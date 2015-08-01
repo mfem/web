@@ -1,0 +1,104 @@
+# Features
+
+The goal of MFEM is to enable research and development of scalable finite element discretization and solver algorithms through general finite element abstractions, accurate and flexible visualization, and tight integration with the *[hypre](http://www.llnl.gov/CASC/hypre)* library.
+
+Conceptually, MFEM can be viewed as a finite element toolbox that provides the building blocks for developing finite element algorithms in a manner similar to that of MATLAB for linear algebra methods.
+
+### Higher-order Finite Element Spaces
+
+<img src="http://mfem.github.io/images/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
+
+MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/html/inherit_graph_16.svg) [spaces](http://mfem.github.io/doxygen/html/inherit_graph_17.svg) in 2D and 3D, including arbitrary high-order:
+
+ - [H1](http://mfem.github.io/doxygen/examples/README_files/index.html?h1)-conforming, [H(div)](http://mfem.github.io/doxygen/examples/README_files/index.html?hdiv)-conforming, [H(curl)](http://mfem.github.io/doxygen/examples/README_files/index.html?hcurl)-conforming spaces,
+ - discontinuous [L2](http://mfem.github.io/doxygen/examples/README_files/index.html?l2) spaces,
+ - numerical trace ([interfacial](http://mfem.github.io/doxygen/examples/README_files/index.html?h12)) spaces,
+ - [NURBS](http://mfem.github.io/doxygen/examples/README_files/index.html?nurbs) spaces for isogeometric analysis.
+
+Many [bilinear](http://mfem.github.io/doxygen/html/inherit_graph_67.svg) and [linear](http://mfem.github.io/doxygen/html/inherit_graph_40.svg) forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
+
+### Flexible Discretization
+
+In addition to classical Galerkin methods, MFEM enables the quick prototyping of
+
+ - [mixed](http://mfem.github.io/doxygen/examples/README_files/index.html?mixed) finite elements,
+ - Discontinuous Galerkin ([DG](http://mfem.github.io/doxygen/examples/README_files/index.html?dg)) methods,
+ - [isogeometric](http://mfem.github.io/doxygen/examples/README_files/index.html?nurbs) analysis methods,
+ - Discontinuous Petrov-Galerkin ([DPG](http://mfem.github.io/doxygen/examples/README_files/index.html?dpg)) approaches.
+
+<img src="http://mfem.github.io/doxygen/examples/README_files/ex6.png" align="right" width="230">
+
+### Wide Range of Mesh Types
+
+MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/html/inherit_graph_14.svg) and includes classes for dealing with:
+
+ - triangular, quadrilateral, tetrahedral and hexahedral [elements](http://mfem.github.io/doxygen/html/inherit_graph_13.svg),
+ - conforming local mesh refinement (triangular/tetrahedral meshes),
+ - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
+ - higher-order elements with [curved](https://github.com/glvis/glvis/wiki/CurvilinearVTKMeshes) boundaries,
+ - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D,
+ - topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes,
+ - 1D meshes.
+
+### Parallel and Scalable
+
+MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
+
+ - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://www.llnl.gov/casc/blast/parallel.php) to [hundreds of thousands](http://computation.llnl.gov/project/blast/images/blast_strong_vulcan_inline.png) of parallel cores.
+ - An experimental support for OpenMP acceleration is also included.
+
+A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) to transition to a high-performing parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library.
+
+### Built-in Solvers
+
+MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra
+[vectors](http://mfem.github.io/doxygen/html/inherit_graph_102.svg) and [sparse matrices](http://mfem.github.io/doxygen/html/inherit_graph_72.svg).
+
+Several matrix storage formats are available including dense, compressed sparse row ([CSR](http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html)) and parallel compressed sparse row ([ParCSR](http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html)). Block vectors, operators and [matrices](http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html) are also supported.
+
+A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):
+
+ - point-wise and polynomial [serial](http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html) and [parallel](http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html) smoothers,
+<img src="http://mfem.github.io/images/hypre_wiw.gif" align="right" width="250">
+ - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_72.svg) in serial and in parallel,
+ - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](http://mfem.github.io/doxygen/examples/README_files/index.html?amg), [AMS](http://mfem.github.io/doxygen/examples/README_files/index.html?ams) and [ADS](http://mfem.github.io/doxygen/examples/README_files/index.html?ads) solvers,
+ - sequential sparse direct solvers from the [SuiteSparse](http://www.cise.ufl.edu/research/sparse/SuiteSparse) library,
+ - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_71.svg),
+ - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
+
+### Extensive Examples
+
+MFEM includes a number of well-documented [example codes](http://mfem.github.io/doxygen/examples/README_files/index.html) that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:
+
+ - [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html): nodal H1 FEM for the Laplace problem,
+ - [Example 2](http://mfem.github.io/doxygen/html/ex2_8cpp_source.html): vector FEM for linear elasticity,
+ - [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html): Nedelec H(curl) FEM for the definite Maxwell problem,
+ - [Example 4](http://mfem.github.io/doxygen/html/ex4_8cpp_source.html): Raviart-Thomas H(div) FEM for the grad-div problem,
+ - [Example 5](http://mfem.github.io/doxygen/html/ex5_8cpp_source.html): mixed pressure-velocity FEM for the Darcy problem,
+ - [Example 6](http://mfem.github.io/doxygen/html/ex6_8cpp_source.html): non-conforming adaptive mesh refinement for the Laplace problem,
+ - [Example 7](http://mfem.github.io/doxygen/html/ex7_8cpp_source.html): Laplace problem on a surface (the unit sphere),
+ - [Example 8](http://mfem.github.io/doxygen/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
+ - [Example 9](http://mfem.github.io/doxygen/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,
+ - [Example 10](http://mfem.github.io/doxygen/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity.
+
+Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
+
+### Accurate and Flexible Visualization
+
+The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
+
+The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
+
+### Lightweight, Portable and Easily Extendable
+
+The MFEM code base is [relatively small](https://github.com/mfem/mfem/wiki/Releases) and is written in highly portable C++ (e.g. with very limited use of templates and the STL).
+
+ - The serial version of MFEM has no external dependencies and is [straightforward to build](https://github.com/mfem/mfem/wiki/Building) on Linux, Mac and Windows machines.
+ - The MPI-parallel version uses two third-party libraries (*hypre* and METIS), and is also easy to build with an MPI compiler.
+ - On most machines, both versions can be built in under a minute by typing: "`make serial -j`" and "`make parallel -j`" respectively.
+
+The object-oriented design of MFEM [separates](http://mfem.github.io/doxygen/html/index.html) the mesh, finite element and linear algebra abstractions, making it easy to extend the library and adapt it to a variety of [applications](https://github.com/mfem/mfem/wiki/Publications).
+
+### Open Source
+
+MFEM is an open-source software, and can be freely used under the terms of the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html) license.

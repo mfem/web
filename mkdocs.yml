@@ -1,0 +1,20 @@
+site_name: MFEM
+
+pages:
+- Home: index.md
+- Features: features.md
+- Examples: examples.md
+- Gallery: gallery.md
+- Documentation:
+  - 'Building MFEM': building.md
+  - 'Serial Tutorial': serial-tutorial.md
+  - 'Parallel Tutorial': parallel-tutorial.md
+  - 'Publications': publications.md
+- Releases: releases.md
+
+include_next_prev: false
+repo_url: https://github.com/example/repository/
+
+#theme_dir: hacked
+theme: flatly
+
