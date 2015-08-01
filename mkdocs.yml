@@ -13,7 +13,7 @@ pages:
 - Releases: releases.md
 
 include_next_prev: false
-repo_url: https://github.com/example/repository/
+repo_url: https://github.com/mfem/mfem
 
 #theme_dir: hacked
 theme: flatly
