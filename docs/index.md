@@ -22,7 +22,7 @@
 
 ## How do I get it?
 
-Download the latest [tarball](releases.md) or just clone from GitHub:
+Download the latest [tarball](download.md) or just clone from GitHub:
 
 <pre>
 git clone https://github.com/mfem/mfem.git
@@ -40,7 +40,7 @@ Be sure to check out the [tutorials](building.md) and [examples](examples.md).
 
 
 
-
-
-
 </div>
+
+
+
