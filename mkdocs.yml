@@ -1,21 +1,22 @@
 site_name: MFEM
+markdown_extensions:
+- extra  # allow markdown in <div>
+repo_url: https://github.com/mfem/mfem
 
 pages:
 - Home: index.md
-- Features: features.md
 - Examples: examples.md
 - Gallery: gallery.md
 - Documentation:
+  - 'Features': features.md
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Publications': publications.md
 - Download: download.md
 
-
 #theme: flatly
 theme_dir: template
 
-include_next_prev: false
+include_next_prev: false  # turn of next/previous buttons
 
-repo_url: https://github.com/mfem/mfem

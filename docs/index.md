@@ -1,10 +1,11 @@
-<br/>
+<div class="col-md-6" markdown="1">
 
 <!-- <img src="img/logo-300.png" style="margin: 0px auto; display: block">  -->
 
-[![](img/logo-300.png)](gallery.md)
-
 <br/>
+[![](img/logo-300.png)](gallery.md)
+<br/>
+
 
 **MFEM** is a _lightweight_, _general_, _scalable_ C++ library for finite element methods.
 
@@ -17,6 +18,7 @@
 * Triangular, quadrilateral, tetrahedral and hexahedral [curved](https://github.com/glvis/glvis/wiki/Mesh-Formats#curvilinear-and-more-general-meshes) elements.
 * ... and [many more](features.md).
 
+</div><div class="col-md-6" markdown="1">
 
 ## How do I get it?
 
@@ -33,3 +35,12 @@ git clone https://github.com/glvis/glvis.git
 </pre>
 
 Be sure to check out the [tutorials](building.md) and [examples](examples.md).
+
+<button type="button" class="btn btn-success">**Download mfem-3.0.1.tar.bz2**</button>
+
+
+
+
+
+
+</div>

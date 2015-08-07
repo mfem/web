@@ -43,17 +43,19 @@
 
         {% include "nav.html" %}
 
-        {% if current_page.title in ('Examples', 'Gallery', 'Download') %}
         <div class="container">
-            <div class="col-md-12" role="main">{% include "content.html" %}</div>
-        </div>
+            {% if current_page.title in ('Home') %}
+            {% include "content.html" %}
 
-        {% else %}
-        <div class="container">
+            {% elif current_page.title in ('Examples', 'Gallery', 'Download') %}
+            <div class="col-md-12" role="main">{% include "content.html" %}</div>
+
+            {% else %}
             <div class="col-md-9" role="main">{% include "content.html" %}</div>
             <div class="col-md-3">{% include "toc.html" %}</div>
+
+            {% endif %}
         </div>
-        {% endif %}
 
         <script src="{{ base_url }}/js/jquery-1.10.2.min.js"></script>
         <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>
