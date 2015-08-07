@@ -12,9 +12,10 @@ pages:
   - 'Publications': publications.md
 - Releases: releases.md
 
+
+#theme: flatly
+theme_dir: template
+
 include_next_prev: false
+
 repo_url: https://github.com/mfem/mfem
-
-#theme_dir: hacked
-theme: flatly
-
