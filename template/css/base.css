@@ -25,6 +25,12 @@ div.source-links {
     float: right;
 }
 
+/*label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}*/
+
 /*
  * Side navigation
  *
