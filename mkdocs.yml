@@ -10,7 +10,7 @@ pages:
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Publications': publications.md
-- Releases: releases.md
+- Download: download.md
 
 
 #theme: flatly

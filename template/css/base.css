@@ -5,7 +5,7 @@ body {
 h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
     content: "";
     display: block;
-    margin-top: -75px;
+    margin-top: -65px;
     height: 75px;
 }
 
@@ -14,7 +14,7 @@ ul.nav li.main {
 }
 
 div.col-md-3 {
-    padding-left: 0;
+    padding-right: 0;
 }
 
 div.col-md-9 {
