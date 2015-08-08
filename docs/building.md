@@ -5,8 +5,9 @@ A simple tutorial how to build and run the serial and parallel version of MFEM t
 ## Instructions
 
 Download MFEM and GLVis
-  - http://mfem.org
-  - http://glvis.org
+
+  - [http://mfem.org](http://mfem.org)
+  - [http://glvis.org](http://glvis.org)
 
 Below we assume that we are working with versions 3.0.
 
@@ -48,8 +49,9 @@ The serial examples can be build with:
 ## Parallel MPI version of MFEM
 
 Download *hypre* and metis from
-  - https://computation.llnl.gov/casc/hypre/software.html
-  - http://glaros.dtc.umn.edu/gkhome/metis/metis/download
+
+  - [https://computation.llnl.gov/casc/hypre/software.html](https://computation.llnl.gov/casc/hypre/software.html)
+  - [http://glaros.dtc.umn.edu/gkhome/metis/metis/download](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
 
 Below we assume that we are working with versions 2.10.0b and 4.0.3 respectively. We also assume that the serial version of MFEM and GLVis have been built as described above.
 
