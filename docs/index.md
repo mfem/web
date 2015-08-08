@@ -1,9 +1,9 @@
 <div class="col-md-6" markdown="1">
 
-<!-- <img src="img/logo-300.png" style="margin: 0px auto; display: block">  -->
-
 <br/>
+<center>
 [![](img/logo-300.png)](gallery.md)
+</center>
 <br/>
 
 
@@ -11,36 +11,57 @@
 
 ## Features
 
-* 2D and 3D, arbitrary high-order H<sup>1</sup>, [H(curl)](http://mfem.github.io/doxygen/examples/README_files/index.html?hcurl), [H(div)](http://mfem.github.io/doxygen/examples/README_files/index.html?hdiv), L<sub>2</sub> and NURBS elements.
-* Parallel version scalable to [hundreds of thousands](http://www.llnl.gov/casc/blast/parallel.php) of MPI cores.
-* Adaptive mesh refinement ([AMR](http://mfem.github.io/doxygen/examples/README_files/index.html?amr)): conforming, nonconforming, anisotropic.
-* Galerkin, [mixed](http://mfem.github.io/doxygen/examples/README_files/index.html?mixed), isogeometric, [DG](http://mfem.github.io/doxygen/examples/README_files/index.html?dg) and [DPG](http://mfem.github.io/doxygen/examples/README_files/index.html?dpg) discretizations.
+* 2D and 3D, arbitrary high-order elements.
+* H<sup>1</sup>, [H(curl)](examples.md?hcurl), [H(div)](examples.md?hdiv), L<sub>2</sub> and NURBS spaces.
+* MPI version scalable to [hundreds of thousands](http://www.llnl.gov/casc/blast/parallel.php) of cores.
+* Adaptive mesh refinement ([AMR](examples.md?amr)): conforming, nonconforming, anisotropic.
+* Galerkin, [mixed](examples.md?mixed), isogeometric, [DG](examples.md?dg) and [DPG](examples.md?dpg) discretizations.
 * Triangular, quadrilateral, tetrahedral and hexahedral [curved](https://github.com/glvis/glvis/wiki/Mesh-Formats#curvilinear-and-more-general-meshes) elements.
 * ... and [many more](features.md).
 
+MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast), [GLVis](http://glvis.org) and [XBraid](http://www.llnl.gov/casc/xbraid) projects. See also our [Gallery](https://github.com/mfem/mfem/wiki/Gallery).
+
+
+
 </div><div class="col-md-6" markdown="1">
 
-## How do I get it?
+## Latest Release
 
-Download the latest [tarball](download.md) or just clone from GitHub:
+**
+[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG) 
+/ [Example codes](examples.md)
+/ [Code documentation](http://mfem.github.io/doxygen/html/index.html) 
+**
 
+[<button type="button" class="btn btn-success">
+**Download mfem-3.0.1.tgz**
+</button>](http://goo.gl/gcNNsA)
+
+Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
+to report [bugs](https://github.com/mfem/mfem/issues/new) 
+or post [questions or comments](https://github.com/mfem/mfem/issues/new).
+For older releases see [downloads](download.md).
+
+## Documentation
+
+The best starting point for new users is the interactive documentation of the [example codes](examples.md).
+
+**
+[Building MFEM](building.md) 
+/ [Serial Tutorial](serial-tutorial.md) 
+/ [Parallel Tutorial](parallel-tutorial.md) 
+<br> [Mesh Formats](https://github.com/glvis/glvis/wiki/MeshFormats) 
+/ [GLVis Tutorials](https://github.com/glvis/glvis/wiki/)
+**
+
+MFEM is being developed at [CASC](http://computation.llnl.gov/casc/), [LLNL](https://www.llnl.gov/). It can be cited with
 <pre>
-git clone https://github.com/mfem/mfem.git
-</pre>
+@misc{mfem-library,
+  title = {{MFEM}: Modular finite element methods},
+  howpublished = {\url{mfem.org}}
+}</pre>
 
-For visualization you will also need [GLVis](glvis.org):
-
-<pre>
-git clone https://github.com/glvis/glvis.git
-</pre>
-
-Be sure to check out the [tutorials](building.md) and [examples](examples.md).
-
-<button type="button" class="btn btn-success">**Download mfem-3.0.1.tar.bz2**</button>
-
+See also our list of [publications](publications.md).
 
 
 </div>
-
-
-

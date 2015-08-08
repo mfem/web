@@ -1,6 +1,8 @@
 site_name: MFEM
+
 markdown_extensions:
-- extra  # allow markdown in <div>
+- extra  # allow markdown in <div markdown="1">
+
 repo_url: https://github.com/mfem/mfem
 
 pages:
@@ -15,7 +17,6 @@ pages:
   - 'Publications': publications.md
 - Download: download.md
 
-#theme: flatly
 theme_dir: template
 
 include_next_prev: false  # turn of next/previous buttons
