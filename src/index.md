@@ -2,7 +2,6 @@
 
 [<img class="centered" src="img/logo-300.png">](gallery.md)
 
-
 **MFEM** is a _lightweight_, _general_, _scalable_ C++ library for finite element methods.
 
 ## Features
@@ -16,7 +15,6 @@
 * ... and [many more](features.md).
 
 MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast), [GLVis](http://glvis.org) and [XBraid](http://www.llnl.gov/casc/xbraid) projects. See also our [Gallery](https://github.com/mfem/mfem/wiki/Gallery).
-
 
 
 </div><div class="col-md-6" markdown="1">
