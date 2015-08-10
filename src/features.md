@@ -6,7 +6,7 @@ Conceptually, MFEM can be viewed as a finite element toolbox that provides the b
 
 ## Higher-order Finite Element Spaces
 
-<img src="http://mfem.github.io/images/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
+<img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
 
 MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/html/inherit_graph_16.svg) [spaces](http://mfem.github.io/doxygen/html/inherit_graph_17.svg) in 2D and 3D, including arbitrary high-order:
 
@@ -26,7 +26,7 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
  - [isogeometric](http://mfem.github.io/doxygen/examples/README_files/index.html?nurbs) analysis methods,
  - Discontinuous Petrov-Galerkin ([DPG](http://mfem.github.io/doxygen/examples/README_files/index.html?dpg)) approaches.
 
-<img src="http://mfem.github.io/doxygen/examples/README_files/ex6.png" align="right" width="230">
+<img src="../img/ex6.png" align="right" width="230">
 
 ## Wide Range of Mesh Types
 
@@ -59,7 +59,7 @@ Several matrix storage formats are available including dense, compressed sparse 
 A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):
 
  - point-wise and polynomial [serial](http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html) and [parallel](http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html) smoothers,
-<img src="http://mfem.github.io/images/hypre_wiw.gif" align="right" width="250">
+<img src="../img/hypre_wiw.gif" align="right" width="250">
  - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_72.svg) in serial and in parallel,
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](http://mfem.github.io/doxygen/examples/README_files/index.html?amg), [AMS](http://mfem.github.io/doxygen/examples/README_files/index.html?ams) and [ADS](http://mfem.github.io/doxygen/examples/README_files/index.html?ads) solvers,
  - sequential sparse direct solvers from the [SuiteSparse](http://www.cise.ufl.edu/research/sparse/SuiteSparse) library,
