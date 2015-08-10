@@ -7,14 +7,14 @@ repo_url: https://github.com/mfem/mfem
 
 pages:
 - Home: index.md
+- Features: features.md
 - Examples: examples.md
-- Gallery: gallery.md
 - Documentation:
-  - 'Features': features.md
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Publications': publications.md
+- Gallery: gallery.md
 - Download: download.md
 
 theme_dir: template

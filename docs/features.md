@@ -4,7 +4,7 @@ The goal of MFEM is to enable research and development of scalable finite elemen
 
 Conceptually, MFEM can be viewed as a finite element toolbox that provides the building blocks for developing finite element algorithms in a manner similar to that of MATLAB for linear algebra methods.
 
-### Higher-order Finite Element Spaces
+## Higher-order Finite Element Spaces
 
 <img src="http://mfem.github.io/images/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
 
@@ -17,7 +17,7 @@ MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/h
 
 Many [bilinear](http://mfem.github.io/doxygen/html/inherit_graph_67.svg) and [linear](http://mfem.github.io/doxygen/html/inherit_graph_40.svg) forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
 
-### Flexible Discretization
+## Flexible Discretization
 
 In addition to classical Galerkin methods, MFEM enables the quick prototyping of
 
@@ -28,7 +28,7 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
 
 <img src="http://mfem.github.io/doxygen/examples/README_files/ex6.png" align="right" width="230">
 
-### Wide Range of Mesh Types
+## Wide Range of Mesh Types
 
 MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/html/inherit_graph_14.svg) and includes classes for dealing with:
 
@@ -40,7 +40,7 @@ MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/
  - topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes,
  - 1D meshes.
 
-### Parallel and Scalable
+## Parallel and Scalable
 
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
 
@@ -49,7 +49,7 @@ MFEM supports MPI-based parallelism throughout the library, and can readily be u
 
 A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) to transition to a high-performing parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library.
 
-### Built-in Solvers
+## Built-in Solvers
 
 MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra
 [vectors](http://mfem.github.io/doxygen/html/inherit_graph_102.svg) and [sparse matrices](http://mfem.github.io/doxygen/html/inherit_graph_72.svg).
@@ -66,7 +66,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_71.svg),
  - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
 
-### Extensive Examples
+## Extensive Examples
 
 MFEM includes a number of well-documented [example codes](http://mfem.github.io/doxygen/examples/README_files/index.html) that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:
 
@@ -83,13 +83,13 @@ MFEM includes a number of well-documented [example codes](http://mfem.github.io/
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
-### Accurate and Flexible Visualization
+## Accurate and Flexible Visualization
 
 The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
 
 The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
 
-### Lightweight, Portable and Easily Extendable
+## Lightweight, Portable and Easily Extendable
 
 The MFEM code base is [relatively small](https://github.com/mfem/mfem/wiki/Releases) and is written in highly portable C++ (e.g. with very limited use of templates and the STL).
 
@@ -99,6 +99,6 @@ The MFEM code base is [relatively small](https://github.com/mfem/mfem/wiki/Relea
 
 The object-oriented design of MFEM [separates](http://mfem.github.io/doxygen/html/index.html) the mesh, finite element and linear algebra abstractions, making it easy to extend the library and adapt it to a variety of [applications](https://github.com/mfem/mfem/wiki/Publications).
 
-### Open Source
+## Open Source
 
 MFEM is an open-source software, and can be freely used under the terms of the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html) license.
