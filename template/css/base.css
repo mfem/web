@@ -17,7 +17,7 @@ div.col-md-3 {
     padding-right: 0;
 }
 
-div.col-md-9, div.col-md-12 {
+div.col-md-6, div.col-md-9, div.col-md-12 {
     padding-bottom: 100px;
 }
 

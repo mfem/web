@@ -51,5 +51,12 @@
     <br><br><strong>Tzanio Kolev</strong></a></p><br>
 </div>
 
+<div class="clearfix"></div>
 
+## Former Members
+
+- Stanimire Tomov
+- Truman Ellis
+- Ilya Lashuk
+- Ido Akkerman
 
