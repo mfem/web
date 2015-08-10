@@ -33,6 +33,16 @@ img.centered {
     margin-bottom: 25px;
 }
 
+img.teamphoto {
+    box-shadow: 4px 4px 4px #999;
+}
+
+p.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 /*label {
     display: inline-block;
     margin-bottom: 5px;
