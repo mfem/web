@@ -69,3 +69,5 @@ See also our list of [publications](publications.md).
 
 
 </div>
+
+<div class="col-md-12"></div>
