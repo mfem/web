@@ -17,12 +17,20 @@ div.col-md-3 {
     padding-right: 0;
 }
 
-div.col-md-9 {
+div.col-md-9, div.col-md-12 {
     padding-bottom: 100px;
 }
 
 div.source-links {
     float: right;
+}
+
+img.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /*label {

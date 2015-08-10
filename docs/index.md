@@ -1,10 +1,6 @@
 <div class="col-md-6" markdown="1">
 
-<br/>
-<center>
-[![](img/logo-300.png)](gallery.md)
-</center>
-<br/>
+[<img class="centered" src="img/logo-300.png">](gallery.md)
 
 
 **MFEM** is a _lightweight_, _general_, _scalable_ C++ library for finite element methods.
