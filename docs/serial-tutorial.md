@@ -3,11 +3,12 @@
 ## Summary
 
 This tutorial illustrates the building and sample use of the following MFEM serial example codes:
+
   - [Example 1](#example-1)
   - [Example 2](#example-2)
   - [Example 3](#example-3)
 
-An interactive documentation of all example codes is available [here](http://mfem.github.io/doxygen/examples/README_files/index.html).
+An interactive documentation of all example codes is available [here](examples.md).
 
 ## Building
 

@@ -335,8 +335,6 @@ No examples match your criteria.
 <hr>
 </div>
 
-<br/>
-
 <div style="clear:both;"/></div>
 <script type="text/javascript"><!--
 function isChecked(id)
