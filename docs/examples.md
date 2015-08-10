@@ -30,11 +30,9 @@ or post
 [questions](https://github.com/mfem/mfem/issues/new)
 or comments_.
 
-<table class="table table-bordered" markdown="1">
-<tr>
-<td>
-   **Equation (PDE)**
-
+<div class="row" markdown="1">
+<div class="col-sm-6 col-md-2 small" markdown="1">
+   <h5>**Equation (PDE)**</h5>
    <label><input type="radio" id="all1" onchange="update(this.id);" checked="checked" /> All</label><br/>
    <label><input type="radio" id="laplace" onchange="update(this.id);" /> Laplace</label><br/>
    <label><input type="radio" id="elasticity" onchange="update(this.id);" /> Elasticity</label><br/>
@@ -42,33 +40,29 @@ or comments_.
    <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
-</td>
-<td>
-   **Finite Elements**
-
+</div>
+<div class="col-sm-6 col-md-3 small" markdown="1">
+   <h5>**Finite Elements**</h5>
    <label><input type="radio" id="all2" onchange="update(this.id);" checked="checked" /> All</label><br/>
    <label><input type="radio" id="l2" onchange="update(this.id);" /> $L_2$ discontinuous elements</label><br/>
    <label><input type="radio" id="h1" onchange="update(this.id);" /> $H^1$ nodal elements</label><br/>
    <label><input type="radio" id="hcurl" onchange="update(this.id);" /> $H(curl)$ Nedelec elements</label><br/>
    <label><input type="radio" id="hdiv" onchange="update(this.id);" /> $H(div)$ Raviart-Thomas elements</label><br/>
    <label><input type="radio" id="h12" onchange="update(this.id);" /> $H^{-1/2}$ interfacial elements</label><br/>
-</td>
-</tr>
-<tr>
-<td>
-   **Discretization**
-
+</div>
+<div class="clearfix hidden-md hidden-lg"></div>
+<div class="col-sm-6 col-md-3 small" markdown="1">
+   <h5>**Discretization**</h5>
    <label><input type="radio" id="all3" onchange="update(this.id);" checked="checked" /> All</label><br/>
    <label><input type="radio" id="galerkin" onchange="update(this.id);" /> Galerkin FEM</label><br/>
    <label><input type="radio" id="mixed" onchange="update(this.id);" /> Mixed FEM</label><br/>
    <label><input type="radio" id="dg" onchange="update(this.id);" /> Discontinuous Galerkin (DG)</label><br/>
-   <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discontinuous Petrov-Galerkin (DPG)</label><br/>
+   <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discont. Petrov-Galerkin (DPG)</label><br/>
    <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
    <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
-</td>
-<td>
-   **Solver**
-
+</div>
+<div class="col-sm-6 col-md-4 small" markdown="1">
+   <h5>**Solver**</h5>
    <label><input type="radio" id="all4" onchange="update(this.id);" checked="checked" /> All</label><br/>
    <label><input type="radio" id="jacobi" onchange="update(this.id);" /> Jacobi</label> <br/>
    <label><input type="radio" id="gs" onchange="update(this.id);" /> Gauss-Seidel</label> <br/>
@@ -81,15 +75,15 @@ or comments_.
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
-</td>
-</tr>
-</table>
+</div>
+</div>
+<hr>
 
 <!-- ------------------------------------------------------------------------- -->
-<div id="ex1" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex1.png" style="float:right;">
 
+<div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
+<img src="../img/ex1.png" style="float:right;">
 
 This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
@@ -107,14 +101,13 @@ connection to the [GLVis](http://glvis.org) tool for visualization.
 
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp))
 and a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) version._
+<div style="clear:both;"></div>
+<br></div>
 
-</div>
 
-<!-- ------------------------------------------------------------------------- -->
 <div id="ex2" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex2.png" style="float:right;">
-
 ##Example 2: Linear Elasticity
+<img src="../img/ex2.png" style="float:right;">
 
 This example code solves a simple linear elasticity problem
 describing a multi-material cantilever beam.
@@ -139,13 +132,13 @@ constant and vector coefficient objects.
 _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp)) 
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex3" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex3.png" style="float:right;">
-
 ##Example 3: Definite Maxwell Problem
+<img src="../img/ex3.png" style="float:right;">
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
@@ -162,13 +155,13 @@ error when the exact solution is known.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 We recommend viewing examples 1-2 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex4" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex4.png" style="float:right;">
-
 ##Example 4: grad-div Problem
+<img src="../img/ex4.png" style="float:right;">
 
 This example code solves a simple 2D/3D $H(div)$
 diffusion problem corresponding to the second order definite equation
@@ -185,13 +178,13 @@ error when the exact solution is known.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 We recommend viewing examples 1-3 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex5" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex5.png" style="float:right;">
-
 ##Example 5: Darcy Problem
+<img src="../img/ex5.png" style="float:right;">
 
 This example code solves a simple 2D/3D mixed Darcy problem
 corresponding to the saddle point system
@@ -212,13 +205,13 @@ a [VisIt](http://visit.llnl.gov) visualization format.
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
 We recommend viewing examples 1-4 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex6" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex6.png" style="float:right;">
-
 ##Example 6: Laplace Problem with AMR
+<img src="../img/ex6.png" style="float:right;">
 
 This is a version of Example 1 with a simple adaptive mesh
 refinement loop. The problem being solved is again the Laplace
@@ -236,13 +229,13 @@ visualization are also illustrated.
 
 _The example currently has only a serial version ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp)).
 We recommend viewing Example 1 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex7" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex7.png" style="float:right;">
-
 ##Example 7: Surface Meshes
+<img src="../img/ex7.png" style="float:right;">
 
 This example code demonstrates the use of MFEM to define a
 triangulation of a unit sphere and a simple isoparametric
@@ -258,13 +251,13 @@ system.
 _The example has a serial ([ex7.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7.cpp))
 and a parallel ([ex7p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex8" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex8.png" style="float:right;">
-
 ##Example 8: DPG for the Laplace Problem
+<img src="../img/ex8.png" style="float:right;">
 
 This example code demonstrates the use of the Discontinuous
 Petrov-Galerkin (DPG) method in its primal 2x2 block form as a
@@ -281,13 +274,13 @@ of block operators and preconditioners.
 _The example has a serial ([ex8.cpp](https://github.com/mfem/mfem/blob/master/examples/ex8.cpp))
 and a parallel ([ex8p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex8p.cpp)) version.
 We recommend viewing examples 1-5 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex9" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex9.png" style="float:right;">
-
 ##Example 9: DG Advection
+<img src="../img/ex9.png" style="float:right;">
 
 This example code solves the time-dependent advection equation
 $$\frac{du}{dt} = v \cdot \nabla u,$$ where $v$ is a given fluid
@@ -303,13 +296,13 @@ is also illustrated.
 
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
 
-<!-- ------------------------------------------------------------------------- -->
+
 <div id="ex10" markdown="1">
-<hr style="clear:both;"/><img src="../img/ex10.png" style="float:right;">
-
 ##Example 10: Nonlinear Elasticity
+<img src="../img/ex10.png" style="float:right;">
 
 This examples solves a time dependent nonlinear elasticity problem of the form
 $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
@@ -327,18 +320,21 @@ solver.
 _The example has a serial ([ex10.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10.cpp))
 and a parallel ([ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) version.
 We recommend viewing examples 2 and 9 before viewing this example._
-</div>
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <!-- ------------------------------------------------------------------------- -->
-<div id="nomatch"><hr>
+
+<div id="nomatch">
 <br/><br/><br/>
 <center>
 No examples match your criteria.
 </center>
 <br/><br/><br/>
+<hr>
 </div>
 
-<hr>
 <br/>
 
 <div style="clear:both;"/></div>
