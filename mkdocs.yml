@@ -1,4 +1,5 @@
 site_name: MFEM
+docs_dir: '.'
 
 markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
