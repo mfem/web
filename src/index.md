@@ -61,8 +61,8 @@ Developed by the [MFEM team](team.md) at [CASC](http://computation.llnl.gov/casc
 Please cite with
 <pre>
 @misc{mfem-library,
- title = {{MFEM}: Modular finite element methods},
- howpublished = {\url{mfem.org}}
+  title={{MFEM}: Modular finite element methods},
+  howpublished={\url{mfem.org}}
 }</pre>
 
 See also our list of [publications](publications.md).
