@@ -52,8 +52,9 @@
             <div class="col-md-12" role="main">{% include "content.html" %}</div>
 
             {% else %}
-            <div class="col-md-3 col-md-push-9">{% include "toc.html" %}</div>
-            <div class="col-md-9 col-md-pull-3" role="main">{% include "content.html" %}</div>
+            <div class="col-md-3 visible-xs visible-sm">{% include "toc.html" %}</div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">{% include "content.html" %}</div>
+            <div class="col-md-3 hidden-xs hidden-sm">{% include "toc.html" %}</div>
 
             {% endif %}
         </div>
