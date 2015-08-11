@@ -2,71 +2,68 @@
 
 [<img class="centered" src="img/logo-300.png" alt="MFEM logo">](gallery.md)
 
-**MFEM** is a _lightweight_, _general_, _scalable_ C++ library for finite element methods.
+MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element methods.
 
 ## Features
 
-* 2D and 3D, arbitrary high-order elements.
-* H<sup>1</sup>, [H(curl)](examples.md?hcurl), [H(div)](examples.md?hdiv), L<sub>2</sub> and NURBS spaces.
-* MPI version scalable to [hundreds of thousands](http://www.llnl.gov/casc/blast/parallel.php) of cores.
-* Adaptive mesh refinement ([AMR](examples.md?amr)): conforming, nonconforming, anisotropic.
-* Galerkin, [mixed](examples.md?mixed), isogeometric, [DG](examples.md?dg) and [DPG](examples.md?dpg) discretizations.
-* Triangular, quadrilateral, tetrahedral and hexahedral [curved](https://github.com/glvis/glvis/wiki/Mesh-Formats#curvilinear-and-more-general-meshes) elements.
+* Arbitrary high-order finite element [meshes](features.md#wide-range-of-mesh-types)
+and [spaces](features.md#higher-order-finite-element-spaces).
+* [Wide variety](features.md#flexible-discretization) of finite element discretization approaches.
+* Conforming and nonconforming [adaptive mesh refinement](examples.md?amr).
+* Scalable to [hundreds of thousands](http://www.llnl.gov/casc/blast/parallel.php) of cores.
 * ... and [many more](features.md).
 
-MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast), [GLVis](http://glvis.org) and [XBraid](http://www.llnl.gov/casc/xbraid) projects. 
-
-<!-- See also our [Gallery](https://github.com/mfem/mfem/wiki/Gallery). -->
-
+MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast),
+[GLVis](http://glvis.org), [XBraid](http://www.llnl.gov/casc/xbraid) and
+[VisIt](http://visit.llnl.gov) projects.
+See also our [Gallery](gallery.md) and list of related [publications](publications.md).
 
 </div><div class="col-md-6" markdown="1">
 
 ## Latest Release
 
 **
-[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG) 
+[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
 / [Example codes](examples.md)
-/ [Code documentation](http://mfem.github.io/doxygen/html/index.html) 
+/ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
+/ [Sources](https://github.com/mfem/mfem)
 **
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.0.1.tgz**
 </button>](http://goo.gl/gcNNsA)
 
-For older releases see [downloads](download.md).
+For older releases see the [download](download.md) section.
 
 ## Documentation
 
-The best starting point for new users are the [example codes](examples.md).
-
 **
-[Building MFEM](building.md) 
-/ [Serial Tutorial](serial-tutorial.md) 
-/ [Parallel Tutorial](parallel-tutorial.md) **
-
-GLVis documentation:
-
-**[Mesh Formats](https://github.com/glvis/glvis/wiki/MeshFormats) 
-/ [GLVis Tutorials](https://github.com/glvis/glvis/wiki/)
+[Building MFEM](building.md)
+/ [Serial Tutorial](serial-tutorial.md)
+/ [Parallel Tutorial](parallel-tutorial.md)
+/ [Mesh Formats](https://github.com/glvis/glvis/wiki/Mesh-Formats)
 **
+
+New users should start by examining the the [example codes](examples.md).
+
+We also recommend using [GLVis](http://glvis.org) for visualization,
+see its [documentation](https://github.com/glvis/glvis/wiki).
 
 ## Contact
 
-Please use GitHub [issue tracker](https://github.com/mfem/mfem/issues)
-to report [bugs](https://github.com/mfem/mfem/issues/new) 
-or post [questions or comments](https://github.com/mfem/mfem/issues/new).
+Developed by the [MFEM team](team.md) at [CASC](http://computation.llnl.gov/casc/),
+[LLNL](https://www.llnl.gov/). Please cite with
+
+    @misc{mfem-library,
+      title={{MFEM}: Modular finite element methods},
+      howpublished={\url{mfem.org}}
+    }
 
 
-Developed by the [MFEM team](team.md) at [CASC](http://computation.llnl.gov/casc/), [LLNL](https://www.llnl.gov/). 
-Please cite with
-<pre>
-@misc{mfem-library,
-  title={{MFEM}: Modular finite element methods},
-  howpublished={\url{mfem.org}}
-}</pre>
-
-See also our list of [publications](publications.md).
-
+Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
+to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
+or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
+or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
 
 </div>
 
