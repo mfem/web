@@ -1,4 +1,4 @@
-# Building MFEM 
+# Building MFEM
 
 A simple tutorial how to build and run the serial and parallel version of MFEM together with GLVis. For more details, see the [INSTALL](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL) file and `make help`.
 
@@ -40,6 +40,7 @@ To start a GLVis server, open a **new terminal** and type
 ~> cd glvis-3.0
 ~/glvis-3.0> ./glvis
 </pre>
+
 The serial examples can be build with:
 <pre>
 ~> cd mfem-3.0/examples
@@ -53,7 +54,7 @@ Download *hypre* and metis from
   - [https://computation.llnl.gov/casc/hypre/software.html](https://computation.llnl.gov/casc/hypre/software.html)
   - [http://glaros.dtc.umn.edu/gkhome/metis/metis/download](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
 
-Below we assume that we are working with versions 2.10.0b and 4.0.3 respectively. We also assume that the serial version of MFEM and GLVis have been built as described above.
+Below we assume that we are working with versions 2.10.0b and [4.0.3](http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz) respectively. We also assume that the serial version of MFEM and GLVis have been built as described above.
 
 Put everything in the same directory:
 <pre>
@@ -102,4 +103,5 @@ One can also use the parallel library to optionally (re-)build GLVis:
 <pre>
 ~> cd glvis-3.0
 ~/glvis-3.0> make clean
-~/glvis-3.0> make MFEM_DIR=../mfem-3.0 -j</code>
+~/glvis-3.0> make MFEM_DIR=../mfem-3.0 -j
+</pre>
