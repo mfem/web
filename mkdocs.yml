@@ -14,6 +14,7 @@ pages:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
+  - 'Mesh Formats': mesh-formats.md
   - 'Publications': publications.md
   - 'The Team': team.md
 - Gallery: gallery.md
