@@ -1,7 +1,7 @@
 # Gallery
 
-This page collects screenshots from various simulations based on MFEM. <br>
-Additional images can be found in the  [GLVis Gallery](https://code.google.com/p/glvis/wiki/Gallery).
+This page collects screenshots from various simulations based on MFEM. 
+Additional images can be found in the  [GLVis gallery](https://github.com/GLVis/glvis/wiki/Gallery).
 
 <br>
 
@@ -53,7 +53,7 @@ Planar inertial confinement fusion (ICF)-like implosion using mixed 4th finite e
 
 <img src="../img/gallery//rt-q8.png", width=400>
 
-Purely Lagrangian Rayleigh-Taylor instability simulation using 8th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.googlecode.com).
+Purely Lagrangian Rayleigh-Taylor instability simulation using 8th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).
 
 ----
 
