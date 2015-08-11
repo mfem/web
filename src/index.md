@@ -29,9 +29,8 @@ MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast), [GLVis](h
 / [Code documentation](http://mfem.github.io/doxygen/html/index.html) 
 **
 
-[<button type="button" class="btn btn-success">
-**Download mfem-3.0.1.tgz**
-</button>](http://goo.gl/gcNNsA)
+<a class="btn btn-success" href="http://goo.gl/gcNNsA">
+**Download mfem-3.0.1.tgz**</a>
 
 For older releases see [downloads](download.md).
 

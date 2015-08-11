@@ -7,9 +7,8 @@
 / [Sources](https://github.com/mfem/mfem)
 **
 
-[<button type="button" class="btn btn-success">
-**Download mfem-3.0.1.tgz**
-</button>](http://goo.gl/gcNNsA)
+<a class="btn btn-success" href="http://goo.gl/gcNNsA">
+**Download mfem-3.0.1.tgz**</a>
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new) 
