@@ -1,14 +1,14 @@
 # Publications
 
-## Google Scholar citations
+## Google Scholar Citations
 
- - [Recent](https://scholar.google.com/scholar?as_vis=1&q=%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&scisbd=2&as_sdt=1,5)
- - [All time](https://scholar.google.com/scholar?q=%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&as_sdt=1,5&as_vis=1)
+ - [Recent](https://scholar.google.com/scholar?as_vis=1&q=%22mfem.org%22+OR+%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.org%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&scisbd=2&as_sdt=1,5)
+ - [All time](https://scholar.google.com/scholar?q=%22mfem.org%22+OR+%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.org%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&as_sdt=1,5&as_vis=1)
 
 ## Selected Publications
 
-  1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel Preconditioners for Reaction-Diffusion Problems with Discontinuous Coefficients](http://arxiv.org/abs/1411.7092), (submitted), **2015**.
-  1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in High-Order Curvilinear Finite Element ALE Remap](http://www.llnl.gov/casc/blast/papers/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
+  1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel preconditioners for reaction-diffusion problems with discontinuous coefficients](http://arxiv.org/abs/1411.7092), (to appear), **2015**.
+  1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in high-order curvilinear finite element ALE remap](http://www.llnl.gov/casc/blast/papers/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
   1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for elastic-plastic Lagrangian dynamics](http://www.llnl.gov/casc/blast/papers/EP-12.pdf), *J. Comp. Phys.*, (257B), pp. 1062–1080, **2014**.
   1. P. Vassilevski, U. Villa, [A mixed formulation for the Brinkman problem](http://dx.doi.org/10.1137/120884109), *SIAM J. Numer. Anal.*, 52-1, pp. 258-281, **2014**.
   1. P. Vassilevski, U. Villa, [A block-diagonal algebraic multigrid preconditioner for the Brinkman problem](http://dx.doi.org/10.1137/120882846), *SIAM J. Sci. Comp.*, 35-5, pp. S3-S17, **2013**.
