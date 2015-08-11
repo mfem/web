@@ -8,10 +8,8 @@
 # Example Codes
 
 This page provides a brief overview of the MFEM example codes. For
-detailed documentation of the MFEM sources, including the examples, build the
-[Doxygen documentation](../../doc/CodeDocumentation/html/index.html) in the
-`doc` directory, or browse the
-[online version](http://mfem.github.io/doxygen/html/index.html).
+detailed documentation of the MFEM sources, including the examples, see the
+[Doxygen documentation](http://mfem.github.io/doxygen/html/index.html).
 
 Clicking on any of the categories below displays examples that contain the
 described feature. _All examples support (arbitrarily) high-order meshes and
@@ -23,10 +21,8 @@ GLVis visualization tool (based on MFEM). See the
 Users are encouraged to submit any example codes that they have created and
 would like to share. <br>
 _Contact a member of the MFEM team to report
-[bugs](https://github.com/mfem/mfem/issues/new)
-or post
-[questions](https://github.com/mfem/mfem/issues/new)
-or comments_.
+[bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
+or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or [comments](https://github.com/mfem/mfem/issues/new?labels=comment)_.
 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
@@ -158,7 +154,7 @@ We recommend viewing examples 1-2 before viewing this example._
 
 
 <div id="ex4" markdown="1">
-##Example 4: grad-div Problem
+##Example 4: Grad-div Problem
 <img src="../img/ex4.png" style="float:right;">
 
 This example code solves a simple 2D/3D $H(div)$
