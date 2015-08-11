@@ -1,4 +1,4 @@
-## Latest release
+## Latest Release
 
 **
 [New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG) 
@@ -15,7 +15,7 @@ Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new) 
 or post [questions or comments](https://github.com/mfem/mfem/issues/new).
 
-## All releases
+## All Releases
 
  **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
