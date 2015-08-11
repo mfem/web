@@ -1,9 +1,9 @@
 ## Latest Release
 
 **
-[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG) 
+[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
 / [Example codes](examples.md)
-/ [Code documentation](http://mfem.github.io/doxygen/html/index.html) 
+/ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 / [Sources](https://github.com/mfem/mfem)
 **
 
@@ -12,8 +12,8 @@
 </button>](http://goo.gl/gcNNsA)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
-to report [bugs](https://github.com/mfem/mfem/issues/new) 
-or post [questions or comments](https://github.com/mfem/mfem/issues/new).
+to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
+or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
 
 ## All Releases
 
