@@ -124,7 +124,7 @@
                 <li>
                     <a href="https://github.com/mfem/mfem">
                         
-                            <i class="fa fa-github"></i>
+                            <i class="fa fa-github-square"></i>
                         
                         GitHub
                     </a>
@@ -172,19 +172,19 @@
 <p><img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces"></p>
 <p>MFEM supports a wide variety of <a href="http://mfem.github.io/doxygen/html/inherit_graph_16.svg">finite element</a> <a href="http://mfem.github.io/doxygen/html/inherit_graph_17.svg">spaces</a> in 2D and 3D, including arbitrary high-order:</p>
 <ul>
-<li><a href="http://mfem.github.io/doxygen/examples/README_files/index.html?h1">H1</a>-conforming, <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?hdiv">H(div)</a>-conforming, <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?hcurl">H(curl)</a>-conforming spaces,</li>
-<li>discontinuous <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?l2">L2</a> spaces,</li>
-<li>numerical trace (<a href="http://mfem.github.io/doxygen/examples/README_files/index.html?h12">interfacial</a>) spaces,</li>
-<li><a href="http://mfem.github.io/doxygen/examples/README_files/index.html?nurbs">NURBS</a> spaces for isogeometric analysis.</li>
+<li><a href="../examples/?h1">H<sup>1</sup></a>-conforming, <a href="../examples/?hdiv">H(div)</a>-conforming, <a href="../examples/?hcurl">H(curl)</a>-conforming spaces,</li>
+<li>discontinuous <a href="../examples/?l2">L<sub>2</sub></a> spaces,</li>
+<li>numerical trace (<a href="../examples/?h12">interfacial</a>) spaces,</li>
+<li><a href="../examples/?nurbs">NURBS</a> spaces for isogeometric analysis.</li>
 </ul>
 <p>Many <a href="http://mfem.github.io/doxygen/html/inherit_graph_67.svg">bilinear</a> and <a href="http://mfem.github.io/doxygen/html/inherit_graph_40.svg">linear</a> forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.</p>
 <h2 id="flexible-discretization">Flexible Discretization</h2>
 <p>In addition to classical Galerkin methods, MFEM enables the quick prototyping of</p>
 <ul>
-<li><a href="http://mfem.github.io/doxygen/examples/README_files/index.html?mixed">mixed</a> finite elements,</li>
-<li>Discontinuous Galerkin (<a href="http://mfem.github.io/doxygen/examples/README_files/index.html?dg">DG</a>) methods,</li>
-<li><a href="http://mfem.github.io/doxygen/examples/README_files/index.html?nurbs">isogeometric</a> analysis methods,</li>
-<li>Discontinuous Petrov-Galerkin (<a href="http://mfem.github.io/doxygen/examples/README_files/index.html?dpg">DPG</a>) approaches.</li>
+<li><a href="../examples/?mixed">mixed</a> finite elements,</li>
+<li>Discontinuous Galerkin (<a href="../examples/?dg">DG</a>) methods,</li>
+<li><a href="../examples/?nurbs">isogeometric</a> analysis methods,</li>
+<li>Discontinuous Petrov-Galerkin (<a href="../examples/?dpg">DPG</a>) approaches.</li>
 </ul>
 <p><img src="../img/ex6.png" align="right" width="230"></p>
 <h2 id="wide-range-of-mesh-types">Wide Range of Mesh Types</h2>
@@ -193,7 +193,7 @@
 <li>triangular, quadrilateral, tetrahedral and hexahedral <a href="http://mfem.github.io/doxygen/html/inherit_graph_13.svg">elements</a>,</li>
 <li>conforming local mesh refinement (triangular/tetrahedral meshes),</li>
 <li>non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,</li>
-<li>higher-order elements with <a href="https://github.com/glvis/glvis/wiki/CurvilinearVTKMeshes">curved</a> boundaries,</li>
+<li>higher-order elements with <a href="https://github.com/glvis/glvis/wiki/Curvilinear-VTK-Meshes">curved</a> boundaries,</li>
 <li><a href="https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh">surface</a> meshes embedded in 3D,</li>
 <li>topologically <a href="https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh">periodic</a> meshes,</li>
 <li>1D meshes.</li>
@@ -214,13 +214,13 @@
 <li>point-wise and polynomial <a href="http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html">serial</a> and <a href="http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html">parallel</a> smoothers,
 <img src="../img/hypre_wiw.gif" align="right" width="250"></li>
 <li><a href="http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="http://mfem.github.io/doxygen/html/inherit_graph_72.svg">operators</a> in serial and in parallel,</li>
-<li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?amg">BoomerAMG</a>, <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?ams">AMS</a> and <a href="http://mfem.github.io/doxygen/examples/README_files/index.html?ads">ADS</a> solvers,</li>
-<li>sequential sparse direct solvers from the <a href="http://www.cise.ufl.edu/research/sparse/SuiteSparse">SuiteSparse</a> library,</li>
+<li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
+<li>sequential sparse direct solvers from the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
 <li>explicit and implicit high-order Runge-Kutta <a href="http://mfem.github.io/doxygen/html/inherit_graph_71.svg">time integrators</a>,</li>
 <li>solvers for nonlinear problems (Newton) and for single linearly constrained <a href="http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html">quadratic minimization</a> problems.</li>
 </ul>
 <h2 id="extensive-examples">Extensive Examples</h2>
-<p>MFEM includes a number of well-documented <a href="http://mfem.github.io/doxygen/examples/README_files/index.html">example codes</a> that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:</p>
+<p>MFEM includes a number of well-documented <a href="../examples/">example codes</a> that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:</p>
 <ul>
 <li><a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
@@ -238,13 +238,13 @@
 <p>The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool <a href="http://glvis.org">GLVis</a>, which is built on top of MFEM.</p>
 <p>The <a href="http://visit.llnl.gov">VisIt</a> visualization and analysis tool also natively supports MFEM formats.</p>
 <h2 id="lightweight-portable-and-easily-extendable">Lightweight, Portable and Easily Extendable</h2>
-<p>The MFEM code base is <a href="https://github.com/mfem/mfem/wiki/Releases">relatively small</a> and is written in highly portable C++ (e.g. with very limited use of templates and the STL).</p>
+<p>The MFEM code base is <a href="../download/">relatively small</a> and is written in highly portable C++ (e.g. with very limited use of templates and the STL).</p>
 <ul>
-<li>The serial version of MFEM has no external dependencies and is <a href="https://github.com/mfem/mfem/wiki/Building">straightforward to build</a> on Linux, Mac and Windows machines.</li>
+<li>The serial version of MFEM has no external dependencies and is <a href="../building/">straightforward to build</a> on Linux, Mac and Windows machines.</li>
 <li>The MPI-parallel version uses two third-party libraries (<em>hypre</em> and METIS), and is also easy to build with an MPI compiler.</li>
 <li>On most machines, both versions can be built in under a minute by typing: "<code>make serial -j</code>" and "<code>make parallel -j</code>" respectively.</li>
 </ul>
-<p>The object-oriented design of MFEM <a href="http://mfem.github.io/doxygen/html/index.html">separates</a> the mesh, finite element and linear algebra abstractions, making it easy to extend the library and adapt it to a variety of <a href="https://github.com/mfem/mfem/wiki/Publications">applications</a>.</p>
+<p>The object-oriented design of MFEM <a href="http://mfem.github.io/doxygen/html/index.html">separates</a> the mesh, finite element and linear algebra abstractions, making it easy to extend the library and adapt it to a variety of <a href="../publications/">applications</a>.</p>
 <h2 id="open-source">Open Source</h2>
 <p>MFEM is an open-source software, and can be freely used under the terms of the <a href="https://www.gnu.org/licenses/lgpl-2.1.html">LGPL 2.1</a> license.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">

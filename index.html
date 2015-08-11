@@ -124,7 +124,7 @@
                 <li>
                     <a href="https://github.com/mfem/mfem">
                         
-                            <i class="fa fa-github"></i>
+                            <i class="fa fa-github-square"></i>
                         
                         GitHub
                     </a>
@@ -140,60 +140,57 @@
             
 
 <div class="col-md-6">
-
 <p><a href="gallery/"><img class="centered" src="img/logo-300.png" alt="MFEM logo"></a></p>
-<p><strong>MFEM</strong> is a <em>lightweight</em>, <em>general</em>, <em>scalable</em> C++ library for finite element methods.</p>
+<p>MFEM is a <em>free</em>, <em>lightweight</em>, <em>scalable</em> C++ library for finite element methods.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>2D and 3D, arbitrary high-order elements.</li>
-<li>H<sup>1</sup>, <a href="examples/?hcurl">H(curl)</a>, <a href="examples/?hdiv">H(div)</a>, L<sub>2</sub> and NURBS spaces.</li>
-<li>MPI version scalable to <a href="http://www.llnl.gov/casc/blast/parallel.php">hundreds of thousands</a> of cores.</li>
-<li>Adaptive mesh refinement (<a href="examples/?amr">AMR</a>): conforming, nonconforming, anisotropic.</li>
-<li>Galerkin, <a href="examples/?mixed">mixed</a>, isogeometric, <a href="examples/?dg">DG</a> and <a href="examples/?dpg">DPG</a> discretizations.</li>
-<li>Triangular, quadrilateral, tetrahedral and hexahedral <a href="https://github.com/glvis/glvis/wiki/Mesh-Formats#curvilinear-and-more-general-meshes">curved</a> elements.</li>
+<li>Arbitrary high-order finite element <a href="features/#wide-range-of-mesh-types">meshes</a>
+and <a href="features/#higher-order-finite-element-spaces">spaces</a>.</li>
+<li><a href="features/#flexible-discretization">Wide variety</a> of finite element discretization approaches.</li>
+<li>Conforming and nonconforming <a href="examples/?amr">adaptive mesh refinement</a>.</li>
+<li>Scalable to <a href="http://www.llnl.gov/casc/blast/parallel.php">hundreds of thousands</a> of cores.</li>
 <li>... and <a href="features/">many more</a>.</li>
 </ul>
-<p>MFEM is currently used in the <a href="http://www.llnl.gov/casc/blast">BLAST</a>, <a href="http://glvis.org">GLVis</a> and <a href="http://www.llnl.gov/casc/xbraid">XBraid</a> projects. </p>
-<!-- See also our <a href="https://github.com/mfem/mfem/wiki/Gallery">Gallery</a>. -->
-
+<p>MFEM is currently used in the <a href="http://www.llnl.gov/casc/blast">BLAST</a>,
+<a href="http://glvis.org">GLVis</a>, <a href="http://www.llnl.gov/casc/xbraid">XBraid</a> and
+<a href="http://visit.llnl.gov">VisIt</a> projects.
+See also our <a href="gallery/">Gallery</a> and list of related <a href="publications/">publications</a>.</p>
 </div>
-
 <div class="col-md-6">
-
 <h2 id="latest-release">Latest Release</h2>
 <p><strong>
-<a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a> 
+<a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a>
 / <a href="examples/">Example codes</a>
-/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a> 
+/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a>
+/ <a href="https://github.com/mfem/mfem">Sources</a>
 </strong></p>
 <p><a href="http://goo.gl/gcNNsA"><button type="button" class="btn btn-success">
 <strong>Download mfem-3.0.1.tgz</strong>
 </button></a></p>
-<p>For older releases see <a href="download/">downloads</a>.</p>
+<p>For older releases see the <a href="download/">download</a> section.</p>
 <h2 id="documentation">Documentation</h2>
-<p>The best starting point for new users are the <a href="examples/">example codes</a>.</p>
 <p><strong>
-<a href="building/">Building MFEM</a> 
-/ <a href="serial-tutorial/">Serial Tutorial</a> 
-/ <a href="parallel-tutorial/">Parallel Tutorial</a> </strong></p>
-<p>GLVis documentation:</p>
-<p><strong><a href="https://github.com/glvis/glvis/wiki/MeshFormats">Mesh Formats</a> 
-/ <a href="https://github.com/glvis/glvis/wiki/">GLVis Tutorials</a>
+<a href="building/">Building MFEM</a>
+/ <a href="serial-tutorial/">Serial Tutorial</a>
+/ <a href="parallel-tutorial/">Parallel Tutorial</a>
+/ <a href="https://github.com/glvis/glvis/wiki/Mesh-Formats">Mesh Formats</a>
 </strong></p>
+<p>New users should start by examining the the <a href="examples/">example codes</a>.</p>
+<p>We also recommend using <a href="http://glvis.org">GLVis</a> for visualization,
+see its <a href="https://github.com/glvis/glvis/wiki">documentation</a>.</p>
 <h2 id="contact">Contact</h2>
-<p>Please use GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
-to report <a href="https://github.com/mfem/mfem/issues/new">bugs</a> 
-or post <a href="https://github.com/mfem/mfem/issues/new">questions or comments</a>.</p>
-<p>Developed by the <a href="team/">MFEM team</a> at <a href="http://computation.llnl.gov/casc/">CASC</a>, <a href="https://www.llnl.gov/">LLNL</a>. 
-Please cite with
-<pre>
-@misc{mfem-library,
+<p>Developed by the <a href="team/">MFEM team</a> at <a href="http://computation.llnl.gov/casc/">CASC</a>,
+<a href="https://www.llnl.gov/">LLNL</a>. Please cite with</p>
+<pre><code>@misc{mfem-library,
   title={{MFEM}: Modular finite element methods},
   howpublished={\url{mfem.org}}
-}</pre></p>
-<p>See also our list of <a href="publications/">publications</a>.</p>
+}
+</code></pre>
+<p>Use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
+to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
+or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a>
+or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.</p>
 </div>
-
 <div class="col-md-12"></div>
 
             
