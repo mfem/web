@@ -16,7 +16,8 @@ pages:
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Mesh Formats': mesh-formats.md
   - 'Publications': publications.md
-  - 'The Team': team.md
+#  - 'The Team': team.md
+  - 'About': about.md
 - Gallery: gallery.md
 - Download: download.md
 
