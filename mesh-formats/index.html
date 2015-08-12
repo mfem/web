@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Download - MFEM</title>  -->
+<!--	<title>Mesh Formats - MFEM</title>  -->
     <title>MFEM - Finite Element Discretization Library</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -86,8 +86,8 @@
                             <a href="../parallel-tutorial/">Parallel Tutorial</a>
                         </li>
                     
-                        <li >
-                            <a href="../mesh-formats/">Mesh Formats</a>
+                        <li class="active">
+                            <a href="./">Mesh Formats</a>
                         </li>
                     
                         <li >
@@ -113,8 +113,8 @@
             
             
             
-                <li class="active">
-                    <a href="./">Download</a>
+                <li >
+                    <a href="../download/">Download</a>
                 </li>
             
             
@@ -141,128 +141,37 @@
 
         <div class="container">
             
-            <div class="col-md-12" role="main">
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
 
-<h2 id="latest-release">Latest Release</h2>
-<p><strong>
-<a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a>
-/ <a href="../examples/">Example codes</a>
-/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a>
-/ <a href="https://github.com/mfem/mfem">Sources</a>
-</strong></p>
-<p><a href="http://goo.gl/gcNNsA"><button type="button" class="btn btn-success">
-<strong>Download mfem-3.0.1.tgz</strong>
-</button></a></p>
-<p>Please use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
-to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
-or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a> or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.</p>
-<h2 id="all-releases">All Releases</h2>
-<table>
-<thead>
-<tr>
-<th><strong>Filename</strong></th>
-<th><strong>Version</strong></th>
-<th><strong>Release Date</strong></th>
-<th><strong>Size</strong></th>
-<th><strong><a href="http://cloc.sourceforge.net">SLOC</a></strong></th>
-<th><strong>Notes</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://goo.gl/gcNNsA">mfem-3.0.1.tgz</a></td>
-<td>v3.0.1</td>
-<td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/TLcT5E">mfem-3.0.tgz</a></td>
-<td>v3.0</td>
-<td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/abUjn7">mfem-9e90b6710d.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2014</td>
-<td>388K</td>
-<td>51K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/KmaiH9">mfem-68e941f8fe.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2013</td>
-<td>367K</td>
-<td>48K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/PNrhv9">mfem-2.0.tgz</a></td>
-<td>v2.0</td>
-<td>Nov 2011</td>
-<td>307K</td>
-<td>40K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/nJ56Qm">mfem-v1.2.2.tgz</a></td>
-<td>v1.2.2</td>
-<td>Apr 2011</td>
-<td>239K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/w44nyx">mfem-v1.2.1.tgz</a></td>
-<td>v1.2.1</td>
-<td>Apr 2011</td>
-<td>239K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/GQit7Z">mfem-v1.2.tgz</a></td>
-<td>v1.2</td>
-<td>Apr 2011</td>
-<td>239K</td>
-<td>28K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/VJ7WB8">mfem-v1.1.tgz</a></td>
-<td>v1.1</td>
-<td>Sep 2010</td>
-<td>165K</td>
-<td>23K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/gY141R">mfem-v1.0.tgz</a></td>
-<td>v1.0</td>
-<td>Jul 2010</td>
-<td>159K</td>
-<td>22K</td>
-<td>Initial release</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>MFEM originates from previous research effort in the (unreleased) <a href="http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html">AggieFEM/aFEM</a> project.</p></div>
+<h1 id="mesh-formats">Mesh Formats</h1>
+<p>MFEM supports a variety of mesh types, including</p>
+<ul>
+<li>Arbitrary high-order curved meshes</li>
+<li>NURBS meshes</li>
+<li>Non-conforming AMR meshes</li>
+<li>VTK, NETGEN and TrueGrid meshes</li>
+</ul>
+<p>These and other supported formats are documented on the <a href="https://github.com/GLVis/glvis/wiki/Mesh-Formats">GLVis website</a>.</p>
+<!--
+Redirecting to GLVis documentation...
+<meta http-equiv="refresh" content="0; URL=https://github.com/GLVis/glvis/wiki/Mesh-Formats" />
+--></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
+        
+    
+    </ul>
+</div></div>
 
             
         </div>
