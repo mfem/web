@@ -267,12 +267,12 @@
         }, 
         {
             "location": "/team/", 
-            "text": "The MFEM Team\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTzanio Kolev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVeselin Dobrev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nJakub Cerveny\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nMark Stowell\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nAaron Fisher\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nBob Anderson\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVladimir Tomov\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTom Brunner\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nRob Reiben\n\n\n\n\n\n\n\n\nFormer Members\n\n\n\n\nStanimire Tomov\n\n\nTruman Ellis\n\n\nIlya Lashuk\n\n\nIdo Akkerman", 
+            "text": "The MFEM Team\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTzanio Kolev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVeselin Dobrev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nJakub Cerveny\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nMark Stowell\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nAaron Fisher\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nUmberto Villa\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nBob Anderson\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVladimir Tomov\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTom Brunner\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nRob Reiben\n\n\n\n\n\n\n\n\nFormer Members\n\n\n\n\nStanimire Tomov\n\n\nTruman Ellis\n\n\nIlya Lashuk\n\n\nIdo Akkerman", 
             "title": "The Team"
         }, 
         {
             "location": "/team/#the-mfem-team", 
-            "text": "Tzanio Kolev   \n     \n     \n     \n     Veselin Dobrev   \n     \n     \n     \n     Jakub Cerveny   \n     \n     \n     \n     Mark Stowell   \n     \n     \n     \n     Aaron Fisher   \n     \n     \n     \n     Bob Anderson   \n     \n     \n     \n     Vladimir Tomov   \n     \n     \n     \n     Tom Brunner   \n     \n     \n     \n     Rob Reiben", 
+            "text": "Tzanio Kolev   \n     \n     \n     \n     Veselin Dobrev   \n     \n     \n     \n     Jakub Cerveny   \n     \n     \n     \n     Mark Stowell   \n     \n     \n     \n     Aaron Fisher   \n     \n     \n     \n     Umberto Villa   \n     \n     \n     \n     Bob Anderson   \n     \n     \n     \n     Vladimir Tomov   \n     \n     \n     \n     Tom Brunner   \n     \n     \n     \n     Rob Reiben", 
             "title": "The MFEM Team"
         }, 
         {
