@@ -266,19 +266,19 @@
             "title": "Selected Publications"
         }, 
         {
-            "location": "/team/", 
-            "text": "The MFEM Team\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTzanio Kolev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVeselin Dobrev\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nJakub Cerveny\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nMark Stowell\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nAaron Fisher\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nUmberto Villa\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nBob Anderson\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nVladimir Tomov\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nTom Brunner\n\n\n\n\n\n\n    \n\n    \n\n    \n\n    \nRob Reiben\n\n\n\n\n\n\n\n\nFormer Members\n\n\n\n\nStanimire Tomov\n\n\nTruman Ellis\n\n\nIlya Lashuk\n\n\nIdo Akkerman", 
-            "title": "The Team"
+            "location": "/about/", 
+            "text": "About MFEM\n\n\nMFEM originates from previous research effort in the (unreleased) \nAggieFEM/aFEM\n project.\n\n\nContributors\n\n\n\n\nRobert Anderson\n\n\nIdo Akkerman\n\n\nThomas Brunner\n\n\nJakub \u010cerven\u00fd\n\n\nVeselin Dobrev\n\n\nTruman Ellis\n\n\nAaron Fisher\n\n\nTzanio Kolev\n -- Project Leader\n\n\nIlya Lashuk\n\n\nRobert Rieben\n\n\nMark Stowell\n\n\nVladimir Tomov\n\n\nStanimire Tomov\n\n\nUmberto Villa", 
+            "title": "About"
         }, 
         {
-            "location": "/team/#the-mfem-team", 
-            "text": "Tzanio Kolev   \n     \n     \n     \n     Veselin Dobrev   \n     \n     \n     \n     Jakub Cerveny   \n     \n     \n     \n     Mark Stowell   \n     \n     \n     \n     Aaron Fisher   \n     \n     \n     \n     Umberto Villa   \n     \n     \n     \n     Bob Anderson   \n     \n     \n     \n     Vladimir Tomov   \n     \n     \n     \n     Tom Brunner   \n     \n     \n     \n     Rob Reiben", 
-            "title": "The MFEM Team"
+            "location": "/about/#about-mfem", 
+            "text": "MFEM originates from previous research effort in the (unreleased)  AggieFEM/aFEM  project.", 
+            "title": "About MFEM"
         }, 
         {
-            "location": "/team/#former-members", 
-            "text": "Stanimire Tomov  Truman Ellis  Ilya Lashuk  Ido Akkerman", 
-            "title": "Former Members"
+            "location": "/about/#contributors", 
+            "text": "Robert Anderson  Ido Akkerman  Thomas Brunner  Jakub \u010cerven\u00fd  Veselin Dobrev  Truman Ellis  Aaron Fisher  Tzanio Kolev  -- Project Leader  Ilya Lashuk  Robert Rieben  Mark Stowell  Vladimir Tomov  Stanimire Tomov  Umberto Villa", 
+            "title": "Contributors"
         }, 
         {
             "location": "/gallery/", 
