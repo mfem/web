@@ -39,6 +39,13 @@
 
 <div class="col-md-3 col-sm-4 col-xs-12">
     <p class="centered">
+    <a href="http://users.ices.utexas.edu/~uvilla/">
+    <img class="teamphoto" src="../img/team/umberto.jpg">
+    <br><br><strong>Umberto Villa</strong></a></p><br>
+</div>
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+    <p class="centered">
     <a href="http://people.llnl.gov/anderson110">
     <img class="teamphoto" src="../img/team/bob.jpg">
     <br><br><strong>Bob Anderson</strong></a></p><br>
