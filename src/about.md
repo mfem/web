@@ -21,4 +21,4 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 ## License
 
-- [GNU Lesser GPL](http://www.gnu.org/licenses/lgpl.html)
+- [GNU Lesser GPL v2.1](http://www.gnu.org/licenses/lgpl-2.1.html)
