@@ -51,7 +51,7 @@ see its [documentation](https://github.com/glvis/glvis/wiki).
 
 ## Contact
 
-Developed by the [MFEM team](team.md) at [CASC](http://computation.llnl.gov/casc/),
+Developed by the [MFEM team](about.md) at [CASC](http://computation.llnl.gov/casc/),
 [LLNL](https://www.llnl.gov/). Please cite with
 
     @misc{mfem-library,

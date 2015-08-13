@@ -30,6 +30,6 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
  [mfem-v1.1.tgz](http://goo.gl/VJ7WB8) | v1.1 | Sep 2010 | 165K | 23K |  |
  [mfem-v1.0.tgz](http://goo.gl/gY141R) | v1.0 | Jul 2010 | 159K | 22K | Initial release |
 
-MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project.
+<!-- MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. -->
 
 
