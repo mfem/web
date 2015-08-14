@@ -96,7 +96,7 @@ connection to the [GLVis](http://glvis.org) tool for visualization.
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp))
 and a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) version._
 <div style="clear:both;"></div>
-</div>
+<br></div>
 
 
 <div id="ex2" markdown="1">
@@ -127,7 +127,7 @@ _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex3" markdown="1">
@@ -150,7 +150,7 @@ _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex4" markdown="1">
@@ -173,7 +173,7 @@ _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex5" markdown="1">
@@ -200,7 +200,7 @@ _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex6" markdown="1">
@@ -224,7 +224,7 @@ visualization are also illustrated.
 _The example currently has only a serial version ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp)).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex7" markdown="1">
@@ -246,7 +246,7 @@ _The example has a serial ([ex7.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex7p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex8" markdown="1">
@@ -269,7 +269,7 @@ _The example has a serial ([ex8.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex8p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex8p.cpp)) version.
 We recommend viewing examples 1-5 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex9" markdown="1">
@@ -291,7 +291,7 @@ is also illustrated.
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <div id="ex10" markdown="1">
@@ -315,7 +315,7 @@ _The example has a serial ([ex10.cpp](https://github.com/mfem/mfem/blob/master/e
 and a parallel ([ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) version.
 We recommend viewing examples 2 and 9 before viewing this example._
 <div style="clear:both;"/></div>
-</div>
+<br></div>
 
 
 <!-- ------------------------------------------------------------------------- -->
