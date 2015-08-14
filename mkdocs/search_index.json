@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee also our \nGallery\n and list of related \npublications\n.\n\n\n\n\n\n\nLatest Release\n\n\n\n\nNew features\n\n/ \nExample codes\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\n\n\nDownload mfem-3.0.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nMesh Formats\n\n\n\n\nNew users should start by examining the the \nexample codes\n.\n\n\nWe also recommend using GLVis for visualization, see its \ndocumentation\n.\n\n\nContact\n\n\nDeveloped by the \nMFEM team\n at \nCASC\n,\n\nLLNL\n. Please cite with\n\n\n@misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}\n\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.", 
+            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee also our \nGallery\n and list of related \npublications\n.\n\n\n\n\n\n\nLatest Release\n\n\n\n\nNew features\n\n/ \nExample codes\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\n\n\nDownload mfem-3.0.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nMesh Formats\n\n\n\n\nNew users should start by examining the \nexample codes\n.\n\n\nWe also recommend using \nGLVis\n for visualization.\n\n\nContact\n\n\nDeveloped by the \nMFEM team\n at \nCASC\n,\n\nLLNL\n. Please cite with\n\n\n@misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}\n\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#documentation", 
-            "text": "Building MFEM \n/  Serial Tutorial \n/  Parallel Tutorial \n/  Mesh Formats   New users should start by examining the the  example codes .  We also recommend using GLVis for visualization, see its  documentation .", 
+            "text": "Building MFEM \n/  Serial Tutorial \n/  Parallel Tutorial \n/  Mesh Formats   New users should start by examining the  example codes .  We also recommend using  GLVis  for visualization.", 
             "title": "Documentation"
         }, 
         {
