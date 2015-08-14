@@ -52,12 +52,12 @@ We also recommend using [GLVis](http://glvis.org) for visualization.
 
 Developed by the [MFEM team](about.md) at [CASC](http://computation.llnl.gov/casc/),
 [LLNL](https://www.llnl.gov/). Please cite with
-
-    @misc{mfem-library,
-      title={{MFEM}: Modular finite element methods},
-      howpublished={\url{mfem.org}}
-    }
-
+```c
+@misc{mfem-library,
+  title={{MFEM}: Modular finite element methods},
+  howpublished={\url{mfem.org}}
+}
+```
 
 Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
