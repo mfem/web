@@ -4,7 +4,7 @@
 
 MFEM supports a number of mesh formats, including:
 
-  - MFEM's own [mesh v1.0 format](#mfem-mesh-v10), which can describe both [straight](#straight-meshes) as well as [arbitrary high-order curvilinear meshes](#curvilinear-and-more-general-meshes),
+  - MFEM's own [mesh v1.0 format](#mfem-mesh-v10), which can describe both [straight](#straight-meshes) as well as [arbitrary high-order curvilinear](#curvilinear-and-more-general-meshes) and [more general](#curvilinear-and-more-general-meshes) meshes,
   - MFEM's own format for [NURBS](#nurbs-meshes) meshes,
   - The [VTK](#curvilinear-vtk-meshes) unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,
   - The [NETGEN](http://sourceforge.net/projects/netgen-mesher/) triangular and tetrahedral mesh formats,
@@ -57,7 +57,7 @@ Lines starting with "#" denote comments. The supported geometry types are:
 
 see the comments in [this source file](https://github.com/mfem/mfem/blob/master/fem/geom.hpp) for more details.
 
-For example, the [beam-quad.mesh](https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh) file from MFEM looks like this:
+For example, the [beam-quad.mesh](https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh) file from the data directory looks like this:
 ```sh
 MFEM mesh v1.0
 
@@ -176,6 +176,7 @@ we get:
 
 ![](img/escher-p3.png)
 
+Topologically periodic meshes can also be described in this format, see for example the [periodic-segment](https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh), [periodic-square](https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh), and [periodic-cube](https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh) meshes in the data directory, as well as [Example 9](examples.md?advection).
 
 ## NURBS meshes
 
