@@ -12,7 +12,7 @@
 <!--	<title>Examples - MFEM</title>  -->
     <title>MFEM - Finite Element Discretization Library</title>
 
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
         <link href="../css/base.css" rel="stylesheet">
@@ -167,6 +167,7 @@ would like to share. <br>
 <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
 or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a> or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a></em>.</p>
 <div class="row">
+
 <p><div class="col-sm-6 col-md-2 small" markdown="1">
    <h5><strong>Equation (PDE)</strong></h5>
    <label><input type="radio" id="all1" onchange="update(this.id);" checked="checked" /> All</label><br/>
@@ -213,11 +214,13 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
 </div></p>
 </div>
+
 <hr>
 
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="ex1">
+
 <h2 id="example-1-laplace-problem">Example 1: Laplace Problem</h2>
 <p><img src="../img/ex1.png" style="float:right;"></p>
 <p>This example code demonstrates the use of MFEM to define a
@@ -237,7 +240,9 @@ and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.
 <div style="clear:both;"></div>
 <br></p>
 </div>
+
 <div id="ex2">
+
 <h2 id="example-2-linear-elasticity">Example 2: Linear Elasticity</h2>
 <p><img src="../img/ex2.png" style="float:right;"></p>
 <p>This example code solves a simple linear elasticity problem
@@ -252,9 +257,8 @@ ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and
 ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being
 a constant pull down vector on boundary elements with attribute 2, and zero
 otherwise. The geometry of the domain is assumed to be as follows:</p>
-<p><img src="../img/ex2-domain.png"><br>
-
-The example demonstrates the use of high-order and NURBS vector
+<p><img src="../img/ex2-domain.png"><br></p>
+<p>The example demonstrates the use of high-order and NURBS vector
 finite element spaces with the linear elasticity bilinear form,
 meshes with curved elements, and the definition of piece-wise
 constant and vector coefficient objects.</p>
@@ -264,7 +268,9 @@ We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex3">
+
 <h2 id="example-3-definite-maxwell-problem">Example 3: Definite Maxwell Problem</h2>
 <p><img src="../img/ex3.png" style="float:right;"></p>
 <p>This example code solves a simple 3D electromagnetic diffusion
@@ -283,7 +289,9 @@ We recommend viewing examples 1-2 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex4">
+
 <h2 id="example-4-grad-div-problem">Example 4: Grad-div Problem</h2>
 <p><img src="../img/ex4.png" style="float:right;"></p>
 <p>This example code solves a simple 2D/3D $H(div)$
@@ -302,7 +310,9 @@ We recommend viewing examples 1-3 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex5">
+
 <h2 id="example-5-darcy-problem">Example 5: Darcy Problem</h2>
 <p><img src="../img/ex5.png" style="float:right;"></p>
 <p>This example code solves a simple 2D/3D mixed Darcy problem
@@ -325,7 +335,9 @@ We recommend viewing examples 1-4 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex6">
+
 <h2 id="example-6-laplace-problem-with-amr">Example 6: Laplace Problem with AMR</h2>
 <p><img src="../img/ex6.png" style="float:right;"></p>
 <p>This is a version of Example 1 with a simple adaptive mesh
@@ -345,7 +357,9 @@ We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex7">
+
 <h2 id="example-7-surface-meshes">Example 7: Surface Meshes</h2>
 <p><img src="../img/ex7.png" style="float:right;"></p>
 <p>This example code demonstrates the use of MFEM to define a
@@ -363,7 +377,9 @@ We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex8">
+
 <h2 id="example-8-dpg-for-the-laplace-problem">Example 8: DPG for the Laplace Problem</h2>
 <p><img src="../img/ex8.png" style="float:right;"></p>
 <p>This example code demonstrates the use of the Discontinuous
@@ -382,7 +398,9 @@ We recommend viewing examples 1-5 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex9">
+
 <h2 id="example-9-dg-advection">Example 9: DG Advection</h2>
 <p><img src="../img/ex9.png" style="float:right;"></p>
 <p>This example code solves the time-dependent advection equation
@@ -400,16 +418,17 @@ and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex9p.
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <div id="ex10">
+
 <h2 id="example-10-nonlinear-elasticity">Example 10: Nonlinear Elasticity</h2>
 <p><img src="../img/ex10.png" style="float:right;"></p>
 <p>This examples solves a time dependent nonlinear elasticity problem of the form
 $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
 where $H$ is a hyperelastic model and $S$ is a viscosity operator of
 Laplacian type. The geometry of the domain is assumed to be as follows:</p>
-<p><img src="../img/ex10-domain.png"><br>
-
-The example demonstrates the use of nonlinear operators, as well as their
+<p><img src="../img/ex10-domain.png"><br></p>
+<p>The example demonstrates the use of nonlinear operators, as well as their
 implicit time integration using a Newton method for solving an associated
 reduced backward-Euler type nonlinear equation. Each Newton step requires the
 inversion of a Jacobian matrix, which is done through a (preconditioned) inner
@@ -420,6 +439,7 @@ We recommend viewing examples 2 and 9 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
