@@ -35,7 +35,7 @@ MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/
  - triangular, quadrilateral, tetrahedral and hexahedral [elements](http://mfem.github.io/doxygen/html/inherit_graph_13.svg),
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
- - higher-order elements with [curved](http://glvis.org/curvilinear-vtk-meshes) boundaries,
+ - higher-order elements with [curved](mesh-formats.md#curvilinear-vtk-meshes) boundaries,
  - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D,
  - topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes,
  - 1D meshes.
