@@ -44,9 +44,9 @@ For older releases see the [download](download.md) section.
 / [Mesh Formats](http://glvis.org/mesh-formats/)
 **
 
-New users should start by examining the the [example codes](examples.md).
+New users should start by examining the [example codes](examples.md).
 
-We also recommend using GLVis for visualization, see its [documentation](http://glvis.org).
+We also recommend using [GLVis](http://glvis.org) for visualization.
 
 ## Contact
 
