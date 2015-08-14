@@ -41,7 +41,7 @@ For older releases see the [download](download.md) section.
 [Building MFEM](building.md)
 / [Serial Tutorial](serial-tutorial.md)
 / [Parallel Tutorial](parallel-tutorial.md)
-/ [Mesh Formats](http://glvis.org/mesh-formats/)
+/ [Mesh Formats](mesh-formats.md)
 **
 
 New users should start by examining the [example codes](examples.md).

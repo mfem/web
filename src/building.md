@@ -94,7 +94,7 @@ The parallel examples can be build with:
 ~/mfem-3.0/examples> make -j
 ```
 
-The serial examples can also be build with the the parallel version of the library, e.g.
+The serial examples can also be build with the parallel version of the library, e.g.
 ```sh
 ~/mfem-3.0/examples> make ex1 ex2
 ```

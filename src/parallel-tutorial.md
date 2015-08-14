@@ -102,7 +102,7 @@ Final PCG Relative Residual Norm = 7.61595e-13
 || E_h - E ||_{L^2} = 0.0821685
 ```
 
-Note that AMS leads to much fewer iterations than the Gauss-Seidel precondiotioner used in the serial code. The parallel subdomain partitioning can be seen with "`ooogt`" and F11/F12:
+Note that AMS leads to much fewer iterations than the Gauss-Seidel preconditioner used in the serial code. The parallel subdomain partitioning can be seen with "`ooogt`" and F11/F12:
 
 ![](img/ex3p-np16-fichera-q3.png)
 
