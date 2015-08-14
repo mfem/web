@@ -1,7 +1,6 @@
 # Gallery
 
-This page collects screenshots from various simulations based on MFEM. 
-Additional images can be found in the  [GLVis gallery](https://github.com/GLVis/glvis/wiki/Gallery).
+This page collects screenshots from various simulations based on MFEM. Additional images can be found in the [GLVis gallery](http://glvis.org/gallery/).
 
 <br>
 
