@@ -33,6 +33,14 @@ img {
     margin-bottom: 25px;
 }
 
+img.floatright {
+    display: block;
+    float: right;
+    margin-top: 0;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
 img.teamphoto {
     box-shadow: 4px 4px 4px #999;
 }

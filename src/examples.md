@@ -77,7 +77,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
-<img src="../img/ex1.png" style="float:right;">
+<img class="floatright" src="../img/ex1.png">
 
 This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
@@ -96,12 +96,12 @@ connection to the [GLVis](http://glvis.org) tool for visualization.
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp))
 and a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) version._
 <div style="clear:both;"></div>
-<br></div>
+</div>
 
 
 <div id="ex2" markdown="1">
 ##Example 2: Linear Elasticity
-<img src="../img/ex2.png" style="float:right;">
+<img class="floatright" src="../img/ex2.png">
 
 This example code solves a simple linear elasticity problem
 describing a multi-material cantilever beam.
@@ -116,7 +116,7 @@ ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being
 a constant pull down vector on boundary elements with attribute 2, and zero
 otherwise. The geometry of the domain is assumed to be as follows:
 
-<img src="../img/ex2-domain.png"><br>
+![](img/ex2-domain.png)
 
 The example demonstrates the use of high-order and NURBS vector
 finite element spaces with the linear elasticity bilinear form,
@@ -127,12 +127,12 @@ _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex3" markdown="1">
 ##Example 3: Definite Maxwell Problem
-<img src="../img/ex3.png" style="float:right;">
+<img class="floatright" src="../img/ex3.png">
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
@@ -150,12 +150,12 @@ _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex4" markdown="1">
 ##Example 4: Grad-div Problem
-<img src="../img/ex4.png" style="float:right;">
+<img class="floatright" src="../img/ex4.png">
 
 This example code solves a simple 2D/3D $H(div)$
 diffusion problem corresponding to the second order definite equation
@@ -173,12 +173,12 @@ _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex5" markdown="1">
 ##Example 5: Darcy Problem
-<img src="../img/ex5.png" style="float:right;">
+<img class="floatright" src="../img/ex5.png">
 
 This example code solves a simple 2D/3D mixed Darcy problem
 corresponding to the saddle point system
@@ -200,12 +200,12 @@ _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex6" markdown="1">
 ##Example 6: Laplace Problem with AMR
-<img src="../img/ex6.png" style="float:right;">
+<img class="floatright" src="../img/ex6.png">
 
 This is a version of Example 1 with a simple adaptive mesh
 refinement loop. The problem being solved is again the Laplace
@@ -224,12 +224,12 @@ visualization are also illustrated.
 _The example currently has only a serial version ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp)).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex7" markdown="1">
 ##Example 7: Surface Meshes
-<img src="../img/ex7.png" style="float:right;">
+<img class="floatright" src="../img/ex7.png">
 
 This example code demonstrates the use of MFEM to define a
 triangulation of a unit sphere and a simple isoparametric
@@ -246,12 +246,12 @@ _The example has a serial ([ex7.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex7p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex8" markdown="1">
 ##Example 8: DPG for the Laplace Problem
-<img src="../img/ex8.png" style="float:right;">
+<img class="floatright" src="../img/ex8.png">
 
 This example code demonstrates the use of the Discontinuous
 Petrov-Galerkin (DPG) method in its primal 2x2 block form as a
@@ -269,12 +269,12 @@ _The example has a serial ([ex8.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex8p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex8p.cpp)) version.
 We recommend viewing examples 1-5 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex9" markdown="1">
 ##Example 9: DG Advection
-<img src="../img/ex9.png" style="float:right;">
+<img class="floatright" src="../img/ex9.png">
 
 This example code solves the time-dependent advection equation
 $$\frac{du}{dt} = v \cdot \nabla u,$$ where $v$ is a given fluid
@@ -291,19 +291,19 @@ is also illustrated.
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <div id="ex10" markdown="1">
 ##Example 10: Nonlinear Elasticity
-<img src="../img/ex10.png" style="float:right;">
+<img class="floatright" src="../img/ex10.png">
 
 This examples solves a time dependent nonlinear elasticity problem of the form
 $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
 where $H$ is a hyperelastic model and $S$ is a viscosity operator of
 Laplacian type. The geometry of the domain is assumed to be as follows:
 
-<img src="../img/ex10-domain.png"><br>
+![](img/ex10-domain.png)
 
 The example demonstrates the use of nonlinear operators, as well as their
 implicit time integration using a Newton method for solving an associated
@@ -315,7 +315,7 @@ _The example has a serial ([ex10.cpp](https://github.com/mfem/mfem/blob/master/e
 and a parallel ([ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) version.
 We recommend viewing examples 2 and 9 before viewing this example._
 <div style="clear:both;"/></div>
-<br></div>
+</div>
 
 
 <!-- ------------------------------------------------------------------------- -->
