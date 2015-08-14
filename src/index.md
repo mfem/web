@@ -41,13 +41,12 @@ For older releases see the [download](download.md) section.
 [Building MFEM](building.md)
 / [Serial Tutorial](serial-tutorial.md)
 / [Parallel Tutorial](parallel-tutorial.md)
-/ [Mesh Formats](https://github.com/glvis/glvis/wiki/Mesh-Formats)
+/ [Mesh Formats](http://glvis.org/mesh-formats/)
 **
 
 New users should start by examining the the [example codes](examples.md).
 
-We also recommend using [GLVis](http://glvis.org) for visualization,
-see its [documentation](https://github.com/glvis/glvis/wiki).
+We also recommend using GLVis for visualization, see its [documentation](http://glvis.org).
 
 ## Contact
 
