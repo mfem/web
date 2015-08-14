@@ -163,34 +163,34 @@
 </ul>
 <p>Below we assume that we are working with versions 3.0.</p>
 <h2 id="serial-version-of-mfem-and-glvis">Serial version of MFEM and GLVis</h2>
-<p>Put everything in the same directory:
-<pre>
-~&gt; ls
+<p>Put everything in the same directory:</p>
+<pre><code class="sh">~&gt; ls
 glvis-3.0.tgz   mfem-3.0.tgz
-</pre></p>
-<p>Build the serial version of MFEM:
-<pre>
-~&gt; tar -zxvf mfem-3.0.tgz
+</code></pre>
+
+<p>Build the serial version of MFEM:</p>
+<pre><code class="sh">~&gt; tar -zxvf mfem-3.0.tgz
 ~&gt; cd mfem-3.0
 ~/mfem-3.0&gt; make serial -j
-</pre></p>
-<p>Build GLVis:
-<pre>
-~&gt; tar -zxvf glvis-3.0.tgz
+</code></pre>
+
+<p>Build GLVis:</p>
+<pre><code class="sh">~&gt; tar -zxvf glvis-3.0.tgz
 ~&gt; cd glvis-3.0
 ~/glvis-3.0&gt; make MFEM_DIR=../mfem-3.0 -j
-</pre></p>
+</code></pre>
+
 <p>That's it! The MFEM library can be found in <code>mfem-3.0/libmfem.a</code>, while the <code>glvis</code> executable will be in the <code>glvis-3.0</code> directory.</p>
-<p>To start a GLVis server, open a <strong>new terminal</strong> and type
-<pre>
-~&gt; cd glvis-3.0
+<p>To start a GLVis server, open a <strong>new terminal</strong> and type</p>
+<pre><code class="sh">~&gt; cd glvis-3.0
 ~/glvis-3.0&gt; ./glvis
-</pre></p>
-<p>The serial examples can be build with:
-<pre>
-~&gt; cd mfem-3.0/examples
+</code></pre>
+
+<p>The serial examples can be build with:</p>
+<pre><code class="sh">~&gt; cd mfem-3.0/examples
 ~/mfem-3.0/examples&gt; make -j
-</pre></p>
+</code></pre>
+
 <h2 id="parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</h2>
 <p>Download <em>hypre</em> and metis from</p>
 <ul>
@@ -198,48 +198,47 @@ glvis-3.0.tgz   mfem-3.0.tgz
 <li><a href="http://glaros.dtc.umn.edu/gkhome/metis/metis/download">http://glaros.dtc.umn.edu/gkhome/metis/metis/download</a></li>
 </ul>
 <p>Below we assume that we are working with versions 2.10.0b and <a href="http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz">4.0.3</a> respectively. We also assume that the serial version of MFEM and GLVis have been built as described above.</p>
-<p>Put everything in the same directory:
-<pre>
-~&gt; ls
+<p>Put everything in the same directory:</p>
+<pre><code class="sh">~&gt; ls
 glvis-3.0/  hypre-2.10.0b.tar.gz   metis-4.0.tar.gz   mfem-3.0/
-</pre></p>
-<p>Build hypre:
-<pre>
-~&gt; tar -zxvf hypre-2.10.0b.tar.gz
+</code></pre>
+
+<p>Build hypre:</p>
+<pre><code class="sh">~&gt; tar -zxvf hypre-2.10.0b.tar.gz
 ~&gt; cd hypre-2.10.0b/src/
 ~/hypre-2.10.0b/src&gt; ./configure --disable-fortran
 ~/hypre-2.10.0b/src&gt; make -j
 ~/hypre-2.10.0b/src&gt; cd ../..
-</pre></p>
-<p>Build metis:
-<pre>
-~&gt; tar -zxvf metis-4.0.3.tar.gz
+</code></pre>
+
+<p>Build metis:</p>
+<pre><code class="sh">~&gt; tar -zxvf metis-4.0.3.tar.gz
 ~&gt; cd metis-4.0.3
 ~/metis-4.0.3&gt; make
 ~/metis-4.0.3&gt; cd ..
 ~&gt; ln -s metis-4.0.3 metis-4.0
-</pre></p>
-<p>Build the parallel version of MFEM:
-<pre>
-~&gt; cd mfem-3.0
+</code></pre>
+
+<p>Build the parallel version of MFEM:</p>
+<pre><code class="sh">~&gt; cd mfem-3.0
 ~/mfem-3.0&gt; make parallel -j
-</pre></p>
+</code></pre>
+
 <p>Note that if hypre or metis are in different locations, or you have different versions of these libraries, you will need to update the corresponding paths in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/makefile">makefile</a> (or create you own <a href="https://raw.githubusercontent.com/mfem/mfem/master/config/user.mk.in">user.mk</a> file as described in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL">INSTALL</a>).</p>
-<p>The parallel examples can be build with:
-<pre>
-~&gt; cd mfem-3.0/examples
+<p>The parallel examples can be build with:</p>
+<pre><code class="sh">~&gt; cd mfem-3.0/examples
 ~/mfem-3.0/examples&gt; make -j
-</pre></p>
-<p>The serial examples can also be build with the the parallel version of the library, e.g.
-<pre>
-~/mfem-3.0/examples&gt; make ex1 ex2
-</pre></p>
-<p>One can also use the parallel library to optionally (re-)build GLVis:
-<pre>
-~&gt; cd glvis-3.0
+</code></pre>
+
+<p>The serial examples can also be build with the the parallel version of the library, e.g.</p>
+<pre><code class="sh">~/mfem-3.0/examples&gt; make ex1 ex2
+</code></pre>
+
+<p>One can also use the parallel library to optionally (re-)build GLVis:</p>
+<pre><code class="sh">~&gt; cd glvis-3.0
 ~/glvis-3.0&gt; make clean
 ~/glvis-3.0&gt; make MFEM_DIR=../mfem-3.0 -j
-</pre></p></div>
+</code></pre></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
