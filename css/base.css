@@ -2,12 +2,12 @@ body {
     padding-top: 70px;
 }
 
-h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
+/*h1[id]:before, h2[id]:before, h3[id]:before, h4[id]:before, h5[id]:before, h6[id]:before {
     content: "";
     display: block;
     margin-top: -65px;
     height: 75px;
-}
+}*/
 
 ul.nav li.main {
     font-weight: bold;
@@ -30,6 +30,14 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+img.floatright {
+    display: block;
+    float: right;
+    margin-top: 0;
+    margin-left: 25px;
     margin-bottom: 25px;
 }
 
