@@ -236,7 +236,7 @@ Final PCG Relative Residual Norm = 7.61595e-13
 || E_h - E ||_{L^2} = 0.0821685
 </code></pre>
 
-<p>Note that AMS leads to much fewer iterations than the Gauss-Seidel precondiotioner used in the serial code. The parallel subdomain partitioning can be seen with "<code>ooogt</code>" and F11/F12:</p>
+<p>Note that AMS leads to much fewer iterations than the Gauss-Seidel preconditioner used in the serial code. The parallel subdomain partitioning can be seen with "<code>ooogt</code>" and F11/F12:</p>
 <p><img alt="" src="../img/ex3p-np16-fichera-q3.png" /></p>
 <p>One can also visualize individual components of the Nedelec solution and remove the elements in a cutting plane to see the surfaces corresponding to inter-processor boundaries:</p>
 <pre><code class="sh">glvis -np 16 -m mesh -g sol -k &quot;ooottmiEF&quot;

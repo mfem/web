@@ -154,9 +154,9 @@
         
             <li><a href="#curvilinear-and-more-general-meshes">Curvilinear and more general meshes</a></li>
         
-            <li><a href="#nurbs-meshes">NURBS Meshes</a></li>
+            <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
-            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK Meshes</a></li>
+            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
         
     
     </ul>
@@ -167,7 +167,7 @@
 <h2 id="summary">Summary</h2>
 <p>MFEM supports a number of mesh formats, including:</p>
 <ul>
-<li>MFEM's own <a href="#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="#straight-meshes">starigth</a> as well as <a href="#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear meshes</a>,</li>
+<li>MFEM's own <a href="#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="#straight-meshes">straight</a> as well as <a href="#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear meshes</a>,</li>
 <li>MFEM's own format for <a href="#nurbs-meshes">NURBS</a> meshes,</li>
 <li>The <a href="#curvilinear-vtk-meshes">VTK</a> unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,</li>
 <li>The <a href="http://sourceforge.net/projects/netgen-mesher/">NETGEN</a> triangular and tetrahedral mesh formats,</li>
@@ -326,7 +326,7 @@ Ordering: 0
 
 <p>we get:</p>
 <p><img alt="" src="../img/escher-p3.png" /></p>
-<h2 id="nurbs-meshes">NURBS Meshes</h2>
+<h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
 <pre><code class="sh">MFEM NURBS mesh v1.0
@@ -443,7 +443,7 @@ Ordering: 1
 0.108578644 0.5
 </code></pre>
 
-<p>This above file, as well as other examples of NURBS meshes, can be be found in <a href="https://github.com/mfem/mfem/tree/master/data">MFEM's data directory</a>. It can be visualized directly with</p>
+<p>This above file, as well as other examples of NURBS meshes, can be found in <a href="https://github.com/mfem/mfem/tree/master/data">MFEM's data directory</a>. It can be visualized directly with</p>
 <pre><code class="sh">glvis -m square-disc-nurbs.mesh
 </code></pre>
 
@@ -451,7 +451,7 @@ Ordering: 1
 <p><img alt="" src="../img/glvis-square-disc-nurbs.png" /></p>
 <p>To explain MFEM's NURBS mesh file format, we first note that the topological part of the mesh (the <code>elements</code> and <code>boundary</code> sections) describe the 4 NURBS patches visible above. We use the vertex numbers as labels, so we only need the number of vertices.</p>
 <p>In the NURBS case we need to also provide description of the edges on the patch boundaries and associate a knot vector with each of them. This is done in the <code>edges</code> section where the first index in each row refers to the knot vector id (from the following <code>knotvectors</code> section), while the remaining two indexes are the edge vertex numbers.</p>
-<p>The position of the NURBS nodes (control points) is given as a NURBS grid function at the end of the file, while the associated weights are listed in the preceeding <code>weights</code> section.</p>
+<p>The position of the NURBS nodes (control points) is given as a NURBS grid function at the end of the file, while the associated weights are listed in the preceding <code>weights</code> section.</p>
 <p>Some examples of VTK meshes can be found in MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a>. Here is one of the 3D NURBS meshes</p>
 <p><img alt="" src="../img/glvis-pipe-nurbs.png" /></p>
 <p>The image above was produced with some refinement (key "<code>o</code>") and mouse manipulations from</p>
@@ -463,7 +463,7 @@ Ordering: 1
 </code></pre>
 
 <p><img alt="" src="../img/glvis-square-disc-nurbs-r2.png" /></p>
-<h2 id="curvilinear-vtk-meshes">Curvilinear VTK Meshes</h2>
+<h2 id="curvilinear-vtk-meshes">Curvilinear VTK meshes</h2>
 <p>MFEM also supports quadratic triangular, quadrilaterals, tetrahedral and hexahedral curvilinear meshes in VTK format. This format is described in the <a href="http://vtk.org/VTK/img/file-formats.pdf">VTK file format documentation</a>. The local numbering of degrees of freedom for the biquadratic quads and triquadratic hexes can be found in the Doxygen reference of the <a href="http://www.vtk.org/doc/release/5.6/html/a00185.html">vtkBiQuadraticQuad</a> and <a href="http://www.vtk.org/doc/release/5.6/html/a02039.html">vtkTriQuadraticHexahedron</a> classes. Currently VTK does not support cubic, and higher-order meshes.</p>
 <p>As an example, consider a simple curved quadrilateral saved in a file <code>quad.vtk</code>:</p>
 <pre><code class="sh"># vtk DataFile Version 3.0
@@ -511,7 +511,7 @@ LOOKUP_TABLE default
 <pre><code class="sh">glvis -m escher-p2.vtk -k &quot;Aaaooooo**************&quot;
 </code></pre>
 
-<p><img alt="" src="../img/escher-p2-vtk.png" /> </p>
+<p><img alt="" src="../img/escher-p2-vtk.png" /></p>
 <pre><code class="sh">glvis -m fichera-q2.vtk -k &quot;Aaaooooo******&quot;
 </code></pre>
 
@@ -529,9 +529,9 @@ LOOKUP_TABLE default
         
             <li><a href="#curvilinear-and-more-general-meshes">Curvilinear and more general meshes</a></li>
         
-            <li><a href="#nurbs-meshes">NURBS Meshes</a></li>
+            <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
-            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK Meshes</a></li>
+            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
         
     
     </ul>
