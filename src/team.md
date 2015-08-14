@@ -69,7 +69,7 @@
     <p class="centered">
     <a href="http://people.llnl.gov/rieben1">
     <img class="teamphoto" src="../img/team/rob.jpg">
-    <br><br><strong>Rob Reiben</strong></a></p><br>
+    <br><br><strong>Rob Rieben</strong></a></p><br>
 </div>
 
 <div class="clearfix"></div>
