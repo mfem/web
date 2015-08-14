@@ -167,7 +167,7 @@
 <h2 id="summary">Summary</h2>
 <p>MFEM supports a number of mesh formats, including:</p>
 <ul>
-<li>MFEM's own <a href="#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="#straight-meshes">straight</a> as well as <a href="#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear meshes</a>,</li>
+<li>MFEM's own <a href="#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="#straight-meshes">straight</a> as well as <a href="#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear</a> and <a href="#curvilinear-and-more-general-meshes">more general</a> meshes,</li>
 <li>MFEM's own format for <a href="#nurbs-meshes">NURBS</a> meshes,</li>
 <li>The <a href="#curvilinear-vtk-meshes">VTK</a> unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,</li>
 <li>The <a href="http://sourceforge.net/projects/netgen-mesher/">NETGEN</a> triangular and tetrahedral mesh formats,</li>
@@ -214,7 +214,7 @@ vertices
 <li>CUBE        = 5</li>
 </ul>
 <p>see the comments in <a href="https://github.com/mfem/mfem/blob/master/fem/geom.hpp">this source file</a> for more details.</p>
-<p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> file from MFEM looks like this:</p>
+<p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> file from the data directory looks like this:</p>
 <pre><code class="sh">MFEM mesh v1.0
 
 dimension
@@ -326,6 +326,7 @@ Ordering: 0
 
 <p>we get:</p>
 <p><img alt="" src="../img/escher-p3.png" /></p>
+<p>Topologically periodic meshes can also be described in this format, see for example the <a href="https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh">periodic-segment</a>, <a href="https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh">periodic-square</a>, and <a href="https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh">periodic-cube</a> meshes in the data directory, as well as <a href="../examples/?advection">Example 9</a>.</p>
 <h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
