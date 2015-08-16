@@ -25,3 +25,4 @@ theme_dir: template
 
 include_next_prev: false  # turn of next/previous buttons
 
+google_analytics: ['UA-101697-3', 'mfem.org']
