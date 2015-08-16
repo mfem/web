@@ -14,6 +14,15 @@ img {
     height: auto;
 }
 
+pre {
+    overflow-x: auto;
+}
+
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
+}
+
 ul.nav li.main {
     font-weight: bold;
 }
