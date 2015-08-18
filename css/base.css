@@ -21,6 +21,11 @@ pre {
 pre code {
     overflow-wrap: normal;
     white-space: pre;
+    font-size: 13.5px;
+}
+
+label {
+    font-weight: normal;
 }
 
 ul.nav li.main {
