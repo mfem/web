@@ -94,8 +94,8 @@ p.centered {
 
 /* First level of nav */
 .bs-sidenav {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    /*margin-top: 10px;
+    margin-bottom: 10px;*/
     padding-top:    10px;
     padding-bottom: 10px;
     border-radius: 5px;
