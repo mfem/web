@@ -297,7 +297,7 @@
         }, 
         {
             "location": "/about/", 
-            "text": "About MFEM\n\n\nMFEM originates from previous research effort in the (unreleased) \nAggieFEM/aFEM\n project.\n\n\nContributors\n\n\n\n\nRobert Anderson\n\n\nIdo Akkerman\n\n\nThomas Brunner\n\n\nJakub \u010cerven\u00fd\n\n\nVeselin Dobrev\n\n\nTruman Ellis\n\n\nAaron Fisher\n\n\nTzanio Kolev\n \n Project Leader\n\n\nIlya Lashuk\n\n\nRobert Rieben\n\n\nMark Stowell\n\n\nVladimir Tomov\n\n\nStanimire Tomov\n\n\nUmberto Villa\n\n\n\n\nLicense\n\n\n\n\nGNU Lesser GPL v2.1", 
+            "text": "About MFEM\n\n\nMFEM originates from previous research effort in the (unreleased) \nAggieFEM/aFEM\n project.\n\n\nContributors\n\n\n\n\nRobert Anderson\n\n\nIdo Akkerman\n\n\nThomas Brunner\n\n\nJakub \u010cerven\u00fd\n\n\nVeselin Dobrev\n\n\nTruman Ellis\n\n\nAaron Fisher\n\n\nTzanio Kolev\n \n Project Leader\n\n\nIlya Lashuk\n\n\nRobert Rieben\n\n\nJoachim Schoeberl\n\n\nMark Stowell\n\n\nVladimir Tomov\n\n\nStanimire Tomov\n\n\nUmberto Villa\n\n\n\n\nLicense\n\n\n\n\nGNU Lesser GPL v2.1\n\n\n\n\n\n\n\n\nWebsite built with \nMkDocs\n, \nBootstrap\n\nand \nBootswatch\n. Hosted on \nGitHub\n.", 
             "title": "About"
         }, 
         {
@@ -307,12 +307,12 @@
         }, 
         {
             "location": "/about/#contributors", 
-            "text": "Robert Anderson  Ido Akkerman  Thomas Brunner  Jakub \u010cerven\u00fd  Veselin Dobrev  Truman Ellis  Aaron Fisher  Tzanio Kolev    Project Leader  Ilya Lashuk  Robert Rieben  Mark Stowell  Vladimir Tomov  Stanimire Tomov  Umberto Villa", 
+            "text": "Robert Anderson  Ido Akkerman  Thomas Brunner  Jakub \u010cerven\u00fd  Veselin Dobrev  Truman Ellis  Aaron Fisher  Tzanio Kolev    Project Leader  Ilya Lashuk  Robert Rieben  Joachim Schoeberl  Mark Stowell  Vladimir Tomov  Stanimire Tomov  Umberto Villa", 
             "title": "Contributors"
         }, 
         {
             "location": "/about/#license", 
-            "text": "GNU Lesser GPL v2.1", 
+            "text": "GNU Lesser GPL v2.1     Website built with  MkDocs ,  Bootstrap \nand  Bootswatch . Hosted on  GitHub .", 
             "title": "License"
         }, 
         {
