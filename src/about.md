@@ -14,10 +14,10 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
 - [Robert Rieben](http://people.llnl.gov/rieben1)
-- [Joachim Schoeberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
+- [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - [Mark Stowell](http://people.llnl.gov/stowell1)
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
-- Stanimire Tomov
+- [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
 
 ## License
@@ -30,4 +30,4 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 ----
 
 Website built with [MkDocs](http://www.mkdocs.org/), [Bootstrap](http://getbootstrap.com/)
-and [Bootswatch](http://bootswatch.com/). Hosted on [GitHub](https://github.com/mfem).
+and [Bootswatch](http://bootswatch.com/). Hosted on [GitHub](http://github.com/mfem/).
