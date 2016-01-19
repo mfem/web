@@ -1,6 +1,6 @@
 # mfem / web
 
-This repo contains the MFEM website [MkDocs](mkdocs.org) sources. 
+This repo contains the MFEM website [MkDocs](http://www.mkdocs.org/) sources. 
 
 To make changes to the website:
 
