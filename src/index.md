@@ -24,7 +24,7 @@ See also our [Gallery](gallery.md) and list of related [publications](publicatio
 
 **
 [New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
-/ [Example codes](examples.md)
+/ [Examples](examples.md)
 / [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 / [Sources](https://github.com/mfem/mfem)
 **

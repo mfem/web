@@ -450,11 +450,11 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
 For more details, please see the documentation in the `miniapps/meshing`
-directory. **We recommend that new users start with the example codes before
-moving to the miniapps.**
+directory.
 
 _The miniapp has only a serial
-([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version._
+([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -471,11 +471,11 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
 
 For more details, please see the documentation in the `miniapps/meshing`
-directory. **We recommend that new users start with the example codes before
-moving to the miniapps.**
+directory.
 
 _The miniapp has only a serial
-([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version._
+([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -486,6 +486,7 @@ _The miniapp has only a serial
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh. Some of its features are:
+
 - visualizing of mesh materials and individual mesh elements
 - mesh scaling, randomization, and general transformation
 - manipulation of the mesh curvature
@@ -493,11 +494,10 @@ mesh. Some of its features are:
 - quantitative and visual reports of mesh quality
 
 For more details, please see the documentation in the `miniapps/meshing`
-directory. **We recommend that new users start with the example codes before
-moving to the miniapps.**
+directory.
 
 _The miniapp has only a serial
-([view-mesh.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/view-mesh.cpp)) version._
+([view-mesh.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/view-mesh.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -509,11 +509,11 @@ _The miniapp has only a serial
 TBD
 
 For more details, please see the documentation in the `miniapps/electromagnetics`
-directory. **We recommend that new users start with the example codes before
-moving to the miniapps.**
+directory.
 
 _The miniapp has only a parallel
-([electrostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/electrostatics.cpp)) version._
+([electrostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/electrostatics.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -525,11 +525,11 @@ _The miniapp has only a parallel
 TBD
 
 For more details, please see the documentation in the `miniapps/electromagnetics`
-directory. **We recommend that new users start with the example codes before
-moving to the miniapps.**
+directory.
 
 _The miniapp has only a parallel
-([magnetostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/magnetostatics.cpp)) version._
+([magnetostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/magnetostatics.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 

@@ -47,6 +47,12 @@ The serial examples can be build with:
 ~/mfem-3.0/examples> make -j
 ```
 
+All serial examples and miniapps can be build with:
+```sh
+~> cd mfem-3.0
+~/mfem-3.0> make all -j
+```
+
 ## Parallel MPI version of MFEM
 
 Download *hypre* and metis from
@@ -97,6 +103,12 @@ The parallel examples can be build with:
 The serial examples can also be build with the parallel version of the library, e.g.
 ```sh
 ~/mfem-3.0/examples> make ex1 ex2
+```
+
+All parallel examples and miniapps can be build with:
+```sh
+~> cd mfem-3.0
+~/mfem-3.0> make all -j
 ```
 
 One can also use the parallel library to optionally (re-)build GLVis:
