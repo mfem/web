@@ -10,7 +10,7 @@
 This page provides a brief overview of MFEM's example codes and miniapps. For
 detailed documentation of the MFEM sources, including the examples, see the
 [online Doxygen documentation](http://mfem.github.io/doxygen/html/index.html),
-or the `code` directory in the distribution.
+or the `doc` directory in the distribution.
 
 The goal of the example codes is to provide a step-by-step introduction to MFEM
 in simple model settings. The miniapps are more complex, and are intended to be
