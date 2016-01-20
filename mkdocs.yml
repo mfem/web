@@ -15,7 +15,8 @@ pages:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
-  - 'Mesh Formats': mesh-formats.md
+  - 'Electromagnetics': electromagnetics.md
+  - 'Meshing': meshing.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md

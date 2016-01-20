@@ -1,17 +1,5 @@
 # Mesh Formats
 
-## Summary
-
-MFEM supports a number of mesh formats, including:
-
-  - MFEM's own [mesh v1.0 format](#mfem-mesh-v10), which can describe both [straight](#straight-meshes) as well as [arbitrary high-order curvilinear](#curvilinear-and-more-general-meshes) and [more general](#curvilinear-and-more-general-meshes) meshes,
-  - MFEM's own format for [NURBS](#nurbs-meshes) meshes,
-  - The [VTK](#curvilinear-vtk-meshes) unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,
-  - The [NETGEN](http://sourceforge.net/projects/netgen-mesher/) triangular and tetrahedral mesh formats,
-  - The [TrueGrid](http://www.truegrid.com/) hexahedral mesh format.
-
-These formats are also supported by MFEM's native visualization tool, [GLVis](http://glvis.org/).
-
 ## MFEM mesh v1.0
 
 This is the default format in GLVis. It can be used to describe simple (triangular, quadrilateral, tetrahedral and hexahedral meshes with straight edges) or complicated (curvilinear and more general) meshes.
