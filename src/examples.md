@@ -7,10 +7,10 @@
 
 # Example Codes and Miniapps
 
-This page provides a brief overview of the MFEM example codes and miniapps. For
+This page provides a brief overview of MFEM's example codes and miniapps. For
 detailed documentation of the MFEM sources, including the examples, see the
 [online Doxygen documentation](http://mfem.github.io/doxygen/html/index.html),
-or the `code` directory in the source distribution.
+or the `code` directory in the distribution.
 
 The goal of the example codes is to provide a step-by-step introduction to MFEM
 in simple model settings. The miniapps are more complex, and are intended to be
@@ -94,7 +94,7 @@ This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
 Laplace problem $$-\Delta u = 1$$ with homogeneous Dirichlet
 boundary conditions. Specifically, we discretize with the
-FE space coming from the mesh (linear by default, quadratic
+finite element space coming from the mesh (linear by default, quadratic
 for quadratic curvilinear mesh, NURBS for NURBS mesh, etc.)
 
 The example highlights the use of mesh refinement, finite
@@ -341,7 +341,7 @@ This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
 
 We compute a number of the lowest eigenmodes by discretizing the Laplacian and
-Mass operators using a FE space of the specified order, or an
+Mass operators using a finite element space of the specified order, or an
 isoparametric/isogeometric space if order < 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)
 
@@ -365,7 +365,7 @@ This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
 
 We compute a number of the lowest eigenmodes by discretizing the Laplacian and
-Mass operators using a FE space of the specified order, or an
+Mass operators using a finite element space of the specified order, or an
 isoparametric/isogeometric space if order < 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)
 
@@ -375,7 +375,7 @@ Specifically, we compute a number of the lowest eigenmodes by approximating the 
 $$-{\rm div}({\sigma}({\bf u})) = \lambda {\bf u} \,,$$
 where
 $${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$
-is the stress tensor corresponding to displacement field $\bf u$$, and $\lambda$ and $\mu$
+is the stress tensor corresponding to displacement field $\bf u$, and $\lambda$ and $\mu$
 are the material Lame constants. The boundary conditions are
 ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and
 ${\sigma}({\bf u})\cdot n = f$ on the remainder.
@@ -449,8 +449,8 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
-**For more details, please see the documentation in the `miniapps/meshing`
-directory. We recommend that new users start with the example codes before
+For more details, please see the documentation in the `miniapps/meshing`
+directory. **We recommend that new users start with the example codes before
 moving to the miniapps.**
 
 _The miniapp has only a serial
@@ -470,8 +470,8 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
 
-**For more details, please see the documentation in the `miniapps/meshing`
-directory. We recommend that new users start with the example codes before
+For more details, please see the documentation in the `miniapps/meshing`
+directory. **We recommend that new users start with the example codes before
 moving to the miniapps.**
 
 _The miniapp has only a serial
@@ -492,8 +492,8 @@ mesh. Some of its features are:
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
 
-**For more details, please see the documentation in the `miniapps/meshing`
-directory. We recommend that new users start with the example codes before
+For more details, please see the documentation in the `miniapps/meshing`
+directory. **We recommend that new users start with the example codes before
 moving to the miniapps.**
 
 _The miniapp has only a serial
@@ -508,8 +508,8 @@ _The miniapp has only a serial
 
 TBD
 
-**For more details, please see the documentation in the `miniapps/electromagnetics`
-directory. We recommend that new users start with the example codes before
+For more details, please see the documentation in the `miniapps/electromagnetics`
+directory. **We recommend that new users start with the example codes before
 moving to the miniapps.**
 
 _The miniapp has only a parallel
@@ -524,8 +524,8 @@ _The miniapp has only a parallel
 
 TBD
 
-**For more details, please see the documentation in the `miniapps/electromagnetics`
-directory. We recommend that new users start with the example codes before
+For more details, please see the documentation in the `miniapps/electromagnetics`
+directory. **We recommend that new users start with the example codes before
 moving to the miniapps.**
 
 _The miniapp has only a parallel
