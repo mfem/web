@@ -5,20 +5,27 @@
   src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-# Example Codes
+# Example Codes and Miniapps
 
-This page provides a brief overview of the MFEM example codes. For
+This page provides a brief overview of the MFEM example codes and miniapps. For
 detailed documentation of the MFEM sources, including the examples, see the
-[Doxygen documentation](http://mfem.github.io/doxygen/html/index.html).
+[online Doxygen documentation](http://mfem.github.io/doxygen/html/index.html),
+or the `code` directory in the source distribution.
 
-Clicking on any of the categories below displays examples that contain the
+The goal of the example codes is to provide a step-by-step introduction to MFEM
+in simple model settings. The miniapps are more complex, and are intended to be
+more representative of the advanced usage of the library in physics/application
+codes. We recommend that new users start with the example codes before moving to
+the miniapps.
+
+Clicking on any of the categories below displays examples and miniapps that contain the
 described feature. _All examples support (arbitrarily) high-order meshes and
 finite element spaces_.
 The numerical results from the example codes can be visualized using the
 GLVis visualization tool (based on MFEM). See the
 [GLVis website](http://glvis.org) for more details.
 
-Users are encouraged to submit any example codes that they have created and
+Users are encouraged to submit any example codes and miniapps that they have created and
 would like to share. <br>
 _Contact a member of the MFEM team to report
 [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
@@ -26,14 +33,15 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
-   <h5>**Equation (PDE)**</h5>
+   <h5>**Application (PDE)**</h5>
    <label><input type="radio" id="all1" onchange="update(this.id);" checked="checked" /> All</label><br/>
    <label><input type="radio" id="laplace" onchange="update(this.id);" /> Laplace</label><br/>
    <label><input type="radio" id="elasticity" onchange="update(this.id);" /> Elasticity</label><br/>
-   <label><input type="radio" id="maxwell" onchange="update(this.id);" /> Definite Maxwell</label><br/>
+   <label><input type="radio" id="maxwell" onchange="update(this.id);" /> Electromagnetics</label><br/>
    <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
+   <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
@@ -62,6 +70,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="gs" onchange="update(this.id);" /> Gauss-Seidel</label> <br/>
    <label><input type="radio" id="pcg" onchange="update(this.id);" /> PCG</label> <br/>
    <label><input type="radio" id="minres" onchange="update(this.id);" /> MINRES</label> <br/>
+   <label><input type="radio" id="gmres" onchange="update(this.id);" /> GMRES</label> <br/>
    <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
    <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
    <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
@@ -69,6 +78,8 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
+   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG (eigensolver)</label><br/>
+   <label><input type="radio" id="ame" onchange="update(this.id);" /> AME (eigensolver)</label><br/>
 </div>
 </div>
 <hr>
@@ -123,7 +134,7 @@ finite element spaces with the linear elasticity bilinear form,
 meshes with curved elements, and the definition of piece-wise
 constant and vector coefficient objects.
 
-_The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp)) 
+_The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp))
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
@@ -139,7 +150,7 @@ problem corresponding to the second order definite Maxwell
 equation $${\rm curl\, curl}\, E + E = f$$
 with boundary condition $ E \times n $ = "given tangential field".
 Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
-$f$. We discretize with Nedelec finite elements.
+$f$. We discretize with Nedelec finite elements in 2D or 3D.
 
 The example demonstrates the use of $H(curl)$ finite element
 spaces with the curl-curl and the (vector finite element) mass
@@ -161,7 +172,7 @@ This example code solves a simple 2D/3D $H(div)$
 diffusion problem corresponding to the second order definite equation
 $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$
 with boundary condition $F \cdot n$ = "given normal field".
-Here we use a given exact solution $F$ and compute the corresponding 
+Here we use a given exact solution $F$ and compute the corresponding
 right hand side $f$.  We discretize with the Raviart-Thomas finite elements.
 
 The example demonstrates the use of $H(div)$
@@ -221,7 +232,8 @@ linear, curved and surface meshes. Interpolation of functions
 from coarse to fine meshes, as well as persistent [GLVis](http://glvis.org)
 visualization are also illustrated.
 
-_The example currently has only a serial version ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp)).
+_The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
+and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -240,7 +252,7 @@ The example highlights mesh generation, the use of mesh
 refinement, high-order meshes and finite elements, as well as
 surface-based linear and bilinear forms corresponding to the
 left-hand side and right-hand side of the discrete linear
-system.
+system. Simple local mesh refinement is also demonstrated.
 
 _The example has a serial ([ex7.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7.cpp))
 and a parallel ([ex7p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex7p.cpp)) version.
@@ -260,6 +272,9 @@ $$-\Delta u = f$$ with homogeneous Dirichlet boundary conditions. We
 use high-order continuous trial space, a high-order interfacial
 (trace) space, and a high-order discontinuous test space
 defining a local dual ($H^{-1}$) norm.
+We use the primal form of DPG, see
+["A primal DPG method without a first-order reformulation"](http://dx.doi.org/10.1016/j.camwa.2013.06.029),
+Demkowicz and Gopalakrishnan, CAM 2013.
 
 The example highlights the use of interfacial (trace) finite
 elements and spaces, trace face integrators and the definition
@@ -298,7 +313,7 @@ and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9
 ##Example 10: Nonlinear Elasticity
 <img class="floatright" src="../img/ex10.png">
 
-This examples solves a time dependent nonlinear elasticity problem of the form
+This example solves a time dependent nonlinear elasticity problem of the form
 $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
 where $H$ is a hyperelastic model and $S$ is a viscosity operator of
 Laplacian type. The geometry of the domain is assumed to be as follows:
@@ -318,12 +333,213 @@ We recommend viewing examples 2 and 9 before viewing this example._
 <br></div>
 
 
+<div id="ex11" markdown="1">
+##Example 11: Laplace Eigenproblem
+<img class="floatright" src="../img/ex11.png">
+
+This example code demonstrates the use of MFEM to solve the eigenvalue problem
+$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
+
+We compute a number of the lowest eigenmodes by discretizing the Laplacian and
+Mass operators using a FE space of the specified order, or an
+isoparametric/isogeometric space if order < 1 (quadratic for quadratic
+curvilinear mesh, NURBS for NURBS mesh, etc.)
+
+The example highlights the use of the LOBPCG eigenvalue solver together with the
+BoomerAMG preconditioner in HYPRE.
+Reusing a single [GLVis](http://glvis.org) visualization window for multiple
+eigenfunctions is also illustrated.
+
+_The example has only a parallel
+([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex12" markdown="1">
+##Example 12: Linear Elasticity Eigenproblem
+<img class="floatright" src="../img/ex12.png">
+
+This example code demonstrates the use of MFEM to solve the eigenvalue problem
+$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
+
+We compute a number of the lowest eigenmodes by discretizing the Laplacian and
+Mass operators using a FE space of the specified order, or an
+isoparametric/isogeometric space if order < 1 (quadratic for quadratic
+curvilinear mesh, NURBS for NURBS mesh, etc.)
+
+This example code solves the linear elasticity eigenvalue
+problem for a multi-material cantilever beam.
+Specifically, we compute a number of the lowest eigenmodes by approximating the weak form of
+$$-{\rm div}({\sigma}({\bf u})) = \lambda {\bf u} \,,$$
+where
+$${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$
+is the stress tensor corresponding to displacement field $\bf u$$, and $\lambda$ and $\mu$
+are the material Lame constants. The boundary conditions are
+${\bf u}=0$ on the fixed part of the boundary with attribute 1, and
+${\sigma}({\bf u})\cdot n = f$ on the remainder.
+The geometry of the domain is assumed to be as follows:
+
+![](img/ex12-domain.png)
+
+The example highlights the use of the LOBPCG eigenvalue solver together with the
+BoomerAMG preconditioner in HYPRE.
+Reusing a single [GLVis](http://glvis.org) visualization window for multiple
+eigenfunctions is also illustrated.
+
+_The example has only a parallel
+([ex12p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex12p.cpp)) version.
+We recommend viewing examples 2 and 11 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex13" markdown="1">
+##Example 13: Maxwell Eigenproblem
+<img class="floatright" src="../img/ex13.png">
+
+This example code solves the Maxwell (electromagnetic)
+eigenvalue problem
+$${\rm curl\, curl}\, E = \lambda $$
+with  homogeneous Dirichlet boundary conditions $E \times n = 0$.
+
+We compute a number of the lowest nonzero eigenmodes by
+discretizing the curl curl operator using a Nedelec finite element space of
+the specified order in 2D or 3D.
+
+The example highlights the use of the AME subspace eigenvalue
+solver from HYPRE, which uses LOBPCG and AMS internally.
+Reusing a single [GLVis](http://glvis.org) visualization window for multiple
+eigenfunctions is also illustrated.
+
+_The example has only a parallel
+([ex13p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex13p.cpp)) version.
+We recommend viewing examples 3 and 11 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex14" markdown="1">
+##Example 14: DG Diffusion
+<img class="floatright" src="../img/ex14.png">
+
+This example code demonstrates the use of MFEM to define a
+discontinuous Galerkin (DG) finite element discretization of
+the Laplace problem  $$-\Delta u = 1$$ with homogeneous Dirichlet
+boundary conditions. Finite element spaces of any order,
+including zero on regular grids, are supported. The example highlights the use
+of discontinuous spaces and DG-specific face integrators.
+
+_The example has a serial ([ex14.cpp](https://github.com/mfem/mfem/blob/master/examples/ex14.cpp))
+and a parallel ([ex14p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex14p.cpp)) version.
+We recommend viewing examples 1 and 9 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="mobius-strip" markdown="1">
+##Miniapp: Mobius Strip
+<img class="floatright" src="../img/mobius-strip.png">
+
+This miniapp generates various Mobius strip-like surface meshes. It is a good
+way to generate complex surface meshes.
+
+Manipulating the mesh topology and performing mesh transformation are demonstrated.
+
+The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
+
+**For more details, please see the documentation in the `miniapps/meshing`
+directory. We recommend that new users start with the example codes before
+moving to the miniapps.**
+
+_The miniapp has only a serial
+([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="klein-bottle" markdown="1">
+##Miniapp: Klein Bottle
+<img class="floatright" src="../img/klein-bottle.png">
+
+This miniapp generates three types of Klein bottle surfaces. It is similar to
+the mobius-strip miniapp.
+
+Manipulating the mesh topology and performing mesh transformation are demonstrated.
+
+The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
+
+**For more details, please see the documentation in the `miniapps/meshing`
+directory. We recommend that new users start with the example codes before
+moving to the miniapps.**
+
+_The miniapp has only a serial
+([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="view-mesh" markdown="1">
+##Miniapp: View Mesh
+<img class="floatright" src="../img/view-mesh.png">
+
+This miniapp is a handy tool to examine, visualize and manipulate a given
+mesh. Some of its features are:
+- visualizing of mesh materials and individual mesh elements
+- mesh scaling, randomization, and general transformation
+- manipulation of the mesh curvature
+- the ability to simulate parallel partitioning
+- quantitative and visual reports of mesh quality
+
+**For more details, please see the documentation in the `miniapps/meshing`
+directory. We recommend that new users start with the example codes before
+moving to the miniapps.**
+
+_The miniapp has only a serial
+([view-mesh.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/view-mesh.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="electrostatics" markdown="1">
+##Miniapp: Electrostatics
+<img class="floatright" src="../img/electrostatics.png">
+
+TBD
+
+**For more details, please see the documentation in the `miniapps/electromagnetics`
+directory. We recommend that new users start with the example codes before
+moving to the miniapps.**
+
+_The miniapp has only a parallel
+([electrostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/electrostatics.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="magnetostatics" markdown="1">
+##Miniapp: Magnetostatics
+<img class="floatright" src="../img/magnetostatics.png">
+
+TBD
+
+**For more details, please see the documentation in the `miniapps/electromagnetics`
+directory. We recommend that new users start with the example codes before
+moving to the miniapps.**
+
+_The miniapp has only a parallel
+([magnetostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/magnetostatics.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
 <br/><br/><br/>
 <center>
-No examples match your criteria.
+No examples or miniapps match your criteria.
 </center>
 <br/><br/><br/>
 <hr>
@@ -377,29 +593,44 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
    updateGroup(group3, id);
    updateGroup(group4, id);
 
+   // Example codes
+   var numExamples = 14; // update when adding examples!
    showElement("ex1",  laplace && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams));
    showElement("ex4",  graddiv && hdiv && galerkin && (gs || pcg || umfpack || ads || ams));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
-   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack));
-   showElement("ex7",  laplace && h1 && galerkin && (gs || pcg || umfpack || amg));
-   showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg));
+   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex9",  advection && l2 && dg && (pcg || rk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk));
+   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg));
+   showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
+   showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
+   showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
-   // NOTE: update 'numExamples' below when adding examples!
-   var numExamples = 10;
+   // Meshing miniapps
+   numExamples += 3; // update when adding miniapps!
+   showElement("mobius-strip", meshing && all2 && all3 && all4);
+   showElement("klein-bottle", meshing && all2 && all3 && all4);
+   showElement("view-mesh", meshing && all2 && all3 && all4);
+
+   // Electromagnetic miniapps
+   numExamples += 2; // update when adding miniapps!
+   showElement("electrostatics", maxwell && all2 && all3 && all4);
+   showElement("magnetostatics", maxwell && all2 && all3 && all4);
+
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {
       if (exampleVisible(i)) {
