@@ -41,7 +41,8 @@ For older releases see the [download](download.md) section.
 [Building MFEM](building.md)
 / [Serial Tutorial](serial-tutorial.md)
 / [Parallel Tutorial](parallel-tutorial.md)
-/ [Mesh Formats](mesh-formats.md)
+/ [Electromagnetics](electromagnetics.md)
+/ [Meshing](meshing.md)
 **
 
 New users should start by examining the [example codes](examples.md).
