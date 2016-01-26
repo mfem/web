@@ -60,6 +60,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="mixed" onchange="update(this.id);" /> Mixed FEM</label><br/>
    <label><input type="radio" id="dg" onchange="update(this.id);" /> Discontinuous Galerkin (DG)</label><br/>
    <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discont. Petrov-Galerkin (DPG)</label><br/>
+   <label><input type="radio" id="hybr" onchange="update(this.id);" /> Hybridization</label><br/>
    <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
    <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
 </div>
@@ -178,7 +179,7 @@ right hand side $f$.  We discretize with the Raviart-Thomas finite elements.
 The example demonstrates the use of $H(div)$
 finite element spaces with the grad-div and $H(div)$
 vector finite element mass bilinear form, as well as the computation of discretization
-error when the exact solution is known.
+error when the exact solution is known. Bilinear form hybridization is also illustrated.
 
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
@@ -595,7 +596,7 @@ function update(id)
 {
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
-   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "nurbs", "amr" ];
+   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
 
    updateGroup(group1, id);
@@ -608,7 +609,7 @@ function update(id)
    showElement("ex1",  laplace && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams));
-   showElement("ex4",  graddiv && hdiv && galerkin && (gs || pcg || umfpack || ads || ams));
+   showElement("ex4",  graddiv && hdiv && (galerkin || hybr) && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
