@@ -609,7 +609,7 @@ function update(id)
    showElement("ex1",  laplace && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams));
-   showElement("ex4",  graddiv && hdiv && (galerkin || hybr) && (gs || pcg || umfpack || amg || ads || ams));
+   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr) && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
