@@ -440,7 +440,7 @@ We recommend viewing examples 1 and 9 before viewing this example._
 
 
 <div id="mobius-strip" markdown="1">
-##Miniapp: Mobius Strip
+##Mobius Strip Miniapp
 <img class="floatright" src="../img/mobius-strip.png">
 
 This miniapp generates various Mobius strip-like surface meshes. It is a good
@@ -461,7 +461,7 @@ moving to the miniapps.**_
 
 
 <div id="klein-bottle" markdown="1">
-##Miniapp: Klein Bottle
+##Klein Bottle Miniapp
 <img class="floatright" src="../img/klein-bottle.png">
 
 This miniapp generates three types of Klein bottle surfaces. It is similar to
@@ -481,9 +481,9 @@ moving to the miniapps.**_
 <br></div>
 
 
-<div id="view-mesh" markdown="1">
-##Miniapp: View Mesh
-<img class="floatright" src="../img/view-mesh.png">
+<div id="mesh-explorer" markdown="1">
+##Mesh Explorer Miniapp
+<img class="floatright" src="../img/mesh-explorer.png">
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh. Some of its features are:
@@ -498,13 +498,13 @@ For more details, please see the documentation in the `miniapps/meshing`
 directory.
 
 _The miniapp has only a serial
-([view-mesh.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/view-mesh.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
+([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
 
 <div id="electrostatics" markdown="1">
-##Miniapp: Electrostatics
+##XXX Miniapp: Electrostatics
 <img class="floatright" src="../img/electrostatics.png">
 
 TBD
@@ -520,7 +520,7 @@ moving to the miniapps.**_
 
 
 <div id="magnetostatics" markdown="1">
-##Miniapp: Magnetostatics
+##XXX Miniapp: Magnetostatics
 <img class="floatright" src="../img/magnetostatics.png">
 
 TBD
@@ -625,7 +625,7 @@ function update(id)
    numExamples += 3; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
-   showElement("view-mesh", meshing && all2 && all3 && all4);
+   showElement("mesh-explorer", meshing && all2 && all3 && all4);
 
    // Electromagnetic miniapps
    numExamples += 2; // update when adding miniapps!

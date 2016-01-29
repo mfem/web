@@ -47,12 +47,12 @@ the mobius-strip miniapp.
 The `klein-bottle` and `klein-donut` meshes in the
 `data` directory were generated with this miniapp.
 
-### view-mesh
+### mesh-explorer
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh.
 
-![](img/view-mesh.png)
+![](img/mesh-explorer.png)
 
 Some of its features are:
 
