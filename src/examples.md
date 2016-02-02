@@ -504,32 +504,54 @@ _The miniapp has only a serial
 
 
 <div id="electrostatics" markdown="1">
-##XXX Miniapp: Electrostatics
+##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/electrostatics.png">
 
-TBD
+This miniapp demonstrates the use of MFEM to solve realistic problems
+in the field of linear electrostatics.  Its features include:
+
+- dielectric materials
+- charge densities
+- surface charge densities
+- prescribed voltages
+- applied polarizations
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
 
 For more details, please see the documentation in the `miniapps/electromagnetics`
 directory.
 
 _The miniapp has only a parallel
-([electrostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/electrostatics.cpp)) version. **We recommend that new users start with the example codes before
+([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version. **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
 
 <div id="magnetostatics" markdown="1">
-##XXX Miniapp: Magnetostatics
+##Tesla Miniapp: Magnetostatics
 <img class="floatright" src="../img/magnetostatics.png">
 
-TBD
+This miniapp showcases many of MFEM's features while solving a variety
+of realistic magnetostatics problems.  Its features include:
+
+- diamagnetic and/or paramagnetic materials
+- ferromagnetic materials
+- volumetric current densities
+- surface current densities
+- external fields
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
 
 For more details, please see the documentation in the `miniapps/electromagnetics`
 directory.
 
 _The miniapp has only a parallel
-([magnetostatics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/magnetostatics.cpp)) version. **We recommend that new users start with the example codes before
+([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version. **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
