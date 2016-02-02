@@ -439,6 +439,60 @@ We recommend viewing examples 1 and 9 before viewing this example._
 <br></div>
 
 
+<div id="volta" markdown="1">
+##Volta Miniapp: Electrostatics
+<img class="floatright" src="../img/volta.png">
+
+This miniapp demonstrates the use of MFEM to solve realistic problems
+in the field of linear electrostatics.  Its features include:
+
+- dielectric materials
+- charge densities
+- surface charge densities
+- prescribed voltages
+- applied polarizations
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
+
+For more details, please see the documentation in the `miniapps/electromagnetics`
+directory.
+
+_The miniapp has only a parallel
+([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="tesla" markdown="1">
+##Tesla Miniapp: Magnetostatics
+<img class="floatright" src="../img/tesla.png">
+
+This miniapp showcases many of MFEM's features while solving a variety
+of realistic magnetostatics problems.  Its features include:
+
+- diamagnetic and/or paramagnetic materials
+- ferromagnetic materials
+- volumetric current densities
+- surface current densities
+- external fields
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
+
+For more details, please see the documentation in the `miniapps/electromagnetics`
+directory.
+
+_The miniapp has only a parallel
+([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version. **We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
 <img class="floatright" src="../img/mobius-strip.png">
@@ -499,60 +553,6 @@ directory.
 
 _The miniapp has only a serial
 ([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
-<div style="clear:both;"/></div>
-<br></div>
-
-
-<div id="electrostatics" markdown="1">
-##Volta Miniapp: Electrostatics
-<img class="floatright" src="../img/electrostatics.png">
-
-This miniapp demonstrates the use of MFEM to solve realistic problems
-in the field of linear electrostatics.  Its features include:
-
-- dielectric materials
-- charge densities
-- surface charge densities
-- prescribed voltages
-- applied polarizations
-- high order meshes
-- high order basis functions
-- adaptive mesh refinement
-- advanced visualization
-
-For more details, please see the documentation in the `miniapps/electromagnetics`
-directory.
-
-_The miniapp has only a parallel
-([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version. **We recommend that new users start with the example codes before
-moving to the miniapps.**_
-<div style="clear:both;"/></div>
-<br></div>
-
-
-<div id="magnetostatics" markdown="1">
-##Tesla Miniapp: Magnetostatics
-<img class="floatright" src="../img/magnetostatics.png">
-
-This miniapp showcases many of MFEM's features while solving a variety
-of realistic magnetostatics problems.  Its features include:
-
-- diamagnetic and/or paramagnetic materials
-- ferromagnetic materials
-- volumetric current densities
-- surface current densities
-- external fields
-- high order meshes
-- high order basis functions
-- adaptive mesh refinement
-- advanced visualization
-
-For more details, please see the documentation in the `miniapps/electromagnetics`
-directory.
-
-_The miniapp has only a parallel
-([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version. **We recommend that new users start with the example codes before
-moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -643,16 +643,16 @@ function update(id)
    showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
+   // Electromagnetic miniapps
+   numExamples += 2; // update when adding miniapps!
+   showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
+   showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+
    // Meshing miniapps
    numExamples += 3; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
-
-   // Electromagnetic miniapps
-   numExamples += 2; // update when adding miniapps!
-   showElement("electrostatics", maxwell && all2 && all3 && all4);
-   showElement("magnetostatics", maxwell && all2 && all3 && all4);
 
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {
