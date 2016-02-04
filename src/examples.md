@@ -456,8 +456,8 @@ in the field of linear electrostatics.  Its features include:
 - adaptive mesh refinement
 - advanced visualization
 
-For more details, please see the documentation in the `miniapps/electromagnetics`
-directory.
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
 
 _The miniapp has only a parallel
 ([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version. **We recommend that new users start with the example codes before
@@ -483,8 +483,8 @@ of realistic magnetostatics problems.  Its features include:
 - adaptive mesh refinement
 - advanced visualization
 
-For more details, please see the documentation in the `miniapps/electromagnetics`
-directory.
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
 
 _The miniapp has only a parallel
 ([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version. **We recommend that new users start with the example codes before
@@ -504,8 +504,8 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
-For more details, please see the documentation in the `miniapps/meshing`
-directory.
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
 
 _The miniapp has only a serial
 ([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version. **We recommend that new users start with the example codes before
@@ -525,8 +525,8 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
 
-For more details, please see the documentation in the `miniapps/meshing`
-directory.
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
 
 _The miniapp has only a serial
 ([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version. **We recommend that new users start with the example codes before
@@ -548,8 +548,8 @@ mesh. Some of its features are:
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
 
-For more details, please see the documentation in the `miniapps/meshing`
-directory.
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
 
 _The miniapp has only a serial
 ([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
