@@ -9,6 +9,16 @@ $\newcommand{\A}{\vec{A}}\newcommand{\B}{\vec{B}}
 \newcommand{\div}{\nabla\cdot}\newcommand{\curl}{\nabla\times}
 \newcommand{\grad}{\nabla}$
 
+The `miniapps/electromagnetics` directory contains a collection of
+electromagnetic miniapps based on MFEM.
+
+Compared to the [example codes](examples.md), the miniapps are more complex,
+demonstrating more advanced usage of the library. They are intended to be more
+representative of MFEM-based application codes. We recommend that new users
+start with the example codes before moving to the miniapps.
+
+The current electromagnetic miniapps are described below.
+
 ## Electromagnetics
 
 The equations describing electromagnetic phenomena are known collectively as
@@ -93,62 +103,66 @@ complicated nonlinear expression.
 
 The solutions to equation \eqref{poisson} are non unique because they can be
 shifted by any additive constant. This means that we must apply a Dirichlet
-boundary condition at at least one point in the problem domain in order to
-obtain a solution. Typically this point will be on the boundry but it need not
+boundary condition at least at one point in the problem domain in order to
+obtain a solution. Typically this point will be on the boundary but it need not
 be so. Such a Dirichlet value is equivalent to fixing the voltage (aka
-potential) at one or more locations. Additionally, this equation admits
-a normal derivative boundary condition. This means setting $\hat{n}\cdot\D$ to
-a prescribed value on some portion of the boundary. This is equivalent to
-defining a surface charge density on that portion of the boundary.
+potential) at one or more locations. Additionally, this equation admits a normal
+derivative boundary condition. This corresponds to setting $\hat{n}\cdot\D$ to a
+prescribed value on some portion of the boundary. This is equivalent to defining
+a surface charge density on that portion of the boundary.
 
-### `volta` Mini Application
+### Volta Mini Application
 
 The electrostatics mini application, named `volta` after the inventor of the
 [voltaic pile](http://en.wikipedia.org/wiki/Voltaic_pile), is intended to
 demonstrate how to solve standard electrostatics problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
-specialized sources or boundary conditions could be implemented. Note that this
-application assumes the mesh coordinates are given in meters.
+specialized sources or boundary conditions could be implemented.
+
+![](img/volta.png)
+
+Note that this application assumes the mesh coordinates are given in meters.
 
 #### Mini Application Features
 
-**Permittivity:** The permittivity is assumed to be that of free space except
-  for an optional sphere of dielectric material which can be defined by the
-  user. The command line option `-ds` can be used to set the parameters for
-  this dielectric sphere. For example, to produce a sphere at the origin with a
-  radius of 0.5 and a relative permittivity of 3 the user would specify:
-  `-ds '0 0 0 0.5 3'`
+**Permittivity:** The permittivity, $\epsilon$, is assumed to be that of free
+  space except for an optional sphere of dielectric material which can be
+  defined by the user. The command line option `-ds` can be used to set the
+  parameters for this dielectric sphere. For example, to produce a sphere at the
+  origin with a radius of 0.5 and a relative permittivity of 3 the user would
+  specify: `-ds '0 0 0 0.5 3'`.
 
-**Charge Density:** The charge density is assumed to be zero except for an
-  optional sphere of uniform charge density which can be defined by the user.
+**Charge Density:** The charge density, $\rho$, is assumed to be zero except for
+  an optional sphere of uniform charge density which can be defined by the user.
   The command line option for this is `-cs` which follows the same pattern as
   the dielectric sphere. Note that the last entry is the total charge of the
   sphere and not its charge density.
 
-**Polarization:** A polarization vector function can be imposed as a source
-  of the electric field. The command line option `-vp` creates a polarization
-  due to a simple voltaic pile, i.e., a cylinder which is electrically
-  polarized along its axis. The user should specify the two end points of the
-  cylinder axis, its radius and the magnitude of the polarization vector.
+**Polarization:** A polarization vector function, $\P$, can be imposed as a
+  source of the electric field. The command line option `-vp` creates a
+  polarization due to a simple voltaic pile, i.e., a cylinder which is
+  electrically polarized along its axis. The user should specify the two end
+  points of the cylinder axis, its radius and the magnitude of the polarization
+  vector.
 
-**Dirichlet BC:** Dirichlet Boundary Conditions can either specify piecewise
+**Dirichlet BC:** Dirichlet boundary conditions can either specify piecewise
   constant voltages on a collection of surfaces or they can specify a gradient
   field which approximates a uniform applied electric field. In either case the
   user specifies the surfaces where the Dirichlet boundary condition should be
   applied using the `-dbcs` option followed by a list of boundary attributes.
   For example to select surfaces 2, 3, and 4 the user would use the following:
-  `-dbcs '2 3 4'`
+  `-dbcs '2 3 4'`.
 
   To apply a gradient field on these surfaces the user would also use the
   `-dbcg` option. This defaults to the uniform field $\E = (0,0,1)$ in 3D or
   $\E = (0,1)$ in 2D. An arbitrary vector can be specified with `-uebc`
   followed by the desired vector, e.g., to apply $\E = (1,2,3)$ the user would
-  supply: `-uebc '1 2 3'`
+  supply: `-uebc '1 2 3'`.
 
   To specify piecewise constant potential values the user would list the
-  desired values after `-dbcv` as follows: `-dbcv '0.0 1.0 -1.0'`
+  desired values after `-dbcv` as follows: `-dbcv '0.0 1.0 -1.0'`.
 
-**Neumann BC:** Neumann Boundary Conditions set the normal component of the
+**Neumann BC:** Neumann boundary conditions set the normal component of the
   electric displacement on portions of the boundary. This normal component is
   equivalent to the surface charge density on the surface. This is rarely used
   because surface charge densities are rarely known unless they are know to be
@@ -190,7 +204,7 @@ with equation \eqref{divb} becomes:
   $$\div\mu\grad\varphi_M = \div\mu_0\M $$
 
 Currently only the vector potential equation is used so we will focus on that
-for the remainder of this documentation.
+for the remainder of this document.
 
 The vector potential is again non unique so we must apply additional
 constraints in order to arrive at a solution for $\A$. When working
@@ -205,7 +219,7 @@ means to specify the component of $\B$ normal to that surface. For example,
 setting the tangential components of $\A$ to be zero on a particular surface
 results in a magnetic flux density which must be tangent to that surface.
 
-### `tesla` Mini Application
+### Tesla Mini Application
 
 The magnetostatics mini application, named `tesla` after the unit of magnetic
 field strength (and of course the man Nikola Tesla), is intended to demonstrate
@@ -213,33 +227,35 @@ how to solve standard magnetostatics problems in MFEM. Its source terms and
 boundary conditions are simple but they should indicate how more specialized
 sources of boundary conditions could be implemented.
 
+![](img/tesla.png)
+
 Note that this application assumes the mesh coordinates are given in meters.
 
 #### Mini Application Features
 
-**Permeability:** The permeability is assumed to be that of free space except
-  for an optional spherical shell of diamagnetic or paramagnetic material which
-  can be defined by the user. The command line option `-ms` can be used to set
-  the parameters for this shell.
+**Permeability:** The permeability, $\mu$, is assumed to be that of free space
+  except for an optional spherical shell of diamagnetic or paramagnetic material
+  which can be defined by the user. The command line option `-ms` can be used to
+  set the parameters for this shell.
 
   For example, to produce a shell at the origin with inner and outer radii of
   0.4 and 0.5 respectively and a relative permeability of 3 the user would
-  specify: `-ms '0 0 0 0.4 0.5 3'`
+  specify: `-ms '0 0 0 0.4 0.5 3'`.
 
-**Current Density:** The current density is assumed to be zero except for an
-  optional ring of constant current which can be defined by the user. The
-  command line option for this is `-cr` which requires two points giving the
-  end points of the ring's axis, inner and outer radii, and a constant total
+**Current Density:** The current density, $\J$, is assumed to be zero except for
+  an optional ring of constant current which can be defined by the user. The
+  command line option for this is `-cr` which requires two points giving the end
+  points of the ring's axis, inner and outer radii, and a constant total
   current.
 
   For example, to specify a ring centered at the origin and laying in the XY
   plane with a thickness of 0.2 and radii 0.4 and 0.5, and a current of 2 amps
-  the user would give: `-cr 0 0 -0.1 0 0 0.1 0.4 0.5 2`
+  the user would give: `-cr 0 0 -0.1 0 0 0.1 0.4 0.5 2`.
 
-**Magnetization:** A permanent magnetization can be applied in the form of a
-  cylindrical magnet with poles at its circular ends. The command line option
-  is `-bm` which indicates a 'bar magnet'. The option requires the two end
-  points of the cylinder's axis, its radius, and the magnitude of the
+**Magnetization:** A permanent magnetization, $\M$, can be applied in the form
+  of a cylindrical magnet with poles at its circular ends. The command line
+  option is `-bm` which indicates a 'bar magnet'. The option requires the two
+  end points of the cylinder's axis, its radius, and the magnitude of the
   magnetization.
 
 **Surface Current Density:** A surface current can be imposed indirectly by
@@ -252,14 +268,14 @@ Note that this application assumes the mesh coordinates are given in meters.
 
   For example, applying voltages 1 and -1 to surfaces 2 and 3 with a current
   path along surfaces 4 and 6 would be specified as:
-  `-vbcs '2 3' -vbcv '1 -1' -kbcs '4 6'`
+  `-vbcs '2 3' -vbcv '1 -1' -kbcs '4 6'`.
 
   Any surfaces not listed as voltage or current surfaces will be assigned as
   homogeneous Dirichlet boundaries. Note that when this option is selected an
-  auxilliary electrostatic problem will be solved on the surface of the
+  auxiliary electrostatic problem will be solved on the surface of the
   geometry to compute the surface current.
 
-**Dirichlet BC:** Dirichlet Boundary Conditions are required if a surface
+**Dirichlet BC:** Dirichlet boundary conditions are required if a surface
   current density is not defined. For this reason the user need not specify
   boundary surfaces by number since the boundary condition must be applied on
   all of them. The default boundary condition is a homogeneous Dirichlet
