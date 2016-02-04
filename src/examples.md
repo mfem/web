@@ -61,6 +61,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="dg" onchange="update(this.id);" /> Discontinuous Galerkin (DG)</label><br/>
    <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discont. Petrov-Galerkin (DPG)</label><br/>
    <label><input type="radio" id="hybr" onchange="update(this.id);" /> Hybridization</label><br/>
+   <label><input type="radio" id="staticcond" onchange="update(this.id);" /> Static condensation</label><br/>
    <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
    <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
 </div>
@@ -102,7 +103,7 @@ The example highlights the use of mesh refinement, finite
 element grid functions, as well as linear and bilinear forms
 corresponding to the left-hand side and right-hand side of the
 discrete linear system. We also cover the explicit elimination
-of boundary conditions on all boundary edges, and the optional
+of essential boundary conditions, static condensation, and the optional
 connection to the [GLVis](http://glvis.org) tool for visualization.
 
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp))
@@ -133,7 +134,8 @@ otherwise. The geometry of the domain is assumed to be as follows:
 The example demonstrates the use of high-order and NURBS vector
 finite element spaces with the linear elasticity bilinear form,
 meshes with curved elements, and the definition of piece-wise
-constant and vector coefficient objects.
+constant and vector coefficient objects. Static condensation is
+also illustrated.
 
 _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp))
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
@@ -156,7 +158,8 @@ $f$. We discretize with Nedelec finite elements in 2D or 3D.
 The example demonstrates the use of $H(curl)$ finite element
 spaces with the curl-curl and the (vector finite element) mass
 bilinear form, as well as the computation of discretization
-error when the exact solution is known.
+error when the exact solution is known. Static condensation is
+also illustrated.
 
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
@@ -179,7 +182,8 @@ right hand side $f$.  We discretize with the Raviart-Thomas finite elements.
 The example demonstrates the use of $H(div)$
 finite element spaces with the grad-div and $H(div)$
 vector finite element mass bilinear form, as well as the computation of discretization
-error when the exact solution is known. Bilinear form hybridization is also illustrated.
+error when the exact solution is known.
+Bilinear form hybridization and static condensation are also illustrated.
 
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
@@ -618,7 +622,7 @@ function update(id)
 {
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
-   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "nurbs", "amr" ];
+   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
 
    updateGroup(group1, id);
@@ -628,10 +632,10 @@ function update(id)
 
    // Example codes
    var numExamples = 14; // update when adding examples!
-   showElement("ex1",  laplace && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
-   showElement("ex2",  elasticity && h1 && (galerkin || nurbs) && (gs || pcg || umfpack || amg));
-   showElement("ex3",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr) && (gs || pcg || umfpack || amg || ads || ams));
+   showElement("ex1",  laplace && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
+   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
+   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
+   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
