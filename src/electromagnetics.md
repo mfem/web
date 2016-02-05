@@ -193,13 +193,13 @@ This choice yields:
 
   $$\curl\mu^{-1}\B = \J + \curl\mu^{-1}\mu_0\M   \nonumber$$
 
-Which, when combined with equation \eqref{divb} becomes:
+Which, when combined with equation \eqref{divb}, becomes:
 
   $$\curl\mu^{-1}\curl\A = \J + \curl\mu^{-1}\mu_0\M $$
 
 If $\J$ happens to be zero we have another option because we can assume that
 $\H = -\grad\varphi_M$ for some scalar potential $\varphi_M$. When combined
-with equation \eqref{divb} becomes:
+with equation \eqref{divb} this leads to:
 
   $$\div\mu\grad\varphi_M = \div\mu_0\M $$
 
