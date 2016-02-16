@@ -15,7 +15,7 @@ var filename = args[2];
 
 function exportPage()
 {
-   console.log("Exporting to " + filename);
+   console.log("Writing to " + filename);
    //page.render('export.png');
    fs.write(filename, page.content, 'w');
    phantom.exit();

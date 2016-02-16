@@ -1,6 +1,14 @@
 #!/bin/bash
 
-function filter {
+mfemdir=$HOME/mfem
+
+function preprocess { # src dst
+	cat $1 \
+	| sed 's|config=TeX-AMS_HTML|config=TeX-AMS-MML_SVG|' \
+	> $2
+}
+
+function postprocess { # src dst localdir
 	cat $1 \
 	| sed 's|"http://cdn.mathjax.org/.*"|""|' \
 	| sed 's|\.\./css|---local---|g' \
@@ -11,23 +19,30 @@ function filter {
 	> $2
 }
 
-mfemdir=$HOME/mfem
-curdir=$(pwd)
+function exportfile { # src dst localdir
+	echo
+	echo Exporting $1
+	tmp1=${1}_tmp.html
+	tmp2=$(mktemp)
+	preprocess $1 $tmp1
+	phantomjs export.js file://$(pwd)/$tmp1 $tmp2
+	postprocess $tmp2 $2 $3
+	rm $tmp1
+	rm $tmp2
+}
 
+# build the docs in the 'site' directory
 mkdocs build
 
-temp=$(mktemp)
-phantomjs export.js file:///$curdir/site/examples/index.html $temp
-filter $temp $mfemdir/examples/README.html ../doc/web
-rm $temp
+# export pages
+exportfile site/examples/index.html \
+           $mfemdir/examples/README.html \
+           ../doc/web
 
-temp=$(mktemp)
-phantomjs export.js file:///$curdir/site/electromagnetics/index.html $temp
-filter $temp $mfemdir/miniapps/electromagnetics/README.html ../../doc/web
-rm $temp
+exportfile site/electromagnetics/index.html \
+           $mfemdir/miniapps/electromagnetics/README.html \
+           ../../doc/web
 
-temp=$(mktemp)
-phantomjs export.js file:///$curdir/site/meshing/index.html $temp
-filter $temp $mfemdir/miniapps/meshing/README.html ../../doc/web
-rm $temp
-
+exportfile site/meshing/index.html \
+           $mfemdir/miniapps/meshing/README.html \
+           ../../doc/web
