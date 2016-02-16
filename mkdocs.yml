@@ -15,7 +15,9 @@ pages:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
-  - 'Mesh Formats': mesh-formats.md
+  - 'Electromagnetics': electromagnetics.md
+  - 'Meshing': meshing.md
+  - '_Mesh Formats': mesh-formats.md   # pages starting with '_' are hidden from the menu
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md

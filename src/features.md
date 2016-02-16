@@ -24,7 +24,8 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
  - [mixed](examples.md?mixed) finite elements,
  - Discontinuous Galerkin ([DG](examples.md?dg)) methods,
  - [isogeometric](examples.md?nurbs) analysis methods,
- - Discontinuous Petrov-Galerkin ([DPG](examples.md?dpg)) approaches.
+ - Discontinuous Petrov-Galerkin ([DPG](examples.md?dpg)) approaches,
+ - [Hybridization](examples.md?hybr) and [static condensation](examples.md?staticcond) for high-order problems.
 
 <img src="../img/ex6.png" align="right" width="230">
 
@@ -62,6 +63,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
 <img src="../img/hypre_wiw.gif" align="right" width="250">
  - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_72.svg) in serial and in parallel,
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
+ - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - sequential sparse direct solvers from the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_71.svg),
  - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
@@ -80,8 +82,18 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 8](http://mfem.github.io/doxygen/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
  - [Example 9](http://mfem.github.io/doxygen/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,
  - [Example 10](http://mfem.github.io/doxygen/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity.
+ - [Example 11](http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html): parallel Laplace eigensolver.
+ - [Example 12](http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver.
+ - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver.
+ - [Example 14](http://mfem.github.io/doxygen/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
+
+Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
+
+ - [Volta](http://mfem.github.io/doxygen/html/volta_8cpp_source.html): simple electrostatics simulation code,
+ - [Tesla](http://mfem.github.io/doxygen/html/volta_8cpp_source.html): simple magnetostatics simulation code,
+ - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes.
 
 ## Accurate and Flexible Visualization
 
