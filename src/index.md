@@ -56,7 +56,7 @@ to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
 or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
 or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
 
-Please cite with
+Please cite with:
 ```c
 @misc{mfem-library,
   title={{MFEM}: Modular finite element methods},
