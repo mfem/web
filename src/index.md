@@ -30,8 +30,8 @@ See also our [Gallery](gallery.md) and list of related [publications](publicatio
 **
 
 [<button type="button" class="btn btn-success">
-**Download mfem-3.0.1.tgz**
-</button>](http://goo.gl/gcNNsA)
+**Download mfem-3.1.tgz**
+</button>](http://goo.gl/xrScXn)
 
 For older releases see the [download](download.md) section.
 
