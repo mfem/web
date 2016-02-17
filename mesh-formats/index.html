@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Mesh Formats - MFEM</title>  -->
+<!--	<title>_Mesh Formats - MFEM</title>  -->
     <title>MFEM - Finite Element Discretization Library</title>
 
         <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
@@ -84,29 +84,49 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../building/">Building MFEM</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../serial-tutorial/">Serial Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../parallel-tutorial/">Parallel Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
                     
-                        <li class="active">
-                            <a href="./">Mesh Formats</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../publications/">Publications</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../about/">About</a>
-                        </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
                     
                     </ul>
                 </li>
@@ -156,8 +176,6 @@
     
         <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
         
-            <li><a href="#summary">Summary</a></li>
-        
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         
             <li><a href="#straight-meshes">Straight meshes</a></li>
@@ -174,16 +192,6 @@
             <div class="col-md-9" role="main">
 
 <h1 id="mesh-formats">Mesh Formats</h1>
-<h2 id="summary">Summary</h2>
-<p>MFEM supports a number of mesh formats, including:</p>
-<ul>
-<li>MFEM's own <a href="#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="#straight-meshes">straight</a> as well as <a href="#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear</a> and <a href="#curvilinear-and-more-general-meshes">more general</a> meshes,</li>
-<li>MFEM's own format for <a href="#nurbs-meshes">NURBS</a> meshes,</li>
-<li>The <a href="#curvilinear-vtk-meshes">VTK</a> unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,</li>
-<li>The <a href="http://sourceforge.net/projects/netgen-mesher/">NETGEN</a> triangular and tetrahedral mesh formats,</li>
-<li>The <a href="http://www.truegrid.com/">TrueGrid</a> hexahedral mesh format.</li>
-</ul>
-<p>These formats are also supported by MFEM's native visualization tool, <a href="http://glvis.org/">GLVis</a>.</p>
 <h2 id="mfem-mesh-v10">MFEM mesh v1.0</h2>
 <p>This is the default format in GLVis. It can be used to describe simple (triangular, quadrilateral, tetrahedral and hexahedral meshes with straight edges) or complicated (curvilinear and more general) meshes.</p>
 <h2 id="straight-meshes">Straight meshes</h2>
@@ -531,8 +539,6 @@ LOOKUP_TABLE default
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
-        
-            <li><a href="#summary">Summary</a></li>
         
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         

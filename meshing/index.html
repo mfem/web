@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Download - MFEM</title>  -->
+<!--	<title>Meshing - MFEM</title>  -->
     <title>MFEM - Finite Element Discretization Library</title>
 
         <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -109,8 +109,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../meshing/">Meshing</a>
+                            <li class="active">
+                                 <a href="./">Meshing</a>
                             </li>
                         
                     
@@ -143,8 +143,8 @@
             
             
             
-                <li class="active">
-                    <a href="./">Download</a>
+                <li >
+                    <a href="../download/">Download</a>
                 </li>
             
             
@@ -171,137 +171,76 @@
 
         <div class="container">
             
-            <div class="col-md-12" role="main">
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#meshing">Meshing</a></li>
+        
+            <li><a href="#mesh-formats">Mesh formats</a></li>
+        
+            <li><a href="#meshing-miniapps">Meshing miniapps</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
 
-<h2 id="latest-release">Latest Release</h2>
-<p><strong>
-<a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a>
-/ <a href="../examples/">Example codes</a>
-/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a>
-/ <a href="https://github.com/mfem/mfem">Sources</a>
-</strong></p>
-<p><a href="http://goo.gl/xrScXn"><button type="button" class="btn btn-success">
-<strong>Download mfem-3.1.tgz</strong>
-</button></a></p>
-<p>Please use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
-to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
-or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a> or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.</p>
-<h2 id="all-releases">All Releases</h2>
-<table>
-<thead>
-<tr>
-<th><strong>Filename</strong></th>
-<th><strong>Version</strong></th>
-<th><strong>Release Date</strong></th>
-<th><strong>Size</strong></th>
-<th><strong><a href="http://cloc.sourceforge.net">SLOC</a></strong></th>
-<th><strong>Notes</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://goo.gl/xrScXn">mfem-3.1.tgz</a></td>
-<td>v3.1</td>
-<td>Feb 2016</td>
-<td>2.9M</td>
-<td>80K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/gcNNsA">mfem-3.0.1.tgz</a></td>
-<td>v3.0.1</td>
-<td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/TLcT5E">mfem-3.0.tgz</a></td>
-<td>v3.0</td>
-<td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/abUjn7">mfem-9e90b6710d.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2014</td>
-<td>389K</td>
-<td>51K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/KmaiH9">mfem-68e941f8fe.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2013</td>
-<td>368K</td>
-<td>48K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/PNrhv9">mfem-2.0.tgz</a></td>
-<td>v2.0</td>
-<td>Nov 2011</td>
-<td>308K</td>
-<td>40K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/nJ56Qm">mfem-v1.2.2.tgz</a></td>
-<td>v1.2.2</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/w44nyx">mfem-v1.2.1.tgz</a></td>
-<td>v1.2.1</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/GQit7Z">mfem-v1.2.tgz</a></td>
-<td>v1.2</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/VJ7WB8">mfem-v1.1.tgz</a></td>
-<td>v1.1</td>
-<td>Sep 2010</td>
-<td>166K</td>
-<td>23K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/gY141R">mfem-v1.0.tgz</a></td>
-<td>v1.0</td>
-<td>Jul 2010</td>
-<td>160K</td>
-<td>22K</td>
-<td>Initial release</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<!-- MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. --></div>
+<h1 id="meshing">Meshing</h1>
+<p>This page provides a brief description of MFEM's mesh formats and meshing mini applications.</p>
+<h2 id="mesh-formats">Mesh formats</h2>
+<p>MFEM supports a number of mesh formats, including:</p>
+<ul>
+<li>MFEM's own <a href="../mesh-formats/#mfem-mesh-v10">mesh v1.0 format</a>, which can describe both <a href="../mesh-formats/#straight-meshes">straight</a> as well as <a href="../mesh-formats/#curvilinear-and-more-general-meshes">arbitrary high-order curvilinear</a> and <a href="../mesh-formats/#curvilinear-and-more-general-meshes">more general</a> meshes,</li>
+<li>MFEM's own format for <a href="../mesh-formats/#nurbs-meshes">NURBS</a> meshes,</li>
+<li>The <a href="../mesh-formats/#curvilinear-vtk-meshes">VTK</a> unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,</li>
+<li>The <a href="http://sourceforge.net/projects/netgen-mesher/">NETGEN</a> triangular and tetrahedral mesh formats,</li>
+<li>The <a href="http://www.truegrid.com/">TrueGrid</a> hexahedral mesh format.</li>
+</ul>
+<p>Detailed description of these formats can be found on the <a href="../mesh-formats/">mesh formats</a> page. These formats are also supported by MFEM's native visualization tool, <a href="http://glvis.org/">GLVis</a>.</p>
+<h2 id="meshing-miniapps">Meshing miniapps</h2>
+<p>The <code>miniapps/meshing</code> directory contains a collection of meshing-related miniapps based on MFEM.</p>
+<p>Compared to the <a href="../examples/">example codes</a>, the miniapps are more complex,
+demonstrating more advanced usage of the library. They are intended to be more
+representative of MFEM-based application codes. We recommend that new users
+start with the example codes before moving to the miniapps.</p>
+<p>The current meshing miniapps are described below.</p>
+<h3 id="mobius-strip">Mobius Strip</h3>
+<p>This miniapp generates various Mobius strip-like surface meshes. It is a good
+way to generate complex surface meshes.</p>
+<p><img alt="" src="../img/mobius-strip.png" /></p>
+<p>Manipulating the mesh topology and
+performing mesh transformation are demonstrated. The <code>mobius-strip</code> mesh in the
+<code>data</code> directory was generated with this miniapp.</p>
+<h3 id="klein-bottle">Klein Bottle</h3>
+<p>This miniapp generates three types of Klein bottle surfaces. It is similar to
+the mobius-strip miniapp.</p>
+<p><img alt="" src="../img/klein-bottle.png" /></p>
+<p>The <code>klein-bottle</code> and <code>klein-donut</code> meshes in the
+<code>data</code> directory were generated with this miniapp.</p>
+<h3 id="mesh-explorer">Mesh Explorer</h3>
+<p>This miniapp is a handy tool to examine, visualize and manipulate a given
+mesh.</p>
+<p><img alt="" src="../img/mesh-explorer.png" /></p>
+<p>Some of its features are:</p>
+<ul>
+<li>visualizing of mesh materials and individual mesh elements</li>
+<li>mesh scaling, randomization, and general transformation</li>
+<li>manipulation of the mesh curvature</li>
+<li>the ability to simulate parallel partitioning</li>
+<li>quantitative and visual reports of mesh quality</li>
+</ul></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#meshing">Meshing</a></li>
+        
+            <li><a href="#mesh-formats">Mesh formats</a></li>
+        
+            <li><a href="#meshing-miniapps">Meshing miniapps</a></li>
+        
+    
+    </ul>
+</div></div>
 
             
         </div>

@@ -84,29 +84,49 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li class="active">
-                            <a href="./">Building MFEM</a>
-                        </li>
+                        
+                            <li class="active">
+                                 <a href="./">Building MFEM</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../serial-tutorial/">Serial Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../parallel-tutorial/">Parallel Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../mesh-formats/">Mesh Formats</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../publications/">Publications</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../about/">About</a>
-                        </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
                     
                     </ul>
                 </li>
@@ -205,6 +225,11 @@ glvis-3.0.tgz   mfem-3.0.tgz
 ~/mfem-3.0/examples&gt; make -j
 </code></pre>
 
+<p>All serial examples and miniapps can be build with:</p>
+<pre><code class="sh">~&gt; cd mfem-3.0
+~/mfem-3.0&gt; make all -j
+</code></pre>
+
 <h2 id="parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</h2>
 <p>Download <em>hypre</em> and metis from</p>
 <ul>
@@ -246,6 +271,11 @@ glvis-3.0/  hypre-2.10.0b.tar.gz   metis-4.0.tar.gz   mfem-3.0/
 
 <p>The serial examples can also be build with the parallel version of the library, e.g.</p>
 <pre><code class="sh">~/mfem-3.0/examples&gt; make ex1 ex2
+</code></pre>
+
+<p>All parallel examples and miniapps can be build with:</p>
+<pre><code class="sh">~&gt; cd mfem-3.0
+~/mfem-3.0&gt; make all -j
 </code></pre>
 
 <p>One can also use the parallel library to optionally (re-)build GLVis:</p>

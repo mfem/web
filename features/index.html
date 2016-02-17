@@ -84,29 +84,49 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../building/">Building MFEM</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../serial-tutorial/">Serial Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../parallel-tutorial/">Parallel Tutorial</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../mesh-formats/">Mesh Formats</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../publications/">Publications</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../about/">About</a>
-                        </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
                     
                     </ul>
                 </li>
@@ -198,7 +218,8 @@
 <li><a href="../examples/?mixed">mixed</a> finite elements,</li>
 <li>Discontinuous Galerkin (<a href="../examples/?dg">DG</a>) methods,</li>
 <li><a href="../examples/?nurbs">isogeometric</a> analysis methods,</li>
-<li>Discontinuous Petrov-Galerkin (<a href="../examples/?dpg">DPG</a>) approaches.</li>
+<li>Discontinuous Petrov-Galerkin (<a href="../examples/?dpg">DPG</a>) approaches,</li>
+<li><a href="../examples/?hybr">Hybridization</a> and <a href="../examples/?staticcond">static condensation</a> for high-order problems.</li>
 </ul>
 <p><img src="../img/ex6.png" align="right" width="230"></p>
 <h2 id="wide-range-of-mesh-types">Wide Range of Mesh Types</h2>
@@ -229,6 +250,7 @@
 <img src="../img/hypre_wiw.gif" align="right" width="250"></li>
 <li><a href="http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="http://mfem.github.io/doxygen/html/inherit_graph_72.svg">operators</a> in serial and in parallel,</li>
 <li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
+<li>discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,</li>
 <li>sequential sparse direct solvers from the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
 <li>explicit and implicit high-order Runge-Kutta <a href="http://mfem.github.io/doxygen/html/inherit_graph_71.svg">time integrators</a>,</li>
 <li>solvers for nonlinear problems (Newton) and for single linearly constrained <a href="http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html">quadratic minimization</a> problems.</li>
@@ -246,8 +268,18 @@
 <li><a href="http://mfem.github.io/doxygen/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity.</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver.</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver.</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver.</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem.</li>
 </ul>
 <p>Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
+<p>Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:</p>
+<ul>
+<li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Volta</a>: simple electrostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Tesla</a>: simple magnetostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes.</li>
+</ul>
 <h2 id="accurate-and-flexible-visualization">Accurate and Flexible Visualization</h2>
 <p>The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool <a href="http://glvis.org">GLVis</a>, which is built on top of MFEM.</p>
 <p>The <a href="http://visit.llnl.gov">VisIt</a> visualization and analysis tool also natively supports MFEM formats.</p>
