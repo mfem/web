@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee also our \nGallery\n and list of related \npublications\n.\n\n\n\n\n\n\n\n\nLatest Release\n\n\n\n\nNew features\n\n/ \nExamples\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\n\n\nDownload mfem-3.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nElectromagnetics\n\n/ \nMeshing\n\n\n\n\nNew users should start by examining the \nexample codes\n.\n\n\nWe also recommend using \nGLVis\n for visualization.\n\n\nContact\n\n\nDeveloped by the \nMFEM team\n at \nCASC\n,\n\nLLNL\n. Please cite with\n\n\n@misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}\n\n\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.", 
+            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee also our \nGallery\n and list of related \npublications\n.\n\n\n\n\n\n\n\n\nLatest Release\n\n\n\n\nNew features\n\n/ \nExamples\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\n\n\nDownload mfem-3.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nElectromagnetics\n\n/ \nMeshing\n\n\n\n\nNew users should start by examining the \nexample codes\n.\n\n\nWe also recommend using \nGLVis\n for visualization.\n\n\nContact\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.\n\n\nPlease cite with:\n\n\n@misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}", 
             "title": "Home"
         }, 
         {
@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/#contact", 
-            "text": "Developed by the  MFEM team  at  CASC , LLNL . Please cite with  @misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}  Use the GitHub  issue tracker \nto report  bugs \nor post  questions \nor  comments .", 
+            "text": "Use the GitHub  issue tracker \nto report  bugs \nor post  questions \nor  comments .  Please cite with:  @misc{mfem-library,\n  title={{MFEM}: Modular finite element methods},\n  howpublished={\\url{mfem.org}}\n}", 
             "title": "Contact"
         }, 
         {
@@ -382,7 +382,7 @@
         }, 
         {
             "location": "/about/", 
-            "text": "About MFEM\n\n\nMFEM originates from previous research effort in the (unreleased) \nAggieFEM/aFEM\n project.\n\n\nContributors\n\n\n\n\nRobert Anderson\n\n\nIdo Akkerman\n\n\nThomas Brunner\n\n\nJakub \u010cerven\u00fd\n\n\nVeselin Dobrev\n\n\nTruman Ellis\n\n\nAaron Fisher\n\n\nTzanio Kolev\n \n Project Leader\n\n\nIlya Lashuk\n\n\nRobert Rieben\n\n\nJoachim Sch\u00f6berl\n\n\nMark Stowell\n\n\nVladimir Tomov\n\n\nStanimire Tomov\n\n\nUmberto Villa\n\n\n\n\nLicense\n\n\n\n\nGNU Lesser GPL v2.1\n\n\n\n\n\n\n\n\nWebsite built with \nMkDocs\n, \nBootstrap\n\nand \nBootswatch\n. Hosted on \nGitHub\n.", 
+            "text": "About MFEM\n\n\nMFEM originates from previous research effort in the (unreleased) \nAggieFEM/aFEM\n project.\n\n\nContributors\n\n\n\n\nRobert Anderson\n\n\nIdo Akkerman\n\n\nThomas Brunner\n\n\nJakub \u010cerven\u00fd\n\n\nVeselin Dobrev\n\n\nTruman Ellis\n\n\nAaron Fisher\n\n\nTzanio Kolev\n \n Project Leader\n\n\nIlya Lashuk\n\n\nRobert Rieben\n\n\nJoachim Sch\u00f6berl\n\n\nMark Stowell\n\n\nVladimir Tomov\n\n\nStanimire Tomov\n\n\nUmberto Villa\n\n\n\n\nLicense\n\n\n\n\nGNU Lesser GPL v2.1\n\n\n\n\n\n\nThis work performed under the auspices of the U.S. Department of Energy\nby Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.\n\n\nLLNL-CODE-443211\n\n\n\n\nWebsite built with \nMkDocs\n, \nBootstrap\n\nand \nBootswatch\n. Hosted on \nGitHub\n.", 
             "title": "About"
         }, 
         {
@@ -397,7 +397,7 @@
         }, 
         {
             "location": "/about/#license", 
-            "text": "GNU Lesser GPL v2.1     Website built with  MkDocs ,  Bootstrap \nand  Bootswatch . Hosted on  GitHub .", 
+            "text": "GNU Lesser GPL v2.1    This work performed under the auspices of the U.S. Department of Energy\nby Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.  LLNL-CODE-443211   Website built with  MkDocs ,  Bootstrap \nand  Bootswatch . Hosted on  GitHub .", 
             "title": "License"
         }, 
         {
