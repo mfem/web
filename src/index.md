@@ -51,8 +51,12 @@ We also recommend using [GLVis](http://glvis.org) for visualization.
 
 ## Contact
 
-Developed by the [MFEM team](about.md) at [CASC](http://computation.llnl.gov/casc/),
-[LLNL](https://www.llnl.gov/). Please cite with
+Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
+to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
+or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
+or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
+
+Please cite with
 ```c
 @misc{mfem-library,
   title={{MFEM}: Modular finite element methods},
@@ -60,10 +64,6 @@ Developed by the [MFEM team](about.md) at [CASC](http://computation.llnl.gov/cas
 }
 ```
 
-Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
-to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
-or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
-or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
 
 </div>
 

@@ -27,6 +27,11 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 <br>
 
+This work performed under the auspices of the U.S. Department of Energy
+by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
+
+LLNL-CODE-443211
+
 ----
 
 Website built with [MkDocs](http://www.mkdocs.org/), [Bootstrap](http://getbootstrap.com/)

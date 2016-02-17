@@ -162,3 +162,40 @@ p.centered {
         width: 263px;
     }
 }
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container .text-muted {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+.container .alignleft {
+  float: left;
+}
+.container .alignright {
+  float: right;
+}
