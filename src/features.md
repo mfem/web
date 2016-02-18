@@ -8,14 +8,14 @@ Conceptually, MFEM can be viewed as a finite element toolbox that provides the b
 
 <img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
 
-MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/html/inherit_graph_16.svg) [spaces](http://mfem.github.io/doxygen/html/inherit_graph_17.svg) in 2D and 3D, including arbitrary high-order:
+MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/html/inherit_graph_20.svg) [spaces](http://mfem.github.io/doxygen/html/inherit_graph_21.svg) in 2D and 3D, including arbitrary high-order:
 
  - [H<sup>1</sup>](examples.md?h1)-conforming, [H(div)](examples.md?hdiv)-conforming, [H(curl)](examples.md?hcurl)-conforming spaces,
  - discontinuous [L<sub>2</sub>](examples.md?l2) spaces,
  - numerical trace ([interfacial](examples.md?h12)) spaces,
  - [NURBS](examples.md?nurbs) spaces for isogeometric analysis.
 
-Many [bilinear](http://mfem.github.io/doxygen/html/inherit_graph_67.svg) and [linear](http://mfem.github.io/doxygen/html/inherit_graph_40.svg) forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
+Many [bilinear](http://mfem.github.io/doxygen/html/inherit_graph_79.svg) and [linear](http://mfem.github.io/doxygen/html/inherit_graph_47.svg) forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
 
 ## Flexible Discretization
 
@@ -31,9 +31,9 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
 
 ## Wide Range of Mesh Types
 
-MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/html/inherit_graph_14.svg) and includes classes for dealing with:
+MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/html/inherit_graph_18.svg) and includes classes for dealing with:
 
- - triangular, quadrilateral, tetrahedral and hexahedral [elements](http://mfem.github.io/doxygen/html/inherit_graph_13.svg),
+ - triangular, quadrilateral, tetrahedral and hexahedral [elements](http://mfem.github.io/doxygen/html/inherit_graph_17.svg),
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
  - higher-order elements with [curved](mesh-formats.md#curvilinear-vtk-meshes) boundaries,
@@ -53,7 +53,7 @@ A serial MFEM application typically requires [minimal](http://mfem.github.io/dox
 ## Built-in Solvers
 
 MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra
-[vectors](http://mfem.github.io/doxygen/html/inherit_graph_102.svg) and [sparse matrices](http://mfem.github.io/doxygen/html/inherit_graph_72.svg).
+[vectors](http://mfem.github.io/doxygen/html/inherit_graph_120.svg) and [sparse matrices](http://mfem.github.io/doxygen/html/inherit_graph_84.svg).
 
 Several matrix storage formats are available including dense, compressed sparse row ([CSR](http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html)) and parallel compressed sparse row ([ParCSR](http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html)). Block vectors, operators and [matrices](http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html) are also supported.
 
@@ -61,11 +61,12 @@ A variety of solvers are available for the resulting linear algebra systems (or 
 
  - point-wise and polynomial [serial](http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html) and [parallel](http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html) smoothers,
 <img src="../img/hypre_wiw.gif" align="right" width="250">
- - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_72.svg) in serial and in parallel,
+ - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_84.svg) in serial and in parallel,
+ - parallel eigensolvers: [LOBPCG](examples.md?lobpcg) and [AME](examples.md?ame),
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - sequential sparse direct solvers from the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
- - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_71.svg),
+ - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_83.svg),
  - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
 
 ## Extensive Examples
@@ -81,10 +82,10 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 7](http://mfem.github.io/doxygen/html/ex7_8cpp_source.html): Laplace problem on a surface (the unit sphere),
  - [Example 8](http://mfem.github.io/doxygen/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
  - [Example 9](http://mfem.github.io/doxygen/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,
- - [Example 10](http://mfem.github.io/doxygen/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity.
- - [Example 11](http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html): parallel Laplace eigensolver.
- - [Example 12](http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver.
- - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver.
+ - [Example 10](http://mfem.github.io/doxygen/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity,
+ - [Example 11](http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html): parallel Laplace eigensolver,
+ - [Example 12](http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver,
+ - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver,
  - [Example 14](http://mfem.github.io/doxygen/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
