@@ -7,7 +7,7 @@
 
 ## Selected Publications
 
-  1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel preconditioners for reaction-diffusion problems with discontinuous coefficients](http://arxiv.org/abs/1411.7092), (to appear), **2015**.
+  1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel preconditioners for reaction-diffusion problems with discontinuous coefficients](http://arxiv.org/abs/1411.7092), *J. Sci. Comp.*, pp. 1-27,  **2015**.
   1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in high-order curvilinear finite element ALE remap](http://www.llnl.gov/casc/blast/papers/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
   1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for elastic-plastic Lagrangian dynamics](http://www.llnl.gov/casc/blast/papers/EP-12.pdf), *J. Comp. Phys.*, (257B), pp. 1062–1080, **2014**.
   1. P. Vassilevski, U. Villa, [A mixed formulation for the Brinkman problem](http://dx.doi.org/10.1137/120884109), *SIAM J. Numer. Anal.*, 52-1, pp. 258-281, **2014**.
