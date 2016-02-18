@@ -4,6 +4,7 @@
 
 MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element methods.
 
+
 ## Features
 
 * Arbitrary high-order finite element [meshes](features.md#wide-range-of-mesh-types)
@@ -20,6 +21,16 @@ See also our [Gallery](gallery.md) and list of related [publications](publicatio
 
 </div><div class="col-md-6" markdown="1">
 
+
+## News
+
+<table><tbody>
+<tr><td>Feb 16, 2016</td><td>Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).</td></tr>
+<tr><td>Aug 18, 2015</td><td>Moved to [GitHub](https://github.com/mfem/mfem). New website.</td></tr>
+<tr><td>Jan 26, 2015</td><td>Version 3.0 released.</td></tr>
+</tbody></table>
+
+
 ## Latest Release
 
 **
@@ -35,6 +46,7 @@ See also our [Gallery](gallery.md) and list of related [publications](publicatio
 
 For older releases see the [download](download.md) section.
 
+
 ## Documentation
 
 **
@@ -49,20 +61,14 @@ New users should start by examining the [example codes](examples.md).
 
 We also recommend using [GLVis](http://glvis.org) for visualization.
 
+
 ## Contact
 
 Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
 or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
 or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
-
-Please cite with:
-```c
-@misc{mfem-library,
-  title={{MFEM}: Modular finite element methods},
-  howpublished={\url{mfem.org}}
-}
-```
+See the [About](about.md) page for citing information.
 
 
 </div>

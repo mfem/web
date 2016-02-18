@@ -20,17 +20,27 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
 
+
 ## License
 
 - [GNU Lesser GPL v2.1](http://www.gnu.org/licenses/lgpl-2.1.html)
 
 
+
 <br>
+
+Please cite with:
+```c
+@misc{mfem-library,
+  title={{MFEM}: Modular finite element methods},
+  howpublished={\url{mfem.org}}
+}
+```
 
 This work performed under the auspices of the U.S. Department of Energy
 by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
 
-LLNL-CODE-443211
+Software relase number: LLNL-CODE-443211.
 
 ----
 
