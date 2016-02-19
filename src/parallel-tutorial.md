@@ -40,16 +40,16 @@ Final PCG Relative Residual Norm = 4.30922e-13
 
 If a GLVis server is running, the computed finite element solution **combined from all processors**, will appear in an interactive window:
 
-![](img/ex1p-np16-1.png)
+![](img/tutorial/ex1p-np16-1.png)
 
 You can examine the solution using the mouse and the GLVis [command keystrokes](https://raw.githubusercontent.com/glvis/glvis/master/README).
 To view the parallel partitioning, for example, press the following keys in the GLVis window: "`RAjlmm`" followed by F11/F12 and zooming with the right mouse button.
 
-![](img/ex1p-np16-2.png)
+![](img/tutorial/ex1p-np16-2.png)
 
 To examine the solution only in one, or a few parallel subdomains, one can use the F9/F10 and the F8 keys. In 2D, one can also use press "`b`" to draw the only the boundaries between the subdomains. For example
 
-![](img/ex1p-np16-3.png)
+![](img/tutorial/ex1p-np16-3.png)
 
 was produced by
 ```sh
@@ -67,11 +67,11 @@ Final PCG Relative Residual Norm = 3.59964e-13
 ~/mfem/examples> glvis -np 16 -m mesh -g sol -k "Aooogtt"
 ```
 
-![](img/ex1p-np16-escher-1.png)
+![](img/tutorial/ex1p-np16-escher-1.png)
 
 The continuity of the solution across the inter-processor interfaces can be seen by using a cutting plane (keys "`AoooiMMtmm`" followed by "`z`" and "`Y`" adjustments):
 
-![](img/ex1p-np16-escher-2.png)
+![](img/tutorial/ex1p-np16-escher-2.png)
 
 
 ## Example 2p
@@ -87,7 +87,7 @@ Final PCG Relative Residual Norm = 2.91528e-09
 
 To view the parallel partitioning with the magnitude of the computed displacement field, type "`Atttaa`" in the GLVis window followed by subdomain shrinking with F11 and scaling adjustments with the mouse:
 
-![](img/ex2p-np16-beam-hex.png)
+![](img/tutorial/ex2p-np16-beam-hex.png)
 
 ## Example 3p
 
@@ -104,12 +104,12 @@ Final PCG Relative Residual Norm = 7.61595e-13
 
 Note that AMS leads to much fewer iterations than the Gauss-Seidel preconditioner used in the serial code. The parallel subdomain partitioning can be seen with "`ooogt`" and F11/F12:
 
-![](img/ex3p-np16-fichera-q3.png)
+![](img/tutorial/ex3p-np16-fichera-q3.png)
 
 One can also visualize individual components of the Nedelec solution and remove the elements in a cutting plane to see the surfaces corresponding to inter-processor boundaries:
 ```sh
 glvis -np 16 -m mesh -g sol -k "ooottmiEF"
 ```
 
-![](img/ex3p-np16-fichera-q3-2.png)
+![](img/tutorial/ex3p-np16-fichera-q3-2.png)
 

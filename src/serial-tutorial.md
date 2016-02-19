@@ -54,12 +54,12 @@ Average reduction factor = 0.857127
 ```
 If a GLVis server is running, the computed finite element solution will appear in an interactive window:
 
-![](img/ex1-star.png)
+![](img/tutorial/ex1-star.png)
 
 You can examine the solution using the mouse and the GLVis [command keystrokes](https://raw.githubusercontent.com/GLVis/glvis/master/README).
 Pressing "`RAfjlmm`", for example, will give us a 2D view without light or perspective showing the computed level lines:
 
-![](img/ex1-star-2.png)
+![](img/tutorial/ex1-star-2.png)
 
 This example saves two files called `refined.mesh` and `sol.gf`, which represent the refined mesh and the computed solution as a grid function. These can be visualized with `glvis -m refined.mesh -g sol.gf` as discussed [here](http://glvis.org/options-and-use#visualizing-functions).
 
@@ -76,7 +76,7 @@ Example 1 can be run on any mesh that is supported by MFEM, including 3D, curvil
 Average reduction factor = 0.610261
 ```
 
-![](img/ex1-fichera-q2.png)
+![](img/tutorial/ex1-fichera-q2.png)
 
 The picture above shows the solution with level lines plotted in normal direction of a cutting plane, and was produced by typing "`AaafmIMMooo`" followed by cutting plane adjustments with "`z`", "`y`" and "`w`".
 
@@ -109,7 +109,7 @@ Average reduction factor = 0.989508
 ```
 The output shows the (curved) displaced mesh together with the inverse displacement vector field:
 
-![](img/ex2-beam-quad2.png)
+![](img/tutorial/ex2-beam-quad2.png)
 
 The above plot can be alternatively produced with:
 ```sh
@@ -132,7 +132,7 @@ Average reduction factor = 0.978648
 
 One can visualize the vector field, e.g., by pressing "`dbAfmeoooovvaa`" followed by scale and position adjustments with the mouse:
 
-![](img/ex2-beam-tet.png)
+![](img/tutorial/ex2-beam-tet.png)
 
 ## Example 3
 
@@ -153,7 +153,7 @@ Average reduction factor = 0.911811
 
 To visualize the magnitude of the solution with the proportionally-sized vector field shown only on the boundary of the domain, type "`Vfooogt`" in the GLVis window (or run `glvis -m refined.mesh -g sol.gf -k "Vfooogt"`):
 
-![](img/ex3-fichera-1.png)
+![](img/tutorial/ex3-fichera-1.png)
 
 Curved meshes are also supported:
 ```sh
@@ -170,11 +170,11 @@ Average reduction factor = 0.921741
 || E_h - E ||_{L^2} = 0.0821686
 ```
 
-![](img/ex3-fichera-q3-2.png)
+![](img/tutorial/ex3-fichera-q3-2.png)
 
 To visualize the entire vector field, type "`fooogtevv`" instead, which will use uniform sized arrows colored according to their magnitude. Here is the corresponding plot from "`ex3 -m ../data/beam-hex.mesh`":
 
-![](img/ex3-beam-hex-2.png)
+![](img/tutorial/ex3-beam-hex-2.png)
 
 Since entire vector fields in 3D might be difficult to see, a good alternative might be to plot the separate components of the field as scalar functions. For example:
 ```sh
@@ -193,7 +193,7 @@ Average reduction factor = 0.917548
 ~/mfem/examples> glvis -m refined.mesh -g sol.gf -gc 0 -k "gooottF"
 ```
 
-![](img/ex3-escher-sc0.png)
+![](img/tutorial/ex3-escher-sc0.png)
 
 The discontinuity of the Nedelec functions is clearly seen in the above plot.
 
