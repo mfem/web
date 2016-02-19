@@ -77,6 +77,15 @@ p.centered {
     text-align: center;
 }
 
+table.news > tbody > tr > td
+{
+  padding: 6px;
+}
+
+/*p li {
+  margin: 10px 0;
+}*/
+
 /*label {
     display: inline-block;
     margin-bottom: 5px;
@@ -189,6 +198,7 @@ body {
   height: 50px;
   background-color: #eeeeee;
   overflow: hidden;
+  /* font-size: 95%; */
 }
 
 

@@ -24,7 +24,7 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 ## News
 
-<table><tbody>
+<table class="news"><tbody>
 <tr><td>Feb 16, 2016</td><td>Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).</td></tr>
 <tr><td>Aug 18, 2015</td><td>Moved to [GitHub](https://github.com/mfem/mfem). New website.</td></tr>
 <tr><td>Jan 26, 2015</td><td>Version 3.0 released.</td></tr>
