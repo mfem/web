@@ -224,12 +224,12 @@ Final PCG Relative Residual Norm = 4.30922e-13
 </code></pre>
 
 <p>If a GLVis server is running, the computed finite element solution <strong>combined from all processors</strong>, will appear in an interactive window:</p>
-<p><img alt="" src="../img/ex1p-np16-1.png" /></p>
+<p><img alt="" src="../img/tutorial/ex1p-np16-1.png" /></p>
 <p>You can examine the solution using the mouse and the GLVis <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">command keystrokes</a>.
 To view the parallel partitioning, for example, press the following keys in the GLVis window: "<code>RAjlmm</code>" followed by F11/F12 and zooming with the right mouse button.</p>
-<p><img alt="" src="../img/ex1p-np16-2.png" /></p>
+<p><img alt="" src="../img/tutorial/ex1p-np16-2.png" /></p>
 <p>To examine the solution only in one, or a few parallel subdomains, one can use the F9/F10 and the F8 keys. In 2D, one can also use press "<code>b</code>" to draw the only the boundaries between the subdomains. For example</p>
-<p><img alt="" src="../img/ex1p-np16-3.png" /></p>
+<p><img alt="" src="../img/tutorial/ex1p-np16-3.png" /></p>
 <p>was produced by</p>
 <pre><code class="sh">glvis -np 16 -m mesh -g sol -k &quot;RAjlb&quot;
 </code></pre>
@@ -243,9 +243,9 @@ Final PCG Relative Residual Norm = 3.59964e-13
 ~/mfem/examples&gt; glvis -np 16 -m mesh -g sol -k &quot;Aooogtt&quot;
 </code></pre>
 
-<p><img alt="" src="../img/ex1p-np16-escher-1.png" /></p>
+<p><img alt="" src="../img/tutorial/ex1p-np16-escher-1.png" /></p>
 <p>The continuity of the solution across the inter-processor interfaces can be seen by using a cutting plane (keys "<code>AoooiMMtmm</code>" followed by "<code>z</code>" and "<code>Y</code>" adjustments):</p>
-<p><img alt="" src="../img/ex1p-np16-escher-2.png" /></p>
+<p><img alt="" src="../img/tutorial/ex1p-np16-escher-2.png" /></p>
 <h2 id="example-2p">Example 2p</h2>
 <p>This is a parallel version of <a href="../serial-tutorial/#example-2">Example 2</a> using the systems version of <em>hypre</em>'s BoomerAMG preconditioner, which can be run analogous to the serial case:</p>
 <pre><code class="sh">~/mfem/examples&gt; mpirun -np 16 ex2p -m ../data/beam-hex.mesh -o 1
@@ -255,7 +255,7 @@ Final PCG Relative Residual Norm = 2.91528e-09
 </code></pre>
 
 <p>To view the parallel partitioning with the magnitude of the computed displacement field, type "<code>Atttaa</code>" in the GLVis window followed by subdomain shrinking with F11 and scaling adjustments with the mouse:</p>
-<p><img alt="" src="../img/ex2p-np16-beam-hex.png" /></p>
+<p><img alt="" src="../img/tutorial/ex2p-np16-beam-hex.png" /></p>
 <h2 id="example-3p">Example 3p</h2>
 <p>This is a parallel version of <a href="../serial-tutorial/#example-3">Example 3</a> using <em>hypre</em>'s AMS preconditioner. Its use is analogous to the serial case:</p>
 <pre><code class="sh">/mfem/examples&gt; mpirun -np 16 ex3p -m ../data/fichera-q3.mesh
@@ -267,12 +267,12 @@ Final PCG Relative Residual Norm = 7.61595e-13
 </code></pre>
 
 <p>Note that AMS leads to much fewer iterations than the Gauss-Seidel preconditioner used in the serial code. The parallel subdomain partitioning can be seen with "<code>ooogt</code>" and F11/F12:</p>
-<p><img alt="" src="../img/ex3p-np16-fichera-q3.png" /></p>
+<p><img alt="" src="../img/tutorial/ex3p-np16-fichera-q3.png" /></p>
 <p>One can also visualize individual components of the Nedelec solution and remove the elements in a cutting plane to see the surfaces corresponding to inter-processor boundaries:</p>
 <pre><code class="sh">glvis -np 16 -m mesh -g sol -k &quot;ooottmiEF&quot;
 </code></pre>
 
-<p><img alt="" src="../img/ex3p-np16-fichera-q3-2.png" /></p></div>
+<p><img alt="" src="../img/tutorial/ex3p-np16-fichera-q3-2.png" /></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
@@ -297,11 +297,11 @@ Final PCG Relative Residual Norm = 7.61595e-13
 
         <footer class="footer">
            <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
               <p class="text-muted alignleft">
                   Developed by the <a href="/about/">MFEM team</a> at
                   <a href="http://computation.llnl.gov/casc/">CASC</a>,
                   <a href="https://www.llnl.gov/">LLNL</a></p>
-              <p class="text-muted alignright">LLNL-WEB-676715</p>
            </div>
         </footer>
 

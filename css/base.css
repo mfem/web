@@ -77,6 +77,14 @@ p.centered {
     text-align: center;
 }
 
+/* hide header in News, adjust spacing */
+div.news-table table > thead > tr > th {
+  display: none
+}
+div.news-table table > tbody > tr > td {
+  padding: 5px;
+}
+
 /*label {
     display: inline-block;
     margin-bottom: 5px;
@@ -189,6 +197,7 @@ body {
   height: 50px;
   background-color: #eeeeee;
   overflow: hidden;
+  /* font-size: 95%; */
 }
 
 
