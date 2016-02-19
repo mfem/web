@@ -1,8 +1,0 @@
-The custom theme (variables.less + bootswatch.less) is a hybrid between the default
-'flatly' and 'yeti' themes. The flatly files were taken as a basis and some sections
-were replaced with their yeti counterparts.
-
-To compile into CSS, download Bootswatch, copy variables.less and bootswatch.less
-into custom/ and run 'grunt swatch:custom'.
-
-

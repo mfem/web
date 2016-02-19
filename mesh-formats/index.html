@@ -9,8 +9,8 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>_Mesh Formats - MFEM</title>  -->
-    <title>MFEM - Finite Element Discretization Library</title>
+<!--	<title>Mesh Formats - GLVis</title>  -->
+    <title>GLVis - OpenGL Finite Element Visualization Tool</title>
 
         <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('create', 'UA-101697-4', 'glvis.org');
             ga('send', 'pageview');
         </script>
         
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">MFEM</a>
+            <a class="navbar-brand" href="..">GLVis</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -72,61 +72,37 @@
             
             
             
-                <li >
-                    <a href="../examples/">Examples</a>
-                </li>
-            
-            
-            
-            
-            
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        
-                            <li >
-                                 <a href="../building/">Building MFEM</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../building/">Building GLVis</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../serial-tutorial/">Serial Tutorial</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../options-and-use/">Options and Use</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
-                            </li>
-                        
+                        <li class="active">
+                            <a href="./">Mesh Formats</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../electromagnetics/">Electromagnetics</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../parallel-visualization/">Parallel Visualization</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../meshing/">Meshing</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../curvilinear-vtk-meshes/">Curvilinear VTK Meshes</a>
+                        </li>
                     
-                        
+                        <li >
+                            <a href="../nurbs/">NURBS Meshes</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../publications/">Publications</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../about/">About</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../about/">About</a>
+                        </li>
                     
                     </ul>
                 </li>
@@ -156,7 +132,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/mfem/mfem">
+                    <a href="https://github.com/glvis/glvis">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -176,11 +152,9 @@
     
         <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
         
-            <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
+            <li><a href="#summary">Summary</a></li>
         
-            <li><a href="#nurbs-meshes">NURBS meshes</a></li>
-        
-            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
+            <li><a href="#details">Details</a></li>
         
     
     </ul>
@@ -188,9 +162,19 @@
             <div class="col-md-9" role="main">
 
 <h1 id="mesh-formats">Mesh Formats</h1>
-<h2 id="mfem-mesh-v10">MFEM mesh v1.0</h2>
+<h2 id="summary">Summary</h2>
+<p>Description of the various mesh formats that can be used with GLVis.</p>
+<h2 id="details">Details</h2>
+<p>GLVis supports a number of mesh formats, including:</p>
+<ul>
+<li>The <a href="http://mfem.org">MFEM</a> mesh v1.0 format, which can describe very general meshes based on any finite element grid function supported by MFEM, including <a href="../nurbs/">NURBS meshes</a>.</li>
+<li>The <a href="http://www.vtk.org/">VTK</a> unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes. See the <a href="../curvilinear-vtk-meshes/">curvilinear VTK tutorial</a> for more details. Some examples of VTK meshes can be found in MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a>.</li>
+<li>The <a href="http://sourceforge.net/projects/netgen-mesher/">NETGEN</a> triangular and tetrahedral mesh formats.</li>
+<li>The <a href="http://www.truegrid.com/">TrueGrid</a> hexahedral mesh format.</li>
+</ul>
+<h3 id="mfem-mesh-v10">MFEM mesh v1.0</h3>
 <p>This is the default format in GLVis. It can be used to describe simple (triangular, quadrilateral, tetrahedral and hexahedral meshes with straight edges) or complicated (curvilinear and more general) meshes.</p>
-<h3 id="straight-meshes">Straight meshes</h3>
+<h4 id="straight-meshes">Straight meshes</h4>
 <p>In the simple case of a mesh with straight edges the format looks as follows</p>
 <pre><code class="sh">MFEM mesh v1.0
 
@@ -228,7 +212,7 @@ vertices
 <li>CUBE        = 5</li>
 </ul>
 <p>see the comments in <a href="https://github.com/mfem/mfem/blob/master/fem/geom.hpp">this source file</a> for more details.</p>
-<p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> file from the data directory looks like this:</p>
+<p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> file from MFEM looks like this:</p>
 <pre><code class="sh">MFEM mesh v1.0
 
 dimension
@@ -290,12 +274,12 @@ vertices
 </code></pre>
 
 <p>which corresponds to the mesh</p>
-<p><img alt="" src="../img/formats/beam-quad.png" /></p>
+<p><img alt="" src="../img/beam-quad.png" /></p>
 <p>visualized with</p>
 <pre><code class="sh">glvis -m beam-quad.mesh -k &quot;Ame****&quot;
 </code></pre>
 
-<h3 id="curvilinear-and-more-general-meshes">Curvilinear and more general meshes</h3>
+<h4 id="curvilinear-and-more-general-meshes">Curvilinear and more general meshes</h4>
 <p>The MFEM mesh v1.0 format also support the general description of meshes based on a vector finite element grid function with degrees of freedom in the "nodes" of the mesh:</p>
 <pre><code class="sh">MFEM mesh v1.0
 
@@ -333,214 +317,29 @@ Ordering: 0
 ...
 </code></pre>
 
-<p>Some possible <a href="https://github.com/mfem/mfem/blob/master/fem/fe_coll.hpp">finite element collection</a> choices are: <code>Linear</code>, <code>Quadratic</code> and <code>Cubic</code> corresponding to curvilinear P1/Q1, P2/Q2 and P3/Q3 meshes. The algorithm for the numbering of the degrees of freedom can be found in <a href="https://github.com/mfem/mfem/blob/master/fem/fespace.cpp#L739">MFEM's source code</a>.</p>
+<p>Some possible <a href="https://github.com/mfem/mfem/blob/master/fem/fe_coll.hpp">finite element collection</a> choices are: <code>Linear</code>, <code>Quadratic</code> and <code>Cubic</code> corresponding to curvilinear P1/Q1, P2/Q2 and P3/Q3 meshes. The algorithm for the numbering of the degrees of freedom can be found in <a href="https://github.com/mfem/mfem/blob/master/fem/fespace.cpp#L1100">MFEM's source code</a>.</p>
 <p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/escher-p3.mesh">escher-p3.mesh</a> from MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a> describes a tetrahedral mesh with nodes given by a P3 vector Lagrangian finite element function. Visualizing this mesh with</p>
 <pre><code class="sh">glvis -m escher-p3.mesh -k &quot;Aaaoooooooooo**************tt&quot;
 </code></pre>
 
 <p>we get:</p>
-<p><img alt="" src="../img/formats/escher-p3.png" /></p>
-<p>Topologically periodic meshes can also be described in this format, see for example the <a href="https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh">periodic-segment</a>, <a href="https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh">periodic-square</a>, and <a href="https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh">periodic-cube</a> meshes in the data directory, as well as <a href="../examples/?advection">Example 9</a>.</p>
-<h2 id="nurbs-meshes">NURBS meshes</h2>
-<p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
-<p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
-<pre><code class="sh">MFEM NURBS mesh v1.0
-
-#
-# MFEM Geometry Types (see mesh/geom.hpp):
-#
-# SEGMENT     = 1
-# SQUARE      = 3
-# CUBE        = 5
-#
-
-dimension
-2
-
-elements
-4
-1 3 0 1 5 4
-1 3 1 2 6 5
-1 3 2 3 7 6
-1 3 3 0 4 7
-
-boundary
-8
-1 1 0 1
-1 1 1 2
-1 1 2 3
-1 1 3 0
-1 1 5 4
-1 1 6 5
-1 1 7 6
-1 1 4 7
-
-edges
-12
-0 0 1
-0 4 5
-1 1 2
-1 5 6
-2 2 3
-2 6 7
-3 3 0
-3 7 4
-4 0 4
-4 1 5
-4 2 6
-4 3 7
-
-vertices
-8
-
-knotvectors
-5
-2  3 0 0 0 1 1 1
-2  3 0 0 0 1 1 1
-2  3 0 0 0 1 1 1
-2  3 0 0 0 1 1 1
-2  3 0 0 0 1 1 1
-
-weights
-1
-1
-1
-1
-1
-1
-1
-1
-1
-0.707106781
-1
-0.707106781
-1
-0.707106781
-1
-0.707106781
-1
-1
-1
-1
-0.853553391
-0.853553391
-0.853553391
-0.853553391
-
-FiniteElementSpace
-FiniteElementCollection: NURBS2
-VDim: 2
-Ordering: 1
-
-0 0
-1 0
-1 1
-0 1
-0.358578644 0.358578644
-0.641421356 0.358578644
-0.641421356 0.641421356
-0.358578644 0.641421356
-0.5 0
-0.5 0.217157288
-1 0.5
-0.782842712 0.5
-0.5 1
-0.5 0.782842712
-0 0.5
-0.217157288 0.5
-0.15 0.15
-0.85 0.15
-0.85 0.85
-0.15 0.85
-0.5  0.108578644
-0.891421356 0.5
-0.5 0.891421356
-0.108578644 0.5
-</code></pre>
-
-<p>This above file, as well as other examples of NURBS meshes, can be found in <a href="https://github.com/mfem/mfem/tree/master/data">MFEM's data directory</a>. It can be visualized directly with</p>
-<pre><code class="sh">glvis -m square-disc-nurbs.mesh
-</code></pre>
-
-<p>which after several refinements with the "<code>i</code>" key looks like</p>
-<p><img alt="" src="../img/formats/glvis-square-disc-nurbs.png" /></p>
-<p>To explain MFEM's NURBS mesh file format, we first note that the topological part of the mesh (the <code>elements</code> and <code>boundary</code> sections) describe the 4 NURBS patches visible above. We use the vertex numbers as labels, so we only need the number of vertices.</p>
-<p>In the NURBS case we need to also provide description of the edges on the patch boundaries and associate a knot vector with each of them. This is done in the <code>edges</code> section where the first index in each row refers to the knot vector id (from the following <code>knotvectors</code> section), while the remaining two indexes are the edge vertex numbers.</p>
-<p>The position of the NURBS nodes (control points) is given as a NURBS grid function at the end of the file, while the associated weights are listed in the preceding <code>weights</code> section.</p>
-<p>Some examples of VTK meshes can be found in MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a>. Here is one of the 3D NURBS meshes</p>
-<p><img alt="" src="../img/formats/glvis-pipe-nurbs.png" /></p>
-<p>The image above was produced with some refinement (key "<code>o</code>") and mouse manipulations from</p>
+<p><img alt="" src="../img/escher-p3.png" /></p>
+<h4 id="nurbs-meshes">NURBS meshes</h4>
+<p>NURBS meshes and functions are fully supported in GLVis. For example,</p>
 <pre><code class="sh">glvis -m pipe-nurbs.mesh
 </code></pre>
 
-<p>Solutions from NURBS discretization spaces are also natively supported. For example here is the approximation for the solution of a simple Poisson problem on a refined version of the above mesh.</p>
-<pre><code class="sh">glvis -m square-disc-nurbs.mesh -g sol.gf
-</code></pre>
-
-<p><img alt="" src="../img/formats/glvis-square-disc-nurbs-r2.png" /></p>
-<h2 id="curvilinear-vtk-meshes">Curvilinear VTK meshes</h2>
-<p>MFEM also supports quadratic triangular, quadrilaterals, tetrahedral and hexahedral curvilinear meshes in VTK format. This format is described in the <a href="http://vtk.org/VTK/img/file-formats.pdf">VTK file format documentation</a>. The local numbering of degrees of freedom for the biquadratic quads and triquadratic hexes can be found in the Doxygen reference of the <a href="http://www.vtk.org/doc/release/5.6/html/a00185.html">vtkBiQuadraticQuad</a> and <a href="http://www.vtk.org/doc/release/5.6/html/a02039.html">vtkTriQuadraticHexahedron</a> classes. Currently VTK does not support cubic, and higher-order meshes.</p>
-<p>As an example, consider a simple curved quadrilateral saved in a file <code>quad.vtk</code>:</p>
-<pre><code class="sh"># vtk DataFile Version 3.0
-Generated by MFEM
-ASCII
-DATASET UNSTRUCTURED_GRID
-POINTS 9 double
-0 0 0
-1 0 0
-1 1 0
-0.1 0.9 0
-0.5 -0.05 0
-0.9 0.5 0
-0.5 1 0
-0 0.5 0
-0.45 0.55 0
-CELLS 1 10
-9 0 1 2 3 4 5 6 7 8
-CELL_TYPES 1
-28
-CELL_DATA 1
-SCALARS material int
-LOOKUP_TABLE default
-1
-</code></pre>
-
-<p>Visualizing it with "<code>glvis -m quad.vtk</code>" and typing "<code>Aemiii</code>" in the GLVis window we get:</p>
-<p><img alt="" src="../img/formats/quad-vtk.png" /></p>
-<p>The "<code>i</code>" key increases the reference element subdivision which gives an increasingly better approximation of the actual curvature of the element. To view the curvature of the mapping inside the element we can use the "I" key, e.g.,</p>
-<pre><code class="sh">glvis -m quad.vtk -k &quot;AemIIiii&quot;
-</code></pre>
-
-<p><img alt="" src="../img/formats/quad-vtk-2.png" /></p>
-<p>Here is a slightly more complicated <a href="https://github.com/mfem/mfem/blob/master/data/star-q2.vtk">quadratic quadrilateral</a> mesh example (the different colors in the GLVis window are used to distinguish neighboring elements):</p>
-<pre><code class="sh">glvis -m star-q2.vtk -k &quot;Am&quot;
-</code></pre>
-
-<p><img alt="" src="../img/formats/star-q2-vtk.png" /></p>
-<p>MFEM and GLVis can also handle <a href="https://github.com/mfem/mfem/blob/master/data/square-disc-p2.vtk">quadratic triangular</a> meshes:</p>
-<pre><code class="sh">glvis -m square-disc-p2.vtk -k &quot;Am&quot;
-</code></pre>
-
-<p><img alt="" src="../img/formats/square-disc-p2-vtk.png" /></p>
-<p>As well as <a href="https://github.com/mfem/mfem/blob/master/data/escher-p2.vtk">quadratic tetrahedral</a> and <a href="https://github.com/mfem/mfem/blob/master/data/fichera-q2.vtk">quadratic hexahedral</a> VTK meshes:</p>
-<pre><code class="sh">glvis -m escher-p2.vtk -k &quot;Aaaooooo**************&quot;
-</code></pre>
-
-<p><img alt="" src="../img/formats/escher-p2-vtk.png" /></p>
-<pre><code class="sh">glvis -m fichera-q2.vtk -k &quot;Aaaooooo******&quot;
-</code></pre>
-
-<p><img alt="" src="../img/formats/fichera-q2-vtk.png" /></p></div>
+<p>produces after some refinement (key "<code>o</code>") and mouse manipulations</p>
+<p><img alt="" src="../img/glvis-pipe-nurbs.png" /></p>
+<p>More details about the NURBS mesh format can be found in the separate <a href="../nurbs/">NURBS tutorial</a>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
         
-            <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
+            <li><a href="#summary">Summary</a></li>
         
-            <li><a href="#nurbs-meshes">NURBS meshes</a></li>
-        
-            <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
+            <li><a href="#details">Details</a></li>
         
     
     </ul>
@@ -551,9 +350,9 @@ LOOKUP_TABLE default
 
         <footer class="footer">
            <div class="container">
-              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignright">LLNL-WEB-676630</p>
               <p class="text-muted alignleft">
-                  Developed by the <a href="/about/">MFEM team</a> at
+                  Developed by the <a href="/about/">GLVis team</a> at
                   <a href="http://computation.llnl.gov/casc/">CASC</a>,
                   <a href="https://www.llnl.gov/">LLNL</a></p>
            </div>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+<!--	<title>Options and Use - GLVis</title>  -->
+    <title>GLVis - OpenGL Finite Element Visualization Tool</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-101697-4', 'glvis.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">GLVis</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../building/">Building GLVis</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Options and Use</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../mesh-formats/">Mesh Formats</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../parallel-visualization/">Parallel Visualization</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../curvilinear-vtk-meshes/">Curvilinear VTK Meshes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../nurbs/">NURBS Meshes</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../about/">About</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/glvis/glvis">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#options-and-use">Options and Use</a></li>
+        
+            <li><a href="#quick-start">Quick start</a></li>
+        
+            <li><a href="#options">Options</a></li>
+        
+            <li><a href="#server-mode">Server mode</a></li>
+        
+            <li><a href="#visualizing-meshes">Visualizing meshes</a></li>
+        
+            <li><a href="#visualizing-functions">Visualizing functions</a></li>
+        
+            <li><a href="#glvis-scripts">GLVis scripts</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="options-and-use">Options and Use</h1>
+<h2 id="quick-start">Quick start</h2>
+<ul>
+<li>Start a socket server: <strong><code>glvis</code></strong></li>
+<li>View a mesh: <strong><code>glvis -m star.mesh</code></strong></li>
+<li>View a mesh with a finite element grid function: <strong><code>glvis -m star.mesh -g sol.gf</code></strong></li>
+<li>View mesh and solution from a run on 4 processors: <strong><code>glvis -np 4 -m mesh -g sol</code></strong> (assuming data saved in files: <code>mesh.000000</code>, ... , <code>mesh.000003</code> and <code>sol.000000</code>, ...  , <code>sol.000003</code>)</li>
+<li>Use <strong><code>glvis -h</code></strong> to get help on all command line options.</li>
+<li>See <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">README</a> for a detail of the keystroke commands accepted in the GLVis interactive window.</li>
+</ul>
+<p>Some of the command-line options of GLVis and its general use are described in more details below:</p>
+<ul>
+<li><a href="#server-mode">The GLVis server mode</a></li>
+<li><a href="#visualizing-meshes">How to visualize meshes</a></li>
+<li><a href="#visualizing-functions">How to visualize functions</a></li>
+<li><a href="#glvis-scripts">GLVis scripts</a></li>
+</ul>
+<h2 id="options">Options</h2>
+<p>GLVis has a number of command-line options that allow it to be used in several different ways. The list of all available options is given by the output of "<code>glvis -h</code>":</p>
+<pre><code class="tex">       _/_/_/  _/      _/      _/  _/
+    _/        _/      _/      _/        _/_/_/
+   _/  _/_/  _/      _/      _/  _/  _/_/
+  _/    _/  _/        _/  _/    _/      _/_/
+   _/_/_/  _/_/_/_/    _/      _/  _/_/_/
+
+Start a GLVis server:
+   glvis
+Visualize a mesh:
+   glvis -m &lt;mesh_file&gt;
+Visualize mesh and solution (grid function):
+   glvis -m &lt;mesh_file&gt; -g &lt;grid_function_file&gt; [&lt;component&gt;](-gc)
+Visualize parallel mesh and solution (grid function):
+   glvis -np &lt;#proc&gt; -m &lt;mesh_prefix&gt; [&lt;grid_function_prefix&gt;](-g)
+
+All Options:
+   -h, --help
+        Print this help message and exit.
+   -m &lt;string&gt;, --mesh &lt;string&gt;, current value: (none)
+        Mesh file to visualize.
+   -g &lt;string&gt;, --grid-function &lt;string&gt;, current value: (none)
+        Solution (GridFunction) file to visualize.
+   -gc &lt;int&gt;, --grid-function-component &lt;int&gt;, current value: -1
+        Select a grid function component, [0-&lt;num-comp&gt;) or -1 for all.
+   -s &lt;string&gt;, --scalar-solution &lt;string&gt;, current value: (none)
+        Scalar solution (vertex values) file to visualize.
+   -v &lt;string&gt;, --vector-solution &lt;string&gt;, current value: (none)
+        Vector solution (vertex values) file to visualize.
+   -np &lt;int&gt;, --num-proc &lt;int&gt;, current value: 0
+        Load mesh/solution from multiple processors.
+   -d &lt;int&gt;, --pad-digits &lt;int&gt;, current value: 6
+        Number of digits used for processor ranks in file names.
+   -run &lt;string&gt;, --run-script &lt;string&gt;, current value: (none)
+        Run a GLVis script file.
+   -k &lt;string&gt;, --keys &lt;string&gt;, current value: (none)
+        Execute key shortcut commands in the GLVis window.
+   -fo, --fix-orientations, -no-fo, --dont-fix-orientations, current option: --dont-fix-orientations
+        Attempt to fix the orientations of inverted elements.
+   -a, --real-attributes, -ap, --processor-attributes, current option: --processor-attributes
+        When opening a parallel mesh, use the real mesh attributes or replace them with the processor rank.
+   -grt &lt;int&gt;, --geometry-refiner-type &lt;int&gt;, current value: 0
+        Set of points to use when refining geometry: 0 = uniform, 1 = Gauss-Lobatto.
+   -sc, --save-coloring, -no-sc, --dont-save-coloring, current option: --dont-save-coloring
+        Save the mesh coloring generated when opening only a mesh.
+   -p &lt;int&gt;, --listen-port &lt;int&gt;, current value: 19916
+        Specify the port number on which to accept connections.
+   -mac, --save-stream, -no-mac, --dont-save-stream, current option: --dont-save-stream
+        In server mode, save incomming data to a file before visualization.
+   -saved &lt;string&gt;, --saved-stream &lt;string&gt;, current value: (none)
+        Load a GLVis stream saved to a file.
+   -ww &lt;int&gt;, --window-width &lt;int&gt;, current value: 400
+        Set the window width.
+   -wh &lt;int&gt;, --window-height &lt;int&gt;, current value: 350
+        Set the window height.
+   -wt &lt;string&gt;, --window-title &lt;string&gt;, current value: (default)
+        Set the window title.
+   -fn &lt;string&gt;, --font &lt;string&gt;, current value: (default)
+        Set the font: &lt;font-name&gt;[-&lt;font-size&gt;].
+   -ms &lt;int&gt;, --multisample &lt;int&gt;, current value: 4
+        Set the multisampling mode (toggled with the 'A' key).
+   -lw &lt;double&gt;, --line-width &lt;double&gt;, current value: 1
+        Set the line width (multisampling off).
+   -mslw &lt;double&gt;, --multisample-line-width &lt;double&gt;, current value: 1.4
+        Set the line width (multisampling on).
+</code></pre>
+
+<h2 id="server-mode">Server mode</h2>
+<p>GLVis can be used as a visualization server, where it waits for data sent by socket connections from applications and visualizes each socket stream in a separate interactive window:</p>
+<p><img alt="" src="../img/glvis-screenshot2.png" /></p>
+<p>To establish the GLVis server, open a new terminal and start the GLVis application without any options:</p>
+<pre><code class="sh">glvis
+</code></pre>
+
+<p>By default, the server is established on <a href="https://github.com/glvis/glvis/blob/master/glvis.cpp#L1105">port 19916</a>, but this can be changed with the "<code>-p</code>" option.</p>
+<p>On legacy Mac machines with OS X Leopard, the server needs to be started with</p>
+<pre><code class="sh">glvis -mac
+</code></pre>
+
+<p>This is due to the fact that Mac OS X returns an error when <a href="http://developer.apple.com/library/mac/#technotes/tn2083/_index.html#//apple_ref/doc/uid/DTS10003794-CH1-SUBSUBSECTION66">fork() is called without an immediate exec()</a>. <em>Note that this option is not necessary on newer versions of OS X.</em></p>
+<p>A side effect of the "<code>-mac</code>" option is that all socket streams will be saved in incrementally named files "<code>glvis-saved.0001</code>", "<code>glvis-saved.0002</code>", and so on. These socket files consist of a <a href="https://github.com/glvis/glvis/blob/master/glvis.cpp#L108">data type identifier</a> followed by a mesh and a finite element function. For example:</p>
+<pre><code class="sh">fem2d_gf_data
+
+MFEM mesh v1.0
+
+dimension
+2
+
+elements
+1
+1 3 0 1 2 3
+
+boundary
+4
+1 1 1 0
+1 1 2 1
+1 1 3 2
+1 1 0 3
+
+vertices
+4
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: Quadratic
+VDim: 2
+Ordering: 0
+
+0
+1
+1
+0.1
+0.5
+0.9
+0.5
+0
+0.45
+0
+0
+1
+0.9
+-0.05
+0.5
+1
+0.5
+0.55
+
+FiniteElementSpace
+FiniteElementCollection: Quadratic
+VDim: 1
+Ordering: 0
+
+0
+0
+0
+0
+0
+0
+0
+0
+1
+</code></pre>
+
+<p>Note that the mesh portion of the above file is the MFEM mesh v1.0 version of the quad.vtk mesh from the <a href="../curvilinear-vtk-meshes/">curvilinear VTK tutorial</a>.</p>
+<p>The "<code>*.saved</code>" files contain an <em>exact copy</em> of the socket data stream which can be visualized later as follows:</p>
+<pre><code class="sh">glvis -saved glvis-saved.0001
+</code></pre>
+
+<p>Below is the result for the above socket data using the following GLVis keystrokes in the OpenGL window: "<code>AmttII</code>" followed by multiple refinements with "<code>i</code>" and move/zoom adjustments with the mouse.</p>
+<p><img alt="" src="../img/glvis-saved.png" /></p>
+<h2 id="visualizing-meshes">Visualizing meshes</h2>
+<p>GLVis can also be employed in non-sever mode, e.g. to visualize a mesh file:</p>
+<pre><code class="sh">glvis -m quad.vtk
+</code></pre>
+
+<p>The optional "<code>-k</code>" parameter specifies a set of keystrokes, which will be passed directly to the GLVis window, see, e.g., the examples in the <a href="../mesh-formats/">mesh formats tutorial</a>.</p>
+<p>Two dimensional meshes are shown with elements in multiple colors, corresponding to a piece-wise constant function with different values in neighboring elements. This function can be generated and saved with the "<code>-sc</code>" option, which writes it in a file called "<code>GLVis_coloring.gf</code>".</p>
+<h2 id="visualizing-functions">Visualizing functions</h2>
+<p>There are several ways to visualize a function on a given mesh. For example we can visualize the coloring function for the mesh <a href="https://github.com/mfem/mfem/blob/master/data/beam-hex.mesh">beam-hex.mesh</a> as follows:</p>
+<pre><code class="sh">glvis -m beam-hex.mesh -sc
+glvis -m beam-hex.mesh -g GLVis_coloring.gf
+</code></pre>
+
+<p>The result is:</p>
+<p><img alt="" src="../img/beam-hex-sc.png" /></p>
+<p>As another example, consider the finite element grid function "<code>quad.gf</code>" embedded in the socket stream "<code>glvis-saved.0001</code>" discussed above:</p>
+<pre><code class="sh">FiniteElementSpace
+FiniteElementCollection: Quadratic
+VDim: 1
+Ordering: 0
+
+0
+0
+0
+0
+0
+0
+0
+0
+1
+</code></pre>
+
+<p>Then</p>
+<pre><code class="sh">glvis -m quad.vtk -g quad.gf
+</code></pre>
+
+<p>will produce identical result to "<code>glvis -saved glvis-saved.0001</code>".</p>
+<p>Vector-valued grid functions are also supported. For example, consider the following data saved in a file named "<code>quad-vec.gf</code>"</p>
+<pre><code class="sh">FiniteElementSpace
+FiniteElementCollection: Quadratic
+VDim: 2
+Ordering: 0
+
+0
+0
+0
+-0.1
+0
+0.1
+0
+0
+0.05
+
+0
+0
+0
+0.1
+0.05
+0
+0
+0
+-0.05
+</code></pre>
+
+<p>which corresponds to the Q2 vector field transforming the "<code>quad.vtk</code>" quadrilateral into the unit square:</p>
+<p><img alt="" src="../img/quad-vec.png" /></p>
+<p>The above plot was produced with:</p>
+<pre><code class="sh">glvis -m quad.vtk -g quad-vec.gf -k &quot;fRjlAmeIIiiiiiiiiiiibbvuuuuuuuuuuu&quot;
+</code></pre>
+
+<p>The transformation between the two domains can be further explored with the "<code>b</code>" and "<code>n</code>" keys.</p>
+<p>One can also visualize the different components of a vector field as scalar functions using the "<code>-gc</code>" option, e.g.</p>
+<pre><code class="sh">glvis -m quad.vtk -g quad-vec.gf -gc 1
+</code></pre>
+
+<p>gives after some manipulations the following plot:</p>
+<p><img alt="" src="../img/quad-vec-sc1.png" /></p>
+<p>Finally, GLVis supports the visualization of functions with values provided only in the vertices of the mesh. <em>This is only supported for non-curved meshes!</em> The scalar and vector case are handled by the "<code>-s</code>" and "<code>-v</code>" options respectively. Here is an example with the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> mesh file and a solution saved in a file "<code>beam-quad.sol</code>":</p>
+<pre><code class="sh">solution
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</code></pre>
+
+<pre><code class="sh">glvis -m beam-quad.mesh -s beam-quad.sol -k &quot;Amaa&quot;
+</code></pre>
+
+<p><img alt="" src="../img/beam-quad-sol.png" /></p>
+<p>Note that the data in this type of solution files starts from the second line (the first line contains an identifier). The vector format for the "<code>-v</code>" option is similar, with all the x-components of the field listed first, followed by all the y-components, etc.</p>
+<h2 id="glvis-scripts">GLVis scripts</h2>
+<p>GLVis can also run a batch sequence of commands, called GLVis scripts, which are useful for saving particular visualization scenes, as well as to generate still frames for animations.</p>
+<p>Scripts are executed with <code>glvis -run</code>. For example, consider the following script, saved in a file "<code>quad-vec.glvs</code>":</p>
+<pre><code class="sh"># Visualization window geometry
+window 0 0 300 300
+
+# Initial solution
+solution quad.vtk quad-vec.gf
+
+# Setup the GLVis scene. Executed after pressing the space bar.
+{
+   perspective off
+   view 0 0
+   viewcenter 0 0
+   zoom 1.95
+   keys fAmeIIiiiiiiiiiiibbvuuuuuuuuuuu
+}
+
+# Take multiple screenshots. Executed after pressing the space bar.
+{
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.00.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.01.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.02.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.03.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.04.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.05.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.06.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.07.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.08.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.09.png
+   keys b
+   solution quad.vtk quad-vec.gf screenshot quad-vec.10.png
+}
+</code></pre>
+
+<p>The "<code>#</code>" lines above indicate comments, while the braces separate the different sequences of commands that are executed together. GLVis will pause between these execution blocks, waiting for the user to press the space bar in order to continue. The "<code>solution</code>" command above updates the mesh and the finite element function plotted, without changing any other visualization parameters, while "<code>screenshot</code>" uses <a href="http://www.xfree86.org/current/xwd.1.html">xwd</a> or the <a href="http://www.libtiff.org/">TIFF library</a> together with <a href="http://www.imagemagick.org/script/convert.php">ImageMagick's convert utility</a> to save a picture in the specified format. There are a number of additional script commands available, the complete list of which can be found (and extended) by examining the <a href="https://github.com/glvis/glvis/blob/master/glvis.cpp#L633">glvis.cpp source code</a>.</p>
+<p>Executing</p>
+<pre><code class="sh">glvis -run quad-vec.glvs
+</code></pre>
+
+<p>and pressing the space bar twice in the GLVis window generates a sequence of screenshots, which can be animated, e.g., with</p>
+<pre><code class="sh">convert -delay 20 quad-vec.??.png quad-vec.gif
+</code></pre>
+
+<p>The generated animated GIF file is shown below (you may need to reload the page to see the animation):</p>
+<p><img alt="" src="../img/quad-vec2.gif" /></p>
+<p>More examples of animations produced with GLVis scripts can be found at the <a href="https://computation.llnl.gov/casc/blast">BLAST website</a>, e.g., <a href="https://computation.llnl.gov/casc/blast/triple-pt/triple-pt-xy.gif">here</a> and <a href="https://computation.llnl.gov/casc/blast/triple-pt/triple-pt-rz.gif">here</a>.</p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#options-and-use">Options and Use</a></li>
+        
+            <li><a href="#quick-start">Quick start</a></li>
+        
+            <li><a href="#options">Options</a></li>
+        
+            <li><a href="#server-mode">Server mode</a></li>
+        
+            <li><a href="#visualizing-meshes">Visualizing meshes</a></li>
+        
+            <li><a href="#visualizing-functions">Visualizing functions</a></li>
+        
+            <li><a href="#glvis-scripts">GLVis scripts</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676630</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">GLVis team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+    </body>
+</html>
