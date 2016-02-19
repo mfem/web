@@ -78,10 +78,10 @@ p.centered {
 }
 
 /* hide header in News, adjust spacing */
-div.news > table > thead > tr > th {
+div.news-table > table > thead > tr > th {
   display: none
 }
-div.news > table > tbody > tr > td {
+div.news-table > table > tbody > tr > td {
   padding: 5px;
 }
 

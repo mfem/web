@@ -19,21 +19,16 @@ MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast),
 [VisIt](http://visit.llnl.gov) projects.
 See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publications](publications.md).
 
-</div><div class="col-md-6" markdown="1">
+</div><div class="col-md-6 news-table" markdown="1">
 
 
 ## News
 
-<div class="news" markdown="1">
-
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Feb 16, 2016 | Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
-Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem). New website.
+Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](https://mfem.org).
 Jan 26, 2015 | Version 3.0 released.
-
-</div>
-
 
 ## Latest Release
 
