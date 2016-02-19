@@ -40,7 +40,7 @@ Please cite with:
 This work performed under the auspices of the U.S. Department of Energy
 by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
 
-Software relase number: LLNL-CODE-443211.
+Software release number: LLNL-CODE-443211.
 
 ----
 
