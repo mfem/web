@@ -18,6 +18,14 @@
     
 
     
+    <url>
+     <loc>None/examples/</loc>
+     <lastmod>2016-02-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
         
     <url>
      <loc>None/building/</loc>
@@ -26,7 +34,25 @@
     </url>
         
     <url>
-     <loc>None/options-and-use/</loc>
+     <loc>None/serial-tutorial/</loc>
+     <lastmod>2016-02-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/parallel-tutorial/</loc>
+     <lastmod>2016-02-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/electromagnetics/</loc>
+     <lastmod>2016-02-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/meshing/</loc>
      <lastmod>2016-02-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -38,19 +64,7 @@
     </url>
         
     <url>
-     <loc>None/parallel-visualization/</loc>
-     <lastmod>2016-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/curvilinear-vtk-meshes/</loc>
-     <lastmod>2016-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/nurbs/</loc>
+     <loc>None/publications/</loc>
      <lastmod>2016-02-19</lastmod>
      <changefreq>daily</changefreq>
     </url>

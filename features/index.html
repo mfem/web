@@ -9,8 +9,8 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Features - GLVis</title>  -->
-    <title>GLVis - OpenGL Finite Element Visualization Tool</title>
+<!--	<title>Features - MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
 
         <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-101697-4', 'glvis.org');
+            ga('create', 'UA-101697-3', 'mfem.org');
             ga('send', 'pageview');
         </script>
         
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">GLVis</a>
+            <a class="navbar-brand" href="..">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -72,37 +72,61 @@
             
             
             
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="../building/">Building GLVis</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../options-and-use/">Options and Use</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../mesh-formats/">Mesh Formats</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../parallel-visualization/">Parallel Visualization</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../curvilinear-vtk-meshes/">Curvilinear VTK Meshes</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="../nurbs/">NURBS Meshes</a>
-                        </li>
+                        
                     
-                        <li >
-                            <a href="../about/">About</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
                     
                     </ul>
                 </li>
@@ -132,7 +156,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/glvis/glvis">
+                    <a href="https://github.com/mfem/mfem">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -150,13 +174,23 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#glvis-features">GLVis Features</a></li>
+        <li class="main active"><a href="#features">Features</a></li>
         
-            <li><a href="#accurate-visualization">Accurate Visualization</a></li>
+            <li><a href="#higher-order-finite-element-spaces">Higher-order Finite Element Spaces</a></li>
         
-            <li><a href="#lightweight-and-convenient">Lightweight and Convenient</a></li>
+            <li><a href="#flexible-discretization">Flexible Discretization</a></li>
         
-            <li><a href="#flexible-server-and-scripting-support">Flexible Server and Scripting Support</a></li>
+            <li><a href="#wide-range-of-mesh-types">Wide Range of Mesh Types</a></li>
+        
+            <li><a href="#parallel-and-scalable">Parallel and Scalable</a></li>
+        
+            <li><a href="#built-in-solvers">Built-in Solvers</a></li>
+        
+            <li><a href="#extensive-examples">Extensive Examples</a></li>
+        
+            <li><a href="#accurate-and-flexible-visualization">Accurate and Flexible Visualization</a></li>
+        
+            <li><a href="#lightweight-portable-and-easily-extendable">Lightweight, Portable and Easily Extendable</a></li>
         
             <li><a href="#open-source">Open Source</a></li>
         
@@ -165,56 +199,121 @@
 </div></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<h1 id="glvis-features">GLVis Features</h1>
-<p>The goal of GLVis is to enable research and development of general finite element discretization algorithms through accurate OpenGL visualization, and tight integration with the <a href="http://mfem.org">MFEM</a> library.</p>
-<p>Though depending on MFEM for its finite element dictionary, GLVis can be used independently for parallel and serial visualization. For example, the <em><a href="http://www.llnl.gov/casc/hypre">hypre</a></em> library includes scripts for displaying the numerical results from its parallel example codes through GLVis.</p>
-<h2 id="accurate-visualization">Accurate Visualization</h2>
-<p><img class="floatpad" src="../img/gallery/fem2d-2.png" width="260">
-GLVis uses OpenGL with interactive refinement to accurately represent curved high-order <a href="../options-and-use/#visualizing-meshes">meshes</a> and a wide variety of finite element <a href="../options-and-use/#visualizing-functions">grid functions</a> defined on them. GLVis is based on the modular finite element methods library <a href="http://mfem.org">MFEM</a>, which supports in particular:</p>
+<h1 id="features">Features</h1>
+<p>The goal of MFEM is to enable research and development of scalable finite element discretization and solver algorithms through general finite element abstractions, accurate and flexible visualization, and tight integration with the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library.</p>
+<p>Conceptually, MFEM can be viewed as a finite element toolbox that provides the building blocks for developing finite element algorithms in a manner similar to that of MATLAB for linear algebra methods.</p>
+<h2 id="higher-order-finite-element-spaces">Higher-order Finite Element Spaces</h2>
+<p><img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces"></p>
+<p>MFEM supports a wide variety of <a href="http://mfem.github.io/doxygen/html/inherit_graph_20.svg">finite element</a> <a href="http://mfem.github.io/doxygen/html/inherit_graph_21.svg">spaces</a> in 2D and 3D, including arbitrary high-order:</p>
 <ul>
-<li>1D, 2D, 3D volume and surface meshes,</li>
-<li>triangular, quadrilateral, tetrahedral and hexahedral meshes,</li>
-<li>general <a href="../mesh-formats/">curvilinear</a> and <a href="../nurbs/">NURBS</a> meshes,</li>
-<li>input in unstructured <a href="../curvilinear-vtk-meshes/">VTK mesh format</a>,</li>
-<li>arbitrary high-order, scalar and vector finite element and NURBS solutions,</li>
-<li>accurate cutting planes and level lines/surfaces,</li>
-<li>visualization of parallel meshes and solutions.</li>
+<li><a href="../examples/?h1">H<sup>1</sup></a>-conforming, <a href="../examples/?hdiv">H(div)</a>-conforming, <a href="../examples/?hcurl">H(curl)</a>-conforming spaces,</li>
+<li>discontinuous <a href="../examples/?l2">L<sub>2</sub></a> spaces,</li>
+<li>numerical trace (<a href="../examples/?h12">interfacial</a>) spaces,</li>
+<li><a href="../examples/?nurbs">NURBS</a> spaces for isogeometric analysis.</li>
 </ul>
-<h2 id="lightweight-and-convenient">Lightweight and Convenient</h2>
-<p><img class="floatpad" src="../img/gallery/ball-nurbs-np16.png" width="240">
-GLVis has a fast <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">keystroke-based</a> interface and uses standard OpenGL that takes advantage of
- hardware acceleration in modern GPUs.
-It has a number of convenient features, including:</p>
+<p>Many <a href="http://mfem.github.io/doxygen/html/inherit_graph_79.svg">bilinear</a> and <a href="http://mfem.github.io/doxygen/html/inherit_graph_47.svg">linear</a> forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.</p>
+<h2 id="flexible-discretization">Flexible Discretization</h2>
+<p>In addition to classical Galerkin methods, MFEM enables the quick prototyping of</p>
 <ul>
-<li>unlimited number of refinement and de-refinement levels,</li>
-<li>interactive rotation, translation and scaling with the mouse,</li>
-<li>support for different perspectives, materials, lighting, color schemes and transparency,</li>
-<li>processor and element shrinking for better visualization of the interior of 3D meshes,</li>
-<li>antialiased meshes and fonts,</li>
-<li>screenshots in PNG or TIFF format.</li>
+<li><a href="../examples/?mixed">mixed</a> finite elements,</li>
+<li>Discontinuous Galerkin (<a href="../examples/?dg">DG</a>) methods,</li>
+<li><a href="../examples/?nurbs">isogeometric</a> analysis methods,</li>
+<li>Discontinuous Petrov-Galerkin (<a href="../examples/?dpg">DPG</a>) approaches,</li>
+<li><a href="../examples/?hybr">Hybridization</a> and <a href="../examples/?staticcond">static condensation</a> for high-order problems.</li>
 </ul>
-<h2 id="flexible-server-and-scripting-support">Flexible Server and Scripting Support</h2>
-<p><img class="floatpad" src="../img/gallery/hypre-ex4-np36-n15-K3-C1-U02-F4.png" width="260">
-When started without any options, GLVis <a href="../options-and-use/#server-mode">establishes a server</a>, which waits for socket connections and visualizes any received data in a separate interactive window. This enables:</p>
+<p><img src="../img/examples/ex6.png" align="right" width="230"></p>
+<h2 id="wide-range-of-mesh-types">Wide Range of Mesh Types</h2>
+<p>MFEM supports arbitrary element <a href="http://mfem.github.io/doxygen/html/inherit_graph_18.svg">transformations</a> and includes classes for dealing with:</p>
 <ul>
-<li>simultaneous visualization of <a href="http://mfem.org/examples?darcy">multiple fields/meshes</a> in separate GLVis windows,</li>
-<li><a href="http://mfem.org/examples?rk">persistent</a> visualization of time-evolving fields,</li>
-<li>local visualization of <a href="../parallel-visualization/">parallel</a> meshes and solutions sent to the server by separate socket connections from each core of a remote parallel machine,</li>
-<li>saving and displaying of <a href="../options-and-use/#server-mode">socket stream data</a>.</li>
+<li>triangular, quadrilateral, tetrahedral and hexahedral <a href="http://mfem.github.io/doxygen/html/inherit_graph_17.svg">elements</a>,</li>
+<li>conforming local mesh refinement (triangular/tetrahedral meshes),</li>
+<li>non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,</li>
+<li>higher-order elements with <a href="../mesh-formats/#curvilinear-vtk-meshes">curved</a> boundaries,</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh">surface</a> meshes embedded in 3D,</li>
+<li>topologically <a href="https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh">periodic</a> meshes,</li>
+<li>1D meshes.</li>
 </ul>
-<p>GLVis can also run a <a href="../options-and-use/#glvis-scripts">batch sequence</a> of commands (GLVis scripts), which enable precise control of particular visualization scenes, and can be useful for making animations.</p>
+<h2 id="parallel-and-scalable">Parallel and Scalable</h2>
+<p>MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.</p>
+<ul>
+<li>MFEM-based <a href="http://www.llnl.gov/casc/blast">applications</a> have been <a href="http://www.llnl.gov/casc/blast/parallel.php">scaled</a> to <a href="http://computation.llnl.gov/project/blast/images/blast_strong_vulcan_inline.png">hundreds of thousands</a> of parallel cores.</li>
+<li>An experimental support for OpenMP acceleration is also included.</li>
+</ul>
+<p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html">changes</a> to transition to a high-performing parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library.</p>
+<h2 id="built-in-solvers">Built-in Solvers</h2>
+<p>MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra
+<a href="http://mfem.github.io/doxygen/html/inherit_graph_120.svg">vectors</a> and <a href="http://mfem.github.io/doxygen/html/inherit_graph_84.svg">sparse matrices</a>.</p>
+<p>Several matrix storage formats are available including dense, compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html">CSR</a>) and parallel compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html">ParCSR</a>). Block vectors, operators and <a href="http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html">matrices</a> are also supported.</p>
+<p>A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):</p>
+<ul>
+<li>point-wise and polynomial <a href="http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html">serial</a> and <a href="http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html">parallel</a> smoothers,
+<img src="../img/hypre_wiw.gif" align="right" width="250"></li>
+<li><a href="http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="http://mfem.github.io/doxygen/html/inherit_graph_84.svg">operators</a> in serial and in parallel,</li>
+<li>parallel eigensolvers: <a href="../examples/?lobpcg">LOBPCG</a> and <a href="../examples/?ame">AME</a>,</li>
+<li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
+<li>discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,</li>
+<li>sequential sparse direct solvers from the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
+<li>explicit and implicit high-order Runge-Kutta <a href="http://mfem.github.io/doxygen/html/inherit_graph_83.svg">time integrators</a>,</li>
+<li>solvers for nonlinear problems (Newton) and for single linearly constrained <a href="http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html">quadratic minimization</a> problems.</li>
+</ul>
+<h2 id="extensive-examples">Extensive Examples</h2>
+<p>MFEM includes a number of well-documented <a href="../examples/">example codes</a> that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:</p>
+<ul>
+<li><a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex3_8cpp_source.html">Example 3</a>: Nedelec H(curl) FEM for the definite Maxwell problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex4_8cpp_source.html">Example 4</a>: Raviart-Thomas H(div) FEM for the grad-div problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex5_8cpp_source.html">Example 5</a>: mixed pressure-velocity FEM for the Darcy problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex6_8cpp_source.html">Example 6</a>: non-conforming adaptive mesh refinement for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex7_8cpp_source.html">Example 7</a>: Laplace problem on a surface (the unit sphere),</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem.</li>
+</ul>
+<p>Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
+<p>Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:</p>
+<ul>
+<li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Volta</a>: simple electrostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Tesla</a>: simple magnetostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes.</li>
+</ul>
+<h2 id="accurate-and-flexible-visualization">Accurate and Flexible Visualization</h2>
+<p>The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool <a href="http://glvis.org">GLVis</a>, which is built on top of MFEM.</p>
+<p>The <a href="http://visit.llnl.gov">VisIt</a> visualization and analysis tool also natively supports MFEM formats.</p>
+<h2 id="lightweight-portable-and-easily-extendable">Lightweight, Portable and Easily Extendable</h2>
+<p>The MFEM code base is <a href="../download/">relatively small</a> and is written in highly portable C++ (e.g. with very limited use of templates and the STL).</p>
+<ul>
+<li>The serial version of MFEM has no external dependencies and is <a href="../building/">straightforward to build</a> on Linux, Mac and Windows machines.</li>
+<li>The MPI-parallel version uses two third-party libraries (<em>hypre</em> and METIS), and is also easy to build with an MPI compiler.</li>
+<li>On most machines, both versions can be built in under a minute by typing: "<code>make serial -j</code>" and "<code>make parallel -j</code>" respectively.</li>
+</ul>
+<p>The object-oriented design of MFEM <a href="http://mfem.github.io/doxygen/html/index.html">separates</a> the mesh, finite element and linear algebra abstractions, making it easy to extend the library and adapt it to a variety of <a href="../publications/">applications</a>.</p>
 <h2 id="open-source">Open Source</h2>
-<p>GLVis is an open-source software, and can be freely used under the terms of the <a href="https://www.gnu.org/licenses/lgpl-2.1.html">LGPL 2.1</a> license.</p></div>
+<p>MFEM is an open-source software, and can be freely used under the terms of the <a href="https://www.gnu.org/licenses/lgpl-2.1.html">LGPL 2.1</a> license.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#glvis-features">GLVis Features</a></li>
+        <li class="main active"><a href="#features">Features</a></li>
         
-            <li><a href="#accurate-visualization">Accurate Visualization</a></li>
+            <li><a href="#higher-order-finite-element-spaces">Higher-order Finite Element Spaces</a></li>
         
-            <li><a href="#lightweight-and-convenient">Lightweight and Convenient</a></li>
+            <li><a href="#flexible-discretization">Flexible Discretization</a></li>
         
-            <li><a href="#flexible-server-and-scripting-support">Flexible Server and Scripting Support</a></li>
+            <li><a href="#wide-range-of-mesh-types">Wide Range of Mesh Types</a></li>
+        
+            <li><a href="#parallel-and-scalable">Parallel and Scalable</a></li>
+        
+            <li><a href="#built-in-solvers">Built-in Solvers</a></li>
+        
+            <li><a href="#extensive-examples">Extensive Examples</a></li>
+        
+            <li><a href="#accurate-and-flexible-visualization">Accurate and Flexible Visualization</a></li>
+        
+            <li><a href="#lightweight-portable-and-easily-extendable">Lightweight, Portable and Easily Extendable</a></li>
         
             <li><a href="#open-source">Open Source</a></li>
         
@@ -227,9 +326,9 @@ When started without any options, GLVis <a href="../options-and-use/#server-mode
 
         <footer class="footer">
            <div class="container">
-              <p class="text-muted alignright">LLNL-WEB-676630</p>
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
               <p class="text-muted alignleft">
-                  Developed by the <a href="/about/">GLVis team</a> at
+                  Developed by the <a href="/about/">MFEM team</a> at
                   <a href="http://computation.llnl.gov/casc/">CASC</a>,
                   <a href="https://www.llnl.gov/">LLNL</a></p>
            </div>
