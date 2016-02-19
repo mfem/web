@@ -4,7 +4,7 @@
 
 This is the default format in GLVis. It can be used to describe simple (triangular, quadrilateral, tetrahedral and hexahedral meshes with straight edges) or complicated (curvilinear and more general) meshes.
 
-## Straight meshes
+### Straight meshes
 
 In the simple case of a mesh with straight edges the format looks as follows
 ```sh
@@ -108,14 +108,14 @@ vertices
 ```
 which corresponds to the mesh
 
-![](img/beam-quad.png)
+![](img/formats/beam-quad.png)
 
 visualized with
 ```sh
 glvis -m beam-quad.mesh -k "Ame****"
 ```
 
-## Curvilinear and more general meshes
+### Curvilinear and more general meshes
 
 The MFEM mesh v1.0 format also support the general description of meshes based on a vector finite element grid function with degrees of freedom in the "nodes" of the mesh:
 ```sh
@@ -162,9 +162,10 @@ glvis -m escher-p3.mesh -k "Aaaoooooooooo**************tt"
 ```
 we get:
 
-![](img/escher-p3.png)
+![](img/formats/escher-p3.png)
 
 Topologically periodic meshes can also be described in this format, see for example the [periodic-segment](https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh), [periodic-square](https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh), and [periodic-cube](https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh) meshes in the data directory, as well as [Example 9](examples.md?advection).
+
 
 ## NURBS meshes
 
@@ -291,7 +292,7 @@ glvis -m square-disc-nurbs.mesh
 ```
 which after several refinements with the "`i`" key looks like
 
-![](img/glvis-square-disc-nurbs.png)
+![](img/formats/glvis-square-disc-nurbs.png)
 
 To explain MFEM's NURBS mesh file format, we first note that the topological part of the mesh (the `elements` and `boundary` sections) describe the 4 NURBS patches visible above. We use the vertex numbers as labels, so we only need the number of vertices.
 
@@ -301,7 +302,7 @@ The position of the NURBS nodes (control points) is given as a NURBS grid functi
 
 Some examples of VTK meshes can be found in MFEM's [data directory](https://github.com/mfem/mfem/blob/master/data). Here is one of the 3D NURBS meshes
 
-![](img/glvis-pipe-nurbs.png)
+![](img/formats/glvis-pipe-nurbs.png)
 
 The image above was produced with some refinement (key "`o`") and mouse manipulations from
 ```sh
@@ -313,7 +314,7 @@ Solutions from NURBS discretization spaces are also natively supported. For exam
 glvis -m square-disc-nurbs.mesh -g sol.gf
 ```
 
-![](img/glvis-square-disc-nurbs-r2.png)
+![](img/formats/glvis-square-disc-nurbs-r2.png)
 
 
 ## Curvilinear VTK meshes
@@ -347,32 +348,32 @@ LOOKUP_TABLE default
 ```
 Visualizing it with "`glvis -m quad.vtk`" and typing "`Aemiii`" in the GLVis window we get:
 
-![](img/quad-vtk.png)
+![](img/formats/quad-vtk.png)
 
 The "`i`" key increases the reference element subdivision which gives an increasingly better approximation of the actual curvature of the element. To view the curvature of the mapping inside the element we can use the "I" key, e.g.,
 ```sh
 glvis -m quad.vtk -k "AemIIiii"
 ```
-![](img/quad-vtk-2.png)
+![](img/formats/quad-vtk-2.png)
 
 Here is a slightly more complicated [quadratic quadrilateral](https://github.com/mfem/mfem/blob/master/data/star-q2.vtk) mesh example (the different colors in the GLVis window are used to distinguish neighboring elements):
 ```sh
 glvis -m star-q2.vtk -k "Am"
 ```
-![](img/star-q2-vtk.png)
+![](img/formats/star-q2-vtk.png)
 
 MFEM and GLVis can also handle [quadratic triangular](https://github.com/mfem/mfem/blob/master/data/square-disc-p2.vtk) meshes:
 ```sh
 glvis -m square-disc-p2.vtk -k "Am"
 ```
-![](img/square-disc-p2-vtk.png)
+![](img/formats/square-disc-p2-vtk.png)
 
 As well as [quadratic tetrahedral](https://github.com/mfem/mfem/blob/master/data/escher-p2.vtk) and [quadratic hexahedral](https://github.com/mfem/mfem/blob/master/data/fichera-q2.vtk) VTK meshes:
 ```sh
 glvis -m escher-p2.vtk -k "Aaaooooo**************"
 ```
-![](img/escher-p2-vtk.png)
+![](img/formats/escher-p2-vtk.png)
 ```sh
 glvis -m fichera-q2.vtk -k "Aaaooooo******"
 ```
-![](img/fichera-q2-vtk.png)
+![](img/formats/fichera-q2-vtk.png)
