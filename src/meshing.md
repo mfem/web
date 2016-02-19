@@ -31,7 +31,7 @@ The current meshing miniapps are described below.
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
 
-![](img/mobius-strip.png)
+![](img/examples/mobius-strip.png)
 
 Manipulating the mesh topology and
 performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
@@ -42,7 +42,7 @@ performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
 
-![](img/klein-bottle.png)
+![](img/examples/klein-bottle.png)
 
 The `klein-bottle` and `klein-donut` meshes in the
 `data` directory were generated with this miniapp.
@@ -52,7 +52,7 @@ The `klein-bottle` and `klein-donut` meshes in the
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh.
 
-![](img/mesh-explorer.png)
+![](img/examples/mesh-explorer.png)
 
 Some of its features are:
 

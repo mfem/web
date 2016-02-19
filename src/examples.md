@@ -129,7 +129,7 @@ ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being
 a constant pull down vector on boundary elements with attribute 2, and zero
 otherwise. The geometry of the domain is assumed to be as follows:
 
-![](img/ex2-domain.png)
+![](img/examples/ex2-domain.png)
 
 The example demonstrates the use of high-order and NURBS vector
 finite element spaces with the linear elasticity bilinear form,
@@ -323,7 +323,7 @@ $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
 where $H$ is a hyperelastic model and $S$ is a viscosity operator of
 Laplacian type. The geometry of the domain is assumed to be as follows:
 
-![](img/ex10-domain.png)
+![](img/examples/ex10-domain.png)
 
 The example demonstrates the use of nonlinear operators, as well as their
 implicit time integration using a Newton method for solving an associated
@@ -386,7 +386,7 @@ ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and
 ${\sigma}({\bf u})\cdot n = f$ on the remainder.
 The geometry of the domain is assumed to be as follows:
 
-![](img/ex12-domain.png)
+![](img/examples/ex12-domain.png)
 
 The example highlights the use of the LOBPCG eigenvalue solver together with the
 BoomerAMG preconditioner in HYPRE.

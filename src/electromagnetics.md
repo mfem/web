@@ -119,7 +119,7 @@ demonstrate how to solve standard electrostatics problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
 specialized sources or boundary conditions could be implemented.
 
-![](img/volta-screenshot-small.png)
+![](img/examples/volta-screenshot-small.png)
 
 Note that this application assumes the mesh coordinates are given in meters.
 
@@ -227,7 +227,7 @@ how to solve standard magnetostatics problems in MFEM. Its source terms and
 boundary conditions are simple but they should indicate how more specialized
 sources of boundary conditions could be implemented.
 
-![](img/tesla-screenshot-small.png)
+![](img/examples/tesla-screenshot-small.png)
 
 Note that this application assumes the mesh coordinates are given in meters.
 
