@@ -77,14 +77,13 @@ p.centered {
     text-align: center;
 }
 
-table.news > tbody > tr > td
-{
+/* hide header in News, adjust spacing */
+div.news > table > thead > tr > th {
+  display: none
+}
+div.news > table > tbody > tr > td {
   padding: 5px;
 }
-
-/*p li {
-  margin: 10px 0;
-}*/
 
 /*label {
     display: inline-block;
