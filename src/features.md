@@ -27,7 +27,7 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
  - Discontinuous Petrov-Galerkin ([DPG](examples.md?dpg)) approaches,
  - [Hybridization](examples.md?hybr) and [static condensation](examples.md?staticcond) for high-order problems.
 
-<img src="../img/ex6.png" align="right" width="230">
+<img src="../img/examples/ex6.png" align="right" width="230">
 
 ## Wide Range of Mesh Types
 

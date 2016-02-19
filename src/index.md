@@ -26,7 +26,7 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 <table class="news"><tbody>
 <tr><td>Feb 16, 2016</td><td>Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).</td></tr>
-<tr><td>Aug 18, 2015</td><td>Moved to [GitHub](https://github.com/mfem/mfem). New website.</td></tr>
+<tr><td>Aug 18, 2015</td><td>Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).</td></tr>
 <tr><td>Jan 26, 2015</td><td>Version 3.0 released.</td></tr>
 </tbody></table>
 
@@ -64,8 +64,7 @@ Use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
 or post [questions](https://github.com/mfem/mfem/issues/new?labels=question)
 or [comments](https://github.com/mfem/mfem/issues/new?labels=comment).
-
-<!-- See the [About](about.md) page for citing information. -->
+See the [About](about.md) page for citation information.
 
 
 </div>
