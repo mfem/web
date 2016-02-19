@@ -30,6 +30,7 @@ Feb 16, 2016 | Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfe
 Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](https://mfem.org).
 Jan 26, 2015 | Version 3.0 released.
 
+
 ## Latest Release
 
 [New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
