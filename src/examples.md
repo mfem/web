@@ -90,7 +90,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
-<img class="floatright" src="../img/ex1.png">
+<img class="floatright" src="../img/examples/ex1.png">
 
 This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
@@ -114,7 +114,7 @@ and a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1
 
 <div id="ex2" markdown="1">
 ##Example 2: Linear Elasticity
-<img class="floatright" src="../img/ex2.png">
+<img class="floatright" src="../img/examples/ex2.png">
 
 This example code solves a simple linear elasticity problem
 describing a multi-material cantilever beam.
@@ -146,7 +146,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex3" markdown="1">
 ##Example 3: Definite Maxwell Problem
-<img class="floatright" src="../img/ex3.png">
+<img class="floatright" src="../img/examples/ex3.png">
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
@@ -170,7 +170,7 @@ We recommend viewing examples 1-2 before viewing this example._
 
 <div id="ex4" markdown="1">
 ##Example 4: Grad-div Problem
-<img class="floatright" src="../img/ex4.png">
+<img class="floatright" src="../img/examples/ex4.png">
 
 This example code solves a simple 2D/3D $H(div)$
 diffusion problem corresponding to the second order definite equation
@@ -194,7 +194,7 @@ We recommend viewing examples 1-3 before viewing this example._
 
 <div id="ex5" markdown="1">
 ##Example 5: Darcy Problem
-<img class="floatright" src="../img/ex5.png">
+<img class="floatright" src="../img/examples/ex5.png">
 
 This example code solves a simple 2D/3D mixed Darcy problem
 corresponding to the saddle point system
@@ -221,7 +221,7 @@ We recommend viewing examples 1-4 before viewing this example._
 
 <div id="ex6" markdown="1">
 ##Example 6: Laplace Problem with AMR
-<img class="floatright" src="../img/ex6.png">
+<img class="floatright" src="../img/examples/ex6.png">
 
 This is a version of Example 1 with a simple adaptive mesh
 refinement loop. The problem being solved is again the Laplace
@@ -246,7 +246,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex7" markdown="1">
 ##Example 7: Surface Meshes
-<img class="floatright" src="../img/ex7.png">
+<img class="floatright" src="../img/examples/ex7.png">
 
 This example code demonstrates the use of MFEM to define a
 triangulation of a unit sphere and a simple isoparametric
@@ -268,7 +268,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex8" markdown="1">
 ##Example 8: DPG for the Laplace Problem
-<img class="floatright" src="../img/ex8.png">
+<img class="floatright" src="../img/examples/ex8.png">
 
 This example code demonstrates the use of the Discontinuous
 Petrov-Galerkin (DPG) method in its primal 2x2 block form as a
@@ -294,7 +294,7 @@ We recommend viewing examples 1-5 before viewing this example._
 
 <div id="ex9" markdown="1">
 ##Example 9: DG Advection
-<img class="floatright" src="../img/ex9.png">
+<img class="floatright" src="../img/examples/ex9.png">
 
 This example code solves the time-dependent advection equation
 $$\frac{du}{dt} = v \cdot \nabla u,$$ where $v$ is a given fluid
@@ -316,7 +316,7 @@ and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9
 
 <div id="ex10" markdown="1">
 ##Example 10: Nonlinear Elasticity
-<img class="floatright" src="../img/ex10.png">
+<img class="floatright" src="../img/examples/ex10.png">
 
 This example solves a time dependent nonlinear elasticity problem of the form
 $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
@@ -340,7 +340,7 @@ We recommend viewing examples 2 and 9 before viewing this example._
 
 <div id="ex11" markdown="1">
 ##Example 11: Laplace Eigenproblem
-<img class="floatright" src="../img/ex11.png">
+<img class="floatright" src="../img/examples/ex11.png">
 
 This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
@@ -364,7 +364,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex12" markdown="1">
 ##Example 12: Linear Elasticity Eigenproblem
-<img class="floatright" src="../img/ex12.png">
+<img class="floatright" src="../img/examples/ex12.png">
 
 This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
@@ -402,7 +402,7 @@ We recommend viewing examples 2 and 11 before viewing this example._
 
 <div id="ex13" markdown="1">
 ##Example 13: Maxwell Eigenproblem
-<img class="floatright" src="../img/ex13.png">
+<img class="floatright" src="../img/examples/ex13.png">
 
 This example code solves the Maxwell (electromagnetic)
 eigenvalue problem
@@ -427,7 +427,7 @@ We recommend viewing examples 3 and 11 before viewing this example._
 
 <div id="ex14" markdown="1">
 ##Example 14: DG Diffusion
-<img class="floatright" src="../img/ex14.png">
+<img class="floatright" src="../img/examples/ex14.png">
 
 This example code demonstrates the use of MFEM to define a
 discontinuous Galerkin (DG) finite element discretization of
@@ -445,7 +445,7 @@ We recommend viewing examples 1 and 9 before viewing this example._
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
-<img class="floatright" src="../img/volta.png">
+<img class="floatright" src="../img/examples/volta.png">
 
 This miniapp demonstrates the use of MFEM to solve realistic problems
 in the field of linear electrostatics.  Its features include:
@@ -472,7 +472,7 @@ moving to the miniapps.**_
 
 <div id="tesla" markdown="1">
 ##Tesla Miniapp: Magnetostatics
-<img class="floatright" src="../img/tesla.png">
+<img class="floatright" src="../img/examples/tesla.png">
 
 This miniapp showcases many of MFEM's features while solving a variety
 of realistic magnetostatics problems.  Its features include:
@@ -499,7 +499,7 @@ moving to the miniapps.**_
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
-<img class="floatright" src="../img/mobius-strip.png">
+<img class="floatright" src="../img/examples/mobius-strip.png">
 
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
@@ -520,7 +520,7 @@ moving to the miniapps.**_
 
 <div id="klein-bottle" markdown="1">
 ##Klein Bottle Miniapp
-<img class="floatright" src="../img/klein-bottle.png">
+<img class="floatright" src="../img/examples/klein-bottle.png">
 
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
@@ -541,7 +541,7 @@ moving to the miniapps.**_
 
 <div id="mesh-explorer" markdown="1">
 ##Mesh Explorer Miniapp
-<img class="floatright" src="../img/mesh-explorer.png">
+<img class="floatright" src="../img/examples/mesh-explorer.png">
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh. Some of its features are:
