@@ -61,7 +61,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/hres_icfcyl_4096_5.png)](img/gallery/hres_icfcyl_4096_5.png)
+[![](img/gallery/hres_icfcyl_4096_5.jpg)](img/gallery/hres_icfcyl_4096_5-full.jpg)
 
 *High-order multimaterial inertial confinement fusion (ICF)-like implosion in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
 
