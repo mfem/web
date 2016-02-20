@@ -19,7 +19,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/ex3-klein-1.png)](img/gallery/ex3-klein-1.png)
+[![](img/gallery/ex3-klein-1.jpg)](img/gallery/ex3-klein-1-full.png)
 
 *Solution of a Maxwell problem on a Klein bottle. Mesh generated with the [klein-bottle](http://mfem.github.io/doxygen/html/klein-bottle_8cpp_source.html) miniapp. Solution with [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html).*
 
@@ -49,13 +49,13 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-![](img/gallery/sedov-3d-4096p-2c.png)
+[![](img/gallery/sedov-3d-4096p-2c.jpg)](img/gallery/sedov-3d-4096p-2c-full.png)
 
 *Test of the propagation of a spherical shock wave through a random non-conforming mesh in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
 
 ----
 
-[![](img/gallery/maxwell-snowflake.png)](img/gallery/maxwell-snowflake.png)
+[![](img/gallery/maxwell-snowflake.jpg)](img/gallery/maxwell-snowflake-full.png)
 
 *An electromagnetic eigenmode of a star-shaped domain computed with 3rd order finite elements computed with [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html).*
 
@@ -97,7 +97,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/gallery-ball-aniso.png)](img/gallery/gallery-ball-aniso-full.png)
+[![](img/gallery/gallery-ball-aniso.jpg)](img/gallery/gallery-ball-aniso-full.png)
 
 *Anisotropic refinement in a 3D version of the AMR test. Portion of the spherical domain is cut away in [GLVis](http://glvis.org).*
 
