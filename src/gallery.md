@@ -19,6 +19,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+[![](img/gallery/ex3-klein-1.png)](img/gallery/ex3-klein-1.png)
+
+*Solution of a Maxwell problem on a Klein bottle. Mesh generated with the [klein-bottle](http://mfem.github.io/doxygen/html/klein-bottle_8cpp_source.html) miniapp. Solution with [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html).*
+
+----
+
 ![](img/gallery/ex1-escher.png)
 
 *Level surfaces in the interior of the solution from [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) on [escher.mesh](https://github.com/mfem/mfem/blob/master/data/escher.mesh). Visualization with [GLVis](http://glvis.org).*
@@ -29,11 +35,11 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *3D Arbitrary Lagrangian-Eulerian (ALE) simulation of a shock-triple point interaction with Q2-Q1 elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
 
-----
+---
 
-[![](img/gallery/cylimp_q4_uniform_t4-small.png)](img/gallery/cylimp_q4_uniform_t4.png)
+[![](img/gallery/taylor_impact_compare_3d-small.png)](img/gallery/taylor_impact_compare_3d.png)
 
-*Planar inertial confinement fusion (ICF)-like implosion using mixed 4th finite elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
+*Modeling elastic-plastic flow in the 3D Taylor high-velocity impact problem using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
 
 </div><div class="col-md-5"  markdown="1">
 
@@ -43,25 +49,25 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-![](img/gallery/ex1p-np100.png)
+![](img/gallery/sedov-3d-4096p-2c.png)
 
-*Parallel version of [Example 1](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) on 100 processors with a relatively coarse version of [square-disc.mesh](https://github.com/mfem/mfem/blob/master/data/square-disc.mesh). Visualization with [GLVis](http://glvis.org).*
-
-----
-
-[![](img/gallery/taylor_impact_compare_3d-small.png)](img/gallery/taylor_impact_compare_3d.png)
-
-*Modeling elastic-plastic flow in the 3D Taylor high-velocity impact problem using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
+*Test of the propagation of a spherical shock wave through a random non-conforming mesh in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
 
 ----
 
-[![](img/gallery/gallery-ball-aniso.png)](img/gallery/gallery-ball-aniso-full.png)
+[![](img/gallery/maxwell-snowflake.png)](img/gallery/maxwell-snowflake.png)
 
-*Anisotropic refinement in a 3D version of the AMR test. Portion of the spherical domain is cut away in [GLVis](http://glvis.org).*
+*An electromagnetic eigenmode of a star-shaped domain computed with 3rd order finite elements computed with [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html).*
 
 ----
 
-[![](img/gallery/gallery-random-aniso.png)](img/gallery/gallery-random-aniso-full.png)
+[![](img/gallery/hres_icfcyl_4096_5.png)](img/gallery/hres_icfcyl_4096_5.png)
+
+*High-order multimaterial inertial confinement fusion (ICF)-like implosion in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
+
+----
+
+[![](img/gallery/random4.png)](img/gallery/random4.png)
 
 *Test of the anisotropic refinement feature on a random mesh. A slightly modified version of [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html). Visualization with [GLVis](http://glvis.org).*
 
@@ -82,6 +88,18 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 [![](img/gallery/gallery-curved-2d.png)](img/gallery/gallery-curved-2d-full.png)
 
 *Anisotropic refinement in a 2D shock-like AMR test problem. Visualization with [GLVis](http://glvis.org).*
+
+----
+
+![](img/gallery/ex1p-np100.png)
+
+*Parallel version of [Example 1](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) on 100 processors with a relatively coarse version of [square-disc.mesh](https://github.com/mfem/mfem/blob/master/data/square-disc.mesh). Visualization with [GLVis](http://glvis.org).*
+
+----
+
+[![](img/gallery/gallery-ball-aniso.png)](img/gallery/gallery-ball-aniso-full.png)
+
+*Anisotropic refinement in a 3D version of the AMR test. Portion of the spherical domain is cut away in [GLVis](http://glvis.org).*
 
 </div>
 
