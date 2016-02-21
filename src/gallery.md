@@ -73,7 +73,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 </div><div class="col-md-3" markdown="1">
 
-[![](img/gallery/rt-q8-small.png)](img/gallery/rt-q8.png)
+[![](img/gallery/rt-q8.jpg)](img/gallery/rt-q8-full.png)
 
 *Purely Lagrangian Rayleigh-Taylor instability simulation using 8th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
 
