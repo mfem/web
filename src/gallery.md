@@ -79,7 +79,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/blast_rt_eulerian_q4_t3-small.png)](img/gallery/blast_rt_eulerian_q4_t3.png)
+[![](img/gallery/blast_rt_eulerian_q4_t3.jpg)](img/gallery/blast_rt_eulerian_q4_t3-full.png)
 
 *Multi-mode Rayleigh-Taylor instability simulation using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
 
