@@ -23,7 +23,7 @@ function exportfile { # src dst localdir
 	echo
 	echo Exporting $1
 	tmp1=${1}_tmp.html
-	tmp2=$(mktemp)
+	tmp2=$(mktemp export.XXXXXXXXXX)
 	preprocess $1 $tmp1
 	phantomjs export.js file://$(pwd)/$tmp1 $tmp2
 	postprocess $tmp2 $2 $3

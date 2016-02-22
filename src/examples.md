@@ -297,7 +297,7 @@ We recommend viewing examples 1-5 before viewing this example._
 <img class="floatright" src="../img/examples/ex9.png">
 
 This example code solves the time-dependent advection equation
-$$\frac{du}{dt} = v \cdot \nabla u,$$ where $v$ is a given fluid
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u = 0,$$ where $v$ is a given fluid
 velocity, and $u_0(x)=u(0,x)$ is a given initial condition.
 
 The example demonstrates the use of Discontinuous Galerkin (DG) bilinear forms
