@@ -26,9 +26,10 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar 4, 2016  | New LLNL OSS [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).
 Feb 16, 2016 | Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).
-Jan 26, 2015 | Version 3.0 released.
+[comment]: # (Jan 26, 2015 | Version 3.0 released.)
 
 
 ## Latest Release
