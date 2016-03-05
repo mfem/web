@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee\nalso\nour\nGallery\n and a list of related \npublications\n.\n\n\n\n\n\n\nNews\n\n\n\n\n\n\n\n\nDate\n\n\nMessage\n\n\n\n\n\n\n\n\n\n\nFeb 16, 2016\n\n\nVersion 3.1 \nreleased\n.\n\n\n\n\n\n\nAug 18, 2015\n\n\nMoved to \nGitHub\n and \nmfem.org\n.\n\n\n\n\n\n\nJan 26, 2015\n\n\nVersion 3.0 released.\n\n\n\n\n\n\n\n\nLatest Release\n\n\nNew features\n\n/ \nExamples\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\nDownload mfem-3.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nElectromagnetics\n\n/ \nMeshing\n\n\nNew users should start by examining the \nexample codes\n.\n\n\nWe also recommend using \nGLVis\n for visualization.\n\n\nContact\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.\nSee\nthe \nAbout\n page for citation information.", 
+            "text": "MFEM is a \nfree\n, \nlightweight\n, \nscalable\n C++ library for finite element methods.\n\n\nFeatures\n\n\n\n\nArbitrary high-order finite element \nmeshes\n\nand \nspaces\n.\n\n\nWide variety\n of finite element discretization approaches.\n\n\nConforming and nonconforming \nadaptive mesh refinement\n.\n\n\nScalable to \nhundreds of thousands\n of cores.\n\n\n... and \nmany more\n.\n\n\n\n\nMFEM is currently used in the \nBLAST\n,\n\nGLVis\n, \nXBraid\n and\n\nVisIt\n projects.\nSee\nalso\nour\nGallery\n and a list of related \npublications\n.\n\n\n\n\n\n\nNews\n\n\n\n\n\n\n\n\nDate\n\n\nMessage\n\n\n\n\n\n\n\n\n\n\nMar 4, 2016\n\n\nNew LLNL OSS \nBlog\n and \nTwitter\n.\n\n\n\n\n\n\nFeb 16, 2016\n\n\nVersion 3.1 \nreleased\n.\n\n\n\n\n\n\nAug 18, 2015\n\n\nMoved to \nGitHub\n and \nmfem.org\n.\n\n\n\n\n\n\n\n\nLatest Release\n\n\nNew features\n\n/ \nExamples\n\n/ \nCode documentation\n\n/ \nSources\n\n\n\n\nDownload mfem-3.1.tgz\n\n\n\n\nFor older releases see the \ndownload\n section.\n\n\nDocumentation\n\n\nBuilding MFEM\n\n/ \nSerial Tutorial\n\n/ \nParallel Tutorial\n\n/ \nElectromagnetics\n\n/ \nMeshing\n\n\nNew users should start by examining the \nexample codes\n.\n\n\nWe also recommend using \nGLVis\n for visualization.\n\n\nContact\n\n\nUse the GitHub \nissue tracker\n\nto report \nbugs\n\nor post \nquestions\n\nor \ncomments\n.\nSee\nthe \nAbout\n page for citation information.", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#news", 
-            "text": "Date  Message      Feb 16, 2016  Version 3.1  released .    Aug 18, 2015  Moved to  GitHub  and  mfem.org .    Jan 26, 2015  Version 3.0 released.", 
+            "text": "Date  Message      Mar 4, 2016  New LLNL OSS  Blog  and  Twitter .    Feb 16, 2016  Version 3.1  released .    Aug 18, 2015  Moved to  GitHub  and  mfem.org .", 
             "title": "News"
         }, 
         {
