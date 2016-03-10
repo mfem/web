@@ -26,9 +26,10 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar 9, 2016  | VisIt 2.10.1 [released](http://software.llnl.gov/news/2016/03/09/visit-2.10.1) with MFEM 3.1 support.
 Mar 4, 2016  | New LLNL OSS [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).
-Feb 16, 2016 | Version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
-Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).
+Feb 16, 2016 | MFEM version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+[comment]: # (Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).)
 [comment]: # (Jan 26, 2015 | Version 3.0 released.)
 
 
