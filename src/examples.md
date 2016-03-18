@@ -443,6 +443,40 @@ We recommend viewing examples 1 and 9 before viewing this example._
 <br></div>
 
 
+<div id="ex15" markdown="1">
+##Example 15: Dynamic AMR
+<img class="floatright" src="../img/examples/ex15.png">
+
+Building on [Example 6](#ex6), this example demostrates dynamic adaptive mesh refinement.
+The mesh is adapted to a time-dependent solution by refinement
+as well as by derefinement. For simplicity, the solution is
+prescribed and no time integration is done. However, the error
+estimation and refinement/derefinement decisions are realistic.
+
+At each outer iteration the right hand side function is changed
+to mimic a time dependent problem.  Within each inner iteration
+the problem is solved on a sequence of meshes which are locally
+refined according to a simple ZZ error estimator.  At the end
+of the inner iteration the error estimates are also used to
+identify any elements which may be over-refined and a single
+derefinement step is performed.  After each refinement or
+derefinement step a rebalance operation is performed to keep
+the mesh evenly distributed among the available processors.
+
+The example demonstrates MFEM's capability to refine, derefine
+and load balance nonconforming meshes, in 2D and 3D, and on
+linear, curved and surface meshes. Interpolation of functions
+between coarse and fine meshes, persistent [GLVis](http://glvis.org) visualization,
+and saving of time-dependent fields for external visualization
+with [VisIt](http://visit.llnl.gov) are also illustrated.
+
+_The example has a serial ([ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp))
+and a parallel ([ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp)) version.
+We recommend viewing examples 1, 6 and 9 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -464,7 +498,8 @@ For more details, please see the [documentation](electromagnetics.md) in the
 `miniapps/electromagnetics` directory.
 
 _The miniapp has only a parallel
-([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version. **We recommend that new users start with the example codes before
+([volta.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp)) version.
+**We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -491,7 +526,8 @@ For more details, please see the [documentation](electromagnetics.md) in the
 `miniapps/electromagnetics` directory.
 
 _The miniapp has only a parallel
-([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version. **We recommend that new users start with the example codes before
+([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version.
+**We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -512,7 +548,8 @@ For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
-([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version. **We recommend that new users start with the example codes before
+([mobius-strip.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp)) version.
+**We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -533,7 +570,8 @@ For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
-([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version. **We recommend that new users start with the example codes before
+([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version.
+**We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -556,7 +594,8 @@ For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
-([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version. **We recommend that new users start with the example codes before moving to the miniapps.**_
+([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -631,7 +670,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 14; // update when adding examples!
+   var numExamples = 15; // update when adding examples!
    showElement("ex1",  laplace && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
@@ -646,6 +685,7 @@ function update(id)
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
    showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
+   showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 2; // update when adding miniapps!
@@ -659,7 +699,7 @@ function update(id)
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
 
    var allHidden = true;
-   for (i = 1; i <= numExamples; i++) {
+   for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
       if (exampleVisible(i)) {
          allHidden = false;
          break;
