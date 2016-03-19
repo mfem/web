@@ -447,7 +447,7 @@ We recommend viewing examples 1 and 9 before viewing this example._
 ##Example 15: Dynamic AMR
 <img class="floatright" src="../img/examples/ex15.png">
 
-Building on [Example 6](#ex6), this example demostrates dynamic adaptive mesh refinement.
+Building on [Example 6](#ex6), this example demonstrates dynamic adaptive mesh refinement.
 The mesh is adapted to a time-dependent solution by refinement
 as well as by derefinement. For simplicity, the solution is
 prescribed and no time integration is done. However, the error
