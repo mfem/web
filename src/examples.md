@@ -150,7 +150,7 @@ We recommend viewing Example 1 before viewing this example._
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
-equation $${\rm curl\, curl}\, E + E = f$$
+equation $$\nabla\times\nabla\times\, E + E = f$$
 with boundary condition $ E \times n $ = "given tangential field".
 Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
 $f$. We discretize with Nedelec finite elements in 2D or 3D.
@@ -406,7 +406,7 @@ We recommend viewing examples 2 and 11 before viewing this example._
 
 This example code solves the Maxwell (electromagnetic)
 eigenvalue problem
-$${\rm curl\, curl}\, E = \lambda $$
+$$\nabla\times\nabla\times\, E = \lambda\, E $$
 with  homogeneous Dirichlet boundary conditions $E \times n = 0$.
 
 We compute a number of the lowest nonzero eigenmodes by
