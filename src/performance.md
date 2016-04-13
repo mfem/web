@@ -1,4 +1,4 @@
-# Tensor-based operator assembly and evaluation
+# Tensor-Based Operator Assembly and Evaluation
 
 ## Overview
 
