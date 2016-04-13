@@ -19,6 +19,7 @@ pages:
   - 'Electromagnetics': electromagnetics.md
   - 'Meshing': meshing.md
   - '_Mesh Formats': mesh-formats.md   # pages starting with '_' are hidden from the menu
+  - 'Performance': performance.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md
