@@ -8,14 +8,16 @@ use a set of templated classes to efficiently implement the inner-most portion
 
 ![](img/FEDecomposition.png)
 
-We take advantage of the tensor-product structure of FE basis and quadrature
-rules to efficiently apply the action of $B$ without necessarily computing its
-entries.  This is generally know as _[sum factorization](http://www.sciencedirect.com/science/article/pii/0021999180900054)_. In the case where we pre-compute and store the $D$ matrix, we call the algorithm _partial assembly_.
+We take advantage of the tensor-product structure of both the finite element
+basis and the quadrature rule to efficiently apply the action of $B$ without
+necessarily computing its entries. This is generally know as
+_[sum factorization](http://www.sciencedirect.com/science/article/pii/0021999180900054)_.
+In the case where we pre-compute and store the $D$ matrix, we call the algorithm _partial assembly_.
 
 ## Reference implementation
 
 Below is a short description of the header files that are part of the initial
-reference implementation of these tensor-based finite element assembly and
+reference implementation of the tensor-based finite element assembly and
 evaluation algorithms.
 
 ### config/tconfig.hpp
@@ -52,7 +54,7 @@ evaluation algorithms.
 
 ### mesh/tmesh.hpp
    The Mesh object templated by the finite element space and layout of the
-   nodes. Provides MathesGeometry() and MatchesNodes() functions to verify if
+   nodes. Provides `MathesGeometry()` and `MatchesNodes()` functions to verify if
    compiled and runtime mesh agree.
 
 ### fem/tintrules.hpp
@@ -83,8 +85,8 @@ evaluation algorithms.
    Classes for evaluating basis (`ShapeEvaluator`) and finite element
    (`FieldEvaluator`) functions and their derivatives at quadrature points,
    templated by a finite element class and an integration rule class. These
-   correspond to the $B$ matrix above. Quads and hexes use the tensor-product
-   structure for fast evaluation.
+   correspond to the $B$ and $BG$ matrices above. Quads and hexes use the
+   tensor-product structure for fast evaluation.
 
 ### fem/tbilininteg.hpp
    Classes for the element-level bilinear form integrator kernels (e.g. mass,
