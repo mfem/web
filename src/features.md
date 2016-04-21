@@ -46,9 +46,10 @@ MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://www.llnl.gov/casc/blast/parallel.php) to [hundreds of thousands](http://computation.llnl.gov/project/blast/images/blast_strong_vulcan_inline.png) of parallel cores.
+ - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
  - An experimental support for OpenMP acceleration is also included.
 
-A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) to transition to a high-performing parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library.
+A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters.
 
 ## Built-in Solvers
 
@@ -87,6 +88,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 12](http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver,
  - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver,
  - [Example 14](http://mfem.github.io/doxygen/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem.
+ - [Example 15](http://mfem.github.io/doxygen/html/ex15_8cpp_source.html): parallel dynamic AMR for Laplace with prescribed time-dependent source
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
