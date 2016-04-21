@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mfemdir=$HOME/mfem
+# mfemdir=..
 
 function preprocess { # src dst
 	cat $1 \
@@ -45,4 +46,8 @@ exportfile site/electromagnetics/index.html \
 
 exportfile site/meshing/index.html \
            $mfemdir/miniapps/meshing/README.html \
+           ../../doc/web
+
+exportfile site/performance/index.html \
+           $mfemdir/miniapps/performance/README.html \
            ../../doc/web
