@@ -4,7 +4,7 @@
 
 The HPC versions of the example codes in the `miniapps/performance` directory
 use a set of templated classes to efficiently implement the inner-most portion
-($B^T D B$) of the fundamental finite element operator decomposition:
+($B^T D B$) of the fundamental finite element (FE) operator decomposition:
 
 ![](img/FEDecomposition.png)
 
@@ -33,11 +33,15 @@ evaluation algorithms.
 ### linalg/tlayout.hpp
    Classes describing fixed size tensor layouts. Implemented are standard
    strided layouts for 1D/2D/3D/4D tensors. Layouts support reshape and
-   sub-tensor operations independent of the actual data storage. This header
-   also contains another set of "vector layout" classes for converting scalar
-   data indices into multi-component (vector) data indices. This is used to
-   describe the layout of vector GridFunctions on global degrees of freedom
-   (similar to the `Ordering` class).
+   sub-tensor operations independent of the actual data storage.
+
+   This header also contains another set of "vector layout" classes for
+   converting scalar data indices into multi-component (vector) data indices.
+   They are used to describe the layout of vector `GridFunctions` on global
+   degrees of freedom (similar to the `Ordering` class). In the FE operator
+   decomposition, these classes are used by the templated `*_FiniteElementSpace`
+   classes (see `fem/tfespace.hpp` below) to implement the actions of $G$ and
+   $G^T$ in the case of vector (multi-component) input and/or output fields.
 
 ### linalg/tmatrix.hpp
    Small matrix operations, defined by specializations: determinant, adjugate,
@@ -70,8 +74,10 @@ evaluation algorithms.
    H1 and L2 finite elements templated by geometry and polynomial order.
 
 ### fem/tfespace.hpp
-   FiniteElementSpace classes providing the mappings between global and local
-   (element) degrees of freedom for H1 continuous and L2 discontinuous spaces.
+   Template `*_FiniteElementSpace` classes providing the mappings between global
+   and local (element) degrees of freedom for H1 continuous and L2 discontinuous
+   spaces. In the FE operator decomposition, these classes provide the element
+   local action of $G$ (`Extract` methods) and $G^T$ (`Assemble` methods).
 
 ### fem/tcoefficient.hpp
    Templated versions of classes derived from the abstract class `Coefficient`.
@@ -88,7 +94,12 @@ evaluation algorithms.
    points. The desired result (a combination of coordinates and/or Jacobian
    matrices at quadrature points, element attribute and/or element index) is
    specified through the template sub-class `Result` and stored in an object of
-   the same type.
+   the same type. The idea of this approach is to eliminate unnecessary
+   evaluations if they are not needed. The need is determined based on what the
+   particular "users" need. The "users" are the templated `Coefficient` and
+   `Kernel` (see `fem/tbilininteg.hpp` below) classes which specify what they
+   need through static constant boolean variables, e.g. `uses_coordinates`,
+   `uses_Jacobians`, etc.
 
 ### fem/tevaluator.hpp
    Classes for evaluating FE basis, `ShapeEvaluator`, and finite element
@@ -103,15 +114,16 @@ evaluation algorithms.
    the local operator that needs to be applied before and after the $D$ matrix -
    these are the $B_{in}$ and $B^T_{out}$ matrices, respectively. The product
    $B^T_{out} D B_{in}$ is the local element matrix, which is the result when
-   using the `BilinearFormIntegrator` classes. The `Kernel` classes provide the
-   following methods:
+   using the `BilinearFormIntegrator` classes. This specifications of the types
+   are given by static constant boolean variables, e.g. `in_values` and
+   `out_values`. The `Kernel` classes provide the following methods:
 
    - `Action`: evaluate the action of $D$ _without_ explicitly storing the
      partially assembled data; this is needed for matrix-free action.
-   - `Assemble`: evaluate the partially assembled data, $D$, which is kernel-
-     specific: e.g., for mass, the data is one scalar per quadrature point; for
-     diffusion, the data is one $d\times d$ matrix (in $d$-dimensions) per
-     quadrature point.
+   - `Assemble`: evaluate the partially assembled data, $D$, which is
+     kernel-specific: e.g., for mass, the data is one scalar per quadrature
+     point; for diffusion, the data is one $d\times d$ matrix (in $d$-dimensions)
+     per quadrature point.
    - `MultAssembled`: perform the action of $D$ using the pre-computed partially
      assembled data.
 
@@ -133,7 +145,7 @@ evaluation algorithms.
 
 ### miniapps/performance/makefile
    By default `make` builds the example drivers with the compiler used to
-   compile MFEM. If g++ was used, a pseudo-code dump file with the optimized
+   compile MFEM. If `g++` was used, a pseudo-code dump file with the optimized
    code will be generated (option `-fdump-tree-optimized-blocks`). The `g++`
    option `--param max-completely-peel-times=3` prevents the compiler from
    unrolling innermost loops (of size greater than 3), allowing the compiler to
