@@ -2,7 +2,7 @@
 
 ## Overview
 
-The HPC versions of the example codes in the `miniapps/performance` directory
+The high performance (HPC) versions of the example codes in the `miniapps/performance` directory
 use a set of templated classes to efficiently implement the inner-most portion
 ($B^T D B$) of the fundamental finite element (FE) operator decomposition:
 
@@ -63,7 +63,7 @@ evaluation algorithms.
 
 ### mesh/tmesh.hpp
    The Mesh object templated by the finite element space and layout of the
-   nodes. Provides `MathesGeometry()` and `MatchesNodes()` functions to verify
+   nodes. Provides `MatchesGeometry()` and `MatchesNodes()` functions to verify
    if compiled and runtime mesh agree.
 
 ### fem/tintrules.hpp
