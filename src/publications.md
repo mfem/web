@@ -7,13 +7,14 @@
 
 ## Selected Publications
 
+  1. V. Dobrev, Tz. Kolev, R. Rieben and V. Tomov, [Multi-material closure model for high-order finite element Lagrangian hydrodynamics](http://computation.llnl.gov/blast/Closure-16.pdf), *Int. J. Numer. Meth. Fluids*, to appear, **2016**.
   1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel preconditioners for reaction-diffusion problems with discontinuous coefficients](http://arxiv.org/abs/1411.7092), *J. Sci. Comp.*, pp. 1-27,  **2015**.
-  1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in high-order curvilinear finite element ALE remap](http://www.llnl.gov/casc/blast/papers/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
-  1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for elastic-plastic Lagrangian dynamics](http://www.llnl.gov/casc/blast/papers/EP-12.pdf), *J. Comp. Phys.*, (257B), pp. 1062–1080, **2014**.
+  1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in high-order curvilinear finite element ALE remap](http://computation.llnl.gov/blast/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
+  1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for elastic-plastic Lagrangian dynamics](http://computation.llnl.gov/blast/EP-12.pdf), *J. Comp. Phys.*, (257B), pp. 1062–1080, **2014**.
   1. P. Vassilevski, U. Villa, [A mixed formulation for the Brinkman problem](http://dx.doi.org/10.1137/120884109), *SIAM J. Numer. Anal.*, 52-1, pp. 258-281, **2014**.
   1. P. Vassilevski, U. Villa, [A block-diagonal algebraic multigrid preconditioner for the Brinkman problem](http://dx.doi.org/10.1137/120882846), *SIAM J. Sci. Comp.*, 35-5, pp. S3-S17, **2013**.
   1. V. Dobrev, T. Ellis, Tz. Kolev and R. Rieben, [High-order curvilinear finite elements for axisymmetric Lagrangian hydrodynamics](http://dx.doi.org/10.1016/j.compfluid.2012.06.004), *Computers and Fluids*, pp. 58-69, **2013**.
-  1. Tz. Kolev and P. Vassilevski, [Parallel auxiliary space AMG solver for H(div) problems](https://computation.llnl.gov/casc/linear_solvers/pubs/kolev-vassilevski-ads-2012.pdf),  *SIAM J. Sci. Comp.*, 34, pp. A3079–A3098, **2012**.
+  1. Tz. Kolev and P. Vassilevski, [Parallel auxiliary space AMG solver for H(div) problems](https://computation.llnl.gov/hypre/kolev-vassilevski-ads-2012.pdf),  *SIAM J. Sci. Comp.*, 34, pp. A3079–A3098, **2012**.
   1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for Lagrangian hydrodynamics](http://dx.doi.org/10.1137/120864672), *SIAM J. Sci. Comp.*, 34, pp. B606–B641, **2012**.
   1. I. Lashuk and  P.Vassilevski, [Element agglomeration coarse Raviart-Thomas spaces with improved approximation properties](http://onlinelibrary.wiley.com/doi/10.1002/nla.1819/abstract), *Numer. Linear Algebra Appl.*, 19, pp. 414-426, **2012**.
   1. D. Kalchev, [Adaptive algebraic multigrid for ﬁnite element elliptic equations with random coeﬃcients](https://e-reports-ext.llnl.gov/pdf/594392.pdf), *LLNL Tech. Report*, LLNL-TR-553254, **2012**.

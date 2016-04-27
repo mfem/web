@@ -11,7 +11,7 @@ MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element metho
 and [spaces](features.md#higher-order-finite-element-spaces).
 * [Wide variety](features.md#flexible-discretization) of finite element discretization approaches.
 * Conforming and nonconforming [adaptive mesh refinement](examples.md?amr).
-* Scalable to [hundreds of thousands](http://www.llnl.gov/casc/blast/parallel.php) of cores.
+* Scalable to [hundreds of thousands](http://computation.llnl.gov/blast/parallel-performance) of cores.
 * ... and [many more](features.md).
 
 MFEM is currently used in the [BLAST](http://www.llnl.gov/casc/blast),

@@ -45,7 +45,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/uorbs-small.png)](img/gallery/uorbs.png)
 
-*Streamlines of the magnetic field from a [parallel computation](http://computation.llnl.gov/project/linear_solvers/pubs/Kolev-2009-par-aux-space.pdf) of the magnetostatic interaction of two magnetic orbs. Visualization with [VTK](http://www.vtk.org/).*
+*Streamlines of the magnetic field from a [parallel computation](http://computation.llnl.gov/hypre/Kolev-2009-par-aux-space.pdf) of the magnetostatic interaction of two magnetic orbs. Visualization with [VTK](http://www.vtk.org/).*
 
 ----
 
