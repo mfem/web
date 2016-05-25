@@ -66,7 +66,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - parallel eigensolvers: [LOBPCG](examples.md?lobpcg) and [AME](examples.md?ame),
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - sequential sparse direct solvers from the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_83.svg),
  - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
 
