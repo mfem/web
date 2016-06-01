@@ -92,7 +92,7 @@ Build the parallel version of MFEM:
 ~/mfem-3.0> make parallel -j
 ```
 
-Note that if hypre or metis are in different locations, or you have different versions of these libraries, you will need to update the corresponding paths in the [makefile](https://raw.githubusercontent.com/mfem/mfem/master/makefile) (or create you own [user.mk](https://raw.githubusercontent.com/mfem/mfem/master/config/user.mk.in) file as described in the [INSTALL](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL)).
+Note that if hypre or metis are in different locations, or you have different versions of these libraries, you will need to update the corresponding paths in the [`config/defaults.mk`](https://raw.githubusercontent.com/mfem/mfem/master/config/defaults.mk) file, or create you own `config/user.mk`, as described in the [`INSTALL`](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL) file.
 
 The parallel examples can be build with:
 ```sh
