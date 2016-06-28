@@ -8,7 +8,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Robert Anderson](http://people.llnl.gov/anderson110)
 - [Mikhail Artemyev](https://github.com/martemyev)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
-- [Jakub Červený](http://people.llnl.gov/cerveny1)
+- [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
