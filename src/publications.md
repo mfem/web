@@ -18,7 +18,7 @@
   1. V. Dobrev, Tz. Kolev and R. Rieben, [High-order curvilinear finite element methods for Lagrangian hydrodynamics](http://dx.doi.org/10.1137/120864672), *SIAM J. Sci. Comp.*, 34, pp. B606–B641, **2012**.
   1. I. Lashuk and  P.Vassilevski, [Element agglomeration coarse Raviart-Thomas spaces with improved approximation properties](http://onlinelibrary.wiley.com/doi/10.1002/nla.1819/abstract), *Numer. Linear Algebra Appl.*, 19, pp. 414-426, **2012**.
   1. D. Kalchev, [Adaptive algebraic multigrid for ﬁnite element elliptic equations with random coeﬃcients](https://e-reports-ext.llnl.gov/pdf/594392.pdf), *LLNL Tech. Report*, LLNL-TR-553254, **2012**.
-  1. A. Aposporidis, P. Vassilevski, and A. Veneziani, [A geometric nonlinear AMLI preconditioner for the  Bingham fluid flow in mixed variables](http://www.mathcs.emory.edu/technical-reports/techrep-00244.pdf), *LLNL Tech. Report*, LLNL-JRNL-600372, **2012**.
+  1. A. Aposporidis, P. Vassilevski, and A. Veneziani, [A geometric nonlinear AMLI preconditioner for the Bingham fluid flow in mixed variables](http://www.mathcs.emory.edu/technical-reports/techrep-00244.pdf), *LLNL Tech. Report*, LLNL-JRNL-600372, **2012**.
   1. D. Kalchev, C. Ketelsen, and P.S. Vassilevski, Adaptive algebraic multigrid for sequence of problems with slowly varying random coefficients, *LLNL Tech. Report*, LLNL-JRNL-589132, **2012**.
   1. A. Baker, R. Falgout, Tz. Kolev and U. Yang, [Multigrid smoothers for ultra-parallel computing](http://dx.doi.org/10.1137/100798806), *SIAM J. Sci. Comp.*, 33, pp. 2864-2887, **2011**.
   1. V. Dobrev, T. Ellis, Tz. Kolev and R. Rieben, [Curvilinear finite elements for Lagrangian hydrodynamics](http://dx.doi.org/10.1002/fld.2366), *Int. J. Numer. Meth. Fluids*, 65, pp. 1295–1310, **2011**.

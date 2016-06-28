@@ -4,8 +4,9 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 ## Contributors
 
-- [Robert Anderson](http://people.llnl.gov/anderson110)
 - Ido Akkerman
+- [Robert Anderson](http://people.llnl.gov/anderson110)
+- [Mikhail Artemyev](https://github.com/martemyev)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
 - [Jakub Červený](http://people.llnl.gov/cerveny1)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
@@ -16,9 +17,10 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - [Mark Stowell](http://people.llnl.gov/stowell1)
-- [Vladimir Tomov](http://people.llnl.gov/tomov2)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
+- [Vladimir Tomov](http://people.llnl.gov/tomov2)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
+- [Daniel White](http://people.llnl.gov/white37)
 
 
 ## License
