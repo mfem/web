@@ -9,8 +9,8 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-<!--	<title>Download - MFEM</title>  -->
-    <title>MFEM - Finite Element Discretization Library</title>
+<!--	<title>Download - GLVis</title>  -->
+    <title>GLVis - OpenGL Finite Element Visualization Tool</title>
 
         <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('create', 'UA-101697-4', 'glvis.org');
             ga('send', 'pageview');
         </script>
         
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">MFEM</a>
+            <a class="navbar-brand" href="..">GLVis</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -72,67 +72,37 @@
             
             
             
-                <li >
-                    <a href="../examples/">Examples</a>
-                </li>
-            
-            
-            
-            
-            
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        
-                            <li >
-                                 <a href="../building/">Building MFEM</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../building/">Building GLVis</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../serial-tutorial/">Serial Tutorial</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../options-and-use/">Options and Use</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../mesh-formats/">Mesh Formats</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../electromagnetics/">Electromagnetics</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../parallel-visualization/">Parallel Visualization</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../meshing/">Meshing</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../curvilinear-vtk-meshes/">Curvilinear VTK Meshes</a>
+                        </li>
                     
-                        
+                        <li >
+                            <a href="../nurbs/">NURBS Meshes</a>
+                        </li>
                     
-                        
-                            <li >
-                                 <a href="../performance/">Performance</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../publications/">Publications</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../about/">About</a>
-                            </li>
-                        
+                        <li >
+                            <a href="../about/">About</a>
+                        </li>
                     
                     </ul>
                 </li>
@@ -162,7 +132,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/mfem/mfem">
+                    <a href="https://github.com/glvis/glvis">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -180,16 +150,17 @@
             <div class="col-md-12" role="main">
 
 <h2 id="latest-release">Latest Release</h2>
-<p><a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a>
-/ <a href="../examples/">Example codes</a>
-/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a>
-/ <a href="https://github.com/mfem/mfem">Sources</a></p>
-<p><a href="http://goo.gl/Y9T75B"><button type="button" class="btn btn-success">
-<strong>Download mfem-3.2.tgz</strong>
+<p><a href="https://raw.githubusercontent.com/glvis/glvis/master/CHANGELOG">New features</a>
+/ <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">User documentation</a>
+/ <a href="http://glvis.github.io/doxygen/html/index.html">Code documentation</a>
+/ <a href="https://github.com/glvis/glvis">Sources</a></p>
+<p><a href="http://goo.gl/hzupg1"><button type="button" class="btn btn-success">
+<strong>Download glvis-3.2.tgz</strong>
 </button></a></p>
-<p>Please use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
-to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
-or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a> or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.</p>
+<p>Please use the GitHub <a href="https://github.com/glvis/glvis/issues">issue tracker</a>
+to report <a href="https://github.com/glvis/glvis/issues/new?labels=bug">bugs</a>
+or post <a href="https://github.com/glvis/glvis/issues/new?labels=question">questions</a>
+or <a href="https://github.com/glvis/glvis/issues/new?labels=comment">comments</a>.</p>
 <h2 id="all-releases">All Releases</h2>
 <table>
 <thead>
@@ -200,130 +171,93 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
 <th><strong>Size</strong></th>
 <th><strong><a href="http://cloc.sourceforge.net">SLOC</a></strong></th>
 <th><strong>Notes</strong></th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="http://goo.gl/Y9T75B">mfem-3.2.tgz</a></td>
+<td><a href="http://goo.gl/hzupg1">glvis-3.2.tgz</a></td>
 <td>v3.2</td>
 <td>Jun 2016</td>
-<td>3.3M</td>
-<td>92K</td>
-<td></td>
+<td>182M</td>
+<td>25K</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://goo.gl/xrScXn">mfem-3.1.tgz</a></td>
+<td><a href="http://goo.gl/gQZuu9">glvis-3.1.tgz</a></td>
 <td>v3.1</td>
 <td>Feb 2016</td>
-<td>2.9M</td>
-<td>80K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/gcNNsA">mfem-3.0.1.tgz</a></td>
-<td>v3.0.1</td>
-<td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td>Bugfix release</td>
+<td>178K</td>
+<td>24K</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://goo.gl/TLcT5E">mfem-3.0.tgz</a></td>
+<td><a href="http://goo.gl/HcdvqY">glvis-3.0.tgz</a></td>
 <td>v3.0</td>
 <td>Jan 2015</td>
-<td>1.1M</td>
-<td>61K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/abUjn7">mfem-9e90b6710d.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2014</td>
-<td>389K</td>
-<td>51K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/KmaiH9">mfem-68e941f8fe.tgz</a></td>
-<td>N/A</td>
-<td>Jul 2013</td>
-<td>368K</td>
-<td>48K</td>
-<td>Development release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/PNrhv9">mfem-2.0.tgz</a></td>
-<td>v2.0</td>
-<td>Nov 2011</td>
-<td>308K</td>
-<td>40K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/nJ56Qm">mfem-v1.2.2.tgz</a></td>
-<td>v1.2.2</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/w44nyx">mfem-v1.2.1.tgz</a></td>
-<td>v1.2.1</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td>Bugfix release</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/GQit7Z">mfem-v1.2.tgz</a></td>
-<td>v1.2</td>
-<td>Apr 2011</td>
-<td>240K</td>
-<td>28K</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="http://goo.gl/VJ7WB8">mfem-v1.1.tgz</a></td>
-<td>v1.1</td>
-<td>Sep 2010</td>
-<td>166K</td>
+<td>174K</td>
 <td>23K</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="http://goo.gl/XlXptO">glvis-d32411e0e4.tgz</a></td>
+<td>N/A</td>
+<td>Jul 2014</td>
+<td>171K</td>
+<td>22K</td>
+<td>Development release</td>
+</tr>
+<tr>
+<td><a href="http://goo.gl/YcpXYl">glvis-d15634d151.tgz</a></td>
+<td>N/A</td>
+<td>Jul 2013</td>
+<td>170K</td>
+<td>22K</td>
+<td>Development release</td>
+</tr>
+<tr>
+<td><a href="http://goo.gl/B4NBVU">glvis-2.0.tgz</a></td>
+<td>v2.0</td>
+<td>Nov 2011</td>
+<td>158K</td>
+<td>20K</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://goo.gl/gY141R">mfem-v1.0.tgz</a></td>
+<td><a href="http://goo.gl/QLcnzW">glvis-v1.2.tgz</a></td>
+<td>v1.2</td>
+<td>Apr 2011</td>
+<td>150K</td>
+<td>19K</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://goo.gl/n7wMF9">glvis-v1.1.tgz</a></td>
+<td>v1.1</td>
+<td>Sep 2010</td>
+<td>148K</td>
+<td>19K</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://goo.gl/a5slBh">glvis-v1.0.tgz</a></td>
 <td>v1.0</td>
 <td>Jul 2010</td>
-<td>160K</td>
-<td>22K</td>
+<td>144K</td>
+<td>18K</td>
 <td>Initial release</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<!-- MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. --></div>
+<!-- GLVis originates from the previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. --></div>
 
             
         </div>
 
         <footer class="footer">
            <div class="container">
-              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignright">LLNL-WEB-676630</p>
               <p class="text-muted alignleft">
-                  Developed by the <a href="/about/">MFEM team</a> at
+                  Developed by the <a href="/about/">GLVis team</a> at
                   <a href="http://computation.llnl.gov/casc/">CASC</a>,
                   <a href="https://www.llnl.gov/">LLNL</a></p>
            </div>
