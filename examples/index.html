@@ -118,6 +118,12 @@
                     
                         
                             <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../publications/">Publications</a>
                             </li>
                         
@@ -214,6 +220,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
+   <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5><strong>Finite Elements</strong></h5>
@@ -248,6 +255,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
    <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
    <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
+   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU (parallel direct)</label><br/>
    <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
@@ -277,8 +285,10 @@ corresponding to the left-hand side and right-hand side of the
 discrete linear system. We also cover the explicit elimination
 of essential boundary conditions, static condensation, and the optional
 connection to the <a href="http://glvis.org">GLVis</a> tool for visualization.</p>
-<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a>)
-and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>) version.</em>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a>),
+a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>),
+and HPC versions: <a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp">performance/ex1.cpp</a>,
+<a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp">performance/ex1p.cpp</a>.</em>
 <div style="clear:both;"></div>
 <br></p>
 </div>
@@ -318,7 +328,7 @@ We recommend viewing Example 1 before viewing this example.</em>
 <p><img class="floatright" src="../img/examples/ex3.png"></p>
 <p>This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
-equation $${\rm curl\, curl}\, E + E = f$$
+equation $$\nabla\times\nabla\times\, E + E = f$$
 with boundary condition $ E \times n $ = "given tangential field".
 Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
 $f$. We discretize with Nedelec finite elements in 2D or 3D.</p>
@@ -500,9 +510,9 @@ Mass operators using a finite element space of the specified order, or an
 isoparametric/isogeometric space if order &lt; 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)</p>
 <p>The example highlights the use of the LOBPCG eigenvalue solver together with the
-BoomerAMG preconditioner in HYPRE.
-Reusing a single <a href="http://glvis.org">GLVis</a> visualization window for multiple
-eigenfunctions is also illustrated.</p>
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU parallel
+direct solver. Reusing a single <a href="http://glvis.org">GLVis</a> visualization window
+for multiple eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp">ex11p.cpp</a>) version.
 We recommend viewing Example 1 before viewing this example.</em>
@@ -549,7 +559,7 @@ We recommend viewing examples 2 and 11 before viewing this example.</em>
 <p><img class="floatright" src="../img/examples/ex13.png"></p>
 <p>This example code solves the Maxwell (electromagnetic)
 eigenvalue problem
-$${\rm curl\, curl}\, E = \lambda $$
+$$\nabla\times\nabla\times\, E = \lambda\, E $$
 with  homogeneous Dirichlet boundary conditions $E \times n = 0$.</p>
 <p>We compute a number of the lowest nonzero eigenmodes by
 discretizing the curl curl operator using a Nedelec finite element space of
@@ -582,6 +592,37 @@ We recommend viewing examples 1 and 9 before viewing this example.</em>
 <br></p>
 </div>
 
+<div id="ex15">
+
+<h2 id="example-15-dynamic-amr">Example 15: Dynamic AMR</h2>
+<p><img class="floatright" src="../img/examples/ex15.png"></p>
+<p>Building on <a href="#ex6">Example 6</a>, this example demonstrates dynamic adaptive mesh refinement.
+The mesh is adapted to a time-dependent solution by refinement
+as well as by derefinement. For simplicity, the solution is
+prescribed and no time integration is done. However, the error
+estimation and refinement/derefinement decisions are realistic.</p>
+<p>At each outer iteration the right hand side function is changed
+to mimic a time dependent problem.  Within each inner iteration
+the problem is solved on a sequence of meshes which are locally
+refined according to a simple ZZ error estimator.  At the end
+of the inner iteration the error estimates are also used to
+identify any elements which may be over-refined and a single
+derefinement step is performed.  After each refinement or
+derefinement step a rebalance operation is performed to keep
+the mesh evenly distributed among the available processors.</p>
+<p>The example demonstrates MFEM's capability to refine, derefine
+and load balance nonconforming meshes, in 2D and 3D, and on
+linear, curved and surface meshes. Interpolation of functions
+between coarse and fine meshes, persistent <a href="http://glvis.org">GLVis</a> visualization,
+and saving of time-dependent fields for external visualization
+with <a href="http://visit.llnl.gov">VisIt</a> are also illustrated.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex15.cpp">ex15.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp">ex15p.cpp</a>) version.
+We recommend viewing examples 1, 6 and 9 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
 <div id="volta">
 
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
@@ -602,7 +643,8 @@ in the field of linear electrostatics.  Its features include:</p>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
 <code>miniapps/electromagnetics</code> directory.</p>
 <p><em>The miniapp has only a parallel
-(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp">volta.cpp</a>) version. <strong>We recommend that new users start with the example codes before
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp">volta.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -628,7 +670,8 @@ of realistic magnetostatics problems.  Its features include:</p>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
 <code>miniapps/electromagnetics</code> directory.</p>
 <p><em>The miniapp has only a parallel
-(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp">tesla.cpp</a>) version. <strong>We recommend that new users start with the example codes before
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp">tesla.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -645,7 +688,8 @@ way to generate complex surface meshes.</p>
 <p>For more details, please see the <a href="../meshing/">documentation</a> in the
 <code>miniapps/meshing</code> directory.</p>
 <p><em>The miniapp has only a serial
-(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp">mobius-strip.cpp</a>) version. <strong>We recommend that new users start with the example codes before
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp">mobius-strip.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -662,7 +706,8 @@ the mobius-strip miniapp.</p>
 <p>For more details, please see the <a href="../meshing/">documentation</a> in the
 <code>miniapps/meshing</code> directory.</p>
 <p><em>The miniapp has only a serial
-(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp">klein-bottle.cpp</a>) version. <strong>We recommend that new users start with the example codes before
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp">klein-bottle.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -684,7 +729,8 @@ mesh. Some of its features are:</p>
 <p>For more details, please see the <a href="../meshing/">documentation</a> in the
 <code>miniapps/meshing</code> directory.</p>
 <p><em>The miniapp has only a serial
-(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp">mesh-explorer.cpp</a>) version. <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp">mesh-explorer.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
@@ -749,10 +795,10 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -760,8 +806,8 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 14; // update when adding examples!
-   showElement("ex1",  laplace && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
+   var numExamples = 15; // update when adding examples!
+   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
    showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams));
@@ -771,10 +817,11 @@ function update(id)
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex9",  advection && l2 && dg && (pcg || rk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk));
-   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg));
+   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
    showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
+   showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 2; // update when adding miniapps!
@@ -788,7 +835,7 @@ function update(id)
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
 
    var allHidden = true;
-   for (i = 1; i <= numExamples; i++) {
+   for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
       if (exampleVisible(i)) {
          allHidden = false;
          break;

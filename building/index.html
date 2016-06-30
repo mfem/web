@@ -118,6 +118,12 @@
                     
                         
                             <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../publications/">Publications</a>
                             </li>
                         
@@ -263,7 +269,7 @@ glvis-3.0/  hypre-2.10.0b.tar.gz   metis-4.0.tar.gz   mfem-3.0/
 ~/mfem-3.0&gt; make parallel -j
 </code></pre>
 
-<p>Note that if hypre or metis are in different locations, or you have different versions of these libraries, you will need to update the corresponding paths in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/makefile">makefile</a> (or create you own <a href="https://raw.githubusercontent.com/mfem/mfem/master/config/user.mk.in">user.mk</a> file as described in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL">INSTALL</a>).</p>
+<p>Note that if hypre or metis are in different locations, or you have different versions of these libraries, you will need to update the corresponding paths in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/config/defaults.mk"><code>config/defaults.mk</code></a> file, or create you own <code>config/user.mk</code>, as described in the <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL"><code>INSTALL</code></a> file.</p>
 <p>The parallel examples can be build with:</p>
 <pre><code class="sh">~&gt; cd mfem-3.0/examples
 ~/mfem-3.0/examples&gt; make -j
