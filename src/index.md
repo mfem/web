@@ -26,7 +26,7 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Jun 29, 2016 | Version 3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Jun 30, 2016 | Version 3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).
 Feb 16, 2016 | Version 3.1 released.
 
