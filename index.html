@@ -9,8 +9,8 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-<!--	<title>GLVis</title>  -->
-    <title>GLVis - OpenGL Finite Element Visualization Tool</title>
+<!--	<title>MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
 
         <link href="./css/bootstrap-mfem.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -30,7 +30,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-101697-4', 'glvis.org');
+            ga('create', 'UA-101697-3', 'mfem.org');
             ga('send', 'pageview');
         </script>
         
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">GLVis</a>
+            <a class="navbar-brand" href=".">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -72,37 +72,67 @@
             
             
             
+                <li >
+                    <a href="examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
-                        <li >
-                            <a href="building/">Building GLVis</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="building/">Building MFEM</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="options-and-use/">Options and Use</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="mesh-formats/">Mesh Formats</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="parallel-visualization/">Parallel Visualization</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="curvilinear-vtk-meshes/">Curvilinear VTK Meshes</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="meshing/">Meshing</a>
+                            </li>
+                        
                     
-                        <li >
-                            <a href="nurbs/">NURBS Meshes</a>
-                        </li>
+                        
                     
-                        <li >
-                            <a href="about/">About</a>
-                        </li>
+                        
+                            <li >
+                                 <a href="performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="about/">About</a>
+                            </li>
+                        
                     
                     </ul>
                 </li>
@@ -132,7 +162,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/glvis/glvis">
+                    <a href="https://github.com/mfem/mfem">
                         
                             <i class="fa fa-github-square"></i>
                         
@@ -151,17 +181,21 @@
 
 <div class="col-md-6">
 
-<p><a href="gallery/"><img alt="GLVis logo" src="./img/logo-300.png" /></a></p>
-<p>GLVis is a <em>lightweight</em> tool for <em>accurate</em> and <em>flexible</em> finite element visualization.</p>
+<p><a href="gallery/"><img alt="MFEM logo" src="./img/logo-300.png" /></a></p>
+<p>MFEM is a <em>free</em>, <em>lightweight</em>, <em>scalable</em> C++ library for finite element methods.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li>Accurate functional representation of many <a href="http://mfem.org/features/#higher-order-finite-element-spaces">finite elements</a>.</li>
-<li>Support for <a href="mesh-formats/#curvilinear-and-more-general-meshes">arbitrary high-order</a> and <a href="nurbs/">NURBS</a> meshes.</li>
-<li><a href="options-and-use/#server-mode">Server mode</a> accepting multiple socket connections.</li>
-<li>Visualization of <a href="parallel-visualization/">parallel</a> meshes and solutions.</li>
+<li>Arbitrary high-order finite element <a href="features/#wide-range-of-mesh-types">meshes</a>
+and <a href="features/#higher-order-finite-element-spaces">spaces</a>.</li>
+<li><a href="features/#flexible-discretization">Wide variety</a> of finite element discretization approaches.</li>
+<li>Conforming and nonconforming <a href="examples/?amr">adaptive mesh refinement</a>.</li>
+<li>Scalable to <a href="http://computation.llnl.gov/blast/parallel-performance">hundreds of thousands</a> of cores.</li>
 <li>... and <a href="features/">many more</a>.</li>
 </ul>
-<p>GLVis is based on the <a href="http://mfem.org">MFEM</a> library and is currently used in the <a href="http://www.llnl.gov/casc/blast">BLAST</a>, <em><a href="http://www.llnl.gov/casc/hypre">hypre</a></em> and <a href="http://www.llnl.gov/casc/xbraid">XBraid</a> projects. See also our <a href="gallery/">Gallery</a>.</p>
+<p>MFEM is currently used in the <a href="http://www.llnl.gov/casc/blast">BLAST</a>,
+<a href="http://glvis.org">GLVis</a>, <a href="http://www.llnl.gov/casc/xbraid">XBraid</a> and
+<a href="http://visit.llnl.gov">VisIt</a> projects.
+See&nbsp;also&nbsp;our&nbsp;<a href="gallery/">Gallery</a> and a list of related <a href="publications/">publications</a>.</p>
 </div>
 
 <div class="col-md-6 news-table">
@@ -177,40 +211,40 @@
 <tbody>
 <tr>
 <td>Jun 30, 2016</td>
-<td>Version 3.2 <a href="https://raw.githubusercontent.com/glvis/glvis/master/CHANGELOG">released</a>.</td>
+<td>Version 3.2 <a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">released</a>.</td>
 </tr>
 <tr>
-<td>Mar 4, 2016</td>
-<td>New LLNL OSS <a href="http://software.llnl.gov/news">Blog</a> and <a href="https://twitter.com/LLNL_OpenSource">Twitter</a>.</td>
+<td>May 6, 2016</td>
+<td>MFEM packages available in <a href="https://github.com/Homebrew/homebrew-science">homebrew</a> and <a href="https://github.com/LLNL/spack">spack</a>.</td>
 </tr>
 <tr>
-<td>Feb 5, 2016</td>
+<td>Feb 16, 2016</td>
 <td>Version 3.1 released.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="latest-release">Latest Release</h2>
-<p><a href="https://raw.githubusercontent.com/glvis/glvis/master/CHANGELOG">New features</a>
-/ <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">User documentation</a>
-/ <a href="http://glvis.github.io/doxygen/html/index.html">Code documentation</a>
-/ <a href="https://github.com/glvis/glvis">Sources</a></p>
-<p><a href="http://goo.gl/hzupg1"><button type="button" class="btn btn-success">
-<strong>Download glvis-3.2.tgz</strong>
+<p><a href="https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG">New features</a>
+/ <a href="examples/">Examples</a>
+/ <a href="http://mfem.github.io/doxygen/html/index.html">Code documentation</a>
+/ <a href="https://github.com/mfem/mfem">Sources</a></p>
+<p><a href="http://goo.gl/Y9T75B"><button type="button" class="btn btn-success">
+<strong>Download mfem-3.2.tgz</strong>
 </button></a></p>
 <p>For older releases see the <a href="download/">download</a> section.</p>
 <h2 id="documentation">Documentation</h2>
-<p><a href="building/">Building</a>
-/ <a href="mesh-formats/">Mesh formats</a>
-/ <a href="parallel-visualization/">Parallel visualization</a>
-/ <a href="curvilinear-vtk-meshes/">VTK</a>
-/ <a href="nurbs/">NURBS</a></p>
-<p>New users should start with the <a href="options-and-use/">options and general use</a> tutorial.</p>
-<p>We also recommend reading the <a href="http://mfem.org">MFEM project</a> documentation.</p>
+<p><a href="building/">Building MFEM</a>
+/ <a href="serial-tutorial/">Serial Tutorial</a>
+/ <a href="parallel-tutorial/">Parallel Tutorial</a>
+/ <a href="electromagnetics/">Electromagnetics</a>
+/ <a href="meshing/">Meshing</a></p>
+<p>New users should start by examining the <a href="examples/">example codes</a>.</p>
+<p>We also recommend using <a href="http://glvis.org">GLVis</a> for visualization.</p>
 <h2 id="contact">Contact</h2>
-<p>Use the GitHub <a href="https://github.com/glvis/glvis/issues">issue tracker</a>
-to report <a href="https://github.com/glvis/glvis/issues/new?labels=bug">bugs</a>
-or post <a href="https://github.com/glvis/glvis/issues/new?labels=question">questions</a>
-or <a href="https://github.com/glvis/glvis/issues/new?labels=comment">comments</a>.
+<p>Use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
+to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
+or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a>
+or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.
 See&nbsp;the <a href="about/">About</a> page for citation information.</p>
 </div>
 
@@ -221,9 +255,9 @@ See&nbsp;the <a href="about/">About</a> page for citation information.</p>
 
         <footer class="footer">
            <div class="container">
-              <p class="text-muted alignright">LLNL-WEB-676630</p>
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
               <p class="text-muted alignleft">
-                  Developed by the <a href="/about/">GLVis team</a> at
+                  Developed by the <a href="/about/">MFEM team</a> at
                   <a href="http://computation.llnl.gov/casc/">CASC</a>,
                   <a href="https://www.llnl.gov/">LLNL</a></p>
            </div>
