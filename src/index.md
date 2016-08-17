@@ -26,12 +26,13 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Jun 30, 2016 | Version 3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).
-Mar 4, 2016  | New LLNL OSS [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).
-Feb 16, 2016 | MFEM version 3.1 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Feb 16, 2016 | Version 3.1 released.
 
 [comment]: # (Mar 16, 2016 | Postdoc position [available](http://careers-ext.llnl.gov/jobs/5242192-postdoctoral-research-staff-member) on the MFEM team.)
 [comment]: # (Mar 9, 2016  | VisIt 2.10.1 [released](http://software.llnl.gov/news/2016/03/09/visit-2.10.1) with MFEM 3.1 support.)
+[comment]: # (Mar 4, 2016  | New LLNL OSS [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).)
 [comment]: # (Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).)
 [comment]: # (Jan 26, 2015 | Version 3.0 released.)
 
@@ -44,8 +45,8 @@ Feb 16, 2016 | MFEM version 3.1 [released](https://raw.githubusercontent.com/mfe
 / [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-3.1.tgz**
-</button>](http://goo.gl/xrScXn)
+**Download mfem-3.2.tgz**
+</button>](http://goo.gl/Y9T75B)
 
 For older releases see the [download](download.md) section.
 
