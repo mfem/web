@@ -535,6 +535,37 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="joule" markdown="1">
+##Joule Miniapp: Transient Magnetics and Joule Heating
+<img class="floatright" src="../img/examples/joule_pic_half.png" >
+
+This miniapp solves the equations of transient low-frequency (aka eddy current)
+electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+by the electromagnetic Joule heating.
+
+Its features include:
+
+- H1 discretization of the electrostatic potential
+- H(curl) discretization of the electric field
+- H(div) discretization of the magetic field 
+- H(div) discretization of the heat flux
+- L2 discretization of the temperature
+- implicit transient time integration
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([joule.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
