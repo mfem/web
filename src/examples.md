@@ -77,6 +77,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
    <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
    <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
+   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU (parallel direct)</label><br/>
    <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
@@ -354,9 +355,9 @@ isoparametric/isogeometric space if order < 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)
 
 The example highlights the use of the LOBPCG eigenvalue solver together with the
-BoomerAMG preconditioner in HYPRE.
-Reusing a single [GLVis](http://glvis.org) visualization window for multiple
-eigenfunctions is also illustrated.
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU parallel
+direct solver. Reusing a single [GLVis](http://glvis.org) visualization window
+for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
 ([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
@@ -535,6 +536,37 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="joule" markdown="1">
+##Joule Miniapp: Transient Magnetics and Joule Heating
+<img class="floatright" src="../img/examples/joule_pic_half.png" >
+
+This miniapp solves the equations of transient low-frequency (aka eddy current)
+electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+by the electromagnetic Joule heating.
+
+Its features include:
+
+- H1 discretization of the electrostatic potential
+- H(curl) discretization of the electric field
+- H(div) discretization of the magetic field 
+- H(div) discretization of the heat flux
+- L2 discretization of the temperature
+- implicit transient time integration
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([joule.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
@@ -665,7 +697,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -684,7 +716,7 @@ function update(id)
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
    showElement("ex9",  advection && l2 && dg && (pcg || rk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk));
-   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg));
+   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
    showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
