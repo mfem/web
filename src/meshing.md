@@ -9,6 +9,8 @@ MFEM supports a number of mesh formats, including:
   - MFEM's own [mesh v1.0 format](mesh-formats.md#mfem-mesh-v10), which can describe both [straight](mesh-formats.md#straight-meshes) as well as [arbitrary high-order curvilinear](mesh-formats.md#curvilinear-and-more-general-meshes) and [more general](mesh-formats.md#curvilinear-and-more-general-meshes) meshes,
   - MFEM's own format for [NURBS](mesh-formats.md#nurbs-meshes) meshes,
   - The [VTK](mesh-formats.md#curvilinear-vtk-meshes) unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,
+  - The [Gmsh](http://gmsh.info/) ASCII and binary formats for 2D and 3D meshes.
+  - The [CUBIT](https://cubit.sandia.gov/) meshes through the Genesis (NetCDF) binary format.
   - The [NETGEN](http://sourceforge.net/projects/netgen-mesher/) triangular and tetrahedral mesh formats,
   - The [TrueGrid](http://www.truegrid.com/) hexahedral mesh format.
 

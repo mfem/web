@@ -66,7 +66,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - parallel eigensolvers: [LOBPCG](examples.md?lobpcg) and [AME](examples.md?ame),
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - sequential sparse direct solvers from the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_83.svg),
  - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
 
@@ -79,7 +79,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html): Nedelec H(curl) FEM for the definite Maxwell problem,
  - [Example 4](http://mfem.github.io/doxygen/html/ex4_8cpp_source.html): Raviart-Thomas H(div) FEM for the grad-div problem,
  - [Example 5](http://mfem.github.io/doxygen/html/ex5_8cpp_source.html): mixed pressure-velocity FEM for the Darcy problem,
- - [Example 6](http://mfem.github.io/doxygen/html/ex6_8cpp_source.html): non-conforming adaptive mesh refinement for the Laplace problem,
+ - [Example 6](http://mfem.github.io/doxygen/html/ex6_8cpp_source.html): non-conforming adaptive mesh refinement (AMR) for the Laplace problem,
  - [Example 7](http://mfem.github.io/doxygen/html/ex7_8cpp_source.html): Laplace problem on a surface (the unit sphere),
  - [Example 8](http://mfem.github.io/doxygen/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
  - [Example 9](http://mfem.github.io/doxygen/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,

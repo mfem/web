@@ -1,4 +1,3 @@
-
 var page = new WebPage()
 var fs = require('fs');
 
@@ -23,8 +22,8 @@ function exportPage()
 
 page.onLoadFinished = function() {
   console.log("Page loaded, waiting 2 sec...");
-  setTimeout(function() { 
-     exportPage(); 
+  setTimeout(function() {
+     exportPage();
   }, 2000);
 };
 
