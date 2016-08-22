@@ -41,9 +41,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
+   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
-   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
@@ -490,7 +490,7 @@ This example code solves a simple 2D/3D time dependent nonlinear heat conduction
 $$\frac{du}{dt} = \nabla \cdot \left( \kappa + \alpha u \right) \nabla u$$
 with a natural insulating boundary condition $\frac{du}{dn} = 0$.
 We linearize the problem by using the temperature field $u$ from the previous time
-step. 
+step to compute the conductivity coefficient. 
 
 This example demonstrates both implicit and explicit time integration as well as a single
 Picard step method for linearization. The saving of time dependent data files for external
