@@ -7,6 +7,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - Ido Akkerman
 - [Robert Anderson](http://people.llnl.gov/anderson110)
 - [Mikhail Artemyev](https://github.com/martemyev)
+- [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
