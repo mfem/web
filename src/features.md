@@ -89,6 +89,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 13](http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver,
  - [Example 14](http://mfem.github.io/doxygen/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem.
  - [Example 15](http://mfem.github.io/doxygen/html/ex15_8cpp_source.html): parallel dynamic AMR for Laplace with prescribed time-dependent source
+ - [Example 16](http://mfem.github.io/doxygen/html/ex16_8cpp_source.html): parallel time-dependent nonlinear heat equation
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
