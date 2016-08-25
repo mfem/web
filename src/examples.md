@@ -486,11 +486,11 @@ We recommend viewing examples 1, 6 and 9 before viewing this example._
 ##Example 16: Time Dependent Heat Conduction
 <img class="floatright" src="../img/examples/ex16.png">
 
-This example code solves a simple 2D/3D time dependent nonlinear heat conduction problem 
+This example code solves a simple 2D/3D time dependent nonlinear heat conduction problem
 $$\frac{du}{dt} = \nabla \cdot \left( \kappa + \alpha u \right) \nabla u$$
 with a natural insulating boundary condition $\frac{du}{dn} = 0$.
 We linearize the problem by using the temperature field $u$ from the previous time
-step to compute the conductivity coefficient. 
+step to compute the conductivity coefficient.
 
 This example demonstrates both implicit and explicit time integration as well as a single
 Picard step method for linearization. The saving of time dependent data files for external
@@ -685,7 +685,7 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing", "hpc", "conduction"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
