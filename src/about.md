@@ -6,6 +6,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 - Ido Akkerman
 - [Robert Anderson](http://people.llnl.gov/anderson110)
+- [Thomas Anderson](http://www.its.caltech.edu/~tganders)
 - [Mikhail Artemyev](https://github.com/martemyev)
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
@@ -15,6 +16,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
+- Peter Maginot
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - [Mark Stowell](http://people.llnl.gov/stowell1)
