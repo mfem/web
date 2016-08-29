@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mfemdir=$HOME/mfem
-# mfemdir=..
+mfemdir=$HOME/mfem/code-reviews/mfem
 
 function preprocess { # src dst
 	cat $1 \

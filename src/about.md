@@ -16,7 +16,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
-- Peter Maginot
+- [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - [Mark Stowell](http://people.llnl.gov/stowell1)
