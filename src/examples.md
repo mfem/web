@@ -519,7 +519,7 @@ is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda
 are the material Lame constants. The boundary conditions are
 Dirichlet, $\bf{u}=\bf{u_D}$, on the fixed part of the boundary, namely
 boundary attributes 1 and 2; on the rest of the boundary we use
-${\sigma}({\bf u})\cdot n = f$. The geometry of the domain is assumed to be
+${\sigma}({\bf u})\cdot n = {\bf 0}$. The geometry of the domain is assumed to be
 as follows:
 
 ![](img/examples/ex17-domain.png)
