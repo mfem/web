@@ -41,6 +41,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
+   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
@@ -481,6 +482,62 @@ We recommend viewing examples 1, 6 and 9 before viewing this example._
 <br></div>
 
 
+<div id="ex16" markdown="1">
+##Example 16: Time Dependent Heat Conduction
+<img class="floatright" src="../img/examples/ex16.png">
+
+This example code solves a simple 2D/3D time dependent nonlinear heat conduction problem
+$$\frac{du}{dt} = \nabla \cdot \left( \kappa + \alpha u \right) \nabla u$$
+with a natural insulating boundary condition $\frac{du}{dn} = 0$.
+We linearize the problem by using the temperature field $u$ from the previous time
+step to compute the conductivity coefficient.
+
+This example demonstrates both implicit and explicit time integration as well as a single
+Picard step method for linearization. The saving of time dependent data files for external
+visualization with [VisIt](http://visit.llnl.gov) is also illustrated.
+
+_The example has a serial ([ex16.cpp](https://github.com/mfem/mfem/blob/master/examples/ex16.cpp))
+and a parallel ([ex16p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex16p.cpp)) version.
+We recommend viewing examples 2, 9, and 10 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex17" markdown="1">
+##Example 17: DG Linear Elasticity
+<img class="floatright" src="../img/examples/ex17.png">
+
+This example code solves a simple linear elasticity problem
+describing a multi-material cantilever beam using symmetric or
+non-symmetric discontinuous Galerkin (DG) formulation.
+
+Specifically, we approximate the weak form of
+$$-{\rm div}({\sigma}({\bf u})) = 0$$
+where
+$${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$
+is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$
+are the material Lame constants. The boundary conditions are
+Dirichlet, $\bf{u}=\bf{u_D}$, on the fixed part of the boundary, namely
+boundary attributes 1 and 2; on the rest of the boundary we use
+${\sigma}({\bf u})\cdot n = {\bf 0}$. The geometry of the domain is assumed to be
+as follows:
+
+![](img/examples/ex17-domain.png)
+
+The example demonstrates the use of high-order DG vector finite
+element spaces with the linear DG elasticity bilinear form,
+meshes with curved elements, and the definition of piece-wise
+constant and function vector-coefficient objects. The use of
+non-homogeneous Dirichlet b.c. imposed weakly, is also
+illustrated.
+
+_The example has a serial ([ex17.cpp](https://github.com/mfem/mfem/blob/master/examples/ex17.cpp))
+and a parallel ([ex17p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex17p.cpp)) version.
+We recommend viewing examples 2 and 14 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -694,7 +751,7 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
@@ -705,7 +762,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 15; // update when adding examples!
+   var numExamples = 17; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
@@ -721,6 +778,8 @@ function update(id)
    showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk));
+   showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 2; // update when adding miniapps!
