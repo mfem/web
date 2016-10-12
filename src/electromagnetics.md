@@ -4,7 +4,7 @@ $\newcommand{\A}{\vec{A}}\newcommand{\B}{\vec{B}}
 \newcommand{\D}{\vec{D}}\newcommand{\E}{\vec{E}}
 \newcommand{\H}{\vec{H}}\newcommand{\J}{\vec{J}}
 \newcommand{\M}{\vec{M}}\newcommand{\P}{\vec{P}}
-\newcommand{\F}{\vec{F}}\newcommand{\T}{\vec{T}}
+\newcommand{\F}{\vec{F}}
 \newcommand{\dd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\cross}{\times}\newcommand{\inner}{\cdot}
 \newcommand{\div}{\nabla\cdot}\newcommand{\curl}{\nabla\times}
@@ -286,7 +286,7 @@ Note that this application assumes the mesh coordinates are given in meters.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
 
-## Magnetostatics
+## Transient Magnetics and Joule Heating (TODO)
 
 Magnetostatic problems arise when we assume no time variation in Ampére's Law
 \eqref{ampere} which leads to:
@@ -332,62 +332,67 @@ means to specify the component of $\B$ normal to that surface. For example,
 setting the tangential components of $\A$ to be zero on a particular surface
 results in a magnetic flux density which must be tangent to that surface.
 
-## Joule Mini Application
+### Joule Mini Application
 
 The transient magnetics mini application, named `Joule` after the SI unit of energy (and the
-scientist James Prescott Joule, who was also a brewer), is intended to demonstrate how to solve 
+scientist James Prescott Joule, who was also a brewer), is intended to demonstrate how to solve
 transient implicit diffusion problems. The equations of low-frequency electromagnetics are coupled
 with the equations of heat transfer. The coupling is one way, electromagnetics generates Joule
 heating, but the heating does not affect the electromagnetics.  The thermal problem
-is solved using an H(div) method, i.e. temperature is discontinuous and the thermal flux F is in H(div).
-There are three linear solves per
-time step: 1) Poissons' equation for the scalar electric potential is solved using the AMG
- preconditioner, 2) the electric diffusion equation is solved using the AMS preconditioner, and
-3) the thermal diffusion equation is solved using the ADS preconditioner. 
+is solved using an $H(\\mathrm{div})$ method, i.e. temperature is discontinuous and the
+thermal flux $\F$ is in $H(\\mathrm{div})$.
+There are three linear solves per time step:
+
+1. Poisson's equation for the scalar electric potential is solved using the AMG
+ preconditioner,
+2. the electric diffusion equation is solved using the AMS preconditioner, and
+3. the thermal diffusion equation is solved using the ADS preconditioner.
 
 Two example meshes are provided, one is a straight circular metal rod in vacuum, the other is a helical
-coil in vaccum. The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
+coil in vacuum. The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
 into the metal, the metal is heated by Joule heating, the heat diffuses out.
 
 The equations are:
- 
-  $$\div\sigma\grad\Phi = 0$$
-  $$\sigma \E = \curl\mu^{-1} \B - \sigma \grad \Phi$$
-  $$ \frac{d \B}{d t} = - \curl \E$$
-  $$ \F = -k \grad \T$$
-  $$ c \frac{d T}{d t} = - \div \F + \sigma \E \cdot \E$$
+
+  $$\begin{align}
+    \div\sigma\grad\Phi &= 0 \\\\
+    \sigma \E &= \curl\mu^{-1} \B - \sigma \grad \Phi \\\\
+    \frac{d \B}{d t} &= - \curl \E \\\\
+    \F &= -k \grad T \\\\
+    c \frac{d T}{d t} &= - \div \F + \sigma \E \cdot \E
+  \end{align}$$
 
 The equations are integrated in time using implicit time integration, either midpoint or
-higher order SDIRK. 
+higher order SDIRK.
 
-Since there are three solves,  three sets of boundary conditions must be specified. The 
+Since there are three solves,  three sets of boundary conditions must be specified. The
 essential BC's are the scalar potential, the electric field, and the thermal flux. These are not
 set via command line arguments, you have to edit the code to change these. To change these,
-search the code for "ess_bdr"
+search the code for `ess_bdr`
 
 There are conducting and non-conducting material regions, and the mesh must have integer attributes
-to specify these regions. To change these, search the code for "std::map<int, double>" this maps the
-integer attribute to the floating-point material value. 
+to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
+integer attribute to the floating-point material value.
 
 Note that this application assumes the mesh coordinates are given in meters.
 
 ![](img/examples/joule_pic.png)
 
-The above picture shows Joule heating of a cylinder using the mesh cylinderHex.mesh. The cylinder is 
-surrounded by vacuum. The black arrows show the magetic field B, the magenta arrows show the heat 
-flux F, and the pseudocolor in the center of the cylinder shows the temperature.
+The above picture shows Joule heating of a cylinder using the mesh `cylinderHex.mesh`. The cylinder is
+surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat
+flux $\F$, and the pseudocolor in the center of the cylinder shows the temperature.
 
 
 #### Mini Application Features
 
-**Boundary Conditions:** Since there are three solves,  three sets of boundary conditions must be specified. The 
-essential BC's are the voltage for the scalar potential, the tangential electric field, and the normal thermal flux. 
+**Boundary Conditions:** Since there are three solves,  three sets of boundary conditions must be specified. The
+essential BC's are the voltage for the scalar potential, the tangential electric field, and the normal thermal flux.
 These are not
 set via command line arguments, you have to edit the code to change these. To change these,
-search the code for "ess_bdr". Note that the essential BC's can be time varying.
+search the code for `ess_bdr`. Note that the essential BC's can be time varying.
 
 **Material Properties:** There are conducting and non-conducting material regions, and the mesh must have integer attributes
-to specify these regions. To change these, search the code for "std::map<int, double>" this maps the
+to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
 integer attribute to the floating-point material value.
 
 

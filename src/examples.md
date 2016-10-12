@@ -546,11 +546,11 @@ by the electromagnetic Joule heating.
 
 Its features include:
 
-- H1 discretization of the electrostatic potential
-- H(curl) discretization of the electric field
-- H(div) discretization of the magetic field 
-- H(div) discretization of the heat flux
-- L2 discretization of the temperature
+- $H^1$ discretization of the electrostatic potential
+- $H(\\mathrm{curl})$ discretization of the electric field
+- $H(\\mathrm{div})$ discretization of the magetic field
+- $H(\\mathrm{div})$ discretization of the heat flux
+- $L^2$ discretization of the temperature
 - implicit transient time integration
 - high order meshes
 - high order basis functions
