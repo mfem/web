@@ -593,9 +593,10 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+
 <div id="joule" markdown="1">
 ##Joule Miniapp: Transient Magnetics and Joule Heating
-<img class="floatright" src="../img/examples/joule_pic_half.png" >
+<img class="floatright" src="../img/examples/joule.png" >
 
 This miniapp solves the equations of transient low-frequency (aka eddy current)
 electromagnetics, and simultanesously computes transient heat transfer with the heat source given
@@ -782,9 +783,10 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
    // Electromagnetic miniapps
-   numExamples += 2; // update when adding miniapps!
+   numExamples += 3; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+   showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
    numExamples += 3; // update when adding miniapps!

@@ -376,7 +376,7 @@ integer attribute to the floating-point material value.
 
 Note that this application assumes the mesh coordinates are given in meters.
 
-![](img/examples/joule_pic.png)
+![](img/examples/joule-screenshot.png)
 
 The above picture shows Joule heating of a cylinder using the mesh `cylinderHex.mesh`. The cylinder is
 surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat
@@ -394,7 +394,6 @@ search the code for `ess_bdr`. Note that the essential BC's can be time varying.
 **Material Properties:** There are conducting and non-conducting material regions, and the mesh must have integer attributes
 to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
 integer attribute to the floating-point material value.
-
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
