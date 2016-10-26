@@ -286,7 +286,7 @@ Note that this application assumes the mesh coordinates are given in meters.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
 
-## Transient Magnetics and Joule Heating 
+## Transient Magnetics and Joule Heating
 
 ### Joule Mini Application
 
@@ -305,7 +305,8 @@ There are three linear solves per time step:
 3. the thermal diffusion equation is solved using the ADS preconditioner.
 
 Two example meshes are provided, one is a straight circular metal rod in vacuum, the other is a helical
-coil in vacuum. The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
+coil in vacuum (the latter is 21MB and can be downloaded from [here](http://github.com/mfem/data/coil.gen)).
+The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
 into the metal, the metal is heated by Joule heating, the heat diffuses out.
 
 The equations are:
