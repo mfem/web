@@ -286,51 +286,7 @@ Note that this application assumes the mesh coordinates are given in meters.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
 
-## Transient Magnetics and Joule Heating (TODO)
-
-Magnetostatic problems arise when we assume no time variation in Ampére's Law
-\eqref{ampere} which leads to:
-
-  $$\curl\H = \J   \nonumber$$
-
-We will again assume a somewhat more general constitutive relation between $\H$
-and $\vec{B}$ than is normally seen:
-
-  $$\B = \mu\H + \mu_0\M = \mu_0(1 + \chi_M)\H + \mu_0\M   \nonumber$$
-
-Where the magnetization is split into two portions; one which is proportional
-to $\H$ and given by $\chi_M\H$, and another which is independent of $\H$ and
-is given by $\M$. This allows for paramagnetic and/or diamagnetic materials
-defined through $\mu$ as well as ferromagnetic materials represented by $\M$.
-This choice yields:
-
-  $$\curl\mu^{-1}\B = \J + \curl\mu^{-1}\mu_0\M   \nonumber$$
-
-Which, when combined with equation \eqref{divb}, becomes:
-
-  $$\curl\mu^{-1}\curl\A = \J + \curl\mu^{-1}\mu_0\M $$
-
-If $\J$ happens to be zero we have another option because we can assume that
-$\H = -\grad\varphi_M$ for some scalar potential $\varphi_M$. When combined
-with equation \eqref{divb} this leads to:
-
-  $$\div\mu\grad\varphi_M = \div\mu_0\M $$
-
-Currently only the vector potential equation is used so we will focus on that
-for the remainder of this document.
-
-The vector potential is again non unique so we must apply additional
-constraints in order to arrive at a solution for $\A$. When working
-analytically it is common to constrain the solution by restricting the
-divergence of $\A$ but numerically this leads to other complications. For our
-problems of interest it will be necessary to require Dirichlet boundary
-conditions on the entire outer surface in order to sufficiently constrain the
-solution.
-
-Dirichlet boundary conditions for the vector potential on a surface provide a
-means to specify the component of $\B$ normal to that surface. For example,
-setting the tangential components of $\A$ to be zero on a particular surface
-results in a magnetic flux density which must be tangent to that surface.
+## Transient Magnetics and Joule Heating 
 
 ### Joule Mini Application
 
