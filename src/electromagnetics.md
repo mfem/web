@@ -290,7 +290,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 
 ### Joule Mini Application
 
-The transient magnetics mini application, named `Joule` after the SI unit of energy (and the
+The transient magnetics mini application, named `joule` after the SI unit of energy (and the
 scientist James Prescott Joule, who was also a brewer), is intended to demonstrate how to solve
 transient implicit diffusion problems. The equations of low-frequency electromagnetics are coupled
 with the equations of heat transfer. The coupling is one way, electromagnetics generates Joule
@@ -334,7 +334,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 
 ![](img/examples/joule-screenshot.png)
 
-The above picture shows Joule heating of a cylinder using the mesh `cylinderHex.mesh`. The cylinder is
+The above picture shows Joule heating of a cylinder using the mesh `cylinder-hex.mesh`. The cylinder is
 surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat
 flux $\F$, and the pseudocolor in the center of the cylinder shows the temperature.
 
