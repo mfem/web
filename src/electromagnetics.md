@@ -4,6 +4,7 @@ $\newcommand{\A}{\vec{A}}\newcommand{\B}{\vec{B}}
 \newcommand{\D}{\vec{D}}\newcommand{\E}{\vec{E}}
 \newcommand{\H}{\vec{H}}\newcommand{\J}{\vec{J}}
 \newcommand{\M}{\vec{M}}\newcommand{\P}{\vec{P}}
+\newcommand{\F}{\vec{F}}
 \newcommand{\dd}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\cross}{\times}\newcommand{\inner}{\cdot}
 \newcommand{\div}{\nabla\cdot}\newcommand{\curl}{\nabla\times}
@@ -284,6 +285,72 @@ Note that this application assumes the mesh coordinates are given in meters.
   specify a desired uniform magnetic flux density on the entire outer surface.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
+
+## Transient Magnetics and Joule Heating
+
+### Joule Mini Application
+
+The transient magnetics mini application, named `joule` after the SI unit of energy (and the
+scientist James Prescott Joule, who was also a brewer), is intended to demonstrate how to solve
+transient implicit diffusion problems. The equations of low-frequency electromagnetics are coupled
+with the equations of heat transfer. The coupling is one way, electromagnetics generates Joule
+heating, but the heating does not affect the electromagnetics.  The thermal problem
+is solved using an $H(\\mathrm{div})$ method, i.e. temperature is discontinuous and the
+thermal flux $\F$ is in $H(\\mathrm{div})$.
+There are three linear solves per time step:
+
+1. Poisson's equation for the scalar electric potential is solved using the AMG
+ preconditioner,
+2. the electric diffusion equation is solved using the AMS preconditioner, and
+3. the thermal diffusion equation is solved using the ADS preconditioner.
+
+Two example meshes are provided, one is a straight circular metal rod in vacuum, the other is a helical
+coil in vacuum (the latter is 21MB and can be downloaded from [here](http://github.com/mfem/data/coil.gen)).
+The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
+into the metal, the metal is heated by Joule heating, the heat diffuses out.
+
+The equations are:
+
+  $$\begin{align}
+    \div\sigma\grad\Phi &= 0 \\\\
+    \sigma \E &= \curl\mu^{-1} \B - \sigma \grad \Phi \\\\
+    \frac{d \B}{d t} &= - \curl \E \\\\
+    \F &= -k \grad T \\\\
+    c \frac{d T}{d t} &= - \div \F + \sigma \E \cdot \E
+  \end{align}$$
+
+The equations are integrated in time using implicit time integration, either midpoint or
+higher order SDIRK.
+
+Since there are three solves,  three sets of boundary conditions must be specified. The
+essential BC's are the scalar potential, the electric field, and the thermal flux. These are not
+set via command line arguments, you have to edit the code to change these. To change these,
+search the code for `ess_bdr`
+
+There are conducting and non-conducting material regions, and the mesh must have integer attributes
+to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
+integer attribute to the floating-point material value.
+
+Note that this application assumes the mesh coordinates are given in meters.
+
+![](img/examples/joule-screenshot.png)
+
+The above picture shows Joule heating of a cylinder using the mesh `cylinder-hex.mesh`. The cylinder is
+surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat
+flux $\F$, and the pseudocolor in the center of the cylinder shows the temperature.
+
+
+#### Mini Application Features
+
+**Boundary Conditions:** Since there are three solves,  three sets of boundary conditions must be specified. The
+essential BC's are the voltage for the scalar potential, the tangential electric field, and the normal thermal flux.
+These are not
+set via command line arguments, you have to edit the code to change these. To change these,
+search the code for `ess_bdr`. Note that the essential BC's can be time varying.
+
+**Material Properties:** There are conducting and non-conducting material regions, and the mesh must have integer attributes
+to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
+integer attribute to the floating-point material value.
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>

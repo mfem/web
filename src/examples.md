@@ -594,6 +594,38 @@ moving to the miniapps.**_
 <br></div>
 
 
+<div id="joule" markdown="1">
+##Joule Miniapp: Transient Magnetics and Joule Heating
+<img class="floatright" src="../img/examples/joule.png" >
+
+This miniapp solves the equations of transient low-frequency (aka eddy current)
+electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+by the electromagnetic Joule heating.
+
+Its features include:
+
+- $H^1$ discretization of the electrostatic potential
+- $H(\\mathrm{curl})$ discretization of the electric field
+- $H(\\mathrm{div})$ discretization of the magetic field
+- $H(\\mathrm{div})$ discretization of the heat flux
+- $L^2$ discretization of the temperature
+- implicit transient time integration
+- high order meshes
+- high order basis functions
+- adaptive mesh refinement
+- advanced visualization
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([joule.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
 <img class="floatright" src="../img/examples/mobius-strip.png">
@@ -751,9 +783,10 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
    // Electromagnetic miniapps
-   numExamples += 2; // update when adding miniapps!
+   numExamples += 3; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+   showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
    numExamples += 3; // update when adding miniapps!
