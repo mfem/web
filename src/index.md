@@ -57,6 +57,7 @@ For older releases see the [download](download.md) section.
 [Building MFEM](building.md)
 / [Serial Tutorial](serial-tutorial.md)
 / [Parallel Tutorial](parallel-tutorial.md)
+/ [Finite Element Method](fem.md)
 / [Electromagnetics](electromagnetics.md)
 / [Meshing](meshing.md)
 
