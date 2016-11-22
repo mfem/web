@@ -1,6 +1,7 @@
 # Bilinear Integrators
 
-$\newcommand{\cross}{\times}
+$
+\newcommand{\cross}{\times}
 \newcommand{\inner}{\cdot}
 \newcommand{\div}{\nabla\cdot}
 \newcommand{\curl}{\nabla\times}
@@ -49,9 +50,12 @@ $$\\{a(\lambda\vec\{u}, \vec\{v})\\}\_{ij}\equiv \int_\Omega \lambda \vec\{u}_j\
 | Class Name                           | Domain | Range  | Coef.   | Operator                                      | Continuous Op.                       | Dimension  |
 |--------------------------------------|--------|--------|:-------:|-----------------------------------------------|--------------------------------------|:----------:|
 | MixedScalarMassIntegrator            | H1, L2 | H1, L2 |    S    | $a(\lambda u, v)$                             | $\lambda u$                          | 1D, 2D, 3D |
+| MixedGradGradIntegrator              | H1     | H1     | S, D, M | $a(\lambda\grad u,\grad v)$                   | $-\div(\lambda\grad u)$              | 2D, 3D     |
+| MixedCrossGradIntegrator             | H1     | ND, RT |  **V**  | $a(\vec\{\lambda}\cross\grad u,\vec\{v})$     | $\vec\{\lambda}\cross\grad u$        | 3D         |
+| MixedCrossGradGradIntegrator         | H1     | H1     |  **V**  | $a(\vec\{\lambda}\cross\grad u,\grad v)$      | $-\div(\vec\{\lambda}\cross\grad u)$ | 2D, 3D     |
 | MixedVectorGradientIntegrator        | H1     | ND, RT | S, D, M | $a(\lambda\grad u,\vec\{v})$                  | $\lambda\grad u$                     | 2D, 3D     |
 | MixedScalarWeakGradientIntegrator    | H1, L2 | RT     |    S    | $a(-\lambda u, \div\vec\{v})$                 | $\grad(\lambda u)$                   | 2D, 3D     |
-| MixedScalarVectorIntegrator          | H1, L2 | ND, RT |  **V**  | $a(\vec\{\lambda}u,\vec\{v})$                 | $\vec\{\lambda}u$                    | 2D, 3D     |
+| MixedVectorProductIntegrator         | H1, L2 | ND, RT |  **V**  | $a(\vec\{\lambda}u,\vec\{v})$                 | $\vec\{\lambda}u$                    | 2D, 3D     |
 | MixedDirectionalDerivativeIntegrator | H1     | H1, L2 |  **V**  | $a(\vec\{\lambda}\cdot\grad u, v)$            | $\vec\{\lambda}\cdot\grad u$         | 2D, 3D     |
 | MixedGradDivIntegrator               | H1     | RT     |  **V**  | $a(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$ | $-\grad(\vec\{\lambda}\cdot\grad u)$ | 2D, 3D     |
 | MixedScalarWeakDivergenceIntegrator  | H1, L2 | H1     |  **V**  | $a(-\vec\{\lambda}u,\grad v)$                 | $\div(\vec\{\lambda}u)$              | 2D, 3D     |
@@ -74,15 +78,17 @@ $$\\{a(\lambda\vec\{u}, \vec\{v})\\}\_{ij}\equiv \int_\Omega \lambda \vec\{u}_j\
 |--------------------------------------|--------|--------|:-------:|------------------------------------------------------|--------------------------------------------|:----------:|
 | MixedVectorMassIntegrator            | ND, RT | ND, RT | S, D, M | $a(\lambda\vec\{u},\vec\{v})$                        | $\lambda\vec\{u}$                          | 2D, 3D     |
 | MixedScalarDivergenceIntegrator      | RT     | H1, L2 |    S    | $a(\lambda\div\vec\{u}, v)$                          | $\lambda \div\vec\{u}$                     | 2D, 3D     |
+| MixedVectorDivergenceIntegrator      | RT     | ND, RT |  **V**  | $a(\vec\{\lambda}\div\vec\{u}, \vec\{v})$            | $\vec\{\lambda}\div\vec\{u}$               | 2D, 3D     |
 | MixedVectorWeakDivergenceIntegrator  | ND, RT | H1     | S, D, M | $a(-\lambda\vec\{u},\grad v)$                        | $\div(\lambda\vec\{u})$                    | 2D, 3D     |
 | MixedVectorCurlIntegrator            | ND     | ND, RT | S, D, M | $a(\lambda\curl\vec\{u},\vec\{v})$                   | $\lambda\curl\vec\{u}$                     | 3D         |
 | MixedVectorWeakCurlIntegrator        | ND, RT | ND     | S, D, M | $a(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | 3D         |
 | MixedDotProductIntegrator            | ND, RT | H1, L2 |  **V**  | $a(\vec\{\lambda}\cdot\vec\{u},v)$                   | $\vec\{\lambda}\cdot\vec\{u}$              | 2D, 3D     |
-| MixedDotDivIntegrator                | ND, RT | RT     |  **V**  | $a(\vec\{\lambda}\cdot\vec\{u},\div\vec\{v})$        | $-\grad(\vec\{\lambda}\cdot\vec\{u})$      | 2D, 3D     |
+| MixedWeakGradDotIntegrator           | ND, RT | RT     |  **V**  | $a(-\vec\{\lambda}\cdot\vec\{u},\div\vec\{v})$       | $\grad(\vec\{\lambda}\cdot\vec\{u})$       | 2D, 3D     |
 | MixedCrossProductIntegrator          | ND, RT | ND, RT |  **V**  | $a(\vec\{\lambda}\cross\vec\{u},\vec\{v})$           | $\vec\{\lambda}\cross\vec\{u}$             | 3D         |
 | MixedWeakDivCrossIntegrator          | ND, RT | H1     |  **V**  | $a(-\vec\{\lambda}\cross\vec\{u},\grad v)$           | $\div(\vec\{\lambda}\cross\vec\{u})$       | 3D         |
 | MixedWeakCurlCrossIntegrator         | ND, RT | ND     |  **V**  | $a(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | 3D         |
 | MixedCrossCurlIntegrator             | ND     | ND, RT |  **V**  | $a(\vec\{\lambda}\cross\curl\vec\{u},\vec\{v})$      | $\vec\{\lambda}\cross\curl\vec\{u}$        | 3D         |
+| MixedCurlCurlIntegrator              | ND     | ND     | S, D, M | $a(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | 3D         |
 | MixedCrossCurlCurlIntegrator         | ND     | ND     |  **V**  | $a(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | 3D         |
 | MixedCrossCurlGradIntegrator         | ND     | H1     |  **V**  | $a(\vec\{\lambda}\cross\curl\vec\{u},\grad v)$       | $-\div(\vec\{\lambda}\cross\curl\vec\{u})$ | 3D         |
 | `None Yet`                           | ND, RT | H1, L2 |  **V**  | $a(\vec\{\lambda}\cross\vec\{u},v)$                  | $\vec\{\lambda}\cross\vec\{u}$             | 2D         |
