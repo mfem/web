@@ -59,6 +59,7 @@ $$\\{a(\lambda\vec\{u}, \vec\{v})\\}\_{ij}\equiv \int_\Omega \lambda \vec\{u}_j\
 | MixedDirectionalDerivativeIntegrator | H1     | H1, L2 |  **V**  | $a(\vec\{\lambda}\cdot\grad u, v)$            | $\vec\{\lambda}\cdot\grad u$         | 2D, 3D     |
 | MixedGradDivIntegrator               | H1     | RT     |  **V**  | $a(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$ | $-\grad(\vec\{\lambda}\cdot\grad u)$ | 2D, 3D     |
 | MixedScalarWeakDivergenceIntegrator  | H1, L2 | H1     |  **V**  | $a(-\vec\{\lambda}u,\grad v)$                 | $\div(\vec\{\lambda}u)$              | 2D, 3D     |
+| MixedScalarCrossGradIntegrator       | H1     | H1, L2 |  **V**  | $a(\vec\{\lambda}\cross\grad u, v)$           | $\vec\{\lambda}\cross\grad u$        | 2D         |
 | MixedScalarWeakCurlIntegrator        | H1, L2 | ND     |    S    | $a(\lambda u,\curl\vec\{v})$                  | $\curl(\lambda\,u\,\hat\{z})\;$      | 2D         |
 | MixedScalarDerivativeIntegrator      | H1     | H1, L2 |    S    | $a(\lambda \ddx\{u}, v)$                      | $\lambda\ddx\{u}\;$                  | 1D         |
 | MixedScalarWeakDerivativeIntegrator  | H1, L2 | H1     |    S    | $a(-\lambda u, \ddx\{v})$                     | $\ddx\{}(\lambda u)\;$               | 1D         |
