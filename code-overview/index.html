@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+<!--	<title>Code Overview - MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                 <a href="./">Code Overview</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#code-overview">Code Overview</a></li>
+        
+            <li><a href="#general">General</a></li>
+        
+            <li><a href="#linear-algebra">Linear Algebra</a></li>
+        
+            <li><a href="#mesh">Mesh</a></li>
+        
+            <li><a href="#finite-elements">Finite Elements</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="code-overview">Code Overview</h1>
+<p>MFEM consists of the following closely interconnected modules:</p>
+<ul>
+<li><a href="#general">General</a> - general data structures and algorithms.</li>
+<li><a href="#linear-algebra">Linear Algebra</a> - linear algebra, linear and nonlinear solvers,
+  time steppers.</li>
+<li><a href="#mesh">Mesh</a> - mesh class, mesh readers, mesh manipulation.</li>
+<li><a href="#finite-elements">FEM</a> - finite elements, spaces, linear and bilinear forms, etc.</li>
+</ul>
+<hr />
+<h2 id="general">General</h2>
+<h3 id="array">Array</h3>
+<ul>
+<li>Class <code>Array&lt;T&gt;</code>.</li>
+<li>Similar to <code>std::vector&lt;T&gt;</code> in many respects.</li>
+<li>Can allocate and manage data or hold <em>external</em> data.</li>
+</ul>
+<h3 id="hash-table">Hash table</h3>
+<ul>
+<li>Class <code>HashTable&lt;T&gt;</code>.</li>
+<li>Used in the <code>NCMesh</code> class.</li>
+</ul>
+<h3 id="table">Table</h3>
+<ul>
+<li>Class <code>Table</code>.</li>
+<li>Maps each row, <code>{0,1,..,n-1}</code>, to a <em>list</em> of integers (columns).</li>
+<li>This is CSR-like data structure without data, only the '<code>I</code>' and '<code>J</code>' arrays.</li>
+<li>Represents relations like <code>vertex-to-element</code>, <code>element-to-dof</code>, etc.</li>
+</ul>
+<h3 id="dynamic-symmetric-table">Dynamic symmetric table</h3>
+<ul>
+<li>Class <code>DSTable</code> is a dynamic symmetric version of the <code>Table</code> class.</li>
+<li>Used for building relations like <code>vertex-to-vertex</code> - mesh edges.</li>
+</ul>
+<h3 id="dynamic-symmetric-3d-table">Dynamic symmetric 3D table</h3>
+<ul>
+<li>Class <code>STable3D</code>.</li>
+<li>Used for building <code>vertex-to-vertex-to-vertex</code> relations - mesh faces in 3D.</li>
+</ul>
+<h3 id="communication">Communication</h3>
+<ul>
+<li>Classes <code>GroupTopology</code>, <code>GroupCommunicator</code>.</li>
+<li><em>Groups</em> are sets of MPI ranks that need to exchange common data at processor
+  boundaries.</li>
+<li>Reduce (gather) and broadcast (scatter) MPI communications within <em>groups</em>.</li>
+</ul>
+<h3 id="socket-stream">Socket stream</h3>
+<ul>
+<li>Class <code>socketstream</code></li>
+<li>Two-way TCP sockets as c++ streams.</li>
+<li>Can be compiled with GnuTLS for security.</li>
+<li>Primarily used for sending data to GLVis.</li>
+</ul>
+<h3 id="timers">Timers</h3>
+<ul>
+<li>Class <code>StopWatch</code>.</li>
+<li>Has various "backends" - <code>std::clock</code>, POSIX clocks, Windows'
+  <code>QueryPerformanceCounter</code> etc.</li>
+</ul>
+<h3 id="options-parser">Options parser</h3>
+<ul>
+<li>Class <code>OptionsParser</code>.</li>
+<li>Makes it easy to define and parse command line parameters.</li>
+<li>Used in all examples and miniapps.</li>
+</ul>
+<hr />
+<h2 id="linear-algebra">Linear Algebra</h2>
+<h3 id="vector">Vector</h3>
+<ul>
+<li>Class <code>Vector</code> - a vector of <code>double</code>s.</li>
+<li>Can allocate and manage data or warp <em>external</em> data.</li>
+<li>Defines a number of vector operations on the data.</li>
+</ul>
+<h3 id="operator">Operator</h3>
+<ul>
+<li>Class <code>Operator</code></li>
+<li>An abstract base class for all linear and non-linear operators.</li>
+<li>Virtual method <code>Mult(const Vector &amp;, Vector &amp;)</code>.</li>
+<li>Optional virtual method <code>Operator &amp;GetGradient(const Vector &amp;x)</code>.</li>
+</ul>
+<h3 id="dense-matrix">Dense matrix</h3>
+<ul>
+<li>Class <code>DenseMatrix</code> - a matrix of <code>double</code>s.</li>
+<li>Can allocate and manage data or wrap <em>external</em> data.</li>
+<li>Uses column-major storage.</li>
+<li>Defines a number of matrix operations, matrix-vector, etc.</li>
+<li>Inherits from <code>Operator</code>.</li>
+</ul>
+<h3 id="dense-tensor">Dense tensor</h3>
+<ul>
+<li>Class <code>DenseTensor</code></li>
+<li>Can be viewed as an array of <code>DenseMatrix</code> (of the same size).</li>
+<li>Can be used in <em>batched</em> matrix operations.</li>
+</ul>
+<h3 id="sparse-matrix">Sparse matrix</h3>
+<ul>
+<li>Class <code>SparseMatrix</code> - <code>int</code> indices, <code>double</code> data.</li>
+<li>Compressed sparse row (CSR) or linked list (LIL) storage.</li>
+<li>Various operations: assembly, matrix-vector, smoothers, etc.</li>
+<li>Inherits from <code>Operator</code>.</li>
+</ul>
+<h3 id="parallel-hypre-vector">Parallel hypre vector</h3>
+<ul>
+<li>Class <code>HypreParVector</code> - wraps hypre's data structure &amp; operations.</li>
+</ul>
+<h3 id="parallel-hypre-matrix">Parallel hypre matrix</h3>
+<ul>
+<li>Class <code>HypreParMatrix</code> - wraps hypre's data structure &amp; operations.</li>
+</ul>
+<h3 id="solvers">Solvers</h3>
+<ul>
+<li>Abstract base class <code>Solver</code> - extends (inherits) class <code>Operator</code>.</li>
+<li>Adds virtual method <code>void SetOperator(const Operator &amp;)</code>.</li>
+</ul>
+<h3 id="direct-dense-solver">Direct dense solver</h3>
+<ul>
+<li>Class <code>DenseMatrixInverse</code> - inherits <code>Solver</code>.</li>
+<li>Inverts dense matrices, class <code>DenseMatrix</code>.</li>
+<li>Uses standard LU factorization with pivoting.</li>
+</ul>
+<h3 id="iterative-solvers">Iterative solvers</h3>
+<ul>
+<li>Krylov methods, Newton method.</li>
+</ul>
+<h3 id="direct-sparse-solvers">Direct sparse solvers</h3>
+<ul>
+<li>Classes <code>UMFPackSolver</code>, <code>KLUSolver</code> - wraps UMFPACK and KLU from SuiteSparse;
+  can be used with <code>SparseMatrix</code> (serial).</li>
+<li>Class <code>SuperLUSolver</code> - wraps SuperLU_DIST; the parallel matrix needs to be
+  converted to <code>SuperLURowLocMatrix</code>.</li>
+</ul>
+<h3 id="hypre-preconditioners-and-solvers">Hypre preconditioners and solvers</h3>
+<ul>
+<li>Classes <code>HypreBoomerAMG</code>, <code>HypreAMS</code>, ect.</li>
+<li>Classes <code>HyprePCG</code>, <code>HypreGMRES</code>.</li>
+</ul>
+<h3 id="time-dependent-operator">Time dependent operator</h3>
+<ul>
+<li>Class <code>TimeDependentOperator</code>, inherits from <code>Operator</code>.</li>
+<li>Implements basic virtual methods <code>double GetTime()</code> and
+  <code>void SetTime(const double)</code>.</li>
+<li>Optional virtual method
+  <code>void ImplicitSolve(const double dt, const Vector &amp;x, Vector &amp;k)</code> - solve
+  backward Euler system; required for implicit time steppers.</li>
+</ul>
+<h3 id="ode-solvers">ODE solvers</h3>
+<ul>
+<li>Abstract base class <code>ODESolver</code>.</li>
+<li>Has virtual method <code>void Init(TimeDependentOperator &amp;)</code>.</li>
+<li>Has pure virtual method <code>void Step(Vector &amp;x, double &amp;t, double &amp;dt)</code>.</li>
+<li>Derived classes for explicit Runge-Kutta and implicit (SDIRK) methods.</li>
+</ul>
+<h3 id="constraint-operator">Constraint operator</h3>
+<ul>
+<li>Class <code>ConstrainedOperator</code>, inherits from <code>Operator</code>.</li>
+<li>Impose essential boundary conditions on any <code>Operator</code> (matrix-free).</li>
+<li>Used by <code>Operator::FormLinearSystem()</code>.</li>
+</ul>
+<h3 id="block-vector">Block vector</h3>
+<ul>
+<li>Class <code>BlockVector</code>, inherits from <code>Vector</code>.</li>
+<li>Holds a set of multiple contiguously allocated vectors.</li>
+<li>Useful for systems of equations with multiple components using different
+  finite element spaces.</li>
+</ul>
+<h3 id="block-operator">Block operator</h3>
+<ul>
+<li>Class <code>BlockOperator</code>, inherits from <code>Operator</code>.</li>
+<li>Each block is itself an <code>Operator</code>.</li>
+</ul>
+<h3 id="block-matrix">Block matrix</h3>
+<ul>
+<li>Class <code>BlockMatrix</code>, inherits <code>AbstractSparseMatrix</code>.</li>
+<li>Each block is a <code>SparseMatrix</code>.</li>
+<li>Supports more operations than <code>BlockOperator</code>.</li>
+</ul>
+<h3 id="block-diagonal-preconditioner">Block diagonal preconditioner</h3>
+<ul>
+<li>Class <code>BlockDiagonalPreconditioner</code>, inherits <code>Solver</code>.</li>
+<li>Similar to <code>BlockOperator</code> but with diagonal block structure and square
+  diagonal blocks.</li>
+</ul>
+<hr />
+<h2 id="mesh">Mesh</h2>
+<h3 id="mesh_1">Mesh</h3>
+<ul>
+<li>Class <code>Mesh</code>.</li>
+<li>The mesh topology/connectivity is given by <code>element-to-vertex</code> relation.</li>
+<li>Elements have type (triangle, quadrilateral, tetrahedron, hexahedron, etc) and
+  attribute (<code>int</code>).</li>
+<li>Boundary elements can be included allowing tagging of boundary subsets, e.g.
+  for boundary conditions, by the boundary element attribute.</li>
+<li>Edges, faces, and other connectivity are derived automatically based on the
+  element type.</li>
+<li>A high-order mesh uses a vector FE function, i.e. a vector
+  <a href="#grid-function"><code>GridFunction</code></a>, to represent its high-order <em>nodes</em>.</li>
+<li>Hanging/slave vertices are regular vertices - the mesh is <em>"cut"</em> along
+  non-conforming edges and faces.</li>
+<li>Conforming constraints and interpolation are added at the level of the
+  <a href="#finite-element-space"><code>FiniteElementSpace</code></a> based on additional
+  data from the <code>Mesh</code> and <code>NCMesh</code> objects.</li>
+<li>Local conforming refinement for triangles and tets.</li>
+<li>Local non-conforming refinement for triangles, quads, and hexes.</li>
+<li>De-refinement and parallel rebalancing for non-conforming meshes.</li>
+<li>Supports curve and surface meshes.</li>
+<li>Periodic meshes: periodic topology with a DG <code>GridFunction</code> as nodes, cut
+  along the periodic edges/faces.</li>
+</ul>
+<h3 id="non-conforming-mesh">Non-conforming mesh</h3>
+<ul>
+<li>Class <code>NCMesh</code>.</li>
+<li>Used through class <code>Mesh</code>.</li>
+<li>Supports triangles, quads, and hexes including anisotropic refinement for
+  quads and hexes.</li>
+<li>Arbitrary level of hanging nodes and full refinement hierarchy.</li>
+<li>Generates the "cut" <code>Mesh</code> from the leaf elements.</li>
+</ul>
+<h3 id="nurbs-mesh">NURBS mesh</h3>
+<ul>
+<li>Class <code>NURBSExtension</code>.</li>
+<li>Used through class <code>Mesh</code>.</li>
+<li>The NURBS patch connectivity is itself a quad/hex <code>Mesh</code>.</li>
+<li>Supports knot insertion, degree elevation, (serial, uniform) h-refinement.</li>
+<li>Generates a quad/hex <code>Mesh</code>.</li>
+<li>Easy to convert to a polynomial high-order mesh.</li>
+</ul>
+<h3 id="mesh-readers-and-writers">Mesh readers and writers</h3>
+<ul>
+<li>Own formats, read and write, for: <code>MFEM mesh v1.0</code>, <code>MFEM mesh v1.1</code>
+  (extension for non-conforming meshes), <code>MFEM NURBS mesh v1.0</code>, and
+  <code>MFEM INLINE mesh v1.0</code> (boxes).</li>
+<li>Readers for (some) Netgen, TrueGrid, VTK, Gmsh, and CUBIT mesh files.</li>
+<li>Write linear and quadratic VTK meshes.</li>
+</ul>
+<h3 id="parallel-mesh">Parallel mesh</h3>
+<ul>
+<li>Classes <code>ParMesh</code>, <code>ParNCMesh</code>, <code>ParNURBSExtension</code>.</li>
+<li>Inherit and extend classes <code>Mesh</code>, <code>NCMesh</code>, <code>NURBSExtension</code>.</li>
+<li><code>ParMesh</code> is constructed from a serial <code>Mesh</code> available on all tasks.</li>
+<li>Built-in mesh partitioning is based on METIS.</li>
+<li>Parallel conforming and non-conforming refinement.</li>
+</ul>
+<h3 id="mesh-operators">Mesh operators</h3>
+<ul>
+<li>Classes <code>ThresholdRefiner</code>, <code>ThresholdDerefiner</code>, <code>Rebalancer</code>.</li>
+</ul>
+<hr />
+<h2 id="finite-elements">Finite Elements</h2>
+<h3 id="quadrature-formulas">Quadrature formulas</h3>
+<ul>
+<li>Class <code>IntegrationPoint</code> - coordinates plus weights.</li>
+<li>Class <code>IntegrationRule</code> - an array of <code>IntegrationPoint</code>s.</li>
+<li>Class <code>IntegrationRules</code> - container for <code>IntegrationRule</code>s.</li>
+</ul>
+<h3 id="element-transformation">Element transformation</h3>
+<ul>
+<li>Class <code>ElementTransformation</code>, <code>IsoparametricTransformation</code>.</li>
+<li>Defined through a <code>FiniteElement</code></li>
+<li>Transforms reference <code>IntegrationPoint</code>s into physical <code>Vector</code>s.</li>
+<li>On demand, computes and stores Jacobian matrix, and weight.</li>
+</ul>
+<h3 id="finite-elements_1">Finite elements</h3>
+<ul>
+<li>Abstract base class <code>FiniteElement</code>.</li>
+<li>Arbitrary order <code>H1_*</code>, <code>L2_*</code>, <code>RT_*</code>, and <code>ND_*</code> elements on
+  segment, triangles, quads, tets, and hexes.</li>
+<li>Abstract method <code>CalcShape</code>, <code>CalcDShape</code> for scalar FE; <code>CalcVShape</code>,
+  <code>CalcDivShape</code>, <code>CalcCurlShape</code> for vector H(div)/H(curl) FE.</li>
+<li>Other interpolation and projection methods.</li>
+</ul>
+<h3 id="finite-element-collections">Finite element collections</h3>
+<ul>
+<li>Base class <code>FiniteElementCollection</code>.</li>
+<li>Associates <code>FiniteElement</code>s with elements, faces, edges, vertices.</li>
+<li>Degrees of freedom on faces/edges/vertices are shared between adjacent
+  elements.</li>
+<li>Derived classes for arbitrary order <code>H1_*</code>, <code>L2_*</code>, <code>RT_*</code>, and <code>ND_*</code>
+  collections.</li>
+</ul>
+<h3 id="finite-element-space">Finite element space</h3>
+<ul>
+<li>Class <code>FiniteElementSpace</code>.</li>
+<li>Constructed from a <code>Mesh</code> and a <code>FiniteElementCollection</code>.</li>
+<li>Defines the mappings <code>elements-to-dofs</code>, <code>faces-to-dofs</code>, etc.</li>
+<li>Defines, when necessary, a prolongation, <code>P</code>, and a restriction, <code>R</code>,
+  matrices: <code>R.P = I</code> to constrain <em>"slave"</em> dofs.</li>
+<li>On non-conforming meshes, the space is <em>"cut"</em> or <em>"partially conforming"</em>
+  (before applying <code>P</code>).</li>
+<li>The domain of <code>P</code> defines the <em>"true"</em> or <em>"conforming"</em> dofs.</li>
+<li>The range of <code>P</code> is a sub-set of the <em>"partially conforming"</em> dofs.</li>
+</ul>
+<h3 id="grid-function">Grid function</h3>
+<ul>
+<li>Class <code>GridFunction</code>, extends class <code>Vector</code>.</li>
+<li>A container <code>Vector</code> on the <em>"partially conforming"</em> dofs.</li>
+<li>Defines a number of useful operations like computing values, gradient, etc
+  at quadrature points (<code>IntegrationPoint</code> or <code>IntegrationRule</code>).</li>
+<li>Methods for projecting (interpolating) <code>Coefficient</code>, <code>VectorCoefficient</code>.</li>
+<li>Methods for computing error norms with respect to a <code>Coefficient</code>.</li>
+</ul>
+<h3 id="linear-form">Linear form</h3>
+<ul>
+<li>Class <code>LinearForm</code>, extends class <code>Vector</code>.</li>
+<li>Assembles r.h.s. vector.</li>
+<li>Uses a sum of local <code>LinearFormIntegrator</code>s.</li>
+</ul>
+<h3 id="bilinear-form">Bilinear form</h3>
+<ul>
+<li>Class <code>BilinearForm</code>.</li>
+<li>Assembles linear system matrix.</li>
+<li>Uses a sum of local <code>BilinearFormIntegrator</code>s.</li>
+<li>Method <code>FormLinearSystem</code> applies necessary transformations, e.g.
+  $P^T A P$.</li>
+</ul>
+<h3 id="mixed-bilinear-form">Mixed bilinear form</h3>
+<ul>
+<li>Class <code>MixedBilinearForm</code>.</li>
+</ul>
+<h3 id="coefficients">Coefficients</h3>
+<ul>
+<li>Abstract base classes: <code>Coefficient</code>, <code>VectorCoefficient</code>, and
+  <code>MatrixCoefficient</code>.</li>
+<li>Derived classes include: <code>ConstantCoefficient</code>, <code>FunctionCoefficient</code>,
+  <code>GridFunctionCoefficient</code>; <code>VectorFunctionCoefficient</code>,
+  <code>VectorGridFunctionCoefficient</code>, etc.</li>
+<li>Easy to derive new coefficient classes.</li>
+</ul>
+<h3 id="parallel-versions">Parallel versions</h3>
+<ul>
+<li><code>ParFiniteElementSpace</code></li>
+<li><code>ParGridFunction</code></li>
+<li><code>ParLinearForm</code></li>
+<li><code>ParBilinearForm</code></li>
+<li>etc</li>
+</ul>
+<h3 id="error-estimators">Error estimators</h3>
+<ul>
+<li>Classes <code>ZienkiewiczZhuEstimator</code>, <code>L2ZienkiewiczZhuEstimator</code>.</li>
+</ul>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "AMS"}},
+  tex2jax: {inlineMath: [['$','$']]}});
+</script>
+
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#code-overview">Code Overview</a></li>
+        
+            <li><a href="#general">General</a></li>
+        
+            <li><a href="#linear-algebra">Linear Algebra</a></li>
+        
+            <li><a href="#mesh">Mesh</a></li>
+        
+            <li><a href="#finite-elements">Finite Elements</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+    </body>
+</html>
