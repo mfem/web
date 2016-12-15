@@ -26,13 +26,15 @@ See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md) and a list of related [publica
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](http://exascaleproject.org) with MFEM.
+Sep 12, 2016 | PyMFEM - a Python wrapper for MFEM [released](https://github.com/piScope/PyMFEM).
 Jun 30, 2016 | Version 3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
-May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).
-Feb 16, 2016 | Version 3.1 released.
 
+[comment]: # (May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).)
 [comment]: # (Mar 16, 2016 | Postdoc position [available](http://careers-ext.llnl.gov/jobs/5242192-postdoctoral-research-staff-member) on the MFEM team.)
 [comment]: # (Mar 9, 2016  | VisIt 2.10.1 [released](http://software.llnl.gov/news/2016/03/09/visit-2.10.1) with MFEM 3.1 support.)
 [comment]: # (Mar 4, 2016  | New LLNL OSS [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).)
+[comment]: # (Feb 16, 2016 | Version 3.1 released.)
 [comment]: # (Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).)
 [comment]: # (Jan 26, 2015 | Version 3.0 released.)
 

@@ -20,6 +20,7 @@ pages:
   - 'Meshing': meshing.md
   - '_Mesh Formats': mesh-formats.md   # pages starting with '_' are hidden from the menu
   - 'Performance': performance.md
+  - 'Code Overview': code-overview.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md
