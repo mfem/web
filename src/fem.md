@@ -1,4 +1,5 @@
 # Finite Element Method
 
- - [Bilinear Integrators](bilininteg.md)
+ - [Linear Form Integrators  ](lininteg.md)
+ - [Bilinear Form Integrators](bilininteg.md)
  
