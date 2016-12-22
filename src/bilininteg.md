@@ -47,9 +47,9 @@ other, more exotic, forms are possible:
 + Integrals involving Scalar and Vector basis functions $\int_\Omega u\,\vec\{\lambda}\cdot\vec\{v}$
 
 The `BilinearFormIntegrator` classes allow MFEM to produce a wide
-variety of local element matricies without modifying the
+variety of local element matrices without modifying the
 `BilinearForm` class.  Many of the possible operators are collected
-below into tables that breifly describe their action and requirements.
+below into tables that briefly describe their action and requirements.
 
 In the tables below the *Space* column refers to finite element spaces
 which implement the following methods:
@@ -204,7 +204,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
 that is often assumed to be zero but can be used to apply an
-inhomogeneous Neumann boundary condition.
+non-homogeneous Neumann boundary condition.
 
 ### Operator with Scalar Range
 
@@ -238,7 +238,7 @@ The following weak operators require the range (or test) space to be
 H(Div) i.e. a vector basis function with a divergence operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an inhomogeneous Neumann boundary
+equal to zero.  On the other hand an non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `DivDivIntegrator` one could provide a known function for
@@ -259,7 +259,7 @@ The following weak operators require the range (or test) space to be
 H(Curl) i.e. a vector basis function with a curl operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an inhomogeneous Neumann boundary
+equal to zero.  On the other hand an non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `CurlCurlIntegrator` one could provide a known function for
