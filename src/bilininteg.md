@@ -108,25 +108,26 @@ to assemble square linear operators.
 
 These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.
 
-| Class Name                            | Domain | Range  | Coef.   | Operator                                     | Continuous Op.                       | Dimension  |
-|---------------------------------------|--------|--------|:-------:|----------------------------------------------|--------------------------------------|:----------:|
-| MixedScalarMassIntegrator             | H1, L2 | H1, L2 |    S    | $(\lambda u, v)$                             | $\lambda u$                          | 1D, 2D, 3D |
-| MixedScalarWeakDivergenceIntegrator   | H1, L2 | H1     |  **V**  | $(-\vec\{\lambda}u,\grad v)$                 | $\div(\vec\{\lambda}u)$              | 2D, 3D     |
-| MixedScalarWeakDerivativeIntegrator   | H1, L2 | H1     |    S    | $(-\lambda u, \ddx\{v})$                     | $\ddx\{}(\lambda u)\;$               | 1D         |
-| MixedScalarWeakCurlIntegrator         | H1, L2 | ND     |    S    | $(\lambda u,\curl\vec\{v})$                  | $\curl(\lambda\,u\,\hat\{z})\;$      | 2D         |
-| MixedVectorProductIntegrator          | H1, L2 | ND, RT |  **V**  | $(\vec\{\lambda}u,\vec\{v})$                 | $\vec\{\lambda}u$                    | 2D, 3D     |
-| MixedScalarWeakCrossProductIntegrator | H1, L2 | ND, RT |  **V**  | $(\vec\{\lambda} u\,\hat\{z},\vec\{v})$      | $\vec\{\lambda}\times\,\hat\{z}\,u$  | 2D         |
-| MixedScalarWeakGradientIntegrator     | H1, L2 | RT     |    S    | $(-\lambda u, \div\vec\{v})$                 | $\grad(\lambda u)$                   | 2D, 3D     |
-| MixedDirectionalDerivativeIntegrator  | H1     | H1, L2 |  **V**  | $(\vec\{\lambda}\cdot\grad u, v)$            | $\vec\{\lambda}\cdot\grad u$         | 2D, 3D     |
-| MixedScalarCrossGradIntegrator        | H1     | H1, L2 |  **V**  | $(\vec\{\lambda}\cross\grad u, v)$           | $\vec\{\lambda}\cross\grad u$        | 2D         |
-| MixedScalarDerivativeIntegrator       | H1     | H1, L2 |    S    | $(\lambda \ddx\{u}, v)$                      | $\lambda\ddx\{u}\;$                  | 1D         |
-| MixedGradGradIntegrator               | H1     | H1     | S, D, M | $(\lambda\grad u,\grad v)$                   | $-\div(\lambda\grad u)$              | 2D, 3D     |
-| MixedCrossGradGradIntegrator          | H1     | H1     |  **V**  | $(\vec\{\lambda}\cross\grad u,\grad v)$      | $-\div(\vec\{\lambda}\cross\grad u)$ | 2D, 3D     |
-| MixedVectorGradientIntegrator         | H1     | ND, RT | S, D, M | $(\lambda\grad u,\vec\{v})$                  | $\lambda\grad u$                     | 2D, 3D     |
-| MixedCrossGradIntegrator              | H1     | ND, RT |  **V**  | $(\vec\{\lambda}\cross\grad u,\vec\{v})$     | $\vec\{\lambda}\cross\grad u$        | 3D         |
-| MixedGradDivIntegrator                | H1     | RT     |  **V**  | $(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$ | $-\grad(\vec\{\lambda}\cdot\grad u)$ | 2D, 3D     |
+| Class Name                            | Domain | Range  | Coef.   | Operator                                       | Continuous Op.                       | Dimension  |
+|---------------------------------------|--------|--------|:-------:|------------------------------------------------|--------------------------------------|:----------:|
+| MixedScalarMassIntegrator             | H1, L2 | H1, L2 |    S    | $(\lambda u, v)$                               | $\lambda u$                          | 1D, 2D, 3D |
+| MixedScalarWeakDivergenceIntegrator   | H1, L2 | H1     |  **V**  | $(-\vec\{\lambda}u,\grad v)$                   | $\div(\vec\{\lambda}u)$              | 2D, 3D     |
+| MixedScalarWeakDerivativeIntegrator   | H1, L2 | H1     |    S    | $(-\lambda u, \ddx\{v})$                       | $\ddx\{}(\lambda u)\;$               | 1D         |
+| MixedScalarWeakCurlIntegrator         | H1, L2 | ND     |    S    | $(\lambda u,\curl\vec\{v})$                    | $\curl(\lambda\,u\,\hat\{z})\;$      | 2D         |
+| MixedVectorProductIntegrator          | H1, L2 | ND, RT |  **V**  | $(\vec\{\lambda}u,\vec\{v})$                   | $\vec\{\lambda}u$                    | 2D, 3D     |
+| MixedScalarWeakCrossProductIntegrator | H1, L2 | ND, RT |  **V**  | $(\vec\{\lambda} u\,\hat\{z},\vec\{v})$        | $\vec\{\lambda}\times\,\hat\{z}\,u$  | 2D         |
+| MixedScalarWeakGradientIntegrator     | H1, L2 | RT     |    S    | $(-\lambda u, \div\vec\{v})$                   | $\grad(\lambda u)$                   | 2D, 3D     |
+| MixedDirectionalDerivativeIntegrator  | H1     | H1, L2 |  **V**  | $(\vec\{\lambda}\cdot\grad u, v)$              | $\vec\{\lambda}\cdot\grad u$         | 2D, 3D     |
+| MixedScalarCrossGradIntegrator        | H1     | H1, L2 |  **V**  | $(\vec\{\lambda}\cross\grad u, v)$             | $\vec\{\lambda}\cross\grad u$        | 2D         |
+| MixedScalarDerivativeIntegrator       | H1     | H1, L2 |    S    | $(\lambda \ddx\{u}, v)$                        | $\lambda\ddx\{u}\;$                  | 1D         |
+| MixedGradGradIntegrator               | H1     | H1     | S, D, M | $(\lambda\grad u,\grad v)$                     | $-\div(\lambda\grad u)$              | 2D, 3D     |
+| MixedCrossGradGradIntegrator          | H1     | H1     |  **V**  | $(\vec\{\lambda}\cross\grad u,\grad v)$        | $-\div(\vec\{\lambda}\cross\grad u)$ | 2D, 3D     |
+| MixedVectorGradientIntegrator         | H1     | ND, RT | S, D, M | $(\lambda\grad u,\vec\{v})$                    | $\lambda\grad u$                     | 2D, 3D     |
+| MixedCrossGradIntegrator              | H1     | ND, RT |  **V**  | $(\vec\{\lambda}\cross\grad u,\vec\{v})$       | $\vec\{\lambda}\cross\grad u$        | 3D         |
+| MixedCrossGradCurlIntegrator          | H1     | ND     |  **V**  | $(\vec\{\lambda}\times\grad u, \curl\vec\{v})$ | $\curl(\vec\{\lambda}\times\grad u)$ | 3D         |
+| MixedGradDivIntegrator                | H1     | RT     |  **V**  | $(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$   | $-\grad(\vec\{\lambda}\cdot\grad u)$ | 2D, 3D     |
 
-## Vector Field Operators
+## Vector Finite Element Operators
 
 These operators require vector-valued basis functions in the trial
 space.  Many of these operators will work with either ND or RT basis
@@ -134,7 +135,8 @@ fucntions but others require one or the other.
 
 ### Square Operators
 
-These integrators are designed to be used with the BilinearForm object to assemble square linear operators.
+These integrators are designed to be used with the BilinearForm object
+to assemble square linear operators.
 
 | Class Name             | Spaces | Coef.   | Operator                               | Continuous Op.                | Dimension  |
 |------------------------|--------|:-------:|----------------------------------------|-------------------------------|:----------:|
@@ -170,16 +172,33 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 | MixedVectorDivergenceIntegrator      | RT     | ND, RT |  **V**  | $(\vec\{\lambda}\div\vec\{u}, \vec\{v})$                 | $\vec\{\lambda}\div\vec\{u}$                  | 2D, 3D     |
 
 
-| Class Name | Operator | Continuous Op. |
-|---|---|---|:---:|
-| VectorMassIntegrator                 | BilinearFormIntegrator |  |
-| VectorFEDivergenceIntegrator         | BilinearFormIntegrator |  |
-| VectorFEWeakDivergenceIntegrator     | BilinearFormIntegrator |  |
-| VectorFECurlIntegrator               | BilinearFormIntegrator |  |
-| DerivativeIntegrator                 | BilinearFormIntegrator |  |
-| VectorCurlCurlIntegrator             | BilinearFormIntegrator |  |
-| VectorDivergenceIntegrator           | BilinearFormIntegrator |  |
-| VectorDiffusionIntegrator            | BilinearFormIntegrator |  |
+| Class Name | Domain | Range  | Coef.   | Operator | Dimension | Notes |
+|---|---|---|---|---|:---:|---|
+| VectorFEDivergenceIntegrator         | RT     | H1, L2 | S | $(\lambda\div\vec\{u}, v)$                                             | 2D, 3D | Alternate implementation of MixedScalarDivergenceIntegrator. |
+| VectorFEWeakDivergenceIntegrator     | ND     | H1     | S | $(-\lambda\vec\{u},\grad v)$                                           | 2D, 3D | See MixedVectorWeakDivergenceIntegrator for a more general implementation. |
+| VectorFECurlIntegrator               | ND, RT | ND, RT | S | $(\lambda\curl\vec\{u},\vec\{v})$ or $(\lambda\vec\{u},\curl\vec\{v})$ | 3D     | If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations. |
+
+## Vector Field Operators
+
+These operators require vector-valued basis functions constructed by using multiple copies of scalar fields.
+
+### Square Operators
+
+| Class Name | Spaces | Coef. | Dimension | Operator | Notes |
+|---|---|:---:|:---:|---|---|
+| VectorMassIntegrator                 | $H_1^d$, $L_2^d$ | S, D, M | 1D, 2D, 3D | $(\lambda\vec\{u},\vec\{v})$ | |
+| VectorCurlCurlIntegrator             | $H_1^d$, $L_2^d$ |    S    | 2D, 3D     | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | |
+| VectorDiffusionIntegrator            | $H_1^d$, $L_2^d$ |    S    | 1D, 2D, 3D | $(\lambda_\{ijkl}\frac\{\partial u_i}\{\partial x_j},\frac\{\partial v_k}\{\partial x_l})$ | Where $\lambda_\{ijkl}=\lambda\delta_\{ik}\delta_\{jl}$ |
+
+### Mixed Operators
+
+| Class Name | Domain | Range | Coef. | Dimension | Operator |
+|---|---|---|:---:|:---:|---|
+| VectorDivergenceIntegrator           | $H_1^d$, $L_2^d$ | H1, L2 |    S    | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$ |
+
+## Others...
+|   |   |   |
+|---|---|---|
 | DGTraceIntegrator                    | BilinearFormIntegrator |  |
 | DGDiffusionIntegrator                | BilinearFormIntegrator |  |
 | DGElasticityIntegrator               | BilinearFormIntegrator |  |
@@ -188,8 +207,9 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 
 ## Special Purpose Integrators
 
-| Class Name | Operator | Continuous Op. |
-|---|---|---|
+| Class Name |Domain | Range | Coef. | Dimensoin | Operator | Continuous Op. |
+|---|---|---|---|---|---|---|
+| DerivativeIntegrator                 | H1, L2 | H1, L2 | S | 1D, 2D, 3D | $(\lambda\frac\{\partial u}\{\partial x_i}, v)$ | The direction index "i" is passed by the user. See MixedDirectionalDerivativeIntegrator for a more general alternative. |
 | BilinearFormIntegrator | NonlinearFormIntegrator |
 | TransposeIntegrator | BilinearFormIntegrator |
 | LumpedIntegrator | BilinearFormIntegrator |
@@ -226,12 +246,12 @@ information.
 |-------------------------------------|-----------------------------------------------|--------------------------------------------|----------------------------------------------------|----|
 | DiffusionIntegrator                 | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u$                    | X  |
 | MixedGradGradIntegrator             | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u$                    | X  |
-| MixedCrossGradGradIntegrator        | $(\vec\{\lambda}\cross\grad u,\grad v)$       | $-\div(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\cdot(\vec\{\lambda}\times\grad u)$       |   |
-| MixedScalarWeakDivergenceIntegrator | $(-\vec\{\lambda}u,\grad v)$                  | $\div(\vec\{\lambda}u)$                    | $-\hat\{n}\cdot\vec\{\lambda}\,u$                  |   |
+| MixedCrossGradGradIntegrator        | $(\vec\{\lambda}\cross\grad u,\grad v)$       | $-\div(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\cdot(\vec\{\lambda}\times\grad u)$       | X  |
+| MixedScalarWeakDivergenceIntegrator | $(-\vec\{\lambda}u,\grad v)$                  | $\div(\vec\{\lambda}u)$                    | $-\hat\{n}\cdot\vec\{\lambda}\,u$                  | X  |
 | MixedScalarWeakDerivativeIntegrator | $(-\lambda u, \ddx\{v})$                      | $\ddx\{}(\lambda u)\;$                     | $-\hat\{n}\cdot\hat\{x}\,\lambda\,u$               |   |
-| MixedVectorWeakDivergenceIntegrator | $(-\lambda\vec\{u},\grad v)$                  | $\div(\lambda\vec\{u})$                    | $-\hat\{n}\cdot(\lambda\,\vec\{u})$                |   |
+| MixedVectorWeakDivergenceIntegrator | $(-\lambda\vec\{u},\grad v)$                  | $\div(\lambda\vec\{u})$                    | $-\hat\{n}\cdot(\lambda\,\vec\{u})$                | X  |
 | MixedWeakDivCrossIntegrator         | $(-\vec\{\lambda}\cross\vec\{u},\grad v)$     | $\div(\vec\{\lambda}\cross\vec\{u})$       | $-\hat\{n}\cdot(\vec\{\lambda}\times\vec\{u})$     |   |
-| MixedCrossCurlGradIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\grad v)$ | $-\div(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\cdot(\vec\{\lambda}\cross\curl\vec\{u})$ |   |
+| MixedCrossCurlGradIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\grad v)$ | $-\div(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\cdot(\vec\{\lambda}\cross\curl\vec\{u})$ | X  |
 | MixedDivGradIntegrator              | $(\vec\{\lambda}\div\vec\{u}, \grad v)$       | $-\div(\vec\{\lambda}\div\vec\{u})$        | $\hat\{n}\cdot(\vec\{\lambda}\div\vec\{u})$        | X  |
 
 ### Operator with Vector Range
@@ -255,6 +275,7 @@ information.
 | CurlCurlIntegrator                  | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              | X  |
 | MixedCurlCurlIntegrator             | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              | X  |
 | MixedCrossCurlCurlIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\times(\vec\{\lambda}\cross\curl\vec\{u})$ | X  |
+| MixedCrossGradCurlIntegrator        | $(\vec\{\lambda}\cross\grad u,\curl\vec\{v})$       | $\curl(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\times(\vec\{\lambda}\cross\grad u)$       | X  |
 | MixedVectorWeakCurlIntegrator       | $(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | $\lambda\,\hat\{n}\times\vec\{u}$                   | X  |
 | MixedScalarWeakCurlIntegrator       | $(\lambda u,\curl\vec\{v})$                         | $\curl(\lambda\,u\,\hat\{z})\;$            | $\lambda\,u\,\hat\{n}\times\hat\{z}$                |   |
 | MixedWeakCurlCrossIntegrator        | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      | X  |
