@@ -7,6 +7,7 @@ $
 \newcommand{\curl}{\nabla\times}
 \newcommand{\grad}{\nabla}
 \newcommand{\ddx}[1]{\frac\{d#1}\{dx}}
+\newcommand{\abs}[1]{|#1|}
 $
 
 Bilinear form integrators are at the heart of any finite element method,
@@ -127,6 +128,15 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 | MixedCrossGradCurlIntegrator          | H1     | ND     |  **V**  | $(\vec\{\lambda}\times\grad u, \curl\vec\{v})$ | $\curl(\vec\{\lambda}\times\grad u)$ | 3D         |
 | MixedGradDivIntegrator                | H1     | RT     |  **V**  | $(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$   | $-\grad(\vec\{\lambda}\cdot\grad u)$ | 2D, 3D     |
 
+### Other Scalar Operators
+
+| Class Name                |Domain  | Range  | Coef. | Dimensoin  | Operator                                        | Notes |
+|---------------------------|--------|--------|-------|------------|-------------------------------------------------|-------|
+| DerivativeIntegrator      | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\frac\{\partial u}\{\partial x_i}, v)$ | The direction index "i" is passed by the user. See `MixedDirectionalDerivativeIntegrator` for a more general alternative. |
+| ConvectionIntegrator      | H1     | H1     | **V** | 1D, 2D, 3D | $(\vec\{\lambda}\cdot\grad u, v)$               | This is designed to be used with `BilinearForm` to produce a square matrix. See `MixedDirectionalDerivativeIntegrator` for a rectangular version. |
+| GroupConvectionIntegrator | H1     | H1     | **V** | 1D, 2D, 3D | $(\alpha\vec\{\lambda}\cdot\grad u, v)$         | Uses the "group" FE discretization. ** Aside from the optional scalar $\alpha$, it is not at all clear to me how this integrator differs from the `ConvectionIntegrator`.**|
+| BoundaryMassIntegrator    | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\,u,v)$                                | Computes a mass matrix on the exterior faces of a domain. ** Only seems to support square matrices. This class only implements the `AssembleFaceMatrix` method which has no documentation.  Consequently I can only guess what this does and how it is meant to be used.  For example, why is this method not implemented as part of the `MassIntegrator` class? ** |
+
 ## Vector Finite Element Operators
 
 These operators require vector-valued basis functions in the trial
@@ -171,24 +181,30 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 | MixedDivGradIntegrator               | RT     | H1     |  **V**  | $(\vec\{\lambda}\div\vec\{u}, \grad v)$                  | $-\div(\vec\{\lambda}\div\vec\{u})$           | 2D, 3D     |
 | MixedVectorDivergenceIntegrator      | RT     | ND, RT |  **V**  | $(\vec\{\lambda}\div\vec\{u}, \vec\{v})$                 | $\vec\{\lambda}\div\vec\{u}$                  | 2D, 3D     |
 
+### Other Vector Finite Element Operators
 
-| Class Name | Domain | Range  | Coef.   | Operator | Dimension | Notes |
-|---|---|---|---|---|:---:|---|
-| VectorFEDivergenceIntegrator         | RT     | H1, L2 | S | $(\lambda\div\vec\{u}, v)$                                             | 2D, 3D | Alternate implementation of MixedScalarDivergenceIntegrator. |
-| VectorFEWeakDivergenceIntegrator     | ND     | H1     | S | $(-\lambda\vec\{u},\grad v)$                                           | 2D, 3D | See MixedVectorWeakDivergenceIntegrator for a more general implementation. |
-| VectorFECurlIntegrator               | ND, RT | ND, RT | S | $(\lambda\curl\vec\{u},\vec\{v})$ or $(\lambda\vec\{u},\curl\vec\{v})$ | 3D     | If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations. |
+| Class Name                       | Domain | Range  | Coef. | Operator                                                               | Dimension | Notes |
+|----------------------------------|--------|--------|-------|------------------------------------------------------------------------|:---------:|-------|
+| VectorFEDivergenceIntegrator     | RT     | H1, L2 |   S   | $(\lambda\div\vec\{u}, v)$                                             | 2D, 3D    | Alternate implementation of MixedScalarDivergenceIntegrator. |
+| VectorFEWeakDivergenceIntegrator | ND     | H1     |   S   | $(-\lambda\vec\{u},\grad v)$                                           | 2D, 3D    | See MixedVectorWeakDivergenceIntegrator for a more general implementation. |
+| VectorFECurlIntegrator           | ND, RT | ND, RT |   S   | $(\lambda\curl\vec\{u},\vec\{v})$ or $(\lambda\vec\{u},\curl\vec\{v})$ | 3D        | If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations. |
 
 ## Vector Field Operators
 
-These operators require vector-valued basis functions constructed by using multiple copies of scalar fields.
+These operators require vector-valued basis functions constructed by
+using multiple copies of scalar fields.  In each of these integrators
+the scalar basis fucntion index increments most quickly followed by
+the vector index.  This leads to local element matrix which have a
+block structure.
 
 ### Square Operators
 
 | Class Name | Spaces | Coef. | Dimension | Operator | Notes |
 |---|---|:---:|:---:|---|---|
-| VectorMassIntegrator                 | $H_1^d$, $L_2^d$ | S, D, M | 1D, 2D, 3D | $(\lambda\vec\{u},\vec\{v})$ | |
-| VectorCurlCurlIntegrator             | $H_1^d$, $L_2^d$ |    S    | 2D, 3D     | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | |
-| VectorDiffusionIntegrator            | $H_1^d$, $L_2^d$ |    S    | 1D, 2D, 3D | $(\lambda_\{ijkl}\frac\{\partial u_i}\{\partial x_j},\frac\{\partial v_k}\{\partial x_l})$ | Where $\lambda_\{ijkl}=\lambda\delta_\{ik}\delta_\{jl}$ |
+| VectorMassIntegrator                 | $H_1^d$, $L_2^d$ | S, D, M    | 1D, 2D, 3D | $(\lambda\vec\{u},\vec\{v})$ | |
+| VectorCurlCurlIntegrator             | $H_1^d$, $L_2^d$ |    S       | 2D, 3D     | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | |
+| VectorDiffusionIntegrator            | $H_1^d$, $L_2^d$ |    S       | 1D, 2D, 3D | $(\lambda\grad u_i,\grad v_i)$ | Produces a block diagonal matrix where $i\in[0,dim)$ indicates the index of the block |
+| ElasticityIntegrator                 | $H_1^d$, $L_2^d$ | $2\times$S | 1D, 2D, 3D | $(c_\{ikjl}\grad u_j,\grad v_i)$ | Takes two scalar coefficients $\lambda$ and $\mu$ and produces a $dim\times dim$ block structured matrix where $i$ and $j$ are indices in this matrix.  The coefficient is defined by $c_\{ikjl} = \lambda\delta_\{ik}\delta_\{jl}+\mu(\delta_\{ij}\delta_\{kl}+\delta_\{il}\delta_\{jk})$ |
 
 ### Mixed Operators
 
@@ -196,31 +212,92 @@ These operators require vector-valued basis functions constructed by using multi
 |---|---|---|:---:|:---:|---|
 | VectorDivergenceIntegrator           | $H_1^d$, $L_2^d$ | H1, L2 |    S    | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$ |
 
-## Others...
-|   |   |   |
-|---|---|---|
-| DGTraceIntegrator                    | BilinearFormIntegrator |  |
-| DGDiffusionIntegrator                | BilinearFormIntegrator |  |
-| DGElasticityIntegrator               | BilinearFormIntegrator |  |
-| TraceJumpIntegrator                  | BilinearFormIntegrator |  |
-| NormalTraceJumpIntegrator            | BilinearFormIntegrator |  |
+## Discontinuous Galerkin Operators
+
+| Class Name                | Domain | Range  | Operator | Notes |
+|---------------------------|--------|--------|----------|-------|
+| DGTraceIntegrator         | H1, L2 | H1, L2 | $\alpha\,(\rho_u\vec\{u}\cdot\hat\{n}\,\\{v\\},[w])+\beta\,(\rho_u \abs\{\vec\{u}\cdot\hat\{n}}[v],[w])$ | |
+| DGDiffusionIntegrator     | H1, L2 | H1, L2 | $-\left(\{Q\grad u\cdot\hat\{n}\},[v])+\sigma\,([u],\\{Q\grad v\cdot\hat\{n}\\})+\kappa\,(\\{h^\{-1}Q\\}[u],[v]\right) $ | |
+| DGElasticityIntegrator    | H1, L2 | H1, L2 | | |
+| TraceJumpIntegrator       |  |  |
+| NormalTraceJumpIntegrator |  |  |
+
+Integrator for the DG elasticity form, for the formulations see:
+
+- PhD Thesis of Jonas De Basabe, High-Order Finite Element Methods for
+  Seismic Wave Propagation, UT Austin, 2009, p. 23, and references therein
+- Peter Hansbo and Mats G. Larson, Discontinuous Galerkin and the
+  Crouzeix-Raviart Element: Application to Elasticity, PREPRINT 2000-09,
+  p.3
+
+$$
+- \left< \\{ \tau(u) \\}, [v] \right> + \alpha \left< \\{ \tau(v) \\}, [u]
+        \right> + \kappa \left< h^{-1} \\{ \lambda + 2 \mu \\} [u], [v] \right>
+$$
+
+where $ \left< u, v\right> = \int_\{F} u \cdot v $, and $ F $ is a
+    face which is either a boundary face $ F_b $ of an element $ K $ or
+    an interior face $ F_i $ separating elements $ K_1 $ and $ K_2 $.
+
+In the bilinear form above $ \tau(u) $ is traction, and it's also
+    $ \tau(u) = \sigma(u) \cdot \vec{n} $, where $ \sigma(u) $ is
+    stress, and $ \vec\{n} $ is the unit normal vector w.r.t. to $ F $.
+
+In other words, we have
+    $$
+    - \left< \\{ \sigma(u) \cdot \vec{n} \\}, [v] \right> + \alpha \left< \\{
+        \sigma(v) \cdot \vec{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
+        \lambda + 2 \mu \\} [u], [v] \right>
+    $$
+
+For isotropic media
+    $$
+    \begin{split}
+    \sigma(u) &= \lambda \nabla \cdot u I + 2 \mu \varepsilon(u) \\
+              &= \lambda \nabla \cdot u I + 2 \mu \frac{1}{2} (\nabla u + \nabla
+                 u^T) \\
+              &= \lambda \nabla \cdot u I + \mu (\nabla u + \nabla u^T)
+    \end{split}
+    $$
+
+where $ I $ is identity matrix, $ \lambda $ and $ \mu $ are Lame
+    coefficients (see ElasticityIntegrator), $ u, v $ are the trial and test
+    functions, respectively.
+
+The parameters $ \alpha $ and $ \kappa $ determine the DG method to
+use (when this integrator is added to the "broken" ElasticityIntegrator):
+
+- IIPG, $\alpha = 0$,
+  C. Dawson, S. Sun, M. Wheeler, Compatible algorithms for coupled flow and
+  transport, Comp. Meth. Appl. Mech. Eng., 193(23-26), 2565-2580, 2004.
+
+- SIPG, $\alpha = -1$,
+  M. Grote, A. Schneebeli, D. Schotzau, Discontinuous Galerkin Finite
+  Element Method for the Wave Equation, SINUM, 44(6), 2408-2431, 2006.
+
+- NIPG, $\alpha = 1$,
+  B. Riviere, M. Wheeler, V. Girault, A Priori Error Estimates for Finite
+  Element Methods Based on Discontinuous Approximation Spaces for Elliptic
+  Problems, SINUM, 39(3), 902-931, 2001.
+
+This is a 'Vector' integrator, i.e. defined for FE spaces using multiple
+copies of a scalar FE space.
 
 ## Special Purpose Integrators
 
-| Class Name |Domain | Range | Coef. | Dimensoin | Operator | Continuous Op. |
-|---|---|---|---|---|---|---|
-| DerivativeIntegrator                 | H1, L2 | H1, L2 | S | 1D, 2D, 3D | $(\lambda\frac\{\partial u}\{\partial x_i}, v)$ | The direction index "i" is passed by the user. See MixedDirectionalDerivativeIntegrator for a more general alternative. |
-| BilinearFormIntegrator | NonlinearFormIntegrator |
-| TransposeIntegrator | BilinearFormIntegrator |
-| LumpedIntegrator | BilinearFormIntegrator |
-| InverseIntegrator | BilinearFormIntegrator |
-| SumIntegrator | BilinearFormIntegrator |
-| BoundaryMassIntegrator               | ?? | ?? |
-| ConvectionIntegrator                 | $(\vec\{\lambda}\cdot\grad u, v)$ | $\vec\{\lambda}\cdot\grad u$   |
-| GroupConvectionIntegrator            | BilinearFormIntegrator |  |
-| ElasticityIntegrator | BilinearFormIntegrator |
+These "integrators" do not actually perform integrations they merely
+alter the results of other integrators.  As such they provide a
+convenient and easy way to reuse existing integrators in special
+situations rather than needing to reimplement their functionality.
 
-## Weak Operators
+| Class Name          | Description                                                                                                            |
+|---------------------|------------------------------------------------------------------------------------------------------------------------|
+| TransposeIntegrator | Returns the transpose of the local matrix computed by another BilinearFormIntegrator                                   |
+| LumpedIntegrator    | Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another BilinearFormIntegrator (only implemented for square matrices) |
+| InverseIntegrator   | Returns the inverse of the local matrix coputed by another BilinearFormIntegrator which produces a square local matrix |
+| SumIntegrator       | Returns the sum of a series of integrators with compatible dimensions (only implemented for square matrices)           |
+
+## Weak Operators and Their Boundary Integrals
 
 Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
