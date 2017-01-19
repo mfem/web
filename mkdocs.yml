@@ -13,6 +13,7 @@ pages:
 - Features: features.md
 - Examples: examples.md
 - Documentation:
+  - '_News': news.md
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
