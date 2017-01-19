@@ -17,7 +17,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 MFEM is used in many projects, including
 [BLAST](http://www.llnl.gov/casc/blast), [GLVis](http://glvis.org),
 [XBraid](http://www.llnl.gov/casc/xbraid) and [VisIt](http://visit.llnl.gov).
-It is part ot the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exasccale Discretizations (CEED)](https://exascaleproject.org/2016/11/11/ecp_co-design_centers).
+It is part ot the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](https://exascaleproject.org/2016/11/11/ecp_co-design_centers).
 
 See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), list of related [publications](publications.md) and
 [project updates](news.md).
