@@ -46,9 +46,9 @@ Sep 12, 2016 | PyMFEM - a Python wrapper for MFEM [released](https://github.com/
 ## Latest Release
 
 [New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
-/ [Examples](examples.md)
-/ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
-/ [Sources](https://github.com/mfem/mfem)
+┊ [Examples](examples.md)
+┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
+┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.3.tgz**
@@ -60,13 +60,13 @@ For older releases see the [download](download.md) section.
 ## Documentation
 
 [Building MFEM](building.md)
-/ [Serial Tutorial](serial-tutorial.md)
-/ [Parallel Tutorial](parallel-tutorial.md)
-/ [Code Overview](code-overview.md)
+┊ [Serial Tutorial](serial-tutorial.md)
+┊ [Parallel Tutorial](parallel-tutorial.md)
+┊ [Code Overview](code-overview.md)
 
 [Finite Element Method](fem.md)
-/ [Electromagnetics](electromagnetics.md)
-/ [Meshing](meshing.md)
+┊ [Electromagnetics](electromagnetics.md)
+┊ [Meshing](meshing.md)
 
 New users should start by examining the [example codes](examples.md).
 

@@ -1,9 +1,9 @@
 ## Latest Release
 
 [New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
-/ [Example codes](examples.md)
-/ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
-/ [Sources](https://github.com/mfem/mfem)
+┊ [Example codes](examples.md)
+┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
+┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.3.tgz**

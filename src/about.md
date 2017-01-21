@@ -24,6 +24,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
 - [Daniel White](http://people.llnl.gov/white37)
+- [Stefano Zampini](https://ecrc.kaust.edu.sa/Pages/People.aspx)
 
 
 ## License
