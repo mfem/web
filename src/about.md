@@ -8,21 +8,28 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Robert Anderson](http://people.llnl.gov/anderson110)
 - [Thomas Anderson](http://www.its.caltech.edu/~tganders)
 - [Mikhail Artemyev](https://github.com/martemyev)
+- Thomas Benson
+- Aaron Black
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
+- [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
+- [Mark Miller]
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
+- Jean Sexton
+- Thomas Stitt
 - [Mark Stowell](http://people.llnl.gov/stowell1)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
+- [Kenneth Weiss](http://people.llnl.gov/weiss27)
 - [Daniel White](http://people.llnl.gov/white37)
 - [Stefano Zampini](https://ecrc.kaust.edu.sa/Pages/People.aspx)
 
