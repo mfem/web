@@ -83,8 +83,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG (eigensolver)</label><br/>
-   <label><input type="radio" id="ame" onchange="update(this.id);" /> AME (eigensolver)</label><br/>
+   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
+   <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
+   <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
 </div>
 </div>
 <hr>
@@ -112,7 +113,8 @@ connection to the [GLVis](http://glvis.org) tool for visualization.
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp)),
 a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)),
 and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp),
-[performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp)._
+[performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -144,6 +146,7 @@ also illustrated.
 
 _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp))
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -168,6 +171,7 @@ also illustrated.
 
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -192,6 +196,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -219,6 +224,7 @@ a [VisIt](http://visit.llnl.gov) visualization format.
 
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -244,6 +250,7 @@ visualization are also illustrated.
 
 _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -314,7 +321,9 @@ files for external visualization with [VisIt](http://visit.llnl.gov)
 is also illustrated.
 
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
-and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version._
+and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.
+It also has a SUNDIALS modification in [examples/sundials](https://github.com/mfem/mfem/blob/master/examples/sundials)
+and a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -338,6 +347,8 @@ solver.
 
 _The example has a serial ([ex10.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10.cpp))
 and a parallel ([ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) version.
+It also has a SUNDIALS modification in [examples/sundials](https://github.com/mfem/mfem/blob/master/examples/sundials)
+and a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing examples 2 and 9 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -755,7 +766,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -764,19 +775,19 @@ function update(id)
 
    // Example codes
    var numExamples = 17; // update when adding examples!
-   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
-   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
-   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
-   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
+   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
+   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
+   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk));
-   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk));
+   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc));
+   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
-   showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
+   showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
    showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk));
