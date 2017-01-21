@@ -2,6 +2,14 @@
 
 MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project.
 
+Please cite with:
+```c
+@misc{mfem-library,
+  title={{MFEM}: Modular finite element methods},
+  howpublished={\url{mfem.org}}
+}
+```
+
 ## Contributors
 
 - Ido Akkerman
@@ -20,7 +28,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
-- [Mark Miller]
+- Mark Miller
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton
@@ -41,14 +49,6 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 
 <br>
-
-Please cite with:
-```c
-@misc{mfem-library,
-  title={{MFEM}: Modular finite element methods},
-  howpublished={\url{mfem.org}}
-}
-```
 
 This work performed under the auspices of the U.S. Department of Energy
 by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
