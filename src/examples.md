@@ -382,14 +382,6 @@ We recommend viewing Example 1 before viewing this example._
 ##Example 12: Linear Elasticity Eigenproblem
 <img class="floatright" src="../img/examples/ex12.png">
 
-This example code demonstrates the use of MFEM to solve the eigenvalue problem
-$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
-
-We compute a number of the lowest eigenmodes by discretizing the Laplacian and
-Mass operators using a finite element space of the specified order, or an
-isoparametric/isogeometric space if order < 1 (quadratic for quadratic
-curvilinear mesh, NURBS for NURBS mesh, etc.)
-
 This example code solves the linear elasticity eigenvalue
 problem for a multi-material cantilever beam.
 Specifically, we compute a number of the lowest eigenmodes by approximating the weak form of
