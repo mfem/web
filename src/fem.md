@@ -20,7 +20,7 @@ mesh elements (or sometimes over edges or faces).  The `BilinearForm` class puts
 several `BilinearFormIntegrator`s together to build the global sparse finite
 element matrix.
 
-### [Linear Form Integrators  ](lininteg.md)
+### [Linear Form Integrators](lininteg.md)
 
 Linear form integrators are used to compute the integrals of products of a basis
 function with a given source function over individual mesh elements (or

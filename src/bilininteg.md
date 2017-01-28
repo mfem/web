@@ -141,7 +141,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 
 These operators require vector-valued basis functions in the trial
 space.  Many of these operators will work with either ND or RT basis
-fucntions but others require one or the other.
+functions but others require one or the other.
 
 ### Square Operators
 
@@ -193,7 +193,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 
 These operators require vector-valued basis functions constructed by
 using multiple copies of scalar fields.  In each of these integrators
-the scalar basis fucntion index increments most quickly followed by
+the scalar basis function index increments most quickly followed by
 the vector index.  This leads to local element matrix which have a
 block structure.
 
@@ -294,7 +294,7 @@ situations rather than needing to reimplement their functionality.
 |---------------------|------------------------------------------------------------------------------------------------------------------------|
 | TransposeIntegrator | Returns the transpose of the local matrix computed by another BilinearFormIntegrator                                   |
 | LumpedIntegrator    | Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another BilinearFormIntegrator (only implemented for square matrices) |
-| InverseIntegrator   | Returns the inverse of the local matrix coputed by another BilinearFormIntegrator which produces a square local matrix |
+| InverseIntegrator   | Returns the inverse of the local matrix computed by another BilinearFormIntegrator which produces a square local matrix |
 | SumIntegrator       | Returns the sum of a series of integrators with compatible dimensions (only implemented for square matrices)           |
 
 ## Weak Operators and Their Boundary Integrals
