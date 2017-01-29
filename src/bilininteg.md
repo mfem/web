@@ -217,11 +217,11 @@ block structure.
 
 | Class Name                | Domain | Range  | Operator | Notes |
 |---------------------------|--------|--------|----------|-------|
-| DGTraceIntegrator         | H1, L2 | H1, L2 | $\alpha\,(\rho_u\vec\{u}\cdot\hat\{n}\,\{v},[w])+\beta\,(\rho_u \abs\{\vec\{u}\cdot\hat\{n}}[v],[w])$ | |
-| DGDiffusionIntegrator     | H1, L2 | H1, L2 | $-\left(\{Q\grad u\cdot\hat\{n}\},[v])+\sigma\,([u],\{Q\grad v\cdot\hat\{n}})+\kappa\,(\{h^\{-1}Q}[u],[v]\right) $ | |
-| DGElasticityIntegrator    | H1, L2 | H1, L2 | | |
-| TraceJumpIntegrator       |  |  |
-| NormalTraceJumpIntegrator |  |  |
+| DGTraceIntegrator         | H1, L2 | H1, L2 | $\alpha \left<\rho_u(\vec\{u}\cdot\hat\{n}) \\\{v\\\},[w]\right> \\\\ + \beta \left<\rho_u \abs\{\vec\{u}\cdot\hat\{n}}[v],[w]\right>$ | |
+| DGDiffusionIntegrator     | H1, L2 | H1, L2 | $-\left<\\\{Q\grad u\cdot\hat\{n}\\\},[v]\right> \\\\ + \sigma \left<[u],\\\{Q\grad v\cdot\hat\{n}\\\}\right> \\\\ + \kappa \left<\\\{h^\{-1}Q\\\}[u],[v]\right> $ | |
+| DGElasticityIntegrator    | H1, L2 | H1, L2 | see $(\ref\{dg-elast})$ | |
+| TraceJumpIntegrator       |        |        | $\left< v, [w] \right>$ | |
+| NormalTraceJumpIntegrator |        |        | $\left< v, \left[\vec\{w}\cdot \vec\{n}\right] \right>$ | |
 
 Integrator for the DG elasticity form, for the formulations see:
 
@@ -245,7 +245,7 @@ In the bilinear form above $ \tau(u) $ is traction, and it's also
     stress, and $ \vec\{n} $ is the unit normal vector w.r.t. to $ F $.
 
 In other words, we have
-    $$
+    $$\label\{dg-elast}
     - \left< \\{ \sigma(u) \cdot \vec\{n} \\}, [v] \right> + \alpha \left< \\{
         \sigma(v) \cdot \vec\{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
         \lambda + 2 \mu \\} [u], [v] \right>
@@ -254,10 +254,11 @@ In other words, we have
 For isotropic media
     $$
     \begin{split}
-    \sigma(u) &= \lambda \nabla \cdot u I + 2 \mu \varepsilon(u) \\
-              &= \lambda \nabla \cdot u I + 2 \mu \frac{1}{2} (\nabla u + \nabla
-                 u^T) \\
-              &= \lambda \nabla \cdot u I + \mu (\nabla u + \nabla u^T)
+    \sigma(u) &= \lambda \nabla \cdot u I + 2 \mu \varepsilon(u) \\\\
+              &= \lambda \nabla \cdot u I + 2 \mu \frac{1}{2} \left( \nabla u +
+	         \nabla u^T \right) \\\\
+              &= \lambda \nabla \cdot u I + \mu \left( \nabla u + \nabla u^T
+	         \right)
     \end{split}
     $$
 

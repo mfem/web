@@ -90,13 +90,13 @@ Face integrators integrate over the interior and boundary faces of mesh elements
 | BoundaryLFIntegrator    | H1, L2 | $(f, v)$ | $f$ | 1D, 2D, 3D |
 | BoundaryNormalLFIntegrator  | H1, L2 | $(\vec\{f} \cdot \vec\{n}, v)$ | $\vec\{f} \cdot \vec\{n}$ | 1D, 2D, 3D |
 | BoundaryTangentialLFIntegrator | H1, L2 | $(\vec\{f} \cdot \vec\{\tau}, v)$ | $\vec\{f} \cdot \vec\{\tau}$ | 2D |
-| BoundaryFlowIntegrator | H1, L2 | $\frac\{\alpha}\{2}\, ((\vec\{u} \cdot \vec\{n})\, f, v) - \beta\, (\mid \vec\{u} \cdot \vec\{n} \mid \vec\{f}, v)$ | $\frac\{\alpha}\{2} (\vec\{u} \cdot \vec\{n})\, f - \beta \mid \vec\{u} \cdot \vec\{n} \mid \vec\{f}$ | 1D, 2D, 3D |
+| BoundaryFlowIntegrator | H1, L2 | $\frac\{\alpha}\{2}\, \left< (\vec\{u} \cdot \vec\{n})\, f, v \right> - \beta\, \left<\mid \vec\{u} \cdot \vec\{n} \mid f, v \right>$ | $\frac\{\alpha}\{2} (\vec\{u} \cdot \vec\{n})\, f - \beta \mid \vec\{u} \cdot \vec\{n} \mid f$ | 1D, 2D, 3D |
 
 ### Face Integrators
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
-| DGDirichletLFIntegrator | L2 | $\sigma\, (u_D, \vec\{n} \cdot Q \cdot \vec{\nabla}(v)) + \kappa\, (\\{h^\{-1} Q\\} u_D, v)$ | DG essential BCs for $u_D$ | 1D, 2D, 3D
+| DGDirichletLFIntegrator | L2 | $\sigma \left< u_D, Q \nabla v \cdot \vec\{n} \right> + \kappa \left< \\\{h^\{-1} Q\\\} u_D, v \right>$ | DG essential BCs for $u_D$ | 1D, 2D, 3D
 
 
 ## Vector Field Operators
@@ -121,7 +121,7 @@ Face integrators integrate over the interior and boundary faces of mesh elements
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
-| DGElasticityDirichletLFIntegrator | L2 | $\alpha\, (\vec\{u_D}, (\lambda (\div \vec\{v}) I + \mu (\nabla\vec\{v} + \nabla\vec\{v}^T)) \cdot \vec\{n})\,\,+$<br>$\kappa\, (h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v})$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
+| DGElasticityDirichletLFIntegrator | L2 | $\alpha\left<\vec\{u_D}, \left(\lambda \left(\div \vec\{v}\right) I + \mu \left(\nabla\vec\{v} + \nabla\vec\{v}^T\right)\right) \cdot \vec\{n}\right> \\\\ + \kappa\left< h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v} \right>$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
