@@ -105,23 +105,23 @@ Face integrators integrate over the interior and boundary faces of mesh elements
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|--------|------------------------------------|------------------| ---------- |
-| VectorDomainLFIntegrator   | H1, L2 | $(\vec{f}, \vec{v})$  | $\vec{f}$  | 1D, 2D, 3D |
-| VectorFEDomainLFIntegrator | ND, RT | $(\vec{f}, \vec{v})$  | $\vec{f}$  | 2D, 3D |
+| VectorDomainLFIntegrator   | H1, L2 | $(\vec\{f}, \vec\{v})$  | $\vec\{f}$  | 1D, 2D, 3D |
+| VectorFEDomainLFIntegrator | ND, RT | $(\vec\{f}, \vec\{v})$  | $\vec\{f}$  | 2D, 3D |
 
 ### Boundary Integrators
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|--------|------------------------------------|------------------| ---------- |
-| VectorBoundaryLFIntegrator    | H1, L2 | $( \vec{f}, \vec{v} )$ | $\vec{f}$ | 1D, 2D, 3D |
-| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec{v} \cdot \vec{n} )$ | $\vec{f}$ | 1D, 2D, 3D |
-| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec{v} \cdot \vec{n} )$ | $\vec{f}$ | 2D, 3D |
-| VectorFEBoundaryTangentLFIntegrator  | ND | $( \vec\{n} \times \vec\{f}, \vec\{v} )$ | $\vec{n} \times \vec{f}$ | 2D, 3D |
+| VectorBoundaryLFIntegrator    | H1, L2 | $( \vec\{f}, \vec\{v} )$ | $\vec\{f}$ | 1D, 2D, 3D |
+| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 1D, 2D, 3D |
+| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 2D, 3D |
+| VectorFEBoundaryTangentLFIntegrator  | ND | $( \vec\{n} \times \vec\{f}, \vec\{v} )$ | $\vec\{n} \times \vec\{f}$ | 2D, 3D |
 
 ### Face Integrators
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
-| DGElasticityDirichletLFIntegrator | L2 | $\alpha\, (\vec{u_D}, (\lambda (\div \vec\{v}) I + \mu (\nabla\vec\{v} + \nabla\vec\{v}^T)) \cdot \vec\{n})\,\,+$<br>$\kappa\, (h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v})$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
+| DGElasticityDirichletLFIntegrator | L2 | $\alpha\, (\vec\{u_D}, (\lambda (\div \vec\{v}) I + \mu (\nabla\vec\{v} + \nabla\vec\{v}^T)) \cdot \vec\{n})\,\,+$<br>$\kappa\, (h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v})$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
