@@ -10,21 +10,20 @@ $
 \newcommand{\abs}[1]{|#1|}
 $
 
-Bilinear form integrators are at the heart of any finite element method,
-they are used to compute the integrals of products of basis functions
-over individual mesh elements (or sometimes over edges or faces).
-Typically each element is contained in the support of several basis
-functions of both the domain and range spaces therefore bilinear
-integrators simultaneously compute the integrals of all combinations
-of the relevant basis functions from the domain and range spaces.
-This produces a two dimensional array of results that are arranged
-into a small dense matrix of integral values called a *local element matrix*.
+Bilinear form integrators are at the heart of any finite element method, they
+are used to compute the integrals of products of basis functions over individual
+mesh elements (or sometimes over edges or faces).  Typically each element is
+contained in the support of several basis functions of both the domain and range
+spaces, therefore bilinear integrators simultaneously compute the integrals of
+all combinations of the relevant basis functions from the domain and range
+spaces.  This produces a two dimensional array of results that are arranged into
+a small dense matrix of integral values called a *local element (stiffness)
+matrix*.
 
-To put this another way, the `BilinearForm` class builds a global,
-sparse, finite element matrix, `glb_mat`, by performing the outer loop
-in the following pseudocode snippet whereas the
-`BilinearFormIntegrator` class performs the nested inner loops to
-compute the dense local element matrix, `loc_mat`.
+To put this another way, the `BilinearForm` class builds a global, sparse,
+finite element matrix, `glb_mat`, by performing the outer loop in the following
+pseudocode snippet whereas the `BilinearFormIntegrator` class performs the
+nested inner loops to compute the dense local element matrix, `loc_mat`.
 
 ```
 for each elem in elements
@@ -40,20 +39,20 @@ for each elem in elements
 end
 ```
 
-There are three types of integrals that typically arise although many
-other, more exotic, forms are possible:
+There are three types of integrals that typically arise although many other,
+more exotic, forms are possible:
 
-+ Integrals involving Scalar basis functions $\int_\Omega \lambda u v$
-+ Integrals involving Vector basis functions $\int_\Omega \lambda \vec\{u}\cdot\vec\{v}$
-+ Integrals involving Scalar and Vector basis functions $\int_\Omega u\,\vec\{\lambda}\cdot\vec\{v}$
++ Integrals involving Scalar basis functions: $\int_\Omega \lambda\, u v$
++ Integrals involving Vector basis functions: $\int_\Omega \lambda\, \vec\{u}\cdot\vec\{v}$
++ Integrals involving Scalar and Vector basis functions: $\int_\Omega u\,\vec\{\lambda}\cdot\vec\{v}$
 
-The `BilinearFormIntegrator` classes allow MFEM to produce a wide
-variety of local element matrices without modifying the
-`BilinearForm` class.  Many of the possible operators are collected
-below into tables that briefly describe their action and requirements.
+The `BilinearFormIntegrator` classes allow MFEM to produce a wide variety of
+local element matrices without modifying the `BilinearForm` class.  Many of the
+possible operators are collected below into tables that briefly describe their
+action and requirements.
 
-In the tables below the *Space* column refers to finite element spaces
-which implement the following methods:
+In the tables below the *Space* column refers to finite element spaces which
+implement the following methods:
 
 | Space | Operator   | Derivative Operator |
 |-------|------------|---------------------|
@@ -82,6 +81,8 @@ $$(\lambda\vec\{u}, \vec\{v})\equiv \int_\Omega\lambda\vec\{u}\cdot\vec\{v}$$
 
 Where $u$ or $\vec\{u}$ is a function in the domain (or trial) space and $v$
 or $\vec\{v}$ is in the range (or test) space.
+For boundary integrators, the integrals are over $\partial \Omega$.
+Face integrators integrate over the interior and boundary faces of mesh elements.
 
 Note that any operators involving a derivative of the range function
 $v$ or $\vec\{v}$ are computed using integration by parts.  This leads
@@ -130,12 +131,12 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 
 ### Other Scalar Operators
 
-| Class Name                |Domain  | Range  | Coef. | Dimensoin  | Operator                                        | Notes |
+| Class Name                |Domain  | Range  | Coef. | Dimension  | Operator                                        | Notes |
 |---------------------------|--------|--------|-------|------------|-------------------------------------------------|-------|
 | DerivativeIntegrator      | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\frac\{\partial u}\{\partial x_i}, v)$ | The direction index "i" is passed by the user. See `MixedDirectionalDerivativeIntegrator` for a more general alternative. |
 | ConvectionIntegrator      | H1     | H1     | **V** | 1D, 2D, 3D | $(\vec\{\lambda}\cdot\grad u, v)$               | This is designed to be used with `BilinearForm` to produce a square matrix. See `MixedDirectionalDerivativeIntegrator` for a rectangular version. |
-| GroupConvectionIntegrator | H1     | H1     | **V** | 1D, 2D, 3D | $(\alpha\vec\{\lambda}\cdot\grad u, v)$         | Uses the "group" FE discretization. ** Aside from the optional scalar $\alpha$, it is not at all clear to me how this integrator differs from the `ConvectionIntegrator`.**|
-| BoundaryMassIntegrator    | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\,u,v)$                                | Computes a mass matrix on the exterior faces of a domain. ** Only seems to support square matrices. This class only implements the `AssembleFaceMatrix` method which has no documentation.  Consequently I can only guess what this does and how it is meant to be used.  For example, why is this method not implemented as part of the `MassIntegrator` class? ** |
+| GroupConvectionIntegrator | H1     | H1     | **V** | 1D, 2D, 3D | $(\alpha\vec\{\lambda}\cdot\grad u, v)$         | Uses the "group" finite element formulation for advection due to [Fletcher](http://www.sciencedirect.com/science/article/pii/0045782583901226). |
+| BoundaryMassIntegrator    | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\,u,v)$                                | Computes a mass matrix on the exterior faces of a domain. See `MassIntegrator` above for a more general version. |
 
 ## Vector Finite Element Operators
 
