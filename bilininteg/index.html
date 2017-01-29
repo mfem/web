@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+<!--	<title>_Bilinear Form Integrators - MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../code-overview/">Code Overview</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#bilinear-form-integrators">Bilinear Form Integrators</a></li>
+        
+            <li><a href="#scalar-field-operators">Scalar Field Operators</a></li>
+        
+            <li><a href="#vector-finite-element-operators">Vector Finite Element Operators</a></li>
+        
+            <li><a href="#vector-field-operators">Vector Field Operators</a></li>
+        
+            <li><a href="#discontinuous-galerkin-operators">Discontinuous Galerkin Operators</a></li>
+        
+            <li><a href="#special-purpose-integrators">Special Purpose Integrators</a></li>
+        
+            <li><a href="#weak-operators-and-their-boundary-integrals">Weak Operators and Their Boundary Integrals</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="bilinear-form-integrators">Bilinear Form Integrators</h1>
+<p>$
+\newcommand{\cross}{\times}
+\newcommand{\inner}{\cdot}
+\newcommand{\div}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\grad}{\nabla}
+\newcommand{\ddx}[1]{\frac{d#1}{dx}}
+\newcommand{\abs}[1]{|#1|}
+$</p>
+<p>Bilinear form integrators are at the heart of any finite element method, they
+are used to compute the integrals of products of basis functions over individual
+mesh elements (or sometimes over edges or faces).  Typically each element is
+contained in the support of several basis functions of both the domain and range
+spaces, therefore bilinear integrators simultaneously compute the integrals of
+all combinations of the relevant basis functions from the domain and range
+spaces.  This produces a two dimensional array of results that are arranged into
+a small dense matrix of integral values called a <em>local element (stiffness)
+matrix</em>.</p>
+<p>To put this another way, the <code>BilinearForm</code> class builds a global, sparse,
+finite element matrix, <code>glb_mat</code>, by performing the outer loop in the following
+pseudocode snippet whereas the <code>BilinearFormIntegrator</code> class performs the
+nested inner loops to compute the dense local element matrix, <code>loc_mat</code>.</p>
+<pre><code>for each elem in elements
+   loc_mat = 0.0
+   for each pt in quadrature_points
+      for each u_j in elem
+         for each v_i in elem
+            loc_mat(i,j) += w(pt) * u_j(pt) v_i(pt)
+         end
+      end
+   end
+   glb_mat += loc_mat
+end
+</code></pre>
+
+<p>There are three types of integrals that typically arise although many other,
+more exotic, forms are possible:</p>
+<ul>
+<li>Integrals involving Scalar basis functions: $\int_\Omega \lambda\, u v$</li>
+<li>Integrals involving Vector basis functions: $\int_\Omega \lambda\, \vec{u}\cdot\vec{v}$</li>
+<li>Integrals involving Scalar and Vector basis functions: $\int_\Omega u\,\vec{\lambda}\cdot\vec{v}$</li>
+</ul>
+<p>The <code>BilinearFormIntegrator</code> classes allow MFEM to produce a wide variety of
+local element matrices without modifying the <code>BilinearForm</code> class.  Many of the
+possible operators are collected below into tables that briefly describe their
+action and requirements.</p>
+<p>In the tables below the <em>Space</em> column refers to finite element spaces which
+implement the following methods:</p>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Operator</th>
+<th>Derivative Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>CalcShape</td>
+<td>CalcDShape</td>
+</tr>
+<tr>
+<td>ND</td>
+<td>CalcVShape</td>
+<td>CalcCurlShape</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>CalcVShape</td>
+<td>CalcDivShape</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>CalcShape</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>Coef.</em> column refers to the types of coefficients that are
+available.  A boldface coefficient type is required whereas most
+coefficients are optional.</p>
+<table>
+<thead>
+<tr>
+<th>Coef.</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S</td>
+<td>Scalar Valued Function</td>
+</tr>
+<tr>
+<td>V</td>
+<td>Vector Valued Function</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Diagonal Matrix Function</td>
+</tr>
+<tr>
+<td>M</td>
+<td>General Matrix Function</td>
+</tr>
+</tbody>
+</table>
+<p>Notation: The integrals performed by the various integrators listed
+below are shown using inner product notation, $(\cdot,\cdot)$, defined
+as follows.</p>
+<p>$$(\lambda u, v)\equiv \int_\Omega \lambda u v$$
+$$(\lambda\vec{u}, \vec{v})\equiv \int_\Omega\lambda\vec{u}\cdot\vec{v}$$</p>
+<p>Where $u$ or $\vec{u}$ is a function in the domain (or trial) space and $v$
+or $\vec{v}$ is in the range (or test) space.
+For boundary integrators, the integrals are over $\partial \Omega$.
+Face integrators integrate over the interior and boundary faces of mesh elements
+and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
+<p>Note that any operators involving a derivative of the range function
+$v$ or $\vec{v}$ are computed using integration by parts.  This leads
+to a boundary integral which can be used to apply Neumann boundary
+conditions.  Some of these operators are listed along with their
+boundary terms in section <a href="#weak-operators">Weak Operators</a>.</p>
+<h2 id="scalar-field-operators">Scalar Field Operators</h2>
+<p>These operators require scalar-valued trial spaces.  Many of these
+operators will work with either H1 or L2 basis functions but some that
+require a gradient operator should be used with H1.</p>
+<h3 id="square-operators">Square Operators</h3>
+<p>These integrators are designed to be used with the BilinearForm object
+to assemble square linear operators.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Spaces</th>
+<th align="center">Coef.</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th align="center">Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MassIntegrator</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td>$(\lambda u, v)$</td>
+<td>$\lambda u$</td>
+<td align="center">1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>DiffusionIntegrator</td>
+<td>H1</td>
+<td align="center">S, M</td>
+<td>$(\lambda\grad u, \grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td align="center">1D, 2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mixed-operators">Mixed Operators</h3>
+<p>These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th align="center">Coef.</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th align="center">Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MixedScalarMassIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td>$(\lambda u, v)$</td>
+<td>$\lambda u$</td>
+<td align="center">1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakDivergenceIntegrator</td>
+<td>H1, L2</td>
+<td>H1</td>
+<td align="center"><strong>V</strong></td>
+<td>$(-\vec{\lambda}u,\grad v)$</td>
+<td>$\div(\vec{\lambda}u)$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakDerivativeIntegrator</td>
+<td>H1, L2</td>
+<td>H1</td>
+<td align="center">S</td>
+<td>$(-\lambda u, \ddx{v})$</td>
+<td>$\ddx{}(\lambda u)\;$</td>
+<td align="center">1D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakCurlIntegrator</td>
+<td>H1, L2</td>
+<td>ND</td>
+<td align="center">S</td>
+<td>$(\lambda u,\curl\vec{v})$</td>
+<td>$\curl(\lambda\,u\,\hat{z})\;$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedVectorProductIntegrator</td>
+<td>H1, L2</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}u,\vec{v})$</td>
+<td>$\vec{\lambda}u$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakCrossProductIntegrator</td>
+<td>H1, L2</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda} u\,\hat{z},\vec{v})$</td>
+<td>$\vec{\lambda}\times\,\hat{z}\,u$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakGradientIntegrator</td>
+<td>H1, L2</td>
+<td>RT</td>
+<td align="center">S</td>
+<td>$(-\lambda u, \div\vec{v})$</td>
+<td>$\grad(\lambda u)$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedDirectionalDerivativeIntegrator</td>
+<td>H1</td>
+<td>H1, L2</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cdot\grad u, v)$</td>
+<td>$\vec{\lambda}\cdot\grad u$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarCrossGradIntegrator</td>
+<td>H1</td>
+<td>H1, L2</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\grad u, v)$</td>
+<td>$\vec{\lambda}\cross\grad u$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedScalarDerivativeIntegrator</td>
+<td>H1</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td>$(\lambda \ddx{u}, v)$</td>
+<td>$\lambda\ddx{u}\;$</td>
+<td align="center">1D</td>
+</tr>
+<tr>
+<td>MixedGradGradIntegrator</td>
+<td>H1</td>
+<td>H1</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\grad u,\grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedCrossGradGradIntegrator</td>
+<td>H1</td>
+<td>H1</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\grad u,\grad v)$</td>
+<td>$-\div(\vec{\lambda}\cross\grad u)$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedVectorGradientIntegrator</td>
+<td>H1</td>
+<td>ND, RT</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\grad u,\vec{v})$</td>
+<td>$\lambda\grad u$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedCrossGradIntegrator</td>
+<td>H1</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\grad u,\vec{v})$</td>
+<td>$\vec{\lambda}\cross\grad u$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedCrossGradCurlIntegrator</td>
+<td>H1</td>
+<td>ND</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\times\grad u, \curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\times\grad u)$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedGradDivIntegrator</td>
+<td>H1</td>
+<td>RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cdot\grad u, \div\vec{v})$</td>
+<td>$-\grad(\vec{\lambda}\cdot\grad u)$</td>
+<td align="center">2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-scalar-operators">Other Scalar Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th>Coef.</th>
+<th>Dimension</th>
+<th>Operator</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DerivativeIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td>S</td>
+<td>1D, 2D, 3D</td>
+<td>$(\lambda\frac{\partial u}{\partial x_i}, v)$</td>
+<td>The direction index "i" is passed by the user. See <code>MixedDirectionalDerivativeIntegrator</code> for a more general alternative.</td>
+</tr>
+<tr>
+<td>ConvectionIntegrator</td>
+<td>H1</td>
+<td>H1</td>
+<td><strong>V</strong></td>
+<td>1D, 2D, 3D</td>
+<td>$(\vec{\lambda}\cdot\grad u, v)$</td>
+<td>This is designed to be used with <code>BilinearForm</code> to produce a square matrix. See <code>MixedDirectionalDerivativeIntegrator</code> for a rectangular version.</td>
+</tr>
+<tr>
+<td>GroupConvectionIntegrator</td>
+<td>H1</td>
+<td>H1</td>
+<td><strong>V</strong></td>
+<td>1D, 2D, 3D</td>
+<td>$(\alpha\vec{\lambda}\cdot\grad u, v)$</td>
+<td>Uses the "group" finite element formulation for advection due to <a href="http://www.sciencedirect.com/science/article/pii/0045782583901226">Fletcher</a>.</td>
+</tr>
+<tr>
+<td>BoundaryMassIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td>S</td>
+<td>1D, 2D, 3D</td>
+<td>$(\lambda\,u,v)$</td>
+<td>Computes a mass matrix on the exterior faces of a domain. See <code>MassIntegrator</code> above for a more general version.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vector-finite-element-operators">Vector Finite Element Operators</h2>
+<p>These operators require vector-valued basis functions in the trial
+space.  Many of these operators will work with either ND or RT basis
+functions but others require one or the other.</p>
+<h3 id="square-operators_1">Square Operators</h3>
+<p>These integrators are designed to be used with the BilinearForm object
+to assemble square linear operators.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Spaces</th>
+<th align="center">Coef.</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th align="center">Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorFEMassIntegrator</td>
+<td>ND, RT</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\vec{u},\vec{v})$</td>
+<td>$\lambda\vec{u}$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>CurlCurlIntegrator</td>
+<td>ND</td>
+<td align="center">S</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>DivDivIntegrator</td>
+<td>RT</td>
+<td align="center">S</td>
+<td>$(\lambda\div\vec{u},\div\vec{v})$</td>
+<td>$-\grad(\lambda\div\vec{u})$</td>
+<td align="center">2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mixed-operators_1">Mixed Operators</h3>
+<p>These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th align="center">Coef.</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th align="center">Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MixedDotProductIntegrator</td>
+<td>ND, RT</td>
+<td>H1, L2</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cdot\vec{u},v)$</td>
+<td>$\vec{\lambda}\cdot\vec{u}$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarCrossProductIntegrator</td>
+<td>ND, RT</td>
+<td>H1, L2</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\vec{u},v)$</td>
+<td>$\vec{\lambda}\cross\vec{u}$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedVectorWeakDivergenceIntegrator</td>
+<td>ND, RT</td>
+<td>H1</td>
+<td align="center">S, D, M</td>
+<td>$(-\lambda\vec{u},\grad v)$</td>
+<td>$\div(\lambda\vec{u})$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedWeakDivCrossIntegrator</td>
+<td>ND, RT</td>
+<td>H1</td>
+<td align="center"><strong>V</strong></td>
+<td>$(-\vec{\lambda}\cross\vec{u},\grad v)$</td>
+<td>$\div(\vec{\lambda}\cross\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedVectorMassIntegrator</td>
+<td>ND, RT</td>
+<td>ND, RT</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\vec{u},\vec{v})$</td>
+<td>$\lambda\vec{u}$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedCrossProductIntegrator</td>
+<td>ND, RT</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\vec{u},\vec{v})$</td>
+<td>$\vec{\lambda}\cross\vec{u}$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedVectorWeakCurlIntegrator</td>
+<td>ND, RT</td>
+<td>ND</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedWeakCurlCrossIntegrator</td>
+<td>ND, RT</td>
+<td>ND</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedScalarWeakCurlCrossIntegrator</td>
+<td>ND, RT</td>
+<td>ND</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedWeakGradDotIntegrator</td>
+<td>ND, RT</td>
+<td>RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(-\vec{\lambda}\cdot\vec{u},\div\vec{v})$</td>
+<td>$\grad(\vec{\lambda}\cdot\vec{u})$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedScalarCurlIntegrator</td>
+<td>ND</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td>$(\lambda\curl\vec{u},v)$</td>
+<td>$\lambda\curl\vec{u}\;$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedCrossCurlGradIntegrator</td>
+<td>ND</td>
+<td>H1</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\curl\vec{u},\grad v)$</td>
+<td>$-\div(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedVectorCurlIntegrator</td>
+<td>ND</td>
+<td>ND, RT</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\curl\vec{u},\vec{v})$</td>
+<td>$\lambda\curl\vec{u}$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedCrossCurlIntegrator</td>
+<td>ND</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\curl\vec{u},\vec{v})$</td>
+<td>$\vec{\lambda}\cross\curl\vec{u}$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedScalarCrossCurlIntegrator</td>
+<td>ND</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\hat{z}\,\curl\vec{u},\vec{v})$</td>
+<td>$\vec{\lambda}\cross\hat{z}\,\curl\vec{u}$</td>
+<td align="center">2D</td>
+</tr>
+<tr>
+<td>MixedCurlCurlIntegrator</td>
+<td>ND</td>
+<td>ND</td>
+<td align="center">S, D, M</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedCrossCurlCurlIntegrator</td>
+<td>ND</td>
+<td>ND</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\cross\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td align="center">3D</td>
+</tr>
+<tr>
+<td>MixedScalarDivergenceIntegrator</td>
+<td>RT</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td>$(\lambda\div\vec{u}, v)$</td>
+<td>$\lambda \div\vec{u}$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedDivGradIntegrator</td>
+<td>RT</td>
+<td>H1</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\div\vec{u}, \grad v)$</td>
+<td>$-\div(\vec{\lambda}\div\vec{u})$</td>
+<td align="center">2D, 3D</td>
+</tr>
+<tr>
+<td>MixedVectorDivergenceIntegrator</td>
+<td>RT</td>
+<td>ND, RT</td>
+<td align="center"><strong>V</strong></td>
+<td>$(\vec{\lambda}\div\vec{u}, \vec{v})$</td>
+<td>$\vec{\lambda}\div\vec{u}$</td>
+<td align="center">2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-vector-finite-element-operators">Other Vector Finite Element Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th>Coef.</th>
+<th>Operator</th>
+<th align="center">Dimension</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorFEDivergenceIntegrator</td>
+<td>RT</td>
+<td>H1, L2</td>
+<td>S</td>
+<td>$(\lambda\div\vec{u}, v)$</td>
+<td align="center">2D, 3D</td>
+<td>Alternate implementation of MixedScalarDivergenceIntegrator.</td>
+</tr>
+<tr>
+<td>VectorFEWeakDivergenceIntegrator</td>
+<td>ND</td>
+<td>H1</td>
+<td>S</td>
+<td>$(-\lambda\vec{u},\grad v)$</td>
+<td align="center">2D, 3D</td>
+<td>See MixedVectorWeakDivergenceIntegrator for a more general implementation.</td>
+</tr>
+<tr>
+<td>VectorFECurlIntegrator</td>
+<td>ND, RT</td>
+<td>ND, RT</td>
+<td>S</td>
+<td>$(\lambda\curl\vec{u},\vec{v})$ or $(\lambda\vec{u},\curl\vec{v})$</td>
+<td align="center">3D</td>
+<td>If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vector-field-operators">Vector Field Operators</h2>
+<p>These operators require vector-valued basis functions constructed by
+using multiple copies of scalar fields.  In each of these integrators
+the scalar basis function index increments most quickly followed by
+the vector index.  This leads to local element matrix which have a
+block structure.</p>
+<h3 id="square-operators_2">Square Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Spaces</th>
+<th align="center">Coef.</th>
+<th align="center">Dimension</th>
+<th>Operator</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorMassIntegrator</td>
+<td>$H_1^d$, $L_2^d$</td>
+<td align="center">S, D, M</td>
+<td align="center">1D, 2D, 3D</td>
+<td>$(\lambda\vec{u},\vec{v})$</td>
+<td></td>
+</tr>
+<tr>
+<td>VectorCurlCurlIntegrator</td>
+<td>$H_1^d$, $L_2^d$</td>
+<td align="center">S</td>
+<td align="center">2D, 3D</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td></td>
+</tr>
+<tr>
+<td>VectorDiffusionIntegrator</td>
+<td>$H_1^d$, $L_2^d$</td>
+<td align="center">S</td>
+<td align="center">1D, 2D, 3D</td>
+<td>$(\lambda\grad u_i,\grad v_i)$</td>
+<td>Produces a block diagonal matrix where $i\in[0,dim)$ indicates the index of the block</td>
+</tr>
+<tr>
+<td>ElasticityIntegrator</td>
+<td>$H_1^d$, $L_2^d$</td>
+<td align="center">$2\times$S</td>
+<td align="center">1D, 2D, 3D</td>
+<td>$(c_{ikjl}\grad u_j,\grad v_i)$</td>
+<td>Takes two scalar coefficients $\lambda$ and $\mu$ and produces a $dim\times dim$ block structured matrix where $i$ and $j$ are indices in this matrix.  The coefficient is defined by $c_{ikjl} = \lambda\delta_{ik}\delta_{jl}+\mu(\delta_{ij}\delta_{kl}+\delta_{il}\delta_{jk})$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mixed-operators_2">Mixed Operators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th align="center">Coef.</th>
+<th align="center">Dimension</th>
+<th>Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorDivergenceIntegrator</td>
+<td>$H_1^d$, $L_2^d$</td>
+<td>H1, L2</td>
+<td align="center">S</td>
+<td align="center">1D, 2D, 3D</td>
+<td>$(\lambda\div\vec{u},v)$</td>
+</tr>
+</tbody>
+</table>
+<h2 id="discontinuous-galerkin-operators">Discontinuous Galerkin Operators</h2>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Domain</th>
+<th>Range</th>
+<th>Operator</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DGTraceIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td>$\alpha \left&lt;\rho_u(\vec{u}\cdot\hat{n}) \{v\},[w]\right&gt; \\ + \beta \left&lt;\rho_u \abs{\vec{u}\cdot\hat{n}}[v],[w]\right&gt;$</td>
+<td></td>
+</tr>
+<tr>
+<td>DGDiffusionIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td>$-\left&lt;\{Q\grad u\cdot\hat{n}\},[v]\right&gt; \\ + \sigma \left&lt;[u],\{Q\grad v\cdot\hat{n}\}\right&gt; \\ + \kappa \left&lt;\{h^{-1}Q\}[u],[v]\right&gt; $</td>
+<td></td>
+</tr>
+<tr>
+<td>DGElasticityIntegrator</td>
+<td>H1, L2</td>
+<td>H1, L2</td>
+<td>see $(\ref{dg-elast})$</td>
+<td></td>
+</tr>
+<tr>
+<td>TraceJumpIntegrator</td>
+<td></td>
+<td></td>
+<td>$\left&lt; v, [w] \right&gt;$</td>
+<td></td>
+</tr>
+<tr>
+<td>NormalTraceJumpIntegrator</td>
+<td></td>
+<td></td>
+<td>$\left&lt; v, \left[\vec{w}\cdot \vec{n}\right] \right&gt;$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Integrator for the DG elasticity form, for the formulations see:</p>
+<ul>
+<li>PhD Thesis of Jonas De Basabe, High-Order Finite Element Methods for
+  Seismic Wave Propagation, UT Austin, 2009, p. 23, and references therein</li>
+<li>Peter Hansbo and Mats G. Larson, Discontinuous Galerkin and the
+  Crouzeix-Raviart Element: Application to Elasticity, PREPRINT 2000-09,
+  p.3</li>
+</ul>
+<p>$$
+- \left&lt; \{ \tau(u) \}, [v] \right&gt; + \alpha \left&lt; \{ \tau(v) \}, [u]
+        \right&gt; + \kappa \left&lt; h^{-1} \{ \lambda + 2 \mu \} [u], [v] \right&gt;
+$$</p>
+<p>where $ \left&lt; u, v\right&gt; = \int_{F} u \cdot v $, and $ F $ is a
+    face which is either a boundary face $ F_b $ of an element $ K $ or
+    an interior face $ F_i $ separating elements $ K_1 $ and $ K_2 $.</p>
+<p>In the bilinear form above $ \tau(u) $ is traction, and it's also
+    $ \tau(u) = \sigma(u) \cdot \vec{n} $, where $ \sigma(u) $ is
+    stress, and $ \vec{n} $ is the unit normal vector w.r.t. to $ F $.</p>
+<p>In other words, we have
+    $$\label{dg-elast}
+    - \left&lt; \{ \sigma(u) \cdot \vec{n} \}, [v] \right&gt; + \alpha \left&lt; \{
+        \sigma(v) \cdot \vec{n} \}, [u] \right&gt; + \kappa \left&lt; h^{-1} \{
+        \lambda + 2 \mu \} [u], [v] \right&gt;
+    $$</p>
+<p>For isotropic media
+    $$
+    \begin{split}
+    \sigma(u) &amp;= \lambda \nabla \cdot u I + 2 \mu \varepsilon(u) \\
+              &amp;= \lambda \nabla \cdot u I + 2 \mu \frac{1}{2} \left( \nabla u +
+             \nabla u^T \right) \\
+              &amp;= \lambda \nabla \cdot u I + \mu \left( \nabla u + \nabla u^T
+             \right)
+    \end{split}
+    $$</p>
+<p>where $ I $ is identity matrix, $ \lambda $ and $ \mu $ are Lame
+    coefficients (see ElasticityIntegrator), $ u, v $ are the trial and test
+    functions, respectively.</p>
+<p>The parameters $ \alpha $ and $ \kappa $ determine the DG method to
+use (when this integrator is added to the "broken" ElasticityIntegrator):</p>
+<ul>
+<li>
+<p><strong>IIPG</strong>, $\alpha = 0$,
+  C. Dawson, S. Sun, M. Wheeler, Compatible algorithms for coupled flow and
+  transport, Comp. Meth. Appl. Mech. Eng., 193(23-26), 2565-2580, 2004.</p>
+</li>
+<li>
+<p><strong>SIPG</strong>, $\alpha = -1$,
+  M. Grote, A. Schneebeli, D. Schotzau, Discontinuous Galerkin Finite
+  Element Method for the Wave Equation, SINUM, 44(6), 2408-2431, 2006.</p>
+</li>
+<li>
+<p><strong>NIPG</strong>, $\alpha = 1$,
+  B. Riviere, M. Wheeler, V. Girault, A Priori Error Estimates for Finite
+  Element Methods Based on Discontinuous Approximation Spaces for Elliptic
+  Problems, SINUM, 39(3), 902-931, 2001.</p>
+</li>
+</ul>
+<p>This is a 'Vector' integrator, i.e. defined for FE spaces using multiple
+copies of a scalar FE space.</p>
+<h2 id="special-purpose-integrators">Special Purpose Integrators</h2>
+<p>These "integrators" do not actually perform integrations they merely
+alter the results of other integrators.  As such they provide a
+convenient and easy way to reuse existing integrators in special
+situations rather than needing to reimplement their functionality.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TransposeIntegrator</td>
+<td>Returns the transpose of the local matrix computed by another BilinearFormIntegrator</td>
+</tr>
+<tr>
+<td>LumpedIntegrator</td>
+<td>Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another BilinearFormIntegrator (only implemented for square matrices)</td>
+</tr>
+<tr>
+<td>InverseIntegrator</td>
+<td>Returns the inverse of the local matrix computed by another BilinearFormIntegrator which produces a square local matrix</td>
+</tr>
+<tr>
+<td>SumIntegrator</td>
+<td>Returns the sum of a series of integrators with compatible dimensions (only implemented for square matrices)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="weak-operators-and-their-boundary-integrals">Weak Operators and Their Boundary Integrals</h2>
+<p>Weak operators use integration by parts to move a spatial derivative
+onto the test function.  This results in an implied boundary integral
+that is often assumed to be zero but can be used to apply an
+non-homogeneous Neumann boundary condition.</p>
+<h3 id="operator-with-scalar-range">Operator with Scalar Range</h3>
+<p>The following weak operators require the range (or test) space to be
+$H_1$ i.e. a scalar basis function with a gradient operator.  The implied
+natural boundary condition when using these operators is for the
+continuous boundary operator (shown in the last column) to be equal to
+zero.  On the other hand an inhomogeneous Neumann boundary condition
+can be applied by using a linear form boundary integrator to compute
+this boundary term for a known function e.g. when using the
+<code>DiffusionIntegrator</code> one could provide a known function for
+$\lambda\,\grad u$ to the <code>BoundaryNormalLFIntegrator</code> which would
+then integrate the normal component of this function over the boundary
+of the domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
+information.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Continuous Boundary Op.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DiffusionIntegrator</td>
+<td>$(\lambda\grad u, \grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td>$\lambda\,\hat{n}\cdot\grad u$</td>
+</tr>
+<tr>
+<td>MixedGradGradIntegrator</td>
+<td>$(\lambda\grad u, \grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td>$\lambda\,\hat{n}\cdot\grad u$</td>
+</tr>
+<tr>
+<td>MixedCrossGradGradIntegrator</td>
+<td>$(\vec{\lambda}\cross\grad u,\grad v)$</td>
+<td>$-\div(\vec{\lambda}\cross\grad u)$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\times\grad u)$</td>
+</tr>
+<tr>
+<td>MixedScalarWeakDivergenceIntegrator</td>
+<td>$(-\vec{\lambda}u,\grad v)$</td>
+<td>$\div(\vec{\lambda}u)$</td>
+<td>$-\hat{n}\cdot\vec{\lambda}\,u$</td>
+</tr>
+<tr>
+<td>MixedScalarWeakDerivativeIntegrator</td>
+<td>$(-\lambda u, \ddx{v})$</td>
+<td>$\ddx{}(\lambda u)\;$</td>
+<td>$-\hat{n}\cdot\hat{x}\,\lambda\,u$</td>
+</tr>
+<tr>
+<td>MixedVectorWeakDivergenceIntegrator</td>
+<td>$(-\lambda\vec{u},\grad v)$</td>
+<td>$\div(\lambda\vec{u})$</td>
+<td>$-\hat{n}\cdot(\lambda\,\vec{u})$</td>
+</tr>
+<tr>
+<td>MixedWeakDivCrossIntegrator</td>
+<td>$(-\vec{\lambda}\cross\vec{u},\grad v)$</td>
+<td>$\div(\vec{\lambda}\cross\vec{u})$</td>
+<td>$-\hat{n}\cdot(\vec{\lambda}\times\vec{u})$</td>
+</tr>
+<tr>
+<td>MixedCrossCurlGradIntegrator</td>
+<td>$(\vec{\lambda}\cross\curl\vec{u},\grad v)$</td>
+<td>$-\div(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\cross\curl\vec{u})$</td>
+</tr>
+<tr>
+<td>MixedDivGradIntegrator</td>
+<td>$(\vec{\lambda}\div\vec{u}, \grad v)$</td>
+<td>$-\div(\vec{\lambda}\div\vec{u})$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\div\vec{u})$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operator-with-vector-range">Operator with Vector Range</h3>
+<p>The following weak operators require the range (or test) space to be
+H(Curl) i.e. a vector basis function with a curl operator.  The
+implied natural boundary condition when using these operators is for
+the continuous boundary operator (shown in the last column) to be
+equal to zero.  On the other hand an non-homogeneous Neumann boundary
+condition can be applied by using a linear form boundary integrator to
+compute this boundary term for a known function e.g. when using the
+<code>CurlCurlIntegrator</code> one could provide a known function for
+$\lambda\,\curl\vec{u}$ to the <code>VectorFEBoundaryTangentLFIntegrator</code>
+which would then integrate the product of the tangential portion of
+this function with that of the ND basis function over the boundary of
+the domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
+information.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Continuous Boundary Op.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CurlCurlIntegrator</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td>$\lambda\,\hat{n}\times\curl\vec{u}$</td>
+</tr>
+<tr>
+<td>MixedCurlCurlIntegrator</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td>$\lambda\,\hat{n}\times\curl\vec{u}$</td>
+</tr>
+<tr>
+<td>MixedCrossCurlCurlIntegrator</td>
+<td>$(\vec{\lambda}\cross\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td>$\hat{n}\times(\vec{\lambda}\cross\curl\vec{u})$</td>
+</tr>
+<tr>
+<td>MixedCrossGradCurlIntegrator</td>
+<td>$(\vec{\lambda}\cross\grad u,\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\grad u)$</td>
+<td>$\hat{n}\times(\vec{\lambda}\cross\grad u)$</td>
+</tr>
+<tr>
+<td>MixedVectorWeakCurlIntegrator</td>
+<td>$(\lambda\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\vec{u})$</td>
+<td>$\lambda\,\hat{n}\times\vec{u}$</td>
+</tr>
+<tr>
+<td>MixedScalarWeakCurlIntegrator</td>
+<td>$(\lambda u,\curl\vec{v})$</td>
+<td>$\curl(\lambda\,u\,\hat{z})\;$</td>
+<td>$\lambda\,u\,\hat{n}\times\hat{z}$</td>
+</tr>
+<tr>
+<td>MixedWeakCurlCrossIntegrator</td>
+<td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
+<td>$\hat{n}\times(\vec{\lambda}\cross\vec{u})$</td>
+</tr>
+<tr>
+<td>MixedScalarWeakCurlCrossIntegrator</td>
+<td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
+<td>$\hat{n}\times(\vec{\lambda}\cross\vec{u})$</td>
+</tr>
+</tbody>
+</table>
+<p>The following weak operators require the range (or test) space to be
+H(Div) i.e. a vector basis function with a divergence operator.  The
+implied natural boundary condition when using these operators is for
+the continuous boundary operator (shown in the last column) to be
+equal to zero.  On the other hand an non-homogeneous Neumann boundary
+condition can be applied by using a linear form boundary integrator to
+compute this boundary term for a known function e.g. when using the
+<code>DivDivIntegrator</code> one could provide a known function for
+$\lambda\,\div\vec{u}$ to the <code>VectorFEBoundaryFluxLFIntegrator</code>
+which would then integrate the product of this function with the
+normal component of the RT basis function over the boundary of the
+domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
+information.</p>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Continuous Boundary Op.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DivDivIntegrator</td>
+<td>$(\lambda\div\vec{u},\div\vec{v})$</td>
+<td>$-\grad(\lambda\div\vec{u})$</td>
+<td>$\lambda\div\vec{u}\,\hat{n}$</td>
+</tr>
+<tr>
+<td>MixedGradDivIntegrator</td>
+<td>$(\vec{\lambda}\cdot\grad u, \div\vec{v})$</td>
+<td>$-\grad(\vec{\lambda}\cdot\grad u)$</td>
+<td>$\vec{\lambda}\cdot\grad u\,\hat{n}$</td>
+</tr>
+<tr>
+<td>MixedScalarWeakGradientIntegrator</td>
+<td>$(-\lambda u, \div\vec{v})$</td>
+<td>$\grad(\lambda u)$</td>
+<td>$-\lambda u\,\hat{n}$</td>
+</tr>
+<tr>
+<td>MixedWeakGradDotIntegrator</td>
+<td>$(-\vec{\lambda}\cdot\vec{u},\div\vec{v})$</td>
+<td>$\grad(\vec{\lambda}\cdot\vec{u})$</td>
+<td>$-\vec{\lambda}\cdot\vec{u}\,\hat{n}$</td>
+</tr>
+</tbody>
+</table>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#bilinear-form-integrators">Bilinear Form Integrators</a></li>
+        
+            <li><a href="#scalar-field-operators">Scalar Field Operators</a></li>
+        
+            <li><a href="#vector-finite-element-operators">Vector Finite Element Operators</a></li>
+        
+            <li><a href="#vector-field-operators">Vector Field Operators</a></li>
+        
+            <li><a href="#discontinuous-galerkin-operators">Discontinuous Galerkin Operators</a></li>
+        
+            <li><a href="#special-purpose-integrators">Special Purpose Integrators</a></li>
+        
+            <li><a href="#weak-operators-and-their-boundary-integrals">Weak Operators and Their Boundary Integrals</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+    </body>
+</html>

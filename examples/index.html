@@ -85,6 +85,8 @@
                     <ul class="dropdown-menu">
                     
                         
+                    
+                        
                             <li >
                                  <a href="../building/">Building MFEM</a>
                             </li>
@@ -100,6 +102,16 @@
                             <li >
                                  <a href="../parallel-tutorial/">Parallel Tutorial</a>
                             </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -225,6 +237,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
+   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
@@ -266,8 +279,9 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG (eigensolver)</label><br/>
-   <label><input type="radio" id="ame" onchange="update(this.id);" /> AME (eigensolver)</label><br/>
+   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
+   <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
+   <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
 </div></p>
 </div>
 
@@ -294,7 +308,8 @@ connection to the <a href="http://glvis.org">GLVis</a> tool for visualization.</
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a>),
 a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>),
 and HPC versions: <a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp">performance/ex1.cpp</a>,
-<a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp">performance/ex1p.cpp</a>.</em>
+<a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp">performance/ex1p.cpp</a>.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.</em>
 <div style="clear:both;"></div>
 <br></p>
 </div>
@@ -323,6 +338,7 @@ constant and vector coefficient objects. Static condensation is
 also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp">ex2.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp">ex2p.cpp</a>) version.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -345,6 +361,7 @@ error when the exact solution is known. Static condensation is
 also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp">ex3.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp">ex3p.cpp</a>) version.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing examples 1-2 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -367,6 +384,7 @@ error when the exact solution is known.
 Bilinear form hybridization and static condensation are also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex4.cpp">ex4.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp">ex4p.cpp</a>) version.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing examples 1-3 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -392,6 +410,7 @@ classes, as well as the collective saving of several grid functions in
 a <a href="http://visit.llnl.gov">VisIt</a> visualization format.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex5.cpp">ex5.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp">ex5p.cpp</a>) version.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing examples 1-4 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -415,6 +434,7 @@ from coarse to fine meshes, as well as persistent <a href="http://glvis.org">GLV
 visualization are also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp">ex6.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp">ex6p.cpp</a>) version.
+It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -479,7 +499,9 @@ visualization of a time-evolving solution. The saving of time-dependent data
 files for external visualization with <a href="http://visit.llnl.gov">VisIt</a>
 is also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex9.cpp">ex9.cpp</a>)
-and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp">ex9p.cpp</a>) version.</em>
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp">ex9p.cpp</a>) version.
+It also has a SUNDIALS modification in <a href="https://github.com/mfem/mfem/blob/master/examples/sundials">examples/sundials</a>
+and a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
@@ -500,6 +522,8 @@ inversion of a Jacobian matrix, which is done through a (preconditioned) inner
 solver.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex10.cpp">ex10.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp">ex10p.cpp</a>) version.
+It also has a SUNDIALS modification in <a href="https://github.com/mfem/mfem/blob/master/examples/sundials">examples/sundials</a>
+and a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing examples 2 and 9 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -530,12 +554,6 @@ We recommend viewing Example 1 before viewing this example.</em>
 
 <h2 id="example-12-linear-elasticity-eigenproblem">Example 12: Linear Elasticity Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex12.png"></p>
-<p>This example code demonstrates the use of MFEM to solve the eigenvalue problem
-$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.</p>
-<p>We compute a number of the lowest eigenmodes by discretizing the Laplacian and
-Mass operators using a finite element space of the specified order, or an
-isoparametric/isogeometric space if order &lt; 1 (quadratic for quadratic
-curvilinear mesh, NURBS for NURBS mesh, etc.)</p>
 <p>This example code solves the linear elasticity eigenvalue
 problem for a multi-material cantilever beam.
 Specifically, we compute a number of the lowest eigenmodes by approximating the weak form of
@@ -629,6 +647,56 @@ We recommend viewing examples 1, 6 and 9 before viewing this example.</em>
 <br></p>
 </div>
 
+<div id="ex16">
+
+<h2 id="example-16-time-dependent-heat-conduction">Example 16: Time Dependent Heat Conduction</h2>
+<p><img class="floatright" src="../img/examples/ex16.png"></p>
+<p>This example code solves a simple 2D/3D time dependent nonlinear heat conduction problem
+$$\frac{du}{dt} = \nabla \cdot \left( \kappa + \alpha u \right) \nabla u$$
+with a natural insulating boundary condition $\frac{du}{dn} = 0$.
+We linearize the problem by using the temperature field $u$ from the previous time
+step to compute the conductivity coefficient.</p>
+<p>This example demonstrates both implicit and explicit time integration as well as a single
+Picard step method for linearization. The saving of time dependent data files for external
+visualization with <a href="http://visit.llnl.gov">VisIt</a> is also illustrated.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex16.cpp">ex16.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex16p.cpp">ex16p.cpp</a>) version.
+We recommend viewing examples 2, 9, and 10 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
+<div id="ex17">
+
+<h2 id="example-17-dg-linear-elasticity">Example 17: DG Linear Elasticity</h2>
+<p><img class="floatright" src="../img/examples/ex17.png"></p>
+<p>This example code solves a simple linear elasticity problem
+describing a multi-material cantilever beam using symmetric or
+non-symmetric discontinuous Galerkin (DG) formulation.</p>
+<p>Specifically, we approximate the weak form of
+$$-{\rm div}({\sigma}({\bf u})) = 0$$
+where
+$${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$
+is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$
+are the material Lame constants. The boundary conditions are
+Dirichlet, $\bf{u}=\bf{u_D}$, on the fixed part of the boundary, namely
+boundary attributes 1 and 2; on the rest of the boundary we use
+${\sigma}({\bf u})\cdot n = {\bf 0}$. The geometry of the domain is assumed to be
+as follows:</p>
+<p><img alt="" src="../img/examples/ex17-domain.png" /></p>
+<p>The example demonstrates the use of high-order DG vector finite
+element spaces with the linear DG elasticity bilinear form,
+meshes with curved elements, and the definition of piece-wise
+constant and function vector-coefficient objects. The use of
+non-homogeneous Dirichlet b.c. imposed weakly, is also
+illustrated.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex17.cpp">ex17.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex17p.cpp">ex17p.cpp</a>) version.
+We recommend viewing examples 2 and 14 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
 <div id="volta">
 
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
@@ -677,6 +745,36 @@ of realistic magnetostatics problems.  Its features include:</p>
 <code>miniapps/electromagnetics</code> directory.</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp">tesla.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
+moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
+<div id="joule">
+
+<h2 id="joule-miniapp-transient-magnetics-and-joule-heating">Joule Miniapp: Transient Magnetics and Joule Heating</h2>
+<p><img class="floatright" src="../img/examples/joule.png" ></p>
+<p>This miniapp solves the equations of transient low-frequency (aka eddy current)
+electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+by the electromagnetic Joule heating.</p>
+<p>Its features include:</p>
+<ul>
+<li>$H^1$ discretization of the electrostatic potential</li>
+<li>$H(\mathrm{curl})$ discretization of the electric field</li>
+<li>$H(\mathrm{div})$ discretization of the magetic field</li>
+<li>$H(\mathrm{div})$ discretization of the heat flux</li>
+<li>$L^2$ discretization of the temperature</li>
+<li>implicit transient time integration</li>
+<li>high order meshes</li>
+<li>high order basis functions</li>
+<li>adaptive mesh refinement</li>
+<li>advanced visualization</li>
+</ul>
+<p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
+<code>miniapps/electromagnetics</code> directory.</p>
+<p><em>The miniapp has only a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp">joule.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
@@ -801,10 +899,10 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "ame"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -812,27 +910,30 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 15; // update when adding examples!
-   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
-   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg));
-   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg ));
-   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
+   var numExamples = 17; // update when adding examples!
+   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
+   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
+   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
+   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk));
-   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk));
+   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc));
+   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
-   showElement("ex13", maxwell && hcurl && galerkin && (ame || ams));
+   showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk));
+   showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
    // Electromagnetic miniapps
-   numExamples += 2; // update when adding miniapps!
+   numExamples += 3; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+   showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
    numExamples += 3; // update when adding miniapps!

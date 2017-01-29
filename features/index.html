@@ -85,6 +85,8 @@
                     <ul class="dropdown-menu">
                     
                         
+                    
+                        
                             <li >
                                  <a href="../building/">Building MFEM</a>
                             </li>
@@ -100,6 +102,16 @@
                             <li >
                                  <a href="../parallel-tutorial/">Parallel Tutorial</a>
                             </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
                         
                     
                         
@@ -264,6 +276,8 @@
 <li><a href="http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="http://mfem.github.io/doxygen/html/inherit_graph_84.svg">operators</a> in serial and in parallel,</li>
 <li>parallel eigensolvers: <a href="../examples/?lobpcg">LOBPCG</a> and <a href="../examples/?ame">AME</a>,</li>
 <li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
+<li>many linear and nonlinear solvers, preconditioners and time integrators from the <a href="https://www.mcs.anl.gov/petsc">PETSc</a> suite,</li>
+<li>time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the <a href="http://computation.llnl.gov/projects/sundials/sundials-software">SUNDIALS</a> suite,</li>
 <li>discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,</li>
 <li><a href="../examples/?superlu">parallel</a> and <a href="../examples/?umfpack">sequential</a> sparse direct solvers based on <a href="http://crd-legacy.lbl.gov/~xiaoye/SuperLU">SuperLU</a> and the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
 <li>explicit and implicit high-order Runge-Kutta <a href="http://mfem.github.io/doxygen/html/inherit_graph_83.svg">time integrators</a>,</li>
@@ -285,14 +299,18 @@
 <li><a href="http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
-<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem.</li>
-<li><a href="http://mfem.github.io/doxygen/html/ex15_8cpp_source.html">Example 15</a>: parallel dynamic AMR for Laplace with prescribed time-dependent source</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex15_8cpp_source.html">Example 15</a>: parallel dynamic AMR for Laplace with prescribed time-dependent source,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex16_8cpp_source.html">Example 16</a>: parallel time-dependent nonlinear heat equation,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex17_8cpp_source.html">Example 17</a>: parallel Discontinuous Galerkin (DG) for linear elasticity.</li>
 </ul>
 <p>Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
+<p>Many of the examples also have modifications that take advantage of optional third-party libraries such as the <a href="http://mfem.github.io/doxygen/html/petsc_8hpp.html">PETSc</a> and <a href="http://mfem.github.io/doxygen/html/sundials_8hpp.html">SUNDIALS</a> suites.</p>
 <p>Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:</p>
 <ul>
 <li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Volta</a>: simple electrostatics simulation code,</li>
 <li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Tesla</a>: simple magnetostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/joule_8cpp_source.html">Joule</a>: transient magnetics and Joule heating miniapp,</li>
 <li><a href="http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes.</li>
 </ul>
 <h2 id="accurate-and-flexible-visualization">Accurate and Flexible Visualization</h2>

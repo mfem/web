@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+<!--	<title>_Linear Form Integrators - MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../code-overview/">Code Overview</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#linear-form-integrators">Linear Form Integrators</a></li>
+        
+            <li><a href="#scalar-field-operators">Scalar Field Operators</a></li>
+        
+            <li><a href="#vector-field-operators">Vector Field Operators</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="linear-form-integrators">Linear Form Integrators</h1>
+<p>$
+\newcommand{\cross}{\times}
+\newcommand{\inner}{\cdot}
+\newcommand{\div}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\grad}{\nabla}
+\newcommand{\ddx}[1]{\frac{d#1}{dx}}
+$</p>
+<p>Linear form integrators are the right-hand side companion to <a href="../bilininteg/">Bilinear Form
+Integrators</a> that compute the integrals of products of a basis
+function and a given "right-hand side" function (coefficient) $\,f$ over
+individual mesh elements (or sometimes over edges or faces). Typically each
+element is contained in the support of several basis functions, therefore linear
+integrators simultaneously compute the integrals of all combinations of the
+relevant basis functions with the given input function $\,f$. This produces a
+one dimensional array of results that is arranged into a small vector of
+integral (dual) values called a <em>local element (load) vector</em>.</p>
+<p>To put this another way, the <code>LinearForm</code> class builds a global vector,
+<code>glb_vec</code>, by performing the outer loop in the following pseudocode snippet
+whereas the <code>LinearFormIntegrator</code> class performs the nested inner loops to
+compute the local vector, <code>loc_vec</code>.</p>
+<pre><code>for each elem in elements
+   loc_vec = 0.0
+   for each pt in quadrature_points
+      for each v_i in elem
+         loc_vec(i) += w(pt) * rhs(pt) v_i(pt)
+      end
+   end
+   glb_vec += loc_vec
+end
+</code></pre>
+
+<p>There are three types of integrals that typically arise although many other,
+more exotic, forms are possible:</p>
+<ul>
+<li>Integrals involving Scalar rhs $\,f$ and basis functions: $\int_\Omega\, f v$</li>
+<li>Integrals involving Vector rhs $\,\vec{f}$ and basis functions: $\int_\Omega\, \vec{f}\cdot\vec{v}$</li>
+<li>Integrals involving mix of Scalar and Vector rhs $\,\vec{f}$ and basis functions: $\int_\Omega f\,\vec{\lambda}\cdot\vec{v}$ and $\int_\Omega v\,\vec{\lambda}\cdot\vec{f}$</li>
+</ul>
+<p>The <code>LinearFormIntegrator</code> classes allow MFEM to produce a wide variety of local
+element matrices without modifying the <code>LinearForm</code> class. Many of the possible
+operators are collected below into tables that briefly describe their action and
+requirements.</p>
+<p>In the tables below the <em>Space</em> column refers to finite element spaces which
+implement the following methods:</p>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Operator</th>
+<th>Derivative Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>CalcShape</td>
+<td>CalcDShape</td>
+</tr>
+<tr>
+<td>ND</td>
+<td>CalcVShape</td>
+<td>CalcCurlShape</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>CalcVShape</td>
+<td>CalcDivShape</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>CalcShape</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Notation:
+$$\{(f, v)\}_i\equiv \int_\Omega f v_i$$
+$$\{(\vec{F}, \vec{v})\}_i\equiv \int_\Omega \lambda \vec{F}\cdot\vec{v}_i$$
+For boundary integrators, the integrals are over $\partial \Omega$.
+Face integrators integrate over the interior and boundary faces of mesh elements
+and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
+<h2 id="scalar-field-operators">Scalar Field Operators</h2>
+<h3 id="domain-integrators">Domain Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DomainLFIntegrator</td>
+<td>H1, L2</td>
+<td>$(f, v)$</td>
+<td>$f$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="boundary-integrators">Boundary Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoundaryLFIntegrator</td>
+<td>H1, L2</td>
+<td>$(f, v)$</td>
+<td>$f$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>BoundaryNormalLFIntegrator</td>
+<td>H1, L2</td>
+<td>$(\vec{f} \cdot \vec{n}, v)$</td>
+<td>$\vec{f} \cdot \vec{n}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>BoundaryTangentialLFIntegrator</td>
+<td>H1, L2</td>
+<td>$(\vec{f} \cdot \vec{\tau}, v)$</td>
+<td>$\vec{f} \cdot \vec{\tau}$</td>
+<td>2D</td>
+</tr>
+<tr>
+<td>BoundaryFlowIntegrator</td>
+<td>H1, L2</td>
+<td>$\frac{\alpha}{2}\, \left&lt; (\vec{u} \cdot \vec{n})\, f, v \right&gt; - \beta\, \left&lt;\mid \vec{u} \cdot \vec{n} \mid f, v \right&gt;$</td>
+<td>$\frac{\alpha}{2} (\vec{u} \cdot \vec{n})\, f - \beta \mid \vec{u} \cdot \vec{n} \mid f$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-integrators">Face Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DGDirichletLFIntegrator</td>
+<td>L2</td>
+<td>$\sigma \left&lt; u_D, Q \nabla v \cdot \vec{n} \right&gt; + \kappa \left&lt; \{h^{-1} Q\} u_D, v \right&gt;$</td>
+<td>DG essential BCs for $u_D$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vector-field-operators">Vector Field Operators</h2>
+<h3 id="domain-integrators_1">Domain Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorDomainLFIntegrator</td>
+<td>H1, L2</td>
+<td>$(\vec{f}, \vec{v})$</td>
+<td>$\vec{f}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>VectorFEDomainLFIntegrator</td>
+<td>ND, RT</td>
+<td>$(\vec{f}, \vec{v})$</td>
+<td>$\vec{f}$</td>
+<td>2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="boundary-integrators_1">Boundary Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VectorBoundaryLFIntegrator</td>
+<td>H1, L2</td>
+<td>$( \vec{f}, \vec{v} )$</td>
+<td>$\vec{f}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>VectorBoundaryFluxLFIntegrator</td>
+<td>H1, L2</td>
+<td>$( f, \vec{v} \cdot \vec{n} )$</td>
+<td>$\vec{f}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+<tr>
+<td>VectorFEBoundaryFluxLFIntegrator</td>
+<td>RT</td>
+<td>$( f, \vec{v} \cdot \vec{n} )$</td>
+<td>$\vec{f}$</td>
+<td>2D, 3D</td>
+</tr>
+<tr>
+<td>VectorFEBoundaryTangentLFIntegrator</td>
+<td>ND</td>
+<td>$( \vec{n} \times \vec{f}, \vec{v} )$</td>
+<td>$\vec{n} \times \vec{f}$</td>
+<td>2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-integrators_1">Face Integrators</h3>
+<table>
+<thead>
+<tr>
+<th>Class Name</th>
+<th>Space</th>
+<th>Operator</th>
+<th>Continuous Op.</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DGElasticityDirichletLFIntegrator</td>
+<td>L2</td>
+<td>$\alpha\left&lt;\vec{u_D}, \left(\lambda \left(\div \vec{v}\right) I + \mu \left(\nabla\vec{v} + \nabla\vec{v}^T\right)\right) \cdot \vec{n}\right&gt; \\ + \kappa\left&lt; h^{-1} (\lambda + 2 \mu) \vec{u_D}, \vec{v} \right&gt;$</td>
+<td>DG essential BCs for $\vec{u_D}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
+</tbody>
+</table>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#linear-form-integrators">Linear Form Integrators</a></li>
+        
+            <li><a href="#scalar-field-operators">Scalar Field Operators</a></li>
+        
+            <li><a href="#vector-field-operators">Vector Field Operators</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+    </body>
+</html>
