@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mfemdir=$HOME/mfem/code-reviews/mfem
+mfemdir=$HOME/mfem/code-reviews/mfem-clean
 
 function preprocess { # src dst
 	cat $1 \
