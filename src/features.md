@@ -65,6 +65,8 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_84.svg) in serial and in parallel,
  - parallel eigensolvers: [LOBPCG](examples.md?lobpcg) and [AME](examples.md?ame),
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
+ - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
+ - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_83.svg),
@@ -93,6 +95,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 17](http://mfem.github.io/doxygen/html/ex17_8cpp_source.html): parallel Discontinuous Galerkin (DG) for linear elasticity.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
+
+Many of the examples also have modifications that take advantage of optional third-party libraries such as the [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html) and [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html) suites.
 
 Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
 
