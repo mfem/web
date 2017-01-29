@@ -82,7 +82,8 @@ $$(\lambda\vec\{u}, \vec\{v})\equiv \int_\Omega\lambda\vec\{u}\cdot\vec\{v}$$
 Where $u$ or $\vec\{u}$ is a function in the domain (or trial) space and $v$
 or $\vec\{v}$ is in the range (or test) space.
 For boundary integrators, the integrals are over $\partial \Omega$.
-Face integrators integrate over the interior and boundary faces of mesh elements.
+Face integrators integrate over the interior and boundary faces of mesh elements
+and are denoted with $\left<\cdot,\cdot\right>$.
 
 Note that any operators involving a derivative of the range function
 $v$ or $\vec\{v}$ are computed using integration by parts.  This leads
@@ -269,15 +270,15 @@ where $ I $ is identity matrix, $ \lambda $ and $ \mu $ are Lame
 The parameters $ \alpha $ and $ \kappa $ determine the DG method to
 use (when this integrator is added to the "broken" ElasticityIntegrator):
 
-- IIPG, $\alpha = 0$,
+- **IIPG**, $\alpha = 0$,
   C. Dawson, S. Sun, M. Wheeler, Compatible algorithms for coupled flow and
   transport, Comp. Meth. Appl. Mech. Eng., 193(23-26), 2565-2580, 2004.
 
-- SIPG, $\alpha = -1$,
+- **SIPG**, $\alpha = -1$,
   M. Grote, A. Schneebeli, D. Schotzau, Discontinuous Galerkin Finite
   Element Method for the Wave Equation, SINUM, 44(6), 2408-2431, 2006.
 
-- NIPG, $\alpha = 1$,
+- **NIPG**, $\alpha = 1$,
   B. Riviere, M. Wheeler, V. Girault, A Priori Error Estimates for Finite
   Element Methods Based on Discontinuous Approximation Spaces for Elliptic
   Problems, SINUM, 39(3), 902-931, 2001.

@@ -73,7 +73,8 @@ Notation:
 $$\\{(f, v)\\}\_i\equiv \int_\Omega f v_i$$
 $$\\{(\vec\{F}, \vec\{v})\\}\_i\equiv \int_\Omega \lambda \vec\{F}\cdot\vec\{v}_i$$
 For boundary integrators, the integrals are over $\partial \Omega$.
-Face integrators integrate over the interior and boundary faces of mesh elements.
+Face integrators integrate over the interior and boundary faces of mesh elements
+and are denoted with $\left<\cdot,\cdot\right>$.
 
 ## Scalar Field Operators
 
