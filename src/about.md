@@ -32,6 +32,7 @@ Please cite with:
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton
+- [Syun'ichi Shiraiwa](https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa)
 - Thomas Stitt
 - [Mark Stowell](http://people.llnl.gov/stowell1)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
