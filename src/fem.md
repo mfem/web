@@ -40,3 +40,7 @@ function with a given source function over individual mesh elements (or
 sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
+
+### [Linear Interpolators](lininterp.md)
+
+Linear Interpolators are useful...
