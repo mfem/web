@@ -7,7 +7,7 @@ Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-
 Nov 11, 2016 | MFEM part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](https://exascaleproject.org/2016/11/11/ecp_co-design_centers).
 Nov 11, 2016 | LLNL Newsline: [Lawrence Livermore tapped to lead ‘co-design’ center for exascale computing ecosystem](https://www.llnl.gov/news/lawrence-livermore-tapped-lead-%E2%80%98co-design%E2%80%99-center-exascale-computing-ecosystem).
 Oct 6, 2016 | [Science & Technology Review](https://str.llnl.gov/september-2016) article: [Laying the Groundwork for Extreme-Scale Computing](https://str.llnl.gov/content/pages/september-2016/pdf/09.16.1.pdf), see also the [YouTube preview](http://www.youtube.com/watch?v=ePWyiDf_XTg).
-Sep 19, 2016 |[PyMFEM](https://github.com/piScope/PyMFEM) - a Python wrapper for MFEM by [Syun'ichi Shiraiwa](https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa) from MIT's Plasma Science and Fusion Center released.
+Sep 19, 2016 |[PyMFEM](https://github.com/MFEM/PyMFEM) - a Python wrapper for MFEM by [Syun'ichi Shiraiwa](https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa) from MIT's Plasma Science and Fusion Center released.
 Jun 30, 2016 | Version 3.2 released.
 May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).
 Mar 9, 2016  | VisIt 2.10.1 [released](http://software.llnl.gov/news/2016/03/09/visit-2.10.1) with MFEM 3.1 support.
