@@ -106,7 +106,7 @@ The solutions to equation \eqref{poisson} are non unique because they can be
 shifted by any additive constant. This means that we must apply a Dirichlet
 boundary condition at least at one point in the problem domain in order to
 obtain a solution. Typically this point will be on the boundary but it need not
-be so. Such a Dirichlet value is equivalent to fixing the voltage (aka
+be so. Such a Dirichlet value is equivalent to fixing the voltage (a.k.a.
 potential) at one or more locations. Additionally, this equation admits a normal
 derivative boundary condition. This corresponds to setting $\hat{n}\cdot\D$ to a
 prescribed value on some portion of the boundary. This is equivalent to defining

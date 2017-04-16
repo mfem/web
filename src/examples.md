@@ -601,15 +601,15 @@ moving to the miniapps.**_
 ##Joule Miniapp: Transient Magnetics and Joule Heating
 <img class="floatright" src="../img/examples/joule.png" >
 
-This miniapp solves the equations of transient low-frequency (aka eddy current)
-electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+This miniapp solves the equations of transient low-frequency (a.k.a. eddy current)
+electromagnetics, and simultaneously computes transient heat transfer with the heat source given
 by the electromagnetic Joule heating.
 
 Its features include:
 
 - $H^1$ discretization of the electrostatic potential
 - $H(\\mathrm{curl})$ discretization of the electric field
-- $H(\\mathrm{div})$ discretization of the magetic field
+- $H(\\mathrm{div})$ discretization of the magnetic field
 - $H(\\mathrm{div})$ discretization of the heat flux
 - $L^2$ discretization of the temperature
 - implicit transient time integration
@@ -667,6 +667,29 @@ For more details, please see the [documentation](meshing.md) in the
 
 _The miniapp has only a serial
 ([klein-bottle.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="shaper" markdown="1">
+##Shaper Miniapp
+<img class="floatright" src="../img/examples/shaper.png">
+
+This miniapp performs multiple levels of adaptive mesh refinement to resolve the
+interfaces between different "materials" in the mesh, as specified by a given
+material function.
+
+It can be used as a simple initial mesh generator, for example in the case when
+the interface is too complex to describe without local refinement. Both
+conforming and non-conforming refinements are supported.
+
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
+
+_The miniapp has only a serial
+([shaper.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/shaper.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
@@ -792,9 +815,10 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 3; // update when adding miniapps!
+   numExamples += 4; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
+   showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
 
    var allHidden = true;

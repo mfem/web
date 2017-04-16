@@ -49,6 +49,18 @@ the mobius-strip miniapp.
 The `klein-bottle` and `klein-donut` meshes in the
 `data` directory were generated with this miniapp.
 
+### Shaper
+
+This miniapp performs multiple levels of adaptive mesh refinement to resolve the
+interfaces between different "materials" in the mesh, as specified by a given
+material() function.
+
+![](img/examples/shaper.png)
+
+It can be used as a simple initial mesh generator, for example in the case when
+the interface is too complex to describe without local refinement. Both
+conforming and non-conforming refinements are supported.
+
 ### Mesh Explorer
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
