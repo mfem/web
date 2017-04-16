@@ -15,7 +15,9 @@ Please cite with:
 - Ido Akkerman
 - [Robert Anderson](http://people.llnl.gov/anderson110)
 - [Thomas Anderson](http://www.its.caltech.edu/~tganders)
+- Julian Andrej
 - [Mikhail Artemyev](https://github.com/martemyev)
+- [Andrew Barker](https://people.llnl.gov/barker29)
 - Thomas Benson
 - Aaron Black
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
@@ -27,6 +29,7 @@ Please cite with:
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
+- [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - Mark Miller
 - [Robert Rieben](http://people.llnl.gov/rieben1)
