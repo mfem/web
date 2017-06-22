@@ -17,7 +17,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 MFEM is used in many projects, including
 [BLAST](http://www.llnl.gov/casc/blast),
 [XBraid](http://www.llnl.gov/casc/xbraid) and [VisIt](http://visit.llnl.gov).
-It is part ot the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](https://exascaleproject.org/2016/11/11/ecp_co-design_centers).
+It is part ot the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org).
 
 See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), list of related [publications](publications.md) and
 project [news updates](news.md).
@@ -30,7 +30,7 @@ project [news updates](news.md).
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Jan 28, 2017 | Version 3.3 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
-Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://exascaleproject.org/2016/11/11/ecp_co-design_centers) with MFEM.
+Nov 11, 2016 | MFEM part of [ECP](https://exascaleproject.org)'s [CEED](http://ceed.exascaleproject.org) co-design center.
 Sep 12, 2016 | PyMFEM - a Python wrapper for MFEM [released](https://github.com/MFEM/PyMFEM).
 
 [comment]: # (Jun 30, 2016 | Version 3.2 released.)
