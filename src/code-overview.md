@@ -133,6 +133,8 @@ MFEM consists of the following closely interconnected modules:
   can be used with `SparseMatrix` (serial).
 * Class `SuperLUSolver` - wraps SuperLU_DIST; the parallel matrix needs to be
   converted to `SuperLURowLocMatrix`.
+* Class `STRUMPACKSolver` - wraps STRUMPACK; the parallel matrix needs to be
+  converted to `STRUMPACKLURowLocMatrix`.
 
 ### Hypre preconditioners and solvers
 
