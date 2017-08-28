@@ -24,6 +24,7 @@ Please cite with:
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
+- [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
