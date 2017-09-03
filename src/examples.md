@@ -78,7 +78,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
    <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
    <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
-   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU (parallel direct)</label><br/>
+   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU/STRUMPACK (parallel direct)</label><br/>
    <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
@@ -367,9 +367,9 @@ isoparametric/isogeometric space if order < 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)
 
 The example highlights the use of the LOBPCG eigenvalue solver together with the
-BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU parallel
-direct solver. Reusing a single [GLVis](http://glvis.org) visualization window
-for multiple eigenfunctions is also illustrated.
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
+STRUMPACK parallel direct solvers. Reusing a single [GLVis](http://glvis.org)
+visualization window for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
 ([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
