@@ -5,7 +5,7 @@
 Feb 16, 2017 | Moved main development to GitHub.
 Jan 28, 2017 | Version 3.3 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 [comment]: # (Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://exascaleproject.org/2016/11/11/ecp_co-design_centers) with MFEM.)
-Nov 11, 2016 | MFEM part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](https://exascaleproject.org/2016/11/11/ecp_co-design_centers).
+Nov 11, 2016 | MFEM part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org).
 Nov 11, 2016 | LLNL Newsline: [Lawrence Livermore tapped to lead ‘co-design’ center for exascale computing ecosystem](https://www.llnl.gov/news/lawrence-livermore-tapped-lead-%E2%80%98co-design%E2%80%99-center-exascale-computing-ecosystem).
 Oct 6, 2016 | [Science & Technology Review](https://str.llnl.gov/september-2016) article: [Laying the Groundwork for Extreme-Scale Computing](https://str.llnl.gov/content/pages/september-2016/pdf/09.16.1.pdf), see also the [YouTube preview](http://www.youtube.com/watch?v=ePWyiDf_XTg).
 Sep 19, 2016 |[PyMFEM](https://github.com/MFEM/PyMFEM) - a Python wrapper for MFEM by [Syun'ichi Shiraiwa](https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa) from MIT's Plasma Science and Fusion Center released.
