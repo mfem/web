@@ -805,7 +805,7 @@ function update(id)
    showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk));
+   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
 
    // Electromagnetic miniapps

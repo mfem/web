@@ -23,6 +23,7 @@ Please cite with:
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
+- [Johann Dahm](http://jdahm.me/)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
