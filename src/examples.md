@@ -42,6 +42,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
    <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
+   <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
@@ -696,25 +697,47 @@ moving to the miniapps.**_
 <br></div>
 
 
-<div id="mesh-explorer" markdown="1">
-##Mesh Explorer Miniapp
-<img class="floatright" src="../img/examples/mesh-explorer.png">
+<div id="laghos" markdown="1">
+##Laghos Miniapp
+<img class="floatright" src="../img/examples/laghos.png">
 
-This miniapp is a handy tool to examine, visualize and manipulate a given
-mesh. Some of its features are:
+**Laghos** (LAGrangian High-Order Solver) is a miniapp that solves the
+time-dependent Euler equations of compressible gas dynamics in a moving
+Lagrangian frame using unstructured high-order finite element spatial
+discretization and explicit high-order time-stepping.
 
-- visualizing of mesh materials and individual mesh elements
-- mesh scaling, randomization, and general transformation
-- manipulation of the mesh curvature
-- the ability to simulate parallel partitioning
-- quantitative and visual reports of mesh quality
+The computational motives captured in Laghos include:
 
-For more details, please see the [documentation](meshing.md) in the
-`miniapps/meshing` directory.
+- Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements (triangular and tetrahedral elements can also be used, but
+  with the less efficient full assembly option). Serial and parallel mesh
+  refinement options can be set via a command-line flag.
+- Explicit time-stepping loop with a variety of time integrator options. Laghos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.
+- Continuous and discontinuous high-order finite element discretization spaces
+  of runtime-specified order.
+- Moving (high-order) meshes.
+- Separation between the assembly and the quadrature point-based computations.
+- Point-wise definition of mesh size, time-step estimate and artificial
+  viscosity coefficient.
+- Constant-in-time velocity mass operator that is inverted iteratively on
+  each time step. This is an example of an operator that is prepared once (fully
+  or partially assembled), but is applied many times. The application cost is
+  dominant for this operator.
+- Time-dependent force matrix that is prepared every time step (fully or
+  partially assembled) and is applied just twice per "assembly". Both the
+  preparation and the application costs are important for this operator.
+- Domain-decomposed MPI parallelism.
+- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+  for visualization / data analysis with [VisIt](http://visit.llnl.gov).
 
-_The miniapp has only a serial
-([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version.
-**We recommend that new users start with the example codes before moving to the miniapps.**_
+The Laghos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.
+
+_This is an external miniapp, available at [https://github.com/CEED/Laghos](https://github.com/CEED/Laghos)._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -778,7 +801,7 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
@@ -820,6 +843,10 @@ function update(id)
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
+
+   // External miniapps
+   numExamples += 1; // update when adding miniapps!
+   showElement("laghos", (hydro || hpc) && all2 && all3 && all4);
 
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!

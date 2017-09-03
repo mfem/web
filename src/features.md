@@ -105,6 +105,11 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes.
 
+In addition, the sources for several extrenal benchmark/proxy-apps build on top of MFEM are available:
+
+- [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
+- [Mulard](https://codesign.llnl.gov/mulard.php): multigroup thermal radiation diffusion mini application.
+
 ## Accurate and Flexible Visualization
 
 The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
