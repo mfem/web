@@ -697,6 +697,66 @@ moving to the miniapps.**_
 <br></div>
 
 
+<div id="mesh-explorer" markdown="1">
+##Mesh Explorer Miniapp
+<img class="floatright" src="../img/examples/mesh-explorer.png">
+
+This miniapp is a handy tool to examine, visualize and manipulate a given
+mesh. Some of its features are:
+
+- visualizing of mesh materials and individual mesh elements
+- mesh scaling, randomization, and general transformation
+- manipulation of the mesh curvature
+- the ability to simulate parallel partitioning
+- quantitative and visual reports of mesh quality
+
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
+
+_The miniapp has only a serial
+([mesh-explorer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp)) version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="mesh-optimizer" markdown="1">
+##Mesh Optimizer Miniapp
+<img class="floatright" src="../img/examples/mesh-optimizer.png">
+
+This miniapp performs mesh optimization using the Target-Matrix Optimization
+Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
+approach. It minimizes the quantity
+
+$$\sum_T \int_T \mu(J(x))$$,
+
+where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
+transformation from the reference to the target element, and $\mu$ is the mesh
+quality metric.
+
+This metric can measure shape, size or alignment of the region around each
+quadrature point. The combination of targets and quality metrics is used to
+optimize the physical node positions, i.e., they must be as close as possible to
+the shape / size / alignment of their targets.
+
+This code also demonstrates a possible use of nonlinear operators, as well as
+their coupling to Newton methods for solving minimization problems. Note that
+the utilized Newton methods are oriented towards avoiding invalid meshes with
+negative Jacobian determinants. Each Newton step requires the inversion of a
+Jacobian matrix, which is done through an inner linear solver.
+
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
+
+_The miniapp has a serial
+([mesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)) and a
+parallel ([pmesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
 <img class="floatright" src="../img/examples/laghos.png">
@@ -838,11 +898,12 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 4; // update when adding miniapps!
+   numExamples += 5; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
+   showElement("mesh-optimizer", meshing && all2 && all3 && all4);
 
    // External miniapps
    numExamples += 1; // update when adding miniapps!
