@@ -731,7 +731,7 @@ approach. It minimizes the quantity
 $$\sum_T \int_T \mu(J(x))$$,
 
 where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
-transformation from the reference to the target element, and $\mu$ is the mesh
+transformation from the target to the physical element, and $\mu$ is the mesh
 quality metric.
 
 This metric can measure shape, size or alignment of the region around each
