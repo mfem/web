@@ -202,6 +202,8 @@
         
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         
+            <li><a href="#mfem-mesh-v11">MFEM mesh v1.1</a></li>
+        
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
             <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
@@ -365,6 +367,51 @@ Ordering: 0
 <p>we get:</p>
 <p><img alt="" src="../img/formats/escher-p3.png" /></p>
 <p>Topologically periodic meshes can also be described in this format, see for example the <a href="https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh">periodic-segment</a>, <a href="https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh">periodic-square</a>, and <a href="https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh">periodic-cube</a> meshes in the data directory, as well as <a href="../examples/?advection">Example 9</a>.</p>
+<h2 id="mfem-mesh-v11">MFEM mesh v1.1</h2>
+<p>This format adds support for non-conforming (AMR) meshes. The sections
+<code>dimension</code>, <code>elements</code>, and <code>boundary</code> are the same as in MFEM mesh v1.0 and
+are followed by two new (optional) sections, <code>vertex_parents</code> and
+<code>coarse_elements</code>:</p>
+<pre><code class="sh"># Vertex hierarchy
+vertex_parents
+&lt;number of relations&gt;
+&lt;vertex index&gt; &lt;parent 1 index&gt; &lt;parent 2 index&gt;
+...
+
+# Element hierarchy
+coarse_elements
+&lt;number of coarse elements&gt;
+&lt;refinement type&gt; &lt;child index 1&gt; ... &lt;child index n&gt;
+...
+</code></pre>
+
+<p>These are followed by the standard sections <code>vertices</code> and <code>nodes</code> of the format
+MFEM mesh v1.0.</p>
+<p>The new section <code>vertex_parents</code> identifies all vertices (by their zero-based
+index) that have been created as new mid-edge vertices by adaptive refinement
+of elements. Each such vertex has exactly two "parents" identified again by two
+zero-based indices. This information is needed to construct constraining
+relations in a mesh with hanging nodes. The order the vertex-parent relations
+are stated in the file is not significant.</p>
+<p>The second optional section <code>coarse_elements</code> describes the element refinement
+hierarchy. While the standard section <code>elements</code> lists all leaf elements of the
+refinement tree, this section describes all elements that have been refined and
+are no longer active. Each line describes one such virtual element, its
+refinement type and up to 8 children. Child indices between 0 and <em>N-1</em> refer
+to the <em>N</em> active elements in the <code>elements</code> section. A coarse element has an
+implied index starting with <em>N</em>. A coarse element can refer to another coarse
+element of <em>index &gt;= N</em>, but only after such child has been defined in the
+<code>coarse_elements</code> section. The hierarchy is thus represented from the bottom
+up. The refinement types are: 1=X, 2=Y, 4=Z, 3=XY, 5=XZ, 6=YZ, 7=XYZ, where X,
+Y, Z refer to one or more splits in the respective axes of the element
+reference domain. If the entire section is missing, MFEM will not be able to
+derefine the mesh.</p>
+<p><img alt="" src="../img/fichera-amr.png" /></p>
+<p>The files
+<a href="https://github.com/mfem/mfem/blob/master/data/amr-quad.mesh">amr-quad.mesh</a>,
+<a href="https://github.com/mfem/mfem/blob/master/data/amr-hex.mesh">amr-hex.mesh</a> and
+<a href="https://github.com/mfem/mfem/blob/master/data/fichera-amr.mesh">fichera-amr.mesh</a>
+(above) in the <code>data</code> directory are examples of AMR meshes.</p>
 <h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
@@ -561,6 +608,8 @@ LOOKUP_TABLE default
         <li class="main active"><a href="#mesh-formats">Mesh Formats</a></li>
         
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
+        
+            <li><a href="#mfem-mesh-v11">MFEM mesh v1.1</a></li>
         
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
