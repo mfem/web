@@ -22,6 +22,7 @@ Please cite with:
 - Aaron Black
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
+- [Jean-Sylvain Camier](http://people.llnl.gov/camier1)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Johann Dahm](http://jdahm.me/)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
