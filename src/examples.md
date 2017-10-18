@@ -542,6 +542,39 @@ We recommend viewing examples 2 and 14 before viewing this example._
 <br></div>
 
 
+<div id="ex18" markdown="1">
+##Example 18: DG Euler Equations
+<img class="floatright" src="../img/examples/ex18.png">
+
+This example code solves the compressible Euler system of
+equations, a model nonlinear hyperbolic PDE, with a
+discontinuous Galerkin (DG) formulation.
+
+Specifically, it solves for an exact solution of the equations
+whereby a vortex is transported by a uniform flow. Since all
+boundaries are periodic here, the method's accuracy can be
+assessed by measuring the difference between the solution and
+the initial condition at a later time when the vortex returns to
+its initial location.
+
+Note that as the order of the spatial discretization increases,
+the timestep must become smaller. This example currently uses a
+simple estimate derived by Cockburn and Shu for the 1D RKDG
+method. An additional factor can be tuned by passing the
+`--cfl` (or `-c` shorter) flag.
+
+The example demonstrates user-defined bilinear and nonlinear
+form integrators, simple Riemann solver (Rusanov flux) for DG,
+as well as the use of block vectors and explicit time
+integrators.
+
+_The example has a serial ([ex18.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18.cpp))
+and a parallel ([ex18p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp)) version.
+We recommend viewing examples 9, 14 and 17 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -812,7 +845,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 17; // update when adding examples!
+   var numExamples = 18; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -830,6 +863,7 @@ function update(id)
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
    showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
+   showElement("ex18", hydro && l2 && dg && (rk));
 
    // Electromagnetic miniapps
    numExamples += 3; // update when adding miniapps!
