@@ -564,9 +564,12 @@ method. An additional factor can be tuned by passing the
 `--cfl` (or `-c` shorter) flag.
 
 The example demonstrates user-defined bilinear and nonlinear
-form integrators, simple Riemann solver (Rusanov flux) for DG,
-as well as the use of block vectors and explicit time
-integrators.
+form integrators for systems of equations that are defined with
+block vectors, and how these are used with an operator for
+explicit time integrators. In this case the system also
+involves an external approximate Riemann solver for the DG
+interface flux. It also demonstrates how to use GLVis for
+in-situ visualization of vector grid functions.
 
 _The example has a serial ([ex18.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18.cpp))
 and a parallel ([ex18p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp)) version.
