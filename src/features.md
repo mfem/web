@@ -104,6 +104,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](http://mfem.github.io/doxygen/html/volta_8cpp_source.html): simple magnetostatics simulation code,
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes.
+ - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes.
 
 In addition, the sources for several extrenal benchmark/proxy-apps build on top of MFEM are available:
 

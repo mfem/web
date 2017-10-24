@@ -75,3 +75,20 @@ Some of its features are:
 - manipulation of the mesh curvature
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
+
+### Mesh Optimizer
+
+This miniapp performs mesh optimization using the Target-Matrix Optimization
+Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
+approach.
+
+![](img/examples/mesh-optimizer.png)
+
+It minimizes the quantity $\sum_T \int_T \mu(J(x))$, where $T$ are the target
+(ideal) elements, $J$ is the Jacobian of the transformation from the target
+to the physical element, and $\mu$ is the mesh quality metric.
+
+This metric can measure shape, size or alignment of the region around each
+quadrature point. The combination of targets and quality metrics is used to
+optimize the physical node positions, i.e., they must be as close as possible to
+the shape / size / alignment of their targets.
