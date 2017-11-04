@@ -2,6 +2,7 @@
 
 &nbsp;       |
 ------------ | -----------------------------------------------------------------
+Nov XX, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) for electromagnetic simulations with MFEM.
 Sep 22, 2017 | LLNL Newsline: [LLNL gears up for next generation of computer-aided design and engineering](https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering).
 Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp and [CEED benchmarks](http://ceed.exascaleproject.org/bps/) released.
