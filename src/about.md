@@ -35,6 +35,8 @@ Please cite with:
 - [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - Mark Miller
+- [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
+- [Geoffrey Oxberry](https://github.com/goxberry)
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton
