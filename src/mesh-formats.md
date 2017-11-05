@@ -167,6 +167,60 @@ we get:
 Topologically periodic meshes can also be described in this format, see for example the [periodic-segment](https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh), [periodic-square](https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh), and [periodic-cube](https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh) meshes in the data directory, as well as [Example 9](examples.md?advection).
 
 
+## MFEM mesh v1.1
+
+This format adds support for non-conforming (AMR) meshes. The sections
+`dimension`, `elements`, and `boundary` are the same as in MFEM mesh v1.0 and
+are followed by two new (optional) sections, `vertex_parents` and
+`coarse_elements`:
+
+```sh
+# Vertex hierarchy
+vertex_parents
+<number of relations>
+<vertex index> <parent 1 index> <parent 2 index>
+...
+
+# Element hierarchy
+coarse_elements
+<number of coarse elements>
+<refinement type> <child index 1> ... <child index n>
+...
+```
+
+These are followed by the standard sections `vertices` and `nodes` of the format
+MFEM mesh v1.0.
+
+The new section `vertex_parents` identifies all vertices (by their zero-based
+index) that have been created as new mid-edge vertices by adaptive refinement
+of elements. Each such vertex has exactly two "parents" identified again by two
+zero-based indices. This information is needed to construct constraining
+relations in a mesh with hanging nodes. The order the vertex-parent relations
+are stated in the file is not significant.
+
+The second optional section `coarse_elements` describes the element refinement
+hierarchy. While the standard section `elements` lists all leaf elements of the
+refinement tree, this section describes all elements that have been refined and
+are no longer active. Each line describes one such virtual element, its
+refinement type and up to 8 children. Child indices between 0 and _N-1_ refer
+to the _N_ active elements in the `elements` section. A coarse element has an
+implied index starting with _N_. A coarse element can refer to another coarse
+element of _index >= N_, but only after such child has been defined in the
+`coarse_elements` section. The hierarchy is thus represented from the bottom
+up. The refinement types are: 1=X, 2=Y, 4=Z, 3=XY, 5=XZ, 6=YZ, 7=XYZ, where X,
+Y, Z refer to one or more splits in the respective axes of the element
+reference domain. If the entire section is missing, MFEM will not be able to
+derefine the mesh.
+
+![](img/fichera-amr.png)
+
+The files
+[amr-quad.mesh](https://github.com/mfem/mfem/blob/master/data/amr-quad.mesh),
+[amr-hex.mesh](https://github.com/mfem/mfem/blob/master/data/amr-hex.mesh) and
+[fichera-amr.mesh](https://github.com/mfem/mfem/blob/master/data/fichera-amr.mesh)
+(above) in the `data` directory are examples of AMR meshes.
+
+
 ## NURBS meshes
 
 MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general [curvilinear meshes](#curvilinear-and-more-general-meshes) where the NURBS nodes are specified as a grid function at the end of the mesh file.
