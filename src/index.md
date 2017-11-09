@@ -16,8 +16,8 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 
 MFEM is used in many projects, including
 [BLAST](http://www.llnl.gov/casc/blast),
-[XBraid](http://www.llnl.gov/casc/xbraid) and [VisIt](http://visit.llnl.gov).
-It is part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org).
+[XBraid](http://www.llnl.gov/casc/xbraid), [VisIt](http://visit.llnl.gov), the [xSDK](https://xsdk.info/),
+the [FASTMath](https://fastmath-scidac.llnl.gov/index.html) institute in SciDAC, and the co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 
 See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), related [publications](publications.md) and
 project [news updates](news.md).
@@ -29,8 +29,9 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Nov XX, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Nov 10, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) on the MFEM team.
+Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp released by [CEED](http://ceed.exascaleproject.org).
 Nov 11, 2016 | MFEM part of [ECP](https://exascaleproject.org)'s [CEED](http://ceed.exascaleproject.org) co-design center.
 
 [comment]: # (Feb 16, 2017 | Moved main development to GitHub.)
@@ -56,7 +57,7 @@ Nov 11, 2016 | MFEM part of [ECP](https://exascaleproject.org)'s [CEED](http://c
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.3.2.tgz**
-</button>]()
+</button>](https://goo.gl/Kd7Jk8)
 
 For older releases see the [download](download.md) section.
 

@@ -2,7 +2,9 @@
 
 &nbsp;       |
 ------------ | -----------------------------------------------------------------
-Nov XX, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Nov 10, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Nov 7, 2017  | ECP article: [Co-Design Center Develops Next-Generation Simulation Tools](https://www.exascaleproject.org/co-design-center-develops-next-generation-simulation-libraries-and-mini-apps/), also in [HPCwire](https://www.hpcwire.com/2017/11/08/co-design-center-develops-next-generation-simulation-tools/)
+Oct 30, 2017 | Laghos part of the [ECP Proxy Applications Suite 1.0](https://exascaleproject.github.io/proxy-apps/ecp-apps/) and the [CORAL-2 Benchmarks](https://asc.llnl.gov/coral-2-benchmarks/)
 Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) for electromagnetic simulations with MFEM.
 Sep 22, 2017 | LLNL Newsline: [LLNL gears up for next generation of computer-aided design and engineering](https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering).
 Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp and [CEED benchmarks](http://ceed.exascaleproject.org/bps/) released.
