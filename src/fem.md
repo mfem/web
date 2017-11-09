@@ -40,3 +40,12 @@ function with a given source function over individual mesh elements (or
 sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
+
+### [Linear Interpolators](lininterp.md)
+
+Unlike Bilinear and Linear forms, Linear Interpolators do not perform
+integrations.  Linear interpolators project one basis function (or a
+linear function of a basis function) onto another basis function.  The
+`DiscreteLinearOperator` class adds one or more `LinearInterpolators`
+together to build a global sparse matrix representation of the linear
+operator.

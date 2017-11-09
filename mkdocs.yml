@@ -20,6 +20,7 @@ pages:
   - 'Finite Elements': fem.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
+  - '_Linear Interpolators': lininterp.md
   - 'Electromagnetics': electromagnetics.md
   - 'Meshing': meshing.md
   - '_Mesh Formats': mesh-formats.md   # pages starting with '_' are hidden from the menu
