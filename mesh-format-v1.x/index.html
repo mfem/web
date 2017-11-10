@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+<!--	<title>_Mesh Format v1.x - MFEM</title>  -->
+    <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-101697-3', 'mfem.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../code-overview/">Code Overview</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#general-mfem-mesh-format">General MFEM Mesh Format</a></li>
+        
+            <li><a href="#topology">Topology</a></li>
+        
+            <li><a href="#geometry">Geometry</a></li>
+        
+            <li><a href="#finite-element-spaces">Finite Element Spaces</a></li>
+        
+            <li><a href="#listings">Listings</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="general-mfem-mesh-format">General MFEM Mesh Format</h1>
+<p>The MFEM mesh v1.x format supports the general description of meshes based on a vector finite element grid function with degrees of freedom in the <em>nodes</em> of the mesh. For simplicity, in this document we refer to this version of the format as <code>MFEM mesh v1.x</code>. The legacy version for meshes with straight edges we will call <code>MFEM linear mesh</code> format.</p>
+<p>A mesh in the <code>MFEM mesh v1.x</code> format consists of two parts: Topology and Geometry. We illustrate these concepts by comparing with the <code>beam-quad.mesh</code> from MFEM's <code>data/</code> directory. This is just a simple quadrilateral beam mesh with 8 elements, 18 vertices (numbered 0 to 17) and 18 boundary segments:</p>
+<p><img alt="beam-quad" src="../img/format-v1.x/beam-quad.png" /></p>
+<p>The original linear mesh version of this file is given in <a href="#listing-1">Listing 1</a>.</p>
+<h2 id="topology">Topology</h2>
+<p>The topological part of the mesh describes the relations between the elements in the mesh, in terms of neighborhood implied by shared vertices. Actual coordinates do not play a role in this part, so the <em>vertices</em> are just labels used to imply which elements share a vertex, an edge or a face.</p>
+<p>Some examples:</p>
+<h3 id="general-version-of-databeam-quadmesh">General version of <code>data/beam-quad.mesh</code></h3>
+<p>Below is the annotated topological part of the <code>MFEM mesh v1.x</code> format for the beam mesh. The complete file is given in <a href="#listing-2">Listing 2</a>.</p>
+<pre><code>...
+# BEGIN Topology Part
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 8 17 16
+
+boundary
+# Skipping the 18 boundary segments for simplicity
+
+vertices
+18
+
+# END Topology Part
+...
+</code></pre>
+
+<p>The element format above is: <code>&lt;attribute&gt; &lt;type&gt; &lt;vertex1&gt; ... &lt;vertexN&gt;</code>. Type <code>3</code> is quadrilateral, which requires 4 vertex indices. The <code>attribute</code> identify e.g. material sub-domains (2 in this case).</p>
+<p><strong>NOTE:</strong> The topology part of this mesh will be the same, irrespective of the order. Compare e.g. <a href="#listing-2">Listing 2</a>, <a href="#listing-3">Listing 3</a> and <a href="#listing-4">Listing 4</a>.</p>
+<p><strong>WARNING:</strong> The vertices are used only to imply topology, and so there coordinates are not important. The mesh coordinates are implied by the mesh <code>nodes</code> not <code>vertices</code>. In particular, while the <code>Mesh</code> object can return vertex coordinates, they are not used an may be incorrect for high-order mesh.</p>
+<h3 id="periodic-version-of-databeam-quadmesh">Periodic version of <code>data/beam-quad.mesh</code></h3>
+<p>The topology part can be used to describe more complicated mesh relations. For example we can identify the two vertical lines of the beam mesh, turning it topologically into a
+cylinder. The complete file is given in <a href="#listing-5">Listing 5</a>.</p>
+<pre><code>...
+# BEGIN Topology Part
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 0 9 16   # Last element uses vertices 0 and 9
+
+# two vertical boundary have been removed
+boundary
+16
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 0
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 9 16
+
+vertices
+16
+
+# END Topology Part
+...
+</code></pre>
+
+<p>Compared to the non-periodic version, e.g. <a href="#listing-2">Listing 2</a>, the main difference above is that we have fused vertices 8 and 0 and vertices 17 and 9.</p>
+<p>The difference between the two topologies can be illustrated by solving a simple Laplace problem with homogeneous essential boundary conditions on the resulting mesh.</p>
+<p>In the periodic case we get:</p>
+<p><img alt="ex1-periodic" src="../img/format-v1.x/ex1-periodic.png" /></p>
+<p>while the solution on the non-periodic mesh looks like:</p>
+<p><img alt="ex1-linear" src="../img/format-v1.x/ex1-linear.png" /></p>
+<p><strong>NOTE:</strong> Meshes with periodic topology allow us to solve problems with periodic boundary conditions without modifying the application to impose them -- we simply run on a different mesh.</p>
+<h2 id="geometry">Geometry</h2>
+<p>The geometry of the mesh, i.e. the actual position of mesh elements in physical space is described by specifying the mesh <em>nodes</em> as a general finite element (vector) function.</p>
+<p>In MFEM, finite element functions are objects of type <code>GridFunction</code> which belong to discrete finite element spaces specified by objects <code>FiniteElementSpace</code> and <code>FiniteElementCollection</code>.</p>
+<p>The actual geometry of each element is obtained by extracting the local degrees of freedom from the global <em>nodes</em>, expanding them in the corresponding (reference element) finite element basis, and using the resulting polynomial vector field to map the reference element.</p>
+<p>An example of a first order geometry is given in <a href="#listing-2">Listing 2</a>:</p>
+<pre><code>...
+# BEGIN Geometry Part
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: H1_2D_P1
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+
+# END Geometry Part
+</code></pre>
+
+<p>Here <code>VDim: 2</code> means that the <em>nodes</em> grid function is a vector field with two components (i.e. the mesh is embedded in R^2); <code>H1_2D_P1</code> describes the finite element space (H1/continuous finite elements in 2D of order 1); <code>Ordering</code> refers to how the vector field values are serialized (in this case x,y,x,y,...); and the rest is just the global degrees of freedom representing in this case the vertex coordinates.</p>
+<p>Compare the above with the linear mesh vertex coordinates from <a href="#listing-1">Listing 1</a>:</p>
+<pre><code>vertices
+18
+2
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+
+</code></pre>
+
+<p>In the MFEM mesh v1.x format, the <em>nodes</em> are a regular grid function, just like an other discretized field in a simulation, which has several advantages:</p>
+<ul>
+<li>The <em>nodes</em> can be part of the discretization, and be evolved directly e.g. in a Lagrangian/ALE simulation.</li>
+<li>Mesh optimization problems can be posed directly for the <em>nodes</em> variable.</li>
+<li>Since the <em>nodes</em> can be any finite element function, a wide variety of meshes are easily supported.</li>
+</ul>
+<p>As an illustration of the last point, consider the geometry of the periodic version of the mesh in <a href="#listing-5">Listing 5</a></p>
+<pre><code>...
+# BEGIN Geometry Part
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: L2_T1_2D_P1
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+0 1
+1 1
+
+1 0
+2 0
+1 1
+2 1
+
+2 0
+3 0
+2 1
+3 1
+
+3 0
+4 0
+3 1
+4 1
+
+4 0
+5 0
+4 1
+5 1
+
+5 0
+6 0
+5 1
+6 1
+
+6 0
+7 0
+6 1
+7 1
+
+7 0
+8 0
+7 1
+8 1
+
+8 0
+9 0
+8 1
+9 1
+
+9 0
+10 0
+9 1
+10 1
+# END Geometry Part
+...
+</code></pre>
+
+<p>Note that the space here is <code>L2</code>, which means a discontinuous linear vector field, where four vertex coordinates are specified on each element. This allows us to plot the periodic mesh as a regular beam, which is what you'd expect for periodic boundary conditions.</p>
+<h2 id="finite-element-spaces">Finite Element Spaces</h2>
+<p>To fully specify the  MFEM mesh v1.x format, we need to describe the degrees of freedom of the <em>nodes</em> finite element space and their global numbering.</p>
+<p>This is something that the MFEM team is very interested to discuss and standardize with other high-order projects and applications. Below is a description of our current approach...</p>
+<p>Finite element spaces have degrees of freedom (dofs) that are associated with the (interiors of the) mesh vertices, edges, faces and elements.
+There may be multiple dofs associated with the same geometric entity (e.g. vector fields), and different spaces have different sets of degrees of freedom.
+For example H1/continuous spaces can have degrees of freedom associated with the Gauss-Lobatto points in a quadrilateral, while L2/discontinuous spaces can have degrees of freedom associated with the Gauss-Legendre points.
+These are just examples, many choices for the basis are actually possible to be encoded in the <code>FiniteElementCollection</code> string above.</p>
+<p>In general, based just on the mesh topology and the type of the space, the <code>FiniteElementSpace</code> object can determine a global set of dofs, that will be the values listed for the mesh <em>nodes</em>.</p>
+<p>The algorithm starts with the given numbering of the elements and the vertices, from which a numbering of the edges and the faces is derived as follows:</p>
+<pre><code>loop over elements
+  loop over edges and faces inside each element (clock-wise)
+    number currently the edges and faces that have not been numbered yet
+</code></pre>
+
+<p>Here is the result of this numbering for the beam mesh</p>
+<p><img alt="beam-quad-num" src="../img/format-v1.x/beam-quad-num.png" /></p>
+<p>In addition to a number, each edges and face is also given a global orientation.</p>
+<p>In 2D and 3D, an edge is oriented from the vertex with the lower vertex id to the vertex with the higher vertex id.</p>
+<p>In 3D, a face is oriented according to the face-to-vertex mappings in the first element in which the face is enumerated. See the <code>fem/geom.cpp</code> for the definitions of the <a href="https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L503-L505">tetrahedral</a> and <a href="https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L524-L529">hexahedral</a> mappings on the reference element, as well as the <code>Mesh::GenerateFaces</code> method in <code>mesh/mesh.cpp</code>. In particular, the normal of the face between two elements points from the element with lower number to the element with higher number. Face orientation however includes not just the normal direction, but also any rotation of the vertices compared to the base, i.e. <em>orientation</em> here means permutation of vertices.</p>
+<p>The global numbering of degrees of freedom is now performed as follows:</p>
+<pre><code>loop over vertices
+  list the dofs associated with each vertex
+
+loop over edges
+  list the dofs associated with the interior of the edge,
+  lexicographically with respect to the edge orientation
+
+loop over faces
+  list the dofs associated with the interior of the face,
+  lexicographically with respect to the face orientation
+
+loop over elements
+  list the dofs associated with the interior of the element
+</code></pre>
+
+<p>An example of this is the quadratic mesh in  <a href="#listing-3">Listing 3</a></p>
+<pre><code>...
+# BEGIN Geometry Part
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: H1_2D_P2
+VDim: 2
+Ordering: 1
+
+# 18 vertex dofs
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+
+# 25 edge dofs
+0.5 0
+1 0.5
+0.5 1
+0 0.5
+1.5 0
+2 0.5
+1.5 1
+2.5 0
+3 0.5
+2.5 1
+3.5 0
+4 0.5
+3.5 1
+4.5 0
+5 0.5
+4.5 1
+5.5 0
+6 0.5
+5.5 1
+6.5 0
+7 0.5
+6.5 1
+7.5 0
+8 0.5
+7.5 1
+
+# 8 element dofs
+0.5 0.5
+1.5 0.5
+2.5 0.5
+3.5 0.5
+4.5 0.5
+5.5 0.5
+6.5 0.5
+7.5 0.5
+
+# END Geometry Part
+...
+</code></pre>
+
+<h2 id="listings">Listings</h2>
+<h3 id="listing-1">Listing 1</h3>
+<p>This is the original version of the <code>beam-quad.mesh</code> using the linear mesh format.</p>
+<pre><code>MFEM mesh v1.0
+
+#
+# MFEM Geometry Types (see mesh/geom.hpp):
+#
+# POINT       = 0
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+#
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 8 17 16
+
+boundary
+18
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 8
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 17 16
+1 1 9 0
+2 1 8 17
+
+vertices
+18
+2
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+
+</code></pre>
+
+<h3 id="listing-2">Listing 2</h3>
+<p>This is a <code>MFEM mesh v1.x</code> version of the <code>beam-quad.mesh</code> which is first order. The mesh is identical to the one of <a href="#listing-1">Listing 1</a>, it is just described in a different format.</p>
+<pre><code>MFEM mesh v1.0
+
+#
+# MFEM Geometry Types (see mesh/geom.hpp):
+#
+# POINT       = 0
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+#
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 8 17 16
+
+boundary
+18
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 8
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 17 16
+1 1 9 0
+2 1 8 17
+
+vertices
+18
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: H1_2D_P1
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+</code></pre>
+
+<h3 id="listing-3">Listing 3</h3>
+<p>This is a second order version of the <code>beam-quad.mesh</code>.</p>
+<pre><code>MFEM mesh v1.0
+
+#
+# MFEM Geometry Types (see mesh/geom.hpp):
+#
+# POINT       = 0
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+#
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 8 17 16
+
+boundary
+18
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 8
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 17 16
+1 1 9 0
+2 1 8 17
+
+vertices
+18
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: H1_2D_P2
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+0.5 0
+1 0.5
+0.5 1
+0 0.5
+1.5 0
+2 0.5
+1.5 1
+2.5 0
+3 0.5
+2.5 1
+3.5 0
+4 0.5
+3.5 1
+4.5 0
+5 0.5
+4.5 1
+5.5 0
+6 0.5
+5.5 1
+6.5 0
+7 0.5
+6.5 1
+7.5 0
+8 0.5
+7.5 1
+0.5 0.5
+1.5 0.5
+2.5 0.5
+3.5 0.5
+4.5 0.5
+5.5 0.5
+6.5 0.5
+7.5 0.5
+</code></pre>
+
+<h3 id="listing-4">Listing 4</h3>
+<p>This is a third order version of the <code>beam-quad.mesh</code>.</p>
+<pre><code>MFEM mesh v1.0
+
+#
+# MFEM Geometry Types (see mesh/geom.hpp):
+#
+# POINT       = 0
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+#
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 8 17 16
+
+boundary
+18
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 8
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 17 16
+1 1 9 0
+2 1 8 17
+
+vertices
+18
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: H1_2D_P3
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+0 1
+1 1
+2 1
+3 1
+4 1
+5 1
+6 1
+7 1
+8 1
+0.27639320225002 0
+0.72360679774998 0
+1 0.27639320225002
+1 0.72360679774998
+0.27639320225002 1
+0.72360679774998 1
+0 0.27639320225002
+0 0.72360679774998
+1.27639320225 0
+1.72360679775 0
+2 0.27639320225002
+2 0.72360679774998
+1.27639320225 1
+1.72360679775 1
+2.27639320225 0
+2.72360679775 0
+3 0.27639320225002
+3 0.72360679774998
+2.27639320225 1
+2.72360679775 1
+3.27639320225 0
+3.72360679775 0
+4 0.27639320225002
+4 0.72360679774998
+3.27639320225 1
+3.72360679775 1
+4.27639320225 0
+4.72360679775 0
+5 0.27639320225002
+5 0.72360679774998
+4.27639320225 1
+4.72360679775 1
+5.27639320225 0
+5.72360679775 0
+6 0.27639320225002
+6 0.72360679774998
+5.27639320225 1
+5.72360679775 1
+6.27639320225 0
+6.72360679775 0
+7 0.27639320225002
+7 0.72360679774998
+6.27639320225 1
+6.72360679775 1
+7.27639320225 0
+7.72360679775 0
+8 0.27639320225002
+8 0.72360679774998
+7.27639320225 1
+7.72360679775 1
+0.27639320225002 0.27639320225002
+0.72360679774998 0.27639320225002
+0.27639320225002 0.72360679774998
+0.72360679774998 0.72360679774998
+1.27639320225 0.27639320225002
+1.72360679775 0.27639320225002
+1.27639320225 0.72360679774998
+1.72360679775 0.72360679774998
+2.27639320225 0.27639320225002
+2.72360679775 0.27639320225002
+2.27639320225 0.72360679774998
+2.72360679775 0.72360679774998
+3.27639320225 0.27639320225002
+3.72360679775 0.27639320225002
+3.27639320225 0.72360679774998
+3.72360679775 0.72360679774998
+4.27639320225 0.27639320225002
+4.72360679775 0.27639320225002
+4.27639320225 0.72360679774998
+4.72360679775 0.72360679774998
+5.27639320225 0.27639320225002
+5.72360679775 0.27639320225002
+5.27639320225 0.72360679774998
+5.72360679775 0.72360679774998
+6.27639320225 0.27639320225002
+6.72360679775 0.27639320225002
+6.27639320225 0.72360679774998
+6.72360679775 0.72360679774998
+7.27639320225 0.27639320225002
+7.72360679775 0.27639320225002
+7.27639320225 0.72360679774998
+7.72360679775 0.72360679774998
+</code></pre>
+
+<h3 id="listing-5">Listing 5</h3>
+<p>Periodic version of the first-order mesh from <a href="#listing-1">Listing 1</a>.</p>
+<pre><code>MFEM mesh v1.0
+
+#
+# MFEM Geometry Types (see mesh/geom.hpp):
+#
+# POINT       = 0
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+#
+
+dimension
+2
+
+elements
+8
+1 3 0 1 10 9
+1 3 1 2 11 10
+1 3 2 3 12 11
+1 3 3 4 13 12
+2 3 4 5 14 13
+2 3 5 6 15 14
+2 3 6 7 16 15
+2 3 7 0 9 16
+
+boundary
+16
+3 1 0 1
+3 1 1 2
+3 1 2 3
+3 1 3 4
+3 1 4 5
+3 1 5 6
+3 1 6 7
+3 1 7 0
+3 1 10 9
+3 1 11 10
+3 1 12 11
+3 1 13 12
+3 1 14 13
+3 1 15 14
+3 1 16 15
+3 1 9 16
+
+vertices
+16
+
+nodes
+FiniteElementSpace
+FiniteElementCollection: L2_T1_2D_P1
+VDim: 2
+Ordering: 1
+
+0 0
+1 0
+0 1
+1 1
+
+1 0
+2 0
+1 1
+2 1
+
+2 0
+3 0
+2 1
+3 1
+
+3 0
+4 0
+3 1
+4 1
+
+4 0
+5 0
+4 1
+5 1
+
+5 0
+6 0
+5 1
+6 1
+
+6 0
+7 0
+6 1
+7 1
+
+7 0
+8 0
+7 1
+8 1
+
+8 0
+9 0
+8 1
+9 1
+
+9 0
+10 0
+9 1
+10 1
+</code></pre></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#general-mfem-mesh-format">General MFEM Mesh Format</a></li>
+        
+            <li><a href="#topology">Topology</a></li>
+        
+            <li><a href="#geometry">Geometry</a></li>
+        
+            <li><a href="#finite-element-spaces">Finite Element Spaces</a></li>
+        
+            <li><a href="#listings">Listings</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+    </body>
+</html>

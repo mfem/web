@@ -115,6 +115,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -124,6 +126,8 @@
                             <li >
                                  <a href="../meshing/">Meshing</a>
                             </li>
+                        
+                    
                         
                     
                         
@@ -202,7 +206,7 @@
 </script>
 
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
 <h1 id="example-codes-and-miniapps">Example Codes and Miniapps</h1>
@@ -238,6 +242,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
    <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
+   <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
@@ -274,7 +279,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
    <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
    <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
    <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
-   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU (parallel direct)</label><br/>
+   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU/STRUMPACK (parallel direct)</label><br/>
    <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
@@ -540,9 +545,9 @@ Mass operators using a finite element space of the specified order, or an
 isoparametric/isogeometric space if order &lt; 1 (quadratic for quadratic
 curvilinear mesh, NURBS for NURBS mesh, etc.)</p>
 <p>The example highlights the use of the LOBPCG eigenvalue solver together with the
-BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU parallel
-direct solver. Reusing a single <a href="http://glvis.org">GLVis</a> visualization window
-for multiple eigenfunctions is also illustrated.</p>
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
+STRUMPACK parallel direct solvers. Reusing a single <a href="http://glvis.org">GLVis</a>
+visualization window for multiple eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp">ex11p.cpp</a>) version.
 We recommend viewing Example 1 before viewing this example.</em>
@@ -697,6 +702,38 @@ We recommend viewing examples 2 and 14 before viewing this example.</em>
 <br></p>
 </div>
 
+<div id="ex18">
+
+<h2 id="example-18-dg-euler-equations">Example 18: DG Euler Equations</h2>
+<p><img class="floatright" src="../img/examples/ex18.png"></p>
+<p>This example code solves the compressible Euler system of
+equations, a model nonlinear hyperbolic PDE, with a
+discontinuous Galerkin (DG) formulation.</p>
+<p>Specifically, it solves for an exact solution of the equations
+whereby a vortex is transported by a uniform flow. Since all
+boundaries are periodic here, the method's accuracy can be
+assessed by measuring the difference between the solution and
+the initial condition at a later time when the vortex returns to
+its initial location.</p>
+<p>Note that as the order of the spatial discretization increases,
+the timestep must become smaller. This example currently uses a
+simple estimate derived by Cockburn and Shu for the 1D RKDG
+method. An additional factor can be tuned by passing the
+<code>--cfl</code> (or <code>-c</code> shorter) flag.</p>
+<p>The example demonstrates user-defined bilinear and nonlinear
+form integrators for systems of equations that are defined with
+block vectors, and how these are used with an operator for
+explicit time integrators. In this case the system also
+involves an external approximate Riemann solver for the DG
+interface flux. It also demonstrates how to use GLVis for
+in-situ visualization of vector grid functions.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18.cpp">ex18.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp">ex18p.cpp</a>) version.
+We recommend viewing examples 9, 14 and 17 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
 <div id="volta">
 
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
@@ -755,14 +792,14 @@ moving to the miniapps.</strong></em>
 
 <h2 id="joule-miniapp-transient-magnetics-and-joule-heating">Joule Miniapp: Transient Magnetics and Joule Heating</h2>
 <p><img class="floatright" src="../img/examples/joule.png" ></p>
-<p>This miniapp solves the equations of transient low-frequency (aka eddy current)
-electromagnetics, and simultanesously computes transient heat transfer with the heat source given
+<p>This miniapp solves the equations of transient low-frequency (a.k.a. eddy current)
+electromagnetics, and simultaneously computes transient heat transfer with the heat source given
 by the electromagnetic Joule heating.</p>
 <p>Its features include:</p>
 <ul>
 <li>$H^1$ discretization of the electrostatic potential</li>
 <li>$H(\mathrm{curl})$ discretization of the electric field</li>
-<li>$H(\mathrm{div})$ discretization of the magetic field</li>
+<li>$H(\mathrm{div})$ discretization of the magnetic field</li>
 <li>$H(\mathrm{div})$ discretization of the heat flux</li>
 <li>$L^2$ discretization of the temperature</li>
 <li>implicit transient time integration</li>
@@ -817,6 +854,26 @@ moving to the miniapps.</strong></em>
 <br></p>
 </div>
 
+<div id="shaper">
+
+<h2 id="shaper-miniapp">Shaper Miniapp</h2>
+<p><img class="floatright" src="../img/examples/shaper.png"></p>
+<p>This miniapp performs multiple levels of adaptive mesh refinement to resolve the
+interfaces between different "materials" in the mesh, as specified by a given
+material function.</p>
+<p>It can be used as a simple initial mesh generator, for example in the case when
+the interface is too complex to describe without local refinement. Both
+conforming and non-conforming refinements are supported.</p>
+<p>For more details, please see the <a href="../meshing/">documentation</a> in the
+<code>miniapps/meshing</code> directory.</p>
+<p><em>The miniapp has only a serial
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/shaper.cpp">shaper.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
+moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
 <div id="mesh-explorer">
 
 <h2 id="mesh-explorer-miniapp">Mesh Explorer Miniapp</h2>
@@ -835,6 +892,80 @@ mesh. Some of its features are:</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp">mesh-explorer.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
+<div id="mesh-optimizer">
+
+<h2 id="mesh-optimizer-miniapp">Mesh Optimizer Miniapp</h2>
+<p><img class="floatright" src="../img/examples/mesh-optimizer.png"></p>
+<p>This miniapp performs mesh optimization using the Target-Matrix Optimization
+Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
+approach. It minimizes the quantity</p>
+<p>$$\sum_T \int_T \mu(J(x)),$$</p>
+<p>where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
+transformation from the target to the physical element, and $\mu$ is the mesh
+quality metric.</p>
+<p>This metric can measure shape, size or alignment of the region around each
+quadrature point. The combination of targets and quality metrics is used to
+optimize the physical node positions, i.e., they must be as close as possible to
+the shape / size / alignment of their targets.</p>
+<p>This code also demonstrates a possible use of nonlinear operators, as well as
+their coupling to Newton methods for solving minimization problems. Note that
+the utilized Newton methods are oriented towards avoiding invalid meshes with
+negative Jacobian determinants. Each Newton step requires the inversion of a
+Jacobian matrix, which is done through an inner linear solver.</p>
+<p>For more details, please see the <a href="../meshing/">documentation</a> in the
+<code>miniapps/meshing</code> directory.</p>
+<p><em>The miniapp has a serial
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp">mesh-optimizer.cpp</a>) and a
+parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp">pmesh-optimizer.cpp</a>)
+version.
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+
+<div id="laghos">
+
+<h2 id="laghos-miniapp">Laghos Miniapp</h2>
+<p><img class="floatright" src="../img/examples/laghos.png"></p>
+<p><strong>Laghos</strong> (LAGrangian High-Order Solver) is a miniapp that solves the
+time-dependent Euler equations of compressible gas dynamics in a moving
+Lagrangian frame using unstructured high-order finite element spatial
+discretization and explicit high-order time-stepping.</p>
+<p>The computational motives captured in Laghos include:</p>
+<ul>
+<li>Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements (triangular and tetrahedral elements can also be used, but
+  with the less efficient full assembly option). Serial and parallel mesh
+  refinement options can be set via a command-line flag.</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Laghos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Continuous and discontinuous high-order finite element discretization spaces
+  of runtime-specified order.</li>
+<li>Moving (high-order) meshes.</li>
+<li>Separation between the assembly and the quadrature point-based computations.</li>
+<li>Point-wise definition of mesh size, time-step estimate and artificial
+  viscosity coefficient.</li>
+<li>Constant-in-time velocity mass operator that is inverted iteratively on
+  each time step. This is an example of an operator that is prepared once (fully
+  or partially assembled), but is applied many times. The application cost is
+  dominant for this operator.</li>
+<li>Time-dependent force matrix that is prepared every time step (fully or
+  partially assembled) and is applied just twice per "assembly". Both the
+  preparation and the application costs are important for this operator.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization / data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
+<p>The Laghos miniapp is part of the <a href="http://ceed.exascaleproject.org/software">CEED software suite</a>,
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.</p>
+<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Laghos">https://github.com/CEED/Laghos</a>.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
@@ -899,7 +1030,7 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
@@ -910,7 +1041,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 17; // update when adding examples!
+   var numExamples = 18; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -926,8 +1057,9 @@ function update(id)
    showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
    showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk));
+   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
+   showElement("ex18", hydro && l2 && dg && (rk));
 
    // Electromagnetic miniapps
    numExamples += 3; // update when adding miniapps!
@@ -936,10 +1068,16 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 3; // update when adding miniapps!
+   numExamples += 5; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
+   showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
+   showElement("mesh-optimizer", meshing && all2 && all3 && all4);
+
+   // External miniapps
+   numExamples += 1; // update when adding miniapps!
+   showElement("laghos", (hydro || hpc) && all2 && all3 && all4);
 
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
