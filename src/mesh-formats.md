@@ -117,7 +117,8 @@ glvis -m beam-quad.mesh -k "Ame****"
 
 ### Curvilinear and more general meshes
 
-The MFEM mesh v1.0 format also support the general description of meshes based on a vector finite element grid function with degrees of freedom in the "nodes" of the mesh:
+The MFEM mesh v1.0 format also support the general description of meshes based on a vector finite element grid function with degrees of freedom in the "nodes" of the mesh. This general format is described briefly below, and in more details on the [General Mesh Format page](mesh-format-v1.x.md).
+
 ```sh
 MFEM mesh v1.0
 

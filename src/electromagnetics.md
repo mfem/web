@@ -106,7 +106,7 @@ The solutions to equation \eqref{poisson} are non unique because they can be
 shifted by any additive constant. This means that we must apply a Dirichlet
 boundary condition at least at one point in the problem domain in order to
 obtain a solution. Typically this point will be on the boundary but it need not
-be so. Such a Dirichlet value is equivalent to fixing the voltage (aka
+be so. Such a Dirichlet value is equivalent to fixing the voltage (a.k.a.
 potential) at one or more locations. Additionally, this equation admits a normal
 derivative boundary condition. This corresponds to setting $\hat{n}\cdot\D$ to a
 prescribed value on some portion of the boundary. This is equivalent to defining
@@ -354,4 +354,4 @@ integer attribute to the floating-point material value.
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>

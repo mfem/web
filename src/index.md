@@ -16,10 +16,10 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 
 MFEM is used in many projects, including
 [BLAST](http://www.llnl.gov/casc/blast),
-[XBraid](http://www.llnl.gov/casc/xbraid) and [VisIt](http://visit.llnl.gov).
-It is part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org).
+[XBraid](http://www.llnl.gov/casc/xbraid), [VisIt](http://visit.llnl.gov), the [xSDK](https://xsdk.info/),
+the [FASTMath](https://fastmath-scidac.llnl.gov/index.html) institute in SciDAC, and the co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 
-See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), list of related [publications](publications.md) and
+See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), related [publications](publications.md) and
 project [news updates](news.md).
 
 </div><div class="col-md-6 news-table" markdown="1">
@@ -29,10 +29,14 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Nov 10, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) on the MFEM team.
-Jan 28, 2017 | Version 3.3 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
+Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp released by [CEED](http://ceed.exascaleproject.org).
 Nov 11, 2016 | MFEM part of [ECP](https://exascaleproject.org)'s [CEED](http://ceed.exascaleproject.org) co-design center.
 
+[comment]: # (Feb 16, 2017 | Moved main development to GitHub.)
+[comment]: # (Jan 28, 2017 | Version 3.3 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).)
+[comment]: # (Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://exascaleproject.org/2016/11/11/ecp_co-design_centers) with MFEM.)
 [comment]: # (Sep 12, 2016 | PyMFEM - a Python wrapper for MFEM [released](https://github.com/MFEM/PyMFEM).)
 [comment]: # (Jun 30, 2016 | Version 3.2 released.)
 [comment]: # (May 6, 2016  | MFEM packages available in [homebrew](https://github.com/Homebrew/homebrew-science) and [spack](https://github.com/LLNL/spack).)
@@ -52,8 +56,8 @@ Nov 11, 2016 | MFEM part of [ECP](https://exascaleproject.org)'s [CEED](http://c
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-3.3.tgz**
-</button>](http://goo.gl/Vrpsns)
+**Download mfem-3.3.2.tgz**
+</button>](https://goo.gl/Kd7Jk8)
 
 For older releases see the [download](download.md) section.
 

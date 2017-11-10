@@ -22,7 +22,7 @@ finite element toolkit that provides the building blocks for developing finite
 element algorithms in a manner similar to that of MATLAB for linear algebra
 methods.
 
-Some of the C++ classes that describe the finite element realizations of
+Some of the C++ classes for the finite element realizations of these
 PDE-level concepts in MFEM are described below.
 
 ### [Bilinear Form Integrators](bilininteg.md)
@@ -40,3 +40,12 @@ function with a given source function over individual mesh elements (or
 sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
+
+### [Linear Interpolators](lininterp.md)
+
+Unlike Bilinear and Linear forms, Linear Interpolators do not perform
+integrations, but project one basis function (or a
+linear function of a basis function) onto another basis function.  The
+`DiscreteLinearOperator` class adds one or more `LinearInterpolators`
+together to build a global sparse matrix representation of the linear
+operator.

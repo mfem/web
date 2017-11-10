@@ -13,16 +13,18 @@ pages:
 - Features: features.md
 - Examples: examples.md
 - Documentation:
-  - '_News': news.md
+  - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Finite Elements': fem.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
+  - '_Linear Interpolators': lininterp.md
   - 'Electromagnetics': electromagnetics.md
   - 'Meshing': meshing.md
-  - '_Mesh Formats': mesh-formats.md   # pages starting with '_' are hidden from the menu
+  - '_Mesh Formats': mesh-formats.md
+  - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
   - 'Code Overview': code-overview.md
   - 'Publications': publications.md

@@ -12,23 +12,31 @@ Please cite with:
 
 ## Contributors
 
-- Ido Akkerman
+- [Ido Akkerman](https://www.researchgate.net/profile/Ido_Akkerman/info)
 - [Robert Anderson](http://people.llnl.gov/anderson110)
-- [Thomas Anderson](http://www.its.caltech.edu/~tganders)
+- [Thomas Anderson](https://www.krellinst.org/csgf/fellows/profile?n=anderson2014)
+- Julian Andrej
 - [Mikhail Artemyev](https://github.com/martemyev)
+- [Andrew Barker](https://people.llnl.gov/barker29)
 - Thomas Benson
 - Aaron Black
 - [Jamie Bramwell](http://people.llnl.gov/bramwell1)
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
+- [Jean-Sylvain Camier](http://people.llnl.gov/camier1)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
+- [Johann Dahm](http://jdahm.me/)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
+- [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
+- [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
-- Mark Miller
+- [Mark Miller](https://people.llnl.gov/miller86)
+- [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
+- [Geoffrey Oxberry](https://github.com/goxberry)
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton

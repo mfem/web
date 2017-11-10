@@ -125,4 +125,4 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 | DGElasticityDirichletLFIntegrator | L2 | $\alpha\left<\vec\{u_D}, \left(\lambda \left(\div \vec\{v}\right) I + \mu \left(\nabla\vec\{v} + \nabla\vec\{v}^T\right)\right) \cdot \vec\{n}\right> \\\\ + \kappa\left< h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v} \right>$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
