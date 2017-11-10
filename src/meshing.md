@@ -6,8 +6,10 @@ This page provides a brief description of MFEM's mesh formats and meshing mini a
 
 MFEM supports a number of mesh formats, including:
 
-  - MFEM's own [mesh v1.0 format](mesh-formats.md#mfem-mesh-v10), which can describe both [straight](mesh-formats.md#straight-meshes) as well as [arbitrary high-order curvilinear](mesh-formats.md#curvilinear-and-more-general-meshes) and [more general](mesh-formats.md#curvilinear-and-more-general-meshes) meshes,
-  - MFEM's own format for [NURBS](mesh-formats.md#nurbs-meshes) meshes,
+  - MFEM's [mesh v1.0 format](mesh-formats.md#mfem-mesh-v10) for [straight](mesh-formats.md#straight-meshes) meshes,
+  - MFEM's [mesh v1.0 format](mesh-formats.md#curvilinear-and-more-general-meshes) for [arbitrary high-order curvilinear](mesh-format-v1.x.md) and more general meshes,
+  - MFEM's [mesh v1.1 format](mesh-formats.md#mfem-mesh-v11), which adds support for non-conforming (AMR) meshes,
+  - MFEM's format for [NURBS](mesh-formats.md#nurbs-meshes) meshes,
   - The [VTK](mesh-formats.md#curvilinear-vtk-meshes) unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,
   - The [Gmsh](http://gmsh.info/) ASCII and binary formats for 2D and 3D meshes.
   - The [CUBIT](https://cubit.sandia.gov/) meshes through the Genesis (NetCDF) binary format.
@@ -92,3 +94,7 @@ This metric can measure shape, size or alignment of the region around each
 quadrature point. The combination of targets and quality metrics is used to
 optimize the physical node positions, i.e., they must be as close as possible to
 the shape / size / alignment of their targets.
+
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
