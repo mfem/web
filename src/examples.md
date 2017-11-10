@@ -764,7 +764,7 @@ This miniapp performs mesh optimization using the Target-Matrix Optimization
 Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
 approach. It minimizes the quantity
 
-$$\sum_T \int_T \mu(J(x))$$,
+$$\sum_T \int_T \mu(J(x)),$$
 
 where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
 transformation from the target to the physical element, and $\mu$ is the mesh
