@@ -10,7 +10,7 @@ function preprocess { # src dst
 
 function postprocess { # src dst localdir
 	cat $1 \
-	| sed 's|"http://cdn.mathjax.org/.*"|""|' \
+	| sed 's|"https://cdnjs.cloudflare.com/.*"|""|' \
 	| sed 's|\.\./css|---local---|g' \
 	| sed 's|\.\./img|---local---|g' \
 	| sed 's|\.\./js|---local---|g' \
@@ -22,10 +22,11 @@ function postprocess { # src dst localdir
 function exportfile { # src dst localdir
 	echo
 	echo Exporting $1
-	tmp1=${1}_tmp.html
+	tmp1=${1}_tmp1.html
 	tmp2=$(mktemp export.XXXXXXXXXX)
+	# tmp2=${1}_tmp2.html
 	preprocess $1 $tmp1
-	phantomjs export.js file://$(pwd)/$tmp1 $tmp2
+	phantomjs export.js file://$PWD/$tmp1 $tmp2
 	postprocess $tmp2 $2 $3
 	rm $tmp1
 	rm $tmp2
