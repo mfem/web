@@ -12,9 +12,9 @@ Please cite with:
 
 ## Contributors
 
-- Ido Akkerman
+- [Ido Akkerman](https://www.researchgate.net/profile/Ido_Akkerman/info)
 - [Robert Anderson](http://people.llnl.gov/anderson110)
-- [Thomas Anderson](http://www.its.caltech.edu/~tganders)
+- [Thomas Anderson](https://www.krellinst.org/csgf/fellows/profile?n=anderson2014)
 - Julian Andrej
 - [Mikhail Artemyev](https://github.com/martemyev)
 - [Andrew Barker](https://people.llnl.gov/barker29)
@@ -34,7 +34,7 @@ Please cite with:
 - Ilya Lashuk
 - [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
-- Mark Miller
+- [Mark Miller](https://people.llnl.gov/miller86)
 - [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
 - [Geoffrey Oxberry](https://github.com/goxberry)
 - [Robert Rieben](http://people.llnl.gov/rieben1)
