@@ -30,6 +30,7 @@ Please cite with:
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
+- Patrick Knupp
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
 - [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
