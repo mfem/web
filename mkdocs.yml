@@ -1,11 +1,11 @@
 site_name: MFEM
+site_url: http://mfem.org
 docs_dir: 'src'
 
 markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
 - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
 
-homepage_url: http://mfem.org
 repo_url: https://github.com/mfem/mfem
 remote_name: github
 
@@ -34,7 +34,10 @@ pages:
 - Download: download.md
 
 theme:
-  name: mkdocs
+  name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
+
+extra:
+  include_next_prev: false  # turn off next/previous buttons
 
 google_analytics: ['UA-101697-3', 'mfem.org']
