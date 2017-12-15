@@ -546,30 +546,37 @@ We recommend viewing examples 2 and 14 before viewing this example._
 ##Example 18: DG Euler Equations
 <img class="floatright" src="../img/examples/ex18.png">
 
-This example code solves the compressible Euler system of
-equations, a model nonlinear hyperbolic PDE, with a
-discontinuous Galerkin (DG) formulation.
+This example code solves the compressible Euler system of equations, a model
+nonlinear hyperbolic PDE, with a discontinuous Galerkin (DG) formulation. The
+primary purpose is to show how a transient system of nonlinear equations can be
+formulated in MFEM. It solves this in conservation form
 
-Specifically, it solves for an exact solution of the equations
-whereby a vortex is transported by a uniform flow. Since all
-boundaries are periodic here, the method's accuracy can be
-assessed by measuring the difference between the solution and
-the initial condition at a later time when the vortex returns to
+$$\frac{\partial u}{\partial t} + \nabla \cdot {\bf F}(u) = 0$$
+
+with a state vector $u = [ \rho, \rho v_0, \rho v_1, \rho E ]$, where $\rho$ is
+the density $v_i$ is the velocity in the $i^{\rm th}$ direction, $E$ is the
+total specific energy, and $H = (E + p) / \rho$ is the total specific enthalpy.
+The conservative hydrodynamic flux $F_i(u)$ in each direction $i$ is
+
+$$F_i(u) = [ \rho v_i, \rho v_0 v_i + p \delta_{i,0}, \rho v_1 v_i + p \delta_{i,1}, \rho v_i H ]$$
+
+Specifically, it solves for an exact solution of the equations whereby a vortex
+is transported by a uniform flow. Since all boundaries are periodic here, the
+method's accuracy can be assessed by measuring the difference between the
+solution and the initial condition at a later time when the vortex returns to
 its initial location.
 
-Note that as the order of the spatial discretization increases,
-the timestep must become smaller. This example currently uses a
-simple estimate derived by Cockburn and Shu for the 1D RKDG
-method. An additional factor can be tuned by passing the
-`--cfl` (or `-c` shorter) flag.
+Note that as the order of the spatial discretization increases, the timestep
+must become smaller. This example currently uses a simple estimate derived by
+Cockburn and Shu for the 1D RKDG method. An additional factor can be tuned by
+passing the `--cfl` (or `-c` shorter) flag.
 
-The example demonstrates user-defined bilinear and nonlinear
-form integrators for systems of equations that are defined with
-block vectors, and how these are used with an operator for
-explicit time integrators. In this case the system also
-involves an external approximate Riemann solver for the DG
-interface flux. It also demonstrates how to use GLVis for
-in-situ visualization of vector grid functions.
+The example demonstrates user-defined bilinear and nonlinear form integrators
+for systems of equations that are defined with block vectors, and how these are
+used with an operator for explicit time integrators. In this case the system
+also involves an external approximate Riemann solver for the DG interface flux.
+It also demonstrates how to use GLVis for in-situ visualization of vector grid
+functions.
 
 _The example has a serial ([ex18.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18.cpp))
 and a parallel ([ex18p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp)) version.
