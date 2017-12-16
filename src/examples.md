@@ -554,11 +554,11 @@ formulated in MFEM. It solves this in conservation form
 $$\frac{\partial u}{\partial t} + \nabla \cdot {\bf F}(u) = 0$$
 
 with a state vector $u = [ \rho, \rho v_0, \rho v_1, \rho E ]$, where $\rho$ is
-the density $v_i$ is the velocity in the $i^{\rm th}$ direction, $E$ is the
-total specific energy, and $H = (E + p) / \rho$ is the total specific enthalpy.
-The conservative hydrodynamic flux $F_i(u)$ in each direction $i$ is
+the density, $v_i$ is the velocity in the $i^{\rm th}$ direction, $E$ is the
+total specific energy, and $H = E + p / \rho$ is the total specific enthalpy.
+The conservative hydrodynamic flux ${\bf F}_i$ in each direction $i$ is
 
-$$F_i(u) = [ \rho v_i, \rho v_0 v_i + p \delta_{i,0}, \rho v_1 v_i + p \delta_{i,1}, \rho v_i H ]$$
+$${\bf F}_i = [ \rho v_i, \rho v_0 v_i + p \delta_{i,0}, \rho v_1 v_i + p \delta_{i,1}, \rho v_i H ]$$
 
 Specifically, it solves for an exact solution of the equations whereby a vortex
 is transported by a uniform flow. Since all boundaries are periodic here, the
