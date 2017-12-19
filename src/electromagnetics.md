@@ -54,8 +54,8 @@ Generally we also need constitutive relations between $\E$ and $\D$ and/or
 between $\H$ and $\B$. These relations start with the definitions:
 
   $$\begin{align}
-    \D & = \epsilon_0\E + \P   \\\\
-    \B & = \mu_0(\H + \M)
+    \D & = \epsilon_0\E + \P \label{const_d}  \\\\
+    \B & = \mu_0(\H + \M)    \label{const_b}
   \end{align}$$
 
 Where $\P$ is the *polarization density*, and $\M$ is the *magnetization*.
@@ -287,6 +287,39 @@ Note that this application assumes the mesh coordinates are given in meters.
   desired $\B$ vector.
 
 ## Transient Full-Wave Electromagnetics
+
+Transient electromagnetics problems are governed by the time-dependent
+Maxwell equations \eqref{ampere} and \eqref{faraday} when combined
+using the constitutive relations \eqref{const_d} and \eqref{const_b}.
+When combined these equations can describe the evolution and
+propagation of electromagnetic waves.
+
+  $$\begin{align}
+    \dd{(\epsilon\E)}{t} & =   \curl(\mu^{-1}\B) - \sigma \E - \J  \\\\
+    \dd{\B}{t}           & = - \curl\E
+  \end{align}$$
+
+The term $\sigma\E$ arises in the presence of electrically conductive
+materials where the electric field induces a current which can be
+separated from $\J$.  In such cases the total current appearing in
+Ampére's Law \eqref{ampere} can be expressed as the sum of an applied
+current (also labeled as $\J$) and an induced current $\sigma\E$.
+
+Solving these equations requires initial conditions for both the
+electric and magnetic fields $\E$ and $\B$ as well as boundary
+conditions related to the tangential components of $\E$ or $\H$.
+Other formulations are possible such as evolving $\H$ and $\D$ or the
+potentials $\varphi$ and $\A$.  This system of equations can also be
+wrtiiten as a single second order equation involving only $\E$, $\H$,
+$\varphi$, or $\A$.  Each of these formulations has a different set of
+sources, initials and boundary conditions for which it is well-suited.
+The choice we make here is perhaps the most common but it may not be
+the most convenient choice for a given application.
+
+These equations can be used to evolve their initial conditions or they
+can be driven by either a current source or through time-varying
+boundary conditions.  It is also possible to combine all three of
+these sources in a single simulation.
 
 ### Maxwell Mini Application
 
