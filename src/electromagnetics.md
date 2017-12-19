@@ -286,6 +286,14 @@ Note that this application assumes the mesh coordinates are given in meters.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
 
+## Transient Full-Wave Electromagnetics
+
+### Maxwell Mini Application
+
+#### Mini Application Features
+
+**Dirichlet BC:** Dirichlet boundary conditions... 
+
 ## Transient Magnetics and Joule Heating
 
 ### Joule Mini Application
