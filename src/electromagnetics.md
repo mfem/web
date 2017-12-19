@@ -340,6 +340,8 @@ which creates a safety margin.  By default the actual time step is less than
 95% of the estimate for the largest stable time step.
 
 Note that this application assumes the mesh coordinates are given in meters.
+Internally the code assumes time is in seconds but the command line options
+use nanoseconds for convenience.
 
 #### Mini Application Features
 
