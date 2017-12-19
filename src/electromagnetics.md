@@ -312,7 +312,7 @@ Other formulations are possible such as evolving $\H$ and $\D$ or the
 potentials $\varphi$ and $\A$.  This system of equations can also be
 written as a single second order equation involving only $\E$, $\H$,
 $\varphi$, or $\A$.  Each of these formulations has a different set of
-sources, initials and boundary conditions for which it is well-suited.
+sources, initial and boundary conditions for which it is well-suited.
 The choice we make here is perhaps the most common but it may not be
 the most convenient choice for a given application.
 
