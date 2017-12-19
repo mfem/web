@@ -310,7 +310,7 @@ electric and magnetic fields $\E$ and $\B$ as well as boundary
 conditions related to the tangential components of $\E$ or $\H$.
 Other formulations are possible such as evolving $\H$ and $\D$ or the
 potentials $\varphi$ and $\A$.  This system of equations can also be
-wrtiiten as a single second order equation involving only $\E$, $\H$,
+written as a single second order equation involving only $\E$, $\H$,
 $\varphi$, or $\A$.  Each of these formulations has a different set of
 sources, initials and boundary conditions for which it is well-suited.
 The choice we make here is perhaps the most common but it may not be
@@ -323,9 +323,83 @@ these sources in a single simulation.
 
 ### Maxwell Mini Application
 
+The electrodynamics mini application, named `maxwell` after James Clerk Maxwell who first formulated the classical theory of electromagnetic radiation, is intended to
+demonstrate how to solve transient wave problems in MFEM. Its source
+terms and boundary conditions are simple but they should indicate how more
+specialized sources or boundary conditions could be implemented.
+
+![](img/examples/maxwell-screenshot-small.png)
+
+Time integration is handled by a variable order symplectic time integration
+algorithm.  This algorithm is designed for systems of equations which are
+derived from a Hamiltonian and it helps to ensure energy conservation within
+some tolerance.  The time step used during integration is automatically chosen
+based on the largest stable time step as computed from the largest eigenvalue
+of the update equations.  This determination involves a user-adjustable factor
+which creates a safety margin.  By default the actual time step is less than
+95% of the estimate for the largest stable time step.
+
+Note that this application assumes the mesh coordinates are given in meters.
+
 #### Mini Application Features
 
-**Dirichlet BC:** Dirichlet boundary conditions... 
+**Time Evolution:** The initial and final times for the simulation can be
+  specified, in nanoseconds, with the `-ti` and `-tf` options.  Visualization
+  snapshots of data will be written out after time intervals specified by `-ts`
+  which again given in nanoseconds.  The order of the time integration can be
+  specified, from 1 to 4, using the `-to` option.
+
+**Permittivity:** The permittivity, $\epsilon$, is assumed to be that of free
+  space except for an optional sphere of dielectric material which can be
+  defined by the user. The command line option `-ds` can be used to set the
+  parameters for this dielectric sphere. For example, to produce a sphere at the
+  origin with a radius of 0.5 and a relative permittivity of 3 the user would
+  specify: `-ds '0 0 0 0.5 3'`.
+
+**Permeability:** The permeability, $\mu$, is assumed to be that of free space
+  except for an optional spherical shell of diamagnetic or paramagnetic material
+  which can be defined by the user. The command line option `-ms` can be used to
+  set the parameters for this shell.
+
+  For example, to produce a shell at the origin with inner and outer radii of
+  0.4 and 0.5 respectively and a relative permeability of 3 the user would
+  specify: `-ms '0 0 0 0.4 0.5 3'`.
+
+**Conductivity:** The conductivity, $\sigma$, is assumed to be zero except for
+  an optional sphere of conductive material which can be defined by the user.
+  The command line option `-cs` can be used to set the parameters for this
+  conductive sphere. For example, to produce a sphere at the origin with a
+  radius of 0.5 and a conductivity of 3,000,000 S/m the user would
+  specify: `-cs '0 0 0 0.5 3e6'`.
+
+**Current Density:** The current density, $\J$, is assumed to be zero except for
+  an optional cylinder of pulsed current which can be defined by the user.
+  The command line option for this is `-dp`, short for 'dipole pulse', which
+  requires two points giving the end points of the cylinder's axis, radius,
+  amplitude ($\alpha$), pulse center ($\beta$), and a pulse width ($\gamma$).
+  The time dependence of this pulse is given by:
+  $$\J(t) = \hat{a} \alpha e^{-(t-\beta)^2/(2\gamma^2)}$$
+  Where $\hat{a}$ is the unit vector along the cylinder's axis and both
+  $\beta$ and $\gamma$ are specified in nanoseconds.
+
+**Dirichlet BC:** Homogeneous Dirichlet boundary conditions, which constrain
+  the tangential components of $\frac{\partial\E}{\partial t}$ to be zero,
+  can be activated on a portion of the boundary by specifying a list of
+  boundary attributes such as `-dbcs '4 8'`.  For convenience a boundary
+  attribute of '-1' can be used to specify all boundary surfaces.
+  Non-Homogeneous, time-dependent Dirichlet boundary conditions are supported
+  by the Maxwell solver so a user can edit `maxwell.cpp` and supply their own
+  function if desired.
+
+**Absorbing BC:** A first order Sommerfeld absorbing boundary condition can be
+  applied to a portion of the boundary using the `-abcs` option along with a
+  list of boundary attributes such as `-abcs '4 18'`.  Again, the special
+  purpose boundary attribute '-1' can be used to specify all boundary surfaces.
+  This boundary condition depends on a coefficient,
+  $\eta^{-1}=\sqrt{\epsilon/\mu}$, which must be matched to the materials just
+  inside the boundary.  The code assumes that the permittivity and permeability
+  are those of the vacuum near the surface but, if this is not the case, an
+  ambitious user can replace `etaInvCoef_` with a more appropriate function.
 
 ## Transient Magnetics and Joule Heating
 
