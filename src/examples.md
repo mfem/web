@@ -561,16 +561,18 @@ The conservative hydrodynamic flux ${\bf F}$ in each direction $i$ is
 
 $${\bf F_{\it i}} = \[ \rho v_i, \rho v_0 v_i + p \delta_{i,0}, \rho v_1 v_i + p \delta_{i,1}, \rho v_i H \]$$
 
-Specifically, the example solves for an exact solution of the equations whereby a vortex
-is transported by a uniform flow. Since all boundaries are periodic here, the
-method's accuracy can be assessed by measuring the difference between the
-solution and the initial condition at a later time when the vortex returns to
-its initial location.
+Specifically, the example solves for an exact solution of the equations whereby
+a vortex is transported by a uniform flow. Since all boundaries are periodic
+here, the method's accuracy can be assessed by measuring the difference between
+the solution and the initial condition at a later time when the vortex returns
+to its initial location.
 
-Note that as the order of the spatial discretization increases, the timestep
-must become smaller. This example currently uses a simple estimate derived by
-Cockburn and Shu for the 1D RKDG method. An additional factor can be tuned by
-passing the `--cfl` (or `-c` shorter) flag.
+Note that as the order of the spatial discretization increases, the
+timestep must become smaller. This example currently uses a simple
+estimate derived by [Cockburn and
+Shu](https://link.springer.com/article/10.1023/A:1012873910884) for
+the 1D RKDG method. An additional factor can be tuned by passing the
+`--cfl` (or `-c` shorter) flag.
 
 The example demonstrates user-defined bilinear and nonlinear form integrators
 for systems of equations that are defined with block vectors, and how these are
