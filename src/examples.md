@@ -637,7 +637,7 @@ moving to the miniapps.**_
 
 <div id="maxwell" markdown="1">
 ##Maxwell Miniapp: Transient Full-Wave Electromagnetics
-<img class="floatright" src="../img/examples/maxwell.png" >
+<img class="floatright" src="../img/examples/maxwell.gif" height=234 width=454>
 
 This miniapp solves the equations of transient full-wave
 electromagnetics.
