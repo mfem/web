@@ -157,6 +157,15 @@ MFEM consists of the following closely interconnected modules:
 * Has pure virtual method `void Step(Vector &x, double &t, double &dt)`.
 * Derived classes for explicit Runge-Kutta and implicit (SDIRK) methods.
 
+### Symplectic Integrators for Hamiltonian Systems
+
+* Abstract base class 'SIASolver'.
+* Has virtual method `void Init(Operator &, TimeDependentOperator &)`.
+* Has pure virtual method `void Step(Vector &q, Vector &p, double &t, double &dt)`.
+* Derived classes for explicit first and second order integrators.
+* Dervied class supporting integration orders from 1 to 4.
+
+
 ### Constraint operator
 
 * Class `ConstrainedOperator`, inherits from `Operator`.
