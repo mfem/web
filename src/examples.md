@@ -639,8 +639,7 @@ moving to the miniapps.**_
 ##Maxwell Miniapp: Transient Full-Wave Electromagnetics
 <img class="floatright" src="../img/examples/maxwell.gif" height=234 width=454>
 
-This miniapp solves the equations of transient full-wave
-electromagnetics.
+This miniapp solves the equations of transient full-wave electromagnetics.
 
 Its features include:
 
@@ -963,7 +962,7 @@ function update(id)
    showElement("ex18", hydro && l2 && dg && (rk));
 
    // Electromagnetic miniapps
-   numExamples += 3; // update when adding miniapps!
+   numExamples += 4; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
    showElement("maxwell", (maxwell || conduction) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
