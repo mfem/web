@@ -163,7 +163,7 @@ MFEM consists of the following closely interconnected modules:
 * Has virtual method `void Init(Operator &, TimeDependentOperator &)`.
 * Has pure virtual method `void Step(Vector &q, Vector &p, double &t, double &dt)`.
 * Derived classes for explicit first and second order integrators.
-* Dervied class supporting integration orders from 1 to 4.
+* Derived class supporting integration orders from 1 to 4.
 
 
 ### Constraint operator
