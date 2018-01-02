@@ -549,7 +549,7 @@ We recommend viewing examples 2 and 14 before viewing this example._
 This example code solves the compressible Euler system of equations, a model
 nonlinear hyperbolic PDE, with a discontinuous Galerkin (DG) formulation. The
 primary purpose is to show how a transient system of nonlinear equations can be
-formulated in MFEM. It solves this in conservation form
+formulated in MFEM. The equations are solved in conservative form
 
 $$\frac{\partial u}{\partial t} + \nabla \cdot {\bf F}(u) = 0$$
 
