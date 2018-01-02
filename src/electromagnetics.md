@@ -328,7 +328,8 @@ demonstrate how to solve transient wave problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
 specialized sources or boundary conditions could be implemented.
 
-![](img/examples/maxwell.gif)
+![](img/examples/maxwell.png)
+[[animated gif]](img/examples/maxwell.gif)
 
 Time integration is handled by a variable order symplectic time integration
 algorithm.  This algorithm is designed for systems of equations which are
