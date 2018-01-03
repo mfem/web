@@ -329,8 +329,9 @@ intended to demonstrate how to solve transient wave problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
 specialized sources or boundary conditions could be implemented.
 
-![](img/examples/maxwell.png)
-[[animated gif]](img/examples/maxwell.gif)
+An example simulation is depicted below (click to animate the wave propagation).
+
+[![](img/examples/maxwell.png)](http://mfem.org/img/examples/maxwell.gif)
 
 Time integration is handled by a variable order symplectic time integration
 algorithm.  This algorithm is designed for systems of equations which are
@@ -451,7 +452,7 @@ integer attribute to the floating-point material value.
 
 Note that this application assumes the mesh coordinates are given in meters.
 
-![](img/examples/joule-screenshot.png)
+[![](img/examples/joule.png)](img/examples/joule-screenshot.png)
 
 The above picture shows Joule heating of a cylinder using the mesh `cylinder-hex.mesh`. The cylinder is
 surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat
