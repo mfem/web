@@ -587,6 +587,54 @@ We recommend viewing examples 9, 14 and 17 before viewing this example._
 <br></div>
 
 
+<div id="ex19" markdown="1">
+##Example 19: Incompressible Nonlinear Elasticity
+<img class="floatright" src="../img/examples/ex19.png">
+
+This example code solves the quasi-static incompressible nonlinear
+hyperelasticity equations. Specifically, it solves the nonlinear equation
+$$ 
+\nabla \cdot \sigma(F) = 0
+$$
+subject to the constraint
+$$
+\text{det } F = 1
+$$
+where $\sigma$ is the Cauchy stress and $F_{ij} = \delta_{ij} + u_{i,j}$ is the deformation
+gradient. To handle the incompressibility constraint, pressure is included as
+an independent unknown $p$ and the stress response is modeled as an [incompressible
+neo-Hookean hyperelastic solid](http://solidmechanics.org/text/Chapter3_5/Chapter3_5.htm).
+
+This formulation requires solving the saddle point system
+$$ \left[ \begin{array}{cc}
+   K &B^T \\\\
+   B & 0
+\end{array} \right]
+\left[\begin{array}{c} \Delta u \\\\ \Delta p \end{array} \right] =
+\left[\begin{array}{c} R_u \\\\ R_p \end{array} \right]
+$$
+at each Newton step. To solve this linear system, we implement a specialized block
+preconditioner of the form
+$$
+P^{-1} = 
+\left[\begin{array}{cc} I & -\tilde{K}^{-1}B^T \\\\ 0 & I \end{array} \right]
+\left[\begin{array}{cc} \tilde{K}^{-1} & 0 \\\\ 0 & -\gamma \tilde{S}^{-1} \end{array} \right]
+$$
+where $\tilde{K}^{-1}$ is an approximation of the inverse of the stiffness matrix $K$ and
+$\tilde{S}^{-1}$ is an approximation of the inverse of the Schur complement $S = BK^{-1}B^T$.
+To approxmitate the Schur complement, we use the mass matrix for the pressure variable $p$.
+
+The example demonstrates how to solve nonlinear systems of equations that are defined with
+block vectors as well as how to implement specialized block preconditioners for use in
+iterative solvers.
+
+_The example has a serial ([ex19.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19.cpp))
+and a parallel ([ex19p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19p.cpp)) version.
+We recommend viewing examples 2, 5 and 10 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -936,6 +984,7 @@ function update(id)
    showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
+   showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
 
    // Electromagnetic miniapps
    numExamples += 3; // update when adding miniapps!
