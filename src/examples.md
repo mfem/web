@@ -593,7 +593,7 @@ We recommend viewing examples 9, 14 and 17 before viewing this example._
 
 This example code solves the quasi-static incompressible nonlinear
 hyperelasticity equations. Specifically, it solves the nonlinear equation
-$$ 
+$$
 \nabla \cdot \sigma(F) = 0
 $$
 subject to the constraint
@@ -616,13 +616,13 @@ $$
 at each Newton step. To solve this linear system, we implement a specialized block
 preconditioner of the form
 $$
-P^{-1} = 
+P^{-1} =
 \left[\begin{array}{cc} I & -\tilde{K}^{-1}B^T \\\\ 0 & I \end{array} \right]
 \left[\begin{array}{cc} \tilde{K}^{-1} & 0 \\\\ 0 & -\gamma \tilde{S}^{-1} \end{array} \right]
 $$
 where $\tilde{K}^{-1}$ is an approximation of the inverse of the stiffness matrix $K$ and
 $\tilde{S}^{-1}$ is an approximation of the inverse of the Schur complement $S = BK^{-1}B^T$.
-To approxmitate the Schur complement, we use the mass matrix for the pressure variable $p$.
+To approximate the Schur complement, we use the mass matrix for the pressure variable $p$.
 
 The example demonstrates how to solve nonlinear systems of equations that are defined with
 block vectors as well as how to implement specialized block preconditioners for use in
@@ -965,7 +965,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 18; // update when adding examples!
+   var numExamples = 19; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
