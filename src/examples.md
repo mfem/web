@@ -604,6 +604,9 @@ where $\sigma$ is the Cauchy stress and $F_{ij} = \delta_{ij} + u_{i,j}$ is the 
 gradient. To handle the incompressibility constraint, pressure is included as
 an independent unknown $p$ and the stress response is modeled as an [incompressible
 neo-Hookean hyperelastic solid](http://solidmechanics.org/text/Chapter3_5/Chapter3_5.htm).
+The geometry of the domain is assumed to be as follows:
+
+![](img/examples/ex19-domain.png)
 
 This formulation requires solving the saddle point system
 $$ \left[ \begin{array}{cc}
