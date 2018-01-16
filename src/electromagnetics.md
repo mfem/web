@@ -54,8 +54,8 @@ Generally we also need constitutive relations between $\E$ and $\D$ and/or
 between $\H$ and $\B$. These relations start with the definitions:
 
   $$\begin{align}
-    \D & = \epsilon_0\E + \P   \\\\
-    \B & = \mu_0(\H + \M)
+    \D & = \epsilon_0\E + \P \label{const_d}  \\\\
+    \B & = \mu_0(\H + \M)    \label{const_b}
   \end{align}$$
 
 Where $\P$ is the *polarization density*, and $\M$ is the *magnetization*.
@@ -286,6 +286,125 @@ Note that this application assumes the mesh coordinates are given in meters.
   This is accomplished with the `-ubbc` command line option followed by the
   desired $\B$ vector.
 
+## Transient Full-Wave Electromagnetics
+
+Transient electromagnetics problems are governed by the time-dependent
+Maxwell equations \eqref{ampere} and \eqref{faraday} when combined
+using the constitutive relations \eqref{const_d} and \eqref{const_b}.
+When combined these equations can describe the evolution and
+propagation of electromagnetic waves.
+
+  $$\begin{align}
+    \dd{(\epsilon\E)}{t} & =   \curl(\mu^{-1}\B) - \sigma \E - \J  \\\\
+    \dd{\B}{t}           & = - \curl\E
+  \end{align}$$
+
+The term $\sigma\E$ arises in the presence of electrically conductive
+materials where the electric field induces a current which can be
+separated from $\J$.  In such cases the total current appearing in
+Ampére's Law \eqref{ampere} can be expressed as the sum of an applied
+current (also labeled as $\J$) and an induced current $\sigma\E$.
+
+Solving these equations requires initial conditions for both the
+electric and magnetic fields $\E$ and $\B$ as well as boundary
+conditions related to the tangential components of $\E$ or $\H$.
+Other formulations are possible such as evolving $\H$ and $\D$ or the
+potentials $\varphi$ and $\A$.  This system of equations can also be
+written as a single second order equation involving only $\E$, $\H$,
+$\varphi$, or $\A$.  Each of these formulations has a different set of
+sources, initial and boundary conditions for which it is well-suited.
+The choice we make here is perhaps the most common but it may not be
+the most convenient choice for a given application.
+
+These equations can be used to evolve their initial conditions or they
+can be driven by either a current source or through time-varying
+boundary conditions.  It is also possible to combine all three of
+these sources in a single simulation.
+
+### Maxwell Mini Application
+
+The electrodynamics mini application, named `maxwell` after James Clerk Maxwell
+who first formulated the classical theory of electromagnetic radiation, is
+intended to demonstrate how to solve transient wave problems in MFEM. Its source
+terms and boundary conditions are simple but they should indicate how more
+specialized sources or boundary conditions could be implemented.
+
+An example simulation is depicted below (click to animate the wave propagation).
+
+[![](img/examples/maxwell.png)](http://mfem.org/img/examples/maxwell.gif)
+
+Time integration is handled by a variable order symplectic time integration
+algorithm.  This algorithm is designed for systems of equations which are
+derived from a Hamiltonian and it helps to ensure energy conservation within
+some tolerance.  The time step used during integration is automatically chosen
+based on the largest stable time step as computed from the largest eigenvalue of
+the update equations.  This determination involves a user-adjustable factor
+which creates a safety margin.  By default the actual time step is less than 95%
+of the estimate for the largest stable time step.
+
+Note that this application assumes the mesh coordinates are given in meters.
+Internally the code assumes time is in seconds but the command line options use
+nanoseconds for convenience.
+
+#### Mini Application Features
+
+**Time Evolution:** The initial and final times for the simulation can be
+  specified, in nanoseconds, with the `-ti` and `-tf` options.  Visualization
+  snapshots of data will be written out after time intervals specified by `-ts`
+  which again given in nanoseconds.  The order of the time integration can be
+  specified, from 1 to 4, using the `-to` option.
+
+**Permittivity:** The permittivity, $\epsilon$, is assumed to be that of free
+  space except for an optional sphere of dielectric material which can be
+  defined by the user. The command line option `-ds` can be used to set the
+  parameters for this dielectric sphere. For example, to produce a sphere at the
+  origin with a radius of 0.5 and a relative permittivity of 3 the user would
+  specify: `-ds '0 0 0 0.5 3'`.
+
+**Permeability:** The permeability, $\mu$, is assumed to be that of free space
+  except for an optional spherical shell of diamagnetic or paramagnetic material
+  which can be defined by the user. The command line option `-ms` can be used to
+  set the parameters for this shell.
+
+  For example, to produce a shell at the origin with inner and outer radii of
+  0.4 and 0.5 respectively and a relative permeability of 3 the user would
+  specify: `-ms '0 0 0 0.4 0.5 3'`.
+
+**Conductivity:** The conductivity, $\sigma$, is assumed to be zero except for
+  an optional sphere of conductive material which can be defined by the user.
+  The command line option `-cs` can be used to set the parameters for this
+  conductive sphere. For example, to produce a sphere at the origin with a
+  radius of 0.5 and a conductivity of 3,000,000 S/m the user would specify: `-cs
+  '0 0 0 0.5 3e6'`.
+
+**Current Density:** The current density, $\J$, is assumed to be zero except for
+  an optional cylinder of pulsed current which can be defined by the user.  The
+  command line option for this is `-dp`, short for 'dipole pulse', which
+  requires two points giving the end points of the cylinder's axis, radius,
+  amplitude ($\alpha$), pulse center ($\beta$), and a pulse width ($\gamma$).
+  The time dependence of this pulse is given by: $$\J(t) = \hat{a} \alpha
+  e^{-(t-\beta)^2/(2\gamma^2)}$$ Where $\hat{a}$ is the unit vector along the
+  cylinder's axis and both $\beta$ and $\gamma$ are specified in nanoseconds.
+
+**Dirichlet BC:** Homogeneous Dirichlet boundary conditions, which constrain the
+  tangential components of $\frac{\partial\E}{\partial t}$ to be zero, can be
+  activated on a portion of the boundary by specifying a list of boundary
+  attributes such as `-dbcs '4 8'`.  For convenience a boundary attribute of
+  '-1' can be used to specify all boundary surfaces.  Non-Homogeneous,
+  time-dependent Dirichlet boundary conditions are supported by the Maxwell
+  solver so a user can edit `maxwell.cpp` and supply their own function if
+  desired.
+
+**Absorbing BC:** A first order Sommerfeld absorbing boundary condition can be
+  applied to a portion of the boundary using the `-abcs` option along with a
+  list of boundary attributes such as `-abcs '4 18'`.  Again, the special
+  purpose boundary attribute '-1' can be used to specify all boundary surfaces.
+  This boundary condition depends on a coefficient,
+  $\eta^{-1}=\sqrt{\epsilon/\mu}$, which must be matched to the materials just
+  inside the boundary.  The code assumes that the permittivity and permeability
+  are those of the vacuum near the surface but, if this is not the case, an
+  ambitious user can replace `etaInvCoef_` with a more appropriate function.
+
 ## Transient Magnetics and Joule Heating
 
 ### Joule Mini Application
@@ -333,7 +452,7 @@ integer attribute to the floating-point material value.
 
 Note that this application assumes the mesh coordinates are given in meters.
 
-![](img/examples/joule-screenshot.png)
+[![](img/examples/joule.png)](img/examples/joule-screenshot.png)
 
 The above picture shows Joule heating of a cylinder using the mesh `cylinder-hex.mesh`. The cylinder is
 surrounded by vacuum. The black arrows show the magnetic field $\B$, the magenta arrows show the heat

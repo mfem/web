@@ -84,6 +84,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
+   <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
    <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
@@ -694,6 +695,38 @@ moving to the miniapps.**_
 <br></div>
 
 
+<div id="maxwell" markdown="1">
+##Maxwell Miniapp: Transient Full-Wave Electromagnetics
+<img class="floatright" src="../img/examples/maxwell.png">
+
+This miniapp solves the equations of transient full-wave electromagnetics.
+
+Its features include:
+
+- mixed formulation of the coupled first-order Maxwell equations
+- $H(\\mathrm{curl})$ discretization of the electric field
+- $H(\\mathrm{div})$ discretization of the magnetic flux
+- energy conserving, variable order, implicit time integration
+- dielectric materials
+- diamagnetic and/or paramagnetic materials
+- conductive materials
+- volumetric current densities
+- Sommerfeld absorbing boundary conditions
+- high order meshes
+- high order basis functions
+- advanced visualization
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([maxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/maxwell.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="joule" markdown="1">
 ##Joule Miniapp: Transient Magnetics and Joule Heating
 <img class="floatright" src="../img/examples/joule.png" >
@@ -960,7 +993,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -990,9 +1023,10 @@ function update(id)
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
 
    // Electromagnetic miniapps
-   numExamples += 3; // update when adding miniapps!
+   numExamples += 4; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+   showElement("maxwell", (maxwell || conduction) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
