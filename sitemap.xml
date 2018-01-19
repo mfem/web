@@ -3,24 +3,24 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/features/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/features/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/examples/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/examples/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,98 +28,98 @@
     
         
     <url>
-     <loc>None/news/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/news/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/building/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/building/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/serial-tutorial/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/serial-tutorial/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/parallel-tutorial/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/parallel-tutorial/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/fem/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/fem/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/bilininteg/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/bilininteg/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/lininteg/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/lininteg/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/lininterp/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/lininterp/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/electromagnetics/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/electromagnetics/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/meshing/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/meshing/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/mesh-formats/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/mesh-formats/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/mesh-format-v1.x/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/mesh-format-v1.x/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/performance/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/performance/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/code-overview/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/code-overview/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/publications/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/publications/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/about/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/about/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -127,16 +127,16 @@
 
     
     <url>
-     <loc>None/gallery/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/gallery/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/download/</loc>
-     <lastmod>2018-01-02</lastmod>
+     <loc>/download/</loc>
+     <lastmod>2018-01-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
