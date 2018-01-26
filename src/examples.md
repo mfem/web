@@ -547,34 +547,94 @@ We recommend viewing examples 2 and 14 before viewing this example._
 ##Example 18: DG Euler Equations
 <img class="floatright" src="../img/examples/ex18.png">
 
-This example code solves the compressible Euler system of
-equations, a model nonlinear hyperbolic PDE, with a
-discontinuous Galerkin (DG) formulation.
+This example code solves the compressible Euler system of equations, a model
+nonlinear hyperbolic PDE, with a discontinuous Galerkin (DG) formulation. The
+primary purpose is to show how a transient system of nonlinear equations can be
+formulated in MFEM. The equations are solved in conservative form
 
-Specifically, it solves for an exact solution of the equations
-whereby a vortex is transported by a uniform flow. Since all
-boundaries are periodic here, the method's accuracy can be
-assessed by measuring the difference between the solution and
-the initial condition at a later time when the vortex returns to
-its initial location.
+$$\frac{\partial u}{\partial t} + \nabla \cdot {\bf F}(u) = 0$$
 
-Note that as the order of the spatial discretization increases,
-the timestep must become smaller. This example currently uses a
-simple estimate derived by Cockburn and Shu for the 1D RKDG
-method. An additional factor can be tuned by passing the
-`--cfl` (or `-c` shorter) flag.
+with a state vector $u = [ \rho, \rho v_0, \rho v_1, \rho E ]$, where $\rho$ is
+the density, $v_i$ is the velocity in the $i^{\rm th}$ direction, $E$ is the
+total specific energy, and $H = E + p / \rho$ is the total specific enthalpy.
+The pressure, $p$ is computed through a simple equation of state (EOS) call.
+The conservative hydrodynamic flux ${\bf F}$ in each direction $i$ is
 
-The example demonstrates user-defined bilinear and nonlinear
-form integrators for systems of equations that are defined with
-block vectors, and how these are used with an operator for
-explicit time integrators. In this case the system also
-involves an external approximate Riemann solver for the DG
-interface flux. It also demonstrates how to use GLVis for
-in-situ visualization of vector grid functions.
+$${\bf F_{\it i}} = \[ \rho v_i, \rho v_0 v_i + p \delta_{i,0}, \rho v_1 v_i + p \delta_{i,1}, \rho v_i H \]$$
+
+Specifically, the example solves for an exact solution of the equations whereby
+a vortex is transported by a uniform flow. Since all boundaries are periodic
+here, the method's accuracy can be assessed by measuring the difference between
+the solution and the initial condition at a later time when the vortex returns
+to its initial location.
+
+Note that as the order of the spatial discretization increases, the timestep
+must become smaller. This example currently uses a simple estimate derived by
+[Cockburn and Shu](https://link.springer.com/article/10.1023/A:1012873910884)
+for the 1D RKDG method. An additional factor can be tuned by passing the `--cfl`
+(or `-c` shorter) flag.
+
+The example demonstrates user-defined bilinear and nonlinear form integrators
+for systems of equations that are defined with block vectors, and how these are
+used with an operator for explicit time integrators. In this case the system
+also involves an external approximate Riemann solver for the DG interface flux.
+It also demonstrates how to use GLVis for in-situ visualization of vector grid
+functions.
 
 _The example has a serial ([ex18.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18.cpp))
 and a parallel ([ex18p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp)) version.
 We recommend viewing examples 9, 14 and 17 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex19" markdown="1">
+##Example 19: Incompressible Nonlinear Elasticity
+<img class="floatright" src="../img/examples/ex19.png">
+
+This example code solves the quasi-static incompressible nonlinear
+hyperelasticity equations. Specifically, it solves the nonlinear equation
+$$
+\nabla \cdot \sigma(F) = 0
+$$
+subject to the constraint
+$$
+\text{det } F = 1
+$$
+where $\sigma$ is the Cauchy stress and $F_{ij} = \delta_{ij} + u_{i,j}$ is the deformation
+gradient. To handle the incompressibility constraint, pressure is included as
+an independent unknown $p$ and the stress response is modeled as an [incompressible
+neo-Hookean hyperelastic solid](http://solidmechanics.org/text/Chapter3_5/Chapter3_5.htm).
+The geometry of the domain is assumed to be as follows:
+
+![](img/examples/ex19-domain.png)
+
+This formulation requires solving the saddle point system
+$$ \left[ \begin{array}{cc}
+   K &B^T \\\\
+   B & 0
+\end{array} \right]
+\left[\begin{array}{c} \Delta u \\\\ \Delta p \end{array} \right] =
+\left[\begin{array}{c} R_u \\\\ R_p \end{array} \right]
+$$
+at each Newton step. To solve this linear system, we implement a specialized block
+preconditioner of the form
+$$
+P^{-1} =
+\left[\begin{array}{cc} I & -\tilde{K}^{-1}B^T \\\\ 0 & I \end{array} \right]
+\left[\begin{array}{cc} \tilde{K}^{-1} & 0 \\\\ 0 & -\gamma \tilde{S}^{-1} \end{array} \right]
+$$
+where $\tilde{K}^{-1}$ is an approximation of the inverse of the stiffness matrix $K$ and
+$\tilde{S}^{-1}$ is an approximation of the inverse of the Schur complement $S = BK^{-1}B^T$.
+To approximate the Schur complement, we use the mass matrix for the pressure variable $p$.
+
+The example demonstrates how to solve nonlinear systems of equations that are defined with
+block vectors as well as how to implement specialized block preconditioners for use in
+iterative solvers.
+
+_The example has a serial ([ex19.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19.cpp))
+and a parallel ([ex19p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19p.cpp)) version.
+We recommend viewing examples 2, 5 and 10 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -941,7 +1001,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 18; // update when adding examples!
+   var numExamples = 19; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -960,6 +1020,7 @@ function update(id)
    showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
+   showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
