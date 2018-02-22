@@ -5,8 +5,9 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 Please cite with:
 ```c
 @misc{mfem-library,
-  title={{MFEM}: Modular finite element methods},
-  howpublished={\url{mfem.org}}
+  title = {{MFEM}: Modular Finite Element Methods Library},
+  howpublished = {\url{mfem.org}},
+  doi = {10.11578/dc.20171025.1248}
 }
 ```
 
@@ -64,6 +65,7 @@ This work performed under the auspices of the U.S. Department of Energy
 by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
 
 Software release number: LLNL-CODE-443211.
+DOI: [10.11578/dc.20171025.1248](https://www.osti.gov/doecode/biblio/1687).
 
 ----
 
