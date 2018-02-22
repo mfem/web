@@ -65,6 +65,7 @@ This work performed under the auspices of the U.S. Department of Energy
 by Lawrence Livermore Laboratory under Contract DE-AC52-07NA27344.
 
 Software release number: LLNL-CODE-443211.
+
 DOI: [10.11578/dc.20171025.1248](https://www.osti.gov/doecode/biblio/1687).
 
 ----
