@@ -5,6 +5,13 @@ together with GLVis. For more details, see the
 [INSTALL](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL) file and
 `make help`.
 
+In addition to the native build system described below, MFEM packages are
+also available in the following package managers:
+
+- [Spack](https://github.com/LLNL/spack)
+- [OpenHPC](http://openhpc.community/downloads)
+- [Homebrew/Science](https://github.com/Homebrew/homebrew-science)
+
 ## Instructions
 
 Download MFEM and GLVis
