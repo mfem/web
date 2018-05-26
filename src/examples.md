@@ -116,7 +116,8 @@ _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/ex
 a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)),
 and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp),
 [performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi)._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -148,7 +149,8 @@ also illustrated.
 
 _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp))
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -252,7 +254,8 @@ visualization are also illustrated.
 
 _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>

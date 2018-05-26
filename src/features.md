@@ -41,6 +41,8 @@ MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/
  - topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes,
  - 1D meshes.
 
+Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the [PUMI](https://scorec.rpi.edu/pumi) distributed mesh management system.
+
 ## Parallel and Scalable
 
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
@@ -98,7 +100,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
-Many of the examples also have modifications that take advantage of optional third-party libraries such as the [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html) and [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html) suites.
+Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html) and [PUMI](http://mfem.github.io/doxygen/html/pumi_8hpp.html).
 
 Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
 
