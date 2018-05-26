@@ -2,7 +2,10 @@
 
 &nbsp;       |
 ------------ | -----------------------------------------------------------------
-Dec 30, 2017 | Initial version of [libCEED](https://github.com/CEED/libCEED) the low-level CEED API released.
+Apr 2, 2018  | MFEM is now officially part of [OpenHPC](http://openhpc.community/), a Linux Foundation project to provide software components required to deploy and manage HPC Linux clusters, including a variety of [scientific libraries](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA).
+Mar 30, 2018 | CEED v1.0 and libCEED v0.2 [released](http://ceed.exascaleproject.org/news/#software-release-ceed-10) with MFEM support.
+Mar 1, 2018  | MFEM highlighted in LLNL's [Science & Technology Review](https://str.llnl.gov/2018-01/lee) magazine, including on the [cover](https://str.llnl.gov/content/pages/2018-01/pdf/01.18.pdf).
+Dec 30, 2017 | Initial version of [libCEED](https://github.com/CEED/libCEED), the low-level CEED API, released.
 Nov 10, 2017 | Version 3.3.2 [released](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG).
 Nov 7, 2017  | ECP article: [Co-Design Center Develops Next-Generation Simulation Tools](https://www.exascaleproject.org/co-design-center-develops-next-generation-simulation-libraries-and-mini-apps/), also in [HPCwire](https://www.hpcwire.com/2017/11/08/co-design-center-develops-next-generation-simulation-tools/)
 Oct 30, 2017 | Laghos part of the [ECP Proxy App Suite 1.0](https://exascaleproject.github.io/proxy-apps/ecp-apps/), [CORAL-2 Benchmarks](https://asc.llnl.gov/coral-2-benchmarks/) and [ASC co-design miniapps](https://codesign.llnl.gov/laghos.php).
