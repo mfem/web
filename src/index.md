@@ -54,7 +54,7 @@ Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2
 
 ## Latest Release
 
-[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)

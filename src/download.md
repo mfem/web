@@ -1,6 +1,6 @@
 ## Latest Release
 
-[New features](https://raw.githubusercontent.com/mfem/mfem/master/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG)
 ┊ [Example codes](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
