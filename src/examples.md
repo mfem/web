@@ -84,6 +84,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
+   <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
    <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
@@ -115,7 +116,8 @@ _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/ex
 a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)),
 and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp),
 [performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi)._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -147,7 +149,8 @@ also illustrated.
 
 _The example has a serial ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp))
 and a parallel ([ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -251,7 +254,8 @@ visualization are also illustrated.
 
 _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -587,6 +591,57 @@ We recommend viewing examples 9, 14 and 17 before viewing this example._
 <br></div>
 
 
+<div id="ex19" markdown="1">
+##Example 19: Incompressible Nonlinear Elasticity
+<img class="floatright" src="../img/examples/ex19.png">
+
+This example code solves the quasi-static incompressible nonlinear
+hyperelasticity equations. Specifically, it solves the nonlinear equation
+$$
+\nabla \cdot \sigma(F) = 0
+$$
+subject to the constraint
+$$
+\text{det } F = 1
+$$
+where $\sigma$ is the Cauchy stress and $F_{ij} = \delta_{ij} + u_{i,j}$ is the deformation
+gradient. To handle the incompressibility constraint, pressure is included as
+an independent unknown $p$ and the stress response is modeled as an [incompressible
+neo-Hookean hyperelastic solid](http://solidmechanics.org/text/Chapter3_5/Chapter3_5.htm).
+The geometry of the domain is assumed to be as follows:
+
+![](img/examples/ex19-domain.png)
+
+This formulation requires solving the saddle point system
+$$ \left[ \begin{array}{cc}
+   K &B^T \\\\
+   B & 0
+\end{array} \right]
+\left[\begin{array}{c} \Delta u \\\\ \Delta p \end{array} \right] =
+\left[\begin{array}{c} R_u \\\\ R_p \end{array} \right]
+$$
+at each Newton step. To solve this linear system, we implement a specialized block
+preconditioner of the form
+$$
+P^{-1} =
+\left[\begin{array}{cc} I & -\tilde{K}^{-1}B^T \\\\ 0 & I \end{array} \right]
+\left[\begin{array}{cc} \tilde{K}^{-1} & 0 \\\\ 0 & -\gamma \tilde{S}^{-1} \end{array} \right]
+$$
+where $\tilde{K}^{-1}$ is an approximation of the inverse of the stiffness matrix $K$ and
+$\tilde{S}^{-1}$ is an approximation of the inverse of the Schur complement $S = BK^{-1}B^T$.
+To approximate the Schur complement, we use the mass matrix for the pressure variable $p$.
+
+The example demonstrates how to solve nonlinear systems of equations that are defined with
+block vectors as well as how to implement specialized block preconditioners for use in
+iterative solvers.
+
+_The example has a serial ([ex19.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19.cpp))
+and a parallel ([ex19p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex19p.cpp)) version.
+We recommend viewing examples 2, 5 and 10 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -637,6 +692,38 @@ For more details, please see the [documentation](electromagnetics.md) in the
 
 _The miniapp has only a parallel
 ([tesla.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="maxwell" markdown="1">
+##Maxwell Miniapp: Transient Full-Wave Electromagnetics
+<img class="floatright" src="../img/examples/maxwell.png">
+
+This miniapp solves the equations of transient full-wave electromagnetics.
+
+Its features include:
+
+- mixed formulation of the coupled first-order Maxwell equations
+- $H(\\mathrm{curl})$ discretization of the electric field
+- $H(\\mathrm{div})$ discretization of the magnetic flux
+- energy conserving, variable order, implicit time integration
+- dielectric materials
+- diamagnetic and/or paramagnetic materials
+- conductive materials
+- volumetric current densities
+- Sommerfeld absorbing boundary conditions
+- high order meshes
+- high order basis functions
+- advanced visualization
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([maxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/maxwell.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
@@ -909,7 +996,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "lobpcg", "sundials", "petsc"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -917,7 +1004,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 18; // update when adding examples!
+   var numExamples = 19; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -936,11 +1023,13 @@ function update(id)
    showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
+   showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
 
    // Electromagnetic miniapps
-   numExamples += 3; // update when adding miniapps!
+   numExamples += 4; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
+   showElement("maxwell", (maxwell || conduction) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
