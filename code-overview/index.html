@@ -371,6 +371,14 @@
 <li>Has pure virtual method <code>void Step(Vector &amp;x, double &amp;t, double &amp;dt)</code>.</li>
 <li>Derived classes for explicit Runge-Kutta and implicit (SDIRK) methods.</li>
 </ul>
+<h3 id="symplectic-integrators-for-hamiltonian-systems">Symplectic Integrators for Hamiltonian Systems</h3>
+<ul>
+<li>Abstract base class 'SIASolver'.</li>
+<li>Has virtual method <code>void Init(Operator &amp;, TimeDependentOperator &amp;)</code>.</li>
+<li>Has pure virtual method <code>void Step(Vector &amp;q, Vector &amp;p, double &amp;t, double &amp;dt)</code>.</li>
+<li>Derived classes for explicit first and second order integrators.</li>
+<li>Derived class supporting integration orders from 1 to 4.</li>
+</ul>
 <h3 id="constraint-operator">Constraint operator</h3>
 <ul>
 <li>Class <code>ConstrainedOperator</code>, inherits from <code>Operator</code>.</li>

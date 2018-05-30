@@ -261,6 +261,7 @@
 <li>topologically <a href="https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh">periodic</a> meshes,</li>
 <li>1D meshes.</li>
 </ul>
+<p>Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the <a href="https://scorec.rpi.edu/pumi">PUMI</a> distributed mesh management system.</p>
 <h2 id="parallel-and-scalable">Parallel and Scalable</h2>
 <p>MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.</p>
 <ul>
@@ -307,14 +308,16 @@
 <li><a href="http://mfem.github.io/doxygen/html/ex15_8cpp_source.html">Example 15</a>: dynamic AMR for Laplace with prescribed time-dependent source,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex16_8cpp_source.html">Example 16</a>: time-dependent nonlinear heat equation,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex17_8cpp_source.html">Example 17</a>: Discontinuous Galerkin (DG) for linear elasticity,</li>
-<li><a href="http://mfem.github.io/doxygen/html/ex18_8cpp_source.html">Example 18</a>: Discontinuous Galerkin (DG) for the Euler equations.</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex18_8cpp_source.html">Example 18</a>: Discontinuous Galerkin (DG) for the Euler equations,</li>
+<li><a href="http://mfem.github.io/doxygen/html/ex19_8cpp_source.html">Example 19</a>: incompressible nonlinear elasticity.</li>
 </ul>
 <p>Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
-<p>Many of the examples also have modifications that take advantage of optional third-party libraries such as the <a href="http://mfem.github.io/doxygen/html/petsc_8hpp.html">PETSc</a> and <a href="http://mfem.github.io/doxygen/html/sundials_8hpp.html">SUNDIALS</a> suites.</p>
+<p>Many of the examples also have modifications that take advantage of optional third-party libraries such as <a href="http://mfem.github.io/doxygen/html/petsc_8hpp.html">PETSc</a>, <a href="http://mfem.github.io/doxygen/html/sundials_8hpp.html">SUNDIALS</a> and <a href="http://mfem.github.io/doxygen/html/pumi_8hpp.html">PUMI</a>.</p>
 <p>Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:</p>
 <ul>
 <li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Volta</a>: simple electrostatics simulation code,</li>
-<li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Tesla</a>: simple magnetostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/tesla_8cpp_source.html">Tesla</a>: simple magnetostatics simulation code,</li>
+<li><a href="http://mfem.github.io/doxygen/html/maxwell_8cpp_source.html">Maxwell</a>: transient electromagnetics simulation code,</li>
 <li><a href="http://mfem.github.io/doxygen/html/joule_8cpp_source.html">Joule</a>: transient magnetics and Joule heating miniapp,</li>
 <li><a href="http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes.</li>
 <li><a href="http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html">Mesh Optimizer</a>: optimize high-order meshes.</li>
