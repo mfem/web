@@ -31,6 +31,7 @@ Please cite with:
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
+- [Kazem Kamran](https://info.rpi.edu/people/kazem-kamran)
 - Patrick Knupp
 - [Tzanio Kolev](http://people.llnl.gov/kolev1) &mdash; Project Leader
 - Ilya Lashuk
@@ -43,6 +44,7 @@ Please cite with:
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton
 - [Syun'ichi Shiraiwa](https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa)
+- [Cameron Smith](https://www.scorec.rpi.edu/~cwsmith)
 - Thomas Stitt
 - [Mark Stowell](http://people.llnl.gov/stowell1)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
