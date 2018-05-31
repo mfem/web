@@ -7,6 +7,8 @@
 
 ## Selected Publications
 
+*TODO*: Update with the entries from the `mfem.bib` file
+
   1. V. Dobrev, Tz. Kolev, R. Rieben and V. Tomov, [Multi-material closure model for high-order finite element Lagrangian hydrodynamics](http://computation.llnl.gov/blast/Closure-16.pdf), *Int. J. Numer. Meth. Fluids*, to appear, **2016**.
   1. Tz. Kolev, J. Xu and Y. Zhu, [Multilevel preconditioners for reaction-diffusion problems with discontinuous coefficients](http://arxiv.org/abs/1411.7092), *J. Sci. Comp.*, pp. 1-27,  **2015**.
   1. R. Anderson, V. Dobrev, Tz. Kolev and R. Rieben, [Monotonicity in high-order curvilinear finite element ALE remap](http://computation.llnl.gov/blast/ALE_IJNMF.pdf), *Int. J. Numer. Meth. Fluids*, 77(5), pp. 249–273, **2014**.
