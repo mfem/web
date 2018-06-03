@@ -17,6 +17,7 @@
   1. A. T. Barker, V. Dobrev, J. Gopalakrishnan, and Tz. Kolev, [A scalable preconditioner for a primal discontinuous Petrov-Galerkin method](https://doi.org/10.1137/16M1104780), *SIAM Journal on Scientific Computing*, 40(2), pp. A1187–A1203, **2018**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [The Target-Matrix Optimization Paradigm For High-Order Meshes], *SIAM Journal on Scientific Computing*, in review, **2018**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, and V. Tomov, [Towards Simulation-Driven Optimization of High-Order Meshes by the Target-Matrix Optimization Paradigm], *27th International Meshing Roundtable, Oct 1-8, 2018, Albuquerque*, submitted, **2018**.
+  1. V. Dobrev, T. Kolev, D. Kuzmin, R. Rieben, and V. Tomov, [Sequential limiting in continuous and discontinuous Galerkin methods for the Euler equations](https://doi.org/10.1016/j.jcp.2017.12.012), *Journal of Computational Physics*, 356, pp. 372 - 390, **2018**.
   1. M. Reberol and B. L&eacute;vy, [Computing the Distance between Two Finite Element Solutions Defined on Different 3D Meshes on a GPU](https://doi.org/10.1137/17M1115976), *SIAM Journal on Scientific Computing*, 40(1), pp. C131-C155, **2018**.
   1. A. Mazuyer, P. Cupillard, R. Giot, M. Conin, Y. Leroy, and P. Thore, [Stress estimation in reservoirs using an integrated inverse method](http://www.sciencedirect.com/science/article/pii/S0098300417305010), *Computers & Geosciences*, 114, pp. 30 - 40, **2018**.
   1. D. A. White, M. Stowell, and D. A. Tortorelli, [Toplogical optimization of structures using Fourier representations](https://doi.org/10.1007/s00158-018-1962-y), *Structural and Multidisciplinary Optimization*, pp. 1-16, **Apr. 2018**.
@@ -93,6 +94,7 @@
 
 
   1. Tz. Kolev and P. Vassilevski, [Parallel auxiliary space AMG for H(curl) problems](http://www.global-sci.org/jcm/volumes/v27n5/pdf/275-604.pdf), *J. Comput. Math.*, 27, pp. 604-623, **2009**.
+  1. Tz. V. Kolev and R. N. Rieben, [A tensor artificial viscosity using a finite element approach](https://doi.org/10.1016/j.jcp.2009.08.010), *Journal of Computational Physics*, 228(22), pp. 8336 - 8366, **2009**.
   1. A. Baker, E. Jessup, and Tz. Kolev, [A simple strategy for varying the restart parameter in GMRES(m)](http://dx.doi.org/10.1016/j.cam.2009.01.009), *J. Comp. Appl. Math.*, 230, pp. 751-761, **2009**.
 
 
