@@ -1,4 +1,5 @@
 site_name: MFEM
+site_url: http://mfem.org
 docs_dir: 'src'
 
 markdown_extensions:
@@ -32,8 +33,11 @@ pages:
 - Gallery: gallery.md
 - Download: download.md
 
-theme_dir: template
+theme:
+  name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
+  custom_dir: template
 
-include_next_prev: false  # turn off next/previous buttons
+extra:
+  include_next_prev: false  # turn off next/previous buttons
 
 google_analytics: ['UA-101697-3', 'mfem.org']
