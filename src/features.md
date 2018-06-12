@@ -8,14 +8,14 @@ Conceptually, MFEM can be viewed as a finite element toolbox that provides the b
 
 <img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces">
 
-MFEM supports a wide variety of [finite element](http://mfem.github.io/doxygen/html/inherit_graph_20.svg) [spaces](http://mfem.github.io/doxygen/html/inherit_graph_21.svg) in 2D and 3D, including arbitrary high-order:
+MFEM supports a wide variety of [finite element][FiniteElement] [spaces][FiniteElementCollection] in 2D and 3D, including arbitrary high-order:
 
  - [H<sup>1</sup>](examples.md?h1)-conforming, [H(div)](examples.md?hdiv)-conforming, [H(curl)](examples.md?hcurl)-conforming spaces,
  - discontinuous [L<sub>2</sub>](examples.md?l2) spaces,
  - numerical trace ([interfacial](examples.md?h12)) spaces,
  - [NURBS](examples.md?nurbs) spaces for isogeometric analysis.
 
-Many [bilinear](http://mfem.github.io/doxygen/html/inherit_graph_79.svg) and [linear](http://mfem.github.io/doxygen/html/inherit_graph_47.svg) forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
+Many [bilinear][NonlinearFormIntegrator] and [linear][LinearFormIntegrator] forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.
 
 ## Flexible Discretization
 
@@ -31,15 +31,14 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
 
 ## Wide Range of Mesh Types
 
-MFEM supports arbitrary element [transformations](http://mfem.github.io/doxygen/html/inherit_graph_18.svg) and includes classes for dealing with:
+MFEM supports arbitrary element [transformations][ElementTransformation] and includes classes for dealing with:
 
- - triangular, quadrilateral, tetrahedral and hexahedral [elements](http://mfem.github.io/doxygen/html/inherit_graph_17.svg),
+ - triangular, quadrilateral, tetrahedral and hexahedral [elements][Element],
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
+ - [mesh optimization][HyperelasticModel] based on the Target-Matrix Optimization Paradigm (TMOP),
  - higher-order elements with [curved](mesh-formats.md#curvilinear-vtk-meshes) boundaries,
- - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D,
- - topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes,
- - 1D meshes.
+ - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D, topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes, 1D meshes.
 
 Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the [PUMI](https://scorec.rpi.edu/pumi) distributed mesh management system.
 
@@ -55,24 +54,23 @@ A serial MFEM application typically requires [minimal](http://mfem.github.io/dox
 
 ## Built-in Solvers
 
-MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra
-[vectors](http://mfem.github.io/doxygen/html/inherit_graph_120.svg) and [sparse matrices](http://mfem.github.io/doxygen/html/inherit_graph_84.svg).
+MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra [vectors][Vector] and [sparse matrices][Operator].
 
-Several matrix storage formats are available including dense, compressed sparse row ([CSR](http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html)) and parallel compressed sparse row ([ParCSR](http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html)). Block vectors, operators and [matrices](http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html) are also supported.
+Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][(http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html] are also supported.
 
 A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):
 
- - point-wise and polynomial [serial](http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html) and [parallel](http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html) smoothers,
+ - point-wise and polynomial [serial][SparseSmoother] and [parallel][HypreSmoother] smoothers,
 <img src="../img/hypre_wiw.gif" align="right" width="250">
- - [Krylov solvers](http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html), such as PCG, MINRES and GMRES applicable to general [operators](http://mfem.github.io/doxygen/html/inherit_graph_84.svg) in serial and in parallel,
- - parallel eigensolvers: [LOBPCG](examples.md?lobpcg) and [AME](examples.md?ame),
+ - [Krylov solvers][IterativeSolver], such as PCG, MINRES and GMRES applicable to general [operators][Operator] in serial and in parallel,
+ - parallel [eigensolvers](examples.md?lobpcg): LOBPCG and AME,
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
- - explicit and implicit high-order Runge-Kutta [time integrators](http://mfem.github.io/doxygen/html/inherit_graph_83.svg),
- - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization](http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html) problems.
+ - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
+ - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
 ## Extensive Examples
 
@@ -135,3 +133,25 @@ The object-oriented design of MFEM [separates](http://mfem.github.io/doxygen/htm
 ## Open Source
 
 MFEM is an open-source software, and can be freely used under the terms of the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html) license.
+
+<!-- To update the SVG images: in the gh-pages branch of mfem/doxygen do:
+     grep 'id="node1" href="$classmfem_1_1FiniteElementCollection.html"' html/inherit*map -->
+
+[FiniteElement]:           http://mfem.github.io/doxygen/html/inherit_graph_251.svg
+[FiniteElementCollection]: http://mfem.github.io/doxygen/html/inherit_graph_55.svg
+[Element]:                 http://mfem.github.io/doxygen/html/inherit_graph_33.svg
+[HyperelasticModel]:       http://mfem.github.io/doxygen/html/inherit_graph_104.svg
+[NonlinearFormIntegrator]: http://mfem.github.io/doxygen/html/inherit_graph_165.svg
+[LinearFormIntegrator]:    http://mfem.github.io/doxygen/html/inherit_graph_130.svg
+[Operator]:                http://mfem.github.io/doxygen/html/inherit_graph_223.svg
+[Vector]:                  http://mfem.github.io/doxygen/html/inherit_graph_295.svg
+
+[BlockMatrix]:             http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html
+[ElementTransformation]:   http://mfem.github.io/doxygen/html/classmfem_1_1ElementTransformation.html
+[HypreParMatrix]:          http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html
+[HypreSmoother]:           http://mfem.github.io/doxygen/html/classmfem_1_1HypreSmoother.html
+[IterativeSolver]:         http://mfem.github.io/doxygen/html/classmfem_1_1IterativeSolver.html
+[ODESolver]:               http://mfem.github.io/doxygen/html/classmfem_1_1ODESolver.html
+[SLBQPOptimizer]:          http://mfem.github.io/doxygen/html/classmfem_1_1SLBQPOptimizer.html
+[SparseMatrix]:            http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html
+[SparseSmoother]:          http://mfem.github.io/doxygen/html/classmfem_1_1SparseSmoother.html
