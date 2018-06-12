@@ -61,7 +61,7 @@ Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.4.tgz**
-</button>](https://goo.gl/Cq4f4Z)
+</button>](https://bit.ly/mfem-3-4)
 
 For older releases see the [download](download.md) section.
 

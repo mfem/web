@@ -7,7 +7,7 @@
 
 [<button type="button" class="btn btn-success">
 **Download mfem-3.4.tgz**
-</button>](https://goo.gl/Cq4f4Z)
+</button>](https://bit.ly/mfem-3-4)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
@@ -17,7 +17,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
  **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
- [mfem-3.4.tgz](https://goo.gl/Cq4f4Z) | v3.4 | May 2018 | 4.4M | 134K |  |
+ [mfem-3.4.tgz](https://bit.ly/mfem-3-4) | v3.4 | May 2018 | 4.4M | 134K |  |
  [mfem-3.3.2.tgz](https://goo.gl/Kd7Jk8) | v3.3.2 | Nov 2017 | 4.2M | 123K |  |
  [mfem-3.3.tgz](http://goo.gl/Vrpsns) | v3.3 | Jan 2017 | 4.0M | 112K |  |
  [mfem-3.2.tgz](http://goo.gl/Y9T75B) | v3.2 | Jun 2016 | 3.3M | 92K |  |
