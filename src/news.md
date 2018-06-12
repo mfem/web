@@ -1,6 +1,6 @@
 ## All News Updates
 
-&nbsp;       |
+&nbsp;       | |
 ------------ | -----------------------------------------------------------------
 May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
 Apr 2, 2018  | MFEM part of [OpenHPC](http://openhpc.community/), a Linux Foundation project for software components required to deploy and manage HPC Linux clusters.
