@@ -1,144 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
+     <loc>http://mfem.org/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/features/</loc>
+     <loc>http://mfem.org/features/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/examples/</loc>
+     <loc>http://mfem.org/examples/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/news/</loc>
+     <loc>http://mfem.org/news/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/building/</loc>
+     <loc>http://mfem.org/building/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/serial-tutorial/</loc>
+     <loc>http://mfem.org/serial-tutorial/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/parallel-tutorial/</loc>
+     <loc>http://mfem.org/parallel-tutorial/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/fem/</loc>
+     <loc>http://mfem.org/fem/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/bilininteg/</loc>
+     <loc>http://mfem.org/bilininteg/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/lininteg/</loc>
+     <loc>http://mfem.org/lininteg/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/lininterp/</loc>
+     <loc>http://mfem.org/lininterp/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/electromagnetics/</loc>
+     <loc>http://mfem.org/electromagnetics/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/meshing/</loc>
+     <loc>http://mfem.org/meshing/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/mesh-formats/</loc>
+     <loc>http://mfem.org/mesh-formats/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/mesh-format-v1.x/</loc>
+     <loc>http://mfem.org/mesh-format-v1.x/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/performance/</loc>
+     <loc>http://mfem.org/performance/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/code-overview/</loc>
+     <loc>http://mfem.org/code-overview/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/publications/</loc>
+     <loc>http://mfem.org/publications/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/about/</loc>
+     <loc>http://mfem.org/about/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/gallery/</loc>
+     <loc>http://mfem.org/gallery/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/download/</loc>
+     <loc>http://mfem.org/download/</loc>
      <lastmod>2018-06-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
