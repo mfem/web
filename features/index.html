@@ -258,7 +258,7 @@
 <li>The library supports <a href="../performance/">efficient operator assembly/evaluation</a> for tensor-product high-order elements.</li>
 <li>An experimental support for OpenMP acceleration is also included.</li>
 </ul>
-<p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters.</p>
+<p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters.</p>
 <h2 id="built-in-solvers">Built-in Solvers</h2>
 <p>MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra <a href="http://mfem.github.io/doxygen/html/inherit_graph_295.svg">vectors</a> and <a href="http://mfem.github.io/doxygen/html/inherit_graph_223.svg">sparse matrices</a>.</p>
 <p>Several matrix storage formats are available including dense, compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html">CSR</a>) and parallel compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html">ParCSR</a>). Block vectors, operators and [matrices][(http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html] are also supported.</p>
@@ -279,7 +279,7 @@
 <h2 id="extensive-examples">Extensive Examples</h2>
 <p>MFEM includes a number of well-documented <a href="../examples/">example codes</a> that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:</p>
 <ul>
-<li><a href="http://mfem.github.io/doxygen/html/ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
+<li><a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex3_8cpp_source.html">Example 3</a>: Nedelec H(curl) FEM for the definite Maxwell problem,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex4_8cpp_source.html">Example 4</a>: Raviart-Thomas H(div) FEM for the grad-div problem,</li>
@@ -289,7 +289,7 @@
 <li><a href="http://mfem.github.io/doxygen/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity,</li>
-<li><a href="http://mfem.github.io/doxygen/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
+<li><a href="http://mfem.github.io/doxygen/html/examples_2ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
 <li><a href="http://mfem.github.io/doxygen/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem,</li>
