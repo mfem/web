@@ -424,7 +424,7 @@ There are three linear solves per time step:
 3. the thermal diffusion equation is solved using the ADS preconditioner.
 
 Two example meshes are provided, one is a straight circular metal rod in vacuum, the other is a helical
-coil in vacuum (the latter is 21MB and can be downloaded from [here](http://github.com/mfem/data/coil.gen)).
+coil in vacuum (the latter is 21MB and can be downloaded from [here](https://github.com/mfem/data/blob/master/coil.gen)).
 The idea is that a voltage is applied to the ends of the rod/coil, the electric field diffuses
 into the metal, the metal is heated by Joule heating, the heat diffuses out.
 

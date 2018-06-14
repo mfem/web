@@ -21,7 +21,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ![](img/gallery/ex1p-np64.png)
 
-*Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
+*Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
 
 ----
 
@@ -118,7 +118,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ![](img/gallery/ex1p-np100.png)
 
-*Parallel version of [Example 1](http://mfem.github.io/doxygen/html/ex1p_8cpp_source.html) on 100 processors with a relatively coarse version of [square-disc.mesh](https://github.com/mfem/mfem/blob/master/data/square-disc.mesh). Visualization with [GLVis](http://glvis.org).*
+*Parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 100 processors with a relatively coarse version of [square-disc.mesh](https://github.com/mfem/mfem/blob/master/data/square-disc.mesh). Visualization with [GLVis](http://glvis.org).*
 
 ----
 
