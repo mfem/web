@@ -33,7 +33,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ![](img/gallery/ex1-escher.png)
 
-*Level surfaces in the interior of the solution from [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html) on [escher.mesh](https://github.com/mfem/mfem/blob/master/data/escher.mesh). Visualization with [GLVis](http://glvis.org).*
+*Level surfaces in the interior of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) on [escher.mesh](https://github.com/mfem/mfem/blob/master/data/escher.mesh). Visualization with [GLVis](http://glvis.org).*
 
 ----
 
@@ -88,7 +88,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/breather.png)](img/gallery/breather.png)
 
-*Poisson problem on a "Breather" surface. Mesh generated with the [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html) miniapp. Solution with [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html).*
+*Poisson problem on a "Breather" surface. Mesh generated with the [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html) miniapp. Solution with [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html).*
 
 ----
 
@@ -136,7 +136,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/random4.png)](img/gallery/random4.png)
 
-*Test of the anisotropic refinement feature on a random mesh. A slightly modified version of [Example 1](http://mfem.github.io/doxygen/html/ex1_8cpp_source.html). Visualization with [GLVis](http://glvis.org).*
+*Test of the anisotropic refinement feature on a random mesh. A slightly modified version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html). Visualization with [GLVis](http://glvis.org).*
 
 
 
