@@ -793,7 +793,7 @@ the mobius-strip miniapp.
 
 Manipulating the mesh topology and performing mesh transformation are demonstrated.
 
-The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
+The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
 For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
