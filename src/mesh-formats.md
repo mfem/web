@@ -42,6 +42,7 @@ Lines starting with "#" denote comments. The supported geometry types are:
   - SQUARE      = 3
   - TETRAHEDRON = 4
   - CUBE        = 5
+  - PRISM       = 6
 
 see the comments in [this source file](https://github.com/mfem/mfem/blob/master/fem/geom.hpp) for more details.
 

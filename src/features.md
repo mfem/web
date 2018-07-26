@@ -33,7 +33,8 @@ In addition to classical Galerkin methods, MFEM enables the quick prototyping of
 
 MFEM supports arbitrary element [transformations][ElementTransformation] and includes classes for dealing with:
 
- - triangular, quadrilateral, tetrahedral and hexahedral [elements][Element],
+ - triangular, quadrilateral, tetrahedral, wedge, and hexahedral [elements][Element],
+ - uniform refinement (all element types),
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
  - [mesh optimization][HyperelasticModel] based on the Target-Matrix Optimization Paradigm (TMOP),
