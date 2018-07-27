@@ -646,10 +646,10 @@ We recommend viewing examples 2, 5 and 10 before viewing this example._
 ##Example 20: Symplectic Integration of Hamiltonian Systems
 <img class="floatright" src="../img/examples/ex20.png">
 
-This example demonstrates the use of the variable order, symplectic
-time integration algorithm. Symplectic integration algorithms are
-designed to conserve energy when integrating systems of ODEs which are
-derived from Hamiltonian systems.
+This example demonstrates the use of the variable order, symplectic time
+integration algorithm. Symplectic integration algorithms are designed to
+conserve energy when integrating systems of ODEs which are derived from
+Hamiltonian systems.
 
 Hamiltonian systems define the energy of a system as a function of
 time (t), a set of generalized coordinates (q), and their corresponding
@@ -659,20 +659,19 @@ H(q,p,t) = T(p) + V(q,t)
 $$
 Hamilton's equations then specify how q and p evolve in time:
 $$
-\frac{dq}{dt} =  \frac{dH}{dp}\,,\qquad 
+\frac{dq}{dt} =  \frac{dH}{dp}\,,\qquad
 \frac{dp}{dt} = -\frac{dH}{dq}
 $$
 
-To use the symplectic integration classes we need to define an
-mfem::Operator ${\bf P}$ which evaluates the action of dH/dp, and an
-mfem::TimeDependentOperator ${\bf F}$ which computes -dH/dq.
+To use the symplectic integration classes we need to define an `mfem::Operator`
+${\bf P}$ which evaluates the action of dH/dp, and an
+`mfem::TimeDependentOperator` ${\bf F}$ which computes -dH/dq.
 
-This example visualizes its results as an evolution in phase space by
-defining the axes to be q, p, and t rather than x, y, and z.  In this
-space we build a ribbon-like mesh with nodes at (0,0,t) and
-(q,p,t). Finally we plot the energy as a function of time as a scalar
-field on this ribbon-like mesh.  This scheme highlights any variations
-in the energy of the system.
+This example visualizes its results as an evolution in phase space by defining
+the axes to be $q$, $p$, and $t$ rather than $x$, $y$, and $z$.  In this space
+we build a ribbon-like mesh with nodes at $(0,0,t)$ and $(q,p,t)$. Finally we
+plot the energy as a function of time as a scalar field on this ribbon-like
+mesh.  This scheme highlights any variations in the energy of the system.
 
 This example offers five simple 1D Hamiltonians:
 
@@ -687,10 +686,9 @@ This example offers five simple 1D Hamiltonians:
 - Negative Quartic Potential
   $$H = \frac{1}{2}\left[ \frac{p^2}{m} + k \left( 1 - \frac{q^2}{8} \right) q^2 \right]$$
 
-In all cases these Hamiltonians are shifted by constant values
-so that the energy will remain positive. The mean and standard
-deviation of the computed energies at each time step are
-displayed upon completion.
+In all cases these Hamiltonians are shifted by constant values so that the
+energy will remain positive. The mean and standard deviation of the computed
+energies at each time step are displayed upon completion.
 
 When run in parallel, each processor integrates the same Hamiltonian
 system but starting from different initial conditions.
