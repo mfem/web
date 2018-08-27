@@ -74,9 +74,9 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/prismatic-torus-o6-s10-ex1-2.png)](img/gallery/prismatic-torus-o6-s10-ex1-2.png)
+[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
 
-*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [prismatic-torus](http://mfem.github.io/doxygen/html/prismatic-torus_8cpp_source.html) miniapp.*
+*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 ----
 

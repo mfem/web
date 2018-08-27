@@ -805,9 +805,9 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
-<div id="prismatic-torus" markdown="1">
-## Prismatic Torus Miniapp
-<img class="floatright" src="../img/examples/prismatic-torus.png">
+<div id="toroid" markdown="1">
+## Toroid Miniapp
+<img class="floatright" src="../img/examples/toroid-wedge.png">
 
 This miniapp generates two types of toroidal volume meshes; one with
 triangular cross sections and one with square cross sections.  It
@@ -829,7 +829,7 @@ in MFEM.  It also produces a family of meshes with simple but
 non-trivial topology for testing various features in MFEM.
 
 _This miniapp has only a serial
-([prismatic-torus.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/prismatic-torus.cpp)) version.
+([toroid.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/toroid.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
@@ -1065,7 +1065,7 @@ function update(id)
    numExamples += 6; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
-   showElement("prismatic-torus", meshing && all2 && all3 && all4);
+   showElement("toroid", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
