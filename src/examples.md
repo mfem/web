@@ -835,6 +835,30 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="extruder" markdown="1">
+## Extruder Miniapp
+<img class="floatright" src="../img/examples/extruded-star.png">
+
+This miniapp creates higher dimensional meshes from lower dimensional meshes
+by extrusion.  Simple coordinate transformations can also be applied if desired.
+
+- The initial mesh can be 1D or 2D
+- 1D meshes can be extruded in both the y and z directions
+- 2D meshes can be triangular, quadrilateral, or contain both element types
+- Meshes with high order geometry are supported
+- User can specify the number of elements and the distance to extrude 
+- Geometric order of the transformed mesh can be user selected or automatic
+
+This miniapp provides another demonstration of how simple meshes can be
+constructed and transformed in MFEM.
+
+_This miniapp has only a serial
+([extruder.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/extruder.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
 <img class="floatright" src="../img/examples/shaper.png">
@@ -1066,6 +1090,7 @@ function update(id)
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
+   showElement("extruder", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);

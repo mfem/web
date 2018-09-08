@@ -64,6 +64,18 @@ amount of twist as well as the major and minor radii and other
 variables.  The `toroid-wedge` and `toroid-hex` meshes in the `data` directory
 were generated with this miniapp.
 
+### Extruder
+
+This miniapp creates higher dimensional meshes from lower dimensional meshes
+by extrusion.
+
+![](img/examples/extruded-star.png)
+
+Simple coordinate transformations can also be applied if desired.  The initial
+mesh can be 1D or 2D. 1D meshes can be extruded in the y-direction first and
+then in the z-direction.  2D meshes can be triangular, quadrilateral, or
+contain both element types.
+
 ### Shaper
 
 This miniapp performs multiple levels of adaptive mesh refinement to resolve the
