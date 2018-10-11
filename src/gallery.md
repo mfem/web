@@ -74,6 +74,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
+
+*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
+
+----
+
 [![](img/gallery/hres_icfcyl_4096_5.jpg)](img/gallery/hres_icfcyl_4096_5-full.jpg)
 
 *High-order multi-material inertial confinement fusion (ICF)-like implosion in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*

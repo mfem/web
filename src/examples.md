@@ -243,7 +243,7 @@ refinement loop. The problem being solved is again the Laplace
 equation $$-\Delta u = 1$$ with homogeneous Dirichlet boundary
 conditions. The problem is solved on a sequence of meshes which
 are locally refined in a conforming (triangles, tetrahedrons)
-or non-conforming (quadrilateral, hexahedrons) manner according
+or non-conforming (quadrilaterals, hexahedra) manner according
 to a simple ZZ error estimator.
 
 The example demonstrates MFEM's capability to work with both
@@ -793,7 +793,7 @@ the mobius-strip miniapp.
 
 Manipulating the mesh topology and performing mesh transformation are demonstrated.
 
-The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
+The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
 For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
@@ -805,6 +805,59 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="toroid" markdown="1">
+## Toroid Miniapp
+<img class="floatright" src="../img/examples/toroid-wedge.png">
+
+This miniapp generates two types of toroidal volume meshes; one with
+triangular cross sections and one with square cross sections.  It
+works by defining a stack of individual elements and bending them so
+that the bottom and top of the stack can be joined to form a torus. It
+supports various options including:
+
+- The element type: 0 - Wedge, 1 - Hexahedron
+- The geometric order of the elements
+- The major and minor radii
+- The number of elements in the azimuthal direction
+- The number of nodes to offset by before rejoining the stack
+- The initial angle of the cross sectional shape
+- The number of uniform refinement step to apply
+
+Along with producing some visually interesting meshes, this miniapp
+demonstrates how simple 3D meshes can be constructed and transformed
+in MFEM.  It also produces a family of meshes with simple but
+non-trivial topology for testing various features in MFEM.
+
+_This miniapp has only a serial
+([toroid.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/toroid.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="extruder" markdown="1">
+## Extruder Miniapp
+<img class="floatright" src="../img/examples/extruded-star.png">
+
+This miniapp creates higher dimensional meshes from lower dimensional meshes
+by extrusion.  Simple coordinate transformations can also be applied if desired.
+
+- The initial mesh can be 1D or 2D
+- 1D meshes can be extruded in both the y and z directions
+- 2D meshes can be triangular, quadrilateral, or contain both element types
+- Meshes with high order geometry are supported
+- User can specify the number of elements and the distance to extrude 
+- Geometric order of the transformed mesh can be user selected or automatic
+
+This miniapp provides another demonstration of how simple meshes can be
+constructed and transformed in MFEM.
+
+_This miniapp has only a serial
+([extruder.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/extruder.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
@@ -1033,9 +1086,11 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 5; // update when adding miniapps!
+   numExamples += 6; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
+   showElement("toroid", meshing && all2 && all3 && all4);
+   showElement("extruder", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
