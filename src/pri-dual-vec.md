@@ -41,7 +41,46 @@ $\;\alpha=\int_\Omega f(\vec{x})d\Omega$, is a linear functional because the
 integral is linear with respect to the function being integrated and the result
 is a real number.  In deed we can derive similar linear functionals using
 compatible functions, $\;g(\vec{x})$, in this way
-$G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\Omega$.  
+$G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\Omega$. If we compute the action of our
+functional on the finite element basis functions,
+$$G_i=G(\phi_i(\vec{x})) =
+\int_\Omega g(\vec{x})\phi_i(\vec{x})d\Omega\label{dualvec},$$
+and we collect the results into a vector we call this a *dual vector*.
+
+Integrals such as this often arise when enforcing energy balance in physical
+systems. For example, if $\vec{J}$ is a current density describing a flow of
+charged particles and $\vec{E}$ is an electric field effecting those particles,
+then $\int_\Omega\vec{J}\cdot\vec{E}\,d\Omega$ is the rate at which work is
+being done by the field on the charged particles.
+
+MFEM provides `LinearForm` objects (or `ParLinearForm` objects in parallel)
+which can compute *dual vectors* from a given function, $\;g(\vec{x})$.  These
+objects require not only the mesh, basis functions, and the field
+$\;g(\vec{x})$ but also a `LinearFormIntegrator` which defines precisely what
+type of linear functional is being computed.
+See [Linear Form Integrators](lininteg.md) for more information about MFEM's
+linear form integrators.
+
+A `LinearForm` objects provide one means for computing dual vectors if you have
+a `Coefficient` describing the function $\;g(\vec{x})$.  If, on the other hand,
+you have a *primal vector*, $\;g_i$, representing $\;g(\vec{x})$ you can form a
+*dual vector* by multiplying $\;g_i$ by a bilinear form,
+see [Bilinear Form Integrators](bilininteg.md) for more information on
+bilinear forms.  To understand why this is so consider inserting the expansion
+\eqref{expan} into \eqref{dualvec}.
+$$
+G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\Omega
+= \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\Omega\right)g_j
+$$
+The last integral contains two indices and can therefore be viewed as an entry
+in a square matrix.  Furthermore each *dual vector* entry, $\;G_i$, is
+equivalent to one row of a matrix-vector product between this matrix of basis
+function integrals and the *primal vector* $\;g_i$.  This particular matrix,
+involving only the product of basis functions, is called a *mass matrix*.
+However, the action of any matrix, resulting from a bilinear form, upon a
+*primal vector* will produce a *dual vector*.  In general, such *dual vectors*
+will have more complicated definitions than \eqref{dualvec} but they will still
+be linear functionals of *primal vectors*.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
