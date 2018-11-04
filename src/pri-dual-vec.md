@@ -1,5 +1,10 @@
 # Primal and Dual Vectors
 
+The finite element method uses vectors of data in a variety of ways and the
+differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
+`Vector` classes which help to distinguish the different roles that vectors of
+data can play.
+
 ## Primal Vectors
 
 The finite element method is based on the notion that a smooth function can be
@@ -81,6 +86,33 @@ However, the action of any matrix, resulting from a bilinear form, upon a
 *primal vector* will produce a *dual vector*.  In general, such *dual vectors*
 will have more complicated definitions than \eqref{dualvec} but they will still
 be linear functionals of *primal vectors*.
+
+## True Degree-of-Freedom Vectors
+
+Primal vectors contain all of the expansion coefficients needed to compute the
+finite element approximation of a function in each element of a mesh.  When run in parallel, the local portion of a primal vector only contains data for the locally owned elements.  Regardless of wether or not the simulation is being run in parallel, some of these cofficients may in fact be redundant.
+
+Sources of redundancy:
+
+- In parallel some coefficients must be shared between processors.
+- When using static condensation or hybridization many coefficients will
+  depend upon the coefficients which are associated with the skeleton of the
+  mesh as well as upon other data.
+- When using non-conforming meshes some of the coefficients on the finer side
+  of a non-conforming interface between elements will depend upon those on the
+  coarser side of the interface.
+
+For any or all of these reasons primal vectors may not contain the *true
+degrees-of-freedom* for describing a finite element approximation of a field.
+The *true* set of degrees-of-freedom may in fact be much smaller than the size
+of the primal vector.
+
+When setting up and solving a linear system to determine the finite element
+approximation of a field, the size of the linear system is determined by the
+number of *true degrees-of-freedom*.  The `GridFunction`, `LinearForm`,
+and `BilinearForm` classes, and their parallel counterparts, provide various
+methods to easily obtain objects relevant to the solution of these true
+degrees-of-freedom.
 
 ## Technical Details
 
