@@ -3,7 +3,7 @@
 ## Primal Vectors
 
 The finite element method is based on the notion that a smooth function can be
-approximated by a sum of piecewise functions called *basis functions*:
+approximated by a sum of piece-wise functions called *basis functions*:
 $$f(\vec{x})\approx\sum_i f_i \phi_i(\vec{x}) \label{expan}$$
 The support of an individual basis function, $\;\phi_i(\vec{x})$, will either be
 a single zone or a collection of zones that share a common vertex, edge, or
@@ -81,6 +81,41 @@ However, the action of any matrix, resulting from a bilinear form, upon a
 *primal vector* will produce a *dual vector*.  In general, such *dual vectors*
 will have more complicated definitions than \eqref{dualvec} but they will still
 be linear functionals of *primal vectors*.
+
+## Technical Details
+
+### Constructing Dual Vectors
+
+It was mentioned above, in the section on
+[Dual Vectors](pri-dual-vec.md#dual-vectors), that you can create a dual vector
+by multiplying a primal vector by a bilinear form.  But of course if you have a
+primal vector you can also use a `GridFunctionCoefficient` to create a dual
+vector using a `LinearForm` and an appropriate `LinearFormIntegrator`.  These
+two choices should produce nearly identical results if the
+`BilinearFormIntegrator` and the `LinearFormIntegrator` use the same
+integration rule order.  The only differences should involve differing
+round-off errors produced by summing double precision numbers in different
+orders.
+
+A bilinear form must create a sparse matrix which can require a great deal of
+memory.  Integrating a `GridFunctionCoefficient` in a `LinearForm` object will
+require very little memory.  On the other hand, computing the integrals inside
+a `LinearForm` object can be computationally expensive even in comparison to
+assembling the bilinear form.
+
+Which is the better option?  As always, there are trade-offs.  The answer
+depends on many variables; the complexities of the `BilinearFormIntegrator` and
+the `LinearFormIntegrator`, the complexity of other coefficients that may be
+present, the order of the basis functions, can the bilinear form be reused or
+is this a one-time calculation, whether the code runs on a CPU or GPU, etc.. On
+some architectures the motion of data through memory during a matrix-vector
+multiplication may be expensive enough that using a `LinearForm` and
+recomputing the integrals is more efficient.
+
+Often the construction of dual vectors is a small portion of the overall
+compute time so this choice may not be critical.  The best choice is to test
+your application and determine which method is more appropriate for your
+algorithm on your hardware.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
