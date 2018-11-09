@@ -76,7 +76,7 @@ bilinear forms.  To understand why this is so consider inserting the expansion
 $$
 G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\Omega
 = \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\Omega\right)g_j
-$$
+\label{dualvecprod}$$
 The last integral contains two indices and can therefore be viewed as an entry
 in a square matrix.  Furthermore each *dual vector* entry, $\;G_i$, is
 equivalent to one row of a matrix-vector product between this matrix of basis
@@ -84,8 +84,9 @@ function integrals and the *primal vector* $\;g_i$.  This particular matrix,
 involving only the product of basis functions, is called a *mass matrix*.
 However, the action of any matrix, resulting from a bilinear form, upon a
 *primal vector* will produce a *dual vector*.  In general, such *dual vectors*
-will have more complicated definitions than \eqref{dualvec} but they will still
-be linear functionals of *primal vectors*.
+will have more complicated definitions than \eqref{dualvec} or
+\eqref{dualvecprod} but they will still be linear functionals of *primal
+vectors*.
 
 ## True Degree-of-Freedom Vectors
 
@@ -109,10 +110,39 @@ of the primal vector.
 
 When setting up and solving a linear system to determine the finite element
 approximation of a field, the size of the linear system is determined by the
-number of *true degrees-of-freedom*.  The `GridFunction`, `LinearForm`,
-and `BilinearForm` classes, and their parallel counterparts, provide various
-methods to easily obtain objects relevant to the solution of these true
-degrees-of-freedom.
+number of *true degrees-of-freedom*.  The details of creating this linear
+system are mostly hidden within the `BilinearForm` object. To convert
+individual bilinear form objects the user can call the
+`BilinearForm::FormSystemMatrix()` method, however, the more common task is to
+form the entire linear system with `BilinearForm::FormLinearSystem()`.  As
+input, this method requires a *primal vector*, a *dual vector*, and an array of
+boundary degrees of freedom.  The degree-of-freedom array contains the true
+degrees-of-freedom, as obtained from a `FiniteElementSpace` object, which
+coincide with the Dirichlet, a.k.a. *essential*, boundaries.
+```
+   // Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
+   // and an array of essential boundary true dof indices...
+   SparseMatrix A;
+   Vector B, X;
+   a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
+
+   // Solve X = A^{-1}B
+   ...
+
+   a.RecoverFEMSolution(X, b, x);
+```
+The primal vector
+must contain the appropriate values for the solution on the essential
+boundaries.  The interior of the primal vector is ignored by default although
+it can be used to supply an initial guess when using certain solvers.  The dual
+vector should be an assembled `LinearForm` object or the product of a
+`GridFunction` and a `BilinearForm`.  As output,
+`BilinearForm::FormLinearSystem()` produces the objects $A$, $X$, and $B$ in
+the linear system $A X=B$.  Where $A$ is ready to be passed to the appropriate
+MFEM solver, $X$ is properly initialized, and $B$ has been modified to
+incorporate the essential boundary conditions.  After the linear system has
+been solved the primal vector representing the solution must be built from $X$
+and the original dual vector by calling `BilinearForm::RecoverFEMSolution()`.
 
 ## Technical Details
 
