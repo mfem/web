@@ -642,6 +642,58 @@ We recommend viewing examples 2, 5 and 10 before viewing this example._
 <br></div>
 
 
+<div id="ex20" markdown="1">
+##Example 20: Symplectic Integration of Hamiltonian Systems
+<img class="floatright" src="../img/examples/ex20.png">
+
+This example demonstrates the use of the variable order, symplectic time
+integration algorithm. Symplectic integration algorithms are designed to
+conserve energy when integrating systems of ODEs which are derived from
+Hamiltonian systems.
+
+Hamiltonian systems define the energy of a system as a function of
+time (t), a set of generalized coordinates (q), and their corresponding
+generalized momenta (p).
+$$
+H(q,p,t) = T(p) + V(q,t)
+$$
+Hamilton's equations then specify how q and p evolve in time:
+$$
+\frac{dq}{dt} =  \frac{dH}{dp}\,,\qquad
+\frac{dp}{dt} = -\frac{dH}{dq}
+$$
+
+To use the symplectic integration classes we need to define an `mfem::Operator`
+${\bf P}$ which evaluates the action of dH/dp, and an
+`mfem::TimeDependentOperator` ${\bf F}$ which computes -dH/dq.
+
+This example visualizes its results as an evolution in phase space by defining
+the axes to be $q$, $p$, and $t$ rather than $x$, $y$, and $z$.  In this space
+we build a ribbon-like mesh with nodes at $(0,0,t)$ and $(q,p,t)$. Finally we
+plot the energy as a function of time as a scalar field on this ribbon-like
+mesh.  This scheme highlights any variations in the energy of the system.
+
+This example offers five simple 1D Hamiltonians:
+
+- Simple Harmonic Oscillator (mass on a spring)
+  $$H = \frac{1}{2}\left( \frac{p^2}{m} + \frac{q^2}{k} \right)$$
+- Pendulum
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} - k \left( 1 - cos(q) \right) \right]$$
+- Gaussian Potential Well
+  $$H = \frac{p^2}{2m} - k e^{-q^2 / 2}$$
+- Quartic Potential
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} + k \left( 1 + q^2 \right) q^2 \right]$$
+- Negative Quartic Potential
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} + k \left( 1 - \frac{q^2}{8} \right) q^2 \right]$$
+
+In all cases these Hamiltonians are shifted by constant values so that the
+energy will remain positive. The mean and standard deviation of the computed
+energies at each time step are displayed upon completion.
+
+When run in parallel, each processor integrates the same Hamiltonian
+system but starting from different initial conditions.
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1057,7 +1109,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 19; // update when adding examples!
+   var numExamples = 20; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1077,6 +1129,7 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
+   showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
