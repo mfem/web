@@ -692,7 +692,34 @@ energies at each time step are displayed upon completion.
 
 When run in parallel, each processor integrates the same Hamiltonian
 system but starting from different initial conditions.
+<div style="clear:both;"/></div>
 <br></div>
+
+
+<div id="ex22" markdown="1">
+##Example 22: Adaptive mesh refinement for linear elasticity
+<img class="floatright" src="../img/examples/ex22.png">
+
+This is a version of Example 2 with a simple adaptive mesh
+refinement loop. The problem being solved is again the linear
+elasticity describing a multi-material cantilever beam.
+The problem is solved on a sequence of meshes which
+are locally refined in a conforming (triangles, tetrahedrons)
+or non-conforming (quadrilaterals, hexahedra) manner according
+to a simple ZZ error estimator.
+
+The example demonstrates MFEM's capability to work with both
+conforming and nonconforming refinements, in 2D and 3D, on
+linear and curved meshes. Interpolation of functions from
+coarse to fine meshes, as well as persistent GLVis
+visualization are also illustrated.
+
+_The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
+and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
+We recommend viewing Examples 2 and 6 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
@@ -898,7 +925,7 @@ by extrusion.  Simple coordinate transformations can also be applied if desired.
 - 1D meshes can be extruded in both the y and z directions
 - 2D meshes can be triangular, quadrilateral, or contain both element types
 - Meshes with high order geometry are supported
-- User can specify the number of elements and the distance to extrude 
+- User can specify the number of elements and the distance to extrude
 - Geometric order of the transformed mesh can be user selected or automatic
 
 This miniapp provides another demonstration of how simple meshes can be
@@ -1109,7 +1136,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 20; // update when adding examples!
+   var numExamples = 21; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1130,6 +1157,7 @@ function update(id)
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
+   showElement("ex22", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg || petsc));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
