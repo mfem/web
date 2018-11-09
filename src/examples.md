@@ -1157,7 +1157,7 @@ function update(id)
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
-   showElement("ex22", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex22", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
