@@ -12,13 +12,13 @@ approximated by a sum of piece-wise functions called *basis functions*:
 $$f(\vec{x})\approx\sum_i f_i \phi_i(\vec{x}) \label{expan}$$
 The support of an individual basis function, $\;\phi_i(\vec{x})$, will either be
 a single zone or a collection of zones that share a common vertex, edge, or
-face.  The expansion coefficients, $\;f_i$, are linear functions of the field
-being approximated, $\;f(\vec{x})$ in this case.  The $\;f_i$ could be as simple
-as values of the function at particular points, called interpolation points,
-e.g. $\;f_i=f(\vec{x}\_i)$ or they could be integrals of the field over
-submanifolds of the domain e.g. $\;f_i = \int_{\Omega_i}f(\vec{x})d\Omega$.
-There are many possibilities but the expansion coefficients must be linear
-functions of $\;f(\vec{x})$.
+face.  The expansion coefficients $\;f_i$, known also as *degrees of freedom*
+are linear functionals of the field being approximated, $\;f(\vec{x})$ in this
+case.  The $\;f_i$ could be as simple as values of the function at particular
+points, called interpolation points, e.g. $\;f_i=f(\vec{x}\_i)$, or they could
+be integrals of the field over submanifolds of the domain e.g. $\;f_i =
+\int_{\Omega_i}f(\vec{x})d\vec{x}$.  There are many possibilities but the
+expansion coefficients must be linear functionals of $\;f(\vec{x})$.
 
 Once the basis functions are defined, with some unique ordering, the expansion
 coefficients can be stored in a vector using the same order.  Such a vector of
@@ -30,12 +30,12 @@ collections of information are combined into `GridFunction` objects (or
 `ParGridFunction` objects when used in parallel).
 
 The `GridFunction` object can be used to compute a primal vector using any of
-its various `Project` methods.  These methods compute the expansion
-coefficients, $\;f_i$, or some subset of them, from a `Coefficient` object
-representing $\;f(\vec{x})$.  There are also many `Get` methods which can
-compute the expansion \eqref{expan} at particular locations within an element.
-And still other methods for computing various measures of the error in the
-finite element approximation of $\;f(\vec{x})$.
+its various `Project` methods.  These methods compute the degrees of freedom,
+$\;f_i$, or some subset of them, from a `Coefficient` object representing
+$\;f(\vec{x})$.  There are also many `Get` methods which can compute the
+expansion \eqref{expan} at particular locations within an element.  And still
+other methods for computing various measures of the error in the finite element
+approximation of $\;f(\vec{x})$.
 
 ## Dual Vectors
 
@@ -91,7 +91,10 @@ vectors*.
 ## True Degree-of-Freedom Vectors
 
 Primal vectors contain all of the expansion coefficients needed to compute the
-finite element approximation of a function in each element of a mesh.  When run in parallel, the local portion of a primal vector only contains data for the locally owned elements.  Regardless of wether or not the simulation is being run in parallel, some of these cofficients may in fact be redundant.
+finite element approximation of a function in each element of a mesh.  When run
+in parallel, the local portion of a primal vector only contains data for the
+locally owned elements.  Regardless of whether or not the simulation is being
+run in parallel, some of these coefficients may in fact be redundant.
 
 Sources of redundancy:
 
@@ -119,17 +122,17 @@ input, this method requires a *primal vector*, a *dual vector*, and an array of
 boundary degrees of freedom.  The degree-of-freedom array contains the true
 degrees-of-freedom, as obtained from a `FiniteElementSpace` object, which
 coincide with the Dirichlet, a.k.a. *essential*, boundaries.
-```
-   // Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
-   // and an array of essential boundary true dof indices...
-   SparseMatrix A;
-   Vector B, X;
-   a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
+```c++
+// Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
+// and an array of essential boundary true dof indices...
+SparseMatrix A;
+Vector B, X;
+a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
 
-   // Solve X = A^{-1}B
-   ...
+// Solve X = A^{-1}B
+...
 
-   a.RecoverFEMSolution(X, b, x);
+a.RecoverFEMSolution(X, b, x);
 ```
 The primal vector
 must contain the appropriate values for the solution on the essential
