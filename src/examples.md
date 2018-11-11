@@ -701,7 +701,7 @@ system but starting from different initial conditions.
 <img class="floatright" src="../img/examples/ex22.png">
 
 This is a version of Example 2 with a simple adaptive mesh
-refinement loop. The problem being solved is again the linear
+refinement loop. The problem being solved is again linear
 elasticity describing a multi-material cantilever beam.
 The problem is solved on a sequence of meshes which
 are locally refined in a conforming (triangles, tetrahedrons)
