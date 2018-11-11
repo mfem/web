@@ -48,20 +48,20 @@ approximation of $\;f(\vec{x})$.
 In this context a *dual vector* is a linear functional of a *primal vector*
 meaning that the action of a *dual vector* upon a *primal vector* is a real
 number.  For example, the integral of a field over a domain,
-$\;\alpha=\int_\Omega f(\vec{x})d\Omega$, is a linear functional because the
+$\;\alpha=\int_\Omega f(\vec{x})d\vec{x}$, is a linear functional because the
 integral is linear with respect to the function being integrated and the result
 is a real number.  In deed we can derive similar linear functionals using
 compatible functions, $\;g(\vec{x})$, in this way
-$G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\Omega$. If we compute the action of our
+$G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\vec{x}$. If we compute the action of our
 functional on the finite element basis functions,
 $$G_i=G(\phi_i(\vec{x})) =
-\int_\Omega g(\vec{x})\phi_i(\vec{x})d\Omega\label{dualvec},$$
+\int_\Omega g(\vec{x})\phi_i(\vec{x})d\vec{x}\label{dualvec},$$
 and we collect the results into a vector we call this a *dual vector*.
 
 Integrals such as this often arise when enforcing energy balance in physical
 systems. For example, if $\vec{J}$ is a current density describing a flow of
 charged particles and $\vec{E}$ is an electric field effecting those particles,
-then $\int_\Omega\vec{J}\cdot\vec{E}\,d\Omega$ is the rate at which work is
+then $\int_\Omega\vec{J}\cdot\vec{E}\,d\vec{x}$ is the rate at which work is
 being done by the field on the charged particles.
 
 MFEM provides `LinearForm` objects (or `ParLinearForm` objects in parallel)
@@ -80,8 +80,8 @@ see [Bilinear Form Integrators](bilininteg.md) for more information on
 bilinear forms.  To understand why this is so consider inserting the expansion
 \eqref{expan} into \eqref{dualvec}.
 $$
-G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\Omega
-= \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\Omega\right)g_j
+G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\vec{x}
+= \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\vec{x}\right)g_j
 \label{dualvecprod}$$
 The last integral contains two indices and can therefore be viewed as an entry
 in a square matrix.  Furthermore each *dual vector* entry, $\;G_i$, is
