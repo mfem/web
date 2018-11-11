@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../code-overview/">Code Overview</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#primal-and-dual-vectors">Primal and Dual Vectors</a></li>
+        
+            <li><a href="#primal-vectors">Primal Vectors</a></li>
+        
+            <li><a href="#dual-vectors">Dual Vectors</a></li>
+        
+            <li><a href="#true-degree-of-freedom-vectors">True Degree-of-Freedom Vectors</a></li>
+        
+            <li><a href="#technical-details">Technical Details</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="primal-and-dual-vectors">Primal and Dual Vectors</h1>
+<p>The finite element method uses vectors of data in a variety of ways and the
+differences can be subtle.  MFEM defines <code>GridFunction</code>, <code>LinearForm</code>, and
+<code>Vector</code> classes which help to distinguish the different roles that vectors of
+data can play.</p>
+<p><center><strong>Graphical summary of Primal, Dual, DoF, True DoF vectors</strong></center>
+<img alt="" src="../img/FEM-LA-Diagrams.png" /></p>
+<h2 id="primal-vectors">Primal Vectors</h2>
+<p>The finite element method is based on the notion that a smooth function can be
+approximated by a sum of piece-wise functions called <em>basis functions</em>:
+$$f(\vec{x})\approx\sum_i f_i \phi_i(\vec{x}) \label{expan}$$
+The support of an individual basis function, $\;\phi_i(\vec{x})$, will either be
+a single zone or a collection of zones that share a common vertex, edge, or
+face.  The expansion coefficients, $\;f_i$, are linear functionals of the field
+being approximated, $\;f(\vec{x})$ in this case.  The $\;f_i$ could be as simple
+as values of the function at particular points, called interpolation points,
+e.g. $\;f_i=f(\vec{x}_i)$ or they could be integrals of the field over
+submanifolds of the domain, e.g. $\;f_i = \int_{\Omega_i}f(\vec{x})d\vec{x}$.
+There are many possibilities but the expansion coefficients must be linear
+functionals of $\;f(\vec{x})$.  The expansion coefficients are often called
+<em>degrees of freedom</em>, or <em>DoFs</em> for short, though in certain cases they may
+not be actually independent.  We'll discuss this more in a later
+section on <a href="./#true-degree-of-freedom-vectors">True DoFs</a>.</p>
+<p>Once the basis functions are defined, with some unique ordering, the expansion
+coefficients can be stored in a vector using the same order.  Such a vector of
+coefficients is called a <em>primal vector</em>.  The original function,
+$\;f(\vec{x})$, can then be approximated using \eqref{expan}.  In practice this
+requires not only the primal vector of coefficients but also knowledge of the
+mesh and the basis functions for each element of the mesh.  In MFEM these
+collections of information are combined into <code>GridFunction</code> objects (or
+<code>ParGridFunction</code> objects when used in parallel).</p>
+<p>The <code>GridFunction</code> object can be used to compute a primal vector using any of
+its various <code>Project</code> methods.  These methods compute the degrees of freedom,
+$\;f_i$, or some subset of them, from a <code>Coefficient</code> object representing
+$\;f(\vec{x})$.  There are also many <code>Get</code> methods which can compute the
+expansion \eqref{expan} at particular locations within an element.  And still
+other methods for computing various measures of the error in the finite element
+approximation of $\;f(\vec{x})$.</p>
+<h2 id="dual-vectors">Dual Vectors</h2>
+<p>In this context a <em>dual vector</em> is a linear functional of a <em>primal vector</em>
+meaning that the action of a <em>dual vector</em> upon a <em>primal vector</em> is a real
+number.  For example, the integral of a field over a domain,
+$\;\alpha=\int_\Omega f(\vec{x})d\vec{x}$, is a linear functional because the
+integral is linear with respect to the function being integrated and the result
+is a real number.  In deed we can derive similar linear functionals using
+compatible functions, $\;g(\vec{x})$, in this way
+$G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\vec{x}$. If we compute the action of our
+functional on the finite element basis functions,
+$$G_i=G(\phi_i(\vec{x})) =
+\int_\Omega g(\vec{x})\phi_i(\vec{x})d\vec{x}\label{dualvec},$$
+and we collect the results into a vector we call this a <em>dual vector</em>.</p>
+<p>Integrals such as this often arise when enforcing energy balance in physical
+systems. For example, if $\vec{J}$ is a current density describing a flow of
+charged particles and $\vec{E}$ is an electric field effecting those particles,
+then $\int_\Omega\vec{J}\cdot\vec{E}\,d\vec{x}$ is the rate at which work is
+being done by the field on the charged particles.</p>
+<p>MFEM provides <code>LinearForm</code> objects (or <code>ParLinearForm</code> objects in parallel)
+which can compute <em>dual vectors</em> from a given function, $\;g(\vec{x})$.  These
+objects require not only the mesh, basis functions, and the field
+$\;g(\vec{x})$ but also a <code>LinearFormIntegrator</code> which defines precisely what
+type of linear functional is being computed.
+See <a href="../lininteg/">Linear Form Integrators</a> for more information about MFEM's
+linear form integrators.</p>
+<p>A <code>LinearForm</code> objects provide one means for computing dual vectors if you have
+a <code>Coefficient</code> describing the function $\;g(\vec{x})$.  If, on the other hand,
+you have a <em>primal vector</em>, $\;g_i$, representing $\;g(\vec{x})$ you can form a
+<em>dual vector</em> by multiplying $\;g_i$ by a bilinear form,
+see <a href="../bilininteg/">Bilinear Form Integrators</a> for more information on
+bilinear forms.  To understand why this is so consider inserting the expansion
+\eqref{expan} into \eqref{dualvec}.
+$$
+G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\vec{x}
+= \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\vec{x}\right)g_j
+\label{dualvecprod}$$
+The last integral contains two indices and can therefore be viewed as an entry
+in a square matrix.  Furthermore each <em>dual vector</em> entry, $\;G_i$, is
+equivalent to one row of a matrix-vector product between this matrix of basis
+function integrals and the <em>primal vector</em> $\;g_i$.  This particular matrix,
+involving only the product of basis functions, is called a <em>mass matrix</em>.
+However, the action of any matrix, resulting from a bilinear form, upon a
+<em>primal vector</em> will produce a <em>dual vector</em>.  In general, such <em>dual vectors</em>
+will have more complicated definitions than \eqref{dualvec} or
+\eqref{dualvecprod} but they will still be linear functionals of <em>primal
+vectors</em>.</p>
+<h2 id="true-degree-of-freedom-vectors">True Degree-of-Freedom Vectors</h2>
+<p>Primal vectors contain all of the expansion coefficients needed to compute the
+finite element approximation of a function in each element of a mesh.  When run
+in parallel, the local portion of a primal vector only contains data for the
+locally owned elements.  Regardless of whether or not the simulation is being
+run in parallel, some of these cofficients may in fact be redundant or
+interdependent.</p>
+<p>Sources of redundancy:</p>
+<ul>
+<li>In parallel some coefficients must be shared between processors.</li>
+<li>When using static condensation or hybridization many coefficients will
+  depend upon the coefficients which are associated with the skeleton of the
+  mesh as well as upon other data.</li>
+<li>When using non-conforming meshes some of the coefficients on the finer side
+  of a non-conforming interface between elements will depend upon those on the
+  coarser side of the interface.</li>
+</ul>
+<p>For any or all of these reasons primal vectors may not contain the <em>true
+degrees-of-freedom</em> for describing a finite element approximation of a field.
+The <em>true</em> set of degrees-of-freedom may in fact be much smaller than the size
+of the primal vector.</p>
+<p>When setting up and solving a linear system to determine the finite element
+approximation of a field, the size of the linear system is determined by the
+number of <em>true degrees-of-freedom</em>.  The details of creating this linear
+system are mostly hidden within the <code>BilinearForm</code> object. To convert
+individual bilinear form objects the user can call the
+<code>BilinearForm::FormSystemMatrix()</code> method, however, the more common task is to
+form the entire linear system with <code>BilinearForm::FormLinearSystem()</code>.  As
+input, this method requires a <em>primal vector</em>, a <em>dual vector</em>, and an array of
+boundary degrees of freedom.  The degree-of-freedom array contains the true
+degrees-of-freedom, as obtained from a <code>FiniteElementSpace</code> object, which
+coincide with the Dirichlet, a.k.a. <em>essential</em>, boundaries.</p>
+<pre><code class="c++">// Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
+// and an array of essential boundary true dof indices...
+SparseMatrix A;
+Vector B, X;
+a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
+
+// Solve X = A^{-1}B
+...
+
+a.RecoverFEMSolution(X, b, x);
+</code></pre>
+
+<p>The primal vector
+must contain the appropriate values for the solution on the essential
+boundaries.  The interior of the primal vector is ignored by default although
+it can be used to supply an initial guess when using certain solvers.  The dual
+vector should be an assembled <code>LinearForm</code> object or the product of a
+<code>GridFunction</code> and a <code>BilinearForm</code>.  As output,
+<code>BilinearForm::FormLinearSystem()</code> produces the objects $A$, $X$, and $B$ in
+the linear system $A X=B$.  Where $A$ is ready to be passed to the appropriate
+MFEM solver, $X$ is properly initialized, and $B$ has been modified to
+incorporate the essential boundary conditions.  After the linear system has
+been solved the primal vector representing the solution must be built from $X$
+and the original dual vector by calling <code>BilinearForm::RecoverFEMSolution()</code>.</p>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="constructing-dual-vectors">Constructing Dual Vectors</h3>
+<p>It was mentioned above, in the section on
+<a href="./#dual-vectors">Dual Vectors</a>, that you can create a dual vector
+by multiplying a primal vector by a bilinear form.  But of course if you have a
+primal vector you can also use a <code>GridFunctionCoefficient</code> to create a dual
+vector using a <code>LinearForm</code> and an appropriate <code>LinearFormIntegrator</code>.  These
+two choices should produce nearly identical results if the
+<code>BilinearFormIntegrator</code> and the <code>LinearFormIntegrator</code> use the same
+integration rule order.  The only differences should involve differing
+round-off errors produced by summing double precision numbers in different
+orders.</p>
+<p>A bilinear form must create a sparse matrix which can require a great deal of
+memory.  Integrating a <code>GridFunctionCoefficient</code> in a <code>LinearForm</code> object will
+require very little memory.  On the other hand, computing the integrals inside
+a <code>LinearForm</code> object can be computationally expensive even in comparison to
+assembling the bilinear form.</p>
+<p>Which is the better option?  As always, there are trade-offs.  The answer
+depends on many variables; the complexities of the <code>BilinearFormIntegrator</code> and
+the <code>LinearFormIntegrator</code>, the complexity of other coefficients that may be
+present, the order of the basis functions, can the bilinear form be reused or
+is this a one-time calculation, whether the code runs on a CPU or GPU, etc.. On
+some architectures the motion of data through memory during a matrix-vector
+multiplication may be expensive enough that using a <code>LinearForm</code> and
+recomputing the integrals is more efficient.</p>
+<p>Often the construction of dual vectors is a small portion of the overall
+compute time so this choice may not be critical.  The best choice is to test
+your application and determine which method is more appropriate for your
+algorithm on your hardware.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#primal-and-dual-vectors">Primal and Dual Vectors</a></li>
+        
+            <li><a href="#primal-vectors">Primal Vectors</a></li>
+        
+            <li><a href="#dual-vectors">Dual Vectors</a></li>
+        
+            <li><a href="#true-degree-of-freedom-vectors">True Degree-of-Freedom Vectors</a></li>
+        
+            <li><a href="#technical-details">Technical Details</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+    </body>
+</html>

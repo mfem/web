@@ -108,6 +108,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -195,6 +197,8 @@
     
         <li class="main active"><a href="#finite-element-method">Finite Element Method</a></li>
         
+            <li><a href="#primal-and-dual-vectors">Primal and Dual Vectors</a></li>
+        
             <li><a href="#bilinear-form-integrators">Bilinear Form Integrators</a></li>
         
             <li><a href="#linear-form-integrators">Linear Form Integrators</a></li>
@@ -229,6 +233,11 @@ element algorithms in a manner similar to that of MATLAB for linear algebra
 methods.</p>
 <p>Some of the C++ classes for the finite element realizations of these
 PDE-level concepts in MFEM are described below.</p>
+<h3 id="primal-and-dual-vectors"><a href="../pri-dual-vec/">Primal and Dual Vectors</a></h3>
+<p>The finite element method uses vectors of data in a variety of ways and the
+differences can be subtle.  MFEM defines <code>GridFunction</code>, <code>LinearForm</code>, and
+<code>Vector</code> classes which help to distinguish the different roles that vectors of
+data can play.</p>
 <h3 id="bilinear-form-integrators"><a href="../bilininteg/">Bilinear Form Integrators</a></h3>
 <p>Bilinear form integrators are at the heart of any finite element method, they
 are used to compute the integrals of products of basis functions over individual
@@ -252,6 +261,8 @@ operator.</p></div>
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#finite-element-method">Finite Element Method</a></li>
+        
+            <li><a href="#primal-and-dual-vectors">Primal and Dual Vectors</a></li>
         
             <li><a href="#bilinear-form-integrators">Bilinear Form Integrators</a></li>
         
