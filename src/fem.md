@@ -25,6 +25,13 @@ methods.
 Some of the C++ classes for the finite element realizations of these
 PDE-level concepts in MFEM are described below.
 
+### [Primal and Dual Vectors](pri-dual-vec.md)
+
+The finite element method uses vectors of data in a variety of ways and the
+differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
+`Vector` classes which help to distinguish the different roles that vectors of
+data can play.
+
 ### [Bilinear Form Integrators](bilininteg.md)
 
 Bilinear form integrators are at the heart of any finite element method, they
