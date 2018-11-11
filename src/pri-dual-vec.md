@@ -5,6 +5,9 @@ differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
 `Vector` classes which help to distinguish the different roles that vectors of
 data can play.
 
+<center>**Graphical summary of Primal, Dual, DoF, True DoF vectors**</center>
+![](img/FEM-LA-Diagrams.png)
+
 ## Primal Vectors
 
 The finite element method is based on the notion that a smooth function can be
@@ -18,7 +21,10 @@ as values of the function at particular points, called interpolation points,
 e.g. $\;f_i=f(\vec{x}\_i)$ or they could be integrals of the field over
 submanifolds of the domain e.g. $\;f_i = \int_{\Omega_i}f(\vec{x})d\Omega$.
 There are many possibilities but the expansion coefficients must be linear
-functions of $\;f(\vec{x})$.
+functions of $\;f(\vec{x})$.  The expansion coefficients are often called
+*degrees of freedom*, or *DoFs* for short, but this is a bit of a misnomer
+because they may not be independent.  We'll discuss this more in a later
+section on [True DoFs](pri-dual-vec.md#true-degree-of-freedom-vectors). 
 
 Once the basis functions are defined, with some unique ordering, the expansion
 coefficients can be stored in a vector using the same order.  Such a vector of
@@ -91,7 +97,11 @@ vectors*.
 ## True Degree-of-Freedom Vectors
 
 Primal vectors contain all of the expansion coefficients needed to compute the
-finite element approximation of a function in each element of a mesh.  When run in parallel, the local portion of a primal vector only contains data for the locally owned elements.  Regardless of wether or not the simulation is being run in parallel, some of these cofficients may in fact be redundant.
+finite element approximation of a function in each element of a mesh.  When run
+in parallel, the local portion of a primal vector only contains data for the
+locally owned elements.  Regardless of wether or not the simulation is being
+run in parallel, some of these cofficients may in fact be redundant or
+interdependent.
 
 Sources of redundancy:
 
