@@ -19,6 +19,7 @@ pages:
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
   - 'Finite Elements': fem.md
+  - '_Primal and Dual Vectors': pri-dual-vec.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
   - '_Linear Interpolators': lininterp.md
