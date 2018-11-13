@@ -65,9 +65,9 @@ and we collect the results into a vector we call this a *dual vector*.
 
 Integrals such as this often arise when enforcing energy balance in physical
 systems. For example, if $\vec{J}$ is a current density describing a flow of
-charged particles and $\vec{E}$ is an electric field effecting those particles,
-then $\int_\Omega\vec{J}\cdot\vec{E}\,d\vec{x}$ is the rate at which work is
-being done by the field on the charged particles.
+charged particles and $\vec{E}$ is an electric field acting upon those
+particles, then $\int_\Omega\vec{J}\cdot\vec{E}\,d\vec{x}$ is the rate at which
+work is being done by the field on the charged particles.
 
 MFEM provides `LinearForm` objects (or `ParLinearForm` objects in parallel)
 which can compute *dual vectors* from a given function, $\;g(\vec{x})$.  These
