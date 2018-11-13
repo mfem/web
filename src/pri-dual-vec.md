@@ -5,20 +5,22 @@ differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
 `Vector` classes which help to distinguish the different roles that vectors of
 data can play.
 
-<center>**Graphical summary of Primal, Dual, DoF, True DoF vectors**</center>
+<center>**Graphical summary of Primal, Dual, DoF (dofs),
+and True DoF (tdofs) vectors**</center>
 ![](img/FEM-LA-Diagrams.png)
 
 ## Primal Vectors
 
 The finite element method is based on the notion that a smooth function can be
-approximated by a sum of piece-wise functions called *basis functions*:
+approximated by a sum of piece-wise smooth functions (typically piece-wise
+polynomilas) called *basis functions*:
 $$f(\vec{x})\approx\sum_i f_i \phi_i(\vec{x}) \label{expan}$$
 The support of an individual basis function, $\;\phi_i(\vec{x})$, will either be
 a single zone or a collection of zones that share a common vertex, edge, or
 face.  The expansion coefficients, $\;f_i$, are linear functionals of the field
 being approximated, $\;f(\vec{x})$ in this case.  The $\;f_i$ could be as simple
 as values of the function at particular points, called interpolation points,
-e.g. $\;f_i=f(\vec{x}\_i)$ or they could be integrals of the field over
+e.g. $\;f_i=f(\vec{x}\_i)$, or they could be integrals of the field over
 submanifolds of the domain, e.g. $\;f_i = \int_{\Omega_i}f(\vec{x})d\vec{x}$.
 There are many possibilities but the expansion coefficients must be linear
 functionals of $\;f(\vec{x})$.  The expansion coefficients are often called
@@ -49,7 +51,7 @@ error in the finite element approximation of $\;f(\vec{x})$.
 ## Dual Vectors
 
 Any vector space, such as the space of *primal vectors*, has a dual space
-containing *covectors* a.k.a. *dual vectors*.  In this context a *dual vector*
+containing *co-vectors* a.k.a. *dual vectors*.  In this context a *dual vector*
 is a linear functional of a *primal vector* meaning that the action of a
 *dual vector* upon a *primal vector* is a real number.  For example, the
 integral of a field over a domain,
@@ -105,7 +107,7 @@ Primal vectors contain all of the expansion coefficients needed to compute the
 finite element approximation of a function in each element of a mesh.  When run
 in parallel, the local portion of a primal vector only contains data for the
 locally owned elements.  Regardless of whether or not the simulation is being
-run in parallel, some of these cofficients may in fact be redundant or
+run in parallel, some of these coefficients may in fact be redundant or
 interdependent.
 
 Sources of redundancy:
