@@ -112,7 +112,7 @@ Beyond the examples, a number of miniapps are available that are more representa
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
 - [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
-- [Mulard](https://codesign.llnl.gov/mulard.php): multigroup thermal radiation diffusion mini application.
+- [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
 ## Accurate and Flexible Visualization
 
