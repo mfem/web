@@ -7,6 +7,9 @@
 
 ## Selected Publications
 
+  1. T. L. Horvath and S. Rhebergen, [A locally conservative and energy-stable finite element method for the Navier-Stokes problem on time-dependent domains](https://doi.org/10.1002/fld.4707), *International Journal for Numerical Methods in Fluids*, pp. 1-14, **2019**.
+  1. K. L. A. Kirk, T. L. Horvath, A. Cesmelioglu and S. Rhebergen, [Analysis of a space-time hybridizable discontinuous Galerkin method for the advection-diffusion problem on time-dependent domains](http://arxiv.org/abs/1812.00216), *arXiv:1812.00216*, **Dec. 2018**.
+  1. S. Rhebergen and G. N. Wells, [An embedded-hybridized discontinuous Galerkin finite element method for the Stokes equations](https://arxiv.org/abs/1811.09194), *arXiv:1811.09194*, **Nov. 2018**.
   1. R. Anderson, A. Barker, J. Bramwell, J. Camier, J. Ceverny, J. Dahm, Y. Dudouit, V. Dobrev, A. Fisher, Tz. Kolev, D. Medina, M. Stowell, and V. Tomov, [MFEM: A Modular Finite Element Library](), in preparation, **2018**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, and V. Tomov, [Towards Simulation-Driven Optimization of High-Order Meshes by the Target-Matrix Optimization Paradigm](), *27th International Meshing Roundtable, Oct 1-8, 2018, Albuquerque*, submitted, **2018**.
   1. J. Ceverny, V. Dobrev, and Tz. Kolev, [Non-Conforming Mesh Refinement For High-Order Finite Elements](), submitted, **2018**.
@@ -20,7 +23,7 @@
   1. A. Mazuyer, P. Cupillard, R. Giot, M. Conin, Y. Leroy, and P. Thore, [Stress estimation in reservoirs using an integrated inverse method](http://www.sciencedirect.com/science/article/pii/S0098300417305010), *Computers & Geosciences*, 114, pp. 30 - 40, **2018**.
   1. D. A. White, M. Stowell, and D. A. Tortorelli, [Topological optimization of structures using Fourier representations](https://doi.org/10.1007/s00158-018-1962-y), *Structural and Multidisciplinary Optimization*, pp. 1-16, **Apr. 2018**.
   1. R. Li, Y. Xi, L. Erlandson, and Y. Saad, [The Eigenvalues Slicing Library (EVSL): Algorithms, Implementation, and Software](http://arxiv.org/abs/1802.05215), *arXiv:1802.05215*, **Feb. 2018**.
-  1. S. Rhebergen and S. N. Wells, [Preconditioning of a hybridized discontinuous Galerkin finite element method for the Stokes equations](http://arxiv.org/abs/1801.04707), *arXiv:1801.04707*, **Jan. 2018**.
+  1. S. Rhebergen and G. N. Wells, [Preconditioning of a hybridized discontinuous Galerkin finite element method for the Stokes equations](https://doi.org/10.1007/s10915-018-0760-4), *Journal of Scientific Computing*, 77(3), pp. 1936-1501, **2018**.
   1. T. S. Haut, P. G. Maginot, V. Z. Tomov, T. A. Brunner, and T. S. Bailey, [An Efficient Sweep-based Solver for the $S_N$ Equations on High-Order Meshes](http://ansannual.org/wp-content/2018/Data/pdfs/228-24980.pdf), *American Nuclear Society 2018 Annual Meeting, June 14-21, Philadelphia, PA*, **2018**.
   1. A. S&aacute;nchez-Villar and M. Merino, [Advances in Wave-Plasma Modelling in ECR Thrusters](http://mariomerino.uc3m.es/assets/docs/pubs/sanc18a.pdf), *2018 Space Propulsion Conference, May 14-18, Seville, Spain*, **2018**.
   1. S. Osborn, P. S. Vassilevski, and U. Villa, [A Multilevel, Hierarchical Sampling Technique for Spatially Correlated Random Fields](https://doi.org/10.1137/16M1082688), *SIAM Journal on Scientific Computing*, 39(5), pp. S543-S562, **Oct. 2017**.
