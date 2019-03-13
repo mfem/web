@@ -19,15 +19,15 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-![](img/gallery/ex1p-np64.png)
-
-*Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
-
-----
-
 [![](img/gallery/ex3-klein-1.jpg)](img/gallery/ex3-klein-1-full.png)
 
 *Solution of a Maxwell problem on a Klein bottle. Mesh generated with the [klein-bottle](http://mfem.github.io/doxygen/html/klein-bottle_8cpp_source.html) miniapp. Solution with [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html).*
+
+----
+
+[![](img/gallery/maxwell-eq.png)](img/gallery/maxwell-eq-full.png)
+
+*Comparisons of equipotential surfaces and force lines from Maxwell's [Treatise on Electricity and Magnetism](https://archive.org/details/ATreatiseOnElectricityMagnetism-Volume1/page/n552) with results from MFEM's [Volta miniapp](http://mfem.github.io/doxygen/html/volta_8cpp_source.html).*
 
 ----
 
@@ -92,9 +92,22 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+[![](img/gallery/rkh-132.png)](img/gallery/rkh-132.png)
+
+*Radiating Kevin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
+
+----
+
 [![](img/gallery/mandel.png)](img/gallery/mandel.png)
 
 *The [Shaper](http://mfem.github.io/doxygen/html/shaper_8cpp_source.html) miniapp applied to a multi-material input functions described by the iterates of the Mandelbrot set. Visualization with [GLVis](http://glvis.org).*
+
+----
+
+[![](img/gallery/drone.png)](img/gallery/drone.png)
+
+*Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
+
 
 </div><div class="col-md-3" markdown="1">
 
@@ -138,8 +151,11 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Test of the anisotropic refinement feature on a random mesh. A slightly modified version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html). Visualization with [GLVis](http://glvis.org).*
 
+----
 
+![](img/gallery/ex1p-np64.png)
 
+*Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
 
 </div>
 
