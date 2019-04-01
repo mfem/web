@@ -7,14 +7,17 @@
 
 ## Selected Publications
 
+SIAM Journal of Scientific Computing 41(1):B50-B68, 2019.
+
+  1. T. Haut, P. Maginot, V. Tomov, B. Southworth, T. Brunner and T. Bailey, [An Efficient Sweep-Based Solver for the SN Equations on High-Order Meshes](https://doi.org/10.1080/00295639.2018.1562778), *Nuclear Science and Engineering*, **2019**.
+  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [The Target-Matrix Optimization Paradigm For High-Order Meshes](https://doi.org/10.1137/18M1167206), *SIAM Journal on Scientific Computing*, 41(1):B50-B68, **2019**.
   1. T. L. Horvath and S. Rhebergen, [A locally conservative and energy-stable finite element method for the Navier-Stokes problem on time-dependent domains](https://doi.org/10.1002/fld.4707), *International Journal for Numerical Methods in Fluids*, pp. 1-14, **2019**.
   1. K. L. A. Kirk, T. L. Horvath, A. Cesmelioglu and S. Rhebergen, [Analysis of a space-time hybridizable discontinuous Galerkin method for the advection-diffusion problem on time-dependent domains](http://arxiv.org/abs/1812.00216), *arXiv:1812.00216*, **Dec. 2018**.
   1. S. Rhebergen and G. N. Wells, [An embedded-hybridized discontinuous Galerkin finite element method for the Stokes equations](https://arxiv.org/abs/1811.09194), *arXiv:1811.09194*, **Nov. 2018**.
   1. R. Anderson, A. Barker, J. Bramwell, J. Camier, J. Ceverny, J. Dahm, Y. Dudouit, V. Dobrev, A. Fisher, Tz. Kolev, D. Medina, M. Stowell, V. Tomov, and S. Zampini, [MFEM: A Modular Finite Element Library](), in preparation, **2018**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, and V. Tomov, [Towards Simulation-Driven Optimization of High-Order Meshes by the Target-Matrix Optimization Paradigm](https://project.inria.fr/imr27/files/2018/09/1034.pdf), *27th International Meshing Roundtable, Oct 1-8, 2018, Albuquerque*, **2018**.
   1. J. Ceverny, V. Dobrev, and Tz. Kolev, [Non-Conforming Mesh Refinement For High-Order Finite Elements](), submitted, **2018**.
-  1. V. A. Dobrev, T. V. Kolev, C. S. Lee, V. Z. Tomov, and P. S. Vassilevski, [Algebraic Hybridization and Static Condensation with Application to Scalable H(div) Preconditioning](https://arxiv.org/abs/1801.08914), *SIAM Journal on Scientific Computing*, in review, **2018**.
-  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [The Target-Matrix Optimization Paradigm For High-Order Meshes](https://arxiv.org/abs/1807.09807), *SIAM Journal on Scientific Computing*, in review, **2018**.
+  1. V. A. Dobrev, T. V. Kolev, C. S. Lee, V. Z. Tomov, and P. S. Vassilevski, [Algebraic Hybridization and Static Condensation with Application to Scalable H(div) Preconditioning](https://arxiv.org/abs/1801.08914), *SIAM Journal on Scientific Computing*, in press, **2018**.
   1. H. Auten, [The High Value of Open Source Software](https://str.llnl.gov/content/pages/2018-01/pdf/01.18.pdf), *Science & Technology Review*, January/February 2018, pp. 5-11, **2018**.
   1. R. W. Anderson, V. A. Dobrev, Tz. V. Kolev, R. N. Rieben, and V. Z. Tomov, [High-Order Multi-Material ALE Hydrodynamics](https://doi.org/10.1137/17M1116453), *SIAM Journal on Scientific Computing*, 40(1), pp. B32-B58, **2018**.
   1. A. T. Barker, V. Dobrev, J. Gopalakrishnan, and Tz. Kolev, [A scalable preconditioner for a primal discontinuous Petrov-Galerkin method](https://doi.org/10.1137/16M1104780), *SIAM Journal on Scientific Computing*, 40(2), pp. A1187–A1203, **2018**.
