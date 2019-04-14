@@ -903,7 +903,7 @@ supports various options including:
 - The number of elements in the azimuthal direction
 - The number of nodes to offset by before rejoining the stack
 - The initial angle of the cross sectional shape
-- The number of uniform refinement step to apply
+- The number of uniform refinement steps to apply
 
 Along with producing some visually interesting meshes, this miniapp
 demonstrates how simple 3D meshes can be constructed and transformed
