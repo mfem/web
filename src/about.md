@@ -30,6 +30,7 @@ Please cite with:
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
+- [Hennes Hajduk](http://www.mathematik.tu-dortmund.de/lsiii/cms/en/mitarbeiter/member/id=Hennes+Hajduk.html)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Kazem Kamran](https://info.rpi.edu/people/kazem-kamran)
 - Patrick Knupp
