@@ -120,6 +120,20 @@ quadrature point. The combination of targets and quality metrics is used to
 optimize the physical node positions, i.e., they must be as close as possible to
 the shape / size / alignment of their targets.
 
+### Low-Order Refined
+
+The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
+capability to generate a *low-order refined* mesh from a high-order mesh, and to
+transfer solutions between these meshes.
+
+![](img/examples/lor-transfer.png)
+
+Grid functions can be transfered between the coarse, high-order mesh and the
+low-order refined mesh using either $L^2$ projection or pointwise evaluation.
+These transfer operators can be designed to discretely conserve mass and to
+recover the original high-order solution when transferring a low-order grid
+function that was obtained by restricting a high-order grid function to the
+low-order refined space.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
