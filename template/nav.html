@@ -36,6 +36,7 @@
                 </li>
             {% else %}
                 <li {% if nav_item.active %}class="active"{% endif %}>
+                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
                     <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
                 </li>
             {% endif %}
