@@ -1024,6 +1024,28 @@ version.
 <br></div>
 
 
+<div id="lor-transfer" markdown="1">
+##Low-Order Refined Transfer Miniapp
+<img class="floatright"  width="450" src="../img/examples/lor-transfer.png">
+
+The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
+capability to generate a *low-order refined* mesh from a high-order mesh, and to
+transfer solutions between these meshes.
+
+Grid functions can be transferred between the coarse, high-order mesh and the
+low-order refined mesh using either $L^2$ projection or pointwise evaluation.
+These transfer operators can be designed to discretely conserve mass and to
+recover the original high-order solution when transferring a low-order grid
+function that was obtained by restricting a high-order grid function to the
+low-order refined space.
+
+_The miniapp has only a serial
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
 <img class="floatright" src="../img/examples/laghos.png">
@@ -1170,7 +1192,7 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 7; // update when adding miniapps!
+   numExamples += 8; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
@@ -1178,6 +1200,7 @@ function update(id)
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
+   showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
 
    // External miniapps
    numExamples += 1; // update when adding miniapps!

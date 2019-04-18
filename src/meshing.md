@@ -1,6 +1,6 @@
 # Meshing
 
-This page provides a brief description of MFEM's mesh formats and meshing mini applications.
+This page provides a brief description of MFEM's mesh formats and meshing mini applications and related tools.
 
 ## Mesh formats
 
@@ -19,7 +19,6 @@ MFEM supports a number of mesh formats, including:
 
 Detailed description of these formats can be found on the [mesh formats](mesh-formats.md) page. These formats are also supported by MFEM's native visualization tool, [GLVis](http://glvis.org/).
 
-
 ## Meshing miniapps
 
 The `miniapps/meshing` directory contains a collection of meshing-related miniapps based on MFEM.
@@ -29,7 +28,7 @@ demonstrating more advanced usage of the library. They are intended to be more
 representative of MFEM-based application codes. We recommend that new users
 start with the example codes before moving to the miniapps.
 
-The current meshing miniapps are described below.
+The current meshing miniapps are described below. Related tools are listed at the [bottom](#tools) of the page.
 
 ### Mobius Strip
 
@@ -120,7 +119,9 @@ quadrature point. The combination of targets and quality metrics is used to
 optimize the physical node positions, i.e., they must be as close as possible to
 the shape / size / alignment of their targets.
 
-### Low-Order Refined
+## Tools
+
+### Low-Order Refined Transfer
 
 The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
 capability to generate a *low-order refined* mesh from a high-order mesh, and to
@@ -128,7 +129,7 @@ transfer solutions between these meshes.
 
 ![](img/examples/lor-transfer.png)
 
-Grid functions can be transfered between the coarse, high-order mesh and the
+Grid functions can be transferred between the coarse, high-order mesh and the
 low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
