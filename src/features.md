@@ -43,13 +43,13 @@ MFEM supports arbitrary element [transformations][ElementTransformation] and inc
 
 Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the [PUMI](https://scorec.rpi.edu/pumi) distributed mesh management system.
 
-## Parallel and Scalable
+## Parallel, Scalable and GPU-ready
 
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
- - An experimental support for OpenMP acceleration is also included.
+ - Support for or hardware devices, such as GPUs, and programming models, such as CUDA, OCCA, RAJA and OpenMP is also included.
 
 A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters.
 
@@ -109,8 +109,9 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](http://mfem.github.io/doxygen/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
  - [Maxwell](http://mfem.github.io/doxygen/html/maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
- - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes.
- - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes.
+ - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
+ - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
