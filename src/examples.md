@@ -699,9 +699,9 @@ miniapp for another application of symplectic integration.
 <br></div>
 
 
-<div id="ex22" markdown="1">
-##Example 22: Adaptive mesh refinement for linear elasticity
-<img class="floatright" src="../img/examples/ex22.png">
+<div id="ex21" markdown="1">
+##Example 21: Adaptive mesh refinement for linear elasticity
+<img class="floatright" src="../img/examples/ex21.png">
 
 This is a version of Example 2 with a simple adaptive mesh
 refinement loop. The problem being solved is again linear
@@ -717,8 +717,8 @@ linear and curved meshes. Interpolation of functions from
 coarse to fine meshes, as well as persistent GLVis
 visualization are also illustrated.
 
-_The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
-and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
+_The example has a serial ([ex21.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21.cpp))
+and a parallel ([ex21p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21p.cpp)) version.
 We recommend viewing Examples 2 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1182,7 +1182,7 @@ function update(id)
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
-   showElement("ex22", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
