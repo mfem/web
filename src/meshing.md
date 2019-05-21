@@ -1,6 +1,6 @@
 # Meshing
 
-This page provides a brief description of MFEM's mesh formats and meshing mini applications and related tools.
+This page provides a brief description of MFEM's mesh formats, meshing mini applications, and related tools.
 
 ## Mesh formats
 

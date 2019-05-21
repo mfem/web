@@ -49,7 +49,7 @@ MFEM supports MPI-based parallelism throughout the library, and can readily be u
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
- - Support for or hardware devices, such as GPUs, and programming models, such as CUDA, OCCA, RAJA and OpenMP is also included.
+ - Support for hardware devices, such as GPUs, and programming models, such as CUDA, OCCA, RAJA and OpenMP is also included.
 
 A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters.
 
