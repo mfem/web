@@ -57,7 +57,7 @@ A serial MFEM application typically requires [minimal](http://mfem.github.io/dox
 
 MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra [vectors][Vector] and [sparse matrices][Operator].
 
-Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][(http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html] are also supported.
+Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][BlockMatrix] are also supported.
 
 A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):
 

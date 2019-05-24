@@ -55,7 +55,7 @@ Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
