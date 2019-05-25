@@ -29,7 +29,7 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Apr XX, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG).
+May 24, 2019 | [Version 4.0](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
 May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
 Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.
 Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).
