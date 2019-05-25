@@ -71,7 +71,7 @@ Download *hypre* and metis from
   - [https://computation.llnl.gov/casc/hypre/software.html](https://computation.llnl.gov/casc/hypre/software.html)
   - [http://glaros.dtc.umn.edu/gkhome/metis/metis/download](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
 
-Below we assume that we are working with versions 2.10.0b and
+Below we assume that we are working with versions 2.16.0 and
 [4.0.3](http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz)
 respectively. We also assume that the serial version of MFEM and GLVis have been
 built as described above.
@@ -79,16 +79,17 @@ built as described above.
 Put everything in the same directory:
 ```sh
 ~> ls
-glvis-3.0/  hypre-2.10.0b.tar.gz   metis-4.0.tar.gz   mfem-3.0/
+glvis-3.0/  hypre-2.16.0.tar.gz   metis-4.0.tar.gz   mfem-3.0/
 ```
 
 Build hypre:
 ```sh
-~> tar -zxvf hypre-2.10.0b.tar.gz
-~> cd hypre-2.10.0b/src/
-~/hypre-2.10.0b/src> ./configure --disable-fortran
-~/hypre-2.10.0b/src> make -j
-~/hypre-2.10.0b/src> cd ../..
+~> tar -zxvf hypre-2.16.0.tar.gz
+~> cd hypre-2.16.0/src/
+~/hypre-2.16.0/src> ./configure --disable-fortran
+~/hypre-2.16.0/src> make -j
+~/hypre-2.16.0/src> cd ../..
+~> ln -s hypre-2.16.0 hypre
 ```
 
 Build metis:

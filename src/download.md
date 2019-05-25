@@ -1,13 +1,13 @@
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG)
 ┊ [Example codes](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-3.4.tgz**
-</button>](https://bit.ly/mfem-3-4)
+**Download mfem-4.0tgz**
+</button>](https://bit.ly/mfem-4-0)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
@@ -17,6 +17,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
  **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
+ [mfem-4.0.tgz](https://bit.ly/mfem-4-0) | v4.0 | May 2019 | 5.2M | 167K |  |
  [mfem-3.4.tgz](https://bit.ly/mfem-3-4) | v3.4 | May 2018 | 4.4M | 134K |  |
  [mfem-3.3.2.tgz](https://goo.gl/Kd7Jk8) | v3.3.2 | Nov 2017 | 4.2M | 123K |  |
  [mfem-3.3.tgz](http://goo.gl/Vrpsns) | v3.3 | Jan 2017 | 4.0M | 112K |  |

@@ -30,6 +30,7 @@ Please cite with:
 - Truman Ellis
 - [Aaron Fisher](http://people.llnl.gov/fisher47)
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2/)
+- [Hennes Hajduk](http://www.mathematik.tu-dortmund.de/lsiii/cms/en/mitarbeiter/member/id=Hennes+Hajduk.html)
 - [Cyrus Harrison](http://people.llnl.gov/harrison37)
 - [Kazem Kamran](https://info.rpi.edu/people/kazem-kamran)
 - Patrick Knupp
@@ -39,7 +40,9 @@ Please cite with:
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - [Mark Miller](https://people.llnl.gov/miller86)
 - [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
+- [Jan Nikl](https://github.com/najlkin)
 - [Geoffrey Oxberry](https://github.com/goxberry)
+- [Will Pazner](https://pazner.github.io/)
 - [Robert Rieben](http://people.llnl.gov/rieben1)
 - [Joachim Schöberl](http://www.asc.tuwien.ac.at/~schoeberl/wiki/index.php/Joachim_Sch%C3%B6berl)
 - Jean Sexton
@@ -49,6 +52,7 @@ Please cite with:
 - [Mark Stowell](http://people.llnl.gov/stowell1)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
+- [Arturo Vargas](https://artv3.github.io/)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
 - [Kenneth Weiss](http://people.llnl.gov/weiss27)
 - [Daniel White](http://people.llnl.gov/white37)

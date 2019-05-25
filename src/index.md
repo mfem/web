@@ -29,11 +29,12 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+May 24, 2019 | [Version 4.0](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
 May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
 Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.
 Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).
-Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG).
 
+[comment]: # (Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG).)
 [comment]: # (Mar 30, 2018 | CEED-1.0 and libCEED-0.2 [released](http://ceed.exascaleproject.org/news/#software-release-ceed-10).)
 [comment]: # (Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) on the MFEM team.)
 [comment]: # (Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp released by [CEED](http://ceed.exascaleproject.org).)
@@ -54,14 +55,14 @@ Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-3.4.tgz**
-</button>](https://bit.ly/mfem-3-4)
+**Download mfem-4.0.tgz**
+</button>](https://bit.ly/mfem-4-0)
 
 For older releases see the [download](download.md) section.
 

@@ -243,7 +243,7 @@ refinement loop. The problem being solved is again the Laplace
 equation $$-\Delta u = 1$$ with homogeneous Dirichlet boundary
 conditions. The problem is solved on a sequence of meshes which
 are locally refined in a conforming (triangles, tetrahedrons)
-or non-conforming (quadrilateral, hexahedrons) manner according
+or non-conforming (quadrilaterals, hexahedra) manner according
 to a simple ZZ error estimator.
 
 The example demonstrates MFEM's capability to work with both
@@ -642,6 +642,88 @@ We recommend viewing examples 2, 5 and 10 before viewing this example._
 <br></div>
 
 
+<div id="ex20" markdown="1">
+##Example 20: Symplectic Integration of Hamiltonian Systems
+<img class="floatright" src="../img/examples/ex20.png">
+
+This example demonstrates the use of the variable order, symplectic time
+integration algorithm. Symplectic integration algorithms are designed to
+conserve energy when integrating systems of ODEs which are derived from
+Hamiltonian systems.
+
+Hamiltonian systems define the energy of a system as a function of
+time (t), a set of generalized coordinates (q), and their corresponding
+generalized momenta (p).
+$$
+H(q,p,t) = T(p) + V(q,t)
+$$
+Hamilton's equations then specify how q and p evolve in time:
+$$
+\frac{dq}{dt} =  \frac{dH}{dp}\,,\qquad
+\frac{dp}{dt} = -\frac{dH}{dq}
+$$
+
+To use the symplectic integration classes we need to define an `mfem::Operator`
+${\bf P}$ which evaluates the action of dH/dp, and an
+`mfem::TimeDependentOperator` ${\bf F}$ which computes -dH/dq.
+
+This example visualizes its results as an evolution in phase space by defining
+the axes to be $q$, $p$, and $t$ rather than $x$, $y$, and $z$.  In this space
+we build a ribbon-like mesh with nodes at $(0,0,t)$ and $(q,p,t)$. Finally we
+plot the energy as a function of time as a scalar field on this ribbon-like
+mesh.  This scheme highlights any variations in the energy of the system.
+
+This example offers five simple 1D Hamiltonians:
+
+- Simple Harmonic Oscillator (mass on a spring)
+  $$H = \frac{1}{2}\left( \frac{p^2}{m} + \frac{q^2}{k} \right)$$
+- Pendulum
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} - k \left( 1 - cos(q) \right) \right]$$
+- Gaussian Potential Well
+  $$H = \frac{p^2}{2m} - k e^{-q^2 / 2}$$
+- Quartic Potential
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} + k \left( 1 + q^2 \right) q^2 \right]$$
+- Negative Quartic Potential
+  $$H = \frac{1}{2}\left[ \frac{p^2}{m} + k \left( 1 - \frac{q^2}{8} \right) q^2 \right]$$
+
+In all cases these Hamiltonians are shifted by constant values so that the
+energy will remain positive. The mean and standard deviation of the computed
+energies at each time step are displayed upon completion.
+
+When run in parallel, each processor integrates the same Hamiltonian
+system but starting from different initial conditions.
+
+See the [Maxwell](#maxwell-miniapp-transient-full-wave-electromagnetics)
+miniapp for another application of symplectic integration.
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex21" markdown="1">
+##Example 21: Adaptive mesh refinement for linear elasticity
+<img class="floatright" src="../img/examples/ex21.png">
+
+This is a version of Example 2 with a simple adaptive mesh
+refinement loop. The problem being solved is again linear
+elasticity describing a multi-material cantilever beam.
+The problem is solved on a sequence of meshes which
+are locally refined in a conforming (triangles, tetrahedrons)
+or non-conforming (quadrilaterals, hexahedra) manner according
+to a simple ZZ error estimator.
+
+The example demonstrates MFEM's capability to work with both
+conforming and nonconforming refinements, in 2D and 3D, on
+linear and curved meshes. Interpolation of functions from
+coarse to fine meshes, as well as persistent GLVis
+visualization are also illustrated.
+
+_The example has a serial ([ex21.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21.cpp))
+and a parallel ([ex21p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21p.cpp)) version.
+We recommend viewing Examples 2 and 6 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -793,7 +875,7 @@ the mobius-strip miniapp.
 
 Manipulating the mesh topology and performing mesh transformation are demonstrated.
 
-The `klein-bottle` and `klein-donut` meshes in the `data` directory was generated with this miniapp.
+The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
 For more details, please see the [documentation](meshing.md) in the
 `miniapps/meshing` directory.
@@ -805,6 +887,59 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="toroid" markdown="1">
+## Toroid Miniapp
+<img class="floatright" src="../img/examples/toroid-wedge.png">
+
+This miniapp generates two types of toroidal volume meshes; one with
+triangular cross sections and one with square cross sections.  It
+works by defining a stack of individual elements and bending them so
+that the bottom and top of the stack can be joined to form a torus. It
+supports various options including:
+
+- The element type: 0 - Wedge, 1 - Hexahedron
+- The geometric order of the elements
+- The major and minor radii
+- The number of elements in the azimuthal direction
+- The number of nodes to offset by before rejoining the stack
+- The initial angle of the cross sectional shape
+- The number of uniform refinement steps to apply
+
+Along with producing some visually interesting meshes, this miniapp
+demonstrates how simple 3D meshes can be constructed and transformed
+in MFEM.  It also produces a family of meshes with simple but
+non-trivial topology for testing various features in MFEM.
+
+_This miniapp has only a serial
+([toroid.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/toroid.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="extruder" markdown="1">
+## Extruder Miniapp
+<img class="floatright" src="../img/examples/extruded-star.png">
+
+This miniapp creates higher dimensional meshes from lower dimensional meshes
+by extrusion.  Simple coordinate transformations can also be applied if desired.
+
+- The initial mesh can be 1D or 2D
+- 1D meshes can be extruded in both the y and z directions
+- 2D meshes can be triangular, quadrilateral, or contain both element types
+- Meshes with high order geometry are supported
+- User can specify the number of elements and the distance to extrude
+- Geometric order of the transformed mesh can be user selected or automatic
+
+This miniapp provides another demonstration of how simple meshes can be
+constructed and transformed in MFEM.
+
+_This miniapp has only a serial
+([extruder.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/extruder.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
@@ -884,6 +1019,28 @@ _The miniapp has a serial
 ([mesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)) and a
 parallel ([pmesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp))
 version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="lor-transfer" markdown="1">
+##Low-Order Refined Transfer Miniapp
+<img class="floatright"  width="450" src="../img/examples/lor-transfer.png">
+
+The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
+capability to generate a *low-order refined* mesh from a high-order mesh, and to
+transfer solutions between these meshes.
+
+Grid functions can be transferred between the coarse, high-order mesh and the
+low-order refined mesh using either $L^2$ projection or pointwise evaluation.
+These transfer operators can be designed to discretely conserve mass and to
+recover the original high-order solution when transferring a low-order grid
+function that was obtained by restricting a high-order grid function to the
+low-order refined space.
+
+_The miniapp has only a serial
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version.
 **We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -1004,7 +1161,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 19; // update when adding examples!
+   var numExamples = 21; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1024,6 +1181,8 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
+   showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
+   showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
@@ -1033,12 +1192,15 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 5; // update when adding miniapps!
+   numExamples += 8; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
+   showElement("toroid", meshing && all2 && all3 && all4);
+   showElement("extruder", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
+   showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
 
    // External miniapps
    numExamples += 1; // update when adding miniapps!
