@@ -56,6 +56,7 @@
             
             
                 <li >
+                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
                     <a href="../features/">Features</a>
                 </li>
             
@@ -64,6 +65,7 @@
             
             
                 <li >
+                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
                     <a href="../examples/">Examples</a>
                 </li>
             
@@ -157,6 +159,7 @@
             
             
                 <li >
+                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
                     <a href="../gallery/">Gallery</a>
                 </li>
             
@@ -165,6 +168,7 @@
             
             
                 <li >
+                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
                     <a href="../download/">Download</a>
                 </li>
             
@@ -268,21 +272,22 @@ glvis-3.0.tgz   mfem-3.0.tgz
 <li><a href="https://computation.llnl.gov/casc/hypre/software.html">https://computation.llnl.gov/casc/hypre/software.html</a></li>
 <li><a href="http://glaros.dtc.umn.edu/gkhome/metis/metis/download">http://glaros.dtc.umn.edu/gkhome/metis/metis/download</a></li>
 </ul>
-<p>Below we assume that we are working with versions 2.10.0b and
+<p>Below we assume that we are working with versions 2.16.0 and
 <a href="http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz">4.0.3</a>
 respectively. We also assume that the serial version of MFEM and GLVis have been
 built as described above.</p>
 <p>Put everything in the same directory:</p>
 <pre><code class="sh">~&gt; ls
-glvis-3.0/  hypre-2.10.0b.tar.gz   metis-4.0.tar.gz   mfem-3.0/
+glvis-3.0/  hypre-2.16.0.tar.gz   metis-4.0.tar.gz   mfem-3.0/
 </code></pre>
 
 <p>Build hypre:</p>
-<pre><code class="sh">~&gt; tar -zxvf hypre-2.10.0b.tar.gz
-~&gt; cd hypre-2.10.0b/src/
-~/hypre-2.10.0b/src&gt; ./configure --disable-fortran
-~/hypre-2.10.0b/src&gt; make -j
-~/hypre-2.10.0b/src&gt; cd ../..
+<pre><code class="sh">~&gt; tar -zxvf hypre-2.16.0.tar.gz
+~&gt; cd hypre-2.16.0/src/
+~/hypre-2.16.0/src&gt; ./configure --disable-fortran
+~/hypre-2.16.0/src&gt; make -j
+~/hypre-2.16.0/src&gt; cd ../..
+~&gt; ln -s hypre-2.16.0 hypre
 </code></pre>
 
 <p>Build metis:</p>
