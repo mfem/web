@@ -134,10 +134,6 @@
                         
                     
                         
-                            <li >
-                                 <a href="../code-overview/">Code Overview</a>
-                            </li>
-                        
                     
                         
                             <li >
@@ -264,9 +260,9 @@
 <ul>
 <li>MFEM-based <a href="http://www.llnl.gov/casc/blast">applications</a> have been <a href="http://computation.llnl.gov/blast/parallel-performance">scaled</a> to <a href="http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png">hundreds of thousands</a> of parallel cores.</li>
 <li>The library supports <a href="../performance/">efficient operator assembly/evaluation</a> for tensor-product high-order elements.</li>
-<li>Support for hardware devices, such as GPUs, and programming models, such as CUDA, OCCA, RAJA and OpenMP is also included.</li>
+<li>Support for hardware devices, such as GPUs, and programming models, such as CUDA, <a href="https://libocca.org">OCCA</a>, <a href="https://github.com/LLNL/RAJA">RAJA</a> and OpenMP is also included.</li>
 </ul>
-<p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters.</p>
+<p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several <a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">examples</a> and many <a href="http://mfem.github.io/doxygen/html/vector_8cpp_source.html">linear algebra</a> and <a href="http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html">finite element</a> operations is available.</p>
 <h2 id="built-in-solvers">Built-in Solvers</h2>
 <p>MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra <a href="http://mfem.github.io/doxygen/html/inherit_graph_295.svg">vectors</a> and <a href="http://mfem.github.io/doxygen/html/inherit_graph_223.svg">sparse matrices</a>.</p>
 <p>Several matrix storage formats are available including dense, compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1SparseMatrix.html">CSR</a>) and parallel compressed sparse row (<a href="http://mfem.github.io/doxygen/html/classmfem_1_1HypreParMatrix.html">ParCSR</a>). Block vectors, operators and <a href="http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html">matrices</a> are also supported.</p>
