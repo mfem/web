@@ -29,11 +29,13 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-May 24, 2019 | [Version 4.0](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
+May 24, 2019 | Version 4.0 with initial GPU support [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG).
+May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
+Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.
 May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
-Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.
-Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).
 
+[comment]: # (Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.)
+[comment]: # (Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).)
 [comment]: # (Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG).)
 [comment]: # (Mar 30, 2018 | CEED-1.0 and libCEED-0.2 [released](http://ceed.exascaleproject.org/news/#software-release-ceed-10).)
 [comment]: # (Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) on the MFEM team.)

@@ -693,8 +693,10 @@ energies at each time step are displayed upon completion.
 When run in parallel, each processor integrates the same Hamiltonian
 system but starting from different initial conditions.
 
-See the [Maxwell](#maxwell-miniapp-transient-full-wave-electromagnetics)
-miniapp for another application of symplectic integration.
+_The example has a serial ([ex20.cpp](https://github.com/mfem/mfem/blob/master/examples/ex20.cpp))
+and a parallel ([ex20p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex20p.cpp)) version.
+See the [Maxwell](#maxwell-miniapp-transient-full-wave-electromagnetics) miniapp for another
+application of symplectic integration._
 <div style="clear:both;"/></div>
 <br></div>
 
