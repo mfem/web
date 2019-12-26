@@ -29,11 +29,12 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
 May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
 May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
 Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.
-May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
 
+[comment]: # (May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).)
 [comment]: # (Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.)
 [comment]: # (Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).)
 [comment]: # (Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG).)
