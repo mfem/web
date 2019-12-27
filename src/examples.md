@@ -88,6 +88,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
    <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
+   <label><input type="radio" id="hiop" onchange="update(this.id);" /> HiOp solvers</label><br/>
 </div>
 </div>
 <hr>
@@ -328,7 +329,8 @@ is also illustrated.
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.
 It also has a SUNDIALS modification in [examples/sundials](https://github.com/mfem/mfem/blob/master/examples/sundials)
-and a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
+, a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc),
+and a HiOp modification in [examples/hiop](https://github.com/mfem/mfem/blob/master/examples/hiop)._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1155,7 +1157,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -1172,7 +1174,7 @@ function update(id)
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc));
+   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || hiop));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));

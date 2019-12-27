@@ -71,7 +71,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
- - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
+ - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
 ## Extensive Examples
 
@@ -101,7 +101,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
-Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html) and [PUMI](http://mfem.github.io/doxygen/html/pumi_8hpp.html).
+Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html), [PUMI](https://mfem.github.io/doxygen/html/pumi_8hpp.html) and [HiOp](https://mfem.github.io/doxygen/html/hiop_8hpp.html).
 
 Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
 
