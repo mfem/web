@@ -730,7 +730,7 @@ We recommend viewing Examples 2 and 6 before viewing this example._
 <img class="floatright" src="../img/examples/ex22.gif">
 
 This example code demonstrates the use of MFEM to define and
-solve a complex-valued linear system.  We implement three variants
+solve a complex-valued linear system. It implements three variants
 of a damped harmonic oscillator:
 
 - A scalar $H^1$ field:
@@ -751,7 +751,7 @@ a sequence of fields sent to a single GLVis socket.
 
 _The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
 and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
-We recommend viewing Examples 1, 3, or 4 before viewing this example._
+We recommend viewing examples 1, 3, and 4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
