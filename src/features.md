@@ -97,7 +97,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 18](http://mfem.github.io/doxygen/html/ex18_8cpp_source.html): Discontinuous Galerkin (DG) for the Euler equations,
  - [Example 19](http://mfem.github.io/doxygen/html/ex19_8cpp_source.html): incompressible nonlinear elasticity,
  - [Example 20](http://mfem.github.io/doxygen/html/ex20_8cpp_source.html): symplectic ODE integration,
- - [Example 21](http://mfem.github.io/doxygen/html/ex21_8cpp_source.html): adaptive mesh refinement for linear elasticity.
+ - [Example 21](http://mfem.github.io/doxygen/html/ex21_8cpp_source.html): adaptive mesh refinement for linear elasticity,
+ - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 

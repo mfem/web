@@ -727,6 +727,36 @@ We recommend viewing Examples 2 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex22" markdown="1">
+##Example 22: Complex Linear Systems
+<img class="floatright" src="../img/examples/ex22.gif">
+
+This example code demonstrates the use of MFEM to define and
+solve a complex-valued linear system. It implements three variants
+of a damped harmonic oscillator:
+
+- A scalar $H^1$ field:
+  $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
+
+- A vector $H(Curl)$ field:
+  $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
+
+- A vector $H(Div)$ field:
+  $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
+
+In each case the field is driven by a forced oscillation, with
+angular frequency $\omega$, imposed at the boundary or a portion
+of the boundary.
+
+The example also demonstrates how to display a time-varying solution as
+a sequence of fields sent to a single GLVis socket.
+
+_The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
+and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
+We recommend viewing examples 1, 3, and 4 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
@@ -1165,7 +1195,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 21; // update when adding examples!
+   var numExamples = 22; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1187,6 +1217,7 @@ function update(id)
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
    showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
