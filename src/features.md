@@ -112,6 +112,10 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
+ - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
+ - [Load DC](http://mfem.github.io/doxygen/html/load-dc_8cpp_source.html): visualize fields saved via DataCollection classes,
+ - [Convert DC](http://mfem.github.io/doxygen/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
