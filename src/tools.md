@@ -23,8 +23,9 @@ Currently supported data collection type options:
 
 The `load-dc` miniapp, found in the `miniapps/tools` subdirectory, loads and
 visualizes (in GLVis) previously saved data using DataCollection sub-classes,
-see e.g. Example 5/5p. Currently, only the VisItDataCollection class is
-supported.
+see e.g. Example 5/5p.
+![](img/examples/load-dc.png)
+Currently, only the VisItDataCollection class is supported.
 
 ### Get Values
 
