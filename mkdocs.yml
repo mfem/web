@@ -30,6 +30,7 @@ pages:
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
   - '_Code Overview': code-overview.md
+  - 'Tools': tools.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md
