@@ -118,7 +118,8 @@ a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cp
 and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp),
 [performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
-and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi)._
+, a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi) and a Ginkgo modification
+in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo)._
 <div style="clear:both;"></div>
 <br></div>
 
