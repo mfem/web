@@ -136,8 +136,8 @@
                         
                     
                         
-                            <li >
-                                 <a href="../tools/">Tools</a>
+                            <li class="active">
+                                 <a href="./">Tools</a>
                             </li>
                         
                     
@@ -198,159 +198,140 @@
 
         <div class="container">
             
-            <div class="col-md-12" role="main">
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#tools">Tools</a></li>
+        
+            <li><a href="#general-tools">General Tools</a></li>
+        
+            <li><a href="#datacollection-tools">DataCollection Tools</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
 
-<h2 id="all-news-updates">All News Updates</h2>
+<h1 id="tools">Tools</h1>
+<h2 id="general-tools">General Tools</h2>
+<h3 id="display-basis">Display Basis</h3>
+<p>The <code>display-basis</code> miniapp, found under <code>miniapps/tools</code>, visualizes various
+types of finite element basis functions on a single mesh element in 1D, 2D,
+and 3D.</p>
+<p><img alt="" src="../img/examples/display-basis.png" /></p>
+<p>The element type, basis type and order can be changed interactively.  The mesh
+element is either the reference element, or a simple transformation of it.</p>
+<h3 id="low-order-refined-transfer">Low-Order Refined Transfer</h3>
+<p>The <code>lor-transfer</code> miniapp, found under <code>miniapps/tools</code> demonstrates the
+capability to generate a <em>low-order refined</em> mesh from a high-order mesh, and to
+transfer solutions between these meshes.</p>
+<p><img alt="" src="../img/examples/lor-transfer.png" /></p>
+<p>Grid functions can be transferred between the coarse, high-order mesh and the
+low-order refined mesh using either $L^2$ projection or pointwise evaluation.
+These transfer operators can be designed to discretely conserve mass and to
+recover the original high-order solution when transferring a low-order grid
+function that was obtained by restricting a high-order grid function to the
+low-order refined space.</p>
+<h2 id="datacollection-tools">DataCollection Tools</h2>
+<h3 id="convert-dc">Convert DC</h3>
+<p>This tool, named <code>convert-dc</code> in the <code>miniapps/tools</code> subdirectory,
+demonstrates how to convert between MFEM's different concrete
+DataCollection options.</p>
+<p>Currently supported data collection type options:</p>
 <table>
 <thead>
 <tr>
-<th>&nbsp;</th>
-<th></th>
+<th>Nickname</th>
+<th align="left">Full Class Name</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>May 24, 2019</td>
-<td>Version 4.0 <a href="https://github.com/mfem/mfem/blob/v4.0/CHANGELOG">released</a> with initial GPU support.</td>
+<td>visit</td>
+<td align="left">VisItDataCollection (default)</td>
 </tr>
 <tr>
-<td>Mar 30, 2019</td>
-<td>CEED v2.0 and libCEED v0.4 <a href="https://ceed.exascaleproject.org/news/#software-release-ceed-v20">released</a> with MFEM support.</td>
+<td>sidre or sidre_hdf5</td>
+<td align="left">SidreDataCollection</td>
 </tr>
 <tr>
-<td>Mar 22, 2019</td>
-<td>A version of the Laghos miniapp <a href="https://github.com/CEED/Laghos/releases/tag/cts2">released</a> for use in the second edition of the <a href="https://asc.llnl.gov/computers/commodity">Commodity Technology Systems</a> procurement process.</td>
+<td>json</td>
+<td align="left">ConduitDataCollection w/ protocol json</td>
 </tr>
 <tr>
-<td>May 10, 2019</td>
-<td><a href="http://arxiv.org/abs/1905.04033">AMR</a> and <a href="http://arxiv.org/abs/1807.09807">TMOP</a> papers available on arXiv.</td>
+<td>conduit_json</td>
+<td align="left">ConduitDataCollection w/ protocol conduit_json</td>
 </tr>
 <tr>
-<td>Nov 19, 2018</td>
-<td>Laghos v2.0 <a href="https://github.com/CEED/Laghos/releases/tag/v2.0">released</a> with CUDA, RAJA, OCCA and AMR versions.</td>
+<td>conduit_bin</td>
+<td align="left">ConduitDataCollection w/ protocol conduit_bin</td>
 </tr>
 <tr>
-<td>Nov 9, 2018</td>
-<td>MFEM part of the first release of the <a href="https://e4s-project.github.io/">Extreme-Scale Scientific Software Stack</a> (E4S) by the Software Technologies focus area of the ECP.</td>
-</tr>
-<tr>
-<td>Aug 6, 2018</td>
-<td>Unstructured technologies <a href="https://www.youtube.com/watch?v=Zh6pFjkmr0g">presentation</a> at <a href="https://extremecomputingtraining.anl.gov/">ATPESC18</a>.</td>
-</tr>
-<tr>
-<td>May 29, 2018</td>
-<td>Version 3.4 <a href="https://github.com/mfem/mfem/blob/v3.4/CHANGELOG">released</a>.</td>
-</tr>
-<tr>
-<td>Apr 2, 2018</td>
-<td>MFEM part of <a href="http://openhpc.community/">OpenHPC</a>, a Linux Foundation project for software components required to deploy and manage HPC Linux clusters.</td>
-</tr>
-<tr>
-<td>Mar 30, 2018</td>
-<td>CEED v1.0 and libCEED v0.2 <a href="http://ceed.exascaleproject.org/news/#software-release-ceed-10">released</a> with MFEM support.</td>
-</tr>
-<tr>
-<td>Mar 1, 2018</td>
-<td>MFEM highlighted in LLNL's <a href="https://str.llnl.gov/2018-01/lee">Science &amp; Technology Review</a> magazine, including on the <a href="https://str.llnl.gov/content/pages/2018-01/pdf/01.18.pdf">cover</a>.</td>
-</tr>
-<tr>
-<td>Dec 30, 2017</td>
-<td>Initial version of <a href="https://github.com/CEED/libCEED">libCEED</a>, the low-level CEED API, released.</td>
-</tr>
-<tr>
-<td>Nov 10, 2017</td>
-<td>Version 3.3.2 <a href="https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG">released</a>.</td>
-</tr>
-<tr>
-<td>Nov 7, 2017</td>
-<td>ECP article: <a href="https://www.exascaleproject.org/co-design-center-develops-next-generation-simulation-libraries-and-mini-apps/">Co-Design Center Develops Next-Generation Simulation Tools</a>, also in <a href="https://www.hpcwire.com/2017/11/08/co-design-center-develops-next-generation-simulation-tools/">HPCwire</a>.</td>
-</tr>
-<tr>
-<td>Oct 30, 2017</td>
-<td>Laghos part of the <a href="https://exascaleproject.github.io/proxy-apps/ecp-apps/">ECP Proxy App Suite 1.0</a>, <a href="https://asc.llnl.gov/coral-2-benchmarks/">CORAL-2 Benchmarks</a> and <a href="https://codesign.llnl.gov/laghos.php">ASC co-design miniapps</a>.</td>
-</tr>
-<tr>
-<td>Oct 16, 2017</td>
-<td>Postdoc position <a href="http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member">available</a> for electromagnetic simulations with MFEM.</td>
-</tr>
-<tr>
-<td>Sep 22, 2017</td>
-<td>LLNL Newsline: <a href="https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering">LLNL gears up for next generation of computer-aided design and engineering</a>.</td>
-</tr>
-<tr>
-<td>Jun 15, 2017</td>
-<td><a href="https://github.com/ceed/Laghos">Laghos</a> miniapp and <a href="http://ceed.exascaleproject.org/bps/">CEED benchmarks</a> released.</td>
-</tr>
-<tr>
-<td>May 8, 2017</td>
-<td>News highlight: <a href="https://computation.llnl.gov/newsroom/accelerating-simulation-software-graphics-processing-units">Accelerating Simulation Software with Graphics Processing Units</a>.</td>
-</tr>
-<tr>
-<td>Feb 16, 2017</td>
-<td>Moved main development to GitHub.</td>
-</tr>
-<tr>
-<td>Jan 28, 2017</td>
-<td>Version 3.3 <a href="https://github.com/mfem/mfem/blob/v3.3/CHANGELOG">released</a>.</td>
-</tr>
-<tr>
-<td>Dec 15, 2016</td>
-<td><a href="http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1">Postdoc position</a> for <a href="https://exascaleproject.org/2016/11/11/ecp_co-design_centers">exascale computing</a> with MFEM.</td>
-</tr>
-<tr>
-<td>Nov 11, 2016</td>
-<td>MFEM part of the new <a href="https://exascaleproject.org">ECP</a> co-design <a href="http://ceed.exascaleproject.org">Center for Efficient Exascale Discretizations (CEED)</a>.</td>
-</tr>
-<tr>
-<td>Nov 11, 2016</td>
-<td>LLNL Newsline: <a href="https://www.llnl.gov/news/lawrence-livermore-tapped-lead-%E2%80%98co-design%E2%80%99-center-exascale-computing-ecosystem">Lawrence Livermore tapped to lead ‘co-design’ center for exascale computing ecosystem</a>.</td>
-</tr>
-<tr>
-<td>Oct 6, 2016</td>
-<td><a href="https://str.llnl.gov/september-2016">Science &amp; Technology Review</a> article: <a href="https://str.llnl.gov/content/pages/september-2016/pdf/09.16.1.pdf">Laying the Groundwork for Extreme-Scale Computing</a>, see also the <a href="http://www.youtube.com/watch?v=ePWyiDf_XTg">YouTube preview</a>.</td>
-</tr>
-<tr>
-<td>Sep 19, 2016</td>
-<td><a href="https://github.com/MFEM/PyMFEM">PyMFEM</a> - a Python wrapper for MFEM by <a href="https://www.psfc.mit.edu/people/scientific-staff/syun-ichi-shiraiwa">Syun'ichi Shiraiwa</a> from MIT's Plasma Science and Fusion Center released.</td>
-</tr>
-<tr>
-<td>Jun 30, 2016</td>
-<td>Version 3.2 <a href="https://github.com/mfem/mfem/blob/v3.2/CHANGELOG">released</a>.</td>
-</tr>
-<tr>
-<td>May 6, 2016</td>
-<td>MFEM packages available in <a href="https://github.com/Homebrew/homebrew-science">homebrew</a> and <a href="https://github.com/LLNL/spack">spack</a>.</td>
-</tr>
-<tr>
-<td>Mar 9, 2016</td>
-<td>VisIt 2.10.1 <a href="http://software.llnl.gov/news/2016/03/09/visit-2.10.1">released</a> with MFEM 3.1 support.</td>
-</tr>
-<tr>
-<td>Mar 4, 2016</td>
-<td>New LLNL open-source software <a href="http://software.llnl.gov/news">Blog</a> and <a href="https://twitter.com/LLNL_OpenSource">Twitter</a>.</td>
-</tr>
-<tr>
-<td>Feb 16, 2016</td>
-<td>Version 3.1 <a href="https://github.com/mfem/mfem/blob/v3.1/CHANGELOG">released</a>.</td>
-</tr>
-<tr>
-<td>Feb 5, 2016</td>
-<td>MFEM simulation images part of the <a href="https://www.llnl.gov/news/media-advisory-laboratory-showcases-art-science-livermore-library">Art of Science</a> exhibition at the Livermore public library.</td>
-</tr>
-<tr>
-<td>Jan 6, 2016</td>
-<td>News highlight: <a href="http://computation.llnl.gov/newsroom/high-order-finite-element-library-provides-scientists-access-cutting-edge-algorithms">High-order finite element library provides scientists with access to cutting-edge algorithms</a>.</td>
-</tr>
-<tr>
-<td>Aug 18, 2015</td>
-<td>Moved to <a href="https://github.com/mfem/mfem">GitHub</a> and <a href="http://mfem.org">mfem.org</a>.</td>
-</tr>
-<tr>
-<td>Jan 26, 2015</td>
-<td>Version 3.0 <a href="https://github.com/mfem/mfem/blob/v3.0/CHANGELOG">released</a>.</td>
+<td>hdf5</td>
+<td align="left">ConduitDataCollection w/ protocol hdf5</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="load-dc">Load DC</h3>
+<p>The <code>load-dc</code> miniapp, found in the <code>miniapps/tools</code> subdirectory, loads and
+visualizes (in GLVis) previously saved data using DataCollection sub-classes,
+see e.g. Example 5/5p.
+<img alt="" src="../img/examples/load-dc.png" />
+Currently, only the VisItDataCollection class is supported.</p>
+<h3 id="get-values">Get Values</h3>
+<p>The <code>get-values</code> miniapp, found in <code>miniapps/tools</code>, loads previously saved
+data using DataCollection sub-classes and outputs field values at a set of
+points. Currently, only the VisItDataCollection class is supported.</p>
+<pre><code># Number of fields
+3
+# Legend
+# &quot;Index&quot; &quot;Location&quot;:2 &quot;pressure&quot;:1 &quot;velocity&quot;:2
+2 1 2
+# Number of points
+6
+0 0.0 0.8 0.717336 -0.716172 -0.696674
+1 0.2 0.8 0.876045 -0.875874 -0.852278
+2 0.4 0.8 1.06999 -1.07106 -1.03923
+3 0.6 0.8 1.30719 -1.30931 -1.26903
+4 0.8 0.8 1.59678 -1.59601 -1.54949
+5 1.0 0.8 1.94995 -1.94853 -1.89371
+</code></pre>
+
+<p>Point locations can be specified on the command line using <code>-p</code> or within a
+data file whose name can be given with option <code>-pf</code>.  The data file format is:</p>
+<pre><code>number_of_points space_dimension
+x_0 y_0 ...
+x_1 y_1 ...
+etc.
+</code></pre>
+
+<p>By default all available fields are evaluated.  The list of fields can be
+reduced by specifying the desired field names with <code>-fn</code>. The <code>-fn</code> option
+takes a space separated list of field names surrounded by quotes.  Field
+names containing spaces, such as "Field 1" and "Field 2", can be entered as:</p>
+<p><code>get-values -fn "Field\ 1 Field\ 2"</code></p>
+<p>By default the data is written to standard out.  This can be overwritten
+with the <code>-o [filename]</code> option.</p>
+<p>The output format contains comments as well as sizing information to aid in
+subsequent processing.  The bulk of the data consists of one line per point
+with a 0-based integer index followed by the point coordinates and then the
+field data.  A legend, appearing before the bulk data, shows the order of
+the fields along with the number of values per field (for vector data).</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#tools">Tools</a></li>
+        
+            <li><a href="#general-tools">General Tools</a></li>
+        
+            <li><a href="#datacollection-tools">DataCollection Tools</a></li>
+        
+    
+    </ul>
+</div></div>
 
             
         </div>

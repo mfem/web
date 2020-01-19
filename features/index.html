@@ -56,7 +56,7 @@
             
             
                 <li class="active">
-                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
                     <a href="./">Features</a>
                 </li>
             
@@ -65,7 +65,7 @@
             
             
                 <li >
-                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
                     <a href="../examples/">Examples</a>
                 </li>
             
@@ -137,6 +137,12 @@
                     
                         
                             <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../publications/">Publications</a>
                             </li>
                         
@@ -155,7 +161,7 @@
             
             
                 <li >
-                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
                     <a href="../gallery/">Gallery</a>
                 </li>
             
@@ -164,7 +170,7 @@
             
             
                 <li >
-                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
                     <a href="../download/">Download</a>
                 </li>
             
@@ -274,6 +280,7 @@
 <li>parallel <a href="../examples/?lobpcg">eigensolvers</a>: LOBPCG and AME,</li>
 <li>high-performance preconditioners from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
 <li>many linear and nonlinear solvers, preconditioners and time integrators from the <a href="https://www.mcs.anl.gov/petsc">PETSc</a> suite,</li>
+<li>various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the <a href="https://github.com/ginkgo-project/ginkgo">Ginkgo</a> library.</li>
 <li>time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the <a href="http://computation.llnl.gov/projects/sundials/sundials-software">SUNDIALS</a> suite,</li>
 <li>discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,</li>
 <li><a href="../examples/?superlu">parallel</a> and <a href="../examples/?umfpack">sequential</a> sparse direct solvers based on <a href="http://crd-legacy.lbl.gov/~xiaoye/SuperLU">SuperLU</a>, <a href="http://portal.nersc.gov/project/sparse/strumpack">STRUMPACK</a> and the <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
@@ -307,7 +314,7 @@
 <li><a href="http://mfem.github.io/doxygen/html/ex22_8cpp_source.html">Example 22</a>: complex-valued linear systems.</li>
 </ul>
 <p>Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
-<p>Many of the examples also have modifications that take advantage of optional third-party libraries such as <a href="http://mfem.github.io/doxygen/html/petsc_8hpp.html">PETSc</a>, <a href="http://mfem.github.io/doxygen/html/sundials_8hpp.html">SUNDIALS</a>, <a href="https://mfem.github.io/doxygen/html/pumi_8hpp.html">PUMI</a> and <a href="https://mfem.github.io/doxygen/html/hiop_8hpp.html">HiOp</a>.</p>
+<p>Many of the examples also have modifications that take advantage of optional third-party libraries such as <a href="http://mfem.github.io/doxygen/html/petsc_8hpp.html">PETSc</a>, <a href="http://mfem.github.io/doxygen/html/sundials_8hpp.html">SUNDIALS</a>, <a href="https://mfem.github.io/doxygen/html/pumi_8hpp.html">PUMI</a>, <a href="https://mfem.github.io/doxygen/html/ginkgo_8hpp.html">Ginkgo</a> and <a href="https://mfem.github.io/doxygen/html/hiop_8hpp.html">HiOp</a>.</p>
 <p>Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:</p>
 <ul>
 <li><a href="http://mfem.github.io/doxygen/html/volta_8cpp_source.html">Volta</a>: simple electrostatics simulation code,</li>
@@ -316,6 +323,10 @@
 <li><a href="http://mfem.github.io/doxygen/html/joule_8cpp_source.html">Joule</a>: transient magnetics and Joule heating miniapp,</li>
 <li><a href="http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes,</li>
 <li><a href="http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html">Mesh Optimizer</a>: optimize high-order meshes,</li>
+<li><a href="http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html">Display Basis</a>: visualize finite element basis functions,</li>
+<li><a href="http://mfem.github.io/doxygen/html/get-values_8cpp_source.html">Get Values</a>: extract field values via DataCollection classes,</li>
+<li><a href="http://mfem.github.io/doxygen/html/load-dc_8cpp_source.html">Load DC</a>: visualize fields saved via DataCollection classes,</li>
+<li><a href="http://mfem.github.io/doxygen/html/convert-dc_8cpp_source.html">Convert DC</a>: convert between different DataCollection formats,</li>
 <li><a href="http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html">LOR Transfer</a>: map functions between high-order and low-order-refined spaces.</li>
 </ul>
 <p>In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:</p>
@@ -383,7 +394,6 @@
         <script src="../js/highlight.pack.js"></script>
         <script src="../js/base.js"></script>
         <script src="../js/retina.min.js"></script>
-        <script src="../search/require.js"></script>
-        <script src="../search/search.js"></script>
+        <script src="../search/main.js"></script>
     </body>
 </html>
