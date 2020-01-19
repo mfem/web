@@ -66,6 +66,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - [Krylov solvers][IterativeSolver], such as PCG, MINRES and GMRES applicable to general [operators][Operator] in serial and in parallel,
  - parallel [eigensolvers](examples.md?lobpcg): LOBPCG and AME,
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
+ - various iterative solvers, preconditioners and easily modifiable generic linear operators on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) high performance library.
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
@@ -102,7 +103,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
-Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html), [PUMI](https://mfem.github.io/doxygen/html/pumi_8hpp.html) and [HiOp](https://mfem.github.io/doxygen/html/hiop_8hpp.html).
+Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html), [PUMI](https://mfem.github.io/doxygen/html/pumi_8hpp.html), [Ginkgo](https://mfem.github.io/doxygen/html/ginkgo_8hpp.html) and [HiOp](https://mfem.github.io/doxygen/html/hiop_8hpp.html).
 
 Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
 
