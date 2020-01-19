@@ -1,5 +1,33 @@
 # Tools
 
+## General Tools
+
+### Display Basis
+
+The `display-basis` miniapp, found under `miniapps/tools`, visualizes various
+types of finite element basis functions on a single mesh element in 1D, 2D,
+and 3D.
+
+![](img/examples/display-basis.png)
+
+The element type, basis type and order can be changed interactively.  The mesh
+element is either the reference element, or a simple transformation of it.
+
+### Low-Order Refined Transfer
+
+The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
+capability to generate a *low-order refined* mesh from a high-order mesh, and to
+transfer solutions between these meshes.
+
+![](img/examples/lor-transfer.png)
+
+Grid functions can be transferred between the coarse, high-order mesh and the
+low-order refined mesh using either $L^2$ projection or pointwise evaluation.
+These transfer operators can be designed to discretely conserve mass and to
+recover the original high-order solution when transferring a low-order grid
+function that was obtained by restricting a high-order grid function to the
+low-order refined space.
+
 ## DataCollection Tools
 
 ### Convert DC
@@ -60,7 +88,7 @@ etc.
 
 By default all available fields are evaluated.  The list of fields can be
 reduced by specifying the desired field names with `-fn`. The `-fn` option
-takes a space separated list of field names surrounded by qoutes.  Field
+takes a space separated list of field names surrounded by quotes.  Field
 names containing spaces, such as "Field 1" and "Field 2", can be entered as:
 
 ```get-values -fn "Field\ 1 Field\ 2"```
@@ -73,34 +101,6 @@ subsequent processing.  The bulk of the data consists of one line per point
 with a 0-based integer index followed by the point coordinates and then the
 field data.  A legend, appearing before the bulk data, shows the order of
 the fields along with the number of values per field (for vector data).
-
-## General Tools
-
-### Display Basis
-
-The `display-basis` miniapp, found under `miniapps/tools`, visualizes various
-types of finite element basis functions on a single mesh element in 1D, 2D,
-and 3D.
-
-![](img/examples/display-basis.png)
-
-The element type, basis type and order can be changed interactively.  The mesh
-element is either the reference element, or a simple transformation of it.
-
-### Low-Order Refined Transfer
-
-The `lor-transfer` miniapp, found under `miniapps/tools` demonstrates the
-capability to generate a *low-order refined* mesh from a high-order mesh, and to
-transfer solutions between these meshes.
-
-![](img/examples/lor-transfer.png)
-
-Grid functions can be transferred between the coarse, high-order mesh and the
-low-order refined mesh using either $L^2$ projection or pointwise evaluation.
-These transfer operators can be designed to discretely conserve mass and to
-recover the original high-order solution when transferring a low-order grid
-function that was obtained by restricting a high-order grid function to the
-low-order refined space.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
