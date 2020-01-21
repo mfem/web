@@ -6,6 +6,8 @@
 
 ## Life
 
+![](img/examples/life.gif)
+
 ## Lissajous
 
 ## Mandel
@@ -15,6 +17,8 @@
 ![](img/examples/mondrian.png)
 
 ## Rubik
+
+![](img/examples/rubik.gif)
 
 ## Snake
 
