@@ -1125,6 +1125,31 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="gslib-interpolation" markdown="1">
+##Interpolation Miniapp
+<img class="floatright"  width="450" src="../img/examples/gslib.png">
+
+The interpolation miniapp, found under `miniapps/gslib`, demonstrates the
+capability to interpolate a grid function on a given set of points in
+physical-space. [`gslib`](https://github.com/gslib/gslib) is a gather-scatter
+library for nearest neighbor exchange and includes a high-order 
+interpolation utility for quad and hex meshes.
+
+This miniapp includes two different examples. The first
+example has a serial
+([findpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp))
+and a parallel version
+([pfindpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/pfindpts.cpp))
+that show how `gslib` can robustly interpolate a gridfunction at randomly
+distributed points in a high-order mesh. The second example
+([field-diff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp))
+demonstrates how gridfunctions on two different meshes can be compared with
+each other.
+
+**We recommend that new users start with the example codes before moving to the
+miniapps.** <div style="clear:both;"/></div>
+<br></div>
+
 
 <!-- ------------------------------------------------------------------------- -->
 
