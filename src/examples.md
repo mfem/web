@@ -1081,6 +1081,33 @@ _The miniapp has only a serial
 <br></div>
 
 
+<div id="gslib-interpolation" markdown="1">
+##Interpolation Miniapps
+<img class="floatright"  width="450" src="../img/examples/gslib.png">
+
+The interpolation miniapps, found under `miniapps/gslib`, demonstrate the
+capability to interpolate high-order finite element functions at given set of
+points in physical space.
+
+
+These miniapps utilize the [`gslib`](https://github.com/gslib/gslib) library's
+high-order  interpolation utility for quad and hex meshes.
+The _FindPts_ miniapp has a serial
+([findpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp))
+and a parallel
+([pfindpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/pfindpts.cpp))
+versions that demonstrate the basic procedures for point search and evaluation
+of grid functions.
+The _Field-Diff_ miniapp
+([field-diff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp))
+demonstrates how grid functions on two different meshes can be compared with
+each other.
+
+_**These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library. We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
 <img class="floatright" src="../img/examples/laghos.png">
@@ -1123,31 +1150,6 @@ information and source code availability.
 
 _This is an external miniapp, available at [https://github.com/CEED/Laghos](https://github.com/CEED/Laghos)._
 <div style="clear:both;"/></div>
-<br></div>
-
-<div id="gslib-interpolation" markdown="1">
-##Interpolation Miniapp
-<img class="floatright"  width="450" src="../img/examples/gslib.png">
-
-The interpolation miniapp, found under `miniapps/gslib`, demonstrates the
-capability to interpolate a grid function on a given set of points in
-physical-space. [`gslib`](https://github.com/gslib/gslib) is a gather-scatter
-library for nearest neighbor exchange and includes a high-order 
-interpolation utility for quad and hex meshes.
-
-This miniapp includes two different examples. The first
-example has a serial
-([findpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp))
-and a parallel version
-([pfindpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/pfindpts.cpp))
-that show how `gslib` can robustly interpolate a gridfunction at randomly
-distributed points in a high-order mesh. The second example
-([field-diff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp))
-demonstrates how gridfunctions on two different meshes can be compared with
-each other.
-
-**We recommend that new users start with the example codes before moving to the
-miniapps.** <div style="clear:both;"/></div>
 <br></div>
 
 
@@ -1253,7 +1255,7 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 8; // update when adding miniapps!
+   numExamples += 9; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
@@ -1262,6 +1264,7 @@ function update(id)
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
    showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
+   showElement("gslib-interpolation", meshing && all2 && all3 && all4);
 
    // External miniapps
    numExamples += 1; // update when adding miniapps!
