@@ -203,16 +203,17 @@ block structure.
 
 | Class Name | Spaces | Coef. | Dimension | Operator | Notes |
 |---|---|:---:|:---:|---|---|
-| VectorMassIntegrator                 | $H_1^d$, $L_2^d$ | S, D, M    | 1D, 2D, 3D | $(\lambda\vec\{u},\vec\{v})$ | |
-| VectorCurlCurlIntegrator             | $H_1^d$, $L_2^d$ |    S       | 2D, 3D     | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | |
-| VectorDiffusionIntegrator            | $H_1^d$, $L_2^d$ |    S       | 1D, 2D, 3D | $(\lambda\grad u_i,\grad v_i)$ | Produces a block diagonal matrix where $i\in[0,dim)$ indicates the index of the block |
-| ElasticityIntegrator                 | $H_1^d$, $L_2^d$ | $2\times$S | 1D, 2D, 3D | $(c_\{ikjl}\grad u_j,\grad v_i)$ | Takes two scalar coefficients $\lambda$ and $\mu$ and produces a $dim\times dim$ block structured matrix where $i$ and $j$ are indices in this matrix.  The coefficient is defined by $c_\{ikjl} = \lambda\delta_\{ik}\delta_\{jl}+\mu(\delta_\{ij}\delta_\{kl}+\delta_\{il}\delta_\{jk})$ |
+| VectorMassIntegrator                 | H1$^d$, L2$^d$ | S, D, M    | 1D, 2D, 3D | $(\lambda\vec\{u},\vec\{v})$ | |
+| VectorCurlCurlIntegrator             | H1$^d$, L2$^d$ |    S       | 2D, 3D     | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | |
+| VectorDiffusionIntegrator            | H1$^d$, L2$^d$ |    S       | 1D, 2D, 3D | $(\lambda\grad u_i,\grad v_i)$ | Produces a block diagonal matrix where $i\in[0,dim)$ indicates the index of the block |
+| ElasticityIntegrator                 | H1$^d$, L2$^d$ | $2\times$S | 1D, 2D, 3D | $(c_\{ikjl}\grad u_j,\grad v_i)$ | Takes two scalar coefficients $\lambda$ and $\mu$ and produces a $dim\times dim$ block structured matrix where $i$ and $j$ are indices in this matrix.  The coefficient is defined by $c_\{ikjl} = \lambda\delta_\{ik}\delta_\{jl}+\mu(\delta_\{ij}\delta_\{kl}+\delta_\{il}\delta_\{jk})$ |
 
 ### Mixed Operators
 
-| Class Name | Domain | Range | Coef. | Dimension | Operator |
-|---|---|---|:---:|:---:|---|
-| VectorDivergenceIntegrator           | $H_1^d$, $L_2^d$ | H1, L2 |    S    | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$ |
+| Class Name                 | Domain           | Range   | Coef. | Dimension  | Operator                     |
+|----------------------------|------------------|---------|:-----:|:----------:|------------------------------|
+| VectorDivergenceIntegrator | H1$^d$, L2$^d$ | H1, L2 | S     | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$    |
+| GradientIntegrator         | H1             | H1$^d$ | S     | 1D, 2D, 3D | $(\lambda\grad u, \vec\{v})$ |
 
 ## Discontinuous Galerkin Operators
 
