@@ -900,7 +900,7 @@ block structure.</p>
 <tbody>
 <tr>
 <td>VectorMassIntegrator</td>
-<td>$H_1^d$, $L_2^d$</td>
+<td>H1$^d$, L2$^d$</td>
 <td align="center">S, D, M</td>
 <td align="center">1D, 2D, 3D</td>
 <td>$(\lambda\vec{u},\vec{v})$</td>
@@ -908,7 +908,7 @@ block structure.</p>
 </tr>
 <tr>
 <td>VectorCurlCurlIntegrator</td>
-<td>$H_1^d$, $L_2^d$</td>
+<td>H1$^d$, L2$^d$</td>
 <td align="center">S</td>
 <td align="center">2D, 3D</td>
 <td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
@@ -916,7 +916,7 @@ block structure.</p>
 </tr>
 <tr>
 <td>VectorDiffusionIntegrator</td>
-<td>$H_1^d$, $L_2^d$</td>
+<td>H1$^d$, L2$^d$</td>
 <td align="center">S</td>
 <td align="center">1D, 2D, 3D</td>
 <td>$(\lambda\grad u_i,\grad v_i)$</td>
@@ -924,7 +924,7 @@ block structure.</p>
 </tr>
 <tr>
 <td>ElasticityIntegrator</td>
-<td>$H_1^d$, $L_2^d$</td>
+<td>H1$^d$, L2$^d$</td>
 <td align="center">$2\times$S</td>
 <td align="center">1D, 2D, 3D</td>
 <td>$(c_{ikjl}\grad u_j,\grad v_i)$</td>
@@ -947,11 +947,19 @@ block structure.</p>
 <tbody>
 <tr>
 <td>VectorDivergenceIntegrator</td>
-<td>$H_1^d$, $L_2^d$</td>
+<td>H1$^d$, L2$^d$</td>
 <td>H1, L2</td>
 <td align="center">S</td>
 <td align="center">1D, 2D, 3D</td>
 <td>$(\lambda\div\vec{u},v)$</td>
+</tr>
+<tr>
+<td>GradientIntegrator</td>
+<td>H1</td>
+<td>H1$^d$</td>
+<td align="center">S</td>
+<td align="center">1D, 2D, 3D</td>
+<td>$(\lambda\grad u, \vec{v})$</td>
 </tr>
 </tbody>
 </table>
