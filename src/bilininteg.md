@@ -210,9 +210,10 @@ block structure.
 
 ### Mixed Operators
 
-| Class Name | Domain | Range | Coef. | Dimension | Operator |
-|---|---|---|:---:|:---:|---|
-| VectorDivergenceIntegrator           | $H_1^d$, $L_2^d$ | H1, L2 |    S    | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$ |
+| Class Name                 | Domain           | Range   | Coef. | Dimension  | Operator                     |
+|----------------------------|------------------|---------|:-----:|:----------:|------------------------------|
+| VectorDivergenceIntegrator | $H_1^d$, $L_2^d$ | H1, L2  | S     | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$    |
+| GradientIntegrator         | $H_1$            | $H_1^d$ | S     | 1D, 2D, 3D | $(\lambda\grad u, \vec\{v})$ |
 
 ## Discontinuous Galerkin Operators
 
