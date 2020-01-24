@@ -2,11 +2,44 @@
 
 ## Automata
 
+The `automata` miniapp implements a one dimensional elementary cellular
+automata as described in:
+[Wolfram MathWorld](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html).
+
+This miniapp shows a completely unnecessary use of the finite element
+method to simply display binary data (but it's fun to play with).
+
 ![](img/examples/automata.png)
+
+The `automata` miniapp has only three options; `-vis` or `-no-vis` to
+enable or disable visualization, `-ns` which defines the number of
+steps to evolve the cellular automata, and `-r` to select the rule
+which is applied at each step.  Rules for this type of cellular
+automata consist of a sequence of 8 bits which are normally passed as
+an integer 0-255.  The rule defines how to update each cell based on
+the current values of that cell and its two nearest neighbors.
 
 ## Life
 
+The `life` miniapp implements Conway's Game of Life. A few simple
+starting positions are available as well as a random initial
+state. The game will terminate only if two successive iterations are
+identical.
+
 ![](img/examples/life.gif)
+
+Users can control the size of the domain and the initial placement of
+simple objects like _blinkers_ and _gliders_.  Arbitrary patterns can
+be supplied through the `--sketch-pad` or `-sp` option.  The sketch
+pad was used to produce the above image with the command line:
+
+``life -nx 30 -sp '11 11 1 1 1 1 1 1 1 1 2
+                         1 0 1 1 1 1 0 1 2
+                         1 1 1 1 1 1 1 1'``
+
+The values following `-sp` are the starting coordinates of the pattern
+followed by zeros or ones to indicate pixels that should be off or on,
+any twos indicate new lines in the pattern.
 
 ## Lissajous
 
