@@ -43,11 +43,31 @@ any twos indicate new lines in the pattern.
 
 ## Lissajous
 
+The `lissajous` miniapp generates two different Lissajous curves in 3D
+which appear to spin vertically and/or horizontally, even though the
+net motion is the same.  Based on the 2019 Illusion of the year "Dual
+Axis Illusion" by Frank Force, see
+[Dual Axis Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
+
 ## Mandel
+
+The `mandel` miniapp is a specialized version of the `shaper` miniapp which
+adapts a mesh to the Mandelbrot set.
 
 ## Mondrian
 
+The `mondrian` miniapp is a specialized version of the `shaper`
+miniapp that converts an input image to an AMR mesh. It allows the
+fast approximate meshing of any domain for which there is an image.
+
 ![](img/examples/mondrian.png)
+
+The input image should be in 8-bit grayscale PGM format. You can use a
+number of image manipulation tools, such as GIMP (gimp.org) and ImageMagick's
+convert utility (imagemagick.org/script/convert.php) to convert your image to
+this format as a pre-processing step, e.g.:
+
+```/usr/bin/convert australia.svg -compress none -depth 8 australia.pgm```
 
 ## Rubik
 
