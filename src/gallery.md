@@ -110,13 +110,13 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-![](img/gallery/gas_impact.gif)
+![](img/gallery/gas_impact.jpg)
 
 *r-adaptivity using
 [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)
 for a three-material high-velocity gas impact in
 [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with
-[GLVis](http://glvis.org).*
+[GLVis](http://glvis.org). Click [here](https://github.com/mfem/web/src/img/gallery/gas_impact.gif) for gif.*
 
 </div><div class="col-md-3" markdown="1">
 
