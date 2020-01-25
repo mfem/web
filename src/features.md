@@ -126,8 +126,8 @@ A handful of miniapps of a less serious nature demonstrate the flexibility of MF
  - [Lissajous](http://mfem.github.io/doxygen/html/lissajous_8cpp_source.html): spinning optical illusion,
  - [Mandel](http://mfem.github.io/doxygen/html/mandel_8cpp_source.html): fractal visualization with AMR,
  - [Mondrian](http://mfem.github.io/doxygen/html/mondrian_8cpp_source.html): convert an image to an AMR mesh,
- - [Rubik](http://mfem.github.io/doxygen/html/rubik_8cpp_source.html): interactive Rubik's Cube_TM puzzle,
- - [Snake](http://mfem.github.io/doxygen/html/snake_8cpp_source.html): model of the Rubik's Snake_TM puzzle.
+ - [Rubik](http://mfem.github.io/doxygen/html/rubik_8cpp_source.html): interactive Rubik's Cube&trade; puzzle,
+ - [Snake](http://mfem.github.io/doxygen/html/snake_8cpp_source.html): model of the Rubik's Snake&trade; puzzle.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
