@@ -45,9 +45,15 @@ any twos indicate new lines in the pattern.
 
 The `lissajous` miniapp generates two different Lissajous curves in 3D
 which appear to spin vertically and/or horizontally, even though the
-net motion is the same.  Based on the 2019 Illusion of the year "Dual
-Axis Illusion" by Frank Force, see
-[Dual Axis Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
+net motion is the same.
+
+| Vertical Rotation                | Horizontal Rotation              |
+|:---------------------------------|:---------------------------------|
+|![](img/examples/lissajous_V.gif) | ![](img/examples/lissajous_H.gif)|
+
+Based on the 2019 Illusion of the year "Dual Axis Illusion" by Frank
+Force, see [Dual Axis
+Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
 
 ## Mandel
 
