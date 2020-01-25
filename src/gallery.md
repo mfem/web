@@ -110,10 +110,13 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/drone.png)](img/gallery/drone.png)
+![](img/gallery/gas_impact.gif)
 
-*Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
-
+*$r$-adaptivity using
+[TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)
+for a three-material high-velocity gas impact in
+[BLAST](https://computing.llnl.gov/projects/blast).  Visualization with
+[GLVis](http://glvis.org).*
 
 </div><div class="col-md-3" markdown="1">
 
@@ -162,6 +165,14 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 ![](img/gallery/ex1p-np64.png)
 
 *Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
+
+
+----
+
+[![](img/gallery/drone.png)](img/gallery/drone.png)
+
+*Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
+
 
 </div>
 
