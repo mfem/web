@@ -60,6 +60,10 @@ Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
 The `mandel` miniapp is a specialized version of the `shaper` miniapp which
 adapts a mesh to the Mandelbrot set.
 
+![](img/examples/mandel.png)
+
+Both planar and surface meshes are supported.
+
 ## Mondrian
 
 The `mondrian` miniapp is a specialized version of the `shaper`

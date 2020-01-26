@@ -119,20 +119,20 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Convert DC](http://mfem.github.io/doxygen/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces.
 
-A handful of miniapps of a less serious nature demonstrate the flexibility of MFEM (and they provide a bit of fun):
+In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
+
+- [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
+- [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
+
+A handful of "toy" miniapps of less serious nature demonstrate the flexibility of MFEM (and provide a bit of fun):
 
  - [Automata](http://mfem.github.io/doxygen/html/automata_8cpp_source.html): model of a simple cellular automata,
  - [Life](http://mfem.github.io/doxygen/html/life_8cpp_source.html): model of Conway's game of life,
  - [Lissajous](http://mfem.github.io/doxygen/html/lissajous_8cpp_source.html): spinning optical illusion,
  - [Mandel](http://mfem.github.io/doxygen/html/mandel_8cpp_source.html): fractal visualization with AMR,
- - [Mondrian](http://mfem.github.io/doxygen/html/mondrian_8cpp_source.html): convert an image to an AMR mesh,
+ - [Mondrian](http://mfem.github.io/doxygen/html/mondrian_8cpp_source.html): convert any image to an AMR mesh,
  - [Rubik](http://mfem.github.io/doxygen/html/rubik_8cpp_source.html): interactive Rubik's Cube&trade; puzzle,
  - [Snake](http://mfem.github.io/doxygen/html/snake_8cpp_source.html): model of the Rubik's Snake&trade; puzzle.
-
-In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
-
-- [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
-- [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
 ## Accurate and Flexible Visualization
 
