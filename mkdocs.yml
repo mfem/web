@@ -30,7 +30,6 @@ nav:
   - 'Performance': performance.md
   - '_Code Overview': code-overview.md
   - 'Tools': tools.md
-  - 'Interpolation' : gslib.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md
