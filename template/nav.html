@@ -28,7 +28,7 @@
                     {% for nav_item in nav_item.children %}
                         {% if not nav_item.title.startswith("_") %}
                             <li {% if nav_item.active %}class="active"{% endif %}>
-                                 <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                                 <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -36,8 +36,8 @@
                 </li>
             {% else %}
                 <li {% if nav_item.active %}class="active"{% endif %}>
-                    <!-- Replace "nav_item.url" with "nav_item.url|url" for mkdocs-1.0 -->
-                    <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
                 </li>
             {% endif %}
             {% endif %}

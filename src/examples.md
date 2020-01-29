@@ -88,6 +88,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
    <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
+   <label><input type="radio" id="hiop" onchange="update(this.id);" /> HiOp solvers</label><br/>
 </div>
 </div>
 <hr>
@@ -117,7 +118,8 @@ a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cp
 and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp),
 [performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
-and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi)._
+, a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi) and a Ginkgo modification
+in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo)._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -328,7 +330,8 @@ with [VisIt](http://visit.llnl.gov) is also illustrated.
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.
 It also has a SUNDIALS modification in [examples/sundials](https://github.com/mfem/mfem/blob/master/examples/sundials)
-and a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)._
+, a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc),
+and a HiOp modification in [examples/hiop](https://github.com/mfem/mfem/blob/master/examples/hiop)._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -693,15 +696,17 @@ energies at each time step are displayed upon completion.
 When run in parallel, each processor integrates the same Hamiltonian
 system but starting from different initial conditions.
 
-See the [Maxwell](#maxwell-miniapp-transient-full-wave-electromagnetics)
-miniapp for another application of symplectic integration.
+_The example has a serial ([ex20.cpp](https://github.com/mfem/mfem/blob/master/examples/ex20.cpp))
+and a parallel ([ex20p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex20p.cpp)) version.
+See the [Maxwell](#maxwell-miniapp-transient-full-wave-electromagnetics) miniapp for another
+application of symplectic integration._
 <div style="clear:both;"/></div>
 <br></div>
 
 
-<div id="ex22" markdown="1">
-##Example 22: Adaptive mesh refinement for linear elasticity
-<img class="floatright" src="../img/examples/ex22.png">
+<div id="ex21" markdown="1">
+##Example 21: Adaptive mesh refinement for linear elasticity
+<img class="floatright" src="../img/examples/ex21.png">
 
 This is a version of Example 2 with a simple adaptive mesh
 refinement loop. The problem being solved is again linear
@@ -717,9 +722,39 @@ linear and curved meshes. Interpolation of functions from
 coarse to fine meshes, as well as persistent GLVis
 visualization are also illustrated.
 
+_The example has a serial ([ex21.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21.cpp))
+and a parallel ([ex21p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21p.cpp)) version.
+We recommend viewing Examples 2 and 6 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex22" markdown="1">
+##Example 22: Complex Linear Systems
+<img class="floatright" src="../img/examples/ex22.gif">
+
+This example code demonstrates the use of MFEM to define and
+solve a complex-valued linear system. It implements three variants
+of a damped harmonic oscillator:
+
+- A scalar $H^1$ field:
+  $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
+
+- A vector $H(Curl)$ field:
+  $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
+
+- A vector $H(Div)$ field:
+  $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
+
+In each case the field is driven by a forced oscillation, with
+angular frequency $\omega$, imposed at the boundary or a portion
+of the boundary.
+
+The example also demonstrates how to display a time-varying solution as
+a sequence of fields sent to a single GLVis socket.
+
 _The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
 and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
-We recommend viewing Examples 2 and 6 before viewing this example._
+We recommend viewing examples 1, 3, and 4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1153,7 +1188,7 @@ function update(id)
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -1161,7 +1196,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 21; // update when adding examples!
+   var numExamples = 22; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1170,7 +1205,7 @@ function update(id)
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || gmres || sdirk));
+   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
@@ -1182,7 +1217,8 @@ function update(id)
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
-   showElement("ex22", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
+   showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!

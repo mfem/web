@@ -49,15 +49,15 @@ MFEM supports MPI-based parallelism throughout the library, and can readily be u
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
- - Support for or hardware devices, such as GPUs, and programming models, such as CUDA, OCCA, RAJA and OpenMP is also included.
+ - Support for hardware devices, such as GPUs, and programming models, such as CUDA, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
 
-A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters.
+A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) and many [linear algebra](http://mfem.github.io/doxygen/html/vector_8cpp_source.html) and [finite element](http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html) operations is available.
 
 ## Built-in Solvers
 
 MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra [vectors][Vector] and [sparse matrices][Operator].
 
-Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][(http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html] are also supported.
+Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][BlockMatrix] are also supported.
 
 A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):
 
@@ -67,11 +67,12 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - parallel [eigensolvers](examples.md?lobpcg): LOBPCG and AME,
  - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
+ - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
  - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
- - solvers for nonlinear problems (Newton) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
+ - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
 ## Extensive Examples
 
@@ -97,11 +98,12 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 18](http://mfem.github.io/doxygen/html/ex18_8cpp_source.html): Discontinuous Galerkin (DG) for the Euler equations,
  - [Example 19](http://mfem.github.io/doxygen/html/ex19_8cpp_source.html): incompressible nonlinear elasticity,
  - [Example 20](http://mfem.github.io/doxygen/html/ex20_8cpp_source.html): symplectic ODE integration,
- - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): adaptive mesh refinement for linear elasticity.
+ - [Example 21](http://mfem.github.io/doxygen/html/ex21_8cpp_source.html): adaptive mesh refinement for linear elasticity,
+ - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
-Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html) and [PUMI](http://mfem.github.io/doxygen/html/pumi_8hpp.html).
+Many of the examples also have modifications that take advantage of optional third-party libraries such as [PETSc](http://mfem.github.io/doxygen/html/petsc_8hpp.html), [SUNDIALS](http://mfem.github.io/doxygen/html/sundials_8hpp.html), [PUMI](https://mfem.github.io/doxygen/html/pumi_8hpp.html), [Ginkgo](https://mfem.github.io/doxygen/html/ginkgo_8hpp.html) and [HiOp](https://mfem.github.io/doxygen/html/hiop_8hpp.html).
 
 Beyond the examples, a number of miniapps are available that are more representative of the advanced usage of the library in physics/application codes. Some of the included miniapps are:
 
@@ -111,12 +113,16 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
+ - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
+ - [Load DC](http://mfem.github.io/doxygen/html/load-dc_8cpp_source.html): visualize fields saved via DataCollection classes,
+ - [Convert DC](http://mfem.github.io/doxygen/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
 - [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
-- [Mulard](https://codesign.llnl.gov/mulard.php): multigroup thermal radiation diffusion mini application.
+- [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
 ## Accurate and Flexible Visualization
 

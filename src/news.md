@@ -2,6 +2,13 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
+Mar 30, 2019 | CEED v2.0 and libCEED v0.4 [released](https://ceed.exascaleproject.org/news/#software-release-ceed-v20) with MFEM support.
+Mar 22, 2019 | A version of the Laghos miniapp [released](https://github.com/CEED/Laghos/releases/tag/cts2) for use in the second edition of the [Commodity Technology Systems](https://asc.llnl.gov/computers/commodity) procurement process.
+May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
+Nov 19, 2018 | Laghos v2.0 [released](https://github.com/CEED/Laghos/releases/tag/v2.0) with CUDA, RAJA, OCCA and AMR versions.
+Nov 9, 2018  | MFEM part of the first release of the [Extreme-Scale Scientific Software Stack](https://e4s-project.github.io/) (E4S) by the Software Technologies focus area of the ECP.
+Aug 6, 2018  | Unstructured technologies [presentation](https://www.youtube.com/watch?v=Zh6pFjkmr0g) at [ATPESC18](https://extremecomputingtraining.anl.gov/).
 May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).
 Apr 2, 2018  | MFEM part of [OpenHPC](http://openhpc.community/), a Linux Foundation project for software components required to deploy and manage HPC Linux clusters.
 Mar 30, 2018 | CEED v1.0 and libCEED v0.2 [released](http://ceed.exascaleproject.org/news/#software-release-ceed-10) with MFEM support.

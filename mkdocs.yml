@@ -7,10 +7,9 @@ markdown_extensions:
 - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
 
 repo_url: https://github.com/mfem/mfem
-remote_name: github
+remote_name: origin
 
-# use "nav:" instead of "pages:" for mkdocs-1.0
-pages:
+nav:
 - Home: index.md
 - Features: features.md
 - Examples: examples.md
@@ -29,7 +28,8 @@ pages:
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
-  - 'Code Overview': code-overview.md
+  - '_Code Overview': code-overview.md
+  - 'Tools': tools.md
   - 'Publications': publications.md
   - 'About': about.md
 - Gallery: gallery.md
