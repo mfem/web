@@ -320,12 +320,12 @@ $$\frac{\partial u}{\partial t} + v \cdot \nabla u = 0,$$ where $v$ is a given f
 velocity, and $u_0(x)=u(0,x)$ is a given initial condition.
 
 The example demonstrates the use of Discontinuous Galerkin (DG) bilinear forms
-in MFEM (face integrators), the use of explicit ODE time integrators, the
-definition of periodic boundary conditions through periodic meshes, as well as
-the use of [GLVis](http://glvis.org) for persistent
-visualization of a time-evolving solution. The saving of time-dependent data
-files for external visualization with [VisIt](http://visit.llnl.gov)
-is also illustrated.
+in MFEM (face integrators), the use of explicit and implicit (with block ILU
+preconditioning) ODE time integrators, the definition of periodic boundary
+conditions through periodic meshes, as well as the use of
+[GLVis](http://glvis.org) for persistent visualization of a time-evolving
+solution. The saving of time-dependent data files for external visualization
+with [VisIt](http://visit.llnl.gov) is also illustrated.
 
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.
@@ -1205,7 +1205,7 @@ function update(id)
    showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || hiop));
+   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
