@@ -1089,16 +1089,15 @@ The interpolation miniapp, found under `miniapps/gslib`, demonstrate the
 capability to interpolate high-order finite element functions at given set of
 points in physical space.
 
-
 These miniapps utilize the [`gslib`](https://github.com/gslib/gslib) library's
 high-order  interpolation utility for quad and hex meshes.
-The _FindPoints_ miniapp has a serial
+The _Find Points_ miniapp has a serial
 ([findpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp))
 and a parallel
 ([pfindpts.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/pfindpts.cpp))
 version that demonstrate the basic procedures for point search and evaluation
 of grid functions.
-The _Field-Diff_ miniapp
+The _Field Diff_ miniapp
 ([field-diff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp))
 demonstrates how grid functions on two different meshes can be compared with
 each other.
