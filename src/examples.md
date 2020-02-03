@@ -760,9 +760,9 @@ We recommend viewing examples 1, 3, and 4 before viewing this example._
 
 
 
-<div id="ex24" markdown="1">
-##Example 24: Wave Problem
-<img class="floatright" src="../img/examples/ex24.png">
+<div id="ex23" markdown="1">
+##Example 23: Wave Problem
+<img class="floatright" src="../img/examples/ex23.png">
 
 This example code solves a simple 2D/3D  wave
 equation with a second order time derivative:
@@ -771,7 +771,7 @@ The boundary conditions are either Dirichlet or Neumann.
 
 The example demonstrates how to solve problems with a second order time derivative.
 
-_The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp)) version._
+_The example has only a serial ([ex23.cpp](https://github.com/mfem/mfem/blob/master/examples/ex23.cpp)) version._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1238,7 +1238,7 @@ function update(id)
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
    showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
-   showElement("ex24", (laplace || wave) && h1  && (galerkin || nurbs) && newmark);
+   showElement("ex23", (laplace || wave) && h1  && (galerkin || nurbs) && newmark);
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
