@@ -124,6 +124,16 @@ In addition, the sources for several external benchmark/proxy-apps build on top 
 - [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
 - [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
+A handful of "toy" miniapps of less serious nature demonstrate the flexibility of MFEM (and provide a bit of fun):
+
+ - [Automata](http://mfem.github.io/doxygen/html/automata_8cpp_source.html): model of a simple cellular automata,
+ - [Life](http://mfem.github.io/doxygen/html/life_8cpp_source.html): model of Conway's game of life,
+ - [Lissajous](http://mfem.github.io/doxygen/html/lissajous_8cpp_source.html): spinning optical illusion,
+ - [Mandel](http://mfem.github.io/doxygen/html/mandel_8cpp_source.html): fractal visualization with AMR,
+ - [Mondrian](http://mfem.github.io/doxygen/html/mondrian_8cpp_source.html): convert any image to an AMR mesh,
+ - [Rubik](http://mfem.github.io/doxygen/html/rubik_8cpp_source.html): interactive Rubik's Cube&trade; puzzle,
+ - [Snake](http://mfem.github.io/doxygen/html/snake_8cpp_source.html): model of the Rubik's Snake&trade; puzzle.
+
 ## Accurate and Flexible Visualization
 
 The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
