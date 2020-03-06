@@ -758,6 +758,24 @@ We recommend viewing examples 1, 3, and 4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex24" markdown="1">
+##Example 24: Mixed finite element spaces
+
+This example code illustrates usage of mixed finite element
+spaces. Using two different approaches, we project a gradient
+of a function in $H^1$ to $H(curl)$. Other spaces and example
+computations are to be added in the future.
+
+We also illustrate usage of a DiscreteLinearOperator and a DiscreteInterpolator to interpolate a 
+gradient in an $H(curl)$ finite element space.
+
+_The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
+and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
+Partial assembly and GPU devices are supported.
+
+We recommend viewing examples 1 and 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
