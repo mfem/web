@@ -154,7 +154,7 @@ The object-oriented design of MFEM [separates](http://mfem.github.io/doxygen/htm
 
 ## Open Source
 
-MFEM is an open-source software, and can be freely used under the terms of the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html) license.
+MFEM is an open-source software, and can be freely used under the terms of the [BSD](https://github.com/mfem/mfem/blob/master/LICENSE) license.
 
 <!-- To update the SVG images: in the gh-pages branch of mfem/doxygen do:
      grep 'id="node1" href="$classmfem_1_1FiniteElementCollection.html"' html/inherit*map -->

@@ -11,13 +11,11 @@ MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element metho
 and [spaces](features.md#higher-order-finite-element-spaces).
 * [Wide variety](features.md#flexible-discretization) of finite element discretization approaches.
 * Conforming and nonconforming [adaptive mesh refinement](examples.md?amr).
-* Scalable to [hundreds of thousands](http://computation.llnl.gov/blast/parallel-performance) of cores.
+* Scalable to [millions of parallel tasks](http://computation.llnl.gov/blast/parallel-performance) and GPU-accelerated.
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including
-[BLAST](http://www.llnl.gov/casc/blast),
-[XBraid](http://www.llnl.gov/casc/xbraid), [VisIt](http://visit.llnl.gov), the [xSDK](https://xsdk.info/),
-the [FASTMath](https://fastmath-scidac.llnl.gov/index.html) institute in SciDAC, and the co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
+[BLAST](http://www.llnl.gov/casc/blast), [VisIt](http://visit.llnl.gov), [xSDK](https://xsdk.info/), SciDAC/[FASTMath](https://fastmath-scidac.llnl.gov/index.html), and the co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 
 See&nbsp;also&nbsp;our&nbsp;[Gallery](gallery.md), related [publications](publications.md) and
 project [news updates](news.md).
@@ -29,11 +27,12 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar XX, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG).
 Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
 May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
 May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
-Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.
 
+[comment]: # (Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.)
 [comment]: # (May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).)
 [comment]: # (Apr 2, 2018  | [OpenHPC](https://github.com/openhpc/ohpc/releases/tag/v1.3.4.GA) packages available for MFEM.)
 [comment]: # (Mar 1, 2018  | MFEM highlighted in [S&TR](https://str.llnl.gov/2018-01/lee).)
@@ -58,14 +57,14 @@ Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.0.tgz**
-</button>](https://bit.ly/mfem-4-0)
+**Download mfem-4.1.tgz**
+</button>](https://bit.ly/mfem-4-1)
 
 For older releases see the [download](download.md) section.
 
@@ -80,6 +79,7 @@ For older releases see the [download](download.md) section.
 [Finite Element Method](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
 ┊ [Meshing](meshing.md)
+┊ [Tools](tools.md)
 
 New users should start by examining the [example codes](examples.md).
 
