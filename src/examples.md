@@ -760,6 +760,7 @@ We recommend viewing examples 1, 3, and 4 before viewing this example._
 
 <div id="ex24" markdown="1">
 ##Example 24: Mixed finite element spaces
+<img class="floatright" src="../img/examples/ex24.png">
 
 This example code illustrates usage of mixed finite element
 spaces. Using two different approaches, we project a gradient
