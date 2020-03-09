@@ -27,7 +27,7 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Mar XX, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG).
+Mar XX, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG).
 Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
 May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
 May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.

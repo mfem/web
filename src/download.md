@@ -6,7 +6,7 @@
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.1tgz**
+**Download mfem-4.1.tgz**
 </button>](https://bit.ly/mfem-4-1)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
