@@ -140,6 +140,8 @@ The general (high-order) meshes and finite element functions in MFEM can be visu
 
 The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
 
+Another visualization tool natively supported by MFEM is [ParaView](https://www.paraview.org). The file format supports high-order (up to order six) meshes and elements.
+
 ## Lightweight, Portable and Easily Extendable
 
 The MFEM code base is [relatively small](download.md) and is written in highly portable C++ (e.g. with very limited use of templates and the STL).
