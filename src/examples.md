@@ -226,7 +226,8 @@ polynomials (pressure $p$).
 
 The example demonstrates the use of the BlockMatrix and BlockOperator
 classes, as well as the collective saving of several grid functions in
-a [VisIt](http://visit.llnl.gov) visualization format.
+[VisIt](http://visit.llnl.gov) and [ParaView](https://www.paraview.org)
+formats.
 
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
@@ -325,7 +326,7 @@ preconditioning) ODE time integrators, the definition of periodic boundary
 conditions through periodic meshes, as well as the use of
 [GLVis](http://glvis.org) for persistent visualization of a time-evolving
 solution. The saving of time-dependent data files for external visualization
-with [VisIt](http://visit.llnl.gov) is also illustrated.
+with [VisIt](http://visit.llnl.gov) and [ParaView](https://www.paraview.org) is also illustrated.
 
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.

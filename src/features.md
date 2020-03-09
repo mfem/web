@@ -140,7 +140,7 @@ The general (high-order) meshes and finite element functions in MFEM can be visu
 
 The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
 
-Another visualization tool natively supported by MFEM is [ParaView](www.paraview.org).  The file format supports high-order (up to order six) meshes and elements.
+Another visualization tool natively supported by MFEM is [ParaView](https://www.paraview.org). The file format supports high-order (up to order six) meshes and elements.
 
 ## Lightweight, Portable and Easily Extendable
 
