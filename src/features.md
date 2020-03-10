@@ -99,7 +99,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 19](http://mfem.github.io/doxygen/html/ex19_8cpp_source.html): incompressible nonlinear elasticity,
  - [Example 20](http://mfem.github.io/doxygen/html/ex20_8cpp_source.html): symplectic ODE integration,
  - [Example 21](http://mfem.github.io/doxygen/html/ex21_8cpp_source.html): adaptive mesh refinement for linear elasticity,
- - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems.
+ - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems,
+ - [Example 23](http://mfem.github.io/doxygen/html/ex23_8cpp_source.html): second order in time wave equation,
  - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
@@ -140,6 +141,8 @@ A handful of "toy" miniapps of less serious nature demonstrate the flexibility o
 The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
 
 The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
+
+Another visualization tool natively supported by MFEM is [ParaView](https://www.paraview.org). The file format supports high-order (up to order six) meshes and elements.
 
 ## Lightweight, Portable and Easily Extendable
 
