@@ -42,6 +42,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
    <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
+   <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
    <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
@@ -84,6 +85,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
+   <label><input type="radio" id="newmark" onchange="update(this.id);" /> Newmark (ODE Integration)</label><br/>
    <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
@@ -729,6 +731,7 @@ We recommend viewing Examples 2 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+
 <div id="ex22" markdown="1">
 ##Example 22: Complex Linear Systems
 <img class="floatright" src="../img/examples/ex22.gif">
@@ -756,6 +759,45 @@ a sequence of fields sent to a single GLVis socket.
 _The example has a serial ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp))
 and a parallel ([ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) version.
 We recommend viewing examples 1, 3, and 4 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex23" markdown="1">
+##Example 23: Wave Problem
+<img class="floatright" src="../img/examples/ex23.png">
+
+This example code solves a simple 2D/3D  wave
+equation with a second order time derivative:
+$$\frac{\partial^2 u}{\partial t^2} - c^2\Delta u = 0$$
+The boundary conditions are either Dirichlet or Neumann.
+
+The example demonstrates the use of time dependent operators,
+implicit solvers and second order time integration.
+
+_The example has only a serial ([ex23.cpp](https://github.com/mfem/mfem/blob/master/examples/ex23.cpp)) version.
+We recommend viewing examples 9 and 10 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex24" markdown="1">
+##Example 24: Mixed finite element spaces
+<img class="floatright" src="../img/examples/ex24.png">
+
+This example code illustrates usage of mixed finite element
+spaces. Using two different approaches, we project a gradient
+of a function in $H^1$ to $H(curl)$. Other spaces and example
+computations are to be added in the future.
+
+We also illustrate usage of a DiscreteLinearOperator and a
+DiscreteInterpolator to interpolate a gradient in an $H(curl)$
+finite element space.
+
+_The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
+and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
+Partial assembly and GPU devices are supported.
+We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1212,10 +1254,10 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "hydro", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "hpc"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
+   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
 
    updateGroup(group1, id);
    updateGroup(group2, id);
@@ -1223,16 +1265,16 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 22; // update when adding examples!
+   var numExamples = 24; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex3",  maxwell && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
+   showElement("ex3",  (maxwell || hpc) && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
    showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
-   showElement("ex6",  laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex6",  (laplace || hpc) && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  advection && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
+   showElement("ex9",  (advection || hpc) && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
@@ -1246,6 +1288,8 @@ function update(id)
    showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
    showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
+   showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
+   showElement("ex24", (graddiv || hpc) && (h1 || hcurl) && galerkin && pcg);
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
