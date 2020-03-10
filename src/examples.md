@@ -42,6 +42,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
    <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
    <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
+   <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
    <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
    <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
@@ -84,6 +85,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
    <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
    <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
+   <label><input type="radio" id="newmark" onchange="update(this.id);" /> Newmark (ODE Integration)</label><br/>
    <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
    <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
    <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
@@ -728,6 +730,7 @@ We recommend viewing Examples 2 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+
 <div id="ex22" markdown="1">
 ##Example 22: Complex Linear Systems
 <img class="floatright" src="../img/examples/ex22.gif">
@@ -759,7 +762,6 @@ We recommend viewing examples 1, 3, and 4 before viewing this example._
 <br></div>
 
 
-
 <div id="ex23" markdown="1">
 ##Example 23: Wave Problem
 <img class="floatright" src="../img/examples/ex23.png">
@@ -769,13 +771,13 @@ equation with a second order time derivative:
 $$\frac{\partial^2 u}{\partial t^2} - c^2\Delta u = 0$$
 The boundary conditions are either Dirichlet or Neumann.
 
-The example demonstrates how to solve problems with a second order time derivative.
+The example demonstrates the use of time dependent operators,
+implicit solvers and second order time integration.
 
-_The example has only a serial ([ex23.cpp](https://github.com/mfem/mfem/blob/master/examples/ex23.cpp)) version._
+_The example has only a serial ([ex23.cpp](https://github.com/mfem/mfem/blob/master/examples/ex23.cpp)) version.
+We recommend viewing examples 9 and 10 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
-
-
 
 
 <div id="volta" markdown="1">
