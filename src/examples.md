@@ -1285,7 +1285,7 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
-   showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
+   showElement("ex20", (elasticity || maxwell || conduction || hydro) && h1 && mixed && symplectic);
    showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
