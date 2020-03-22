@@ -1011,7 +1011,7 @@ The Twist miniapp supports various options including:
 
 - The element type: 4 - Tetrahedron, 6 - Wedge, 8 - Hexahedron
 - The geometric order of the elements
-- The dimensions of the inital brick-shaped stack of elements
+- The dimensions of the initial brick-shaped stack of elements
 - The number of elements in the z direction
 - The number of nodes to offset by before rejoining the stack
 - The number of uniform refinement steps to apply
