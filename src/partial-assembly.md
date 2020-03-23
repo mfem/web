@@ -1,7 +1,7 @@
 # Performance and Partial Assembly
 
 This document provides a brief overview of the tensor-based high-performance
-and **partial assembly** features in MFEM. In the traditional finite element
+and partial assembly features in MFEM. In the traditional finite element
 setting, the operator is assembled in the form of a matrix. The action of the
 operator is computed by multiplying with this matrix. At high orders this
 requires both a large amount of memory to store the matrix, as well as many
@@ -19,7 +19,30 @@ Once partial assembly is enabled, subsequent calls to functions such as
 `FormLinearSystem` will result in an `Operator` that represents the action of
 the bilinear form `a`, without assembling a matrix. This functionality is 
 illustrated in several [MFEM examples](examples.md), include example 1, 3, 6, 
-9, and 24.
+9, 24, and 25.
+
+## Preconditioning with Partial Assembly
+
+When using partial assembly, the system matrix is no longer available for
+constructing preconditioners. This means that some of the standard
+preconditioners in MFEM such as `HypreBoomerAMG` and `GSSmoother` cannot be
+used.
+
+MFEM allows for the efficient construction of diagonal (Jacobi) smoothers for
+partially assembled operators on quad and hex meshes using the class
+`OperatorJacobiSmoother`. This class will efficiently assemble the diagonal of
+the corresponding matrix, exploiting the tensor-product structure for efficient
+evaluation.
+
+MFEM also allows for Chebyshev smoothing with partial assembly using the class
+`OperatorChebyshevSmoother`. This smoother uses estimates of the eigenvalues of
+the operator computed using the power method, and is built upon the
+functionality of `OperatotJacobiSmoother`.
+
+These smoothers can be used within the context of h- and p-multigrid methods.
+These facilities are provided using the `MultigridOperator` and
+`MultigridSolver` classes. This functionality is illustrated in example 25.
+
 
 ## Finite Element Operator Decomposition
 
@@ -41,12 +64,12 @@ of freedom on each element*, transitions to independent *quadrature points* in
 reference space, performs the integration, and then goes back in reverse order
 to global (test) degrees of freedom on the whole mesh.
 
-This is illustrated below for the simple case of symmetric linear operator on
-third order (Q3) scalar continuous (H1) elements, where we use the notions
-**T-vector**, **L-vector**, **E-vector** and **Q-vector** to represent the sets
-corresponding to the (true) degrees of freedom on the global mesh, the split
-local degrees of freedom on the subdomains, the split degrees of freedom on the
-mesh elements, and the values at quadrature points, respectively.
+This is illustrated below for the case of a symmetric linear operator. We use
+the notions **T-vector**, **L-vector**, **E-vector** and **Q-vector** to
+represent the sets corresponding to the (true) degrees of freedom on the global
+mesh, the split local degrees of freedom on the subdomains, the split degrees
+of freedom on the mesh elements, and the values at quadrature points,
+respectively.
 
 We refer to the operators that connect the different types of vectors as:
 
@@ -114,7 +137,7 @@ the operators **P**, **G**, **B** and **D** clearly separate the MPI parallelism
 in the operator (**P**) from the unstructured mesh topology (**G**), the choice
 of the finite element space/basis (**B**) and the geometry and point-wise
 physics **D**. These components also naturally fall in different classes of
-numerical algorithms -- parallel (multi-device) linear algebra for **P**, sparse
+numerical algorithms: parallel (multi-device) linear algebra for **P**, sparse
 (on-device) linear algebra for **G**, dense/structured linear algebra (tensor
 contractions) for **B** and parallel point-wise evaluations for **D**.
 
