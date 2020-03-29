@@ -801,9 +801,9 @@ We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
-<div id="ex26" markdown="1">
-##Example 26: Laplace Boundary Conditions
-<img class="floatright" src="../img/examples/ex26.png">
+<div id="ex27" markdown="1">
+##Example 27: Laplace Boundary Conditions
+<img class="floatright" src="../img/examples/ex27.png">
 
 This example code demonstrates the use of MFEM to define a
 simple finite element discretization of the Laplace problem:
@@ -825,8 +825,8 @@ conditions on different portions of a predefined mesh.
 
 as well as periodic boundary conditions which are enforced topologically.
 
-_The example has a serial ([ex26.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26.cpp))
-and a parallel ([ex26p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp)) version.
+_The example has a serial ([ex27.cpp](https://github.com/mfem/mfem/blob/master/examples/ex27.cpp))
+and a parallel ([ex27p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex27p.cpp)) version.
 We recommend viewing examples 1 and 14 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1353,7 +1353,7 @@ function update(id)
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
    showElement("ex24", (graddiv || hpc) && (h1 || hcurl) && galerkin && pcg);
-   showElement("ex26", (elasticity || maxwell || conduction || hydro) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack));
+   showElement("ex27", (elasticity || maxwell || conduction || hydro) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack));
    
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
