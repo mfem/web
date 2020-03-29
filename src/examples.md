@@ -1025,6 +1025,39 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="twist" markdown="1">
+## Twist Miniapp
+<img class="floatright" src="../img/examples/twist-wedge.png">
+
+This miniapp generates simple periodic meshes to demonstrate MFEM's handling
+of periodic domains. MFEM's strategy is to use a discontinuous vector field
+to define the mesh coordinates on a topologically periodic mesh. It works by
+defining a stack of individual elements and stitching together the top and
+bottom of the mesh. The stack can also be twisted so that the vertices of the
+bottom and top can be joined with any integer offset (for tetrahedral and
+wedge meshes only even offsets are supported).
+
+The Twist miniapp supports various options including:
+
+- The element type: 4 - Tetrahedron, 6 - Wedge, 8 - Hexahedron
+- The geometric order of the elements
+- The dimensions of the initial brick-shaped stack of elements
+- The number of elements in the z direction
+- The number of nodes to offset by before rejoining the stack
+- The number of uniform refinement steps to apply
+
+Along with producing some visually interesting meshes, this miniapp
+demonstrates how simple 3D meshes can be constructed and transformed
+in MFEM.  It also produces a family of meshes with simple but
+non-trivial topology for testing various features in MFEM.
+
+_This miniapp has only a serial
+([twist.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/twist.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="extruder" markdown="1">
 ## Extruder Miniapp
 <img class="floatright" src="../img/examples/extruded-star.png">
@@ -1330,10 +1363,11 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 9; // update when adding miniapps!
+   numExamples += 10; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
+   showElement("twist", meshing && all2 && all3 && all4);
    showElement("extruder", meshing && all2 && all3 && all4);
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
