@@ -11,3 +11,12 @@ To make changes to the website:
 - edit or add some ```.md``` files (you may also need to update the ```mkdocs.yml``` config),
 - preview locally with ```mkdocs serve```,
 - publish with ```mkdocs gh-deploy```.
+
+
+Checklist for adding examples
+
+- Add a brief description in examples.md
+- Add an image file in img/examples/
+- Update numExamples in examples.md 
+- List the "categories" for the example in examples.md (towards the end)
+- Add the example in features.md
