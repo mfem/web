@@ -801,6 +801,37 @@ We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex25" markdown="1">
+##Example 25: Perfectly Matched Layers
+<img class="floatright" src="../img/examples/ex25.gif">
+
+The example illustrates the use of a Perfectly Matched Layer (PML) for the
+simulation of time-harmonic electromagnetic waves propagating in unbounded
+domains.
+
+PML was originally introduced by Berenger in ["A Perfectly Matched Layer for the
+Absorption of Electromagnetic Waves"](https://doi.org/10.1006/jcph.1994.1159).
+It is a technique used to solve wave propagation problems posed in infinite
+domains. The implementation involves the introduction of an artificial absorbing
+layer that minimizes undesired reflections. Inside this layer a complex
+coordinate stretching map is used which forces the wave modes to decay
+exponentially.
+
+The example solves the indefinite Maxwell equations
+$$\nabla \times (a \nabla \times E) - \omega^2 b E = f.$$
+where $a = \mu^{-1} |J|^{-1} J^T J$, $b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is
+the Jacobian matrix of the coordinate transformation.
+
+The example demonstrates discretization with Nedelec finite elements in 2D or
+3D, as well as the use of complex-valued bilinear and linear forms. Several
+test problems are included, with known exact solutions.
+
+_The example has a serial ([ex25.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25.cpp))
+and a parallel ([ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp)) version.
+We recommend viewing Example 22 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
@@ -1298,7 +1329,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 24; // update when adding examples!
+   var numExamples = 25; // update when adding examples!
    showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  (maxwell || hpc) && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
@@ -1323,12 +1354,13 @@ function update(id)
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
    showElement("ex24", (graddiv || hpc) && (h1 || hcurl) && galerkin && pcg);
+   showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
    showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
    showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
-   showElement("maxwell", (maxwell || conduction) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
+   showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
