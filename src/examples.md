@@ -1290,7 +1290,7 @@ function showElement(id, show)
     var divs = document.getElementsByTagName("div");
     for (i = 0; i < divs.length; i++)
         if (divs.item(i).id == id)
-	    divs.item(i).style.display = show ? "block" : "none";
+            divs.item(i).style.display = show ? "block" : "none";
 }
 
 function updateGroup(names, id)
@@ -1298,7 +1298,7 @@ function updateGroup(names, id)
    // make only one box checked in the group
    if (names.indexOf(id) != -1)
       for (i = 0; i < names.length; ++i)
-	 setChecked(names[i], id == names[i]);
+         setChecked(names[i], id == names[i]);
 
    // generate boolean variables from the group names
    for (i = 0; i < names.length; ++i)
@@ -1383,8 +1383,8 @@ function update(id)
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
       if (exampleVisible(i)) {
-	 allHidden = false;
-	 break;
+         allHidden = false;
+         break;
       }
    }
    showElement("nomatch", allHidden);
