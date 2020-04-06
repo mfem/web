@@ -56,3 +56,6 @@ linear function of a basis function) onto another basis function.  The
 `DiscreteLinearOperator` class adds one or more `LinearInterpolators`
 together to build a global sparse matrix representation of the linear
 operator.
+
+### [Boundary Conditions](fem_bc.md)
+
