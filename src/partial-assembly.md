@@ -37,7 +37,7 @@ evaluation.
 MFEM also allows for Chebyshev smoothing with partial assembly using the class
 `OperatorChebyshevSmoother`. This smoother uses estimates of the eigenvalues of
 the operator computed using the power method, and is built upon the
-functionality of `OperatotJacobiSmoother`.
+functionality of `OperatorJacobiSmoother`.
 
 These smoothers can be used within the context of h- and p-multigrid methods.
 These facilities are provided using the `MultigridOperator` and
