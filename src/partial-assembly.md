@@ -125,11 +125,11 @@ A complementary partial assembly decomposition is used for Discontinuous Galerki
 methods to handle face terms, where a similar sequence of operators is applied
 on the faces to compute the numerical fluxes. However, since elements are
 decoupled, the element restriction **G** is the identity, and a face restriction
-**F** is used instead to compute the numerical fluxes and couple elements
-together. This face restriction **F** goes from element degrees of freedom to
-face degrees of freedom. Then a **B** operator can be applied on the faces
-(different from **B** for the elements, but identical for all faces). And an
-analogous **D** operator is then applied at the face quadrature points. We
+**G<sub>F</sub>** is used instead to compute the numerical fluxes and couple elements
+together. This face restriction **G<sub>F</sub>** goes from element degrees of freedom to
+face degrees of freedom. Then a **B<sub>F</sub>** operator can be applied on the faces
+(different from the element **B**, but identical for all faces). And an
+analogous **D<sub>F</sub>** operator is then applied at the face quadrature points. We
 currently support partial assembly only for closed basis functions
 (e.g. Gauss-Lobatto and Bernstein basis) with Integrators that don't require the
 derivative on the faces.
