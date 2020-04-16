@@ -15,7 +15,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/tg-vortex.png)](img/gallery/tg-vortex-full.png)
 
-*High-order Taylor-Green vortex simulation. Visualization with [ParaView](https://www.paraview.org).*
+*Incompressible Taylor-Green vortex simulation with high-order finite elements. Visualization with [ParaView](https://www.paraview.org).*
 
 ----
 

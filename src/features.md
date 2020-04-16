@@ -99,7 +99,10 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 19](http://mfem.github.io/doxygen/html/ex19_8cpp_source.html): incompressible nonlinear elasticity,
  - [Example 20](http://mfem.github.io/doxygen/html/ex20_8cpp_source.html): symplectic ODE integration,
  - [Example 21](http://mfem.github.io/doxygen/html/ex21_8cpp_source.html): adaptive mesh refinement for linear elasticity,
- - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems.
+ - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems,
+ - [Example 23](http://mfem.github.io/doxygen/html/ex23_8cpp_source.html): second order in time wave equation,
+ - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
+ - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 

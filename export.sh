@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mfemdir=$HOME/mfem/code-reviews/mfem-clean
+mfemdir=$HOME/mfem/mfem-master
 
 function preprocess { # src dst
 	cat $1 \
@@ -51,3 +51,12 @@ exportfile site/meshing/index.html \
 exportfile site/performance/index.html \
            $mfemdir/miniapps/performance/README.html \
            ../../doc/web
+
+exportfile site/toys/index.html \
+           $mfemdir/miniapps/toys/README.html \
+           ../../doc/web
+
+exportfile site/tools/index.html \
+           $mfemdir/miniapps/tools/README.html \
+           ../../doc/web
+
