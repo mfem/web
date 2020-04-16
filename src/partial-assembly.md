@@ -151,7 +151,9 @@ decoupled, the element restriction **G** is the identity, and a face restriction
 together. This face restriction **G<sub>F</sub>** goes from element degrees of freedom to
 face degrees of freedom. Then a **B<sub>F</sub>** operator can be applied on the
 faces. And an analogous **D<sub>F</sub>** operator is then applied at the face
-quadrature points. Currently, we support partial assembly only for  Gauss-Lobatto
+quadrature points.
+
+Currently, we support partial assembly only for  Gauss-Lobatto
 and Bernstein basis with Integrators that don't require derivatives on the faces.
 
 ## [High-Performance Templated Operators](performance.md)
