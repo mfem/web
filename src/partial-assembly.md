@@ -119,19 +119,6 @@ side-effect of evaluating a different operator, such as a nonlinear residual.
 The relative costs of the setup and apply phases are different depending on the
 physics being expressed and the representation of **D**.
 
-## Partial Assembly for Discontinuous Galerkin methods
-
-A complementary partial assembly decomposition is used for Discontinuous Galerkin
-methods to handle face terms, where a similar sequence of operators is applied
-on the faces to compute the numerical fluxes. However, since elements are
-decoupled, the element restriction **G** is the identity, and a face restriction
-**G<sub>F</sub>** is used instead to compute the numerical fluxes and couple elements
-together. This face restriction **G<sub>F</sub>** goes from element degrees of freedom to
-face degrees of freedom. Then a **B<sub>F</sub>** operator can be applied on the
-faces. And an analogous **D<sub>F</sub>** operator is then applied at the face
-quadrature points. Currently, we support partial assembly only for  Gauss-Lobatto
-and Bernstein basis with Integrators that don't require derivatives on the faces.
-
 ### Parallel Decomposition
 
 After the application of each of the first three transition operators, **P**,
@@ -153,6 +140,19 @@ physics **D**. These components also naturally fall in different classes of
 numerical algorithms: parallel (multi-device) linear algebra for **P**, sparse
 (on-device) linear algebra for **G**, dense/structured linear algebra (tensor
 contractions) for **B** and parallel point-wise evaluations for **D**.
+
+## Partial Assembly for Discontinuous Galerkin methods
+
+A complementary partial assembly decomposition is used for Discontinuous Galerkin
+methods to handle face terms, where a similar sequence of operators is applied
+on the faces to compute the numerical fluxes. However, since elements are
+decoupled, the element restriction **G** is the identity, and a face restriction
+**G<sub>F</sub>** is used instead to compute the numerical fluxes and couple elements
+together. This face restriction **G<sub>F</sub>** goes from element degrees of freedom to
+face degrees of freedom. Then a **B<sub>F</sub>** operator can be applied on the
+faces. And an analogous **D<sub>F</sub>** operator is then applied at the face
+quadrature points. Currently, we support partial assembly only for  Gauss-Lobatto
+and Bernstein basis with Integrators that don't require derivatives on the faces.
 
 ## [High-Performance Templated Operators](performance.md)
 
