@@ -5,7 +5,7 @@ and partial assembly features in MFEM. In the traditional finite element
 setting, the operator is assembled in the form of a matrix. The action of the
 operator is computed by multiplying with this matrix. At high orders this
 requires both a large amount of memory to store the matrix, as well as many
-floating point operations to compute and apply it. Partial assembly is a
+floating point operations to compute and apply it. _Partial assembly_ is a
 technique that allows for efficiently applying the action of finite element
 operators efficiently without forming the corresponding matrix. This is
 particularly important when running on GPUs.
@@ -17,9 +17,9 @@ a->SetAssemblyLevel(AssemblyLevel::PARTIAL);
 ```
 Once partial assembly is enabled, subsequent calls to functions such as
 `FormLinearSystem` will result in an `Operator` that represents the action of
-the bilinear form `a`, without assembling a matrix. This functionality is 
-illustrated in several [MFEM examples](examples.md), include example 1, 3, 6, 
-9, 24, and 25.
+the bilinear form `a`, without assembling a matrix. This functionality is
+illustrated in several [MFEM examples](examples.md), including example 1, 3, 6,
+9, 24, and 26.
 
 ## Preconditioning with Partial Assembly
 
@@ -30,8 +30,8 @@ used.
 
 MFEM allows for the efficient construction of diagonal (Jacobi) smoothers for
 partially assembled operators on quad and hex meshes using the class
-`OperatorJacobiSmoother`. This class will efficiently assemble the diagonal of
-the corresponding matrix, exploiting the tensor-product structure for efficient
+`OperatorJacobiSmoother`. This class efficiently assembles the diagonal of the
+corresponding matrix, exploiting the tensor-product structure for efficient
 evaluation.
 
 MFEM also allows for Chebyshev smoothing with partial assembly using the class
@@ -41,7 +41,7 @@ functionality of `OperatorJacobiSmoother`.
 
 These smoothers can be used within the context of h- and p-multigrid methods.
 These facilities are provided using the `MultigridOperator` and
-`MultigridSolver` classes. This functionality is illustrated in example 25.
+`MultigridSolver` classes. This functionality is illustrated in example 26.
 
 
 ## Finite Element Operator Decomposition
@@ -84,10 +84,11 @@ versions of **P**, **G** and **B**.
 ![Operator Decomposition](img/libceed.png "Operator Decomposition")
 
 Note that in the case of adaptive mesh refinement (AMR), the restrictions **P**
-and **G** will involve not just extracting sub-vectors, but evaluating values at
-constrained degrees of freedom through the AMR interpolation. There can also be
-several levels of subdomains (**P1**, **P2**, etc.), and it may be convenient to
-split **D** as the product of several operators (**D1**, **D2**, etc.).
+and **G** will involve not just extracting sub-vectors, but evaluating values
+at constrained degrees of freedom through the AMR interpolation. There can also
+be several levels of subdomains (**P1**, **P2**, etc.), and it may be
+convenient to split **D** as the product of several operators (**D1**, **D2**,
+etc.).
 
 ## Partial Assembly in MFEM
 
@@ -122,9 +123,9 @@ physics being expressed and the representation of **D**.
 ### Parallel Decomposition
 
 After the application of each of the first three transition operators, **P**,
-**G** and **B**, the operator evaluation is decoupled on their ranges, so **P**,
-**G** and **B** allow us to "zoom-in" to subdomain, element and quadrature point
-level, ignoring the coupling at higher levels.
+**G** and **B**, the operator evaluation is decoupled on their ranges, so
+**P**, **G** and **B** allow us to "zoom-in" to subdomain, element and
+quadrature point level, ignoring the coupling at higher levels.
 
 Thus, a natural mapping of **A** on a parallel computer is to split the
 **T-vector** over MPI ranks (a non-overlapping decomposition, as is typically
@@ -132,31 +133,33 @@ used for sparse matrices), and then split the rest of the vector types over
 computational devices (CPUs, GPUs, etc.) as indicated by the shaded regions in
 the diagram above.
 
-One of the advantages of the decomposition perspective in these settings is that
-the operators **P**, **G**, **B** and **D** clearly separate the MPI parallelism
-in the operator (**P**) from the unstructured mesh topology (**G**), the choice
-of the finite element space/basis (**B**) and the geometry and point-wise
-physics **D**. These components also naturally fall in different classes of
-numerical algorithms: parallel (multi-device) linear algebra for **P**, sparse
-(on-device) linear algebra for **G**, dense/structured linear algebra (tensor
-contractions) for **B** and parallel point-wise evaluations for **D**.
+One of the advantages of the decomposition perspective in these settings is
+that the operators **P**, **G**, **B** and **D** clearly separate the MPI
+parallelism in the operator (**P**) from the unstructured mesh topology
+(**G**), the choice of the finite element space/basis (**B**) and the geometry
+and point-wise physics **D**. These components also naturally fall in different
+classes of numerical algorithms: parallel (multi-device) linear algebra for
+**P**, sparse (on-device) linear algebra for **G**, dense/structured linear
+algebra (tensor contractions) for **B** and parallel point-wise evaluations for
+**D**.
 
 ## Partial Assembly for Discontinuous Galerkin methods
 
-A complementary partial assembly decomposition is used for Discontinuous Galerkin
-methods to handle face terms, where a similar sequence of operators is applied
-on the faces to compute the numerical fluxes. However, since elements are
-decoupled, the element restriction **G** is the identity, and a face restriction
-**G<sub>F</sub>** is used instead to compute the numerical fluxes and couple elements
-together. This face restriction **G<sub>F</sub>** goes from element degrees of freedom to
-face degrees of freedom. Then a **B<sub>F</sub>** operator can be applied on the
-faces. And an analogous **D<sub>F</sub>** operator is then applied at the face
-quadrature points.
+A complementary partial assembly decomposition is used for Discontinuous
+Galerkin methods to handle face terms, where a similar sequence of operators is
+applied on the faces to compute the numerical fluxes. However, since elements
+are decoupled, the element restriction **G** is the identity, and a face
+restriction **G<sub>F</sub>** is used instead to compute the numerical fluxes
+and couple elements together. This face restriction **G<sub>F</sub>** goes from
+element degrees of freedom to face degrees of freedom. Then a **B<sub>F</sub>**
+operator can be applied on the faces. An analogous **D<sub>F</sub>** operator
+is then applied at the face quadrature points.
 
-Currently, we support partial assembly only for  Gauss-Lobatto
-and Bernstein basis with Integrators that don't require derivatives on the faces.
+Currently, we support partial assembly only for Gauss-Lobatto and Bernstein
+basis with Integrators that don't require derivatives on the faces.
 
 ## [High-Performance Templated Operators](performance.md)
 
-MFEM also offers a set of templated classes to evaluate finite element 
-operators on tensor-product (quadrilateral and hexahedral) meshes.
+MFEM also offers a set of templated classes to evaluate finite element
+operators on tensor-product (quadrilateral and hexahedral) meshes, [described in
+further detail here](performance.md).
