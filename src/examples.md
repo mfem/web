@@ -45,7 +45,6 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
    <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
-   <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
@@ -68,6 +67,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="staticcond" onchange="update(this.id);" /> Static condensation</label><br/>
    <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
    <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
+   <label><input type="radio" id="pa" onchange="update(this.id);" /> Partial assembly</label><br/>
 </div>
 <div class="col-sm-6 col-md-4 small" markdown="1">
    <h5>**Solver**</h5>
@@ -1318,9 +1318,9 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "hpc"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
-   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
+   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
 
    updateGroup(group1, id);
@@ -1330,15 +1330,15 @@ function update(id)
 
    // Example codes
    var numExamples = 25; // update when adding examples!
-   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex3",  (maxwell || hpc) && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
+   showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc));
    showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
-   showElement("ex6",  (laplace || hpc) && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
+   showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  (advection || hpc) && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
+   showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
    showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
    showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
    showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
@@ -1349,11 +1349,11 @@ function update(id)
    showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
    showElement("ex18", hydro && l2 && dg && (rk));
    showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
-   showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
+   showElement("ex20", (elasticity || maxwell || conduction || hydro) && all2 && all3 && symplectic);
    showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
-   showElement("ex24", (graddiv || hpc) && (h1 || hcurl) && galerkin && pcg);
+   showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg);
    showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));
 
    // Electromagnetic miniapps
@@ -1378,7 +1378,7 @@ function update(id)
 
    // External miniapps
    numExamples += 1; // update when adding miniapps!
-   showElement("laghos", (hydro || hpc) && all2 && all3 && all4);
+   showElement("laghos", (hydro) && (l2 || h1) && (galerkin || dg || pa) && (rk));
 
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
