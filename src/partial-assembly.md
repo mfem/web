@@ -40,8 +40,8 @@ the operator computed using the power method, and is built upon the
 functionality of `OperatorJacobiSmoother`.
 
 These smoothers can be used within the context of h- and p-multigrid methods.
-These facilities are provided using the `MultigridOperator` and
-`MultigridSolver` classes. This functionality is illustrated in example 26.
+These facilities are provided using the `Multigrid` class. This functionality is
+illustrated in example 26.
 
 
 ## Finite Element Operator Decomposition
