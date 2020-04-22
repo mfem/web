@@ -7,19 +7,23 @@ operator is computed by multiplying with this matrix. At high orders this
 requires both a large amount of memory to store the matrix, as well as many
 floating point operations to compute and apply it. _Partial assembly_ is a
 technique that allows for efficiently applying the action of finite element
-operators efficiently without forming the corresponding matrix. This is
-particularly important when running on GPUs.
+operators without forming the corresponding matrix. This is particularly
+important when running on GPUs.
 
 Partial assembly is enabled at the level of the `BilinearForm` by setting
 the assembly level:
 ```c++
 a->SetAssemblyLevel(AssemblyLevel::PARTIAL);
 ```
-Once partial assembly is enabled, subsequent calls to functions such as
+Once partial assembly is enabled, subsequent calls to member functions such as
 `FormLinearSystem` will result in an `Operator` that represents the action of
 the bilinear form `a`, without assembling a matrix. This functionality is
 illustrated in several [MFEM examples](examples.md), including example 1, 3, 6,
 9, 24, and 26.
+
+Note that partial assembly is currently implemented for tensor-product elements
+(i.e. quadrilaterals and hexahedra). Partial assembly for simplex elements
+(triangles and tetrahedra) is planned.
 
 ## Preconditioning with Partial Assembly
 
@@ -34,14 +38,16 @@ partially assembled operators on quad and hex meshes using the class
 corresponding matrix, exploiting the tensor-product structure for efficient
 evaluation.
 
-MFEM also allows for Chebyshev smoothing with partial assembly using the class
-`OperatorChebyshevSmoother`. This smoother uses estimates of the eigenvalues of
-the operator computed using the power method, and is built upon the
+MFEM also allows for [Chebyshev
+smoothing](http://netlib.org/linalg/html_templates/node76.html) with partial
+assembly using the class `OperatorChebyshevSmoother`. This smoother uses
+estimates of the eigenvalues of the operator computed using the [power
+method](https://en.wikipedia.org/wiki/Power_iteration), and is built upon the
 functionality of `OperatorJacobiSmoother`.
 
 These smoothers can be used within the context of h- and p-multigrid methods.
 These facilities are provided using the `Multigrid` class. This functionality is
-illustrated in example 26.
+illustrated in [example 26](examples.md#ex26).
 
 
 ## Finite Element Operator Decomposition
@@ -111,7 +117,7 @@ structure of the degrees of freedom and quadrature points on quadrilateral and
 hexahedral elements to perform the action of **B** without storing it as a
 matrix.
 
-The partial assembly algorithm requires optimal amount of memory transfers
+The partial assembly algorithm requires the optimal amount of memory transfers
 (with respect to the polynomial order) and near-optimal FLOPs for operator
 evaluation. It consists of an operator *setup* phase, that evaluates and stores
 **D** and an operator *apply* (evaluation) phase that computes the action of
@@ -156,7 +162,7 @@ operator can be applied on the faces. An analogous **D<sub>F</sub>** operator
 is then applied at the face quadrature points.
 
 Currently, we support partial assembly only for Gauss-Lobatto and Bernstein
-basis with Integrators that don't require derivatives on the faces.
+bases, with integrators that don't require derivatives on the faces.
 
 ## [High-Performance Templated Operators](performance.md)
 
