@@ -46,6 +46,7 @@ We then use the Divergence theorem to obtain:
 $$(-\div\vec\{\alpha}, v)\_\Omega =
 (\vec\{\alpha}, \grad v)\_\Omega - \int_\dO(\hat\{n}\cdot\vec\{\alpha}))v\,d\Gamma =
 (\vec\{\alpha}, \grad v)\_\Omega - (\hat\{n}\cdot\vec\{\alpha},v)\_\dO $$
+Where $d\Gamma$ is the area element on the boundary of $\Omega$.
 
 #### Weak Curl
 
