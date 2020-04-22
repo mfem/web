@@ -174,6 +174,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *[Triple point shock interaction](https://computation.llnl.gov/projects/blast/triple-point-shock-interaction) on 4 elements of order 12.  Note the element curvature and the high variation of the field inside the lower right element.*
 
+---
+
+[![](img/gallery/nstxu_hhfw.png)](img/gallery/nstxu_hhfw.png)
+
+*Slice image of the high harmonic fast wave propagation in NSTX-U. Computed using MFEM 4th order H(curl) elements by [RF SciDAC project](https://www.rfscidac4.org).*
+
 </div>
 
 </center>
