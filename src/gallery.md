@@ -178,7 +178,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/nstxu_hhfw.png)](img/gallery/nstxu_hhfw.png)
 
-*Slice image of the high harmonic fast wave propagation in NSTX-U. Computed using MFEM 4th order H(curl) elements by [RF SciDAC project](https://www.rfscidac4.org).*
+*Slice image of the high harmonic fast wave propagation in [NSTX-U](https://nstx-u.pppl.gov/overview). Computed using MFEM 4th order H(curl) elements by [RF SciDAC project](https://www.rfscidac4.org).*
 
 </div>
 
