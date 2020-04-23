@@ -72,6 +72,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Test of the propagation of a spherical shock wave through a random non-conforming mesh in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
 
+---
+
+[![](img/gallery/nstxu_hhfw.png)](img/gallery/nstxu_hhfw.png)
+
+*Slice image of the high harmonic fast wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) magnetic fusion device. Computed using MFEM's 4th order H(curl) elements by the [RF-SciDAC project](https://www.rfscidac4.org).*
+
 ----
 
 [![](img/gallery/maxwell-snowflake.jpg)](img/gallery/maxwell-snowflake-full.png)
@@ -98,6 +104,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
+
+*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](http://visit.llnl.gov). Click [here](img/gallery/gas_impact.gif) for a movie.*
+
+----
+
 [![](img/gallery/mandel.png)](img/gallery/mandel.png)
 
 *The [Shaper](http://mfem.github.io/doxygen/html/shaper_8cpp_source.html) miniapp applied to a multi-material input functions described by the iterates of the Mandelbrot set. Visualization with [GLVis](http://glvis.org).*
@@ -107,18 +119,6 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 [![](img/gallery/drone.png)](img/gallery/drone.png)
 
 *Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
-
-----
-
-[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
-
-*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](http://visit.llnl.gov). Click [here](img/gallery/gas_impact.gif) for a movie.*
-
-----
-
-[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
-
-*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 </div><div class="col-md-3" markdown="1">
 
@@ -173,6 +173,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 [![](img/gallery/triple-pt-2x2-q12-3d.png)](img/gallery/triple-pt-2x2-q12-3d.png)
 
 *[Triple point shock interaction](https://computation.llnl.gov/projects/blast/triple-point-shock-interaction) on 4 elements of order 12.  Note the element curvature and the high variation of the field inside the lower right element.*
+
+----
+
+[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
+
+*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 </div>
 
