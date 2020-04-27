@@ -115,7 +115,10 @@ portions of it) and evaluates the actions of **P**, **G** and **B** on-the-fly.
 Critically for performance, MFEM takes advantage of the tensor-product
 structure of the degrees of freedom and quadrature points on quadrilateral and
 hexahedral elements to perform the action of **B** without storing it as a
-matrix.
+matrix. Note that the action of **B** is performed elementwise (it corresponds
+to a block-diagonal matrix), and the blocks depend only on the element order
+and reference geometry. Currently, only fixed order and geometry is supported,
+meaning that all the blocks of **B** are identical.
 
 The partial assembly algorithm requires the optimal amount of memory transfers
 (with respect to the polynomial order) and near-optimal FLOPs for operator
