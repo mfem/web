@@ -89,8 +89,8 @@ versions of **P**, **G** and **B**.
 
 ![Operator Decomposition](img/libceed.png "Operator Decomposition")
 
-Note that in the case of adaptive mesh refinement (AMR), the restrictions **P**
-and **G** will involve not just extracting sub-vectors, but evaluating values
+Note that in the case of adaptive mesh refinement (AMR), the prolongation
+operator **P** involves not only extracting sub-vectors, but evaluating values
 at constrained degrees of freedom through the AMR interpolation. There can also
 be several levels of subdomains (**P1**, **P2**, etc.), and it may be
 convenient to split **D** as the product of several operators (**D1**, **D2**,
