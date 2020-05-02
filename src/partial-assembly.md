@@ -153,6 +153,20 @@ classes of numerical algorithms: parallel (multi-device) linear algebra for
 algebra (tensor contractions) for **B** and parallel point-wise evaluations for
 **D**.
 
+### Essential Boundary Conditions
+
+Essential boundary conditions for partially assembled operators are enforced
+using the class `ConstrainedOperator` (or, for rectangular systems,
+`RectangularConstrainedOperator`). These operators represent the action of the
+partially assembled operator, together with specified constraints on essential
+degrees of freedom. The `Operator` returned from, for example,
+`BilinearForm::FormLinearSystem` or `BilinearForm::FormSystemMatrix` will in
+fact be a `ConstrainedOperator`. The `Operator` returned from
+`MixedBilinearForm::FormRectangularSystemMatrix` will be a
+`RectangularConstrainedOperator`. These classes perform the matrix-free
+equivalent of eliminating the rows and columns of the system matrix
+corresponding to the essential degrees of freedom.
+
 ## Partial Assembly for Discontinuous Galerkin methods
 
 A complementary partial assembly decomposition is used for Discontinuous
