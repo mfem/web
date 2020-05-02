@@ -45,10 +45,10 @@ estimates of the eigenvalues of the operator computed using the [power
 method](https://en.wikipedia.org/wiki/Power_iteration), and is built upon the
 functionality of `OperatorJacobiSmoother`.
 
-These smoothers can be used within the context of h- and p-multigrid methods.
-These facilities are provided using the `Multigrid` class. This functionality is
-illustrated in [example 26](examples.md#ex26).
-
+Very efficient partially assembled h-multigrid and p-multigrid preconditioners
+can be constructed by leveraging a hierarchy of discretizations and the
+smoothers described above. This functionality is illustrated in [example
+26](examples.md#ex26).
 
 ## Finite Element Operator Decomposition
 
