@@ -84,8 +84,9 @@ We refer to the operators that connect the different types of vectors as:
 - Basis (Dofs-to-Qpts) evaluator **B**
 - Operator at quadrature points **D**
 
-More generally, when the test and trial space differ, they get their own
-versions of **P**, **G** and **B**.
+More generally, if the operator is nonsymmetric or the test and trial space differ, then the
+operators mapping back from quadrature points to test spaces may not be transposes of
+**P**, **G** and **B**, but they still have the same basic structure and interpretation.
 
 ![Operator Decomposition](img/libceed.png "Operator Decomposition")
 
