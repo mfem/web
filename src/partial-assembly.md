@@ -18,8 +18,8 @@ a->SetAssemblyLevel(AssemblyLevel::PARTIAL);
 Once partial assembly is enabled, subsequent calls to member functions such as
 `FormLinearSystem` will result in an `Operator` that represents the action of
 the bilinear form `a`, without assembling a matrix. This functionality is
-illustrated in several [MFEM examples](examples.md), including example 1, 3, 6,
-9, 24, and 26.
+illustrated in several [MFEM examples](examples.md), including examples 1, 3, 4,
+5, 6, 9, 24, and 26.
 
 Note that partial assembly is currently implemented for tensor-product elements
 (i.e. quadrilaterals and hexahedra). Partial assembly for simplex elements

@@ -180,6 +180,7 @@ also illustrated.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly and GPU devices are supported.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -205,6 +206,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly and GPU devices are supported.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -234,6 +236,7 @@ formats.
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly is supported.
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1333,7 +1336,7 @@ function update(id)
    showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
+   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc));
    showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
    showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
