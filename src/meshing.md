@@ -130,5 +130,23 @@ quadrature point. The combination of targets and quality metrics is used to
 optimize the physical node positions, i.e., they must be as close as possible to
 the shape / size / alignment of their targets.
 
+### Minimal Surface
+
+This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
+Two problems can be run:
+
+- Problem 0 solves the minimal surface equation of parametric surfaces. The command line options allow the selection of different parameterizations: Catenoid, Helicoid, Enneper, Hold, Costa, Shell, Scherk or one given input mesh file.
+- Problem 1 solves the minimal surface equation ($-\nabla\cdot(q(u)\nabla{u})=0$, with $q(u) = \frac{1}{\sqrt{1+|\nabla{u}|^{2}})}$) for surfaces of the form $z=f(x,y)$, using Picard iterations.
+
+
+<img src="../img/examples/min-surf-costa.gif" width="640"/>
+
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+
+
+
+
