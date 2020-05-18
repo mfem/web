@@ -1194,9 +1194,13 @@ version.
 
 <div id="minimal-surface" markdown="1">
 ##Minimal Surface Miniapp
-<img class="floatright" width="450" src="../img/examples/min-surf-costa-amr.png">
+<img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
 
 This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
+
+Options to solve the minimal surface equations of both parametric surfaces as well as
+surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
+number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
 
 For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
 

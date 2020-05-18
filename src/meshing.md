@@ -134,17 +134,29 @@ the shape / size / alignment of their targets.
 
 This miniapp solves Plateau's nonlinear elliptic problem: the Dirichlet problem for the minimal surface equation.
 
+[![](img/examples/min-surf-costa-amr-small.png)](img/examples/min-surf-costa-amr.png)
+
 The weak form of the equation, with prescribed boundary conditions, is given by:
 
 $$\int_\Omega\frac{\nabla{u}\cdot\nabla{v}}{\sqrt{1+|\nabla{u}|^2}}dx = 0$$
 
 Two problems can be run:
 
-- Problem 0 solves the parametric Plateau problem (minimal surface equation of parametric surfaces). The command line options allow the selection of different parameterizations: Catenoid, Helicoid, Enneper, Hold, Costa, Shell, Scherk or simply one input mesh file.
-- Problem 1 solves the non-parametric Plateau problem (minimal surface equation for surfaces restricted to be graphs of the form $z=f(x,y)$), using Picard iterations: $$\int_\Omega\frac{\nabla{u_{n+1}}\cdot\nabla{v}}{\sqrt{1+|\nabla{u_n}|^2}}dx = 0$$
-                           
-<img src="../img/examples/min-surf-costa.gif" width="640" title="Costa's Minimal Surface"/> 
+1. Problem 0 solves the *minimal surface equation of parametric surfaces*.
+   The command line options allow the selection of different parameterizations:
 
+    - Catenoid,
+    - Helicoid,
+    - Enneper,
+    - Hold,
+    - Costa,
+    - Shell,
+    - Scherk
+
+    or simply one from an input mesh file.
+
+2. Problem 1 solves the *minimal surface equation for surfaces restricted to be graphs of the form $z=f(x,y)$*.
+   This problem is solved using the Picard iterations: $$\int_\Omega\frac{\nabla{u_{n+1}}\cdot\nabla{v}}{\sqrt{1+|\nabla{u_n}|^2}}dx = 0$$
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
