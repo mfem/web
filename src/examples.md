@@ -836,6 +836,32 @@ We recommend viewing Example 22 before viewing this example._
 <br></div>
 
 
+<div id="ex26" markdown="1">
+##Example 26: Multigrid Preconditioner
+<img class="floatright" src="../img/examples/ex26.png">
+
+This example code demonstrates the use of MFEM to define a
+simple isoparametric finite element discretization of the
+Laplace problem $$-\Delta u = 1$$ with homogeneous Dirichlet
+boundary conditions and how to solve it efficiently using a
+matrix-free multigrid preconditioner.
+
+The example highlights on the creation of a hierarchy of
+discretization spaces and diffusion bilinear forms using
+partial assembly. The levels in the hierarchy of finite
+element spaces maybe constructed through geometric or
+order refinements. Moreover, the construction of a multigrid
+preconditioner for the PCG solver is shown. The multigrid
+uses a PCG solver on the coarsest level and second order
+Chebyshev accelerated smoothers on the other levels.
+
+_The example has a serial ([ex26.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26.cpp))
+and a parallel ([ex26p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1169,6 +1195,27 @@ version.
 <br></div>
 
 
+<div id="minimal-surface" markdown="1">
+##Minimal Surface Miniapp
+<img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
+
+This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
+
+Options to solve the minimal surface equations of both parametric surfaces as well as
+surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
+number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
+
+For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+
+_The miniapp has a serial
+([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a
+parallel ([pminimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pminimal-surface.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="lor-transfer" markdown="1">
 ##Low-Order Refined Transfer Miniapp
 <img class="floatright"  width="450" src="../img/examples/lor-transfer.png">
@@ -1185,8 +1232,8 @@ function that was obtained by restricting a high-order grid function to the
 low-order refined space.
 
 _The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version.
-**We recommend that new users start with the example codes before moving to the miniapps.**_
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1332,7 +1379,7 @@ function update(id)
    updateGroup(group4, id);
 
    // Example codes
-   var numExamples = 25; // update when adding examples!
+   var numExamples = 26; // update when adding examples!
    showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc));
@@ -1358,6 +1405,7 @@ function update(id)
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
    showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg);
    showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));
+   showElement("ex26", (laplace || hpc) && h1 && galerkin && (jacobi || pcg || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
@@ -1367,7 +1415,7 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 10; // update when adding miniapps!
+   numExamples += 11; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
@@ -1376,6 +1424,7 @@ function update(id)
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
+   showElement("minimal-surface", meshing && all2 && all3 && all4);
    showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
    showElement("gslib-interpolation", meshing && all2 && all3 && all4);
 
