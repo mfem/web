@@ -102,8 +102,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 22](http://mfem.github.io/doxygen/html/ex22_8cpp_source.html): complex-valued linear systems,
  - [Example 23](http://mfem.github.io/doxygen/html/ex23_8cpp_source.html): second order in time wave equation,
  - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
- - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations.
- - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem 
+ - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
+ - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -117,6 +117,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
  - [Load DC](http://mfem.github.io/doxygen/html/load-dc_8cpp_source.html): visualize fields saved via DataCollection classes,

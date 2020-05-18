@@ -1192,6 +1192,27 @@ version.
 <br></div>
 
 
+<div id="minimal-surface" markdown="1">
+##Minimal Surface Miniapp
+<img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
+
+This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
+
+Options to solve the minimal surface equations of both parametric surfaces as well as
+surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
+number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
+
+For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+
+_The miniapp has a serial
+([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a
+parallel ([pminimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pminimal-surface.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="lor-transfer" markdown="1">
 ##Low-Order Refined Transfer Miniapp
 <img class="floatright"  width="450" src="../img/examples/lor-transfer.png">
@@ -1208,8 +1229,8 @@ function that was obtained by restricting a high-order grid function to the
 low-order refined space.
 
 _The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version.
-**We recommend that new users start with the example codes before moving to the miniapps.**_
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1391,7 +1412,7 @@ function update(id)
    showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
 
    // Meshing miniapps
-   numExamples += 10; // update when adding miniapps!
+   numExamples += 11; // update when adding miniapps!
    showElement("mobius-strip", meshing && all2 && all3 && all4);
    showElement("klein-bottle", meshing && all2 && all3 && all4);
    showElement("toroid", meshing && all2 && all3 && all4);
@@ -1400,6 +1421,7 @@ function update(id)
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
+   showElement("minimal-surface", meshing && all2 && all3 && all4);
    showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
    showElement("gslib-interpolation", meshing && all2 && all3 && all4);
 
