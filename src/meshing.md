@@ -143,7 +143,7 @@ $$\int_\Omega\frac{\nabla{u}\cdot\nabla{v}}{\sqrt{1+|\nabla{u}|^2}}dx = 0$$
 Two problems can be run:
 
 1. Problem 0 solves the *minimal surface equation of parametric surfaces*.
-   The command line options allow the selection of different parameterizations:
+   The command line options allow the selection of different parametrization:
 
     - Catenoid,
     - Helicoid,
@@ -157,7 +157,6 @@ Two problems can be run:
 
 2. Problem 1 solves the *minimal surface equation for surfaces restricted to be graphs of the form $z=f(x,y)$*.
    This problem is solved using the Picard iterations: $$\int_\Omega\frac{\nabla{u_{n+1}}\cdot\nabla{v}}{\sqrt{1+|\nabla{u_n}|^2}}dx = 0$$
-
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
