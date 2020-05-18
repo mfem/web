@@ -264,6 +264,7 @@ _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
+Partial assembly and GPU devices are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1384,7 +1385,7 @@ function update(id)
    showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc));
    showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc));
-   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
+   showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc));
    showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc));
    showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
    showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
@@ -1405,7 +1406,7 @@ function update(id)
    showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
    showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg);
    showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));
-   showElement("ex26", (laplace || hpc) && h1 && galerkin && (jacobi || pcg || amg));
+   showElement("ex26", laplace && h1 && (galerkin || pa) && (jacobi || pcg || amg));
 
    // Electromagnetic miniapps
    numExamples += 4; // update when adding miniapps!
@@ -1424,7 +1425,7 @@ function update(id)
    showElement("shaper", meshing && all2 && all3 && all4);
    showElement("mesh-explorer", meshing && all2 && all3 && all4);
    showElement("mesh-optimizer", meshing && all2 && all3 && all4);
-   showElement("minimal-surface", meshing && all2 && all3 && all4);
+   showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4);
    showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
    showElement("gslib-interpolation", meshing && all2 && all3 && all4);
 
