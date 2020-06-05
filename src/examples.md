@@ -45,6 +45,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
    <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
    <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
+   <label><input type="radio" id="fluid" onchange="update(this.id);" /> Fluid</label><br/>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
@@ -1309,6 +1310,33 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="navier" markdown="1">
+##Navier Miniapp
+<img class="floatright" width="300" src="../img/gallery/tg-vortex-full.png">
+
+Navier is a miniapp that solves the time-dependent Navier-Stokes equations of
+incompressible fluid dynamics
+\begin{align}
+\frac{\partial u}{\partial t} + (u \cdot \nabla) u - \frac{1}{Re} \nabla^2 - \nabla p &= f \\\\
+\nabla \cdot u &= 0
+\end{align}
+using a spatially high-order finite element discretization.
+
+The time-dependent problem is solved using a (up to) third order
+implicit-explicit method which leverages an extrapolation scheme for the
+convective parts and a backward-difference formulation for the viscous parts of
+the equation.
+
+The miniapp supports:
+
+- Arbitrary order H1 elements
+- High order mesh elements
+- IMEX (EXTk-BDFk) time-stepping up to third order
+- Convenient interface for new users
+- A variety of test cases and benchmarks
+
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -1369,7 +1397,7 @@ function exampleVisible(num)
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "fluid"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
@@ -1432,6 +1460,9 @@ function update(id)
    // External miniapps
    numExamples += 1; // update when adding miniapps!
    showElement("laghos", (hydro) && (l2 || h1) && (galerkin || dg || pa) && (rk));
+
+   numExamples += 1;
+   showElement("navier", (fluid) && (h1) && (galerkin || pa) && (gmres || pcg || amg));
 
    var allHidden = true;
    for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
