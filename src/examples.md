@@ -1317,7 +1317,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 Navier is a miniapp that solves the time-dependent Navier-Stokes equations of
 incompressible fluid dynamics
 \begin{align}
-\frac{\partial u}{\partial t} + (u \cdot \nabla) u - \frac{1}{Re} \nabla^2 - \nabla p &= f \\\\
+\frac{\partial u}{\partial t} + (u \cdot \nabla) u - \frac{1}{Re} \nabla^2 u - \nabla p &= f \\\\
 \nabla \cdot u &= 0
 \end{align}
 using a spatially high-order finite element discretization.
