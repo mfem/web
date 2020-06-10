@@ -1312,7 +1312,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 
 <div id="navier" markdown="1">
 ##Navier Miniapp
-<img class="floatright" width="300" src="../img/gallery/tg-vortex-full.png">
+<img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
 
 Navier is a miniapp that solves the time-dependent Navier-Stokes equations of
 incompressible fluid dynamics
