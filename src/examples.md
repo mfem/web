@@ -1395,6 +1395,16 @@ function exampleVisible(num)
    return elementVisible("ex"+num);// || elementVisible("ex"+num+"p");
 }
 
+function miniappVisible(miniappList)
+{
+   for (i = 0; i < miniappList.length; i++) {
+      if (elementVisible(miniappList[i])) {
+         return true;
+      }
+   }
+   return false;
+}
+
 function update(id)
 {
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "fluid"];
@@ -1464,13 +1474,22 @@ function update(id)
    numExamples += 1;
    showElement("navier", (fluid) && (h1) && (galerkin || pa) && (gmres || pcg || amg));
 
+   const miniappList = ["volta", "tesla", "maxwell", "joule", "mobius-strip", "klein-bottle", "toroid", "twist", "extruder",
+                        "shaper", "mesh-explorer", "mesh-optimizer", "minimal-surface", "lor-transfer", "gslib-interpolation",
+                        "laghos", "navier"]
+
    var allHidden = true;
-   for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
+   for (i = 1; i <= numExamples; i++) {
       if (exampleVisible(i)) {
          allHidden = false;
          break;
       }
    }
+
+   if (miniappVisible(miniappList)) {
+      allHidden = false;
+   }
+
    showElement("nomatch", allHidden);
 }
 
