@@ -32,7 +32,7 @@ Checklist for adding miniapps:
 - Consider adding a one-line summary of the example in `features.md` (if we want to advertise the miniapp to users)
 - Add an image file in `img/examples/`, e.g. `img/examples/shaper.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
-- Update `numExamples` in examples.md in the JavaScript code at the end of the files in the appropriate miniapps section
+- Update `numExamples` and `miniappList` in examples.md in the JavaScript code at the end of the files in the appropriate miniapps section
 - Add a line with the appropriate  categories for the example in the `update` function at the end of `examples.md`
 - If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing.md`
 
