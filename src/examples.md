@@ -1406,6 +1406,7 @@ function getBooleans(names, comboId)
 
 function update()
 {
+   // TODO: pull the names directly from the combos
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "wave", "hydro", "meshing", "fluid"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
