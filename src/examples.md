@@ -18,8 +18,8 @@ more representative of the advanced usage of the library in physics/application
 codes. We recommend that new users start with the example codes before moving to
 the miniapps.
 
-Clicking on any of the categories below displays examples and miniapps that contain the
-described feature. _All examples support (arbitrarily) high-order meshes and
+Select from the categories below to displays examples and miniapps that contain the
+respective feature. _All examples support (arbitrarily) high-order meshes and
 finite element spaces_.
 The numerical results from the example codes can be visualized using the
 GLVis visualization tool (based on MFEM). See the
@@ -34,66 +34,75 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
    <h5>**Application (PDE)**</h5>
-   <label><input type="radio" id="all1" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="laplace" onchange="update(this.id);" /> Laplace</label><br/>
-   <label><input type="radio" id="elasticity" onchange="update(this.id);" /> Elasticity</label><br/>
-   <label><input type="radio" id="maxwell" onchange="update(this.id);" /> Electromagnetics</label><br/>
-   <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
-   <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
-   <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
-   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
-   <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
-   <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
-   <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
-   <label><input type="radio" id="fluid" onchange="update(this.id);" /> Fluid</label><br/>
+   <select id="group1" onchange="update()">
+      <option value="all1">All</option>
+      <option value="laplace">Laplace</option>
+      <option value="elasticity">Elasticity</option>
+      <option value="maxwell">Electromagnetics</option>
+      <option value="graddiv">grad-div</option>
+      <option value="darcy">Darcy</option>
+      <option value="advection">Advection</option>
+      <option value="conduction">Conduction</option>
+      <option value="wave">Wave</option>
+      <option value="hydro">Hydrodynamics</option>
+      <option value="meshing">Meshing</option>
+      <option value="fluid">Fluid</option>
+   </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
-   <label><input type="radio" id="all2" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="l2" onchange="update(this.id);" /> $L_2$ discontinuous elements</label><br/>
-   <label><input type="radio" id="h1" onchange="update(this.id);" /> $H^1$ nodal elements</label><br/>
-   <label><input type="radio" id="hcurl" onchange="update(this.id);" /> $H(curl)$ Nedelec elements</label><br/>
-   <label><input type="radio" id="hdiv" onchange="update(this.id);" /> $H(div)$ Raviart-Thomas elements</label><br/>
-   <label><input type="radio" id="h12" onchange="update(this.id);" /> $H^{-1/2}$ interfacial elements</label><br/>
+   <select id="group2" onchange="update()">
+      <option value="all2">All</option>
+      <option value="l2">L2 discontinuous elements</option>
+      <option value="h1">H1 nodal elements</option>
+      <option value="hcurl">H(curl) Nedelec elements</option>
+      <option value="hdiv">H(div) Raviart-Thomas elements</option>
+      <option value="h12">H^{-1/2} interfacial elements</option>
+   </select>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Discretization**</h5>
-   <label><input type="radio" id="all3" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="galerkin" onchange="update(this.id);" /> Galerkin FEM</label><br/>
-   <label><input type="radio" id="mixed" onchange="update(this.id);" /> Mixed FEM</label><br/>
-   <label><input type="radio" id="dg" onchange="update(this.id);" /> Discontinuous Galerkin (DG)</label><br/>
-   <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discont. Petrov-Galerkin (DPG)</label><br/>
-   <label><input type="radio" id="hybr" onchange="update(this.id);" /> Hybridization</label><br/>
-   <label><input type="radio" id="staticcond" onchange="update(this.id);" /> Static condensation</label><br/>
-   <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
-   <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
-   <label><input type="radio" id="pa" onchange="update(this.id);" /> Partial assembly</label><br/>
+   <select id="group3" onchange="update()">
+      <option value="all3">All</option>
+      <option value="galerkin">Galerkin FEM</option>
+      <option value="mixed">Mixed FEM</option>
+      <option value="dg">Discontinuous Galerkin (DG)</option>
+      <option value="dpg">Discont. Petrov-Galerkin (DPG)</option>
+      <option value="hybr">Hybridization</option>
+      <option value="staticcond">Static condensation</option>
+      <option value="nurbs">Isogeometric analysis (NURBS)</option>
+      <option value="amr">Adaptive mesh refinement (AMR)</option>
+      <option value="pa">Partial assembly</option>
+   </select>
 </div>
 <div class="col-sm-6 col-md-4 small" markdown="1">
    <h5>**Solver**</h5>
-   <label><input type="radio" id="all4" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="jacobi" onchange="update(this.id);" /> Jacobi</label> <br/>
-   <label><input type="radio" id="gs" onchange="update(this.id);" /> Gauss-Seidel</label> <br/>
-   <label><input type="radio" id="pcg" onchange="update(this.id);" /> PCG</label> <br/>
-   <label><input type="radio" id="minres" onchange="update(this.id);" /> MINRES</label> <br/>
-   <label><input type="radio" id="gmres" onchange="update(this.id);" /> GMRES</label> <br/>
-   <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
-   <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
-   <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
-   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU/STRUMPACK (parallel direct)</label><br/>
-   <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
-   <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
-   <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="newmark" onchange="update(this.id);" /> Newmark (ODE Integration)</label><br/>
-   <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
-   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
-   <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
-   <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
-   <label><input type="radio" id="hiop" onchange="update(this.id);" /> HiOp solvers</label><br/>
+   <select id="group4" onchange="update()">
+      <option value="all4">All</option>
+      <option value="jacobi">Jacobi</option>
+      <option value="gs">Gauss-Seidel</option>
+      <option value="pcg">PCG</option>
+      <option value="minres">MINRES</option>
+      <option value="gmres">GMRES</option>
+      <option value="amg">Algebraic Multigrid (BoomerAMG)</option>
+      <option value="ams">Auxiliary-space Maxwell Solver (AMS)</option>
+      <option value="ads">Auxiliary-space Divergence Solver (ADS)</option>
+      <option value="superlu">SuperLU/STRUMPACK (parallel direct)</option>
+      <option value="umfpack">UMFPACK (serial direct)</option>
+      <option value="newton">Newton method (nonlinear solver)</option>
+      <option value="rk">Explicit Runge-Kutta (ODE integration)</option>
+      <option value="sdirk">Implicit Runge-Kutta (ODE integration)</option>
+      <option value="newmark">Newmark (ODE Integration)</option>
+      <option value="symplectic">Symplectic Algorithm (ODE Integration)</option>
+      <option value="lobpcg">LOBPCG, AME (eigensolvers)</option>
+      <option value="sundials">SUNDIALS solvers</option>
+      <option value="petsc">PETSc solvers</option>
+      <option value="hiop">HiOp solvers</option>
+   </select>
 </div>
 </div>
+<br>
 <hr>
 
 <!-- ------------------------------------------------------------------------- -->
@@ -1386,17 +1395,26 @@ function updateGroup(names, id)
       this[names[i]] = isChecked(names[i]) || isChecked(names[0]/*all*/);
 }
 
-function update(id)
+function getBooleans(names, comboId)
+{
+    selected = document.getElementById(comboId).value
+    // generate boolean variables from the group names
+    for (i = 0; i < names.length; ++i) {
+       this[names[i]] = (names[i] == selected) || (names[0] /*all*/ == selected);
+    }
+}
+
+function update()
 {
    var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "wave", "hydro", "meshing", "fluid"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
 
-   updateGroup(group1, id);
-   updateGroup(group2, id);
-   updateGroup(group3, id);
-   updateGroup(group4, id);
+   getBooleans(group1, "group1");
+   getBooleans(group2, "group2");
+   getBooleans(group3, "group3");
+   getBooleans(group4, "group4");
 
    numShown = 0 // expression continued...
 
