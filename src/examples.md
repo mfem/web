@@ -1370,6 +1370,8 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
         if (divs.item(i).id == id)
             divs.item(i).style.display = show ? "block" : "none";
+
+    return show ? 1 : 0;
 }
 
 function updateGroup(names, id)
@@ -1381,33 +1383,12 @@ function updateGroup(names, id)
 
    // generate boolean variables from the group names
    for (i = 0; i < names.length; ++i)
-      this[names[i]] = isChecked(names[i]) || isChecked(names[0]);
-}
-
-function elementVisible(id)
-{
-   var elem = document.getElementById(id);
-   return elem != null && elem.style.display != "none";
-}
-
-function exampleVisible(num)
-{
-   return elementVisible("ex"+num);// || elementVisible("ex"+num+"p");
-}
-
-function miniappVisible(miniappList)
-{
-   for (i = 0; i < miniappList.length; i++) {
-      if (elementVisible(miniappList[i])) {
-         return true;
-      }
-   }
-   return false;
+      this[names[i]] = isChecked(names[i]) || isChecked(names[0]/*all*/);
 }
 
 function update(id)
 {
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "fluid"];
+   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "wave", "hydro", "meshing", "fluid"];
    var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
    var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
    var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
@@ -1417,80 +1398,64 @@ function update(id)
    updateGroup(group3, id);
    updateGroup(group4, id);
 
-   // Example codes
-   var numExamples = 26; // update when adding examples!
-   showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc));
-   showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc));
-   showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
-   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
-   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
-   showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
-   showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
-   showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
-   showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
-   showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
-   showElement("ex18", hydro && l2 && dg && (rk));
-   showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
-   showElement("ex20", (elasticity || maxwell || conduction || hydro) && all2 && all3 && symplectic);
-   showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
-   showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
-   showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg);
-   showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));
-   showElement("ex26", laplace && h1 && (galerkin || pa) && (jacobi || pcg || amg));
+   numShown = 0 // expression continued...
 
-   // Electromagnetic miniapps
-   numExamples += 4; // update when adding miniapps!
-   showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
-   showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
-   showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
-   showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
+   // example codes
+   + showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
+   + showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
+   + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
+   + showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
+   + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
+   + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
+   + showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
+   + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
+   + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
+   + showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg))
+   + showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials))
+   + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
+   + showElement("ex18", hydro && l2 && dg && (rk))
+   + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
+   + showElement("ex20", (elasticity || maxwell || conduction || hydro) && all2 && all3 && symplectic)
+   + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
+   + showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark)
+   + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
+   + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
+   + showElement("ex26", laplace && h1 && (galerkin || pa) && (jacobi || pcg || amg))
 
-   // Meshing miniapps
-   numExamples += 11; // update when adding miniapps!
-   showElement("mobius-strip", meshing && all2 && all3 && all4);
-   showElement("klein-bottle", meshing && all2 && all3 && all4);
-   showElement("toroid", meshing && all2 && all3 && all4);
-   showElement("twist", meshing && all2 && all3 && all4);
-   showElement("extruder", meshing && all2 && all3 && all4);
-   showElement("shaper", meshing && all2 && all3 && all4);
-   showElement("mesh-explorer", meshing && all2 && all3 && all4);
-   showElement("mesh-optimizer", meshing && all2 && all3 && all4);
-   showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4);
-   showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
-   showElement("gslib-interpolation", meshing && all2 && all3 && all4);
+   // electromagnetic miniapps
+   + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
+   + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
+   + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
+   + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
 
-   // External miniapps
-   numExamples += 1; // update when adding miniapps!
-   showElement("laghos", (hydro) && (l2 || h1) && (galerkin || dg || pa) && (rk));
+   // meshing miniapps
+   + showElement("mobius-strip", meshing && all2 && all3 && all4)
+   + showElement("klein-bottle", meshing && all2 && all3 && all4)
+   + showElement("toroid", meshing && all2 && all3 && all4)
+   + showElement("twist", meshing && all2 && all3 && all4)
+   + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("shaper", meshing && all2 && all3 && all4)
+   + showElement("mesh-explorer", meshing && all2 && all3 && all4)
+   + showElement("mesh-optimizer", meshing && all2 && all3 && all4)
+   + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
+   + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
+   + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
 
-   numExamples += 1;
-   showElement("navier", (fluid) && (h1) && (galerkin || pa) && (gmres || pcg || amg));
+   // external miniapps
+   + showElement("laghos", (hydro) && (l2 || h1) && (galerkin || dg || pa) && (rk))
 
-   const miniappList = ["volta", "tesla", "maxwell", "joule", "mobius-strip", "klein-bottle", "toroid", "twist", "extruder",
-                        "shaper", "mesh-explorer", "mesh-optimizer", "minimal-surface", "lor-transfer", "gslib-interpolation",
-                        "laghos", "navier"]
+   + showElement("navier", (fluid) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
-   var allHidden = true;
-   for (i = 1; i <= numExamples; i++) {
-      if (exampleVisible(i)) {
-         allHidden = false;
-         break;
-      }
-   }
+   ; // ...end of expression
 
-   if (miniappVisible(miniappList)) {
-      allHidden = false;
-   }
-
-   showElement("nomatch", allHidden);
+   // show/hide the message "No examples match your criteria"
+   showElement("nomatch", numShown == 0);
 }
 
 function initButtons()
