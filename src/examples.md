@@ -18,7 +18,7 @@ more representative of the advanced usage of the library in physics/application
 codes. We recommend that new users start with the example codes before moving to
 the miniapps.
 
-Select from the categories below to displays examples and miniapps that contain the
+Select from the categories below to display examples and miniapps that contain the
 respective feature. _All examples support (arbitrarily) high-order meshes and
 finite element spaces_.
 The numerical results from the example codes can be visualized using the
