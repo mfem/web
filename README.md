@@ -18,13 +18,12 @@ Checklist for adding examples:
 - Add a one-line summary of the example in `features.md`
 - Add an image file in `img/examples/`, e.g. `img/examples/ex1.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
-- Add a line with the appropriate  categories for the example in the `update` function at the end of `examples.md`
+- Add a "showElement" line with the appropriate categories for the example in the `update` function at the end of `examples.md`
 
 To add a new Application / Finite Elements / Discretization / Solver category:
 
-- Add a radio button at the top of `examples.md`, e.g.
-  ```<label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>```
-- Add the `id` to the appropriate group at the beginning of the `update` function at the end of `examples.md`.
+- Add an `<option>` tag at the top of `examples.md`, e.g.
+  ```<option id="wave">Wave</option>```
 - Use the `id` in filter expressions of appropriate examples in `update`, e.g.
   ```showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));```
 
@@ -33,7 +32,7 @@ Checklist for adding miniapps:
 - Consider adding a one-line summary of the example in `features.md` (if we want to advertise the miniapp to users)
 - Add an image file in `img/examples/`, e.g. `img/examples/shaper.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
-- Add a line with the appropriate  categories for the miniapp in the `update` function at the end of `examples.md`
+- Add a "showElement" line with the appropriate categories for the miniapp in the `update` function at the end of `examples.md`
 - If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing.md`
 
 

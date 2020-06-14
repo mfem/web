@@ -35,70 +35,70 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 <div class="col-sm-6 col-md-2 small" markdown="1">
    <h5>**Application (PDE)**</h5>
    <select id="group1" onchange="update()">
-      <option value="all1">All</option>
-      <option value="laplace">Laplace</option>
-      <option value="elasticity">Elasticity</option>
-      <option value="maxwell">Electromagnetics</option>
-      <option value="graddiv">grad-div</option>
-      <option value="darcy">Darcy</option>
-      <option value="advection">Advection</option>
-      <option value="conduction">Conduction</option>
-      <option value="wave">Wave</option>
-      <option value="hydro">Hydrodynamics</option>
-      <option value="meshing">Meshing</option>
-      <option value="fluid">Fluid</option>
+      <option id="all1">All</option>
+      <option id="laplace">Laplace</option>
+      <option id="elasticity">Elasticity</option>
+      <option id="maxwell">Electromagnetics</option>
+      <option id="graddiv">grad-div</option>
+      <option id="darcy">Darcy</option>
+      <option id="advection">Advection</option>
+      <option id="conduction">Conduction</option>
+      <option id="wave">Wave</option>
+      <option id="hydro">Hydrodynamics</option>
+      <option id="meshing">Meshing</option>
+      <option id="fluid">Fluid</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
    <select id="group2" onchange="update()">
-      <option value="all2">All</option>
-      <option value="l2">L2 discontinuous elements</option>
-      <option value="h1">H1 nodal elements</option>
-      <option value="hcurl">H(curl) Nedelec elements</option>
-      <option value="hdiv">H(div) Raviart-Thomas elements</option>
-      <option value="h12">H^{-1/2} interfacial elements</option>
+      <option id="all2">All</option>
+      <option id="h1">H1 nodal elements</option>
+      <option id="l2">L2 discontinuous elements</option>
+      <option id="hcurl">H(curl) Nedelec elements</option>
+      <option id="hdiv">H(div) Raviart-Thomas elements</option>
+      <option id="h12">H^{-1/2} interfacial elements</option>
    </select>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Discretization**</h5>
    <select id="group3" onchange="update()">
-      <option value="all3">All</option>
-      <option value="galerkin">Galerkin FEM</option>
-      <option value="mixed">Mixed FEM</option>
-      <option value="dg">Discontinuous Galerkin (DG)</option>
-      <option value="dpg">Discont. Petrov-Galerkin (DPG)</option>
-      <option value="hybr">Hybridization</option>
-      <option value="staticcond">Static condensation</option>
-      <option value="nurbs">Isogeometric analysis (NURBS)</option>
-      <option value="amr">Adaptive mesh refinement (AMR)</option>
-      <option value="pa">Partial assembly</option>
+      <option id="all3">All</option>
+      <option id="galerkin">Galerkin FEM</option>
+      <option id="mixed">Mixed FEM</option>
+      <option id="dg">Discontinuous Galerkin (DG)</option>
+      <option id="dpg">Discont. Petrov-Galerkin (DPG)</option>
+      <option id="hybr">Hybridization</option>
+      <option id="staticcond">Static condensation</option>
+      <option id="nurbs">Isogeometric analysis (NURBS)</option>
+      <option id="amr">Adaptive mesh refinement (AMR)</option>
+      <option id="pa">Partial assembly</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-4 small" markdown="1">
    <h5>**Solver**</h5>
    <select id="group4" onchange="update()">
-      <option value="all4">All</option>
-      <option value="jacobi">Jacobi</option>
-      <option value="gs">Gauss-Seidel</option>
-      <option value="pcg">PCG</option>
-      <option value="minres">MINRES</option>
-      <option value="gmres">GMRES</option>
-      <option value="amg">Algebraic Multigrid (BoomerAMG)</option>
-      <option value="ams">Auxiliary-space Maxwell Solver (AMS)</option>
-      <option value="ads">Auxiliary-space Divergence Solver (ADS)</option>
-      <option value="superlu">SuperLU/STRUMPACK (parallel direct)</option>
-      <option value="umfpack">UMFPACK (serial direct)</option>
-      <option value="newton">Newton method (nonlinear solver)</option>
-      <option value="rk">Explicit Runge-Kutta (ODE integration)</option>
-      <option value="sdirk">Implicit Runge-Kutta (ODE integration)</option>
-      <option value="newmark">Newmark (ODE Integration)</option>
-      <option value="symplectic">Symplectic Algorithm (ODE Integration)</option>
-      <option value="lobpcg">LOBPCG, AME (eigensolvers)</option>
-      <option value="sundials">SUNDIALS solvers</option>
-      <option value="petsc">PETSc solvers</option>
-      <option value="hiop">HiOp solvers</option>
+      <option id="all4">All</option>
+      <option id="jacobi">Jacobi</option>
+      <option id="gs">Gauss-Seidel</option>
+      <option id="pcg">PCG</option>
+      <option id="minres">MINRES</option>
+      <option id="gmres">GMRES</option>
+      <option id="amg">Algebraic Multigrid (BoomerAMG)</option>
+      <option id="ams">Auxiliary-space Maxwell Solver (AMS)</option>
+      <option id="ads">Auxiliary-space Divergence Solver (ADS)</option>
+      <option id="superlu">SuperLU/STRUMPACK (parallel direct)</option>
+      <option id="umfpack">UMFPACK (serial direct)</option>
+      <option id="newton">Newton method (nonlinear solver)</option>
+      <option id="rk">Explicit Runge-Kutta (ODE integration)</option>
+      <option id="sdirk">Implicit Runge-Kutta (ODE integration)</option>
+      <option id="newmark">Newmark (ODE Integration)</option>
+      <option id="symplectic">Symplectic Algorithm (ODE Integration)</option>
+      <option id="lobpcg">LOBPCG, AME (eigensolvers)</option>
+      <option id="sundials">SUNDIALS solvers</option>
+      <option id="petsc">PETSc solvers</option>
+      <option id="hiop">HiOp solvers</option>
    </select>
 </div>
 </div>
@@ -1360,15 +1360,6 @@ No examples or miniapps match your criteria.
 
 <div style="clear:both;"/></div>
 <script type="text/javascript"><!--
-function isChecked(id)
-{
-    return document.getElementById(id).checked;
-}
-
-function setChecked(id, value)
-{
-    document.getElementById(id).checked = value;
-}
 
 function showElement(id, show)
 {
@@ -1377,45 +1368,36 @@ function showElement(id, show)
     // workaround because Doxygen splits and duplicates the divs for some reason
     var divs = document.getElementsByTagName("div");
     for (i = 0; i < divs.length; i++)
-        if (divs.item(i).id == id)
-            divs.item(i).style.display = show ? "block" : "none";
-
+    {
+       if (divs.item(i).id == id) {
+          divs.item(i).style.display = show ? "block" : "none";
+       }
+    }
     return show ? 1 : 0;
 }
 
-function updateGroup(names, id)
+function getBooleans(comboId)
 {
-   // make only one box checked in the group
-   if (names.indexOf(id) != -1)
-      for (i = 0; i < names.length; ++i)
-         setChecked(names[i], id == names[i]);
+   combo = document.getElementById(comboId);
 
-   // generate boolean variables from the group names
-   for (i = 0; i < names.length; ++i)
-      this[names[i]] = isChecked(names[i]) || isChecked(names[0]/*all*/);
-}
+   first_selected = false;
+   for (i = 0; i < combo.options.length; i++)
+   {
+      opt = combo.options[i];
+      selected = opt.selected || first_selected;
+      if (!i) { first_selected = selected; }
 
-function getBooleans(names, comboId)
-{
-    selected = document.getElementById(comboId).value
-    // generate boolean variables from the group names
-    for (i = 0; i < names.length; ++i) {
-       this[names[i]] = (names[i] == selected) || (names[0] /*all*/ == selected);
-    }
+      // create a boolean variable named after the option
+      this[opt.id] = selected;
+   }
 }
 
 function update()
 {
-   // TODO: pull the names directly from the combos
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction", "wave", "hydro", "meshing", "fluid"];
-   var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
-   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr", "pa" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
-
-   getBooleans(group1, "group1");
-   getBooleans(group2, "group2");
-   getBooleans(group3, "group3");
-   getBooleans(group4, "group4");
+   getBooleans("group1");
+   getBooleans("group2");
+   getBooleans("group3");
+   getBooleans("group4");
 
    numShown = 0 // expression continued...
 
@@ -1477,13 +1459,15 @@ function update()
    showElement("nomatch", numShown == 0);
 }
 
-function initButtons()
+function initCombos()
 {
    var query = location.search.substr(1);
    query.split("&").forEach(function(id)
    {
-      setChecked(id, true);
-      update(id);
+      if (id) {
+         opt = document.getElementById(id);
+         if (opt) { opt.selected = true; }
+      }
    });
 }
 
@@ -1494,6 +1478,6 @@ window.onload = update;
 document.getElementsByTagName("body")[0].style = "overflow-y: scroll"
 
 // parse URL part after '?', e.g., http://.../index.html?elasticity&nurbs
-initButtons();
+initCombos();
 
 //--></script>
