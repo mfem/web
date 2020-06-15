@@ -24,6 +24,7 @@ nav:
   - '_Linear Form Integrators': lininteg.md
   - '_Linear Interpolators': lininterp.md
   - 'Electromagnetics': electromagnetics.md
+  - 'Fluids': fluids.md
   - 'Meshing': meshing.md
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
