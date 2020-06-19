@@ -36,7 +36,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <h5>**Application (PDE)**</h5>
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
-      <option id="laplace">Laplace</option>
+      <option id="diffusion">Diffusion</option>
       <option id="elasticity">Elasticity</option>
       <option id="maxwell">Electromagnetics</option>
       <option id="graddiv">grad-div</option>
@@ -1402,32 +1402,32 @@ function update()
    numShown = 0 // expression continued...
 
    // example codes
-   + showElement("ex1",  (laplace) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex1",  (diffusion) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
    + showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
    + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
-   + showElement("ex6",  (laplace) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
-   + showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
-   + showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
+   + showElement("ex6",  (diffusion) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex7",  (diffusion || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
-   + showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
+   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
    + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
    + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
-   + showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg))
-   + showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex14", diffusion && l2 && dg && (gs || pcg || gmres || umfpack || amg))
+   + showElement("ex15", diffusion && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials))
    + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
    + showElement("ex18", compressibleflow && l2 && dg && (rk))
    + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
    + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && all2 && all3 && symplectic)
    + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
-   + showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
-   + showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark)
+   + showElement("ex22", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
+   + showElement("ex23", (diffusion || wave) && h1 && (galerkin || nurbs) && newmark)
    + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
-   + showElement("ex26", laplace && h1 && (galerkin || pa) && (jacobi || pcg || amg))
+   + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
