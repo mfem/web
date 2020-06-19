@@ -44,9 +44,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="advection">Advection</option>
       <option id="conduction">Conduction</option>
       <option id="wave">Wave</option>
-      <option id="hydro">Hydrodynamics</option>
+      <option id="compressibleflow">Compressible flow</option>
+      <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
-      <option id="fluid">Fluid</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1419,9 +1419,9 @@ function update()
    + showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials))
    + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
-   + showElement("ex18", hydro && l2 && dg && (rk))
+   + showElement("ex18", compressibleflow && l2 && dg && (rk))
    + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
-   + showElement("ex20", (elasticity || maxwell || conduction || hydro) && all2 && all3 && symplectic)
+   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && all2 && all3 && symplectic)
    + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
    + showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark)
@@ -1449,9 +1449,9 @@ function update()
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
 
    // external miniapps
-   + showElement("laghos", (hydro) && (l2 || h1) && (galerkin || dg || pa) && (rk))
+   + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
 
-   + showElement("navier", (fluid) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
+   + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
    ; // ...end of expression
 
