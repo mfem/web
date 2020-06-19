@@ -109,8 +109,8 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 |------------------------|--------|------------------------------------|------------------| ---------- |
 | VectorDomainLFIntegrator   | H1, L2 | $(\vec\{f}, \vec\{v})$  | $\vec\{f}$  | 1D, 2D, 3D |
 | VectorFEDomainLFIntegrator | ND, RT | $(\vec\{f}, \vec\{v})$  | $\vec\{f}$  | 2D, 3D |
-| VectorFEDomainLFCurlIntegrator | ND | $(\vec\{f}, \nabla \times v$) | $\nabla \times \vec\{f}$ | 2D, 3D |
-| VectorFEDomainLFDivIntegrator | RT | ($f, \nabla \cdot v $) | $ - \nabla f$ | 2D, 3D |
+| VectorFEDomainLFCurlIntegrator | ND | $(\vec\{f}, \nabla \times \vec\{v})$ | $\nabla \times \vec\{f}$ | 2D, 3D |
+| VectorFEDomainLFDivIntegrator | RT | $(f, \nabla \cdot \vec\{v})$ | $ - \nabla f$ | 2D, 3D |
 
 ### Boundary Integrators
 
