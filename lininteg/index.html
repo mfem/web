@@ -323,6 +323,13 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <td>$f$</td>
 <td>1D, 2D, 3D</td>
 </tr>
+<tr>
+<td>DomainLFGradIntegrator</td>
+<td>H1</td>
+<td>$(\vec{f}, \nabla v)$</td>
+<td>$-\nabla \cdot \vec{f}$</td>
+<td>1D, 2D, 3D</td>
+</tr>
 </tbody>
 </table>
 <h3 id="boundary-integrators">Boundary Integrators</h3>
@@ -413,6 +420,20 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <td>ND, RT</td>
 <td>$(\vec{f}, \vec{v})$</td>
 <td>$\vec{f}$</td>
+<td>2D, 3D</td>
+</tr>
+<tr>
+<td>VectorFEDomainLFCurlIntegrator</td>
+<td>ND</td>
+<td>$(\vec{f}, \nabla \times \vec{v})$</td>
+<td>$\nabla \times \vec{f}$</td>
+<td>2D, 3D</td>
+</tr>
+<tr>
+<td>VectorFEDomainLFDivIntegrator</td>
+<td>RT</td>
+<td>$(f, \nabla \cdot \vec{v})$</td>
+<td>$ - \nabla f$</td>
 <td>2D, 3D</td>
 </tr>
 </tbody>
