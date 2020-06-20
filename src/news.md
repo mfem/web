@@ -2,10 +2,17 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+Jun 8, 2020 | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.
+Jun 8, 2020 | Matrix-free high-order solvers research [highlighted](https://computing.llnl.gov/casc/newsletter/vol-9) in CASC Newsletter #9.
+Mar 30, 2020 | [Remhos](https://github.com/ceed/remhos) a new MFEM-based miniapp for high-order DG remap released.
+Mar 29, 2020 | [CEED v3.0](https://ceed.exascaleproject.org/ceed-3.0/) and [libCEED v0.6](https://github.com/CEED/libCEED/releases/tag/v0.6) released with updated MFEM support.
+Mar 27, 2020 | Laghos v3.0 [released](https://github.com/CEED/Laghos/releases/tag/v3.0) with direct device support based on MFEM-4.1.
+Mar 10, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG).
+Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
 May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.
+May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
 Mar 30, 2019 | CEED v2.0 and libCEED v0.4 [released](https://ceed.exascaleproject.org/news/#software-release-ceed-v20) with MFEM support.
 Mar 22, 2019 | A version of the Laghos miniapp [released](https://github.com/CEED/Laghos/releases/tag/cts2) for use in the second edition of the [Commodity Technology Systems](https://asc.llnl.gov/computers/commodity) procurement process.
-May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
 Nov 19, 2018 | Laghos v2.0 [released](https://github.com/CEED/Laghos/releases/tag/v2.0) with CUDA, RAJA, OCCA and AMR versions.
 Nov 9, 2018  | MFEM part of the first release of the [Extreme-Scale Scientific Software Stack](https://e4s-project.github.io/) (E4S) by the Software Technologies focus area of the ECP.
 Aug 6, 2018  | Unstructured technologies [presentation](https://www.youtube.com/watch?v=Zh6pFjkmr0g) at [ATPESC18](https://extremecomputingtraining.anl.gov/).
