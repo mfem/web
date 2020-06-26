@@ -2,6 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.
 Jun 8, 2020 | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.
 Jun 8, 2020 | Matrix-free high-order solvers research [highlighted](https://computing.llnl.gov/casc/newsletter/vol-9) in CASC Newsletter #9.
 Mar 30, 2020 | [Remhos](https://github.com/ceed/remhos) a new MFEM-based miniapp for high-order DG remap released.
