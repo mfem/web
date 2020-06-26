@@ -27,11 +27,12 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.
 Jun 8, 2020 | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.
 Mar 10, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG).
 Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
-May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.
 
+[comment]: # (May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.)
 [comment]: # (May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.)
 [comment]: # (Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.)
 [comment]: # (May 29, 2018 | Version 3.4 [released](https://github.com/mfem/mfem/blob/v3.4/CHANGELOG).)
