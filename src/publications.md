@@ -7,6 +7,8 @@
 
 ## Selected Publications
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), in review, **2020**.
+  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of Sn Transport on High-Order Curved Meshes](), in review, **2020**.
+  1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of Sn Transport](), *Journal of Computational Physics*, to appear, **2020**.
   1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://arxiv.org/abs/1911.09220), *Computers & Mathematics with Applications*, to appear, **2020**.
   1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *SIAM Journal on Scientific Computing*, to appear, **2020**.
   1. P. Bello-Maldonado, Tz. Kolev, R. Rieben, and V. Tomov, [A Matrix-Free Hyperviscosity Formulation for High-Order ALE Hydrodynamics](https://doi.org/10.1016/j.compfluid.2020.104577), *Computers & Fluids*, (205) 104577, **2020**.
@@ -22,7 +24,7 @@
   1. D. White, W. Arrighi, J. Kudo, and S. Watts, [Multiscale topology optimization using neural network surrogate models](https://www.sciencedirect.com/science/article/pii/S004578251830450X), *Comp. Meth. Appl. Mech. Eng.*,  346, pp.1118-1135, **2019**.
   1. V. A. Dobrev, T. V. Kolev, C. S. Lee, V. Z. Tomov, and P. S. Vassilevski, [Algebraic Hybridization and Static Condensation with Application to Scalable H(div) Preconditioning](https://epubs.siam.org/doi/10.1137/17M1132562), *SIAM Journal on Scientific Computing*, 41(3):B425-B447, **2019**.
   1. D. White, and A. Voronin, [A computational study of symmetry and well-posedness of structural topology optimization](https://link.springer.com/article/10.1007/s00158-018-2098-9), *Structural and Multidisciplinary Optimization*, 59(3), pp. 759-766, **2019**.
-  1. T. Haut, P. Maginot, V. Tomov, B. Southworth, T. Brunner and T. Bailey, [An Efficient Sweep-Based Solver for the SN Equations on High-Order Meshes](https://doi.org/10.1080/00295639.2018.1562778), *Nuclear Science and Engineering*, **2019**.
+  1. T. Haut, P. Maginot, V. Tomov, B. Southworth, T. Brunner and T. Bailey, [An Efficient Sweep-Based Solver for the SN Equations on High-Order Meshes](https://doi.org/10.1080/00295639.2018.1562778), *Nuclear Science and Engineering*, 193(7):746-759, **2019**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [The Target-Matrix Optimization Paradigm For High-Order Meshes](https://doi.org/10.1137/18M1167206), *SIAM Journal on Scientific Computing*, 41(1):B50-B68, **2019**.
   1. T. L. Horvath and S. Rhebergen, [A locally conservative and energy-stable finite element method for the Navier-Stokes problem on time-dependent domains](https://doi.org/10.1002/fld.4707), *International Journal for Numerical Methods in Fluids*, pp. 1-14, **2019**.
   1. R. Li, Y. Xi, L. Erlandson, and Y. Saad, [The Eigenvalues Slicing Library (EVSL): Algorithms, Implementation, and Software](https://doi.org/10.1137/18M1170935), *SIAM Journal on Scientific Computing*, 41(4), pp. C393-C415, **Aug. 2019**.
