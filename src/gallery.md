@@ -107,7 +107,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/rkh-132.png)](img/gallery/rkh-132.png)
 
-*Radiating Kevin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
+*Radiating Kelvin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
 
 ----
 
