@@ -9,8 +9,8 @@
 
 #### 2020
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), in review, **2020**.
-  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of Sn Transport on High-Order Curved Meshes](), in review, **2020**.
-  1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of Sn Transport](), *Journal of Computational Physics*, to appear, **2020**.
+  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), in review, **2020**.
+  1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of SN Transport](https://arxiv.org/abs/1910.02918), *Journal of Computational Physics*, to appear, **2020**.
   1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://arxiv.org/abs/1911.09220), *Computers & Mathematics with Applications*, to appear, **2020**.
   1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *SIAM Journal on Scientific Computing*, to appear, **2020**.
   1. P. Bello-Maldonado, Tz. Kolev, R. Rieben, and V. Tomov, [A Matrix-Free Hyperviscosity Formulation for High-Order ALE Hydrodynamics](https://doi.org/10.1016/j.compfluid.2020.104577), *Computers & Fluids*, (205) 104577, **2020**.
