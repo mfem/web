@@ -4,8 +4,16 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 Please cite with:
 ```c
-@misc{mfem-library,
-  title = {{MFEM}: Modular Finite Element Methods Library},
+@article{mfem,
+  title = {{MFEM}: A Modular Finite Element Library},
+  author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and J. Cerveny V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and M. Stowell and V. Tomov and I. Akkerman and J. Dahm and D. Medina and S. Zampini},
+  journal = {Computers \& Mathematics with Applications},
+  year = {2020}
+}
+
+@misc{mfem-web,
+  key = {mfem},
+  title = {{MFEM}: Modular Finite Element Methods},
   howpublished = {\url{mfem.org}},
   doi = {10.11578/dc.20171025.1248}
 }
