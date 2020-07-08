@@ -32,7 +32,7 @@ differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
 `Vector` classes which help to distinguish the different roles that vectors of
 data can play.
 
-### [Bilinear Form Integrators](bilininteg.md)
+### [Bilinear Form Integrators](bilininteg.md){: rel="nofollow"}
 
 Bilinear form integrators are at the heart of any finite element method, they
 are used to compute the integrals of products of basis functions over individual
@@ -40,7 +40,7 @@ mesh elements (or sometimes over edges or faces).  The `BilinearForm` class adds
 several `BilinearFormIntegrator`s together to build the global sparse finite
 element matrix.
 
-### [Linear Form Integrators](lininteg.md)
+### [Linear Form Integrators](lininteg.md){: rel="nofollow"}
 
 Linear form integrators are used to compute the integrals of products of a basis
 function with a given source function over individual mesh elements (or
