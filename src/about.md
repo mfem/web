@@ -6,8 +6,11 @@ Please cite with:
 ```c
 @article{mfem,
   title = {{MFEM}: A Modular Finite Element Library},
-  author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and J. Cerveny V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and M. Stowell and V. Tomov and I. Akkerman and J. Dahm and D. Medina and S. Zampini},
+  author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
+            J. Cerveny V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and
+            M. Stowell and V. Tomov and I. Akkerman and J. Dahm and D. Medina and S. Zampini},
   journal = {Computers \& Mathematics with Applications},
+  doi = {10.1016/j.camwa.2020.06.009},
   year = {2020}
 }
 
