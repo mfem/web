@@ -5,6 +5,7 @@ docs_dir: 'src'
 markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
 - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
+- attr_list  # Allow us to add link attributes
 
 repo_url: https://github.com/mfem/mfem
 remote_name: origin
