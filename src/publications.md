@@ -9,7 +9,8 @@
 
 #### 2020
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), in review, **2020**.
-  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), in review, **2020**.
+  1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://arxiv.org/abs/2001.09196), *Nuclear Science and Engineering*, to appear, **2020**.
+  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), *SIAM Journal on Scientific Computing*, to appear, **2020**.
   1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of SN Transport](https://arxiv.org/abs/1910.02918), *Journal of Computational Physics*, to appear, **2020**.
   1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://doi.org/10.1016/j.camwa.2020.06.009), *Computers & Mathematics with Applications*, **2020**. Also available as [arXiv:1911.09220](http://arxiv.org/abs/1911.09220).
   1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *SIAM Journal on Scientific Computing*, **2020**.
@@ -22,6 +23,8 @@
   1. P. Fischer, M. Min, T. Rathanayake, S. Dutta, Tz. Kolev, V. Dobrev, J.S. Camier, M. Kronbichler, T. Warburton, K. Swirydowicz, and J. Brown, [Scalability of High-Performance PDE Solvers](https://doi.org/10.1177/1094342020915762), *The International Journal on High Performance Computing Applications*, **2020**.
   1. W. Pazner, [Efficient low-order refined preconditioners for high-order matrix-free continuous and discontinuous Galerkin methods](https://arxiv.org/abs/1908.07071), *SIAM Journal on Scientific Computing*, in press, **2020**.
   1. M. Franco, J.-S. Camier, J. Andrej, and W. Pazner, [High-order matrix-free incompressible flow solvers with GPU acceleration and low-order refined preconditioners](https://www.sciencedirect.com/science/article/pii/S0045793020301134), *Computers & Fluids*, **2020**.
+  1. S. Friedhoff and B. S. Southworth,[On "Optimal" h‐independent convergence of Parareal and multigrid‐reduction‐in‐time using Runge‐Kutta time integration](https://doi.org/10.1002/nla.2301), *Numerical Linear Algebra with Applications*, e2301, **2020**.
+
 
 ---
 
