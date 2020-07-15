@@ -304,6 +304,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="lobpcg">LOBPCG, AME (eigensolvers)</option>
       <option id="sundials">SUNDIALS solvers</option>
       <option id="petsc">PETSc solvers</option>
+      <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
    </select>
 </div></p>
@@ -557,6 +558,7 @@ STRUMPACK parallel direct solvers. Reusing a single <a href="http://glvis.org">G
 visualization window for multiple eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp">ex11p.cpp</a>) version.
+It also has a SLEPc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -861,11 +863,11 @@ of a damped harmonic oscillator:</p>
   $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$</p>
 </li>
 <li>
-<p>A vector $H(Curl)$ field:
+<p>A vector $H(curl)$ field:
   $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$</p>
 </li>
 <li>
-<p>A vector $H(Div)$ field:
+<p>A vector $H(div)$ field:
   $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$</p>
 </li>
 </ul>
@@ -898,15 +900,17 @@ We recommend viewing examples 9 and 10 before viewing this example.</em>
 <h2 id="example-24-mixed-finite-element-spaces">Example 24: Mixed finite element spaces</h2>
 <p><img class="floatright" src="../img/examples/ex24.png"></p>
 <p>This example code illustrates usage of mixed finite element
-spaces. Using two different approaches, we project a gradient
-of a function in $H^1$ to $H(curl)$. Other spaces and example
-computations are to be added in the future.</p>
-<p>We also illustrate usage of a DiscreteLinearOperator and a
-DiscreteInterpolator to interpolate a gradient in an $H(curl)$
-finite element space.</p>
+spaces, with three variants:</p>
+<ul>
+<li>$H^1 \times H(curl)$</li>
+<li>$H(curl) \times H(div)$</li>
+<li>$H(div) \times L_2$</li>
+</ul>
+<p>Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.</p>
+<p>Partial assembly and GPU devices are supported.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex24.cpp">ex24.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp">ex24p.cpp</a>) version.
-Partial assembly and GPU devices are supported.
 We recommend viewing examples 1 and 3 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -1341,6 +1345,42 @@ information and source code availability.</p>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="remhos">
+<h2 id="remhos-miniapp">Remhos Miniapp</h2>
+<p><img class="floatright" width="450" src="../img/examples/remhos.png"></p>
+<p><strong>Remhos</strong> (REMap High-Order Solver) is a miniapp that solves the pure advection
+equations that are used to perform monotonic and conservative discontinuous
+field interpolation (remap) as part of the Eulerian phase in Arbitrary
+Lagrangian Eulerian (ALE) simulations.</p>
+<p>The computational motives captured in Remhos include:</p>
+<ul>
+<li>Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements. Serial and parallel mesh refinement options can be
+  set via a command-line flag.</li>
+<li>Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.</li>
+<li>Discontinuous high-order finite element discretization spaces
+  of runtime-specified order.</li>
+<li>Moving (high-order) meshes.</li>
+<li>Mass operator that is local per each zone. It is inverted by iterative or exact
+  methods at each time step. This operator is constant in time (transport mode)
+  or changing in time (remap mode). Options for full or partial assembly.</li>
+<li>Advection operator that couples neighboring zones. It is applied once at each
+  time step. This operator is constant in time (transport mode) or
+  changing in time (remap mode). Options for full or partial assembly.</li>
+<li>Domain-decomposed MPI parallelism.</li>
+<li>Optional in-situ visualization with <a href="http:/glvis.org">GLVis</a> and data output
+  for visualization and data analysis with <a href="http://visit.llnl.gov">VisIt</a>.</li>
+</ul>
+<p>The Remhos miniapp is part of the <a href="http://ceed.exascaleproject.org/software">CEED software suite</a>,
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.</p>
+<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Remhos">https://github.com/CEED/Remhos</a>.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="navier">
 <h2 id="navier-miniapp">Navier Miniapp</h2>
 <p><img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png"></p>
@@ -1436,7 +1476,7 @@ function update()
    + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
-   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
+   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
    + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
    + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex14", diffusion && l2 && dg && (gs || pcg || gmres || umfpack || amg))
@@ -1474,7 +1514,7 @@ function update()
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
-
+   + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
    ; // ...end of expression
