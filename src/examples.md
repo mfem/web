@@ -98,6 +98,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="lobpcg">LOBPCG, AME (eigensolvers)</option>
       <option id="sundials">SUNDIALS solvers</option>
       <option id="petsc">PETSc solvers</option>
+      <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
    </select>
 </div>
@@ -398,6 +399,7 @@ visualization window for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
 ([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
+It also has a SLEPc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1458,7 +1460,7 @@ function update()
    + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
-   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
+   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
    + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
    + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex14", diffusion && l2 && dg && (gs || pcg || gmres || umfpack || amg))
