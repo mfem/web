@@ -757,10 +757,10 @@ of a damped harmonic oscillator:
 - A scalar $H^1$ field:
   $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
 
-- A vector $H(Curl)$ field:
+- A vector $H(curl)$ field:
   $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
-- A vector $H(Div)$ field:
+- A vector $H(div)$ field:
   $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
 In each case the field is driven by a forced oscillation, with
@@ -800,17 +800,19 @@ We recommend viewing examples 9 and 10 before viewing this example._
 <img class="floatright" src="../img/examples/ex24.png">
 
 This example code illustrates usage of mixed finite element
-spaces. Using two different approaches, we project a gradient
-of a function in $H^1$ to $H(curl)$. Other spaces and example
-computations are to be added in the future.
+spaces, with three variants:
 
-We also illustrate usage of a DiscreteLinearOperator and a
-DiscreteInterpolator to interpolate a gradient in an $H(curl)$
-finite element space.
+- $H^1 \times H(curl)$
+- $H(curl) \times H(div)$
+- $H(div) \times L_2$
+
+Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.
+
+Partial assembly and GPU devices are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
-Partial assembly and GPU devices are supported.
 We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
