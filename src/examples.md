@@ -1494,9 +1494,7 @@ function update()
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
-
    + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
-
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
    ; // ...end of expression
