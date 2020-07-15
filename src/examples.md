@@ -1321,6 +1321,46 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="remhos" markdown="1">
+##Remhos Miniapp
+<img class="floatright" width="450" src="../img/examples/remhos.png">
+
+**Remhos** (REMap High-Order Solver) is a miniapp that solves the pure advection
+equations that are used to perform monotonic and conservative discontinuous
+field interpolation (remap) as part of the Eulerian phase in Arbitrary
+Lagrangian Eulerian (ALE) simulations.
+
+The computational motives captured in Remhos include:
+
+- Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements. Serial and parallel mesh refinement options can be
+  set via a command-line flag.
+- Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.
+- Discontinuous high-order finite element discretization spaces
+  of runtime-specified order.
+- Moving (high-order) meshes.
+- Mass operator that is local per each zone. It is inverted by iterative or exact
+  methods at each time step. This operator is constant in time (transport mode)
+  or changing in time (remap mode). Options for full or partial assembly.
+- Advection operator that couples neighboring zones. It is applied once at each
+  time step. This operator is constant in time (transport mode) or
+  changing in time (remap mode). Options for full or partial assembly.
+- Domain-decomposed MPI parallelism.
+- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+  for visualization and data analysis with [VisIt](http://visit.llnl.gov).
+
+The Remhos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.
+
+_This is an external miniapp, available at [https://github.com/CEED/Remhos](https://github.com/CEED/Remhos)._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="navier" markdown="1">
 ##Navier Miniapp
 <img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
@@ -1456,7 +1496,7 @@ function update()
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
-
+   + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
    ; // ...end of expression
