@@ -98,6 +98,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="lobpcg">LOBPCG, AME (eigensolvers)</option>
       <option id="sundials">SUNDIALS solvers</option>
       <option id="petsc">PETSc solvers</option>
+      <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
    </select>
 </div>
@@ -398,6 +399,7 @@ visualization window for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
 ([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
+It also has a SLEPc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -757,10 +759,10 @@ of a damped harmonic oscillator:
 - A scalar $H^1$ field:
   $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
 
-- A vector $H(Curl)$ field:
+- A vector $H(curl)$ field:
   $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
-- A vector $H(Div)$ field:
+- A vector $H(div)$ field:
   $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
 In each case the field is driven by a forced oscillation, with
@@ -800,17 +802,19 @@ We recommend viewing examples 9 and 10 before viewing this example._
 <img class="floatright" src="../img/examples/ex24.png">
 
 This example code illustrates usage of mixed finite element
-spaces. Using two different approaches, we project a gradient
-of a function in $H^1$ to $H(curl)$. Other spaces and example
-computations are to be added in the future.
+spaces, with three variants:
 
-We also illustrate usage of a DiscreteLinearOperator and a
-DiscreteInterpolator to interpolate a gradient in an $H(curl)$
-finite element space.
+- $H^1 \times H(curl)$
+- $H(curl) \times H(div)$
+- $H(div) \times L_2$
+
+Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.
+
+Partial assembly and GPU devices are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
-Partial assembly and GPU devices are supported.
 We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1319,6 +1323,46 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="remhos" markdown="1">
+##Remhos Miniapp
+<img class="floatright" width="450" src="../img/examples/remhos.png">
+
+**Remhos** (REMap High-Order Solver) is a miniapp that solves the pure advection
+equations that are used to perform monotonic and conservative discontinuous
+field interpolation (remap) as part of the Eulerian phase in Arbitrary
+Lagrangian Eulerian (ALE) simulations.
+
+The computational motives captured in Remhos include:
+
+- Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements. Serial and parallel mesh refinement options can be
+  set via a command-line flag.
+- Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.
+- Discontinuous high-order finite element discretization spaces
+  of runtime-specified order.
+- Moving (high-order) meshes.
+- Mass operator that is local per each zone. It is inverted by iterative or exact
+  methods at each time step. This operator is constant in time (transport mode)
+  or changing in time (remap mode). Options for full or partial assembly.
+- Advection operator that couples neighboring zones. It is applied once at each
+  time step. This operator is constant in time (transport mode) or
+  changing in time (remap mode). Options for full or partial assembly.
+- Domain-decomposed MPI parallelism.
+- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+  for visualization and data analysis with [VisIt](http://visit.llnl.gov).
+
+The Remhos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.
+
+_This is an external miniapp, available at [https://github.com/CEED/Remhos](https://github.com/CEED/Remhos)._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="navier" markdown="1">
 ##Navier Miniapp
 <img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
@@ -1416,7 +1460,7 @@ function update()
    + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
-   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu))
+   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
    + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
    + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex14", diffusion && l2 && dg && (gs || pcg || gmres || umfpack || amg))
@@ -1454,7 +1498,7 @@ function update()
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
-
+   + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
 
    ; // ...end of expression
