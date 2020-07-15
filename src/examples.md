@@ -800,13 +800,14 @@ We recommend viewing examples 9 and 10 before viewing this example._
 <img class="floatright" src="../img/examples/ex24.png">
 
 This example code illustrates usage of mixed finite element
-spaces. Using two different approaches, we project a gradient
-of a function in $H^1$ to $H(curl)$. Other spaces and example
-computations are to be added in the future.
+spaces, with three variants:
 
-We also illustrate usage of a DiscreteLinearOperator and a
-DiscreteInterpolator to interpolate a gradient in an $H(curl)$
-finite element space.
+- $H^1 \times H(Curl)$
+- $H(Curl) \times H(Div)$
+- $H(Div) \times L_2$
+
+Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors of each.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
