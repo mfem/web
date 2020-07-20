@@ -59,6 +59,13 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Poisson problem on a "Breather" surface. Mesh generated with the [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html) miniapp. Solution with [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html).*
 
+
+----
+
+[![](img/gallery/triple-pt-2x2-q12-3d.png)](img/gallery/triple-pt-2x2-q12-3d.png)
+
+*[Triple point shock interaction](https://computation.llnl.gov/projects/blast/triple-point-shock-interaction) on 4 elements of order 12.  Note the element curvature and the high variation of the field inside the lower right element.*
+
 </div><div class="col-md-5"  markdown="1">
 
 
@@ -71,6 +78,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 [![](img/gallery/sedov-3d-4096p-2c.jpg)](img/gallery/sedov-3d-4096p-2c-full.png)
 
 *Test of the propagation of a spherical shock wave through a random non-conforming mesh in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
+
+---
+
+[![](img/gallery/nstxu_hhfw.png)](img/gallery/nstxu_hhfw.png)
+
+*Slice image of the high harmonic fast wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) magnetic fusion device. Computed using MFEM's 4th order H(curl) elements by the [RF-SciDAC project](https://www.rfscidac4.org).*
 
 ----
 
@@ -98,6 +111,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
+
+*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](http://visit.llnl.gov). Click [here](img/gallery/gas_impact.gif) for a movie.*
+
+----
+
 [![](img/gallery/mandel.png)](img/gallery/mandel.png)
 
 *The [Shaper](http://mfem.github.io/doxygen/html/shaper_8cpp_source.html) miniapp applied to a multi-material input functions described by the iterates of the Mandelbrot set. Visualization with [GLVis](http://glvis.org).*
@@ -108,29 +127,23 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
 
-----
-
-[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
-
-*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](http://visit.llnl.gov). Click [here](img/gallery/gas_impact.gif) for a movie.*
-
-----
-
-[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
-
-*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
-
 </div><div class="col-md-3" markdown="1">
 
-[![](img/gallery/rt-q8.jpg)](img/gallery/rt-q8-full.png)
+[![](img/gallery/mri.png)](img/gallery/mri-full.png)
 
-*Purely Lagrangian Rayleigh-Taylor instability simulation using 8th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
+*Electric field induced by an MRI gradient coil in a human body. Simulation by the [Magnetic Resonance Physics and Instrumentation Group](https://www.nmr.mgh.harvard.edu/lab/mr-pig/research/pns-gradient-coils) at Harvard Medical School.*
 
 ----
 
 [![](img/gallery/blast_rt_eulerian_q4_t3.jpg)](img/gallery/blast_rt_eulerian_q4_t3-full.png)
 
 *Multi-mode Rayleigh-Taylor instability simulation using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
+
+----
+
+[![](img/gallery/rt-q8.jpg)](img/gallery/rt-q8-full.png)
+
+*Purely Lagrangian Rayleigh-Taylor instability simulation using 8th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [GLVis](http://glvis.org).*
 
 ----
 
@@ -170,9 +183,9 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/triple-pt-2x2-q12-3d.png)](img/gallery/triple-pt-2x2-q12-3d.png)
+[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
 
-*[Triple point shock interaction](https://computation.llnl.gov/projects/blast/triple-point-shock-interaction) on 4 elements of order 12.  Note the element curvature and the high variation of the field inside the lower right element.*
+*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 </div>
 

@@ -97,7 +97,7 @@ boundary
 3 1 9 16
 
 vertices
-16
+18
 
 # END Topology Part
 ...
@@ -869,7 +869,7 @@ boundary
 3 1 9 16
 
 vertices
-16
+18
 
 nodes
 FiniteElementSpace

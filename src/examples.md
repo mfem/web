@@ -18,8 +18,8 @@ more representative of the advanced usage of the library in physics/application
 codes. We recommend that new users start with the example codes before moving to
 the miniapps.
 
-Clicking on any of the categories below displays examples and miniapps that contain the
-described feature. _All examples support (arbitrarily) high-order meshes and
+Select from the categories below to display examples and miniapps that contain the
+respective feature. _All examples support (arbitrarily) high-order meshes and
 finite element spaces_.
 The numerical results from the example codes can be visualized using the
 GLVis visualization tool (based on MFEM). See the
@@ -34,65 +34,76 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
    <h5>**Application (PDE)**</h5>
-   <label><input type="radio" id="all1" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="laplace" onchange="update(this.id);" /> Laplace</label><br/>
-   <label><input type="radio" id="elasticity" onchange="update(this.id);" /> Elasticity</label><br/>
-   <label><input type="radio" id="maxwell" onchange="update(this.id);" /> Electromagnetics</label><br/>
-   <label><input type="radio" id="graddiv" onchange="update(this.id);" /> grad-div</label><br/>
-   <label><input type="radio" id="darcy" onchange="update(this.id);" /> Darcy</label><br/>
-   <label><input type="radio" id="advection" onchange="update(this.id);" /> Advection</label><br/>
-   <label><input type="radio" id="conduction" onchange="update(this.id);" /> Conduction</label><br/>
-   <label><input type="radio" id="wave" onchange="update(this.id);" /> Wave</label><br/>
-   <label><input type="radio" id="hydro" onchange="update(this.id);" /> Hydrodynamics</label><br/>
-   <label><input type="radio" id="meshing" onchange="update(this.id);" /> Meshing</label><br/>
-   <label><input type="radio" id="hpc" onchange="update(this.id);" /> High-performance</label><br/>
+   <select id="group1" onchange="update()">
+      <option id="all1">All</option>
+      <option id="diffusion">Diffusion</option>
+      <option id="elasticity">Elasticity</option>
+      <option id="maxwell">Electromagnetics</option>
+      <option id="graddiv">grad-div</option>
+      <option id="darcy">Darcy</option>
+      <option id="advection">Advection</option>
+      <option id="conduction">Conduction</option>
+      <option id="wave">Wave</option>
+      <option id="compressibleflow">Compressible flow</option>
+      <option id="incompressibleflow">Incompressible flow</option>
+      <option id="meshing">Meshing</option>
+   </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Finite Elements**</h5>
-   <label><input type="radio" id="all2" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="l2" onchange="update(this.id);" /> $L_2$ discontinuous elements</label><br/>
-   <label><input type="radio" id="h1" onchange="update(this.id);" /> $H^1$ nodal elements</label><br/>
-   <label><input type="radio" id="hcurl" onchange="update(this.id);" /> $H(curl)$ Nedelec elements</label><br/>
-   <label><input type="radio" id="hdiv" onchange="update(this.id);" /> $H(div)$ Raviart-Thomas elements</label><br/>
-   <label><input type="radio" id="h12" onchange="update(this.id);" /> $H^{-1/2}$ interfacial elements</label><br/>
+   <select id="group2" onchange="update()">
+      <option id="all2">All</option>
+      <option id="h1">H1 nodal elements</option>
+      <option id="l2">L2 discontinuous elements</option>
+      <option id="hcurl">H(curl) Nedelec elements</option>
+      <option id="hdiv">H(div) Raviart-Thomas elements</option>
+      <option id="h12">H^{-1/2} interfacial elements</option>
+   </select>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
    <h5>**Discretization**</h5>
-   <label><input type="radio" id="all3" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="galerkin" onchange="update(this.id);" /> Galerkin FEM</label><br/>
-   <label><input type="radio" id="mixed" onchange="update(this.id);" /> Mixed FEM</label><br/>
-   <label><input type="radio" id="dg" onchange="update(this.id);" /> Discontinuous Galerkin (DG)</label><br/>
-   <label><input type="radio" id="dpg" onchange="update(this.id);" /> Discont. Petrov-Galerkin (DPG)</label><br/>
-   <label><input type="radio" id="hybr" onchange="update(this.id);" /> Hybridization</label><br/>
-   <label><input type="radio" id="staticcond" onchange="update(this.id);" /> Static condensation</label><br/>
-   <label><input type="radio" id="nurbs" onchange="update(this.id);" /> Isogeometric analysis (NURBS)</label><br/>
-   <label><input type="radio" id="amr" onchange="update(this.id);" /> Adaptive mesh refinement (AMR)</label><br/>
+   <select id="group3" onchange="update()">
+      <option id="all3">All</option>
+      <option id="galerkin">Galerkin FEM</option>
+      <option id="mixed">Mixed FEM</option>
+      <option id="dg">Discontinuous Galerkin (DG)</option>
+      <option id="dpg">Discont. Petrov-Galerkin (DPG)</option>
+      <option id="hybr">Hybridization</option>
+      <option id="staticcond">Static condensation</option>
+      <option id="nurbs">Isogeometric analysis (NURBS)</option>
+      <option id="amr">Adaptive mesh refinement (AMR)</option>
+      <option id="pa">Partial assembly</option>
+   </select>
 </div>
 <div class="col-sm-6 col-md-4 small" markdown="1">
    <h5>**Solver**</h5>
-   <label><input type="radio" id="all4" onchange="update(this.id);" checked="checked" /> All</label><br/>
-   <label><input type="radio" id="jacobi" onchange="update(this.id);" /> Jacobi</label> <br/>
-   <label><input type="radio" id="gs" onchange="update(this.id);" /> Gauss-Seidel</label> <br/>
-   <label><input type="radio" id="pcg" onchange="update(this.id);" /> PCG</label> <br/>
-   <label><input type="radio" id="minres" onchange="update(this.id);" /> MINRES</label> <br/>
-   <label><input type="radio" id="gmres" onchange="update(this.id);" /> GMRES</label> <br/>
-   <label><input type="radio" id="amg" onchange="update(this.id);" /> Algebraic Multigrid (BoomerAMG)</label> <br/>
-   <label><input type="radio" id="ams" onchange="update(this.id);" /> Auxiliary-space Maxwell Solver (AMS)</label> <br/>
-   <label><input type="radio" id="ads" onchange="update(this.id);" /> Auxiliary-space Divergence Solver (ADS)</label> <br/>
-   <label><input type="radio" id="superlu" onchange="update(this.id);" /> SuperLU/STRUMPACK (parallel direct)</label><br/>
-   <label><input type="radio" id="umfpack" onchange="update(this.id);" /> UMFPACK (serial direct)</label><br/>
-   <label><input type="radio" id="newton" onchange="update(this.id);" /> Newton method (nonlinear solver)</label><br/>
-   <label><input type="radio" id="rk" onchange="update(this.id);" /> Explicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="sdirk" onchange="update(this.id);" /> Implicit Runge-Kutta (ODE integration)</label><br/>
-   <label><input type="radio" id="newmark" onchange="update(this.id);" /> Newmark (ODE Integration)</label><br/>
-   <label><input type="radio" id="symplectic" onchange="update(this.id);" /> Symplectic Algorithm (ODE Integration)</label><br/>
-   <label><input type="radio" id="lobpcg" onchange="update(this.id);" /> LOBPCG, AME (eigensolvers)</label><br/>
-   <label><input type="radio" id="sundials" onchange="update(this.id);" /> SUNDIALS solvers</label><br/>
-   <label><input type="radio" id="petsc" onchange="update(this.id);" /> PETSc solvers</label><br/>
-   <label><input type="radio" id="hiop" onchange="update(this.id);" /> HiOp solvers</label><br/>
+   <select id="group4" onchange="update()">
+      <option id="all4">All</option>
+      <option id="jacobi">Jacobi</option>
+      <option id="gs">Gauss-Seidel</option>
+      <option id="pcg">PCG</option>
+      <option id="minres">MINRES</option>
+      <option id="gmres">GMRES</option>
+      <option id="amg">Algebraic Multigrid (BoomerAMG)</option>
+      <option id="ams">Auxiliary-space Maxwell Solver (AMS)</option>
+      <option id="ads">Auxiliary-space Divergence Solver (ADS)</option>
+      <option id="superlu">SuperLU/STRUMPACK (parallel direct)</option>
+      <option id="umfpack">UMFPACK (serial direct)</option>
+      <option id="newton">Newton method (nonlinear solver)</option>
+      <option id="rk">Explicit Runge-Kutta (ODE integration)</option>
+      <option id="sdirk">Implicit Runge-Kutta (ODE integration)</option>
+      <option id="newmark">Newmark (ODE Integration)</option>
+      <option id="symplectic">Symplectic Algorithm (ODE Integration)</option>
+      <option id="lobpcg">LOBPCG, AME (eigensolvers)</option>
+      <option id="sundials">SUNDIALS solvers</option>
+      <option id="petsc">PETSc solvers</option>
+      <option id="slepc">SLEPc eigensolvers</option>
+      <option id="hiop">HiOp solvers</option>
+   </select>
 </div>
 </div>
+<br>
 <hr>
 
 <!-- ------------------------------------------------------------------------- -->
@@ -180,6 +191,7 @@ also illustrated.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly and GPU devices are supported.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -205,6 +217,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly and GPU devices are supported.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -234,6 +247,7 @@ formats.
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+Partial assembly is supported.
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -261,6 +275,7 @@ _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
+Partial assembly and GPU devices are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -384,6 +399,7 @@ visualization window for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
 ([ex11p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp)) version.
+It also has a SLEPc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -743,10 +759,10 @@ of a damped harmonic oscillator:
 - A scalar $H^1$ field:
   $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
 
-- A vector $H(Curl)$ field:
+- A vector $H(curl)$ field:
   $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
-- A vector $H(Div)$ field:
+- A vector $H(div)$ field:
   $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
 In each case the field is driven by a forced oscillation, with
@@ -786,18 +802,77 @@ We recommend viewing examples 9 and 10 before viewing this example._
 <img class="floatright" src="../img/examples/ex24.png">
 
 This example code illustrates usage of mixed finite element
-spaces. Using two different approaches, we project a gradient
-of a function in $H^1$ to $H(curl)$. Other spaces and example
-computations are to be added in the future.
+spaces, with three variants:
 
-We also illustrate usage of a DiscreteLinearOperator and a
-DiscreteInterpolator to interpolate a gradient in an $H(curl)$
-finite element space.
+- $H^1 \times H(curl)$
+- $H(curl) \times H(div)$
+- $H(div) \times L_2$
+
+Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.
+
+Partial assembly and GPU devices are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
-Partial assembly and GPU devices are supported.
 We recommend viewing examples 1 and 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex25" markdown="1">
+##Example 25: Perfectly Matched Layers
+<img class="floatright" src="../img/examples/ex25.gif">
+
+The example illustrates the use of a Perfectly Matched Layer (PML) for the
+simulation of time-harmonic electromagnetic waves propagating in unbounded
+domains.
+
+PML was originally introduced by Berenger in ["A Perfectly Matched Layer for the
+Absorption of Electromagnetic Waves"](https://doi.org/10.1006/jcph.1994.1159).
+It is a technique used to solve wave propagation problems posed in infinite
+domains. The implementation involves the introduction of an artificial absorbing
+layer that minimizes undesired reflections. Inside this layer a complex
+coordinate stretching map is used which forces the wave modes to decay
+exponentially.
+
+The example solves the indefinite Maxwell equations
+$$\nabla \times (a \nabla \times E) - \omega^2 b E = f.$$
+where $a = \mu^{-1} |J|^{-1} J^T J$, $b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is
+the Jacobian matrix of the coordinate transformation.
+
+The example demonstrates discretization with Nedelec finite elements in 2D or
+3D, as well as the use of complex-valued bilinear and linear forms. Several
+test problems are included, with known exact solutions.
+
+_The example has a serial ([ex25.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25.cpp))
+and a parallel ([ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp)) version.
+We recommend viewing Example 22 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex26" markdown="1">
+##Example 26: Multigrid Preconditioner
+<img class="floatright" src="../img/examples/ex26.png">
+
+This example code demonstrates the use of MFEM to define a
+simple isoparametric finite element discretization of the
+Laplace problem $$-\Delta u = 1$$ with homogeneous Dirichlet
+boundary conditions and how to solve it efficiently using a
+matrix-free multigrid preconditioner.
+
+The example highlights on the creation of a hierarchy of
+discretization spaces and diffusion bilinear forms using
+partial assembly. The levels in the hierarchy of finite
+element spaces maybe constructed through geometric or
+order refinements. Moreover, the construction of a multigrid
+preconditioner for the PCG solver is shown. The multigrid
+uses a PCG solver on the coarsest level and second order
+Chebyshev accelerated smoothers on the other levels.
+
+_The example has a serial ([ex26.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26.cpp))
+and a parallel ([ex26p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1135,6 +1210,27 @@ version.
 <br></div>
 
 
+<div id="minimal-surface" markdown="1">
+##Minimal Surface Miniapp
+<img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
+
+This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
+
+Options to solve the minimal surface equations of both parametric surfaces as well as
+surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
+number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
+
+For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+
+_The miniapp has a serial
+([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a
+parallel ([pminimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pminimal-surface.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="lor-transfer" markdown="1">
 ##Low-Order Refined Transfer Miniapp
 <img class="floatright"  width="450" src="../img/examples/lor-transfer.png">
@@ -1151,8 +1247,8 @@ function that was obtained by restricting a high-order grid function to the
 low-order refined space.
 
 _The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version.
-**We recommend that new users start with the example codes before moving to the miniapps.**_
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1227,6 +1323,77 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="remhos" markdown="1">
+##Remhos Miniapp
+<img class="floatright" width="450" src="../img/examples/remhos.png">
+
+**Remhos** (REMap High-Order Solver) is a miniapp that solves the pure advection
+equations that are used to perform monotonic and conservative discontinuous
+field interpolation (remap) as part of the Eulerian phase in Arbitrary
+Lagrangian Eulerian (ALE) simulations.
+
+The computational motives captured in Remhos include:
+
+- Support for unstructured meshes, in 2D and 3D, with quadrilateral and
+  hexahedral elements. Serial and parallel mesh refinement options can be
+  set via a command-line flag.
+- Explicit time-stepping loop with a variety of time integrator options. Remhos
+  supports Runge-Kutta ODE solvers of orders 1, 2, 3, 4 and 6.
+- Discontinuous high-order finite element discretization spaces
+  of runtime-specified order.
+- Moving (high-order) meshes.
+- Mass operator that is local per each zone. It is inverted by iterative or exact
+  methods at each time step. This operator is constant in time (transport mode)
+  or changing in time (remap mode). Options for full or partial assembly.
+- Advection operator that couples neighboring zones. It is applied once at each
+  time step. This operator is constant in time (transport mode) or
+  changing in time (remap mode). Options for full or partial assembly.
+- Domain-decomposed MPI parallelism.
+- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+  for visualization and data analysis with [VisIt](http://visit.llnl.gov).
+
+The Remhos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+a collection of software benchmarks, miniapps, libraries and APIs for
+efficient exascale discretizations based on high-order finite element
+and spectral element methods. See http://github.com/ceed for more
+information and source code availability.
+
+_This is an external miniapp, available at [https://github.com/CEED/Remhos](https://github.com/CEED/Remhos)._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="navier" markdown="1">
+##Navier Miniapp
+<img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
+
+Navier is a miniapp that solves the time-dependent Navier-Stokes equations of
+incompressible fluid dynamics
+\begin{align}
+\frac{\partial u}{\partial t} + (u \cdot \nabla) u - \frac{1}{Re} \nabla^2 u - \nabla p &= f \\\\
+\nabla \cdot u &= 0
+\end{align}
+using a spatially high-order finite element discretization.
+
+The time-dependent problem is solved using a (up to) third order
+implicit-explicit method which leverages an extrapolation scheme for the
+convective parts and a backward-difference formulation for the viscous parts of
+the equation.
+
+The miniapp supports:
+
+- Arbitrary order H1 elements
+- High order mesh elements
+- IMEX (EXTk-BDFk) time-stepping up to third order
+- Convenient interface for new users
+- A variety of test cases and benchmarks
+
+_This miniapp has only a parallel
+([navier_solver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_solver.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -1241,15 +1408,6 @@ No examples or miniapps match your criteria.
 
 <div style="clear:both;"/></div>
 <script type="text/javascript"><!--
-function isChecked(id)
-{
-    return document.getElementById(id).checked;
-}
-
-function setChecked(id, value)
-{
-    document.getElementById(id).checked = value;
-}
 
 function showElement(id, show)
 {
@@ -1258,113 +1416,106 @@ function showElement(id, show)
     // workaround because Doxygen splits and duplicates the divs for some reason
     var divs = document.getElementsByTagName("div");
     for (i = 0; i < divs.length; i++)
-        if (divs.item(i).id == id)
-            divs.item(i).style.display = show ? "block" : "none";
+    {
+       if (divs.item(i).id == id) {
+          divs.item(i).style.display = show ? "block" : "none";
+       }
+    }
+    return show ? 1 : 0;
 }
 
-function updateGroup(names, id)
+function getBooleans(comboId)
 {
-   // make only one box checked in the group
-   if (names.indexOf(id) != -1)
-      for (i = 0; i < names.length; ++i)
-         setChecked(names[i], id == names[i]);
+   combo = document.getElementById(comboId);
 
-   // generate boolean variables from the group names
-   for (i = 0; i < names.length; ++i)
-      this[names[i]] = isChecked(names[i]) || isChecked(names[0]);
-}
+   first_selected = false;
+   for (i = 0; i < combo.options.length; i++)
+   {
+      opt = combo.options[i];
+      selected = opt.selected || first_selected;
+      if (!i) { first_selected = selected; }
 
-function elementVisible(id)
-{
-   var elem = document.getElementById(id);
-   return elem != null && elem.style.display != "none";
-}
-
-function exampleVisible(num)
-{
-   return elementVisible("ex"+num);// || elementVisible("ex"+num+"p");
-}
-
-function update(id)
-{
-   var group1 = ["all1", "laplace", "elasticity", "maxwell", "graddiv", "darcy", "advection", "conduction","wave", "hydro", "meshing", "hpc"];
-   var group2 = ["all2", "l2", "h1", "hcurl", "hdiv", "h12"];
-   var group3 = ["all3", "galerkin", "mixed", "dg", "dpg", "hybr", "staticcond", "nurbs", "amr" ];
-   var group4 = ["all4", "jacobi", "gs", "pcg", "minres", "gmres", "amg", "ams", "ads", "superlu", "umfpack", "newton", "rk", "sdirk", "newmark", "symplectic", "lobpcg", "sundials", "petsc", "hiop"];
-
-   updateGroup(group1, id);
-   updateGroup(group2, id);
-   updateGroup(group3, id);
-   updateGroup(group4, id);
-
-   // Example codes
-   var numExamples = 24; // update when adding examples!
-   showElement("ex1",  (laplace  || hpc) && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex3",  (maxwell || hpc) && hcurl && (galerkin || staticcond) && (gs || pcg || umfpack || ams || petsc));
-   showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond) && (gs || pcg || umfpack || amg || ads || ams || petsc));
-   showElement("ex5",  darcy && (l2 || hdiv) && mixed && (gs || jacobi || minres || umfpack || amg  || petsc));
-   showElement("ex6",  (laplace || hpc) && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg || petsc));
-   showElement("ex7",  (laplace || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex8",  laplace && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams));
-   showElement("ex9",  (advection || hpc) && l2 && dg && (pcg || rk || sundials || petsc || hiop || gmres || sdirk));
-   showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc));
-   showElement("ex11", laplace && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu));
-   showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg));
-   showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams));
-   showElement("ex14", laplace && l2 && dg && (gs || pcg || gmres || umfpack || amg));
-   showElement("ex15", laplace && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials));
-   showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg));
-   showElement("ex18", hydro && l2 && dg && (rk));
-   showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg));
-   showElement("ex20", (elasticity || maxwell || conduction || hydro) && symplectic);
-   showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg));
-   showElement("ex22", (laplace || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads));
-   showElement("ex23", (laplace || wave) && h1 && (galerkin || nurbs) && newmark);
-   showElement("ex24", (graddiv || hpc) && (h1 || hcurl) && galerkin && pcg);
-
-   // Electromagnetic miniapps
-   numExamples += 4; // update when adding miniapps!
-   showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg));
-   showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams));
-   showElement("maxwell", (maxwell || conduction) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic));
-   showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk));
-
-   // Meshing miniapps
-   numExamples += 10; // update when adding miniapps!
-   showElement("mobius-strip", meshing && all2 && all3 && all4);
-   showElement("klein-bottle", meshing && all2 && all3 && all4);
-   showElement("toroid", meshing && all2 && all3 && all4);
-   showElement("twist", meshing && all2 && all3 && all4);
-   showElement("extruder", meshing && all2 && all3 && all4);
-   showElement("shaper", meshing && all2 && all3 && all4);
-   showElement("mesh-explorer", meshing && all2 && all3 && all4);
-   showElement("mesh-optimizer", meshing && all2 && all3 && all4);
-   showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4);
-   showElement("gslib-interpolation", meshing && all2 && all3 && all4);
-
-   // External miniapps
-   numExamples += 1; // update when adding miniapps!
-   showElement("laghos", (hydro || hpc) && all2 && all3 && all4);
-
-   var allHidden = true;
-   for (i = 1; i <= numExamples; i++) {  // FIXME this no longer works with the miniapps!
-      if (exampleVisible(i)) {
-         allHidden = false;
-         break;
-      }
+      // create a boolean variable named after the option
+      this[opt.id] = selected;
    }
-   showElement("nomatch", allHidden);
 }
 
-function initButtons()
+function update()
+{
+   getBooleans("group1");
+   getBooleans("group2");
+   getBooleans("group3");
+   getBooleans("group4");
+
+   numShown = 0 // expression continued...
+
+   // example codes
+   + showElement("ex1",  (diffusion) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
+   + showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
+   + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
+   + showElement("ex6",  (diffusion) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
+   + showElement("ex7",  (diffusion || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
+   + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
+   + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
+   + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
+   + showElement("ex12", elasticity && h1 && (galerkin || nurbs) && (lobpcg || amg))
+   + showElement("ex13", maxwell && hcurl && galerkin && (lobpcg || ams))
+   + showElement("ex14", diffusion && l2 && dg && (gs || pcg || gmres || umfpack || amg))
+   + showElement("ex15", diffusion && h1 && (galerkin || nurbs || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex16", conduction && h1 && galerkin && (pcg || jacobi || rk || sdirk || sundials))
+   + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
+   + showElement("ex18", compressibleflow && l2 && dg && (rk))
+   + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
+   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && all2 && all3 && symplectic)
+   + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
+   + showElement("ex22", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
+   + showElement("ex23", (diffusion || wave) && h1 && (galerkin || nurbs) && newmark)
+   + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
+   + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
+   + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
+
+   // electromagnetic miniapps
+   + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
+   + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
+   + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
+   + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
+
+   // meshing miniapps
+   + showElement("mobius-strip", meshing && all2 && all3 && all4)
+   + showElement("klein-bottle", meshing && all2 && all3 && all4)
+   + showElement("toroid", meshing && all2 && all3 && all4)
+   + showElement("twist", meshing && all2 && all3 && all4)
+   + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("shaper", meshing && all2 && all3 && all4)
+   + showElement("mesh-explorer", meshing && all2 && all3 && all4)
+   + showElement("mesh-optimizer", meshing && all2 && all3 && all4)
+   + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
+   + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
+   + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
+
+   // external miniapps
+   + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
+   + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
+   + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
+
+   ; // ...end of expression
+
+   // show/hide the message "No examples match your criteria"
+   showElement("nomatch", numShown == 0);
+}
+
+function initCombos()
 {
    var query = location.search.substr(1);
    query.split("&").forEach(function(id)
    {
-      setChecked(id, true);
-      update(id);
+      if (id) {
+         opt = document.getElementById(id);
+         if (opt) { opt.selected = true; }
+      }
    });
 }
 
@@ -1375,6 +1526,6 @@ window.onload = update;
 document.getElementsByTagName("body")[0].style = "overflow-y: scroll"
 
 // parse URL part after '?', e.g., http://.../index.html?elasticity&nurbs
-initButtons();
+initCombos();
 
 //--></script>
