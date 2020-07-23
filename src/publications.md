@@ -8,6 +8,7 @@
 ## Selected Publications
 
 #### 2020
+  1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), in review, **2020**.
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), in review, **2020**.
   1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://arxiv.org/abs/2001.09196), *Nuclear Science and Engineering*, to appear, **2020**.
   1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), *SIAM Journal on Scientific Computing*, to appear, **2020**.
