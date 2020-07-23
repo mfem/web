@@ -196,7 +196,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 These operators require vector-valued basis functions constructed by
 using multiple copies of scalar fields.  In each of these integrators
 the scalar basis function index increments most quickly followed by
-the vector index.  This leads to local element matrix which have a
+the vector index.  This leads to local element matrices that have a
 block structure.
 
 ### Square Operators
