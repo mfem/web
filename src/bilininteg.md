@@ -153,7 +153,7 @@ to assemble square linear operators.
 | Class Name             | Spaces | Coef.   | Operator                               | Continuous Op.                | Dimension  |
 |------------------------|--------|:-------:|----------------------------------------|-------------------------------|:----------:|
 | VectorFEMassIntegrator | ND, RT | S, D, M | $(\lambda\vec\{u},\vec\{v})$           | $\lambda\vec\{u}$             | 2D, 3D     |
-| CurlCurlIntegrator     | ND     |    S    | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | 2D, 3D     |
+| CurlCurlIntegrator     | ND     | S, M    | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | 2D, 3D     |
 | DivDivIntegrator       | RT     |    S    | $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$ | 2D, 3D     |
 
 ### Mixed Operators
