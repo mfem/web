@@ -42,7 +42,7 @@ are:
  --------|-----------------------|-------------------
   $\H$   | magnetic field        | Ampere/meter
   $\B$   | magnetic flux density | Tesla
-  $\E$   | electric field        | Volts/meter
+  $\E$   | electric field        | Volt/meter
   $\D$   | electric displacement | Coulomb/meter$^2$
   $\J$   | current density       | Ampere/meter$^2$
   $\rho$ | charge density        | Coulomb/meter$^3$
