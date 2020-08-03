@@ -305,7 +305,7 @@ situations rather than needing to reimplement their functionality.
 
 Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
-that is often assumed to be zero but can be used to apply an
+that is often assumed to be zero but can be used to apply a
 non-homogeneous Neumann boundary condition.
 
 ### Operator with Scalar Range
@@ -341,7 +341,7 @@ The following weak operators require the range (or test) space to be
 H(Curl) i.e. a vector basis function with a curl operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an non-homogeneous Neumann boundary
+equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `CurlCurlIntegrator` one could provide a known function for
@@ -366,7 +366,7 @@ The following weak operators require the range (or test) space to be
 H(Div) i.e. a vector basis function with a divergence operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an non-homogeneous Neumann boundary
+equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `DivDivIntegrator` one could provide a known function for
