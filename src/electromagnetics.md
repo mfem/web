@@ -98,7 +98,7 @@ the SI system. Inserting this definition into equation \eqref{gauss} gives:
 which is *Poisson's equation* for the electric potential, where we have assumed
 a linear constitutive relation between $\D$ and $\E$ of the form $\D =
 \epsilon\E + \P$. This allows a polarization which is proportional to $\E$ as
-well a polarization independent of $\E$. If this relation happens to be
+well as a polarization independent of $\E$. If this relation happens to be
 nonlinear then Poisson's equation would need to be replaced with a more
 complicated nonlinear expression.
 
@@ -166,7 +166,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 **Neumann BC:** Neumann boundary conditions set the normal component of the
   electric displacement on portions of the boundary. This normal component is
   equivalent to the surface charge density on the surface. This is rarely used
-  because surface charge densities are rarely known unless they are know to be
+  because surface charge densities are rarely known unless they are known to be
   zero. However, if the surface charge density is zero then the Neumann BCs are
   not needed because this is the natural boundary condition. Only piecewise
   constant Neumann boundary conditions are supported. They can be set
@@ -444,7 +444,7 @@ higher order SDIRK.
 Since there are three solves,  three sets of boundary conditions must be specified. The
 essential BC's are the scalar potential, the electric field, and the thermal flux. These are not
 set via command line arguments, you have to edit the code to change these. To change these,
-search the code for `ess_bdr`
+search the code for `ess_bdr`.
 
 There are conducting and non-conducting material regions, and the mesh must have integer attributes
 to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
