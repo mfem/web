@@ -32,7 +32,7 @@ the Maxwell Equations. They are usually given as:
                   \div\B & = 0     \label{divb}
   \end{align}$$
 
-Where equation \eqref{ampere} can be referred to as *Ampére's Law*, equation
+Where equation \eqref{ampere} can be referred to as *Ampère's Law*, equation
 \eqref{faraday} is called *Faraday's Law*, equation \eqref{gauss} is *Gauss's
 Law*, and equation \eqref{divb} doesn't generally have a name but is related to
 the nonexistence of magnetic monopoles. The various fields in these equations
@@ -42,7 +42,7 @@ are:
  --------|-----------------------|-------------------
   $\H$   | magnetic field        | Ampere/meter
   $\B$   | magnetic flux density | Tesla
-  $\E$   | electric field        | Volts/meter
+  $\E$   | electric field        | Volt/meter
   $\D$   | electric displacement | Coulomb/meter$^2$
   $\J$   | current density       | Ampere/meter$^2$
   $\rho$ | charge density        | Coulomb/meter$^3$
@@ -98,7 +98,7 @@ the SI system. Inserting this definition into equation \eqref{gauss} gives:
 which is *Poisson's equation* for the electric potential, where we have assumed
 a linear constitutive relation between $\D$ and $\E$ of the form $\D =
 \epsilon\E + \P$. This allows a polarization which is proportional to $\E$ as
-well a polarization independent of $\E$. If this relation happens to be
+well as a polarization independent of $\E$. If this relation happens to be
 nonlinear then Poisson's equation would need to be replaced with a more
 complicated nonlinear expression.
 
@@ -166,7 +166,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 **Neumann BC:** Neumann boundary conditions set the normal component of the
   electric displacement on portions of the boundary. This normal component is
   equivalent to the surface charge density on the surface. This is rarely used
-  because surface charge densities are rarely known unless they are know to be
+  because surface charge densities are rarely known unless they are known to be
   zero. However, if the surface charge density is zero then the Neumann BCs are
   not needed because this is the natural boundary condition. Only piecewise
   constant Neumann boundary conditions are supported. They can be set
@@ -176,7 +176,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 
 ## Magnetostatics
 
-Magnetostatic problems arise when we assume no time variation in Ampére's Law
+Magnetostatic problems arise when we assume no time variation in Ampère's Law
 \eqref{ampere} which leads to:
 
   $$\curl\H = \J   \nonumber$$
@@ -302,7 +302,7 @@ propagation of electromagnetic waves.
 The term $\sigma\E$ arises in the presence of electrically conductive
 materials where the electric field induces a current which can be
 separated from $\J$.  In such cases the total current appearing in
-Ampére's Law \eqref{ampere} can be expressed as the sum of an applied
+Ampère's Law \eqref{ampere} can be expressed as the sum of an applied
 current (also labeled as $\J$) and an induced current $\sigma\E$.
 
 Solving these equations requires initial conditions for both the
@@ -444,7 +444,7 @@ higher order SDIRK.
 Since there are three solves,  three sets of boundary conditions must be specified. The
 essential BC's are the scalar potential, the electric field, and the thermal flux. These are not
 set via command line arguments, you have to edit the code to change these. To change these,
-search the code for `ess_bdr`
+search the code for `ess_bdr`.
 
 There are conducting and non-conducting material regions, and the mesh must have integer attributes
 to specify these regions. To change these, search the code for `std::map<int, double>` this maps the
