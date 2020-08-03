@@ -32,7 +32,7 @@ the Maxwell Equations. They are usually given as:
                   \div\B & = 0     \label{divb}
   \end{align}$$
 
-Where equation \eqref{ampere} can be referred to as *Ampére's Law*, equation
+Where equation \eqref{ampere} can be referred to as *Ampère's Law*, equation
 \eqref{faraday} is called *Faraday's Law*, equation \eqref{gauss} is *Gauss's
 Law*, and equation \eqref{divb} doesn't generally have a name but is related to
 the nonexistence of magnetic monopoles. The various fields in these equations
@@ -176,7 +176,7 @@ Note that this application assumes the mesh coordinates are given in meters.
 
 ## Magnetostatics
 
-Magnetostatic problems arise when we assume no time variation in Ampére's Law
+Magnetostatic problems arise when we assume no time variation in Ampère's Law
 \eqref{ampere} which leads to:
 
   $$\curl\H = \J   \nonumber$$
@@ -302,7 +302,7 @@ propagation of electromagnetic waves.
 The term $\sigma\E$ arises in the presence of electrically conductive
 materials where the electric field induces a current which can be
 separated from $\J$.  In such cases the total current appearing in
-Ampére's Law \eqref{ampere} can be expressed as the sum of an applied
+Ampère's Law \eqref{ampere} can be expressed as the sum of an applied
 current (also labeled as $\J$) and an induced current $\sigma\E$.
 
 Solving these equations requires initial conditions for both the
