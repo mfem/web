@@ -65,12 +65,12 @@ The *Coef.* column refers to the types of coefficients that are
 available.  A boldface coefficient type is required whereas most
 coefficients are optional.
 
-| Coef. | Type                     |
-|-------|--------------------------|
-|   S   | Scalar Valued Function   |
-|   V   | Vector Valued Function   |
-|   D   | Diagonal Matrix Function |
-|   M   | General Matrix Function  |
+| Coef. | Type of Function         | Argument Type     |
+|-------|--------------------------| ----------------- |
+|   S   | Scalar Valued Function   | Coefficient       |
+|   V   | Vector Valued Function   | VectorCoefficient |
+|   D   | Diagonal Matrix Function | VectorCoefficient |
+|   M   | General Matrix Function  | MatrixCoefficient |
 
 Notation: The integrals performed by the various integrators listed
 below are shown using inner product notation, $(\cdot,\cdot)$, defined
