@@ -11,14 +11,14 @@ MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element metho
 and [spaces](features.md#higher-order-finite-element-spaces).
 * [Wide variety](features.md#flexible-discretization) of finite element discretization approaches.
 * Conforming and nonconforming [adaptive mesh refinement](examples.md?amr).
-* Scalable to [millions of parallel tasks](http://computation.llnl.gov/blast/parallel-performance) and GPU-accelerated.
+* Scalable from laptops to [GPU-accelerated](features#parallel-scalable-and-gpu-ready) supercomputers.
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including
-[BLAST](http://www.llnl.gov/casc/blast), [VisIt](http://visit.llnl.gov), [xSDK](https://xsdk.info/), SciDAC/[FASTMath](https://fastmath-scidac.llnl.gov/index.html), and the co-design [Center for Efficient Exascale Discretizations (CEED)](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
+[BLAST](http://www.llnl.gov/casc/blast), [RF-SciDAC](https://www.rfscidac4.org/), [VisIt](http://visit.llnl.gov), [Cardioid](https://github.com/llnl/cardioid), [xSDK](https://xsdk.info/), SciDAC/[FASTMath](https://fastmath-scidac.llnl.gov/index.html), and the [Center for Efficient Exascale Discretizations](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 
-See also our [Gallery](gallery.md), related [publications](publications.md) and
-project [news updates](news.md).
+See also our [Gallery](gallery.md), [Publications](publications.md) and
+[News](news.md) pages.
 
 </div><div class="col-md-6 news-table" markdown="1">
 
@@ -27,11 +27,12 @@ project [news updates](news.md).
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Jul 11, 2020 | MFEM paper [appeared](http://doi.org/10.1016/j.camwa.2020.06.009) in CAMWA.
 Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.
-Jun 8, 2020 | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.
+Jun 8, 2020  | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.
 Mar 10, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG).
-Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.
 
+[comment]: # (Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.)
 [comment]: # (May 24, 2019 | Version 4.0 [released](https://github.com/mfem/mfem/blob/v4.0/CHANGELOG) with initial GPU support.)
 [comment]: # (May 10, 2019 | [AMR](http://arxiv.org/abs/1905.04033) and [TMOP](http://arxiv.org/abs/1807.09807) papers available on arXiv.)
 [comment]: # (Nov 9, 2018  | MFEM part of the [E4S](https://e4s-project.github.io/) project.)
@@ -75,12 +76,14 @@ For older releases see the [download](download.md) section.
 [Building MFEM](building.md)
 ┊ [Serial Tutorial](serial-tutorial.md)
 ┊ [Parallel Tutorial](parallel-tutorial.md)
-┊ [Code Overview](code-overview.md)
 
-[Finite Element Method](fem.md)
+[Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
 ┊ [Meshing](meshing.md)
+┊ [Performance](performance.md)
 ┊ [Tools](tools.md)
+
+[comment]: # ([Code Overview](code-overview.md))
 
 New users should start by examining the [example codes](examples.md).
 

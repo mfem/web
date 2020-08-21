@@ -89,7 +89,7 @@ Note that any operators involving a derivative of the range function
 $v$ or $\vec\{v}$ are computed using integration by parts.  This leads
 to a boundary integral which can be used to apply Neumann boundary
 conditions.  Some of these operators are listed along with their
-boundary terms in section [Weak Operators](#weak-operators).
+boundary terms in section [Weak Operators](#weak-operators-and-their-boundary-integrals).
 
 ## Scalar Field Operators
 

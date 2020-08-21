@@ -1,6 +1,6 @@
 # Meshing
 
-This page provides a brief description of MFEM's mesh formats, meshing mini applications, and related tools.
+This page provides a brief description of MFEM's mesh formats and meshing mini applications.
 
 ## Mesh formats
 
@@ -28,7 +28,7 @@ demonstrating more advanced usage of the library. They are intended to be more
 representative of MFEM-based application codes. We recommend that new users
 start with the example codes before moving to the miniapps.
 
-The current meshing miniapps are described below. Related tools are listed at the [bottom](#tools) of the page.
+The current meshing miniapps are described below.
 
 ### Mobius Strip
 
