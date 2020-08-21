@@ -285,16 +285,15 @@ glvis-3.4.tgz   mfem-3.4.tgz
 </code></pre>
 
 <h2 id="parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</h2>
-<p>Download <em>hypre</em> and metis from</p>
+<p>Download <em>hypre</em> and METIS from</p>
 <ul>
 <li><a href="https://github.com/hypre-space/hypre/releases">https://github.com/hypre-space/hypre/releases</a></li>
-<li><a href="https://computation.llnl.gov/casc/hypre/software.html">https://computation.llnl.gov/casc/hypre/software.html</a></li>
 <li><a href="http://glaros.dtc.umn.edu/gkhome/metis/metis/download">http://glaros.dtc.umn.edu/gkhome/metis/metis/download</a></li>
 </ul>
-<p>Below we assume that we are working with versions 2.16.0 and
+<p>Below we assume that we are working with hypre version 2.16.0 and METIS version
 <a href="http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz">4.0.3</a>
-respectively. We also assume that the serial version of MFEM and GLVis have been
-built as described above.</p>
+(see <a href="#parallel-build-using-metis-5">below</a> for METIS version 5 and later). We also assume that the serial version
+of MFEM and GLVis have been built as described above.</p>
 <p>Put everything in the same directory:</p>
 <pre><code class="sh">~&gt; ls
 glvis-3.4/  hypre-2.16.0.tar.gz   metis-4.0.3.tar.gz   mfem-3.4/
@@ -309,7 +308,7 @@ glvis-3.4/  hypre-2.16.0.tar.gz   metis-4.0.3.tar.gz   mfem-3.4/
 ~&gt; ln -s hypre-2.16.0 hypre
 </code></pre>
 
-<p>Build metis:</p>
+<p>Build METIS:</p>
 <pre><code class="sh">~&gt; tar -zxvf metis-4.0.3.tar.gz
 ~&gt; cd metis-4.0.3
 ~/metis-4.0.3&gt; make
@@ -324,7 +323,7 @@ glvis-3.4/  hypre-2.16.0.tar.gz   metis-4.0.3.tar.gz   mfem-3.4/
 ~/mfem-3.4&gt; make parallel -j
 </code></pre>
 
-<p>Note that if hypre or metis are in different locations, or you have different
+<p>Note that if hypre or METIS are in different locations, or you have different
 versions of these libraries, you will need to update the corresponding paths in
 the
 <a href="https://raw.githubusercontent.com/mfem/mfem/master/config/defaults.mk"><code>config/defaults.mk</code></a>
