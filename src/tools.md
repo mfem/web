@@ -1,5 +1,8 @@
 # Tools
 
+This page provides a brief description of several useful tool programs that are distributed
+in the MFEM's `miniapps/tools` directory.
+
 ## General Tools
 
 ### Display Basis

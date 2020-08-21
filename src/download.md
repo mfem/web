@@ -15,7 +15,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 ## All Releases
 
- **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
+ **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](https://github.com/AlDanial/cloc)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
  [mfem-4.1.tgz](https://bit.ly/mfem-4-1) | v4.1 | Mar 2020 | 7.9M | 209K | |
  [mfem-4.0.tgz](https://bit.ly/mfem-4-0) | v4.0 | May 2019 | 5.2M | 167K | *GPU support* |
