@@ -11,81 +11,80 @@ $
 \newcommand{\dO}{{\partial\Omega}}
 $
 
-## Galerkin Formulations
+## Continuous Formulations
 
-### Essential Boundary Conditions
+### Essential (Dirichlet) Boundary Conditions
+
+In continuous formulations essential boundary conditions are set by
+modifying the linear system to require the degrees of freedom on the
+boundary to obtain specific values. This limits the types of
+constraints that can be imposed on fields. For example, $L^2$ fields
+have no degrees of freedom on the boundary of elements so essential
+BCs cannot be applied, H(Curl) (a.k.a. Nedelec) elements can only
+constrain the tangential components of a vector field, and H(Div)
+(a.k.a. Raviart-Thomas) elements can only constrain the normal
+component of a vector field.
 
 | Space   | Essential BC                                            |
 |---------|---------------------------------------------------------|
 |  H1     | $u = f$ on $\partial\Omega$                             |
 |  H1$^d$ | $\vec\{u} = \vec\{f}$ on $\partial\Omega$               |
-|  ND     | $\hat\{n}\times\vec\{u} = \vec\{f}$ on $\partial\Omega$ |
+|  ND     | $(\hat\{n}\times\vec\{u})\times\hat\{n} = \vec\{f}$ on $\partial\Omega$ |
 |  RT     | $\hat\{n}\cdot\vec\{u} = f$ on $\partial\Omega$         |
 
 
 ### Natural Boundary Conditions
 
-| Operator | Continuous Operator | Natural BC |
+So called "Natural Boundary Conditions" can arise whenever weak
+derivatives occur in a PDE (see below for more on [weak
+derivatives](fem_weak_form.md)).  Weak derivatives must be handled
+using integration by parts which introduces a boundary integral. If
+this boundary integral is ignored its value is implicitly set to zero
+which creates an implicit constraint, called a "natural boundary
+condition", on the solution.
+
+| Continuous Operator | Weak Operator | Natural BC |
+|---------------------|---------------|------------|
+| $-\div(\lambda\grad u)$       | $(\lambda\grad u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u)=0$ on $\dO$   |
+| $\curl(\lambda\curl\vec\{u})$ | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=0$ on $\dO$|
+| $-\grad(\lambda\div\vec\{u})$ | $(\lambda\div\vec\{u},\div\vec\{v})$   | $\lambda\div\vec\{u}=0$ on $\dO$             |
+| $\div(\vec\{\lambda}u)$       | $(-\vec\{\lambda}u,\grad v)$           | $\hat\{n}\cdot\vec\{\lambda}u = 0$ on $\dO$  |
+| $\curl(\lambda\vec\{u})$      |$(\lambda\vec\{u},\curl\vec\{v})$       | $\hat\{n}\cross(\lambda\vec\{u})=0$ on $\dO$ |
+| $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=0$ on $\dO$   |
+
+###  Neumann Boundary Conditions
+
+Neumann boundary conditions are closely related to natural boundary
+conditions.  Rather than ignoring the boundary integral we integrate a
+known function on the boundary which approximates the desired value of
+the boundary condition (often a involving a derivative of the field).
+The following table shows a variety of common operators and their
+related Neumann boundary condition.
+
+| Operator | Continuous Operator | Neumann BC |
 |------|----------|---|
 | $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)=f$ on $\dO$|
-| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\vec\{f}$ on $\dO$|
-| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}=f$ on $\dO$ |
+| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$|
+| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\dO$ |
 | $(-\vec\{\lambda}u,\grad v)$                   | $\div(\vec\{\lambda}u)$ | $\hat\{n}\cdot\vec\{\lambda}u = f$ on $\dO$ |
-|$(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$| $\hat\{n}\cross(\lambda\vec\{u})=f$ on $\dO$ |
+|$(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$| $\hat\{n}\cross(\lambda\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$ |
+| $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=f$ on $\dO$   |
 
-#### Weak Divergence
-Natural boundary conditions arise when creating a weak formulation of a partial differential equation (PDE) whenever integration by parts is required to accurately handle the derivatives appearing in the PDE.  For example, consider a weak divergence operator.  Let $\vec\{\alpha} \equiv \vec\{\beta}u+\gamma\grad u$, where $\vec\{\beta}$ is a vector-valued function and $\gamma$ is a tensor-valued function.  The function $\vec\{\alpha}$ is a general linear function of $u$ and its gradient.  The weak divergence of this quantity would be calculated by multiplying $\div\vec\{\alpha}$ by a test function, $v$, and integrating over the domain $\Omega$.
+To impose these boundary conditions in MFEM simply modify the
+right-hand side of your linear system by adding the appropriate
+boundary integral of either $f$ or $\vec\{f}$.  For $H^1$ or $L^2$
+fields this can be accomplished by adding the `BoundaryLFIntegrator`
+with an appropriate coefficient for $f$ to a `[Par]LinearForm` object.
+For H(Curl) fields this can be accomplished by adding the
+`VectorFEBoundaryTangentLFIntegrator` with an appropriate vector
+coefficient for $\vec\{f}$ to a `[Par]LinearForm` object.  And
+finally, for H(Div) fields this can be accomplished by adding the
+`VectorFEBoundaryFluxLFIntegrator` with an appropriate scalar
+coefficient for $f = \hat\{n}\cdot\vec\{f}$ to a `[Par]LinearForm`
+object.  Other integrators may be appropriate if it is desirable to
+express the functions $f$ or $\vec\{f}$ in other ways.
 
-$$(-\div\vec\{\alpha},v)\_\Omega
-\equiv-\int_\Omega(\div\vec\{\alpha})v\,d\Omega$$
-The negative sign in this expression is only a matter of convention.
-
-Using the vector calculus identity, $\div(\vec\{\alpha}v) = (\div\vec\{\alpha})v + \vec\{\alpha}\cdot\grad v$, we find:
-$$(-\div\vec\{\alpha}, v)\_\Omega = (\vec\{\alpha}, \grad v)\_\Omega - \int_\Omega\div(\vec\{\alpha}v)\,d\Omega$$
-We then use the Divergence theorem to obtain:
-$$(-\div\vec\{\alpha}, v)\_\Omega =
-(\vec\{\alpha}, \grad v)\_\Omega - \int_\dO(\hat\{n}\cdot\vec\{\alpha}))v\,d\Gamma =
-(\vec\{\alpha}, \grad v)\_\Omega - (\hat\{n}\cdot\vec\{\alpha},v)\_\dO $$
-Where $d\Gamma$ is the area element on the boundary of $\Omega$.
-
-#### Weak Curl
-
-For the next example consider the weak curl of a vector operator.  Let $\vec\{\alpha} \equiv \beta\vec\{u}+\gamma\curl\vec\{u}$, where $\beta$ and $\gamma$ are both tensor-valued functions. The function $\vec\{\alpha}$ is a general linear function of $\vec\{u}$ and its curl.  The weak curl of this quantity would be calculated by multiplying $\curl\vec\{\alpha}$ by a test function, $\vec\{v}$, and integrating over the domain $\Omega$.
-
-$$(\curl\vec\{\alpha},\vec\{v})\_\Omega \equiv
-\int_\Omega(\curl\vec\{\alpha})\cdot\vec\{v}\,d\Omega$$
-Using the vector calulus identity, $\div(\vec\{\alpha}\cross\vec\{v}) = (\curl\vec\{\alpha})\cdot\vec\{v} - \vec\{\alpha}\cdot(\curl\vec\{v})$, we find: 
-$$(\curl\vec\{\alpha},\vec\{v})\_\Omega =
-(\vec\{\alpha},\curl\vec\{v})\_\Omega +
-\int_\Omega\div(\vec\{\alpha}\times\vec\{v})\,d\Omega$$
-We again use the Divergence theorem to obtain:
-$$(\curl\vec\{\alpha},\vec\{v})\_\Omega =
-(\vec\{\alpha},\curl\vec\{v})\_\Omega +
-\int_\dO\hat\{n}\cdot(\vec\{\alpha}\times\vec\{v})\,d\Gamma =
-(\vec\{\alpha},\curl\vec\{v})\_\Omega + (\hat\{n}\cross\vec\{\alpha},\vec\{v})\_\dO$$
-Where we also made use of the scalar triple product, $\hat\{n}\cdot(\vec\{\alpha}\cross\vec\{v}) = \vec\{v}\cdot(\hat\{n}\cross\vec\{\alpha})$, in the last equality.
-
-#### Weak Gradient
-
-For the last example consider the weak gradient of a scalar operator.  Let $\alpha \equiv \vec\{\beta}\cdot\vec\{u}+\gamma\div\vec\{u}$, where $\vec\{\beta}$ is a vector-valued function and $\gamma$ is a scalar-valued function. The function $\alpha$ is a general linear function of $\vec\{u}$ and its divergence.  The weak gradient of this quantity would be calculated by multiplying $\grad\alpha$ by a test function, $\vec\{v}$, and integrating over the domain $\Omega$.
-
-$$(-\grad\alpha,\vec\{v})\_\Omega \equiv
--\int_\Omega(\grad\alpha)\cdot\vec\{v}\,d\Omega$$
-The negative sign in this expression is again only a matter of convention.
-
-Using the vector calulus identity, $\div(\alpha\vec\{v}) = (\grad\alpha)\cdot\vec\{v} + \alpha\div\vec\{v}$, we find: 
-$$(-\grad\alpha,\vec\{v})\_\Omega =
-(\alpha,\div\vec\{v})\_\Omega -
-\int_\Omega\div(\alpha\vec\{v})\,d\Omega$$
-We again use the Divergence theorem to obtain:
-$$(-\grad\alpha,\vec\{v})\_\Omega =
-(\alpha,\div\vec\{v})\_\Omega -
-\int_\dO\hat\{n}\cdot(\alpha\vec\{v})\,d\Gamma =
-(\alpha,\div\vec\{v})\_\Omega -
-(\alpha\hat\{n},\vec\{v})\_\dO
-$$
-
-###  Boundary Conditions
+### Mixed (Robin) Boundary Conditions
 
 ## Discontinuous Galerkin Formulations
 
