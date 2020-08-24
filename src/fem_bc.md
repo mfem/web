@@ -84,22 +84,22 @@ coefficient for $f = \hat\{n}\cdot\vec\{f}$ to a `[Par]LinearForm`
 object.  Other integrators may be appropriate if it is desirable to
 express the functions $\,f$ or $\vec\{f}$ in other ways.
 
-### Mixed (Robin) Boundary Conditions
+### Robin Boundary Conditions
 
-Mixed boundary conditions typically involve a linear function of the
-field and its derivative.  As such they also arise from weak
+Robin boundary conditions typically involve a linear function of the
+field and its normal derivative.  As such they also arise from weak
 derivatives and the boundary integrals they introduce to the system of
-equations.  Typical forms of the mixed boundary condition include the
+equations.  Typical forms of the Robin boundary condition include the
 following.
 
-| Operator | Continuous Operator | Mixed BC |
+| Operator | Continuous Operator | Robin BC |
 |------|----------|---|
 | $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)+\gamma\,u=f$ on $\dO$|
 | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u}+\gamma\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$|
 | $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}+\gamma\,u=\hat\{n}\cdot\vec\{f}$ on $\dO$ |
 | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)+\gamma\,u=f$ on $\dO$   |
 
-Mixed boundary conditions are applied in the same manner as Neumann
+Robin boundary conditions are applied in the same manner as Neumann
 boundary conditions except that one must also add a boundary integral
 to the `[Par]BilinearForm` object to account for the term involving
 $\gamma$.  For example, when solving for an $H^1$ field one should add
