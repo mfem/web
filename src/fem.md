@@ -57,5 +57,16 @@ linear function of a basis function) onto another basis function.  The
 together to build a global sparse matrix representation of the linear
 operator.
 
+### [Weak Formulations](fem_weak_form.md)
+
+Weak formulations are at the heart of the finite element method.
+Finite element approximations are almost always less smooth than the
+solutions we hope to approximate.  Weak formulations provide a means
+of approximating derivatives of non-differentiable functions.
+
 ### [Boundary Conditions](fem_bc.md)
 
+The types of available boundary conditions and how to apply them
+depend on the discretizations being used. This page will describe how
+to enforce various boundary conditions for certrain classes of
+problems.
