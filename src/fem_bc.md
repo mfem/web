@@ -11,9 +11,51 @@ $
 \newcommand{\dO}{{\partial\Omega}}
 $
 
+MFEM supports boundary conditions of mixed type through the definition
+of boundary attributes on the mesh.  A boundary attribute is a
+positive integer index assigned to each boundary element of the mesh.
+Since each boundary element can have only one attribute number the
+boundary attributes split the boundary into a group of disjoint sets.
+MFEM allows the user to define boundary conditions on a subset of
+boundary attributes.
+
+Typically mixed boundary conditions are defined on disjoint portions
+of the boundary defined as:
+
+| Symbol            | Description                       |
+|-------------------|-----------------------------------|
+| $\Gamma\equiv\dO$ | Boundary of the Domain ($\Omega$) |
+| $\Gamma_D$        | Dirichlet Boundary                |
+| $\Gamma_N$        | Neumann Boundary                  |
+| $\Gamma_R$        | Robin Boundary                    |
+| $\Gamma_0$        | Natural Boundary                  |
+
+Where we assume $\Gamma =
+\Gamma_D\cup\Gamma_N\cup\Gamma_R\cup\Gamma_0$.  In MFEM boundaries are
+usually described by "marker arrays".  A marker array is an array of
+integers containing zeros and ones with a length equal to the largest
+boundary attribute index.
+
+```
+   // Assume we start with an array containing boundary attribute numbers
+   // stored in bdr_attr.
+   //
+   // Prepare a marker array from a set of attributes
+   Array<int> bdr_marker(pmesh.bdr_attributes.Max());
+   bdr_marker = 0;
+
+   for (int i=0; i<bdr_attr.Size(); i++)
+   {
+      bdr_marker[bdr_attr[i]-1] = 1;
+   }
+```
+
+Separate marker arrays of this type can be prepared for the Dirichlet,
+Neumann, and Robin portions of the boundary.
+
 ## Continuous Formulations
 
-### Essential (Dirichlet) Boundary Conditions
+### Dirichlet (Essential) Boundary Conditions
 
 In continuous formulations essential boundary conditions are set by
 modifying the linear system to require the degrees of freedom on the
@@ -25,13 +67,44 @@ constrain the tangential components of a vector field, and H(Div)
 (a.k.a. Raviart-Thomas) elements can only constrain the normal
 component of a vector field.
 
-| Space   | Essential BC                                            |
-|---------|---------------------------------------------------------|
-|  H1     | $u = f$ on $\partial\Omega$                             |
-|  H1$^d$ | $\vec\{u} = \vec\{f}$ on $\partial\Omega$               |
-|  ND     | $(\hat\{n}\times\vec\{u})\times\hat\{n} = \vec\{f}$ on $\partial\Omega$ |
-|  RT     | $\hat\{n}\cdot\vec\{u} = f$ on $\partial\Omega$         |
+| Space   | Essential BC                                                      |
+|---------|-------------------------------------------------------------------|
+|  H1     | $u = f$ on $\Gamma_D$                                             |
+|  H1$^d$ | $\vec\{u} = \vec\{f}$ on $\Gamma_D$                               |
+|  ND     | $(\hat\{n}\times\vec\{u})\times\hat\{n} = \vec\{f}$ on $\Gamma_D$ |
+|  RT     | $\hat\{n}\cdot\vec\{u} = f$ on $\Gamma_D$                         |
 
+MFEM provides a convenience method, called `FormLinearSystem`, on the
+`[Par]BilinearForm` class which can prepare a linear system with these
+essential constraints.
+
+```
+   // Set the Dirchlet values in the solution vector
+   ParGridFunction u(&fespace);
+   u = 0.0;
+   u.ProjectBdrCoefficient(dbcCoef, dbc_marker);
+
+   // Prepare the source term in the right-hand-side
+   ParLinearForm b(&fespace);
+   b.AddDomainIntegrator(new DomainLFIntegrator(rhsCoef));
+   b.Assemble();
+
+   // Prepare the bilinear form
+   ParBilinearForm a(&fespace);
+   a.AddDomainIntegrator(new DiffusionIntegrator(matCoef));
+   a.Assemble();
+
+   // Determine the essential degrees of freedom corresponding to the set of
+   // boundary attributes marked in dbc_marker
+   Array<int> ess_tdof_list(0);
+   fespace.GetEssentialTrueDofs(dbc_marker, ess_tdof_list);
+
+   // Prepare the linear system with enforcement of the essential boundary
+   // conditions
+   OperatorPtr A;
+   Vector B, X;
+   a.FormLinearSystem(ess_tdof_list, u, b, A, X, B);
+```
 
 ### Natural Boundary Conditions
 
@@ -45,12 +118,12 @@ condition", on the solution.
 
 | Continuous Operator | Weak Operator | Natural BC |
 |---------------------|---------------|------------|
-| $-\div(\lambda\grad u)$       | $(\lambda\grad u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u)=0$ on $\dO$   |
-| $\curl(\lambda\curl\vec\{u})$ | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=0$ on $\dO$|
-| $-\grad(\lambda\div\vec\{u})$ | $(\lambda\div\vec\{u},\div\vec\{v})$   | $\lambda\div\vec\{u}=0$ on $\dO$             |
-| $\div(\vec\{\lambda}u)$       | $(-\vec\{\lambda}u,\grad v)$           | $\hat\{n}\cdot\vec\{\lambda}u = 0$ on $\dO$  |
-| $\curl(\lambda\vec\{u})$      |$(\lambda\vec\{u},\curl\vec\{v})$       | $\hat\{n}\cross(\lambda\vec\{u})=0$ on $\dO$ |
-| $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=0$ on $\dO$   |
+| $-\div(\lambda\grad u)$       | $(\lambda\grad u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u)=0$ on $\Gamma_0$   |
+| $\curl(\lambda\curl\vec\{u})$ | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=0$ on $\Gamma_0$|
+| $-\grad(\lambda\div\vec\{u})$ | $(\lambda\div\vec\{u},\div\vec\{v})$   | $\lambda\div\vec\{u}=0$ on $\Gamma_0$             |
+| $\div(\vec\{\lambda}u)$       | $(-\vec\{\lambda}u,\grad v)$           | $\hat\{n}\cdot\vec\{\lambda}u = 0$ on $\Gamma_0$  |
+| $\curl(\lambda\vec\{u})$      |$(\lambda\vec\{u},\curl\vec\{v})$       | $\hat\{n}\cross(\lambda\vec\{u})=0$ on $\Gamma_0$ |
+| $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=0$ on $\Gamma_0$   |
 
 ###  Neumann Boundary Conditions
 
@@ -62,19 +135,27 @@ The following table shows a variety of common operators and their
 related Neumann boundary condition.
 
 | Operator | Continuous Operator | Neumann BC |
-|------|----------|---|
-| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)=f$ on $\dO$|
-| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$|
-| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\dO$ |
-| $(-\vec\{\lambda}u,\grad v)$                   | $\div(\vec\{\lambda}u)$ | $\hat\{n}\cdot\vec\{\lambda}u = f$ on $\dO$ |
-|$(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$| $\hat\{n}\cross(\lambda\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$ |
-| $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=f$ on $\dO$   |
+|----------|---------------------|------------|
+| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)=f$ on $\Gamma_N$|
+| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$|
+| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\Gamma_N$ |
+| $(-\vec\{\lambda}u,\grad v)$                   | $\div(\vec\{\lambda}u)$ | $\hat\{n}\cdot\vec\{\lambda}u = f$ on $\Gamma_N$ |
+|$(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$| $\hat\{n}\cross(\lambda\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$ |
+| $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=f$ on $\Gamma_N$   |
 
 To impose these boundary conditions in MFEM simply modify the
 right-hand side of your linear system by adding the appropriate
 boundary integral of either $f$ or $\vec\{f}$.  For $H^1$ or $L^2$
 fields this can be accomplished by adding the `BoundaryLFIntegrator`
 with an appropriate coefficient for $f$ to a `[Par]LinearForm` object.
+
+Neumann boundary conditions can be added to the above example code by adding the following line before the call to `b.Assemble()`.
+```
+   // Add Neumann BCs n.(matCoef Grad u) = nbcCoef on the boundary marked in
+   // the nbc_marker array.
+   b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
+```
+
 For H(Curl) fields this can be accomplished by adding the
 `VectorFEBoundaryTangentLFIntegrator` with an appropriate vector
 coefficient for $\vec\{f}$ to a `[Par]LinearForm` object.  And
@@ -93,11 +174,11 @@ equations.  Typical forms of the Robin boundary condition include the
 following.
 
 | Operator | Continuous Operator | Robin BC |
-|------|----------|---|
-| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)+\gamma\,u=f$ on $\dO$|
-| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u}+\gamma\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\dO$|
-| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}+\gamma\,u=\hat\{n}\cdot\vec\{f}$ on $\dO$ |
-| $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)+\gamma\,u=f$ on $\dO$   |
+|----------|---------------------|----------|
+| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)+\gamma\,u=f$ on $\Gamma_R$|
+| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u}+\gamma\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_R$|
+| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}+\gamma\,u=\hat\{n}\cdot\vec\{f}$ on $\Gamma_R$ |
+| $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)+\gamma\,u=f$ on $\Gamma_R$   |
 
 Robin boundary conditions are applied in the same manner as Neumann
 boundary conditions except that one must also add a boundary integral
@@ -105,6 +186,22 @@ to the `[Par]BilinearForm` object to account for the term involving
 $\gamma$.  For example, when solving for an $H^1$ field one should add
 a `MassIntegrator` with an appropriate scalar coefficient for
 $\gamma$.
+
+The implementation of a Robin boundary condition requires precisely
+the same change to the right-hand-side as the Neumann boundary
+condition as well as a new term in the bilinear form before `a.Assemble()`:
+
+```
+   // Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
+   // marked in the rbc_marker array.
+   b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
+
+   ...
+
+   // Add Robin BCs n.(matCoef grad u) + rbcACoef u = rbcBCoef on the boundary
+   // marked in the rbc_marker array.
+   a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
+```
 
 ## Discontinuous Galerkin Formulations
 
