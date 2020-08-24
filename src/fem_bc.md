@@ -212,5 +212,36 @@ condition as well as a new term in the bilinear form before `a.Assemble()`:
 
 ## Discontinuous Galerkin Formulations
 
+In the Discontinuous Galerkin (DG) formulation the
+[Natural](#natural-boundary-conditions),
+[Neumann](#neumann-boundary-conditions), and
+[Robin](#robin-boundary-conditions) can be implemented in precisely
+the same manner as in the continuous case.  However, since DG basis
+functions have no degrees of freedom associated with the boundary,
+Dirichlet boundary conditions must be handled differently.  
+
+```
+   // Add the desired value for the Dirichlet constraint on the boundary
+   // marked in the dbc_marker array.
+   b.AddBdrFaceIntegrator(new DGDirichletLFIntegrator(dbcCoef, matCoef,
+                                                      sigma, kappa),	
+                          dbc_marker);
+
+   ...
+
+   // Add the n.Grad(u) boundary integral on the Dirichlet portion of the
+   // boundary marked in the dbc_marker array.
+   a.AddBdrFaceIntegrator(new DGDiffusionIntegrator(matCoef, sigma, kappa),
+                          dbc_marker);
+```
+
+Where `sigma` and `kappa` are parameters controlling the symmetry and
+interior penalty used in the DG diffusion formulation.  These two
+integrators work together to balance the natural boundary condition
+associated with the `DiffusionIntegrator` and to penalize solutions
+which differ from the desired Dirichlet value near the boundary.
+Similar pairs of integrators would need to be written to accommodate
+other PDEs.
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
