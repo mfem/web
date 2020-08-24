@@ -13,11 +13,11 @@ $
 
 MFEM supports boundary conditions of mixed type through the definition
 of boundary attributes on the mesh.  A boundary attribute is a
-positive integer index assigned to each boundary element of the mesh.
-Since each boundary element can have only one attribute number the
-boundary attributes split the boundary into a group of disjoint sets.
-MFEM allows the user to define boundary conditions on a subset of
-boundary attributes.
+positive integer assigned to each boundary element of the mesh.  Since
+each boundary element can have only one attribute number the boundary
+attributes split the boundary into a group of disjoint sets.  MFEM
+allows the user to define boundary conditions on a subset of boundary
+attributes.
 
 Typically mixed boundary conditions are defined on disjoint portions
 of the boundary defined as:
@@ -51,7 +51,9 @@ boundary attribute index.
 ```
 
 Separate marker arrays of this type can be prepared for the Dirichlet,
-Neumann, and Robin portions of the boundary.
+Neumann, and Robin portions of the boundary.  It is left to the user
+to ensure that $\Gamma_D$, $\Gamma_N$, and $\Gamma_R$ are defined as
+non-overlapping portions of the boundary.
 
 ## Continuous Formulations
 
@@ -124,6 +126,11 @@ condition", on the solution.
 | $\div(\vec\{\lambda}u)$       | $(-\vec\{\lambda}u,\grad v)$           | $\hat\{n}\cdot\vec\{\lambda}u = 0$ on $\Gamma_0$  |
 | $\curl(\lambda\vec\{u})$      |$(\lambda\vec\{u},\curl\vec\{v})$       | $\hat\{n}\cross(\lambda\vec\{u})=0$ on $\Gamma_0$ |
 | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=0$ on $\Gamma_0$   |
+
+No implementation is necessary for natural boundary conditions.  Any
+portion of the boundary where a Dirichlet, Neumann, or Robin boundary
+condition has not been applied will receive a natural boundary
+condition by default.
 
 ###  Neumann Boundary Conditions
 
