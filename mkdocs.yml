@@ -23,6 +23,7 @@ nav:
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
   - '_Linear Interpolators': lininterp.md
+  - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md
   - 'Electromagnetics': electromagnetics.md
   - 'Meshing': meshing.md
