@@ -89,7 +89,7 @@ Note that any operators involving a derivative of the range function
 $v$ or $\vec\{v}$ are computed using integration by parts.  This leads
 to a boundary integral which can be used to apply Neumann boundary
 conditions.  Some of these operators are listed along with their
-boundary terms in section [Weak Operators](#weak-operators).
+boundary terms in section [Weak Operators](#weak-operators-and-their-boundary-integrals).
 
 ## Scalar Field Operators
 
@@ -153,7 +153,7 @@ to assemble square linear operators.
 | Class Name             | Spaces | Coef.   | Operator                               | Continuous Op.                | Dimension  |
 |------------------------|--------|:-------:|----------------------------------------|-------------------------------|:----------:|
 | VectorFEMassIntegrator | ND, RT | S, D, M | $(\lambda\vec\{u},\vec\{v})$           | $\lambda\vec\{u}$             | 2D, 3D     |
-| CurlCurlIntegrator     | ND     |    S    | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | 2D, 3D     |
+| CurlCurlIntegrator     | ND     | S, M    | $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | 2D, 3D     |
 | DivDivIntegrator       | RT     |    S    | $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$ | 2D, 3D     |
 
 ### Mixed Operators
@@ -196,7 +196,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 These operators require vector-valued basis functions constructed by
 using multiple copies of scalar fields.  In each of these integrators
 the scalar basis function index increments most quickly followed by
-the vector index.  This leads to local element matrix which have a
+the vector index.  This leads to local element matrices that have a
 block structure.
 
 ### Square Operators
