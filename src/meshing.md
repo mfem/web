@@ -86,6 +86,19 @@ mesh can be 1D or 2D. 1D meshes can be extruded in the y-direction first and
 then in the z-direction.  2D meshes can be triangular, quadrilateral, or
 contain both element types.
 
+### Polar-NC
+
+This miniapp generates a circular sector mesh that consist of quadrilaterals
+and triangles of similar sizes. The 3D version of the mesh is made of prisms
+and tetrahedra:
+
+![](img/examples/polar-nc.png)
+
+The mesh is non-conforming by design, and can optionally be
+made curvilinear. The elements are ordered along a space-filling curve by
+default, which makes the mesh ready for parallel non-conforming AMR in MFEM.
+
+
 ### Shaper
 
 This miniapp performs multiple levels of adaptive mesh refinement to resolve the

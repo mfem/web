@@ -16,7 +16,7 @@ Please cite with:
 
 @misc{mfem-web,
   key = {mfem},
-  title = {{MFEM}: Modular Finite Element Methods [Software]},
+  title = {{MFEM}: Modular Finite Element Methods {[Software]}},
   howpublished = {\url{mfem.org}},
   doi = {10.11578/dc.20171025.1248}
 }

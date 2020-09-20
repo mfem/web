@@ -1159,6 +1159,31 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="polar-nc" markdown="1">
+## Polar-NC Miniapp
+<img class="floatright" src="../img/examples/polar-nc.png">
+
+This miniapp generates a circular sector mesh that consist of quadrilaterals
+and triangles of similar sizes. The 3D version of the mesh is made of prisms
+and tetrahedra.
+
+The mesh is non-conforming by design, and can optionally be made curvilinear.
+The elements are ordered along a space-filling curve by default, which makes
+the mesh ready for parallel non-conforming AMR in MFEM.
+
+The implementation also demonstrates how to initialize a non-conforming mesh
+on the fly by marking hanging nodes with `Mesh::AddVertexParents`.
+
+For more details, please see the [documentation](meshing.md) in the
+`miniapps/meshing` directory.
+
+_The miniapp has only a serial
+([polar-nc.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/polar-nc.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
 <img class="floatright" src="../img/examples/shaper.png">
@@ -1180,7 +1205,6 @@ _The miniapp has only a serial
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
-
 
 <div id="mesh-explorer" markdown="1">
 ##Mesh Explorer Miniapp
@@ -1522,6 +1546,7 @@ function update()
    + showElement("toroid", meshing && all2 && all3 && all4)
    + showElement("twist", meshing && all2 && all3 && all4)
    + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("polar-nc", meshing && all2 && all3 && all4)
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
    + showElement("mesh-optimizer", meshing && all2 && all3 && all4)
