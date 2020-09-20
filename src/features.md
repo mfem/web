@@ -119,6 +119,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Navier](http://mfem.github.io/doxygen/html/navier_solver_8cpp_source.html): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
