@@ -819,6 +819,7 @@ We recommend viewing examples 1 and 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+
 <div id="ex25" markdown="1">
 ##Example 25: Perfectly Matched Layers
 <img class="floatright" src="../img/examples/ex25.gif">
@@ -873,6 +874,39 @@ Chebyshev accelerated smoothers on the other levels.
 _The example has a serial ([ex26.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26.cpp))
 and a parallel ([ex26p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="ex27" markdown="1">
+##Example 27: Laplace Boundary Conditions
+<img class="floatright" src="../img/examples/ex27.png">
+
+This example code demonstrates the use of MFEM to define a
+simple finite element discretization of the Laplace problem:
+$$
+-\Delta u = 0
+$$
+with a variety of boundary conditions.
+
+Specifically, we discretize
+using a FE space of the specified order using a continuous or
+discontinuous space.  We then apply Dirichlet, Neumann (both
+homogeneous and inhomogeneous), Robin, and Periodic boundary
+conditions on different portions of a predefined mesh.
+
+| Boundary conditions:               |                      |
+|------------------------------------|----------------------|
+| $u = u_\{dbc}$                     | on $\Gamma_\{dbc}$   |
+| $\hat\{n}\cdot\nabla u = g_\{nbc}$ | on $\Gamma_\{nbc}$   |
+| $\hat\{n}\cdot\nabla u = 0$        | on $\Gamma_\{nbc_0}$ |
+| $\hat\{n}\cdot\nabla u + a u = b$  | on $\Gamma_\{rbc}$   |
+
+as well as periodic boundary conditions which are enforced topologically.
+
+_The example has a serial ([ex27.cpp](https://github.com/mfem/mfem/blob/master/examples/ex27.cpp))
+and a parallel ([ex27p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex27p.cpp)) version.
+We recommend viewing examples 1 and 14 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1496,13 +1530,14 @@ function update()
    + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
    + showElement("ex18", compressibleflow && l2 && dg && (rk))
    + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
-   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && all2 && all3 && symplectic)
+   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && h1 && mixed && symplectic)
    + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex22", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
    + showElement("ex23", (diffusion || wave) && h1 && (galerkin || nurbs) && newmark)
    + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
+   + showElement("ex27", (elasticity || maxwell || conduction || compressibleflow) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
