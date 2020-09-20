@@ -59,7 +59,6 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Poisson problem on a "Breather" surface. Mesh generated with the [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html) miniapp. Solution with [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html).*
 
-
 ----
 
 [![](img/gallery/triple-pt-2x2-q12-3d.png)](img/gallery/triple-pt-2x2-q12-3d.png)
@@ -107,7 +106,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/rkh-132.png)](img/gallery/rkh-132.png)
 
-*Radiating Kevin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
+*Radiating Kelvin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
 
 ----
 
