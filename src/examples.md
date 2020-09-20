@@ -1128,7 +1128,7 @@ moving to the miniapps.**_
 <br></div>
 
 <div id="polar-nc" markdown="1">
-##Polar-NC
+## Polar-NC Miniapp
 <img class="floatright" src="../img/examples/polar-nc.png">
 
 This miniapp generates a circular sector mesh that consist of quadrilaterals
