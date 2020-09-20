@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#weak-formulations">Weak Formulations</a></li>
+        
+            <li><a href="#weak-derivatives">Weak Derivatives</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="weak-formulations">Weak Formulations</h1>
+<p>$
+\newcommand{\cross}{\times}
+\newcommand{\inner}{\cdot}
+\newcommand{\div}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\grad}{\nabla}
+\newcommand{\ddx}[1]{\frac{d#1}{dx}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\dO}{{\partial\Omega}}
+$</p>
+<p>Spaces of finite element basis functions are rarely rich enough to
+contain exact solutions to partial differential equations (PDEs) of
+interest. This is particularly true when we consider the irregular
+domains that often arise in practical simulations. One consequence of
+this is that finite element solutions often don't precisely satisfy
+the continuous PDEs being modeled. The goal is to build a finite
+element solution which approximates the true solution and satisfies
+the PDE in a weaker sense.</p>
+<p>Consider a general linear differential operator $L(u)$ and the partial
+differential equation:</p>
+<p>$$L(u) = f\mbox{ on }\Omega$$</p>
+<p>We approximate the solution using a linear combination of
+finite element basis functions which we'll call $\varphi_i$.</p>
+<p>$$u\approx u_h\equiv\sum_i\alpha_i\varphi_i(\vec{x})$$</p>
+<p>The basis functions $\varphi_i$ are known but we need to find the
+degrees of freedom, $\alpha_i$, which produce a reasonable
+approximation of $u$.  In Galerkin finite element methods this is done
+by multiplying the PDE by each of the basis functions and integrating
+over the problem domain.  If we have a total of $N$ finite element
+basis functions, this leads to a set of $N$ equations for the $N$
+unknowns.  The resulting system of equations for the $\alpha_i$ is called
+the "weak formulation" of the PDE.</p>
+<p>The weak formulation of this problem can be written as:</p>
+<p>$$\sum_j\alpha_j\int_\Omega L(\varphi_j)\varphi_i\dO = \int_\Omega f\varphi_i\dO$$</p>
+<p>or by the matrix equation:</p>
+<p>$$M\vec{\alpha}=\vec{f}$$</p>
+<p>Where the matrix entries $M_{ij}\equiv\int_\Omega
+L(\varphi_j)\varphi_i\dO$ and the entries of $\,\vec{f}$ are given by
+$\,f_i\equiv\int_\Omega f\varphi_i\dO$.</p>
+<p>However, it is much more common to write these integrals using inner
+product notation:</p>
+<p>$$(L(u),v)_\Omega=(f, v)_\Omega\,\forall v\in V$$
+Where $V$ is space spanned by the basis functions $\varphi_i$.</p>
+<p>The next step is to examine the linear operator $L(u)$ and determine
+how to compute the integral $(L(u),v)_\Omega$ in the most accurate
+manner possible which leads us to "weak derivatives".</p>
+<h2 id="weak-derivatives">Weak Derivatives</h2>
+<p>A "weak derivative" is a generalization of the notion of a derivative
+for integrable functions whose derivatives do not exist in the strong
+sense. When using the finite element method weak derivatives are
+required whenever terms in a PDE require derivatives of discontinuous
+or otherwise non-differentiable quantities. Finite element basis
+functions are typically not smooth functions. Even if they happen to
+be continuous their derivatives are often at least partially
+discontinuous. Also, coefficient functions can be discontinuous but,
+more importantly, their derivatives are often not known. For these
+reasons PDE terms similar to $\grad(\lambda u)$ or $\div\grad u$
+cannot be accurately computed using finite element basis functions
+without employing weak derivatives.</p>
+<p>Consider the following discontinuous approximation to the function
+$\cos(2\pi x)e^{-2x}$.</p>
+<p><img class="floatcenter" src="../img/DiscFunc.png"></p>
+<p>Piecewise linear, discontinuous basis functions can approximate this
+function rather well on this coarse 4 element mesh. If we simply
+ignore the discontinuities and compute the piecewise derivatives of
+the basis functions we obtain the following approximation of the
+continuous function's derivative.</p>
+<p><img class="floatcenter" src="../img/BasisDeriv.png"></p>
+<p>This is a reasonable, albeit quite crude, approximation of the derivative.  Expending a little more effort to compute the weak derivative using continuous 2nd order basis functions produces a far superior approximation.</p>
+<p><img class="floatcenter" src="../img/WeakDeriv.png"></p>
+<p>Clearly we will benefit from using weak derivatives to handle
+derivatives of discontinuous functions which arise in our linear
+operators.</p>
+<h3 id="weak-divergence">Weak Divergence</h3>
+<p>Consider a linear operator of the form $L(u)=-\div\vec{\alpha}(u)$
+with $\vec{\alpha}\equiv\vec{\beta}u+\gamma\grad u$, where
+$\vec{\beta}$ is a vector-valued function and $\gamma$ is a
+scalar or tensor-valued function.  The function $\vec{\alpha}$ is a general
+linear function of $u$ and its gradient.  The weak divergence of this
+quantity would be calculated by multiplying $\div\vec{\alpha}$ by a
+test function, $v$, and integrating over the domain $\Omega$.</p>
+<p>$$(-\div\vec{\alpha},v)_\Omega
+\equiv-\int_\Omega(\div\vec{\alpha})v\,d\Omega$$
+The negative sign in this expression is only a matter of convention.</p>
+<p>Using the vector calculus identity, $\div(\vec{\alpha}v) =
+(\div\vec{\alpha})v + \vec{\alpha}\cdot\grad v$, we find:</p>
+<p>$$(-\div\vec{\alpha}, v)_\Omega = (\vec{\alpha}, \grad v)_\Omega - \int_\Omega\div(\vec{\alpha}v)\,d\Omega$$</p>
+<p>We then use the Divergence theorem to obtain:</p>
+<p>$$(-\div\vec{\alpha}, v)_\Omega =
+(\vec{\alpha}, \grad v)_\Omega - \int_\dO(\hat{n}\cdot\vec{\alpha})v\,d\Gamma =
+(\vec{\alpha}, \grad v)_\Omega - (\hat{n}\cdot\vec{\alpha},v)_\dO $$</p>
+<p>Where $d\Gamma$ is the area element on the boundary of $\Omega$.  For
+linear operators of this type the bilinear form $\,(\vec{\alpha},
+\grad v)_\Omega$ can be much more accurately approximated than the
+original bilinear form $\,(-\div\vec{\alpha}, v)_\Omega$ provided we
+can accurately manage the boundary integral
+$\,(\hat{n}\cdot\vec{\alpha},v)_\dO$.  Boundary integrals such as
+this can be used to incorporate Neumann boundary conditions into a
+PDE.  See the <a href="../fem_bc/#neumann-boundary-conditions">Boundary
+Conditions</a> page for more
+information on this.</p>
+<h3 id="weak-curl">Weak Curl</h3>
+<p>For the next example consider the weak curl of a vector operator.  Let
+$L(u)=\curl\vec{\alpha}(u)$ with $\vec{\alpha} \equiv
+\beta\vec{u}+\gamma\curl\vec{u}$, where $\beta$ and $\gamma$ are
+either scalar or tensor-valued functions. The function $\vec{\alpha}$
+is a general linear function of $\vec{u}$ and its curl.  The weak
+curl of this quantity would be calculated by multiplying
+$\curl\vec{\alpha}$ by a test function, $\vec{v}$, and integrating
+over the domain $\Omega$.</p>
+<p>$$(\curl\vec{\alpha},\vec{v})_\Omega \equiv
+\int_\Omega(\curl\vec{\alpha})\cdot\vec{v}\,d\Omega$$</p>
+<p>Using the vector calculus identity, $\div(\vec{\alpha}\cross\vec{v})
+= (\curl\vec{\alpha})\cdot\vec{v} -
+\vec{\alpha}\cdot(\curl\vec{v})$, we find:</p>
+<p>$$(\curl\vec{\alpha},\vec{v})_\Omega =
+(\vec{\alpha},\curl\vec{v})_\Omega +
+\int_\Omega\div(\vec{\alpha}\times\vec{v})\,d\Omega$$</p>
+<p>We again use the Divergence theorem to obtain:</p>
+<p>$$(\curl\vec{\alpha},\vec{v})_\Omega =
+(\vec{\alpha},\curl\vec{v})_\Omega +
+\int_\dO\hat{n}\cdot(\vec{\alpha}\times\vec{v})\,d\Gamma =
+(\vec{\alpha},\curl\vec{v})_\Omega + (\hat{n}\cross\vec{\alpha},\vec{v})_\dO$$</p>
+<p>Where we also made use of the scalar triple product,
+$\hat{n}\cdot(\vec{\alpha}\cross\vec{v}) =
+\vec{v}\cdot(\hat{n}\cross\vec{\alpha})$, in the last equality.
+Again it will be more accurate to use the bilinear form
+$(\vec{\alpha},\curl\vec{v})_\Omega$ and a Neumann boundary
+condition will arise from the boundary integral.</p>
+<h3 id="weak-gradient">Weak Gradient</h3>
+<p>For the last example consider the weak gradient of a scalar operator.
+Let $L(u)=-\grad\alpha(u)$ with
+$\alpha\equiv\vec{\beta}\cdot\vec{u}+\gamma\div\vec{u}$, where
+$\vec{\beta}$ is a vector-valued function and $\gamma$ is a
+scalar-valued function. The function $\alpha$ is a general linear
+function of $\vec{u}$ and its divergence.  The weak gradient of this
+quantity would be calculated by multiplying $\grad\alpha$ by a test
+function, $\vec{v}$, and integrating over the domain $\Omega$.</p>
+<p>$$(-\grad\alpha,\vec{v})_\Omega \equiv
+-\int_\Omega(\grad\alpha)\cdot\vec{v}\,d\Omega$$</p>
+<p>The negative sign in this expression is again only a matter of convention.</p>
+<p>Using the vector calculus identity, $\div(\alpha\vec{v}) =
+(\grad\alpha)\cdot\vec{v} + \alpha\div\vec{v}$, we find:</p>
+<p>$$(-\grad\alpha,\vec{v})_\Omega =
+(\alpha,\div\vec{v})_\Omega -
+\int_\Omega\div(\alpha\vec{v})\,d\Omega$$</p>
+<p>We again use the Divergence theorem to obtain:</p>
+<p>$$(-\grad\alpha,\vec{v})_\Omega =
+(\alpha,\div\vec{v})_\Omega -
+\int_\dO\hat{n}\cdot(\alpha\vec{v})\,d\Gamma =
+(\alpha,\div\vec{v})_\Omega -
+(\alpha\hat{n},\vec{v})_\dO$$</p>
+<p>Once again we find a complimentary bilinear form in
+$(\alpha,\div\vec{v})_\Omega$ and a boundary integral leading to a
+Neumann boundary condition.</p>
+<h3 id="other-types-of-terms">Other Types of Terms</h3>
+<p>Partial differential equations with other types of terms such as
+spatial derivatives of order three or higher (e.g. $\nabla^4u$) or
+coefficients in inconvenient locations (e.g. $\alpha\div(\beta\grad
+u)$) will often require the introduction of auxiliary variables unless
+algebraic manipulations can remove the inconvenient factors.  For
+example,</p>
+<p>$$\nabla^4 u=f$$</p>
+<p>can be split into a pair of coupled equations:</p>
+<p>$$
+\begin{align*}
+\nabla^2u &amp;= \psi\\
+\nabla^2\psi &amp;= f
+\end{align*}
+$$</p>
+<p>and</p>
+<p>$$\alpha\div(\beta\grad u)=f$$</p>
+<p>can be split into:</p>
+<p>$$
+\begin{align*}
+\beta\grad u &amp;= \psi\\
+\alpha\div\psi &amp;= f
+\end{align*}
+$$</p>
+<p>Careful examination of the required derivatives will often suggest the
+most appropriate choice for the basis functions to be used for such
+auxiliary fields.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#weak-formulations">Weak Formulations</a></li>
+        
+            <li><a href="#weak-derivatives">Weak Derivatives</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>

@@ -112,6 +112,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -219,6 +223,10 @@
         
             <li><a href="#linear-interpolators">Linear Interpolators</a></li>
         
+            <li><a href="#weak-formulations">Weak Formulations</a></li>
+        
+            <li><a href="#boundary-conditions">Boundary Conditions</a></li>
+        
     
     </ul>
 </div></div> <!-- toc on top on mobile -->
@@ -270,7 +278,17 @@ integrations, but project one basis function (or a
 linear function of a basis function) onto another basis function.  The
 <code>DiscreteLinearOperator</code> class adds one or more <code>LinearInterpolators</code>
 together to build a global sparse matrix representation of the linear
-operator.</p></div>
+operator.</p>
+<h3 id="weak-formulations"><a href="../fem_weak_form/">Weak Formulations</a></h3>
+<p>Weak formulations are at the heart of the finite element method.
+Finite element approximations are almost always less smooth than the
+solutions we hope to approximate.  Weak formulations provide a means
+of approximating derivatives of non-differentiable functions.</p>
+<h3 id="boundary-conditions"><a href="../fem_bc/">Boundary Conditions</a></h3>
+<p>The types of available boundary conditions and how to apply them
+depend on the discretizations being used. This page describes how
+to enforce various boundary conditions for certain classes of
+problems.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
@@ -283,6 +301,10 @@ operator.</p></div>
             <li><a href="#linear-form-integrators">Linear Form Integrators</a></li>
         
             <li><a href="#linear-interpolators">Linear Interpolators</a></li>
+        
+            <li><a href="#weak-formulations">Weak Formulations</a></li>
+        
+            <li><a href="#boundary-conditions">Boundary Conditions</a></li>
         
     
     </ul>

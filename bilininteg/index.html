@@ -112,6 +112,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -315,25 +319,30 @@ coefficients are optional.</p>
 <thead>
 <tr>
 <th>Coef.</th>
-<th>Type</th>
+<th>Type of Function</th>
+<th>Argument Type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>S</td>
 <td>Scalar Valued Function</td>
+<td>Coefficient</td>
 </tr>
 <tr>
 <td>V</td>
 <td>Vector Valued Function</td>
+<td>VectorCoefficient</td>
 </tr>
 <tr>
 <td>D</td>
 <td>Diagonal Matrix Function</td>
+<td>VectorCoefficient</td>
 </tr>
 <tr>
 <td>M</td>
 <td>General Matrix Function</td>
+<td>MatrixCoefficient</td>
 </tr>
 </tbody>
 </table>
@@ -632,7 +641,7 @@ to assemble square linear operators.</p>
 <tr>
 <td>CurlCurlIntegrator</td>
 <td>ND</td>
-<td align="center">S</td>
+<td align="center">S, D, M</td>
 <td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\lambda\curl\vec{u})$</td>
 <td align="center">2D, 3D</td>
@@ -891,7 +900,7 @@ to assemble square linear operators.</p>
 <p>These operators require vector-valued basis functions constructed by
 using multiple copies of scalar fields.  In each of these integrators
 the scalar basis function index increments most quickly followed by
-the vector index.  This leads to local element matrix which have a
+the vector index.  This leads to local element matrices that have a
 block structure.</p>
 <h3 id="square-operators_2">Square Operators</h3>
 <table>
@@ -1113,7 +1122,7 @@ situations rather than needing to reimplement their functionality.</p>
 <h2 id="weak-operators-and-their-boundary-integrals">Weak Operators and Their Boundary Integrals</h2>
 <p>Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
-that is often assumed to be zero but can be used to apply an
+that is often assumed to be zero but can be used to apply a
 non-homogeneous Neumann boundary condition.</p>
 <h3 id="operator-with-scalar-range">Operator with Scalar Range</h3>
 <p>The following weak operators require the range (or test) space to be
@@ -1199,7 +1208,7 @@ information.</p>
 H(Curl) i.e. a vector basis function with a curl operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an non-homogeneous Neumann boundary
+equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 <code>CurlCurlIntegrator</code> one could provide a known function for
@@ -1272,7 +1281,7 @@ information.</p>
 H(Div) i.e. a vector basis function with a divergence operator.  The
 implied natural boundary condition when using these operators is for
 the continuous boundary operator (shown in the last column) to be
-equal to zero.  On the other hand an non-homogeneous Neumann boundary
+equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 <code>DivDivIntegrator</code> one could provide a known function for

@@ -112,6 +112,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -963,6 +967,53 @@ We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="ex27">
+<h2 id="example-27-laplace-boundary-conditions">Example 27: Laplace Boundary Conditions</h2>
+<p><img class="floatright" src="../img/examples/ex27.png"></p>
+<p>This example code demonstrates the use of MFEM to define a
+simple finite element discretization of the Laplace problem:
+$$
+-\Delta u = 0
+$$
+with a variety of boundary conditions.</p>
+<p>Specifically, we discretize
+using a FE space of the specified order using a continuous or
+discontinuous space.  We then apply Dirichlet, Neumann (both
+homogeneous and inhomogeneous), Robin, and Periodic boundary
+conditions on different portions of a predefined mesh.</p>
+<table>
+<thead>
+<tr>
+<th>Boundary conditions:</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$u = u_{dbc}$</td>
+<td>on $\Gamma_{dbc}$</td>
+</tr>
+<tr>
+<td>$\hat{n}\cdot\nabla u = g_{nbc}$</td>
+<td>on $\Gamma_{nbc}$</td>
+</tr>
+<tr>
+<td>$\hat{n}\cdot\nabla u = 0$</td>
+<td>on $\Gamma_{nbc_0}$</td>
+</tr>
+<tr>
+<td>$\hat{n}\cdot\nabla u + a u = b$</td>
+<td>on $\Gamma_{rbc}$</td>
+</tr>
+</tbody>
+</table>
+<p>as well as periodic boundary conditions which are enforced topologically.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex27.cpp">ex27.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex27p.cpp">ex27p.cpp</a>) version.
+We recommend viewing examples 1 and 14 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -1181,6 +1232,26 @@ moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="polar-nc">
+<h2 id="polar-nc-miniapp">Polar-NC Miniapp</h2>
+<p><img class="floatright" src="../img/examples/polar-nc.png"></p>
+<p>This miniapp generates a circular sector mesh that consist of quadrilaterals
+and triangles of similar sizes. The 3D version of the mesh is made of prisms
+and tetrahedra.</p>
+<p>The mesh is non-conforming by design, and can optionally be made curvilinear.
+The elements are ordered along a space-filling curve by default, which makes
+the mesh ready for parallel non-conforming AMR in MFEM.</p>
+<p>The implementation also demonstrates how to initialize a non-conforming mesh
+on the fly by marking hanging nodes with <code>Mesh::AddVertexParents</code>.</p>
+<p>For more details, please see the <a href="../meshing/">documentation</a> in the
+<code>miniapps/meshing</code> directory.</p>
+<p><em>The miniapp has only a serial
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/polar-nc.cpp">polar-nc.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
+moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="shaper">
 <h2 id="shaper-miniapp">Shaper Miniapp</h2>
 <p><img class="floatright" src="../img/examples/shaper.png"></p>
@@ -1287,19 +1358,24 @@ low-order refined space.</p>
 <p><img class="floatright"  width="450" src="../img/examples/gslib.png"></p>
 <p>The interpolation miniapp, found under <code>miniapps/gslib</code>, demonstrate the
 capability to interpolate high-order finite element functions at given set of
-points in physical space.</p>
-<p>These miniapps utilize the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library's
-high-order  interpolation utility for quad and hex meshes.
-The <em>Find Points</em> miniapp has a serial
+points in physical space.
+These miniapps utilize the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library's
+high-order  interpolation utility for quad and hex meshes:</p>
+<ul>
+<li><em>Find Points</em> miniapp has a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp">findpts.cpp</a>)
 and a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/pfindpts.cpp">pfindpts.cpp</a>)
 version that demonstrate the basic procedures for point search and evaluation
-of grid functions.
-The <em>Field Diff</em> miniapp
+of grid functions.</li>
+<li><em>Field Interp</em> miniapp
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-interp.cpp">field-interp.cpp</a>)
+demonstrates how grid functions can be transferred between meshes.</li>
+<li><em>Field Diff</em> miniapp
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp">field-diff.cpp</a>)
 demonstrates how grid functions on two different meshes can be compared with
-each other.</p>
+each other.</li>
+</ul>
 <p><em><strong>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library. We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
@@ -1485,13 +1561,14 @@ function update()
    + showElement("ex17", elasticity && l2 && dg && (gs || pcg || gmres || umfpack || amg))
    + showElement("ex18", compressibleflow && l2 && dg && (rk))
    + showElement("ex19", elasticity && h1 && mixed && (gs || gmres || newton || amg))
-   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && all2 && all3 && symplectic)
+   + showElement("ex20", (elasticity || maxwell || conduction || compressibleflow) && h1 && mixed && symplectic)
    + showElement("ex21", elasticity && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex22", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads))
    + showElement("ex23", (diffusion || wave) && h1 && (galerkin || nurbs) && newmark)
    + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
+   + showElement("ex27", (elasticity || maxwell || conduction || compressibleflow) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -1505,6 +1582,7 @@ function update()
    + showElement("toroid", meshing && all2 && all3 && all4)
    + showElement("twist", meshing && all2 && all3 && all4)
    + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("polar-nc", meshing && all2 && all3 && all4)
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
    + showElement("mesh-optimizer", meshing && all2 && all3 && all4)

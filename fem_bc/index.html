@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../examples/">Examples</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../building/">Building MFEM</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../serial-tutorial/">Serial Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#boundary-conditions">Boundary Conditions</a></li>
+        
+            <li><a href="#continuous-formulations">Continuous Formulations</a></li>
+        
+            <li><a href="#discontinuous-galerkin-formulations">Discontinuous Galerkin Formulations</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="boundary-conditions">Boundary Conditions</h1>
+<p>$
+\newcommand{\cross}{\times}
+\newcommand{\inner}{\cdot}
+\newcommand{\div}{\nabla\cdot}
+\newcommand{\curl}{\nabla\times}
+\newcommand{\grad}{\nabla}
+\newcommand{\ddx}[1]{\frac{d#1}{dx}}
+\newcommand{\abs}[1]{|#1|}
+\newcommand{\dO}{{\partial\Omega}}
+$</p>
+<p>MFEM supports boundary conditions of mixed type through the definition
+of boundary attributes on the mesh.  A boundary attribute is a
+positive integer assigned to each boundary element of the mesh.  Since
+each boundary element can have only one attribute number the boundary
+attributes split the boundary into a group of disjoint sets.  MFEM
+allows the user to define boundary conditions on a subset of boundary
+attributes.</p>
+<p>Typically mixed boundary conditions are imposed on disjoint portions
+of the boundary defined as:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Gamma\equiv\dO$</td>
+<td>Boundary of the Domain ($\Omega$)</td>
+</tr>
+<tr>
+<td>$\Gamma_D$</td>
+<td>Dirichlet Boundary</td>
+</tr>
+<tr>
+<td>$\Gamma_N$</td>
+<td>Neumann Boundary</td>
+</tr>
+<tr>
+<td>$\Gamma_R$</td>
+<td>Robin Boundary</td>
+</tr>
+<tr>
+<td>$\Gamma_0$</td>
+<td>Natural Boundary</td>
+</tr>
+</tbody>
+</table>
+<p>Where we assume $\Gamma =
+\Gamma_D\cup\Gamma_N\cup\Gamma_R\cup\Gamma_0$.  In MFEM boundaries are
+usually described by "marker arrays".  A marker array is an array of
+integers containing zeros and ones with a length equal to the largest
+boundary attribute index.</p>
+<pre><code class="c++">// Assume we start with an array containing boundary attribute numbers
+// stored in bdr_attr.
+//
+// Prepare a marker array from a set of attributes
+Array&lt;int&gt; bdr_marker(pmesh.bdr_attributes.Max());
+bdr_marker = 0;
+
+for (int i=0; i&lt;bdr_attr.Size(); i++)
+{
+   bdr_marker[bdr_attr[i]-1] = 1;
+}
+</code></pre>
+
+<p>Separate marker arrays of this type can be prepared for the Dirichlet,
+Neumann, and Robin portions of the boundary.  It is left to the user
+to ensure that $\Gamma_D$, $\Gamma_N$, and $\Gamma_R$ are defined as
+non-overlapping portions of the boundary.</p>
+<h2 id="continuous-formulations">Continuous Formulations</h2>
+<h3 id="dirichlet-essential-boundary-conditions">Dirichlet (Essential) Boundary Conditions</h3>
+<p>In continuous formulations essential boundary conditions are set by
+modifying the linear system to require the degrees of freedom on the
+boundary to obtain specific values. This limits the types of
+constraints that can be imposed on fields. For example, $L^2$ fields
+have no degrees of freedom on the boundary of elements so essential
+BCs cannot be applied, H(Curl) (Nedelec) elements can only
+constrain the tangential components of a vector field, and H(Div)
+(Raviart-Thomas) elements can only constrain the normal
+component of a vector field.</p>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Essential BC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>$u = f$ on $\Gamma_D$</td>
+</tr>
+<tr>
+<td>H1$^d$</td>
+<td>$\vec{u} = \vec{f}$ on $\Gamma_D$</td>
+</tr>
+<tr>
+<td>ND</td>
+<td>$(\hat{n}\times\vec{u})\times\hat{n} = \vec{f}$ on $\Gamma_D$</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>$\hat{n}\cdot\vec{u} = f$ on $\Gamma_D$</td>
+</tr>
+</tbody>
+</table>
+<p>MFEM provides a convenience method, called <code>FormLinearSystem</code>, on the
+<code>[Par]BilinearForm</code> class which can prepare a linear system with these
+essential constraints.</p>
+<pre><code class="c++">// Set the Dirichlet values in the solution vector
+ParGridFunction u(&amp;fespace);
+u = 0.0;
+u.ProjectBdrCoefficient(dbcCoef, dbc_marker);
+
+// Prepare the source term in the right-hand-side
+ParLinearForm b(&amp;fespace);
+b.AddDomainIntegrator(new DomainLFIntegrator(rhsCoef));
+b.Assemble();
+
+// Prepare the bilinear form
+ParBilinearForm a(&amp;fespace);
+a.AddDomainIntegrator(new DiffusionIntegrator(matCoef));
+a.Assemble();
+
+// Determine the essential degrees of freedom corresponding to the set of
+// boundary attributes marked in dbc_marker
+Array&lt;int&gt; ess_tdof_list(0);
+fespace.GetEssentialTrueDofs(dbc_marker, ess_tdof_list);
+
+// Prepare the linear system with enforcement of the essential boundary
+// conditions
+OperatorPtr A;
+Vector B, X;
+a.FormLinearSystem(ess_tdof_list, u, b, A, X, B);
+</code></pre>
+
+<h3 id="natural-boundary-conditions">Natural Boundary Conditions</h3>
+<p>The so called "Natural Boundary Conditions" arise whenever weak
+derivatives occur in a PDE (see below for more on <a href="../fem_weak_form/">weak
+derivatives</a>).  Weak derivatives must be handled
+using integration by parts which introduces a boundary integral. If
+this boundary integral is ignored, its value is implicitly set to zero
+which creates an implicit constraint on the solution called a
+"natural boundary condition".</p>
+<table>
+<thead>
+<tr>
+<th>Continuous Operator</th>
+<th>Weak Operator</th>
+<th>Natural BC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$-\div(\lambda\grad u)$</td>
+<td>$(\lambda\grad u,\grad v)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u)=0$ on $\Gamma_0$</td>
+</tr>
+<tr>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\hat{n}\cross(\lambda\curl\vec{u})=0$ on $\Gamma_0$</td>
+</tr>
+<tr>
+<td>$-\grad(\lambda\div\vec{u})$</td>
+<td>$(\lambda\div\vec{u},\div\vec{v})$</td>
+<td>$\lambda\div\vec{u}=0$ on $\Gamma_0$</td>
+</tr>
+<tr>
+<td>$\div(\vec{\lambda}u)$</td>
+<td>$(-\vec{\lambda}u,\grad v)$</td>
+<td>$\hat{n}\cdot\vec{\lambda}u = 0$ on $\Gamma_0$</td>
+</tr>
+<tr>
+<td>$\curl(\lambda\vec{u})$</td>
+<td>$(\lambda\vec{u},\curl\vec{v})$</td>
+<td>$\hat{n}\cross(\lambda\vec{u})=0$ on $\Gamma_0$</td>
+</tr>
+<tr>
+<td>$-\div(\lambda\grad u) + \div(\vec{\beta}u)$</td>
+<td>$(\lambda\grad u - \vec{\beta}u,\grad v)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u-\vec{\beta}u)=0$ on $\Gamma_0$</td>
+</tr>
+</tbody>
+</table>
+<p>No additional implementation is necessary to impose natural boundary conditions.  Any
+portion of the boundary where a Dirichlet, Neumann, or Robin boundary
+condition has not been applied will receive a natural boundary
+condition by default.</p>
+<h3 id="neumann-boundary-conditions">Neumann Boundary Conditions</h3>
+<p>Neumann boundary conditions are closely related to natural boundary
+conditions.  Rather than ignoring the boundary integral we integrate a
+known function on the boundary which approximates the desired value of
+the boundary condition (often a involving a derivative of the field).
+The following table shows a variety of common operators and their
+related Neumann boundary condition.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Continuous Operator</th>
+<th>Neumann BC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(\lambda\grad u,\grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u)=f$ on $\Gamma_N$</td>
+</tr>
+<tr>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td>$\hat{n}\cross(\lambda\curl\vec{u})=\hat{n}\cross\vec{f}$ on $\Gamma_N$</td>
+</tr>
+<tr>
+<td>$(\lambda\div\vec{u},\div\vec{v})$</td>
+<td>$-\grad(\lambda\div\vec{u})$</td>
+<td>$\lambda\div\vec{u}=\hat{n}\cdot\vec{f}$ on $\Gamma_N$</td>
+</tr>
+<tr>
+<td>$(-\vec{\lambda}u,\grad v)$</td>
+<td>$\div(\vec{\lambda}u)$</td>
+<td>$\hat{n}\cdot\vec{\lambda}u = f$ on $\Gamma_N$</td>
+</tr>
+<tr>
+<td>$(\lambda\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\vec{u})$</td>
+<td>$\hat{n}\cross(\lambda\vec{u})=\hat{n}\cross\vec{f}$ on $\Gamma_N$</td>
+</tr>
+<tr>
+<td>$(\lambda\grad u - \vec{\beta}u,\grad v)$</td>
+<td>$-\div(\lambda\grad u) + \div(\vec{\beta}u)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u-\vec{\beta}u)=f$ on $\Gamma_N$</td>
+</tr>
+</tbody>
+</table>
+<p>To impose these boundary conditions in MFEM simply modify the
+right-hand side of your linear system by adding the appropriate
+boundary integral of either $f$ or $\vec{f}$.  For $H^1$ or $L^2$
+fields this can be accomplished by adding the <code>BoundaryLFIntegrator</code>
+with an appropriate coefficient for $f$ to a <code>[Par]LinearForm</code> object.</p>
+<p>Neumann boundary conditions can be added to the above example code by adding the following line before the call to <code>b.Assemble()</code>.</p>
+<pre><code class="c++">// Add Neumann BCs n.(matCoef Grad u) = nbcCoef on the boundary marked in
+// the nbc_marker array.
+b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
+</code></pre>
+
+<p>For H(Curl) fields this can be accomplished by adding the
+<code>VectorFEBoundaryTangentLFIntegrator</code> with an appropriate vector
+coefficient for $\vec{f}$ to a <code>[Par]LinearForm</code> object.  And
+finally, for H(Div) fields this can be accomplished by adding the
+<code>VectorFEBoundaryFluxLFIntegrator</code> with an appropriate scalar
+coefficient for $f = \hat{n}\cdot\vec{f}$ to a <code>[Par]LinearForm</code>
+object.  Other integrators may be appropriate if it is desirable to
+express the functions $\,f$ or $\vec{f}$ in other ways.</p>
+<h3 id="robin-boundary-conditions">Robin Boundary Conditions</h3>
+<p>Robin boundary conditions typically involve a linear function of the
+field and its normal derivative.  As such they also arise from weak
+derivatives and the boundary integrals they introduce to the system of
+equations.  Typical forms of the Robin boundary condition include the
+following.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Continuous Operator</th>
+<th>Robin BC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(\lambda\grad u,\grad v)$</td>
+<td>$-\div(\lambda\grad u)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u)+\gamma\,u=f$ on $\Gamma_R$</td>
+</tr>
+<tr>
+<td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
+<td>$\curl(\lambda\curl\vec{u})$</td>
+<td>$\hat{n}\cross(\lambda\curl\vec{u}+\gamma\vec{u})=\hat{n}\cross\vec{f}$ on $\Gamma_R$</td>
+</tr>
+<tr>
+<td>$(\lambda\div\vec{u},\div\vec{v})$</td>
+<td>$-\grad(\lambda\div\vec{u})$</td>
+<td>$\lambda\div\vec{u}+\gamma\,u=\hat{n}\cdot\vec{f}$ on $\Gamma_R$</td>
+</tr>
+<tr>
+<td>$(\lambda\grad u - \vec{\beta}u,\grad v)$</td>
+<td>$-\div(\lambda\grad u) + \div(\vec{\beta}u)$</td>
+<td>$\hat{n}\cdot(\lambda\grad u-\vec{\beta}u)+\gamma\,u=f$ on $\Gamma_R$</td>
+</tr>
+</tbody>
+</table>
+<p>Robin boundary conditions are applied in the same manner as Neumann
+boundary conditions except that one must also add a boundary integral
+to the <code>[Par]BilinearForm</code> object to account for the term involving
+$\gamma$.  For example, when solving for an $H^1$ field one should add
+a <code>MassIntegrator</code> with an appropriate scalar coefficient for
+$\gamma$.</p>
+<p>The implementation of a Robin boundary condition requires precisely
+the same change to the right-hand-side as the Neumann boundary
+condition as well as a new term in the bilinear form before <code>a.Assemble()</code>:</p>
+<pre><code class="c++">// Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
+// marked in the rbc_marker array.
+b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
+
+...
+
+// Add Robin BCs n.(matCoef grad u) + rbcACoef u = rbcBCoef on the boundary
+// marked in the rbc_marker array.
+a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
+</code></pre>
+
+<h2 id="discontinuous-galerkin-formulations">Discontinuous Galerkin Formulations</h2>
+<p>In the Discontinuous Galerkin (DG) formulation the
+<a href="#natural-boundary-conditions">Natural</a>,
+<a href="#neumann-boundary-conditions">Neumann</a>, and
+<a href="#robin-boundary-conditions">Robin</a> can be implemented in precisely
+the same manner as in the continuous case.  However, since DG basis
+functions have no degrees of freedom associated with the boundary,
+Dirichlet boundary conditions must be handled differently.</p>
+<pre><code class="c++">// Add the desired value for the Dirichlet constraint on the boundary
+// marked in the dbc_marker array.
+b.AddBdrFaceIntegrator(new DGDirichletLFIntegrator(dbcCoef, matCoef, sigma, kappa),
+                       dbc_marker);
+
+...
+
+// Add the n.Grad(u) boundary integral on the Dirichlet portion of the
+// boundary marked in the dbc_marker array.
+a.AddBdrFaceIntegrator(new DGDiffusionIntegrator(matCoef, sigma, kappa),
+                       dbc_marker);
+</code></pre>
+
+<p>Where <code>sigma</code> and <code>kappa</code> are parameters controlling the symmetry and
+interior penalty used in the DG diffusion formulation.  These two
+integrators work together to balance the natural boundary condition
+associated with the <code>DiffusionIntegrator</code> and to penalize solutions
+which differ from the desired Dirichlet value near the boundary.
+Similar pairs of integrators can be implemented to accommodate
+other PDEs.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#boundary-conditions">Boundary Conditions</a></li>
+        
+            <li><a href="#continuous-formulations">Continuous Formulations</a></li>
+        
+            <li><a href="#discontinuous-galerkin-formulations">Discontinuous Galerkin Formulations</a></li>
+        
+    
+    </ul>
+</div></div>
+
+            
+        </div>
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>
