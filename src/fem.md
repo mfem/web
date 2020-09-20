@@ -67,6 +67,6 @@ of approximating derivatives of non-differentiable functions.
 ### [Boundary Conditions](fem_bc.md)
 
 The types of available boundary conditions and how to apply them
-depend on the discretizations being used. This page will describe how
-to enforce various boundary conditions for certrain classes of
+depend on the discretizations being used. This page describes how
+to enforce various boundary conditions for certain classes of
 problems.

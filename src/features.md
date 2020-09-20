@@ -105,7 +105,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
  - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
  - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem,
- - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for Laplace.
+ - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 

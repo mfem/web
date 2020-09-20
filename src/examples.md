@@ -887,13 +887,15 @@ simple finite element discretization of the Laplace problem:
 $$
 -\Delta u = 0
 $$
-with a variety of boundary conditions. Specifically, we discretize
+with a variety of boundary conditions.
+
+Specifically, we discretize
 using a FE space of the specified order using a continuous or
 discontinuous space.  We then apply Dirichlet, Neumann (both
 homogeneous and inhomogeneous), Robin, and Periodic boundary
 conditions on different portions of a predefined mesh.
 
-| With boundary conditions:          |                      |
+| Boundary conditions:               |                      |
 |------------------------------------|----------------------|
 | $u = u_\{dbc}$                     | on $\Gamma_\{dbc}$   |
 | $\hat\{n}\cdot\nabla u = g_\{nbc}$ | on $\Gamma_\{nbc}$   |

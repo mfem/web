@@ -25,7 +25,7 @@ differential equation:
 
 $$L(u) = f\mbox\{ on }\Omega$$
 
-We hope to approximate the solution using a linear combination of
+We approximate the solution using a linear combination of
 finite element basis functions which we'll call $\varphi_i$.
 
 $$u\approx u_h\equiv\sum_i\alpha_i\varphi_i(\vec\{x})$$
@@ -67,7 +67,7 @@ A "weak derivative" is a generalization of the notion of a derivative
 for integrable functions whose derivatives do not exist in the strong
 sense. When using the finite element method weak derivatives are
 required whenever terms in a PDE require derivatives of discontinuous
-or otherwise undifferentiable quantities. Finite element basis
+or otherwise non-differentiable quantities. Finite element basis
 functions are typically not smooth functions. Even if they happen to
 be continuous their derivatives are often at least partially
 discontinuous. Also, coefficient functions can be discontinuous but,

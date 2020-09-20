@@ -19,7 +19,7 @@ attributes split the boundary into a group of disjoint sets.  MFEM
 allows the user to define boundary conditions on a subset of boundary
 attributes.
 
-Typically mixed boundary conditions are defined on disjoint portions
+Typically mixed boundary conditions are imposed on disjoint portions
 of the boundary defined as:
 
 | Symbol            | Description                       |
@@ -36,18 +36,18 @@ usually described by "marker arrays".  A marker array is an array of
 integers containing zeros and ones with a length equal to the largest
 boundary attribute index.
 
-```
-   // Assume we start with an array containing boundary attribute numbers
-   // stored in bdr_attr.
-   //
-   // Prepare a marker array from a set of attributes
-   Array<int> bdr_marker(pmesh.bdr_attributes.Max());
-   bdr_marker = 0;
+```c++
+// Assume we start with an array containing boundary attribute numbers
+// stored in bdr_attr.
+//
+// Prepare a marker array from a set of attributes
+Array<int> bdr_marker(pmesh.bdr_attributes.Max());
+bdr_marker = 0;
 
-   for (int i=0; i<bdr_attr.Size(); i++)
-   {
-      bdr_marker[bdr_attr[i]-1] = 1;
-   }
+for (int i=0; i<bdr_attr.Size(); i++)
+{
+   bdr_marker[bdr_attr[i]-1] = 1;
+}
 ```
 
 Separate marker arrays of this type can be prepared for the Dirichlet,
@@ -64,9 +64,9 @@ modifying the linear system to require the degrees of freedom on the
 boundary to obtain specific values. This limits the types of
 constraints that can be imposed on fields. For example, $L^2$ fields
 have no degrees of freedom on the boundary of elements so essential
-BCs cannot be applied, H(Curl) (a.k.a. Nedelec) elements can only
+BCs cannot be applied, H(Curl) (Nedelec) elements can only
 constrain the tangential components of a vector field, and H(Div)
-(a.k.a. Raviart-Thomas) elements can only constrain the normal
+(Raviart-Thomas) elements can only constrain the normal
 component of a vector field.
 
 | Space   | Essential BC                                                      |
@@ -80,43 +80,43 @@ MFEM provides a convenience method, called `FormLinearSystem`, on the
 `[Par]BilinearForm` class which can prepare a linear system with these
 essential constraints.
 
-```
-   // Set the Dirchlet values in the solution vector
-   ParGridFunction u(&fespace);
-   u = 0.0;
-   u.ProjectBdrCoefficient(dbcCoef, dbc_marker);
+```c++
+// Set the Dirichlet values in the solution vector
+ParGridFunction u(&fespace);
+u = 0.0;
+u.ProjectBdrCoefficient(dbcCoef, dbc_marker);
 
-   // Prepare the source term in the right-hand-side
-   ParLinearForm b(&fespace);
-   b.AddDomainIntegrator(new DomainLFIntegrator(rhsCoef));
-   b.Assemble();
+// Prepare the source term in the right-hand-side
+ParLinearForm b(&fespace);
+b.AddDomainIntegrator(new DomainLFIntegrator(rhsCoef));
+b.Assemble();
 
-   // Prepare the bilinear form
-   ParBilinearForm a(&fespace);
-   a.AddDomainIntegrator(new DiffusionIntegrator(matCoef));
-   a.Assemble();
+// Prepare the bilinear form
+ParBilinearForm a(&fespace);
+a.AddDomainIntegrator(new DiffusionIntegrator(matCoef));
+a.Assemble();
 
-   // Determine the essential degrees of freedom corresponding to the set of
-   // boundary attributes marked in dbc_marker
-   Array<int> ess_tdof_list(0);
-   fespace.GetEssentialTrueDofs(dbc_marker, ess_tdof_list);
+// Determine the essential degrees of freedom corresponding to the set of
+// boundary attributes marked in dbc_marker
+Array<int> ess_tdof_list(0);
+fespace.GetEssentialTrueDofs(dbc_marker, ess_tdof_list);
 
-   // Prepare the linear system with enforcement of the essential boundary
-   // conditions
-   OperatorPtr A;
-   Vector B, X;
-   a.FormLinearSystem(ess_tdof_list, u, b, A, X, B);
+// Prepare the linear system with enforcement of the essential boundary
+// conditions
+OperatorPtr A;
+Vector B, X;
+a.FormLinearSystem(ess_tdof_list, u, b, A, X, B);
 ```
 
 ### Natural Boundary Conditions
 
-So called "Natural Boundary Conditions" can arise whenever weak
+The so called "Natural Boundary Conditions" arise whenever weak
 derivatives occur in a PDE (see below for more on [weak
 derivatives](fem_weak_form.md)).  Weak derivatives must be handled
 using integration by parts which introduces a boundary integral. If
-this boundary integral is ignored its value is implicitly set to zero
-which creates an implicit constraint, called a "natural boundary
-condition", on the solution.
+this boundary integral is ignored, its value is implicitly set to zero
+which creates an implicit constraint on the solution called a
+"natural boundary condition".
 
 | Continuous Operator | Weak Operator | Natural BC |
 |---------------------|---------------|------------|
@@ -127,7 +127,7 @@ condition", on the solution.
 | $\curl(\lambda\vec\{u})$      |$(\lambda\vec\{u},\curl\vec\{v})$       | $\hat\{n}\cross(\lambda\vec\{u})=0$ on $\Gamma_0$ |
 | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=0$ on $\Gamma_0$   |
 
-No implementation is necessary for natural boundary conditions.  Any
+No additional implementation is necessary to impose natural boundary conditions.  Any
 portion of the boundary where a Dirichlet, Neumann, or Robin boundary
 condition has not been applied will receive a natural boundary
 condition by default.
@@ -157,10 +157,10 @@ fields this can be accomplished by adding the `BoundaryLFIntegrator`
 with an appropriate coefficient for $f$ to a `[Par]LinearForm` object.
 
 Neumann boundary conditions can be added to the above example code by adding the following line before the call to `b.Assemble()`.
-```
-   // Add Neumann BCs n.(matCoef Grad u) = nbcCoef on the boundary marked in
-   // the nbc_marker array.
-   b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
+```c++
+// Add Neumann BCs n.(matCoef Grad u) = nbcCoef on the boundary marked in
+// the nbc_marker array.
+b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
 ```
 
 For H(Curl) fields this can be accomplished by adding the
@@ -198,16 +198,16 @@ The implementation of a Robin boundary condition requires precisely
 the same change to the right-hand-side as the Neumann boundary
 condition as well as a new term in the bilinear form before `a.Assemble()`:
 
-```
-   // Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
-   // marked in the rbc_marker array.
-   b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
+```c++
+// Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
+// marked in the rbc_marker array.
+b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
 
-   ...
+...
 
-   // Add Robin BCs n.(matCoef grad u) + rbcACoef u = rbcBCoef on the boundary
-   // marked in the rbc_marker array.
-   a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
+// Add Robin BCs n.(matCoef grad u) + rbcACoef u = rbcBCoef on the boundary
+// marked in the rbc_marker array.
+a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
 ```
 
 ## Discontinuous Galerkin Formulations
@@ -218,21 +218,20 @@ In the Discontinuous Galerkin (DG) formulation the
 [Robin](#robin-boundary-conditions) can be implemented in precisely
 the same manner as in the continuous case.  However, since DG basis
 functions have no degrees of freedom associated with the boundary,
-Dirichlet boundary conditions must be handled differently.  
+Dirichlet boundary conditions must be handled differently.
 
-```
-   // Add the desired value for the Dirichlet constraint on the boundary
-   // marked in the dbc_marker array.
-   b.AddBdrFaceIntegrator(new DGDirichletLFIntegrator(dbcCoef, matCoef,
-                                                      sigma, kappa),	
-                          dbc_marker);
+```c++
+// Add the desired value for the Dirichlet constraint on the boundary
+// marked in the dbc_marker array.
+b.AddBdrFaceIntegrator(new DGDirichletLFIntegrator(dbcCoef, matCoef, sigma, kappa),
+                       dbc_marker);
 
-   ...
+...
 
-   // Add the n.Grad(u) boundary integral on the Dirichlet portion of the
-   // boundary marked in the dbc_marker array.
-   a.AddBdrFaceIntegrator(new DGDiffusionIntegrator(matCoef, sigma, kappa),
-                          dbc_marker);
+// Add the n.Grad(u) boundary integral on the Dirichlet portion of the
+// boundary marked in the dbc_marker array.
+a.AddBdrFaceIntegrator(new DGDiffusionIntegrator(matCoef, sigma, kappa),
+                       dbc_marker);
 ```
 
 Where `sigma` and `kappa` are parameters controlling the symmetry and
@@ -240,7 +239,7 @@ interior penalty used in the DG diffusion formulation.  These two
 integrators work together to balance the natural boundary condition
 associated with the `DiffusionIntegrator` and to penalize solutions
 which differ from the desired Dirichlet value near the boundary.
-Similar pairs of integrators would need to be written to accommodate
+Similar pairs of integrators can be implemented to accommodate
 other PDEs.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
