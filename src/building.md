@@ -170,3 +170,24 @@ Build the parallel version of MFEM, setting the options `MFEM_USE_METIS_5` and
 ~> cd mfem-3.4
 ~/mfem-3.4> make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
 ```
+
+## Cuda version of MFEM
+Build the serial Cuda version of MFEM:
+```sh
+~/mfem> make cuda -j
+```
+
+Build the parallel Cuda version of MFEM:
+```sh
+~/mfem> make pcuda -j
+```
+
+It can be useful to specify the [compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag, corresponding to your NVidia GPU:
+Build the parallel Cuda version of MFEM for `sm_70` (NVidia V100):
+```sh
+~/mfem> make pcuda CUDA_ARCH=sm_70 -j
+```
+
+## Hip version of MFEM
+
+## Installing MFEM with Spack
