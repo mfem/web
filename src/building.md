@@ -182,12 +182,21 @@ Build the parallel Cuda version of MFEM:
 ~/mfem> make pcuda -j
 ```
 
-It can be useful to specify the [compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag, corresponding to your NVidia GPU:
+It can be useful to specify the [compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag, corresponding to your NVidia GPU.
 Build the parallel Cuda version of MFEM for `sm_70` (NVidia V100):
 ```sh
 ~/mfem> make pcuda CUDA_ARCH=sm_70 -j
 ```
 
 ## Hip version of MFEM
+Build the serial Hip version of MFEM:
+```sh
+~/mfem> make hip -j
+```
+
+Build the parallel Hip version of MFEM:
+```sh
+~/mfem> make phip -j
+```
 
 ## Installing MFEM with Spack
