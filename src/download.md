@@ -15,7 +15,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 ## All Releases
 
- **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
+ **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](https://github.com/AlDanial/cloc)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
  [mfem-4.1.tgz](https://bit.ly/mfem-4-1) | v4.1 | Mar 2020 | 7.9M | 209K | |
  [mfem-4.0.tgz](https://bit.ly/mfem-4-0) | v4.0 | May 2019 | 5.2M | 167K | *GPU support* |
@@ -32,7 +32,3 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
  [mfem-v1.2.tgz](http://goo.gl/GQit7Z) | v1.2 | Apr 2011 | 240K | 28K | *MPI parallelism based on hypre* |
  [mfem-v1.1.tgz](http://goo.gl/VJ7WB8) | v1.1 | Sep 2010 | 166K | 23K |  |
  [mfem-v1.0.tgz](http://goo.gl/gY141R) | v1.0 | Jul 2010 | 160K | 22K | *initial release* |
-
-<!-- MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. -->
-
-

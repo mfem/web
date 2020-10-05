@@ -13,7 +13,7 @@ and True DoF (tdofs) vectors**</center>
 
 The finite element method is based on the notion that a smooth function can be
 approximated by a sum of piece-wise smooth functions (typically piece-wise
-polynomilas) called *basis functions*:
+polynomials) called *basis functions*:
 $$f(\vec{x})\approx\sum_i f_i \phi_i(\vec{x}) \label{expan}$$
 The support of an individual basis function, $\;\phi_i(\vec{x})$, will either be
 a single zone or a collection of zones that share a common vertex, edge, or

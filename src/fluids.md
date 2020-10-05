@@ -32,14 +32,14 @@ method.
 Applying a BDF method to the initial equation using the introduced forms yields
 
 \begin{align}
-    \sum_{j=0}^k \frac{b_j}{\Delta t} u^{n+1-j} = 
+    \sum_{j=0}^k \frac{b_j}{\Delta t} u^{n+1-j} =
     -\nabla p^{n+1} + L(u^{n+1}) + N^\*(u^{n+1}) + f^{n+1}.
 \end{align}
 
 Collecting all known quantities at a given time with
 
 \begin{align}
-    F^\*(u^n) = -\sum_{j=1}^k \frac{b_j}{\Delta t} u^{n+1-j} 
+    F^\*(u^n) = -\sum_{j=1}^k \frac{b_j}{\Delta t} u^{n+1-j}
     + N^\*(u^{n+1}) + f^{n+1}
 \end{align}
 
@@ -71,11 +71,11 @@ divergence on both sides
 which is closed by the Neumann type boundary condition
 
 \begin{align}
-    \nabla^2 p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} \cdot \hat{n} 
+    \nabla^2 p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} \cdot \hat{n}
     + \nabla \cdot (L_{\times}^\*(u^{n+1} + F^\*(u^{n+1})) \cdot \hat{n}.
 \end{align}
 
-We will refer to this as the pressure poisson equation in the following. The
+We will refer to this as the pressure Poisson equation in the following. The
 last step is a Helmholtz type equation to solve for the implicit (viscous)
 velocity part which is also derived from \eqref{eq:bdf_short}. Consider
 
@@ -140,7 +140,7 @@ The choice of solvers and preconditioners for \eqref{eq:prespois} and
 \eqref{eq:hlm} are essential for the performance and robustness of the
 simulation.
 
-The pressure poisson equation \eqref{eq:prespois} is solved using the CG Krylov
+The pressure Poisson equation \eqref{eq:prespois} is solved using the CG Krylov
 method in combination with the low-order refined preconditioning technique
 coupled with AMG (c.f. Franco et al (2020)[^2]).
 
@@ -150,7 +150,7 @@ derivative term in \eqref{eq:hlm} is dominating and a CG Krylov method
 preconditioned with Jacobi is sufficient.
 
 Depending on the problem, this results in the majority of time per time step is
-spent in the pressure poisson solve.
+spent in the pressure Poisson solve.
 
 At the moment there is no interface to change the default options for the
 solvers, but a user can easily modify them in the code itself.

@@ -6,6 +6,7 @@ markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
 - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
 - footnotes
+- attr_list  # Allow us to add link attributes
 
 repo_url: https://github.com/mfem/mfem
 remote_name: origin
@@ -24,6 +25,8 @@ nav:
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
   - '_Linear Interpolators': lininterp.md
+  - '_Weak Formulations': fem_weak_form.md
+  - '_Boundary Conditions': fem_bc.md
   - 'Electromagnetics': electromagnetics.md
   - 'Fluids': fluids.md
   - 'Meshing': meshing.md
