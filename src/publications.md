@@ -8,7 +8,7 @@
 ## Selected Publications
 
 #### 2020
-  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [hr-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), in review, **2020**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
+  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), in review, **2020**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
   1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), in review, **2020**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
   1. D. Kuzmin and M. Quezada de Luna, [Entropy conservation property and entropy stabilization of high-order continuous Galerkin approximations to scalar conservation laws](), in review, **2020**. Also available as [arXiv:2005.08788](https://arxiv.org/abs/2005.08788).
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), *SIAM Journal on Scientific Computing*, in press, **2020**.
