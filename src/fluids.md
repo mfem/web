@@ -181,7 +181,7 @@ conservative limit).
 - **How do I compute steady state solutions with this?** There is no
  acceleration to steady state algorithm implemented right now. Your only option
  is to run the transient case until you reach a steady state criterion. (See
- adaptive time stepping problematic).
+ adaptive time stepping FAQ above).
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
