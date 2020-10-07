@@ -18,7 +18,7 @@ equal order finite element discretization on quadrilateral or hexahedral
 elements of high polynomial order. The method describes an implicit-explicit
 time-integration scheme for the viscous and convective terms respectively.
 Introducing the following notation for the linear term $L(u) = \frac{1}{Re}
-\nabla u$ and the nonlinear term $N(u) = -(u \cdot \nabla) u$ and their
+\nabla^2 u$ and the nonlinear term $N(u) = -(u \cdot \nabla) u$ and their
 time-extrapolated forms
 
 \begin{align}
@@ -29,7 +29,8 @@ time-extrapolated forms
 where $a_j$ are coefficients from the corresponding explicit time integration
 method.
 
-Applying a BDF method to the initial equation using the introduced forms yields
+Applying a BDF method with coefficients $b_j$ to the initial equation using the
+introduced forms yields
 
 \begin{align}
     \sum_{j=0}^k \frac{b_j}{\Delta t} u^{n+1-j} =
@@ -71,8 +72,8 @@ divergence on both sides
 which is closed by the Neumann type boundary condition
 
 \begin{align}
-    \nabla^2 p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} \cdot \hat{n}
-    + \nabla \cdot (L_{\times}^\*(u^{n+1} + F^\*(u^{n+1})) \cdot \hat{n}.
+    \nabla p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} u^{n+1} \cdot \hat{n}
+    + (L_{\times}^\*(u^{n+1} + F^\*(u^{n+1})) \cdot \hat{n}.
 \end{align}
 
 We will refer to this as the pressure Poisson equation in the following. The
@@ -127,8 +128,10 @@ nature of the $H^1$ finite-element discretization, the terms arise naturally in
 \eqref{eq:prespois} and \eqref{eq:hlm} resulting in
 
 \begin{align}
-    \nu \nabla u \cdot \hat{n} - p \cdot \hat{n} = 0.
+    \nu \nabla u \cdot \hat{n} - p \mathbb{I} \cdot \hat{n} = 0,
 \end{align}
+
+where $\mathbb{I}$ represents the identity tensor.
 
 If there is no other boundary condition applied to a certain attribute, this
 boundary condition is applied automatically (not through modification but rather
@@ -149,8 +152,8 @@ method used is CFL (and therefore time step) bound. As a result the time
 derivative term in \eqref{eq:hlm} is dominating and a CG Krylov method
 preconditioned with Jacobi is sufficient.
 
-Depending on the problem, this results in the majority of time per time step is
-spent in the pressure Poisson solve.
+Depending on the problem, this results in the majority of time per time step
+being spent in the pressure Poisson solve.
 
 At the moment there is no interface to change the default options for the
 solvers, but a user can easily modify them in the code itself.
