@@ -17,12 +17,11 @@ the method presented in Tomboulides (1997)[^1] is used, which is based on an
 equal order finite element discretization on quadrilateral or hexahedral
 elements of high polynomial order. The method describes an implicit-explicit
 time-integration scheme for the viscous and convective terms respectively.
-Introducing the following notation for the linear term $L(u) = \frac{1}{Re}
-\nabla^2 u$ and the nonlinear term $N(u) = -(u \cdot \nabla) u$ and their
-time-extrapolated forms
+Introducing the following notation the nonlinear term $N(u) = -(u \cdot \nabla)
+u$ and the time-extrapolated form
 
 \begin{align}
-    L^\*(u^{n+1}) = \sum_{j=1}^k a_j L(u^{n+1-j}) \\\\
+    \label{eq:Next}
     N^\*(u^{n+1}) = \sum_{j=1}^k a_j N(u^{n+1-j})
 \end{align}
 
@@ -59,8 +58,12 @@ by
 \end{align}
 
 which is used to weakly enforce incompressibility by setting the first term to
-zero.
+zero. Like in \eqref{eq:Next} we introduce the time extrapolated term
 
+\begin{align}
+    L^\*\_{\times}(u) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
+\end{align}
+ 
 To compute the pressure we rearrange \eqref{eq:bdf_short} and take the
 divergence on both sides
 
