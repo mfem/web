@@ -63,7 +63,7 @@ zero. Like in \eqref{eq:Next} we introduce the time extrapolated term
 \begin{align}
     L^\*\_{\times}(u) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
 \end{align}
- 
+
 To compute the pressure we rearrange \eqref{eq:bdf_short} and take the
 divergence on both sides
 
