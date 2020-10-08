@@ -79,6 +79,7 @@ For older releases see the [download](download.md) section.
 
 [Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
+┊ [Fluids](fluids.md)
 ┊ [Meshing](meshing.md)
 ┊ [Performance](performance.md)
 ┊ [Tools](tools.md)

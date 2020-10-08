@@ -5,6 +5,7 @@ docs_dir: 'src'
 markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
 - fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
+- footnotes
 - attr_list  # Allow us to add link attributes
 
 repo_url: https://github.com/mfem/mfem
@@ -27,6 +28,7 @@ nav:
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md
   - 'Electromagnetics': electromagnetics.md
+  - 'Fluids': fluids.md
   - 'Meshing': meshing.md
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
