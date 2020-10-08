@@ -123,6 +123,12 @@
                     
                         
                             <li >
+                                 <a href="../fluids/">Fluids</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../meshing/">Meshing</a>
                             </li>
                         
@@ -221,6 +227,8 @@
         
             <li><a href="#linear-form-integrators">Linear Form Integrators</a></li>
         
+            <li><a href="#nonlinear-form-integrators">Nonlinear Form Integrators</a></li>
+        
             <li><a href="#linear-interpolators">Linear Interpolators</a></li>
         
             <li><a href="#weak-formulations">Weak Formulations</a></li>
@@ -272,6 +280,10 @@ function with a given source function over individual mesh elements (or
 sometimes over edges or faces).  The <code>LinearForm</code> class adds several
 <code>LinearFormIntegrator</code>s together to build the global right-hand side for the
 finite element linear system.</p>
+<h3 id="nonlinear-form-integrators"><a href="../nonlininteg/">Nonlinear Form Integrators</a></h3>
+<p>Nonlinear form integrators are used to express the local action of a general
+nonlinear finite element operator. In addition, they may provide the capability
+to assemble the local gradient operator and to compute the local energy.</p>
 <h3 id="linear-interpolators"><a href="../lininterp/">Linear Interpolators</a></h3>
 <p>Unlike Bilinear and Linear forms, Linear Interpolators do not perform
 integrations, but project one basis function (or a
@@ -299,6 +311,8 @@ problems.</p></div>
             <li><a href="#bilinear-form-integrators">Bilinear Form Integrators</a></li>
         
             <li><a href="#linear-form-integrators">Linear Form Integrators</a></li>
+        
+            <li><a href="#nonlinear-form-integrators">Nonlinear Form Integrators</a></li>
         
             <li><a href="#linear-interpolators">Linear Interpolators</a></li>
         
