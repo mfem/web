@@ -8,14 +8,17 @@
 ## Selected Publications
 
 #### 2020
+  1. W. Pazner, Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), in review, **2020**.
+  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), in review, **2020**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
   1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), in review, **2020**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
+  1. W. Pazner, [Sparse invariant domain preserving discontinuous Galerkin methods with subcell convex limiting](https://arxiv.org/abs/2004.08503), in review, **2020**.
   1. D. Kuzmin and M. Quezada de Luna, [Entropy conservation property and entropy stabilization of high-order continuous Galerkin approximations to scalar conservation laws](), in review, **2020**. Also available as [arXiv:2005.08788](https://arxiv.org/abs/2005.08788).
-  1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), in review, **2020**.
+  1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), *SIAM Journal on Scientific Computing*, in press, **2020**.
   1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://arxiv.org/abs/2001.09196), *Nuclear Science and Engineering*, to appear, **2020**.
-  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), *SIAM Journal on Scientific Computing*, to appear, **2020**.
+  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), *SIAM Journal on Scientific Computing*, in press, **2020**.
   1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://doi.org/10.1016/j.camwa.2020.06.009), *Computers & Mathematics with Applications*, in press, **2020**. Also available as [arXiv:1911.09220](http://arxiv.org/abs/1911.09220).
   1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *SIAM Journal on Scientific Computing*, in press, **2020**.
-  1. W. Pazner, [Efficient low-order refined preconditioners for high-order matrix-free continuous and discontinuous Galerkin methods](https://arxiv.org/abs/1908.07071), *SIAM Journal on Scientific Computing*, in press, **2020**.
+  1. W. Pazner, [Efficient low-order refined preconditioners for high-order matrix-free continuous and discontinuous Galerkin methods](https://doi.org/10.1137/19M1282052), *SIAM Journal on Scientific Computing*, 42(5), pp. A3055-A3083, **2020**.
   1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of SN Transport](https://arxiv.org/abs/1910.02918), *Journal of Computational Physics*, (419) 109696, **2020**.
   1. T. L. Horvath and S. Rhebergen, [An exactly mass conserving space-time embedded-hybridized discontinuous Galerkin method for the Navier-Stokes equations on moving domains](https://doi.org/10.1016/j.jcp.2020.109577), *Journal of Computational Physics*, (417) 109577, **2020**.
   1. S. Rhebergen and G. N. Wells, [An embedded-hybridized discontinuous Galerkin finite element method for the Stokes equations](https://doi.org/10.1016/j.cma.2019.112619), *Computer Methods in Applied Mechanics and Engineering*, (358) 112619, **2020**.
