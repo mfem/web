@@ -51,8 +51,8 @@ finite element linear system.
 ### [Nonlinear Form Integrators](nonlininteg.md)
 
 Nonlinear form integrators are used to express the local action of a general
-nonlinear finite element operator. In addition it may provide the capability to
-assemble the local gradient operator and to compute the local energy.
+nonlinear finite element operator. In addition, they may provide the capability
+to assemble the local gradient operator and to compute the local energy.
 
 ### [Linear Interpolators](lininterp.md)
 
