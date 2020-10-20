@@ -86,6 +86,7 @@ New users should start by examining the [example codes](examples.md).
 
 We also recommend using [GLVis](http://glvis.org) for visualization.
 
+[GPU tricks and tips](gpu-tips-n-tricks.md)
 
 ## Contact
 
