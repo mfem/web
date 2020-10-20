@@ -1,16 +1,17 @@
 # MFEM device handling:
 MFEM relies mainly on two features for running algorithms on devices such as GPUs:
+
 - The memory manager, handles transparently moving data between host (CPU) and device (GPU for instance),
-- `MFEM_FORALL` allows to abstract `for` loops to parallelize on an arbitrary device.
+- `MFEM_FORALL` allows to abstract `for` loops to parallelize transparently on an arbitrary device.
 
 ## The memory manager
 In order to make as transparent as possible the use of memory on host, or on device, MFEM relies on a memory manager.
 Instead of storing a pointer of type `T*`, each object that can be accessed on a device contains `Memory<T>` objects.
-The `Memory<T>` objects handle host and device pointers, memory allocations, and data synchronization between host and device.
+The `Memory<T>` objects handle host and device pointers, memory allocations, and data synchronizations between host and device.
 
 To get the pointer `T*` from a `Memory<T>` object, one has to use the `Read()`, `Write()`, or `ReadWrite()` methods.
 
--  `Read()` returns a `const T*` pointer, and should be use when the data will only be read,
+-  `Read()` returns a `const T*` pointer, and should be used when the data will only be read,
 -  `Write()` returns a `T*` pointer, and should be used when writing data **without** using any previously contained data,
 -  `ReadWrite()` returns `T*` pointer, and should be used when read and write access to the pointer are required.
 
@@ -21,7 +22,8 @@ The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if 
 
 Sometimes, it is necessary to access data on host regardless, in this situation the `HostRead()`, `HostWrite()`, and `HostReadWrite()` methods should be used.
 
-`Vector`'s and `Array<T>`'s data can also directly be accessed with these functions.
+In practice, developers rarely have to manipulate `Memory<T>` objects, instead their data are stored using `Vector` and `Array<T>`.
+`Vector` and `Array<T>` data pointers can be accessed with the same methods as `Memory<T>`.
 ```c++
 Vector v;
 v.UseDevice(true);
@@ -54,8 +56,8 @@ In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block o
 
 ## Compile in debug mode when developping for devices:
 The memory manager performs checks that catches most of the missuses of the memory on host or device.
-If using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `mfem::mfem_error` .
-The code will break as soon as it reaches this point and then you can backtrace from here to see what went wrong and where.
+If using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `b mfem::mfem_error` .
+The code will break as soon as it reaches this point and then you can backtrace `bt` from here to see what went wrong and where.
 
 ## Forcing synchronization with the host or the device:
 It is sometimes needed to synchronize data between host and device.
@@ -63,17 +65,17 @@ In order to make sure that the host's data are synchronized one should use `Host
 similarly to ensure synchronized data on the device one should use `Read()`.
 
 ## Warning about `GetData()`:
-Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer wihtout synchronazing the data.
+Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer wihtout synchronizing the data.
 
 ## Tracking data movements and allocations
-Defining the `MFEM_TRACK_CUDA_MEM` macro while building can help you see when data is transferred, allocated, and etc.
+Defining the `MFEM_TRACK_CUDA_MEM` macro while building can help you see when data is transferred, allocated, etc.
 If you see a lot of data movement between host and device that’s a good indication that you’re running a lot of host or device kernels that are making use of that data.
 You want to avoid this at all costs. Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
 Avoid mallocing memory on the GPU within frequently called kernels. CUDA malloc calls are slow and can hinder performance.
 If you really need to do such operations think of making use of a memory pool (e.g. Umpire) that way the mallocs are much cheaper on the GPU.
 
 ## The `UseDevice(bool)` function
-If you know you’re going to use your `mfem::Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the object.
+If you know you’re going to use your `Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the object.
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, the first one just returns a boolean that tells you whether the object should be on the device or not.
 
 ## `MakeRef()` vector does not see the same valid host/device data as the base vector.
@@ -107,10 +109,18 @@ Ideally, "base" Vectors that will be modified/accessed on device through aliases
 The `MFEM_FORALL` relies on lambda capture, one issue that comes up is with lambda captures for `constexpr` variables in `MFEM_FORALL` on MSVC.
 In particular according to the standard, `constexpr` variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors like:
+
 `error C2131: expression did not evaluate to a constant`
 
 A simple fix for this error is to declare the `constexpr` variable as `static constexpr`.
-Similar problems and workarounds are discussed here: https://stackoverflow.com/questions/55136414
+```c++
+static constexpr P = ...; // omitting the static would result in an error on MSVC
+MFEM_FORALL(I,N,
+{
+  double my_data[P];
+});
+```
+Similar problems and workarounds are discussed [here](https://stackoverflow.com/questions/55136414).
 
 # Achieving high performance on GPU
 
