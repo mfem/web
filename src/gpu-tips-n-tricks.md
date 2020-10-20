@@ -1,6 +1,6 @@
 # MFEM device handling:
-MFEM relies mainly on two things for running algorithms on devices such as GPUs:
-- The memory manager, handles transparently moving data between host (CPU) and device (GPU for instance)
+MFEM relies mainly on two features for running algorithms on devices such as GPUs:
+- The memory manager, handles transparently moving data between host (CPU) and device (GPU for instance),
 - `MFEM_FORALL` allows to abstract `for` loops to parallelize on an arbitrary device.
 
 ## The memory manager
@@ -8,8 +8,8 @@ In order to make as transparent as possible the use of memory on host, or on dev
 Instead of storing a pointer of type `T*`, each object that can be accessed on a device contains `Memory<T>` objects.
 
 To get the pointer `T*` from a `Memory<T>` object, one has to use `Read()`, `Write()`, or `ReadWrite()`.
-- `Read()` returns a `const T*` pointer, and should be use when the data will only be read.
-- `Write()` returns a `T*` pointer, and should be used when writing data **without** using any previously contained data.
+- `Read()` returns a `const T*` pointer, and should be use when the data will only be read,
+- `Write()` returns a `T*` pointer, and should be used when writing data **without** using any previously contained data,
 - `ReadWrite()` returns `T*` pointer, and should be used when read and write access to the pointer are required.
 `Read()`, `Write()`, and `ReadWrite()` are taking care automatically and completely transparently of data movement between host and device.
 
@@ -19,7 +19,7 @@ A convenient class, `DeviceTensor<N,T>` is the only class that can be moved auto
 
 ### Compile in debug mode when developping for devices:
 The memory manager performs checks that catches most of the missuses of the memory on host or device.
-If using device debug, if your code fails you can run gdb and set a breakpoint at mfem::mfem_error .
+If using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `mfem::mfem_error` .
 The code will break as soon as it reaches this point and then you can backtrace from here to see what went wrong and where.
 
 ### Forcing synchronization with the host or the device:
@@ -42,13 +42,18 @@ If you know you’re going to use your `mfem::Vector` like object on the GPU go 
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, it just returns a boolean that tells you whether the object should be on the device or not.
 
 ### `MakeRef()` vector does not see the same valid host/device data as the base vector.
-There is no easy way to keep the big "base" Vector (v in your example) and the "alias" sub-Vector (w in your example) synchronized when they are being moved/copied between host and device. Therefore such synchronizations need to be done "manually" using the methods Vector::SyncMemory and Vector::SyncAliasMemory.
+There is no easy way to keep the big "base" `Vector` (`v` in your example) and the "alias" sub-Vector (`w` in your example) synchronized when they are being moved/copied between host and device.
+Therefore such synchronizations need to be done "manually" using the methods `Vector::SyncMemory` and `Vector::SyncAliasMemory`.
 
-Basically the issue is that the Memory objects (inside the Vectors) do not know about the other version, so they cannot update the validity flags (the host and device validity flags indicate which of the pointers has valid data) of the other Vector. Also such update may not make sense if you just moved the sub-Vector.
+Basically the issue is that the Memory objects (inside the `Vector`s) do not know about the other version, so they cannot update the validity flags (the host and device validity flags indicate which of the pointers has valid data) of the other `Vector`.
+Also such update may not make sense if you just moved the sub-`Vector`.
 
-In your example above, after you move the "base" Vector v to host, you need to "inform" the "alias" w that the validity flags of its base have been changed. This is done by calling `w.SyncMemory(v)` which simply copies the validity flags from `v` to `w` -- there are no host-device memory transfers involved.
+In your example above, after you move the "base" `Vector v` to host, you need to "inform" the "alias" `w `that the validity flags of its base have been changed.
+This is done by calling `w.SyncMemory(v)` which simply copies the validity flags from `v` to `w` -- there are no host-device memory transfers involved.
 
-One the other hand, if in your example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`. In this particular case, the call will move the sub-Vector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`. This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
+One the other hand, if in your example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
+In this particular case, the call will move the sub-Vector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`.
+This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
 
 Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the validity flags of `v`, the difference is where the real data is before the call -- in the first case the real data is in `v` and in the second, it is in `w`.
 
@@ -92,7 +97,7 @@ However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors lik
 A simple fix for this error is to declare the `constexpr` variable as `static constexpr`.
 Similar problems and workarounds are discussed here: https://stackoverflow.com/questions/55136414
 
-# Achieving performance on GPU
+# Achieving high performance on GPU
 
 Yohann:
 roofline model: https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf
