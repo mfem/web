@@ -17,12 +17,12 @@ To get the pointer `T*` from a `Memory<T>` object, one has to use the `Read()`, 
 
 `Read()`, `Write()`, and `ReadWrite()` are taking care automatically and completely transparently of data movements between host and device.
 
-The method `void UseDevice(bool)` specifies if a `Memory<T>` object should be used on host or on device.
+The method `void UseDevice(bool)` specifies if a `Memory<T>` object is intended for computation on host or on device.
 The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if using the device has been set to `true` with `UseDevice`, by default it is `false` and will return a host pointer.
 
 Sometimes, it is necessary to access data on host regardless, in this situation the `HostRead()`, `HostWrite()`, and `HostReadWrite()` methods should be used.
 
-In practice, developers rarely have to manipulate `Memory<T>` objects, instead their data are stored using `Vector` and `Array<T>`.
+In practice, developers rarely have to manipulate `Memory<T>` objects, instead objects data can be stored using `Vector` and `Array<T>`.
 `Vector` and `Array<T>` data pointers can be accessed with the same methods as `Memory<T>`.
 ```c++
 Vector v;
@@ -30,8 +30,6 @@ v.UseDevice(true);
 const double *device_ptr = v.Read();
 const double *host_ptr = v.HostRead();
 ```
-
-A convenient class, `DeviceTensor<N,T>` is the only class that can be moved automatically between host and device.
 
 ## The MFEM_FORALL macro
 The idea behind the `MFEM_FORALL` macro is to have the same behavior as a `for` loop and hide all the specifics to devices.
@@ -47,6 +45,24 @@ becomes
 MFEM_FORALL(i, N,
 {
   ...
+});
+```
+
+The `DeviceTensor<N,T>` class is an `N` dimension array containing elements of type `T`, `T` is `double` by default.
+It is convenient to use the `DeviceTensor<N,T>` class in combination with the memory manager and `MFEM_FORALL`.
+The `Reshape` function reshapes an array into an `N` dimension array:
+```c++
+Vector a;
+a.UseDevice(true);
+const int p = ...;
+const int q = ...;
+const int ne = ...;
+auto A = Reshape(a.Write(), p, q, ne); // returns a DeviceTensor<3,double>
+MFEM_FORALL(e, ne,
+{
+  for (int j = 0; j < q; j++)
+    for (int i = 0; i < p; i++)
+      A(i,j,e) = ...;
 });
 ```
 There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help maping 2D or 3D blocks of threads to the hardware more efficiently.
