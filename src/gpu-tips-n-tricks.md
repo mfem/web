@@ -1,7 +1,7 @@
 # MFEM device handling:
 MFEM relies mainly on two features for running algorithms on devices:
 
-- The memory manager, handles transparently moving data between host (CPU) and device (GPU for instance),
+- The memory manager handles transparently moving data between host (CPU) and device (GPU for instance),
 - `MFEM_FORALL` allows to abstract `for` loops to parallelize transparently on an arbitrary device.
 
 ## The memory manager
@@ -107,7 +107,7 @@ It is sometimes needed to synchronize data between host and device.
 In order to make sure that the host data is synchronized one should use `HostRead()`,
 similarly to ensure synchronized data on the device one should use `Read()`.
 
-## Warning about `GetData()`:
+## Do not use `GetData()`:
 Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer wihtout synchronizing the data.
 
 ## Tracking data movements and allocations
@@ -121,7 +121,7 @@ If you really need to do such operations think of making use of a memory pool (e
 If you know you’re going to use your `Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the `Vector`.
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.
 
-## Remark about using `constexpr` inside `MFEM_FORALL`:
+## Using `constexpr` inside `MFEM_FORALL`:
 The `MFEM_FORALL` relies on lambda capture, one issue that comes up is with lambda captures for `constexpr` variables in `MFEM_FORALL` on MSVC.
 In particular according to the standard, `constexpr` variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors like:
