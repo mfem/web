@@ -22,7 +22,7 @@ The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if 
 
 Sometimes, it is necessary to access data on host regardless, in this situation the `HostRead()`, `HostWrite()`, and `HostReadWrite()` methods should be used.
 
-In practice, developers rarely have to manipulate `Memory<T>` objects, instead objects data can be stored using `Vector` and `Array<T>`.
+In practice, developpers rarely have to manipulate `Memory<T>` objects, instead objects data can be stored using `Vector` and `Array<T>`.
 `Vector` and `Array<T>` data pointers can be accessed with the same methods as `Memory<T>`.
 ```c++
 Vector v;
@@ -90,7 +90,7 @@ MFEM_FORALL_3D(n, N, p, q, r,
 });
 ```
 The reasons for this more complex syntax is to better utilize the hardware, GPUs in particular.
-Using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD` allows to use more concurrency `NxXxYxZ` threads instead of only at `N` threads with `MFEM_FORALL`,
+Using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD` allows to use more concurrency `NxXxYxZ` threads instead of only `N` threads with `MFEM_FORALL`,
 but more importantly the memory accesses on `A(i,j,k,n)` are much better with `MFEM_FORALL_3D`.
 With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesce memory access.
 Because most applied math algorithms are highly memory bound, having coalesce memory accesses is critical to achieve high performance.
@@ -108,7 +108,7 @@ In order to make sure that the host data is synchronized one should use `HostRea
 similarly to ensure synchronized data on the device one should use `Read()`.
 
 ## Do not use `GetData()`:
-Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer wihtout synchronizing the data.
+Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer without synchronizing the data.
 
 ## Tracking data movements and allocations:
 Defining the `MFEM_TRACK_CUDA_MEM` macro while building can help you see when data is transferred, allocated, etc.
@@ -119,6 +119,9 @@ If you really need to do such operations think of making use of a memory pool (e
 
 ## The `UseDevice(bool)` function:
 If you know you’re going to use your `Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the `Vector`.
+```c++
+Vector v; v.UseDevice(true);
+```
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.
 
 ## Using `constexpr` inside `MFEM_FORALL`:
@@ -201,10 +204,19 @@ Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the valid
 
 # Achieving high performance on GPU
 
+## Roofline model
 roofline model: https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf
+
+## Shared memory
 shared mem: http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf
+
+## Memory Diagram
 memory diagram: https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth
+
+## White paper
 white paper: https://arxiv.org/pdf/1804.06826.pdf
+
+## Profiling
 https://software.intel.com/content/www/us/en/develop/articles/intel-advisor-roofline.html
 You can look at the stall reasons:
 I would recommend this link first: https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm
