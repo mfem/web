@@ -56,17 +56,40 @@ Vector a;
 a.UseDevice(true);
 const int p = ...;
 const int q = ...;
-const int ne = ...;
-auto A = Reshape(a.Write(), p, q, ne); // returns a DeviceTensor<3,double>
-MFEM_FORALL(e, ne,
+const int r = ...;
+const int N = ...;
+auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor<4,double>
+MFEM_FORALL(n, N,
 {
-  for (int j = 0; j < q; j++)
-    for (int i = 0; i < p; i++)
-      A(i,j,e) = ...;
+  for (int k = 0; k < r; k++)
+    for (int j = 0; j < q; j++)
+      for (int i = 0; i < p; i++)
+        A(i,j,k,n) = ...;
 });
 ```
 There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help maping 2D or 3D blocks of threads to the hardware more efficiently.
 In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads.
+
+In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop,
+the first variable `i` is the name of the "loop" variable, `x` is the threadId, it can take the values `x`, `y`, or `z`, and `p` is the the bound of the loop.
+If we rewrite the previous example using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD`, we get:
+```c++
+Vector a;
+a.UseDevice(true);
+const int p = ...;
+const int q = ...;
+const int r = ...;
+const int N = ...;
+auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor<4,double>
+MFEM_FORALL_3D(n, N, p, q, r,
+{
+  MFEM_FOREACH_THREAD(k,z,r)
+    MFEM_FOREACH_THREAD(j,y,q)
+      MFEM_FOREACH_THREAD(i,x,p)
+        A(i,j,k,n) = ...;
+});
+```
+
 
 # Tips-n-tricks
 
