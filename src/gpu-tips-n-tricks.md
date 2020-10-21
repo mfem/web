@@ -1,4 +1,4 @@
-# MFEM device handling:
+# MFEM device handling
 MFEM relies mainly on two features for running algorithms on devices:
 
 - The memory manager handles transparently moving data between host (CPU) and device (GPU for instance),
@@ -110,14 +110,14 @@ similarly to ensure synchronized data on the device one should use `Read()`.
 ## Do not use `GetData()`:
 Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer wihtout synchronizing the data.
 
-## Tracking data movements and allocations
+## Tracking data movements and allocations:
 Defining the `MFEM_TRACK_CUDA_MEM` macro while building can help you see when data is transferred, allocated, etc.
 If you see a lot of data movement between host and device that’s a good indication that you’re running a lot of host or device kernels that are making use of that data.
 You want to avoid this at all costs. Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
 Avoid mallocing memory on the GPU within frequently called kernels. CUDA malloc calls are slow and can hinder performance.
 If you really need to do such operations think of making use of a memory pool (e.g. Umpire) that way the mallocs are much cheaper on the GPU.
 
-## The `UseDevice(bool)` function
+## The `UseDevice(bool)` function:
 If you know you’re going to use your `Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the `Vector`.
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.
 
@@ -138,7 +138,7 @@ MFEM_FORALL(I,N,
 ```
 Similar problems and workarounds are discussed [here](https://stackoverflow.com/questions/55136414).
 
-## Error: `alias not found`
+## Error: `alias not found`:
 This error message indicates that you are trying to move an "alias" `Vector` to gpu while its "base" `Vector` did not have gpu allocation (valid or not) when the alias was created (and may still not have gpu allocation when the move of the "alias" was attempted). This is another case where we cannot update the "base" `Vector` because we do not have access to it, and even if we did, there are other complications.
 
 Therefore, we need to follow this rule: if you are creating an "alias" that will be used on device, you need to ensure the "base" is allocated on device. Depending on the context, one can use different methods to do that.
@@ -149,7 +149,7 @@ Another example: if the "base" was initialized outside of the function where the
 
 Ideally, "base" Vectors that will be modified/accessed on device through aliases should be allocated on device to begin with, e.g. using `Vector::SetSize(int s, MemoryType mt)` typically with `mt = Device::GetDeviceMemoryType()`.
 
-## `MakeRef()` vectors do not see the same valid host/device data as their base vector.
+## `MakeRef()` vectors do not see the same valid host/device data as their base vector:
 ```c++
 const int vSize = 10;
 Vector v; v.UseDevice(true); v.SetSize(vSize); v = 0.0;
