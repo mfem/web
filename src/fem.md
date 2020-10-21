@@ -48,6 +48,12 @@ sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
 
+### [Nonlinear Form Integrators](nonlininteg.md)
+
+Nonlinear form integrators are used to express the local action of a general
+nonlinear finite element operator. In addition, they may provide the capability
+to assemble the local gradient operator and to compute the local energy.
+
 ### [Linear Interpolators](lininterp.md)
 
 Unlike Bilinear and Linear forms, Linear Interpolators do not perform
@@ -56,3 +62,17 @@ linear function of a basis function) onto another basis function.  The
 `DiscreteLinearOperator` class adds one or more `LinearInterpolators`
 together to build a global sparse matrix representation of the linear
 operator.
+
+### [Weak Formulations](fem_weak_form.md)
+
+Weak formulations are at the heart of the finite element method.
+Finite element approximations are almost always less smooth than the
+solutions we hope to approximate.  Weak formulations provide a means
+of approximating derivatives of non-differentiable functions.
+
+### [Boundary Conditions](fem_bc.md)
+
+The types of available boundary conditions and how to apply them
+depend on the discretizations being used. This page describes how
+to enforce various boundary conditions for certain classes of
+problems.

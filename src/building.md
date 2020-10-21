@@ -74,16 +74,15 @@ All serial examples and miniapps can be build with:
 
 ## Parallel MPI version of MFEM
 
-Download *hypre* and metis from
+Download *hypre* and METIS from
 
   - [https://github.com/hypre-space/hypre/releases](https://github.com/hypre-space/hypre/releases)
-  - [https://computation.llnl.gov/casc/hypre/software.html](https://computation.llnl.gov/casc/hypre/software.html)
   - [http://glaros.dtc.umn.edu/gkhome/metis/metis/download](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
 
-Below we assume that we are working with versions 2.16.0 and
+Below we assume that we are working with hypre version 2.16.0 and METIS version
 [4.0.3](http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/metis-4.0.3.tar.gz)
-respectively. We also assume that the serial version of MFEM and GLVis have been
-built as described above.
+(see [below](#parallel-build-using-metis-5) for METIS version 5 and later). We also assume that the serial version
+of MFEM and GLVis have been built as described above.
 
 Put everything in the same directory:
 ```sh
@@ -101,7 +100,7 @@ Build hypre:
 ~> ln -s hypre-2.16.0 hypre
 ```
 
-Build metis:
+Build METIS:
 ```sh
 ~> tar -zxvf metis-4.0.3.tar.gz
 ~> cd metis-4.0.3
@@ -119,7 +118,7 @@ Build the parallel version of MFEM:
 ~/mfem-3.4> make parallel -j
 ```
 
-Note that if hypre or metis are in different locations, or you have different
+Note that if hypre or METIS are in different locations, or you have different
 versions of these libraries, you will need to update the corresponding paths in
 the
 [`config/defaults.mk`](https://raw.githubusercontent.com/mfem/mfem/master/config/defaults.mk)

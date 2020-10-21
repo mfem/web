@@ -1,6 +1,6 @@
 # Features
 
-The goal of MFEM is to enable research and development of scalable finite element discretization and solver algorithms through general finite element abstractions, accurate and flexible visualization, and tight integration with the *[hypre](http://www.llnl.gov/CASC/hypre)* library.
+The goal of MFEM is is to enable high-performance scalable finite element discretization research and application development on a wide variety of platforms, ranging from laptops to supercomputers.
 
 Conceptually, MFEM can be viewed as a finite element toolbox that provides the building blocks for developing finite element algorithms in a manner similar to that of MATLAB for linear algebra methods.
 
@@ -49,13 +49,13 @@ MFEM supports MPI-based parallelism throughout the library, and can readily be u
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
- - Support for hardware devices, such as GPUs, and programming models, such as CUDA, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
+ - Support for hardware devices, such as GPUs, and programming models, such as CUDA, HIP, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
 
-A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) and many [linear algebra](http://mfem.github.io/doxygen/html/vector_8cpp_source.html) and [finite element](http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html) operations is available.
+A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](examples.md?pa) and many [linear algebra](http://mfem.github.io/doxygen/html/vector_8cpp_source.html) and [finite element](http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html) operations is available.
 
 ## Built-in Solvers
 
-MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra [vectors][Vector] and [sparse matrices][Operator].
+MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra [vectors][Vector] and [sparse matrices][SparseMatrix].
 
 Several matrix storage formats are available including dense, compressed sparse row ([CSR][SparseMatrix]) and parallel compressed sparse row ([ParCSR][HypreParMatrix]). Block vectors, operators and [matrices][BlockMatrix] are also supported.
 
@@ -71,7 +71,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - [parallel](examples.md?superlu) and [sequential](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
  - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
@@ -104,7 +104,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 23](http://mfem.github.io/doxygen/html/ex23_8cpp_source.html): second order in time wave equation,
  - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
  - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
- - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem.
+ - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem,
+ - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -116,8 +117,10 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](http://mfem.github.io/doxygen/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
  - [Maxwell](http://mfem.github.io/doxygen/html/maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](http://mfem.github.io/doxygen/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
+ - [Navier](http://mfem.github.io/doxygen/html/navier_solver_8cpp_source.html): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
@@ -128,6 +131,7 @@ Beyond the examples, a number of miniapps are available that are more representa
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
 - [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
+- [Remhos](https://github.com/CEED/Remhos): high-order advection remap miniapp,
 - [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
 A handful of "toy" miniapps of less serious nature demonstrate the flexibility of MFEM (and provide a bit of fun):
@@ -165,14 +169,14 @@ MFEM is an open-source software, and can be freely used under the terms of the [
 <!-- To update the SVG images: in the gh-pages branch of mfem/doxygen do:
      grep 'id="node1" href="$classmfem_1_1FiniteElementCollection.html"' html/inherit*map -->
 
-[FiniteElement]:           http://mfem.github.io/doxygen/html/inherit_graph_251.svg
-[FiniteElementCollection]: http://mfem.github.io/doxygen/html/inherit_graph_55.svg
-[Element]:                 http://mfem.github.io/doxygen/html/inherit_graph_33.svg
-[HyperelasticModel]:       http://mfem.github.io/doxygen/html/inherit_graph_104.svg
-[NonlinearFormIntegrator]: http://mfem.github.io/doxygen/html/inherit_graph_165.svg
-[LinearFormIntegrator]:    http://mfem.github.io/doxygen/html/inherit_graph_130.svg
-[Operator]:                http://mfem.github.io/doxygen/html/inherit_graph_223.svg
-[Vector]:                  http://mfem.github.io/doxygen/html/inherit_graph_295.svg
+[FiniteElement]:           http://mfem.github.io/doxygen/html/inherit_graph_389.svg
+[FiniteElementCollection]: http://mfem.github.io/doxygen/html/inherit_graph_119.svg
+[Element]:                 http://mfem.github.io/doxygen/html/inherit_graph_94.svg
+[HyperelasticModel]:       http://mfem.github.io/doxygen/html/inherit_graph_175.svg
+[NonlinearFormIntegrator]: http://mfem.github.io/doxygen/html/inherit_graph_296.svg
+[LinearFormIntegrator]:    http://mfem.github.io/doxygen/html/inherit_graph_203.svg
+[Operator]:                http://mfem.github.io/doxygen/html/inherit_graph_361.svg
+[Vector]:                  http://mfem.github.io/doxygen/html/inherit_graph_437.svg
 
 [BlockMatrix]:             http://mfem.github.io/doxygen/html/classmfem_1_1BlockMatrix.html
 [ElementTransformation]:   http://mfem.github.io/doxygen/html/classmfem_1_1ElementTransformation.html
