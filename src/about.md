@@ -76,6 +76,7 @@ Please cite with:
 - [Jeremy Thompson](https://github.com/jeremylt)
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
+- [Jean-Étienne Tremblay](https://github.com/jetremblay)
 - [Arturo Vargas](https://artv3.github.io/)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla/)
 - [Chris Vogl](https://people.llnl.gov/vogl2)
