@@ -71,7 +71,7 @@ Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) availab
 **Download mfem-4.2.tgz**
 </button>](https://bit.ly/mfem-4-2)
 
-For older releases see the [download](download.md) section.
+[Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM)
 
 ## Documentation
 
