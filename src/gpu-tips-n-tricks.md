@@ -71,7 +71,7 @@ There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `
 In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `MFEM_FORALL` uses `N` threads.
 
 In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop,
-the first variable `i` is the name of the "loop" variable, `x` is the threadId, it can take the values `x`, `y`, or `z`, and `p` is the the bound of the loop.
+the first variable `i` is the name of the "loop" variable, `x` is the threadId, it can take the values `x`, `y`, or `z`, and `p` is the bound of the loop.
 If we rewrite the previous example using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD`, we get:
 ```c++
 Vector a;
@@ -99,33 +99,40 @@ Because most applied math algorithms are highly memory bound, having coalesce me
 
 ## Compile in debug mode when developping for devices:
 The memory manager performs checks that catches most of the missuses of the memory on host or device.
-If using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `b mfem::mfem_error` .
+When using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `b mfem::mfem_error`.
 The code will break as soon as it reaches this point and then you can backtrace `bt` from here to see what went wrong and where.
 
 ## Forcing synchronization with the host or the device:
-It is sometimes needed to synchronize data between host and device.
+It is sometimes needed to force synchronization between host and device data.
 In order to make sure that the host data is synchronized one should use `HostRead()`,
 similarly to ensure synchronized data on the device one should use `Read()`.
 
 ## Do not use `GetData()`:
-Do not use `GetData()` to use a pointer on GPU since this will always return the host pointer without synchronizing the data.
+Do not use `GetData()` to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.
 
 ## Tracking data movements and allocations:
-Defining the `MFEM_TRACK_CUDA_MEM` macro while building can help you see when data is transferred, allocated, etc.
-If you see a lot of data movement between host and device that’s a good indication that you’re running a lot of host or device kernels that are making use of that data.
-You want to avoid this at all costs. Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
-Avoid mallocing memory on the GPU within frequently called kernels. CUDA malloc calls are slow and can hinder performance.
-If you really need to do such operations think of making use of a memory pool (e.g. Umpire) that way the mallocs are much cheaper on the GPU.
+Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help you see when data is transferred, allocated, etc.
+Large amount of data movement between host and device should be avoided at all costs.
+Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
+Avoid allocating GPU memory too frequently, CUDA malloc calls are slow and can hinder performance.
+If you really need to allocate frequently GPU memory, consider using a memory pool (e.g. Umpire), that way the mallocs are much cheaper on the GPU.
 
 ## The `UseDevice(bool)` function:
-If you know you’re going to use your `Vector` like object on the GPU go ahead call `UseDevice(true)` right after constructing the `Vector`.
+It is a good practice to call `UseDevice(true)` on any `Vector` intended to go on device right after constructing it.
 ```c++
 Vector v; v.UseDevice(true);
 ```
 Be aware `UseDevice()` is not the same as `UseDevice(true)`, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.
 
 ## Using `constexpr` inside `MFEM_FORALL`:
-The `MFEM_FORALL` relies on lambda capture, one issue that comes up is with lambda captures for `constexpr` variables in `MFEM_FORALL` on MSVC.
+```c++
+constexpr P = ...; // Result in an error on MSVC
+MFEM_FORALL(I,N,
+{
+  double my_data[P];
+});
+```
+The `MFEM_FORALL` relies on lambda capture, one issue comes up with MSVC is the capture for `constexpr` variables in `MFEM_FORALL`.
 In particular according to the standard, `constexpr` variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors like:
 
@@ -133,7 +140,7 @@ However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors lik
 
 A simple fix for this error is to declare the `constexpr` variable as `static constexpr`.
 ```c++
-static constexpr P = ...; // omitting the static would result in an error on MSVC
+static constexpr P = ...; // Omitting the static would result in an error on MSVC
 MFEM_FORALL(I,N,
 {
   double my_data[P];
@@ -144,8 +151,10 @@ Similar problems and workarounds are discussed [here](https://stackoverflow.com/
 ## Error: `alias not found`:
 This error message indicates that you are trying to move an "alias" `Vector` to gpu while its "base" `Vector` did not have gpu allocation (valid or not) when the alias was created (and may still not have gpu allocation when the move of the "alias" was attempted). This is another case where we cannot update the "base" `Vector` because we do not have access to it, and even if we did, there are other complications.
 
-Therefore, we need to follow this rule: if you are creating an "alias" that will be used on device, you need to ensure the "base" is allocated on device. Depending on the context, one can use different methods to do that.
+Therefore, we need to follow this rule:
+**if you are creating an "alias" that will be used on device, you need to ensure that the "base" is allocated on device.**
 
+Depending on the context, one can use different methods to do that.
 For example, if the "base" is initialized (on host, otherwise there will be no issue) in the same function that will create the alias, one can call `base.Write()` to create the device allocation followed by `base.HostWrite()` and then initialize "base" on host -- this sequence avoids any unnecessary host-device transfers.
 
 Another example: if the "base" was initialized outside of the function where the "alias" is created, then the most appropriate choice probably is to call `base.Read()` before creating the "alias". Since the alias will need the data on device, the incurred host-to-device transfer is (at least partially) necessary anyway.
@@ -186,16 +195,16 @@ z.HostRead();
 cout << "norm(z) = " << z.Norml2() << endl;
 ```
 
-There is no easy way to keep the big "base" `Vector` (`v` in your example) and the "alias" sub-Vector (`w` in your example) synchronized when they are being moved/copied between host and device.
+There is no easy way to keep the big "base" `Vector` (`v` in the example) and the "alias" sub-Vector (`w` in the example) synchronized when they are being moved/copied between host and device.
 Therefore such synchronizations need to be done "manually" using the methods `Vector::SyncMemory` and `Vector::SyncAliasMemory`.
 
 Basically the issue is that the Memory objects (inside the `Vector`s) do not know about the other version, so they cannot update the validity flags (the host and device validity flags indicate which of the pointers has valid data) of the other `Vector`.
 Also such update may not make sense if you just moved the sub-`Vector`.
 
-In your example above, after you move the "base" `Vector v` to host, you need to "inform" the "alias" `w `that the validity flags of its base have been changed.
+In the example above, after you move the "base" `Vector v` to host, you need to "inform" the "alias" `w` that the validity flags of its base have been changed.
 This is done by calling `w.SyncMemory(v)` which simply copies the validity flags from `v` to `w` -- there are no host-device memory transfers involved.
 
-One the other hand, if in your example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
+One the other hand, if in the example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
 In this particular case, the call will move the sub-Vector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`.
 This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
 
@@ -203,33 +212,41 @@ Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the valid
 
 
 # Achieving high performance on GPU
+As metionned above, most applied math algorithms are highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
+In particular, the main memory, or device memory, is the memory that has to be maximized in order to achieve peak performance.
+It is important to *not* saturate memory bandwidth other than the main memory bandwidth, failing to do so will decrease the main memory throughput by creating memory bandwidth bottlenecks.
+
+Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the data transfered.
+The more computationaly light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfiled.
+Memory is transferred by contiguous blocks, called *cache-line*, which are typically the size of 32 `float`, or 16 `double`.
+Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
+In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transfered being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
+When a kernel is cautiously writen to use all the data from each cache-line, the memory access are often referred as coallesce memory access.
+Having collesce memory access kernels is critical to achieving peak performance.
 
 ## Roofline model
-roofline model: https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf
+A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) help predicting the peak performance achievable by a specific kernel.
+The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
+By dividing the maximum FLops, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
+A kernel with an arithmetic intensity below and above the threshold value will be **memory bound** and **computation bound** respectively.
 
 ## Shared memory
 shared mem: http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf
 
-## Memory Diagram
-memory diagram: https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth
+## Profiling on NVidia GPUs
+I would recommend this link first:
+https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm
 
-## White paper
-white paper: https://arxiv.org/pdf/1804.06826.pdf
-
-## Profiling
-https://software.intel.com/content/www/us/en/develop/articles/intel-advisor-roofline.html
-You can look at the stall reasons:
-I would recommend this link first: https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm
 https://docs.nvidia.com/cuda/profiler-users-guide/index.html#metrics-reference-7x
-Then if needed: https://stackoverflow.com/questions/14887807/what-are-other-issue-stall-reasons-displayed-by-the-nsight-profiler
+
 You can use nvprof with:
-stall_constant_memory_dependency for Percentage of stalls occurring because of immediate constant cache miss
-stall_exec_dependency for Percentage of stalls occurring because an input required by the instruction is not yet available
-stall_inst_fetch for Percentage of stalls occurring because the next assembly instruction has not yet been fetched
-stall_memory_dependency for Percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
-stall_memory_throttle for	Percentage of stalls occurring because of memory throttle
-stall_not_selected for Percentage of stalls occurring because warp was not selected
-stall_other for Percentage of stalls occurring due to miscellaneous reasons
-stall_pipe_busy for Percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
-stall_sync for Percentage of stalls occurring because the warp is blocked at a __syncthreads() call
-stall_texture for Percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests
+`stall_constant_memory_dependency` for the percentage of stalls occurring because of immediate constant cache miss
+`stall_exec_dependency` for the percentage of stalls occurring because an input required by the instruction is not yet available
+`stall_inst_fetch` for the percentage of stalls occurring because the next assembly instruction has not yet been fetched
+`stall_memory_dependency` for the percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
+`stall_memory_throttle` for the	percentage of stalls occurring because of memory throttle
+`stall_not_selected` for the percentage of stalls occurring because warp was not selected
+`stall_other` for the percentage of stalls occurring due to miscellaneous reasons
+`stall_pipe_busy` for the percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
+`stall_sync` for the percentage of stalls occurring because the warp is blocked at a __syncthreads() call
+`stall_texture` for the percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests
