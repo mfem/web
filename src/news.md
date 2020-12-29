@@ -31,7 +31,7 @@ Oct 30, 2017 | Laghos part of the [ECP Proxy App Suite 1.0](https://exascaleproj
 Oct 16, 2017 | Postdoc position [available](http://careers-llnl.ttcportals.com/jobs/8037517-postdoctoral-research-staff-member) for electromagnetic simulations with MFEM.
 Sep 22, 2017 | LLNL Newsline: [LLNL gears up for next generation of computer-aided design and engineering](https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering).
 Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp and [CEED benchmarks](http://ceed.exascaleproject.org/bps/) released.
-May 8, 2017  | News highlight: Accelerating Simulation Software with Graphics Processing Units.
+May 8, 2017  | News highlight: [Accelerating Simulation Software with Graphics Processing Units](https://computing.llnl.gov/sites/default/files/public/Computation%20Annual%20Report2016_MFEM.pdf).
 Feb 16, 2017 | Moved main development to GitHub.
 Jan 28, 2017 | Version 3.3 [released](https://github.com/mfem/mfem/blob/v3.3/CHANGELOG).
 Dec 15, 2016 | [Postdoc position](http://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://exascaleproject.org/2016/11/11/ecp_co-design_centers) with MFEM.
@@ -45,6 +45,6 @@ Mar 9, 2016  | VisIt 2.10.1 [released](https://software.llnl.gov/news/2016/03/09
 Mar 4, 2016  | New LLNL open-source software [Blog](http://software.llnl.gov/news) and [Twitter](https://twitter.com/LLNL_OpenSource).
 Feb 16, 2016 | Version 3.1 [released](https://github.com/mfem/mfem/blob/v3.1/CHANGELOG).
 Feb 5, 2016  | MFEM simulation images part of the [Art of Science](https://www.llnl.gov/news/media-advisory-laboratory-showcases-art-science-livermore-library) exhibition at the Livermore public library.
-Jan 6, 2016  | News highlight: High-order finite element library provides scientists with access to cutting-edge algorithms.
+Jan 6, 2016  | News highlight: [High-order finite element library provides scientists with access to cutting-edge algorithms](https://computing.llnl.gov/sites/default/files/public/High-Order%20Finite%20Element%20Library%20Provides%20Scientists%20with%20Access%20to%20Cutting-Edge%20Algorithms.pdf).
 Aug 18, 2015 | Moved to [GitHub](https://github.com/mfem/mfem) and [mfem.org](http://mfem.org).
 Jan 26, 2015 | Version 3.0 [released](https://github.com/mfem/mfem/blob/v3.0/CHANGELOG).
