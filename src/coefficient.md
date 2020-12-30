@@ -74,15 +74,26 @@ a quick and, hopefully, easy to use alternative.
 
 ## Vector Coefficients
 
+### Basic Vector Coefficients
+
+| Class Name                | Description                                      |
+|---------------------------|--------------------------------------------------|
+| VectorConstantCoefficient | Returns a constant vector value: $\vec\{\alpha}$ |
+| VectorFunctionCoefficient | Computes a value from a standard function,       |
+|                           | $\vec\{f}(\vec\{x})$, or a lambda expression     |
+| VectorGridFunctionCoefficient   | Returns values interpolated from a vector-valued `GridFunction`: $\vec\{u}(\vec\{x})$ |
+| GradientGridFunctionCoefficient | Returns the gradient of a scalar-valued  `GridFunction`:  $\nabla u(\vec\{x})$ |
+| CurlGridFunctionCoefficient     | Returns the curl of a vector-valued  `GridFunction`:  $\nabla\times\vec\{u}(\vec\{x})$ |
+| VectorDeltaCoefficient    | $s\,\vec\{\alpha}\,\delta(\vec\{x}-\vec\{x}_c)$  |
+
+### Derived Vector Coefficients
+
+Again these classes provide a means of creating functions of existing
+coefficients.
+
 | Class Name | Formula |
 |--|--|
-| VectorConstantCoefficient | $\vec\{\alpha}$ |
-| VectorFunctionCoefficient  | $\vec\{f}(\vec\{x})$ |
-| VectorArrayCoefficient  | $\vec\{Q}_a$ |
-| VectorGridFunctionCoefficient  | $\vec\{u}$ |
-| GradientGridFunctionCoefficient  | $\nabla u$ |
-| CurlGridFunctionCoefficient  | $\nabla\times\vec\{u}$ |
-| VectorDeltaCoefficient  | $s\,\vec\{\alpha}\,\delta(\vec\{x}-\vec\{x}_c)$ |
+| VectorArrayCoefficient  | Construct a vector value from an array of scalar coefficients: $\vec\{Q}_a$ |
 | VectorRestrictedCoefficient  | $\vec\{Q}(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |
 | VectorSumCoefficient  | $\alpha\,\vec\{Q}_1(\vec\{x}) + \beta\,\vec\{Q}_2(\vec\{x})$ |
 | ScalarVectorProductCoefficient  | $Q_1\,\vec\{Q}_2$ |
