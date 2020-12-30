@@ -102,18 +102,29 @@ coefficients.
 
 ## Matrix Coefficients
 
-| Class Name | Formula |
-|--|--|
-| MatrixConstantCoefficient | $\overleftrightarrow\{\alpha}$ |
-| MatrixFunctionCoefficient | $\overleftrightarrow\{f}$ |
-| MatrixArrayCoefficient | $\overleftrightarrow\{Q}_a$ |
-| MatrixRestrictedCoefficient | $\overleftrightarrow\{Q}(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |
-| IdentityMatrixCoefficient | $\overleftrightarrow\{I}$ |
-| MatrixSumCoefficient | $\alpha\,\overleftrightarrow\{Q}_1(\vec\{x}) + \beta\,\overleftrightarrow\{Q}_2(\vec\{x})$ |
-| ScalarMatrixProductCoefficient | $Q_1\,\overleftrightarrow\{Q}_2$ |
-| TransposeMatrixCoefficient | $\overleftrightarrow\{Q}^T$ |
-| InverseMatrixCoefficient | $\overleftrightarrow\{Q}^\{-1}$ |
-| OuterProductCoefficient | $\vec\{Q}_1\otimes\vec\{Q}_2$ |
+### Basic Matrix Coefficients
+
+| Class Name                | Description                                      |
+|---------------------------|--------------------------------------------------|
+| MatrixConstantCoefficient | Returns a constant matrix value: $\overleftrightarrow\{\alpha}$ |
+| MatrixFunctionCoefficient | Computes a value from a standard function,       |
+|                           | $\overleftrightarrow\{f}$, or a lambda expression |
+| IdentityMatrixCoefficient | Returns the identity matrix of the appropriate dimension: $\overleftrightarrow\{I}$ |
+
+### Derived Matrix Coefficients
+
+Again these classes provide a means of creating functions of existing
+coefficients.
+
+| Class Name                     | Formula                                    |
+|--------------------------------|--------------------------------------------|
+| MatrixArrayCoefficient         | Construct a matrix value from an array of scalar coefficients: $\overleftrightarrow\{Q}_a$ |
+| MatrixRestrictedCoefficient    | $\overleftrightarrow\{Q}(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |
+| MatrixSumCoefficient           | $\alpha\,\overleftrightarrow\{Q}_1(\vec\{x}) + \beta\,\overleftrightarrow\{Q}_2(\vec\{x})$ |
+| ScalarMatrixProductCoefficient | $Q_1\,\overleftrightarrow\{Q}_2$           |
+| TransposeMatrixCoefficient     | $\overleftrightarrow\{Q}^T$                |
+| InverseMatrixCoefficient       | $\overleftrightarrow\{Q}^\{-1}$            |
+| OuterProductCoefficient        | $\vec\{Q}_1\otimes\vec\{Q}_2$              |
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
