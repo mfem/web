@@ -1,5 +1,43 @@
 # Coefficients
 
+Coefficient objects serve many purposes within MFEM. As the name
+suggests they often represent the material coefficients appearing in
+partial differential equations. However, Coefficients can also be
+used to specify initial conditions, boundary conditions, exact
+solutions, etc..
+
+Coefficients come in three varieties; scalar-valued, vector-valued,
+and matrix-valued. The primary purpose of any Coefficient class is to
+define an `Eval` method which returns a scalar, vector, or matrix
+given an element and a location within that element expressed as a
+point in reference space i.e. an `IntegrationPoint`. Coefficients can
+also be time dependent. Time is treated as a parameter which changes
+infrequently by passing the current time though a `SetTime(t)` method.
+
+A Coefficient's `Eval` method depends on not only the position within
+an element but also on the element attribute number which allows the
+Coefficient to return different results from different regions of the
+domain or boundary. This can be a powerful feature but it can lead to
+unexpected results.  As a rule domain integrals will have access to
+element attributes and boundary integrals will access the boundary
+attributes.  This seems obvious but there may be cases where the
+outcome is not so clear cut and careful thought is required.
+
+It is important to know when a Coefficient will be accessed,
+particularly in the case of time-dependent or field-dependent
+coefficients.  When used with `GridFunction::Project`,
+`GridFunction::ComputeL2Error`, and other `GridFunction` methods the
+`Coefficient` is used immediately. When used in `BilinearForm` and
+`LinearForm` objects the coefficients are only accessed during calls
+to the `Assemble` methods.  An important side note is that
+`GridFunction` and `LinearForm` objects will overwrite their values
+during such calls but a `BilinearForm` will not.  Consequently, when
+using a time-dependent coefficient with a `BilinearForm` object it is
+crucial that the user calls `BilinearForm::Update` to reset the
+internally stored matrix to zero before calling
+`BilinearForm::Assemble`.  Otherwise the new matrix entries will be
+added to the previous values leading to odd behavior.
+
 ## Scalar Coefficients
 
 | PWConstCoefficient |
