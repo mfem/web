@@ -40,23 +40,36 @@ added to the previous values leading to odd behavior.
 
 ## Scalar Coefficients
 
-| PWConstCoefficient |
-| GridFunctionCoefficient |
+### Basic Scalar Coefficients
 
-| Class Name | Formula |
-|--|--|
-| ConstantCoefficient | $\alpha$ |
-| FunctionCoefficient | $f(\vec\{x},t)$ |
-| TransformedCoefficient | $T(Q_1(\vec\{x},t))\mbox\{ or }T(Q_1(\vec\{x},t),Q_2(\vec\{x},t))$ |
-| DeltaCoefficient  | $s\,w(\vec\{x},t)\,T(t)\,\delta(\vec\{x}-\vec\{x}_c)$ | 
-| RestrictedCoefficient | $Q(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |  
-| SumCoefficient  | $\alpha\,Q_1(\vec\{x}) + \beta\,Q_2(\vec\{x})$ |
-| ProductCoefficient  | $Q_1(\vec\{x})\,Q_2(\vec\{x})$ | 
-| PowerCoefficient  | $Q^p$ | 
-| InnerProductCoefficient | $\vec\{Q}_1\cdot\vec\{Q}_2$ |  
+| Class Name              | Description                                      |
+|-------------------------|--------------------------------------------------|
+| ConstantCoefficient     | Returns a constant value: $\alpha$               |
+| FunctionCoefficient     | Computes a value from a standard function,       |
+|                         | $f(\vec\{x},t)$, or a lambda expression          |
+| PWConstCoefficient      | Returns different constants based on element     |
+|                         | attribute or boundary attribute numbers          |
+| GridFunctionCoefficient | Returns values interpolated from a scalar-valued `GridFunction`: $u(\vec\{x})$ |
+| DivergenceGridFunctionCoefficient | Returns the divergence of a vector-valued  `GridFunction`:  $\nabla\cdot\vec\{u}$ | 
+| DeltaCoefficient        | A weighted Dirac delta function: $s\,w(\vec\{x},t)\,T(t)\,\delta(\vec\{x}-\vec\{x}_c)$ | 
+
+### Derived Scalar Coefficients
+
+These classes provide a means of creating functions of existing
+coefficients.  In performance critical situations it would clearly be
+preferable to write specialized `Coefficient` classes but these offer
+a quick and, hopefully, easy to use alternative.
+
+| Class Name                  | Formula                                       |
+|-----------------------------|-----------------------------------------------|
+| TransformedCoefficient      | $T(Q_1(\vec\{x},t))\mbox\{ or }T(Q_1(\vec\{x},t),Q_2(\vec\{x},t))$ |
+| RestrictedCoefficient       | $Q(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |  
+| SumCoefficient              | $\alpha\,Q_1(\vec\{x}) + \beta\,Q_2(\vec\{x})$ |
+| ProductCoefficient          | $Q_1(\vec\{x})\,Q_2(\vec\{x})$ | 
+| PowerCoefficient            | $Q(\vec\{x})^p$ | 
+| InnerProductCoefficient     | $\vec\{Q}_1\cdot\vec\{Q}_2$ |  
 | VectorRotProductCoefficient | $\vec\{Q}_1\times\vec\{Q}_2\mbox\{ in }\mathbb\{R}^2$ |
-| DeterminantCoefficient | $\|\overleftrightarrow\{Q}\|$ |
-| DivergenceGridFunctionCoefficient | $\nabla\cdot\vec\{u}$ | 
+| DeterminantCoefficient      | $\|\overleftrightarrow\{Q}\|$ |
 
 
 ## Vector Coefficients
