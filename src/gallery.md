@@ -59,18 +59,11 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Poisson problem on a "Breather" surface. Mesh generated with the [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html) miniapp. Solution with [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html).*
 
-
 ----
 
 [![](img/gallery/triple-pt-2x2-q12-3d.png)](img/gallery/triple-pt-2x2-q12-3d.png)
 
 *[Triple point shock interaction](https://computation.llnl.gov/projects/blast/triple-point-shock-interaction) on 4 elements of order 12.  Note the element curvature and the high variation of the field inside the lower right element.*
-
-----
-
-[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
-
-*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 </div><div class="col-md-5"  markdown="1">
 
@@ -113,7 +106,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/rkh-132.png)](img/gallery/rkh-132.png)
 
-*Radiating Kevin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
+*Radiating Kelvin-Helmholtz modeled with the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Volume visualization with [VisIt](http://visit.llnl.gov).*
 
 ----
 
@@ -135,15 +128,15 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 </div><div class="col-md-3" markdown="1">
 
-[![](img/gallery/blast_rt_eulerian_q4_t3.jpg)](img/gallery/blast_rt_eulerian_q4_t3-full.png)
-
-*Multi-mode Rayleigh-Taylor instability simulation using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
-
-----
-
 [![](img/gallery/mri.png)](img/gallery/mri-full.png)
 
 *Electric field induced by an MRI gradient coil in a human body. Simulation by the [Magnetic Resonance Physics and Instrumentation Group](https://www.nmr.mgh.harvard.edu/lab/mr-pig/research/pns-gradient-coils) at Harvard Medical School.*
+
+----
+
+[![](img/gallery/blast_rt_eulerian_q4_t3.jpg)](img/gallery/blast_rt_eulerian_q4_t3-full.png)
+
+*Multi-mode Rayleigh-Taylor instability simulation using 4th order mixed elements in the MFEM-based [BLAST](http://www.llnl.gov/casc/blast) shock hydrodynamics code. Visualization with [VisIt](http://visit.llnl.gov).*
 
 ----
 
@@ -186,6 +179,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 ![](img/gallery/ex1p-np64.png)
 
 *Level lines in a cutting plane of the solution from the parallel version of [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on 64 processors with [fichera.mesh](https://github.com/mfem/mfem/blob/master/data/fichera.mesh). Visualization with [GLVis](http://glvis.org).*
+
+----
+
+[![](img/gallery/toroid-wedge-o6-s10-ex1-2.png)](img/gallery/toroid-wedge-o6-s10-ex1-2.png)
+
+*Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
 </div>
 

@@ -32,7 +32,7 @@ differences can be subtle.  MFEM defines `GridFunction`, `LinearForm`, and
 `Vector` classes which help to distinguish the different roles that vectors of
 data can play.
 
-### [Bilinear Form Integrators](bilininteg.md)
+### [Bilinear Form Integrators](bilininteg.md){: rel="nofollow"}
 
 Bilinear form integrators are at the heart of any finite element method, they
 are used to compute the integrals of products of basis functions over individual
@@ -40,13 +40,19 @@ mesh elements (or sometimes over edges or faces).  The `BilinearForm` class adds
 several `BilinearFormIntegrator`s together to build the global sparse finite
 element matrix.
 
-### [Linear Form Integrators](lininteg.md)
+### [Linear Form Integrators](lininteg.md){: rel="nofollow"}
 
 Linear form integrators are used to compute the integrals of products of a basis
 function with a given source function over individual mesh elements (or
 sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
+
+### [Nonlinear Form Integrators](nonlininteg.md)
+
+Nonlinear form integrators are used to express the local action of a general
+nonlinear finite element operator. In addition, they may provide the capability
+to assemble the local gradient operator and to compute the local energy.
 
 ### [Linear Interpolators](lininterp.md)
 
@@ -59,3 +65,16 @@ operator.
 
 ### [Coefficients](coefficient.md)
 
+### [Weak Formulations](fem_weak_form.md)
+
+Weak formulations are at the heart of the finite element method.
+Finite element approximations are almost always less smooth than the
+solutions we hope to approximate.  Weak formulations provide a means
+of approximating derivatives of non-differentiable functions.
+
+### [Boundary Conditions](fem_bc.md)
+
+The types of available boundary conditions and how to apply them
+depend on the discretizations being used. This page describes how
+to enforce various boundary conditions for certain classes of
+problems.

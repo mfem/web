@@ -1,13 +1,13 @@
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG)
 ┊ [Example codes](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.1.tgz**
-</button>](https://bit.ly/mfem-4-1)
+**Download mfem-4.2.tgz**
+</button>](https://bit.ly/mfem-4-2)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
@@ -15,8 +15,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 ## All Releases
 
- **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](http://cloc.sourceforge.net)** | **Notes** |
+ **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](https://github.com/AlDanial/cloc)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
+ [mfem-4.2.tgz](https://bit.ly/mfem-4-2) | v4.2 | Oct 2020 | 2.4M | 258K | |
  [mfem-4.1.tgz](https://bit.ly/mfem-4-1) | v4.1 | Mar 2020 | 7.9M | 209K | |
  [mfem-4.0.tgz](https://bit.ly/mfem-4-0) | v4.0 | May 2019 | 5.2M | 167K | *GPU support* |
  [mfem-3.4.tgz](https://bit.ly/mfem-3-4) | v3.4 | May 2018 | 4.4M | 134K |  |
@@ -32,7 +33,3 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
  [mfem-v1.2.tgz](http://goo.gl/GQit7Z) | v1.2 | Apr 2011 | 240K | 28K | *MPI parallelism based on hypre* |
  [mfem-v1.1.tgz](http://goo.gl/VJ7WB8) | v1.1 | Sep 2010 | 166K | 23K |  |
  [mfem-v1.0.tgz](http://goo.gl/gY141R) | v1.0 | Jul 2010 | 160K | 22K | *initial release* |
-
-<!-- MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](http://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project. -->
-
-

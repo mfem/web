@@ -215,3 +215,10 @@ body {
 .container .alignright {
   float: right;
 }
+
+/* Add horizontal toolbar to tables that are too wide for mobile */
+.table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
