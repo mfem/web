@@ -124,17 +124,18 @@ However, if the threads in a block access the same data in a bank, or different 
 ## Profiling on NVidia GPUs
 When profiling to improve the performance of a memory bound kernel, I recommend the following steps:
 
-1. Mesure the main memory bandwidth and efficiency: this tells us how far from peak performance we are.
+1. Mesure the main memory bandwidth and efficiency: this tells us how far from peak throughput we are.
 
-2. Insure that no *register spills* are occuring: most kernels can be written without any register spills.
+2. Insure that no *register spills* are occuring: most kernels can be written without any register spilling.
 
 3. Mesure the shared memory bandwidth and efficiency: try to prevent the shared memory to be the performance bottleneck.
 
 ### Optimizing the main memory usage:
-`nvprof --metrics gld_throughput,gst_throughput,gld_efficiency,gst_efficiency --kernels myKernel`
-The sum of `gld_throughput` and `gst_throughput` should be as close as possible to the maximum main memory bandwidth.
+The first thing we need to know is how far from peak throughput and how efficiently the main memory is accessed.
+For instance, with `nvprof` the following command `nvprof --metrics gld_throughput,gst_throughput,gld_efficiency,gst_efficiency` gives us the desired information.
+The sum of the load throughput (`gld_throughput`) and store throughput (`gst_throughput`) should be as close as possible to the main memory maximum bandwidth.
 `gld_efficiency` and `gst_efficiency` informs us on ratio of requested global memory load/store throughput to required global memory load/store throughput expressed as percentage.
-As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coalescing memory access.
+As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coallescing memory access.
 
 Once we know how far we are from peak throughput, it can be interesting to look at the main stall reasons to give us an idea of what might be slowing down the kernels:
 - Instruction Fetch — The next assembly instruction has not yet been fetched.
@@ -144,14 +145,14 @@ Once we know how far we are from peak throughput, it can be interesting to look 
 - Execution Dependency — An input required by the instruction is not yet available. Execution dependency stalls can potentially be reduced by increasing instruction-level parallelism.
 
 You can use `nvprof --metrics` with:
-`stall_inst_fetch` for the percentage of stalls occurring because the next assembly instruction has not yet been fetched,
-`stall_exec_dependency` for the percentage of stalls occurring because an input required by the instruction is not yet available,
-`stall_memory_dependency` for the percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding,
+`stall_inst_fetch` for the percentage of stalls occurring because of instruction fetch,
+`stall_exec_dependency` for the percentage of stalls occurring because of execution dependency,
+`stall_memory_dependency` for the percentage of stalls occurring because a memory dependency,
 `stall_memory_throttle` for the	percentage of stalls occurring because of memory throttle,
 `stall_sync` for the percentage of stalls occurring because the warp is blocked at a `__syncthreads()` call.
 
 ### Optimizing the register usage:
-This can be achieved two ways:
+We can know if there is register spilling by two means:
 
 - Compiling for Cuda with `-Xptxas="-v"` tells you at compilation the register usage and spills for each kernel.
 - Mesuring *local memory transfers* with a profiler tells you if there is register spills. `nvprof --metrics local_load_transactions,local_store_transactions --kernels myKernel` should be `0`.
@@ -162,7 +163,7 @@ Register spills happen for two main reasons:
 - Array indices are not known at compilation time.
 
 When each thread uses too many registers it is often usefull to redesign the kernel to use more threads per block to perform the computation, this lowers the amount of registers used per thread but usually increases the shared memory usage due to more distributed data.
-Computing indices at compilation can often be resolved by simply unrolling loops with `#pragma unroll` and making sure that all the necessary information to compute the indices is known at compilation time.
+Computing indices at compilation can often be resolved by simply unrolling loops with `MFEM_UNROLL` and making sure that all the necessary information to compute the indices is known at compilation time.
 
 ## Roofline model
 A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) helps predicting the peak performance achievable by a specific algorithm.
