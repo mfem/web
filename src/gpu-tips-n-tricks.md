@@ -95,6 +95,85 @@ but more importantly the memory accesses on `A(i,j,k,n)` are much better with `M
 With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesce memory access.
 Because most applied math algorithms are highly memory bound, having coalesce memory accesses is critical to achieve high performance.
 
+# Achieving high performance on GPU
+As metionned above, most applied math algorithms are usually highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
+In particular, the main memory, or device memory, is the memory that has to be maximized in order to achieve peak performance.
+It is important to *not* saturate memory bandwidth other than the main memory bandwidth, failing to do so will decrease the main memory throughput by creating memory bandwidth bottlenecks.
+
+Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the data transfered.
+The more computationaly light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfiled.
+Memory is transferred by contiguous blocks, called *cache-line*, which are typically the size of 32 `float`, or 16 `double`.
+Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
+In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transfered being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
+When a kernel is cautiously writen to use all the data from each cache-line, the memory access are often referred as coallesce memory access.
+Having collesce memory access kernels is critical to achieving peak performance.
+
+In term of parallelization, when seeing GPUs as having only one level of parallelism over threads, severe constraints are imposed to the kernels in order to achieve high performance.
+Each thread is limited to 255 `float` registers, using more registers results in what is known as *register spilling* which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
+Therefore, it is usually a good strategy to see GPUs as having two levels of parallelism: the coarse parallelism level among block of threads, and the fine parallelism level among threads in a block of threads.
+Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should kept to the absolute minimum.
+Threads inside a block of threads can exchange data efficiently by using the [shared memory](http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf).
+Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage cpacity of the shared memory.
+Due to their low arithmetic intensity, applied math algorithms often require a significant amount of shared memory bandwidth to exchange information between threads in a block.
+High amounts of shared memory bandwidth usage is a common bottleneck to achieve high performance.
+In order to be used efficiently, shared memory also requires specific memory access patterns to prevent *bank conflicts*.
+When bank conflicts occur, memory access are serialized instead of being parallel.
+Each cache line in the shared memory is linearly spread over the shared memory banks, if the threads in a block of threads access different data in the same bank then a bank conflict occurs.
+However, if the threads in a block access the same data in a bank, or different data in different banks, then the memory access can occur optimaly in parallel.
+
+## Profiling on NVidia GPUs
+When profiling to improve the performance of a memory bound kernel, I recommend the following steps:
+
+1. Mesure the main memory bandwidth and efficiency: this tells us how far from peak performance we are.
+
+2. Insure that no *register spills* are occuring: most kernels can be written without any register spills.
+
+3. Mesure the shared memory bandwidth and efficiency: try to prevent the shared memory to be the performance bottleneck.
+
+### Optimizing the main memory usage:
+`nvprof --metrics gld_throughput,gst_throughput,gld_efficiency,gst_efficiency --kernels myKernel`
+The sum of `gld_throughput` and `gst_throughput` should be as close as possible to the maximum main memory bandwidth.
+`gld_efficiency` and `gst_efficiency` informs us on ratio of requested global memory load/store throughput to required global memory load/store throughput expressed as percentage.
+As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coalescing memory access.
+
+Once we know how far we are from peak throughput, it can be interesting to look at the main stall reasons to give us an idea of what might be slowing down the kernels:
+- Instruction Fetch — The next assembly instruction has not yet been fetched.
+- Memory Throttle — A large number of pending memory operations prevent further forward progress. These can be reduced by combining several memory transactions into one.
+- Memory Dependency — A load/store cannot be made because the required resources are not available or are fully utilized, or too many requests of a given type are outstanding. Memory dependency stalls can potentially be reduced by optimizing memory alignment and access patterns.
+- Synchronization — The warp is blocked at a _syncthreads() call.
+- Execution Dependency — An input required by the instruction is not yet available. Execution dependency stalls can potentially be reduced by increasing instruction-level parallelism.
+
+You can use `nvprof --metrics` with:
+`stall_inst_fetch` for the percentage of stalls occurring because the next assembly instruction has not yet been fetched,
+`stall_exec_dependency` for the percentage of stalls occurring because an input required by the instruction is not yet available,
+`stall_memory_dependency` for the percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding,
+`stall_memory_throttle` for the	percentage of stalls occurring because of memory throttle,
+`stall_sync` for the percentage of stalls occurring because the warp is blocked at a `__syncthreads()` call.
+
+### Optimizing the register usage:
+This can be achieved two ways:
+
+- Compiling for Cuda with `-Xptxas="-v"` tells you at compilation the register usage and spills for each kernel.
+- Mesuring *local memory transfers* with a profiler tells you if there is register spills. `nvprof --metrics local_load_transactions,local_store_transactions --kernels myKernel` should be `0`.
+
+Register spills happen for two main reasons:
+
+- Each thread uses too many registers,
+- Array indices are not known at compilation time.
+
+When each thread uses too many registers it is often usefull to redesign the kernel to use more threads per block to perform the computation, this lowers the amount of registers used per thread but usually increases the shared memory usage due to more distributed data.
+Computing indices at compilation can often be resolved by simply unrolling loops with `#pragma unroll` and making sure that all the necessary information to compute the indices is known at compilation time.
+
+## Roofline model
+A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) helps predicting the peak performance achievable by a specific algorithm.
+The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
+By dividing the maximum FLops, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
+A kernel with an arithmetic intensity below and above the threshold value will be **memory bound** and **computation bound** respectively.
+
+For in depths performance analysis I would recommend to look at [efficiency issues](https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm)
+
+[Here](https://docs.nvidia.com/cuda/profiler-users-guide/index.html#metrics-reference-7x) is the list of all the possible metrics for nvprof.
+
 # Tips-n-tricks
 
 ## Compile in debug mode when developping for devices:
@@ -210,43 +289,3 @@ This way the whole `Vector v` gets the real data in one location -- before the c
 
 Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the validity flags of `v`, the difference is where the real data is before the call -- in the first case the real data is in `v` and in the second, it is in `w`.
 
-
-# Achieving high performance on GPU
-As metionned above, most applied math algorithms are highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
-In particular, the main memory, or device memory, is the memory that has to be maximized in order to achieve peak performance.
-It is important to *not* saturate memory bandwidth other than the main memory bandwidth, failing to do so will decrease the main memory throughput by creating memory bandwidth bottlenecks.
-
-Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the data transfered.
-The more computationaly light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfiled.
-Memory is transferred by contiguous blocks, called *cache-line*, which are typically the size of 32 `float`, or 16 `double`.
-Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
-In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transfered being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
-When a kernel is cautiously writen to use all the data from each cache-line, the memory access are often referred as coallesce memory access.
-Having collesce memory access kernels is critical to achieving peak performance.
-
-## Roofline model
-A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) help predicting the peak performance achievable by a specific kernel.
-The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
-By dividing the maximum FLops, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
-A kernel with an arithmetic intensity below and above the threshold value will be **memory bound** and **computation bound** respectively.
-
-## Shared memory
-shared mem: http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf
-
-## Profiling on NVidia GPUs
-I would recommend this link first:
-https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm
-
-https://docs.nvidia.com/cuda/profiler-users-guide/index.html#metrics-reference-7x
-
-You can use nvprof with:
-`stall_constant_memory_dependency` for the percentage of stalls occurring because of immediate constant cache miss
-`stall_exec_dependency` for the percentage of stalls occurring because an input required by the instruction is not yet available
-`stall_inst_fetch` for the percentage of stalls occurring because the next assembly instruction has not yet been fetched
-`stall_memory_dependency` for the percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
-`stall_memory_throttle` for the	percentage of stalls occurring because of memory throttle
-`stall_not_selected` for the percentage of stalls occurring because warp was not selected
-`stall_other` for the percentage of stalls occurring due to miscellaneous reasons
-`stall_pipe_busy` for the percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
-`stall_sync` for the percentage of stalls occurring because the warp is blocked at a __syncthreads() call
-`stall_texture` for the percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests
