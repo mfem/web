@@ -45,13 +45,11 @@ added to the previous values leading to odd behavior.
 | Class Name              | Description                                      |
 |-------------------------|--------------------------------------------------|
 | ConstantCoefficient     | Returns a constant value: $\alpha$               |
-| FunctionCoefficient     | Computes a value from a standard function,       |
-|                         | $f(\vec\{x},t)$, or a lambda expression          |
-| PWConstCoefficient      | Returns different constants based on element     |
-|                         | attribute or boundary attribute numbers          |
+| FunctionCoefficient     | Computes a value from a standard function, $f(\vec\{x},t)$, or a lambda expression          |
+| PWConstCoefficient      | Returns different constants based e.g. on element attribute |
 | GridFunctionCoefficient | Returns values interpolated from a scalar-valued `GridFunction`: $u(\vec\{x})$ |
-| DivergenceGridFunctionCoefficient | Returns the divergence of a vector-valued  `GridFunction`:  $\nabla\cdot\vec\{u}$ | 
-| DeltaCoefficient        | A weighted Dirac delta function: $s\,w(\vec\{x},t)\,T(t)\,\delta(\vec\{x}-\vec\{x}_c)$ | 
+| DivergenceGridFunctionCoefficient | Returns the divergence of a vector-valued  `GridFunction`:  $\nabla\cdot\vec\{u}$ |
+| DeltaCoefficient        | A weighted Dirac delta function: $s\,w(\vec\{x},t)\,T(t)\,\delta(\vec\{x}-\vec\{x}_c)$ |
 
 ### Derived Scalar Coefficients
 
@@ -63,11 +61,11 @@ a quick and, hopefully, easy to use alternative.
 | Class Name                  | Formula                                       |
 |-----------------------------|-----------------------------------------------|
 | TransformedCoefficient      | $T(Q_1(\vec\{x},t))\mbox\{ or }T(Q_1(\vec\{x},t),Q_2(\vec\{x},t))$ |
-| RestrictedCoefficient       | $Q(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |  
+| RestrictedCoefficient       | $Q(\vec\{x})\,\forall a\in A, 0\mbox\{ otherwise}$ |
 | SumCoefficient              | $\alpha\,Q_1(\vec\{x}) + \beta\,Q_2(\vec\{x})$ |
-| ProductCoefficient          | $Q_1(\vec\{x})\,Q_2(\vec\{x})$ | 
-| PowerCoefficient            | $Q(\vec\{x})^p$ | 
-| InnerProductCoefficient     | $\vec\{Q}_1\cdot\vec\{Q}_2$ |  
+| ProductCoefficient          | $Q_1(\vec\{x})\,Q_2(\vec\{x})$ |
+| PowerCoefficient            | $Q(\vec\{x})^p$ |
+| InnerProductCoefficient     | $\vec\{Q}_1\cdot\vec\{Q}_2$ |
 | VectorRotProductCoefficient | $\vec\{Q}_1\times\vec\{Q}_2\mbox\{ in }\mathbb\{R}^2$ |
 | DeterminantCoefficient      | $\|\overleftrightarrow\{Q}\|$ |
 
@@ -79,8 +77,7 @@ a quick and, hopefully, easy to use alternative.
 | Class Name                | Description                                      |
 |---------------------------|--------------------------------------------------|
 | VectorConstantCoefficient | Returns a constant vector value: $\vec\{\alpha}$ |
-| VectorFunctionCoefficient | Computes a value from a standard function,       |
-|                           | $\vec\{f}(\vec\{x})$, or a lambda expression     |
+| VectorFunctionCoefficient | Computes a value from a standard function, $\vec\{f}(\vec\{x})$, or a lambda expression     |
 | VectorGridFunctionCoefficient   | Returns values interpolated from a vector-valued `GridFunction`: $\vec\{u}(\vec\{x})$ |
 | GradientGridFunctionCoefficient | Returns the gradient of a scalar-valued  `GridFunction`:  $\nabla u(\vec\{x})$ |
 | CurlGridFunctionCoefficient     | Returns the curl of a vector-valued  `GridFunction`:  $\nabla\times\vec\{u}(\vec\{x})$ |
@@ -107,8 +104,7 @@ coefficients.
 | Class Name                | Description                                      |
 |---------------------------|--------------------------------------------------|
 | MatrixConstantCoefficient | Returns a constant matrix value: $\overleftrightarrow\{\alpha}$ |
-| MatrixFunctionCoefficient | Computes a value from a standard function,       |
-|                           | $\overleftrightarrow\{f}$, or a lambda expression |
+| MatrixFunctionCoefficient | Computes a value from a standard function, $\overleftrightarrow\{f}$, or a lambda expression |
 | IdentityMatrixCoefficient | Returns the identity matrix of the appropriate dimension: $\overleftrightarrow\{I}$ |
 
 ### Derived Matrix Coefficients

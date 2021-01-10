@@ -48,6 +48,12 @@ sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
 
+### [Coefficients](coefficient.md)
+
+The `Coefficient` objects in MFEM are general functions on continuous level that
+are used to represent the PDE coefficients of linear and bilinear forms, as well
+as to specify initial conditions, boundary conditions, exact solutions, etc.
+
 ### [Nonlinear Form Integrators](nonlininteg.md)
 
 Nonlinear form integrators are used to express the local action of a general
@@ -62,8 +68,6 @@ linear function of a basis function) onto another basis function.  The
 `DiscreteLinearOperator` class adds one or more `LinearInterpolators`
 together to build a global sparse matrix representation of the linear
 operator.
-
-### [Coefficients](coefficient.md)
 
 ### [Weak Formulations](fem_weak_form.md)
 
