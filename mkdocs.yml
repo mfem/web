@@ -33,6 +33,7 @@ nav:
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
+  - 'GPU Tips': gpu-tips-n-tricks.md
   - '_High Performance Templated Code': tperformance.md
   - '_Code Overview': code-overview.md
   - 'Tools': tools.md

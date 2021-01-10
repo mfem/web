@@ -22,7 +22,7 @@ The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if 
 
 Sometimes, it is necessary to access data on host regardless, in this situation the `HostRead()`, `HostWrite()`, and `HostReadWrite()` methods should be used.
 
-In practice, developpers rarely have to manipulate `Memory<T>` objects, instead objects data can be stored using `Vector` and `Array<T>`.
+In practice, developers rarely have to manipulate `Memory<T>` objects, instead objects data can be stored using `Vector` and `Array<T>`.
 `Vector` and `Array<T>` data pointers can be accessed with the same methods as `Memory<T>`.
 ```c++
 Vector v;
@@ -67,7 +67,7 @@ MFEM_FORALL(n, N,
         A(i,j,k,n) = ...;
 });
 ```
-There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help maping 2D or 3D blocks of threads to the hardware more efficiently.
+There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help mapping 2D or 3D blocks of threads to the hardware more efficiently.
 In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `MFEM_FORALL` uses `N` threads.
 
 In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop,
@@ -96,46 +96,46 @@ With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesc
 Because most applied math algorithms are highly memory bound, having coalesce memory accesses is critical to achieve high performance.
 
 # Achieving high performance on GPU
-As metionned above, most applied math algorithms are usually highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
+As mentioned above, most applied math algorithms are usually highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
 In particular, the main memory, or device memory, is the memory that has to be maximized in order to achieve peak performance.
 It is important to *not* saturate memory bandwidth other than the main memory bandwidth, failing to do so will decrease the main memory throughput by creating memory bandwidth bottlenecks.
 
-Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the data transfered.
-The more computationaly light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfiled.
+Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the data transferred.
+The more computationally light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfilled.
 Memory is transferred by contiguous blocks, called *cache-line*, which are typically the size of 32 `float`, or 16 `double`.
 Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
-In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transfered being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
-When a kernel is cautiously writen to use all the data from each cache-line, the memory access are often referred as coallesce memory access.
-Having collesce memory access kernels is critical to achieving peak performance.
+In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transferred being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
+When a kernel is cautiously written to use all the data from each cache-line, the memory access are often referred as coalesce memory access.
+Having coalesces memory access kernels is critical to achieving peak performance.
 
 In term of parallelization, when seeing GPUs as having only one level of parallelism over threads, severe constraints are imposed to the kernels in order to achieve high performance.
 Each thread is limited to 255 `float` registers, using more registers results in what is known as *register spilling* which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
 Therefore, it is usually a good strategy to see GPUs as having two levels of parallelism: the coarse parallelism level among block of threads, and the fine parallelism level among threads in a block of threads.
 Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should kept to the absolute minimum.
 Threads inside a block of threads can exchange data efficiently by using the [shared memory](http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf).
-Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage cpacity of the shared memory.
+Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage capacity of the shared memory.
 Due to their low arithmetic intensity, applied math algorithms often require a significant amount of shared memory bandwidth to exchange information between threads in a block.
 High amounts of shared memory bandwidth usage is a common bottleneck to achieve high performance.
 In order to be used efficiently, shared memory also requires specific memory access patterns to prevent *bank conflicts*.
 When bank conflicts occur, memory access are serialized instead of being parallel.
 Each cache line in the shared memory is linearly spread over the shared memory banks, if the threads in a block of threads access different data in the same bank then a bank conflict occurs.
-However, if the threads in a block access the same data in a bank, or different data in different banks, then the memory access can occur optimaly in parallel.
+However, if the threads in a block access the same data in a bank, or different data in different banks, then the memory access can occur optimally in parallel.
 
-## Profiling on NVidia GPUs
+## Profiling on NVIDIA GPUs
 When profiling to improve the performance of a memory bound kernel, I recommend the following steps:
 
-1. Mesure the main memory bandwidth and efficiency: this tells us how far from peak throughput we are.
+1. Measure the main memory bandwidth and efficiency: this tells us how far from peak throughput we are.
 
-2. Insure that no *register spills* are occuring: most kernels can be written without any register spilling.
+2. Insure that no *register spills* are occurring: most kernels can be written without any register spilling.
 
-3. Mesure the shared memory bandwidth and efficiency: try to prevent the shared memory to be the performance bottleneck.
+3. Measure the shared memory bandwidth and efficiency: try to prevent the shared memory to be the performance bottleneck.
 
 ### Optimizing the main memory usage:
 The first thing we need to know is how far from peak throughput and how efficiently the main memory is accessed.
 For instance, with `nvprof` the following command `nvprof --metrics gld_throughput,gst_throughput,gld_efficiency,gst_efficiency` gives us the desired information.
 The sum of the load throughput (`gld_throughput`) and store throughput (`gst_throughput`) should be as close as possible to the main memory maximum bandwidth.
 `gld_efficiency` and `gst_efficiency` informs us on ratio of requested global memory load/store throughput to required global memory load/store throughput expressed as percentage.
-As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coallescing memory access.
+As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coalescing memory access.
 
 Once we know how far we are from peak throughput, it can be interesting to look at the main stall reasons to give us an idea of what might be slowing down the kernels:
 - Instruction Fetch — The next assembly instruction has not yet been fetched.
@@ -155,20 +155,20 @@ You can use `nvprof --metrics` with:
 We can know if there is register spilling by two means:
 
 - Compiling for Cuda with `-Xptxas="-v"` tells you at compilation the register usage and spills for each kernel.
-- Mesuring *local memory transfers* with a profiler tells you if there is register spills. `nvprof --metrics local_load_transactions,local_store_transactions --kernels myKernel` should be `0`.
+- Measuring *local memory transfers* with a profiler tells you if there is register spills. `nvprof --metrics local_load_transactions,local_store_transactions --kernels myKernel` should be `0`.
 
 Register spills happen for two main reasons:
 
 - Each thread uses too many registers,
 - Array indices are not known at compilation time.
 
-When each thread uses too many registers it is often usefull to redesign the kernel to use more threads per block to perform the computation, this lowers the amount of registers used per thread but usually increases the shared memory usage due to more distributed data.
+When each thread uses too many registers it is often useful to redesign the kernel to use more threads per block to perform the computation, this lowers the amount of registers used per thread but usually increases the shared memory usage due to more distributed data.
 Computing indices at compilation can often be resolved by simply unrolling loops with `MFEM_UNROLL` and making sure that all the necessary information to compute the indices is known at compilation time.
 
 ## Roofline model
 A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) helps predicting the peak performance achievable by a specific algorithm.
 The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
-By dividing the maximum FLops, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
+By dividing the maximum FLOPs, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
 A kernel with an arithmetic intensity below and above the threshold value will be **memory bound** and **computation bound** respectively.
 
 For in depths performance analysis I would recommend to look at [efficiency issues](https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm)
@@ -177,7 +177,7 @@ For in depths performance analysis I would recommend to look at [efficiency issu
 
 # Tips-n-tricks
 
-## Compile in debug mode when developping for devices:
+## Compile in debug mode when developing for devices:
 The memory manager performs checks that catches most of the missuses of the memory on host or device.
 When using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `b mfem::mfem_error`.
 The code will break as soon as it reaches this point and then you can backtrace `bt` from here to see what went wrong and where.

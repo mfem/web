@@ -78,6 +78,7 @@ Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) availab
 [Building MFEM](building.md)
 ┊ [Serial Tutorial](serial-tutorial.md)
 ┊ [Parallel Tutorial](parallel-tutorial.md)
+┊ [GPU tips](gpu-tips-n-tricks.md)
 
 [Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
@@ -91,8 +92,6 @@ Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) availab
 New users should start by examining the [example codes](examples.md).
 
 We also recommend using [GLVis](http://glvis.org) for visualization.
-
-[GPU tricks and tips](gpu-tips-n-tricks.md)
 
 ## Contact
 
