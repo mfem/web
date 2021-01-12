@@ -72,11 +72,12 @@ these derivative operators by having the necessary inter-element
 continuity.  Other possible derivative operators would not possess the
 correct continuity and must therefore be implemented in a weak sense.
 
-| Class Name             | Domain | Range | Operator        |
-|------------------------|--------|-------|-----------------|
-| GradientInterpolator   |   H1   |  ND   | $\grad u$       |
-| CurlInterpolator       |   ND   |  RT   | $\curl\vec\{u}$ |
-| DivergenceInterpolator |   RT   |  L2   | $\div\vec\{u}$  |
+| Class Name             |  Domain  | Range | Operator        |
+|------------------------|----------|-------|-----------------|
+| GradientInterpolator   |    H1    |  ND   | $\grad u$       |
+| CurlInterpolator       | ND in 3D |  RT   | $\curl\vec\{u}$ |
+| CurlInterpolator       | ND in 2D |  L2   | $\hat\{z}\cdot(\curl\vec\{u})$ |
+| DivergenceInterpolator |    RT    |  L2   | $\div\vec\{u}$  |
 
 ### Product Interpolators
 
@@ -94,7 +95,8 @@ though not necessary, for the range space to be quadratic.
 | ScalarProductInterpolator       | H1,L2  | H1,L2 |   S   | $\lambda u$       |
 | ScalarVectorProductInterpolator | ND,RT  | ND,RT |   S   | $\lambda\vec\{u}$ |
 | VectorScalarProductInterpolator | H1,L2  | ND,RT |   V   | $\vec\{\lambda}u$ |
-| VectorCrossProductInterpolator  | ND,RT  | ND,RT |   V   | $\vec\{\lambda}\times\vec\{u}$ |
+| VectorCrossProductInterpolator  | ND,RT in 3D | ND,RT |   V   | $\vec\{\lambda}\times\vec\{u}$ |
+| ScalarCrossProductInterpolator  | ND,RT in 2D | H1,L2 |   V   | $\hat\{z}\cdot(\vec\{\lambda}\times\vec\{u})$ |
 | VectorInnerProductInterpolator  | ND,RT  | H1,L2 |   V   | $\vec\{\lambda}\cdot\vec\{u}$ |
 
 ### Special Purpose Interpolators
