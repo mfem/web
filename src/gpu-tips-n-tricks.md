@@ -68,7 +68,8 @@ MFEM_FORALL(n, N,
 });
 ```
 There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help mapping 2D or 3D blocks of threads to the hardware more efficiently.
-In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `MFEM_FORALL` uses `N` threads.
+In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `MFEM_FORALL` uses `N/256` block of threads each of size `256` threads.
+Using `MFEM_FORALL_3D` (and `MFEM_FORALL_2D`) over `MFEM_FORALL` results in a higher level of parallelism, the former using `N`x`X`x`Y`x`Z` software threads and the later only `N` software threads.
 
 In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop,
 the first variable `i` is the name of the "loop" variable, `x` is the threadId, it can take the values `x`, `y`, or `z`, and `p` is the bound of the loop.
