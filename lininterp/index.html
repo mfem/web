@@ -358,9 +358,15 @@ correct continuity and must therefore be implemented in a weak sense.</p>
 </tr>
 <tr>
 <td>CurlInterpolator</td>
-<td>ND</td>
+<td>ND in 3D</td>
 <td>RT</td>
 <td>$\curl\vec{u}$</td>
+</tr>
+<tr>
+<td>CurlInterpolator</td>
+<td>ND in 2D</td>
+<td>L2</td>
+<td>$\hat{z}\cdot(\curl\vec{u})$</td>
 </tr>
 <tr>
 <td>DivergenceInterpolator</td>
@@ -413,10 +419,17 @@ though not necessary, for the range space to be quadratic.</p>
 </tr>
 <tr>
 <td>VectorCrossProductInterpolator</td>
-<td>ND,RT</td>
+<td>ND,RT in 3D</td>
 <td>ND,RT</td>
 <td align="center">V</td>
 <td>$\vec{\lambda}\times\vec{u}$</td>
+</tr>
+<tr>
+<td>ScalarCrossProductInterpolator</td>
+<td>ND,RT in 2D</td>
+<td>H1,L2</td>
+<td align="center">V</td>
+<td>$\hat{z}\cdot(\vec{\lambda}\times\vec{u})$</td>
 </tr>
 <tr>
 <td>VectorInnerProductInterpolator</td>
