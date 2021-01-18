@@ -110,7 +110,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
+<a href="https://glvis.org/live/?stream=../data/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
+</a>
 
 This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
@@ -139,7 +141,9 @@ in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo)._
 
 <div id="ex2" markdown="1">
 ##Example 2: Linear Elasticity
+<a href="https://glvis.org/live/?stream=../data/ex2.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex2.png">
+</a>
 
 This example code solves a simple linear elasticity problem
 describing a multi-material cantilever beam.
@@ -173,7 +177,9 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex3" markdown="1">
 ##Example 3: Definite Maxwell Problem
+<a href="https://glvis.org/live/?stream=../data/ex3.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex3.png">
+</a>
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
@@ -225,7 +231,9 @@ We recommend viewing examples 1-3 before viewing this example._
 
 <div id="ex5" markdown="1">
 ##Example 5: Darcy Problem
+<a href="https://glvis.org/live/?stream=../data/ex5.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex5.png">
+</a>
 
 This example code solves a simple 2D/3D mixed Darcy problem
 corresponding to the saddle point system
@@ -331,7 +339,9 @@ We recommend viewing examples 1-5 before viewing this example._
 
 <div id="ex9" markdown="1">
 ##Example 9: DG Advection
+<a href="https://glvis.org/live/?stream=../data/ex9.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex9.png">
+</a>
 
 This example code solves the time-dependent advection equation
 $$\frac{\partial u}{\partial t} + v \cdot \nabla u = 0,$$ where $v$ is a given fluid
@@ -880,7 +890,9 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex27" markdown="1">
 ##Example 27: Laplace Boundary Conditions
+<a href="https://glvis.org/live/?stream=../data/ex27.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex27.png">
+</a>
 
 This example code demonstrates the use of MFEM to define a
 simple finite element discretization of the Laplace problem:
@@ -1033,7 +1045,9 @@ moving to the miniapps.**_
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
+<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
 <img class="floatright" src="../img/examples/mobius-strip.png">
+</a>
 
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
@@ -1055,7 +1069,9 @@ moving to the miniapps.**_
 
 <div id="klein-bottle" markdown="1">
 ##Klein Bottle Miniapp
+<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
 <img class="floatright" src="../img/examples/klein-bottle.png">
+</a>
 
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
@@ -1188,7 +1204,9 @@ moving to the miniapps.**_
 
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
+<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
 <img class="floatright" src="../img/examples/shaper.png">
+</a>
 
 This miniapp performs multiple levels of adaptive mesh refinement to resolve the
 interfaces between different "materials" in the mesh, as specified by a given
@@ -1210,7 +1228,9 @@ moving to the miniapps.**_
 
 <div id="mesh-explorer" markdown="1">
 ##Mesh Explorer Miniapp
+<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
 <img class="floatright" src="../img/examples/mesh-explorer.png">
+</a>
 
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh. Some of its features are:
@@ -1270,7 +1290,9 @@ version.
 
 <div id="minimal-surface" markdown="1">
 ##Minimal Surface Miniapp
+<a href="https://glvis.org/live/?stream=../data/minimal-surface.saved" target="_blank">
 <img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
+</a>
 
 This miniapp solves Plateau's problem: the Dirichlet problem for the minimal surface equation.
 
@@ -1342,7 +1364,9 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
+<a href="https://glvis.org/live/?stream=../data/laghos.saved" target="_blank">
 <img class="floatright" src="../img/examples/laghos.png">
+</a>
 
 **Laghos** (LAGrangian High-Order Solver) is a miniapp that solves the
 time-dependent Euler equations of compressible gas dynamics in a moving
@@ -1386,7 +1410,9 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 
 <div id="remhos" markdown="1">
 ##Remhos Miniapp
+<a href="https://glvis.org/live/?stream=../data/remhos.saved" target="_blank">
 <img class="floatright" width="450" src="../img/examples/remhos.png">
+</a>
 
 **Remhos** (REMap High-Order Solver) is a miniapp that solves the pure advection
 equations that are used to perform monotonic and conservative discontinuous
@@ -1426,7 +1452,9 @@ _This is an external miniapp, available at [https://github.com/CEED/Remhos](http
 
 <div id="navier" markdown="1">
 ##Navier Miniapp
+<a href="https://glvis.org/live/?stream=../data/navier.saved" target="_blank">
 <img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
+</a>
 
 Navier is a miniapp that solves the time-dependent Navier-Stokes equations of
 incompressible fluid dynamics

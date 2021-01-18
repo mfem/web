@@ -35,7 +35,9 @@ The current meshing miniapps are described below.
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
 
-![](img/examples/mobius-strip.png)
+<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
+<img src="../img/examples/mobius-strip.png">
+</a>
 
 Manipulating the mesh topology and
 performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
@@ -46,7 +48,9 @@ performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
 
-![](img/examples/klein-bottle.png)
+<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
+<img src="../img/examples/klein-bottle.png">
+</a>
 
 The `klein-bottle` and `klein-donut` meshes in the
 `data` directory were generated with this miniapp.
@@ -105,7 +109,9 @@ This miniapp performs multiple levels of adaptive mesh refinement to resolve the
 interfaces between different "materials" in the mesh, as specified by a given
 material() function.
 
-![](img/examples/shaper.png)
+<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
+<img src="../img/examples/shaper.png">
+</a>
 
 It can be used as a simple initial mesh generator, for example in the case when
 the interface is too complex to describe without local refinement. Both
@@ -116,7 +122,9 @@ conforming and non-conforming refinements are supported.
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh.
 
-![](img/examples/mesh-explorer.png)
+<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
+<img src="../img/examples/mesh-explorer.png">
+</a>
 
 Some of its features are:
 

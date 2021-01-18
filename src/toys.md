@@ -124,7 +124,9 @@ a row so that neighboring wedges can rotate against each other but cannot
 be separated. An astonishing variety of different configurations can be
 reached.
 
-![](img/examples/snake.png)
+<a href="https://glvis.org/live/?stream=../data/snake.saved" target="_blank">
+<img src="../img/examples/snake.png">
+</a>
 
 Thirteen pre-programmed configurations are available via the `-c
 [0-12]` command line option.  Other configurations can be reached with
