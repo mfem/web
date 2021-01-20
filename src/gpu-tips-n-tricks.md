@@ -69,7 +69,7 @@ MFEM_FORALL(n, N,
 ```
 There exists variants of this `MFEM_FORALL` macro, namely `MFEM_FORALL_2D` and `MFEM_FORALL_3D` which help mapping 2D or 3D blocks of threads to the hardware more efficiently.
 In the case of a GPU, `MFEM_FORALL_3D(i,N,X,Y,Z,{...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `MFEM_FORALL` uses `N/256` block of threads each of size `256` threads.
-Using `MFEM_FORALL_3D` (and `MFEM_FORALL_2D`) over `MFEM_FORALL` results in a higher level of parallelism, the former using `N`x`X`x`Y`x`Z` software threads and the later only `N` software threads.
+Using `MFEM_FORALL_3D` (and `MFEM_FORALL_2D`) over `MFEM_FORALL` results in a higher level of parallelism, the former using `N`x`X`x`Y`x`Z` software threads and the latter only `N` software threads.
 
 In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop,
 the first variable `i` is the name of the "loop" variable, `x` is the threadId, it can take the values `x`, `y`, or `z`, and `p` is the bound of the loop.
@@ -93,7 +93,7 @@ MFEM_FORALL_3D(n, N, p, q, r,
 The reasons for this more complex syntax is to better utilize the hardware, GPUs in particular.
 Using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD` allows to use more concurrency `NxXxYxZ` threads instead of only `N` threads with `MFEM_FORALL`,
 but more importantly the memory accesses on `A(i,j,k,n)` are much better with `MFEM_FORALL_3D`.
-With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesce memory access.
+With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesced memory access.
 Because most applied math algorithms are highly memory bound, having coalesce memory accesses is critical to achieve high performance.
 
 # Achieving high performance on GPU
@@ -107,7 +107,7 @@ Memory is transferred by contiguous blocks, called *cache-line*, which are typic
 Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
 In the worst case, only one `float` of each cache-line is used resulting in only 1/32 of the data transferred being used, such a kernel is potentially 32 times slower than a kernel that would fully utilize the data in each cache line.
 When a kernel is cautiously written to use all the data from each cache-line, the memory access are often referred as coalesce memory access.
-Having coalesces memory access kernels is critical to achieving peak performance.
+Having coalesced memory access kernels is critical to achieving peak performance.
 
 In term of parallelization, when seeing GPUs as having only one level of parallelism over threads, severe constraints are imposed to the kernels in order to achieve high performance.
 Each thread is limited to 255 `float` registers, using more registers results in what is known as *register spilling* which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
@@ -149,7 +149,7 @@ You can use `nvprof --metrics` with:
 `stall_inst_fetch` for the percentage of stalls occurring because of instruction fetch,
 `stall_exec_dependency` for the percentage of stalls occurring because of execution dependency,
 `stall_memory_dependency` for the percentage of stalls occurring because a memory dependency,
-`stall_memory_throttle` for the	percentage of stalls occurring because of memory throttle,
+`stall_memory_throttle` for the percentage of stalls occurring because of memory throttle,
 `stall_sync` for the percentage of stalls occurring because the warp is blocked at a `__syncthreads()` call.
 
 ### Optimizing the register usage:
@@ -179,7 +179,7 @@ For in depths performance analysis I would recommend to look at [efficiency issu
 # Tips-n-tricks
 
 ## Compile in debug mode when developing for devices:
-The memory manager performs checks that catches most of the missuses of the memory on host or device.
+The memory manager performs checks that catches most of the misuse of the memory on host or device.
 When using device debug, if your code fails you can run gdb or lldb, and set a breakpoint at `b mfem::mfem_error`.
 The code will break as soon as it reaches this point and then you can backtrace `bt` from here to see what went wrong and where.
 
