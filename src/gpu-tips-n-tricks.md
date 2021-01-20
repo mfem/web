@@ -112,7 +112,7 @@ Having coalesced memory access kernels is critical to achieving peak performance
 In term of parallelization, when seeing GPUs as having only one level of parallelism over threads, severe constraints are imposed to the kernels in order to achieve high performance.
 Each thread is limited to 255 `float` registers, using more registers results in what is known as *register spilling* which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
 Therefore, it is usually a good strategy to see GPUs as having two levels of parallelism: the coarse parallelism level among block of threads, and the fine parallelism level among threads in a block of threads.
-Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should kept to the absolute minimum.
+Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should be kept to the absolute minimum.
 Threads inside a block of threads can exchange data efficiently by using the [shared memory](http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf).
 Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage capacity of the shared memory.
 Due to their low arithmetic intensity, applied math algorithms often require a significant amount of shared memory bandwidth to exchange information between threads in a block.
@@ -170,7 +170,7 @@ Computing indices at compilation can often be resolved by simply unrolling loops
 A [roofline model](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) helps predicting the peak performance achievable by a specific algorithm.
 The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
 By dividing the maximum FLOPs, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
-A kernel with an arithmetic intensity below and above the threshold value will be **memory bound** and **computation bound** respectively.
+A kernel with an arithmetic intensity below or above the threshold value will be **memory bound** or **computation bound** respectively.
 
 For in depths performance analysis I would recommend to look at [efficiency issues](https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm)
 
@@ -285,7 +285,7 @@ Also such update may not make sense if you just moved the sub-`Vector`.
 In the example above, after you move the "base" `Vector v` to host, you need to "inform" the "alias" `w` that the validity flags of its base have been changed.
 This is done by calling `w.SyncMemory(v)` which simply copies the validity flags from `v` to `w` -- there are no host-device memory transfers involved.
 
-One the other hand, if in the example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
+On the other hand, if in the example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
 In this particular case, the call will move the sub-Vector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`.
 This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
 
