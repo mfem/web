@@ -199,6 +199,13 @@ Build the parallel HIP version of MFEM:
 ```
 
 ## Installing MFEM with Spack
+If Spack is already available on your system and is visible in your PATH, you can install the MFEM software simply with:
 ```sh
 spack install mfem
+```
+If you don't have Spack, you can download it and install MFEM with the following commands:
+```sh
+git clone https://github.com/spack/spack.git
+cd spack
+./bin/spack install -v mfem
 ```
