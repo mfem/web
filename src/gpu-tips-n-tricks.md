@@ -4,6 +4,18 @@ MFEM relies mainly on two features for running algorithms on devices:
 - The memory manager handles transparently moving data between host (CPU) and device (GPU for instance),
 - `MFEM_FORALL` allows to abstract `for` loops to parallelize transparently on an arbitrary device.
 
+```c++
+Vector u;
+Vector v;
+// ...
+auto u_data = u.Read(); // Express the intent to read u
+auto v_data = v.ReadWrite(); // Express the intent to read and write v
+MFEM_FORALL(i, u.Size(), // Abstract a loop: for(int i=0; i<u.Size(); i++)
+{
+   v_data[i] *= u_data[i]; // This block of code is executed on the chosen device
+});
+```
+
 ## The memory manager
 In order to make as transparent as possible the use of memory on host, or on device, MFEM relies on a memory manager.
 Instead of storing a pointer of type `T*`, each object that can be accessed on a device contains `Memory<T>` objects.
