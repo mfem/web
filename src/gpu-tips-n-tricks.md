@@ -94,7 +94,7 @@ The reasons for this more complex syntax is to better utilize the hardware, GPUs
 Using `MFEM_FORALL_3D` and `MFEM_FOREACH_THREAD` allows to use more concurrency `NxXxYxZ` threads instead of only `N` threads with `MFEM_FORALL`,
 but more importantly the memory accesses on `A(i,j,k,n)` are much better with `MFEM_FORALL_3D`.
 With `MFEM_FORALL_3D`, threads access consecutive memory, this is called coalesced memory access.
-Because most applied math algorithms are highly memory bound, having coalesce memory accesses is critical to achieve high performance.
+Because most applied math algorithms are highly memory bound, having coalesced memory accesses is critical to achieve high performance.
 
 # Achieving high performance on GPU
 As mentioned above, most applied math algorithms are usually highly [memory bound](https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf) on GPU, therefore in order to achieve peak performance one has to maximize the utilization of the different [memory bandwidths](https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth).
