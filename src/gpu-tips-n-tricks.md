@@ -15,7 +15,7 @@ To get the pointer `T*` from a `Memory<T>` object, one has to use the `Read()`, 
 -  `Write()` returns a `T*` pointer, and should be used when writing data **without** using any previously contained data,
 -  `ReadWrite()` returns `T*` pointer, and should be used when read and write access to the pointer are required.
 
-`Read()`, `Write()`, and `ReadWrite()` are taking care automatically and completely transparently of data movements between host and device.
+`Read()`, `Write()`, and `ReadWrite()` automatically and transparently handles data movement between the host and device.
 
 The method `void UseDevice(bool)` specifies if a `Memory<T>` object is intended for computation on host or on device.
 The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if using the device has been set to `true` with `UseDevice`, by default it is `false` and will return a host pointer.
@@ -290,4 +290,3 @@ In this particular case, the call will move the sub-Vector described by `w` from
 This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
 
 Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the validity flags of `v`, the difference is where the real data is before the call -- in the first case the real data is in `v` and in the second, it is in `w`.
-
