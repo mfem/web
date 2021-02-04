@@ -204,7 +204,7 @@ similarly to ensure synchronized data on the device one should use `Read()`.
 Do not use `GetData()` to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.
 
 ## Tracking data movements and allocations:
-Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help you see when data is transferred, allocated, etc.
+Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help by printing when data is transferred, allocated, etc. 
 Large amount of data movement between host and device should be avoided at all costs.
 Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
 Avoid allocating GPU memory too frequently, CUDA malloc calls are slow and can hinder performance.
