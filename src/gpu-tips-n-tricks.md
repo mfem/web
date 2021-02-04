@@ -32,7 +32,7 @@ const double *host_ptr = v.HostRead();
 ```
 
 ## The MFEM_FORALL macro
-The idea behind the `MFEM_FORALL` macro is to have the same behavior as a `for` loop and hide all the specifics to devices.
+The idea behind the `MFEM_FORALL` macro is to have the same behavior as a `for` loop and hide all device-specific code in order to enable performance portability.
 Example:
 ```c++
 for(int i = 0; i < N; i++)
