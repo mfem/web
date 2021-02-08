@@ -204,7 +204,7 @@ similarly to ensure synchronized data on the device one should use `Read()`.
 Do not use `GetData()` to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.
 
 ## Tracking data movements and allocations:
-Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help by printing when data is transferred, allocated, etc. 
+Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help by printing when data is transferred, allocated, etc.
 Large amount of data movement between host and device should be avoided at all costs.
 Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
 Avoid allocating GPU memory too frequently, CUDA malloc calls are slow and can hinder performance.
@@ -286,6 +286,14 @@ MFEM_FORALL(i, vSize,
 });
 z.HostRead();
 cout << "norm(z) = " << z.Norml2() << endl;
+```
+```
+IsHost(v) = 1
+IsHost(w) = 1
+IsHost(v) = 1
+IsHost(w) = 1
+norm(z) = 3.16228
+norm(z) = 3.16228
 ```
 
 There is no easy way to keep the big "base" `Vector` (`v` in the example) and the "alias" sub-Vector (`w` in the example) synchronized when they are being moved/copied between host and device.
