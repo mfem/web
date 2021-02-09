@@ -288,11 +288,11 @@ z.HostRead();
 cout << "norm(z) = " << z.Norml2() << endl;
 ```
 ```
+IsHost(v) = 0
+IsHost(w) = 0
 IsHost(v) = 1
-IsHost(w) = 1
-IsHost(v) = 1
-IsHost(w) = 1
-norm(z) = 3.16228
+IsHost(w) = 0
+norm(z) = 0
 norm(z) = 3.16228
 ```
 
