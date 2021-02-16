@@ -54,6 +54,9 @@ Build GLVis:
 That's it! The MFEM library can be found in `mfem-3.4/libmfem.a`, while the
 `glvis` executable will be in the `glvis-3.4` directory.
 
+Note: as of version 4.0, GLVis has additional dependencies that need to be installed
+first, see its building [documentation](https://glvis.org/building/).
+
 To start a GLVis server, open a **new terminal** and type
 ```sh
 ~> cd glvis-3.4
@@ -168,4 +171,48 @@ Build the parallel version of MFEM, setting the options `MFEM_USE_METIS_5` and
 ```sh
 ~> cd mfem-3.4
 ~/mfem-3.4> make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
+```
+
+## CUDA version of MFEM
+Build the serial CUDA version of MFEM:
+```sh
+~/mfem> make cuda -j
+```
+
+Build the parallel CUDA version of MFEM:
+```sh
+~/mfem> make pcuda -j
+```
+
+It can be useful to specify the [compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag, corresponding to your NVidia GPU.
+Build the parallel CUDA version of MFEM for `sm_70` (NVidia V100):
+```sh
+~/mfem> make pcuda CUDA_ARCH=sm_70 -j
+```
+
+## HIP version of MFEM
+Build the serial HIP version of MFEM:
+```sh
+~/mfem> make hip -j
+```
+
+Build the parallel HIP version of MFEM:
+```sh
+~/mfem> make phip -j
+```
+
+## Installing MFEM with Spack
+If Spack is already available on your system and is visible in your `PATH`, you can install the MFEM software simply with:
+```sh
+spack install mfem
+```
+To enable package testing during the build process, use instead:
+```sh
+spack install -v --test=all mfem
+```
+If you don't have Spack, you can download it and install MFEM with the following commands:
+```sh
+git clone https://github.com/spack/spack.git
+cd spack
+./bin/spack install -v mfem
 ```
