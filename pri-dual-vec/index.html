@@ -116,6 +116,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -140,6 +144,12 @@
                         
                             <li >
                                  <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-tips-n-tricks/">GPU Support</a>
                             </li>
                         
                     
@@ -404,7 +414,7 @@ bilinear form.</p>
 depends on many variables; the complexities of the <code>BilinearFormIntegrator</code> and
 the <code>LinearFormIntegrator</code>, the complexity of other coefficients that may be
 present, the order of the basis functions, can the bilinear form be reused or
-is this a one-time calculation, whether the code runs on a CPU or GPU, etc.. On
+is this a one-time calculation, whether the code runs on a CPU or <a href="../gpu-tips-n-tricks/">GPU</a>, etc. On
 some architectures the motion of data through memory during a matrix-vector
 multiplication may be expensive enough that using a <code>LinearForm</code> and
 recomputing the integrals is more efficient.</p>

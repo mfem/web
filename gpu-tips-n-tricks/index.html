@@ -73,7 +73,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -116,6 +116,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -140,6 +144,12 @@
                         
                             <li >
                                  <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                 <a href="./">GPU Support</a>
                             </li>
                         
                     
@@ -219,62 +229,327 @@
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#gpu-support-in-mfem">GPU support in MFEM</a></li>
+        
+            <li><a href="#memory-manager">Memory manager</a></li>
+        
+            <li><a href="#mfem_forall">MFEM_FORALL</a></li>
+        
+    
+        <li class="main "><a href="#achieving-high-performance-on-gpus">Achieving high performance on GPUs</a></li>
+        
+            <li><a href="#profiling-on-nvidia-gpus">Profiling on NVIDIA GPUs</a></li>
+        
+            <li><a href="#roofline-model">Roofline model</a></li>
+        
+            <li><a href="#tips-tricks">Tips &amp; Tricks</a></li>
+        
+    
     </ul>
 </div></div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">
 
-<p>roofline model: https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf
-shared mem: http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf
-memory diagram: https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth
-white paper: https://arxiv.org/pdf/1804.06826.pdf
-https://software.intel.com/content/www/us/en/develop/articles/intel-advisor-roofline.html
-You can look at the stall reasons:
-I would recommend this link first: https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm
-https://docs.nvidia.com/cuda/profiler-users-guide/index.html#metrics-reference-7x
-Then if needed: https://stackoverflow.com/questions/14887807/what-are-other-issue-stall-reasons-displayed-by-the-nsight-profiler
-You can use nvprof with:
-stall_constant_memory_dependency for Percentage of stalls occurring because of immediate constant cache miss
-stall_exec_dependency for Percentage of stalls occurring because an input required by the instruction is not yet available
-stall_inst_fetch for Percentage of stalls occurring because the next assembly instruction has not yet been fetched
-stall_memory_dependency for Percentage of stalls occurring because a memory operation cannot be performed due to the required resources not being available or fully utilized, or because too many requests of a given type are outstanding
-stall_memory_throttle for   Percentage of stalls occurring because of memory throttle
-stall_not_selected for Percentage of stalls occurring because warp was not selected
-stall_other for Percentage of stalls occurring due to miscellaneous reasons
-stall_pipe_busy for Percentage of stalls occurring because a compute operation cannot be performed because the compute pipeline is busy
-stall_sync for Percentage of stalls occurring because the warp is blocked at a __syncthreads() call
-stall_texture for Percentage of stalls occurring because the texture sub-system is fully utilized or has too many outstanding requests</p>
-<p>Veselin:
-One good addition to the “gpu tips and tricks” webpage can be this: https://github.com/mfem/mfem/issues/1578#issuecomment-649139077 with the example there. We can probably simplify the example though.
- https://github.com/mfem/mfem/issues/1578#issuecomment-649962962</p>
-<p>Will:
-One issue that comes up is with lambda captures for constexpr variables in MFEM_FORALL on MSVC.</p>
-<p>In particular according to the standard, constexpr variables do not need to be captured, and should not lose their const-ness in a lambda. However, on MSVC (e.g. in the AppVeyor CI checks), this can result in errors like:</p>
-<p>error C2131: expression did not evaluate to a constant
-A simple fix for this error is to declare the constexpr variable as static constexpr. Similar problems and workarounds are discussed here: https://stackoverflow.com/questions/55136414</p>
-<p>Robert:
-I would say some of my “tips and tricks” are:</p>
-<p>Avoid making use of GetData() it can lead to various issues later down the road when running things on the GPU
-Instead make use of HostRead(Write) in areas you know will stay on the Host and Read(Write) for kernels you know could end up on the GPU in the future.
-MFEM_FORALLs are an easy way to make sure your code can run on GPUs. However, they are limited to only being able to make use of public class functions within them.
-When passing data into the forall it’s a good idea to use Read(Write) to obtain the underlying data pointers passed into the macro
-For mfem::Vector and mfem::Array type classes, you can do something like obj.HostRead() or obj.Read() to pull the object’s data down to the host or device. You don’t actually need to make use of the pointers returned by these functions.
-Make use of device debug mode early on it. It’s a very useful tool in helping pinpoint whether or not your memory is in the wrong location when used within a compute kernel.
-If using device debug, if your code fails you can run gdb and set a breakpoint at mfem::mfem_error . The code will break as soon as it reaches this point and then you can backtrace from here to see what went wrong and where.
-Later, you can move the breakpoint to earlier points in the code and see if an object has memory currently located on the host or device.
-Defining the MFEM_TRACK_CUDA_MEM macro while building can help you see when data is transferred, allocated, and etc.
-If you see a lot of data movement between host and device that’s a good indication that you’re running a lot of host or device kernels that are making use of that data.
-You want to avoid this at all costs. Pin point where this is occurring and see if you can’t refactor your code so the data stays mainly on the device.
-Avoid mallocing memory on the GPU within frequently called kernels. CUDA malloc calls are slow and can hinder performance.
-If you really need to do such operations think of making use of a memory pool (e.g. Umpire) that way the mallocs are much cheaper on the GPU.
-If you know you’re going to use your mfem::Vector like object on the GPU go ahead call UseDevice(true) right after constructing the object.
-Be aware UseDevice() just returns a boolean tells you whether the object should be on the device or not. It’s not the same as UseDevice(true).</p>
-<p>I’m sure I’ve got more but these are at least a start.</p>
-<p>Arturo:
-My recommendation would be to develop in debug mode, and set a break point here https://github.com/mfem/mfem/blob/master/general/error.cpp#L155</p>
-<p>Most of my bugs stem from not moving the data correctly.</p>
-<p>Also, I think it would be nice to have an overview of the flags in the memory manager class to help understand what is going on.</p></div>
+<h1 id="gpu-support-in-mfem">GPU support in MFEM</h1>
+<p>MFEM relies mainly on two features for running algorithms on devices such as GPUs:</p>
+<ul>
+<li>The memory manager handles transparently the moving of data between the host (CPU) and the device (e.g. GPU),</li>
+<li>The <code>MFEM_FORALL</code> macro allows to abstract <code>for</code> loops to parallelize the execution on an arbitrary device.</li>
+</ul>
+<pre><code class="c++">Vector u;
+Vector v;
+// ...
+auto u_data = u.Read();      // Express the intent to read u
+auto v_data = v.ReadWrite(); // Express the intent to read and write v
+MFEM_FORALL(i, u.Size(),     // Abstract the loop: for(int i=0; i&lt;u.Size(); i++)
+{
+   v_data[i] *= u_data[i];   // This block of code is executed on the chosen device
+});
+</code></pre>
+
+<h2 id="memory-manager">Memory manager</h2>
+<p>In order to make the use of host/device memory as simple as possible, MFEM relies on internal memory manager.
+Instead of storing a pointer of type <code>T*</code>, each object that can be accessed on a device contains <code>Memory&lt;T&gt;</code> objects.
+The <code>Memory&lt;T&gt;</code> objects handle host and device pointers, memory allocations, and data synchronizations between host and device.</p>
+<p>To get the pointer <code>T*</code> from a <code>Memory&lt;T&gt;</code> object, one has to use the <code>Read()</code>, <code>Write()</code>, or <code>ReadWrite()</code> methods.</p>
+<ul>
+<li><code>Read()</code> returns a <code>const T*</code> pointer, and should be used when the data will only be read,</li>
+<li><code>Write()</code> returns a <code>T*</code> pointer, and should be used when writing data <strong>without</strong> using any previously contained data,</li>
+<li><code>ReadWrite()</code> returns <code>T*</code> pointer, and should be used when read and write access to the pointer are required.</li>
+</ul>
+<p><code>Read()</code>, <code>Write()</code>, and <code>ReadWrite()</code> automatically handle data movement between the host and device. They can optimize data transfer, since e.g. data that is declared as <code>Write()</code> on the host/device need not be updated from the device/host.</p>
+<p>The method <code>void UseDevice(bool)</code> specifies if a <code>Memory&lt;T&gt;</code> object is intended for computation on host or on device.
+The <code>Read()</code>,<code>Write()</code>, and <code>ReadWrite()</code> methods will return device pointer if using the device has been set to <code>true</code> with <code>UseDevice</code>, by default it is <code>false</code> and will return a host pointer.</p>
+<p>Sometimes, it is necessary to access the data specifically on the host. In this case the <code>HostRead()</code>, <code>HostWrite()</code>, and <code>HostReadWrite()</code> methods should be used.</p>
+<p>In practice, developers rarely have to manipulate <code>Memory&lt;T&gt;</code> objects, instead objects data can be stored using <code>Vector</code> and <code>Array&lt;T&gt;</code>.
+<code>Vector</code> and <code>Array&lt;T&gt;</code> data pointers can be accessed with the same methods as <code>Memory&lt;T&gt;</code>.</p>
+<pre><code class="c++">Vector v;
+v.UseDevice(true);
+const double *device_ptr = v.Read();
+const double *host_ptr = v.HostRead();
+</code></pre>
+
+<h2 id="mfem_forall">MFEM_FORALL</h2>
+<p>The idea behind the <code>MFEM_FORALL</code> macro is to have the same behavior as a <code>for</code> loop and hide all device-specific code in order to enable performance portability.
+Example:</p>
+<pre><code class="c++">for (int i = 0; i &lt; N; i++)
+{
+   ...
+}
+</code></pre>
+
+<p>becomes</p>
+<pre><code class="c++">MFEM_FORALL(i, N,
+{
+   ...
+});
+</code></pre>
+
+<p>One class that is convenient to use in combination with the memory manager and <code>MFEM_FORALL</code> is <code>DeviceTensor&lt;N,T&gt;</code>: an <code>N</code> dimensional array containing elements of type <code>T</code>, which by default is <code>double</code>.
+The <code>Reshape</code> function reshapes its input into such an <code>N</code> dimensional array:</p>
+<pre><code class="c++">Vector a;
+a.UseDevice(true);
+const int p = ...;
+const int q = ...;
+const int r = ...;
+const int N = ...;
+auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor&lt;4,double&gt;
+MFEM_FORALL(n, N,
+{
+   for (int k = 0; k &lt; r; k++)
+      for (int j = 0; j &lt; q; j++)
+         for (int i = 0; i &lt; p; i++)
+            A(i,j,k,n) = ...;
+});
+</code></pre>
+
+<p>Several variants of <code>MFEM_FORALL</code> exist, such as <code>MFEM_FORALL_2D</code> and <code>MFEM_FORALL_3D</code>, to help map 2D or 3D blocks of threads to the hardware more efficiently.
+In the case of a GPU, <code>MFEM_FORALL_3D(i,N,X,Y,Z,{...})</code> will declare <code>N</code> block of threads each of size <code>X</code>x<code>Y</code>x<code>Z</code> threads, whereas <code>MFEM_FORALL</code> uses <code>N/256</code> block of threads each of size <code>256</code> threads.
+Using <code>MFEM_FORALL_3D</code> (and <code>MFEM_FORALL_2D</code>) over <code>MFEM_FORALL</code> results in a higher level of parallelism, the former using <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> software threads and the latter only <code>N</code> software threads.</p>
+<p>In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro <code>MFEM_FOREACH_THREAD(i,x,p)</code> to use threads as a <code>for</code> loop.
+The first variable <code>i</code> is the name of the "loop" variable, <code>x</code> is the threadId (it can take the values <code>x</code>, <code>y</code>, or <code>z</code>), and <code>p</code> is the loop upper bound.
+If we rewrite the previous example using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code>, we get:</p>
+<pre><code class="c++">Vector a;
+a.UseDevice(true);
+const int p = ...;
+const int q = ...;
+const int r = ...;
+const int N = ...;
+auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor&lt;4,double&gt;
+MFEM_FORALL_3D(n, N, p, q, r,
+{
+   MFEM_FOREACH_THREAD(k,z,r)
+      MFEM_FOREACH_THREAD(j,y,q)
+         MFEM_FOREACH_THREAD(i,x,p)
+            A(i,j,k,n) = ...;
+});
+</code></pre>
+
+<p>The reasons for this more complex syntax is to better utilize the hardware, GPUs in particular.
+Using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code> allows to use more concurrency <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> threads instead of only <code>N</code> threads with <code>MFEM_FORALL</code>,
+but more importantly the memory accesses on <code>A(i,j,k,n)</code> are much better with <code>MFEM_FORALL_3D</code>.
+With <code>MFEM_FORALL_3D</code>, threads access consecutive memory (i.e. <em>coalesced</em> memory access).
+Because most applied math algorithms are memory bound, having coalesced memory accesses is critical to achieve high performance.</p>
+<h1 id="achieving-high-performance-on-gpus">Achieving high performance on GPUs</h1>
+<p>Finite element algorithms are usually <a href="https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf">memory bound</a> on GPUs, and therefore in order to achieve peak performance one has to maximize the utilization of the different <a href="https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth">memory bandwidths</a>.
+In particular, the main memory, or device memory, is the memory that has to be maximally used (i.e. <em>saturated</em>) in order to achieve peak performance.
+It is important to <em>not</em> saturate memory bandwidth other than the main memory bandwidth, failing to do so will decrease the main memory throughput by creating memory bandwidth bottlenecks.</p>
+<p>Maximizing the main memory bandwidth is achieved by issuing enough memory transactions and using efficiently the transferred data.
+The more computationally light a kernel is the more frequently memory transactions are issued, and if there is no memory bandwidth saturated other than the main memory bandwidth, e.g: shared or L1 memory, then the first condition to achieve peak performance is fulfilled.
+Memory is transferred by contiguous blocks, called <em>cache-line</em>, which are typically the size of 32 <code>float</code>, or 16 <code>double</code>.
+Since each cache-line is a block of contiguous memory it is common to over-fetch data when accessing non-contiguous memory addresses (because not all the data is used in each cache-line).
+In the worst case, only one <code>float</code> of each cache-line is used resulting in only 1/32 of the data transferred being used, such a kernel is potentially 32 times slower than a kernel that fully utilizes the data in each cache line.
+When a kernel is carefully written to use all the data from each cache-line, the memory access are often referred as coalesced memory access.
+Having coalesced memory access kernels is critical to achieving peak performance.</p>
+<p>In term of parallelization, when seeing GPUs as having only one level of parallelism over threads, severe constraints are imposed to the kernels in order to achieve high performance.
+Each thread is limited to 255 <code>float</code> registers, using more registers results in what is known as <em>register spilling</em> which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
+Therefore, it is usually a good strategy to see GPUs as having two levels of parallelism: the coarse parallelism level among block of threads, and the fine parallelism level among threads in a block of threads.
+Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should be kept to the absolute minimum.
+Threads inside a block of threads can exchange data efficiently by using the <a href="http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf">shared memory</a>.
+Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage capacity of the shared memory.
+Due to their low arithmetic intensity, finite element algorithms often require a significant amount of shared memory bandwidth to exchange information between threads in a block.
+High amounts of shared memory bandwidth usage is a common bottleneck to achieve high performance.
+In order to be used efficiently, shared memory also requires specific memory access patterns to prevent <em>bank conflicts</em>.
+When bank conflicts occur, memory access are serialized instead of being parallel.
+Each cache line in the shared memory is linearly spread over the shared memory banks, if the threads in a block of threads access different data in the same bank then a bank conflict occurs.
+However, if the threads in a block access the same data in a bank, or different data in different banks, then the memory access can occur optimally in parallel.</p>
+<h2 id="profiling-on-nvidia-gpus">Profiling on NVIDIA GPUs</h2>
+<p>When profiling to improve the performance of a memory bound kernel, we recommend the following steps:</p>
+<ol>
+<li>
+<p>Measure the main memory bandwidth and efficiency: this tells us how far from peak throughput we are.</p>
+</li>
+<li>
+<p>Insure that no <em>register spills</em> are occurring: most kernels can be written without any register spilling.</p>
+</li>
+<li>
+<p>Measure the shared memory bandwidth and efficiency: try to prevent the shared memory to be the performance bottleneck.</p>
+</li>
+</ol>
+<h3 id="optimizing-the-main-memory-usage">Optimizing the main memory usage</h3>
+<p>The first thing we need to know is how far from peak throughput and how efficiently the main memory is accessed.
+For instance, with <code>nvprof</code> the following command <code>nvprof --metrics gld_throughput,gst_throughput,gld_efficiency,gst_efficiency</code> gives us the desired information.
+The sum of the load throughput (<code>gld_throughput</code>) and store throughput (<code>gst_throughput</code>) should be as close as possible to the main memory maximum bandwidth.
+<code>gld_efficiency</code> and <code>gst_efficiency</code> informs us on ratio of requested global memory load/store throughput to required global memory load/store throughput expressed as percentage.
+As mentioned above, efficiency issues are critical to achieve peak performance and are solved by coalescing memory access.</p>
+<p>Once we know how far we are from peak throughput, one should look at the main stall reasons to get an idea of what might be slowing down the kernels:</p>
+<ul>
+<li><em>Instruction Fetch</em> — The next assembly instruction has not yet been fetched.</li>
+<li><em>Memory Throttle</em> — A large number of pending memory operations prevent further forward progress. These can be reduced by combining several memory transactions into one.</li>
+<li><em>Memory Dependency</em> — A load/store cannot be made because the required resources are not available or are fully utilized, or too many requests of a given type are outstanding. Memory dependency stalls can potentially be reduced by optimizing memory alignment and access patterns.</li>
+<li><em>Synchronization</em> — The warp is blocked at a <code>_syncthreads()</code> call.</li>
+<li><em>Execution Dependency</em> — An input required by the instruction is not yet available. Execution dependency stalls can potentially be reduced by increasing instruction-level parallelism.</li>
+</ul>
+<p>You can use <code>nvprof --metrics</code> with:</p>
+<ul>
+<li><code>stall_inst_fetch</code> for the percentage of stalls occurring because of instruction fetch,</li>
+<li><code>stall_exec_dependency</code> for the percentage of stalls occurring because of execution dependency,</li>
+<li><code>stall_memory_dependency</code> for the percentage of stalls occurring because a memory dependency,</li>
+<li><code>stall_memory_throttle</code> for the percentage of stalls occurring because of memory throttle,</li>
+<li><code>stall_sync</code> for the percentage of stalls occurring because the warp is blocked at a <code>__syncthreads()</code> call.</li>
+</ul>
+<h3 id="optimizing-the-register-usage">Optimizing the register usage</h3>
+<p>Register spilling can be detected in two ways:</p>
+<ul>
+<li>Compile for CUDA with <code>-Xptxas="-v"</code> which reports at compilation the register usage and spills for each kernel.</li>
+<li>Measure the <em>local memory transfers</em> with a profiler to check if there are register spills. <code>nvprof --metrics local_load_transactions,local_store_transactions --kernels myKernel</code> should be <code>0</code>.</li>
+</ul>
+<p>Register spills happen for two main reasons:</p>
+<ul>
+<li>Each thread uses too many registers,</li>
+<li>Array indices are not known at compilation time.</li>
+</ul>
+<p>When each thread uses too many registers it is often useful to redesign the kernel to use more threads per block to perform the computation, this lowers the amount of registers used per thread but usually increases the shared memory usage due to more distributed data.
+Computing indices at compilation can often be resolved by simply unrolling loops with <code>MFEM_UNROLL</code> and making sure that all the necessary information to compute the indices is known at compilation time.</p>
+<h2 id="roofline-model">Roofline model</h2>
+<p>A <a href="https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf">roofline model</a> helps predicting the peak performance achievable by a specific algorithm.
+The arithmetic intensity is the ratio of the total number of operations divided by the amount of data movement from and to the main memory.
+By dividing the maximum FLOPs, by the maximum bandwidth we get an arithmetic intensity threshold value between the two main regime of a GPU.
+A kernel with an arithmetic intensity below or above the threshold value will be <strong>memory bound</strong> or <strong>computation bound</strong> respectively.</p>
+<p>For in depths performance analysis we recommend to look at <a href="https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/kernellevel/issueefficiency.htm">efficiency issues</a></p>
+<p>The list of all the possible metrics for nvprof is available <a href="https://docs.nvidia.com/cuda/profiler-users-guide/index.html#metrics-reference-7x">here</a>.</p>
+<h2 id="tips-tricks">Tips &amp; Tricks</h2>
+<h3 id="compile-in-debug-mode-when-developing-for-devices">Compile in debug mode when developing for devices</h3>
+<p>The memory manager performs checks that catches most of the misuse of the memory on host or device.
+When using device debug, if your code fails you can run <code>gdb</code> or <code>lldb</code>, and set a breakpoint at <code>b mfem::mfem_error</code>.
+The code will break as soon as it reaches this point and then you can backtrace <code>bt</code> from here to see what went wrong and where.</p>
+<h3 id="forcing-synchronization-with-the-host-or-the-device">Forcing synchronization with the host or the device</h3>
+<p>It is sometimes needed to force synchronization between host and device data.
+In order to make sure that the host data is synchronized one should use <code>HostRead()</code>,
+similarly to ensure synchronized data on the device one should use <code>Read()</code>.</p>
+<h3 id="do-not-use-getdata">Do not use GetData</h3>
+<p>Do not use <code>GetData()</code> to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.</p>
+<h3 id="tracking-data-movements-and-allocations">Tracking data movements and allocations</h3>
+<p>Compiling MFEM with <code>MFEM_TRACK_CUDA_MEM</code> can help by printing when data is transferred, allocated, etc.
+Large amount of data movement between host and device should be avoided at all costs.
+Pinpoint where this is occurring and see if you can refactor your code so the data stays mainly on the device.
+Avoid allocating GPU memory too frequently, CUDA <code>malloc</code> calls are slow and can hinder performance.
+If you really need to allocate frequently GPU memory, consider using a memory pool (e.g. <a href="https://github.com/LLNL/Umpire">Umpire</a>), that way the mallocs are much cheaper on the GPU.</p>
+<h3 id="the-usedevice-function">The UseDevice function</h3>
+<p>It is a good practice to call <code>UseDevice(true)</code> on any <code>Vector</code> intended to go on device right after constructing it.</p>
+<pre><code class="c++">Vector v; v.UseDevice(true);
+</code></pre>
+
+<p>Be aware that <code>UseDevice()</code> is not the same as <code>UseDevice(true)</code>, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.</p>
+<h3 id="using-constexpr-inside-mfem_forall">Using constexpr inside MFEM_FORALL</h3>
+<pre><code class="c++">constexpr P = ...; // Results in an error on MSVC
+MFEM_FORALL(I,N,
+{
+   double my_data[P];
+});
+</code></pre>
+
+<p>The <code>MFEM_FORALL</code> macro relies on lambda capturing in C++. One issue comes up with compilers such as <a href="https://visualstudio.microsoft.com/">MSVC</a> is the capturing of <code>constexpr</code> variables inside <code>MFEM_FORALL</code>.
+According to the C++ standard, <code>constexpr</code> variables do not need to be captured, and should not lose their const-ness in a lambda.
+However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in errors like:</p>
+<p><code>error C2131: expression did not evaluate to a constant</code></p>
+<p>A simple fix for this error is to declare the <code>constexpr</code> variable as <code>static constexpr</code>.</p>
+<pre><code class="c++">static constexpr P = ...; // Omitting the static results in an error on MSVC
+MFEM_FORALL(I,N,
+{
+   double my_data[P];
+});
+</code></pre>
+
+<p>Similar problems and workarounds are discussed <a href="https://stackoverflow.com/questions/55136414">here</a>.</p>
+<h3 id="error-alias-not-found">Error: "alias not found"</h3>
+<p>This error message indicates that you are trying to move an "alias" <code>Vector</code> to GPU while its "base" <code>Vector</code> did not have a GPU allocation (valid or not) when the alias was created (and may still not have GPU allocation when the move of the "alias" was attempted). This is another case where we cannot update the "base" <code>Vector</code> because we do not have access to it (and even if we did, there are complications).</p>
+<p>This can be avoided if one follows the following rule:
+<strong>if you are creating an "alias" that will be used on device, you need to ensure that the "base" is allocated on that device.</strong></p>
+<p>Depending on the context, one can use different methods to do that.
+For example, if the "base" is initialized (on host, otherwise there will be no issue) in the same function that will create the alias, one can call <code>base.Write()</code> to create the device allocation followed by <code>base.HostWrite()</code> and then initialize "base" on host -- this sequence avoids any unnecessary host-device transfers.</p>
+<p>Another example: if the "base" was initialized outside of the function where the "alias" is created, then the most appropriate choice probably is to call <code>base.Read()</code> before creating the "alias". Since the alias will need the data on device, the incurred host-to-device transfer is (at least partially) necessary anyway.</p>
+<p>Ideally, "base" Vectors that will be modified/accessed on device through aliases should be allocated on device to begin with, e.g. using <code>Vector::SetSize(int s, MemoryType mt)</code> typically with <code>mt = Device::GetDeviceMemoryType()</code>.</p>
+<h3 id="makeref-vectors-do-not-see-the-same-valid-hostdevice-data-as-their-base-vector">MakeRef vectors do not see the same valid host/device data as their base vector</h3>
+<p>Consider the following code snippet where the vector <code>w</code> is defined from <code>v</code> using the <code>MakeRef()</code> method:</p>
+<pre><code class="c++">const int vSize = 10;
+Vector v; v.UseDevice(true); v.SetSize(vSize); v = 0.0;
+cout &lt;&lt; &quot;IsHost(v) = &quot; &lt;&lt; IsHostMemory(v.GetMemory().GetMemoryType()) &lt;&lt; endl;
+
+Vector w; w.MakeRef(v, 0, vSize);
+cout &lt;&lt; &quot;IsHost(w) = &quot; &lt;&lt; IsHostMemory(w.GetMemory().GetMemoryType()) &lt;&lt; endl;
+
+auto hv = v.HostWrite();
+for (int j = 0; j &lt; vSize; j++) { hv[j] = 1.0; }
+cout &lt;&lt; &quot;IsHost(v) = &quot; &lt;&lt; IsHostMemory(v.GetMemory().GetMemoryType()) &lt;&lt; endl;
+cout &lt;&lt; &quot;IsHost(w) = &quot; &lt;&lt; IsHostMemory(w.GetMemory().GetMemoryType()) &lt;&lt; endl;
+
+Vector z; z.UseDevice(true); z.SetSize(vSize);
+auto dz = z.Write();
+auto dw = w.Read();
+MFEM_FORALL(i, vSize,
+{
+   dz[i] = dw[i];
+});
+z.HostRead();
+cout &lt;&lt; &quot;norm(z) = &quot; &lt;&lt; z.Norml2() &lt;&lt; endl;
+
+dz = z.Write();
+auto dv = v.Read();
+MFEM_FORALL(i, vSize,
+{
+   dz[i] = dv[i];
+});
+z.HostRead();
+cout &lt;&lt; &quot;norm(z) = &quot; &lt;&lt; z.Norml2() &lt;&lt; endl;
+</code></pre>
+
+<p>The resulting output may be unexpected:</p>
+<pre><code>IsHost(v) = 0
+IsHost(w) = 0
+IsHost(v) = 1
+IsHost(w) = 0
+norm(z) = 0
+norm(z) = 3.16228
+</code></pre>
+
+<p>Basically the issue is that the Memory objects (inside the <code>Vector</code>s) do not know about the other version, so they cannot update the validity flags (the host and device validity flags indicate which of the pointers has valid data) of the other <code>Vector</code>.
+Also such update may not make sense if you just moved the subvector.</p>
+<p>There is no easy way to keep the big "base" <code>Vector</code> <code>v</code> and the "alias" subvector <code>w</code> synchronized when they are being moved/copied between host and device.
+Therefore such synchronizations need to be done "manually" using the methods <code>Vector::SyncMemory</code> and <code>Vector::SyncAliasMemory</code>.</p>
+<p>In the example above, after you move the "base" <code>Vector v</code> to host, you need to "inform" the "alias" <code>w</code> that the validity flags of its base have been changed.
+This is done by calling <code>w.SyncMemory(v)</code> which simply copies the validity flags from <code>v</code> to <code>w</code>, there are no host-device memory transfers involved.</p>
+<p>On the other hand, if in the example you moved <code>w</code> to host and modified it there, and then you want to access the data through the base <code>Vector v</code> (you can think of the more general case here, when <code>w</code> is smaller than <code>v</code>) then you need to call <code>w.SyncAliasMemory(v)</code>.
+In this particular case, the call will move the subvector described by <code>w</code> from host to device and update the validity flags of <code>w</code> to be the same as the ones of <code>v</code>.
+This way the whole <code>Vector v</code> gets the real data in one location -- before the call part of it was on device and the part described by w was on host.</p>
+<p>Both <code>w.SyncMemory(v)</code> and <code>w.SyncAliasMemory(v)</code> ensure that <code>w</code> gets the validity flags of <code>v</code>, the difference is where the real data is before the call -- in the first case the real data is in <code>v</code> and in the second, it is in <code>w</code>.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#gpu-support-in-mfem">GPU support in MFEM</a></li>
+        
+            <li><a href="#memory-manager">Memory manager</a></li>
+        
+            <li><a href="#mfem_forall">MFEM_FORALL</a></li>
+        
+    
+        <li class="main "><a href="#achieving-high-performance-on-gpus">Achieving high performance on GPUs</a></li>
+        
+            <li><a href="#profiling-on-nvidia-gpus">Profiling on NVIDIA GPUs</a></li>
+        
+            <li><a href="#roofline-model">Roofline model</a></li>
+        
+            <li><a href="#tips-tricks">Tips &amp; Tricks</a></li>
+        
     
     </ul>
 </div></div>

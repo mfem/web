@@ -116,6 +116,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -140,6 +144,12 @@
                         
                             <li >
                                  <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-tips-n-tricks/">GPU Support</a>
                             </li>
                         
                     
@@ -227,6 +237,12 @@
         
             <li><a href="#parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</a></li>
         
+            <li><a href="#cuda-version-of-mfem">CUDA version of MFEM</a></li>
+        
+            <li><a href="#hip-version-of-mfem">HIP version of MFEM</a></li>
+        
+            <li><a href="#installing-mfem-with-spack">Installing MFEM with Spack</a></li>
+        
     
     </ul>
 </div></div> <!-- toc on top on mobile -->
@@ -279,6 +295,8 @@ glvis-3.4.tgz   mfem-3.4.tgz
 
 <p>That's it! The MFEM library can be found in <code>mfem-3.4/libmfem.a</code>, while the
 <code>glvis</code> executable will be in the <code>glvis-3.4</code> directory.</p>
+<p>Note: as of version 4.0, GLVis has additional dependencies that need to be installed
+first, see its building <a href="https://glvis.org/building/">documentation</a>.</p>
 <p>To start a GLVis server, open a <strong>new terminal</strong> and type</p>
 <pre><code class="sh">~&gt; cd glvis-3.4
 ~/glvis-3.4&gt; ./glvis
@@ -375,6 +393,44 @@ can interfere with the other GLVis threads.</p>
 <code>METIS_DIR</code>, e.g.:</p>
 <pre><code class="sh">~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
+</code></pre>
+
+<h2 id="cuda-version-of-mfem">CUDA version of MFEM</h2>
+<p>Build the serial CUDA version of MFEM:</p>
+<pre><code class="sh">~/mfem&gt; make cuda -j
+</code></pre>
+
+<p>Build the parallel CUDA version of MFEM:</p>
+<pre><code class="sh">~/mfem&gt; make pcuda -j
+</code></pre>
+
+<p>It can be useful to specify the <a href="https://developer.nvidia.com/cuda-gpus#compute">compute capability</a>, with the <code>CUDA_ARCH</code> flag, corresponding to your NVidia GPU.
+Build the parallel CUDA version of MFEM for <code>sm_70</code> (NVidia V100):</p>
+<pre><code class="sh">~/mfem&gt; make pcuda CUDA_ARCH=sm_70 -j
+</code></pre>
+
+<h2 id="hip-version-of-mfem">HIP version of MFEM</h2>
+<p>Build the serial HIP version of MFEM:</p>
+<pre><code class="sh">~/mfem&gt; make hip -j
+</code></pre>
+
+<p>Build the parallel HIP version of MFEM:</p>
+<pre><code class="sh">~/mfem&gt; make phip -j
+</code></pre>
+
+<h2 id="installing-mfem-with-spack">Installing MFEM with Spack</h2>
+<p>If Spack is already available on your system and is visible in your <code>PATH</code>, you can install the MFEM software simply with:</p>
+<pre><code class="sh">spack install mfem
+</code></pre>
+
+<p>To enable package testing during the build process, use instead:</p>
+<pre><code class="sh">spack install -v --test=all mfem
+</code></pre>
+
+<p>If you don't have Spack, you can download it and install MFEM with the following commands:</p>
+<pre><code class="sh">git clone https://github.com/spack/spack.git
+cd spack
+./bin/spack install -v mfem
 </code></pre></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
@@ -386,6 +442,12 @@ can interfere with the other GLVis threads.</p>
             <li><a href="#serial-version-of-mfem-and-glvis">Serial version of MFEM and GLVis</a></li>
         
             <li><a href="#parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</a></li>
+        
+            <li><a href="#cuda-version-of-mfem">CUDA version of MFEM</a></li>
+        
+            <li><a href="#hip-version-of-mfem">HIP version of MFEM</a></li>
+        
+            <li><a href="#installing-mfem-with-spack">Installing MFEM with Spack</a></li>
         
     
     </ul>

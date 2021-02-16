@@ -116,6 +116,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../electromagnetics/">Electromagnetics</a>
                             </li>
@@ -140,6 +144,12 @@
                         
                             <li class="active">
                                  <a href="./">Performance</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-tips-n-tricks/">GPU Support</a>
                             </li>
                         
                     
@@ -245,7 +255,7 @@ requires both a large amount of memory to store the matrix, as well as many
 floating point operations to compute and apply it. <em>Partial assembly</em> is a
 technique that allows for efficiently applying the action of finite element
 operators without forming the corresponding matrix. This is particularly
-important when running on GPUs.</p>
+important when running on <a href="../gpu-tips-n-tricks/">GPUs</a>.</p>
 <p>Partial assembly is enabled at the level of the <code>BilinearForm</code> by setting
 the assembly level:</p>
 <pre><code class="c++">a-&gt;SetAssemblyLevel(AssemblyLevel::PARTIAL);
