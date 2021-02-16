@@ -24,6 +24,8 @@ nav:
   - '_Primal and Dual Vectors': pri-dual-vec.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
+  - '_Coefficients': coefficient.md
+  - '_Nonlinear Form Integrators': nonlininteg.md
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md
@@ -33,7 +35,7 @@ nav:
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
-  - 'GPU Tips': gpu-tips-n-tricks.md
+  - 'GPU Support': gpu-tips-n-tricks.md
   - '_High Performance Templated Code': tperformance.md
   - '_Code Overview': code-overview.md
   - 'Tools': tools.md

@@ -132,7 +132,8 @@ and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master
 [performance/ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1p.cpp).
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 , a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi) and a Ginkgo modification
-in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo)._
+in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo).
+Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -191,7 +192,7 @@ also illustrated.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and GPU devices are supported.
+Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -217,7 +218,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and GPU devices are supported.
+Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -275,7 +276,7 @@ _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
-Partial assembly and GPU devices are supported.
+Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -811,7 +812,7 @@ spaces, with three variants:
 Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
 divergence in the appropriate spaces, comparing the errors in each case.
 
-Partial assembly and GPU devices are supported.
+Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.

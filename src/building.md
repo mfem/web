@@ -54,6 +54,9 @@ Build GLVis:
 That's it! The MFEM library can be found in `mfem-3.4/libmfem.a`, while the
 `glvis` executable will be in the `glvis-3.4` directory.
 
+Note: as of version 4.0, GLVis has additional dependencies that need to be installed
+first, see its building [documentation](https://glvis.org/building/).
+
 To start a GLVis server, open a **new terminal** and type
 ```sh
 ~> cd glvis-3.4
