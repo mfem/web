@@ -2,6 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+Feb 16, 2021 | New documentation page on [GPU performance](gpu-tips-n-tricks.md).
 Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).
 Jul 11, 2020 | MFEM [paper](http://doi.org/10.1016/j.camwa.2020.06.009) in Computers & Mathematics with Applications.

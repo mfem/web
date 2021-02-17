@@ -27,11 +27,12 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
 Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).
 Jul 11, 2020 | MFEM paper [appeared](http://doi.org/10.1016/j.camwa.2020.06.009) in CAMWA.
-Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.
 
+[comment]: # (Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.)
 [comment]: # (Jun 8, 2020  | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.)
 [comment]: # (Mar 10, 2020 | Version 4.1 [released](https://github.com/mfem/mfem/blob/v4.1/CHANGELOG).)
 [comment]: # (Nov 20, 2019 | MFEM overview [paper](http://arxiv.org/abs/1911.09220) available on arXiv.)
