@@ -169,8 +169,92 @@ we get:
 Topologically periodic meshes can also be described in this format, see for example the [periodic-segment](https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh), [periodic-square](https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh), and [periodic-cube](https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh) meshes in the data directory, as well as [Example 9](examples.md?advection).
 
 
-## MFEM mesh v1.1
+## MFEM NC mesh v1.0
 
+The `MFEM NC mesh v1.0` is a format for nonconfoming meshes in MFEM. It is
+similar in style to the default (conforming) `MFEM mesh v1.0` format, but is
+in fact independent and supports advanced AMR features such as
+
+* storing refined elements and the refinement hierarchy,
+* anisotropic element refinement,
+* hanging nodes (vertices),
+* parallel partitioning.
+
+The file starts with a signature and the mesh dimension:
+```sh
+MFEM NC mesh v1.0
+
+# NCMesh supported geometry types:
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+# PRISM       = 6
+
+dimension
+2
+
+# optional rank for parallel files, defaults to 0
+rank
+0
+```
+The `rank` section defines the MPI rank of the process that saved the file.
+This section can be omitted in serial meshes.
+
+Similarly to the conforming format, the next section lists all elements. This
+time however, we recognize two kinds of elements:
+
+* Regular, active elements (`refinement type == 0`). These elements participate
+  in the computation (are listed in the `Mesh` class) and reference vertex indices.
+* Inactive, previously refined elements (`refinement type > 0`). Instead of
+  vertices, these elements contain links to their child elements, and are not
+  visible in the `Mesh` class.
+
+All elements also have their geometry type and user attribute defined, as well
+as the MPI rank of their owner process (only used in parallel meshes).
+
+```sh
+# mesh elements, both regular and refined
+elements
+<number of elements>
+<owner rank> <attribute> <geometry type> 0 <vertex indices>
+<owner rank> <attribute> <geometry type> <refinement type> <child indices>
+...
+```
+
+Storing the complete refinement hierarchy allows MFEM to coarsen some of the
+fine elements if necessary, and also to naturally define an ordering of the
+fine elements that can be used for fast parallel partitioning of the mesh (a
+depth-first traversal of all refinement trees defines a space-filling curve
+(SFC) that can be easily partitioned among parallel processes).
+
+The following picture illustrates the refinement hierarchy of a mesh that
+started as two quadrilaterals and then underwent two anisotropic refinements
+(blue numbers are vertex indices):
+![](img/formats/hierarchy.svg)
+
+The corresponding `elements` section of the mesh file could look like this:
+```sh
+elements
+6
+0 1 3 2 2 3      # element 0: refinement 2 (Y), children 2, 3
+0 1 3 0 1 2 5 4  # element 1: no refinement, vertices 1, 2, 5, 4
+0 1 3 1 4 5      # element 2: refinement 1 (X), children 4, 5
+0 1 3 0 6 7 4 3  # element 3: no refinement, vertices 6, 7, 4, 3
+0 1 3 0 0 8 9 6  # element 4: no refinement, vertices 0, 8, 9, 6
+0 1 3 0 8 1 7 9  # element 5: no refinement, vertices 8, 1, 7, 9
+```
+
+The refinement types are numbered as follows:
+![](img/formats/reftypes.svg)
+
+Note that the type is encoded as a 3-bit number, where bits 0, 1, 2 correspond
+to the X, Y, Z axes, respectively. Other element geometries allow roughly
+similar refinement types: triangle (3), square (1, 2, 3), tetrahedron (7),
+prism (3, 4, 7).
+
+<!--
 This format adds support for non-conforming (AMR) meshes. The sections
 `dimension`, `elements`, and `boundary` are the same as in MFEM mesh v1.0 and
 are followed by two new (optional) sections, `vertex_parents` and
@@ -213,6 +297,7 @@ up. The refinement types are: 1=X, 2=Y, 4=Z, 3=XY, 5=XZ, 6=YZ, 7=XYZ, where X,
 Y, Z refer to one or more splits in the respective axes of the element
 reference domain. If the entire section is missing, MFEM will not be able to
 derefine the mesh.
+-->
 
 ![](img/fichera-amr.png)
 
