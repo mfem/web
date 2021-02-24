@@ -7,6 +7,11 @@
 
 ## Selected Publications
 
+#### 2021
+  1. J. Nikl, I. Göthel, M. Kuchařík, S. Weber, and M. Bussmann, [Implicit reduced Vlasov–Fokker–Planck–Maxwell model based on high-order mixed elements](https://doi.org/10.1016/j.jcp.2021.110214). *Journal of Computational Physics*, (434) 110214, **2021**.
+
+---
+
 #### 2020
   1. W. Pazner, Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), in review, **2020**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), in review, **2020**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
