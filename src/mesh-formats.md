@@ -324,6 +324,8 @@ by a serialized `GridFunction` representing a vector-valued finite element
 function defining the curvature of the elements, similarly as in the conforming
 case.
 
+The end of the mesh file is marked with the line `mfem_mesh_end`.
+
 For examples of meshes using the `NC mesh v1.0` format, see
 [amr-quad.mesh](https://github.com/mfem/mfem/blob/master/data/amr-quad.mesh),
 [amr-hex.mesh](https://github.com/mfem/mfem/blob/master/data/amr-hex.mesh) and
