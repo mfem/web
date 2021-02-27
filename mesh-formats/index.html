@@ -233,7 +233,7 @@
         
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         
-            <li><a href="#mfem-mesh-v11">MFEM mesh v1.1</a></li>
+            <li><a href="#mfem-nc-mesh-v10">MFEM NC mesh v1.0</a></li>
         
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
@@ -399,51 +399,146 @@ Ordering: 0
 <p>we get:</p>
 <p><img alt="" src="../img/formats/escher-p3.png" /></p>
 <p>Topologically periodic meshes can also be described in this format, see for example the <a href="https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh">periodic-segment</a>, <a href="https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh">periodic-square</a>, and <a href="https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh">periodic-cube</a> meshes in the data directory, as well as <a href="../examples/?advection">Example 9</a>.</p>
-<h2 id="mfem-mesh-v11">MFEM mesh v1.1</h2>
-<p>This format adds support for non-conforming (AMR) meshes. The sections
-<code>dimension</code>, <code>elements</code>, and <code>boundary</code> are the same as in MFEM mesh v1.0 and
-are followed by two new (optional) sections, <code>vertex_parents</code> and
-<code>coarse_elements</code>:</p>
-<pre><code class="sh"># Vertex hierarchy
-vertex_parents
-&lt;number of relations&gt;
-&lt;vertex index&gt; &lt;parent 1 index&gt; &lt;parent 2 index&gt;
-...
+<h2 id="mfem-nc-mesh-v10">MFEM NC mesh v1.0</h2>
+<p>The <code>MFEM NC mesh v1.0</code> is a format for nonconfoming meshes in MFEM. It is
+similar in style to the default (conforming) <code>MFEM mesh v1.0</code> format, but is
+in fact independent and supports advanced AMR features such as</p>
+<ul>
+<li>storing refined elements and the refinement hierarchy,</li>
+<li>anisotropic element refinement,</li>
+<li>hanging nodes (vertices),</li>
+<li>parallel partitioning.</li>
+</ul>
+<p>The file starts with a signature and the mesh dimension:</p>
+<pre><code class="sh">MFEM NC mesh v1.0
 
-# Element hierarchy
-coarse_elements
-&lt;number of coarse elements&gt;
-&lt;refinement type&gt; &lt;child index 1&gt; ... &lt;child index n&gt;
+# NCMesh supported geometry types:
+# SEGMENT     = 1
+# TRIANGLE    = 2
+# SQUARE      = 3
+# TETRAHEDRON = 4
+# CUBE        = 5
+# PRISM       = 6
+
+# mesh dimension 1, 2 or 3
+dimension
+&lt;dimension&gt;
+
+# optional rank for parallel files, defaults to 0
+rank
+&lt;MPI rank&gt;
+</code></pre>
+
+<p>The <code>rank</code> section defines the MPI rank of the process that saved the file.
+This section can be omitted in serial meshes.</p>
+<p>Similarly to the conforming format, the next section lists all elements. This
+time however, we recognize two kinds of elements:</p>
+<ul>
+<li>Regular, active elements (<code>refinement type == 0</code>). These elements participate
+  in the computation (are listed in the <code>Mesh</code> class) and reference vertex indices.</li>
+<li>Inactive, previously refined elements (<code>refinement type &gt; 0</code>). Instead of
+  vertices, these elements contain links to their child elements, and are not
+  visible in the <code>Mesh</code> class.</li>
+</ul>
+<p>All elements also have their geometry type and user attribute defined, as well
+as the MPI rank of their owner process (only used in parallel meshes).</p>
+<pre><code class="sh"># mesh elements, both regular and refined
+elements
+&lt;number of elements&gt;
+&lt;owner rank&gt; &lt;attribute&gt; &lt;geometry type&gt; 0 &lt;vertex indices&gt;
+&lt;owner rank&gt; &lt;attribute&gt; &lt;geometry type&gt; &lt;refinement type&gt; &lt;child indices&gt;
 ...
 </code></pre>
 
-<p>These are followed by the standard sections <code>vertices</code> and <code>nodes</code> of the format
-MFEM mesh v1.0.</p>
-<p>The new section <code>vertex_parents</code> identifies all vertices (by their zero-based
-index) that have been created as new mid-edge vertices by adaptive refinement
-of elements. Each such vertex has exactly two "parents" identified again by two
-zero-based indices. This information is needed to construct constraining
-relations in a mesh with hanging nodes. The order the vertex-parent relations
-are stated in the file is not significant.</p>
-<p>The second optional section <code>coarse_elements</code> describes the element refinement
-hierarchy. While the standard section <code>elements</code> lists all leaf elements of the
-refinement tree, this section describes all elements that have been refined and
-are no longer active. Each line describes one such virtual element, its
-refinement type and up to 8 children. Child indices between 0 and <em>N-1</em> refer
-to the <em>N</em> active elements in the <code>elements</code> section. A coarse element has an
-implied index starting with <em>N</em>. A coarse element can refer to another coarse
-element of <em>index &gt;= N</em>, but only after such child has been defined in the
-<code>coarse_elements</code> section. The hierarchy is thus represented from the bottom
-up. The refinement types are: 1=X, 2=Y, 4=Z, 3=XY, 5=XZ, 6=YZ, 7=XYZ, where X,
-Y, Z refer to one or more splits in the respective axes of the element
-reference domain. If the entire section is missing, MFEM will not be able to
-derefine the mesh.</p>
-<p><img alt="" src="../img/fichera-amr.png" /></p>
-<p>The files
+<p>Storing the complete refinement hierarchy allows MFEM to coarsen some of the
+fine elements if necessary, and also to naturally define an ordering of the
+fine elements that can be used for fast parallel partitioning of the mesh (a
+depth-first traversal of all refinement trees defines a space-filling curve
+(SFC) that can be easily partitioned among parallel processes).</p>
+<p>The following picture illustrates the refinement hierarchy of a mesh that
+started as two quadrilaterals and then underwent two anisotropic refinements
+(blue numbers are vertex indices):
+<img alt="" src="../img/formats/hierarchy.svg" /></p>
+<p>The corresponding <code>elements</code> section of the mesh file could look like this:</p>
+<pre><code class="sh">elements
+6
+0 1 3 2 2 3      # element 0: refinement 2 (Y), children 2, 3
+0 1 3 0 1 2 5 4  # element 1: no refinement, vertices 1, 2, 5, 4
+0 1 3 1 4 5      # element 2: refinement 1 (X), children 4, 5
+0 1 3 0 6 7 4 3  # element 3: no refinement, vertices 6, 7, 4, 3
+0 1 3 0 0 8 9 6  # element 4: no refinement, vertices 0, 8, 9, 6
+0 1 3 0 8 1 7 9  # element 5: no refinement, vertices 8, 1, 7, 9
+</code></pre>
+
+<p>The refinement types are numbered as follows:
+<img alt="" src="../img/formats/reftypes.svg" /></p>
+<p>Note that the type is encoded as a 3-bit number, where bits 0, 1, 2 correspond
+to the X, Y, Z axes, respectively. Other element geometries allow fewer
+but similar refinement types: triangle (3), square (1, 2, 3), tetrahedron (7),
+prism (3, 4, 7).</p>
+<p>The next section is the <code>boundary</code> section, which is exactly the same as in the
+conforming format:</p>
+<pre><code class="sh">boundary
+&lt;number of boundary elements&gt;
+&lt;boundary element attribute&gt; &lt;geometry type&gt; &lt;vertex indices&gt;
+...
+</code></pre>
+
+<p>The nonconfoming mesh however needs to identify hanging vertices, which may
+occur in the middle of edges or faces as elements are refined. A hanging vertex
+always has two "parent" vertices.</p>
+<pre><code class="sh">vertex_parents
+&lt;number of records&gt;
+&lt;vertex number&gt; &lt;parent 1 number&gt; &lt;parent 2 number&gt;
+...
+</code></pre>
+
+<p>In our example above, vertices 6, 7, 8, 9 are hanging vertices, so the
+<code>vertex_parents</code> section would look like this:</p>
+<pre><code class="sh">vertex_parents
+4
+6 0 3
+7 1 4
+8 0 1
+9 6 7
+</code></pre>
+
+<p>The hanging vertices can appear in any order in this section. The only
+limitation is that the first N vertex indices (not listed in this section) be
+reserved for the top-level vertices (those with no parents, typically the
+vertices of the coarse mesh).</p>
+<p>The next section is optional and can be safely omitted when creating the mesh
+file manually. The <code>root_state</code> section affects leaf ordering when traversing
+the refinement trees and is used to optimize the SFC-based partitioning. There
+is one number per root element. The default state for all root elements is zero.</p>
+<pre><code class="sh">root_state
+&lt;number of records&gt;
+&lt;root element state&gt;
+...
+</code></pre>
+
+<p>Finally, we have the <code>coordinates</code> section which assigns physical positions
+to the N top-level vertices. Note that the positions of hanging vertices are
+always derived from their parent vertices and are not listed in the mesh file.</p>
+<pre><code class="sh">coordinates
+&lt;number of top-level vertices&gt;
+&lt;vdim&gt;
+&lt;coordinate 1&gt; ... &lt;coordinate &lt;vdim&gt;&gt;
+...
+</code></pre>
+
+<p>If the mesh is curvilinear, the <code>coordinates</code> section can be replaced with
+an alternative section called <code>nodes</code>. The <code>nodes</code> keyword is then followed
+by a serialized <code>GridFunction</code> representing a vector-valued finite element
+function defining the curvature of the elements, similarly as in the conforming
+case.</p>
+<p>The end of the mesh file is marked with the line <code>mfem_mesh_end</code>.</p>
+<p>For examples of meshes using the <code>NC mesh v1.0</code> format, see
 <a href="https://github.com/mfem/mfem/blob/master/data/amr-quad.mesh">amr-quad.mesh</a>,
 <a href="https://github.com/mfem/mfem/blob/master/data/amr-hex.mesh">amr-hex.mesh</a> and
 <a href="https://github.com/mfem/mfem/blob/master/data/fichera-amr.mesh">fichera-amr.mesh</a>
-(above) in the <code>data</code> directory are examples of AMR meshes.</p>
+(visualized below) in the <code>data</code> directory of MFEM.</p>
+<p><img alt="" src="../img/fichera-amr.png" /></p>
 <h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
@@ -641,7 +736,7 @@ LOOKUP_TABLE default
         
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         
-            <li><a href="#mfem-mesh-v11">MFEM mesh v1.1</a></li>
+            <li><a href="#mfem-nc-mesh-v10">MFEM NC mesh v1.0</a></li>
         
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
