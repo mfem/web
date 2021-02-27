@@ -11,7 +11,9 @@ Please cite with:
             M. Stowell and V. Tomov and I. Akkerman and J. Dahm and D. Medina and S. Zampini},
   journal = {Computers \& Mathematics with Applications},
   doi = {10.1016/j.camwa.2020.06.009},
-  year = {2020}
+  volume = {81},
+  pages = {42-74},
+  year = {2021}
 }
 
 @misc{mfem-web,
