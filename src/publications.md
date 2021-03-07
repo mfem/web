@@ -7,17 +7,23 @@
 
 ## Selected Publications
 
+#### 2021
+  1. W. Pazner, Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), *in review*, **2021**.
+  1. W. Pazner, [Sparse invariant domain preserving discontinuous Galerkin methods with subcell convex limiting](https://arxiv.org/abs/2004.08503), *in review*, **2021**.
+  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), *in review*, **2021**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
+  1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), *in review*, **2021**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
+  1. J. Nikl, I. Göthel, M. Kuchařík, S. Weber, and M. Bussmann, [Implicit reduced Vlasov-Fokker-Planck-Maxwell model based on high-order mixed elements](https://doi.org/10.1016/j.jcp.2021.110214), *Journal of Computational Physics*, (434) 110214, **2021**.
+
+---
+
 #### 2020
-  1. W. Pazner, Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), in review, **2020**.
-  1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), in review, **2020**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
-  1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), in review, **2020**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
-  1. W. Pazner, [Sparse invariant domain preserving discontinuous Galerkin methods with subcell convex limiting](https://arxiv.org/abs/2004.08503), in review, **2020**.
-  1. D. Kuzmin and M. Quezada de Luna, [Entropy conservation property and entropy stabilization of high-order continuous Galerkin approximations to scalar conservation laws](), in review, **2020**. Also available as [arXiv:2005.08788](https://arxiv.org/abs/2005.08788).
-  1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](), *SIAM Journal on Scientific Computing*, in press, **2020**.
-  1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://arxiv.org/abs/2001.09196), *Nuclear Science and Engineering*, to appear, **2020**.
-  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [DSA Preconditioning for DG Discretizations of SN Transport on High-Order Curved Meshes](https://arxiv.org/abs/1810.11082), *SIAM Journal on Scientific Computing*, in press, **2020**.
-  1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://doi.org/10.1016/j.camwa.2020.06.009), *Computers & Mathematics with Applications*, in press, **2020**. Also available as [arXiv:1911.09220](http://arxiv.org/abs/1911.09220).
-  1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *SIAM Journal on Scientific Computing*, in press, **2020**.
+  1. A. Barker and Tz. Kolev, [Matrix‐free preconditioning for high-order H(curl) discretizations](https://doi.org/10.1002/nla.2348), 28(2) e2348, **2020**.
+  1. D. Kuzmin and M. Quezada de Luna, [Entropy conservation property and entropy stabilization of high-order continuous Galerkin approximations to scalar conservation laws](https://doi.org/10.1016/j.compfluid.2020.104742), *Computers & Fluids*, (213) 104742, **2020**.
+  1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](https://doi.org/10.1137/20M1314495), *SIAM Journal on Scientific Computing*, 43(1), A221-A241, **2020**.
+  1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://doi.org/10.1080/00295639.2020.1799603), *Nuclear Science and Engineering*, 195(2), 119-136, **2020**.
+  1. T. Haut, B. Southworth, P. Maginot, V. Tomov, [Diffusion Synthetic Acceleration Preconditioning for Discontinuous Galerkin Discretizations of SN Transport on High-Order Curved Meshes](https://doi.org/10.1137/19M124993X), *SIAM Journal on Scientific Computing*, 42(5), B1271-B1301, **2020**.
+  1. R. Anderson, J. Andrej, A. Barker, J. Bramwell, J.-S. Camier, J. Cerveny V. Dobrev, Y. Dudouit, A. Fisher, Tz. Kolev, W. Pazner, M. Stowell, V. Tomov, I. Akkerman, J. Dahm, D. Medina, and S. Zampini, [MFEM: A Modular Finite Element Library](http://doi.org/10.1016/j.camwa.2020.06.009), *Computers & Mathematics with Applications*, (81) 42-74, **2020**. Also available as [arXiv:1911.09220](http://arxiv.org/abs/1911.09220).
+  1. R. Li and C. Zhang, [Efficient Parallel Implementations of Sparse Triangular Solves for GPU Architectures](https://epubs.siam.org/doi/abs/10.1137/1.9781611976137.10), *Proceedings of the 2020 SIAM Conference on Parallel Processing for Scientific Computing*, **2020**.
   1. W. Pazner, [Efficient low-order refined preconditioners for high-order matrix-free continuous and discontinuous Galerkin methods](https://doi.org/10.1137/19M1282052), *SIAM Journal on Scientific Computing*, 42(5), pp. A3055-A3083, **2020**.
   1. B. Yee, S. Olivier, T. Haut, M. Holec, V. Tomov, P. Maginot, [A Quadratic Programming Flux Correction Method for High-Order DG Discretizations of SN Transport](https://arxiv.org/abs/1910.02918), *Journal of Computational Physics*, (419) 109696, **2020**.
   1. T. L. Horvath and S. Rhebergen, [An exactly mass conserving space-time embedded-hybridized discontinuous Galerkin method for the Navier-Stokes equations on moving domains](https://doi.org/10.1016/j.jcp.2020.109577), *Journal of Computational Physics*, (417) 109577, **2020**.
@@ -26,9 +32,10 @@
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, R. Rieben, and V. Tomov, [Simulation-Driven Optimization of High-Order Meshes in ALE Hydrodynamics](https://doi.org/10.1016/j.compfluid.2020.104602), *Computers & Fluids*, (208) 104602, **2020**.
   1. H. Hajduk, D. Kuzmin, Tz. Kolev, V. Tomov, I. Tomas, and J. Shadid, [Matrix-free subcell residual distribution for Bernstein finite elements: Monolithic limiting](https://doi.org/10.1016/j.compfluid.2020.104451), *Computers & Fluids*, (200) 104451, **2020**.
   1. M. Franco, J.-S. Camier, J. Andrej, and W. Pazner, [High-order matrix-free incompressible flow solvers with GPU acceleration and low-order refined preconditioners](https://www.sciencedirect.com/science/article/pii/S0045793020301134), *Computers & Fluids*, (203) 104541, **2020**.
-  1. S. Friedhoff and B. S. Southworth,[On "Optimal" h‐independent convergence of Parareal and multigrid‐reduction‐in‐time using Runge‐Kutta time integration](https://doi.org/10.1002/nla.2301), *Numerical Linear Algebra with Applications*, e2301, **2020**.
+  1. S. Friedhoff and B. S. Southworth,[On "Optimal" h-independent convergence of Parareal and multigrid-reduction-in-time using Runge-Kutta time integration](https://doi.org/10.1002/nla.2301), *Numerical Linear Algebra with Applications*, e2301, **2020**.
   1. B. S. Southworth, A. A. Sivas, and S. Rhebergen, [On fixed-point, Krylov, and 2x2 block preconditioners for nonsymmetric problems](https://doi.org/10.1137/19M1298317), *SIAM Journal on Matrix Analysis and Applications*, 41(2), pp. 871-900, **2020**.
-  1. P. Fischer, M. Min, T. Rathanayake, S. Dutta, Tz. Kolev, V. Dobrev, J.S. Camier, M. Kronbichler, T. Warburton, K. Swirydowicz, and J. Brown, [Scalability of High-Performance PDE Solvers](https://doi.org/10.1177/1094342020915762), *The International Journal on High Performance Computing Applications*, 34(5), pp. 562–586, **2020**.
+  1. P. Fischer, M. Min, T. Rathanayake, S. Dutta, Tz. Kolev, V. Dobrev, J.S. Camier, M. Kronbichler, T. Warburton, K. Swirydowicz, and J. Brown, [Scalability of High-Performance PDE Solvers](https://doi.org/10.1177/1094342020915762), *The International Journal on High Performance Computing Applications*, 34(5), pp. 562-586, **2020**.
+  1. G. Sosa Jones, J. J. Lee, and S. Rhebergen, [A space-time hybridizable discontinuous Galerkin method for linear free-surface waves](https://doi.org/10.1007/s10915-020-01340-8), *Journal of Scientific Computing*, (85) 61, **2020**. Also available as [arXiv:1910.07315](https://arxiv.org/abs/1910.07315)
 
 ---
 
@@ -44,7 +51,6 @@
   1. D. White, and A. Voronin, [A computational study of symmetry and well-posedness of structural topology optimization](https://link.springer.com/article/10.1007/s00158-018-2098-9), *Structural and Multidisciplinary Optimization*, 59(3), pp. 759-766, **2019**.
   1. T. Haut, P. Maginot, V. Tomov, B. Southworth, T. Brunner and T. Bailey, [An Efficient Sweep-Based Solver for the SN Equations on High-Order Meshes](https://doi.org/10.1080/00295639.2018.1562778), *Nuclear Science and Engineering*, 193(7):746-759, **2019**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [The Target-Matrix Optimization Paradigm For High-Order Meshes](https://doi.org/10.1137/18M1167206), *SIAM Journal on Scientific Computing*, 41(1):B50-B68, **2019**.
-  1. G. Sosa Jones, J. J. Lee, and S. Rhebergen, [A space-time hybridizable discontinuous Galerkin method for linear free-surface waves](https://arxiv.org/abs/1910.07315), in review, **2019**.
   1. K. L. A. Kirk, T. L. Horvath, A. Cesmelioglu and S. Rhebergen, [Analysis of a space-time hybridizable discontinuous Galerkin method for the advection-diffusion problem on time-dependent domains](https://doi.org/10.1137/18M1202049), *SIAM Journal on Numerical Analysis*, 57(4), pp. 1677-1696, **2019**.
   1. T. L. Horvath and S. Rhebergen, [A locally conservative and energy-stable finite element method for the Navier-Stokes problem on time-dependent domains](https://doi.org/10.1002/fld.4707), *International Journal for Numerical Methods in Fluids*, 89(12):519-532, **2019**.
   1. R. Li, Y. Xi, L. Erlandson, and Y. Saad, [The Eigenvalues Slicing Library (EVSL): Algorithms, Implementation, and Software](https://doi.org/10.1137/18M1170935), *SIAM Journal on Scientific Computing*, 41(4), pp. C393-C415, **2019**.
