@@ -923,6 +923,25 @@ We recommend viewing examples 1 and 14 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex28" markdown="1">
+##Example 28: Constraints and Sliding Boundary Conditions
+<img class="floatright" src="../img/examples/ex28.png">
+
+Here we illustrate the use of linear solvers with constraints by
+solving an elasticity problem where the normal component of displacement
+is constrained to zero on two boundaries but tangential displacement is
+allowed.
+
+The constraints can be enforced in several different ways, including
+eliminating them from the linear system or solving a saddle-point
+system that explicitly includes constraint conditions.
+
+_The example has a serial ([ex28.cpp](https://github.com/mfem/mfem/blob/master/examples/ex28.cpp))
+and a parallel ([ex28p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex28p.cpp)) version.
+We recommend viewing example 2 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
