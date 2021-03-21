@@ -927,8 +927,8 @@ We recommend viewing examples 1 and 14 before viewing this example._
 ##Example 28: Constraints and Sliding Boundary Conditions
 <img class="floatright" src="../img/examples/ex28.png">
 
-Here we illustrate the use of linear solvers with constraints by
-solving an elasticity problem where the normal component of displacement
+This example code illustrates the use of constraints in linear solvers by
+solving an elasticity problem where the normal component of the displacement
 is constrained to zero on two boundaries but tangential displacement is
 allowed.
 
@@ -1586,6 +1586,7 @@ function update()
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
    + showElement("ex27", (elasticity || maxwell || conduction || compressibleflow) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
+   + showElement("ex28", elasticity && h1 && galerkin && pcg)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
