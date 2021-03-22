@@ -79,6 +79,7 @@ A variety of solvers are available for the resulting linear algebra systems (or 
 
 MFEM includes a number of well-documented [example codes](examples.md) that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:
 
+ - [Example 0](http://mfem.github.io/doxygen/html/ex0_8cpp_source.html): simplest MFEM example, good starting point for new users (nodal H1 FEM for the Laplace problem),
  - [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html): nodal H1 FEM for the Laplace problem,
  - [Example 2](http://mfem.github.io/doxygen/html/ex2_8cpp_source.html): vector FEM for linear elasticity,
  - [Example 3](http://mfem.github.io/doxygen/html/ex3_8cpp_source.html): Nedelec H(curl) FEM for the definite Maxwell problem,
