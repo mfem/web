@@ -1382,6 +1382,29 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 <br></div>
 
 
+<div id="distance" markdown="1">
+##Distance Solver Miniapp
+<a href="https://glvis.org/live/?stream=../data/distance.saved" target="_blank">
+<img class="floatright" width="250" src="../img/examples/distance.png">
+</a>
+
+The `distance` miniapp, found under `miniapps/shifted` demonstrates the
+capability to compute the "distance" to a given point source or to the zero
+level set of a given function.
+Here "distance" refers to the length of the shortest path through the mesh.
+The input can be a `DeltaCoefficient` (representing a point source),
+or any `Coefficient` (for the case of a level set).
+The output is a `ParGridFunction` that can be scalar (representing the scalar
+distance), or a vector (its magnitude is the distance, and its direction is
+the starting direction of the shortest path).
+
+_The miniapp has only a parallel
+([distance.cpp](https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
 <a href="https://glvis.org/live/?stream=../data/laghos.saved" target="_blank">
@@ -1504,6 +1527,7 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -1607,6 +1631,9 @@ function update()
    + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
    + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
+   
+   // shifted methods miniapps
+   + showElement("distance", all1 && h1 && galerkin && (cg || gmres || amg || newton))
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
