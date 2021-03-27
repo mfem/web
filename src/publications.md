@@ -8,16 +8,21 @@
 ## Selected Publications
 
 #### 2021
-  1. W. Pazner, Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), *in review*, **2021**.
+  1. Tz. Kolev and W. Pazner,  [Conservative and accurate solution transfer between high-order and low-order refined finite element spaces](https://arxiv.org/abs/2103.05283), *in review*, **2021**.
+  1. J. Yang, T. Dzanic, B. Petersen, J. Kudo, K. Mittal, V. Tomov, J.-S. Camier, T. Zhao, H. Zha, Tz. Kolev, R. Anderson, D. Faissol, [Reinforcement Learning for Adaptive Mesh Refinement](https://arxiv.org/abs/2103.01342), *in review*, **2021**.
+  1. W. Pazner and Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), *in review*, **2021**.
   1. W. Pazner, [Sparse invariant domain preserving discontinuous Galerkin methods with subcell convex limiting](https://arxiv.org/abs/2004.08503), *in review*, **2021**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](), *in review*, **2021**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
-  1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](), *in review*, **2021**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
+  1. N. Whitman, T. Palmer, P. Greaney, S. Hosseini, D. Burkes, and D. Senor, [Gray Phonon Transport Prediction of Thermal Conductivity in Lithium Aluminate with Higher-Order Finite Elements on Meshes with Curved Surfaces](https://doi.org/10.1080/23324309.2021.1900258), *Journal of Computational and Theoretical Transport*, **2021**.
+  1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](https://doi.org/10.1016/j.camwa.2021.02.012), *Computers & Mathematics with Applications*, (87) 120-138, **2021**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
   1. J. Nikl, I. Göthel, M. Kuchařík, S. Weber, and M. Bussmann, [Implicit reduced Vlasov-Fokker-Planck-Maxwell model based on high-order mixed elements](https://doi.org/10.1016/j.jcp.2021.110214), *Journal of Computational Physics*, (434) 110214, **2021**.
 
 ---
 
 #### 2020
-  1. A. Barker and Tz. Kolev, [Matrix‐free preconditioning for high-order H(curl) discretizations](https://doi.org/10.1002/nla.2348), 28(2) e2348, **2020**.
+
+  1. N. Beams, A. Abdelfattah, S. Tomov, J. Dongarra, T. Kolev and Y. Dudouit, [High-Order Finite Element Method using Standard and Device-Level Batch GEMM on GPUs](https://doi.org/10.1109/ScalA51936.2020.00012), *IEEE/ACM 11th ScalA Workshop*, 53-60, **2020**.
+  1. A. Barker and Tz. Kolev, [Matrix-free preconditioning for high-order H(curl) discretizations](https://doi.org/10.1002/nla.2348),  *Numerical Linear Algebra with Applications*, 28(2) e2348, **2020**.
   1. D. Kuzmin and M. Quezada de Luna, [Entropy conservation property and entropy stabilization of high-order continuous Galerkin approximations to scalar conservation laws](https://doi.org/10.1016/j.compfluid.2020.104742), *Computers & Fluids*, (213) 104742, **2020**.
   1. A. Sandu, V. Tomov, L. Cervena, and Tz. Kolev, [Conservative High-Order Time Integration for Lagrangian Hydrodynamics](https://doi.org/10.1137/20M1314495), *SIAM Journal on Scientific Computing*, 43(1), A221-A241, **2020**.
   1. B. S. Southworth, M. Holec, and T. Haut. [Diffusion synthetic acceleration for heterogeneous domains, compatible with voids](https://doi.org/10.1080/00295639.2020.1799603), *Nuclear Science and Engineering*, 195(2), 119-136, **2020**.
