@@ -1111,7 +1111,7 @@ moving to the miniapps.**_
 <br></div>
 
 <div id="toroid" markdown="1">
-## Toroid Miniapp
+##Toroid Miniapp
 <img class="floatright" src="../img/examples/toroid-wedge.png">
 
 This miniapp generates two types of toroidal volume meshes; one with
@@ -1141,7 +1141,7 @@ moving to the miniapps.**_
 <br></div>
 
 <div id="twist" markdown="1">
-## Twist Miniapp
+##Twist Miniapp
 <img class="floatright" src="../img/examples/twist-wedge.png">
 
 This miniapp generates simple periodic meshes to demonstrate MFEM's handling
@@ -1174,7 +1174,7 @@ moving to the miniapps.**_
 <br></div>
 
 <div id="extruder" markdown="1">
-## Extruder Miniapp
+##Extruder Miniapp
 <img class="floatright" src="../img/examples/extruded-star.png">
 
 This miniapp creates higher dimensional meshes from lower dimensional meshes
@@ -1198,7 +1198,7 @@ moving to the miniapps.**_
 <br></div>
 
 <div id="polar-nc" markdown="1">
-## Polar-NC Miniapp
+##Polar-NC Miniapp
 <img class="floatright" src="../img/examples/polar-nc.png">
 
 This miniapp generates a circular sector mesh that consist of quadrilaterals
@@ -1388,7 +1388,7 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 <img class="floatright" width="250" src="../img/examples/distance.png">
 </a>
 
-The `distance` miniapp, found under `miniapps/shifted` demonstrates the
+The `distance` miniapp, found in the `miniapps/shifted` directory demonstrates the
 capability to compute the "distance" to a given point source or to the zero
 level set of a given function.
 Here "distance" refers to the length of the shortest path through the mesh.
@@ -1631,7 +1631,7 @@ function update()
    + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
    + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
-   
+
    // shifted methods miniapps
    + showElement("distance", all1 && h1 && galerkin && (cg || gmres || amg || newton))
 
