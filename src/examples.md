@@ -112,14 +112,10 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 ##Example 0: Laplace Problem (Simplest MFEM Example)
 <img class="floatright" src="../img/examples/ex0.png">
 
-This is the simplest MFEM example, and is a good starting point for new users.
-This example demonstrates the use of MFEM to define an $H^1$ finite element
+This is the simplest MFEM example and a good starting point for new users.
+The example demonstrates the use of MFEM to define an $H^1$ finite element
 discretization of the Laplace problem $$-\Delta u = 1$$ with homogeneous
 Dirichlet boundary conditions.
-
-The example highlights the use of mesh refinement, finite element grid
-functions, as well as linear and bilinear forms corresponding to the left-hand
-side and right-hand side of the discrete linear system.
 
 _The example has serial ([ex0.cpp](https://github.com/mfem/mfem/blob/master/examples/ex0.cpp))
 and parallel ([ex0p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex0p.cpp))
