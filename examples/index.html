@@ -333,23 +333,36 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
 <hr></p>
 <!-- ------------------------------------------------------------------------- -->
 
+<div id="ex0">
+<h2 id="example-0-laplace-problem-simplest-mfem-example">Example 0: Laplace Problem (Simplest MFEM Example)</h2>
+<p><img class="floatright" src="../img/examples/ex0.png"></p>
+<p>This is the simplest MFEM example and a good starting point for new users.
+The example demonstrates the use of MFEM to define an $H^1$ finite element
+discretization of the Laplace problem $$-\Delta u = 1$$ with homogeneous
+Dirichlet boundary conditions.</p>
+<p><em>The example has serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex0.cpp">ex0.cpp</a>)
+and parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex0p.cpp">ex0p.cpp</a>)
+versions.</em>
+<div style="clear:both;"></div>
+<br></p>
+</div>
 <div id="ex1">
 <h2 id="example-1-laplace-problem">Example 1: Laplace Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
 </a></p>
-<p>This example code demonstrates the use of MFEM to define a
-simple isoparametric finite element discretization of the
-Laplace problem $$-\Delta u = 1$$ with homogeneous Dirichlet
-boundary conditions. Specifically, we discretize with the
-finite element space coming from the mesh (linear by default, quadratic
-for quadratic curvilinear mesh, NURBS for NURBS mesh, etc.)</p>
-<p>The example highlights the use of mesh refinement, finite
-element grid functions, as well as linear and bilinear forms
-corresponding to the left-hand side and right-hand side of the
-discrete linear system. We also cover the explicit elimination
-of essential boundary conditions, static condensation, and the optional
-connection to the <a href="http://glvis.org">GLVis</a> tool for visualization.</p>
+<p>This example code demonstrates the use of MFEM to define a simple isoparametric
+finite element discretization of the Laplace problem $$-\Delta u = 1$$ with
+homogeneous Dirichlet boundary conditions. Specifically, we discretize with the
+finite element space coming from the mesh (linear by default, quadratic for
+quadratic curvilinear mesh, NURBS for NURBS mesh, etc.) The problem solved in
+this example is the same as <a href="#ex0">ex0</a>, but with more sophisticated options and
+features.</p>
+<p>The example highlights the use of mesh refinement, finite element grid
+functions, as well as linear and bilinear forms corresponding to the left-hand
+side and right-hand side of the discrete linear system. We also cover the
+explicit elimination of essential boundary conditions, static condensation, and
+the optional connection to the <a href="http://glvis.org">GLVis</a> tool for visualization.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a>),
 a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>),
 and HPC versions: <a href="https://github.com/mfem/mfem/blob/master/miniapps/performance/ex1.cpp">performance/ex1.cpp</a>,
@@ -1623,6 +1636,7 @@ function update()
    numShown = 0 // expression continued...
 
    // example codes
+   + showElement("ex0",  (diffusion) && h1 && (galerkin) && (gs || pcg || amg))
    + showElement("ex1",  (diffusion) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
