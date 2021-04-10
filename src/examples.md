@@ -1655,7 +1655,7 @@ function update()
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
 
    // shifted methods miniapps
-   + showElement("distance", all1 && h1 && galerkin && (cg || gmres || amg || newton))
+   + showElement("distance", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
@@ -1665,7 +1665,7 @@ function update()
    ; // ...end of expression
 
    // show/hide the message "No examples match your criteria"
-   showElement("nomatch", numShown == 0);
+   showElement("nomatch", numShown === 0);
 }
 
 function initCombos()
