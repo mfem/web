@@ -124,6 +124,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
  - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Distance](http://mfem.github.io/doxygen/html/distance_8cpp_source.html): finite element distance solver,
+ - [Shifted](http://mfem.github.io/doxygen/html/shifted_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
