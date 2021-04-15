@@ -1427,6 +1427,7 @@ _**We recommend that new users start with the example codes before moving to the
 
 <div id="shifted" markdown="1">
 ##Shifted Boundary Method Miniapp
+<a href="https://glvis.org/live/?stream=../data/shifted.saved" target="_blank">
 <img class="floatright"  width="500" src="../img/examples/shifted.png">
 </a>
 
