@@ -1548,6 +1548,43 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+
+<div id="block-solvers" markdown="1">
+##Block Solvers Miniapp
+<img class="floatright" width="400" src="../img/examples/block-solvers.png">
+
+The Block Solvers miniapp, found under `miniapps/solvers`, compares various linear solvers for the saddle
+point system obtained from mixed finite element discretization of the Darcy's flow problem
+\begin{array}{rcl}
+      k{\bf u}        & + \nabla p & = f \\\\
+-\nabla \cdot {\bf u} &            & = g
+\end{array}
+
+The solvers being compared include:
+
+- The divergence-free solver (couple and decoupled modes), which is based on a multilevel decomposition of
+the Raviart-Thomas finite element space and its divergence-free subspace.
+- MINRES preconditioned by the block diagonal preconditioner in
+[ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp).
+
+For more details, please see the
+[documentation](https://github.com/mfem/mfem/blob/master/miniapps/solvers/README) in the `miniapps/solvers`
+directory.
+
+The miniapp supports:
+
+- Arbitrary order mixed finite element pair (Raviart-Thomas elements + piecewise discontinuous polynomials)
+- Various combination of essential and natural boundary conditions
+- Homogeneous or heterogeneous scalar coefficient k
+
+_This miniapp has only a parallel
+([block-solvers.cpp](https://github.com/mfem/mfem/blob/master/miniapps/solvers/block-solvers.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="overlapping" markdown="1">
 ##Overlapping Grids Miniapps
 <img class="floatright"  width="450" src="../img/examples/overlapping.png">
@@ -1571,7 +1608,8 @@ demonstrates how a conjugate heat transfer problem can be solved with the fluid
 dynamics (incompressible Navier-Stokes equations) and heat transfer
 (advection-diffusion equation) PDEs modeled on different meshes.
 
-_These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library. We recommend that new users start with the example codes before moving to the miniapps._
+_These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1688,6 +1726,7 @@ function update()
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
    + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
+   + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
 
    ; // ...end of expression
