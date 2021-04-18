@@ -1585,6 +1585,68 @@ moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="block-solvers">
+<h2 id="block-solvers-miniapp">Block Solvers Miniapp</h2>
+<p><img class="floatright" width="400" src="../img/examples/block-solvers.png"></p>
+<p>The Block Solvers miniapp, found under <code>miniapps/solvers</code>, compares various linear solvers for the saddle
+point system obtained from mixed finite element discretization of the Darcy's flow problem
+\begin{array}{rcl}
+      k{\bf u}        &amp; + \nabla p &amp; = f \\
+-\nabla \cdot {\bf u} &amp;            &amp; = g
+\end{array}</p>
+<p>The solvers being compared include:</p>
+<ul>
+<li>The divergence-free solver (couple and decoupled modes), which is based on a multilevel decomposition of
+the Raviart-Thomas finite element space and its divergence-free subspace.</li>
+<li>MINRES preconditioned by the block diagonal preconditioner in
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp">ex5p.cpp</a>.</li>
+</ul>
+<p>For more details, please see the
+<a href="https://github.com/mfem/mfem/blob/master/miniapps/solvers/README">documentation</a> in the <code>miniapps/solvers</code>
+directory.</p>
+<p>The miniapp supports:</p>
+<ul>
+<li>Arbitrary order mixed finite element pair (Raviart-Thomas elements + piecewise discontinuous polynomials)</li>
+<li>Various combination of essential and natural boundary conditions</li>
+<li>Homogeneous or heterogeneous scalar coefficient k</li>
+</ul>
+<p><em>This miniapp has only a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/solvers/block-solvers.cpp">block-solvers.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
+moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+<div id="overlapping">
+<h2 id="overlapping-grids-miniapps">Overlapping Grids Miniapps</h2>
+<p><img class="floatright"  width="450" src="../img/examples/overlapping.png"></p>
+<p>Overlapping grids-based frameworks can often make problems tractable that are
+otherwise inaccessible with a single conforming grid. The following
+<code>gslib</code>-based miniapps in MFEM demonstrate how to set up and use overlapping grids:</p>
+<ul>
+<li>
+<p>The <em>Schwarz Example 1</em> miniapp in <code>miniapps/gslib</code> has a serial
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp">schwarz_ex1.cpp</a>)
+a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1p.cpp">schwarz_ex1p.cpp</a>)
+version that solves the
+Poisson problem on overlapping grids. The serial version is restricted to use
+two overlapping grids, while the parallel version supports arbitrary number of
+overlapping grids.</p>
+</li>
+<li>
+<p>The <em>Navier Conjugate Heat Transfer</em> miniapp in <code>miniapps/navier</code>
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp">navier_cht.cpp</a>)
+demonstrates how a conjugate heat transfer problem can be solved with the fluid
+dynamics (incompressible Navier-Stokes equations) and heat transfer
+(advection-diffusion equation) PDEs modeled on different meshes.</p>
+</li>
+</ul>
+<p><em>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library.
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -1609,7 +1671,7 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
     {
        if (divs.item(i).id == id) {
-          divs.item(i).style.display = show ? "block" : "none";
+      divs.item(i).style.display = show ? "block" : "none";
        }
     }
     return show ? 1 : 0;
@@ -1698,6 +1760,8 @@ function update()
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
    + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
+   + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
+   + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
 
    ; // ...end of expression
 
@@ -1711,8 +1775,8 @@ function initCombos()
    query.split("&").forEach(function(id)
    {
       if (id) {
-         opt = document.getElementById(id);
-         if (opt) { opt.selected = true; }
+     opt = document.getElementById(id);
+     if (opt) { opt.selected = true; }
       }
    });
 }

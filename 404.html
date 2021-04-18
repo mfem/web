@@ -9,18 +9,13 @@
         
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>MFEM</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <script>
@@ -35,160 +30,152 @@
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href=".">MFEM</a>
-                </div>
+                <a class="navbar-brand" href=".">MFEM</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href=".">Home</a>
+                            <li class="navitem">
+                                <a href="." class="nav-link">Home</a>
                             </li>
-                            <li >
-                                <a href="features/">Features</a>
+                            <li class="navitem">
+                                <a href="features/" class="nav-link">Features</a>
                             </li>
-                            <li >
-                                <a href="examples/">Examples</a>
+                            <li class="navitem">
+                                <a href="examples/" class="nav-link">Examples</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="news/">_News</a>
+<li>
+    <a href="news/" class="dropdown-item">_News</a>
 </li>
                                     
-<li >
-    <a href="building/">Building MFEM</a>
+<li>
+    <a href="building/" class="dropdown-item">Building MFEM</a>
 </li>
                                     
-<li >
-    <a href="serial-tutorial/">Serial Tutorial</a>
+<li>
+    <a href="serial-tutorial/" class="dropdown-item">Serial Tutorial</a>
 </li>
                                     
-<li >
-    <a href="parallel-tutorial/">Parallel Tutorial</a>
+<li>
+    <a href="parallel-tutorial/" class="dropdown-item">Parallel Tutorial</a>
 </li>
                                     
-<li >
-    <a href="fem/">Finite Elements</a>
+<li>
+    <a href="fem/" class="dropdown-item">Finite Elements</a>
 </li>
                                     
-<li >
-    <a href="pri-dual-vec/">_Primal and Dual Vectors</a>
+<li>
+    <a href="pri-dual-vec/" class="dropdown-item">_Primal and Dual Vectors</a>
 </li>
                                     
-<li >
-    <a href="bilininteg/">_Bilinear Form Integrators</a>
+<li>
+    <a href="bilininteg/" class="dropdown-item">_Bilinear Form Integrators</a>
 </li>
                                     
-<li >
-    <a href="lininteg/">_Linear Form Integrators</a>
+<li>
+    <a href="lininteg/" class="dropdown-item">_Linear Form Integrators</a>
 </li>
                                     
-<li >
-    <a href="coefficient/">_Coefficients</a>
+<li>
+    <a href="coefficient/" class="dropdown-item">_Coefficients</a>
 </li>
                                     
-<li >
-    <a href="nonlininteg/">_Nonlinear Form Integrators</a>
+<li>
+    <a href="nonlininteg/" class="dropdown-item">_Nonlinear Form Integrators</a>
 </li>
                                     
-<li >
-    <a href="lininterp/">_Linear Interpolators</a>
+<li>
+    <a href="lininterp/" class="dropdown-item">_Linear Interpolators</a>
 </li>
                                     
-<li >
-    <a href="fem_weak_form/">_Weak Formulations</a>
+<li>
+    <a href="fem_weak_form/" class="dropdown-item">_Weak Formulations</a>
 </li>
                                     
-<li >
-    <a href="fem_bc/">_Boundary Conditions</a>
+<li>
+    <a href="fem_bc/" class="dropdown-item">_Boundary Conditions</a>
 </li>
                                     
-<li >
-    <a href="electromagnetics/">Electromagnetics</a>
+<li>
+    <a href="electromagnetics/" class="dropdown-item">Electromagnetics</a>
 </li>
                                     
-<li >
-    <a href="fluids/">Fluids</a>
+<li>
+    <a href="fluids/" class="dropdown-item">Fluids</a>
 </li>
                                     
-<li >
-    <a href="meshing/">Meshing</a>
+<li>
+    <a href="meshing/" class="dropdown-item">Meshing</a>
 </li>
                                     
-<li >
-    <a href="mesh-formats/">_Mesh Formats</a>
+<li>
+    <a href="mesh-formats/" class="dropdown-item">_Mesh Formats</a>
 </li>
                                     
-<li >
-    <a href="mesh-format-v1.x/">_Mesh Format v1.x</a>
+<li>
+    <a href="mesh-format-v1.x/" class="dropdown-item">_Mesh Format v1.x</a>
 </li>
                                     
-<li >
-    <a href="performance/">Performance</a>
+<li>
+    <a href="performance/" class="dropdown-item">Performance</a>
 </li>
                                     
-<li >
-    <a href="gpu-tips-n-tricks/">GPU Support</a>
+<li>
+    <a href="gpu-tips-n-tricks/" class="dropdown-item">GPU Support</a>
 </li>
                                     
-<li >
-    <a href="tperformance/">_High Performance Templated Code</a>
+<li>
+    <a href="tperformance/" class="dropdown-item">_High Performance Templated Code</a>
 </li>
                                     
-<li >
-    <a href="code-overview/">_Code Overview</a>
+<li>
+    <a href="code-overview/" class="dropdown-item">_Code Overview</a>
 </li>
                                     
-<li >
-    <a href="tools/">Tools</a>
+<li>
+    <a href="tools/" class="dropdown-item">Tools</a>
 </li>
                                     
-<li >
-    <a href="toys/">Toys</a>
+<li>
+    <a href="toys/" class="dropdown-item">Toys</a>
 </li>
                                     
-<li >
-    <a href="publications/">Publications</a>
+<li>
+    <a href="publications/" class="dropdown-item">Publications</a>
 </li>
                                     
-<li >
-    <a href="about/">About</a>
+<li>
+    <a href="about/" class="dropdown-item">About</a>
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="gallery/">Gallery</a>
+                            <li class="navitem">
+                                <a href="gallery/" class="nav-link">Gallery</a>
                             </li>
-                            <li >
-                                <a href="download/">Download</a>
+                            <li class="navitem">
+                                <a href="download/" class="nav-link">Download</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li>
-                                <a href="https://github.com/mfem/mfem/"><i class="fa fa-github"></i> GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/mfem/mfem/" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -196,6 +183,7 @@
         </div>
 
         <div class="container">
+            <div class="row">
 
     <div class="row-fluid">
       <div id="main-content" class="span12">
@@ -205,6 +193,7 @@
     </div>
 
 
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -213,26 +202,26 @@
         </footer>
         <script>
             var base_url = "",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="js/base.js" defer></script>
         <script src="search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -241,12 +230,12 @@
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

@@ -254,7 +254,7 @@ Navier-Stokes equations.</p>
     \nabla \cdot u &amp;= 0 &amp; \quad \text{in } \Omega
 \end{align}</p>
 <p>where $Re$ represents the Reynolds number. In order to solve these equations,
-the method presented in Tomboulides (1997)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> is used, which is based on an
+the method presented in Tomboulides (1997)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> is used, which is based on an
 equal order finite element discretization on quadrilateral or hexahedral
 elements of high polynomial order. The method describes an implicit-explicit
 time-integration scheme for the viscous and convective terms respectively.
@@ -314,7 +314,7 @@ velocity part which is also derived from \eqref{eq:bdf_short}. Consider</p>
 <p>\begin{align}
     u^{n+1} = g_D^{n+1}.
 \end{align}</p>
-<p>A detailed walk through can also be found in Franco et al (2020) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>.</p>
+<p>A detailed walk through can also be found in Franco et al (2020) <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
 <p><strong>Note</strong> <em>The notation is very similar to what is used in the code to make it easy
 to follow the theoretical explanation and understand what is done in the
 implementation.</em></p>
@@ -347,7 +347,7 @@ through the formulation).</p>
 simulation.</p>
 <p>The pressure Poisson equation \eqref{eq:prespois} is solved using the CG Krylov
 method in combination with the low-order refined preconditioning technique
-coupled with AMG (c.f. Franco et al (2020)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>).</p>
+coupled with AMG (c.f. Franco et al (2020)<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>).</p>
 <p>Due to the nature of the explicit time discretization of the nonlinear term, the
 method used is CFL (and therefore time step) bound. As a result the time
 derivative term in \eqref{eq:hlm} is dominating and a CG Krylov method
@@ -396,12 +396,12 @@ conservative limit).</p>
 <ol>
 <li id="fn:1">
 <p>A. G. Tomboulides, J. C. Y. Lee &amp; S. A. Orszag (1997) Numerical Simulation
-of Low Mach Number Reactive Flows&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+of Low Mach Number Reactive Flows&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>Michael Franco, Jean-Sylvain Camier, Julian Andrej, Will Pazner (2020)
 High-order matrix-free incompressible flow solvers with GPU acceleration and
-low-order refined preconditioners (https://arxiv.org/abs/1910.03032)&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+low-order refined preconditioners (https://arxiv.org/abs/1910.03032)&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
