@@ -100,7 +100,6 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="petsc">PETSc solvers</option>
       <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
-      <option id="divfree">Divergence-free Solver</option>
    </select>
 </div>
 </div>
@@ -1609,7 +1608,8 @@ demonstrates how a conjugate heat transfer problem can be solved with the fluid
 dynamics (incompressible Navier-Stokes equations) and heat transfer
 (advection-diffusion equation) PDEs modeled on different meshes.
 
-_These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library. We recommend that new users start with the example codes before moving to the miniapps._
+_These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1726,7 +1726,7 @@ function update()
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
    + showElement("remhos", (advection) && (l2) && (galerkin || dg || pa) && (rk))
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
-   + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg || divfree))
+   + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
 
    ; // ...end of expression
