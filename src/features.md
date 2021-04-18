@@ -106,7 +106,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 24](http://mfem.github.io/doxygen/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
  - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
  - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem,
- - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem.
+ - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem,
  - [Example 28](http://mfem.github.io/doxygen/html/ex28_8cpp_source.html): constraints and sliding boundary conditions.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
@@ -123,6 +123,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Mesh Explorer](http://mfem.github.io/doxygen/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](http://mfem.github.io/doxygen/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
  - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
+ - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Distance](http://mfem.github.io/doxygen/html/distance_8cpp_source.html): finite element distance solver,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,

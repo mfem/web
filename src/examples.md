@@ -1552,27 +1552,26 @@ moving to the miniapps.**_
 ##Overlapping Grids Miniapps
 <img class="floatright"  width="450" src="../img/examples/overlapping.png">
 
-Overlapping grids-based framework can often make problems tractable that were
-otherwise inaccessible with a single conforming grid. We have introduced
-`gslib`-based miniapps to demonstrate how overlapping grids can be setup in
-MFEM:
+Overlapping grids-based frameworks can often make problems tractable that are
+otherwise inaccessible with a single conforming grid. The following
+`gslib`-based miniapps in MFEM demonstrate how to set up and use overlapping grids:
 
-- _Schwarz ex1_ miniapp has a serial
+- The _Schwarz Example 1_ miniapp in `miniapps/gslib` has a serial
 ([schwarz_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp))
 a parallel
 ([schwarz_ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1p.cpp))
 version that solves the
 Poisson problem on overlapping grids. The serial version is restricted to use
-two overlapping grids and the parallel version supports an arbitrary number of
-overlapping grids. 
+two overlapping grids, while the parallel version supports arbitrary number of
+overlapping grids.
 
-- _Navier cht_ miniapp
+- The _Navier Conjugate Heat Transfer_ miniapp in `miniapps/navier`
 ([navier_cht.cpp](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp))
 demonstrates how a conjugate heat transfer problem can be solved with the fluid
 dynamics (incompressible Navier-Stokes equations) and heat transfer
 (advection-diffusion equation) PDEs modeled on different meshes.
 
-_**These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library. We recommend that new users start with the example codes before moving to the miniapps.**_
+_These miniapps require installation of the [`gslib`](https://github.com/gslib/gslib) library. We recommend that new users start with the example codes before moving to the miniapps._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1600,7 +1599,7 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
     {
        if (divs.item(i).id == id) {
-          divs.item(i).style.display = show ? "block" : "none";
+	  divs.item(i).style.display = show ? "block" : "none";
        }
     }
     return show ? 1 : 0;
@@ -1703,8 +1702,8 @@ function initCombos()
    query.split("&").forEach(function(id)
    {
       if (id) {
-         opt = document.getElementById(id);
-         if (opt) { opt.selected = true; }
+	 opt = document.getElementById(id);
+	 if (opt) { opt.selected = true; }
       }
    });
 }
