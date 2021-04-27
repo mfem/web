@@ -1730,7 +1730,7 @@ function update()
    + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
-   + showElement("ex27", (elasticity || maxwell || conduction || compressibleflow) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
+   + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
 
    // electromagnetic miniapps
