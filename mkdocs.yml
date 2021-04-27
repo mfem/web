@@ -15,8 +15,7 @@ nav:
 - Home: index.md
 - Features: features.md
 - Examples: examples.md
-- Documentation:
-  - '_News': news.md   # pages starting with '_' are hidden from the menu
+- Getting Started:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
   - 'Parallel Tutorial': parallel-tutorial.md
@@ -28,28 +27,37 @@ nav:
   - '_Nonlinear Form Integrators': nonlininteg.md
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
-  - '_Boundary Conditions': fem_bc.md
-  - 'Electromagnetics': electromagnetics.md
-  - 'Fluids': fluids.md
-  - 'Meshing': meshing.md
+  - '_Boundary Conditions': fem_bc.md  
+- Documentation:
+  - '_News': news.md   # pages starting with '_' are hidden from the menu
+  - 'Doxygen': http://mfem.github.io/doxygen/html/index.html
+  - 'Topic Search':  search.md
+  - 'Mesh Formats': meshing.md
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
   - 'GPU Support': gpu-tips-n-tricks.md
   - '_High Performance Templated Code': tperformance.md
   - '_Code Overview': code-overview.md
-  - 'Tools': tools.md
-  - 'Toys': toys.md
   - 'Publications': publications.md
   - 'About': about.md
+- Miniapps:
+  - 'Electromagnetics': electromagnetics.md
+  - 'Fluids': fluids.md  
+  - 'Tools': tools.md
+  - 'Toys': toys.md
 - Gallery: gallery.md
 - Download: download.md
 
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
+  show_sidebar: true
 
 extra:
   include_next_prev: false  # turn off next/previous buttons
+
+plugins:
+  - search
 
 google_analytics: ['UA-101697-3', 'mfem.org']
