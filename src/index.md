@@ -27,21 +27,21 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+May 7, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).
 Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
 Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.2.tgz**
-</button>](https://bit.ly/mfem-4-2)
+**Download mfem-4.3.tgz**
+</button>](https://bit.ly/mfem-4-3)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM)
 
@@ -79,6 +79,7 @@ See the [About](about.md) page for citation information.
 <div class="col-md-12"></div>
 
 
+[comment]: # (Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).)
 [comment]: # (Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).)
 [comment]: # (Mar 18, 2021 | [Postdoc position](https://www.llnl.gov/join-our-team/careers/find-your-job/all/mfem/3743990000038667) using MFEM.)
 [comment]: # (Jul 11, 2020 | MFEM paper [appeared](http://doi.org/10.1016/j.camwa.2020.06.009) in CAMWA.)
