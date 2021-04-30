@@ -1077,6 +1077,26 @@ We recommend viewing example 2 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="ex29">
+<h2 id="example-29-solving-pdes-on-embedded-surfaces">Example 29: Solving PDEs on embedded surfaces</h2>
+<p><img class="floatright" src="../img/examples/ex29.png"></p>
+<p>This example demonstrates setting up and solving an anisotropic Laplace problem
+$$-\nabla\cdot(\sigma\nabla u) = 1 \quad\text{in } \Omega$$
+with homogeneous Dirichlet boundary conditions
+$$ u = 0 \quad\text{on } \partial\Omega$$
+where $\Omega$ is a two dimensional curved surface embedded in three
+dimensions and $\sigma$ is an anisotropic diffusion tensor.</p>
+<p>The example demonstrates and validates our <code>DiffusionIntegrator</code>'s ability to
+properly integrate three dimensional fluxes on a two dimensional domain. Not
+all of our integrators currently support such cases but the
+<code>DiffusionIntegrator</code> can be used as a simple example of how extend other
+integrators when necessary.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex29.cpp">ex29.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex29p.cpp">ex29p.cpp</a>) version.
+We recommend viewing examples 1 and 7 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -1732,6 +1752,7 @@ function update()
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
+   + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
