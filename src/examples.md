@@ -1721,8 +1721,8 @@ function update()
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
-   + showElement("ex29",  (diffusion) && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
-   
+   + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
+
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
