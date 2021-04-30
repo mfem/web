@@ -963,6 +963,29 @@ We recommend viewing example 2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex29" markdown="1">
+##Example 29: Solving PDEs on embedded surfaces
+<img class="floatright" src="../img/examples/ex29.png">
+
+This example demonstrates setting up and solving an anisotropic Laplace problem
+$$-\nabla\cdot(\sigma\nabla u) = 1 \quad\text{in } \Omega$$
+with homogeneous Dirichlet boundary conditions
+$$ u = 0 \quad\text{on } \partial\Omega$$
+where $\Omega$ is a two dimensional curved surface embedded in three
+dimensions and $\sigma$ is an anisotropic diffusion tensor.
+
+The example demonstrates and validates our `DiffusionIntegrator`'s ability to
+properly integrate three dimensional fluxes on a two dimensional domain. Not
+all of our integrators currently support such cases but the
+`DiffusionIntegrator` can be used as a simple example of how extend other
+integrators when necessary.
+
+_The example has a serial ([ex29.cpp](https://github.com/mfem/mfem/blob/master/examples/ex29.cpp))
+and a parallel ([ex29p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex29p.cpp)) version.
+We recommend viewing examples 1 and 7 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
@@ -1698,6 +1721,7 @@ function update()
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
+   + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
