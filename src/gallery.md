@@ -186,6 +186,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Cut image of the solution from [Example 1](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) on a sharply twisted, high order toroidal mesh.  The mesh was generated with the [toroid](http://mfem.github.io/doxygen/html/toroid_8cpp_source.html) miniapp.*
 
+----
+
+[![](img/examples/trimmer-small.png)](img/examples/trimmer.png)
+
+*Cut image of an induction coil mesh and three sub-meshes created with the [Trimmer](http://mfem.github.io/doxygen/html/trimmer_8cpp_source.html) miniapp. Visualization with [VisIt](http://visit.llnl.gov).*
+
 </div>
 
 </center>

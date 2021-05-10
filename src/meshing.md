@@ -90,6 +90,21 @@ mesh can be 1D or 2D. 1D meshes can be extruded in the y-direction first and
 then in the z-direction.  2D meshes can be triangular, quadrilateral, or
 contain both element types.
 
+### Trimmer
+
+This miniapp creates a new mesh file from an existing mesh by trimming away
+elements with selected attributes. High order and/or periodic meshes are
+supported although NURBS meshes are not.
+
+[![](img/examples/trimmer-small.png)](img/examples/trimmer.png)
+
+By default newly exposed boundaries will be assigned unique boundary
+attributes. The new boundary attributes are determined by adding the volume
+attribute of the exposing elements to the maximum boundary attribute in the
+original mesh. Alternatively the user can specify new boundary attributes to be
+associated with each volume attribute being trimmed away. In the later case
+the new attributes need not be unique.
+
 ### Polar-NC
 
 This miniapp generates a circular sector mesh that consist of quadrilaterals

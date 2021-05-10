@@ -1241,6 +1241,30 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="trimmer" markdown="1">
+##Trimmer Miniapp
+<img class="floatright" src="../img/examples/trimmer-small.png">
+
+This miniapp creates a new mesh file from an existing mesh by trimming away
+elements with selected attributes. Newly exposed boundary elements will be
+assigned new or user specified boundary attributes.
+
+ - The initial mesh can be 2D or 3D
+ - Meshes with high order geometry are supported
+ - Periodic meshes are supported
+ - NURBS meshes are _not_ supported
+
+This miniapp provides another demonstration of how simple meshes can be
+constructed in MFEM.
+
+_This miniapp has only a serial
+([trimmer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/trimmer.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="polar-nc" markdown="1">
 ##Polar-NC Miniapp
 <img class="floatright" src="../img/examples/polar-nc.png">
@@ -1735,6 +1759,7 @@ function update()
    + showElement("toroid", meshing && all2 && all3 && all4)
    + showElement("twist", meshing && all2 && all3 && all4)
    + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("trimmer", meshing && all2 && all3 && all4)
    + showElement("polar-nc", meshing && all2 && all3 && all4)
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
