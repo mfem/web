@@ -94,9 +94,9 @@ contain both element types.
 
 This miniapp creates a new mesh file from an existing mesh by trimming away
 elements with selected attributes. High order and/or periodic meshes are
-supported although NUYRBs meshes are not.
+supported although NURBS meshes are not.
 
-![](img/examples/trimmer-small.png)
+[![](img/examples/trimmer-small.png)](img/examples/trimmer.png)
 
 By default newly exposed boundaries will be assigned unique boundary
 attributes. The new boundary attributes are determined by adding the volume

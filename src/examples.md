@@ -1252,8 +1252,8 @@ assigned new or user specified boundary attributes.
  - The initial mesh can be 2D or 3D
  - Meshes with high order geometry are supported
  - Periodic meshes are supported
- - NURBs meshes are _not_ supported
- 
+ - NURBS meshes are _not_ supported
+
 This miniapp provides another demonstration of how simple meshes can be
 constructed in MFEM.
 
