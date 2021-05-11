@@ -52,12 +52,21 @@ nav:
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
-  show_sidebar: true
+  #show_sidebar: true
 
 extra:
   include_next_prev: false  # turn off next/previous buttons
 
 plugins:
   - search
+  - exclude-search:
+      exclude:
+        - search.md
+        - gallery.md
+        - electromagnetics.md
+        - fluids.md
+        - tools.md
+        - toys.md
+
 
 google_analytics: ['UA-101697-3', 'mfem.org']
