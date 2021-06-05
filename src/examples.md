@@ -1426,18 +1426,18 @@ _**We recommend that new users start with the example codes before moving to the
 <br></div>
 
 <div id="shifted" markdown="1">
-##Shifted Boundary Method Miniapp
+##Shifted Diffusion Miniapp
 <a href="https://glvis.org/live/?stream=../data/shifted.saved" target="_blank">
 <img class="floatright"  width="500" src="../img/examples/shifted.png">
 </a>
 
-The `shifted` miniapp, found in the `miniapps/shifted` directory, demonstrates
+The `diffusion` miniapp, found in the `miniapps/shifted` directory, demonstrates
 the capability to formulate a boundary value problem using a surrogate
 computational domain. The method uses a distance function to the true boundary
 to enforce Dirichlet boundary conditions on the (non-aligned) mesh faces,
 therefore "shifting" the location where boundary conditions are imposed. The
 implementation in the miniapp is a high-order extension of the
-second-generation 
+second-generation
 [shifted boundary method](https://www.sciencedirect.com/science/article/pii/S0045782520305260).
 
 _The miniapp has only a parallel
@@ -1658,7 +1658,7 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
     {
        if (divs.item(i).id == id) {
-	  divs.item(i).style.display = show ? "block" : "none";
+          divs.item(i).style.display = show ? "block" : "none";
        }
     }
     return show ? 1 : 0;
@@ -1763,8 +1763,8 @@ function initCombos()
    query.split("&").forEach(function(id)
    {
       if (id) {
-	 opt = document.getElementById(id);
-	 if (opt) { opt.selected = true; }
+         opt = document.getElementById(id);
+         if (opt) { opt.selected = true; }
       }
    });
 }
