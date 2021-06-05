@@ -1472,6 +1472,27 @@ _**We recommend that new users start with the example codes before moving to the
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="shifted" markdown="1">
+##Shifted Diffusion Miniapp
+<a href="https://glvis.org/live/?stream=../data/shifted.saved" target="_blank">
+<img class="floatright"  width="500" src="../img/examples/shifted.png">
+</a>
+
+The `diffusion` miniapp, found in the `miniapps/shifted` directory, demonstrates
+the capability to formulate a boundary value problem using a surrogate
+computational domain. The method uses a distance function to the true boundary
+to enforce Dirichlet boundary conditions on the (non-aligned) mesh faces,
+therefore "shifting" the location where boundary conditions are imposed. The
+implementation in the miniapp is a high-order extension of the
+second-generation
+[shifted boundary method](https://www.sciencedirect.com/science/article/pii/S0045782520305260).
+
+_The miniapp has only a parallel
+([diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
@@ -1684,7 +1705,7 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
     {
        if (divs.item(i).id == id) {
-	  divs.item(i).style.display = show ? "block" : "none";
+          divs.item(i).style.display = show ? "block" : "none";
        }
     }
     return show ? 1 : 0;
@@ -1770,6 +1791,7 @@ function update()
 
    // shifted methods miniapps
    + showElement("distance", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
+   + showElement("shifted", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
@@ -1790,8 +1812,8 @@ function initCombos()
    query.split("&").forEach(function(id)
    {
       if (id) {
-	 opt = document.getElementById(id);
-	 if (opt) { opt.selected = true; }
+         opt = document.getElementById(id);
+         if (opt) { opt.selected = true; }
       }
    });
 }
