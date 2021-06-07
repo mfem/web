@@ -1,9 +1,59 @@
 <div class="col-md-6" markdown="1">
 
-[![MFEM logo](img/logo-300.png)](gallery.md)
+<div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:380px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>
 
-MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element methods.
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
+      <div class="carousel-caption d-none" style="text-align:left">
+        MFEM is a _free_, _lightweight_, _scalable_ C++ library for finite element methods.
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" src="img/carousel/slide2.png">](gallery.md)
+      <div class="carousel-caption d-none">
+        Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) fusion device.
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" src="img/carousel/slide4.jpg">](gallery.md)
+      <div class="carousel-caption d-none">
+        Arbitrary Lagrangian-Eulerian simulation in the [BLAST](http://www.llnl.gov/casc/blast) hydrodynamics code.
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="300" height="300" src="img/carousel/slide3.jpg">](gallery.md)
+      <div class="carousel-caption d-none">
+        High-order multi-material hydrodynamics (ICF-like implosion in [BLAST](http://www.llnl.gov/casc/blast)).
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" src="img/carousel/slide5.png">](gallery.md)
+      <div class="carousel-caption d-none">
+        Anisotropic nonconforming refinement on a curvilinear hexahedral mesh.
+      </div>
+    </div>
+  </div>
 
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 ## Features
 
