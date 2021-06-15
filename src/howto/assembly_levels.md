@@ -27,29 +27,29 @@ The native MFEM backend, OCCA backend, and libCEED backend each offer different 
 
 | Supported Integrators             | native MFEM | OCCA backend | libCEED backend |
 |-----------------------------------|-------------|--------------|-----------------|
-| Mass Integrator                   | V           | V            | V               |
-| Vector Mass Integrator            | V           | X            | V               |
-| Vector FE Mass Integrator         | V           | X            | X               |
-| Convection Integrator             | V           | X            | V               |
-| Non-linear Convection Integrator  | V           | X            | V               |
-| Diffusion Integrator              | V           | V            | V               |
-| Vector Diffusion Integrator       | V           | X            | V               |
-| DGTrace Integrator                | V           | X            | X               |
-| Mixed Vector Gradient Integrator  | V           | X            | X               |
-| Mixed Vector Curl Integrator      | V           | X            | X               |
-| Mixed Vector Weak Curl Integrator | V           | X            | X               |
-| Gradient Integrator               | V           | X            | X               |
-| Vector Divergence Integrator      | V           | X            | X               |
-| Vector FE Divergence Integrator   | V           | X            | X               |
-| Curl Curl Integrator              | V           | X            | X               |
-| Div Div Integrator                | V           | X            | X               |
+| Mass Integrator                   | ✅          | ✅           | ✅              |
+| Vector Mass Integrator            | ✅          | ❌           | ✅              |
+| Vector FE Mass Integrator         | ✅          | ❌           | ❌              |
+| Convection Integrator             | ✅          | ❌           | ✅              |
+| Non-linear Convection Integrator  | ✅          | ❌           | ✅              |
+| Diffusion Integrator              | ✅          | ✅           | ✅              |
+| Vector Diffusion Integrator       | ✅          | ❌           | ✅              |
+| DGTrace Integrator                | ✅          | ❌           | ❌              |
+| Mixed Vector Gradient Integrator  | ✅          | ❌           | ❌              |
+| Mixed Vector Curl Integrator      | ✅          | ❌           | ❌              |
+| Mixed Vector Weak Curl Integrator | ✅          | ❌           | ❌              |
+| Gradient Integrator               | ✅          | ❌           | ❌              |
+| Vector Divergence Integrator      | ✅          | ❌           | ❌              |
+| Vector FE Divergence Integrator   | ✅          | ❌           | ❌              |
+| Curl Curl Integrator              | ✅          | ❌           | ❌              |
+| Div Div Integrator                | ✅          | ❌           | ❌              |
 
 | Features                          | native MFEM | OCCA backend | libCEED backend |
 |-----------------------------------|-------------|--------------|-----------------|
-| Tensor elements support           | V           | V            | V               |
-| Simplices support                 | X           | X            | V               |
-| Mixed elements support            | X           | X            | X               |
-| Assembly: None                    | X           | X            | V               |
-| Assembly: Partial                 | V           | V            | V               |
-| Assembly: Element                 | V           | X            | X               |
-| Assembly: Full                    | V           | X            | X (host only)   |
+| Tensor elements support           | ✅          | ✅           | ✅              |
+| Simplices support                 | ❌          | ❌           | ✅              |
+| Mixed elements support            | ❌          | ❌           | ❌              |
+| Assembly: None                    | ❌          | ❌           | ✅              |
+| Assembly: Partial                 | ✅          | ✅           | ✅              |
+| Assembly: Element                 | ✅          | ❌           | ❌              |
+| Assembly: Full                    | ✅          | ❌           | ❌ (host only)  |
