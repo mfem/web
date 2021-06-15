@@ -22,9 +22,33 @@ where `a` is either an `mfem::BilinearForm`, `mfem::MixedBilinearForm`,
 
 ## Assembly levels and backends
 
-MFEM integrates two backends that interact with the assembly levels, namely the OCCA backend and the libCEED backend.
+MFEM integrates three backends that interact with the assembly levels, namely the RAJA backend, the OCCA backend, and the libCEED backend.
 Backends are accessible by configuring the `mfem::Device` accordingly.
-The native MFEM backend, OCCA backend, and libCEED backend each offer different features, and support different Integrators.
+
+| Device Configuration |  |
+|-|-|
+| `cpu` | Default CPU backend: sequential execution on each MPI rank. |
+| `omp` | OpenMP backend. Enabled when MFEM_USE_OPENMP = YES. |
+| `cuda` | CUDA backend. Enabled when MFEM_USE_CUDA = YES. |
+| `hip` | HIP backend. Enabled when MFEM_USE_HIP = YES. |
+| `raja-cpu` | RAJA CPU backend: sequential execution on each MPI rank. Enabled when MFEM_USE_RAJA = YES. |
+| `raja-omp` | RAJA OpenMP backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_OPENMP = YES. |
+| `raja-cuda` | RAJA CUDA backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_CUDA = YES. |
+| `raja-hip` | RAJA HIP backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_HIP = YES. |
+| `occa-cpu` | OCCA CPU backend: sequential execution on each MPI rank. Enabled when MFEM_USE_OCCA = YES. |
+| `occa-omp` | OCCA OpenMP backend. Enabled when MFEM_USE_OCCA = YES. |
+| `occa-cuda` | OCCA CUDA backend. Enabled when MFEM_USE_OCCA = YES and MFEM_USE_CUDA = YES. |
+| `ceed-cpu` | CEED CPU backend. GPU backends can still be used, but with expensive memory transfers. Enabled when MFEM_USE_CEED = YES. |
+| `ceed-cuda` | CEED CUDA backend working together with the CUDA backend. Enabled when MFEM_USE_CEED = YES and MFEM_USE_CUDA = YES. NOTE: The current default libCEED CUDA backend is non-deterministic! |
+| `ceed-hip` | CEED HIP backend working together with the HIP backend. Enabled when MFEM_USE_CEED = YES and MFEM_USE_HIP = YES. |
+| `debug` | Debug backend: host memory is READ/WRITE protected while a device is in use. It allows to test the "device" code-path (using separate host/device memory pools and host <-> device transfers) without any GPU hardware. As 'DEBUG' is sometimes used as a macro, `_DEVICE` has been added to avoid conflicts. |
+
+It is also possible to request the backend of a backend, for instance if we want to use the `/gpu/cuda/shared` backend of libCEED one can specify this with the following syntax:
+```c++
+mfem::Device device("ceed-cuda:/gpu/cuda/shared");
+```
+
+The native MFEM backend and the RAJA backend support the same features and Integrators. However, the OCCA backend, and the libCEED backend each offer different features, and support different Integrators with different performance characteristics.
 
 | Supported Integrators             | native MFEM | OCCA backend | libCEED backend |
 |-----------------------------------|:-----------:|:------------:|:---------------:|
@@ -53,4 +77,4 @@ The native MFEM backend, OCCA backend, and libCEED backend each offer different 
 | Assembly: None                    | ❌          | ❌           | ✅              |
 | Assembly: Partial                 | ✅          | ✅           | ✅              |
 | Assembly: Element                 | ✅          | ❌           | ❌              |
-| Assembly: Full                    | ✅          | ❌           | ❌ (host only)  |
+| Assembly: Full                    | ✅          | ❌           | ❌              |
