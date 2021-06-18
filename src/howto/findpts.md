@@ -5,9 +5,8 @@ via `findpts`, a set of routines that were developed as
 a part of the gather-scatter library, [gslib](https://github.com/Nek5000/gslib).
 While `findpts` was originally developed for interpolation of grid functions in
 `H1` for meshes with quadrilateral or hexahedron elements, `FindPointsGSLIB`
-also enables interpolation of functions `L2, H(div), H(curl)` on meshes with
-triangle and tetrahedral elements by using `findpts`' kernels for communication
-and MFEM's internal methods for interpolation.
+also enables interpolation of functions in `L2, H(div), H(curl)` on meshes with
+triangle and tetrahedral elements.
 
 The key steps of using `FindPointsGSLIB`, as demonstrated in the
 [gslib](https://github.com/mfem/mfem/tree/master/miniapps/gslib) miniapps
@@ -17,9 +16,9 @@ are:
 the mesh of interest. This is done by using the `FindPointsGSLIB::Setup(mesh)`
 method with the desired `mfem::Mesh` or `mfem::ParMesh`.
 
-* Next, `FindPointsGSLIB::FindPoints(xyz)` method must be used with the
-`mfem::Vector xyz` of physical-space coordinates of the points where the user
-wants to interpolate the desired grid function.
+* Next, use the `FindPointsGSLIB::FindPoints(xyz)` method with the
+`mfem::Vector xyz` of physical-space coordinates where we seek to
+interpolate the desired grid function.
 The ordering of the coordinates in `xyz` must be by `vdim`,
 i.e. (**x** = x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...,x<sub>N</sub>,
               y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>...,y<sub>N</sub>,
@@ -31,7 +30,7 @@ p<sub>j</sub>}) for each point.
 These computational coordinates include the element number
 (e<sub>j</sub> in `mfem::Array<int> gsl_elem`) in which the point is found,
 the reference-space coordinates (**r**<sub>j</sub> in `mfem::Vector gsl_ref`) inside e<sub>j</sub>,
-and the MPI rank that the element is partitioned on (p<sub>j</sub> `mfem::Array<int> gsl_proc`).
+and the MPI rank that the element is partitioned on (p<sub>j</sub> in `mfem::Array<int> gsl_proc`).
 `FindPoints` also returns a code (`mfem::Array<int> gsl_code`) to indicate wether
 the point was found inside an element (`gsl_code[j] = 0`), on the edge/face of an
 element (`gsl_code[j] = 1`), or not found at all (`gsl_code[j] = 2`) for the case
@@ -42,7 +41,7 @@ a certain tolerance, `findpts` tries to find the closest location on the mesh
 surface (i.e. `gsl_code[j] = 1`) and returns the distance (`mfem::Vector gsl_dist`)
 between the sought point and the point found on the mesh surface.
 
-* Finally, `FindPointsGSLIB::Interpolate(u, ui)` can be used to interpolate the
+* Finally, use `FindPointsGSLIB::Interpolate(u, ui)` to interpolate the
 desired `mfem::(Par)GridFunction u` at the physical-space coordinates given by `xyz`
 and return the interpolated values in `mfem::Vector ui`.
 
@@ -53,11 +52,11 @@ for interpolation.
 
 * **Note**, the `FindPointsGSLIB::FreeData()` method must be used before the
 program is terminated to free up the memory setup internally by `findpts` during
-the `setup` phase. Not doing this step will result in memory leaks.
+the `setup` phase.
 
 For convenience, `FindPointsGSLIB` class provides methods such as
 `FindPointsGSLIB::Interpolate(mesh, xyz, u, ui)` which combines the three steps
-(setup, finding the computatational coordinates of the sought points, and
+described above (setup, finding the computatational coordinates of the sought points, and
 interpolation) into a single method. Please see the [class definition](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45)
 for more details.
 
