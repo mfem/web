@@ -14,7 +14,12 @@ remote_name: origin
 nav:
 - Home: index.md
 - Features: features.md
-- Examples: examples.md
+- Examples: 
+  - 'Small Examples': examples.md
+  - 'Electromagnetics': electromagnetics.md
+  - 'Fluids': fluids.md  
+  - 'Tools': tools.md
+  - 'Toys': toys.md
 - Getting Started:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
@@ -30,7 +35,7 @@ nav:
   - '_Boundary Conditions': fem_bc.md  
 - Documentation:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
-  - 'Doxygen': http://mfem.github.io/doxygen/html/index.html
+  - 'Doxygen': dox.md
   - 'Topic Search':  search.md
   - 'Mesh Formats': meshing.md
   - '_Mesh Formats': mesh-formats.md
@@ -41,18 +46,13 @@ nav:
   - '_Code Overview': code-overview.md
   - 'Publications': publications.md
   - 'About': about.md
-- Miniapps:
-  - 'Electromagnetics': electromagnetics.md
-  - 'Fluids': fluids.md  
-  - 'Tools': tools.md
-  - 'Toys': toys.md
 - Gallery: gallery.md
 - Download: download.md
 
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
-  #show_sidebar: true
+
 
 extra:
   include_next_prev: false  # turn off next/previous buttons
@@ -61,12 +61,33 @@ plugins:
   - search
   - exclude-search:
       exclude:
-        - search.md
+        - about.md
+        - building.md
+        - code-overview.md
+        - coefficient.md 
+        - download.md
+        - dox.md
+        - examples.md
+        - features.md
         - gallery.md
-        - electromagnetics.md
-        - fluids.md
+        - index.md
+        - lininteg.md 
+        - lininterp.md
+        - mesh-format-v1.x.md
+        - news.md
+        - performance.md
+        - publications.md
+        - search.md
         - tools.md
         - toys.md
+        - tperformance.md
+# - doxygen:
+#     tryclone: yes
+#     packages:
+#       - doxygen:
+#           url: ../mfem_master
+#           config: doc/config.in  
+#           workdir: .
 
 
 google_analytics: ['UA-101697-3', 'mfem.org']

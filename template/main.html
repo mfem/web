@@ -45,6 +45,13 @@
 
         {% include "nav.html" %}
 
+        {% if page.title in ('Doxygen') %}
+        <div class="alignleft">
+        <div class="col-md-12" role="main">
+        <div id="frame_root">{% include "content.html" %}</div>
+        </div>
+        </div>
+        {% else %}
         <div class="container">
             {% if page.title in ('Home') %}
             {% include "content.html" %}
@@ -53,15 +60,15 @@
             <div class="col-md-12" role="main">{% include "content.html" %}</div>
 
             {% elif page.title in ('Topic Search') %}
-            <div class="col-md-12" role="main">{% include "search.html" %}</div>            
+            <div class="col-md-12" role="main">{% include "search.html" %}</div>
 
             {% else %}
             <div class="col-md-3 visible-xs visible-sm">{% include "toc.html" %}</div> <!-- toc on top on mobile -->
             <div class="col-md-9" role="main">{% include "content.html" %}</div>
             <div class="col-md-3 hidden-xs hidden-sm">{% include "toc.html" %}</div>
-
             {% endif %}
         </div>
+        {% endif %}
 
         <footer class="footer">
            <div class="container">
