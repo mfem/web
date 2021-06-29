@@ -20,7 +20,7 @@ a->SetAssemblyLevel(assembly_level);
 where `a` is either an `mfem::BilinearForm`, `mfem::MixedBilinearForm`,
 `mfem::DiscreteLinearOperator`, or `mfem::NonlinearForm`.
 
-## Assembly levels and backends
+## Assembly levels and backend device configuration
 
 MFEM integrates three backends that interact with the assembly levels, namely the RAJA backend, the OCCA backend, and the libCEED backend.
 Backends are accessible by configuring the `mfem::Device` accordingly.
