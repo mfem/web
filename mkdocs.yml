@@ -33,7 +33,7 @@ nav:
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md  
-- Documentation:
+- Docs:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Doxygen': dox.md
   - 'Topic Search':  search.md
