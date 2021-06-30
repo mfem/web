@@ -63,7 +63,7 @@ Please cite with:
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - [David Medina](https://github.com/dmed256)
 - [Mark Miller](https://people.llnl.gov/miller86)
-- [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
+- [Ketan Mittal](https://people.llnl.gov/mittal3)
 - [Jan Nikl](https://github.com/najlkin)
 - [Geoffrey Oxberry](https://github.com/goxberry)
 - [Will Pazner](https://pazner.github.io/)
