@@ -2,6 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+May 7, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
 Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).
 Feb 16, 2021 | New documentation page on [GPU performance](gpu-tips-n-tricks.md).
