@@ -27,11 +27,10 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Jul 10, 2021 | Announcing the [1st MFEM Community Workshop](workshop.md) coming Oct 20th.
+Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
 Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).
 Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
-Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 
 ## Latest Release
 
@@ -80,6 +79,7 @@ See the [About](about.md) page for citation information.
 <div class="col-md-12"></div>
 
 
+[comment]: # (Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).)
 [comment]: # (Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).)
 [comment]: # (Mar 18, 2021 | [Postdoc position](https://www.llnl.gov/join-our-team/careers/find-your-job/all/mfem/3743990000038667) using MFEM.)
 [comment]: # (Jul 11, 2020 | MFEM paper [appeared](http://doi.org/10.1016/j.camwa.2020.06.009) in CAMWA.)

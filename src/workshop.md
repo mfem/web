@@ -1,17 +1,17 @@
-# 1st MFEM Community Workshop
+# MFEM Community Workshop
 #### October 20, 2021
-#### Virtual Meeting on Zoom
+#### Virtual Meeting
 
 ![MFEM Logo](img/logo-300.png)
 
 ### Overview
 
-The MFEM team is happy to announce that we will hold our first MFEM Community Workshop 
-on October 20, 2021 virtually using Zoom for videoconferencing.  The goal of
-the meeting is to share the latest features with the broader community, deepen
-our engagement with application developers, foster collaboration among all MFEM 
-users and developers, and solicit feedback to guide our future development directions. 
-
+The MFEM team is happy to announce the first MFEM Community Workshop, which will
+take place on October 20, 2021, virtually, using WebEx for videoconferencing.
+The goal of the workshop is to foster collaboration among all MFEM users and
+developers, share the latest MFEM features with the broader community, deepen
+application engagements, and solicit feedback to guide future development
+directions for the project.
 
 ### Registration
 
@@ -19,38 +19,33 @@ If you plan to attend, [please register no later than **October 6th**](https://f
 
 ### Meeting format
 
-The meeting will include the following elements:
+Depending on the interest and user feedback, the meeting will include the following elements:
 
 - Project news and development updates from the MFEM team
 - An overview of the latest features in MFEM-4.3 and GLVis-4.1
 - Contributed talks from application developers utilizing MFEM
 - Demos of pymfem, pyglvis, MFEM jupyter notebooks
 - Roadmap discussion for future development
-- Technical discussions in breakout rooms of E+M, Fluids, and Structural Mechanics applications
+- Technical discussions in breakout rooms for Electromagnetics, Fluids, and
+  Structural Mechanics applications
 
-Live presentations and wrap-up will be on [Zoom](https://exascaleproject.zoomgov.com/) (links to be posted the week of the meeting).
-
-### Draft Meeting Agenda
-
-The meeting activities will take place 11:00am-6:00pm eastern time (8:00am-3:00pm pacific).
-
-Moderators will be unmuted to provide some auditory feedback. They will also monitor chat, relay questions and lead in the applause!
+The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-7):
 
 #### Wednesday, October 20
 
-| Time (PDT) |  Time (EDT) | Activity | Moderator |
-|---|---|---|---|
-| 8:00-8:15 | 11:00-11:15 | **Welcome & Overview** <br> Aaron Fisher (LLNL) | |
-| 8:15-8:45 | 11:15-11:45 | **News and Development Updates** <br> Tzanio Kolev (LLNL) | |
-| 8:45-9:30 | 11:45-12:30 | **Latest MFEM/GLVis feature overview** <br> Veselin Dobrev (LLNL) | |
-| 9:30-10:00 | 12:30-1:00 | **Break** <br> All | |
-| 10:00-11:00 | 1:00-2:00 | **Deep dives on new features** <br> MFEM developers | *Aaron Fisher* |
-| 11:00-12:00 | 2:00-3:00 | **Application Talks** <br> Application researchers | *Aaron Fisher* |
-| 12:00-12:30 | 3:00-3:30 | **Break** <br> All | |
-| 12:30-1:00 | 3:30-4:00 | **Alternative Platform Demos** <br> TBD | |
-| 1:00-2:00 | 4:00-5:00 | **Roadmap discussion** <br> Tzanio Kolev | *Aaron Fisher* |
-| 2:00-3:00 | 5:00-6:00 | **Breakout Sessions** <br> • Breakouts for E+M, Fluids, and Structural Mechanics applications | |
-| 3:00-3:10 | 6:00-6:10 | **Wrap-up** <br> Tzanio Kolev | |
+| Time (Pacific) | Activity | Presenter |
+|---|---|---|
+| 8:00-8:15 | **Welcome & Overview** | Aaron Fisher |
+| 8:15-8:45 | **The state of MFEM** | Tzanio Kolev |
+| 8:45-9:30 | **Recent developments** | Veselin Dobrev |
+| 9:30-10:00 | **Break** | All |
+| 10:00-11:00 | **Deep dives on new features** | MFEM developers | *Aaron Fisher* |
+| 11:00-12:00 | **Application talks** | Application researchers | *Aaron Fisher* |
+| 12:00-12:30 | **Break** | All |
+| 12:30-1:00 | **Demos** | MFEM community |
+| 1:00-2:00 | **Roadmap discussion** | Tzanio Kolev | *Aaron Fisher* |
+| 2:00-3:00 | **Breakout Sessions** | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
+| 3:00-3:10 | **Wrap-up** | Tzanio Kolev |
 
 
 ### Questions?
