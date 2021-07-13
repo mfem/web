@@ -33,7 +33,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
-   <h5>**Application (PDE)**</h5>
+   <h5><strong>Application (PDE)</strong></h5>
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
@@ -50,7 +50,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
-   <h5>**Finite Elements**</h5>
+   <h5><strong>Finite Elements</strong></h5>
    <select id="group2" onchange="update()">
       <option id="all2">All</option>
       <option id="h1">H1 nodal elements</option>
@@ -62,7 +62,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
-   <h5>**Discretization**</h5>
+   <h5><strong>Discretization</strong></h5>
    <select id="group3" onchange="update()">
       <option id="all3">All</option>
       <option id="galerkin">Galerkin FEM</option>
@@ -77,7 +77,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    </select>
 </div>
 <div class="col-sm-6 col-md-4 small" markdown="1">
-   <h5>**Solver**</h5>
+   <h5><strong>Solver</strong></h5>
    <select id="group4" onchange="update()">
       <option id="all4">All</option>
       <option id="jacobi">Jacobi</option>
