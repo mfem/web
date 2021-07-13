@@ -22,7 +22,7 @@ u$ and the time-extrapolated form
 
 \begin{align}
     \label{eq:Next}
-    N^\*(u^{n+1}) = \sum_{j=1}^k a_j N(u^{n+1-j})
+    N^\*(u^{n}) = \sum_{j=1}^k a_j N(u^{n+1-j})
 \end{align}
 
 where $a_j$ are coefficients from the corresponding explicit time integration
@@ -33,14 +33,14 @@ introduced forms yields
 
 \begin{align}
     \sum_{j=0}^k \frac{b_j}{\Delta t} u^{n+1-j} =
-    -\nabla p^{n+1} + L(u^{n+1}) + N^\*(u^{n+1}) + f^{n+1}.
+    -\nabla p^{n+1} + L(u^{n+1}) + N^\*(u^{n}) + f^{n+1}.
 \end{align}
 
 Collecting all known quantities at a given time with
 
 \begin{align}
     F^\*(u^n) = -\sum_{j=1}^k \frac{b_j}{\Delta t} u^{n+1-j}
-    + N^\*(u^{n+1}) + f^{n+1}
+    + N^\*(u^{n}) + f^{n+1}
 \end{align}
 
 the BDF expression reduces to
@@ -61,7 +61,7 @@ which is used to weakly enforce incompressibility by setting the first term to
 zero. Like in \eqref{eq:Next} we introduce the time extrapolated term
 
 \begin{align}
-    L^\*\_{\times}(u) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
+    L^\*\_{\times}(u^{n}) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
 \end{align}
 
 To compute the pressure we rearrange \eqref{eq:bdf_short} and take the
@@ -69,14 +69,14 @@ divergence on both sides
 
 \begin{align}
     \label{eq:prespois}
-    \nabla^2 p^{n+1} = \nabla \cdot (L_{\times}^\*(u^{n+1} + F^\*(u^{n+1})),
+    \nabla^2 p^{n+1} = \nabla \cdot (L_{\times}^\*(u^{n}) + F^\*(u^{n})),
 \end{align}
 
 which is closed by the Neumann type boundary condition
 
 \begin{align}
     \nabla p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} u^{n+1} \cdot \hat{n}
-    + (L_{\times}^\*(u^{n+1} + F^\*(u^{n+1})) \cdot \hat{n}.
+    + (L_{\times}^\*(u^{n}) + F^\*(u^{n})) \cdot \hat{n}.
 \end{align}
 
 We will refer to this as the pressure Poisson equation in the following. The
@@ -85,7 +85,7 @@ velocity part which is also derived from \eqref{eq:bdf_short}. Consider
 
 \begin{align}
     \label{eq:hlm}
-    \frac{b_0}{\Delta t} u^{n+1} - L(u^{n+1}) = -\nabla p^{n+1} + F^*(u^{n+1})
+    \frac{b_0}{\Delta t} u^{n+1} - L(u^{n+1}) = -\nabla p^{n+1} + F^*(u^{n})
 \end{align}
 
 with the Dirichlet (essential type) boundary condition
