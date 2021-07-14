@@ -15,7 +15,7 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 6th**](https://forms.gle/9dnZHG2MNAaT7jg97) **swap this link out**. There is no registration fee.
+If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8). There is no registration fee.
 
 ### Meeting format
 
