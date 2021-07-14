@@ -50,7 +50,7 @@ Using Spack is easy to start with, complex when it comes to getting exactly what
 Unless you want to develop in Spack, those rules will help keeping things under control:
 
 * Use a single Spack instance. Spack has `environments` that mimic the way python environment work to allow you to partition things so that not all the packages installed show up in a big mess.
-* Stick to a release of Spack. Packages evolves along with Spack source code. It means that updating Spack will likely affect reproducibility of your specs installed. Expect to reinstall everything when you update Spack.
+* Stick to a release of Spack. Packages evolve along with Spack source code. It means that updating Spack will likely affect reproducing the build of specs already installed. Expect to reinstall everything when you update Spack.
 
 ### Using Spack to install MFEM on lassen and quartz.
 
