@@ -57,6 +57,3 @@ Unless you want to develop in Spack, those rules will help keeping things under 
 Those machines are used to test MFEM. The tests running in Gitlab CI use Spack to manage MFEM dependencies. The configuration used for those tests can be reproduced exactly to be guaranteed to get a working insatllation through Spack.
 
 Unfortunately, only a handfull of configuration are being tested. But this is a good starting point to explore further. See [MFEM Uberenv configuration](https://github.com/mfem/mfem-uberenv) for more details.
-
-
-
