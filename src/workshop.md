@@ -15,7 +15,8 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8). There is no registration fee.
+If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8). 
+There is no registration fee. WebEx details will be distributed to participants prior to the event date.
 
 ### Meeting format
 
@@ -39,11 +40,11 @@ The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-
 | 8:15-8:45 | **The state of MFEM** | Tzanio Kolev |
 | 8:45-9:30 | **Recent developments** | Veselin Dobrev |
 | 9:30-10:00 | **Break** | All |
-| 10:00-11:00 | **Deep dives on new features** | MFEM developers | *Aaron Fisher* |
-| 11:00-12:00 | **Application talks** | Application researchers | *Aaron Fisher* |
+| 10:00-11:00 | **Deep dives on new features** | MFEM developers |
+| 11:00-12:00 | **Application talks** | Application researchers |
 | 12:00-12:30 | **Break** | All |
 | 12:30-1:00 | **Demos** | MFEM community |
-| 1:00-2:00 | **Roadmap discussion** | Tzanio Kolev | *Aaron Fisher* |
+| 1:00-2:00 | **Roadmap discussion** | Tzanio Kolev |
 | 2:00-3:00 | **Breakout Sessions** | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
 | 3:00-3:10 | **Wrap-up** | Tzanio Kolev |
 
