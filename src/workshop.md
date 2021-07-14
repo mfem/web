@@ -40,14 +40,16 @@ The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-
 | 8:15-8:45 | **The state of MFEM** | Tzanio Kolev |
 | 8:45-9:30 | **Recent developments** | Veselin Dobrev |
 | 9:30-10:00 | **Break** | All |
-| 10:00-11:00 | **Deep dives on new features** | MFEM developers |
-| 11:00-12:00 | **Application talks** | Application researchers |
+| 10:00-11:00 | **Deep dives on new features**\* | MFEM developers |
+| 11:00-12:00 | **Application talks**\* | Application researchers |
 | 12:00-12:30 | **Break** | All |
-| 12:30-1:00 | **Demos** | MFEM community |
+| 12:30-1:00 | **Demos**\* | MFEM community |
 | 1:00-2:00 | **Roadmap discussion** | Tzanio Kolev |
-| 2:00-3:00 | **Breakout Sessions** | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
+| 2:00-3:00 | **Breakout Sessions**\* | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
 | 3:00-3:10 | **Wrap-up** | Tzanio Kolev |
 
+\* If you have an idea for a talk, demo, or breakout session topic, please describe it on the registration form. 
+Submissions are due on **October 6th** along with your registration.
 
 ### Questions?
 
