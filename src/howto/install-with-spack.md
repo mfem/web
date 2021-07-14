@@ -22,7 +22,7 @@ Spack is a *from source* package manager. So Spack will allow you to build mfem 
 
 #### To manage your libraries for development.
 
-Spack is typically used to deploy software. You may use it to install MMFEM among other libraries in a shared location for developers using MFEM as a dependency: all will have access to the same configuration and you will be able to reproduce this installation at will.
+Spack is typically used to deploy software. You may use it to install MFEM among other libraries in a shared location for developers using MFEM as a dependency: all will have access to the same configuration and you will be able to reproduce this installation at will.
 
 But you will be limited to a predefined set of versions. Typically the releases and the latest state of `master` branch. In that sense Spack is not meant to be use to develop in MFEM *a priori*.
 
@@ -30,7 +30,7 @@ _(For those looking to use Spack to develop in MFEM, see [Spack workflow feature
 
 #### To install dependencies automatically.
 
-Spack will automatatically build the dependencies, which can be very valuable to get started quickly with and advanced configuration of MFEM.
+Spack will automatically build the dependencies, which can be especially valuable to get started quickly with an advanced configuration of MFEM.
 
 This is a great way to get students started quickly with a configuration that would require much too many steps otherwise.
 
@@ -43,17 +43,17 @@ For more details about this, explore [MFEM Uberenv configuration](https://github
 
 ## How to use Spack to install MFEM.
 
-Using Spack is easy to start with, complex when it comes to getting what you want, and can be tenious to maintain on the long term.
+Using Spack is easy to start with, complex when it comes to getting exactly what you want, and can be tedious to maintain on the long term.
 
 ### Best practices for a long-term sane reliationship with Spack.
 
 Unless you want to develop in Spack, those rules will help keeping things under control:
 
-* Use a single Spack instance. Spack has `environments` that mimic the way python environment work to allow you to partition things so that not all the packages installed shows up in a big mess.
+* Use a single Spack instance. Spack has `environments` that mimic the way python environment work to allow you to partition things so that not all the packages installed show up in a big mess.
 * Stick to a release of Spack. Packages evolves along with Spack source code. It means that updating Spack will likely affect reproducibility of your specs installed. Expect to reinstall everything when you update Spack.
 
 ### Using Spack to install MFEM on lassen and quartz.
 
-Those machines are used to test MFEM. The tests running in Gitlab CI use Spack to manage MFEM dependencies. The configuration used for those tests can be reproduced exactly to be guaranteed to get a working insatllation through Spack.
+Those machines are used to test MFEM. The tests running in Gitlab CI use Spack to manage MFEM dependencies. The configuration used for those tests can be reproduced exactly. This guarantees to get a working installation through Spack.
 
-Unfortunately, only a handfull of configuration are being tested. But this is a good starting point to explore further. See [MFEM Uberenv configuration](https://github.com/mfem/mfem-uberenv) for more details.
+Unfortunately, only a handful of configurations are being tested. But this is a good starting point to explore further. See [MFEM Uberenv configuration](https://github.com/mfem/mfem-uberenv) for more details.
