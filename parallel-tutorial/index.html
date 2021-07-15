@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -258,7 +258,7 @@
 <h2 id="building">Building</h2>
 <p>Follow the <a href="../building/">building instructions</a> to build the parallel MFEM library and to start a GLVis server. The latter is the recommended visualization software for MFEM (though its use is optional).</p>
 <p>To build the parallel example codes, type <code>make</code> in MFEM's examples directory:</p>
-<pre><code class="sh">~/mfem/examples&gt; make
+<pre><code class="language-sh">~/mfem/examples&gt; make
 mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex1p.cpp -o ex1p ...
 mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex2p.cpp -o ex2p ...
 mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex3p.cpp -o ex3p ...
@@ -269,15 +269,13 @@ mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex8p.cpp -o ex8p ...
 mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex9p.cpp -o ex9p ...
 mpicxx  -O3 -I..  -I../../hypre/src/hypre/include ex10p.cpp -o ex10p ...
 </code></pre>
-
 <h2 id="example-1p">Example 1p</h2>
 <p>This is a parallel version of <a href="../serial-tutorial/#example-1">Example 1</a> using <em>hypre</em>'s BoomerAMG preconditioner. Run this example as follows:</p>
-<pre><code class="sh">~/mfem/examples&gt; mpirun -np 16 ex1p -m ../data/square-disc.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; mpirun -np 16 ex1p -m ../data/square-disc.mesh
 ...
 PCG Iterations = 26
 Final PCG Relative Residual Norm = 4.30922e-13
 </code></pre>
-
 <p>If a GLVis server is running, the computed finite element solution <strong>combined from all processors</strong>, will appear in an interactive window:</p>
 <p><img alt="" src="../img/tutorial/ex1p-np16-1.png" /></p>
 <p>You can examine the solution using the mouse and the GLVis <a href="https://raw.githubusercontent.com/glvis/glvis/master/README">command keystrokes</a>.
@@ -286,47 +284,42 @@ To view the parallel partitioning, for example, press the following keys in the 
 <p>To examine the solution only in one, or a few parallel subdomains, one can use the F9/F10 and the F8 keys. In 2D, one can also use press "<code>b</code>" to draw the only the boundaries between the subdomains. For example</p>
 <p><img alt="" src="../img/tutorial/ex1p-np16-3.png" /></p>
 <p>was produced by</p>
-<pre><code class="sh">glvis -np 16 -m mesh -g sol -k &quot;RAjlb&quot;
+<pre><code class="language-sh">glvis -np 16 -m mesh -g sol -k &quot;RAjlb&quot;
 </code></pre>
-
 <p>followed by F9 and scaling/position adjustment with the mouse.</p>
 <p>Three-dimensional and curvilinear meshes are also supported in parallel:</p>
-<pre><code class="sh">~/mfem/examples&gt; mpirun -np 16 ex1p -m ../data/escher-p3.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; mpirun -np 16 ex1p -m ../data/escher-p3.mesh
 ...
 PCG Iterations = 24
 Final PCG Relative Residual Norm = 3.59964e-13
 ~/mfem/examples&gt; glvis -np 16 -m mesh -g sol -k &quot;Aooogtt&quot;
 </code></pre>
-
 <p><img alt="" src="../img/tutorial/ex1p-np16-escher-1.png" /></p>
 <p>The continuity of the solution across the inter-processor interfaces can be seen by using a cutting plane (keys "<code>AoooiMMtmm</code>" followed by "<code>z</code>" and "<code>Y</code>" adjustments):</p>
 <p><img alt="" src="../img/tutorial/ex1p-np16-escher-2.png" /></p>
 <h2 id="example-2p">Example 2p</h2>
 <p>This is a parallel version of <a href="../serial-tutorial/#example-2">Example 2</a> using the systems version of <em>hypre</em>'s BoomerAMG preconditioner, which can be run analogous to the serial case:</p>
-<pre><code class="sh">~/mfem/examples&gt; mpirun -np 16 ex2p -m ../data/beam-hex.mesh -o 1
+<pre><code class="language-sh">~/mfem/examples&gt; mpirun -np 16 ex2p -m ../data/beam-hex.mesh -o 1
 ...
 PCG Iterations = 39
 Final PCG Relative Residual Norm = 2.91528e-09
 </code></pre>
-
 <p>To view the parallel partitioning with the magnitude of the computed displacement field, type "<code>Atttaa</code>" in the GLVis window followed by subdomain shrinking with F11 and scaling adjustments with the mouse:</p>
 <p><img alt="" src="../img/tutorial/ex2p-np16-beam-hex.png" /></p>
 <h2 id="example-3p">Example 3p</h2>
 <p>This is a parallel version of <a href="../serial-tutorial/#example-3">Example 3</a> using <em>hypre</em>'s AMS preconditioner. Its use is analogous to the serial case:</p>
-<pre><code class="sh">/mfem/examples&gt; mpirun -np 16 ex3p -m ../data/fichera-q3.mesh
+<pre><code class="language-sh">/mfem/examples&gt; mpirun -np 16 ex3p -m ../data/fichera-q3.mesh
 ...
 PCG Iterations = 17
 Final PCG Relative Residual Norm = 7.61595e-13
 
 || E_h - E ||_{L^2} = 0.0821685
 </code></pre>
-
 <p>Note that AMS leads to much fewer iterations than the Gauss-Seidel preconditioner used in the serial code. The parallel subdomain partitioning can be seen with "<code>ooogt</code>" and F11/F12:</p>
 <p><img alt="" src="../img/tutorial/ex3p-np16-fichera-q3.png" /></p>
 <p>One can also visualize individual components of the Nedelec solution and remove the elements in a cutting plane to see the surfaces corresponding to inter-processor boundaries:</p>
-<pre><code class="sh">glvis -np 16 -m mesh -g sol -k &quot;ooottmiEF&quot;
+<pre><code class="language-sh">glvis -np 16 -m mesh -g sol -k &quot;ooottmiEF&quot;
 </code></pre>
-
 <p><img alt="" src="../img/tutorial/ex3p-np16-fichera-q3-2.png" /></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">

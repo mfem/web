@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -231,7 +231,6 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
 </script>
-
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML">
 </script>
@@ -258,9 +257,9 @@ would like to share. <br>
 <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
 or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a> or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a></em>.</p>
 <div class="row">
-<p><div class="col-sm-6 col-md-2 small" markdown="1">
-   <h5><strong>Application (PDE)</strong></h5>
-   <select id="group1" onchange="update()">
+<div class="col-sm-6 col-md-2 small">
+<h5 id="application-pde"><strong>Application (PDE)</strong></h5>
+<p><select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
       <option id="elasticity">Elasticity</option>
@@ -273,23 +272,23 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
-   </select>
+   </select></p>
 </div>
-<div class="col-sm-6 col-md-3 small" markdown="1">
-   <h5><strong>Finite Elements</strong></h5>
-   <select id="group2" onchange="update()">
+<div class="col-sm-6 col-md-3 small">
+<h5 id="finite-elements"><strong>Finite Elements</strong></h5>
+<p><select id="group2" onchange="update()">
       <option id="all2">All</option>
       <option id="h1">H1 nodal elements</option>
       <option id="l2">L2 discontinuous elements</option>
       <option id="hcurl">H(curl) Nedelec elements</option>
       <option id="hdiv">H(div) Raviart-Thomas elements</option>
       <option id="h12">H^{-1/2} interfacial elements</option>
-   </select>
+   </select></p>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
-<div class="col-sm-6 col-md-3 small" markdown="1">
-   <h5><strong>Discretization</strong></h5>
-   <select id="group3" onchange="update()">
+<div class="col-sm-6 col-md-3 small">
+<h5 id="discretization"><strong>Discretization</strong></h5>
+<p><select id="group3" onchange="update()">
       <option id="all3">All</option>
       <option id="galerkin">Galerkin FEM</option>
       <option id="mixed">Mixed FEM</option>
@@ -300,11 +299,11 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="nurbs">Isogeometric analysis (NURBS)</option>
       <option id="amr">Adaptive mesh refinement (AMR)</option>
       <option id="pa">Partial assembly</option>
-   </select>
+   </select></p>
 </div>
-<div class="col-sm-6 col-md-4 small" markdown="1">
-   <h5><strong>Solver</strong></h5>
-   <select id="group4" onchange="update()">
+<div class="col-sm-6 col-md-4 small">
+<h5 id="solver"><strong>Solver</strong></h5>
+<p><select id="group4" onchange="update()">
       <option id="all4">All</option>
       <option id="jacobi">Jacobi</option>
       <option id="gs">Gauss-Seidel</option>
@@ -326,11 +325,12 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="petsc">PETSc solvers</option>
       <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
-   </select>
-</div></p>
+   </select></p>
 </div>
-<p><br>
-<hr></p>
+</div>
+<p><br></p>
+<hr>
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="ex0">
@@ -347,9 +347,9 @@ finite element space, as well as linear and bilinear forms corresponding to the
 left-hand side and right-hand side of the discrete linear system.</p>
 <p><em>The example has serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex0.cpp">ex0.cpp</a>)
 and parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex0p.cpp">ex0p.cpp</a>)
-versions.</em>
+versions.</em></p>
 <div style="clear:both;"></div>
-<br></p>
+<p><br></p>
 </div>
 <div id="ex1">
 <h2 id="example-1-laplace-problem">Example 1: Laplace Problem</h2>
@@ -375,9 +375,9 @@ and HPC versions: <a href="https://github.com/mfem/mfem/blob/master/miniapps/per
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>
 , a PUMI modification in <a href="https://github.com/mfem/mfem/blob/master/examples/pumi">examples/pumi</a> and a Ginkgo modification
 in <a href="https://github.com/mfem/mfem/tree/master/examples/ginkgo">examples/ginkgo</a>.
-Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.</em>
+Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.</em></p>
 <div style="clear:both;"></div>
-<br></p>
+<p><br></p>
 </div>
 <div id="ex2">
 <h2 id="example-2-linear-elasticity">Example 2: Linear Elasticity</h2>
@@ -406,10 +406,10 @@ also illustrated.</p>
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp">ex2p.cpp</a>) version.
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>
 and a PUMI modification in <a href="https://github.com/mfem/mfem/blob/master/examples/pumi">examples/pumi</a>.
-We recommend viewing Example 1 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 1 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex3">
 <h2 id="example-3-definite-maxwell-problem">Example 3: Definite Maxwell Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/ex3.saved" target="_blank">
@@ -430,10 +430,10 @@ also illustrated.</p>
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp">ex3p.cpp</a>) version.
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.
-We recommend viewing examples 1-2 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1-2 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex4">
 <h2 id="example-4-grad-div-problem">Example 4: Grad-div Problem</h2>
 <p><img class="floatright" src="../img/examples/ex4.png"></p>
@@ -452,10 +452,10 @@ Bilinear form hybridization and static condensation are also illustrated.</p>
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp">ex4p.cpp</a>) version.
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.
-We recommend viewing examples 1-3 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1-3 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex5">
 <h2 id="example-5-darcy-problem">Example 5: Darcy Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/ex5.saved" target="_blank">
@@ -480,10 +480,10 @@ formats.</p>
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp">ex5p.cpp</a>) version.
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
 Partial assembly is supported.
-We recommend viewing examples 1-4 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1-4 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex6">
 <h2 id="example-6-laplace-problem-with-amr">Example 6: Laplace Problem with AMR</h2>
 <p><img class="floatright" src="../img/examples/ex6.png"></p>
@@ -504,10 +504,10 @@ and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6p.
 It also has a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>
 and a PUMI modification in <a href="https://github.com/mfem/mfem/blob/master/examples/pumi">examples/pumi</a>.
 Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.
-We recommend viewing Example 1 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 1 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex7">
 <h2 id="example-7-surface-meshes">Example 7: Surface Meshes</h2>
 <p><img class="floatright" src="../img/examples/ex7.png"></p>
@@ -522,10 +522,10 @@ left-hand side and right-hand side of the discrete linear
 system. Simple local mesh refinement is also demonstrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex7.cpp">ex7.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex7p.cpp">ex7p.cpp</a>) version.
-We recommend viewing Example 1 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 1 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex8">
 <h2 id="example-8-dpg-for-the-laplace-problem">Example 8: DPG for the Laplace Problem</h2>
 <p><img class="floatright" src="../img/examples/ex8.png"></p>
@@ -544,10 +544,10 @@ elements and spaces, trace face integrators and the definition
 of block operators and preconditioners.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex8.cpp">ex8.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex8p.cpp">ex8p.cpp</a>) version.
-We recommend viewing examples 1-5 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1-5 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex9">
 <h2 id="example-9-dg-advection">Example 9: DG Advection</h2>
 <p><a href="https://glvis.org/live/?stream=../data/ex9.saved" target="_blank">
@@ -567,10 +567,10 @@ with <a href="http://visit.llnl.gov">VisIt</a> and <a href="https://www.paraview
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp">ex9p.cpp</a>) version.
 It also has a SUNDIALS modification in <a href="https://github.com/mfem/mfem/blob/master/examples/sundials">examples/sundials</a>
 , a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>,
-and a HiOp modification in <a href="https://github.com/mfem/mfem/blob/master/examples/hiop">examples/hiop</a>.</em>
-<div style="clear:both;"/></div>
-<br></p>
+and a HiOp modification in <a href="https://github.com/mfem/mfem/blob/master/examples/hiop">examples/hiop</a>.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex10">
 <h2 id="example-10-nonlinear-elasticity">Example 10: Nonlinear Elasticity</h2>
 <p><img class="floatright" src="../img/examples/ex10.png"></p>
@@ -588,10 +588,10 @@ solver.</p>
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp">ex10p.cpp</a>) version.
 It also has a SUNDIALS modification in <a href="https://github.com/mfem/mfem/blob/master/examples/sundials">examples/sundials</a>
 and a PETSc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
-We recommend viewing examples 2 and 9 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 2 and 9 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex11">
 <h2 id="example-11-laplace-eigenproblem">Example 11: Laplace Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex11.png"></p>
@@ -608,10 +608,10 @@ visualization window for multiple eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex11p.cpp">ex11p.cpp</a>) version.
 It also has a SLEPc modification in <a href="https://github.com/mfem/mfem/blob/master/examples/petsc">examples/petsc</a>.
-We recommend viewing Example 1 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 1 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex12">
 <h2 id="example-12-linear-elasticity-eigenproblem">Example 12: Linear Elasticity Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex12.png"></p>
@@ -633,10 +633,10 @@ Reusing a single <a href="http://glvis.org">GLVis</a> visualization window for m
 eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex12p.cpp">ex12p.cpp</a>) version.
-We recommend viewing examples 2 and 11 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 2 and 11 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex13">
 <h2 id="example-13-maxwell-eigenproblem">Example 13: Maxwell Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex13.png"></p>
@@ -653,10 +653,10 @@ Reusing a single <a href="http://glvis.org">GLVis</a> visualization window for m
 eigenfunctions is also illustrated.</p>
 <p><em>The example has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex13p.cpp">ex13p.cpp</a>) version.
-We recommend viewing examples 3 and 11 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 3 and 11 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex14">
 <h2 id="example-14-dg-diffusion">Example 14: DG Diffusion</h2>
 <p><img class="floatright" src="../img/examples/ex14.png"></p>
@@ -668,10 +668,10 @@ including zero on regular grids, are supported. The example highlights the use
 of discontinuous spaces and DG-specific face integrators.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex14.cpp">ex14.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex14p.cpp">ex14p.cpp</a>) version.
-We recommend viewing examples 1 and 9 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1 and 9 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex15">
 <h2 id="example-15-dynamic-amr">Example 15: Dynamic AMR</h2>
 <p><img class="floatright" src="../img/examples/ex15.png"></p>
@@ -697,10 +697,10 @@ and saving of time-dependent fields for external visualization
 with <a href="http://visit.llnl.gov">VisIt</a> are also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex15.cpp">ex15.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp">ex15p.cpp</a>) version.
-We recommend viewing examples 1, 6 and 9 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1, 6 and 9 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex16">
 <h2 id="example-16-time-dependent-heat-conduction">Example 16: Time Dependent Heat Conduction</h2>
 <p><img class="floatright" src="../img/examples/ex16.png"></p>
@@ -714,10 +714,10 @@ Picard step method for linearization. The saving of time dependent data files fo
 visualization with <a href="http://visit.llnl.gov">VisIt</a> is also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex16.cpp">ex16.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex16p.cpp">ex16p.cpp</a>) version.
-We recommend viewing examples 2, 9, and 10 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 2, 9, and 10 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex17">
 <h2 id="example-17-dg-linear-elasticity">Example 17: DG Linear Elasticity</h2>
 <p><img class="floatright" src="../img/examples/ex17.png"></p>
@@ -743,10 +743,10 @@ non-homogeneous Dirichlet b.c. imposed weakly, is also
 illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex17.cpp">ex17.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex17p.cpp">ex17p.cpp</a>) version.
-We recommend viewing examples 2 and 14 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 2 and 14 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex18">
 <h2 id="example-18-dg-euler-equations">Example 18: DG Euler Equations</h2>
 <p><img class="floatright" src="../img/examples/ex18.png"></p>
@@ -779,10 +779,10 @@ It also demonstrates how to use GLVis for in-situ visualization of vector grid
 functions.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18.cpp">ex18.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp">ex18p.cpp</a>) version.
-We recommend viewing examples 9, 14 and 17 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 9, 14 and 17 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex19">
 <h2 id="example-19-incompressible-nonlinear-elasticity">Example 19: Incompressible Nonlinear Elasticity</h2>
 <p><img class="floatright" src="../img/examples/ex19.png"></p>
@@ -824,10 +824,10 @@ block vectors as well as how to implement specialized block preconditioners for 
 iterative solvers.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex19.cpp">ex19.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex19p.cpp">ex19p.cpp</a>) version.
-We recommend viewing examples 2, 5 and 10 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 2, 5 and 10 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex20">
 <h2 id="example-20-symplectic-integration-of-hamiltonian-systems">Example 20: Symplectic Integration of Hamiltonian Systems</h2>
 <p><img class="floatright" src="../img/examples/ex20.png"></p>
@@ -875,10 +875,10 @@ system but starting from different initial conditions.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex20.cpp">ex20.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex20p.cpp">ex20p.cpp</a>) version.
 See the <a href="#maxwell-miniapp-transient-full-wave-electromagnetics">Maxwell</a> miniapp for another
-application of symplectic integration.</em>
-<div style="clear:both;"/></div>
-<br></p>
+application of symplectic integration.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex21">
 <h2 id="example-21-adaptive-mesh-refinement-for-linear-elasticity">Example 21: Adaptive mesh refinement for linear elasticity</h2>
 <p><img class="floatright" src="../img/examples/ex21.png"></p>
@@ -896,10 +896,10 @@ coarse to fine meshes, as well as persistent GLVis
 visualization are also illustrated.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex21.cpp">ex21.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex21p.cpp">ex21p.cpp</a>) version.
-We recommend viewing Examples 2 and 6 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Examples 2 and 6 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex22">
 <h2 id="example-22-complex-linear-systems">Example 22: Complex Linear Systems</h2>
 <p><img class="floatright" src="../img/examples/ex22.gif"></p>
@@ -927,10 +927,10 @@ of the boundary.</p>
 a sequence of fields sent to a single GLVis socket.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex22.cpp">ex22.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp">ex22p.cpp</a>) version.
-We recommend viewing examples 1, 3, and 4 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1, 3, and 4 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex23">
 <h2 id="example-23-wave-problem">Example 23: Wave Problem</h2>
 <p><img class="floatright" src="../img/examples/ex23.png"></p>
@@ -941,10 +941,10 @@ The boundary conditions are either Dirichlet or Neumann.</p>
 <p>The example demonstrates the use of time dependent operators,
 implicit solvers and second order time integration.</p>
 <p><em>The example has only a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex23.cpp">ex23.cpp</a>) version.
-We recommend viewing examples 9 and 10 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 9 and 10 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex24">
 <h2 id="example-24-mixed-finite-element-spaces">Example 24: Mixed finite element spaces</h2>
 <p><img class="floatright" src="../img/examples/ex24.png"></p>
@@ -960,10 +960,10 @@ divergence in the appropriate spaces, comparing the errors in each case.</p>
 <p>Partial assembly and <a href="../gpu-tips-n-tricks/">GPU devices</a> are supported.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex24.cpp">ex24.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp">ex24p.cpp</a>) version.
-We recommend viewing examples 1 and 3 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1 and 3 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex25">
 <h2 id="example-25-perfectly-matched-layers">Example 25: Perfectly Matched Layers</h2>
 <p><img class="floatright" src="../img/examples/ex25.gif"></p>
@@ -986,10 +986,10 @@ the Jacobian matrix of the coordinate transformation.</p>
 test problems are included, with known exact solutions.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex25.cpp">ex25.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp">ex25p.cpp</a>) version.
-We recommend viewing Example 22 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 22 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex26">
 <h2 id="example-26-multigrid-preconditioner">Example 26: Multigrid Preconditioner</h2>
 <p><img class="floatright" src="../img/examples/ex26.png"></p>
@@ -1008,10 +1008,10 @@ uses a PCG solver on the coarsest level and second order
 Chebyshev accelerated smoothers on the other levels.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex26.cpp">ex26.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp">ex26p.cpp</a>) version.
-We recommend viewing Example 1 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing Example 1 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex27">
 <h2 id="example-27-laplace-boundary-conditions">Example 27: Laplace Boundary Conditions</h2>
 <p><a href="https://glvis.org/live/?stream=../data/ex27.saved" target="_blank">
@@ -1057,10 +1057,10 @@ conditions on different portions of a predefined mesh.</p>
 <p>as well as periodic boundary conditions which are enforced topologically.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex27.cpp">ex27.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex27p.cpp">ex27p.cpp</a>) version.
-We recommend viewing examples 1 and 14 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1 and 14 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex28">
 <h2 id="example-28-constraints-and-sliding-boundary-conditions">Example 28: Constraints and Sliding Boundary Conditions</h2>
 <p><img class="floatright" src="../img/examples/ex28.png"></p>
@@ -1073,10 +1073,10 @@ eliminating them from the linear system or solving a saddle-point
 system that explicitly includes constraint conditions.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex28.cpp">ex28.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex28p.cpp">ex28p.cpp</a>) version.
-We recommend viewing example 2 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing example 2 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="ex29">
 <h2 id="example-29-solving-pdes-on-embedded-surfaces">Example 29: Solving PDEs on embedded surfaces</h2>
 <p><img class="floatright" src="../img/examples/ex29.png"></p>
@@ -1093,10 +1093,10 @@ all of our integrators currently support such cases but the
 integrators when necessary.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex29.cpp">ex29.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex29p.cpp">ex29p.cpp</a>) version.
-We recommend viewing examples 1 and 7 before viewing this example.</em>
-<div style="clear:both;"/></div>
-<br></p>
+We recommend viewing examples 1 and 7 before viewing this example.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -1118,10 +1118,10 @@ in the field of linear electrostatics.  Its features include:</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp">volta.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="tesla">
 <h2 id="tesla-miniapp-magnetostatics">Tesla Miniapp: Magnetostatics</h2>
 <p><img class="floatright" src="../img/examples/tesla.png"></p>
@@ -1143,10 +1143,10 @@ of realistic magnetostatics problems.  Its features include:</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp">tesla.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="maxwell">
 <h2 id="maxwell-miniapp-transient-full-wave-electromagnetics">Maxwell Miniapp: Transient Full-Wave Electromagnetics</h2>
 <p><img class="floatright" src="../img/examples/maxwell.png"></p>
@@ -1171,10 +1171,10 @@ moving to the miniapps.</strong></em>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/maxwell.cpp">maxwell.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="joule">
 <h2 id="joule-miniapp-transient-magnetics-and-joule-heating">Joule Miniapp: Transient Magnetics and Joule Heating</h2>
 <p><img class="floatright" src="../img/examples/joule.png" ></p>
@@ -1199,10 +1199,10 @@ by the electromagnetic Joule heating.</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp">joule.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="mobius-strip">
 <h2 id="mobius-strip-miniapp">Mobius Strip Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
@@ -1217,10 +1217,10 @@ way to generate complex surface meshes.</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp">mobius-strip.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="klein-bottle">
 <h2 id="klein-bottle-miniapp">Klein Bottle Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
@@ -1235,10 +1235,10 @@ the mobius-strip miniapp.</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/klein-bottle.cpp">klein-bottle.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="toroid">
 <h2 id="toroid-miniapp">Toroid Miniapp</h2>
 <p><img class="floatright" src="../img/examples/toroid-wedge.png"></p>
@@ -1263,10 +1263,10 @@ non-trivial topology for testing various features in MFEM.</p>
 <p><em>This miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/toroid.cpp">toroid.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="twist">
 <h2 id="twist-miniapp">Twist Miniapp</h2>
 <p><img class="floatright" src="../img/examples/twist-wedge.png"></p>
@@ -1293,10 +1293,10 @@ non-trivial topology for testing various features in MFEM.</p>
 <p><em>This miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/twist.cpp">twist.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="extruder">
 <h2 id="extruder-miniapp">Extruder Miniapp</h2>
 <p><img class="floatright" src="../img/examples/extruded-star.png"></p>
@@ -1315,10 +1315,10 @@ constructed and transformed in MFEM.</p>
 <p><em>This miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/extruder.cpp">extruder.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="trimmer">
 <h2 id="trimmer-miniapp">Trimmer Miniapp</h2>
 <p><img class="floatright" src="../img/examples/trimmer-small.png"></p>
@@ -1336,10 +1336,10 @@ constructed in MFEM.</p>
 <p><em>This miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/trimmer.cpp">trimmer.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="polar-nc">
 <h2 id="polar-nc-miniapp">Polar-NC Miniapp</h2>
 <p><img class="floatright" src="../img/examples/polar-nc.png"></p>
@@ -1356,10 +1356,10 @@ on the fly by marking hanging nodes with <code>Mesh::AddVertexParents</code>.</p
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/polar-nc.cpp">polar-nc.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="shaper">
 <h2 id="shaper-miniapp">Shaper Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
@@ -1376,10 +1376,10 @@ conforming and non-conforming refinements are supported.</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/shaper.cpp">shaper.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="mesh-explorer">
 <h2 id="mesh-explorer-miniapp">Mesh Explorer Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
@@ -1398,10 +1398,10 @@ mesh. Some of its features are:</p>
 <code>miniapps/meshing</code> directory.</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp">mesh-explorer.cpp</a>) version.
-<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="mesh-optimizer">
 <h2 id="mesh-optimizer-miniapp">Mesh Optimizer Miniapp</h2>
 <p><img class="floatright" src="../img/examples/mesh-optimizer.png"></p>
@@ -1427,10 +1427,10 @@ Jacobian matrix, which is done through an inner linear solver.</p>
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp">mesh-optimizer.cpp</a>) and a
 parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp">pmesh-optimizer.cpp</a>)
 version.
-<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="minimal-surface">
 <h2 id="minimal-surface-miniapp">Minimal Surface Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/minimal-surface.saved" target="_blank">
@@ -1445,10 +1445,10 @@ number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.</p
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp">minimal-surface.cpp</a>) and a
 parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pminimal-surface.cpp">pminimal-surface.cpp</a>)
 version.
-<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="lor-transfer">
 <h2 id="low-order-refined-transfer-miniapp">Low-Order Refined Transfer Miniapp</h2>
 <p><img class="floatright"  width="450" src="../img/examples/lor-transfer.png"></p>
@@ -1463,10 +1463,10 @@ function that was obtained by restricting a high-order grid function to the
 low-order refined space.</p>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp">lor-transfer.cpp</a>) version.</em>
-<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="gslib-interpolation">
 <h2 id="interpolation-miniapps">Interpolation Miniapps</h2>
 <p><img class="floatright"  width="450" src="../img/examples/gslib.png"></p>
@@ -1490,10 +1490,10 @@ demonstrates how grid functions can be transferred between meshes.</li>
 demonstrates how grid functions on two different meshes can be compared with
 each other.</li>
 </ul>
-<p><em><strong>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library. We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<p><em><strong>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library. We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="distance">
 <h2 id="distance-solver-miniapp">Distance Solver Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/distance.saved" target="_blank">
@@ -1510,10 +1510,10 @@ distance), or a vector (its magnitude is the distance, and its direction is
 the starting direction of the shortest path).</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp">distance.cpp</a>) version.</em>
-<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="shifted">
 <h2 id="shifted-diffusion-miniapp">Shifted Diffusion Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/shifted.saved" target="_blank">
@@ -1529,10 +1529,10 @@ second-generation
 <a href="https://www.sciencedirect.com/science/article/pii/S0045782520305260">shifted boundary method</a>.</p>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp">diffusion.cpp</a>) version.</em>
-<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="laghos">
 <h2 id="laghos-miniapp">Laghos Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/laghos.saved" target="_blank">
@@ -1572,10 +1572,10 @@ a collection of software benchmarks, miniapps, libraries and APIs for
 efficient exascale discretizations based on high-order finite element
 and spectral element methods. See http://github.com/ceed for more
 information and source code availability.</p>
-<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Laghos">https://github.com/CEED/Laghos</a>.</em>
-<div style="clear:both;"/></div>
-<br></p>
+<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Laghos">https://github.com/CEED/Laghos</a>.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="remhos">
 <h2 id="remhos-miniapp">Remhos Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/remhos.saved" target="_blank">
@@ -1610,10 +1610,10 @@ a collection of software benchmarks, miniapps, libraries and APIs for
 efficient exascale discretizations based on high-order finite element
 and spectral element methods. See http://github.com/ceed for more
 information and source code availability.</p>
-<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Remhos">https://github.com/CEED/Remhos</a>.</em>
-<div style="clear:both;"/></div>
-<br></p>
+<p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Remhos">https://github.com/CEED/Remhos</a>.</em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="navier">
 <h2 id="navier-miniapp">Navier Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/navier.saved" target="_blank">
@@ -1641,10 +1641,10 @@ the equation.</p>
 <p><em>This miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_solver.cpp">navier_solver.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="block-solvers">
 <h2 id="block-solvers-miniapp">Block Solvers Miniapp</h2>
 <p><img class="floatright" width="400" src="../img/examples/block-solvers.png"></p>
@@ -1673,10 +1673,10 @@ directory.</p>
 <p><em>This miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/solvers/block-solvers.cpp">block-solvers.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
-moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <div id="overlapping">
 <h2 id="overlapping-grids-miniapps">Overlapping Grids Miniapps</h2>
 <p><img class="floatright"  width="450" src="../img/examples/overlapping.png"></p>
@@ -1703,10 +1703,10 @@ dynamics (incompressible Navier-Stokes equations) and heat transfer
 </li>
 </ul>
 <p><em>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library.
-<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
-<div style="clear:both;"/></div>
-<br></p>
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
+<div style="clear:both;"/>
 </div>
+<p><br></div></p>
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -1718,8 +1718,8 @@ No examples or miniapps match your criteria.
 <hr>
 </div>
 
-<div style="clear:both;"/></div>
-
+<div style="clear:both;"/>
+</div>
 <script type="text/javascript"><!--
 
 function showElement(id, show)

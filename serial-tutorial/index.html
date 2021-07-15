@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -249,7 +249,6 @@
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});
 </script>
-
 <script type="text/javascript"
   src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -266,7 +265,7 @@
 <h2 id="building">Building</h2>
 <p>Follow the <a href="../building/#serial-version-of-mfem-and-glvis">serial instructions</a> to build the MFEM library and to start a GLVis server. The latter is the recommended visualization software for MFEM (though its use is optional).</p>
 <p>To build the serial example codes, type <code>make</code> in MFEM's examples directory:</p>
-<pre><code class="sh">~/mfem/examples&gt; make
+<pre><code class="language-sh">~/mfem/examples&gt; make
 g++ -O3 -I.. ex1.cpp -o ex1 -L.. -lmfem
 g++ -O3 -I.. ex2.cpp -o ex2 -L.. -lmfem
 g++ -O3 -I.. ex3.cpp -o ex3 -L.. -lmfem
@@ -278,12 +277,11 @@ g++ -O3 -I.. ex8.cpp -o ex8 -L.. -lmfem
 g++ -O3 -I.. ex9.cpp -o ex9 -L.. -lmfem
 g++ -O3 -I.. ex10.cpp -o ex10 -L.. -lmfem
 </code></pre>
-
 <h2 id="example-1">Example 1</h2>
 <p>This example code demonstrates the use of MFEM to define a simple
 linear finite element discretization of the Laplace problem
 $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions. To run it, simply specify the input mesh file (which will be refined to a final mesh with no more than 50,000 elements):</p>
-<pre><code class="sh">~/mfem/examples&gt; ex1 -m ../data/star.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; ex1 -m ../data/star.mesh
    Iteration :   0  (B r, r) = 0.00111712
    Iteration :   1  (B r, r) = 0.00674088
    Iteration :   2  (B r, r) = 0.0123008
@@ -293,7 +291,6 @@ $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions. To run it, simpl
    Iteration :  90  (B r, r) = 9.91309e-16
 Average reduction factor = 0.857127
 </code></pre>
-
 <p>If a GLVis server is running, the computed finite element solution will appear in an interactive window:</p>
 <p><img alt="" src="../img/tutorial/ex1-star.png" /></p>
 <p>You can examine the solution using the mouse and the GLVis <a href="https://raw.githubusercontent.com/GLVis/glvis/master/README">command keystrokes</a>.
@@ -301,7 +298,7 @@ Pressing "<code>RAfjlmm</code>", for example, will give us a 2D view without lig
 <p><img alt="" src="../img/tutorial/ex1-star-2.png" /></p>
 <p>This example saves two files called <code>refined.mesh</code> and <code>sol.gf</code>, which represent the refined mesh and the computed solution as a grid function. These can be visualized with <code>glvis -m refined.mesh -g sol.gf</code> as discussed <a href="http://glvis.org/options-and-use#visualizing-functions">here</a>.</p>
 <p>Example 1 can be run on any mesh that is supported by MFEM, including 3D, curvilinear and VTK meshes, e.g.,</p>
-<pre><code class="sh">~/mfem/examples&gt; ex1 -m ../data/fichera-q2.vtk
+<pre><code class="language-sh">~/mfem/examples&gt; ex1 -m ../data/fichera-q2.vtk
    Iteration :   0  (B r, r) = 0.0235996
    Iteration :   1  (B r, r) = 0.0476694
    Iteration :   2  (B r, r) = 0.0200109
@@ -311,19 +308,17 @@ Pressing "<code>RAfjlmm</code>", for example, will give us a 2D view without lig
    Iteration :  29  (B r, r) = 8.56679e-15
 Average reduction factor = 0.610261
 </code></pre>
-
 <p><img alt="" src="../img/tutorial/ex1-fichera-q2.png" /></p>
 <p>The picture above shows the solution with level lines plotted in normal direction of a cutting plane, and was produced by typing "<code>AaafmIMMooo</code>" followed by cutting plane adjustments with "<code>z</code>", "<code>y</code>" and "<code>w</code>".</p>
 <h2 id="example-2">Example 2</h2>
 <p>This example code solves a simple linear elasticity problem describing a multi-material Cantilever beam. Note that the input mesh should have at least two materials and two boundary attributes as shown below:</p>
-<pre><code class="nohighlight">               +----------+----------+
+<pre><code class="language-nohighlight">               +----------+----------+
   boundary ---&gt;| material | material |&lt;--- boundary
   attribute 1  |    1     |    2     |     attribute 2
   (fixed)      +----------+----------+     (pull down)
 </code></pre>
-
 <p>The example demonstrates the use of (high-order) vector finite element spaces by supporting several different discretization options:</p>
-<pre><code class="sh">~/mfem/examples&gt; ex2 -m ../data/beam-quad.mesh -o 2
+<pre><code class="language-sh">~/mfem/examples&gt; ex2 -m ../data/beam-quad.mesh -o 2
 Assembling: r.h.s. ... matrix ... done.
    Iteration :   0  (B r, r) = 1.88755e-06
    Iteration :   1  (B r, r) = 8.2357e-07
@@ -338,15 +333,13 @@ PCG: No convergence!
 Number of PCG iterations: 500
 Average reduction factor = 0.989508
 </code></pre>
-
 <p>The output shows the (curved) displaced mesh together with the inverse displacement vector field:</p>
 <p><img alt="" src="../img/tutorial/ex2-beam-quad2.png" /></p>
 <p>The above plot can be alternatively produced with:</p>
-<pre><code class="sh">glvis -m displaced.mesh -g sol.gf -k &quot;RfjliiiiimmAbb&quot;
+<pre><code class="language-sh">glvis -m displaced.mesh -g sol.gf -k &quot;RfjliiiiimmAbb&quot;
 </code></pre>
-
 <p>Example 2 also works in 3D:</p>
-<pre><code class="sh">~/mfem/examples&gt; ex2 -m ../data/beam-tet.mesh -o 3
+<pre><code class="language-sh">~/mfem/examples&gt; ex2 -m ../data/beam-tet.mesh -o 3
 Assembling: r.h.s. ... matrix ... done.
    Iteration :   0  (B r, r) = 2.7147e-06
    Iteration :   1  (B r, r) = 1.95756e-06
@@ -357,12 +350,11 @@ Assembling: r.h.s. ... matrix ... done.
    Iteration : 428  (B r, r) = 2.5706e-14
 Average reduction factor = 0.978648
 </code></pre>
-
 <p>One can visualize the vector field, e.g., by pressing "<code>dbAfmeoooovvaa</code>" followed by scale and position adjustments with the mouse:</p>
 <p><img alt="" src="../img/tutorial/ex2-beam-tet.png" /></p>
 <h2 id="example-3">Example 3</h2>
 <p>This example code solves a simple 3D electromagnetic diffusion problem corresponding to the second order definite Maxwell equation ${\rm curl\, curl}\, E + E = f$ discretized with the lowest order Nedelec finite elements. It computes the approximation error with a know exact solution, and requires a 3D input mesh:</p>
-<pre><code class="sh">~/mfem/examples&gt; ex3 -m ../data/fichera.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; ex3 -m ../data/fichera.mesh
    Iteration :   0  (B r, r) = 121.209
    Iteration :   1  (B r, r) = 21.1137
    Iteration :   2  (B r, r) = 12.6503
@@ -374,11 +366,10 @@ Average reduction factor = 0.911811
 
 || E_h - E ||_{L^2} = 0.00976655
 </code></pre>
-
 <p>To visualize the magnitude of the solution with the proportionally-sized vector field shown only on the boundary of the domain, type "<code>Vfooogt</code>" in the GLVis window (or run <code>glvis -m refined.mesh -g sol.gf -k "Vfooogt"</code>):</p>
 <p><img alt="" src="../img/tutorial/ex3-fichera-1.png" /></p>
 <p>Curved meshes are also supported:</p>
-<pre><code class="sh">~/mfem/examples&gt; ex3 -m ../data/fichera-q3.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; ex3 -m ../data/fichera-q3.mesh
    Iteration :   0  (B r, r) = 135.613
    Iteration :   1  (B r, r) = 22.3785
    Iteration :   2  (B r, r) = 12.5215
@@ -390,12 +381,11 @@ Average reduction factor = 0.921741
 
 || E_h - E ||_{L^2} = 0.0821686
 </code></pre>
-
 <p><img alt="" src="../img/tutorial/ex3-fichera-q3-2.png" /></p>
 <p>To visualize the entire vector field, type "<code>fooogtevv</code>" instead, which will use uniform sized arrows colored according to their magnitude. Here is the corresponding plot from "<code>ex3 -m ../data/beam-hex.mesh</code>":</p>
 <p><img alt="" src="../img/tutorial/ex3-beam-hex-2.png" /></p>
 <p>Since entire vector fields in 3D might be difficult to see, a good alternative might be to plot the separate components of the field as scalar functions. For example:</p>
-<pre><code class="sh">~/mfem/examples&gt; ex3 -m ../data/escher.mesh
+<pre><code class="language-sh">~/mfem/examples&gt; ex3 -m ../data/escher.mesh
    Iteration :   0  (B r, r) = 348.797
    Iteration :   1  (B r, r) = 32.0699
    Iteration :   2  (B r, r) = 14.902
@@ -409,7 +399,6 @@ Average reduction factor = 0.917548
 
 ~/mfem/examples&gt; glvis -m refined.mesh -g sol.gf -gc 0 -k &quot;gooottF&quot;
 </code></pre>
-
 <p><img alt="" src="../img/tutorial/ex3-escher-sc0.png" /></p>
 <p>The discontinuity of the Nedelec functions is clearly seen in the above plot.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
