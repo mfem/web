@@ -274,15 +274,15 @@ introduced forms yields</p>
 \end{align}</p>
 <p>Collecting all known quantities at a given time with</p>
 <p>\begin{align}
-    F^*(u^n) = -\sum_{j=1}^k \frac{b_j}{\Delta t} u^{n+1-j}
+    F^*(u^{n+1}) = -\sum_{j=1}^k \frac{b_j}{\Delta t} u^{n+1-j}
     + N^*(u^{n+1}) + f^{n+1}
 \end{align}</p>
 <p>the BDF expression reduces to</p>
 <p>\begin{align}
     \label{eq:bdf_short}
-    \frac{b_0}{\Delta t} u^{n+1} = -\nabla p^{n+1} + L(u^{n+1}) + F^*(u^n).
+    \frac{b_0}{\Delta t} u^{n+1} = -\nabla p^{n+1} + L(u^{n+1}) + F^*(u^{n+1}).
 \end{align}</p>
-<p>To achieve a high order convergence in space the linear term $L(u)$ is replaced
+<p>To achieve a high order convergence in space, the linear term $L(u)$ is replaced
 by</p>
 <p>\begin{align}
     L_{\times}(u) = \nu \nabla(\nabla \cdot u) - \nu \nabla \times \nabla \times u
@@ -290,18 +290,18 @@ by</p>
 <p>which is used to weakly enforce incompressibility by setting the first term to
 zero. Like in \eqref{eq:Next} we introduce the time extrapolated term</p>
 <p>\begin{align}
-    L^*_{\times}(u) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
+    L^*_{\times}(u^{n+1}) = \sum_{j=1}^k a_j L_{\times}(u^{n+1-j}).
 \end{align}</p>
 <p>To compute the pressure we rearrange \eqref{eq:bdf_short} and take the
 divergence on both sides</p>
 <p>\begin{align}
     \label{eq:prespois}
-    \nabla^2 p^{n+1} = \nabla \cdot (L_{\times}^*(u^{n+1} + F^*(u^{n+1})),
+    \nabla^2 p^{n+1} = \nabla \cdot (L_{\times}^*(u^{n+1}) + F^*(u^{n+1})),
 \end{align}</p>
 <p>which is closed by the Neumann type boundary condition</p>
 <p>\begin{align}
     \nabla p^{n+1} \cdot \hat{n} = -\frac{b_0}{\Delta t} u^{n+1} \cdot \hat{n}
-    + (L_{\times}^*(u^{n+1} + F^*(u^{n+1})) \cdot \hat{n}.
+    + (L_{\times}^*(u^{n+1}) + F^*(u^{n+1})) \cdot \hat{n}.
 \end{align}</p>
 <p>We will refer to this as the pressure Poisson equation in the following. The
 last step is a Helmholtz type equation to solve for the implicit (viscous)
