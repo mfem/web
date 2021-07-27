@@ -131,7 +131,7 @@ versions._
 
 <div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
-<a href="https://glvis.org/live/?stream=../data/ex1.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
 </a>
 
@@ -163,7 +163,7 @@ Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported._
 
 <div id="ex2" markdown="1">
 ##Example 2: Linear Elasticity
-<a href="https://glvis.org/live/?stream=../data/ex2.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex2.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex2.png">
 </a>
 
@@ -199,7 +199,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex3" markdown="1">
 ##Example 3: Definite Maxwell Problem
-<a href="https://glvis.org/live/?stream=../data/ex3.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex3.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex3.png">
 </a>
 
@@ -253,7 +253,7 @@ We recommend viewing examples 1-3 before viewing this example._
 
 <div id="ex5" markdown="1">
 ##Example 5: Darcy Problem
-<a href="https://glvis.org/live/?stream=../data/ex5.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex5.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex5.png">
 </a>
 
@@ -361,7 +361,7 @@ We recommend viewing examples 1-5 before viewing this example._
 
 <div id="ex9" markdown="1">
 ##Example 9: DG Advection
-<a href="https://glvis.org/live/?stream=../data/ex9.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex9.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex9.png">
 </a>
 
@@ -912,7 +912,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex27" markdown="1">
 ##Example 27: Laplace Boundary Conditions
-<a href="https://glvis.org/live/?stream=../data/ex27.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex27.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex27.png">
 </a>
 
@@ -1109,7 +1109,7 @@ moving to the miniapps.**_
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
-<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
 <img class="floatright" src="../img/examples/mobius-strip.png">
 </a>
 
@@ -1133,7 +1133,7 @@ moving to the miniapps.**_
 
 <div id="klein-bottle" markdown="1">
 ##Klein Bottle Miniapp
-<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/klein-bottle.saved" target="_blank">
 <img class="floatright" src="../img/examples/klein-bottle.png">
 </a>
 
@@ -1292,7 +1292,7 @@ moving to the miniapps.**_
 
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
-<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/shaper.saved" target="_blank">
 <img class="floatright" src="../img/examples/shaper.png">
 </a>
 
@@ -1316,7 +1316,7 @@ moving to the miniapps.**_
 
 <div id="mesh-explorer" markdown="1">
 ##Mesh Explorer Miniapp
-<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mesh-explorer.saved" target="_blank">
 <img class="floatright" src="../img/examples/mesh-explorer.png">
 </a>
 
@@ -1378,7 +1378,7 @@ version.
 
 <div id="minimal-surface" markdown="1">
 ##Minimal Surface Miniapp
-<a href="https://glvis.org/live/?stream=../data/minimal-surface.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/minimal-surface.saved" target="_blank">
 <img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
 </a>
 
@@ -1452,7 +1452,7 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 
 <div id="distance" markdown="1">
 ##Distance Solver Miniapp
-<a href="https://glvis.org/live/?stream=../data/distance.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/distance.saved" target="_blank">
 <img class="floatright" width="250" src="../img/examples/distance.png">
 </a>
 
@@ -1474,7 +1474,7 @@ _**We recommend that new users start with the example codes before moving to the
 
 <div id="shifted" markdown="1">
 ##Shifted Diffusion Miniapp
-<a href="https://glvis.org/live/?stream=../data/shifted.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/shifted.saved" target="_blank">
 <img class="floatright"  width="500" src="../img/examples/shifted.png">
 </a>
 
@@ -1496,7 +1496,7 @@ _**We recommend that new users start with the example codes before moving to the
 
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
-<a href="https://glvis.org/live/?stream=../data/laghos.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/laghos.saved" target="_blank">
 <img class="floatright" src="../img/examples/laghos.png">
 </a>
 
@@ -1542,7 +1542,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 
 <div id="remhos" markdown="1">
 ##Remhos Miniapp
-<a href="https://glvis.org/live/?stream=../data/remhos.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/remhos.saved" target="_blank">
 <img class="floatright" width="450" src="../img/examples/remhos.png">
 </a>
 
@@ -1584,7 +1584,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Remhos](http
 
 <div id="navier" markdown="1">
 ##Navier Miniapp
-<a href="https://glvis.org/live/?stream=../data/navier.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/navier.saved" target="_blank">
 <img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
 </a>
 
