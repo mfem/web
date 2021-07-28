@@ -9,8 +9,8 @@ MFEM can be built with `make` or using `CMake`. But MFEM has also been packaged 
 In concrete terms, packaging with Spack here means that:
 
 * Spack will interface with the build system: no make or CMake command required.
-* Build options are specified as "variants". There may no be a variant for every options or combination of options allowed by building from source "manually".
-* Spack will also installed the dependencies, which may also be activated using "variants".
+* Build options are specified as "variants". There may not be a variant for every option or combination of options allowed by building from source "manually".
+* Spack will also install the dependencies, which may also be activated using "variants".
 
 _(Note that so far, the MFEM Spack package interfaces with MFEM makefile build system, not CMake.)_
 
@@ -49,7 +49,7 @@ Using Spack is easy to start with, complex when it comes to getting exactly what
 
 Unless you want to develop in Spack, those rules will help keeping things under control:
 
-* Use a single Spack instance. Spack has `environments` that mimic the way python environment work to allow you to partition things so that not all the packages installed show up in a big mess.
+* Use a single Spack instance. Spack has `environments` that mimic the way python environments work to allow you to partition things so that all the packages installed do not show up in a big mess.
 * Stick to a release of Spack. Packages evolve along with Spack source code. It means that updating Spack will likely affect reproducing the build of specs already installed. Expect to reinstall everything when you update Spack.
 
 ### Using Spack to install MFEM on lassen and quartz.
