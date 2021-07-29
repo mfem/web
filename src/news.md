@@ -2,7 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
-Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
+Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | The inaugural [MFEM Community Workshop](workshop.md) will take place on October 20th, 2021.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
 Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).

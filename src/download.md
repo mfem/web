@@ -17,7 +17,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
  **Filename** | **Version** | **Release Date** | **Size** | **[SLOC](https://github.com/AlDanial/cloc)** | **Notes** |
  ------------ | ----------- | ---------------- | -------- | --------------------------------------- | --------- |
- [mfem-4.3.tgz](https://bit.ly/mfem-4-3) | v4.3 | May 2021 | X.XM | XXXK | |
+ [mfem-4.3.tgz](https://bit.ly/mfem-4-3) | v4.3 | Jul 2021 | X.XM | XXXK | |
  [mfem-4.2.tgz](https://bit.ly/mfem-4-2) | v4.2 | Oct 2020 | 2.4M | 258K | |
  [mfem-4.1.tgz](https://bit.ly/mfem-4-1) | v4.1 | Mar 2020 | 7.9M | 209K | |
  [mfem-4.0.tgz](https://bit.ly/mfem-4-0) | v4.0 | May 2019 | 5.2M | 167K | *GPU support* |
