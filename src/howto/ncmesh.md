@@ -22,10 +22,10 @@ For more advanced AMR, MFEM has the class `NCMesh`:
 The user does not interact directly with the `NCMesh` class -- it is
 created behind the scenes, and the `Mesh` class in nonconforming mode, continually updated
 to contain the finest elements of the refinement hierarchy, still serves as an interface
-with the user and other MFEM classes.
+for the user and other MFEM classes.
 
 To switch to the nonconforming mode (or convert and existing conforming `Mesh`),
-the user needs to call `EnsureNCMesh`, typically at the beginning after loading the
+you need to call `EnsureNCMesh`, typically at the beginning after loading the
 mesh:
 
 ```c++
@@ -46,7 +46,7 @@ to locally refine a subset of elements:
 Array<int> refinement_list;
 for (int i = 0; i < mesh->GetNE(); i++)
 {
-   if (...element i refinement condition...)
+   if (/*element i refinement condition*/)
    {
       refinement_list.Append(i);
    }
@@ -118,25 +118,50 @@ forced refinements may propagate. Using a reasonable `nc_limit` may reduce this 
 Nevertheless, a valid mesh is produced in all cases.
 
 
-## Refinement strategies
-
-Note: more advanced refinement with error estimation -- see ex6, ex15.
-
-
 ## Derefinement
 
-Mesh interface: `DerefineByError`, example
+To coarsen elements, use the method `Mesh::DerefineByError`.
+The interface is different from refinement, because it is not possible to coarsen
+arbitrary groups of fine elements: it is only possible to reintroduce previously existing
+coarse elements by undoing their refinement (hence the term "derefinement").
 
-More advanced derefiners -- see ex15.
+Since one cannot supply the indices of elements that no longer exist in the `Mesh` class
+(the refinement trees are only kept internally in the `NCMesh` class), the method
+`DerefineByError` works indirectly by taking an array of "error" values corresponding to
+each element of the current `Mesh`. If the sum of error values of the children of some
+coarse element is below a supplied threshold, the children are removed and the coarse
+element is restored.
 
-Anisotropic: not supported yet.
+If the user specifies a nonzero `nc_limit`, care is taken not to derefine elements that
+are needed to keep the specified level of nonconformity.
+
+*Note: derefinement is not yet supported for meshes containing anisotropic refinements.*
 
 
-## Parallel refinement
+## Parallel nonconforming meshes
 
-Transparent...  `ParNCMesh` class, again no user interaction.
+Just as the `Mesh` class has a parallel counterpart (`ParMesh`), so does the `NCMesh`
+class have a parallel descendant: `ParNCMesh`. The parallel class is again kept
+internal and the user can continue to interact with the standard `ParMesh` class
+(see examples `ex1p`, `ex6p` and `ex15p`).
 
-Anisotropic in 3D not supported yet.
+The refinement hierarchy in parallel NC mode is fully distributed and scales to billions
+of elements and hundreds of thousands of MPI tasks. Ghost elements are automatically tracked
+by the `ParNCMesh` class, so that a parallel conforming interpolation matrix can be constructed
+by `ParFiniteElementSpace`. Depending on the assembly level, `ParBilinearForm`
+will either explicitly assemble the parallel $P^TAP$ system using the Hypre library, or
+the action of the $P$ matrix will be applied during solver iterations.
+
+Parallel refinement is still done through `Mesh::GeneralRefinement` inherited by the `ParMesh`
+class. The method takes local element indices and works the same as in serial. All parallel
+concerns such as keeping the ghost layers synchronized are handled internally in `ParNCMesh`.
+
+*Note: parallel anisotropic refinement of 3D meshes is not supported yet.*
+
+After each mesh operation (refinement, derefinement, load balancing) the `ParMesh` is
+updated to reflect the current parallel mesh state. Communication groups, used in
+conforming mode for reductions/broadcasts over parallel solution vectors, are approximated in
+the NC mode as if the mesh was cut along the nonconforming interfaces.
 
 
 ## Load balancing
@@ -150,7 +175,7 @@ dynamic SFC based partitioning .
 ## NC mesh I/O
 
 In NC mode, `ParMesh::ParPrint` saves the current state, including refinement hierarchy
-and partitioning, using the `MFEM
+and partitioning, using the `MFEM nonconforming mesh v1.0` format.
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
