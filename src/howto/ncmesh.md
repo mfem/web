@@ -130,10 +130,10 @@ Since one cannot supply the indices of elements that no longer exist in the `Mes
 `DerefineByError` works indirectly by taking an array of "error" values corresponding to
 each element of the current `Mesh`. If the sum of error values of the children of some
 coarse element is below a supplied threshold, the children are removed and the coarse
-element is restored.
+element is restored in `Mesh`.
 
 If the user specifies a nonzero `nc_limit`, care is taken not to derefine elements that
-are needed to keep the specified level of nonconformity.
+are needed to keep the required level of nonconformity.
 
 *Note: derefinement is not yet supported for meshes containing anisotropic refinements.*
 
@@ -159,17 +159,37 @@ concerns such as keeping the ghost layers synchronized are handled internally in
 *Note: parallel anisotropic refinement of 3D meshes is not supported yet.*
 
 After each mesh operation (refinement, derefinement, load balancing) the `ParMesh` is
-updated to reflect the current parallel mesh state. Communication groups, used in
-conforming mode for reductions/broadcasts over parallel solution vectors, are approximated in
-the NC mode as if the mesh was cut along the nonconforming interfaces.
+updated to reflect the current parallel mesh state (minus the ghost elements, which are not exported to `ParMesh`). Communication groups, used in conforming mode for reductions/broadcasts over parallel solution vectors, are approximated in the NC mode as if the mesh was cut along the nonconforming interfaces.
 
 
 ## Load balancing
 
-`ParMesh::Rebalance` can be called in NC mode.
+In conforming mode, a serial `Mesh` can only be partitioned statically (with METIS) when
+constructing a `ParMesh`. In nonconforming mode, the internal `ParNCMesh` class is capable
+of load balancing the distributed mesh at any time. This functionality is available to the
+user through `ParMesh::Rebalance` (see `ex6p` and `ex15p`).
 
-Unlike `ParMesh`, which partitions `Mesh` statically with METIS, `ParNCMesh` uses
-dynamic SFC based partitioning .
+The dynamic load balancing algorithm is based on partitioning a space-filling curve (SFC)
+that naturally arises when traversing the distributed refinement trees. Compared with
+METIS the partitions are not as high quality but the process is extremely
+fast and scales to hundreds of thousands of processors.
+
+For best results with SFC-based partitioning, one condition has to be met: the elements
+of the coarse nonconforming `Mesh` from which the `ParMesh` is constructed need to be
+ordered, ideally as a sequence of face-neighbors. This makes it possible for `ParNCMesh`
+to order the (future) leaves of all refinement trees into a global linear sequence,
+which when equipartitioned should produce compact (if not minimal surface) mesh partitions.
+
+<img src="/howto/img/nc-sfc-1.png" width="60%"/>
+<img src="/howto/img/nc-sfc-2.png" width="60%"/>
+<img src="/howto/img/nc-sfc-3.png" width="60%"/>
+
+MFEM provides several methods to help with ordering the coarse mesh:
+
+*
+
+
+`ParMesh::Rebalance` can be called in NC mode.
 
 
 ## NC mesh I/O
