@@ -19,7 +19,7 @@ For more advanced AMR, MFEM has the class `NCMesh`:
 * Derefinement (coarsening) of previously refined elements is possible.
 * In parallel, the mesh can be load balanced.
 
-The user does not interact directly with the `NCMesh` class -- it is
+The user does not interact directly with the `NCMesh` class &mdash; it is
 created behind the scenes, and the `Mesh` class in nonconforming mode, continually updated
 to contain the finest elements of the refinement hierarchy, still serves as an interface
 for the user and other MFEM classes.
@@ -170,26 +170,51 @@ of load balancing the distributed mesh at any time. This functionality is availa
 user through `ParMesh::Rebalance` (see `ex6p` and `ex15p`).
 
 The dynamic load balancing algorithm is based on partitioning a space-filling curve (SFC)
-that naturally arises when traversing the distributed refinement trees. Compared with
-METIS the partitions are not as high quality but the process is extremely
+that naturally arises when traversing the distributed refinement trees. Compared to spectral
+partitioners like METIS the partitions are not as high quality but the process is extremely
 fast and scales to hundreds of thousands of processors.
 
 For best results with SFC-based partitioning, one condition has to be met: the elements
-of the coarse nonconforming `Mesh` from which the `ParMesh` is constructed need to be
+of the coarse `Mesh` from which the `ParMesh` is constructed need to be
 ordered, ideally as a sequence of face-neighbors. This makes it possible for `ParNCMesh`
-to order the (future) leaves of all refinement trees into a global linear sequence,
-which when equipartitioned should produce compact (if not minimal surface) mesh partitions.
+to order the leaves of all refinement trees into a global linear sequence,
+which when equipartitioned should produce compact (albeit not minimal surface) mesh partitions.
+
+Take for example a coarse mesh produced by the `polar-nc` miniapp. Except for two
+discontinuities, the elements are mostly ordered as a sequence of face-neighbors (using a pseudo-Hilbert curve).
 
 <img src="/howto/img/nc-sfc-1.png" width="60%"/>
+
+When we start refining elements (in both serial and parallel), MFEM will try to keep the
+space-filling curve continuous by inserting local Hilbert curves in the refined areas (press
+`Ctrl+O` in GLVis to visualize the ordering curve):
+
 <img src="/howto/img/nc-sfc-2.png" width="60%"/>
+
+In a parallel computation, the global curve is then used for fast assignment of elements
+to MPI ranks. In the following run of `ex15p`, each processor is assigned the same number
+of elements (+/- one element). Note that the last partition is discontinuous due to a jump
+in ordering in the coarse mesh. This only affects the efficiency of MPI communication &mdash;
+the numerical results will be the same regardless of the partitioning.
+
 <img src="/howto/img/nc-sfc-3.png" width="60%"/>
 
-MFEM provides several methods to help with ordering the coarse mesh:
+MFEM provides several methods to help with ordering coarse meshes:
 
-*
+* Procedurally generated rectangular grids (`Mesh::MakeCartesian2D`, `Mesh::MakeCartesian3D`
+  and also `MFEM INLINE mesh v1.0` files) are by default ordered along a pseudo-Hilbert
+  curve. Note that even grid dimensions are recommended, as explained [here](https://github.com/jakubcerveny/gilbert).
 
+* General unstructured meshes may be ordered by a spatial sort algorithm
+  (`Mesh::GetHilbertElementOrdering`). This is a fast method that will leave a number of
+  jumps in complex meshes, but it is still highly recommended over not ordering the mesh at all.
 
-`ParMesh::Rebalance` can be called in NC mode.
+* High-quality orderings of general meshes can be obtained with the
+  [Gecko](https://github.com/LLNL/gecko) library, now included directly in MFEM and available
+  as `Mesh::GetGeckoElementOrdering`. The optimization algorithm used is more costly than
+  a simple spatial sort, but it should produce better orderings for meshes with complex geometries.
+  Beware the exponential cost of increasing the `window` parameter. Large meshes should probably
+  be ordered in a preprocessing step (you may use the `mesh-explorer` miniapp for that).
 
 
 ## NC mesh I/O
