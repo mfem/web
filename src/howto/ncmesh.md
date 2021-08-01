@@ -126,7 +126,7 @@ arbitrary groups of fine elements: it is only possible to reintroduce previously
 coarse elements by undoing their refinement (hence the term "derefinement").
 
 Since one cannot supply the indices of elements that no longer exist in the `Mesh` class
-(the refinement trees are only kept internally in the `NCMesh` class), the method
+(the refinement trees are kept internal to `NCMesh`), the method
 `DerefineByError` works indirectly by taking an array of "error" values corresponding to
 each element of the current `Mesh`. If the sum of error values of the children of some
 coarse element is below a supplied threshold, the children are removed and the coarse
@@ -135,7 +135,7 @@ element is restored in `Mesh`.
 If the user specifies a nonzero `nc_limit`, care is taken not to derefine elements that
 are needed to keep the required level of nonconformity.
 
-*Note: derefinement is not yet supported for meshes containing anisotropic refinements.*
+*Note: derefinement is not yet supported for meshes containing 3D anisotropic refinements.*
 
 
 ## Parallel nonconforming meshes
@@ -181,7 +181,7 @@ to order the leaves of all refinement trees into a global linear sequence,
 which when equipartitioned should produce compact (albeit not minimal surface) mesh partitions.
 
 Take for example a coarse mesh produced by the `polar-nc` miniapp. Except for two
-discontinuities, the elements are mostly ordered as a sequence of face-neighbors (using a pseudo-Hilbert curve).
+discontinuities, the elements are mostly ordered as a sequence of face-neighbors:
 
 <img src="/howto/img/nc-sfc-1.png" width="60%"/>
 
@@ -199,7 +199,7 @@ the numerical results will be the same regardless of the partitioning.
 
 <img src="/howto/img/nc-sfc-3.png" width="60%"/>
 
-MFEM provides several methods to help with ordering coarse meshes:
+MFEM provides several methods to help with mesh ordering:
 
 * Procedurally generated rectangular grids (`Mesh::MakeCartesian2D`, `Mesh::MakeCartesian3D`
   and also `MFEM INLINE mesh v1.0` files) are by default ordered along a pseudo-Hilbert
@@ -217,10 +217,16 @@ MFEM provides several methods to help with ordering coarse meshes:
   be ordered in a preprocessing step (you may use the `mesh-explorer` miniapp for that).
 
 
-## NC mesh I/O
+## Nonconforming mesh I/O
 
-In NC mode, `ParMesh::ParPrint` saves the current state, including refinement hierarchy
-and partitioning, using the `MFEM nonconforming mesh v1.0` format.
+Nonconforming meshes have their own [file format](../mesh-formats.md#mfem-nc-mesh-v10) `MFEM NC mesh v1.0`, which supports all the additional internal structures (refinement trees, hanging nodes, etc.) and works for both serial and parallel NC meshes.
+
+The method `ParMesh::ParPrint` will automatically choose the right format and can be used to
+save and restart an AMR computation, as demonstrated in example `ex6p`.
+
+`ParMesh::ParPrint` should not be confused with the method `ParMesh::Print`, an analog of
+`Mesh::Print`, which is only suitable for visualization, as it uses the serial `MFEM mesh v1.0`
+format and only adds the parallel shared faces to the output.
 
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
