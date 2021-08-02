@@ -4,7 +4,7 @@ MFEM has two build systems:
  - Makefile. We will refer to it as "original Makefile"
  - CMake, an out-of-source build system generator, that will generate a build-system in `Makefile` or another language like `Ninja`.
 
-The most important difference between the two is that CMake being an out-of-source build system, it will require the creation of a build directory, and all commands will be run there. The original Makefile system will build the code in source from the root directory.
+The most important difference between the two is that CMake being an out-of-source build system, it will require the creation of a build directory, and all commands will be run from there. The original Makefile system will build the code in source from the root directory.
 
 - The original Makefile
 ```
