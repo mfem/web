@@ -266,9 +266,10 @@ boundary
 ...
 ```
 
-The nonconfoming mesh however needs to identify hanging vertices, which may
-occur in the middle of edges or faces as elements are refined. A hanging vertex
-always has two "parent" vertices.
+The nonconforming mesh however needs to identify hanging vertices, which may
+occur in the middle of edges or faces as elements are refined. In fact, any
+vertex that was created as a result of refinement always has two "parent"
+vertices and needs to be listed in the `vertex_parents` section:
 
 ```sh
 vertex_parents
@@ -277,8 +278,7 @@ vertex_parents
 ...
 ```
 
-In our example above, vertices 6, 7, 8, 9 are hanging vertices, so the
-`vertex_parents` section would look like this:
+In our example above, vertices 6, 7, 8, 9 have these parents:
 
 ```sh
 vertex_parents
@@ -289,9 +289,9 @@ vertex_parents
 9 6 7
 ```
 
-The hanging vertices can appear in any order in this section. The only
+Vertices can appear in any order in this section. The only
 limitation is that the first N vertex indices (not listed in this section) be
-reserved for the top-level vertices (those with no parents, typically the
+reserved for top-level vertices (those with no parents, typically the
 vertices of the coarse mesh).
 
 The next section is optional and can be safely omitted when creating the mesh
