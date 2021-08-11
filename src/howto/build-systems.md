@@ -40,7 +40,7 @@ cmake --build . --target miniapps -j 8    # Build miniapps
 ctest --output-on-failure -T test         # Run the tests
 ```
 
-- CMake + Ninja (this is not what we are used to do, but it works)
+- CMake + Ninja (this is not what we are used to doing, but it works)
 ```
 cd <mfem-root-dir>
 mkdir build
