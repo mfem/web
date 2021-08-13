@@ -14,12 +14,6 @@ remote_name: origin
 nav:
 - Home: index.md
 - Features: features.md
-- Examples: 
-  - 'Small Examples': examples.md
-  - 'Electromagnetics': electromagnetics.md
-  - 'Fluids': fluids.md  
-  - 'Tools': tools.md
-  - 'Toys': toys.md
 - Getting Started:
   - 'Building MFEM': building.md
   - 'Serial Tutorial': serial-tutorial.md
@@ -33,10 +27,16 @@ nav:
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md  
+- Examples: 
+  - 'Examples Codes': examples.md
+  - 'E&M Miniapps': electromagnetics.md
+  - 'Fluids Miniapps': fluids.md  
+  - 'Tools': tools.md
+  - 'Toys': toys.md
 - Docs:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Doxygen': dox.md
-  - 'Topic Search':  search.md
+  - 'HowTo Articles': howto/howto-index.md
   - 'Mesh Formats': meshing.md
   - '_Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
@@ -52,6 +52,8 @@ nav:
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
+  features:
+    - search.suggest
 
 
 extra:
