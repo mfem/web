@@ -219,7 +219,7 @@ MFEM provides several methods to help with mesh ordering:
 
 ## Nonconforming mesh I/O
 
-Nonconforming meshes have their own [file format](../mesh-formats.md#mfem-nc-mesh-v10) `MFEM NC mesh v1.0`, which supports all the additional internal structures (refinement trees, hanging nodes, etc.) and works for both serial and parallel NC meshes.
+Nonconforming meshes have their own [file format](../mesh-format-v1.0.md#mfem-nc-mesh-v10) `MFEM NC mesh v1.0`, which supports all the additional internal structures (refinement trees, hanging nodes, etc.) and works for both serial and parallel NC meshes.
 
 The method `ParMesh::ParPrint` will automatically choose the right format and can be used to
 save and restart an AMR computation, as demonstrated in example `ex6p`.
