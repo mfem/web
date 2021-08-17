@@ -55,7 +55,7 @@ Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHA
 [Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
 ┊ [Fluids](fluids.md)
-┊ [Meshing](meshing.md)
+┊ [Meshing](meshing-miniapps.md)
 ┊ [Performance](performance.md)
 ┊ [Tools](tools.md)
 

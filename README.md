@@ -34,6 +34,6 @@ Checklist for adding miniapps:
 - Add an image file in `img/examples/`, e.g. `img/examples/shaper.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
 - Add a "showElement" line with the appropriate categories for the miniapp in the `update` function at the end of `examples.md`
-- If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing.md`
+- If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing-miniapps.md`
 
 

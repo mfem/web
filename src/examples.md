@@ -1097,7 +1097,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1121,7 +1121,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1233,7 +1233,7 @@ the mesh ready for parallel non-conforming AMR in MFEM.
 The implementation also demonstrates how to initialize a non-conforming mesh
 on the fly by marking hanging nodes with `Mesh::AddVertexParents`.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1257,7 +1257,7 @@ It can be used as a simple initial mesh generator, for example in the case when
 the interface is too complex to describe without local refinement. Both
 conforming and non-conforming refinements are supported.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1282,7 +1282,7 @@ mesh. Some of its features are:
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1317,7 +1317,7 @@ the utilized Newton methods are oriented towards avoiding invalid meshes with
 negative Jacobian determinants. Each Newton step requires the inversion of a
 Jacobian matrix, which is done through an inner linear solver.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has a serial
@@ -1341,7 +1341,7 @@ Options to solve the minimal surface equations of both parametric surfaces as we
 surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
 number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
 
-For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+For more details, please see the [documentation](meshing-miniapps.md) in the `miniapps/meshing` directory.
 
 _The miniapp has a serial
 ([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a

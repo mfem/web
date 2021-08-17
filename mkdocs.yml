@@ -18,8 +18,8 @@ nav:
   - 'Example Codes': examples.md
   - 'Electromagnetics': electromagnetics.md
   - 'Fluid Dynamics': fluids.md
+  - 'Meshing': meshing-miniapps.md
   - 'Tools': tools.md
-  #- 'Meshing': mesh-miniapps.md
   - 'Toys': toys.md
 - Documentation:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
@@ -41,8 +41,8 @@ nav:
   - 'Performance': performance.md
   - '_High Performance Templated Code': tperformance.md
   - 'GPU Support': gpu-support.md
-  - 'Mesh Formats': meshing.md
-  - '_Mesh Formats': mesh-formats.md
+  - 'Mesh Formats': mesh-formats.md
+  - '_Mesh Format v1.0': mesh-format-v1.0.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Doxygen': dox.md
   - 'Publications': publications.md
