@@ -28,7 +28,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Mar 18, 2021 | [Postdoc position](https://www.llnl.gov/join-our-team/careers/find-your-job/all/mfem/3743990000038667) using MFEM.
-Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
+Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).
 
@@ -50,7 +50,7 @@ Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHA
 [Building MFEM](building.md)
 ┊ [Serial Tutorial](serial-tutorial.md)
 ┊ [Parallel Tutorial](parallel-tutorial.md)
-┊ [GPU tips](gpu-tips-n-tricks.md)
+┊ [GPU tips](gpu-support.md)
 
 [Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)

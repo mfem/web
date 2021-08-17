@@ -1,26 +1,34 @@
-# HowTo Article Index
+# HowTo Articles
 
-## Build, Install, and Test
-[Overview of MFEM Build and Test System](build-systems.md)
+This is a growing collection of "how-to" articles on topics encountered
+by our users in practice.
 
-[Install MFEM with Spack](install-with-spack.md)
+Please feel free to [suggest](https://github.com/mfem/mfem/issues/new?labels=howto) a missing topic!
 
-## Finite Element Machinery
-[Using Partial and Matri-Free Assembly](assembly_levels.md)
+[Search](../search.md) articles...
 
-## Meshes
-[Navigating Mesh Connectivity](nav-mesh-connectivity.md)
 
-[Parallel Element Numbering](element-local-global-numbering.md)
+### Build, Install, and Test
+- [Overview of MFEM Build and Test System](build-systems.md)
+- [Install MFEM with Spack](install-with-spack.md)
 
-[Finding Local Element Coordinates of Physical Points](findpts.md)
 
-[Working with Nonconforming Meshes for AMR](ncmesh.md)
+### Finite Elements
+- [Using Partial and Matrix-free Assembly](assembly_levels.md)
 
-## Solvers
-[Using a Custom Preconditioner](custom_precond.md)
 
-## Boundaries
-[Compute Outer Normals of Boundary Elements](outer_normals.md)
+### Meshes
+- [Navigating Mesh Connectivity](nav-mesh-connectivity.md)
+- [Parallel Element Numbering](element-local-global-numbering.md)
+- [Finding Local Element Coordinates of Physical Points](findpts.md)
+- [Working with Nonconforming Meshes for AMR](ncmesh.md)
 
-[Using Periodic Boundaries](periodic-boundaries.md)
+
+### Solvers
+- [Using a Custom Preconditioner](custom_precond.md)
+
+
+### Boundaries
+- [Compute Outer Normals of Boundary Elements](outer_normals.md)
+- [Using Periodic Boundaries](periodic-boundaries.md)
+

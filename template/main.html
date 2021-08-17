@@ -56,10 +56,10 @@
             {% if page.title in ('Home') %}
             {% include "content.html" %}
 
-            {% elif page.title in ('Examples', 'Gallery', 'Download', '_News') %}
+            {% elif page.title in ('Example Codes', 'Gallery', 'Download', '_News') %}
             <div class="col-md-12" role="main">{% include "content.html" %}</div>
 
-            {% elif page.title in ('Topic Search') %}
+            {% elif page.title in ('Search...') %}
             <div class="col-md-12" role="main">{% include "search.html" %}</div>
 
             {% else %}

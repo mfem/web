@@ -227,11 +227,12 @@ MFEM consists of the following closely interconnected modules:
 ### Non-conforming mesh
 
 * Class `NCMesh`.
-* Used through class `Mesh`.
+* Used indirectly through the class `Mesh`.
 * Supports triangles, quads, and hexes including anisotropic refinement for
   quads and hexes.
 * Arbitrary level of hanging nodes and full refinement hierarchy.
 * Generates the "cut" `Mesh` from the leaf elements.
+* See [HowTo Article on NC AMR](howto/ncmesh.md)
 
 ### NURBS mesh
 
