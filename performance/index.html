@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -258,8 +258,9 @@ operators without forming the corresponding matrix. This is particularly
 important when running on <a href="../gpu-tips-n-tricks/">GPUs</a>.</p>
 <p>Partial assembly is enabled at the level of the <code>BilinearForm</code> by setting
 the assembly level:</p>
-<pre><code class="language-c++">a-&gt;SetAssemblyLevel(AssemblyLevel::PARTIAL);
+<pre><code class="c++">a-&gt;SetAssemblyLevel(AssemblyLevel::PARTIAL);
 </code></pre>
+
 <p>Once partial assembly is enabled, subsequent calls to member functions such as
 <code>FormLinearSystem</code> will result in an <code>Operator</code> that represents the action of
 the bilinear form <code>a</code>, without assembling a matrix. This functionality is

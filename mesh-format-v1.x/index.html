@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -280,6 +280,7 @@ vertices
 # END Topology Part
 ...
 </code></pre>
+
 <p>The element format above is: <code>&lt;attribute&gt; &lt;type&gt; &lt;vertex1&gt; ... &lt;vertexN&gt;</code>. Type <code>3</code> is quadrilateral, which requires 4 vertex indices. The <code>attribute</code> identify e.g. material sub-domains (2 in this case).</p>
 <p><strong>NOTE:</strong> The topology part of this mesh will be the same, irrespective of the order. Compare e.g. <a href="#listing-2">Listing 2</a>, <a href="#listing-3">Listing 3</a> and <a href="#listing-4">Listing 4</a>.</p>
 <p><strong>WARNING:</strong> The vertices are used only to imply topology, and so there coordinates are not important. The mesh coordinates are implied by the mesh <code>nodes</code> not <code>vertices</code>. In particular, while the <code>Mesh</code> object can return vertex coordinates, they are not used an may be incorrect for high-order mesh.</p>
@@ -329,6 +330,7 @@ vertices
 # END Topology Part
 ...
 </code></pre>
+
 <p>Compared to the non-periodic version, e.g. <a href="#listing-2">Listing 2</a>, the main difference above is that we have fused vertices 8 and 0 and vertices 17 and 9.</p>
 <p>The difference between the two topologies can be illustrated by solving a simple Laplace problem with homogeneous essential boundary conditions on the resulting mesh.</p>
 <p>In the periodic case we get:</p>
@@ -371,6 +373,7 @@ Ordering: 1
 
 # END Geometry Part
 </code></pre>
+
 <p>Here <code>VDim: 2</code> means that the <em>nodes</em> grid function is a vector field with two components (i.e. the mesh is embedded in R^2); <code>H1_2D_P1</code> describes the finite element space (H1/continuous finite elements in 2D of order 1); <code>Ordering</code> refers to how the vector field values are serialized (in this case x,y,x,y,...); and the rest is just the global degrees of freedom representing in this case the vertex coordinates.</p>
 <p>Compare the above with the linear mesh vertex coordinates from <a href="#listing-1">Listing 1</a>:</p>
 <pre><code>vertices
@@ -396,6 +399,7 @@ Ordering: 1
 8 1
 
 </code></pre>
+
 <p>In the MFEM mesh v1.x format, the <em>nodes</em> are a regular grid function, just like an other discretized field in a simulation, which has several advantages:</p>
 <ul>
 <li>The <em>nodes</em> can be part of the discretization, and be evolved directly e.g. in a Lagrangian/ALE simulation.</li>
@@ -464,6 +468,7 @@ Ordering: 1
 # END Geometry Part
 ...
 </code></pre>
+
 <p>Note that the space here is <code>L2</code>, which means a discontinuous linear vector field, where four vertex coordinates are specified on each element. This allows us to plot the periodic mesh as a regular beam, which is what you'd expect for periodic boundary conditions.</p>
 <h2 id="finite-element-spaces">Finite Element Spaces</h2>
 <p>To fully specify the  MFEM mesh v1.x format, we need to describe the degrees of freedom of the <em>nodes</em> finite element space and their global numbering.</p>
@@ -478,6 +483,7 @@ These are just examples, many choices for the basis are actually possible to be 
   loop over edges and faces inside each element (clock-wise)
     number currently the edges and faces that have not been numbered yet
 </code></pre>
+
 <p>Here is the result of this numbering for the beam mesh</p>
 <p><img alt="beam-quad-num" src="../img/format-v1.x/beam-quad-num.png" /></p>
 <p>In addition to a number, each edges and face is also given a global orientation.</p>
@@ -498,6 +504,7 @@ loop over faces
 loop over elements
   list the dofs associated with the interior of the element
 </code></pre>
+
 <p>An example of this is the quadratic mesh in  <a href="#listing-3">Listing 3</a></p>
 <pre><code>...
 # BEGIN Geometry Part
@@ -568,6 +575,7 @@ Ordering: 1
 # END Geometry Part
 ...
 </code></pre>
+
 <h2 id="listings">Listings</h2>
 <h3 id="listing-1">Listing 1</h3>
 <p>This is the original version of the <code>beam-quad.mesh</code> using the linear mesh format.</p>
@@ -642,6 +650,7 @@ vertices
 8 1
 
 </code></pre>
+
 <h3 id="listing-2">Listing 2</h3>
 <p>This is a <code>MFEM mesh v1.x</code> version of the <code>beam-quad.mesh</code> which is first order. The mesh is identical to the one of <a href="#listing-1">Listing 1</a>, it is just described in a different format.</p>
 <pre><code>MFEM mesh v1.0
@@ -720,6 +729,7 @@ Ordering: 1
 7 1
 8 1
 </code></pre>
+
 <h3 id="listing-3">Listing 3</h3>
 <p>This is a second order version of the <code>beam-quad.mesh</code>.</p>
 <pre><code>MFEM mesh v1.0
@@ -831,6 +841,7 @@ Ordering: 1
 6.5 0.5
 7.5 0.5
 </code></pre>
+
 <h3 id="listing-4">Listing 4</h3>
 <p>This is a third order version of the <code>beam-quad.mesh</code>.</p>
 <pre><code>MFEM mesh v1.0
@@ -991,6 +1002,7 @@ Ordering: 1
 7.27639320225 0.72360679774998
 7.72360679775 0.72360679774998
 </code></pre>
+
 <h3 id="listing-5">Listing 5</h3>
 <p>Periodic version of the first-order mesh from <a href="#listing-1">Listing 1</a>.</p>
 <pre><code>MFEM mesh v1.0

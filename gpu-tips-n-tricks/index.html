@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -255,7 +255,7 @@
 <li>The memory manager handles transparently the moving of data between the host (CPU) and the device (e.g. GPU),</li>
 <li>The <code>MFEM_FORALL</code> macro allows to abstract <code>for</code> loops to parallelize the execution on an arbitrary device.</li>
 </ul>
-<pre><code class="language-c++">Vector u;
+<pre><code class="c++">Vector u;
 Vector v;
 // ...
 auto u_data = u.Read();      // Express the intent to read u
@@ -265,6 +265,7 @@ MFEM_FORALL(i, u.Size(),     // Abstract the loop: for(int i=0; i&lt;u.Size(); i
    v_data[i] *= u_data[i];   // This block of code is executed on the chosen device
 });
 </code></pre>
+
 <h2 id="memory-manager">Memory manager</h2>
 <p>In order to make the use of host/device memory as simple as possible, MFEM relies on internal memory manager.
 Instead of storing a pointer of type <code>T*</code>, each object that can be accessed on a device contains <code>Memory&lt;T&gt;</code> objects.
@@ -281,28 +282,31 @@ The <code>Read()</code>,<code>Write()</code>, and <code>ReadWrite()</code> metho
 <p>Sometimes, it is necessary to access the data specifically on the host. In this case the <code>HostRead()</code>, <code>HostWrite()</code>, and <code>HostReadWrite()</code> methods should be used.</p>
 <p>In practice, developers rarely have to manipulate <code>Memory&lt;T&gt;</code> objects, instead objects data can be stored using <code>Vector</code> and <code>Array&lt;T&gt;</code>.
 <code>Vector</code> and <code>Array&lt;T&gt;</code> data pointers can be accessed with the same methods as <code>Memory&lt;T&gt;</code>.</p>
-<pre><code class="language-c++">Vector v;
+<pre><code class="c++">Vector v;
 v.UseDevice(true);
 const double *device_ptr = v.Read();
 const double *host_ptr = v.HostRead();
 </code></pre>
+
 <h2 id="mfem_forall">MFEM_FORALL</h2>
 <p>The idea behind the <code>MFEM_FORALL</code> macro is to have the same behavior as a <code>for</code> loop and hide all device-specific code in order to enable performance portability.
 Example:</p>
-<pre><code class="language-c++">for (int i = 0; i &lt; N; i++)
+<pre><code class="c++">for (int i = 0; i &lt; N; i++)
 {
    ...
 }
 </code></pre>
+
 <p>becomes</p>
-<pre><code class="language-c++">MFEM_FORALL(i, N,
+<pre><code class="c++">MFEM_FORALL(i, N,
 {
    ...
 });
 </code></pre>
+
 <p>One class that is convenient to use in combination with the memory manager and <code>MFEM_FORALL</code> is <code>DeviceTensor&lt;N,T&gt;</code>: an <code>N</code> dimensional array containing elements of type <code>T</code>, which by default is <code>double</code>.
 The <code>Reshape</code> function reshapes its input into such an <code>N</code> dimensional array:</p>
-<pre><code class="language-c++">Vector a;
+<pre><code class="c++">Vector a;
 a.UseDevice(true);
 const int p = ...;
 const int q = ...;
@@ -317,13 +321,14 @@ MFEM_FORALL(n, N,
             A(i,j,k,n) = ...;
 });
 </code></pre>
+
 <p>Several variants of <code>MFEM_FORALL</code> exist, such as <code>MFEM_FORALL_2D</code> and <code>MFEM_FORALL_3D</code>, to help map 2D or 3D blocks of threads to the hardware more efficiently.
 In the case of a GPU, <code>MFEM_FORALL_3D(i,N,X,Y,Z,{...})</code> will declare <code>N</code> block of threads each of size <code>X</code>x<code>Y</code>x<code>Z</code> threads, whereas <code>MFEM_FORALL</code> uses <code>N/256</code> block of threads each of size <code>256</code> threads.
 Using <code>MFEM_FORALL_3D</code> (and <code>MFEM_FORALL_2D</code>) over <code>MFEM_FORALL</code> results in a higher level of parallelism, the former using <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> software threads and the latter only <code>N</code> software threads.</p>
 <p>In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro <code>MFEM_FOREACH_THREAD(i,x,p)</code> to use threads as a <code>for</code> loop.
 The first variable <code>i</code> is the name of the "loop" variable, <code>x</code> is the threadId (it can take the values <code>x</code>, <code>y</code>, or <code>z</code>), and <code>p</code> is the loop upper bound.
 If we rewrite the previous example using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code>, we get:</p>
-<pre><code class="language-c++">Vector a;
+<pre><code class="c++">Vector a;
 a.UseDevice(true);
 const int p = ...;
 const int q = ...;
@@ -338,6 +343,7 @@ MFEM_FORALL_3D(n, N, p, q, r,
             A(i,j,k,n) = ...;
 });
 </code></pre>
+
 <p>The reasons for this more complex syntax is to better utilize the hardware, GPUs in particular.
 Using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code> allows to use more concurrency <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> threads instead of only <code>N</code> threads with <code>MFEM_FORALL</code>,
 but more importantly the memory accesses on <code>A(i,j,k,n)</code> are much better with <code>MFEM_FORALL_3D</code>.
@@ -440,27 +446,30 @@ Avoid allocating GPU memory too frequently, CUDA <code>malloc</code> calls are s
 If you really need to allocate frequently GPU memory, consider using a memory pool (e.g. <a href="https://github.com/LLNL/Umpire">Umpire</a>), that way the mallocs are much cheaper on the GPU.</p>
 <h3 id="the-usedevice-function">The UseDevice function</h3>
 <p>It is a good practice to call <code>UseDevice(true)</code> on any <code>Vector</code> intended to go on device right after constructing it.</p>
-<pre><code class="language-c++">Vector v; v.UseDevice(true);
+<pre><code class="c++">Vector v; v.UseDevice(true);
 </code></pre>
+
 <p>Be aware that <code>UseDevice()</code> is not the same as <code>UseDevice(true)</code>, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.</p>
 <h3 id="using-constexpr-inside-mfem_forall">Using constexpr inside MFEM_FORALL</h3>
-<pre><code class="language-c++">constexpr P = ...; // Results in an error on MSVC
+<pre><code class="c++">constexpr P = ...; // Results in an error on MSVC
 MFEM_FORALL(I,N,
 {
    double my_data[P];
 });
 </code></pre>
+
 <p>The <code>MFEM_FORALL</code> macro relies on lambda capturing in C++. One issue comes up with compilers such as <a href="https://visualstudio.microsoft.com/">MSVC</a> is the capturing of <code>constexpr</code> variables inside <code>MFEM_FORALL</code>.
 According to the C++ standard, <code>constexpr</code> variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in errors like:</p>
 <p><code>error C2131: expression did not evaluate to a constant</code></p>
 <p>A simple fix for this error is to declare the <code>constexpr</code> variable as <code>static constexpr</code>.</p>
-<pre><code class="language-c++">static constexpr P = ...; // Omitting the static results in an error on MSVC
+<pre><code class="c++">static constexpr P = ...; // Omitting the static results in an error on MSVC
 MFEM_FORALL(I,N,
 {
    double my_data[P];
 });
 </code></pre>
+
 <p>Similar problems and workarounds are discussed <a href="https://stackoverflow.com/questions/55136414">here</a>.</p>
 <h3 id="error-alias-not-found">Error: "alias not found"</h3>
 <p>This error message indicates that you are trying to move an "alias" <code>Vector</code> to GPU while its "base" <code>Vector</code> did not have a GPU allocation (valid or not) when the alias was created (and may still not have GPU allocation when the move of the "alias" was attempted). This is another case where we cannot update the "base" <code>Vector</code> because we do not have access to it (and even if we did, there are complications).</p>
@@ -472,7 +481,7 @@ For example, if the "base" is initialized (on host, otherwise there will be no i
 <p>Ideally, "base" Vectors that will be modified/accessed on device through aliases should be allocated on device to begin with, e.g. using <code>Vector::SetSize(int s, MemoryType mt)</code> typically with <code>mt = Device::GetDeviceMemoryType()</code>.</p>
 <h3 id="makeref-vectors-do-not-see-the-same-valid-hostdevice-data-as-their-base-vector">MakeRef vectors do not see the same valid host/device data as their base vector</h3>
 <p>Consider the following code snippet where the vector <code>w</code> is defined from <code>v</code> using the <code>MakeRef()</code> method:</p>
-<pre><code class="language-c++">const int vSize = 10;
+<pre><code class="c++">const int vSize = 10;
 Vector v; v.UseDevice(true); v.SetSize(vSize); v = 0.0;
 cout &lt;&lt; &quot;IsHost(v) = &quot; &lt;&lt; IsHostMemory(v.GetMemory().GetMemoryType()) &lt;&lt; endl;
 
@@ -503,6 +512,7 @@ MFEM_FORALL(i, vSize,
 z.HostRead();
 cout &lt;&lt; &quot;norm(z) = &quot; &lt;&lt; z.Norml2() &lt;&lt; endl;
 </code></pre>
+
 <p>The resulting output may be unexpected:</p>
 <pre><code>IsHost(v) = 0
 IsHost(w) = 0
@@ -511,6 +521,7 @@ IsHost(w) = 0
 norm(z) = 0
 norm(z) = 3.16228
 </code></pre>
+
 <p>Basically the issue is that the Memory objects (inside the <code>Vector</code>s) do not know about the other version, so they cannot update the validity flags (the host and device validity flags indicate which of the pointers has valid data) of the other <code>Vector</code>.
 Also such update may not make sense if you just moved the subvector.</p>
 <p>There is no easy way to keep the big "base" <code>Vector</code> <code>v</code> and the "alias" subvector <code>w</code> synchronized when they are being moved/copied between host and device.
