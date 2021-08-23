@@ -1,5 +1,8 @@
 # Toys
 
+A handful of "toy" miniapps of less serious nature demonstrate the
+flexibility of MFEM (and provide a bit of fun):
+
 ## Automata
 
 The `automata` miniapp implements a one dimensional elementary cellular

@@ -156,7 +156,7 @@ and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 , a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi) and a Ginkgo modification
 in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported._
+Partial assembly and [GPU devices](gpu-support.md) are supported._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -219,7 +219,7 @@ also illustrated.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -245,7 +245,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -305,7 +305,7 @@ _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -843,7 +843,7 @@ spaces, with three variants:
 Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
 divergence in the appropriate spaces, comparing the errors in each case.
 
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
@@ -1120,7 +1120,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1144,7 +1144,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1280,7 +1280,7 @@ the mesh ready for parallel non-conforming AMR in MFEM.
 The implementation also demonstrates how to initialize a non-conforming mesh
 on the fly by marking hanging nodes with `Mesh::AddVertexParents`.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1304,7 +1304,7 @@ It can be used as a simple initial mesh generator, for example in the case when
 the interface is too complex to describe without local refinement. Both
 conforming and non-conforming refinements are supported.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1329,7 +1329,7 @@ mesh. Some of its features are:
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1364,7 +1364,7 @@ the utilized Newton methods are oriented towards avoiding invalid meshes with
 negative Jacobian determinants. Each Newton step requires the inversion of a
 Jacobian matrix, which is done through an inner linear solver.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has a serial
@@ -1388,7 +1388,7 @@ Options to solve the minimal surface equations of both parametric surfaces as we
 surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
 number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
 
-For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+For more details, please see the [documentation](meshing-miniapps.md) in the `miniapps/meshing` directory.
 
 _The miniapp has a serial
 ([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a

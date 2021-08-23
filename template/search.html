@@ -1,0 +1,16 @@
+{% if page.meta.source %}
+<div class="source-links">
+{% for filename in page.meta.source %}
+    <span class="label label-primary">{{ filename }}</span>
+{% endfor %}
+</div>
+{% endif %}
+
+{{ page.content }}
+
+<div align="center">
+    <input name="q" id="mkdocs-search-query" type="text" autofocus>
+</div>
+
+<div id="mkdocs-search-results">
+</div>

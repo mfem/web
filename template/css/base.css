@@ -222,3 +222,27 @@ body {
     width: 100%;
     overflow-x: auto;
 }
+
+div.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 17px;
+}
+
+
+div#frame_root {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+div#frame_root > iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+input {
+  width: 100%;
+}

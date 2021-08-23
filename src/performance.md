@@ -8,7 +8,7 @@ requires both a large amount of memory to store the matrix, as well as many
 floating point operations to compute and apply it. _Partial assembly_ is a
 technique that allows for efficiently applying the action of finite element
 operators without forming the corresponding matrix. This is particularly
-important when running on [GPUs](gpu-tips-n-tricks.md).
+important when running on [GPUs](gpu-support.md).
 
 Partial assembly is enabled at the level of the `BilinearForm` by setting
 the assembly level:
