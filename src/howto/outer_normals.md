@@ -6,7 +6,7 @@ of interest, and in 3D this will be the vector normal to the plane tangent to th
 point of interest.  An easy way to obtain these vector/plane tangents is to use the Jacobian
 of the element transformation at the point of interest as in the following example:
 
-```
+```c++
 // Loop through the boundary elements and compute the normals at the centers of those elements
 for (int it = 0; it < fespace->GetNBE(); it++)
 {

@@ -7,7 +7,7 @@ class and overriding the necessary methods to define the action.  Se the followi
 example:
 
 
-```
+```c++
 // Define a custom solver class that can be used as the preconditioner for a broader problem solvers
 // Here we will define the example preconditioner:  P x = M x + Ainv x
 class SumSolver : mfem::Solver

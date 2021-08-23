@@ -15,7 +15,7 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8). 
+If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8).
 There is no registration fee. WebEx details will be distributed to participants prior to the event date.
 
 ### Meeting format
@@ -48,7 +48,7 @@ The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-
 | 2:00-3:00 | **Breakout Sessions**\* | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
 | 3:00-3:10 | **Wrap-up** | Tzanio Kolev |
 
-\* If you have an idea for a talk, demo, or breakout session topic, please describe it on the registration form. 
+\* If you have an idea for a talk, demo, or breakout session topic, please describe it on the registration form.
 Submissions are due on **October 6th** along with your registration.
 
 ### Questions?
