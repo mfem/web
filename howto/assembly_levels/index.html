@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-partial-assembly-and-matrix-free-assembly">HowTo: Use partial assembly and matrix-free assembly</a></li>
+        
+            <li><a href="#assembly-levels-and-backend-device-configuration">Assembly levels and backend device configuration</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="howto-use-partial-assembly-and-matrix-free-assembly">HowTo: Use partial assembly and matrix-free assembly</h1>
+<p>MFEM provides different levels of assembly for <code>mfem::BilinearForm</code>,
+<code>mfem::MixedBilinearForm</code>, <code>mfem::DiscreteLinearOperator</code>, and
+<code>mfem::NonlinearForm</code> based on the operator decomposition:
+<img alt="Operator Decomposition" src="../../img/libceed.png" title="Operator Decomposition" />
+These different levels of assembly are:</p>
+<ul>
+<li>LEGACY, in the case of a <code>mfem::BilinearForm</code> LEGACY corresponds to a fully assembled form, i.e. a global sparse matrix in MFEM, Hypre or PETSC format. In the case of a <code>mfem::NonlinearForm</code> LEGACY corresponds to an operator that is fully evaluated on the fly. The LEGACY assembly level is ALWAYS performed on the host.</li>
+<li>FULL, fully assembled form, i.e. a global sparse matrix in MFEM format. This assembly is compatible with device execution, and therefore the sparse matrix is assembled on device if available. This corresponds to storing the whole A = G<sup>T</sup> B<sup>T</sup> D B G operator as a sparse matrix.</li>
+<li>ELEMENT, Form assembled at element level, which computes and stores dense element matrices. This corresponds to storing the element-local dense matrices A<sub>E</sub> = B<sup>T</sup> D B. This format allows to have some access to the matrix entries, while also providing a data format that is more friendly with GPU architectures.</li>
+<li>PARTIAL, Partially-assembled form, which computes and stores data only at quadrature points. This corresponds to storing only quadrature points values D, this format results in significantly faster computations and less storage usage compared to format storing matrices. Only the diagonal entries of the operator are accessible.</li>
+<li>NONE, "Matrix-free" form that computes all of its action on-the-fly without any substantial storage. In this case D is computed on the fly, this format is also significantly faster than the matrix formats, but is currently slower than partial assembly due to the increased number of computations. However, in the case of operators that need to be reassembled frequently this assembly level might be faster than partial assembly by skipping any reassembly steps.</li>
+</ul>
+<p>The different assembly levels are accessed through the following unified interface:</p>
+<pre><code class="language-c++">AssemblyLevel assembly_level = ...;
+a-&gt;SetAssemblyLevel(assembly_level);
+</code></pre>
+<p>where <code>a</code> is either an <code>mfem::BilinearForm</code>, <code>mfem::MixedBilinearForm</code>,
+<code>mfem::DiscreteLinearOperator</code>, or <code>mfem::NonlinearForm</code>.</p>
+<h2 id="assembly-levels-and-backend-device-configuration">Assembly levels and backend device configuration</h2>
+<p>MFEM integrates three backends that interact with the assembly levels, namely the RAJA backend, the OCCA backend, and the libCEED backend.
+Backends are accessible by configuring the <code>mfem::Device</code> accordingly.</p>
+<table>
+<thead>
+<tr>
+<th>Device Configuration</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cpu</code></td>
+<td>Default CPU backend: sequential execution on each MPI rank.</td>
+</tr>
+<tr>
+<td><code>omp</code></td>
+<td>OpenMP backend. Enabled when MFEM_USE_OPENMP = YES.</td>
+</tr>
+<tr>
+<td><code>cuda</code></td>
+<td>CUDA backend. Enabled when MFEM_USE_CUDA = YES.</td>
+</tr>
+<tr>
+<td><code>hip</code></td>
+<td>HIP backend. Enabled when MFEM_USE_HIP = YES.</td>
+</tr>
+<tr>
+<td><code>raja-cpu</code></td>
+<td>RAJA CPU backend: sequential execution on each MPI rank. Enabled when MFEM_USE_RAJA = YES.</td>
+</tr>
+<tr>
+<td><code>raja-omp</code></td>
+<td>RAJA OpenMP backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_OPENMP = YES.</td>
+</tr>
+<tr>
+<td><code>raja-cuda</code></td>
+<td>RAJA CUDA backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_CUDA = YES.</td>
+</tr>
+<tr>
+<td><code>raja-hip</code></td>
+<td>RAJA HIP backend. Enabled when MFEM_USE_RAJA = YES and MFEM_USE_HIP = YES.</td>
+</tr>
+<tr>
+<td><code>occa-cpu</code></td>
+<td>OCCA CPU backend: sequential execution on each MPI rank. Enabled when MFEM_USE_OCCA = YES.</td>
+</tr>
+<tr>
+<td><code>occa-omp</code></td>
+<td>OCCA OpenMP backend. Enabled when MFEM_USE_OCCA = YES.</td>
+</tr>
+<tr>
+<td><code>occa-cuda</code></td>
+<td>OCCA CUDA backend. Enabled when MFEM_USE_OCCA = YES and MFEM_USE_CUDA = YES.</td>
+</tr>
+<tr>
+<td><code>ceed-cpu</code></td>
+<td>CEED CPU backend. GPU backends can still be used, but with expensive memory transfers. Enabled when MFEM_USE_CEED = YES.</td>
+</tr>
+<tr>
+<td><code>ceed-cuda</code></td>
+<td>CEED CUDA backend working together with the CUDA backend. Enabled when MFEM_USE_CEED = YES and MFEM_USE_CUDA = YES. NOTE: The current default libCEED CUDA backend is non-deterministic!</td>
+</tr>
+<tr>
+<td><code>ceed-hip</code></td>
+<td>CEED HIP backend working together with the HIP backend. Enabled when MFEM_USE_CEED = YES and MFEM_USE_HIP = YES.</td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td>Debug backend: host memory is READ/WRITE protected while a device is in use. It allows to test the "device" code-path (using separate host/device memory pools and host &lt;-&gt; device transfers) without any GPU hardware. As 'DEBUG' is sometimes used as a macro, <code>_DEVICE</code> has been added to avoid conflicts.</td>
+</tr>
+</tbody>
+</table>
+<p>It is also possible to request the backend of a backend, for instance if we want to use the <code>/gpu/cuda/shared</code> backend of libCEED one can specify this with the following syntax:</p>
+<pre><code class="language-c++">mfem::Device device(&quot;ceed-cuda:/gpu/cuda/shared&quot;);
+</code></pre>
+<p>The native MFEM backend and the RAJA backend support the same features and Integrators. However, the OCCA backend, and the libCEED backend each offer different features, and support different Integrators with different performance characteristics.</p>
+<table>
+<thead>
+<tr>
+<th>Supported Integrators</th>
+<th align="center">native MFEM</th>
+<th align="center">OCCA backend</th>
+<th align="center">libCEED backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mass Integrator</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Vector Mass Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Vector FE Mass Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Convection Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Non-linear Convection Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Diffusion Integrator</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Vector Diffusion Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>DGTrace Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Mixed Vector Gradient Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Mixed Vector Curl Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Mixed Vector Weak Curl Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Gradient Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Vector Divergence Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Vector FE Divergence Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Curl Curl Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Div Div Integrator</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Features</th>
+<th align="center">native MFEM</th>
+<th align="center">OCCA backend</th>
+<th align="center">libCEED backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tensor elements support</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Simplices support</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Mixed elements support</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Assembly: None</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Assembly: Partial</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td>Assembly: Element</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+<tr>
+<td>Assembly: Full</td>
+<td align="center">✅</td>
+<td align="center">❌</td>
+<td align="center">❌</td>
+</tr>
+</tbody>
+</table></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-partial-assembly-and-matrix-free-assembly">HowTo: Use partial assembly and matrix-free assembly</a></li>
+        
+            <li><a href="#assembly-levels-and-backend-device-configuration">Assembly levels and backend device configuration</a></li>
+        
+    
+    </ul>
+</div></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

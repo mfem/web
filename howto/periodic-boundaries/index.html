@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-periodic-meshes-and-enforce-periodic-boundary-conditions">HowTo: Use periodic meshes and enforce periodic boundary conditions</a></li>
+        
+            <li><a href="#reading-a-periodic-mesh-from-disk">Reading a periodic mesh from disk</a></li>
+        
+            <li><a href="#creating-a-periodic-mesh-by-identifying-vertices">Creating a periodic mesh by identifying vertices</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="howto-use-periodic-meshes-and-enforce-periodic-boundary-conditions">HowTo: Use periodic meshes and enforce periodic boundary conditions</h1>
+<p>In order to solve a problem with periodic boundary conditions, the <code>Mesh</code> object should have a
+periodic topology. This can be achieved in one of two ways:</p>
+<ol>
+<li>By reading a periodic mesh from disk.</li>
+<li>By identifying periodic vertices (e.g. through a translation vector), and then creating a new
+   periodic mesh.</li>
+</ol>
+<h2 id="reading-a-periodic-mesh-from-disk">Reading a periodic mesh from disk</h2>
+<p>MFEM supports reading periodic meshes from a <a href="https://mfem.org/meshing/">variety of mesh file
+formats</a>. Several periodic sample meshes are included with MFEM in the
+<code>data</code> directory:</p>
+<p>MFEM format:</p>
+<ul>
+<li><code>periodic-square.mesh</code>: a 3x3 Cartesian mesh of the (periodic) square [-1,1]^2</li>
+<li><code>periodic-hexagon.mesh</code>: a quad mesh of a periodic hexagonal domain with 12 elements</li>
+<li><code>periodic-cube.mesh</code>: a 3x3x3 Cartesian mesh of the (periodic) cube [-1,1]^3</li>
+</ul>
+<p>Gmsh format (the corresponding <code>.geo</code> files are also included):</p>
+<ul>
+<li><code>periodic-square.msh</code>: a 4x4 Cartesian mesh of the (periodic) unit square</li>
+<li><code>periodic-cube.msh</code>: a 4x4x4 Cartesian mesh of the (periodic) unit cube</li>
+<li><code>periodic-annulus-sector.msh</code>: a 2D mesh of an annular sector with periodic boundaries defined by
+   a rotation</li>
+<li><code>periodic-torus-sector.msh</code>: a 3D mesh of a torus sector with periodic boundaries defined by a
+   rotation</li>
+</ul>
+<p>Any of these meshes can be loaded as usual using MFEM (e.g. using the <code>-m</code> flag in the <a href="https://mfem.org/examples/">MFEM
+examples</a>), and the periodic topology will be automatically handled.</p>
+<p><em>(Note that some periodic boundaries (such as <code>periodic-cube.mesh</code>) contain so-called "internal
+boundary elements", which may result in boundary conditions being enforced for some examples.)</em></p>
+<table>
+<thead>
+<tr>
+<th align="center">Example 0 on Periodic Annulus</th>
+<th align="center">Example 0 on Periodic Torus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="/img/periodic-annulus.png" /></td>
+<td align="center"><img alt="" src="/img/periodic-torus.png" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-a-periodic-mesh-by-identifying-vertices">Creating a periodic mesh by identifying vertices</h2>
+<p>MFEM can also create periodic meshes from non-periodic meshes by identifying periodic vertices. The
+function <code>Mesh::MakePeriodic</code> creates a periodic mesh from a non-periodic mesh given such a vertex
+identification. For example, if we wish to create a periodic line segment, then we would like to
+<em>identify</em> the two endpoints of the line segment since they represent the same point in the periodic
+topology. An example of creating this vertex mapping in the case of a line segment is described
+<a href="#line-segment">here</a>.</p>
+<p>It is often more convenient to describe the periodicity constraints in terms of <em>translation
+vectors</em>. Any two vertices that are coincident under any of the given translation vectors will be
+considered topologically identical. MFEM can generate a vertex mapping from these translation
+vectors using the <code>Mesh::CreatePeriodicVertexMapping</code>. An example using this functionality to create
+a mesh of the periodic square is shown <a href="#square">here</a>.</p>
+<h3 id="example-creating-a-periodic-line-segment-with-a-vertex-map"><a name="line-segment"></a>Example: creating a periodic line segment with a vertex map</h3>
+<pre><code class="language-c++">Mesh mesh = Mesh::MakeCartesian1D(10);// Make a mesh of the unit interval with 10 elements
+// Create the vertex mapping. To begin, create the identity mapping.
+std::vector&lt;int&gt; v2v(mesh.GetNV());
+for (int i = 0; i &lt; mesh.GetNV(); ++i)
+{
+   v2v[i] = i;
+}
+// Modify the mapping so that the last vertex gets mapped to the first vertex.
+v2v.back() = 0;
+Mesh periodic_mesh = Mesh::MakePeriodic(mesh, v2v); // Create the periodic mesh
+</code></pre>
+<h3 id="example-creating-a-periodic-square-with-translation-vectors"><a name="square"></a>Example: creating a periodic square with translation vectors</h3>
+<pre><code class="language-c++">// Create a 10x10 quad mesh of the unit square;
+Mesh mesh = Mesh::MakeCartesian2D(10, 10, Element::QUADRILATERAL);
+// Create translation vectors defining the periodicity
+Vector x_translation({1.0, 0.0});
+Vector y_translation({0.0, 1.0});
+std::vector&lt;Vector&gt; translations = {x_translation, y_translation};
+// Create the periodic mesh using the vertex mapping defined by the translation vectors
+Mesh periodic_mesh = Mesh::MakePeriodic(mesh, mesh.CreatePeriodicVertexMapping(translations));
+</code></pre></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-periodic-meshes-and-enforce-periodic-boundary-conditions">HowTo: Use periodic meshes and enforce periodic boundary conditions</a></li>
+        
+            <li><a href="#reading-a-periodic-mesh-from-disk">Reading a periodic mesh from disk</a></li>
+        
+            <li><a href="#creating-a-periodic-mesh-by-identifying-vertices">Creating a periodic mesh by identifying vertices</a></li>
+        
+    
+    </ul>
+</div></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

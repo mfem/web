@@ -43,8 +43,11 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
         </div>
+
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
@@ -64,9 +67,47 @@
             
             
             
-                <li >
-                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
-                    <a href="../examples/">Examples</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
                 </li>
             
             
@@ -81,19 +122,21 @@
                     
                         
                             <li >
-                                 <a href="../building/">Building MFEM</a>
+                                 <a href="../getting-started/">Getting Started</a>
                             </li>
                         
                     
                         
-                            <li >
-                                 <a href="../serial-tutorial/">Serial Tutorial</a>
-                            </li>
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
                             <li >
-                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                                 <a href="../howto/howto-index/">HowTo Articles</a>
                             </li>
                         
                     
@@ -121,35 +164,21 @@
                     
                         
                             <li >
-                                 <a href="../electromagnetics/">Electromagnetics</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../fluids/">Fluids</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../meshing/">Meshing</a>
-                            </li>
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                            <li >
                                  <a href="../performance/">Performance</a>
                             </li>
                         
                     
                         
+                    
+                        
                             <li >
-                                 <a href="../gpu-tips-n-tricks/">GPU Support</a>
+                                 <a href="../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mesh-formats/">Mesh Formats</a>
                             </li>
                         
                     
@@ -159,13 +188,7 @@
                     
                         
                             <li >
-                                 <a href="../tools/">Tools</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../toys/">Toys</a>
+                                 <a href="../dox/">Doxygen</a>
                             </li>
                         
                     
@@ -178,6 +201,12 @@
                         
                             <li >
                                  <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../search/">🔎 Search...</a>
                             </li>
                         
                     
@@ -224,6 +253,7 @@
     </div>
 </div>
 
+        
         <div class="container">
             
             <div class="col-md-12" role="main">
@@ -393,6 +423,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
 
             
         </div>
+        
 
         <footer class="footer">
            <div class="container">
@@ -409,6 +440,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
         <script src="../js/highlight.pack.js"></script>
         <script src="../js/base.js"></script>
         <script src="../js/retina.min.js"></script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../search/main.js"></script>
     </body>
 </html>

@@ -43,8 +43,11 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
         </div>
+
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
@@ -64,9 +67,47 @@
             
             
             
-                <li >
-                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
-                    <a href="../examples/">Examples</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
                 </li>
             
             
@@ -81,19 +122,21 @@
                     
                         
                             <li >
-                                 <a href="../building/">Building MFEM</a>
+                                 <a href="../getting-started/">Getting Started</a>
                             </li>
                         
                     
                         
-                            <li >
-                                 <a href="../serial-tutorial/">Serial Tutorial</a>
-                            </li>
+                    
+                        
+                    
+                        
+                    
                         
                     
                         
                             <li >
-                                 <a href="../parallel-tutorial/">Parallel Tutorial</a>
+                                 <a href="../howto/howto-index/">HowTo Articles</a>
                             </li>
                         
                     
@@ -121,35 +164,21 @@
                     
                         
                             <li >
-                                 <a href="../electromagnetics/">Electromagnetics</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../fluids/">Fluids</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../meshing/">Meshing</a>
-                            </li>
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                            <li >
                                  <a href="../performance/">Performance</a>
                             </li>
                         
                     
                         
+                    
+                        
                             <li >
-                                 <a href="../gpu-tips-n-tricks/">GPU Support</a>
+                                 <a href="../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mesh-formats/">Mesh Formats</a>
                             </li>
                         
                     
@@ -159,13 +188,7 @@
                     
                         
                             <li >
-                                 <a href="../tools/">Tools</a>
-                            </li>
-                        
-                    
-                        
-                            <li >
-                                 <a href="../toys/">Toys</a>
+                                 <a href="../dox/">Doxygen</a>
                             </li>
                         
                     
@@ -178,6 +201,12 @@
                         
                             <li >
                                  <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../search/">🔎 Search...</a>
                             </li>
                         
                     
@@ -224,6 +253,7 @@
     </div>
 </div>
 
+        
         <div class="container">
             
             <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
@@ -294,7 +324,7 @@
 <ul>
 <li>MFEM-based <a href="http://www.llnl.gov/casc/blast">applications</a> have been <a href="http://computation.llnl.gov/blast/parallel-performance">scaled</a> to <a href="http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png">hundreds of thousands</a> of parallel cores.</li>
 <li>The library supports <a href="../performance/">efficient operator assembly/evaluation</a> for tensor-product high-order elements.</li>
-<li>Support for hardware devices, such as <a href="../gpu-tips-n-tricks/">GPUs</a>, and programming models, such as CUDA, HIP, <a href="https://libocca.org">OCCA</a>, <a href="https://github.com/LLNL/RAJA">RAJA</a> and OpenMP is also included.</li>
+<li>Support for hardware devices, such as <a href="../gpu-support/">GPUs</a>, and programming models, such as CUDA, HIP, <a href="https://libocca.org">OCCA</a>, <a href="https://github.com/LLNL/RAJA">RAJA</a> and OpenMP is also included.</li>
 </ul>
 <p>A serial MFEM application typically requires <a href="http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html">minimal</a> <a href="http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="http://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several <a href="../examples/?pa">examples</a> and many <a href="http://mfem.github.io/doxygen/html/vector_8cpp_source.html">linear algebra</a> and <a href="http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html">finite element</a> operations is available.</p>
 <h2 id="built-in-solvers">Built-in Solvers</h2>
@@ -430,9 +460,9 @@
     
     </ul>
 </div></div>
-
             
         </div>
+        
 
         <footer class="footer">
            <div class="container">
@@ -449,6 +479,7 @@
         <script src="../js/highlight.pack.js"></script>
         <script src="../js/base.js"></script>
         <script src="../js/retina.min.js"></script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../search/main.js"></script>
     </body>
 </html>

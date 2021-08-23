@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-spack-to-install-mfem">HowTo: Use Spack to install MFEM.</a></li>
+        
+            <li><a href="#what-does-it-mean-to-use-spack-and-why-use-it">What does it mean to use Spack, and why use it?</a></li>
+        
+            <li><a href="#how-to-use-spack-to-install-mfem">How to use Spack to install MFEM.</a></li>
+        
+    
+    </ul>
+</div></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="howto-use-spack-to-install-mfem">HowTo: Use Spack to install MFEM.</h1>
+<p>MFEM can be built with <code>make</code> or <code>CMake</code>. But MFEM has also been packaged to be built with <code>Spack</code>.</p>
+<h2 id="what-does-it-mean-to-use-spack-and-why-use-it">What does it mean to use Spack, and why use it?</h2>
+<h3 id="packaging-vs-build-system">Packaging vs. Build-System</h3>
+<p>In concrete terms, packaging with Spack here means that:</p>
+<ul>
+<li>Spack will interface with the build system: no make or CMake command required.</li>
+<li>Build options are specified as "variants". There may not be a variant for every option or combination of options allowed by building from source "manually".</li>
+<li>Spack will also install the dependencies, which may also be activated using "variants".</li>
+</ul>
+<p><em>(Note that so far, the MFEM Spack package interfaces with MFEM makefile build system, not CMake.)</em></p>
+<p>The first takeaway is that using Spack may not allow as much configuration as possible manually but will manage the installation of dependencies.</p>
+<h3 id="when-to-use-spack">When to use Spack?</h3>
+<p>Spack is a <em>from source</em> package manager. So Spack will allow you to build mfem from source using the underlying makefile build system.</p>
+<h4 id="to-manage-your-libraries-for-development">To manage your libraries for development</h4>
+<p>Spack is typically used to deploy software. You may use it to install MFEM among other libraries in a shared location for developers using MFEM as a dependency: all will have access to the same configuration and you will be able to reproduce this installation at will.</p>
+<p>But you will be limited to a predefined set of versions. Typically the releases and the latest state of <code>master</code> branch. In that sense Spack is not meant to be use to develop in MFEM <em>a priori</em>.</p>
+<p><em>(For those looking to use Spack to develop in MFEM, see <a href="https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html">Spack workflow feature</a>)</em></p>
+<h4 id="to-install-dependencies-automatically">To install dependencies automatically</h4>
+<p>Spack will automatically build the dependencies, which can be especially valuable to get started quickly with an advanced configuration of MFEM.</p>
+<p>This is a great way to get students started quickly with a configuration that would require much too many steps otherwise.</p>
+<h4 id="to-reproduce-a-vetted-configuration">To reproduce a vetted configuration</h4>
+<p>Spack is used in GitLab CI context to automate the build on dependencies, easily update those, and improve reproducibility.</p>
+<p>For more details about this, explore <a href="https://github.com/mfem/mfem-uberenv">MFEM Uberenv configuration</a>, and the documentation mentioned in the README.</p>
+<h2 id="how-to-use-spack-to-install-mfem">How to use Spack to install MFEM.</h2>
+<p>Using Spack is easy to start with, complex when it comes to getting exactly what you want, and can be tedious to maintain on the long term.</p>
+<h3 id="best-practices-for-a-long-term-sane-relationship-with-spack">Best practices for a long-term sane relationship with Spack</h3>
+<p>Unless you want to develop in Spack, those rules will help keeping things under control:</p>
+<ul>
+<li>Use a single Spack instance. Spack has <code>environments</code> that mimic the way python environments work to allow you to partition things so that all the packages installed do not show up in a big mess.</li>
+<li>Stick to a release of Spack. Packages evolve along with Spack source code. It means that updating Spack will likely affect reproducing the build of specs already installed. Expect to reinstall everything when you update Spack.</li>
+</ul>
+<h3 id="using-spack-to-install-mfem-on-llnls-lassen-and-quartz-systems">Using Spack to install MFEM on LLNL's Lassen and Quartz systems</h3>
+<p>Those machines are used to test MFEM. The tests running in GitLab CI use Spack to manage MFEM dependencies. The configuration used for those tests can be reproduced exactly. This guarantees to get a working installation through Spack.</p>
+<p>Unfortunately, only a handful of configurations are being tested. But this is a good starting point to explore further. See <a href="https://github.com/mfem/mfem-uberenv">MFEM Uberenv configuration</a> for more details.</p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#howto-use-spack-to-install-mfem">HowTo: Use Spack to install MFEM.</a></li>
+        
+            <li><a href="#what-does-it-mean-to-use-spack-and-why-use-it">What does it mean to use Spack, and why use it?</a></li>
+        
+            <li><a href="#how-to-use-spack-to-install-mfem">How to use Spack to install MFEM.</a></li>
+        
+    
+    </ul>
+</div></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>
