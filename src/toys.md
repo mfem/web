@@ -127,7 +127,7 @@ a row so that neighboring wedges can rotate against each other but cannot
 be separated. An astonishing variety of different configurations can be
 reached.
 
-<a href="https://glvis.org/live/?stream=../data/snake.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/snake.saved" target="_blank">
 <img src="../img/examples/snake.png">
 </a>
 

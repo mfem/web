@@ -107,7 +107,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 25](http://mfem.github.io/doxygen/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
  - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem,
  - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem,
- - [Example 28](http://mfem.github.io/doxygen/html/ex28_8cpp_source.html): constraints and sliding boundary conditions.
+ - [Example 28](http://mfem.github.io/doxygen/html/ex28_8cpp_source.html): constraints and sliding boundary conditions,
+ - [Example 29](http://mfem.github.io/doxygen/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -125,6 +126,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Distance](http://mfem.github.io/doxygen/html/distance_8cpp_source.html): finite element distance solver,
+ - [Shifted Diffusion](http://mfem.github.io/doxygen/html/shifted_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,

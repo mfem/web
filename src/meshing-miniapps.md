@@ -14,7 +14,7 @@ The current meshing miniapps are described below.
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
 
-<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
 <img src="../img/examples/mobius-strip.png">
 </a>
 
@@ -27,7 +27,7 @@ performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
 
-<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/klein-bottle.saved" target="_blank">
 <img src="../img/examples/klein-bottle.png">
 </a>
 
@@ -69,6 +69,21 @@ mesh can be 1D or 2D. 1D meshes can be extruded in the y-direction first and
 then in the z-direction.  2D meshes can be triangular, quadrilateral, or
 contain both element types.
 
+### Trimmer
+
+This miniapp creates a new mesh file from an existing mesh by trimming away
+elements with selected attributes. High order and/or periodic meshes are
+supported although NURBS meshes are not.
+
+[![](img/examples/trimmer-small.png)](img/examples/trimmer.png)
+
+By default newly exposed boundaries will be assigned unique boundary
+attributes. The new boundary attributes are determined by adding the volume
+attribute of the exposing elements to the maximum boundary attribute in the
+original mesh. Alternatively the user can specify new boundary attributes to be
+associated with each volume attribute being trimmed away. In the later case
+the new attributes need not be unique.
+
 ### Polar-NC
 
 This miniapp generates a circular sector mesh that consist of quadrilaterals
@@ -88,7 +103,7 @@ This miniapp performs multiple levels of adaptive mesh refinement to resolve the
 interfaces between different "materials" in the mesh, as specified by a given
 material() function.
 
-<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/shaper.saved" target="_blank">
 <img src="../img/examples/shaper.png">
 </a>
 
@@ -101,7 +116,7 @@ conforming and non-conforming refinements are supported.
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh.
 
-<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mesh-explorer.saved" target="_blank">
 <img src="../img/examples/mesh-explorer.png">
 </a>
 
