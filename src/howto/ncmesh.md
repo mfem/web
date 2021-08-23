@@ -113,7 +113,7 @@ where the refined faces of adjacent elements are not subsets of each other. For 
 running the above code on a mesh with two hexahedra adjacent in the X direction will
 create an interface that cannot be constrained correctly. In such cases, MFEM will
 automatically adjust one side of the interface with additional refinements (called forced
-refinements) to ensure that the mesh remains a valid FEM mesh. In pathologic cases the
+refinements) to ensure that the mesh remains a valid FEM mesh. In pathological cases the
 forced refinements may propagate. Using a reasonable `nc_limit` may reduce this effect.
 Nevertheless, a valid mesh is produced in all cases.
 

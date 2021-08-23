@@ -31,7 +31,7 @@ These computational coordinates include the element number
 (e<sub>j</sub> in `mfem::Array<int> gsl_elem`) in which the point is found,
 the reference-space coordinates (**r**<sub>j</sub> in `mfem::Vector gsl_ref`) inside e<sub>j</sub>,
 and the MPI rank that the element is partitioned on (p<sub>j</sub> in `mfem::Array<int> gsl_proc`).
-`FindPoints` also returns a code (`mfem::Array<int> gsl_code`) to indicate wether
+`FindPoints` also returns a code (`mfem::Array<int> gsl_code`) to indicate weather
 the point was found inside an element (`gsl_code[j] = 0`), on the edge/face of an
 element (`gsl_code[j] = 1`), or not found at all (`gsl_code[j] = 2`) for the case
 when the point is located outside the mesh.
@@ -56,7 +56,7 @@ the `setup` phase.
 
 For convenience, `FindPointsGSLIB` class provides methods such as
 `FindPointsGSLIB::Interpolate(mesh, xyz, u, ui)` which combines the three steps
-described above (setup, finding the computatational coordinates of the sought points, and
+described above (setup, finding the computational coordinates of the sought points, and
 interpolation) into a single method. Please see the [class definition](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45)
 for more details.
 
@@ -65,7 +65,7 @@ The `gslib` miniapps demonstrate several application of `FindPointsGSLIB`:
 
 * [findpts/pfindpts](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp)
 miniapps demonstrate high-order interpolation of a function in `H1`, `L2`, `H(div)`, or `H(curl)` at an
-arbitrary set of of points in physical space.
+arbitrary set of points in physical space.
 
 * [field-diff](https://github.com/mfem/mfem/blob/master/miniapps/gslib/field-diff.cpp)
 miniapp demonstrates comparison of grid functions defined on two
@@ -79,7 +79,7 @@ on to another mesh.
 miniapp demonstrates use of overlapping Schwarz method to
 solve the Poisson problem in overlapping meshes. Here, we use `FindPointsGSLIB` to
 transfer solution between overlapping meshes to enforce Dirichlet conditions
-at the interdomain boundaries.
+at the inter-domain boundaries.
 
 * [cht](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp)
 Navier miniapp demonstrates how a conjugate heat transfer problem can be

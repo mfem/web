@@ -3,13 +3,13 @@
 This is a growing collection of "how-to" articles on topics encountered
 by our users in practice.
 
-Please feel free to [suggest](https://github.com/mfem/mfem/issues/new?labels=howto) a missing topic!
+*Please feel free to [suggest](https://github.com/mfem/mfem/issues/new?labels=howto) a missing topic!*
 
-[Search](../search.md) articles...
+[🔎 Search](../search.md) the articles...
 
 
 ### Build, Install, and Test
-- [Overview of MFEM Build and Test System](build-systems.md)
+- [Overview of the MFEM Build and Test System](build-systems.md)
 - [Install MFEM with Spack](install-with-spack.md)
 
 
@@ -31,4 +31,3 @@ Please feel free to [suggest](https://github.com/mfem/mfem/issues/new?labels=how
 ### Boundaries
 - [Compute Outer Normals of Boundary Elements](outer_normals.md)
 - [Using Periodic Boundaries](periodic-boundaries.md)
-

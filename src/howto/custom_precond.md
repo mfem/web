@@ -1,9 +1,9 @@
-# HowTo:  Create a custom preconditoner using only matrix actions
+# HowTo:  Create a custom preconditioner using only matrix actions
 
-For many problems of interest the off the shelf preconditioners are insufficient and 
-something more taylored to the equations of interest is required.  MFEM has a flexible 
+For many problems of interest the off the shelf preconditioners are insufficient and
+something more tailored to the equations of interest is required.  MFEM has a flexible
 approach to defining preconditioners enabled by deriving from the existing Solver
-class and overridding the necessesary methods to define the action.  Se the following
+class and overriding the necessary methods to define the action.  Se the following
 example:
 
 
@@ -13,8 +13,8 @@ example:
 class SumSolver : mfem::Solver
 {
   private:
-    const mfem::Operator *M;		//Since these are Operators only their
-    const mfem::Operator *Ainv;		//actions need to be defined
+    const mfem::Operator *M;            //Since these are Operators only their
+    const mfem::Operator *Ainv;         //actions need to be defined
 
   public:
     SumSolver(const mfem::Operator *M_, const mfem::Operator *Ainv_)
@@ -33,10 +33,10 @@ class SumSolver : mfem::Solver
       y = 0.0;
       mfem::Vector M_x(M->Height());
       mfem::Vector Ainv_x(Ainv->Height());
-      M->Mult(x, M_x);			// M_x = A x
-      Ainv->Mult(x, Ainv_x);	// Ainv_x = Ainv x
-      y.Add(1.0, M_x);			// y += M_x
-      y.Add(1.0, Ainv_x);		// y += Ainv_x
+      M->Mult(x, M_x);                  // M_x = A x
+      Ainv->Mult(x, Ainv_x);    // Ainv_x = Ainv x
+      y.Add(1.0, M_x);                  // y += M_x
+      y.Add(1.0, Ainv_x);               // y += Ainv_x
     };
 
     void SetOperator(const Operator &op) { M = &op;};
@@ -45,8 +45,8 @@ class SumSolver : mfem::Solver
 ```
 
 In this example we defined a new MFEM solver that can be applies as a preconditioner for a broader
-solution.  In this case we demonstrated an example where we have a matrix M, the action of the inverse 
-of a matrix A, and we want to define the action of a preconditioner that is the sum of the two.  In this 
+solution.  In this case we demonstrated an example where we have a matrix M, the action of the inverse
+of a matrix A, and we want to define the action of a preconditioner that is the sum of the two.  In this
 case we cannot simply sum the matrices to form the new preconditioner because we no access to the elements
 of Ainv.  As you can see this approach is quite flexible and can be utilized to create custom preconditioners
 of arbitrary complexity.

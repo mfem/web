@@ -47,7 +47,7 @@ nav:
   - 'Doxygen': dox.md
   - 'Publications': publications.md
   - 'About': about.md
-  - 'Search...': search.md
+  - '🔎 Search...': search.md
 - Gallery: gallery.md
 - Download: download.md
 

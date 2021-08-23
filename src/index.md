@@ -30,7 +30,7 @@ Date         | Message
 Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
+Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 ## Latest Release
 

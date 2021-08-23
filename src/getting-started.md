@@ -7,7 +7,7 @@ We recommend that new users start with these articles:
 - [Building MFEM](building.md)
 - [Serial Tutorial](serial-tutorial.md)
 - [Parallel Tutorial](parallel-tutorial.md)
-- [Browse All Examples](examples.md)
+- [Browse Example Codes](examples.md)
 
 ### Code Documentation
 
