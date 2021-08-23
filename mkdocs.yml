@@ -57,7 +57,6 @@ theme:
   features:
     - search.suggest
 
-
 extra:
   include_next_prev: false  # turn off next/previous buttons
 
@@ -65,27 +64,15 @@ plugins:
   - search
   - exclude-search:
       exclude:
-        # TODO: some pages like 'download', 'about' should probably be excluded, but why exclude many of the docs?
-        - about.md
-        - building.md
+        # List of pages that will not be searched
         - code-overview.md
-        - coefficient.md
         - download.md
-        - dox.md
-        - examples.md
         - features.md
-        - gallery.md
         - index.md
-        - lininteg.md
-        - lininterp.md
-        - mesh-format-v1.x.md
-        - news.md
-        - performance.md
-        - publications.md
         - search.md
-        - tools.md
-        - toys.md
-        - tperformance.md
+	- tperformance.md
+
+# Currently not used
 # - doxygen:
 #     tryclone: yes
 #     packages:
@@ -93,6 +80,5 @@ plugins:
 #           url: ../mfem_master
 #           config: doc/config.in
 #           workdir: .
-
 
 google_analytics: ['UA-101697-3', 'mfem.org']
