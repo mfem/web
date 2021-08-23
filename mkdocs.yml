@@ -14,10 +14,21 @@ remote_name: origin
 nav:
 - Home: index.md
 - Features: features.md
-- Getting Started:
-  - 'Building MFEM': building.md
-  - 'Serial Tutorial': serial-tutorial.md
-  - 'Parallel Tutorial': parallel-tutorial.md
+- Examples:
+  - 'Example Codes': examples.md
+  - 'Electromagnetics': electromagnetics.md
+  - 'Fluid Dynamics': fluids.md
+  - 'Meshing': meshing-miniapps.md
+  - 'Tools': tools.md
+  - 'Toys': toys.md
+- Documentation:
+  - '_News': news.md   # pages starting with '_' are hidden from the menu
+  - 'Getting Started': getting-started.md
+  - '_Building MFEM': building.md
+  - '_Serial Tutorial': serial-tutorial.md
+  - '_Parallel Tutorial': parallel-tutorial.md
+  - '_Code Overview': code-overview.md
+  - 'HowTo Articles': howto/howto-index.md
   - 'Finite Elements': fem.md
   - '_Primal and Dual Vectors': pri-dual-vec.md
   - '_Bilinear Form Integrators': bilininteg.md
@@ -26,26 +37,17 @@ nav:
   - '_Nonlinear Form Integrators': nonlininteg.md
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
-  - '_Boundary Conditions': fem_bc.md  
-- Examples: 
-  - 'Examples Codes': examples.md
-  - 'E&M Miniapps': electromagnetics.md
-  - 'Fluids Miniapps': fluids.md  
-  - 'Tools': tools.md
-  - 'Toys': toys.md
-- Docs:
-  - '_News': news.md   # pages starting with '_' are hidden from the menu
-  - 'Doxygen': dox.md
-  - 'HowTo Articles': howto/howto-index.md
-  - 'Mesh Formats': meshing.md
-  - '_Mesh Formats': mesh-formats.md
-  - '_Mesh Format v1.x': mesh-format-v1.x.md
+  - '_Boundary Conditions': fem_bc.md
   - 'Performance': performance.md
-  - 'GPU Support': gpu-tips-n-tricks.md
   - '_High Performance Templated Code': tperformance.md
-  - '_Code Overview': code-overview.md
+  - 'GPU Support': gpu-support.md
+  - 'Mesh Formats': mesh-formats.md
+  - '_Mesh Format v1.0': mesh-format-v1.0.md
+  - '_Mesh Format v1.x': mesh-format-v1.x.md
+  - 'Doxygen': dox.md
   - 'Publications': publications.md
   - 'About': about.md
+  - '🔎 Search...': search.md
 - Gallery: gallery.md
 - Download: download.md
 
@@ -63,17 +65,18 @@ plugins:
   - search
   - exclude-search:
       exclude:
+        # TODO: some pages like 'download', 'about' should probably be excluded, but why exclude many of the docs?
         - about.md
         - building.md
         - code-overview.md
-        - coefficient.md 
+        - coefficient.md
         - download.md
         - dox.md
         - examples.md
         - features.md
         - gallery.md
         - index.md
-        - lininteg.md 
+        - lininteg.md
         - lininterp.md
         - mesh-format-v1.x.md
         - news.md
@@ -88,7 +91,7 @@ plugins:
 #     packages:
 #       - doxygen:
 #           url: ../mfem_master
-#           config: doc/config.in  
+#           config: doc/config.in
 #           workdir: .
 
 

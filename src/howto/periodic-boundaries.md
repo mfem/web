@@ -48,7 +48,7 @@ topology. An example of creating this vertex mapping in the case of a line segme
 [here](#line-segment).
 
 It is often more convenient to describe the periodicity constraints in terms of _translation
-vectors_. Any two vertices that are coindicent under any of the given translation vectors will be
+vectors_. Any two vertices that are coincident under any of the given translation vectors will be
 considered topologically identical. MFEM can generate a vertex mapping from these translation
 vectors using the `Mesh::CreatePeriodicVertexMapping`. An example using this functionality to create
 a mesh of the periodic square is shown [here](#square).

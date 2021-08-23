@@ -27,21 +27,21 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Mar 18, 2021 | [Postdoc position](https://www.llnl.gov/join-our-team/careers/find-your-job/all/mfem/3743990000038667) using MFEM.
-Feb 16, 2021 | New page on [GPU performance](gpu-tips-n-tricks.md).
-Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
-Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).
+Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
+Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
+Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
+Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.2.tgz**
-</button>](https://bit.ly/mfem-4-2)
+**Download mfem-4.3.tgz**
+</button>](https://bit.ly/mfem-4-3)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM)
 
@@ -50,12 +50,12 @@ Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHA
 [Building MFEM](building.md)
 ┊ [Serial Tutorial](serial-tutorial.md)
 ┊ [Parallel Tutorial](parallel-tutorial.md)
-┊ [GPU tips](gpu-tips-n-tricks.md)
+┊ [GPU tips](gpu-support.md)
 
 [Finite Elements](fem.md)
 ┊ [Electromagnetics](electromagnetics.md)
 ┊ [Fluids](fluids.md)
-┊ [Meshing](meshing.md)
+┊ [Meshing](meshing-miniapps.md)
 ┊ [Performance](performance.md)
 ┊ [Tools](tools.md)
 
@@ -79,6 +79,10 @@ See the [About](about.md) page for citation information.
 <div class="col-md-12"></div>
 
 
+[comment]: # (Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).)
+[comment]: # (Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).)
+[comment]: # (Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).)
+[comment]: # (Mar 18, 2021 | [Postdoc position](https://www.llnl.gov/join-our-team/careers/find-your-job/all/mfem/3743990000038667) using MFEM.)
 [comment]: # (Jul 11, 2020 | MFEM paper [appeared](http://doi.org/10.1016/j.camwa.2020.06.009) in CAMWA.)
 [comment]: # (Jun 24, 2020 | MFEM [video](https://www.youtube.com/watch?v=Rpccj3NopSE) available on YouTube.)
 [comment]: # (Jun 8, 2020  | ECP [podcast](https://www.exascaleproject.org/major-update-of-the-mfem-finite-element-library-broadens-gpu-support/) about mfem-4.1.)

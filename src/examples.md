@@ -33,7 +33,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
 <div class="row" markdown="1">
 <div class="col-sm-6 col-md-2 small" markdown="1">
-   <h5><strong>Application(PDE)</strong></h5>
+   <h5><strong>Application (PDE)</strong></h5>
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
@@ -131,7 +131,7 @@ versions._
 
 <div id="ex1" markdown="1">
 ##Example 1: Laplace Problem
-<a href="https://glvis.org/live/?stream=../data/ex1.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
 </a>
 
@@ -156,14 +156,14 @@ and HPC versions: [performance/ex1.cpp](https://github.com/mfem/mfem/blob/master
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 , a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi) and a Ginkgo modification
 in [examples/ginkgo](https://github.com/mfem/mfem/tree/master/examples/ginkgo).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported._
+Partial assembly and [GPU devices](gpu-support.md) are supported._
 <div style="clear:both;"></div>
 <br></div>
 
 
 <div id="ex2" markdown="1">
 ##Example 2: Linear Elasticity
-<a href="https://glvis.org/live/?stream=../data/ex2.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex2.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex2.png">
 </a>
 
@@ -199,7 +199,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex3" markdown="1">
 ##Example 3: Definite Maxwell Problem
-<a href="https://glvis.org/live/?stream=../data/ex3.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex3.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex3.png">
 </a>
 
@@ -219,7 +219,7 @@ also illustrated.
 _The example has a serial ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp))
 and a parallel ([ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing examples 1-2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -245,7 +245,7 @@ Bilinear form hybridization and static condensation are also illustrated.
 _The example has a serial ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp))
 and a parallel ([ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing examples 1-3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -253,7 +253,7 @@ We recommend viewing examples 1-3 before viewing this example._
 
 <div id="ex5" markdown="1">
 ##Example 5: Darcy Problem
-<a href="https://glvis.org/live/?stream=../data/ex5.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex5.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex5.png">
 </a>
 
@@ -305,7 +305,7 @@ _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/ex
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
 It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
 and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -361,7 +361,7 @@ We recommend viewing examples 1-5 before viewing this example._
 
 <div id="ex9" markdown="1">
 ##Example 9: DG Advection
-<a href="https://glvis.org/live/?stream=../data/ex9.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex9.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex9.png">
 </a>
 
@@ -843,7 +843,7 @@ spaces, with three variants:
 Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
 divergence in the appropriate spaces, comparing the errors in each case.
 
-Partial assembly and [GPU devices](gpu-tips-n-tricks.md) are supported.
+Partial assembly and [GPU devices](gpu-support.md) are supported.
 
 _The example has a serial ([ex24.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24.cpp))
 and a parallel ([ex24p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex24p.cpp)) version.
@@ -912,7 +912,7 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex27" markdown="1">
 ##Example 27: Laplace Boundary Conditions
-<a href="https://glvis.org/live/?stream=../data/ex27.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/ex27.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex27.png">
 </a>
 
@@ -960,6 +960,29 @@ system that explicitly includes constraint conditions.
 _The example has a serial ([ex28.cpp](https://github.com/mfem/mfem/blob/master/examples/ex28.cpp))
 and a parallel ([ex28p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex28p.cpp)) version.
 We recommend viewing example 2 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex29" markdown="1">
+##Example 29: Solving PDEs on embedded surfaces
+<img class="floatright" src="../img/examples/ex29.png">
+
+This example demonstrates setting up and solving an anisotropic Laplace problem
+$$-\nabla\cdot(\sigma\nabla u) = 1 \quad\text{in } \Omega$$
+with homogeneous Dirichlet boundary conditions
+$$ u = 0 \quad\text{on } \partial\Omega$$
+where $\Omega$ is a two dimensional curved surface embedded in three
+dimensions and $\sigma$ is an anisotropic diffusion tensor.
+
+The example demonstrates and validates our `DiffusionIntegrator`'s ability to
+properly integrate three dimensional fluxes on a two dimensional domain. Not
+all of our integrators currently support such cases but the
+`DiffusionIntegrator` can be used as a simple example of how extend other
+integrators when necessary.
+
+_The example has a serial ([ex29.cpp](https://github.com/mfem/mfem/blob/master/examples/ex29.cpp))
+and a parallel ([ex29p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex29p.cpp)) version.
+We recommend viewing examples 1 and 7 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1086,7 +1109,7 @@ moving to the miniapps.**_
 
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
-<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
 <img class="floatright" src="../img/examples/mobius-strip.png">
 </a>
 
@@ -1097,7 +1120,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `mobius-strip` mesh in the `data` directory was generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1110,7 +1133,7 @@ moving to the miniapps.**_
 
 <div id="klein-bottle" markdown="1">
 ##Klein Bottle Miniapp
-<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/klein-bottle.saved" target="_blank">
 <img class="floatright" src="../img/examples/klein-bottle.png">
 </a>
 
@@ -1121,7 +1144,7 @@ Manipulating the mesh topology and performing mesh transformation are demonstrat
 
 The `klein-bottle` and `klein-donut` meshes in the `data` directory were generated with this miniapp.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1218,6 +1241,30 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="trimmer" markdown="1">
+##Trimmer Miniapp
+<img class="floatright" src="../img/examples/trimmer-small.png">
+
+This miniapp creates a new mesh file from an existing mesh by trimming away
+elements with selected attributes. Newly exposed boundary elements will be
+assigned new or user specified boundary attributes.
+
+ - The initial mesh can be 2D or 3D
+ - Meshes with high order geometry are supported
+ - Periodic meshes are supported
+ - NURBS meshes are _not_ supported
+
+This miniapp provides another demonstration of how simple meshes can be
+constructed in MFEM.
+
+_This miniapp has only a serial
+([trimmer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/trimmer.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="polar-nc" markdown="1">
 ##Polar-NC Miniapp
 <img class="floatright" src="../img/examples/polar-nc.png">
@@ -1233,7 +1280,7 @@ the mesh ready for parallel non-conforming AMR in MFEM.
 The implementation also demonstrates how to initialize a non-conforming mesh
 on the fly by marking hanging nodes with `Mesh::AddVertexParents`.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1245,7 +1292,7 @@ moving to the miniapps.**_
 
 <div id="shaper" markdown="1">
 ##Shaper Miniapp
-<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/shaper.saved" target="_blank">
 <img class="floatright" src="../img/examples/shaper.png">
 </a>
 
@@ -1257,7 +1304,7 @@ It can be used as a simple initial mesh generator, for example in the case when
 the interface is too complex to describe without local refinement. Both
 conforming and non-conforming refinements are supported.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1269,7 +1316,7 @@ moving to the miniapps.**_
 
 <div id="mesh-explorer" markdown="1">
 ##Mesh Explorer Miniapp
-<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mesh-explorer.saved" target="_blank">
 <img class="floatright" src="../img/examples/mesh-explorer.png">
 </a>
 
@@ -1282,7 +1329,7 @@ mesh. Some of its features are:
 - the ability to simulate parallel partitioning
 - quantitative and visual reports of mesh quality
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has only a serial
@@ -1317,7 +1364,7 @@ the utilized Newton methods are oriented towards avoiding invalid meshes with
 negative Jacobian determinants. Each Newton step requires the inversion of a
 Jacobian matrix, which is done through an inner linear solver.
 
-For more details, please see the [documentation](meshing.md) in the
+For more details, please see the [documentation](meshing-miniapps.md) in the
 `miniapps/meshing` directory.
 
 _The miniapp has a serial
@@ -1331,7 +1378,7 @@ version.
 
 <div id="minimal-surface" markdown="1">
 ##Minimal Surface Miniapp
-<a href="https://glvis.org/live/?stream=../data/minimal-surface.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/minimal-surface.saved" target="_blank">
 <img class="floatright" width="350" src="../img/examples/min-surf-costa-amr-small.png">
 </a>
 
@@ -1341,7 +1388,7 @@ Options to solve the minimal surface equations of both parametric surfaces as we
 surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
 number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
 
-For more details, please see the [documentation](meshing.md) in the `miniapps/meshing` directory.
+For more details, please see the [documentation](meshing-miniapps.md) in the `miniapps/meshing` directory.
 
 _The miniapp has a serial
 ([minimal-surface.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp)) and a
@@ -1405,7 +1452,7 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 
 <div id="distance" markdown="1">
 ##Distance Solver Miniapp
-<a href="https://glvis.org/live/?stream=../data/distance.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/distance.saved" target="_blank">
 <img class="floatright" width="250" src="../img/examples/distance.png">
 </a>
 
@@ -1425,10 +1472,31 @@ _**We recommend that new users start with the example codes before moving to the
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="shifted" markdown="1">
+##Shifted Diffusion Miniapp
+<a href="https://glvis.org/live/?stream=../data/streams/shifted.saved" target="_blank">
+<img class="floatright"  width="500" src="../img/examples/shifted.png">
+</a>
+
+The `diffusion` miniapp, found in the `miniapps/shifted` directory, demonstrates
+the capability to formulate a boundary value problem using a surrogate
+computational domain. The method uses a distance function to the true boundary
+to enforce Dirichlet boundary conditions on the (non-aligned) mesh faces,
+therefore "shifting" the location where boundary conditions are imposed. The
+implementation in the miniapp is a high-order extension of the
+second-generation
+[shifted boundary method](https://www.sciencedirect.com/science/article/pii/S0045782520305260).
+
+_The miniapp has only a parallel
+([diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="laghos" markdown="1">
 ##Laghos Miniapp
-<a href="https://glvis.org/live/?stream=../data/laghos.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/laghos.saved" target="_blank">
 <img class="floatright" src="../img/examples/laghos.png">
 </a>
 
@@ -1474,7 +1542,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Laghos](http
 
 <div id="remhos" markdown="1">
 ##Remhos Miniapp
-<a href="https://glvis.org/live/?stream=../data/remhos.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/remhos.saved" target="_blank">
 <img class="floatright" width="450" src="../img/examples/remhos.png">
 </a>
 
@@ -1516,7 +1584,7 @@ _This is an external miniapp, available at [https://github.com/CEED/Remhos](http
 
 <div id="navier" markdown="1">
 ##Navier Miniapp
-<a href="https://glvis.org/live/?stream=../data/navier.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/navier.saved" target="_blank">
 <img class="floatright" width="300" style="border:1px solid black" src="../img/examples/navier_shear4.png">
 </a>
 
@@ -1637,7 +1705,7 @@ function showElement(id, show)
     for (i = 0; i < divs.length; i++)
     {
        if (divs.item(i).id == id) {
-	  divs.item(i).style.display = show ? "block" : "none";
+          divs.item(i).style.display = show ? "block" : "none";
        }
     }
     return show ? 1 : 0;
@@ -1696,8 +1764,9 @@ function update()
    + showElement("ex24", (graddiv) && (h1 || hcurl) && (galerkin || pa) && pcg)
    + showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams))
    + showElement("ex26", diffusion && h1 && (galerkin || pa) && (jacobi || pcg || amg))
-   + showElement("ex27", (elasticity || maxwell || conduction || compressibleflow) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
+   + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
+   + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -1711,6 +1780,7 @@ function update()
    + showElement("toroid", meshing && all2 && all3 && all4)
    + showElement("twist", meshing && all2 && all3 && all4)
    + showElement("extruder", meshing && all2 && all3 && all4)
+   + showElement("trimmer", meshing && all2 && all3 && all4)
    + showElement("polar-nc", meshing && all2 && all3 && all4)
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
@@ -1721,6 +1791,7 @@ function update()
 
    // shifted methods miniapps
    + showElement("distance", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
+   + showElement("shifted", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
 
    // external miniapps
    + showElement("laghos", (compressibleflow) && (l2 || h1) && (galerkin || dg || pa) && (rk))
@@ -1741,8 +1812,8 @@ function initCombos()
    query.split("&").forEach(function(id)
    {
       if (id) {
-	 opt = document.getElementById(id);
-	 if (opt) { opt.selected = true; }
+         opt = document.getElementById(id);
+         if (opt) { opt.selected = true; }
       }
    });
 }
