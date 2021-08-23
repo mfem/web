@@ -70,7 +70,7 @@ plugins:
         - features.md
         - index.md
         - search.md
-	- tperformance.md
+        - tperformance.md
 
 # Currently not used
 # - doxygen:
