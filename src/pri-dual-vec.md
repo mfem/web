@@ -188,7 +188,7 @@ Which is the better option?  As always, there are trade-offs.  The answer
 depends on many variables; the complexities of the `BilinearFormIntegrator` and
 the `LinearFormIntegrator`, the complexity of other coefficients that may be
 present, the order of the basis functions, can the bilinear form be reused or
-is this a one-time calculation, whether the code runs on a CPU or [GPU](gpu-tips-n-tricks.md), etc. On
+is this a one-time calculation, whether the code runs on a CPU or [GPU](gpu-support.md), etc. On
 some architectures the motion of data through memory during a matrix-vector
 multiplication may be expensive enough that using a `LinearForm` and
 recomputing the integrals is more efficient.

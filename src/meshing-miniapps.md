@@ -1,25 +1,4 @@
-# Meshing
-
-This page provides a brief description of MFEM's mesh formats and meshing mini applications.
-
-## Mesh formats
-
-MFEM supports a number of mesh formats, including:
-
-  - MFEM's [mesh v1.0 format](mesh-formats.md#mfem-mesh-v10) for [straight](mesh-formats.md#straight-meshes) meshes,
-  - MFEM's [mesh v1.0 format](mesh-formats.md#curvilinear-and-more-general-meshes) for [arbitrary high-order curvilinear](mesh-format-v1.x.md) and more general meshes,
-  - MFEM's mesh v1.2 format, which adds support for parallel meshes,
-  - MFEM's [NC mesh v1.0 format](mesh-formats.md#mfem-nc-mesh-v10), supporting non-conforming (AMR) meshes,
-  - MFEM's format for [NURBS](mesh-formats.md#nurbs-meshes) meshes,
-  - The [VTK](mesh-formats.md#curvilinear-vtk-meshes) unstructured mesh format, for triangular, quadrilateral, tetrahedral and hexahedral meshes,
-  - The [Gmsh](http://gmsh.info/) ASCII and binary formats for 2D and 3D meshes.
-  - The [CUBIT](https://cubit.sandia.gov/) meshes through the Genesis (NetCDF) binary format.
-  - The [NETGEN](http://sourceforge.net/projects/netgen-mesher/) triangular and tetrahedral mesh formats,
-  - The [TrueGrid](http://www.truegrid.com/) hexahedral mesh format.
-
-Detailed description of these formats can be found on the [mesh formats](mesh-formats.md) page. These formats are also supported by MFEM's native visualization tool, [GLVis](http://glvis.org/).
-
-## Meshing miniapps
+# Meshing Miniapps
 
 The `miniapps/meshing` directory contains a collection of meshing-related miniapps based on MFEM.
 
@@ -35,7 +14,7 @@ The current meshing miniapps are described below.
 This miniapp generates various Mobius strip-like surface meshes. It is a good
 way to generate complex surface meshes.
 
-<a href="https://glvis.org/live/?stream=../data/mobius-strip.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
 <img src="../img/examples/mobius-strip.png">
 </a>
 
@@ -48,7 +27,7 @@ performing mesh transformation are demonstrated. The `mobius-strip` mesh in the
 This miniapp generates three types of Klein bottle surfaces. It is similar to
 the mobius-strip miniapp.
 
-<a href="https://glvis.org/live/?stream=../data/klein-bottle.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/klein-bottle.saved" target="_blank">
 <img src="../img/examples/klein-bottle.png">
 </a>
 
@@ -124,7 +103,7 @@ This miniapp performs multiple levels of adaptive mesh refinement to resolve the
 interfaces between different "materials" in the mesh, as specified by a given
 material() function.
 
-<a href="https://glvis.org/live/?stream=../data/shaper.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/shaper.saved" target="_blank">
 <img src="../img/examples/shaper.png">
 </a>
 
@@ -137,7 +116,7 @@ conforming and non-conforming refinements are supported.
 This miniapp is a handy tool to examine, visualize and manipulate a given
 mesh.
 
-<a href="https://glvis.org/live/?stream=../data/mesh-explorer.saved" target="_blank">
+<a href="https://glvis.org/live/?stream=../data/streams/mesh-explorer.saved" target="_blank">
 <img src="../img/examples/mesh-explorer.png">
 </a>
 

@@ -49,7 +49,7 @@ MFEM supports MPI-based parallelism throughout the library, and can readily be u
 
  - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
- - Support for hardware devices, such as [GPUs](gpu-tips-n-tricks.md), and programming models, such as CUDA, HIP, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
+ - Support for hardware devices, such as [GPUs](gpu-support.md), and programming models, such as CUDA, HIP, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
 
 A serial MFEM application typically requires [minimal](http://mfem.github.io/doxygen/html/examples_2ex1_8cpp_source.html) [changes](http://mfem.github.io/doxygen/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](http://mfem.github.io/doxygen/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](examples.md?pa) and many [linear algebra](http://mfem.github.io/doxygen/html/vector_8cpp_source.html) and [finite element](http://mfem.github.io/doxygen/html/bilininteg__diffusion_8cpp_source.html) operations is available.
 
@@ -126,6 +126,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Interpolation](http://mfem.github.io/doxygen/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Distance](http://mfem.github.io/doxygen/html/distance_8cpp_source.html): finite element distance solver,
+ - [Shifted Diffusion](http://mfem.github.io/doxygen/html/shifted_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
  - [Minimal Surface](http://mfem.github.io/doxygen/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](http://mfem.github.io/doxygen/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,

@@ -14,12 +14,21 @@ remote_name: origin
 nav:
 - Home: index.md
 - Features: features.md
-- Examples: examples.md
+- Examples:
+  - 'Example Codes': examples.md
+  - 'Electromagnetics': electromagnetics.md
+  - 'Fluid Dynamics': fluids.md
+  - 'Meshing': meshing-miniapps.md
+  - 'Tools': tools.md
+  - 'Toys': toys.md
 - Documentation:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
-  - 'Building MFEM': building.md
-  - 'Serial Tutorial': serial-tutorial.md
-  - 'Parallel Tutorial': parallel-tutorial.md
+  - 'Getting Started': getting-started.md
+  - '_Building MFEM': building.md
+  - '_Serial Tutorial': serial-tutorial.md
+  - '_Parallel Tutorial': parallel-tutorial.md
+  - '_Code Overview': code-overview.md
+  - 'HowTo Articles': howto/howto-index.md
   - 'Finite Elements': fem.md
   - '_Primal and Dual Vectors': pri-dual-vec.md
   - '_Bilinear Form Integrators': bilininteg.md
@@ -29,27 +38,47 @@ nav:
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md
-  - 'Electromagnetics': electromagnetics.md
-  - 'Fluids': fluids.md
-  - 'Meshing': meshing.md
-  - '_Mesh Formats': mesh-formats.md
-  - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Performance': performance.md
-  - 'GPU Support': gpu-tips-n-tricks.md
   - '_High Performance Templated Code': tperformance.md
-  - '_Code Overview': code-overview.md
-  - 'Tools': tools.md
-  - 'Toys': toys.md
+  - 'GPU Support': gpu-support.md
+  - 'Mesh Formats': mesh-formats.md
+  - '_Mesh Format v1.0': mesh-format-v1.0.md
+  - '_Mesh Format v1.x': mesh-format-v1.x.md
+  - 'Doxygen': dox.md
   - 'Publications': publications.md
   - 'About': about.md
+  - '🔎 Search...': search.md
 - Gallery: gallery.md
 - Download: download.md
 
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
   custom_dir: template
+  features:
+    - search.suggest
 
 extra:
   include_next_prev: false  # turn off next/previous buttons
+
+plugins:
+  - search
+  - exclude-search:
+      exclude:
+        # List of pages that will not be searched
+        - code-overview.md
+        - download.md
+        - features.md
+        - index.md
+        - search.md
+        - tperformance.md
+
+# Currently not used
+# - doxygen:
+#     tryclone: yes
+#     packages:
+#       - doxygen:
+#           url: ../mfem_master
+#           config: doc/config.in
+#           workdir: .
 
 google_analytics: ['UA-101697-3', 'mfem.org']

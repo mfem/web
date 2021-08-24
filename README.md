@@ -2,13 +2,14 @@
 
 This repo contains the MFEM website [MkDocs](http://www.mkdocs.org/) sources.
 
-To make changes to the website:
+To make changes to the website you will need an install of Python 3 with the following libraries:
 
-- use MkDocs v1.0.4 with Markdown v2.6.8, PyYAML v3.13 and futures v3.3.0, e.g.
-  * `pip install --upgrade --user mkdocs==1.0.4`
-  * `pip install --upgrade --user Markdown==2.6.8`
-  * `pip install --upgrade --user PyYAML==3.13`
-  * `pip install --upgrade --user futures==3.3.0`
+- use the latest versions of MkDocs, Markdown, PyYAML and mkdocs-exclude-search:
+  * `pip install --upgrade --user mkdocs`
+  * `pip install --upgrade --user Markdown`
+  * `pip install --upgrade --user PyYAML`
+  * `pip install --upgrade --user mkdocs-exclude-search`
+- depending on your system you may need `pip3` above and specific versions, e.g. `mkdocs==1.2` and `mkdocs-exclude-search==0.5.2`
 - clone this repo,
 - edit or add some ```.md``` files (you may also need to update the ```mkdocs.yml``` config),
 - preview locally with ```mkdocs serve``` (Windows users may need to specify a port, such as ```mkdocs serve --dev-addr 127.0.0.1:4000```),
@@ -35,6 +36,4 @@ Checklist for adding miniapps:
 - Add an image file in `img/examples/`, e.g. `img/examples/shaper.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
 - Add a "showElement" line with the appropriate categories for the miniapp in the `update` function at the end of `examples.md`
-- If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing.md`
-
-
+- If the miniapp is part of a group, e.g. meshing miniapps, add it also to `meshing-miniapps.md`

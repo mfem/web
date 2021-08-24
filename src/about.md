@@ -5,7 +5,7 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 Please cite with:
 ```c
 @article{mfem,
-  title = {{MFEM}: A Modular Finite Element Library},
+  title = {{MFEM}: A Modular Finite Element Methods Library},
   author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
             J. Cerveny V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and
             M. Stowell and V. Tomov and I. Akkerman and J. Dahm and D. Medina and S. Zampini},
@@ -63,7 +63,7 @@ Please cite with:
 - [Peter Maginot](http://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
 - [David Medina](https://github.com/dmed256)
 - [Mark Miller](https://people.llnl.gov/miller86)
-- [Ketan Mittal](http://kmittal2.web.engr.illinois.edu/)
+- [Ketan Mittal](https://people.llnl.gov/mittal3)
 - [Jan Nikl](https://github.com/najlkin)
 - [Geoffrey Oxberry](https://github.com/goxberry)
 - [Will Pazner](https://pazner.github.io/)
