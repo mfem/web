@@ -43,7 +43,7 @@ Please cite with:
 - [Thomas Brunner](http://people.llnl.gov/brunner6)
 - [Jean-Sylvain Camier](http://people.llnl.gov/camier1)
 - [Robert Carson](https://scholar.google.com/citations?user=RpyyzXkAAAAJ&hl=en)
-- [Eric Chin](https://github.com/ebchin)
+- [Eric Chin](https://scholar.google.com/citations?user=ix4Y2oMAAAAJ)
 - [Lenka Červená](https://github.com/cervenal)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Dylan Copeland](http://people.llnl.gov/copeland11)
