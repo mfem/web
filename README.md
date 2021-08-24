@@ -4,17 +4,16 @@ This repo contains the MFEM website [MkDocs](http://www.mkdocs.org/) sources.
 
 To make changes to the website you will need an install of Python 3 with the following libraries:
 
-- use the latest versions of MkDocs, Markdown, PyYAML and mkdocs-exclude-search:
-  * `pip install --upgrade --user mkdocs`
-  * `pip install --upgrade --user Markdown`
+- use MkDocs v1.0.4 with Markdown v3.0 and the latest PyYAML and mkdocs-exclude-search:
+  * `pip install --upgrade --user mkdocs==1.0.4`
+  * `pip install --upgrade --user Markdown==3.0`
   * `pip install --upgrade --user PyYAML`
   * `pip install --upgrade --user mkdocs-exclude-search`
-- depending on your system you may need `pip3` above and specific versions, e.g. `mkdocs==1.2` and `mkdocs-exclude-search==0.5.2`
+- newer versions may not generate correct front page (to see the installed version, use `pip show mkdocs`)
 - clone this repo,
-- edit or add some ```.md``` files (you may also need to update the ```mkdocs.yml``` config),
-- preview locally with ```mkdocs serve``` (Windows users may need to specify a port, such as ```mkdocs serve --dev-addr 127.0.0.1:4000```),
-- publish with ```mkdocs gh-deploy```.
-
+- edit or add some `.md` files (you may also need to update the `mkdocs.yml` config),
+- preview locally with `mkdocs serve` (Windows users may need to specify a port, such as `mkdocs serve --dev-addr 127.0.0.1:4000`),
+- publish with `mkdocs gh-deploy`.
 
 Checklist for adding examples:
 
@@ -26,9 +25,9 @@ Checklist for adding examples:
 To add a new Application / Finite Elements / Discretization / Solver category:
 
 - Add an `<option>` tag at the top of `examples.md`, e.g.
-  ```<option id="wave">Wave</option>```
+  `<option id="wave">Wave</option>`
 - Use the `id` in filter expressions of appropriate examples in `update`, e.g.
-  ```showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));```
+  `showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));`
 
 Checklist for adding miniapps:
 
