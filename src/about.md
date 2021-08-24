@@ -101,7 +101,7 @@ Please cite with:
 - [Daniel White](http://people.llnl.gov/white37)
 - [Brad Whitlock](https://github.com/BradWhitlock)
 - [Jonathan Wong](https://github.com/jonwong12)
-- [George Zagaris](https://scholar.google.com/citations?user=vKxIM6sAAAAJ&hl=en)
+- [George Zagaris](https://github.com/gzagaris)
 - [Stefano Zampini](https://ecrc.kaust.edu.sa/Pages/People.aspx)
 
 
