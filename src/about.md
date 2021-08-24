@@ -94,7 +94,7 @@ Please cite with:
 - [Stanimire Tomov](http://icl.cs.utk.edu/~tomov)
 - [Vladimir Tomov](http://people.llnl.gov/tomov2)
 - [Jean-Étienne Tremblay](https://github.com/jetremblay)
-- [Arturo Vargas](https://artv3.github.io/
+- [Arturo Vargas](https://artv3.github.io)
 - [Umberto Villa](http://users.ices.utexas.edu/~uvilla)
 - [Chris Vogl](https://people.llnl.gov/vogl2)
 - [Kenneth Weiss](http://people.llnl.gov/weiss27)
