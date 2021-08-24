@@ -36,7 +36,7 @@ Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 [New features](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG)
 ┊ [Examples](examples.md)
-┊ [Code documentation](http://mfem.github.io/doxygen/html/index.html)
+┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
