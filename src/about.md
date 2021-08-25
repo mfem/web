@@ -48,7 +48,7 @@ Please cite with:
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Dylan Copeland](http://people.llnl.gov/copeland11)
 - [Johann Dahm](http://jdahm.me)
-- [William Dawn](https://scholar.google.com/citations?user=6m4SWJEAAAAJ&hl=en)
+- [William Dawn](https://wcdawn.github.io)
 - [Veselin Dobrev](http://people.llnl.gov/dobrev1)
 - [Daniel Drzisga](https://www.drzisga.dev)
 - [Yohann Dudouit](https://people.llnl.gov/dudouit1)
