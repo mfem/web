@@ -46,7 +46,7 @@ Specifically, MFEM supports:
 - Meshes with [high-order Lagrange
   elements](https://blog.kitware.com/modeling-arbitrary-order-lagrange-finite-elements-in-the-visualization-toolkit/).
 - Mixed meshes with all element types.
-- `XML` format with inline or appended bindary data, including `zlib` compression.
+- `XML` format with inline or appended binary data, including `zlib` compression.
 
 ### Gmsh Mesh Formats
 
