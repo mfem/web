@@ -43,10 +43,10 @@ Wiki](https://vtk.org/Wiki/VTK_XML_Formats).
 
 Specifically, MFEM supports:
 
-- VTK meshes with [high-order Lagrange
+- Meshes with [high-order Lagrange
   elements](https://blog.kitware.com/modeling-arbitrary-order-lagrange-finite-elements-in-the-visualization-toolkit/).
 - Mixed meshes with all element types.
-- `XML` format with inline or appended data, including `zlib` compression.
+- `XML` format with inline or appended bindary data, including `zlib` compression.
 
 ### Gmsh Mesh Formats
 
