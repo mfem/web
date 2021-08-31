@@ -60,5 +60,11 @@ which is not compatible with MFEM. Users should either specify
 `Mesh.MshFileVersion = 2.2;` in their geometry file or run Gmsh with `-format
 msh22` from the command line.
 
-<i class="fa fa-warning" style="color:red"></i>&nbsp;
-Additionally, all physical groups should have strictly positive tag numbers.
+<i class="fa fa-info-circle" style="color:green"></i>&nbsp;
+Elements' _physical tags_ in Gmsh correspond to their _attribute numbers_ in
+MFEM. MFEM only supports strictly positive (&#8805; 1) attributes, so users
+should be sure to define all physical groups with strictly positive tag numbers.
+The one exception to this is in cases where all elements have physical tag zero
+(which happens by default in Gmsh when no physical groups are defined). In this
+case, MFEM will reassign all the elements to have attribute number 1 instead of
+failing to read the mesh.
