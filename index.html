@@ -259,7 +259,55 @@
             
 
 <div class="col-md-6">
-<p><a href="gallery/"><img alt="MFEM logo" src="img/logo-300.png" /></a></p>
+<div class="carousel slide" data-ride="carousel" id="myCarousel" style="margin-top:-10px;margin-bottom:0px;height:360px;">
+<p><!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol></p>
+<p><!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="gallery/"><img class="d-block w-100" src="img/logo-300.png" ></a>
+    </div>
+    <div class="item">
+      <a href="gallery/"><img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png"></a>
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        Electromagnetic wave propagation in the <a href="https://nstx-u.pppl.gov/overview">NSTX-U</a> tokamak
+      </div>
+    </div>
+    <div class="item">
+      <a href="gallery/"><img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg"></a>
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        High-order multi-material hydrodynamics in the <a href="http://www.llnl.gov/casc/blast">BLAST</a> code
+      </div>
+    </div>
+    <div class="item">
+      <a href="gallery/"><img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png"></a>
+      <div class="carousel-caption d-none" style="margin-top:-10px;">
+        Topology optimization of a drone body using <br> LLNL's <a href="https://str.llnl.gov/2018-03/tortorelli">LiDO code</a>, based on MFEM
+      </div>
+    </div>
+    <div class="item">
+      <a href="gallery/"><img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png"></a>
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        Non-conforming adaptive mesh refinement with parallel load-balancing
+      </div>
+    </div>
+  </div></p>
+<p><!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a></p>
+</div>
 <p>MFEM is a <em>free</em>, <em>lightweight</em>, <em>scalable</em> C++ library for finite element methods.</p>
 <h2 id="features">Features</h2>
 <ul>
@@ -270,10 +318,8 @@ and <a href="features/#higher-order-finite-element-spaces">spaces</a>.</li>
 <li>Scalable from laptops to <a href="features#parallel-scalable-and-gpu-ready">GPU-accelerated</a> supercomputers.</li>
 <li>... and <a href="features/">many more</a>.</li>
 </ul>
-<p>MFEM is used in many projects, including
-<a href="http://www.llnl.gov/casc/blast">BLAST</a>, <a href="https://www.rfscidac4.org/">RF-SciDAC</a>, <a href="http://visit.llnl.gov">VisIt</a>, <a href="https://github.com/llnl/cardioid">Cardioid</a>, <a href="https://xsdk.info/">xSDK</a>, SciDAC/<a href="https://fastmath-scidac.llnl.gov/index.html">FASTMath</a>, and the <a href="http://ceed.exascaleproject.org">Center for Efficient Exascale Discretizations</a> in the <a href="https://exascaleproject.org">Exascale Computing Project</a>.</p>
-<p>See also our <a href="gallery/">Gallery</a>, <a href="publications/">Publications</a> and
-<a href="news/">News</a> pages.</p>
+<p>MFEM is used in many projects, including <a href="http://www.llnl.gov/casc/blast">BLAST</a>, <a href="https://github.com/llnl/cardioid">Cardioid</a>, <a href="http://visit.llnl.gov">VisIt</a>, <a href="https://www.rfscidac4.org/">RF-SciDAC</a>, <a href="https://fastmath-scidac.llnl.gov/index.html">FASTMath</a>, <a href="https://xsdk.info/">xSDK</a>, and <a href="http://ceed.exascaleproject.org">CEED</a> in the <a href="https://exascaleproject.org">Exascale Computing Project</a>.
+See also our <a href="gallery/">Gallery</a>, <a href="publications/">Publications</a> and <a href="news/">News</a> pages.</p>
 </div>
 <div class="col-md-6 news-table">
 <h2 id="news">News</h2>
@@ -314,25 +360,19 @@ and <a href="features/#higher-order-finite-element-spaces">spaces</a>.</li>
 <p><a href="download/">Older releases</a> ┊ <a href="https://github.com/mfem/PyMFEM">Python wrapper</a></p>
 <h2 id="documentation">Documentation</h2>
 <p><a href="building/">Building MFEM</a>
-┊ <a href="serial-tutorial/">Serial Tutorial</a>
-┊ <a href="parallel-tutorial/">Parallel Tutorial</a>
-┊ <a href="gpu-support/">GPU tips</a></p>
-<p><a href="fem/">Finite Elements</a>
-┊ <a href="electromagnetics/">Electromagnetics</a>
-┊ <a href="fluids/">Fluids</a>
-┊ <a href="meshing-miniapps/">Meshing</a>
-┊ <a href="performance/">Performance</a>
-┊ <a href="tools/">Tools</a></p>
+┊ <a href="getting-started/">Getting Started</a>
+┊ <a href="fem/">Finite Elements</a>
+┊ <a href="performance/">Performance</a></p>
 <p>New users should start by examining the <a href="examples/">example codes</a>.</p>
-<p>We also recommend using <a href="http://glvis.org">GLVis</a> for visualization.</p>
+<p>We also recommend using <a href="https://glvis.org">GLVis</a> for visualization.</p>
 <h2 id="contact">Contact</h2>
 <p>Use the GitHub <a href="https://github.com/mfem/mfem/issues">issue tracker</a>
 to report <a href="https://github.com/mfem/mfem/issues/new?labels=bug">bugs</a>
 or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questions</a>
 or <a href="https://github.com/mfem/mfem/issues/new?labels=comment">comments</a>.
-See the <a href="about/">About</a> page for citation information.</p>
+See&nbsp;the <a href="about/">About</a> page for citation information.</p>
 </div>
-<div class="col-md-12"></div>
+<div class="col-md-12 bottom"></div>
 
             
         </div>
