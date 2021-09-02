@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -282,9 +282,10 @@ These different levels of assembly are:</p>
 <li>NONE, "Matrix-free" form that computes all of its action on-the-fly without any substantial storage. In this case D is computed on the fly, this format is also significantly faster than the matrix formats, but is currently slower than partial assembly due to the increased number of computations. However, in the case of operators that need to be reassembled frequently this assembly level might be faster than partial assembly by skipping any reassembly steps.</li>
 </ul>
 <p>The different assembly levels are accessed through the following unified interface:</p>
-<pre><code class="language-c++">AssemblyLevel assembly_level = ...;
+<pre><code class="c++">AssemblyLevel assembly_level = ...;
 a-&gt;SetAssemblyLevel(assembly_level);
 </code></pre>
+
 <p>where <code>a</code> is either an <code>mfem::BilinearForm</code>, <code>mfem::MixedBilinearForm</code>,
 <code>mfem::DiscreteLinearOperator</code>, or <code>mfem::NonlinearForm</code>.</p>
 <h2 id="assembly-levels-and-backend-device-configuration">Assembly levels and backend device configuration</h2>
@@ -361,8 +362,9 @@ Backends are accessible by configuring the <code>mfem::Device</code> accordingly
 </tbody>
 </table>
 <p>It is also possible to request the backend of a backend, for instance if we want to use the <code>/gpu/cuda/shared</code> backend of libCEED one can specify this with the following syntax:</p>
-<pre><code class="language-c++">mfem::Device device(&quot;ceed-cuda:/gpu/cuda/shared&quot;);
+<pre><code class="c++">mfem::Device device(&quot;ceed-cuda:/gpu/cuda/shared&quot;);
 </code></pre>
+
 <p>The native MFEM backend and the RAJA backend support the same features and Integrators. However, the OCCA backend, and the libCEED backend each offer different features, and support different Integrators with different performance characteristics.</p>
 <table>
 <thead>

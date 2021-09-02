@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '..';</script>
@@ -307,35 +307,41 @@ also available in the following package managers:</p>
 <p>Below we assume that we are working with versions 3.4.</p>
 <h2 id="serial-version-of-mfem-and-glvis">Serial version of MFEM and GLVis</h2>
 <p>Put everything in the same directory:</p>
-<pre><code class="language-sh">~&gt; ls
+<pre><code class="sh">~&gt; ls
 glvis-3.4.tgz   mfem-3.4.tgz
 </code></pre>
+
 <p>Build the serial version of MFEM:</p>
-<pre><code class="language-sh">~&gt; tar -zxvf mfem-3.4.tgz
+<pre><code class="sh">~&gt; tar -zxvf mfem-3.4.tgz
 ~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make serial -j
 </code></pre>
+
 <p>Build GLVis:</p>
-<pre><code class="language-sh">~&gt; tar -zxvf glvis-3.4.tgz
+<pre><code class="sh">~&gt; tar -zxvf glvis-3.4.tgz
 ~&gt; cd glvis-3.4
 ~/glvis-3.4&gt; make MFEM_DIR=../mfem-3.4 -j
 </code></pre>
+
 <p>That's it! The MFEM library can be found in <code>mfem-3.4/libmfem.a</code>, while the
 <code>glvis</code> executable will be in the <code>glvis-3.4</code> directory.</p>
 <p>Note: as of version 4.0, GLVis has additional dependencies that need to be installed
 first, see its building <a href="https://glvis.org/building/">documentation</a>.</p>
 <p>To start a GLVis server, open a <strong>new terminal</strong> and type</p>
-<pre><code class="language-sh">~&gt; cd glvis-3.4
+<pre><code class="sh">~&gt; cd glvis-3.4
 ~/glvis-3.4&gt; ./glvis
 </code></pre>
+
 <p>The serial examples can be build with:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4/examples
+<pre><code class="sh">~&gt; cd mfem-3.4/examples
 ~/mfem-3.4/examples&gt; make -j
 </code></pre>
+
 <p>All serial examples and miniapps can be build with:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4
+<pre><code class="sh">~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make all -j
 </code></pre>
+
 <h2 id="parallel-mpi-version-of-mfem">Parallel MPI version of MFEM</h2>
 <p>Download <em>hypre</em> and METIS from</p>
 <ul>
@@ -347,30 +353,34 @@ first, see its building <a href="https://glvis.org/building/">documentation</a>.
 (see <a href="#parallel-build-using-metis-5">below</a> for METIS version 5 and later). We also assume that the serial version
 of MFEM and GLVis have been built as described above.</p>
 <p>Put everything in the same directory:</p>
-<pre><code class="language-sh">~&gt; ls
+<pre><code class="sh">~&gt; ls
 glvis-3.4/  hypre-2.16.0.tar.gz   metis-4.0.3.tar.gz   mfem-3.4/
 </code></pre>
+
 <p>Build hypre:</p>
-<pre><code class="language-sh">~&gt; tar -zxvf hypre-2.16.0.tar.gz
+<pre><code class="sh">~&gt; tar -zxvf hypre-2.16.0.tar.gz
 ~&gt; cd hypre-2.16.0/src/
 ~/hypre-2.16.0/src&gt; ./configure --disable-fortran
 ~/hypre-2.16.0/src&gt; make -j
 ~/hypre-2.16.0/src&gt; cd ../..
 ~&gt; ln -s hypre-2.16.0 hypre
 </code></pre>
+
 <p>Build METIS:</p>
-<pre><code class="language-sh">~&gt; tar -zxvf metis-4.0.3.tar.gz
+<pre><code class="sh">~&gt; tar -zxvf metis-4.0.3.tar.gz
 ~&gt; cd metis-4.0.3
 ~/metis-4.0.3&gt; make
 ~/metis-4.0.3&gt; cd ..
 ~&gt; ln -s metis-4.0.3 metis-4.0
 </code></pre>
+
 <p>(If you are using METIS 5, see the instructions
 <a href="#parallel-build-using-metis-5">below</a>.)</p>
 <p>Build the parallel version of MFEM:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4
+<pre><code class="sh">~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make parallel -j
 </code></pre>
+
 <p>Note that if hypre or METIS are in different locations, or you have different
 versions of these libraries, you will need to update the corresponding paths in
 the
@@ -378,64 +388,77 @@ the
 file, or create you own <code>config/user.mk</code>, as described in the
 <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL"><code>INSTALL</code></a> file.</p>
 <p>The parallel examples can be build with:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4/examples
+<pre><code class="sh">~&gt; cd mfem-3.4/examples
 ~/mfem-3.4/examples&gt; make -j
 </code></pre>
+
 <p>The serial examples can also be build with the parallel version of the library,
 e.g.</p>
-<pre><code class="language-sh">~/mfem-3.4/examples&gt; make ex1 ex2
+<pre><code class="sh">~/mfem-3.4/examples&gt; make ex1 ex2
 </code></pre>
+
 <p>All parallel examples and miniapps can be build with:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4
+<pre><code class="sh">~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make all -j
 </code></pre>
+
 <p>One can also use the parallel library to optionally (re-)build GLVis:</p>
-<pre><code class="language-sh">~&gt; cd glvis-3.4
+<pre><code class="sh">~&gt; cd glvis-3.4
 ~/glvis-3.4&gt; make clean
 ~/glvis-3.4&gt; make MFEM_DIR=../mfem-3.4 -j
 </code></pre>
+
 <p>This, however, is generally <em>not recommended</em>, since the additional MPI thread
 can interfere with the other GLVis threads.</p>
 <h3 id="parallel-build-using-metis-5">Parallel build using METIS 5</h3>
 <p>Build METIS 5:</p>
-<pre><code class="language-sh">~&gt; tar zvxf metis-5.1.0.tar.gz
+<pre><code class="sh">~&gt; tar zvxf metis-5.1.0.tar.gz
 ~&gt; cd metis-5.1.0
 ~/metis-5.1.0&gt; make config ; make
 ~/metis-5.1.0&gt; mkdir lib
 ~/metis-5.1.0&gt; ln -s ../build/Linux-x86_64/libmetis/libmetis.a lib
 </code></pre>
+
 <p>Build the parallel version of MFEM, setting the options <code>MFEM_USE_METIS_5</code> and
 <code>METIS_DIR</code>, e.g.:</p>
-<pre><code class="language-sh">~&gt; cd mfem-3.4
+<pre><code class="sh">~&gt; cd mfem-3.4
 ~/mfem-3.4&gt; make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
 </code></pre>
+
 <h2 id="cuda-version-of-mfem">CUDA version of MFEM</h2>
 <p>Build the serial CUDA version of MFEM:</p>
-<pre><code class="language-sh">~/mfem&gt; make cuda -j
+<pre><code class="sh">~/mfem&gt; make cuda -j
 </code></pre>
+
 <p>Build the parallel CUDA version of MFEM:</p>
-<pre><code class="language-sh">~/mfem&gt; make pcuda -j
+<pre><code class="sh">~/mfem&gt; make pcuda -j
 </code></pre>
+
 <p>It can be useful to specify the <a href="https://developer.nvidia.com/cuda-gpus#compute">compute capability</a>, with the <code>CUDA_ARCH</code> flag, corresponding to your NVidia GPU.
 Build the parallel CUDA version of MFEM for <code>sm_70</code> (NVidia V100):</p>
-<pre><code class="language-sh">~/mfem&gt; make pcuda CUDA_ARCH=sm_70 -j
+<pre><code class="sh">~/mfem&gt; make pcuda CUDA_ARCH=sm_70 -j
 </code></pre>
+
 <h2 id="hip-version-of-mfem">HIP version of MFEM</h2>
 <p>Build the serial HIP version of MFEM:</p>
-<pre><code class="language-sh">~/mfem&gt; make hip -j
+<pre><code class="sh">~/mfem&gt; make hip -j
 </code></pre>
+
 <p>Build the parallel HIP version of MFEM:</p>
-<pre><code class="language-sh">~/mfem&gt; make phip -j
+<pre><code class="sh">~/mfem&gt; make phip -j
 </code></pre>
+
 <h2 id="installing-mfem-with-spack">Installing MFEM with Spack</h2>
 <p>If Spack is already available on your system and is visible in your <code>PATH</code>, you can install the MFEM software simply with:</p>
-<pre><code class="language-sh">spack install mfem
+<pre><code class="sh">spack install mfem
 </code></pre>
+
 <p>To enable package testing during the build process, use instead:</p>
-<pre><code class="language-sh">spack install -v --test=all mfem
+<pre><code class="sh">spack install -v --test=all mfem
 </code></pre>
+
 <p>If you don't have Spack, you can download it and install MFEM with the following commands:</p>
-<pre><code class="language-sh">git clone https://github.com/spack/spack.git
+<pre><code class="sh">git clone https://github.com/spack/spack.git
 cd spack
 ./bin/spack install -v mfem
 </code></pre></div>

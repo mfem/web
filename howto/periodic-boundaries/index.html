@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -328,7 +328,7 @@ considered topologically identical. MFEM can generate a vertex mapping from thes
 vectors using the <code>Mesh::CreatePeriodicVertexMapping</code>. An example using this functionality to create
 a mesh of the periodic square is shown <a href="#square">here</a>.</p>
 <h3 id="example-creating-a-periodic-line-segment-with-a-vertex-map"><a name="line-segment"></a>Example: creating a periodic line segment with a vertex map</h3>
-<pre><code class="language-c++">Mesh mesh = Mesh::MakeCartesian1D(10);// Make a mesh of the unit interval with 10 elements
+<pre><code class="c++">Mesh mesh = Mesh::MakeCartesian1D(10);// Make a mesh of the unit interval with 10 elements
 // Create the vertex mapping. To begin, create the identity mapping.
 std::vector&lt;int&gt; v2v(mesh.GetNV());
 for (int i = 0; i &lt; mesh.GetNV(); ++i)
@@ -339,8 +339,9 @@ for (int i = 0; i &lt; mesh.GetNV(); ++i)
 v2v.back() = 0;
 Mesh periodic_mesh = Mesh::MakePeriodic(mesh, v2v); // Create the periodic mesh
 </code></pre>
+
 <h3 id="example-creating-a-periodic-square-with-translation-vectors"><a name="square"></a>Example: creating a periodic square with translation vectors</h3>
-<pre><code class="language-c++">// Create a 10x10 quad mesh of the unit square;
+<pre><code class="c++">// Create a 10x10 quad mesh of the unit square;
 Mesh mesh = Mesh::MakeCartesian2D(10, 10, Element::QUADRILATERAL);
 // Create translation vectors defining the periodicity
 Vector x_translation({1.0, 0.0});

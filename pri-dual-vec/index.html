@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '..';</script>
@@ -397,7 +397,7 @@ input, this method requires a <em>primal vector</em>, a <em>dual vector</em>, an
 Dirichlet boundary degree-of-freedom indices.  The degree-of-freedom array
 contains the true degrees-of-freedom, as obtained from a <code>FiniteElementSpace</code>
 object, which coincide with the Dirichlet, a.k.a. <em>essential</em>, boundaries.</p>
-<pre><code class="language-c++">// Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
+<pre><code class="c++">// Given a bilinear form 'a', a primal vector 'x', a dual vector 'b',
 // and an array of essential boundary true dof indices...
 SparseMatrix A;
 Vector B, X;
@@ -408,6 +408,7 @@ a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
 
 a.RecoverFEMSolution(X, b, x);
 </code></pre>
+
 <p>The primal vector
 must contain the appropriate values for the solution on the essential
 boundaries.  The interior of the primal vector is ignored by default although
@@ -452,6 +453,7 @@ compute time so this choice may not be critical.  The best choice is to test
 your application and determine which method is more appropriate for your
 algorithm on your hardware.</p>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">

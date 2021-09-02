@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -272,7 +272,7 @@ something more tailored to the equations of interest is required.  MFEM has a fl
 approach to defining preconditioners enabled by deriving from the existing Solver
 class and overriding the necessary methods to define the action.  Se the following
 example:</p>
-<pre><code class="language-c++">// Define a custom solver class that can be used as the preconditioner for a broader problem solvers
+<pre><code class="c++">// Define a custom solver class that can be used as the preconditioner for a broader problem solvers
 // Here we will define the example preconditioner:  P x = M x + Ainv x
 class SumSolver : mfem::Solver
 {
@@ -307,6 +307,7 @@ class SumSolver : mfem::Solver
 };
 
 </code></pre>
+
 <p>In this example we defined a new MFEM solver that can be applies as a preconditioner for a broader
 solution.  In this case we demonstrated an example where we have a matrix M, the action of the inverse
 of a matrix A, and we want to define the action of a preconditioner that is the sum of the two.  In this

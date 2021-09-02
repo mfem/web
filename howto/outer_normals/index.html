@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -272,7 +272,7 @@ mesh.  In 2D this will simply be the vector normal to the vector tangent to the 
 of interest, and in 3D this will be the vector normal to the plane tangent to the boundary
 point of interest.  An easy way to obtain these vector/plane tangents is to use the Jacobian
 of the element transformation at the point of interest as in the following example:</p>
-<pre><code class="language-c++">// Loop through the boundary elements and compute the normals at the centers of those elements
+<pre><code class="c++">// Loop through the boundary elements and compute the normals at the centers of those elements
 for (int it = 0; it &lt; fespace-&gt;GetNBE(); it++)
 {
   Vector normal(dim);
@@ -282,6 +282,7 @@ for (int it = 0; it &lt; fespace-&gt;GetNBE(); it++)
   ... Do something of interest with the normals
 }
 </code></pre>
+
 <p>The ElementTransformation object handles transformations between the elements and their
 corresponding reference elements.  We start by getting the ElementTransformation object
 for the boundary element we are interested in.  In order to move forward we then need to

@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -279,6 +279,7 @@ make config [...options...]
 make all -j 8   # Build everything
 make test       # Run the tests
 </code></pre>
+
 <ul>
 <li>CMake + Makefile (option 1: explicit makefile)</li>
 </ul>
@@ -292,6 +293,7 @@ make examples -j 8         # Build examples
 make miniapps -j 8         # Build miniapps
 make test                  # Run the tests
 </code></pre>
+
 <ul>
 <li>CMake + Makefile (option 2: generic build, cmake wrappers)</li>
 </ul>
@@ -305,6 +307,7 @@ cmake --build . --target examples -j 8    # Build examples
 cmake --build . --target miniapps -j 8    # Build miniapps
 ctest --output-on-failure -T test         # Run the tests
 </code></pre>
+
 <ul>
 <li>CMake + Ninja (this is not what we are used to doing, but it works)</li>
 </ul>

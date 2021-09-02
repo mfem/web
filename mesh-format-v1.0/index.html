@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '..';</script>
@@ -279,7 +279,7 @@
 <p>This is the default format in GLVis. It can be used to describe simple (triangular, quadrilateral, tetrahedral and hexahedral meshes with straight edges) or complicated (curvilinear and more general) meshes.</p>
 <h3 id="straight-meshes">Straight meshes</h3>
 <p>In the simple case of a mesh with straight edges the format looks as follows</p>
-<pre><code class="language-sh">MFEM mesh v1.0
+<pre><code class="sh">MFEM mesh v1.0
 
 # Space dimension: 2 or 3
 dimension
@@ -304,6 +304,7 @@ vertices
 &lt;coordinate 1&gt; ... &lt;coordinate &lt;vdim&gt;&gt;
 ...
 </code></pre>
+
 <p>Lines starting with "#" denote comments. The supported geometry types are:</p>
 <ul>
 <li>POINT       = 0</li>
@@ -316,7 +317,7 @@ vertices
 </ul>
 <p>see the comments in <a href="https://github.com/mfem/mfem/blob/master/fem/geom.hpp">this source file</a> for more details.</p>
 <p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/beam-quad.mesh">beam-quad.mesh</a> file from the data directory looks like this:</p>
-<pre><code class="language-sh">MFEM mesh v1.0
+<pre><code class="sh">MFEM mesh v1.0
 
 dimension
 2
@@ -375,14 +376,16 @@ vertices
 7 1
 8 1
 </code></pre>
+
 <p>which corresponds to the mesh</p>
 <p><img alt="" src="../img/formats/beam-quad.png" /></p>
 <p>visualized with</p>
-<pre><code class="language-sh">glvis -m beam-quad.mesh -k &quot;Ame****&quot;
+<pre><code class="sh">glvis -m beam-quad.mesh -k &quot;Ame****&quot;
 </code></pre>
+
 <h3 id="curvilinear-and-more-general-meshes">Curvilinear and more general meshes</h3>
 <p>The MFEM mesh v1.0 format also support the general description of meshes based on a vector finite element grid function with degrees of freedom in the "nodes" of the mesh. This general format is described briefly below, and in more details on the <a href="../mesh-format-v1.x/">General Mesh Format page</a>.</p>
-<pre><code class="language-sh">MFEM mesh v1.0
+<pre><code class="sh">MFEM mesh v1.0
 
 # Space dimension: 2 or 3
 dimension
@@ -417,10 +420,12 @@ Ordering: 0
 &lt;z-coordinate degrees of freedom&gt;
 ...
 </code></pre>
+
 <p>Some possible <a href="https://github.com/mfem/mfem/blob/master/fem/fe_coll.hpp">finite element collection</a> choices are: <code>Linear</code>, <code>Quadratic</code> and <code>Cubic</code> corresponding to curvilinear P1/Q1, P2/Q2 and P3/Q3 meshes. The algorithm for the numbering of the degrees of freedom can be found in <a href="https://github.com/mfem/mfem/blob/master/fem/fespace.cpp#L739">MFEM's source code</a>.</p>
 <p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/escher-p3.mesh">escher-p3.mesh</a> from MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a> describes a tetrahedral mesh with nodes given by a P3 vector Lagrangian finite element function. Visualizing this mesh with</p>
-<pre><code class="language-sh">glvis -m escher-p3.mesh -k &quot;Aaaoooooooooo**************tt&quot;
+<pre><code class="sh">glvis -m escher-p3.mesh -k &quot;Aaaoooooooooo**************tt&quot;
 </code></pre>
+
 <p>we get:</p>
 <p><img alt="" src="../img/formats/escher-p3.png" /></p>
 <p>Topologically periodic meshes can also be described in this format, see for example the <a href="https://github.com/mfem/mfem/blob/master/data/periodic-segment.mesh">periodic-segment</a>, <a href="https://github.com/mfem/mfem/blob/master/data/periodic-square.mesh">periodic-square</a>, and <a href="https://github.com/mfem/mfem/blob/master/data/periodic-cube.mesh">periodic-cube</a> meshes in the data directory, as well as <a href="../examples/?advection">Example 9</a>.</p>
@@ -435,7 +440,7 @@ in fact independent and supports advanced AMR features such as</p>
 <li>parallel partitioning.</li>
 </ul>
 <p>The file starts with a signature and the mesh dimension:</p>
-<pre><code class="language-sh">MFEM NC mesh v1.0
+<pre><code class="sh">MFEM NC mesh v1.0
 
 # NCMesh supported geometry types:
 # SEGMENT     = 1
@@ -453,6 +458,7 @@ dimension
 rank
 &lt;MPI rank&gt;
 </code></pre>
+
 <p>The <code>rank</code> section defines the MPI rank of the process that saved the file.
 This section can be omitted in serial meshes.</p>
 <p>Similarly to the conforming format, the next section lists all elements. This
@@ -466,13 +472,14 @@ time however, we recognize two kinds of elements:</p>
 </ul>
 <p>All elements also have their geometry type and user attribute defined, as well
 as the MPI rank of their owner process (only used in parallel meshes).</p>
-<pre><code class="language-sh"># mesh elements, both regular and refined
+<pre><code class="sh"># mesh elements, both regular and refined
 elements
 &lt;number of elements&gt;
 &lt;owner rank&gt; &lt;attribute&gt; &lt;geometry type&gt; 0 &lt;vertex indices&gt;
 &lt;owner rank&gt; &lt;attribute&gt; &lt;geometry type&gt; &lt;refinement type&gt; &lt;child indices&gt;
 ...
 </code></pre>
+
 <p>Storing the complete refinement hierarchy allows MFEM to coarsen some of the
 fine elements if necessary, and also to naturally define an ordering of the
 fine elements that can be used for fast parallel partitioning of the mesh (a
@@ -483,7 +490,7 @@ started as two quadrilaterals and then underwent two anisotropic refinements
 (blue numbers are vertex indices):
 <img alt="" src="../img/formats/hierarchy.svg" /></p>
 <p>The corresponding <code>elements</code> section of the mesh file could look like this:</p>
-<pre><code class="language-sh">elements
+<pre><code class="sh">elements
 6
 0 1 3 2 2 3      # element 0: refinement 2 (Y), children 2, 3
 0 1 3 0 1 2 5 4  # element 1: no refinement, vertices 1, 2, 5, 4
@@ -492,6 +499,7 @@ started as two quadrilaterals and then underwent two anisotropic refinements
 0 1 3 0 0 8 9 6  # element 4: no refinement, vertices 0, 8, 9, 6
 0 1 3 0 8 1 7 9  # element 5: no refinement, vertices 8, 1, 7, 9
 </code></pre>
+
 <p>The refinement types are numbered as follows:
 <img alt="" src="../img/formats/reftypes.svg" /></p>
 <p>Note that the type is encoded as a 3-bit number, where bits 0, 1, 2 correspond
@@ -500,28 +508,31 @@ but similar refinement types: triangle (3), square (1, 2, 3), tetrahedron (7),
 prism (3, 4, 7).</p>
 <p>The next section is the <code>boundary</code> section, which is exactly the same as in the
 conforming format:</p>
-<pre><code class="language-sh">boundary
+<pre><code class="sh">boundary
 &lt;number of boundary elements&gt;
 &lt;boundary element attribute&gt; &lt;geometry type&gt; &lt;vertex indices&gt;
 ...
 </code></pre>
+
 <p>The nonconforming mesh however needs to identify hanging vertices, which may
 occur in the middle of edges or faces as elements are refined. In fact, any
 vertex that was created as a result of refinement always has two "parent"
 vertices and needs to be listed in the <code>vertex_parents</code> section:</p>
-<pre><code class="language-sh">vertex_parents
+<pre><code class="sh">vertex_parents
 &lt;number of records&gt;
 &lt;vertex number&gt; &lt;parent 1 number&gt; &lt;parent 2 number&gt;
 ...
 </code></pre>
+
 <p>In our example above, vertices 6, 7, 8, 9 have these parents:</p>
-<pre><code class="language-sh">vertex_parents
+<pre><code class="sh">vertex_parents
 4
 6 0 3
 7 1 4
 8 0 1
 9 6 7
 </code></pre>
+
 <p>Vertices can appear in any order in this section. The only
 limitation is that the first N vertex indices (not listed in this section) be
 reserved for top-level vertices (those with no parents, typically the
@@ -530,20 +541,22 @@ vertices of the coarse mesh).</p>
 file manually. The <code>root_state</code> section affects leaf ordering when traversing
 the refinement trees and is used to optimize the SFC-based partitioning. There
 is one number per root element. The default state for all root elements is zero.</p>
-<pre><code class="language-sh">root_state
+<pre><code class="sh">root_state
 &lt;number of records&gt;
 &lt;root element state&gt;
 ...
 </code></pre>
+
 <p>Finally, we have the <code>coordinates</code> section which assigns physical positions
 to the N top-level vertices. Note that the positions of hanging vertices are
 always derived from their parent vertices and are not listed in the mesh file.</p>
-<pre><code class="language-sh">coordinates
+<pre><code class="sh">coordinates
 &lt;number of top-level vertices&gt;
 &lt;vdim&gt;
 &lt;coordinate 1&gt; ... &lt;coordinate &lt;vdim&gt;&gt;
 ...
 </code></pre>
+
 <p>If the mesh is curvilinear, the <code>coordinates</code> section can be replaced with
 an alternative section called <code>nodes</code>. The <code>nodes</code> keyword is then followed
 by a serialized <code>GridFunction</code> representing a vector-valued finite element
@@ -559,7 +572,7 @@ case.</p>
 <h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
-<pre><code class="language-sh">MFEM NURBS mesh v1.0
+<pre><code class="sh">MFEM NURBS mesh v1.0
 
 #
 # MFEM Geometry Types (see mesh/geom.hpp):
@@ -672,9 +685,11 @@ Ordering: 1
 0.5 0.891421356
 0.108578644 0.5
 </code></pre>
+
 <p>This above file, as well as other examples of NURBS meshes, can be found in <a href="https://github.com/mfem/mfem/tree/master/data">MFEM's data directory</a>. It can be visualized directly with</p>
-<pre><code class="language-sh">glvis -m square-disc-nurbs.mesh
+<pre><code class="sh">glvis -m square-disc-nurbs.mesh
 </code></pre>
+
 <p>which after several refinements with the "<code>i</code>" key looks like</p>
 <p><img alt="" src="../img/formats/glvis-square-disc-nurbs.png" /></p>
 <p>To explain MFEM's NURBS mesh file format, we first note that the topological part of the mesh (the <code>elements</code> and <code>boundary</code> sections) describe the 4 NURBS patches visible above. We use the vertex numbers as labels, so we only need the number of vertices.</p>
@@ -683,16 +698,18 @@ Ordering: 1
 <p>Some examples of VTK meshes can be found in MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a>. Here is one of the 3D NURBS meshes</p>
 <p><img alt="" src="../img/formats/glvis-pipe-nurbs.png" /></p>
 <p>The image above was produced with some refinement (key "<code>o</code>") and mouse manipulations from</p>
-<pre><code class="language-sh">glvis -m pipe-nurbs.mesh
+<pre><code class="sh">glvis -m pipe-nurbs.mesh
 </code></pre>
+
 <p>Solutions from NURBS discretization spaces are also natively supported. For example here is the approximation for the solution of a simple Poisson problem on a refined version of the above mesh.</p>
-<pre><code class="language-sh">glvis -m square-disc-nurbs.mesh -g sol.gf
+<pre><code class="sh">glvis -m square-disc-nurbs.mesh -g sol.gf
 </code></pre>
+
 <p><img alt="" src="../img/formats/glvis-square-disc-nurbs-r2.png" /></p>
 <h2 id="curvilinear-vtk-meshes">Curvilinear VTK meshes</h2>
 <p>MFEM also supports quadratic triangular, quadrilaterals, tetrahedral and hexahedral curvilinear meshes in VTK format. This format is described in the <a href="http://vtk.org/VTK/img/file-formats.pdf">VTK file format documentation</a>. The local numbering of degrees of freedom for the biquadratic quads and triquadratic hexes can be found in the Doxygen reference of the <a href="http://www.vtk.org/doc/release/5.6/html/a00185.html">vtkBiQuadraticQuad</a> and <a href="http://www.vtk.org/doc/release/5.6/html/a02039.html">vtkTriQuadraticHexahedron</a> classes. Currently VTK does not support cubic, and higher-order meshes.</p>
 <p>As an example, consider a simple curved quadrilateral saved in a file <code>quad.vtk</code>:</p>
-<pre><code class="language-sh"># vtk DataFile Version 3.0
+<pre><code class="sh"># vtk DataFile Version 3.0
 Generated by MFEM
 ASCII
 DATASET UNSTRUCTURED_GRID
@@ -715,26 +732,32 @@ SCALARS material int
 LOOKUP_TABLE default
 1
 </code></pre>
+
 <p>Visualizing it with "<code>glvis -m quad.vtk</code>" and typing "<code>Aemiii</code>" in the GLVis window we get:</p>
 <p><img alt="" src="../img/formats/quad-vtk.png" /></p>
 <p>The "<code>i</code>" key increases the reference element subdivision which gives an increasingly better approximation of the actual curvature of the element. To view the curvature of the mapping inside the element we can use the "I" key, e.g.,</p>
-<pre><code class="language-sh">glvis -m quad.vtk -k &quot;AemIIiii&quot;
+<pre><code class="sh">glvis -m quad.vtk -k &quot;AemIIiii&quot;
 </code></pre>
+
 <p><img alt="" src="../img/formats/quad-vtk-2.png" /></p>
 <p>Here is a slightly more complicated <a href="https://github.com/mfem/mfem/blob/master/data/star-q2.vtk">quadratic quadrilateral</a> mesh example (the different colors in the GLVis window are used to distinguish neighboring elements):</p>
-<pre><code class="language-sh">glvis -m star-q2.vtk -k &quot;Am&quot;
+<pre><code class="sh">glvis -m star-q2.vtk -k &quot;Am&quot;
 </code></pre>
+
 <p><img alt="" src="../img/formats/star-q2-vtk.png" /></p>
 <p>MFEM and GLVis can also handle <a href="https://github.com/mfem/mfem/blob/master/data/square-disc-p2.vtk">quadratic triangular</a> meshes:</p>
-<pre><code class="language-sh">glvis -m square-disc-p2.vtk -k &quot;Am&quot;
+<pre><code class="sh">glvis -m square-disc-p2.vtk -k &quot;Am&quot;
 </code></pre>
+
 <p><img alt="" src="../img/formats/square-disc-p2-vtk.png" /></p>
 <p>As well as <a href="https://github.com/mfem/mfem/blob/master/data/escher-p2.vtk">quadratic tetrahedral</a> and <a href="https://github.com/mfem/mfem/blob/master/data/fichera-q2.vtk">quadratic hexahedral</a> VTK meshes:</p>
-<pre><code class="language-sh">glvis -m escher-p2.vtk -k &quot;Aaaooooo**************&quot;
+<pre><code class="sh">glvis -m escher-p2.vtk -k &quot;Aaaooooo**************&quot;
 </code></pre>
+
 <p><img alt="" src="../img/formats/escher-p2-vtk.png" /></p>
-<pre><code class="language-sh">glvis -m fichera-q2.vtk -k &quot;Aaaooooo******&quot;
+<pre><code class="sh">glvis -m fichera-q2.vtk -k &quot;Aaaooooo******&quot;
 </code></pre>
+
 <p><img alt="" src="../img/formats/fichera-q2-vtk.png" /></p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">

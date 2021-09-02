@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -306,15 +306,16 @@ for the user and other MFEM classes.</p>
 <p>To switch to the nonconforming mode (or convert and existing conforming <code>Mesh</code>),
 you need to call <code>EnsureNCMesh</code>, typically at the beginning after loading the
 mesh:</p>
-<pre><code class="language-c++">Mesh *mesh = new Mesh(mesh_file, 1, 1);
+<pre><code class="c++">Mesh *mesh = new Mesh(mesh_file, 1, 1);
 mesh-&gt;EnsureNCMesh(true);
 </code></pre>
+
 <p>The boolean parameter, if <code>true</code>, forces simplex meshes to use nonconforming
 refinement (the default is <code>false</code>).</p>
 <h2 id="nonconforming-refinement">Nonconforming refinement</h2>
 <p>Once the <code>Mesh</code> is in nonconforming mode, you can simply call <code>Mesh::GeneralRefinement</code>
 to locally refine a subset of elements:</p>
-<pre><code class="language-c++">Array&lt;int&gt; refinement_list;
+<pre><code class="c++">Array&lt;int&gt; refinement_list;
 for (int i = 0; i &lt; mesh-&gt;GetNE(); i++)
 {
    if (/*element i refinement condition*/)
@@ -324,6 +325,7 @@ for (int i = 0; i &lt; mesh-&gt;GetNE(); i++)
 }
 mesh-&gt;GeneralRefinement(refinement_list);
 </code></pre>
+
 <p>The resulting hanging nodes will be treated transparently by the <code>FiniteElementSpace</code> and
 <code>BilinearForm</code> classes:</p>
 <ul>
@@ -356,11 +358,12 @@ elements in both 2D and 3D. The method <code>Mesh::GeneralRefinement</code> has 
 taking a simple list of elements to refine (as seen above), and the other taking a list
 of <code>struct Refinement { int index; char ref_type; }</code>, where one can specify a refinement
 type for each element in the list:</p>
-<pre><code class="language-c++">Array&lt;Refinement&gt; refinement_list;
+<pre><code class="c++">Array&lt;Refinement&gt; refinement_list;
 refinement_list.Append(Refinement(0, 2));
 refinement_list.Append(Refinement(1, 4));
 mesh-&gt;GeneralRefinement(refinement_list);
 </code></pre>
+
 <p>This code will refine the first element (index 0) of the mesh in the Y direction only
 (provided it is a quad or hex element) and the second element (index 1)
 in the Z direction only. The directions are assumed in the element reference coordinates
@@ -465,6 +468,7 @@ save and restart an AMR computation, as demonstrated in example <code>ex6p</code
 <code>Mesh::Print</code>, which is only suitable for visualization, as it uses the serial <code>MFEM mesh v1.0</code>
 format and only adds the parallel shared faces to the output.</p>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">

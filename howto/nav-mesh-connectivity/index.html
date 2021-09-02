@@ -43,7 +43,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://mfem.org/">MFEM</a>
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
         </div>
 
         <script>var base_url = '../..';</script>
@@ -327,7 +327,7 @@ addition, two of the methods are only defined in 3D due to them using the strict
 of faces and edges while the others use the looser definition by letting the faces be edges
 in 2D and the edges vertices in 1D.  Once you have the table with the information you want
 you can access it through the table methods as in the following example:</p>
-<pre><code class="language-c++">const Table &amp;elem_edge = mesh.ElementToEdgeTable();
+<pre><code class="c++">const Table &amp;elem_edge = mesh.ElementToEdgeTable();
 int num_elems = mesh.GetNE();
 for (int elem_id = 0; ei &lt; num_elems; elem_id++)
 {
@@ -340,10 +340,11 @@ for (int elem_id = 0; ei &lt; num_elems; elem_id++)
   }
 }
 </code></pre>
+
 <p>Another useful method related to navigating mesh connections with these Table objects is
 the Transpose method.  This method takes an A_to_B table and transposes it into a B_to_A
 table.  Usage is as follows:</p>
-<pre><code class="language-c++">Table &amp;face_edge = *mesh.GetFaceEdgeTable();
+<pre><code class="c++">Table &amp;face_edge = *mesh.GetFaceEdgeTable();
 Table edge_face;
 Transpose(face_edge, edge_face);
 int num_edges = mesh.GetNEdges();
