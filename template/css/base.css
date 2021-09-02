@@ -43,7 +43,7 @@ div.col-md-3 {
     padding-right: 0;
 }
 
-div.col-md-9, div.col-md-12 {
+div.col-md-9, div.col-md-12.bottom {
     padding-bottom: 100px;
 }
 
@@ -229,7 +229,6 @@ div.col-75 {
     margin-top: 17px;
 }
 
-
 div#frame_root {
     position: fixed;
     width: 100%;
@@ -245,4 +244,33 @@ div#frame_root > iframe {
 
 input {
   width: 100%;
+}
+
+/* Tweak default carousel appearance */
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control {
+  opacity: 0.3;
+}
+.carousel .carousel-indicators {
+  bottom: 15px;
+}
+/* The default indicators are invisible on white background */
+.carousel .carousel-indicators li {
+  border: none;
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25);
+}
+.carousel .carousel-indicators .active {
+  background-color: #444;
+}
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+  color: #000;
 }
