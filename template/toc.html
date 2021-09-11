@@ -6,5 +6,9 @@
             <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
         {% endfor %}
     {% endfor %}
+    {% if page.title.startswith("HowTo:") %}
+        <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../howto-index/"><i class="fa fa-chevron-circle-left"></i> Back to HowTo Articles</a> </li>
+    {% endif %}
     </ul>
 </div>
