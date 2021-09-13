@@ -1,3 +1,5 @@
+tag-mesh:
+
 # General MFEM Mesh Format
 
 The MFEM mesh v1.x format supports the general description of meshes based on a vector finite element grid function with degrees of freedom in the *nodes* of the mesh. For simplicity, in this document we refer to this version of the format as `MFEM mesh v1.x`. The legacy version for meshes with straight edges we will call `MFEM linear mesh` format.

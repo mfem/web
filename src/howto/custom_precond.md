@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo:  Create a custom preconditioner using only matrix actions
 
 For many problems of interest the off the shelf preconditioners are insufficient and

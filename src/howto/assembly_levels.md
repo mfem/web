@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Use partial assembly and matrix-free assembly
 
 MFEM provides different levels of assembly for `mfem::BilinearForm`,

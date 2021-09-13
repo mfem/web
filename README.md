@@ -15,6 +15,13 @@ To make changes to the website you will need an install of Python version >= 3.6
 - preview locally with `mkdocs serve` (Windows users may need to specify a port, such as `mkdocs serve --dev-addr 127.0.0.1:4000`),
 - publish with `mkdocs gh-deploy`.
 
+Breadcrumbs:
+
+- We have several article collections: `tag-howto`, `tag-gettingstarted`, `tag-fem`, `tag-mesh` each of which has a base page, e.g. `howto-index.md` for `tag-howto`.
+- If an article belongs to a collection, a "Back to <Base Page>" link will appear below its TOC.
+- To mark that an article is part of one or several collection, add the tags at the very beginning of the file, see e.g. `fem.md`.
+- To add a new collection, see the code in `template/toc.html`.
+
 Checklist for adding examples:
 
 - Add a one-line summary of the example in `features.md`

@@ -1,3 +1,5 @@
+tag-gettingstarted:
+
 # Building MFEM
 
 A simple tutorial how to build and run the serial and parallel version of MFEM

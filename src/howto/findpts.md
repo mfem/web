@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Use FindPointsGSLIB for high-order interpolation
 
 [`FindPointsGSLIB`](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45) provides a wrapper for high-order interpolation

@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Nonconforming and AMR meshes
 
 The `Mesh` class provides basic element refinement capabilities:

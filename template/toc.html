@@ -6,9 +6,28 @@
             <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
         {% endfor %}
     {% endfor %}
-    {% if page.title.startswith("HowTo:") %}
-        <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
-           <li><a href="../howto-index/"><i class="fa fa-chevron-circle-left"></i> Back to HowTo Articles</a> </li>
-    {% endif %}
+    {% for type in page.meta %}
+	{% if type.startswith("tag-howto") %}
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="{{ base_url }}/howto/howto-index/"><i class="fa fa-chevron-circle-left"></i> Back to HowTo Articles</a> </li>
+        {% endif %}
+	{% if type.startswith("tag-gettingstarted") %}
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="{{ base_url }}/getting-started/"><i class="fa fa-chevron-circle-left"></i> Back to Getting Started</a> </li>
+        {% endif %}
+	{% if type.startswith("tag-fem") %}
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="{{ base_url }}/fem/"><i class="fa fa-chevron-circle-left"></i> Back to Finite Element Method</a> </li>
+        {% endif %}
+	{% if type.startswith("tag-mesh") %}
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="{{ base_url }}/mesh-formats/"><i class="fa fa-chevron-circle-left"></i> Back to Mesh Formats</a> </li>
+        {% endif %}
+    {% endfor %}
     </ul>
 </div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+-->

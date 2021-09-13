@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Use Spack to install MFEM.
 
 MFEM can be built with `make` or `CMake`. But MFEM has also been packaged to be built with `Spack`.

@@ -1,3 +1,6 @@
+tag-gettingstarted:
+tag-howto:
+
 # Finite Element Method
 
 The finite element method is a general discretization technique that can utilize
