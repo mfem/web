@@ -15,28 +15,28 @@ To make changes to the website you will need an install of Python version >= 3.6
 - preview locally with `mkdocs serve` (Windows users may need to specify a port, such as `mkdocs serve --dev-addr 127.0.0.1:4000`),
 - publish with `mkdocs gh-deploy`.
 
-Breadcrumbs:
+#### Breadcrumbs:
 
 - We have several article collections: `tag-howto`, `tag-gettingstarted`, `tag-fem`, `tag-mesh` each of which has a base page, e.g. `howto-index.md` for `tag-howto`.
 - If an article belongs to a collection, a "Back to <Base Page>" link will appear below its TOC.
 - To mark that an article is part of one or several collection, add the tags at the very beginning of the file, see e.g. `fem.md`.
 - To add a new collection, see the code in `template/toc.html`.
 
-Checklist for adding examples:
+#### Checklist for adding examples:
 
 - Add a one-line summary of the example in `features.md`
 - Add an image file in `img/examples/`, e.g. `img/examples/ex1.png`
 - Add a brief description in `examples.md` following the description at the top of the C++ file
 - Add a "showElement" line with the appropriate categories for the example in the `update` function at the end of `examples.md`
 
-To add a new Application / Finite Elements / Discretization / Solver category:
+#### To add a new Application / Finite Elements / Discretization / Solver category:
 
 - Add an `<option>` tag at the top of `examples.md`, e.g.
   `<option id="wave">Wave</option>`
 - Use the `id` in filter expressions of appropriate examples in `update`, e.g.
   `showElement("ex25", (maxwell || wave) && hcurl && galerkin && (gmres || ams));`
 
-Checklist for adding miniapps:
+#### Checklist for adding miniapps:
 
 - Consider adding a one-line summary of the example in `features.md` (if we want to advertise the miniapp to users)
 - Add an image file in `img/examples/`, e.g. `img/examples/shaper.png`
