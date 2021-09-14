@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Map between local element numbering and parallel global element numbering
 
 With MPI parallelization, a distributed mesh is represented by the `ParMesh` class. On each MPI rank,

@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Build and test MFEM, syntax for each build-system
 
 MFEM has two build systems:

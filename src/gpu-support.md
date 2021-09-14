@@ -1,3 +1,5 @@
+tag-gettingstarted:
+
 # GPU support in MFEM
 MFEM relies mainly on two features for running algorithms on devices such as GPUs:
 

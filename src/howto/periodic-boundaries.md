@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo: Use periodic meshes and enforce periodic boundary conditions
 
 In order to solve a problem with periodic boundary conditions, the `Mesh` object should have a

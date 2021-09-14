@@ -1,3 +1,5 @@
+tag-howto:
+
 # HowTo:  Navigate the connections between mesh primitives with Table objects
 
 Elements, faces, edges, and vertices are all connected to each other to form a cohesive
