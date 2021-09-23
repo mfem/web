@@ -51,7 +51,25 @@ The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-
 \* If you have an idea for a talk, demo, or breakout session topic, please describe it on the registration form.
 Submissions are due on **October 6th** along with your registration.
 
+### Simulation and Visualization Contest
+
+We will be holding a simulation and visualization contest open to all attendees.
+Participants can submit viusalizations (images or videos) from MFEM-related
+simulations. The winner of the competition (selected by the organizing
+committee) will receive an MFEM T-shirt.
+
+To submit an entry in the contest,
+please fill out the [Google
+form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link).
+
+
+Alternatively, you may email your submission to
+[mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
+description of the simulation (the underlying physics, discretization,
+application details, etc.) and visualization software used (GLVis, ParaView,
+VisIt, etc.).
+
 ### Questions?
 
-For questions, please contact the meeting organizer at
-[fisher47@llnl.gov](mailto:fisher47@llnl.gov).
+For questions, please contact the meeting organizers at
+[mfem@llnl.gov](mailto:mfem@llnl.gov).
