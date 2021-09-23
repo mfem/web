@@ -29,6 +29,11 @@ Depending on the interest and user feedback, the meeting will include the follow
 - Technical discussions in breakout rooms for Electromagnetics, Fluids, and
   Structural Mechanics applications
 
+Workshop participants are encouraged to join the
+[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-weieq6sh-yeu39dNdFRIKyGpoE2u9SQ)
+to communicate with other MFEM users and developers before, during and after the
+MFEM workshop.
+
 The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-7):
 
 #### Wednesday, October 20
@@ -51,11 +56,11 @@ The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-
 We will be holding a simulation and visualization contest open to all attendees.
 Participants can submit visualizations (images or videos) from MFEM-related
 simulations. The winner of the competition (selected by the organizing
-committee) will receive an MFEM T-shirt. We will also feature the images in the [gallery](gallery.md).
+committee) will receive an MFEM T-shirt. We will also feature the images in the
+[gallery](gallery.md).
 
-To submit an entry in the contest,
-please fill out the [Google
-form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link).
+To submit an entry in the contest, please fill out the
+[Google form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link).
 
 Alternatively, you may email your submission to
 [mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
