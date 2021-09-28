@@ -13,9 +13,11 @@
   1. W. Pazner and Tz. Kolev, [Uniform subspace correction preconditioners for discontinuous Galerkin methods with *hp*-refinement](https://arxiv.org/abs/2009.01287), *in review*, **2021**.
   1. W. Pazner, [Sparse invariant domain preserving discontinuous Galerkin methods with subcell convex limiting](https://arxiv.org/abs/2004.08503), *in review*, **2021**.
   1. V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, and V. Tomov, [*hr*-adaptivity for nonconforming high-order meshes with the target matrix optimization paradigm](https://doi.org/10.1007/s00366-021-01407-6), *in review*, **2021**. Also available as [arXiv:2010.02166](https://arxiv.org/abs/2010.02166).
+  1. D. Kalchev, U. Villa, and P. Vassilevski, [Parallel Element-based Algebraic Multigrid for H(curl) and H(div) Problems Using the ParELAG Library](https://arxiv.org/abs/2107.05613), *in review*, **2021**.
   1. N. Whitman, T. Palmer, P. Greaney, S. Hosseini, D. Burkes, and D. Senor, [Gray Phonon Transport Prediction of Thermal Conductivity in Lithium Aluminate with Higher-Order Finite Elements on Meshes with Curved Surfaces](https://doi.org/10.1080/23324309.2021.1900258), *Journal of Computational and Theoretical Transport*, **2021**.
   1. H. Hajduk, [Monolithic convex limiting in discontinuous Galerkin discretizations of hyperbolic conservation laws](https://doi.org/10.1016/j.camwa.2021.02.012), *Computers & Mathematics with Applications*, (87) 120-138, **2021**. Also available as [arXiv:2007.01212](https://arxiv.org/abs/2007.01212).
   1. J. Nikl, I. Göthel, M. Kuchařík, S. Weber, and M. Bussmann, [Implicit reduced Vlasov-Fokker-Planck-Maxwell model based on high-order mixed elements](https://doi.org/10.1016/j.jcp.2021.110214), *Journal of Computational Physics*, (434) 110214, **2021**.
+  1. D. Kalchev, U. Villa, and P. Vassilevski, [On ParELAG's Parallel Element-based Algebraic Multigrid and its MFEM Miniapps for H(curl) and H(div) Problems: a report including lowest and next to the lowest order numerical results](https://doi.org/10.2172/1807757), *LLNL Tech. Report*, LLNL-TR-824455, **2021**.
 
 ---
 
