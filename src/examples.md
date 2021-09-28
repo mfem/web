@@ -1845,6 +1845,7 @@ function update()
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
    + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
+   + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
 
    ; // ...end of expression
 
