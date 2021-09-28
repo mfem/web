@@ -132,7 +132,8 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Get Values](http://mfem.github.io/doxygen/html/get-values_8cpp_source.html): extract field values via DataCollection classes,
  - [Load DC](http://mfem.github.io/doxygen/html/load-dc_8cpp_source.html): visualize fields saved via DataCollection classes,
  - [Convert DC](http://mfem.github.io/doxygen/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
- - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces.
+ - [LOR Transfer](http://mfem.github.io/doxygen/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces,
+ - [ParELAG H(curl) and H(div) AMGe](http://mfem.github.io/doxygen/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
