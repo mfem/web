@@ -1683,7 +1683,7 @@ _These miniapps require installation of the [`gslib`](https://github.com/gslib/g
 
 
 <div id="parelag" markdown="1">
-##ParELAG Miniapp
+##ParELAG AMGe for H(curl) and H(div) Miniapp
 <img class="floatright" width="350" src="../img/examples/amge-2d-aes.png">
 
 This is a miniapp that exhibits the **ParELAG** library and part of its
