@@ -43,16 +43,29 @@ A dual number  $x+\varepsilon x'$ consists of a primal/real part and a dual part
 
 # Example of AD differentiated function 
 
+The following vector function, defined as lambda expression, has two parameters kappa and load. The input of the function uu is a vector with four components (the last one is not used in the output of the function), and the result is a vector vres of size four.
 
+```c++
+//using lambda expression
+auto func = [](mfem::Vector& vparam, mfem::ad::ADVectorType& uu, mfem::ad::ADVectorType& vres) {
+   auto kappa = vparam[0]; //diffusion coefficient
+   auto load = vparam[1]; //volumetric influx
 
-
-    
-
- 
-
-
-
-
+   vres[0] = kappa * uu[0];
+   vres[1] = kappa * uu[1];
+   vres[2] = kappa * uu[2];
+   vres[3] = -load;
+};
+```
+The gradient of vres will be a matrix of size 4x4 and is computed with the help of the following object:
+```c++
+mfem::VectorFuncAutoDiff<4,4,2> fdr(func);
+```
+The first parameter in the above template specifies the length of the result, the second parameter the length of the input vector uu, and the third template parameter specifies the length of vparam. Once fdr is defined, the following statement computes the gradients:
+```c++
+fdr.QJacobian(param,state, grad_mat);
+```
+The input consists of parameters and a state vector, and the output is 4x4 grad_mat matrix. 
 
 
 
