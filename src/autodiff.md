@@ -69,7 +69,7 @@ The input consists of parameters and a state vector, and the output is 4x4 grad_
 
 # Example of AD differentiated function using functors
 
-The following vector function, defined as funtor, has zero parameters. The input of the function uu is a vector with six components, and the result is a vector rr of size three.
+The following vector function, defined as a functor, has zero parameters. The input of the function uu is a vector with six components, and the result is a vector rr of size three.
 
 ```c++
 template<typename TDataType, typename TParamVector, typename TStateVector,
@@ -92,7 +92,7 @@ The gradient of rr will be a matrix of size 3x6 and is computed with the help of
  mfem::QVectorFuncAutoDiff<ExampleResidual,3,6,0> erdf;
 ```
 
-The Jacobian for a vector uu is calculated by:
+The Jacobian for a vector uu is calculated using the following lines:
 ```c++
 mfem::DenseMatrix jac(3,6);
 mfem::Vector param; //dummy vector - we do not have parameters
