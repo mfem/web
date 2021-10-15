@@ -13,6 +13,9 @@ developers, share the latest MFEM features with the broader community, deepen
 application engagements, and solicit feedback to guide future development
 directions for the project.
 
+**For questions, please contact the meeting organizers at**
+**[mfem@llnl.gov](mailto:mfem@llnl.gov).**
+
 ### Registration
 
 If you plan to attend, [please register no later than **October 18th**](https://docs.google.com/forms/d/e/1FAIpQLSdVnFGMlkOtfHYNrm0oEBNLKI7Skba5WTBloZiZqh4MRfD73w/viewform).
@@ -44,7 +47,7 @@ The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-
 | 8:00-8:30 | **The State of MFEM & Roadmap** | Tzanio Kolev |
 | 8:30-9:00 | **Recent Developments** | Veselin Dobrev |
 | 9:00-10:00 | **Talks, Session I**<br>(20 mins each) | • Jamie Bramwell (LLNL), *Serac: user-friendly abstractions for MFEM-based engineering applications*<br>• Guillaume Latu (CEA), *MFEM-MGIS-MFront, a MFEM based library for non linear solid thermomechanics*<br>• Julian Jimenez (National University of Colombia), *Phase change heat and mass transfer simulation with MFEM* |
-| 10:00-10:30 | **Break & Group Photo** | All |
+| 10:00-10:30 | **Break & Group Photo**| All<br>Download a virtual background below |
 | 10:30-12:30 | **Talks, Session II**<br>(20 mins each) | • Robert Rieben (LLNL), *The multiphysics on advanced platforms project: performance, portability and scaling*<br>• Marc Bolinches (UT), *Development of DG compressible Navier Stokes solver with MFEM*<br>• Mathias Davids (Harvard), *Modeling peripheral nerve stimulations in magnetic resonance imaging*<br>• Jan Nikl (ELI Beamlines), *Laser plasma modeling with high-order finite elements*<br>• Qi Tang (LANL), *An adaptive, scalable fully implicit resistive MHD solver*<br>• Syun’ichi Shiraiwa (PPPL), *Development of PyMFEM python wrapper for MFEM and scalable RF wave simulation for nuclear fusion* |
 | 12:30-1:00 | **Break** | All |
 | 1:00-2:00 | **Talks, Session III**<br>(20 mins each) | • William Dawn (NCSU), *Unstructured finite element neutron transport using MFEM*<br>• Vladimir Tomov (LLNL), *MFEM capabilities for high-order mesh optimization*<br>• Will Pazner (LLNL), *High-order matrix-free solvers* |
@@ -68,7 +71,30 @@ description of the simulation (the underlying physics, discretization,
 application details, etc.), and visualization software used (GLVis, ParaView,
 VisIt, etc.).
 
-### Questions?
+### Virtual Backgrounds
 
-For questions, please contact the meeting organizers at
-[mfem@llnl.gov](mailto:mfem@llnl.gov).
+We invite workshop participants to use the virtual backgrounds designed for this event. 
+Click each image to enlarge, then right-click to save locally.
+
+<center>
+
+<div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-blueprint-text.png)](img/workshop-vb/mfem-blueprint-text.png)
+
+[![](img/workshop-vb/mfem-dark-blue-text.png)](img/workshop-vb/mfem-dark-blue-text.png)
+
+</div><div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-wave-text.png)](img/workshop-vb/mfem-wave-text.png)
+
+[![](img/workshop-vb/mfem-light-blue-text.png)](img/workshop-vb/mfem-light-blue-text.png)
+
+</div><div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-tron-wave-text.png)](img/workshop-vb/mfem-tron-wave-text.png)
+
+[![](img/workshop-vb/mfem-grey-text.png)](img/workshop-vb/mfem-dark-blue-text.png)
+
+</div>
+</center>
