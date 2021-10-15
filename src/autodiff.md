@@ -67,6 +67,40 @@ fdr.QJacobian(param,state, grad_mat);
 ```
 The input consists of parameters and a state vector, and the output is 4x4 grad_mat matrix. 
 
+# Example of AD differentiated function using functors
+
+The following vector function, defined as funtor, has zero parameters. The input of the function uu is a vector with six components, and the result is a vector rr of size three.
+
+```c++
+template<typename TDataType, typename TParamVector, typename TStateVector,
+         int residual_size, int state_size, int param_size>
+class ExampleResidual
+{
+public:
+    void operator ()(TParamVector& vparam, TStateVector& uu, TStateVector& rr)
+    {
+        rr[0]=sin(uu[0]+uu[1]+uu[2]);
+        rr[1]=cos(uu[1]+uu[2]+uu[3]);
+        rr[2]=tan(uu[2]+uu[3]+uu[4]+uu[5]);
+    }
+
+};
+```
+
+The gradient of rr will be a matrix of size 3x6 and is computed with the help of the following object:
+```c++
+ mfem::QVectorFuncAutoDiff<ExampleResidual,3,6,0> erdf;
+```
+
+The Jacobian for a vector uu is calculated by:
+```c++
+mfem::DenseMatrix jac(3,6);
+mfem::Vector param; //dummy vector - we do not have parameters
+mfem::Vector uu(6); uu=1.0; - all values are set to one 
+erdf.QJacobian(param,uu,jac);
+```
+The elements of the state vector uu are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix jac(3,6).
+
 
 
 
