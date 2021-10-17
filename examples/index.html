@@ -1737,6 +1737,49 @@ dynamics (incompressible Navier-Stokes equations) and heat transfer
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="parelag">
+<h2 id="parelag-amge-for-hcurl-and-hdiv-miniapp">ParELAG AMGe for H(curl) and H(div) Miniapp</h2>
+<p><img class="floatright" width="250" style="border:1px solid black" src="../img/examples/amge-2d-aes.png"></p>
+<p>This is a miniapp that exhibits the <strong>ParELAG</strong> library and part of its
+capabilities. The miniapp employs MFEM and ParELAG to solve $H(\mathrm{curl})$-
+and $H(\mathrm{div})$-elliptic forms by an element based algebraic multigrid
+(AMGe).</p>
+<p><a href="https://github.com/LLNL/parelag">ParELAG</a> is a library mostly developed at the
+Center for Applied Scientific Computing of Lawrence Livermore National
+Laboratory, California, USA.</p>
+<p>The miniapp uses:</p>
+<ul>
+<li>
+<p>A multilevel hierarchy of de Rham complexes of finite element spaces, built by
+ParELAG;</p>
+</li>
+<li>
+<p>Hiptmair-type (hybrid) smoothers, implemented in ParELAG;</p>
+</li>
+<li>
+<p>AMS (Auxiliary-space Maxwell Solver) or ADS (Auxiliary-space Divergence
+Solver), from HYPRE, for preconditioning or solving on the coarsest levels.</p>
+</li>
+</ul>
+<p>Alternatively, it is possible to precondition or solve the $H(\mathrm{div})$
+form on the coarsest level via a <a href="https://mfem.github.io/doxygen/html/classmfem_1_1Hybridization.html">hybridization</a>
+approach. However, this is not yet implemented in ParELAG for the coarse levels.
+Only the hybridization solver that is directly applicable to an
+$H(\mathrm{div})$-$L^2$ mixed (saddle-point) system is currently available in
+ParELAG.</p>
+<p>We recommend viewing <a href="https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp">ex3p.cpp</a>
+and <a href="https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp">ex4p.cpp</a>
+before viewing this miniapp.</p>
+<p>For more details, please see the
+<a href="https://github.com/mfem/mfem/blob/master/miniapps/parelag/README">documentation</a> in the <code>miniapps/parelag</code>
+directory.</p>
+<p><em>This miniapp has only a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/parelag/MultilevelHcurlHdivSolver.cpp">MultilevelHcurlHdivSolver.cpp</a>) version.
+<strong>We recommend that new users start with the example codes before
+moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -1855,6 +1898,7 @@ function update()
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
    + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
+   + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
 
    ; // ...end of expression
 
