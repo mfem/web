@@ -18,8 +18,8 @@ nav:
   - 'Example Codes': examples.md
   - 'Electromagnetics': electromagnetics.md
   - 'Fluid Dynamics': fluids.md
-  - 'Automatic differentiation': autodiff.md
   - 'Meshing': meshing-miniapps.md
+  - 'Automatic Differentiation': autodiff.md
   - 'Tools': tools.md
   - 'Toys': toys.md
 - Documentation:

@@ -26,3 +26,4 @@ We recommend that new users start with these articles:
 - [Electromagnetics Miniapps](electromagnetics.md)
 - [Fluid Dynamics Miniapp](fluids.md)
 - [Meshing Miniapps](meshing-miniapps.md)
+- [AD Miniapps](autodiff.md)
