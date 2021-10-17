@@ -1682,6 +1682,52 @@ _These miniapps require installation of the [`gslib`](https://github.com/gslib/g
 <br></div>
 
 
+<div id="parelag" markdown="1">
+##ParELAG AMGe for H(curl) and H(div) Miniapp
+<img class="floatright" width="250" style="border:1px solid black" src="../img/examples/amge-2d-aes.png">
+
+This is a miniapp that exhibits the **ParELAG** library and part of its
+capabilities. The miniapp employs MFEM and ParELAG to solve $H(\\mathrm{curl})$-
+and $H(\\mathrm{div})$-elliptic forms by an element based algebraic multigrid
+(AMGe).
+
+[ParELAG](https://github.com/LLNL/parelag) is a library mostly developed at the
+Center for Applied Scientific Computing of Lawrence Livermore National
+Laboratory, California, USA.
+
+The miniapp uses:
+
+- A multilevel hierarchy of de Rham complexes of finite element spaces, built by
+ParELAG;
+
+- Hiptmair-type (hybrid) smoothers, implemented in ParELAG;
+
+- AMS (Auxiliary-space Maxwell Solver) or ADS (Auxiliary-space Divergence
+Solver), from HYPRE, for preconditioning or solving on the coarsest levels.
+
+Alternatively, it is possible to precondition or solve the $H(\\mathrm{div})$
+form on the coarsest level via a [hybridization](https://mfem.github.io/doxygen/html/classmfem_1_1Hybridization.html)
+approach. However, this is not yet implemented in ParELAG for the coarse levels.
+Only the hybridization solver that is directly applicable to an
+$H(\\mathrm{div})$-$L^2$ mixed (saddle-point) system is currently available in
+ParELAG.
+
+We recommend viewing [ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)
+and [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)
+before viewing this miniapp.
+
+For more details, please see the
+[documentation](https://github.com/mfem/mfem/blob/master/miniapps/parelag/README) in the `miniapps/parelag`
+directory.
+
+_This miniapp has only a parallel
+([MultilevelHcurlHdivSolver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/parelag/MultilevelHcurlHdivSolver.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -1799,6 +1845,7 @@ function update()
    + showElement("navier", (incompressibleflow) && (h1) && (galerkin || pa) && (gmres || pcg || amg))
    + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
+   + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
 
    ; // ...end of expression
 

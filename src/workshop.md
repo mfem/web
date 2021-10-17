@@ -13,9 +13,12 @@ developers, share the latest MFEM features with the broader community, deepen
 application engagements, and solicit feedback to guide future development
 directions for the project.
 
+**For questions, please contact the meeting organizers at**
+**[mfem@llnl.gov](mailto:mfem@llnl.gov).**
+
 ### Registration
 
-If you plan to attend, [please register no later than **October 6th**](https://forms.gle/KE9XGyD8ZCwAv29H8).
+If you plan to attend, [please register no later than **October 18th**](https://docs.google.com/forms/d/e/1FAIpQLSdVnFGMlkOtfHYNrm0oEBNLKI7Skba5WTBloZiZqh4MRfD73w/viewform).
 There is no registration fee. WebEx details will be distributed to participants prior to the event date.
 
 ### Meeting format
@@ -25,33 +28,73 @@ Depending on the interest and user feedback, the meeting will include the follow
 - Project news and development updates from the MFEM team
 - An overview of the latest features in MFEM-4.3 and GLVis-4.1
 - Contributed talks from application developers utilizing MFEM
-- Demos of pymfem, pyglvis, MFEM jupyter notebooks
 - Roadmap discussion for future development
 - Technical discussions in breakout rooms for Electromagnetics, Fluids, and
   Structural Mechanics applications
 
-The meeting activities will take place 8:00am-3:00pm Pacific standard time (GMT-7):
+Workshop participants are encouraged to join the
+[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-weieq6sh-yeu39dNdFRIKyGpoE2u9SQ)
+to communicate with other MFEM users and developers before, during and after the
+MFEM workshop.
+
+The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-7):
 
 #### Wednesday, October 20
 
-| Time (Pacific) | Activity | Presenter |
+| Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 8:00-8:15 | **Welcome & Overview** | Aaron Fisher |
-| 8:15-8:45 | **The state of MFEM** | Tzanio Kolev |
-| 8:45-9:30 | **Recent developments** | Veselin Dobrev |
-| 9:30-10:00 | **Break** | All |
-| 10:00-11:00 | **Deep dives on new features**\* | MFEM developers |
-| 11:00-12:00 | **Application talks**\* | Application researchers |
-| 12:00-12:30 | **Break** | All |
-| 12:30-1:00 | **Demos**\* | MFEM community |
-| 1:00-2:00 | **Roadmap discussion** | Tzanio Kolev |
-| 2:00-3:00 | **Breakout Sessions**\* | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
-| 3:00-3:10 | **Wrap-up** | Tzanio Kolev |
+| 7:45-8:00 | **Welcome & Overview** | Aaron Fisher |
+| 8:00-8:30 | **The State of MFEM & Roadmap** | Tzanio Kolev |
+| 8:30-9:00 | **Recent Developments** | Veselin Dobrev |
+| 9:00-10:00 | **Talks, Session I**<br>(20 mins each) | • Jamie Bramwell (LLNL), *Serac: user-friendly abstractions for MFEM-based engineering applications*<br>• Guillaume Latu (CEA), *MFEM-MGIS-MFront, a MFEM based library for non linear solid thermomechanics*<br>• Julian Jimenez (National University of Colombia), *Phase change heat and mass transfer simulation with MFEM* |
+| 10:00-10:30 | **Break & Group Photo**| All<br>Download a virtual background below |
+| 10:30-12:30 | **Talks, Session II**<br>(20 mins each) | • Robert Rieben (LLNL), *The multiphysics on advanced platforms project: performance, portability and scaling*<br>• Marc Bolinches (UT), *Development of DG compressible Navier Stokes solver with MFEM*<br>• Mathias Davids (Harvard), *Modeling peripheral nerve stimulations in magnetic resonance imaging*<br>• Jan Nikl (ELI Beamlines), *Laser plasma modeling with high-order finite elements*<br>• Qi Tang (LANL), *An adaptive, scalable fully implicit resistive MHD solver*<br>• Syun’ichi Shiraiwa (PPPL), *Development of PyMFEM python wrapper for MFEM and scalable RF wave simulation for nuclear fusion* |
+| 12:30-1:00 | **Break** | All |
+| 1:00-2:00 | **Talks, Session III**<br>(20 mins each) | • William Dawn (NCSU), *Unstructured finite element neutron transport using MFEM*<br>• Vladimir Tomov (LLNL), *MFEM capabilities for high-order mesh optimization*<br>• Will Pazner (LLNL), *High-order matrix-free solvers* |
+| 2:00-2:30 | **Breakout Sessions** | • Electromagnetics<br>• Fluids<br>• Structural Mechanics |
+| 2:30-2:45 | **Wrap-up & Contest Winners** | Aaron Fisher |
 
-\* If you have an idea for a talk, demo, or breakout session topic, please describe it on the registration form.
-Submissions are due on **October 6th** along with your registration.
+### Simulation and Visualization Contest
 
-### Questions?
+We will be holding a simulation and visualization contest open to all attendees.
+Participants can submit visualizations (images or videos) from MFEM-related
+simulations. The winner of the competition (selected by the organizing
+committee) will receive an MFEM T-shirt. We will also feature the images in the
+[gallery](gallery.md).
 
-For questions, please contact the meeting organizer at
-[fisher47@llnl.gov](mailto:fisher47@llnl.gov).
+To submit an entry in the contest, please fill out the
+[Google form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link).
+
+Alternatively, you may email your submission to
+[mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
+description of the simulation (the underlying physics, discretization,
+application details, etc.), and visualization software used (GLVis, ParaView,
+VisIt, etc.).
+
+### Virtual Backgrounds
+
+We invite workshop participants to use the virtual backgrounds designed for this event. 
+Click each image to enlarge, then right-click to save locally.
+
+<center>
+
+<div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-blueprint-text.png)](img/workshop-vb/mfem-blueprint-text.png)
+
+[![](img/workshop-vb/mfem-dark-blue-text.png)](img/workshop-vb/mfem-dark-blue-text.png)
+
+</div><div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-wave-text.png)](img/workshop-vb/mfem-wave-text.png)
+
+[![](img/workshop-vb/mfem-light-blue-text.png)](img/workshop-vb/mfem-light-blue-text.png)
+
+</div><div class="col-md-3"  markdown="1">
+
+[![](img/workshop-vb/mfem-tron-wave-text.png)](img/workshop-vb/mfem-tron-wave-text.png)
+
+[![](img/workshop-vb/mfem-grey-text.png)](img/workshop-vb/mfem-dark-blue-text.png)
+
+</div>
+</center>
