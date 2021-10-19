@@ -25,6 +25,8 @@ by our users in practice.
 - [Finding Local Element Coordinates of Physical Points](findpts.md)
 - [Working with Nonconforming Meshes for AMR](ncmesh.md)
 
+### Linear Algebra
+- [Using Block Operators and Matrices](block_operators_matrices.md)
 
 ### Solvers
 - [Using a Custom Preconditioner](custom_precond.md)
