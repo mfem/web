@@ -90,10 +90,12 @@ The Jacobian for a vector `uu` is calculated using the following lines:
 ```c++
 mfem::DenseMatrix jac(3,6);
 mfem::Vector param; //dummy vector - we do not have parameters
-mfem::Vector uu(6); uu=1.0; - all values are set to one
+mfem::Vector uu(6); uu=1.0; // all values are set to one
 erdf.QJacobian(param,uu,jac);
 ```
-The elements of the state vector `uu` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`.
+The elements of the state vector `uu` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`. 
+
+It is important to mention that the current AD interface is intended to be used at the integration point level. Thus, all vectors and matrices used as arguments in the functors and the lambda expressions should be serial objects. The provided set of examples, in the mini-app directory, for solving a P-Laplacian problem further exemplifies the intended use of the current implementation.
 
 
 [^1]: Griewank, A. & Walther, A. Evaluating derivatives: principles and techniques of algorithmic differentiation SIAM, 2008
