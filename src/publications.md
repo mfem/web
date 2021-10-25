@@ -8,6 +8,7 @@
 ## Selected Publications
 
 #### 2021
+  1. J. Nikl, M. Kuchařík, and S. Weber, [High-Order Curvilinear Finite Element Magneto-Hydrodynamics I: A Conservative Lagrangian Scheme](https://arxiv.org/abs/2110.11669), *in review*, **2021**.
   1. T. L. Horvath and S. Rhebergen, [A conforming sliding mesh technique for an embedded-hybridized discontinuous Galerkin discretization for fluid-rigid body interaction](https://arxiv.org/abs/2105.12542), *in review*, **2021**.
   1. Tz. Kolev and W. Pazner, [Conservative and accurate solution transfer between high-order and low-order refined finite element spaces](https://arxiv.org/abs/2103.05283), *in review*, **2021**.
   1. J. Yang, T. Dzanic, B. Petersen, J. Kudo, K. Mittal, V. Tomov, J.-S. Camier, T. Zhao, H. Zha, Tz. Kolev, R. Anderson, D. Faissol, [Reinforcement Learning for Adaptive Mesh Refinement](https://arxiv.org/abs/2103.01342), *in review*, **2021**.
