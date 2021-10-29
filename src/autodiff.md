@@ -37,7 +37,7 @@ A dual number  $x+\varepsilon x'$ consists of a primal/real part and a dual part
 
 # Example of AD differentiated function
 
-The following vector function, defined as lambda expression, has two parameters `kappa` and `load`. The input of the function `uu` is a vector with 4 components (the last one is not used in the output of the function), and the result is a vector `vres` of size 4.
+The following vector function, defined as lambda expression, has two parameters `kappa` and `load`. The input of the function `uu` is a vector $\left[\partial u/\partial x, \partial u/\partial y,\partial u/\partial z,u \right]^{\sf{T}}$ with 4 components (the last one is not used in the output of the function), and the result is a vector  $\left[\kappa \partial u/\partial x, \kappa \partial u/\partial y, \kappa \partial u/\partial z, -f \right]$  `vres` of size 4.
 
 ```c++
 //using lambda expression
@@ -53,13 +53,16 @@ auto func = [](mfem::Vector& vparam, mfem::ad::ADVectorType& uu, mfem::ad::ADVec
 ```
 The gradient of `vres` will be a matrix of size 4x4 and is computed with the help of the following object:
 ```c++
-mfem::VectorFuncAutoDiff<4,4,2> fdr(func);
+constexpr int output_length = 4;
+constexpr int input_length = 4;
+constexpr int parameter_length = 2;
+mfem::VectorFuncAutoDiff<output_length,input_length,parameter_length> function_derivative(func);
 ```
-The first parameter in the above template specifies the length of the result, the second parameter the length of the input vector `uu`, and the third template parameter specifies the length of `vparam`. Once `fdr` is defined, the following statement computes the gradients:
+The first parameter in the above template specifies the length of the result, the second parameter the length of the input vector `uu`, and the third template parameter specifies the length of `vparam`. Once `function_derivative` is defined, the following statement computes the gradients:
 ```c++
-fdr.QJacobian(param,state, grad_mat);
+function_derivative.Jacobian(param,state, grad_mat);
 ```
-The input consists of parameters and a state vector, and the output is 4x4 `grad_mat` matrix.
+The input consists of parameters and a state vector, and the output is 4x4 `grad_mat` matrix. The parameter vector consists of the coefficients $\kappa$ and $f$ (referred to as load in the code).
 
 # Example of AD differentiated function using functors
 
@@ -83,7 +86,10 @@ public:
 
 The gradient of `rr` will be a matrix of size 3x6 and is computed with the help of the following object:
 ```c++
- mfem::QVectorFuncAutoDiff<ExampleResidual,3,6,0> erdf;
+constexpr int output_length = 3;
+constexpr int input_length = 6;
+constexpr int parameter_length = 0;
+ mfem::VectorFuncAutoDiff<ExampleResidual,output_length,input_length,parameter_length> erdf;
 ```
 
 The Jacobian for a vector `uu` is calculated using the following lines:
@@ -91,9 +97,9 @@ The Jacobian for a vector `uu` is calculated using the following lines:
 mfem::DenseMatrix jac(3,6);
 mfem::Vector param; //dummy vector - we do not have parameters
 mfem::Vector uu(6); uu=1.0; // all values are set to one
-erdf.QJacobian(param,uu,jac);
+erdf.Jacobian(param,uu,jac);
 ```
-The elements of the state vector `uu` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`. 
+The elements of the state vector `uu` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`. The template parameters `output_length`, `input_length`,and `parameter_length` should match the vector function signature.    
 
 It is important to mention that the current AD interface is intended to be used at the integration point level. Thus, all vectors and matrices used as arguments in the functors and the lambda expressions should be serial objects. The provided set of examples, in the mini-app directory, for solving a P-Laplacian problem further exemplifies the intended use of the current implementation.
 
