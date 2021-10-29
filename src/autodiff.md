@@ -89,7 +89,7 @@ The gradient of `rr` will be a matrix of size 3x6 and is computed with the help 
 constexpr int output_length = 3;
 constexpr int input_length = 6;
 constexpr int parameter_length = 0;
- mfem::VectorFuncAutoDiff<ExampleResidual,output_length,input_length,parameter_length> erdf;
+mfem::VectorFuncAutoDiff<ExampleResidual,output_length,input_length,parameter_length> erdf;
 ```
 
 The Jacobian for a vector `uu` is calculated using the following lines:
