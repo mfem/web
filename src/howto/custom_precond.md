@@ -5,7 +5,7 @@ tag-howto:
 For many problems of interest the off the shelf preconditioners are insufficient and
 something more tailored to the equations of interest is required.  MFEM has a flexible
 approach to defining preconditioners enabled by deriving from the existing Solver
-class and overriding the necessary methods to define the action.  Se the following
+class and overriding the necessary methods to define the action.  See the following
 example:
 
 
