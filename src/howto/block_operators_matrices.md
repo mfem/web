@@ -49,5 +49,3 @@ an operator and a matrix, but this test illustrates the equivalence of the two a
 
 The capability to form a monolithic matrix is available only for `HypreParMatrix`, not for the serial
 class `SparseMatrix`.
-
-
