@@ -69,12 +69,12 @@ The input consists of parameters and a state vector, and the output is 4x4 `grad
 The following vector function, defined as a functor, has zero parameters. The input of the function `uu` is a vector with 6 components, and the result is a vector `rr` of size 3.
 
 ```c++
-template<typename TDataType, typename TParamVector, typename TStateVector,
+template<typename DataType, typename ParamVector, typename StateVector,
          int residual_size, int state_size, int param_size>
 class ExampleResidual
 {
 public:
-    void operator ()(TParamVector& vparam, TStateVector& uu, TStateVector& rr)
+    void operator ()(ParamVector& vparam, StateVector& uu, StateVector& rr)
     {
         rr[0]=sin(uu[0]+uu[1]+uu[2]);
         rr[1]=cos(uu[1]+uu[2]+uu[3]);
