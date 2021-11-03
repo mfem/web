@@ -108,7 +108,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 26](http://mfem.github.io/doxygen/html/ex26_8cpp_source.html): multigrid preconditioner for the Laplace problem,
  - [Example 27](http://mfem.github.io/doxygen/html/ex27_8cpp_source.html): boundary conditions for the Laplace problem,
  - [Example 28](http://mfem.github.io/doxygen/html/ex28_8cpp_source.html): constraints and sliding boundary conditions,
- - [Example 29](http://mfem.github.io/doxygen/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces.
+ - [Example 29](http://mfem.github.io/doxygen/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces,
+ - [Example 30](http://mfem.github.io/doxygen/html/ex30_8cpp_source.html): mesh preprocessing, resolving problem data.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
