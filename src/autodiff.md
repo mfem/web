@@ -1,3 +1,5 @@
+tag-gettingstarted:
+
 # Automatic Differentiation Mini Applications
 
 The code in the `miniapps/autodiff` subdirectory of MFEM provides methods for automatic differentiation (AD) of arbitrary functions implemented in C++, either as lambda functions or functors.  AD consists of a set of techniques to evaluate the derivative of a function implemented as a computer program. AD  does not provide a symbolic form of the derivatives, and AD is not a numerical approximation technique. Instead, the derivatives obtained by AD are exact and exploit the fact that every function implemented on a computer can be represented by a sequence of arithmetic operations and basic functions, i.e., addition, multiplication, `sin`, `cos`, `log`, etc. The derivatives in AD with respect to the input arguments are obtained by applying the chain rule on the recorded sequence of operations. For more theoretical details, the users are referred to [^1].
@@ -10,7 +12,7 @@ Two distinguished modes, forward and reverse, can be easily identified in softwa
 \dot{\mathbf{y}}&=f'\left(\mathbf{x}\right)\dot{\mathbf{x}}, \quad \dot{\mathbf{x}}\in\mathbb{R}^{n\times 1}, \dot{\mathbf{y}}\in\mathbb{R}^{m\times1},
 \end{align}
 
-where the vector $\dot{\mathbf{x}}$ is specified by the user. Therefore, to extract the Jacobian $f'\left(\mathbf{x}\right)\dot{\mathbf{x}}$ one has to call the AD procedure $n$ times with n different vectors $\dot{\mathbf{x}}$, where the values of  vector $j=1,\ldots, n$ are defined as $\dot{\mathbf{x}}\_i=\delta_{i,j}$. The Jacobian is extracted column by column.
+where the vector $\dot{\mathbf{x}}$ is specified by the user. Therefore, to extract the Jacobian $f'\left(\mathbf{x}\right)\dot{\mathbf{x}}$ one has to call the AD procedure $n$ times with $n$ different vectors $\dot{\mathbf{x}}$, where the values of  vector $j=1,\ldots, n$ are defined as $\dot{\mathbf{x}}\_i=\delta_{i,j}$. The Jacobian is extracted column by column.
 
 For a function $f(\mathbf{x}):\mathbb{R}^n \rightarrow\mathbb{R}^m$, reverse mode evaluates
 
@@ -99,9 +101,9 @@ mfem::Vector param; //dummy vector - we do not have parameters
 mfem::Vector input_vector(6); input_vector=1.0; // all values are set to one
 erdf.Jacobian(param,input_vector,jac);
 ```
-The elements of the state vector `input_vector` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`. The template parameters `output_length`, `input_length`,and `parameter_length` should match the vector function signature.    
+The elements of the state vector `input_vector` are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix `jac(3,6)`. The template parameters `output_length`, `input_length`,and `parameter_length` should match the vector function signature.
 
-It is important to mention that the current AD interface is intended to be used at the integration point level. Thus, all vectors and matrices used as arguments in the functors and the lambda expressions should be serial objects. The provided set of examples, in the mini-app directory, for solving a P-Laplacian problem further exemplifies the intended use of the current implementation.
+It is important to mention that the current AD interface is intended to be used at the integration point level. Thus, all vectors and matrices used as arguments in the functors and the lambda expressions should be serial objects. The provided set of examples, in the mini-app directory, for solving a $p$-Laplacian problem further exemplifies the intended use of the current implementation.
 
 
 [^1]: Griewank, A. & Walther, A. Evaluating derivatives: principles and techniques of algorithmic differentiation SIAM, 2008

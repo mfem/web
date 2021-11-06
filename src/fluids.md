@@ -1,3 +1,5 @@
+tag-gettingstarted:
+
 # Navier-Stokes Mini Application
 
 The solver implemented in this miniapp solves the transient incompressible
