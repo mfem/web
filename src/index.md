@@ -86,10 +86,10 @@ a short description, and visualization software used.
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
+Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our workshop.
+Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 ## Latest Release
 
