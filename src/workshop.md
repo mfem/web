@@ -2,10 +2,10 @@
 #### October 20, 2021
 #### Virtual Meeting
 
-**Speakers' slides** are linked in the agenda below. Read the 
-[**article**](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) 
-about the workshop on LLNL's Computing website. Check back soon for links to 
-**videos of the talks** on this page and **contest submissions** in the [gallery](gallery.md). 
+**Speakers' slides** are linked in the agenda below. Read the
+[**article**](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop)
+about the workshop on LLNL's Computing website. Check back soon for links to
+**videos of the talks** on this page and **contest submissions** in the [gallery](gallery.md).
 
 ![MFEM Logo](img/logo-300.png)
 
@@ -79,7 +79,7 @@ VisIt, etc.).
 
 ### Virtual Backgrounds
 
-We invite workshop participants to use the virtual backgrounds designed for this event. 
+We invite workshop participants to use the virtual backgrounds designed for this event.
 Click each image to enlarge, then right-click to save locally.
 
 <center>

@@ -70,14 +70,14 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and [News](n
 
 ### October Simulation/Visualization Contest
 
-We are holding a simulation and visualization contest open to all attendees of 
+We are holding a simulation and visualization contest open to all attendees of
 our upcoming [workshop](workshop.md). The winner as selected by the workshop organizing
 committee will receive an MFEM T-shirt. We will also feature the images in the [gallery](gallery.md).
 
 To submit your visualization from MFEM-related simulations in the contest,
 please fill out the [Google
-form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link) 
-or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution, 
+form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link)
+or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution,
 a short description, and visualization software used.
 
 </div><div class="col-md-6 news-table" markdown="1">
