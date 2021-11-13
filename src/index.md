@@ -70,14 +70,14 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and [News](n
 
 ### October Simulation/Visualization Contest
 
-We are holding a simulation and visualization contest open to all attendees of 
+We are holding a simulation and visualization contest open to all attendees of
 our upcoming [workshop](workshop.md). The winner as selected by the workshop organizing
 committee will receive an MFEM T-shirt. We will also feature the images in the [gallery](gallery.md).
 
 To submit your visualization from MFEM-related simulations in the contest,
 please fill out the [Google
-form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link) 
-or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution, 
+form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link)
+or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution,
 a short description, and visualization software used.
 
 </div><div class="col-md-6 news-table" markdown="1">
@@ -86,10 +86,10 @@ a short description, and visualization software used.
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
+Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our workshop.
+Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 ## Latest Release
 
