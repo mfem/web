@@ -8,6 +8,8 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
     <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -37,6 +39,18 @@
       [<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
         Non-conforming adaptive mesh refinement with parallel load-balancing
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Dennis Ogiermann
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Tamas Horvath
       </div>
     </div>
   </div>
