@@ -18,6 +18,18 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
+      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Dennis Ogiermann
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Tamas Horvath
+      </div>
+    </div>
+    <div class="item">
       [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
         Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
@@ -39,18 +51,6 @@
       [<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
         Non-conforming adaptive mesh refinement with parallel load-balancing
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Dennis Ogiermann
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Tamas Horvath
       </div>
     </div>
   </div>
