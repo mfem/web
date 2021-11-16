@@ -62,20 +62,8 @@ The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-
 
 ### Simulation and Visualization Contest
 
-We will be holding a simulation and visualization contest open to all attendees.
-Participants can submit visualizations (images or videos) from MFEM-related
-simulations. The winner of the competition (selected by the organizing
-committee) will receive an MFEM T-shirt. We will also feature the images in the
-[gallery](gallery.md).
-
-To submit an entry in the contest, please fill out the
-[Google form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link).
-
-Alternatively, you may email your submission to
-[mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
-description of the simulation (the underlying physics, discretization,
-application details, etc.), and visualization software used (GLVis, ParaView,
-VisIt, etc.).
+The 2021 MFEM Workshop featured a simulation and visualization contest. The
+submitted entries can be viewed in the [gallery](gallery.md).
 
 ### Virtual Backgrounds
 

@@ -8,12 +8,26 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
     <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Dennis Ogiermann
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Tamas Horvath
+      </div>
     </div>
     <div class="item">
       [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md)
@@ -66,19 +80,6 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 
 MFEM is used in many projects, including [BLAST](http://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](http://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 See also our [Gallery](gallery.md), [Publications](publications.md) and [News](news.md) pages.
-
-
-### October Simulation/Visualization Contest
-
-We are holding a simulation and visualization contest open to all attendees of
-our upcoming [workshop](workshop.md). The winner as selected by the workshop organizing
-committee will receive an MFEM T-shirt. We will also feature the images in the [gallery](gallery.md).
-
-To submit your visualization from MFEM-related simulations in the contest,
-please fill out the [Google
-form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link)
-or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution,
-a short description, and visualization software used.
 
 </div><div class="col-md-6 news-table" markdown="1">
 
