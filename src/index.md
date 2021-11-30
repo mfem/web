@@ -79,7 +79,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including [BLAST](http://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](http://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
-See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
+See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md), and [News](news.md) pages.
 
 </div><div class="col-md-6 news-table" markdown="1">
 

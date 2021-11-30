@@ -2,6 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
 Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) summarizing the October 20th, 2021, community workshop.
 Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | The inaugural [MFEM Community Workshop](workshop.md) will take place on October 20th, 2021.
