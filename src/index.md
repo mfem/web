@@ -79,7 +79,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including [BLAST](http://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](http://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
-See also our [Gallery](gallery.md), [Publications](publications.md) and [News](news.md) pages.
+See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md), and [News](news.md) pages.
 
 </div><div class="col-md-6 news-table" markdown="1">
 
@@ -87,10 +87,10 @@ See also our [Gallery](gallery.md), [Publications](publications.md) and [News](n
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
 Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our workshop.
 Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
-Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
 
 ## Latest Release
 
