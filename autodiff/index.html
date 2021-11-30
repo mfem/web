@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                 <a href="./">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#automatic-differentiation-mini-applications">Automatic Differentiation Mini Applications</a></li>
+        
+    
+        <li class="main "><a href="#dual-numbers">Dual numbers</a></li>
+        
+    
+        <li class="main "><a href="#example-of-ad-differentiated-function">Example of AD differentiated function</a></li>
+        
+    
+        <li class="main "><a href="#example-of-ad-differentiated-function-using-functors">Example of AD differentiated function using functors</a></li>
+        
+    
+    
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../getting-started/"><i class="fa fa-chevron-circle-left"></i> Back to Getting Started</a> </li>
+        
+	
+	
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="automatic-differentiation-mini-applications">Automatic Differentiation Mini Applications</h1>
+<p>The code in the <code>miniapps/autodiff</code> subdirectory of MFEM provides methods for automatic differentiation (AD) of arbitrary functions implemented in C++, either as lambda functions or functors.  AD consists of a set of techniques to evaluate the derivative of a function implemented as a computer program. AD  does not provide a symbolic form of the derivatives, and AD is not a numerical approximation technique. Instead, the derivatives obtained by AD are exact and exploit the fact that every function implemented on a computer can be represented by a sequence of arithmetic operations and basic functions, i.e., addition, multiplication, <code>sin</code>, <code>cos</code>, <code>log</code>, etc. The derivatives in AD with respect to the input arguments are obtained by applying the chain rule on the recorded sequence of operations. For more theoretical details, the users are referred to <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>.</p>
+<p>AD can be implemented on a compiler level by source code transformations or by using some of the features of modern object-oriented languages like operator overloading and templating. Even though several AD implementations on a compiler level exist, they are often utilized for simple functions written in languages like Fortran and C, and developments for general C++ applications are still in their infancy.  The MFEM implementation relies on native and external C++ libraries like CoDiPack <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>.  The users can choose the AD engine during the configuration phase. The choice does not affect the actual utilization of AD  in the code, and it can impact only the performance and memory utilization.</p>
+<p>Two distinguished modes, forward and reverse, can be easily identified in software implementations of automatic differentiation.  For a function $f(\mathbf{x}):\mathbb{R}^n \rightarrow\mathbb{R}^m$, forward mode implementations evaluate</p>
+<p>\begin{align}
+\dot{\mathbf{y}}&amp;=f'\left(\mathbf{x}\right)\dot{\mathbf{x}}, \quad \dot{\mathbf{x}}\in\mathbb{R}^{n\times 1}, \dot{\mathbf{y}}\in\mathbb{R}^{m\times1},
+\end{align}</p>
+<p>where the vector $\dot{\mathbf{x}}$ is specified by the user. Therefore, to extract the Jacobian $f'\left(\mathbf{x}\right)\dot{\mathbf{x}}$ one has to call the AD procedure $n$ times with $n$ different vectors $\dot{\mathbf{x}}$, where the values of  vector $j=1,\ldots, n$ are defined as $\dot{\mathbf{x}}_i=\delta_{i,j}$. The Jacobian is extracted column by column.</p>
+<p>For a function $f(\mathbf{x}):\mathbb{R}^n \rightarrow\mathbb{R}^m$, reverse mode evaluates</p>
+<p>\begin{align}
+\bar{\mathbf{x}}^{\sf{T}}&amp;=\bar{\mathbf{y}}^{\sf{T}} f'\left(\mathbf{x}\right), &amp;\bar{\mathbf{x}}\in\mathbb{R}^{n\times 1}, \bar{\mathbf{y}}\in\mathbb{R}^{m\times1},
+\end{align}</p>
+<p>where $\bar{\mathbf{y}}$ is a vector specified by the user. In contrast to forward mode, the Jacobian, in this case, can be extracted row by row. Thus, for a vector function with a number of arguments smaller than the size of the output, the forward mode will be the preferable one. For a vector function with a number of arguments larger than the size of the output, the reverse mode will be the preferable one. It should be mentioned that reverse mode introduces additional overhead for storing the computational graph in the memory, which might easily fill up the available memory. The interested users are referred to <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> for detailed comparisons. In MFEM, users can choose between a native implementation using AD in a forward mode and both forward and reverse mode implementation based on CoDiPack <sup id="fnref2:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>. The native implementation is based on the so-called <em>dual numbers</em> briefly described below.</p>
+<h1 id="dual-numbers">Dual numbers</h1>
+<p>In forward mode, the derivative information propagates from the input arguments to the output results. In MFEM, this is achieved with the help of the so-called dual number arithmetic. The native low-level implementation can be found in the header file <code>fdual.hpp</code>.  The file implements a large number of basic functions, and if necessary additional basic and more complex functions can be easily added by following the examples.</p>
+<p>A dual number  $x+\varepsilon x'$ consists of a primal/real part and a dual part dragging the derivative information. Every real number can be represented as $x+\varepsilon 0 $. The arithmetic is defined with the help of dummy symbol $\varepsilon$ by specifying that $\varepsilon^2=0$. Based on the above, the following set of rules can be easily derived.</p>
+<ul>
+<li>
+<p>$\left(x+\varepsilon x'\right)+\left(y+\varepsilon y'\right)=\left(x+y\right)+\varepsilon\left(x'+y'\right)$</p>
+</li>
+<li>
+<p>$\left(x+\varepsilon x'\right)*\left(y+\varepsilon y'\right)=xy+\varepsilon\left(yx'+xy'\right)$</p>
+</li>
+<li>
+<p>$f\left(x+\varepsilon x'\right)=f\left(x\right)+\varepsilon f'\left(x\right)x'$</p>
+</li>
+<li>
+<p>$f\left(g \left(x+\varepsilon x'\right) \right)= f\left(g \left(x\right)+\varepsilon g'\left(x\right) x'\right) = f\left(g \left(x \right)\right)+\varepsilon f'\left(g \left(x \right)\right) g'\left(x\right) x'$</p>
+</li>
+</ul>
+<h1 id="example-of-ad-differentiated-function">Example of AD differentiated function</h1>
+<p>The following vector function, defined as lambda expression, has two parameters <code>kappa</code> and <code>load</code>. The input of the function <code>input_vector</code> is a vector $\left[\partial u/\partial x, \partial u/\partial y,\partial u/\partial z,u \right]^{\sf{T}}$ with 4 components (the last one is not used in the output of the function), and the result is a vector  $\left[\kappa \partial u/\partial x, \kappa \partial u/\partial y, \kappa \partial u/\partial z, -f \right]$  <code>output_vector</code> of size 4.</p>
+<pre><code class="c++">//using lambda expression
+auto func = [](mfem::Vector&amp; vparam, mfem::ad::ADVectorType&amp; input_vector, mfem::ad::ADVectorType&amp; output_vector) {
+   auto kappa = vparam[0]; //diffusion coefficient
+   auto load = vparam[1]; //volumetric influx
+
+   output_vector[0] = kappa * input_vector[0];
+   output_vector[1] = kappa * input_vector[1];
+   output_vector[2] = kappa * input_vector[2];
+   output_vector[3] = -load;
+};
+</code></pre>
+
+<p>The gradient of <code>output_vector</code> will be a matrix of size 4x4 and is computed with the help of the following object:</p>
+<pre><code class="c++">constexpr int output_length = 4;
+constexpr int input_length = 4;
+constexpr int parameter_length = 2;
+mfem::VectorFuncAutoDiff&lt;output_length,input_length,parameter_length&gt; function_derivative(func);
+</code></pre>
+
+<p>The first parameter in the above template specifies the length of the result, the second parameter the length of the input vector <code>input_vector</code>, and the third template parameter specifies the length of <code>vparam</code>. Once <code>function_derivative</code> is defined, the following statement computes the gradients:</p>
+<pre><code class="c++">function_derivative.Jacobian(param,state, grad_mat);
+</code></pre>
+
+<p>The input consists of parameters and a state vector, and the output is 4x4 <code>grad_mat</code> matrix. The parameter vector consists of the coefficients $\kappa$ and $f$ (referred to as load in the code).</p>
+<h1 id="example-of-ad-differentiated-function-using-functors">Example of AD differentiated function using functors</h1>
+<p>The following vector function, defined as a functor, has zero parameters. The input of the function <code>input_vector</code> is a vector with 6 components, and the result is a vector <code>output_vector</code> of size 3.</p>
+<pre><code class="c++">template&lt;typename DataType, typename ParamVector, typename StateVector,
+         int residual_size, int state_size, int param_size&gt;
+class ExampleResidual
+{
+public:
+    void operator ()(ParamVector&amp; vparam, StateVector&amp; input_vector, StateVector&amp; output_vector)
+    {
+        output_vector[0]=sin(input_vector[0]+input_vector[1]+input_vector[2]);
+        output_vector[1]=cos(input_vector[1]+input_vector[2]+input_vector[3]);
+        output_vector[2]=tan(input_vector[2]+input_vector[3]+input_vector[4]+input_vector[5]);
+    }
+
+};
+</code></pre>
+
+<p>The gradient of <code>output_vector</code> will be a matrix of size 3x6 and is computed with the help of the following object:</p>
+<pre><code class="c++">constexpr int output_length = 3;
+constexpr int input_length = 6;
+constexpr int parameter_length = 0;
+mfem::VectorFuncAutoDiff&lt;ExampleResidual,output_length,input_length,parameter_length&gt; erdf;
+</code></pre>
+
+<p>The Jacobian for a vector <code>input_vector</code> is calculated using the following lines:</p>
+<pre><code class="c++">mfem::DenseMatrix jac(3,6);
+mfem::Vector param; //dummy vector - we do not have parameters
+mfem::Vector input_vector(6); input_vector=1.0; // all values are set to one
+erdf.Jacobian(param,input_vector,jac);
+</code></pre>
+
+<p>The elements of the state vector <code>input_vector</code> are set to one. In real application they should be set to the actual arguments of the function. The Jacobian is returned in the matrix <code>jac(3,6)</code>. The template parameters <code>output_length</code>, <code>input_length</code>,and <code>parameter_length</code> should match the vector function signature.</p>
+<p>It is important to mention that the current AD interface is intended to be used at the integration point level. Thus, all vectors and matrices used as arguments in the functors and the lambda expressions should be serial objects. The provided set of examples, in the mini-app directory, for solving a $p$-Laplacian problem further exemplifies the intended use of the current implementation.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Griewank, A. &amp; Walther, A. Evaluating derivatives: principles and techniques of algorithmic differentiation SIAM, 2008&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Sagebaum, M.; Albring, T. &amp; Gauger, N. R. High-Performance Derivative Computations Using CoDiPack ACM Trans. Math. Softw., Association for Computing Machinery, 2019, 45&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Nørgaard, S. A.; Sagebaum, M.; Gauger, N. R. &amp; Lazarov, B. Applications of automatic differentiation in topology optimization Structural and Multidisciplinary Optimization, 2017, 56, 1135-1146&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#automatic-differentiation-mini-applications">Automatic Differentiation Mini Applications</a></li>
+        
+    
+        <li class="main "><a href="#dual-numbers">Dual numbers</a></li>
+        
+    
+        <li class="main "><a href="#example-of-ad-differentiated-function">Example of AD differentiated function</a></li>
+        
+    
+        <li class="main "><a href="#example-of-ad-differentiated-function-using-functors">Example of AD differentiated function using functors</a></li>
+        
+    
+    
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../getting-started/"><i class="fa fa-chevron-circle-left"></i> Back to Getting Started</a> </li>
+        
+	
+	
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>
