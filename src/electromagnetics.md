@@ -1,3 +1,5 @@
+tag-gettingstarted:
+
 # Electromagnetics Mini Applications
 
 $\newcommand{\A}{\vec{A}}\newcommand{\B}{\vec{B}}
