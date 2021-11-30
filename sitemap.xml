@@ -166,6 +166,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://mfem.org/videos/</loc>
+     <lastmod>2021-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://mfem.org/about/</loc>
      <lastmod>2021-11-30</lastmod>
      <changefreq>daily</changefreq>
