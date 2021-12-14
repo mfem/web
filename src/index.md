@@ -103,7 +103,8 @@ Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
 **Download mfem-4.3.tgz**
 </button>](https://bit.ly/mfem-4-3)
 
-[Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM)
+[Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊ [Jupyter notebook](https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb)
+
 
 ## Documentation
 
