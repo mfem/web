@@ -328,6 +328,7 @@ combinations of the following quantites:
 + Divergence of vector-valued basis functions obtained from `CalcPhysDivShape`
 + Curl of vector-valued basis functions in 2D obtained from `CalcPhysCurlShape`
 + Gradient of scalar-valued basis functions in 1D obtained from `CalcPhysDShape`
++ An optional scalar coefficient
 
 To derive a custom integrator from `MixedScalarIntegrator` a developer
 need only define constructors for the custom integrator. Only one constructor
@@ -342,7 +343,7 @@ public:
 };
 ```
 
-By default this integrator will compute the square operator:
+By default this integrator will compute the operator:
 
 $$a_{ij} = \int_{\Omega_e}q(x)\,f_j(x)\,g_i(x)\,d\Omega$$
 
@@ -365,7 +366,7 @@ More commonly a derived class will need to override one or both of the
 function values. For example the four types of scalar basis function evaluations
 supported by `MixedScalarIntegrator` could be obtained by these overrides of the trial (domain) finite element basis functions:
 ```
-/// Evaluate the scalar-valued basis function
+/// Evaluate the scalar-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
                                    Vector & shape)
@@ -373,7 +374,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 ```
 or
 ```
-/// Evaluate the divergence of the vector-valued basis function
+/// Evaluate the divergence of the vector-valued basis functions
 virtual void CalcTrialShape(const FiniteElement & trial_fe,
                             ElementTransformation &Trans,
                             Vector & shape)
@@ -381,7 +382,7 @@ virtual void CalcTrialShape(const FiniteElement & trial_fe,
 ```
 or
 ```
-/// Evaluate the 2D curl of the vector-valued basis function
+/// Evaluate the 2D curl of the vector-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
                                    Vector & shape)
@@ -392,7 +393,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 ```
 or
 ```
-/// Evaluate the 1D gradient of the scalar-valued basis function
+/// Evaluate the 1D gradient of the scalar-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
                                    Vector & shape)
