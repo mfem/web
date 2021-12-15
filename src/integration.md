@@ -511,5 +511,59 @@ included in MFEM. See [Bilinear Form Integrators](bilininteg.md) for a listing.
 
 ### Working with the MixedScalarVectorIntegrator
 
+The `MixedScalarVectorIntegrator` follows naturally from the
+`MixedScalarIntegrator` and the `MixedVectorIntegrator`. The integrand in this
+case is computed as the product of a scalar basis function with a vector basis
+function. However, since the integrand must be scalar valued, a vector-valued
+coefficient will always be required.
+
+The types of scalar-valued basis functions will include:
+
++ Scalar-valued basis functions obtained from `CalcPhysShape`
++ Divergence of vector-valued basis functions obtained from `CalcPhysDivShape`
++ Curl of vector-valued basis functions in 2D obtained from `CalcPhysCurlShape`
++ Gradient of scalar-valued basis functions in 1D obtained from `CalcPhysDShape`
+
+The types of vector-valued basis functions will include:
+
++ Vector-valued basis functions obtained from `CalcVShape`
++ Gradient of scalar-valued basis functions obtained from `CalcPhysDShape`
++ Curl of vector-valued basis functions in 3D obtained from `CalcPhysCurlShape`
+
+By default this integrator will compute different operators based on the choice
+of the trial and test spaces and, in 2D, how the vector coefficient should be
+employed:
+
+$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\,f_j(x)\right)\cdot\vec{G}_i(x)\,d\Omega\label{msv_def}$$
+
+or
+
+$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\cdot\vec{F}_j(x)\right)\,g_i(x)\,d\Omega\label{msv_trans}$$
+
+or in 2D there is an option to compute
+
+$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\,f_j(x)\right)\times\vec{G}_i(x)\,d\Omega\label{msv_2d_def}$$
+
+or (again optionally in 2D)
+
+$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\,g_i(x)\,d\Omega\label{msv_2d_trans}$$
+
+The methods that a developer may choose to override are again quite similar to
+those in `MixedScalarIntegrator` and `MixedVectorIntegrator`. The main
+difference is the basis function overrides which have been renamed to
+`CalcShape` for the scalar-valued basis and `CalcVShape` for the vector-valued
+basis. By default it is assumed that the trial (domain) space is scalar-valued
+and the test (range) space is vector-valued as in equations \ref{msv_def} and
+\ref{msv_2d_def}. The choice of trial and test spaces is here controlled by a
+`transpose` option in the `MixedScalarVectorIntegrator` constructor. If
+`transpose == true` then equations \ref{msv_trans} and \ref{msv_2d_trans} are
+assumed. The choice between equations \ref{msv_def} and \ref{msv_trans} on the
+one hand and equations \ref{msv_2d_def} and \ref{msv_2d_trans} on the other is
+made with the `cross_2d` optional constructor argument.
+
+Again there are several customizations of this integrator included in MFEM but
+others are possible. See [Bilinear Form Integrators](bilininteg.md) for a
+listing.
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
