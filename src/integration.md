@@ -299,8 +299,8 @@ computed in the reference coordinate system.
 | Family | Evaluation          | Transformation                                |
 |--------|---------------------|-----------------------------------------------|
 | H1     | Basis               | None |
-| H1     | Gradient of Basis   | $\nabla_x\varphi_i = (J^T)^{-1}\nabla_u\hat{\varphi}_i$ |
-| ND     | Basis               | $\vec{W}_i = (J^T)^{-1}\hat{W}_i$ |
+| H1     | Gradient of Basis   | $\nabla_x\varphi_i = (J^{-1})^T\nabla_u\hat{\varphi}_i$ |
+| ND     | Basis               | $\vec{W}_i = (J^{-1})^T\hat{W}_i$ |
 | ND     | Curl of Basis       | $\nabla_x\times\vec{W}_i = \frac{1}{\|J\|}J\,\nabla_u\times\hat{W}_i$ |
 | RT     | Basis               | $\vec{F}_i = \frac{1}{\|J\|}J\,\hat{F}_i$ |
 | RT     | Divergence of Basis | $\nabla_x\cdot\vec{F}_i = \frac{1}{\|J\|}\nabla_u\cdot\hat{F}_i$ |
@@ -317,9 +317,136 @@ both multiply and divide by the Jacobian determinant at each
 integration point. Clearly this is unnecessary and could significantly
 increase the computational effort needed to compute the integrals.
 
-
-
 ### Working with the MixedScalarIntegrator
+
+The `MixedScalarIntegrator` is designed to help construct
+`BilinearFormIntegrators` which build an integrand from two sets of
+scalar-valued basis function evaluations. Such integrands will involve
+combinations of the following quantites:
+
++ Scalar-valued basis functions obtained from `CalcPhysShape`
++ Divergence of vector-valued basis functions obtained from `CalcPhysDivShape`
++ Curl of vector-valued basis functions in 2D obtained from `CalcPhysCurlShape`
++ Gradient of scalar-valued basis functions in 1D obtained from `CalcPhysDShape`
+
+To derive a custom integrator from `MixedScalarIntegrator` a developer
+need only define constructors for the custom integrator. Only one constructor
+is necessary but support of various coefficient types is often useful.
+```
+class MixedScalarMassIntegrator : public MixedScalarIntegrator
+{
+public:
+   MixedScalarMassIntegrator() { same_calc_shape = true; }
+   MixedScalarMassIntegrator(Coefficient &q)
+      : MixedScalarIntegrator(q) { same_calc_shape = true; }
+};
+```
+
+By default this integrator will compute the square operator:
+
+$$a_{ij} = \int_{\Omega_e}q(x)\,f_j(x)\,g_i(x)\,d\Omega$$
+
+Where $f_j$ and $g_i$ are two sets of scalar-valued basis functions
+which produces a "mass" matrix. 
+
+The `MixedScalarIntegrator` has two public methods and five protected
+methods which can be overridden to customize the integrator. 
+
+The public methods are `AssembleElementMatrix` for use with the `BilinearForm`
+class of square bilinear forms and `AssembleElementMatrix2` for use with the
+`MixedBilinearForm` class of rectangular bilinear forms. Typically only one of
+these is necessary and the default implementations will often suffice. However,
+one or both of these methods may be overridden by a derived class if some
+customizsation is desired. For example, to implement optimizations related to
+coordinate transformations or custom integration rules, etc..
+
+More commonly a derived class will need to override one or both of the
+`CalcTestShape` and `CalcTrialShape` methods which compute the necessary basis
+function values. For example the four types of scalar basis function evaluations
+supported by `MixedScalarIntegrator` could be obtained by these overrides of the trial (domain) finite element basis functions:
+```
+/// Evaluate the scalar-valued basis function
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   Vector & shape)
+{ trial_fe.CalcPhysShape(Trans, shape); }
+```
+or
+```
+/// Evaluate the divergence of the vector-valued basis function
+virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                            ElementTransformation &Trans,
+                            Vector & shape)
+{ trial_fe.CalcPhysDivShape(Trans, shape); }
+```
+or
+```
+/// Evaluate the 2D curl of the vector-valued basis function
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   Vector & shape)
+{
+   DenseMatrix dshape(shape.GetData(), shape.Size(), 1);
+   trial_fe.CalcPhysCurlShape(Trans, dshape);
+}
+```
+or
+```
+/// Evaluate the 1D gradient of the scalar-valued basis function
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   Vector & shape)
+{
+   DenseMatrix dshape(shape.GetData(), shape.Size(), 1);
+   trial_fe.CalcPhysDShape(Trans, dshape);
+}
+```
+Similar overrides could be implemented for the test (range) space. Of course
+other overrides are possible and may be quite useful for other custom
+integrators.
+
+The next override that is often advisable is `VerifyFiniteElementTypes` which
+provides a means of testing the `FiniteElement` objects passed by the
+`BilinearForm` class to make sure they support the evaluations needed by the
+`CalcTestShape` and `CalcTrialShape` methods. This override is optional but
+highly recommeneded. As an example the following override verifies that the
+geometry is one dimensional and that the trial (domain) space supports
+evaluation of the gradient of the basis functions.
+```
+inline virtual bool VerifyFiniteElementTypes(const FiniteElement & trial_fe,
+                                             const FiniteElement & test_fe
+                                             ) const
+{
+   return (trial_fe.GetDim() == 1 && test_fe.GetDim() == 1 &&
+           trial_fe.GetDerivType() == mfem::FiniteElement::GRAD  &&
+           test_fe.GetRangeType()  == mfem::FiniteElement::SCALAR );
+}
+```
+A related optional method can be used to output an appropriate error message in
+the event that unsuitable basis functions have been provided. For example the
+following error message might be appropriate in conjunction with the previous
+`VerifyFiniteElementTypes` implementation:
+```
+inline virtual const char * FiniteElementTypeFailureMessage() const
+{
+   return "Trial and test spaces must both be scalar fields in 1D "
+          "and the trial space must implement CalcDShape.";
+}
+```
+The last optional protected method allows a certain flexibility in the choice
+of quadrature order. The default implementation is shown below but other
+choices may be suitable.
+```
+inline virtual int GetIntegrationOrder(const FiniteElement & trial_fe,
+                                       const FiniteElement & test_fe,
+                                       ElementTransformation &Trans)
+{ return trial_fe.GetOrder() + test_fe.GetOrder() + Trans.OrderW(); }
+```
+
+A wide variety of bilinear forms can be easily implemented using the
+`MixedScalarIntegrator`. Most of these are probably already included in MFEM,
+see [Bilinear Form Integrators](bilininteg.md) for a listing, but other options
+may be useful.
 
 ### Working with the MixedVectorIntegrator
 
