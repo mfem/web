@@ -51,7 +51,8 @@ more exotic, forms are possible:
 The `BilinearFormIntegrator` classes allow MFEM to produce a wide variety of
 local element matrices without modifying the `BilinearForm` class.  Many of the
 possible operators are collected below into tables that briefly describe their
-action and requirements.
+action and requirements. For more information on integration and developing
+custom `BilinearFormIntegrator` classes see [Integration](integration.md).
 
 In the tables below the *Space* column refers to finite element spaces which
 implement the following methods:
