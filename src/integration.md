@@ -139,7 +139,7 @@ matrix:
 | Inverse Jacobian     | `const DenseMatrix &InvJ = Trans.InverseJacobian()`  | ${\bf J}^{-1}$ |
 | Adjugate Jacobian    | `const DenseMatrix &AdjJ = Trans.AdjugateJacobian()` | $\|{\bf J}\|\,{\bf J}^{-1}$ |
 
-Since these quantites can be expensive to compute the
+Since these quantities can be expensive to compute the
 `ElementTransformation` object will avoid recomputing values whenever
 possible. However, once a new quadrature point is set, using
 `ElementTransformation::SetIntPoint()`, any cached values will be
@@ -147,8 +147,8 @@ overwritten by subsequent calls to the above functions.
 
 ## Writing Custom Integrators
 
-Elementwise integration arises in various places in the finite element
-method. A few of the most common occurances are square and rectangular
+Element-wise integration arises in various places in the finite element
+method. A few of the most common occurrences are square and rectangular
 bilinear form operators, linear form operators, and the calculation of
 norms from field data.
 
@@ -169,7 +169,7 @@ The pieces that are common to each of these include:
  + Evaluating the function to be integrated
 
 An appropriate quadrature order depends on many variables. If we could
-restrict ourselves to integrating polynomials then a specififc order
+restrict ourselves to integrating polynomials then a specific order
 would produce an exact result and a higher order would only incur
 additional effort. However, skewed or curved elements can introduce a
 rational polynomial factor through the Jacobian of the element
@@ -257,7 +257,7 @@ to their dependence on the reference element.
 The scalar basis functions provided by the `H1_FECollection` are
 straightforward. Simply call `FiniteElement::CalcShape` with the
 current quadrature point to retrieve a vector containing the values of
-each basis function evaluted at the given point in reference space.
+each basis function evaluated at the given point in reference space.
 
 ```
 ...
@@ -276,7 +276,7 @@ for (int i = 0; i < ir->GetNPoints(); i++)
 
    ...
 
-   // Evalute the basis functions at the point ip
+   // Evaluate the basis functions at the point ip
    trial_fe.CalcShape(ip, tr_shape);
 
    ...
@@ -293,7 +293,7 @@ certain optimizations are possible.
 In the following table subscripts on the derivative operators indicate
 which coordinate system is being used to compute the derivative; 'x'
 for the physical coordinates and 'u' for the reference
-coordinates. Quantites with a carat above them indicate functions
+coordinates. Quantities with a caret above them indicate functions
 computed in the reference coordinate system.
 
 | Family | Evaluation          | Transformation                                |
@@ -322,7 +322,7 @@ increase the computational effort needed to compute the integrals.
 The `MixedScalarIntegrator` is designed to help construct
 `BilinearFormIntegrators` which build an integrand from two sets of
 scalar-valued basis function evaluations. Such integrands will involve
-combinations of the following quantites:
+combinations of the following quantities:
 
 + Scalar-valued basis functions obtained from `CalcPhysShape`
 + Divergence of vector-valued basis functions obtained from `CalcPhysDivShape`
@@ -358,7 +358,7 @@ class of square bilinear forms and `AssembleElementMatrix2` for use with the
 `MixedBilinearForm` class of rectangular bilinear forms. Typically only one of
 these is necessary and the default implementations will often suffice. However,
 one or both of these methods may be overridden by a derived class if some
-customizsation is desired. For example, to implement optimizations related to
+customization is desired. For example, to implement optimizations related to
 coordinate transformations or custom integration rules, etc..
 
 More commonly a derived class will need to override one or both of the
@@ -410,7 +410,7 @@ The next override that is often advisable is `VerifyFiniteElementTypes` which
 provides a means of testing the `FiniteElement` objects passed by the
 `BilinearForm` class to make sure they support the evaluations needed by the
 `CalcTestShape` and `CalcTrialShape` methods. This override is optional but
-highly recommeneded. As an example the following override verifies that the
+highly recommended. As an example the following override verifies that the
 geometry is one dimensional and that the trial (domain) space supports
 evaluation of the gradient of the basis functions.
 ```
@@ -453,8 +453,8 @@ may be useful.
 
 The `MixedVectorIntegrator` is very similar in spirit to the
 `MixedScalarIntegrator` but the integrand in this case is computed as the inner
-product of two vecftors. Such integrands will involve combinations of the
-following quantites:
+product of two vectors. Such integrands will involve combinations of the
+following quantities:
 
 + Vector-valued basis functions obtained from `CalcVShape`
 + Gradient of scalar-valued basis functions obtained from `CalcPhysDShape`
