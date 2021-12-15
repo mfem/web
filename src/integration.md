@@ -451,6 +451,64 @@ may be useful.
 
 ### Working with the MixedVectorIntegrator
 
+The `MixedVectorIntegrator` is very similar in spirit to the
+`MixedScalarIntegrator` but the integrand in this case is computed as the inner
+product of two vecftors. Such integrands will involve combinations of the
+following quantites:
+
++ Vector-valued basis functions obtained from `CalcVShape`
++ Gradient of scalar-valued basis functions obtained from `CalcPhysDShape`
++ Curl of vector-valued basis functions in 3D obtained from `CalcPhysCurlShape`
++ Optional scalar, vector, or matrix-valued coefficients
+
+By default this integrator will compute different operators based on
+coefficient type:
+
+| Coefficient Type | Default Integral                                          |
+|------------------|-----------------------------------------------------------|
+| Scalar           | $a_{ij} = \int_{\Omega_e}q(x)\,\vec{F}_j(x)\cdot\,\vec{G}_i(x)\,d\Omega$ |
+| Matrix           | $a_{ij} = \int_{\Omega_e}\left(Q(x)\,\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$ |
+| Vector           | $a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$ |
+
+Where $\vec{F}_j$ and $\vec{G}_i$ are two sets of vector-valued basis functions
+which produces a "mass" matrix. 
+
+The `MixedVectorIntegrator` also has public and protected methods which may be
+overridden in an analogous manner to those in `MixedScalarIntegrator` to
+implement an even wider variety of custom integrators. Note that the default
+implementation of the assembly methods do assume a square matrix coefficient
+but this assumption could be removed if necessary.
+
+The `CalcTestShape` and `CalcTrialShape` methods which compute the necessary
+vector-valued basis function values might be overridden as follows:
+
+```
+/// Evaluate the vector-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   DenseMatrix & shape)
+{ trial_fe.CalcVShape(Trans, shape); }
+```
+or
+```
+/// Evaluate the gradient of the scalar-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   DenseMatrix & shape)
+{ trial_fe.CalcPhysDShape(Trans, shape); }
+```
+or
+```
+/// Evaluate the 3D curl of the vector-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
+                                   ElementTransformation &Trans,
+                                   DenseMatrix & shape)
+{ trial_fe.CalcPhysCurlShape(Trans, shape); }
+```
+
+Many of the possible `MixedVectorIntegrator` customizations are already
+included in MFEM. See [Bilinear Form Integrators](bilininteg.md) for a listing.
+
 ### Working with the MixedScalarVectorIntegrator
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
