@@ -134,10 +134,10 @@ matrix:
 
 | Name                 | C++ Expression                                       | Formula |
 |----------------------|------------------------------------------------------|---------|
-| Jacobian Matrix      | `const DenseMatrix &J = Trans.Jacobian()`            | ${\bf J}_{ij} = \frac{\partial x_i}{\partial u_j}$ |
-| Jacobian Determinant | `double detJ = Trans.Weight()`                       | $\|{\bf J}\|$ |
-| Inverse Jacobian     | `const DenseMatrix &InvJ = Trans.InverseJacobian()`  | ${\bf J}^{-1}$ |
-| Adjugate Jacobian    | `const DenseMatrix &AdjJ = Trans.AdjugateJacobian()` | $\|{\bf J}\|\,{\bf J}^{-1}$ |
+| Jacobian Matrix      | `const DenseMatrix &J = Trans.Jacobian()`            | $\{\bf J}_\{ij} = \frac\{\partial x_i}\{\partial u_j}$ |
+| Jacobian Determinant | `double detJ = Trans.Weight()`                       | $\|\{\bf J}\|$ |
+| Inverse Jacobian     | `const DenseMatrix &InvJ = Trans.InverseJacobian()`  | $\{\bf J}^\{-1}$ |
+| Adjugate Jacobian    | `const DenseMatrix &AdjJ = Trans.AdjugateJacobian()` | $\|\{\bf J}\|\,\{\bf J}^\{-1}$ |
 
 Since these quantities can be expensive to compute the
 `ElementTransformation` object will avoid recomputing values whenever
@@ -299,12 +299,12 @@ computed in the reference coordinate system.
 | Family | Evaluation          | Transformation                                |
 |--------|---------------------|-----------------------------------------------|
 | H1     | Basis               | None |
-| H1     | Gradient of Basis   | $\nabla_x\varphi_i = (J^{-1})^T\nabla_u\hat{\varphi}_i$ |
-| ND     | Basis               | $\vec{W}_i = (J^{-1})^T\hat{W}_i$ |
-| ND     | Curl of Basis       | $\nabla_x\times\vec{W}_i = \frac{1}{\|J\|}J\,\nabla_u\times\hat{W}_i$ |
-| RT     | Basis               | $\vec{F}_i = \frac{1}{\|J\|}J\,\hat{F}_i$ |
-| RT     | Divergence of Basis | $\nabla_x\cdot\vec{F}_i = \frac{1}{\|J\|}\nabla_u\cdot\hat{F}_i$ |
-| L2 (INTEGRAL) | Basis | $\psi_i = \frac{1}{\|J\|}\hat{\psi}_i$ |
+| H1     | Gradient of Basis   | $\nabla_x\varphi_i = (J^\{-1})^T\nabla_u\hat\{\varphi}_i$ |
+| ND     | Basis               | $\vec\{W}_i = (J^\{-1})^T\hat\{W}_i$ |
+| ND     | Curl of Basis       | $\nabla_x\times\vec\{W}_i = \frac\{1}\{\|J\|}J\,\nabla_u\times\hat\{W}_i$ |
+| RT     | Basis               | $\vec\{F}_i = \frac\{1}\{\|J\|}J\,\hat\{F}_i$ |
+| RT     | Divergence of Basis | $\nabla_x\cdot\vec\{F}_i = \frac\{1}\{\|J\|}\nabla_u\cdot\hat\{F}_i$ |
+| L2 (INTEGRAL) | Basis | $\psi_i = \frac\{1}\{\|J\|}\hat\{\psi}_i$ |
 | L2 (VALUE)    | Basis | None |
 
 Use of these "CalcPhys" functions enable integrators to be used with a
@@ -466,9 +466,9 @@ coefficient type:
 
 | Coefficient Type | Default Integral                                          |
 |------------------|-----------------------------------------------------------|
-| Scalar           | $a_{ij} = \int_{\Omega_e}q(x)\,\vec{F}_j(x)\cdot\,\vec{G}_i(x)\,d\Omega$ |
-| Matrix           | $a_{ij} = \int_{\Omega_e}\left(Q(x)\,\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$ |
-| Vector           | $a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$ |
+| Scalar           | $a_\{ij} = \int_\{\Omega_e}q(x)\,\vec\{F}_j(x)\cdot\,\vec\{G}_i(x)\,d\Omega$ |
+| Matrix           | $a_\{ij} = \int_\{\Omega_e}\left(Q(x)\,\vec\{F}_j(x)\right)\cdot\,\vec\{G}_i(x)\,d\Omega$ |
+| Vector           | $a_\{ij} = \int_\{\Omega_e}\left(\vec\{q}(x)\times\vec\{F}_j(x)\right)\cdot\,\vec\{G}_i(x)\,d\Omega$ |
 
 Where $\vec{F}_j$ and $\vec{G}_i$ are two sets of vector-valued basis functions
 which produces a "mass" matrix.
