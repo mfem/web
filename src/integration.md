@@ -32,8 +32,8 @@ singularities. Our rules take the form:
 $$\int_{\Omega_i} f(x)\,d\Omega \approx \sum_j w_j\,f(x(u_j))\,|J_i(u_j)|\label{eq:quad_rule}$$
 
 Where $w_j$ are the quadrature weights, $u_j$ are the quadrature
-points within the reference element, and |J_i(u_j)| is the Jacobian
-determinant for element i at the location u_j. Integrals at this level
+points within the reference element, and $|J_i(u_j)|$ is the Jacobian
+determinant for element $i$ at the location $u_j$. Integrals at this level
 are typically computed by classes derived from
 `BilinearFormIntegrator` or `LinearFormIntegrator`, see [Bilinear Form
 Integrators](bilininteg.md) or [Linear Form Integrators](lininteg.md)
@@ -235,7 +235,7 @@ for (int i = 0; i < ir->GetNPoints(); i++)
 
    // Compute the Jacobian determinant at the current integration point
    double detJ = Trans.Weight();
-   
+
    ...
 }
 ```
@@ -348,10 +348,10 @@ By default this integrator will compute the operator:
 $$a_{ij} = \int_{\Omega_e}q(x)\,f_j(x)\,g_i(x)\,d\Omega$$
 
 Where $f_j$ and $g_i$ are two sets of scalar-valued basis functions
-which produces a "mass" matrix. 
+which produces a "mass" matrix.
 
 The `MixedScalarIntegrator` has two public methods and five protected
-methods which can be overridden to customize the integrator. 
+methods which can be overridden to customize the integrator.
 
 The public methods are `AssembleElementMatrix` for use with the `BilinearForm`
 class of square bilinear forms and `AssembleElementMatrix2` for use with the
@@ -471,7 +471,7 @@ coefficient type:
 | Vector           | $a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$ |
 
 Where $\vec{F}_j$ and $\vec{G}_i$ are two sets of vector-valued basis functions
-which produces a "mass" matrix. 
+which produces a "mass" matrix.
 
 The `MixedVectorIntegrator` also has public and protected methods which may be
 overridden in an analogous manner to those in `MixedScalarIntegrator` to
