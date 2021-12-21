@@ -12,7 +12,7 @@ $$ \int_\Omega f(x)\,d\Omega = \sum_i\int_{\Omega_i}f(x)\,d\Omega $$
 
 Where $\Omega$ is the full domain and $\Omega_i$ is the domain of the
 i-th element. In MFEM this sum over elements is performed in classes
-such as the `BilinearForm` or `LinearForm` or their parallel
+such as the `BilinearForm` or `LinearForm` and their parallel
 counterparts.
 
 Elements come in a variety of shapes and they may be flat-sided or
@@ -79,7 +79,7 @@ retrieved in various ways depending on context.
 
 For standard mesh elements
 
-```
+```c++
 for (int e=0; e<mesh->GetNE(); e++)
 {
    ElementTransformation *Trans = mesh->GetElementTransformation(e);
@@ -90,7 +90,7 @@ for (int e=0; e<mesh->GetNE(); e++)
 
 or for boundary elements
 
-```
+```c++
 for (int be=0; be<mesh->GetNBE(); be++)
 {
    ElementTransformation *Trans = mesh->GetBdrElementTransformation(be);
@@ -101,7 +101,7 @@ for (int be=0; be<mesh->GetNBE(); be++)
 
 or for faces (usually in a Discontinuous Galerkin (DG) context)
 
-```
+```c++
 for (int f=0; f<mesh->GetNumFaces(); f++)
 {
    FaceElementTransformation *FETrans = mesh->GetFaceElementTransformation(f);
@@ -112,7 +112,7 @@ for (int f=0; f<mesh->GetNumFaces(); f++)
 
 or, finally, for boundary faces in a DG context
 
-```
+```c++
 for (int bf=0; bf<mesh->GetNBE(); bf++)
 {
    FaceElementTransformation *FETrans = mesh->GetBdrFaceElementTransformation(bf);
@@ -191,7 +191,7 @@ since most common norms tend to be quadratic.
 For example a custom integrator for a rectangular operator might start
 with the following lines:
 
-```
+```c++
 void CustomIntegrator::AssembleElementMatrix2(const FiniteElement &trial_fe,
                                               const FiniteElement &test_fe,
                                               ElementTransformation &Trans,
@@ -220,7 +220,7 @@ by some other means.
 The next piece is to loop over the integration points and, in most
 cases, make use of the `ElementTransformation` object.
 
-```
+```c++
 ...
 
 // Loop over each quadrature point in the reference element
@@ -259,7 +259,7 @@ straightforward. Simply call `FiniteElement::CalcShape` with the
 current quadrature point to retrieve a vector containing the values of
 each basis function evaluated at the given point in reference space.
 
-```
+```c++
 ...
 
 // Retrieve the number of basis functions
@@ -333,7 +333,7 @@ combinations of the following quantities:
 To derive a custom integrator from `MixedScalarIntegrator` a developer
 need only define constructors for the custom integrator. Only one constructor
 is necessary but support of various coefficient types is often useful.
-```
+```c++
 class MixedScalarMassIntegrator : public MixedScalarIntegrator
 {
 public:
@@ -365,7 +365,7 @@ More commonly a derived class will need to override one or both of the
 `CalcTestShape` and `CalcTrialShape` methods which compute the necessary basis
 function values. For example the four types of scalar basis function evaluations
 supported by `MixedScalarIntegrator` could be obtained by these overrides of the trial (domain) finite element basis functions:
-```
+```c++
 /// Evaluate the scalar-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
@@ -373,7 +373,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 { trial_fe.CalcPhysShape(Trans, shape); }
 ```
 or
-```
+```c++
 /// Evaluate the divergence of the vector-valued basis functions
 virtual void CalcTrialShape(const FiniteElement & trial_fe,
                             ElementTransformation &Trans,
@@ -381,7 +381,7 @@ virtual void CalcTrialShape(const FiniteElement & trial_fe,
 { trial_fe.CalcPhysDivShape(Trans, shape); }
 ```
 or
-```
+```c++
 /// Evaluate the 2D curl of the vector-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
@@ -392,7 +392,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 }
 ```
 or
-```
+```c++
 /// Evaluate the 1D gradient of the scalar-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
@@ -413,7 +413,7 @@ provides a means of testing the `FiniteElement` objects passed by the
 highly recommended. As an example the following override verifies that the
 geometry is one dimensional and that the trial (domain) space supports
 evaluation of the gradient of the basis functions.
-```
+```c++
 inline virtual bool VerifyFiniteElementTypes(const FiniteElement & trial_fe,
                                              const FiniteElement & test_fe
                                              ) const
@@ -427,7 +427,7 @@ A related optional method can be used to output an appropriate error message in
 the event that unsuitable basis functions have been provided. For example the
 following error message might be appropriate in conjunction with the previous
 `VerifyFiniteElementTypes` implementation:
-```
+```c++
 inline virtual const char * FiniteElementTypeFailureMessage() const
 {
    return "Trial and test spaces must both be scalar fields in 1D "
@@ -437,7 +437,7 @@ inline virtual const char * FiniteElementTypeFailureMessage() const
 The last optional protected method allows a certain flexibility in the choice
 of quadrature order. The default implementation is shown below but other
 choices may be suitable.
-```
+```c++
 inline virtual int GetIntegrationOrder(const FiniteElement & trial_fe,
                                        const FiniteElement & test_fe,
                                        ElementTransformation &Trans)
@@ -482,7 +482,7 @@ but this assumption could be removed if necessary.
 The `CalcTestShape` and `CalcTrialShape` methods which compute the necessary
 vector-valued basis function values might be overridden as follows:
 
-```
+```c++
 /// Evaluate the vector-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
@@ -490,7 +490,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 { trial_fe.CalcVShape(Trans, shape); }
 ```
 or
-```
+```c++
 /// Evaluate the gradient of the scalar-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
@@ -498,7 +498,7 @@ inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
 { trial_fe.CalcPhysDShape(Trans, shape); }
 ```
 or
-```
+```c++
 /// Evaluate the 3D curl of the vector-valued basis functions
 inline virtual void CalcTrialShape(const FiniteElement & trial_fe,
                                    ElementTransformation &Trans,
