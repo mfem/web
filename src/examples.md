@@ -986,6 +986,29 @@ We recommend viewing examples 1 and 7 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex30" markdown="1">
+##Example 30: Resolving rough and fine-scale problem data
+<img class="floatright" src="../img/examples/ex30.png">
+
+Unresolved problem data will affect the accuracy of a discretized PDE solution as
+well as a posteriori estimates of the solution error.
+This example uses a `CoefficientRefiner` object to preprocess an input mesh until
+the resolution of the prescribed problem data $f \\in L^2$ is below a prescribed
+tolerance. In this example, the resolution is identified with a data oscillation
+function on the mesh $\\mathcal{T}$, defined
+$$ \\mathrm{osc}(f) = \\Big( \\sum\_{T\\in\\mathcal{T}} \\| h \\cdot (I - \Pi)\\, f \\|^2\_{L^2(T)} \\Big)^{1/2}, $$
+where $h$ is the local element size function and $\\Pi$ is a finite element projection
+operator, and the sum is taken over all elements $T$ in the mesh.
+
+In this example, the coarse initial mesh is adaptively refined until $\\mathrm{osc}(f)$ is below a
+prescribed tolerance for various candidate functions $f \\in L^2$. When using rough problem data,
+it is recommended to perform this type of preprocessing before a posteriori error estimation.
+
+_The example has a serial ([ex30.cpp](https://github.com/mfem/mfem/blob/master/examples/ex30.cpp))
+and a parallel ([ex30p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex30p.cpp)) version.
+We recommend viewing examples 1 and 6 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
@@ -1813,6 +1836,7 @@ function update()
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
+   + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))

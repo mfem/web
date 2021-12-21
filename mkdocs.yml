@@ -19,6 +19,7 @@ nav:
   - 'Electromagnetics': electromagnetics.md
   - 'Fluid Dynamics': fluids.md
   - 'Meshing': meshing-miniapps.md
+  - 'Automatic Differentiation': autodiff.md
   - 'Tools': tools.md
   - 'Toys': toys.md
 - Documentation:
@@ -46,6 +47,7 @@ nav:
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Doxygen': dox.md
   - 'Publications': publications.md
+  - 'Videos': videos.md  
   - 'About': about.md
   - '🔎 Search...': search.md
 - Gallery: gallery.md

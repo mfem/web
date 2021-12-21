@@ -8,12 +8,26 @@
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
     <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Dennis Ogiermann
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2021 Visualization Contest Winner Tamas Horvath
+      </div>
     </div>
     <div class="item">
       [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md)
@@ -65,20 +79,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including [BLAST](http://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](http://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
-See also our [Gallery](gallery.md), [Publications](publications.md) and [News](news.md) pages.
-
-
-### October Simulation/Visualization Contest
-
-We are holding a simulation and visualization contest open to all attendees of 
-our upcoming [workshop](workshop.md). The winner as selected by the workshop organizing
-committee will receive an MFEM T-shirt. We will also feature the images in the [gallery](gallery.md).
-
-To submit your visualization from MFEM-related simulations in the contest,
-please fill out the [Google
-form](https://docs.google.com/forms/d/e/1FAIpQLSeZBs2jwmWvdgZ9WED3nIlt0pCSqm-9lURbCtSFVQN5-9gGEA/viewform?usp=sf_link) 
-or email your submission to [mfem@llnl.gov](mailto:mfem@llnl.gov) with your name, institution, 
-a short description, and visualization software used.
+See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md), and [News](news.md) pages.
 
 </div><div class="col-md-6 news-table" markdown="1">
 
@@ -86,10 +87,10 @@ a short description, and visualization software used.
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Jul 29, 2021  | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
+Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
+Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our workshop.
+Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | [MFEM Community Workshop](workshop.md) in October.
-Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 
 ## Latest Release
 
@@ -102,7 +103,10 @@ Feb 16, 2021 | New page on [GPU performance](gpu-support.md).
 **Download mfem-4.3.tgz**
 </button>](https://bit.ly/mfem-4-3)
 
-[Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM)
+[Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
+[![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](
+https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb
+ "C++ Jupiter notebok")
 
 ## Documentation
 
