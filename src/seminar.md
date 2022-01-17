@@ -85,7 +85,7 @@ Immersed/embedded//unfitted boundary methods obviate the need for continual re-m
 ---
 
 #### Garth Wells (University of Cambridge)
-##### *TBD*
+##### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
 ##### **November 8, 2022**
 
 ---
