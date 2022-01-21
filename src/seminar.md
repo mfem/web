@@ -13,30 +13,43 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](https://cee.duke.edu/sites/cee.duke.edu/files/scholars_images/thumb_image_1016092.jpg)
+![](img/seminar/carson.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Robert Carson (LLNL)
+##### *An overview of ExaConstit and its use in the ExaAM project*
+##### [**9am PDT, February 1, 2022**](https://everytimezone.com/s/09129547)
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>]()
+
+**Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. This talk will go over the ExaConstit code and how we’ve leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
+![](img/seminar/scovazzi.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 ####  Guglielmo Scovazzi (Duke University)
 ##### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
-##### [**10am PDT, January 20, 2022**](https://everytimezone.com/s/03ecbb58)
-[<button type="button" class="btn btn-success">
-**WebEx Link**
-</button>](https://llnlfed.webex.com/llnlfed/j.php?MTID=m671cf18c9aab4142e7a9b12f461a8966)
+##### January 20, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/scovazzi.pdf)
 
 **Abstract:** Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.
 
-&nbsp;
+---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Robert Carson (LLNL)
-##### *An overview of ExaConstit and its use in the ExaAM project*
-##### **February 1, 2022**
-
----
 
 #### Raphael Zanelle (UT Austin)
 ##### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
@@ -91,5 +104,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ##### **November 8, 2022**
 
 ---
+
+&nbsp;
 
 </div>
