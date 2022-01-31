@@ -43,11 +43,11 @@ for numerous examples.
 
 The basic building block of an integration rule is the
 `IntegrationPoint`. This is a minimal object with member data 'x',
-'y', 'z', and 'weight' (and an integer 'index' which is a mystery to
-me). These store the coordinates of the integration point in the
-reference coordinate system, $u_j$ from equation $\ref{eq:quad_rule}$
-is defined as $u_j\equiv(x,y,z)$ , along with the quadrature weight,
-$w_j$ also from equation $\ref{eq:quad_rule}$.
+'y', 'z', and 'weight' (and an integer 'index' which indicates the point's
+place in an integration rule). These store the coordinates of the integration
+point in the reference coordinate system, $u_j$ from equation
+$\ref{eq:quad_rule}$ is defined as $u_j\equiv(x,y,z)$ , along with the
+quadrature weight, $w also from equation $\ref{eq:quad_rule}$.
 
 Integration points can be collected together into an `IntegrationRule`
 object. `IntegrationRule` is little more than a container for the set
@@ -80,7 +80,7 @@ retrieved in various ways depending on context.
 For standard mesh elements
 
 ```c++
-for (int e=0; e<mesh->GetNE(); e++)
+for (int e = 0; e < mesh->GetNE(); e++)
 {
    ElementTransformation *Trans = mesh->GetElementTransformation(e);
 
@@ -91,7 +91,7 @@ for (int e=0; e<mesh->GetNE(); e++)
 or for boundary elements
 
 ```c++
-for (int be=0; be<mesh->GetNBE(); be++)
+for (int be = 0; be < mesh->GetNBE(); be++)
 {
    ElementTransformation *Trans = mesh->GetBdrElementTransformation(be);
 
@@ -102,7 +102,7 @@ for (int be=0; be<mesh->GetNBE(); be++)
 or for faces (usually in a Discontinuous Galerkin (DG) context)
 
 ```c++
-for (int f=0; f<mesh->GetNumFaces(); f++)
+for (int f = 0; f < mesh->GetNumFaces(); f++)
 {
    FaceElementTransformation *FETrans = mesh->GetFaceElementTransformation(f);
 
@@ -113,7 +113,7 @@ for (int f=0; f<mesh->GetNumFaces(); f++)
 or, finally, for boundary faces in a DG context
 
 ```c++
-for (int bf=0; bf<mesh->GetNBE(); bf++)
+for (int bf = 0; bf < mesh->GetNBE(); bf++)
 {
    FaceElementTransformation *FETrans = mesh->GetBdrFaceElementTransformation(bf);
 
@@ -135,9 +135,9 @@ matrix:
 | Name                 | C++ Expression                                       | Formula |
 |----------------------|------------------------------------------------------|---------|
 | Jacobian Matrix      | `const DenseMatrix &J = Trans.Jacobian()`            | $\{\bf J}_\{ij} = \frac\{\partial x_i}\{\partial u_j}$ |
-| Jacobian Determinant | `double detJ = Trans.Weight()`                       | $\|\{\bf J}\|$ |
+| Jacobian Determinant | `double detJ = Trans.Weight()`                       | $\det(\{\bf J})$ |
 | Inverse Jacobian     | `const DenseMatrix &InvJ = Trans.InverseJacobian()`  | $\{\bf J}^\{-1}$ |
-| Adjugate Jacobian    | `const DenseMatrix &AdjJ = Trans.AdjugateJacobian()` | $\|\{\bf J}\|\,\{\bf J}^\{-1}$ |
+| Adjugate Jacobian    | `const DenseMatrix &AdjJ = Trans.AdjugateJacobian()` | $\det(\{\bf J})\,\{\bf J}^\{-1}$ |
 
 Since these quantities can be expensive to compute the
 `ElementTransformation` object will avoid recomputing values whenever
@@ -156,7 +156,7 @@ norms from field data.
 |-----------------------|--------------------------------------------------|
 | Square Operators      | `BilinearFormIntegrator::AssembleElementMatrix`  |
 | Rectangular Operators | `BilinearFormIntegrator::AssembleElementMatrix2` |
-| Linear Operators      | `LinearFormIntegrator::AssembleRHSElementVect`   |
+| Linear Functionals    | `LinearFormIntegrator::AssembleRHSElementVect`   |
 
 Development of a new norm or another custom integral might follow the
 code found in `GridFunction::ComputeElementLpErrors`.
@@ -172,7 +172,7 @@ An appropriate quadrature order depends on many variables. If we could
 restrict ourselves to integrating polynomials then a specific order
 would produce an exact result and a higher order would only incur
 additional effort. However, skewed or curved elements can introduce a
-rational polynomial factor through the Jacobian of the element
+rational polynomial factor through the inverse Jacobian of the element
 transformation. Furthermore, non-trivial material coefficients can
 introduce factors with arbitrary functional forms. Useful rules of
 thumb for linear and bilinear form integration orders are:
@@ -301,10 +301,10 @@ computed in the reference coordinate system.
 | H1     | Basis               | None |
 | H1     | Gradient of Basis   | $\nabla_x\varphi_i = (J^\{-1})^T\nabla_u\hat\{\varphi}_i$ |
 | ND     | Basis               | $\vec\{W}_i = (J^\{-1})^T\hat\{W}_i$ |
-| ND     | Curl of Basis       | $\nabla_x\times\vec\{W}_i = \frac\{1}\{\|J\|}J\,\nabla_u\times\hat\{W}_i$ |
-| RT     | Basis               | $\vec\{F}_i = \frac\{1}\{\|J\|}J\,\hat\{F}_i$ |
-| RT     | Divergence of Basis | $\nabla_x\cdot\vec\{F}_i = \frac\{1}\{\|J\|}\nabla_u\cdot\hat\{F}_i$ |
-| L2 (INTEGRAL) | Basis | $\psi_i = \frac\{1}\{\|J\|}\hat\{\psi}_i$ |
+| ND     | Curl of Basis       | $\nabla_x\times\vec\{W}_i = \frac\{1}\{\det(J)}J\,\nabla_u\times\hat\{W}_i$ |
+| RT     | Basis               | $\vec\{F}_i = \frac\{1}\{\det(J)}J\,\hat\{F}_i$ |
+| RT     | Divergence of Basis | $\nabla_x\cdot\vec\{F}_i = \frac\{1}\{\det(J)}\nabla_u\cdot\hat\{F}_i$ |
+| L2 (INTEGRAL) | Basis | $\psi_i = \frac\{1}\{\det(J)}\hat\{\psi}_i$ |
 | L2 (VALUE)    | Basis | None |
 
 Use of these "CalcPhys" functions enable integrators to be used with a
@@ -561,7 +561,7 @@ assumed. The choice between equations \ref{msv_def} and \ref{msv_trans} on the
 one hand and equations \ref{msv_2d_def} and \ref{msv_2d_trans} on the other is
 made with the `cross_2d` optional constructor argument.
 
-Again there are several customizations of this integrator included in MFEM but
+There are several customizations of this integrator included in MFEM but
 others are possible. See [Bilinear Form Integrators](bilininteg.md) for a
 listing.
 
