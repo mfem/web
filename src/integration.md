@@ -56,19 +56,17 @@ a given order of accuracy within the domain of a specific reference
 element.
 
 `IntegrationRule` objects are in turn collected together into the
-`IntegrationRules` global object. This object constructs and caches
-all `IntegrationRule` objects requested by the calling program. On one
-hand the `IntegrationRules` global object is a container class which
-categorizes `IntegrationRule` objects by element type and order of
-accuracy but more importantly it is responsible for allocating
-`IntegrationRule` objects and populating them with appropriate
-`IntegrationPoint` objects.
+`IntRules` global object. This object constructs and caches all
+`IntegrationRule` objects requested by the calling program. On one
+hand the `IntRules` global object is a container class which categorizes
+`IntegrationRule` objects by element type and order of accuracy but more
+importantly it is responsible for allocating `IntegrationRule` objects and
+populating them with appropriate `IntegrationPoint` objects.
 
-It is also possible to sidestep the `IntegrationRules` global object
-and setup custom `IntegrationRule` objects. These custom integration
-rules can then be passed to `BilinearFormIntegrator` or
-`LinearFormIntegrator` objects (using custom integration rules with
-mixed meshes currently requires specialized handling).
+It is also possible to sidestep the `IntRules` global object and setup custom
+`IntegrationRule` objects. These custom integration rules can then be passed
+to `BilinearFormIntegrator` or `LinearFormIntegrator` objects (using custom
+integration rules with mixed meshes currently requires specialized handling).
 
 ## Coordinate Transformations
 
@@ -149,7 +147,7 @@ overwritten by subsequent calls to the above functions.
 
 Element-wise integration arises in various places in the finite element
 method. A few of the most common occurrences are square and rectangular
-bilinear form operators, linear form operators, and the calculation of
+bilinear form operators, linear functionals, and the calculation of
 norms from field data.
 
 | Type                  | Primary Function Needing Implementation          |
@@ -165,7 +163,7 @@ The pieces that are common to each of these include:
 
  + Determination of the appropriate quadrature order
  + Obtaining the quadrature rule for the appropriate element type
- + Working with the `ElementTransformtation` object
+ + Working with the `ElementTransformation` object
  + Evaluating the function to be integrated
 
 An appropriate quadrature order depends on many variables. If we could
@@ -241,7 +239,7 @@ for (int i = 0; i < ir->GetNPoints(); i++)
 ```
 
 The final piece is to evaluate the function to be integrated. This
-often involves evaluation of a coefficient object as well as one or
+often involves evaluation of a `Coefficient` object as well as one or
 two sets of basis functions or their derivatives. The coefficient
 should be straightforward, simply call its `Eval` method with the
 `ElementTransformation` and `IntegrationPoint` objects and perhaps a
@@ -283,7 +281,7 @@ for (int i = 0; i < ir->GetNPoints(); i++)
 }
 ```
 
-For other types of basis functions it can be more simple to call
+For other types of basis functions it can be simpler to call
 `CalcPhysShape` or `CalcPhysVShape`. These, and similar evaluation
 functions with "Phys" in the name, internally perform the geometric
 transformation of the basis functions when necessary. This is clearly
