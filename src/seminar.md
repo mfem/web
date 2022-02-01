@@ -13,22 +13,41 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/zanella.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Raphaël Zanella (UT Austin)
+##### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
+##### [**9am PDT, March 1, 2022**](https://everytimezone.com/s/f34b1e90)
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](TBD)
+
+**Abstract:** The solver uses a H^1-conforming finite element space and an explicit time scheme to approximate the compressible Navier-Stokes equations under axisymmetric assumption. This example illustrates how to implement the weak formulation of an axisymmetric problem with MFEM. A convergence test, a scalability test (MPI) and an application case confirm the correctness of the implementation.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/carson.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Robert Carson (LLNL)
 ##### *An overview of ExaConstit and its use in the ExaAM project*
-##### [**9am PDT, February 1, 2022**](https://everytimezone.com/s/09129547)
+##### February 1, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/carson.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/fisher47)
+**Talk Recording**
+</button>](videos.md)
 
 **Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -42,6 +61,10 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 [<button type="button" class="btn btn-primary">
 **Slides**
 </button>](pdf/seminar/scovazzi.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](videos.md)
 
 **Abstract:** Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.
 
@@ -50,12 +73,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Raphael Zanelle (UT Austin)
-##### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
-##### **March 1, 2022**
-
----
 
 #### Tamas Hovarth (Oakland University)
 ##### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
