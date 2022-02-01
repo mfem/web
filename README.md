@@ -10,9 +10,9 @@ To make changes to the website you will need an install of Python version >= 3.6
   * `pip install --upgrade --user PyYAML`
   * `pip install --upgrade --user mkdocs-exclude-search`
 - or in a Python virtual environment
-  * 'python3 -m venv mfem-web-venv'
-  * '. ./mfem-web-venv/bin/activate'
-  * 'pip install -r requirements.txt'
+  * `python3 -m venv mfem-web-venv`
+  * `. ./mfem-web-venv/bin/activate`
+  * `pip install -r requirements.txt`
 - newer versions may not generate correct front page (to see the installed version, use `pip show mkdocs`)
 - clone this repo,
 - edit or add some `.md` files (you may also need to update the `mkdocs.yml` config),
