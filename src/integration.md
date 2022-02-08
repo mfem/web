@@ -47,7 +47,7 @@ The basic building block of an integration rule is the
 place in an integration rule). These store the coordinates of the integration
 point in the reference coordinate system, $u_j$ from equation
 $\ref{eq:quad_rule}$ is defined as $u_j\equiv(x,y,z)$ , along with the
-quadrature weight, $w also from equation $\ref{eq:quad_rule}$.
+quadrature weight, $w$ also from equation $\ref{eq:quad_rule}$.
 
 Integration points can be collected together into an `IntegrationRule`
 object. `IntegrationRule` is little more than a container for the set
