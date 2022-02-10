@@ -2,13 +2,13 @@
 
 A collection of MFEM-related videos, including recorded talks from the MFEM workshops and conference presentations.
 
-## FEM@LLNL Seminar Series
+## FEM@LLNL Seminar
 
 ---
 
 <div class="col-md-6"  markdown="1">
 
-#### Guglielmo Scovazzi (Duke University)
+#### Guglielmo Scovazzi (Duke)
 #### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
 ##### **January 20, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
