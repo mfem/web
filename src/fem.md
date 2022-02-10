@@ -51,6 +51,11 @@ sometimes over edges or faces).  The `LinearForm` class adds several
 `LinearFormIntegrator`s together to build the global right-hand side for the
 finite element linear system.
 
+### [Integration](integration.md)
+
+This page offers guidance on writing custom Bilinear Form or Linear Form
+Integrators.
+
 ### [Coefficients](coefficient.md)
 
 The `Coefficient` objects in MFEM are general functions on continuous level that
