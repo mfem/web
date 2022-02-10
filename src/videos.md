@@ -2,11 +2,27 @@
 
 A collection of MFEM-related videos, including recorded talks from the MFEM workshops and conference presentations.
 
-## MFEM Workshop 2021
+## FEM@LLNL Seminar Series
 
 ---
 
 <div class="col-md-6"  markdown="1">
+
+#### Guglielmo Scovazzi (Duke University)
+#### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
+##### **January 20, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](WJ5dAhOR6Gg)
+
+Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.
+
+</div><div class="col-md-12"  markdown="1">
+
+## MFEM Workshop 2021
+
+---
+
+</div><div class="col-md-6"  markdown="1">
 
 #### Aaron Fisher (LLNL)
 #### *Wrap-Up and Simulation Contest Winners*
