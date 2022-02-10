@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#integration">Integration</a></li>
+        
+            <li><a href="#integration-rules">Integration Rules</a></li>
+        
+            <li><a href="#coordinate-transformations">Coordinate Transformations</a></li>
+        
+            <li><a href="#writing-custom-integrators">Writing Custom Integrators</a></li>
+        
+    
+    
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../fem/"><i class="fa fa-chevron-circle-left"></i> Back to Finite Element Method</a> </li>
+        
+	
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="integration">Integration</h1>
+<p>MFEM's spatial integrations are performed in the usual finite element
+manner by first splitting the spatial domain into a collection of
+non-overlapping "elements" which cover the domain. This is usually
+referred to as the "mesh". An integral can then be computed separately
+in each element and the results added together:</p>
+<p>$$ \int_\Omega f(x)\,d\Omega = \sum_i\int_{\Omega_i}f(x)\,d\Omega $$</p>
+<p>Where $\Omega$ is the full domain and $\Omega_i$ is the domain of the
+i-th element. In MFEM this sum over elements is performed in classes
+such as the <code>BilinearForm</code> or <code>LinearForm</code> and their parallel
+counterparts.</p>
+<p>Elements come in a variety of shapes and they may be flat-sided or
+curved. For this reason it is much simpler to perform the element-wise
+integrations on reference elements which have relatively simple
+shapes. For example in 2D we might integrate over a unit square rather
+than an arbitrary quadrilateral.</p>
+<p>Finite element methods typically make the assumption that the
+functions to be integrated are non-singular and at least reasonably
+smooth. This enables us to employ families of relatively simple
+quadrature rules which are designed for accurately integrating
+polynomials.  This is in contrast to boundary element methods which
+require more specialized rules which can accurately integrate
+singularities. Our rules take the form:</p>
+<p>$$\int_{\Omega_i} f(x)\,d\Omega \approx \sum_j w_j\,f(x(u_j))\,|J_i(u_j)|\label{eq:quad_rule}$$</p>
+<p>Where $w_j$ are the quadrature weights, $u_j$ are the quadrature
+points within the reference element, and $|J_i(u_j)|$ is the Jacobian
+determinant for element $i$ at the location $u_j$. Integrals at this level
+are typically computed by classes derived from
+<code>BilinearFormIntegrator</code> or <code>LinearFormIntegrator</code>, see <a href="../bilininteg/">Bilinear Form
+Integrators</a> or <a href="../lininteg/">Linear Form Integrators</a>
+for numerous examples.</p>
+<h2 id="integration-rules">Integration Rules</h2>
+<p>The basic building block of an integration rule is the
+<code>IntegrationPoint</code>. This is a minimal object with member data 'x',
+'y', 'z', and 'weight' (and an integer 'index' which indicates the point's
+place in an integration rule). These store the coordinates of the integration
+point in the reference coordinate system, $u_j$ from equation
+$\ref{eq:quad_rule}$ is defined as $u_j\equiv(x,y,z)$ , along with the
+quadrature weight, $w$ also from equation $\ref{eq:quad_rule}$.</p>
+<p>Integration points can be collected together into an <code>IntegrationRule</code>
+object. <code>IntegrationRule</code> is little more than a container for the set
+of <code>IntegrationPoint</code> objects associated with an integration rule for
+a given order of accuracy within the domain of a specific reference
+element.</p>
+<p><code>IntegrationRule</code> objects are in turn collected together into the
+<code>IntRules</code> global object. This object constructs and caches all
+<code>IntegrationRule</code> objects requested by the calling program. On one
+hand the <code>IntRules</code> global object is a container class which categorizes
+<code>IntegrationRule</code> objects by element type and order of accuracy but more
+importantly it is responsible for allocating <code>IntegrationRule</code> objects and
+populating them with appropriate <code>IntegrationPoint</code> objects.</p>
+<p>It is also possible to sidestep the <code>IntRules</code> global object and setup custom
+<code>IntegrationRule</code> objects. These custom integration rules can then be passed
+to <code>BilinearFormIntegrator</code> or <code>LinearFormIntegrator</code> objects (using custom
+integration rules with mixed meshes currently requires specialized handling).</p>
+<h2 id="coordinate-transformations">Coordinate Transformations</h2>
+<p>The coordinate transformation from the reference element to an
+individual mesh element is performed by the <code>ElementTransformation</code>
+class. Objects of this class are prepared by the <code>Mesh</code> object and
+retrieved in various ways depending on context.</p>
+<p>For standard mesh elements</p>
+<pre><code class="c++">for (int e = 0; e &lt; mesh-&gt;GetNE(); e++)
+{
+   ElementTransformation *Trans = mesh-&gt;GetElementTransformation(e);
+
+   ...
+}
+</code></pre>
+
+<p>or for boundary elements</p>
+<pre><code class="c++">for (int be = 0; be &lt; mesh-&gt;GetNBE(); be++)
+{
+   ElementTransformation *Trans = mesh-&gt;GetBdrElementTransformation(be);
+
+   ...
+}
+</code></pre>
+
+<p>or for faces (usually in a Discontinuous Galerkin (DG) context)</p>
+<pre><code class="c++">for (int f = 0; f &lt; mesh-&gt;GetNumFaces(); f++)
+{
+   FaceElementTransformation *FETrans = mesh-&gt;GetFaceElementTransformation(f);
+
+   ...
+}
+</code></pre>
+
+<p>or, finally, for boundary faces in a DG context</p>
+<pre><code class="c++">for (int bf = 0; bf &lt; mesh-&gt;GetNBE(); bf++)
+{
+   FaceElementTransformation *FETrans = mesh-&gt;GetBdrFaceElementTransformation(bf);
+
+   ...
+}
+</code></pre>
+
+<p>A <code>FaceElementTransformation</code> object is a convenience object for
+easily accessing the three <code>ElementTransformation</code> objects associated
+with a mesh face and its two neighboring elements. In the case of
+boundary faces one of the neighboring element transformation objects
+is not present.</p>
+<p>In addition to transforming coordinates between the reference and
+global coordinate systems an <code>ElementTransformation</code> object can be
+used to compute the following quantities related to the Jacobian
+matrix:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>C++ Expression</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jacobian Matrix</td>
+<td><code>const DenseMatrix &amp;J = Trans.Jacobian()</code></td>
+<td>${\bf J}_{ij} = \frac{\partial x_i}{\partial u_j}$</td>
+</tr>
+<tr>
+<td>Jacobian Determinant</td>
+<td><code>double detJ = Trans.Weight()</code></td>
+<td>$\det({\bf J})$</td>
+</tr>
+<tr>
+<td>Inverse Jacobian</td>
+<td><code>const DenseMatrix &amp;InvJ = Trans.InverseJacobian()</code></td>
+<td>${\bf J}^{-1}$</td>
+</tr>
+<tr>
+<td>Adjugate Jacobian</td>
+<td><code>const DenseMatrix &amp;AdjJ = Trans.AdjugateJacobian()</code></td>
+<td>$\det({\bf J})\,{\bf J}^{-1}$</td>
+</tr>
+</tbody>
+</table>
+<p>Since these quantities can be expensive to compute the
+<code>ElementTransformation</code> object will avoid recomputing values whenever
+possible. However, once a new quadrature point is set, using
+<code>ElementTransformation::SetIntPoint()</code>, any cached values will be
+overwritten by subsequent calls to the above functions.</p>
+<h2 id="writing-custom-integrators">Writing Custom Integrators</h2>
+<p>Element-wise integration arises in various places in the finite element
+method. A few of the most common occurrences are square and rectangular
+bilinear form operators, linear functionals, and the calculation of
+norms from field data.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Primary Function Needing Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Square Operators</td>
+<td><code>BilinearFormIntegrator::AssembleElementMatrix</code></td>
+</tr>
+<tr>
+<td>Rectangular Operators</td>
+<td><code>BilinearFormIntegrator::AssembleElementMatrix2</code></td>
+</tr>
+<tr>
+<td>Linear Functionals</td>
+<td><code>LinearFormIntegrator::AssembleRHSElementVect</code></td>
+</tr>
+</tbody>
+</table>
+<p>Development of a new norm or another custom integral might follow the
+code found in <code>GridFunction::ComputeElementLpErrors</code>.</p>
+<p>The pieces that are common to each of these include:</p>
+<ul>
+<li>Determination of the appropriate quadrature order</li>
+<li>Obtaining the quadrature rule for the appropriate element type</li>
+<li>Working with the <code>ElementTransformation</code> object</li>
+<li>Evaluating the function to be integrated</li>
+</ul>
+<p>An appropriate quadrature order depends on many variables. If we could
+restrict ourselves to integrating polynomials then a specific order
+would produce an exact result and a higher order would only incur
+additional effort. However, skewed or curved elements can introduce a
+rational polynomial factor through the inverse Jacobian of the element
+transformation. Furthermore, non-trivial material coefficients can
+introduce factors with arbitrary functional forms. Useful rules of
+thumb for linear and bilinear form integration orders are:</p>
+<ul>
+<li>(linear form order) = (basis function order) + (geometry order)</li>
+<li>(bilinear form order) = (domain basis function order) + (range basis function order) + (geometry order)</li>
+</ul>
+<p>It can be appropriate to lower the basis function order by one if a
+derivative of the basis function is being used. It might be
+appropriate to increase the order if the coefficient is expected to
+vary more rapidly but, in such a case, it would probably be more
+appropriate to further refine the mesh. Appropriate orders for
+computing norms should probably follow the guidance for bilinear forms
+since most common norms tend to be quadratic.</p>
+<p>For example a custom integrator for a rectangular operator might start
+with the following lines:</p>
+<pre><code class="c++">void CustomIntegrator::AssembleElementMatrix2(const FiniteElement &amp;trial_fe,
+                                              const FiniteElement &amp;test_fe,
+                                              ElementTransformation &amp;Trans,
+                                              DenseMatrix &amp;elmat)
+{
+   // Determine an appropriate integration rule order
+   int order = trial_fe.GetOrder() // Polynomial order of domain space
+             + test_fe.GetOrder()  // Polynomial order of range space
+             + Trans.OrderW();     // Polynomial order of the geometry
+
+   // Determine the element type: triangle, quadrilateral, tetrahedron, etc.
+   Geometry::Type geom = Trans.GetGeometryType();
+
+   // Construct or retrieve an integration rule for the appropriate
+   // reference element with the desired order of accuracy
+   const IntegrationRule * ir = &amp;IntRules.Get(Trans.GetGeometryType(), order);
+
+   ...
+}
+</code></pre>
+
+<p>This example uses the <code>IntRules</code> global object but custom integration
+rules could be provided through the use of a similar global object or
+by some other means.</p>
+<p>The next piece is to loop over the integration points and, in most
+cases, make use of the <code>ElementTransformation</code> object.</p>
+<pre><code class="c++">...
+
+// Loop over each quadrature point in the reference element
+for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++)
+{
+   // Extract the current quadrature point from the integration rule
+   const IntegrationPoint &amp;ip = ir-&gt;IntPoint(i);
+
+   // Prepare to evaluate the coordinate transformation at the current
+   // quadrature point
+   Trans.SetIntPoint(&amp;ip);
+
+   // Compute the Jacobian determinant at the current integration point
+   double detJ = Trans.Weight();
+
+   ...
+}
+</code></pre>
+
+<p>The final piece is to evaluate the function to be integrated. This
+often involves evaluation of a <code>Coefficient</code> object as well as one or
+two sets of basis functions or their derivatives. The coefficient
+should be straightforward, simply call its <code>Eval</code> method with the
+<code>ElementTransformation</code> and <code>IntegrationPoint</code> objects and perhaps a
+<code>Vector</code> or <code>DenseMatrix</code> to hold the resulting coefficient value when
+appropriate. Basis function evaluation can be a bit more complicated.</p>
+<h3 id="basis-function-evaluation">Basis Function Evaluation</h3>
+<p>Some basis functions, particularly vector-valued basis functions,
+partially depend upon the geometry of the physical element in addition
+to their dependence on the reference element.</p>
+<p>The scalar basis functions provided by the <code>H1_FECollection</code> are
+straightforward. Simply call <code>FiniteElement::CalcShape</code> with the
+current quadrature point to retrieve a vector containing the values of
+each basis function evaluated at the given point in reference space.</p>
+<pre><code class="c++">...
+
+// Retrieve the number of basis functions
+int tr_dof = trial_fe.GetDof();
+
+// Allocate a vector to hold the values of each basis function
+Vector tr_shape(tr_dof);
+
+// Loop over each quadrature point in the reference element
+for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++)
+{
+   // Extract the current quadrature point from the integration rule
+   const IntegrationPoint &amp;ip = ir-&gt;IntPoint(i);
+
+   ...
+
+   // Evaluate the basis functions at the point ip
+   trial_fe.CalcShape(ip, tr_shape);
+
+   ...
+}
+</code></pre>
+
+<p>For other types of basis functions it can be simpler to call
+<code>CalcPhysShape</code> or <code>CalcPhysVShape</code>. These, and similar evaluation
+functions with "Phys" in the name, internally perform the geometric
+transformation of the basis functions when necessary. This is clearly
+a convenience feature but it can lead to unnecessary computations when
+certain optimizations are possible.</p>
+<p>In the following table subscripts on the derivative operators indicate
+which coordinate system is being used to compute the derivative; 'x'
+for the physical coordinates and 'u' for the reference
+coordinates. Quantities with a caret above them indicate functions
+computed in the reference coordinate system.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Evaluation</th>
+<th>Transformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>Basis</td>
+<td>None</td>
+</tr>
+<tr>
+<td>H1</td>
+<td>Gradient of Basis</td>
+<td>$\nabla_x\varphi_i = (J^{-1})^T\nabla_u\hat{\varphi}_i$</td>
+</tr>
+<tr>
+<td>ND</td>
+<td>Basis</td>
+<td>$\vec{W}_i = (J^{-1})^T\hat{W}_i$</td>
+</tr>
+<tr>
+<td>ND</td>
+<td>Curl of Basis</td>
+<td>$\nabla_x\times\vec{W}_i = \frac{1}{\det(J)}J\,\nabla_u\times\hat{W}_i$</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>Basis</td>
+<td>$\vec{F}_i = \frac{1}{\det(J)}J\,\hat{F}_i$</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>Divergence of Basis</td>
+<td>$\nabla_x\cdot\vec{F}_i = \frac{1}{\det(J)}\nabla_u\cdot\hat{F}_i$</td>
+</tr>
+<tr>
+<td>L2 (INTEGRAL)</td>
+<td>Basis</td>
+<td>$\psi_i = \frac{1}{\det(J)}\hat{\psi}_i$</td>
+</tr>
+<tr>
+<td>L2 (VALUE)</td>
+<td>Basis</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Use of these "CalcPhys" functions enable integrators to be used with a
+wider variety of basis function families without the need to
+explicitly handle these transformations within the integrator. This
+leads to more general implementations but at the possible cost of
+added computational expense. For example, a <code>LinearFormIntegrator</code>
+involving an L2 basis function using the <code>INTEGRAL</code> map type would
+both multiply and divide by the Jacobian determinant at each
+integration point. Clearly this is unnecessary and could significantly
+increase the computational effort needed to compute the integrals.</p>
+<h3 id="working-with-the-mixedscalarintegrator">Working with the MixedScalarIntegrator</h3>
+<p>The <code>MixedScalarIntegrator</code> is designed to help construct
+<code>BilinearFormIntegrators</code> which build an integrand from two sets of
+scalar-valued basis function evaluations. Such integrands will involve
+combinations of the following quantities:</p>
+<ul>
+<li>Scalar-valued basis functions obtained from <code>CalcPhysShape</code></li>
+<li>Divergence of vector-valued basis functions obtained from <code>CalcPhysDivShape</code></li>
+<li>Curl of vector-valued basis functions in 2D obtained from <code>CalcPhysCurlShape</code></li>
+<li>Gradient of scalar-valued basis functions in 1D obtained from <code>CalcPhysDShape</code></li>
+<li>An optional scalar coefficient</li>
+</ul>
+<p>To derive a custom integrator from <code>MixedScalarIntegrator</code> a developer
+need only define constructors for the custom integrator. Only one constructor
+is necessary but support of various coefficient types is often useful.</p>
+<pre><code class="c++">class MixedScalarMassIntegrator : public MixedScalarIntegrator
+{
+public:
+   MixedScalarMassIntegrator() { same_calc_shape = true; }
+   MixedScalarMassIntegrator(Coefficient &amp;q)
+      : MixedScalarIntegrator(q) { same_calc_shape = true; }
+};
+</code></pre>
+
+<p>By default this integrator will compute the operator:</p>
+<p>$$a_{ij} = \int_{\Omega_e}q(x)\,f_j(x)\,g_i(x)\,d\Omega$$</p>
+<p>Where $f_j$ and $g_i$ are two sets of scalar-valued basis functions
+which produces a "mass" matrix.</p>
+<p>The <code>MixedScalarIntegrator</code> has two public methods and five protected
+methods which can be overridden to customize the integrator.</p>
+<p>The public methods are <code>AssembleElementMatrix</code> for use with the <code>BilinearForm</code>
+class of square bilinear forms and <code>AssembleElementMatrix2</code> for use with the
+<code>MixedBilinearForm</code> class of rectangular bilinear forms. Typically only one of
+these is necessary and the default implementations will often suffice. However,
+one or both of these methods may be overridden by a derived class if some
+customization is desired. For example, to implement optimizations related to
+coordinate transformations or custom integration rules, etc..</p>
+<p>More commonly a derived class will need to override one or both of the
+<code>CalcTestShape</code> and <code>CalcTrialShape</code> methods which compute the necessary basis
+function values. For example the four types of scalar basis function evaluations
+supported by <code>MixedScalarIntegrator</code> could be obtained by these overrides of the trial (domain) finite element basis functions:</p>
+<pre><code class="c++">/// Evaluate the scalar-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   Vector &amp; shape)
+{ trial_fe.CalcPhysShape(Trans, shape); }
+</code></pre>
+
+<p>or</p>
+<pre><code class="c++">/// Evaluate the divergence of the vector-valued basis functions
+virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                            ElementTransformation &amp;Trans,
+                            Vector &amp; shape)
+{ trial_fe.CalcPhysDivShape(Trans, shape); }
+</code></pre>
+
+<p>or</p>
+<pre><code class="c++">/// Evaluate the 2D curl of the vector-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   Vector &amp; shape)
+{
+   DenseMatrix dshape(shape.GetData(), shape.Size(), 1);
+   trial_fe.CalcPhysCurlShape(Trans, dshape);
+}
+</code></pre>
+
+<p>or</p>
+<pre><code class="c++">/// Evaluate the 1D gradient of the scalar-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   Vector &amp; shape)
+{
+   DenseMatrix dshape(shape.GetData(), shape.Size(), 1);
+   trial_fe.CalcPhysDShape(Trans, dshape);
+}
+</code></pre>
+
+<p>Similar overrides could be implemented for the test (range) space. Of course
+other overrides are possible and may be quite useful for other custom
+integrators.</p>
+<p>The next override that is often advisable is <code>VerifyFiniteElementTypes</code> which
+provides a means of testing the <code>FiniteElement</code> objects passed by the
+<code>BilinearForm</code> class to make sure they support the evaluations needed by the
+<code>CalcTestShape</code> and <code>CalcTrialShape</code> methods. This override is optional but
+highly recommended. As an example the following override verifies that the
+geometry is one dimensional and that the trial (domain) space supports
+evaluation of the gradient of the basis functions.</p>
+<pre><code class="c++">inline virtual bool VerifyFiniteElementTypes(const FiniteElement &amp; trial_fe,
+                                             const FiniteElement &amp; test_fe
+                                             ) const
+{
+   return (trial_fe.GetDim() == 1 &amp;&amp; test_fe.GetDim() == 1 &amp;&amp;
+           trial_fe.GetDerivType() == mfem::FiniteElement::GRAD  &amp;&amp;
+           test_fe.GetRangeType()  == mfem::FiniteElement::SCALAR );
+}
+</code></pre>
+
+<p>A related optional method can be used to output an appropriate error message in
+the event that unsuitable basis functions have been provided. For example the
+following error message might be appropriate in conjunction with the previous
+<code>VerifyFiniteElementTypes</code> implementation:</p>
+<pre><code class="c++">inline virtual const char * FiniteElementTypeFailureMessage() const
+{
+   return &quot;Trial and test spaces must both be scalar fields in 1D &quot;
+          &quot;and the trial space must implement CalcDShape.&quot;;
+}
+</code></pre>
+
+<p>The last optional protected method allows a certain flexibility in the choice
+of quadrature order. The default implementation is shown below but other
+choices may be suitable.</p>
+<pre><code class="c++">inline virtual int GetIntegrationOrder(const FiniteElement &amp; trial_fe,
+                                       const FiniteElement &amp; test_fe,
+                                       ElementTransformation &amp;Trans)
+{ return trial_fe.GetOrder() + test_fe.GetOrder() + Trans.OrderW(); }
+</code></pre>
+
+<p>A wide variety of bilinear forms can be easily implemented using the
+<code>MixedScalarIntegrator</code>. Most of these are probably already included in MFEM,
+see <a href="../bilininteg/">Bilinear Form Integrators</a> for a listing, but other options
+may be useful.</p>
+<h3 id="working-with-the-mixedvectorintegrator">Working with the MixedVectorIntegrator</h3>
+<p>The <code>MixedVectorIntegrator</code> is very similar in spirit to the
+<code>MixedScalarIntegrator</code> but the integrand in this case is computed as the inner
+product of two vectors. Such integrands will involve combinations of the
+following quantities:</p>
+<ul>
+<li>Vector-valued basis functions obtained from <code>CalcVShape</code></li>
+<li>Gradient of scalar-valued basis functions obtained from <code>CalcPhysDShape</code></li>
+<li>Curl of vector-valued basis functions in 3D obtained from <code>CalcPhysCurlShape</code></li>
+<li>Optional scalar, vector, or matrix-valued coefficients</li>
+</ul>
+<p>By default this integrator will compute different operators based on
+coefficient type:</p>
+<table>
+<thead>
+<tr>
+<th>Coefficient Type</th>
+<th>Default Integral</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scalar</td>
+<td>$a_{ij} = \int_{\Omega_e}q(x)\,\vec{F}_j(x)\cdot\,\vec{G}_i(x)\,d\Omega$</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>$a_{ij} = \int_{\Omega_e}\left(Q(x)\,\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$</td>
+</tr>
+<tr>
+<td>Vector</td>
+<td>$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\cdot\,\vec{G}_i(x)\,d\Omega$</td>
+</tr>
+</tbody>
+</table>
+<p>Where $\vec{F}_j$ and $\vec{G}_i$ are two sets of vector-valued basis functions
+which produces a "mass" matrix.</p>
+<p>The <code>MixedVectorIntegrator</code> also has public and protected methods which may be
+overridden in an analogous manner to those in <code>MixedScalarIntegrator</code> to
+implement an even wider variety of custom integrators. Note that the default
+implementation of the assembly methods do assume a square matrix coefficient
+but this assumption could be removed if necessary.</p>
+<p>The <code>CalcTestShape</code> and <code>CalcTrialShape</code> methods which compute the necessary
+vector-valued basis function values might be overridden as follows:</p>
+<pre><code class="c++">/// Evaluate the vector-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   DenseMatrix &amp; shape)
+{ trial_fe.CalcVShape(Trans, shape); }
+</code></pre>
+
+<p>or</p>
+<pre><code class="c++">/// Evaluate the gradient of the scalar-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   DenseMatrix &amp; shape)
+{ trial_fe.CalcPhysDShape(Trans, shape); }
+</code></pre>
+
+<p>or</p>
+<pre><code class="c++">/// Evaluate the 3D curl of the vector-valued basis functions
+inline virtual void CalcTrialShape(const FiniteElement &amp; trial_fe,
+                                   ElementTransformation &amp;Trans,
+                                   DenseMatrix &amp; shape)
+{ trial_fe.CalcPhysCurlShape(Trans, shape); }
+</code></pre>
+
+<p>Many of the possible <code>MixedVectorIntegrator</code> customizations are already
+included in MFEM. See <a href="../bilininteg/">Bilinear Form Integrators</a> for a listing.</p>
+<h3 id="working-with-the-mixedscalarvectorintegrator">Working with the MixedScalarVectorIntegrator</h3>
+<p>The <code>MixedScalarVectorIntegrator</code> follows naturally from the
+<code>MixedScalarIntegrator</code> and the <code>MixedVectorIntegrator</code>. The integrand in this
+case is computed as the product of a scalar basis function with a vector basis
+function. However, since the integrand must be scalar valued, a vector-valued
+coefficient will always be required.</p>
+<p>The types of scalar-valued basis functions will include:</p>
+<ul>
+<li>Scalar-valued basis functions obtained from <code>CalcPhysShape</code></li>
+<li>Divergence of vector-valued basis functions obtained from <code>CalcPhysDivShape</code></li>
+<li>Curl of vector-valued basis functions in 2D obtained from <code>CalcPhysCurlShape</code></li>
+<li>Gradient of scalar-valued basis functions in 1D obtained from <code>CalcPhysDShape</code></li>
+</ul>
+<p>The types of vector-valued basis functions will include:</p>
+<ul>
+<li>Vector-valued basis functions obtained from <code>CalcVShape</code></li>
+<li>Gradient of scalar-valued basis functions obtained from <code>CalcPhysDShape</code></li>
+<li>Curl of vector-valued basis functions in 3D obtained from <code>CalcPhysCurlShape</code></li>
+</ul>
+<p>By default this integrator will compute different operators based on the choice
+of the trial and test spaces and, in 2D, how the vector coefficient should be
+employed:</p>
+<p>$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\,f_j(x)\right)\cdot\vec{G}_i(x)\,d\Omega\label{msv_def}$$</p>
+<p>or</p>
+<p>$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\cdot\vec{F}_j(x)\right)\,g_i(x)\,d\Omega\label{msv_trans}$$</p>
+<p>or in 2D there is an option to compute</p>
+<p>$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\,f_j(x)\right)\times\vec{G}_i(x)\,d\Omega\label{msv_2d_def}$$</p>
+<p>or (again optionally in 2D)</p>
+<p>$$a_{ij} = \int_{\Omega_e}\left(\vec{q}(x)\times\vec{F}_j(x)\right)\,g_i(x)\,d\Omega\label{msv_2d_trans}$$</p>
+<p>The methods that a developer may choose to override are again quite similar to
+those in <code>MixedScalarIntegrator</code> and <code>MixedVectorIntegrator</code>. The main
+difference is the basis function overrides which have been renamed to
+<code>CalcShape</code> for the scalar-valued basis and <code>CalcVShape</code> for the vector-valued
+basis. By default it is assumed that the trial (domain) space is scalar-valued
+and the test (range) space is vector-valued as in equations \ref{msv_def} and
+\ref{msv_2d_def}. The choice of trial and test spaces is here controlled by a
+<code>transpose</code> option in the <code>MixedScalarVectorIntegrator</code> constructor. If
+<code>transpose == true</code> then equations \ref{msv_trans} and \ref{msv_2d_trans} are
+assumed. The choice between equations \ref{msv_def} and \ref{msv_trans} on the
+one hand and equations \ref{msv_2d_def} and \ref{msv_2d_trans} on the other is
+made with the <code>cross_2d</code> optional constructor argument.</p>
+<p>There are several customizations of this integrator included in MFEM but
+others are possible. See <a href="../bilininteg/">Bilinear Form Integrators</a> for a
+listing.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#integration">Integration</a></li>
+        
+            <li><a href="#integration-rules">Integration Rules</a></li>
+        
+            <li><a href="#coordinate-transformations">Coordinate Transformations</a></li>
+        
+            <li><a href="#writing-custom-integrators">Writing Custom Integrators</a></li>
+        
+    
+    
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../fem/"><i class="fa fa-chevron-circle-left"></i> Back to Finite Element Method</a> </li>
+        
+	
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="http://computation.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>
