@@ -12,7 +12,7 @@ periodic topology. This can be achieved in one of two ways:
 ## Reading a periodic mesh from disk
 
 MFEM supports reading periodic meshes from a [variety of mesh file
-formats](https://mfem.org/meshing/). Several periodic sample meshes are included with MFEM in the
+formats](https://mfem.org/mesh-formats/). Several periodic sample meshes are included with MFEM in the
 `data` directory:
 
 MFEM format:

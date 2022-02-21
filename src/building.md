@@ -19,7 +19,7 @@ MFEM can also be installed as part of
 - [CEED](https://ceed.exascaleproject.org/software)
 - [xSDK](https://xsdk.info)
 - [E4S](https://e4s-project.github.io)
-- [FASTMath](https://fastmath-scidac.llnl.gov/software-catalog.html)
+- [FASTMath](https://scidac5-fastmath.lbl.gov)
 - [RADIUSS](https://software.llnl.gov/radiuss)
 
 ## Instructions

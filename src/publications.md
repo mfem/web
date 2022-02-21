@@ -76,7 +76,7 @@
   1. J. Gopalakrishnan, M. Neumüller, and P. Vassilevski, [The auxiliary space preconditioner for the de Rham complex](https://doi.org/10.1137/17M1153376), *SIAM Journal on Numerical Analysis*, 56(6), pp. 3196-3218, **2018**.
   1. D. A. White, M. Stowell, and D. A. Tortorelli, [Topological optimization of structures using Fourier representations](https://doi.org/10.1007/s00158-018-1962-y), *Structural and Multidisciplinary Optimization*, pp. 1-16, **2018**.
   1. S. Rhebergen and G. N. Wells, [Preconditioning of a hybridized discontinuous Galerkin finite element method for the Stokes equations](https://doi.org/10.1007/s10915-018-0760-4), *Journal of Scientific Computing*, 77(3), pp. 1936-1501, **2018**.
-  1. T. S. Haut, P. G. Maginot, V. Z. Tomov, T. A. Brunner, and T. S. Bailey, [An Efficient Sweep-based Solver for the $S_N$ Equations on High-Order Meshes](https://ansannual.org/wp-content/2018/Data/pdfs/228-24980.pdf), *American Nuclear Society 2018 Annual Meeting, June 14-21, Philadelphia, PA*, **2018**.
+  1. T. S. Haut, P. G. Maginot, V. Z. Tomov, T. A. Brunner, and T. S. Bailey, [An Efficient Sweep-based Solver for the $S_N$ Equations on High-Order Meshes](http://ansannual.org/wp-content/2018/Data/pdfs/228-24980.pdf), *American Nuclear Society 2018 Annual Meeting, June 14-21, Philadelphia, PA*, **2018**.
   1. A. S&aacute;nchez-Villar and M. Merino, [Advances in Wave-Plasma Modelling in ECR Thrusters](https://mariomerino.uc3m.es/assets/docs/pubs/sanc18a.pdf), *2018 Space Propulsion Conference, May 14-18, Seville, Spain*, **2018**.
 
 ---
@@ -121,7 +121,7 @@
   1. V. Dobrev, Tz. Kolev, and R. Rieben, [High-order curvilinear finite element methods for elastic-plastic Lagrangian dynamics](https://computing.llnl.gov/sites/default/files/EP-12.pdf), *J. Comp. Phys.*, (257B), pp. 1062-1080, **2014**.
   1. P. Vassilevski and U. Villa, [A mixed formulation for the Brinkman problem](https://dx.doi.org/10.1137/120884109), *SIAM Journal on Numerical Analysis*, 52-1, pp. 258-281, **2014**.
   1. J. H. Adler and P. S. Vassilevski, [Error Analysis for Constrained First-Order System Least-Squares Finite-Element Methods](https://doi.org/10.1137/130943091), *SIAM Journal on Scientific Computing*, 36(3), pp. A1071-A1088, **2014**.
-  1. A. Aposporidis, P. S. Vassilevski, and A. Veneziani, [Multigrid preconditioning of the non-regularized augmented Bingham fluid problem](https://etna.mcs.kent.edu/vol.41.2014/pp42-61.dir/pp42-61.pdf), *ETNA. Electronic Transactions on Numerical Analysis*, 41, **2014**.
+  1. A. Aposporidis, P. S. Vassilevski, and A. Veneziani, [Multigrid preconditioning of the non-regularized augmented Bingham fluid problem](http://etna.mcs.kent.edu/vol.41.2014/pp42-61.dir/pp42-61.pdf), *ETNA. Electronic Transactions on Numerical Analysis*, 41, **2014**.
   1. P. S. Vassilevski and U. M. Yang, [Reducing communication in algebraic multigrid using additive variants](https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.1928), *Numerical Linear Algebra with Applications*, 21(2), pp. 275-296, **2014**.
   1. T. Dong, V. Dobrev, T. Kolev, R. Rieben, S. Tomov, and J. Dongarra, [A Step towards Energy Efficient Computing: Redesigning a Hydrodynamic Application on CPU-GPU](https://ieeexplore.ieee.org/document/6877327/), *2014 IEEE 28th International Parallel and Distributed Processing Symposium*, **May 2014**.
   1. P. Vassilevski and U. Villa, [A block-diagonal algebraic multigrid preconditioner for the Brinkman problem](https://dx.doi.org/10.1137/120882846), *SIAM Journal on Scientific Computing*, 35-5, pp. S3-S17, **2013**.
@@ -142,7 +142,7 @@
   1. J. Brannick and R. Falgout, [Compatible relaxation and coarsening in algebraic multigrid](https://dx.doi.org/10.1137/090772216), *SIAM Journal on Scientific Computing*, 32, pp. 1393-1416, **2010**.
   1. A. Baker, Tz. Kolev, and U. M. Yang, [Improving algebraic multigrid interpolation operators for linear elasticity problems](https://dx.doi.org/10.1002/nla.688), *Numerical Linear Algebra with Applications*, 17, pp. 495-517, **2010**.
   1. U. M. Yang, [On long-range interpolation operators for aggressive coarsening](https://dx.doi.org/10.1002/nla.689), *Numerical Linear Algebra with Applications*, 17, pp. 453-472, **2010**.
-  1. Tz. Kolev and P. Vassilevski, [Parallel auxiliary space AMG for H(curl) problems](https://www.global-sci.org/jcm/volumes/v27n5/pdf/275-604.pdf), *Journal of Computational Mathematics*, 27, pp. 604-623, **2009**.
+  1. Tz. Kolev and P. Vassilevski, [Parallel auxiliary space AMG for H(curl) problems](https://www.osti.gov/pages/servlets/purl/1670552), *Journal of Computational Mathematics*, 27, pp. 604-623, **2009**.
   1. Tz. V. Kolev and R. N. Rieben, [A tensor artificial viscosity using a finite element approach](https://doi.org/10.1016/j.jcp.2009.08.010), *Journal of Computational Physics*, 228(22), pp. 8336 - 8366, **2009**.
   1. A. Baker, E. Jessup, and Tz. Kolev, [A simple strategy for varying the restart parameter in GMRES(m)](https://dx.doi.org/10.1016/j.cam.2009.01.009), *J. Comp. Appl. Math.*, 230, pp. 751-761, **2009**.
   1. Tz. Kolev, J. Pasciak, and P. Vassilevski, [H(curl) auxiliary mesh preconditioning](https://dx.doi.org/10.1002/nla.534), *Numerical Linear Algebra with Applications*, 15, pp. 455-471, **2008**.

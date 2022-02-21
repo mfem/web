@@ -56,7 +56,7 @@ net motion is the same.
 
 Based on the 2019 Illusion of the year "Dual Axis Illusion" by Frank
 Force, see [Dual Axis
-Illusion](https://illusionoftheyear.com/2019/12/dual-axis-illusion).
+Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
 
 ## Mandel
 

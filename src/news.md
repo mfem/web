@@ -8,7 +8,7 @@ Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hos
 Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 Jul 10, 2021 | The inaugural [MFEM Community Workshop](workshop.md) will take place on October 20th, 2021.
 Apr 22, 2021 | MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).
-Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/content/pages/fy2020/pdf/fy2020annual.pdf).
+Mar 1, 2021  | Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/sites/annual/files/2021-11/fy2020annual.pdf).
 Feb 16, 2021 | New documentation page on [GPU performance](gpu-support.md).
 Dec 19, 2020 | [PyMFEM](https://github.com/mfem/PyMFEM) available with [`pip install mfem`](https://pypi.org/project/mfem).
 Oct 30, 2020 | Version 4.2 [released](https://github.com/mfem/mfem/blob/v4.2/CHANGELOG).
@@ -42,7 +42,7 @@ Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp and [CEED benchm
 May 8, 2017  | News highlight: [Accelerating Simulation Software with Graphics Processing Units](https://computing.llnl.gov/sites/default/files/Computation%20Annual%20Report2016_MFEM.pdf).
 Feb 16, 2017 | Moved main development to GitHub.
 Jan 28, 2017 | Version 3.3 [released](https://github.com/mfem/mfem/blob/v3.3/CHANGELOG).
-Dec 15, 2016 | [Postdoc position](https://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://exascaleproject.org/2016/11/11/ecp_co-design_centers) with MFEM.
+Dec 15, 2016 | [Postdoc position](https://careers-ext.llnl.gov/jobs/6264056-post-dr-research-staff-1) for [exascale computing](https://www.exascaleproject.org/ecp_co-design_centers) with MFEM.
 Nov 11, 2016 | MFEM part of the new [ECP](https://exascaleproject.org) co-design [Center for Efficient Exascale Discretizations (CEED)](https://ceed.exascaleproject.org).
 Nov 11, 2016 | LLNL Newsline: [Lawrence Livermore tapped to lead co-design center for exascale computing ecosystem](https://www.llnl.gov/news/lawrence-livermore-tapped-lead-%E2%80%98co-design%E2%80%99-center-exascale-computing-ecosystem).
 Oct 6, 2016 | [Science & Technology Review](https://str.llnl.gov/september-2016) article: [Laying the Groundwork for Extreme-Scale Computing](https://str.llnl.gov/content/pages/september-2016/pdf/09.16.1.pdf), see also the [YouTube preview](https://www.youtube.com/watch?v=ePWyiDf_XTg).
