@@ -63,7 +63,7 @@ Pressing "`RAfjlmm`", for example, will give us a 2D view without light or persp
 
 ![](img/tutorial/ex1-star-2.png)
 
-This example saves two files called `refined.mesh` and `sol.gf`, which represent the refined mesh and the computed solution as a grid function. These can be visualized with `glvis -m refined.mesh -g sol.gf` as discussed [here](http://glvis.org/options-and-use#visualizing-functions).
+This example saves two files called `refined.mesh` and `sol.gf`, which represent the refined mesh and the computed solution as a grid function. These can be visualized with `glvis -m refined.mesh -g sol.gf` as discussed [here](https://glvis.org/options-and-use#visualizing-functions).
 
 Example 1 can be run on any mesh that is supported by MFEM, including 3D, curvilinear and VTK meshes, e.g.,
 ```sh

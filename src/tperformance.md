@@ -12,7 +12,7 @@ We take advantage of the tensor-product structure of both the finite element
 basis and the quadrature rule to efficiently apply the action of $B$ without
 necessarily computing its entries. This is generally know as _[sum
 factorization](
-http://www.sciencedirect.com/science/article/pii/0021999180900054)_.
+https://www.sciencedirect.com/science/article/pii/0021999180900054)_.
 In the case where we pre-compute and store the $D$ matrix, we call the algorithm
 _partial assembly_.
 

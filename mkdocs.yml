@@ -1,10 +1,10 @@
 site_name: MFEM
-site_url: http://mfem.org
+site_url: https://mfem.org
 docs_dir: 'src'
 
 markdown_extensions:
 - extra  # allow markdown in <div markdown="1">
-- fenced_code  # GitHub style code blocks, e.g. ```python, see http://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
+- fenced_code  # GitHub style code blocks, e.g. ```python, see https://highlightjs.readthedocs.org/en/latest/css-classes-reference.html for a list of languages
 - footnotes
 - attr_list  # Allow us to add link attributes
 

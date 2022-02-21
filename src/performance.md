@@ -39,7 +39,7 @@ corresponding matrix, exploiting the tensor-product structure for efficient
 evaluation.
 
 MFEM also allows for [Chebyshev
-smoothing](http://netlib.org/linalg/html_templates/node76.html) with partial
+smoothing](https://netlib.org/linalg/html_templates/node76.html) with partial
 assembly using the class `OperatorChebyshevSmoother`. This smoother uses
 estimates of the eigenvalues of the operator computed using the [power
 method](https://en.wikipedia.org/wiki/Power_iteration), and is built upon the

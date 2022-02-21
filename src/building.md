@@ -11,7 +11,7 @@ In addition to the native build system described below, MFEM packages are
 also available in the following package managers:
 
 - [Spack](https://github.com/spack/spack)
-- [OpenHPC](http://openhpc.community/downloads)
+- [OpenHPC](https://openhpc.community/downloads)
 - [Homebrew/Science](https://github.com/Homebrew/homebrew-science) (deprecated)
 
 MFEM can also be installed as part of
@@ -26,8 +26,8 @@ MFEM can also be installed as part of
 
 Download MFEM and GLVis
 
-  - [http://mfem.org](http://mfem.org)
-  - [http://glvis.org](http://glvis.org)
+  - [https://mfem.org](https://mfem.org)
+  - [https://glvis.org](https://glvis.org)
 
 Below we assume that we are working with versions 3.4.
 
@@ -81,7 +81,7 @@ All serial examples and miniapps can be build with:
 
 Download *hypre* and METIS from
 
-  - [https://github.com/hypre-space/hypre/releases](https://github.com/hypre-space/hypre/releases)
+  - [https://github.com/hypre-space/hypre/tags](https://github.com/hypre-space/hypre/tags)
   - [http://glaros.dtc.umn.edu/gkhome/metis/metis/download](http://glaros.dtc.umn.edu/gkhome/metis/metis/download)
 
 Below we assume that we are working with hypre version 2.16.0 and METIS version

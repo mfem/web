@@ -47,11 +47,11 @@ Additional support for automated adaptive analysis and parallel unstructured mod
 
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
 
- - MFEM-based [applications](http://www.llnl.gov/casc/blast) have been [scaled](http://computation.llnl.gov/blast/parallel-performance) to [hundreds of thousands](http://computation.llnl.gov/sites/default/files/public/NewBLASTScaling.png) of parallel cores.
+ - MFEM-based [applications](https://www.llnl.gov/casc/blast) have been [scaled](https://computing.llnl.gov/blast/parallel-performance) to hundreds of thousands of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
  - Support for hardware devices, such as [GPUs](gpu-support.md), and programming models, such as CUDA, HIP, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
 
-A serial MFEM application typically requires [minimal](https://docs.mfem.org/html/examples_2ex1_8cpp_source.html) [changes](https://docs.mfem.org/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](http://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](https://docs.mfem.org/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](https://docs.mfem.org/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](examples.md?pa) and many [linear algebra](https://docs.mfem.org/html/vector_8cpp_source.html) and [finite element](https://docs.mfem.org/html/bilininteg__diffusion_8cpp_source.html) operations is available.
+A serial MFEM application typically requires [minimal](https://docs.mfem.org/html/examples_2ex1_8cpp_source.html) [changes](https://docs.mfem.org/html/examples_2ex1p_8cpp_source.html) to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the *[hypre](https://www.llnl.gov/CASC/hypre)* library. Both of these versions can be further transitioned to [high-performing](https://docs.mfem.org/html/miniapps_2performance_2ex1_8cpp_source.html) [templated variants](https://docs.mfem.org/html/miniapps_2performance_2ex1p_8cpp_source.html), where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several [examples](examples.md?pa) and many [linear algebra](https://docs.mfem.org/html/vector_8cpp_source.html) and [finite element](https://docs.mfem.org/html/bilininteg__diffusion_8cpp_source.html) operations is available.
 
 ## Built-in Solvers
 
@@ -65,13 +65,13 @@ A variety of solvers are available for the resulting linear algebra systems (or 
 <img src="../img/hypre_wiw.gif" align="right" width="250">
  - [Krylov solvers][IterativeSolver], such as PCG, MINRES and GMRES applicable to general [operators][Operator] in serial and in parallel,
  - parallel [eigensolvers](examples.md?lobpcg): LOBPCG and AME,
- - high-performance preconditioners from the *[hypre](http://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
+ - high-performance preconditioners from the *[hypre](https://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
  - several eigensolvers from the [SLEPc](https://slepc.upv.es/) suite,
  - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
- - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](http://computation.llnl.gov/projects/sundials/sundials-software) suite,
+ - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](https://computing.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](http://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](http://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](http://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](https://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html) library,
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
  - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
@@ -140,7 +140,7 @@ In addition, the sources for several external benchmark/proxy-apps build on top 
 
 - [Laghos](https://github.com/CEED/Laghos): high-order Lagrangian hydrodynamics miniapp,
 - [Remhos](https://github.com/CEED/Remhos): high-order advection remap miniapp,
-- [Mulard](https://computation.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
+- [Mulard](https://computing.llnl.gov/projects/co-design/mulard): multigroup thermal radiation diffusion mini application.
 
 A handful of "toy" miniapps of less serious nature demonstrate the flexibility of MFEM (and provide a bit of fun):
 
@@ -154,9 +154,9 @@ A handful of "toy" miniapps of less serious nature demonstrate the flexibility o
 
 ## Accurate and Flexible Visualization
 
-The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](http://glvis.org), which is built on top of MFEM.
+The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool [GLVis](https://glvis.org), which is built on top of MFEM.
 
-The [VisIt](http://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
+The [VisIt](https://visit.llnl.gov) visualization and analysis tool also natively supports MFEM formats.
 
 Another visualization tool natively supported by MFEM is [ParaView](https://www.paraview.org). The file format supports high-order (up to order six) meshes and elements.
 

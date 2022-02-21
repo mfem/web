@@ -139,7 +139,7 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 |---------------------------|--------|--------|-------|------------|-------------------------------------------------|-------|
 | DerivativeIntegrator      | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\frac\{\partial u}\{\partial x_i}, v)$ | The direction index "i" is passed by the user. See `MixedDirectionalDerivativeIntegrator` for a more general alternative. |
 | ConvectionIntegrator      | H1     | H1     | **V** | 1D, 2D, 3D | $(\vec\{\lambda}\cdot\grad u, v)$               | This is designed to be used with `BilinearForm` to produce a square matrix. See `MixedDirectionalDerivativeIntegrator` for a rectangular version. |
-| GroupConvectionIntegrator | H1     | H1     | **V** | 1D, 2D, 3D | $(\alpha\vec\{\lambda}\cdot\grad u, v)$         | Uses the "group" finite element formulation for advection due to [Fletcher](http://www.sciencedirect.com/science/article/pii/0045782583901226). |
+| GroupConvectionIntegrator | H1     | H1     | **V** | 1D, 2D, 3D | $(\alpha\vec\{\lambda}\cdot\grad u, v)$         | Uses the "group" finite element formulation for advection due to [Fletcher](https://www.sciencedirect.com/science/article/pii/0045782583901226). |
 | BoundaryMassIntegrator    | H1, L2 | H1, L2 |   S   | 1D, 2D, 3D | $(\lambda\,u,v)$                                | Computes a mass matrix on the exterior faces of a domain. See `MassIntegrator` above for a more general version. |
 
 ## Vector Finite Element Operators

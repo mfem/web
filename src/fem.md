@@ -15,8 +15,8 @@ following excellent books:
 - [Higher-Order Finite Element Methods](https://www.amazon.com/dp/158488438X) by *Pavel Šolín*, *Karel Segeth* and *Ivo Doležel*
 - [High-Order Methods for Incompressible Fluid Flow](https://www.amazon.com/dp/0521453097) by *Michel Deville*, *Paul Fischer* and *Ernest Mund*
 - [Finite Elements: Theory, Fast Solvers, and Applications in Elasticity Theory](https://www.amazon.com/dp/0521705185) by *Dietrich Braess*
-- [The Finite Element Method for Elliptic Problems](http://epubs.siam.org/doi/book/10.1137/1.9780898719208) by *Philippe Ciarlet*
-- [The Mathematical Theory of Finite Element Methods](http://www.springer.com/us/book/9780387759333) by *Susanne Brenner* and *Ridgway Scott*
+- [The Finite Element Method for Elliptic Problems](https://epubs.siam.org/doi/book/10.1137/1.9780898719208) by *Philippe Ciarlet*
+- [The Mathematical Theory of Finite Element Methods](https://www.springer.com/us/book/9780387759333) by *Susanne Brenner* and *Ridgway Scott*
 - [An Analysis of the Finite Element Method](https://www.amazon.com/dp/0980232708) by *Gilbert Strang* and *George Fix*
 - [The Finite Element Method: Its Basis and Fundamentals](https://www.amazon.com/dp/1856176339/) by *Olek Zienkiewicz*, *Robert Taylor* and *J.Z. Zhu*
 

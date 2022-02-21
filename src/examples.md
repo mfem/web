@@ -23,7 +23,7 @@ respective feature. _All examples support (arbitrarily) high-order meshes and
 finite element spaces_.
 The numerical results from the example codes can be visualized using the
 GLVis visualization tool (based on MFEM). See the
-[GLVis website](http://glvis.org) for more details.
+[GLVis website](https://glvis.org) for more details.
 
 Users are encouraged to submit any example codes and miniapps that they have created and
 would like to share. <br>
@@ -147,7 +147,7 @@ The example highlights the use of mesh refinement, finite element grid
 functions, as well as linear and bilinear forms corresponding to the left-hand
 side and right-hand side of the discrete linear system. We also cover the
 explicit elimination of essential boundary conditions, static condensation, and
-the optional connection to the [GLVis](http://glvis.org) tool for visualization.
+the optional connection to the [GLVis](https://glvis.org) tool for visualization.
 
 _The example has a serial ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp)),
 a parallel ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)),
@@ -271,7 +271,7 @@ polynomials (pressure $p$).
 
 The example demonstrates the use of the BlockMatrix and BlockOperator
 classes, as well as the collective saving of several grid functions in
-[VisIt](http://visit.llnl.gov) and [ParaView](https://www.paraview.org)
+[VisIt](https://visit.llnl.gov) and [ParaView](https://www.paraview.org)
 formats.
 
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
@@ -298,7 +298,7 @@ to a simple ZZ error estimator.
 The example demonstrates MFEM's capability to work with both
 conforming and nonconforming refinements, in 2D and 3D, on
 linear, curved and surface meshes. Interpolation of functions
-from coarse to fine meshes, as well as persistent [GLVis](http://glvis.org)
+from coarse to fine meshes, as well as persistent [GLVis](https://glvis.org)
 visualization are also illustrated.
 
 _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
@@ -345,7 +345,7 @@ use high-order continuous trial space, a high-order interfacial
 (trace) space, and a high-order discontinuous test space
 defining a local dual ($H^{-1}$) norm.
 We use the primal form of DPG, see
-["A primal DPG method without a first-order reformulation"](http://dx.doi.org/10.1016/j.camwa.2013.06.029),
+["A primal DPG method without a first-order reformulation"](https://dx.doi.org/10.1016/j.camwa.2013.06.029),
 Demkowicz and Gopalakrishnan, CAM 2013.
 
 The example highlights the use of interfacial (trace) finite
@@ -373,9 +373,9 @@ The example demonstrates the use of Discontinuous Galerkin (DG) bilinear forms
 in MFEM (face integrators), the use of explicit and implicit (with block ILU
 preconditioning) ODE time integrators, the definition of periodic boundary
 conditions through periodic meshes, as well as the use of
-[GLVis](http://glvis.org) for persistent visualization of a time-evolving
+[GLVis](https://glvis.org) for persistent visualization of a time-evolving
 solution. The saving of time-dependent data files for external visualization
-with [VisIt](http://visit.llnl.gov) and [ParaView](https://www.paraview.org) is also illustrated.
+with [VisIt](https://visit.llnl.gov) and [ParaView](https://www.paraview.org) is also illustrated.
 
 _The example has a serial ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp))
 and a parallel ([ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) version.
@@ -426,7 +426,7 @@ curvilinear mesh, NURBS for NURBS mesh, etc.)
 
 The example highlights the use of the LOBPCG eigenvalue solver together with the
 BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
-STRUMPACK parallel direct solvers. Reusing a single [GLVis](http://glvis.org)
+STRUMPACK parallel direct solvers. Reusing a single [GLVis](https://glvis.org)
 visualization window for multiple eigenfunctions is also illustrated.
 
 _The example has only a parallel
@@ -457,7 +457,7 @@ The geometry of the domain is assumed to be as follows:
 
 The example highlights the use of the LOBPCG eigenvalue solver together with the
 BoomerAMG preconditioner in HYPRE.
-Reusing a single [GLVis](http://glvis.org) visualization window for multiple
+Reusing a single [GLVis](https://glvis.org) visualization window for multiple
 eigenfunctions is also illustrated.
 
 _The example has only a parallel
@@ -482,7 +482,7 @@ the specified order in 2D or 3D.
 
 The example highlights the use of the AME subspace eigenvalue
 solver from HYPRE, which uses LOBPCG and AMS internally.
-Reusing a single [GLVis](http://glvis.org) visualization window for multiple
+Reusing a single [GLVis](https://glvis.org) visualization window for multiple
 eigenfunctions is also illustrated.
 
 _The example has only a parallel
@@ -533,9 +533,9 @@ the mesh evenly distributed among the available processors.
 The example demonstrates MFEM's capability to refine, derefine
 and load balance nonconforming meshes, in 2D and 3D, and on
 linear, curved and surface meshes. Interpolation of functions
-between coarse and fine meshes, persistent [GLVis](http://glvis.org) visualization,
+between coarse and fine meshes, persistent [GLVis](https://glvis.org) visualization,
 and saving of time-dependent fields for external visualization
-with [VisIt](http://visit.llnl.gov) are also illustrated.
+with [VisIt](https://visit.llnl.gov) are also illustrated.
 
 _The example has a serial ([ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp))
 and a parallel ([ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp)) version.
@@ -556,7 +556,7 @@ step to compute the conductivity coefficient.
 
 This example demonstrates both implicit and explicit time integration as well as a single
 Picard step method for linearization. The saving of time dependent data files for external
-visualization with [VisIt](http://visit.llnl.gov) is also illustrated.
+visualization with [VisIt](https://visit.llnl.gov) is also illustrated.
 
 _The example has a serial ([ex16.cpp](https://github.com/mfem/mfem/blob/master/examples/ex16.cpp))
 and a parallel ([ex16p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex16p.cpp)) version.
@@ -1551,12 +1551,12 @@ The computational motives captured in Laghos include:
   preparation and the application costs are important for this operator.
 - Domain-decomposed MPI parallelism.
 - Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
-  for visualization / data analysis with [VisIt](http://visit.llnl.gov).
+  for visualization / data analysis with [VisIt](https://visit.llnl.gov).
 
-The Laghos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+The Laghos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
 a collection of software benchmarks, miniapps, libraries and APIs for
 efficient exascale discretizations based on high-order finite element
-and spectral element methods. See http://github.com/ceed for more
+and spectral element methods. See https://github.com/ceed for more
 information and source code availability.
 
 _This is an external miniapp, available at [https://github.com/CEED/Laghos](https://github.com/CEED/Laghos)._
@@ -1592,12 +1592,12 @@ The computational motives captured in Remhos include:
   changing in time (remap mode). Options for full or partial assembly.
 - Domain-decomposed MPI parallelism.
 - Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
-  for visualization and data analysis with [VisIt](http://visit.llnl.gov).
+  for visualization and data analysis with [VisIt](https://visit.llnl.gov).
 
-The Remhos miniapp is part of the [CEED software suite](http://ceed.exascaleproject.org/software),
+The Remhos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
 a collection of software benchmarks, miniapps, libraries and APIs for
 efficient exascale discretizations based on high-order finite element
-and spectral element methods. See http://github.com/ceed for more
+and spectral element methods. See https://github.com/ceed for more
 information and source code availability.
 
 _This is an external miniapp, available at [https://github.com/CEED/Remhos](https://github.com/CEED/Remhos)._

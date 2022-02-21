@@ -117,7 +117,7 @@ a surface charge density on that portion of the boundary.
 ### Volta Mini Application
 
 The electrostatics mini application, named `volta` after the inventor of the
-[voltaic pile](http://en.wikipedia.org/wiki/Voltaic_pile), is intended to
+[voltaic pile](https://en.wikipedia.org/wiki/Voltaic_pile), is intended to
 demonstrate how to solve standard electrostatics problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
 specialized sources or boundary conditions could be implemented.
@@ -333,7 +333,7 @@ specialized sources or boundary conditions could be implemented.
 
 An example simulation is depicted below (click to animate the wave propagation).
 
-[![](img/examples/maxwell.png)](http://mfem.org/img/examples/maxwell.gif)
+[![](img/examples/maxwell.png)](https://mfem.org/img/examples/maxwell.gif)
 
 Time integration is handled by a variable order symplectic time integration
 algorithm.  This algorithm is designed for systems of equations which are

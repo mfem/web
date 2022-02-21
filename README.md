@@ -1,6 +1,6 @@
 # mfem / web
 
-This repo contains the MFEM website [MkDocs](http://www.mkdocs.org/) sources.
+This repo contains the MFEM website [MkDocs](https://www.mkdocs.org/) sources.
 
 To make changes to the website you will need an install of Python version >= 3.6.9 with the following libraries:
 

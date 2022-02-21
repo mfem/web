@@ -38,7 +38,7 @@
     <div class="item">
       [<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        High-order multi-material hydrodynamics in the [BLAST](http://www.llnl.gov/casc/blast) code
+        High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
       </div>
     </div>
     <div class="item">
@@ -78,7 +78,7 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * Scalable from laptops to [GPU-accelerated](features#parallel-scalable-and-gpu-ready) supercomputers.
 * ... and [many more](features.md).
 
-MFEM is used in many projects, including [BLAST](http://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](http://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](http://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
+MFEM is used in many projects, including [BLAST](https://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](https://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://fastmath-scidac.llnl.gov/index.html), [xSDK](https://xsdk.info/), and [CEED](https://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
 See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
 
 </div><div class="col-md-6 news-table" markdown="1">

@@ -126,7 +126,7 @@ In term of parallelization, when seeing GPUs as having only one level of paralle
 Each thread is limited to 255 `float` registers, using more registers results in what is known as *register spilling* which significantly impacts performance, this is why this type of parallelization strategy should only be used for the most simple kernels.
 Therefore, it is usually a good strategy to see GPUs as having two levels of parallelism: the coarse parallelism level among block of threads, and the fine parallelism level among threads in a block of threads.
 Threads in different blocks of threads can only exchange data through the main memory, therefore data exchange between blocks of threads should be kept to the absolute minimum.
-Threads inside a block of threads can exchange data efficiently by using the [shared memory](http://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf).
+Threads inside a block of threads can exchange data efficiently by using the [shared memory](https://developer.download.nvidia.com/GTC/PDF/1083_Wang.pdf).
 Shared memory can also be used to store data common between threads, but stored data should be carefully managed due to the very limited storage capacity of the shared memory.
 Due to their low arithmetic intensity, finite element algorithms often require a significant amount of shared memory bandwidth to exchange information between threads in a block.
 High amounts of shared memory bandwidth usage is a common bottleneck to achieve high performance.

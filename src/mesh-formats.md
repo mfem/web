@@ -7,13 +7,13 @@ MFEM supports a number of mesh formats, including:
   - VTK format (XML VTU format and legacy ASCII format).
   - The [CUBIT](https://cubit.sandia.gov/) meshes through the Genesis (NetCDF)
     binary format.
-  - The [NETGEN](http://sourceforge.net/projects/netgen-mesher/) triangular and
+  - The [NETGEN](https://sourceforge.net/projects/netgen-mesher/) triangular and
     tetrahedral mesh formats.
   - The [TrueGrid](http://www.truegrid.com/) hexahedral mesh format.
 
 See below for more details and information on the specific formats that are
 supported. All of these mesh formats are also supported by MFEM's native
-visualization tool, [GLVis](http://glvis.org/).
+visualization tool, [GLVis](https://glvis.org/).
 
 
 ### MFEM Mesh Formats
@@ -50,7 +50,7 @@ Specifically, MFEM supports:
 
 ### Gmsh Mesh Formats
 
-MFEM supports reading version 2.2 of the [Gmsh](http://gmsh.info/) ASCII and
+MFEM supports reading version 2.2 of the [Gmsh](https://gmsh.info/) ASCII and
 binary formats for 2D and 3D meshes. High-order elements (up to order 9) are
 supported, as are periodic meshes.
 

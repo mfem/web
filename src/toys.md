@@ -7,7 +7,7 @@ flexibility of MFEM (and provide a bit of fun):
 
 The `automata` miniapp implements a one dimensional elementary cellular
 automata as described in:
-[Wolfram MathWorld](http://mathworld.wolfram.com/ElementaryCellularAutomaton.html).
+[Wolfram MathWorld](https://mathworld.wolfram.com/ElementaryCellularAutomaton.html).
 
 This miniapp shows a completely unnecessary use of the finite element
 method to simply display binary data (but it's fun to play with).
@@ -56,7 +56,7 @@ net motion is the same.
 
 Based on the 2019 Illusion of the year "Dual Axis Illusion" by Frank
 Force, see [Dual Axis
-Illusion](http://illusionoftheyear.com/2019/12/dual-axis-illusion).
+Illusion](https://illusionoftheyear.com/2019/12/dual-axis-illusion).
 
 ## Mandel
 
