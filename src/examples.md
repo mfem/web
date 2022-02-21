@@ -9,7 +9,7 @@
 
 This page provides a brief overview of MFEM's example codes and miniapps. For
 detailed documentation of the MFEM sources, including the examples, see the
-[online Doxygen documentation](http://mfem.github.io/doxygen/html/index.html),
+[online Doxygen documentation](http://docs.mfem.org),
 or the `doc` directory in the distribution.
 
 The goal of the example codes is to provide a step-by-step introduction to MFEM
@@ -1729,7 +1729,7 @@ ParELAG;
 Solver), from HYPRE, for preconditioning or solving on the coarsest levels.
 
 Alternatively, it is possible to precondition or solve the $H(\\mathrm{div})$
-form on the coarsest level via a [hybridization](https://mfem.github.io/doxygen/html/classmfem_1_1Hybridization.html)
+form on the coarsest level via a [hybridization](http://docs.mfem.org/html/classmfem_1_1Hybridization.html)
 approach. However, this is not yet implemented in ParELAG for the coarse levels.
 Only the hybridization solver that is directly applicable to an
 $H(\\mathrm{div})$-$L^2$ mixed (saddle-point) system is currently available in
