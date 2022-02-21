@@ -12,15 +12,14 @@ also available in the following package managers:
 
 - [Spack](https://github.com/spack/spack)
 - [OpenHPC](https://openhpc.community/downloads)
-- [Homebrew/Science](https://github.com/Homebrew/homebrew-science) (deprecated)
 
 MFEM can also be installed as part of
 
-- [CEED](https://ceed.exascaleproject.org/software)
 - [xSDK](https://xsdk.info)
 - [E4S](https://e4s-project.github.io)
 - [FASTMath](https://scidac5-fastmath.lbl.gov)
 - [RADIUSS](https://software.llnl.gov/radiuss)
+- [CEED](https://ceed.exascaleproject.org/software)
 
 ## Instructions
 

@@ -35,7 +35,7 @@ Mar 1, 2018  | MFEM highlighted in LLNL's [Science & Technology Review](https://
 Dec 30, 2017 | Initial version of [libCEED](https://github.com/CEED/libCEED), the low-level CEED API, released.
 Nov 10, 2017 | Version 3.3.2 [released](https://github.com/mfem/mfem/blob/v3.3.2/CHANGELOG).
 Nov 7, 2017  | ECP article: [Co-Design Center Develops Next-Generation Simulation Tools](https://www.exascaleproject.org/co-design-center-develops-next-generation-simulation-libraries-and-mini-apps/), also in [HPCwire](https://www.hpcwire.com/2017/11/08/co-design-center-develops-next-generation-simulation-tools/).
-Oct 30, 2017 | Laghos part of the [ECP Proxy App Suite 1.0](https://exascaleproject.github.io/proxy-apps/ecp-apps/), [CORAL-2 Benchmarks](https://asc.llnl.gov/coral-2-benchmarks/) and [ASC co-design miniapps](https://computing.llnl.gov/projects/co-design/laghos).
+Oct 30, 2017 | Laghos part of the [ECP Proxy App Suite 1.0](https://proxyapps.exascaleproject.org/), [CORAL-2 Benchmarks](https://asc.llnl.gov/coral-2-benchmarks/) and [ASC co-design miniapps](https://computing.llnl.gov/projects/co-design/laghos).
 Oct 16, 2017 | Postdoc position available for electromagnetic simulations with MFEM.
 Sep 22, 2017 | LLNL Newsline: [LLNL gears up for next generation of computer-aided design and engineering](https://www.llnl.gov/news/llnl-gears-next-generation-computer-aided-design-and-engineering).
 Jun 15, 2017 | [Laghos](https://github.com/ceed/Laghos) miniapp and [CEED benchmarks](https://ceed.exascaleproject.org/bps/) released.

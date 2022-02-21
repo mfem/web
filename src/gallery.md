@@ -33,7 +33,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/maxwell-eq.png)](img/gallery/maxwell-eq-full.png)
 
-*Comparisons of equipotential surfaces and force lines from Maxwell's [Treatise on Electricity and Magnetism](https://archive.org/details/ATreatiseOnElectricityMagnetism-Volume1/page/n552) with results from MFEM's [Volta miniapp](https://docs.mfem.org/html/volta_8cpp_source.html).*
+*Comparisons of equipotential surfaces and force lines from Maxwell's [Treatise on Electricity and Magnetism](https://archive.org/details/treatiseonelectr01maxwrich/page/n525) with results from MFEM's [Volta miniapp](https://docs.mfem.org/html/volta_8cpp_source.html).*
 
 ----
 
