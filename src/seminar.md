@@ -13,18 +13,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](img/seminar/zanella.jpg)
+![](img/seminar/isaac.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
-#### Raphaël Zanella (UT Austin)
-##### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
-##### [**9am PDT, March 1, 2022**](https://everytimezone.com/s/f34b1e90)
-[<button type="button" class="btn btn-success">
+#### Tobin Isaac (Georgia Tech)
+##### *Unifying the Analysis of Geometric Decomposition in FEEC*
+##### [**9am PDT, March 22, 2022**](https://everytimezone.com/s/42ed5524)
+[<button type="button" class="btn btn-success disabled">
 **WebEx**
-</button>](TBD)
+</button>]()
 
-**Abstract:** An axisymmetric model leads, when suitable, to a substantial cut in the computational cost with respect to a 3D model. Although not as accurate, the axisymmetric model allows to quickly obtain a result which can be satisfying. Simple modifications to a 2D finite element solver allow to obtain an axisymmetric solver. We present MFEM-based parallel axisymmetric solvers for different problems. We first present simple axisymmetric solvers for the Laplacian problem and the heat equation. We then present an axisymmetric solver for the compressible Navier-Stokes equations. All solvers are based on H^1-conforming finite element spaces. The correctness of the implementation is verified with convergence tests on manufactured solutions. The Navier-Stokes solver is used to simulate axisymmetric flows with an analytical solution (Poiseuille and Taylor-Couette) and an air flow in a plasma torch geometry.
+**Abstract:** Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the _geometric decomposition_ of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.
 
 ---
 
