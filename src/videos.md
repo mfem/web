@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Robert Carson (LLNL)
+##### *An overview of ExaConstit and its use in the ExaAM project*
+##### **February 1, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](I0kTJdR8oZU)
+
+As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
+
+</div><div class="col-md-6"  markdown="1">
+
 #### Guglielmo Scovazzi (Duke)
 #### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
 ##### **January 20, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)

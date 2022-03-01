@@ -1,4 +1,4 @@
-var page = new WebPage()
+var page = new WebPage();
 var fs = require('fs');
 
 var system = require('system');
