@@ -22,7 +22,7 @@ nav:
   - 'Automatic Differentiation': autodiff.md
   - 'Tools': tools.md
   - 'Toys': toys.md
-- Documentation:
+- Docs:
   - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Getting Started': getting-started.md
   - '_Building MFEM': building.md
@@ -46,12 +46,15 @@ nav:
   - '_Mesh Format v1.0': mesh-format-v1.0.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Doxygen': dox.md
-  - 'Publications': publications.md
   - 'Videos': videos.md
   - 'About': about.md
   - '🔎 Search...': search.md
 - Gallery: gallery.md
 - Download: download.md
+- Outreach:
+  - 'Seminar': seminar.md
+  - 'Workshop': workshop.md
+  - 'Publications': publications.md
 
 theme:
   name: mkdocs  # required. Can be anything as long as custom_dir is set correctly below
