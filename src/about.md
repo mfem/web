@@ -58,7 +58,7 @@ Please cite with:
 - [David Gardner](https://people.llnl.gov/gardner48)
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2)
 - [Andrew Gillette](https://akgillette.github.io)
-- [Sebastian Grimberg](https://github.com/sebastiangrimberg)
+- [Sebastian Grimberg](https://scholar.google.com/citations?user=p2FEptUAAAAJ&hl=en)
 - [Hennes Hajduk](https://www.mathematik.tu-dortmund.de/lsiii/cms/en/mitarbeiter/member/id=Hennes+Hajduk.html)
 - [Cyrus Harrison](https://people.llnl.gov/harrison37)
 - [Stefan Henneking](https://www.oden.utexas.edu/people/1497)
