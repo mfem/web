@@ -47,7 +47,7 @@ nav:
   - 'Doxygen': dox.md
   - 'About': about.md
   - '🔎 Search...': search.md
-- Outreach:
+- Outreach: # alternatives: "Community", "Resources"
   - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Videos': videos.md
   - 'Seminar': seminar.md
