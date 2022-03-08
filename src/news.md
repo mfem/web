@@ -2,6 +2,7 @@
 
 &nbsp;       | |
 ------------ | -----------------------------------------------------------------
+Mar XX, 2022 | Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
 Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) summarizing the October 20th, 2021, community workshop.
