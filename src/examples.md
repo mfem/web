@@ -1010,6 +1010,24 @@ We recommend viewing examples 1 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex31" markdown="1">
+##Example 31: Spectral fractional Laplacian
+<img class="floatright" src="../img/examples/ex30.png">
+
+This example code demonstrates the use of MFEM to solve the fractional Laplacian problem
+$$ (-\Delta u)^\alpha = 1, \quad \alpha > 0, $$
+with homogeneous Dirichlet boundary conditions. The problem solved in this example is similar to
+[ex1](#ex1), but involves a fractional-order diffusion operator whose inverse can be approximated
+by a series of integer-order diffusion operator inverses. Solving each of these integer-order PDE
+problems with MFEM and accumulating the solutions delivers the discrete solution to the fractional
+Laplacian problem above.
+
+_The example has a serial ([ex31.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31.cpp))
+and a parallel ([ex31p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31p.cpp)) version.
+We recommend viewing example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
