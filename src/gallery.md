@@ -83,9 +83,6 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Axisymmetric computation of an air flow in a tube with continuous Galerkin discretization. Image courtesy of Raphael Zanella, as part of the 2021 MFEM Workshop Visualization Contest.*
 
-
-
-
 </div><div class="col-md-5"  markdown="1">
 
 
