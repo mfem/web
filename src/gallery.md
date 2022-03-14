@@ -164,7 +164,7 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
-[![](img/gallery/workshop21/island_coalescence.png)](img/gallery/workshop21/island_coalescence.mp4)
+[![](img/gallery/island_coalescence.png)](img/gallery/island_coalescence.mp4)
 
 *Adaptive, implicit resistive MHD solver (from [TDS-SciDAC](https://tds-scidac.github.io/)) resolves multi-scale features of plasmoid instability.*
 

@@ -8,9 +8,13 @@
 ## Selected Publications
 
 #### 2022
-1. Q. Tang, L. Chacon, T. V. Kolev, J. N. Shadid and X.-Z. Tang. [An adaptive scalable fully implicit algorithm based on stabilized finite element for reduced visco-resistive MHD](https://doi.org/10.1016/j.jcp.2022.110967), *Journal of Computational Physics*, (454) 110967, **2022**.
+
+  1. Q. Tang, L. Chacon, Tz. Kolev, J. N. Shadid and X.-Z. Tang. [An adaptive scalable fully implicit algorithm based on stabilized finite element for reduced visco-resistive MHD](https://doi.org/10.1016/j.jcp.2022.110967), *Journal of Computational Physics*, (454) 110967, **2022**.
+
+---
 
 #### 2021
+
   1. J. Nikl, M. Kuchařík, and S. Weber, [High-Order Curvilinear Finite Element Magneto-Hydrodynamics I: A Conservative Lagrangian Scheme](https://arxiv.org/abs/2110.11669), *in review*, **2021**.
   1. T. L. Horvath and S. Rhebergen, [A conforming sliding mesh technique for an embedded-hybridized discontinuous Galerkin discretization for fluid-rigid body interaction](https://arxiv.org/abs/2105.12542), *in review*, **2021**.
   1. Tz. Kolev and W. Pazner, [Conservative and accurate solution transfer between high-order and low-order refined finite element spaces](https://arxiv.org/abs/2103.05283), *in review*, **2021**.
