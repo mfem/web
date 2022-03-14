@@ -32,6 +32,7 @@
   1. J. Nikl, I. Göthel, M. Kuchařík, S. Weber, and M. Bussmann, [Implicit reduced Vlasov-Fokker-Planck-Maxwell model based on high-order mixed elements](https://doi.org/10.1016/j.jcp.2021.110214), *Journal of Computational Physics*, (434) 110214, **2021**.
   1. D. Kalchev, P. Vassilevski, and  U. Villa, [On ParELAG's Parallel Element-based Algebraic Multigrid and its MFEM Miniapps for H(curl) and H(div) Problems: a report including lowest and next to the lowest order numerical results](https://doi.org/10.2172/1807757), *LLNL Tech. Report*, LLNL-TR-824455, **2021**.
   1. J. Brown, A. Abdelfattah, V. Barra, N. Beams, J. Camier, V. Dobrev, Y. Dudouit, L. Ghaffari, Tz. Kolev, D. Medina, W. Pazner, T. Ratnayaka, J. Thompson and S. Tomov, [libCEED: Fast algebra for high-order element-based discretizations](https://doi.org/10.21105/joss.02945), *The Journal of Open Source Software*, **2021**.
+  1. P. Knupp, Tz. Kolev, K. Mittal, V. Tomov, [Adaptive Surface Fitting and Tangential Relaxation for High-Order Mesh Optimization](https://www.internationalmeshingroundtable.com/assets/papers/2021/11-Knupp.pdf). *International Meshing Roundtable*, **2021**.
 
 ---
 
