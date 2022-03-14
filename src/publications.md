@@ -7,7 +7,14 @@
 
 ## Selected Publications
 
+#### 2022
+
+  1. Q. Tang, L. Chacon, Tz. Kolev, J. N. Shadid and X.-Z. Tang. [An adaptive scalable fully implicit algorithm based on stabilized finite element for reduced visco-resistive MHD](https://doi.org/10.1016/j.jcp.2022.110967), *Journal of Computational Physics*, (454) 110967, **2022**.
+
+---
+
 #### 2021
+
   1. J. Nikl, M. Kuchařík, and S. Weber, [High-Order Curvilinear Finite Element Magneto-Hydrodynamics I: A Conservative Lagrangian Scheme](https://arxiv.org/abs/2110.11669), *in review*, **2021**.
   1. T. L. Horvath and S. Rhebergen, [A conforming sliding mesh technique for an embedded-hybridized discontinuous Galerkin discretization for fluid-rigid body interaction](https://arxiv.org/abs/2105.12542), *in review*, **2021**.
   1. Tz. Kolev and W. Pazner, [Conservative and accurate solution transfer between high-order and low-order refined finite element spaces](https://arxiv.org/abs/2103.05283), *in review*, **2021**.
@@ -45,6 +52,7 @@
   1. B. S. Southworth, A. A. Sivas, and S. Rhebergen, [On fixed-point, Krylov, and 2x2 block preconditioners for nonsymmetric problems](https://doi.org/10.1137/19M1298317), *SIAM Journal on Matrix Analysis and Applications*, 41(2), pp. 871-900, **2020**.
   1. P. Fischer, M. Min, T. Rathanayake, S. Dutta, Tz. Kolev, V. Dobrev, J.S. Camier, M. Kronbichler, T. Warburton, K. Swirydowicz, and J. Brown, [Scalability of High-Performance PDE Solvers](https://doi.org/10.1177/1094342020915762), *The International Journal on High Performance Computing Applications*, 34(5), pp. 562-586, **2020**.
   1. G. Sosa Jones, J. J. Lee, and S. Rhebergen, [A space-time hybridizable discontinuous Galerkin method for linear free-surface waves](https://doi.org/10.1007/s10915-020-01340-8), *Journal of Scientific Computing*, (85) 61, **2020**. Also available as [arXiv:1910.07315](https://arxiv.org/abs/1910.07315)
+  1. Z. Peng, Q. Tang and X.-Z. Tang. [An adaptive discontinuous Petrov-Galerkin method for the Grad-Shafranov equation](https://doi.org/10.1137/19M1309894), *SIAM Journal on Scientific Computing*, 42(5):B1227-B1249, **2020**.
 
 ---
 
