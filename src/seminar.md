@@ -20,7 +20,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Tobin Isaac (Georgia Tech)
 ##### *Unifying the Analysis of Geometric Decomposition in FEEC*
 ##### [**9am PDT, March 22, 2022**](https://everytimezone.com/s/42ed5524)
-[<button type="button" class="btn btn-success disabled">
+[<button type="button" class="btn btn-success">
 **WebEx**
 </button>](https://llnlfed.webex.com/meet/kolev1)
 
