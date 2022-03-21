@@ -1499,6 +1499,28 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="extrapolate" markdown="1">
+##Extrapolation Miniapp
+<img class="floatright"  width="450" src="../img/examples/extrapolate.png">
+
+The `extrapolate` miniapp, found in the `miniapps/shifted` directory,
+extrapolates a finite element function from a set of elements (known values) to
+the rest of the domain. The set of elements that contains the known values is
+specified by the positive values of a level set Coefficient. The known values
+are not modified. The miniapp supports two PDE-based approaches
+([Aslam](https://www.sciencedirect.com/science/article/pii/S0021999103004170?via%3Dihub), [Bochkov & Gibou](https://epubs.siam.org/doi/10.1137/19M1307883)),
+both of which rely on solving a sequence of advection problems in the
+direction of the unknown parts of the domain. The extrapolation can be constant
+(1st order), linear (2nd order), or quadratic (3rd order). These formal orders
+hold for a limited band around the zero level set, see the above references for
+further information.
+
+_The miniapp has only a parallel
+([extrapolate.cpp](https://github.com/mfem/mfem/blob/master/miniapps/shifted/extrapolate.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
+
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="distance" markdown="1">
 ##Distance Solver Miniapp
@@ -1888,6 +1910,7 @@ function update()
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
 
    // shifted methods miniapps
+   + showElement("extrapolate", advection && l2 && dg && rk)
    + showElement("distance", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
    + showElement("shifted", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
 
