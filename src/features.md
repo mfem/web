@@ -110,7 +110,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 28](https://docs.mfem.org/html/ex28_8cpp_source.html): constraints and sliding boundary conditions,
  - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces,
  - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html): mesh preprocessing, resolving problem data,
- - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html): Nedelec H(curl) FEM for the anisotropic definite Maxwell problem.
+ - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html): Nedelec H(curl) FEM for the anisotropic definite Maxwell problem,
+ - [Example 32](https://docs.mfem.org/html/ex32_8cpp_source.html): Parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
