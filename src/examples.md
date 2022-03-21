@@ -1037,6 +1037,35 @@ We recommend viewing example 3 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex32" markdown="1">
+##Example 32: Anisotropic Maxwell Eigenproblem 
+<img class="floatright" src="../img/examples/ex32.png">
+
+This example code solves the Maxwell (electromagnetic)
+eigenvalue problem with anisotropic permittivity, $\epsilon$
+$$\nabla\times\nabla\times\, E = \lambda\, \epsilon E $$
+with  homogeneous Dirichlet boundary conditions $E \times n = 0$.
+
+We compute a number of the lowest nonzero eigenmodes by
+discretizing the curl curl operator using a Nedelec finite element space of
+the specified order in 1D, 2D, or 3D.
+
+The example demonstrates the use of restricted $H(curl)$ finite element
+spaces in an eigenmode context. These restricted spaces allow
+the solution of 1D or 2D electromagnetic problems which involve 3D
+field vectors. Such problems arise in plasma physics and crystallography.
+The example highlights the use of the AME subspace eigenvalue
+solver from HYPRE, which uses LOBPCG and AMS internally.
+Reusing multiple [GLVis](https://glvis.org) visualization windows for multiple
+eigenfunctions is also illustrated.
+
+_The example has only a parallel
+([ex32p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex32p.cpp)) version.
+We recommend viewing examples 13 and 31 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1865,6 +1894,7 @@ function update()
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
+   + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
