@@ -1010,6 +1010,33 @@ We recommend viewing examples 1 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex31" markdown="1">
+##Example 31: Anisotropic Definite Maxwell Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex31.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex31.png">
+</a>
+
+This example code solves a simple electromagnetic diffusion
+problem corresponding to the second order definite Maxwell
+equation $$\nabla\times\nabla\times\, E + \sigma E = f$$
+with boundary condition $ E \times n $ = "given tangential field".
+In this example $\sigma$ is an anisotropic 3x3 tensor. Here, we use a
+given exact solution $E$ and compute the corresponding r.h.s.
+$f$. We discretize with Nedelec finite elements in 1D, 2D, or 3D.
+
+The example demonstrates the use of restricted $H(curl)$ finite element
+spaces with the curl-curl and the (vector finite element) mass
+bilinear form, as well as the computation of discretization
+error when the exact solution is known. These restricted spaces allow
+the solution of 1D or 2D electromagnetic problems which involve 3D
+field vectors. Such problems arise in plasma physics and crystallography.
+
+_The example has a serial ([ex31.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31.cpp))
+and a parallel ([ex31p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31p.cpp)) version.
+We recommend viewing example 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1837,6 +1864,7 @@ function update()
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
+   + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
