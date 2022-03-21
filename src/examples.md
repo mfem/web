@@ -1010,6 +1010,62 @@ We recommend viewing examples 1 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex31" markdown="1">
+##Example 31: Anisotropic Definite Maxwell Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex31.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex31.png">
+</a>
+
+This example code solves a simple electromagnetic diffusion
+problem corresponding to the second order definite Maxwell
+equation $$\nabla\times\nabla\times\, E + \sigma E = f$$
+with boundary condition $ E \times n $ = "given tangential field".
+In this example $\sigma$ is an anisotropic 3x3 tensor. Here, we use a
+given exact solution $E$ and compute the corresponding r.h.s.
+$f$. We discretize with Nedelec finite elements in 1D, 2D, or 3D.
+
+The example demonstrates the use of restricted $H(curl)$ finite element
+spaces with the curl-curl and the (vector finite element) mass
+bilinear form, as well as the computation of discretization
+error when the exact solution is known. These restricted spaces allow
+the solution of 1D or 2D electromagnetic problems which involve 3D
+field vectors. Such problems arise in plasma physics and crystallography.
+
+_The example has a serial ([ex31.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31.cpp))
+and a parallel ([ex31p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31p.cpp)) version.
+We recommend viewing example 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex32" markdown="1">
+##Example 32: Anisotropic Maxwell Eigenproblem 
+<img class="floatright" src="../img/examples/ex32.png">
+
+This example code solves the Maxwell (electromagnetic)
+eigenvalue problem with anisotropic permittivity, $\epsilon$
+$$\nabla\times\nabla\times\, E = \lambda\, \epsilon E $$
+with  homogeneous Dirichlet boundary conditions $E \times n = 0$.
+
+We compute a number of the lowest nonzero eigenmodes by
+discretizing the curl curl operator using a Nedelec finite element space of
+the specified order in 1D, 2D, or 3D.
+
+The example demonstrates the use of restricted $H(curl)$ finite element
+spaces in an eigenmode context. These restricted spaces allow
+the solution of 1D or 2D electromagnetic problems which involve 3D
+field vectors. Such problems arise in plasma physics and crystallography.
+The example highlights the use of the AME subspace eigenvalue
+solver from HYPRE, which uses LOBPCG and AMS internally.
+Reusing multiple [GLVis](https://glvis.org) visualization windows for multiple
+eigenfunctions is also illustrated.
+
+_The example has only a parallel
+([ex32p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex32p.cpp)) version.
+We recommend viewing examples 13 and 31 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1472,6 +1528,28 @@ _**These miniapps require installation of the [`gslib`](https://github.com/gslib
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="extrapolate" markdown="1">
+##Extrapolation Miniapp
+<img class="floatright"  width="450" src="../img/examples/extrapolate.png">
+
+The `extrapolate` miniapp, found in the `miniapps/shifted` directory,
+extrapolates a finite element function from a set of elements (known values) to
+the rest of the domain. The set of elements that contains the known values is
+specified by the positive values of a level set Coefficient. The known values
+are not modified. The miniapp supports two PDE-based approaches
+([Aslam](https://www.sciencedirect.com/science/article/pii/S0021999103004170?via%3Dihub), [Bochkov & Gibou](https://epubs.siam.org/doi/10.1137/19M1307883)),
+both of which rely on solving a sequence of advection problems in the
+direction of the unknown parts of the domain. The extrapolation can be constant
+(1st order), linear (2nd order), or quadratic (3rd order). These formal orders
+hold for a limited band around the zero level set, see the above references for
+further information.
+
+_The miniapp has only a parallel
+([extrapolate.cpp](https://github.com/mfem/mfem/blob/master/miniapps/shifted/extrapolate.cpp)) version._
+_**We recommend that new users start with the example codes before moving to the miniapps.**_
+
+<div style="clear:both;"/></div>
+<br></div>
 
 <div id="distance" markdown="1">
 ##Distance Solver Miniapp
@@ -1837,6 +1915,8 @@ function update()
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
+   + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
+   + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -1860,6 +1940,7 @@ function update()
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
 
    // shifted methods miniapps
+   + showElement("extrapolate", advection && l2 && dg && rk)
    + showElement("distance", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
    + showElement("shifted", all1 && h1 && galerkin && (pcg || gmres || amg || newton))
 

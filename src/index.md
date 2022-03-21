@@ -87,21 +87,21 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar 21, 2022 | Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
 Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our [community workshop](workshop.md).
-Jul 29, 2021 | Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.3.tgz**
-</button>](https://bit.ly/mfem-4-3)
+**Download mfem-4.4.tgz**
+</button>](https://bit.ly/mfem-4-4)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](
