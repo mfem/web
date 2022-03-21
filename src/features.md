@@ -111,7 +111,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces,
  - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html): mesh preprocessing, resolving problem data,
  - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html): Nedelec H(curl) FEM for the anisotropic definite Maxwell problem,
- - [Example 32](https://docs.mfem.org/html/ex32_8cpp_source.html): Parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
+ - [Example 32](https://docs.mfem.org/html/ex32_8cpp_source.html): parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -128,7 +128,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
  - [Interpolation](https://docs.mfem.org/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
- - [Extrapolate](https://docs.mfem.org/html/extrapolate_8cpp_source.html): finite element extrapolation solver,
+ - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html): finite element extrapolation solver,
  - [Distance](https://docs.mfem.org/html/distance_8cpp_source.html): finite element distance solver,
  - [Shifted Diffusion](https://docs.mfem.org/html/shifted_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
  - [Minimal Surface](https://docs.mfem.org/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
