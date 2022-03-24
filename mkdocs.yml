@@ -45,14 +45,14 @@ nav:
   - '_Mesh Format v1.0': mesh-format-v1.0.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Doxygen': dox.md
+  - 'Publications': publications.md
   - 'About': about.md
   - '🔎 Search...': search.md
-- Outreach: # alternatives: "Community", "Resources"
-  - '_News': news.md   # pages starting with '_' are hidden from the menu
+- Community:
+  - 'News': news.md   # pages starting with '_' are hidden from the menu
   - 'Videos': videos.md
   - 'Seminar': seminar.md
   - 'Workshop': workshop.md
-  - 'Publications': publications.md
 - Gallery: gallery.md
 - Download: download.md
 
