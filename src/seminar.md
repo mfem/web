@@ -136,6 +136,12 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ---
 
+#### Ricardo Vinuesa (KTH)
+##### *Modelling and Controlling Turbulent Flows Through Deep Learning*
+##### **August 16, 2022**
+
+---
+
 #### Dennis Ogiermann (University of Bochum)
 ##### *Computing meets Cardiology: Making heart simulations fast and accurate*
 ##### **September 13, 2022**
