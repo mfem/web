@@ -13,11 +13,11 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](img/seminar/hovarth.jpg)
+![](img/seminar/horvath.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
-#### Tamas Hovarth (Oakland University)
+#### Tamas Horvath (Oakland University)
 ##### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
 ##### [**9am PDT, March 29, 2022**](https://everytimezone.com/s/885ecb5e)
 [<button type="button" class="btn btn-success">
