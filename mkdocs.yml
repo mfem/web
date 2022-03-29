@@ -23,7 +23,6 @@ nav:
   - 'Tools': tools.md
   - 'Toys': toys.md
 - Documentation:
-  - '_News': news.md   # pages starting with '_' are hidden from the menu
   - 'Getting Started': getting-started.md
   - '_Building MFEM': building.md
   - '_Serial Tutorial': serial-tutorial.md
@@ -47,9 +46,13 @@ nav:
   - '_Mesh Format v1.x': mesh-format-v1.x.md
   - 'Doxygen': dox.md
   - 'Publications': publications.md
-  - 'Videos': videos.md
   - 'About': about.md
   - '🔎 Search...': search.md
+- Community:
+  - 'News': news.md   # pages starting with '_' are hidden from the menu
+  - 'Videos': videos.md
+  - 'Seminar': seminar.md
+  - 'Workshop': workshop.md
 - Gallery: gallery.md
 - Download: download.md
 
