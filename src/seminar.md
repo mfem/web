@@ -19,7 +19,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Robert Chodi (UIUC)
 ##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
-##### [**9am PDT, March 29, 2022**](https://everytimezone.com/s/291a6d95)
+##### [**9am PDT, April 26, 2022**](https://everytimezone.com/s/291a6d95)
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
@@ -40,7 +40,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Tamas Horvath (Oakland University)
 ##### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
 ##### March 29, 2022
-[<button type="button" class="btn btn-success">
+[<button type="button" class="btn btn-primary">
 **Slides**
 </button>](pdf/seminar/horvath.pdf)
 &nbsp;&nbsp;
@@ -49,7 +49,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </button>](videos.md)
 
 **Abstract:** Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
-
 
 </div><div class="col-md-3"  markdown="1">
 
