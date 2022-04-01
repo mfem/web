@@ -300,7 +300,9 @@
     
         <li class="main active"><a href="#mfem-videos">MFEM Videos</a></li>
         
-            <li><a href="#femllnl-seminar">FEM@LLNL Seminar</a></li>
+            <li><a href="#femllnl-seminars">FEM@LLNL Seminars</a></li>
+        
+            <li><a href="#conferences-in-2022">Conferences in 2022</a></li>
         
             <li><a href="#mfem-workshop-2021">MFEM Workshop 2021</a></li>
         
@@ -323,11 +325,25 @@
 
 <h1 id="mfem-videos">MFEM Videos</h1>
 <p>A collection of MFEM-related videos, including recorded talks from the MFEM workshops and conference presentations.</p>
-<h2 id="femllnl-seminar">FEM@LLNL Seminar</h2>
+<h2 id="femllnl-seminars">FEM@LLNL Seminars</h2>
 <hr />
 <div class="col-md-6">
+<h4 id="tobin-isaac-georgia-tech">Tobin Isaac (Georgia Tech)</h4>
+<h4 id="unifying-the-analysis-of-geometric-decomposition-in-feec"><em>Unifying the Analysis of Geometric Decomposition in FEEC</em></h4>
+<h5 id="march-22-2022-femllnl-seminar-series"><strong>March 22, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><img alt="YouTube" src="edK62yPUtIs" /></p>
+<p>Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the <em>geometric decomposition</em> of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.</p>
+</div>
+<div class="col-md-6">
+<h4 id="raphael-zanella-ut-austin">Raphaël Zanella (UT Austin)</h4>
+<h4 id="axisymmetric-mfem-based-solvers-for-the-compressible-navier-stokes-equations-and-other-problems"><em>Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems</em></h4>
+<h5 id="march-1-2022-femllnl-seminar-series"><strong>March 1, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><img alt="YouTube" src="qCW60wWmv4Y" /></p>
+<p>An axisymmetric model leads, when suitable, to a substantial cut in the computational cost with respect to a 3D model. Although not as accurate, the axisymmetric model allows to quickly obtain a result which can be satisfying. Simple modifications to a 2D finite element solver allow to obtain an axisymmetric solver. We present MFEM-based parallel axisymmetric solvers for different problems. We first present simple axisymmetric solvers for the Laplacian problem and the heat equation. We then present an axisymmetric solver for the compressible Navier-Stokes equations. All solvers are based on H^1-conforming finite element spaces. The correctness of the implementation is verified with convergence tests on manufactured solutions. The Navier-Stokes solver is used to simulate axisymmetric flows with an analytical solution (Poiseuille and Taylor-Couette) and an air flow in a plasma torch geometry.</p>
+</div>
+<div class="col-md-6">
 <h4 id="robert-carson-llnl">Robert Carson (LLNL)</h4>
-<h5 id="an-overview-of-exaconstit-and-its-use-in-the-exaam-project"><em>An overview of ExaConstit and its use in the ExaAM project</em></h5>
+<h4 id="an-overview-of-exaconstit-and-its-use-in-the-exaam-project"><em>An overview of ExaConstit and its use in the ExaAM project</em></h4>
 <h5 id="february-1-2022-femllnl-seminar-series"><strong>February 1, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><img alt="YouTube" src="I0kTJdR8oZU" /></p>
 <p>As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.</p>
@@ -338,6 +354,17 @@
 <h5 id="january-20-2022-femllnl-seminar-series"><strong>January 20, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><img alt="YouTube" src="WJ5dAhOR6Gg" /></p>
 <p>Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
+</div>
+<div class="col-md-12">
+<h2 id="conferences-in-2022">Conferences in 2022</h2>
+<hr />
+</div>
+<div class="col-md-6">
+<h4 id="john-camier-llnl">John Camier (LLNL)</h4>
+<h4 id="all-out-kernel-fusion-reaching-peak-performance-faster-in-high-order-finite-element-simulations"><em>All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations</em></h4>
+<h5 id="march-2124-2022-nvidia-gtc22"><strong>March 21–24, 2022</strong> | <a href="https://www.nvidia.com/gtc/">NVIDIA GTC22</a></h5>
+<p><img alt="YouTube" src="M2a1eW9XMJQ" /></p>
+<p>LLNL research scientist John Camier described recent improvements of high-order finite element CUDA kernels that can reduce the time-to-solution by a factor of 10. Augmenting traditional compiler representations with a general mathematical description enables a sustainable way to generate optimized kernels, matching the peak performance of hand-tuned CUDA code. Such intermediate graph-based representation provides significant potential for optimization, both in terms of minimizing the number of kernel launches and in reducing the memory bandwidth. Camier also presented results on single and multiple GPUs that demonstrate significant reduction in the local problem size required to reach peak performance, leading to faster time-to-solution in finite element applications.</p>
 </div>
 <div class="col-md-12">
 <h2 id="mfem-workshop-2021">MFEM Workshop 2021</h2>
@@ -506,7 +533,9 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
     
         <li class="main active"><a href="#mfem-videos">MFEM Videos</a></li>
         
-            <li><a href="#femllnl-seminar">FEM@LLNL Seminar</a></li>
+            <li><a href="#femllnl-seminars">FEM@LLNL Seminars</a></li>
+        
+            <li><a href="#conferences-in-2022">Conferences in 2022</a></li>
         
             <li><a href="#mfem-workshop-2021">MFEM Workshop 2021</a></li>
         
