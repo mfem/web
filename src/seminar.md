@@ -13,22 +13,61 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/chiodi.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Robert Chiodi (UIUC)
+##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
+##### [**9am PDT, April 26, 2022**](https://everytimezone.com/s/291a6d95)
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>]()
+
+**Abstract:** The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3"  markdown="1">
+
+![](img/seminar/horvath.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Tamas Horvath (Oakland University)
+##### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
+##### March 29, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/horvath.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=v8-EubYMT-A&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=6)
+
+**Abstract:** Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/isaac.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Tobin Isaac (Georgia Tech)
 ##### *Unifying the Analysis of Geometric Decomposition in FEEC*
-##### [**9am PDT, March 22, 2022**](https://everytimezone.com/s/42ed5524)
-[<button type="button" class="btn btn-success disabled">
-**WebEx**
-</button>]()
+##### March 22, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](https://tinyurl.com/isaac-feec-mfem)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=edK62yPUtIs&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=4)
 
 **Abstract:** Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the _geometric decomposition_ of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -37,7 +76,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Raphaël Zanella (UT Austin)
-##### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
+##### *Axisymmetric MFEM-Based Solvers for the Compressible Navier-Stokes Equations and Other Problems*
 ##### March 1, 2022
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -45,7 +84,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>](videos.md)
+</button>](https://www.youtube.com/watch?v=qCW60wWmv4Y&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=3)
 
 **Abstract:** An axisymmetric model leads, when suitable, to a substantial cut in the computational cost with respect to a 3D model. Although not as accurate, the axisymmetric model allows to quickly obtain a result which can be satisfying. Simple modifications to a 2D finite element solver allow to obtain an axisymmetric solver. We present MFEM-based parallel axisymmetric solvers for different problems. We first present simple axisymmetric solvers for the Laplacian problem and the heat equation. We then present an axisymmetric solver for the compressible Navier-Stokes equations. All solvers are based on H^1-conforming finite element spaces. The correctness of the implementation is verified with convergence tests on manufactured solutions. The Navier-Stokes solver is used to simulate axisymmetric flows with an analytical solution (Poiseuille and Taylor-Couette) and an air flow in a plasma torch geometry.
 
@@ -56,7 +95,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Robert Carson (LLNL)
-##### *An overview of ExaConstit and its use in the ExaAM project*
+##### *An Overview of ExaConstit and Its Use in the ExaAM Project*
 ##### February 1, 2022
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -93,12 +132,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 &nbsp;
 
-#### Tamas Hovarth (Oakland University)
-##### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
-##### **March 29, 2022**
-
----
-
 #### Robert Chodi (UIUC)
 ##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
 ##### **April 26, 2022**
@@ -120,6 +153,12 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Victoria Korchogova (Russian Academy of Sciences)
 ##### *On Using of AMR Algorithms for Solving Gas Dynamics Problems by RKDG Method*
 ##### **July 19, 2022**
+
+---
+
+#### Ricardo Vinuesa (KTH)
+##### *Modelling and Controlling Turbulent Flows Through Deep Learning*
+##### **August 16, 2022**
 
 ---
 

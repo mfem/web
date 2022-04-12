@@ -162,6 +162,12 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 *Compressible Euler in Lagrangian frame using the [Laghos](https://github.com/CEED/Laghos) miniapp. Image courtesy of Vladimir Tomov, as part of the 2021 MFEM Workshop Visualization Contest.*
 
+----
+
+[![](img/gallery/island_coalescence.png)](img/gallery/island_coalescence.mp4)
+
+*Adaptive, implicit resistive MHD solver (from [TDS-SciDAC](https://tds-scidac.github.io/)) resolves multi-scale features of plasmoid instability.*
+
 </div><div class="col-md-3" markdown="1">
 
 [![](img/gallery/mri.png)](img/gallery/mri-full.png)
