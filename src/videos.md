@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Tamas Horvath (Oakland University)
+#### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
+##### **March 29, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](v8-EubYMT-A)
+
+Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
+
+---
+
 #### Tobin Isaac (Georgia Tech)
 #### *Unifying the Analysis of Geometric Decomposition in FEEC*
 ##### **March 22, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -16,10 +26,10 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the _geometric decomposition_ of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Raphaël Zanella (UT Austin)
-#### *Axisymmetric MFEM-based solvers for the compressible Navier-Stokes equations and other problems*
+#### *Axisymmetric MFEM-Based Solvers for the Compressible Navier-Stokes Equations and Other Problems*
 ##### **March 1, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
 ![YouTube](qCW60wWmv4Y)
@@ -29,14 +39,14 @@ An axisymmetric model leads, when suitable, to a substantial cut in the computat
 </div><div class="col-md-6"  markdown="1">
 
 #### Robert Carson (LLNL)
-#### *An overview of ExaConstit and its use in the ExaAM project*
+#### *An Overview of ExaConstit and Its Use in the ExaAM Project*
 ##### **February 1, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
 ![YouTube](I0kTJdR8oZU)
 
 As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Guglielmo Scovazzi (Duke)
 #### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
