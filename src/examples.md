@@ -1011,9 +1011,9 @@ We recommend viewing examples 1 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
-<div id="ex31" markdown="1">
-##Example 31: Spectral fractional Laplacian
-<img class="floatright" width="280pt" src="../img/examples/ex31.png">
+<div id="ex33" markdown="1">
+##Example 33: Spectral fractional Laplacian
+<img class="floatright" width="280pt" src="../img/examples/ex33.png">
 
 This example code demonstrates the use of MFEM to solve the fractional Laplacian problem
 $$ (-\Delta)^\alpha u = 1, \quad \alpha > 0, $$
@@ -1023,8 +1023,8 @@ by a series of inverses of integer-order diffusion operators. Solving each of th
 integer-order PDEs with MFEM and summing their solutions results in a discrete solution to the
 fractional Laplacian problem above.
 
-_The example has a serial ([ex31.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31.cpp))
-and a parallel ([ex31p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex31p.cpp)) version.
+_The example has a serial ([ex33.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33.cpp))
+and a parallel ([ex33p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp)) version.
 We recommend viewing example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1856,7 +1856,7 @@ function update()
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
-   + showElement("ex31", (diffusion || nonlocal) && h1)
+   + showElement("ex33", (diffusion || nonlocal) && h1)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
