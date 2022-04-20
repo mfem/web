@@ -342,6 +342,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
+      <option id="nonlocal">Nonlocal models</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1235,6 +1236,22 @@ We recommend viewing examples 13 and 31 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="ex33">
+<h2 id="example-33-spectral-fractional-laplacian">Example 33: Spectral fractional Laplacian</h2>
+<p><img class="floatright" width="280pt" src="../img/examples/ex33.png"></p>
+<p>This example code demonstrates the use of MFEM to solve the fractional Laplacian problem
+$$ (-\Delta)^\alpha u = 1, \quad 0 &lt; \alpha &lt; 1, $$
+with homogeneous Dirichlet boundary conditions. The problem solved in this example is similar to
+<a href="#ex1">ex1</a>, but involves a fractional-order diffusion operator whose inverse can be approximated
+by a series of inverses of integer-order diffusion operators. Solving each of these independent
+integer-order PDEs with MFEM and summing their solutions results in a discrete solution to the
+fractional Laplacian problem above.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex33.cpp">ex33.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp">ex33p.cpp</a>) version.
+We recommend viewing Example 1 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -1998,6 +2015,7 @@ function update()
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
+   + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
