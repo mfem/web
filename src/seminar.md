@@ -22,7 +22,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ##### [**9am PDT, May 24, 2022**](https://everytimezone.com/s/3e494930)
 [<button type="button" class="btn btn-success">
 **WebEx**
-</button>](https://llnlfed.webex.com/meet/fisher47)
+</button>]()
 
 **Abstract:** TBD
 
