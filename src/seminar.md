@@ -13,6 +13,26 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/puso.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Mike Puso (LLNL)
+##### *Topics in immersed boundary and contact interface methods*
+##### [**9am PDT, May 24, 2022**](https://everytimezone.com/s/3e494930)
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/meet/fisher47)
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/chiodi.jpg)
 
 </div><div class="col-md-12"  markdown="1">
@@ -20,16 +40,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Robert Chiodi (UIUC)
 ##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
 ##### [**9am PDT, April 26, 2022**](https://everytimezone.com/s/291a6d95)
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/chiodi.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/fisher47)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=v8-EubYMT-A&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=6)
 
 **Abstract:** The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -46,7 +65,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>](https://www.youtube.com/watch?v=v8-EubYMT-A&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=6)
+</button>](https://www.youtube.com/watch?v=v8-EubYMT-A&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=5)
 
 **Abstract:** Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
 
@@ -132,17 +151,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 &nbsp;
 
-#### Robert Chodi (UIUC)
-##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
-##### **April 26, 2022**
-
----
-
-#### Mike Puso (LLNL)
-##### *Topics in immersed boundary and contact interface methods*
-##### **May 24, 2022**
-
----
 
 #### Paul Fischer (UIUC)
 ##### *Outlook for Exascale Fluid Dynamics Simulations*
