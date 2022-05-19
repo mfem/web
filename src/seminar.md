@@ -39,7 +39,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Robert Chiodi (UIUC)
 ##### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
-##### [**9am PDT, April 26, 2022**](https://everytimezone.com/s/291a6d95)
+##### April 26, 2022
 [<button type="button" class="btn btn-primary">
 **Slides**
 </button>](pdf/seminar/chiodi.pdf)
