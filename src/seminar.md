@@ -13,7 +13,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![]()
+![](img/seminar/fischer.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
@@ -169,12 +169,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 &nbsp;
 
-
-#### Paul Fischer (UIUC)
-##### *Outlook for Exascale Fluid Dynamics Simulations*
-##### **June 21, 2022**
-
----
 
 #### Victoria Korchogova (Russian Academy of Sciences)
 ##### *On Using of AMR Algorithms for Solving Gas Dynamics Problems by RKDG Method*
