@@ -28,9 +28,12 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 When running on large-scale HPC platforms, three of the most common user
 questions are
-   o How long will my job take?
-   o How many nodes will be required?
-   o Is there anything I can do to make my job run faster?
+
++ How long will my job take?
+
++ How many nodes will be required?
+
++ Is there anything I can do to make my job run faster?
    
 Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times.  This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user.  We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
@@ -178,12 +181,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 &nbsp;
 
 
-#### Victoria Korchogova (Russian Academy of Sciences)
-##### *On Using of AMR Algorithms for Solving Gas Dynamics Problems by RKDG Method*
-##### **July 19, 2022**
-
----
-
 #### Ricardo Vinuesa (KTH)
 ##### *Modelling and Controlling Turbulent Flows Through Deep Learning*
 ##### **August 16, 2022**
@@ -205,6 +202,12 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 #### Garth Wells (University of Cambridge)
 ##### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
 ##### **November 8, 2022**
+
+---
+
+#### Lin Mu (University of Georgia)
+##### * *
+##### **December 13, 2022**
 
 ---
 
