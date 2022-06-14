@@ -17,7 +17,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-12"  markdown="1">
 
-#### Paul Fischer (UIUC)
+#### Paul Fischer (UIUC/ANL)
 ##### *Outlook for Exascale Fluid Dynamics Simulations*
 ##### [**9am PDT, June 21, 2022**](https://everytimezone.com/s/77417d37)
 [<button type="button" class="btn btn-success">
@@ -206,7 +206,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 #### Lin Mu (University of Georgia)
-##### * *
+##### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
 ##### **December 13, 2022**
 
 ---
