@@ -1071,7 +1071,7 @@ We recommend viewing examples 13 and 31 before viewing this example._
 <img class="floatright" width="280pt" src="../img/examples/ex33.png">
 
 This example code demonstrates the use of MFEM to solve the fractional Laplacian problem
-$$ (-\Delta)^\alpha u = 1, \quad 0 < \alpha < 1, $$
+$$ (-\Delta)^\alpha u = 1, \quad \alpha > 0, $$
 with homogeneous Dirichlet boundary conditions. The problem solved in this example is similar to
 [ex1](#ex1), but involves a fractional-order diffusion operator whose inverse can be approximated
 by a series of inverses of integer-order diffusion operators. Solving each of these independent
