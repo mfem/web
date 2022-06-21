@@ -34,12 +34,43 @@ questions are
 + How many nodes will be required?
 
 + Is there anything I can do to make my job run faster?
-   
+
 Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times.  This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user.  We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3"  markdown="1">
+
+![](img/seminar/fischer.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Paul Fischer (UIUC/ANL)
+##### *Exascale: A User's Perspective*
+##### June 21, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/fischer.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=RasTXV6IYC0&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=7)
+
+**Abstract:** We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED).  Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms--it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red.  There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability.  Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used.
+
+When running on large-scale HPC platforms, three of the most common user
+questions are
+
++ How long will my job take?
+
++ How many nodes will be required?
+
++ Is there anything I can do to make my job run faster?
+
+Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times.  This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user.  We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
 </div><div class="col-md-3"  markdown="1">
 
