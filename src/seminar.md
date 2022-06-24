@@ -13,18 +13,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/banks.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
-#### Speaker (Institution)
-##### *Title*
-##### [**9am PDT, July 19, 2022**](https://everytimezone.com/s/5476f4be)
+#### Jeffrey Banks (RPI)
+##### *Galerkin Difference Methods*
+##### [**9am PDT, July 26, 2022**](https://everytimezone.com/s/345aeb3f)
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
 
-**Abstract:**
+**Abstract:** TBD
 
 ---
 
