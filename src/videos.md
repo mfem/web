@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Paul Fischer (UIUC/ANL)
+#### *Outlook for Exascale Fluid Dynamics Simulations*
+##### **June 21, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](WqrwDarTdss)
+
+We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED). Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms—it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red. There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability. Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used. When running on large-scale HPC platforms, three of the most common user questions are: How long will my job take? How many nodes will be required? Is there anything I can do to make my job run faster? Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results? Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
+
+---
+
 #### Mike Puso (LLNL)
 #### *Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research*
 ##### **May 24, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -36,7 +46,7 @@ The University of Illinois at Urbana-Champaign’s Center for Hypersonics and En
 
 Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Tobin Isaac (Georgia Tech)
 #### *Unifying the Analysis of Geometric Decomposition in FEEC*
@@ -46,7 +56,7 @@ Unsteady partial differential equations on deforming domains appear in many real
 
 Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the _geometric decomposition_ of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Raphaël Zanella (UT Austin)
 #### *Axisymmetric MFEM-Based Solvers for the Compressible Navier-Stokes Equations and Other Problems*
