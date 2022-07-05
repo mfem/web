@@ -18,7 +18,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Jeffrey Banks (RPI)
-##### *Galerkin Difference Methods*
+##### *Galerkin Difference Discretizations with Application to Wave Phenomena*
 ##### [**9am PDT, July 26, 2022**](https://everytimezone.com/s/345aeb3f)
 [<button type="button" class="btn btn-success">
 **WebEx**
