@@ -1,19 +1,29 @@
-# Tour of MFEM Examples
+## <i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples
 
-### High-order methods
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; High-order methods
 - full de Rham complex
 - Examples 1, 2, 3, 4
 
-### Discontinuous Galerkin
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Discontinuous Galerkin
 - Example 9
 
-### Nonlinear elasticity
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Nonlinear elasticity
 - Example 10
 
-### Adaptive mesh refinement
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive mesh refinement
 - Example 15
 
-### Complex methods, PML
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Complex methods, PML
 - Examples 22, 25
 
 ---

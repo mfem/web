@@ -87,10 +87,10 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
 Mar 21, 2022 | Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
-Nov 12, 2021 | [Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) about our [community workshop](workshop.md).
 
 ## Latest Release
 

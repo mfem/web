@@ -1,14 +1,20 @@
-# Meshing and Visualization
+## <i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization
 
-### Importing meshes from Gmsh and Cubit
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Importing meshes from Gmsh and Cubit
 - Showcase Uploading to AWS
 
-### MFEM's meshing tools
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's meshing tools
 - Mesh Explorer
 - Mesh Optimizer
 - Shaper
 
-### Visualizing results in VisIt and Paraview
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and Paraview
 - Showcase Downloading from AWS
 
 ---

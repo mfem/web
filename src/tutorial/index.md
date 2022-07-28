@@ -1,21 +1,30 @@
-# MFEM AWS Tutorial
-#### August 15, 2022
+# MFEM Tutorial on AWS
+<h4>August 15, 2022</h4>
 
-![MFEM Logo](../img/logo-300.png)
-
+![MFEM Logo](img/mfem-aws.png)
 
 Welcome to the MFEM tutorial, part of the
 [RADIUSS Tutorial Series](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/)
-in collaboration with AWS!
+in collaboration with AWS.
 
 The pages below provide a self-paced overview of MFEM, and its use for scalable
 finite element discretizations and application development. You can follow
 along on your own EC2 instance. No previous experience is necessary.
 
-We recommend that you start with Lessons 1 and 2, and then pick one or several
-from Lessons 3, 4, 5 and 6, depending on your interest.
+We recommend that you start with the
+[<i class="fa fa-play-circle"></i> Getting Started](start.md) and
+[<i class="fa fa-book"></i> Finite Element Basics](fem.md) lessons,
+and then, depending on your interests pick some of the next 3 lessons:
+[<i class="fa fa-gears"></i> Tour of MFEM Examples](examples.md),
+[<i class="fa fa-picture-o"></i> Meshing and Visualization](meshvis.md), and
+[<i class="fa fa-tasks"></i> Solvers and Scalability](solvers.md).
+The tutorial concludes with additional suggestions in the
+[<i class="fa fa-rocket"></i> Further Steps](further.md) page.
 
-### Lesson 1. [Getting Started](start.md)
+---
+
+<!-- fa-cloud, fa-bookmark-o, see https://fontawesome.com/v4/icons -->
+### <i class="fa fa-play-circle"></i>&nbsp; [Getting Started](start.md)
 
 This is the first page you should visit to setup your tutorial environment.
 You will learn about:
@@ -24,7 +33,9 @@ You will learn about:
 - Setting up GLVis for visualization
 - Testing the setup with a simple MFEM example
 
-### Lesson 2. [Finite Element Basics](fem.md)
+---
+
+### <i class="fa fa-book"></i>&nbsp; [Finite Element Basics](fem.md)
 
 Once you have the tutorial environment working, visit this page to learn about
 the basics of the finite element method and its implementation in MFEM. The
@@ -34,7 +45,9 @@ lesson covers:
 - Serial and parallel runs
 - GLVis keys/web interface
 
-### Lesson 3. [Tour of MFEM Examples](examples.md)
+---
+
+### <i class="fa fa-gears"></i>&nbsp; [Tour of MFEM Examples](examples.md)
 
 This is an optional lesson where you can learn about MFEM's main features: support
 for high-order methods, adaptive mesh refinement, $H^1$, $H(curl)$, $H(div)$ and $L^2$
@@ -46,7 +59,9 @@ discretizations, through several of the examples included with the library:
 - Adaptive mesh refinement (Example 15)
 - Complex methods, PML (Examples 22, 25)
 
-### Lesson 4. [Meshing and Visualization](meshvis.md)
+---
+
+### <i class="fa fa-picture-o"></i>&nbsp; [Meshing and Visualization](meshvis.md)
 
 This is an optional lesson that illustrates MFEM's support for external mesh generators,
 internal meshing tools and optimization, and external visualization tools.
@@ -56,7 +71,9 @@ You will learn about:
 - MFEM's meshing tools: Mesh Explorer, Mesh Optimizer and Shaper
 - Visualizing results in VisIt and Paraview
 
-### Lesson 5. [Solvers and Scalability](solvers.md)
+---
+
+### <i class="fa fa-tasks"></i>&nbsp; [Solvers and Scalability](solvers.md)
 
 This is an optional lesson that showcases MFEM's parallel scalability and support for efficient
 solvers and preconditioners.  The lesson covers:
@@ -66,7 +83,9 @@ solvers and preconditioners.  The lesson covers:
 - Low-order refined methods (Solvers and Transfer miniapps)
 - Additional solver integrations via PETSc, SuperLU and STRUMPACK
 
-### Lesson 6. [Further Steps](further.md)
+---
+
+### <i class="fa fa-rocket"></i>&nbsp; [Further Steps](further.md)
 
 This is an optional lesson with further activities, including:
 
@@ -74,7 +93,6 @@ This is an optional lesson with further activities, including:
 - Visit the MFEM website to review the Features, Examples, Publications, Finite Elements pages
 - Watch MFEM-related videos and seminar talks
 - Join the MFEM organization on GitHub to contribute to the project
-
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>

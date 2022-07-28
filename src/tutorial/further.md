@@ -1,15 +1,23 @@
-# Further Steps
+## <i class="fa fa-rocket"></i>&nbsp; Further Steps
 
-### Write a simple simulation
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Write a simple simulation
 - Starting from one of the MFEM examples
 
-### Visit the MFEM website
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Visit the MFEM website
 - Review the Features, Examples, Publications, Finite Elements pages
 
-### Watch MFEM-related videos
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Watch MFEM-related videos
 - Videos (including ATPESC), Seminar
 
-### Join us to contribute
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Join us to contribute
 - MFEM organization on GitHub
 
 ---

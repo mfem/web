@@ -1,15 +1,23 @@
-# Solvers and Scalability
+## <i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability
 
-### Scalable algebraic multigrid preconditioners from hypre
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Scalable algebraic multigrid preconditioners from hypre
 - Examples 1, 2, 3, 4
 
-### MFEM's native Multigrid solver
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's native Multigrid solver
 - Example 26
 
-### Low-order refined methods
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Low-order refined methods
 - Solvers and Transfer miniapps
 
-### Additional solver integrations
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Additional solver integrations
 - PETSc, SuperLU and STRUMPACK
 
 ---
