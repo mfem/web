@@ -2,6 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Aug 15, 2022** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/) series.*
 **Mar 21, 2022** | *Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).*
 **Jan 20, 2022** | *[FEM@LLNL seminar series](seminar.md) starting.*
 **Nov 30, 2021** | *New [page](videos.md) with recorded talks + videos.*
