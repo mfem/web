@@ -25,10 +25,9 @@ MFEM supports:
 
   - MFEM's [mesh v1.0 format](mesh-format-v1.0.md#mfem-mesh-v10) for
     [straight](mesh-format-v1.0.md#straight-meshes) meshes.
-  - MFEM's [mesh v1.0
-    format](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) for
-    [arbitrary high-order curvilinear](mesh-format-v1.x.md) and more general
-    meshes.
+  - MFEM's [mesh v1.x format](mesh-format-v1.x.md) for [arbitrary high-order
+    curvilinear](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) and
+    more general meshes.
   - MFEM's mesh v1.2 format, which adds support for parallel meshes.
   - MFEM's [NC mesh v1.0 format](mesh-format-v1.0.md#mfem-nc-mesh-v10),
     supporting non-conforming (AMR) meshes.
