@@ -59,6 +59,14 @@ img {
     margin-bottom: 25px;
 }
 
+img.tight {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    margin-bottom: -30px;
+}
+
 img.floatright {
     display: block;
     float: right;

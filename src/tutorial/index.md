@@ -1,7 +1,7 @@
 # MFEM Tutorial on AWS
 <h4>August 15, 2022</h4>
 
-![MFEM Logo](img/mfem-aws.png)
+![MFEM on AWS](img/mfem-aws.png)
 
 Welcome to the MFEM tutorial, part of the
 [RADIUSS Tutorial Series](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/)
