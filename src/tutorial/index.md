@@ -64,7 +64,7 @@ discretizations, through several of the examples included with the library:
 ### <i class="fa fa-picture-o"></i>&nbsp; [Meshing and Visualization](meshvis.md)
 
 This is an optional lesson that illustrates MFEM's support for external mesh generators,
-internal meshing tools and optimization, and external visualization tools.
+internal meshing tools, and external visualization tools.
 You will learn about:
 
 - Importing meshes from Gmsh and Cubit
@@ -90,8 +90,9 @@ solvers and preconditioners.  The lesson covers:
 This is an optional lesson with further activities, including:
 
 - Write your own simple simulation starting from one of the MFEM examples
-- Visit the MFEM website to review the Features, Examples, Publications, Finite Elements pages
-- Watch MFEM-related videos and seminar talks
+- Explore additional examples and miniapps
+- Learn about integrations with other libraries and MFEM's GPU capabilities
+- Visit the MFEM website, watch MFEM-related videos and seminar talks
 - Join the MFEM organization on GitHub to contribute to the project
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>

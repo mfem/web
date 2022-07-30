@@ -1,14 +1,17 @@
 ## <i class="fa fa-play-circle"></i>&nbsp; Getting Started
 
+<span class="label label-default">10 minutes</span>
+<span class="label label-default">basic</span>
+
 ---
 
 <div class="panel panel-success">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
 </div>
-<div class="panel-body">
-<i class="fa fa-square-o"></i>&nbsp; Setup a browser-based MFEM development environment<br>
-<i class="fa fa-square-o"></i>&nbsp; Run a simple MFEM code to test the environment<br>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Setup a browser-based MFEM development environment.<br>
+<i class="fa fa-square-o"></i>&nbsp; Run a simple MFEM code to test the environment.
 </div>
 </div>
 
@@ -119,7 +122,7 @@ rotate the plot with the <kbd>Left</kbd> mouse button and zoom in/out with the
 <h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
 </div>
 <div class="panel-body">
-•&nbsp; Ask for help on the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03HKL68HPT">Slack channel</a>.
+Ask for help on the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03HKL68HPT">Slack channel</a>.
 </div>
 </div>
 
@@ -128,7 +131,7 @@ rotate the plot with the <kbd>Left</kbd> mouse button and zoom in/out with the
 <h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
 </div>
 <div class="panel-body">
-•&nbsp; Go to the <a href="../fem/"><i class="fa fa-book"></i> Finite Element Basics</a> page.
+Go to the <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> page.
 </div>
 </div>
 
