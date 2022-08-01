@@ -77,7 +77,17 @@ Currently, there are two examples demonstrating the use of complex valued system
     [ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp) and
     [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp).
 
-- <strong>Example 25</strong> illustrates the use of a Perfectly Matched Layer (PML)
+    Selected sample runs: 
+
+    `./ex22 -m ../data/inline-quad.mesh -o 3 -p 1`
+
+    `./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa`
+
+    `./ex22 -m ../data/star.mesh -r 1 -o 2 -sigma 10.0`
+
+    `./ex22 -m ../data/inline-pyramid.mesh -o 1`
+
+- <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer (PML)](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
     for the simulation of time-harmonic electromagnetic waves propagating in unbounded
     domains. The implementation involves the introduction of an artificial absorbing
     layer that minimizes undesired reflections. Inside this layer a complex coordinate
@@ -89,6 +99,16 @@ Currently, there are two examples demonstrating the use of complex valued system
     transformation. The implementation can be found in
     [ex25.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25.cpp) and
     [ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp).
+
+    Selected sample runs: 
+
+    `./ex25 -o 3 -f 10.0 -ref 2 -prob 1`
+
+    `./ex25 -o 2 -f 1.0 -ref 2 -prob 3`
+
+    `./ex25 -o 2 -f 8.0 -ref 3 -prob 4 -m ../data/inline-quad.mesh`
+
+    `./ex25 -o 2 -f 1.0 -ref 2 -prob 0 -m ../data/beam-quad.mesh`
 
 ---
 
