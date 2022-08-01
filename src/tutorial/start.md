@@ -20,7 +20,7 @@
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-You should have received an email with the AWS IP address allocated to
+You should have received an email with the AWS instance IP address allocated to
 you for this tutorial. Use that in place of <code>IP</code> in the instructions below.
 </div>
 </div>
@@ -30,7 +30,7 @@ you for this tutorial. Use that in place of <code>IP</code> in the instructions 
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
 </div>
 <div class="panel-body">
-If you use VPN, make sure to <b>turn it off</b> before following the instructions below.
+If you use a VPN, make sure to <b>turn it off</b> before following the instructions below.
 </div>
 </div>
 
@@ -97,7 +97,7 @@ You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Simple test
 
-- To test your environment, run ex1p`, which together with the MFEM library itself,
+- To test your environment, run `ex1p`, which together with the MFEM library itself,
   comes pre-build in the AWS image.
 
 - In the VS Code terminal, type
