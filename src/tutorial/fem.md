@@ -37,6 +37,10 @@ page before this lesson.
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; GLVis keys/web interface
+- GLVis web interface
+- GLVis keys
+- taking a screenshot
+- making a movie?
 
 <details>
   <summary>Epcot Center</summary>

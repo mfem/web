@@ -42,6 +42,13 @@ pages before this lesson.
 - Navier
 - Hooke
 - Laghos, Remhos
+- how do miniapps with multiple GLVis windows work?
+
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Install MFEM on your own machine
+- Building instructions
+- Download and build GLVis
 
 ---
 
@@ -60,6 +67,12 @@ pages before this lesson.
 - Partial assembly
 - CUDA and HIP
 - libCEED
+
+---
+
+### <i class="fa fa-check-square-o"></i>&nbsp; Python and Jupyter support
+- PyMFEM
+- Python and C++ binders
 
 ---
 
