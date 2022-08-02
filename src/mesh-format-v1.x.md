@@ -279,9 +279,15 @@ The algorithm starts with the given numbering of the elements and the vertices, 
 
 ```
 loop over elements
-  loop over edges and faces inside each element (clock-wise)
+  loop over edges and faces inside each element (see below)
     number currently the edges and faces that have not been numbered yet
 ```
+
+The ordering of edges/faces within each element is defined by the arrays `Edges`
+and `FaceVert` in the classes `Geometry::Constants<Geometry::Type>` which are
+defined in the file
+[`fem/geom.cpp`](https://docs.mfem.org/html/geom_8cpp_source.html), e.g. search
+for `<Geometry::TRIANGLE>::Edges` or `<Geometry::CUBE>::FaceVert`.
 
 Here is the result of this numbering for the beam mesh
 
@@ -289,9 +295,18 @@ Here is the result of this numbering for the beam mesh
 
 In addition to a number, each edges and face is also given a global orientation.
 
-In 2D and 3D, an edge is oriented from the vertex with the lower vertex id to the vertex with the higher vertex id.
+In 2D and 3D, an edge is oriented from the vertex with the lower vertex id to
+the vertex with the higher vertex id.
 
-In 3D, a face is oriented according to the face-to-vertex mappings in the first element in which the face is enumerated. See the `fem/geom.cpp` for the definitions of the [tetrahedral](https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L503-L505) and [hexahedral](https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L524-L529) mappings on the reference element, as well as the `Mesh::GenerateFaces` method in `mesh/mesh.cpp`. In particular, the normal of the face between two elements points from the element with lower number to the element with higher number. Face orientation however includes not just the normal direction, but also any rotation of the vertices compared to the base, i.e. _orientation_ here means permutation of vertices.
+In 3D, a face is oriented according to the face-to-vertex mappings in the first
+element in which the face is enumerated. See the `FaceVert` arrays in
+[`fem/geom.cpp`](https://docs.mfem.org/html/geom_8cpp_source.html) mentioned
+above, as well as the `Mesh::GenerateFaces` method in
+[`mesh/mesh.cpp`](https://docs.mfem.org/html/mesh_8cpp_source.html). In
+particular, the normal of the face between two elements points from the element
+with lower number to the element with higher number. Face orientation however
+includes not just the normal direction, but also any rotation of the vertices
+compared to the base, i.e. _orientation_ here means permutation of vertices.
 
 The global numbering of degrees of freedom is now performed as follows:
 
