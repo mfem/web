@@ -73,9 +73,12 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 - Even though the number of unknowns for this problem has increased by roughly
   4x, the iteration count remains at 18 &mdash; this is due to the
   **scalability** of the AMG preconditioner.
-- Let's now try a 3D problem. Because these problems are more computationally
-  expensive, let's reduce the refinement level, setting `int par_ref_levels =
-  1;`
+- Let's now try a 3D problem.
+    - <i class="fa fa-info-circle"></i>&nbsp; To run a 3D problem, we just need
+      to choose a 3D mesh using the `-m` or `--mesh` command line argument.
+- Because these problems are more computationally
+  expensive, let's reduce the refinement level, setting
+  `int par_ref_levels = 1;` in the `ex1p.cpp` source code.
 - Rebuild the example (`make ex1p`) and re-run it using the three-dimensional
   _Fichera_ mesh: `./ex1p -m ../data/fichera.mesh`
     - <i class="fa fa-hand-o-right"></i>&nbsp; Convergence is attained in only
@@ -95,6 +98,54 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
       to solution should remain roughly fixed (minus some overhead and
       communication cost), even though we are solving a problem that is 8x
       larger.
+
+
+#### <i class="fa fa-arrow-circle-right"></i>&nbsp; Example 2: linear elasticity
+
+- This example demonstrates solving a [linear
+  elasticity](https://en.wikipedia.org/wiki/Linear_elasticity) cantilever beam
+  problem with different materials.
+- This example is designed to work with any of the "beam" meshes provided by
+  MFEM
+    - Run `ls ../data | grep beam` to list the available meshes.
+    - The elements and boundaries of these meshes are assigned
+      attributes/materials suitable for the cantilever problem:
+
+```text
+                                 +----------+----------+
+                    boundary --->| material | material |<--- boundary
+                    attribute 1  |    1     |    2     |     attribute 2
+                    (fixed)      +----------+----------+     (pull down)
+
+```
+
+- Try running `./ex2p` to run a 2D elasticity problem.
+- As in example 1, the linear system is solved using _algebraic multigrid_.
+- For this example, two types of AMG solvers can be used:
+    1. A special version of AMG designed specifically for elasticity ([see this
+       paper](https://onlinelibrary.wiley.com/doi/pdf/10.1002/nla.688))
+    2. AMG for systems.
+- To enable the special elasticity AMG, add the flag `-elast`. Otherwise, AMG
+  for systems will be used.
+- The polynomial degree (order) can be changed with the `-order` argument.
+    - By default, low-order $(p=1)$ elements are used.
+    - <i class="fa fa-exclamation-circle"></i>&nbsp; Using higher-order elements
+      can become computationally expensive very quickly. See the section on
+      [low-order-refined methods](#low-order-refined-methods) for a more
+      efficient approach.
+- Additionally, _static condensation_ can be used to eliminate interior
+  high-order degrees of freedom and obtain a smaller system.
+    - For `-order 1` this has no effect. For higher-order problems, static
+      condensation can improve efficiency.
+- In this example, as before, the mesh refinement level can be controlled in the
+  source code through `par_ref_levels`.
+    - <i class="fa fa-info-circle"></i>&nbsp; Remember to recompile the example
+      after editing the source code (`make ex2p`).
+- Running with more than one MPI rank will partition the mesh and run the
+  problem in parallel
+    - Sample run 3D: `mpirun -np 8 ./ex2p -m ../data/beam-hex.mesh`
+- Try experimenting with different discretization, solver, and parallelization
+  options.
 
 ---
 
