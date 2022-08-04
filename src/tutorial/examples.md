@@ -44,7 +44,24 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive mesh refinement
-- Example 15
+<img class="floatright" src="../../img/examples/ex15.png", width="260"/>
+
+MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary order hanging nodes, anisotropic refinement, derefinement and parallel load balancing. The AMR support covers the full de Rham complex i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. The user can choose from  several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the adaptive mesh refinements. We recommend to take look at examples 6, 15, 21 and 30 for some simulations with AMR. 
+
+In particular, <strong>Example 16</strong> demonstrates MFEM's cabability to refine, derifine and load balance non-conforming meshes in 2D and 3D, and on linear, curved and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes which are refined based on a simple ZZ estimator. At the end of the refinement process the error estimates are used to identify elements that are over-refined and a single derefinment step is performed. Finally, in the parallel case a load-balancing step is executed. 
+
+The implementation can be found in
+[ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp) and
+[ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp).
+
+Try the following sample runs:
+<code class="language-java"><pre>
+./ex15 -p 1 -n 3
+./ex15 -m ../data/square-disc.mesh
+./ex15 -est 1 -e 0.0001
+mpirun -np 4 ex15p -m ../data/mobius-strip.mesh
+mpirun -np 4 ex15p -m ../data/fichera.mesh -tf 0.5
+</pre></code>
 
 ---
 
@@ -59,6 +76,7 @@ the real problems (such us `Assemble`, `FormLinearSystem`, and `RecoverFEMSoluti
 to recover the solution.
 
 Currently, there are two examples demonstrating the use of complex valued systems.
+<img class="floatright" src="../../img/examples/ex22.gif", width="260"/>
 
 - <strong>Example 22</strong> implements three variants of a damped harmonic oscillator:
 
@@ -85,6 +103,7 @@ Currently, there are two examples demonstrating the use of complex valued system
     ./ex22 -m ../data/inline-pyramid.mesh -o 1
     </pre></code>
 
+<img class="floatright" src="../../img/examples/ex25.gif", width="250"/>
 
 - <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer (PML)](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
     for the simulation of time-harmonic electromagnetic waves propagating in unbounded
