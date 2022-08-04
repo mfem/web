@@ -21,6 +21,38 @@ and then, depending on your interests pick some of the next 3 lessons:
 The tutorial concludes with additional suggestions in the
 [<i class="fa fa-rocket"></i> Further Steps](further.md) page.
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<div class="mermaid">
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#deebf7',
+    'primaryBorderColor': '#3182bd'
+}}}%%
+  graph LR;
+      A[fa:fa-play-circle Getting Started];
+      B[fa:fa-book Finite Element Basics];
+      C[fa:fa-gears Tour of MFEM Examples];
+      D[fa:fa-picture-o Meshing and Visualization];
+      E[fa:fa-tasks Solvers and Scalability];
+      F[fa:fa-rocket Further Steps];
+
+      A-->B;
+      B-->C;
+      B-->D;
+      B-->E;
+      C-->F;
+      D-->F;
+      E-->F;
+
+      click A "start"
+      click B "fem"
+      click C "examples"
+      click D "meshvis"
+      click E "solvers"
+      click F "further"
+</div>
+
 ---
 
 <!-- fa-cloud, fa-bookmark-o, see https://fontawesome.com/v4/icons -->

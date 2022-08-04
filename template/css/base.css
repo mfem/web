@@ -282,3 +282,9 @@ input {
   right: auto;
   color: #000;
 }
+
+.mermaid .label {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: inherit;
+}
