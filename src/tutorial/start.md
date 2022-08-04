@@ -70,7 +70,7 @@ and adjust it similarly to the desktop version.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up GLVis
 
-- Open a new browser window and load `http://IP:3000/live`
+- Open a new browser window and load `http://IP:8000/live`
 
 - When you move the mouse to the top of the window you should see the GLVis interface:
 
