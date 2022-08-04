@@ -48,7 +48,10 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
   provided in the example output under the headers `BoomerAMG SETUP PARAMETERS`
   and `BoomerAMG SOLVER PARAMETERS`.
 
-<img class="tight" src="../img/solvers1.png">
+- <details>
+    <summary>Click to expand for terminal output</summary>
+    <img class="tight" src="../img/solvers1.png">
+  </details>
 
 - A key feature of AMG methods is their scalability
     - <i class="fa fa-hand-o-right"></i>&nbsp; With default options,
@@ -127,7 +130,8 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
     2. AMG for systems.
 - To enable the special elasticity AMG, add the flag `-elast`. Otherwise, AMG
   for systems will be used.
-- The polynomial degree (order) can be changed with the `-order` argument.
+- The polynomial degree (order) can be changed with the `--order` argument (`-o`
+  for short).
     - By default, low-order $(p=1)$ elements are used.
     - <i class="fa fa-exclamation-circle"></i>&nbsp; Using higher-order elements
       can become computationally expensive very quickly. See the section on
@@ -147,15 +151,112 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 - Try experimenting with different discretization, solver, and parallelization
   options.
 
+#### <i class="fa fa-arrow-circle-right"></i>&nbsp; Examples 3 and 4: the de Rham complex
+
+- Examples 3 and 4 demonstrate the use of _vector finite element spaces_.
+    - Example 3 solves an electromagnetics problem using $H(\mathrm{curl})$
+      finite elements.
+    - Example 4 solves a grad-div problem using $H(\mathrm{div})$ finite
+      elements.
+- Standard multigrid methods don't always work well for these problems
+    - <i class="fa fa-hand-o-right"></i>&nbsp; We need specialized solvers! (See
+      [here](https://link.springer.com/article/10.1007/PL00005386) for a paper
+      on this topic)
+- <i class="fa fa-info-circle"></i>&nbsp; For $H(\mathrm{curl})$ problems, we use the [AMS solver](https://hypre.readthedocs.io/en/latest/solvers-ams.html) from hypre.
+- <i class="fa fa-info-circle"></i>&nbsp; For $H(\mathrm{div})$ problems, we
+  either use the [ADS
+  solver](https://hypre.readthedocs.io/en/latest/solvers-ads.html) from hypre or
+  a special [hybridization
+  solver](https://epubs.siam.org/doi/abs/10.1137/17M1132562).
+- Try experimenting with different options to get a feel for the performance of
+  the discretizations and solvers.
+    - Change the mesh (2D or 3D) using the `--mesh` (`-m`) command line
+      argument.
+    - Change the polynomial degree using the `--order` (`-o`) command line
+      argument.
+    - Run problems in parallel using `mpirun`
+    - For `ex4p`, enable hybridization using the `-hb` flag.
+
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's native Multigrid solver
-- Example 26
+
+- The previous examples (`ex1p`, `ex2p`, `ex3p`, and `ex4p`) all used
+  _algebraic_ multigrid methods.
+- MFEM also supports geometric ($h$- and $p$-multigrid) methods.
+- These solvers are illustrated in example 26 (and its parallel variant).
+- Mesh refinement can be set using the `--geometric-refinements` (`-gr`) command
+  line argument.
+- The finite element order can be controlled using the `--order-refinements`
+  (`-or`) command line argument.
+    - <i class="fa fa-exclamation-circle"></i>&nbsp; **Note:** each additional
+      order refinement **increases the order by a factor of 2**. This quickly
+      becomes expensive, so be careful increasing the oreder refinements.
+- <i class="fa fa-exclamation-circle"></i>&nbsp; This example runs
+  **matrix-free** using MFEM's [partial assembly algorithms](/performance).
+    - Matrix-free methods are **much** more efficient for high-order problems
+      and work better on GPUs.
+    - <i class="fa fa-info-circle"></i>&nbsp; Try comparing the performance of
+      `ex1p` and `ex26p` for higher-order problems.
+    - For example, compare the run time of `mpirun -np 8 ./ex26p -m
+      ../data/fichera.mesh -or 2` to that of `mpirun -np 8 ./ex1p -m
+      ../data/fichera.mesh -o 4`
+     - Both examples solve a degree-4 Poisson problem with 1,884,545 degrees of
+       freedom, but one is significantly faster.
+- Try seeing how the number of CG iterations changes as `-or` and `-gr` are
+  increased.
+    - For large problems, it may be worth running `ex26p` in parallel with
+      `mpirun`.
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Low-order refined methods
-- Solvers and Transfer miniapps
+### <i class="fa fa-check-square-o"></i>&nbsp; Low-order-refined methods
+
+<table>
+    <tr>
+        <td><img src="../img/solvers3.png" width="50%"/></td>
+        <td><img src="../img/solvers4.png" width="50%"/></td>
+    </tr>
+</table>
+
+- [Examples 1, 2, 3, and
+  4](#scalable-algebraic-multigrid-preconditioners-from-hypre) used _algebraic
+  multigrid methods_ applied to the discretization matrix for each of the
+  problems.
+- [Example 26](#mfems-native-multigrid-solver) showed how to use geometric multigrid together with matrix-free
+  methods.
+- _Low-order-refined_ provides an alternative matrix-free methodology for
+  solving these problems.
+- The **LOR solvers** miniapp provides matrix-free solvers for the same problems
+  solved in examoples 1, 3, and 4.
+- `cd` to the LOR solvers miniapp directory: `cd ~/mfem/miniapps/solvers`
+- Run `make plor_solvers` to build the parallel LOR solvers miniapp.
+- The `--fe-type` (or `-fe`) command line argument can be used to choose the
+  problem type.
+    - `-fe h` solves an $H^1$ problem (Poisson, equivalent to example 1).
+    - `fe n` solves a Nedelec problem (Maxwell in $H(\mathrm{curl})$, equivalent
+      to example 3).
+    - `fe r` solves a Raviart-Thomas problem (grad-div in $H(\mathrm{div})$,
+      equivalent to example 4).
+- As usual, the `--mesh` (`-m`) argument can be used to choose the mesh file.
+    - <i class="fa fa-info-circle"></i>&nbsp; Keep in mind, MFEM's meshes in the
+      data directory are now found in `../../data` relative to the miniapp
+      directory.
+- The number of mesh refinements in serial and parallel can be controlled with
+  the `--refine-serial` and `--refine-parallel` (`-rs` and `-rp`) command line
+  arguments
+- The polynomial degree can be controlled with the `--order` (`-o`) argument.
+- Compare the performance of high-order problems with `plor_solvers` to that of
+  examples 1, 3, and 4.
+- Some sample runs to compare:
+    - 2D, order 5, 256,800 DOFs:
+        - `mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2
+          -o 5 -no-vis`
+        - `mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5`
+    - 3D, order 2, 2,378,016 DOFs:
+        - `mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2
+          -rp 2 -o 2 -no-vis`
+        - `mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2`
 
 ---
 
