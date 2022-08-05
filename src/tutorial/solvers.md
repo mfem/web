@@ -111,6 +111,10 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 - This example is designed to work with any of the "beam" meshes provided by
   MFEM
     - Run `ls ../data | grep beam` to list the available meshes.
+        - 2D and 3D beam meshes: `beam-hex-nurbs.mesh`, `beam-hex.mesh`,
+          `beam-hex.vtk`, `beam-quad-amr.mesh`, `beam-quad-nurbs.mesh`,
+          `beam-quad.mesh`, `beam-quad.vtk`, `beam-tet.mesh`, `beam-tet.vtk`,
+          `beam-tri.mesh`, `beam-tri.vtk`, `beam-wedge.mesh`, `beam-wedge.vtk`
     - The elements and boundaries of these meshes are assigned
       attributes/materials suitable for the cantilever problem:
 
@@ -261,7 +265,26 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Additional solver integrations
-- PETSc, SuperLU and STRUMPACK
+
+- In addition to the _hypre_ AMG solvers and MFEM's built-in solvers illustrated
+  above, MFEM also integrates with a number of third-party solver libraries,
+  including:
+    - [PETSc](https://petsc.org/release/)
+        - See the `~/mfem/examples/petsc` directory
+    - [SuperLU](https://portal.nersc.gov/project/sparse/superlu/)
+        - See the `~/mfem/examples/superlu` directory
+    - [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack/)
+        - See `~/mfem/examples/ex11p.cpp`
+    - [Ginkgo](https://ginkgo-project.github.io)
+        - See the `~/mfem/examples/ginkgo` directory
+    - [AmgX](https://developer.nvidia.com/amgx)
+        - See the `~/mfem/examples/amgx` directory
+- <i class="fa fa-exclamation-circle"></i>&nbsp; **Note:** these third-party
+  libraries are not pre-installed in the AWS image
+    - Feel free to peruse the example source code to see the capabilities of the
+      various integrations
+    - If you install these libraries locally, you can enable the integrating
+      with the `MFEM_USE_*` configuration variables.
 
 ---
 
