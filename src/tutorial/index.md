@@ -11,16 +11,6 @@ The pages below provide a self-paced overview of MFEM, and its use for scalable
 finite element discretizations and application development. You can follow
 along on your own EC2 instance. No previous experience is necessary.
 
-We recommend that you start with the
-[<i class="fa fa-play-circle"></i> Getting Started](start.md) and
-[<i class="fa fa-book"></i> Finite Element Basics](fem.md) lessons,
-and then, depending on your interests pick some of the next 3 lessons:
-[<i class="fa fa-gears"></i> Tour of MFEM Examples](examples.md),
-[<i class="fa fa-picture-o"></i> Meshing and Visualization](meshvis.md), and
-[<i class="fa fa-tasks"></i> Solvers and Scalability](solvers.md).
-The tutorial concludes with additional suggestions in the
-[<i class="fa fa-rocket"></i> Further Steps](further.md) page.
-
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <div class="mermaid">
 %%{init: {
@@ -52,6 +42,16 @@ The tutorial concludes with additional suggestions in the
       click E "solvers"
       click F "further"
 </div>
+
+We recommend that you start with the
+[<i class="fa fa-play-circle"></i> Getting Started](start.md) and
+[<i class="fa fa-book"></i> Finite Element Basics](fem.md) lessons,
+and then, depending on your interests pick some of the next 3 lessons:
+[<i class="fa fa-gears"></i> Tour of MFEM Examples](examples.md),
+[<i class="fa fa-picture-o"></i> Meshing and Visualization](meshvis.md), and
+[<i class="fa fa-tasks"></i> Solvers and Scalability](solvers.md).
+The tutorial concludes with additional suggestions in the
+[<i class="fa fa-rocket"></i> Further Steps](further.md) page.
 
 ---
 

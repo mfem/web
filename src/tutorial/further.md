@@ -34,6 +34,7 @@ pages before this lesson.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Write a simple simulation
 - Starting from one of the MFEM examples
+- Post your visualization images in the Slack channel
 
 ---
 
@@ -97,7 +98,7 @@ pages before this lesson.
 </div>
 <div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
 Thank you for participating in the MFEM tutorial.<br>
-Please let us know if you have any questions in the <a href="https://radiuss-llnl.slack.com/archives/C03HKL68HPT">Slack channel</a>.
+Please let us know if you have any questions in the <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
 </div>
 </div>
 

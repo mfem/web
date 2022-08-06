@@ -1,6 +1,6 @@
 ## <i class="fa fa-play-circle"></i>&nbsp; Getting Started
 
-<span class="label label-default">10 minutes</span>
+<span class="label label-default">15 minutes</span>
 <span class="label label-default">basic</span>
 
 ---
@@ -30,7 +30,7 @@ you for this tutorial. Use that in place of <code>IP</code> in the instructions 
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
 </div>
 <div class="panel-body">
-If you use a VPN, make sure to <b>turn it off</b> before following the instructions below.
+If you use VPN, make sure to <b>turn it off</b> before following the instructions below.
 </div>
 </div>
 
@@ -38,9 +38,11 @@ If you use a VPN, make sure to <b>turn it off</b> before following the instructi
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up Visual Studio Code
 
- Open a new browser window and load `http://IP:3000`
+- Open a new browser window and load `http://IP:3000`.
 
-- You should see the Visual Studio Code (VS Code) interface:
+- You should see the Visual Studio Code (VS Code) interface.
+
+- Click on `Mark Done` to continue.
 
 <img class="tight" src="../img/start1.png">
 
@@ -48,9 +50,9 @@ If you use a VPN, make sure to <b>turn it off</b> before following the instructi
 
 - In the left pane, open `examples` and select `ex1.cpp`.
 
-- Open a new terminal by clicking on <i class="fa fa-bars"></i> in the upper left corner, then `Terminal`, and then `New Terminal`.
+- Open a new terminal by clicking on &nbsp;<i class="fa fa-bars"></i>&nbsp; in the upper left corner, then `Terminal`, and then `New Terminal`.
 
-- Alternatively you can open a terminal by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>.
+- Alternatively you can open a new terminal by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>.
 
 - You should now see the MFEM source tree and a terminal in the `~/mfem` directory.
 
@@ -122,7 +124,7 @@ rotate the plot with the <kbd>Left</kbd> mouse button and zoom in/out with the
 <h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
 </div>
 <div class="panel-body">
-Ask for help on the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03HKL68HPT">Slack channel</a>.
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
 </div>
 </div>
 
