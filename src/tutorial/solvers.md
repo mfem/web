@@ -65,7 +65,7 @@ each of these examples in more details below.
   and `BoomerAMG SOLVER PARAMETERS`.
 
 - <details>
-    <summary> Click here <i class="fa fa-arrow-down"></i> to expand for terminal output</summary>
+    <summary> Click here to expand for terminal output <i class="fa fa-arrow-down"></i></summary>
     <img class="tight" src="../img/solvers1.png">
   </details>
 
@@ -75,7 +75,7 @@ each of these examples in more details below.
 - Let's see what happens if we increase the mesh refinement. Edit `ex1p.cpp`
   changing line 153 as follows:
 
-<div class="col-md-12" markdown="1" style="width:96%; margin:auto; float:right;">
+<div class="container" markdown="1" style="width:96%; margin:auto;">
 ```diff
 @@ -150,7 +150,7 @@ int main(int argc, char *argv[])
     ParMesh pmesh(MPI_COMM_WORLD, mesh);
@@ -135,13 +135,13 @@ each of these examples in more details below.
   MFEM. Run `ls ../data | grep beam` to list the available 2D and 3D meshes:
   `beam-hex-nurbs.mesh`, `beam-hex.mesh`, `beam-hex.vtk`, `beam-quad-amr.mesh`,
   `beam-quad-nurbs.mesh`, `beam-quad.mesh`, `beam-quad.vtk`, `beam-tet.mesh`,
-  `beam-tet.vtk`, `beam-tri.mesh`, `beam-tri.vtk`, `beam-wedge.mesh`,
-  `beam-wedge.vtk`
+  `beam-tet.vtk`, `beam-tri.mesh`, `beam-tri.vtk`, `beam-wedge.mesh`, and
+  `beam-wedge.vtk`.
 
 - The elements and boundaries of these meshes are assigned attributes/materials
   suitable for the cantilever problem:
 
-<div class="col-md-12" markdown="1" style="width:96%; margin:auto; float:right;">
+<div class="container" markdown="1" style="width:96%; margin:auto;">
 ```text
                          +----------+----------+
             boundary --->| material | material |<--- boundary
@@ -282,7 +282,7 @@ quickly becomes expensive, so be careful increasing the order refinements.
 - Try comparing the performance of `ex1p` and `ex26p` for higher-order
   problems. For example, compare the run time of the following two runs:
 
-<div class="col-md-12" markdown="1" style="width:96%; margin:auto; float:right;">
+<div class="container" markdown="1" style="width:96%; margin:auto;">
 ```java
 mpirun -np 8 ./ex26p -m ../data/fichera.mesh -or 2
 mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
@@ -301,11 +301,13 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 ### <i class="fa fa-check-square-o"></i>&nbsp; Low-order-refined methods
 
 <div class="col-md-6" markdown="1">
-<img src="../img/solvers3.png"  width="240">
+<img src="../img/solvers3.png" width="240">
 </div>
 <div class="col-md-6" markdown="1">
 <img src="../img/solvers4.png" width="240">
 </div>
+
+<div class="col-md-12" markdown="1" style="padding-left:0;">
 
 - [Examples 1, 2, 3, and 4](#scalable-algebraic-multigrid-preconditioners-from-hypre)
   used _algebraic multigrid methods_ applied to the discretization matrix for
@@ -348,7 +350,7 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 - Compare the performance of high-order problems with `plor_solvers` to that of
   Examples 1, 3, and 4. Here are some sample runs to compare:
 
-<div class="col-md-12" markdown="1" style="width:98%; margin:auto; float:right;">
+<div class="container" markdown="1" style="width:96%; margin:auto;">
 ```java
 //  2D, 5th order, 256,800 DOFs
 mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
@@ -358,7 +360,7 @@ mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
 mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 2 -no-vis
 mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2
 ```
-</div>&nbsp;<br><br><br><br>
+</div>
 
 - For more details on LOR, see this [talk](https://mfem.org/pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf) from the 2021 MFEM community [workshop](https://mfem.org/workshop).
 
