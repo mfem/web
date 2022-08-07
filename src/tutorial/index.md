@@ -121,8 +121,8 @@ solvers and preconditioners.  The lesson covers:
 
 This is an optional lesson with further activities, including:
 
-- Write your own simple simulation starting from one of the MFEM examples
 - Explore additional examples and miniapps
+- Write your own simple simulation starting from one of the MFEM examples
 - Learn about integrations with other libraries and MFEM's GPU capabilities
 - Visit the MFEM website, watch MFEM-related videos and seminar talks
 - Join the MFEM organization on GitHub to contribute to the project

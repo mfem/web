@@ -1,6 +1,6 @@
 ## <i class="fa fa-book"></i>&nbsp; Finite Element Basics
 
-<span class="label label-default">30 minutes</span>
+<span class="label label-default">45 minutes</span>
 <span class="label label-default">basic</span>
 
 ---

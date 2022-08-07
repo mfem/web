@@ -36,7 +36,7 @@ If you use VPN, make sure to <b>turn it off</b> before following the instruction
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Set up Visual Studio Code
+### <i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code
 
 - Open a new browser window and load `http://IP:3000`.
 
