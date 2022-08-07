@@ -434,24 +434,26 @@ by pressing the <kbd>h</kbd> key.
 
 Some of the more useful key commands and mouse functions are:
 
-- <kbd>Left</kbd> + <kbd>Shift</kbd> - Spin the plot (according to the dragging vector)
-- <kbd>space</kbd> - Pause solution update in time-dependent simulations
-- <kbd>A</kbd> - Turn on/off the use of anti-aliasing/multi-sampling
-- <kbd>b</kbd> - Toggle the boundary in 2D scalar mode
-- <kbd>c</kbd> - Show/hide colorbar
-- <kbd>g</kbd> - Toggle background color (white/black)
-- <kbd>i</kbd> - Toggle cutting plane
-- <kbd>j</kbd> - Turn on/off perspective
-- <kbd>m</kbd> - Toggle the mesh state.
-- <kbd>p</kbd> / <kbd>P</kbd> - Cycle through color palettes (lots of options)
-- <kbd>r</kbd> - Reset the plot to 3D view
-- <kbd>R</kbd> - Cycle through the six 2D projections (camera looking above/below in `x`/`y`/`z` directions)
-- <kbd>S</kbd> - Take an image snapshot
-- <kbd>t</kbd> - Cycle materials and lights
-- <kbd>x</kbd> / <kbd>X</kbd> - Rotate cutting plane (`\phi`) in 3D
-- <kbd>y</kbd> / <kbd>Y</kbd> - Rotate cutting plane (`\theta`) in 3D
-- <kbd>z</kbd> / <kbd>Z</kbd> - Translate cutting plane in 3D
-- <kbd>F11</kbd> / <kbd>F12</kbd> - Shrink/Zoom parallel subdomains
+- <kbd>A</kbd> &mdash; Turn on/off the use of anti-aliasing/multi-sampling
+- <kbd>b</kbd> &mdash; Toggle the boundary in 2D scalar mode
+- <kbd>c</kbd> &mdash; Show/hide colorbar
+- <kbd>F11</kbd> / <kbd>F12</kbd> &mdash; Shrink/Zoom parallel subdomains
+- <kbd>g</kbd> &mdash; Toggle background color (white/black)
+- <kbd>i</kbd> &mdash; Toggle cutting plane
+- <kbd>j</kbd> &mdash; Turn on/off perspective
+- <kbd>Left</kbd> &mdash; Rotate the plot
+- <kbd>Left</kbd> + <kbd>Shift</kbd> &mdash; Spin the plot (according to the dragging vector)
+- <kbd>m</kbd> &mdash; Toggle the mesh state.
+- <kbd>p</kbd> / <kbd>P</kbd> &mdash; Cycle through color palettes (lots of options)
+- <kbd>r</kbd> &mdash; Reset the plot to 3D view
+- <kbd>R</kbd> &mdash; Cycle through 2D projections (looking above/below in `x`/`y`/`z` directions)
+- <kbd>Right</kbd> &mdash; Zoom in/out
+- <kbd>S</kbd> &mdash; Take an image snapshot
+- <kbd>space</kbd> &mdash; Pause solution update in time-dependent simulations
+- <kbd>t</kbd> &mdash; Cycle materials and lights
+- <kbd>x</kbd> / <kbd>X</kbd> &mdash; Rotate cutting plane (`\phi`) in 3D
+- <kbd>y</kbd> / <kbd>Y</kbd> &mdash; Rotate cutting plane (`\theta`) in 3D
+- <kbd>z</kbd> / <kbd>Z</kbd> &mdash; Translate cutting plane in 3D
 
 For more details, see the full list of
 [key commands](https://github.com/GLVis/glvis/blob/master/README.md#key-commands) and

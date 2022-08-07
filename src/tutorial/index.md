@@ -7,6 +7,10 @@ Welcome to the MFEM tutorial, part of the
 [RADIUSS Tutorial Series](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/)
 in collaboration with AWS.
 
+[MFEM](https://mfem.org/) is a modular parallel C++ library for finite element
+methods developed at [CASC](https://computing.llnl.gov/casc/),
+[LLNL](https://www.llnl.gov/) with the help of the MFEM [community](https://github.com/mfem/mfem/graphs/contributors).
+
 The pages below provide a self-paced overview of MFEM, and its use for scalable
 finite element discretizations and application development. You can follow
 along on your own EC2 instance. No previous experience is necessary.
@@ -119,7 +123,7 @@ solvers and preconditioners.  The lesson covers:
 
 ### <i class="fa fa-rocket"></i>&nbsp; [Further Steps](further.md)
 
-This is an optional lesson with further activities, including:
+This is the final lesson with further activities, including:
 
 - Explore additional examples and miniapps
 - Write your own simple simulation starting from one of the MFEM examples
