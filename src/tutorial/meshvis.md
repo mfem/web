@@ -60,19 +60,34 @@ Cylinder(3) = {4*L/8, 0.0, L/4, 0, L, 0, Rc , 2*Pi};
 
 The first line in the Gmsh input file defines the geometric engine. Here it is assumed that Gmsh is compiled with CAD support. Such precompiled binaries for Windows, Mac, and Linux can be downloaded from the <a href="https://gmsh.info/">Gmsh web page</a>. The next three lines define the mesh algorithm, which will be used later for generating the mesh and the associated characteristic length scale. Finer or coarser meshes can be obtained by playing with these numbers. The following line defines a parameter L which is utilized in the definition of the cube. A parameter R defines the radius of the base of the two cylinders. The final geometry which will be used for simulations is obtained by subtracting the two cylinders from the cube as:
 ```diff
-BooleanDifference(50) = { Volume{1}; Delete; }{ Volume{2,3};};
+BooleanDifference(50) = { Volume{1}; Delete; }{ Volume{2,3}; Delete; };
 ```
 
 
+Gmsh will use the obtained geometry for generating the mesh. However, without additional specifications, we cannot impose boundary conditions without any attributes assigned to the boundaries. Different attributes can be assigned to the volumetric part of the mesh for using different material coefficients within the domain. Here, however, we will use only a single attribute as the first example uses only a sinlge diffusion coefficient. 
+```diff
+Physical Volume(1) = {50};
+Physical Surface(1) = {1,6,8};
+
+SetOrder 1;
+Mesh.MshFileVersion = 2.2;
+```
+The first line from the above snippet will define physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the boolean operation. The second line will define physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last two lines specify the order of the elements and the file format. It should be pointed out that MFEM can only read ASCII Gmsh format version 2.2. 
+
+
+<img style="width:60%" src="../img/gmsh02.png"> 
+<img style="width:60%" src="../img/gmsh03.png">
+
+The generated mesh is shown in the figure above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by either refining the mesh or introducing high-order elements. The order can be modified by setting
+```diff
+SetOrder 2;
+```
+
+The Gmsh input file can be downloaded  <a href="../cross_heat.geo">here</a>  and the first order mesh <a href="../cross_heat.msh">here</a>.
 
 
 
-
-
-
-
-
-- Click on the "Explorer" window with the right bottom of the mouse and select Upload to upload the mesh file from your computer to the AWS machine. Once uploaded, the file is available to any program on the AWS machine. To run example 1 with the newly prepared mesh, copy  or move the mesh to the examples directory and run the parallel version of example 1 with the following line in the terminal:
+To run simulations with the generated mesh, go to the web browser, click on the "Explorer" window with the right bottom of the mouse and select Upload to upload the mesh file from your computer to the AWS machine. Once uploaded, the file is available to any program on the AWS machine. To run example 1 with the newly prepared mesh, copy the file to the examples directory and run the parallel version of example 1 with the following:
 ```diff
 euler@26c14060d771:~/mfem/examples$ mpirun -np 24 ./ex1p -m mesh_file.msh
 ``` 
@@ -92,6 +107,25 @@ euler@26c14060d771:~/mfem/examples$ mpirun -np 24 ./ex1p -m mesh_file.msh
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and Paraview
 - Showcase Downloading from AWS
+
+
+To save the simulation results from example 1 in ParaView format, add the following lines just before step 17 in the file.
+
+```diff
+   {
+      ParaViewDataCollection *pd = NULL;
+      pd = new ParaViewDataCollection("Example1P", &pmesh);
+      pd->SetPrefixPath("ParaView");
+      pd->RegisterField("solution", &x);
+      pd->SetLevelsOfDetail(order);
+      pd->SetDataFormat(VTKFormat::BINARY);
+      pd->SetHighOrderOutput(true);
+      pd->SetCycle(0);
+      pd->SetTime(0.0);
+      pd->Save();
+      delete pd;
+   }
+```
 
 ---
 
