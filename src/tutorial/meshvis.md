@@ -63,8 +63,7 @@ The first line in the Gmsh input file defines the geometric engine. Here it is a
 BooleanDifference(50) = { Volume{1}; Delete; }{ Volume{2,3}; Delete; };
 ```
 
-
-Gmsh will use the obtained geometry for generating the mesh. However, without additional specifications, we cannot impose boundary conditions without any attributes assigned to the boundaries. Different attributes can be assigned to the volumetric part of the mesh for using different material coefficients within the domain. Here, however, we will use only a single attribute as the first example uses only a sinlge diffusion coefficient. 
+Gmsh will use the obtained geometry for generating the mesh. However, without additional specifications, we cannot impose boundary conditions without any attributes assigned to the boundaries. Different attributes can be assigned to the volumetric part of the mesh for using different material coefficients within the domain. Here, however, we will use only a single attribute, as the first example uses only a single diffusion coefficient. 
 ```diff
 Physical Volume(1) = {50};
 Physical Surface(1) = {1,6,8};
@@ -126,6 +125,15 @@ To save the simulation results from example 1 in ParaView format, add the follow
       delete pd;
    }
 ```
+
+```diff
+tar cvfz paraview.tgz ParaView/
+```
+
+```diff
+tar vxfz paraview.tgz ParaView/
+```
+
 
 ---
 
