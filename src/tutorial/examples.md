@@ -27,9 +27,26 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; High-order methods
-- full de Rham complex
-- How to build the example codes
-- Examples 1, 2, 3, 4
+- MFEM includes support for the full *de Rham complex*; $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component) and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible de Rham complex on the discrete level can be constructed using the `*_FECollection` with `*` replaced by `H1`, `ND`, `RT` and `L2`, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.
+
+- Building the example codes:
+    - Make sure that the MFEM source code is already compiled
+    - Enter the `examples` directory: `cd ~/mfem/examples` 
+    - Compile the serial version of `example ?` with `make ex?` or the parallel version with `make ex?p`. 
+- Examples 1, 2, 3, 4 and their energy spaces
+
+    - **Example 1** ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) and
+     [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) solves a simple Poisson problem using a scalar $H^1$ space. More specificaly it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.
+
+    - **Example 2** ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp) and
+     [ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) solves a linear elasticity problem using a vector $H^1$ space. The problem describes a multi-material cantilever beam. The weak form is $$-{\rm div}({\sigma}({\bf u})) = 0$$ where $${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$ is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$ are the material Lame constants. The boundary conditions are ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being a constant pull down vector on boundary elements with attribute 2, and zero otherwise.
+
+    - **Example 3**  ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp) and
+     [ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) solves a 3D electromagnetic diffusion problem (definite Maxwell) using an $H(curl)$ finite element space. It solves the equation $$\nabla\times\nabla\times\, E + E = f$$ with boundary condition $ E \times n $ = "given tangential field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $E$.
+
+    - **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and
+     [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
+     diffusion problem corresponds to the second order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $F$. 
 
 ---
 
