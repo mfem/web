@@ -28,12 +28,12 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 MFEM is designed to be highly scalable and efficient on a wide variety of
 platforms: from laptops to
 [GPU-accelerated supercomputers](https://mfem.org/features/#parallel-scalable-and-gpu-ready).
-The solvers described in this lesson play a critical role for this parallel
+The solvers described in this lesson play a critical role in this parallel
 scalability.
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Scalable algebraic multigrid preconditioners from hypre
+### <i class="fa fa-check-square-o"></i>&nbsp; Scalable algebraic multigrid preconditioners from _hypre_
 
 MFEM comes with a large number of [example codes](/examples/) that demonstrate
 different physical applications, finite element discretizations, and linear
@@ -44,28 +44,28 @@ solvers:
 - [Example 3](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp) solves a definite Maxwell (electromagnetics) problem, and
 - [Example 4](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) solves grad-div diffusion problem.
 
-The parallel versions of these examples (`ex1p`, `ex2p`, `ex3p` and `ex4p`) each use
+The parallel versions of these examples (`ex1p`, `ex2p`, `ex3p`, and `ex4p`) each use
 suitable **algebraic multigrid (AMG) preconditioners** from the
 [_hypre_](https://github.com/hypre-space/hypre/) solvers library. We describe sample runs with
 each of these examples in more details below.
 
 ---
 
-#### <i class="fa fa-arrow-circle-right"></i>&nbsp; Example 1: Poisson problem and algebraic multigrid
+#### <i class="fa fa-arrow-circle-right"></i>&nbsp; Example 1: Poisson problem and AMG
 
 - First, make sure you are in the examples subdirectory: `cd ~/mfem/examples`
 
-- Ensure the parallel version of example 1 is built: `make ex1p`
+- Build the parallel version of Example 1: `make ex1p`
 
-- Run the parallel version of example 1, solving a Poisson problem: `./ex1p`
+- Run the parallel version of Example 1, solving a Poisson problem: `./ex1p`
 
 - After forming the linear system, MFEM uses _hypre_ to construct and apply an
-  algebraic multigrid preconditioner. Details of the AMG preconditioner are
+  AMG preconditioner. Details of the AMG preconditioner are
   provided in the example output under the headers `BoomerAMG SETUP PARAMETERS`
   and `BoomerAMG SOLVER PARAMETERS`.
 
 - <details>
-    <summary> Click here to expand for terminal output <i class="fa fa-arrow-down"></i></summary>
+    <summary> Click here to view the terminal output <i class="fa fa-arrow-down"></i></summary>
     <img class="tight" src="../img/solvers1.png">
   </details>
 
@@ -94,15 +94,15 @@ each of these examples in more details below.
 
 - Rebuild the example (`make ex1p`) and re-run it: `./ex1p`
 
-- Even though the number of unknowns for this problem has increased by roughly
-  4x, the iteration count remains at 18 &mdash; this is due to the
+- Although the number of unknowns for this problem has increased by roughly
+  4x, the iteration count remains at 18 due to the
   **scalability** of the AMG preconditioner.
 
 - Let's now try a 3D problem. For that, we just need to choose a 3D mesh using
   the `-m` or `--mesh` command line argument.
 
 - Because these problems are more computationally
-  expensive, let's reduce the refinement level, setting
+  expensive, let's first reduce the refinement level, setting
   `int par_ref_levels = 1;` in the `ex1p.cpp` source code.
 
 - Rebuild the example (`make ex1p`) and re-run it using the three-dimensional
@@ -152,7 +152,7 @@ each of these examples in more details below.
 
 - Try running `./ex2p` to run a 2D elasticity problem.
 
-- As in example 1, the linear system is solved using _algebraic multigrid_.
+- As in Example 1, the linear system is solved using AMG.
 
 - For this example, two types of AMG solvers can be used:
 
@@ -172,15 +172,14 @@ each of these examples in more details below.
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
 </div>
 <div class="panel-body">
-Using higher-order elements can become computationally expensive very
-quickly. See the section on
-<a href="#low-order-refined-methods">low-order-refined methods</a>
+Using higher-order elements can quickly become computationally expensive. See the section below on
+<a href="#low-order-refined-methods">Low-order-refined methods</a>
 for a more efficient approach.
 </div>
 </div>
 
 - Additionally, _static condensation_ can be used to eliminate interior
-  high-order degrees of freedom and obtain a smaller system. For `-order 1`
+  high-order degrees of freedom and obtain a smaller system. For `-order 1`,
   this has no effect. For higher-order problems, static condensation can improve
   efficiency.
 
@@ -214,8 +213,8 @@ Remember to recompile the example after editing the source code (<code>make ex2p
     - Example 4 solves a grad-div problem using $H(\mathrm{div})$ finite
       elements.
 
-- Standard multigrid methods don't always work well for these problems.
-  *We need specialized solvers!*
+- Standard multigrid methods don't always work well for these problems, so
+  *we need specialized solvers!*
   (See [here](https://link.springer.com/article/10.1007/PL00005386) for a paper on this topic.)
 
 - For $H(\mathrm{curl})$ problems, we use the [AMS solver](https://hypre.readthedocs.io/en/latest/solvers-ams.html) from hypre.
@@ -234,7 +233,7 @@ Remember to recompile the example after editing the source code (<code>make ex2p
     - Change the polynomial degree using the `--order` (`-o`) command line
       argument.
 
-    - Run problems in parallel using `mpirun`
+    - Run problems in parallel using `mpirun`.
 
     - For `ex4p`, enable hybridization using the `-hb` flag.
 
@@ -252,11 +251,11 @@ Remember to build the examples first: <code>make ex3 ex4 ex3p ex4p</code>
 ### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's native Multigrid solver
 
 - The previous examples (`ex1p`, `ex2p`, `ex3p`, and `ex4p`) all used
-  _algebraic_ multigrid methods. MFEM also supports geometric ($h$- and
+  _algebraic_ multigrid methods. MFEM also supports _geometric_ ($h$- and
   $p$-multigrid) methods.
 
-- These solvers are illustrated in Example 26 (and its parallel variant), see the
-  `ex26.cpp` and `ex26p.cpp` source files.
+- These solvers are illustrated in Example 26 (and its parallel variant); see the
+  [ex26.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26.cpp) and [ex26p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp) source files.
 
 - Mesh refinement can be set using the `--geometric-refinements` (`-gr`) command
   line argument.
@@ -270,13 +269,11 @@ Remember to build the examples first: <code>make ex3 ex4 ex3p ex4p</code>
 </div>
 <div class="panel-body">
 Each additional order refinement increases the order by a factor of 2. This
-quickly becomes expensive, so be careful increasing the order refinements.
+quickly becomes computationally expensive, so be careful when increasing the order refinements.
 </div>
 </div>
 
-- This example runs **matrix-free** using MFEM's [partial assembly algorithms](/performance).
-
-- Matrix-free methods are **much** more efficient for high-order problems and
+- This example runs **matrix-free** using MFEM's [partial assembly algorithms](/performance). Matrix-free methods are **much** more efficient for high-order problems and
   also work better on GPU architectures.
 
 - Try comparing the performance of `ex1p` and `ex26p` for higher-order
@@ -294,7 +291,7 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 
 - Explore how the number of CG iterations changes as `-or` and `-gr` are
   increased. (For large problems, it may be worth running `ex26p` in parallel
-  with `mpirun`)
+  with `mpirun`.)
 
 ---
 
@@ -310,16 +307,12 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 <div class="col-md-12" markdown="1" style="padding-left:0;">
 
 - [Examples 1, 2, 3, and 4](#scalable-algebraic-multigrid-preconditioners-from-hypre)
-  used _algebraic multigrid methods_ applied to the discretization matrix for
-  each of the problems.
-
-- [Example 26](#mfems-native-multigrid-solver) showed how to use geometric
-  multigrid together with matrix-free methods.
+  used _algebraic_ methods applied to the discretization matrix for
+  each of the problems. [Example 26](#mfems-native-multigrid-solver) showed how to use _geometric_
+  multigrid together with _matrix-free_ methods.
 
 - _Low-order-refined_ (LOR) is an alternative matrix-free methodology for
-  solving these problems.
-
-- The **LOR solvers** miniapp provides matrix-free solvers for the same problems
+  solving these problems. The **LOR solvers** miniapp provides matrix-free solvers for the same problems
   solved in Examples 1, 3, and 4.
 
 - Go to the LOR solvers miniapp directory: `cd ~/mfem/miniapps/solvers`
@@ -338,7 +331,7 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
       equivalent to `ex4`).
 
 - As usual, the `--mesh` (`-m`) argument can be used to choose the mesh file.
-  (Keep in mind, MFEM's meshes in the data directory are now found in
+  (Keep in mind that MFEM's meshes in the data directory are now found in
   `../../data` relative to the miniapp directory.)
 
 - The number of mesh refinements in serial and parallel can be controlled with
@@ -350,7 +343,6 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 - Compare the performance of high-order problems with `plor_solvers` to that of
   Examples 1, 3, and 4. Here are some sample runs to compare:
 
-<div class="container" markdown="1" style="width:96%; margin:auto;">
 ```java
 //  2D, 5th order, 256,800 DOFs
 mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
@@ -360,9 +352,8 @@ mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
 mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 2 -no-vis
 mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2
 ```
-</div>
 
-- For more details on LOR, see this [talk](https://mfem.org/pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf) from the 2021 MFEM community [workshop](https://mfem.org/workshop).
+- For more details on how LOR solvers work in MFEM, see the _High-Order Matrix-Free Solvers_ talk ([PDF](../pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf), [video](https://youtu.be/d6Ic9itl21g)) from the 2021 MFEM community [workshop](https://mfem.org/workshop).
 
 ---
 
@@ -392,7 +383,7 @@ peruse the example source code to see the capabilities of the various integratio
 <div class="panel-body">
 If you <a href="../further/#install-mfem-glvis-on-your-own-machine">install MFEM locally</a>,
 you can enable these third-party solver library integrarions with the <code>MFEM_USE_*</code>
-configuration variables, e.g. by specifying <code>MFEM_USE_PETSC=YES</code>.
+configuration variables, e.g., by specifying <code>MFEM_USE_PETSC=YES</code>.
 </div>
 </div>
 
