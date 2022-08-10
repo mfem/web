@@ -104,8 +104,8 @@ internal meshing tools, and external visualization tools.
 You will learn about:
 
 - Importing meshes from Gmsh and Cubit
-- MFEM's meshing tools: Mesh Explorer, Mesh Optimizer and Shaper
-- Visualizing results in VisIt and Paraview
+- MFEM's meshing tools: Mesh Explorer, Mesh Optimizer, and Shaper
+- Visualizing results in VisIt and ParaView
 
 ---
 
@@ -117,7 +117,7 @@ solvers and preconditioners. The lesson covers:
 - Scalable algebraic multigrid preconditioners from hypre (Examples 1, 2, 3, 4)
 - MFEM's native Multigrid solver (Example 26)
 - Low-order refined methods (Solvers and Transfer miniapps)
-- Additional solver integrations via PETSc, SuperLU and STRUMPACK
+- Additional solver integrations via PETSc, SuperLU, and STRUMPACK
 
 ---
 

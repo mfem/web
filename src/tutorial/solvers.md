@@ -382,7 +382,7 @@ peruse the example source code to see the capabilities of the various integratio
 </div>
 <div class="panel-body">
 If you <a href="../further/#install-mfem-glvis-on-your-own-machine">install MFEM locally</a>,
-you can enable these third-party solver library integrarions with the <code>MFEM_USE_*</code>
+you can enable these third-party solver library integrations with the <code>MFEM_USE_*</code>
 configuration variables, e.g., by specifying <code>MFEM_USE_PETSC=YES</code>.
 </div>
 </div>

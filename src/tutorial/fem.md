@@ -432,7 +432,7 @@ Some of the more useful key commands and mouse functions are:
 
 - <kbd>A</kbd> &mdash; Turn on/off the use of anti-aliasing/multi-sampling
 - <kbd>b</kbd> &mdash; Toggle the boundary in 2D scalar mode
-- <kbd>c</kbd> &mdash; Show/hide colorbar
+- <kbd>c</kbd> &mdash; Show/hide color bar
 - <kbd>F11</kbd> / <kbd>F12</kbd> &mdash; Shrink/Zoom parallel subdomains
 - <kbd>g</kbd> &mdash; Toggle background color (white/black)
 - <kbd>i</kbd> &mdash; Toggle cutting plane
