@@ -20,5 +20,4 @@ BooleanDifference(50) = { Volume{1}; Delete; }{ Volume{2,3}; Delete; };
 Physical Volume(1) = {50};
 Physical Surface(1) = {1,6,8};
 
-SetOrder 1;
 Mesh.MshFileVersion = 2.2;

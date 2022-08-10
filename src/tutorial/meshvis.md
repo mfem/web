@@ -68,32 +68,55 @@ Gmsh will use the obtained geometry for generating the mesh. However, without ad
 Physical Volume(1) = {50};
 Physical Surface(1) = {1,6,8};
 
-SetOrder 1;
 Mesh.MshFileVersion = 2.2;
 ```
-The first line from the above snippet will define physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the boolean operation. The second line will define physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last two lines specify the order of the elements and the file format. It should be pointed out that MFEM can only read ASCII Gmsh format version 2.2. 
+The first line from the above snippet will define physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the boolean operation. The second line will define physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last line specify the the file format. It should be pointed out that MFEM can only read ASCII Gmsh format version 2.2. 
 
 
 <img style="width:60%" src="../img/gmsh02.png"> 
 <img style="width:60%" src="../img/gmsh03.png">
 
-The generated mesh is shown in the figure above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by either refining the mesh or introducing high-order elements. The order can be modified by setting
+The generated mesh is shown in the figure above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by refining the mesh. The Gmsh input file can be downloaded  <a href="../cross_heat.geo">here</a>  and the mesh <a href="../cross_heat.msh">here</a>. The users are strongly encouraged to play with the mesh and to generate finer discretizations for the simulations.  
+
+For users without access to the graphical interface of Gmsh, a mesh can be generated in a terminal by the following command: 
 ```diff
-SetOrder 2;
+gmsh -3 cross_heat.geo
 ```
-
-The Gmsh input file can be downloaded  <a href="../cross_heat.geo">here</a>  and the first order mesh <a href="../cross_heat.msh">here</a>.
-
-
 
 To run simulations with the generated mesh, go to the web browser, click on the "Explorer" window with the right bottom of the mouse and select Upload to upload the mesh file from your computer to the AWS machine. Once uploaded, the file is available to any program on the AWS machine. To run example 1 with the newly prepared mesh, copy the file to the examples directory and run the parallel version of example 1 with the following:
 ```diff
 euler@26c14060d771:~/mfem/examples$ mpirun -np 24 ./ex1p -m mesh_file.msh
 ``` 
+The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the end of this tutorial session. 
+<img style="width:60%" src="../img/parav00002.png">
 
+If we want to enforce Dirichlet boundary conditions different than zero on some other surface, we must export it as a physical surface. For example, if we want to enforce value one on the other cylindrical surface, we can add the following line to the geo file: 
+```diff
+Physical Surface(2) = {7};
+```
 
+If we run ex1p without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, we have to modify section 10 is ex1p.cpp
+```diff
+   // 10. Define the solution vector x as a parallel finite element grid
+   //     function corresponding to fespace. Initialize x with initial guess of
+   //     zero, which satisfies the boundary conditions.
+   ParGridFunction x(&fespace);
+   x = 0.0;
+   {
+      Array<int> ess_bdr(pmesh.bdr_attributes.Max());
+      ess_bdr = 0;
+      ess_bdr[1] = 1;
+      ConstantCoefficient zero(0.0);
+      Coefficient* coeff[1];
+      coeff[0]=&one;
+      x.ProjectBdrCoefficient(coeff,ess_bdr);
+   }
+```
 
-- Showcase Uploading to AWS
+In the above snippet, we project coefficient one on the degrees of freedom associated with physical surface 2 (in c/c++ the indexing starts at zero). Executing the modified code with the newly created mesh will result in the following solution: 
+<img style="width:60%" src="../img/parav00003.png">
+
+MFEM can import meshes saved in Exodus II format generated with  <a href="https://cubit.sandia.gov/">Cubit</a>. However, this feature requires compilation of the library with HDF5, NetCDF, and Exodus, which is not currently available on the AWS machines. 
 
 ---
 
@@ -105,10 +128,7 @@ euler@26c14060d771:~/mfem/examples$ mpirun -np 24 ./ex1p -m mesh_file.msh
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and Paraview
-- Showcase Downloading from AWS
-
-
-To save the simulation results from example 1 in ParaView format, add the following lines just before step 17 in the file.
+To save the simulation results from example 1 (ex1p.cpp) in ParaView format, add the following lines just before step 17 in the file.
 
 ```diff
    {
@@ -126,14 +146,28 @@ To save the simulation results from example 1 in ParaView format, add the follow
    }
 ```
 
+The first line defines a ParaViewDataCollection for saving data in ParaView data format. The following two lines define the name of the data collection and the prefix path, which is set to ParaView. Thus, the data set will be written in the directory ParaView relative to the current execution path. The following line registers the ParGridFunction x in the data collection. The rest of the lines set different parameters for the format and the data set, and finally, the set is saved and deleted. The users are advised to read the MFEM documentation for more detailed information. 
+
+
+To download the results saved in ParaView format to the local user machine, one needs to compress and gather all files in a single archive. Therefore, a user should go to the terminal and type the following command:
 ```diff
 tar cvfz paraview.tgz ParaView/
 ```
+, which will generate the file paraview.tgz in the current directory. Download the file by using the explorer window and then go to the download directory and extract the archive by typing in the local terminal: 
 
 ```diff
 tar vxfz paraview.tgz ParaView/
 ```
 
+The above assumes a UNIX type of environment. Windows users could use the graphical user interface or WSL/WSL2 engines.  
+
+<a href="https://www.paraview.org/">ParaView</a> can be freely downloaded both as a source code or precompiled binaries. The precompiled binaries are available for Linux, macOS, and Windows. Please follow the instructions for the corresponding operating system for installation instructions.
+
+To visualize the downloaded simulation data, run ParaView and open the file Example1P.pvd in the ParaView/Example1P directory, where the path is relative to the directory where the archive was downloaded. Next, click on the Apply button and select  "solution" in the drop-down menu in the second row of buttons. The geometry, together with the solution, can be rotated on the screen by holding and dragging the mouse. 
+
+<img style="width:80%" src="../img/parav00004.png">
+
+Replacing the ParaviewDataCollection with VisItDataCollection would allow users to write data in VisIt data format. <a href="https://visit-dav.github.io/visit-website/">VisIt</a> can be freely downloaded and installed on Linux, macOS, and Windows and provides another alternative to ParaView. The steps for downloading and the simulation data are the same as the steps outlined above for ParaView.
 
 ---
 
