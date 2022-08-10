@@ -27,26 +27,66 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; High-order methods
-- MFEM includes support for the full *de Rham complex*; $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component) and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible de Rham complex on the discrete level can be constructed using the `*_FECollection` with `*` replaced by `H1`, `ND`, `RT` and `L2`, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.
+- MFEM includes support for the full *de Rham complex*; $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component) and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible high-order de Rham complex on the discrete level can be constructed using the `*_FECollection` with `*` replaced by `H1`, `ND`, `RT` and `L2`, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.
 
 - Building the example codes:
     - Make sure that the MFEM source code is already compiled
     - Enter the `examples` directory: `cd ~/mfem/examples` 
     - Compile the serial version of `example ?` with `make ex?` or the parallel version with `make ex?p`. 
-- Examples 1, 2, 3, 4 and their energy spaces
 
-    - **Example 1** ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) and
+<img class="floatright" src="../../img/examples/ex1.png", width="200"/>
+
+- **Example 1** ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) and
      [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) solves a simple Poisson problem using a scalar $H^1$ space. More specificaly it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.
 
-    - **Example 2** ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp) and
+    Try the following sample runs:
+    <code class="language-java"><pre>
+    ./ex1 -m ../data/square-disc.mesh
+    ./ex1 -m ../data/fichera.mesh
+    mpirun -np 4 ex1p -m ../data/star-surf.mesh
+    mpirun -np 4 ex1p -m ../data/mobius-strip.mesh
+    </pre></code>
+
+
+<img class="floatright" src="../../img/examples/ex2.png", width="200">
+
+- **Example 2** ([ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp) and
      [ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) solves a linear elasticity problem using a vector $H^1$ space. The problem describes a multi-material cantilever beam. The weak form is $$-{\rm div}({\sigma}({\bf u})) = 0$$ where $${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$ is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$ are the material Lame constants. The boundary conditions are ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being a constant pull down vector on boundary elements with attribute 2, and zero otherwise.
 
-    - **Example 3**  ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp) and
+    Try the following sample runs:
+    <code class="language-java"><pre>
+    ./ex2 -m ../data/beam-tri.mesh
+    ./ex2 -m ../data/beam-hex.mesh
+    mpirun -np 4 ex2p -m ../data/beam-wedge.mesh
+    mpirun -np 4 ex2p -m ../data/beam-quad.mesh -o 3 -elast
+    </pre></code>
+
+<img class="floatright" src="../../img/examples/ex3.png", width="200"/>
+
+- **Example 3**  ([ex3.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp) and
      [ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) solves a 3D electromagnetic diffusion problem (definite Maxwell) using an $H(curl)$ finite element space. It solves the equation $$\nabla\times\nabla\times\, E + E = f$$ with boundary condition $ E \times n $ = "given tangential field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $E$.
 
-    - **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and
+    Try the following sample runs:
+    <code class="language-java"><pre>
+    ./ex3 -m ../data/star.mesh
+    ./ex3 -m ../data/beam-tri.mesh -o 2
+    mpirun -np 4 ex3p -m ../data/fichera.mesh
+    mpirun -np 4 ex3p -m ../data/escher.mesh -o 2
+    </pre></code>
+<img class="floatright" src="../../img/examples/ex4.png", width="200"/>
+
+- **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and
      [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
      diffusion problem corresponds to the second order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $F$. 
+
+    Try the following sample runs:
+    <code class="language-java"><pre>
+    ./ex4 -m ../data/square-disc.mesh
+    ./ex4 -m ../data/periodic-square.mesh -no-bc
+    mpirun -np 4 ex4p -m ../data/fichera-q2.vtk
+    mpirun -np 4 ex4p -m ../data/amr-quad.mesh
+    </pre></code>
+</pre></code>
 
 ---
 
@@ -61,7 +101,7 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive mesh refinement
-<img class="floatright" src="../../img/examples/ex15.png", width="260"/>
+<img class="floatright" src="../../img/examples/ex15.png", width="200"/>
 
 MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary order hanging nodes, anisotropic refinement, derefinement and parallel load balancing. The AMR support covers the full de Rham complex i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. The user can choose from  several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the adaptive mesh refinements. We recommend to take a look at examples 6, 15, 21 and 30 for some simulations with AMR. 
 
@@ -93,7 +133,8 @@ the real problems (such us `Assemble`, `FormLinearSystem`, and `RecoverFEMSoluti
 to recover the solution.
 
 Currently, there are two examples demonstrating the use of complex valued systems.
-<img class="floatright" src="../../img/examples/ex22.gif", width="260"/>
+
+<img class="floatright" src="../../img/examples/ex22.gif", width="200"/>
 
 - <strong>Example 22</strong> implements three variants of a damped harmonic oscillator:
 
@@ -116,11 +157,11 @@ Currently, there are two examples demonstrating the use of complex valued system
     <code class="language-java"><pre>
     ./ex22 -m ../data/inline-quad.mesh -o 3 -p 1
     ./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa
-    ./ex22 -m ../data/star.mesh -r 1 -o 2 -sigma 10.0
-    ./ex22 -m ../data/inline-pyramid.mesh -o 1
+    mpirun -np 4 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
+    mpirun -np 4 ex22p -m ../data/inline-pyramid.mesh -o 1
     </pre></code>
 
-<img class="floatright" src="../../img/examples/ex25.gif", width="250"/>
+<img class="floatright" src="../../img/examples/ex25.gif", width="200"/>
 
 - <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer (PML)](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
     for the simulation of time-harmonic electromagnetic waves propagating in unbounded
@@ -139,8 +180,8 @@ Currently, there are two examples demonstrating the use of complex valued system
     <code class="language-java"><pre>
     ./ex25 -o 3 -f 10.0 -ref 2 -prob 1
     ./ex25 -o 2 -f 1.0 -ref 2 -prob 3
-    ./ex25 -o 2 -f 8.0 -ref 3 -prob 4 -m ../data/inline-quad.mesh
-    ./ex25 -o 2 -f 1.0 -ref 2 -prob 0 -m ../data/beam-quad.mesh
+    mpirun -np 4 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
+    mpirun -np 4 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
     </pre></code>
 
 ---
