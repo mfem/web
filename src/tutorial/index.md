@@ -112,7 +112,7 @@ You will learn about:
 ### <i class="fa fa-tasks"></i>&nbsp; [Solvers and Scalability](solvers.md)
 
 This is an optional lesson that showcases MFEM's parallel scalability and support for efficient
-solvers and preconditioners.  The lesson covers:
+solvers and preconditioners. The lesson covers:
 
 - Scalable algebraic multigrid preconditioners from hypre (Examples 1, 2, 3, 4)
 - MFEM's native Multigrid solver (Example 26)

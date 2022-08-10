@@ -63,7 +63,7 @@ If you use VPN, make sure to <b>turn it off</b> before following the instruction
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-The window contains a fully functioning copy of Visual Studio Code. You can customize it further,
+The browser window contains a fully functioning copy of Visual Studio Code. You can customize it further,
 and adjust it similarly to the desktop version.
 </div>
 </div>
@@ -72,7 +72,9 @@ and adjust it similarly to the desktop version.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up GLVis
 
-- Open a new browser window and load `http://IP:8000/live`
+In this tutorial we use [GLVis](https://glvis.org) for finite element visualization based on MFEM.
+
+- Open a new browser window and load `http://IP:8000/live`.
 
 - When you move the mouse to the top of the window you should see the GLVis interface:
 
@@ -89,7 +91,7 @@ You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog
 </div>
 </div>
 
-- When the button switches to `DISCONNECT`, click outside of the **Connect to socket** dialog.
+- When the button switches to `DISCONNECT`, click outside of the **Connect to socket** dialog to close it.
 
 - Your environment should now look like:
 
