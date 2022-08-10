@@ -27,17 +27,25 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; High-order methods
-- MFEM includes support for the full *de Rham complex*; $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component) and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible high-order de Rham complex on the discrete level can be constructed using the `*_FECollection` with `*` replaced by `H1`, `ND`, `RT` and `L2`, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.
+- MFEM includes support for the full [*de Rham complex*](https://en.wikipedia.org/wiki/De_Rham_cohomology), $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component), and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible high-order de Rham complex on the discrete level can be constructed using the `*_FECollection` with `*` replaced by `H1`, `ND`, `RT`, and `L2`, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.
 
 - Building the example codes:
     - Make sure that the MFEM source code is already compiled
     - Enter the `examples` directory: `cd ~/mfem/examples` 
-    - Compile the serial version of `example ?` with `make ex?` or the parallel version with `make ex?p`. 
+
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Remember to compile each numbered example before executing its sample runs: <code>make ex?</code> for the serial version or <code>make ex?p</code> for the parallel version. You can build multiple examples in the same command: <code>make ex3 ex4 ex3p ex4p</code>
+</div>
+</div>
 
 <img class="floatright" src="../../img/examples/ex1.png", width="200"/>
 
 - **Example 1** ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) and
-     [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) solves a simple Poisson problem using a scalar $H^1$ space. More specificaly it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.
+     [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) solves a simple Poisson problem using a scalar $H^1$ space. More specificaly, it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.
 
     Try the following sample runs:
     <code class="language-java"><pre>
@@ -77,7 +85,7 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 
 - **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and
      [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
-     diffusion problem corresponds to the second order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $F$. 
+     diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s $f$ and the boundary condition data are computed using a given exact solution $F$. 
 
     Try the following sample runs:
     <code class="language-java"><pre>
@@ -103,9 +111,9 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive mesh refinement
 <img class="floatright" src="../../img/examples/ex15.png", width="200"/>
 
-MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary order hanging nodes, anisotropic refinement, derefinement and parallel load balancing. The AMR support covers the full de Rham complex i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. The user can choose from  several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the adaptive mesh refinements. We recommend to take a look at examples 6, 15, 21 and 30 for some simulations with AMR. 
+MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary-order hanging nodes, anisotropic refinement, derefinement, and parallel load balancing. The AMR support covers the full de Rham complex, i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. You can choose from several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the AMRs. We recommend looking at examples 6, 15, 21, and 30 for some simulations with AMR.
 
-In particular, <strong>Example 16</strong> demonstrates MFEM's cabability to refine, derifine and load balance non-conforming meshes in 2D and 3D, and on linear, curved and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes which are refined based on a simple ZZ estimator. At the end of the refinement process the error estimates are used to identify elements that are over-refined and a single derefinment step is performed. Finally, in the parallel case a load-balancing step is executed. 
+In particular, <strong>Example 16</strong> demonstrates MFEM's cabability to refine, derifine, and load balance non-conforming meshes in 2D and 3D as well as on linear, curved, and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes that are refined based on a simple ZZ estimator. At the end of the refinement process, the error estimates are used to identify elements that are over-refined, and a single derefinment step is performed. Finally, in the parallel case, a load-balancing step is executed.
 
 The implementation can be found in
 [ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp) and
@@ -124,15 +132,15 @@ mpirun -np 4 ex15p -m ../data/fichera.mesh -tf 0.5
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Complex-valued problems
 
-MFEM provides a user friendly interface for solving complex valued systems.
+MFEM provides a user-friendly interface for solving complex valued systems.
 These kinds of problems can be formulated using the classes `ComplexOperator`,
 `ComplexLinearForm`, `SesquilinearForm`, `ComplexGridFunction`, and their parallel
-counterparts. The user can define the weak formulation by providing the integrators
-of its real and imaginary part independently and then use similar methods as in
+counterparts. You can define the weak formulation by providing the integrators
+of real and imaginary parts independently and then use similar methods as in
 the real problems (such us `Assemble`, `FormLinearSystem`, and `RecoverFEMSolution`)
 to recover the solution.
 
-Currently, there are two examples demonstrating the use of complex valued systems.
+Currently, there are two examples demonstrating the use of complex-valued systems.
 
 <img class="floatright" src="../../img/examples/ex22.gif", width="200"/>
 
@@ -148,7 +156,7 @@ Currently, there are two examples demonstrating the use of complex valued system
       $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$
 
     In each case the field is driven by a forced oscillation, with angular
-    frequency $\omega$, imposed at the boundary or a portion of the boundary.
+    frequency $\omega$ imposed at the boundary or a portion of the boundary.
     The implementation can be found in
     [ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp) and
     [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp).
@@ -163,11 +171,11 @@ Currently, there are two examples demonstrating the use of complex valued system
 
 <img class="floatright" src="../../img/examples/ex25.gif", width="200"/>
 
-- <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer (PML)](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
-    for the simulation of time-harmonic electromagnetic waves propagating in unbounded
+- <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
+    (PML) for the simulation of time-harmonic electromagnetic waves propagating in unbounded
     domains. The implementation involves the introduction of an artificial absorbing
     layer that minimizes undesired reflections. Inside this layer a complex coordinate
-    stretching map is used which forces the wave modes to decay exponentially.
+    stretching map forces the wave modes to decay exponentially.
 
     The example solves the indefinite Maxwell equations
     $$ \nabla \times (a \nabla \times E) - \omega^2 b E = f $$ where $a = \mu^{-1} |J|^{-1} J^T J$,
