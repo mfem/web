@@ -105,10 +105,9 @@ You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog
   comes pre-build in the AWS image.
 
 - In the VS Code terminal, type
-<code class="language-console"><pre>
-euler@IP:~/mfem$ cd examples
-euler@IP:~/mfem/examples$ ./ex1
-</pre></code>
+
+        euler@IP:~/mfem$ cd examples
+        euler@IP:~/mfem/examples$ ./ex1
 
 - You should see `111` iterations printed in the terminal and the image in the
 GLVis window should change:
