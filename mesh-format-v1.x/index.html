@@ -249,6 +249,12 @@
                             </li>
                         
                     
+                        
+                            <li >
+                                 <a href="../tutorial/">Tutorial</a>
+                            </li>
+                        
+                    
                     </ul>
                 </li>
             
@@ -563,15 +569,29 @@ These are just examples, many choices for the basis are actually possible to be 
 <p>In general, based just on the mesh topology and the type of the space, the <code>FiniteElementSpace</code> object can determine a global set of dofs, that will be the values listed for the mesh <em>nodes</em>.</p>
 <p>The algorithm starts with the given numbering of the elements and the vertices, from which a numbering of the edges and the faces is derived as follows:</p>
 <pre><code>loop over elements
-  loop over edges and faces inside each element (clock-wise)
+  loop over edges and faces inside each element (see below)
     number currently the edges and faces that have not been numbered yet
 </code></pre>
 
+<p>The ordering of edges/faces within each element is defined by the arrays <code>Edges</code>
+and <code>FaceVert</code> in the classes <code>Geometry::Constants&lt;Geometry::Type&gt;</code> which are
+defined in the file
+<a href="https://docs.mfem.org/html/geom_8cpp_source.html"><code>fem/geom.cpp</code></a>, e.g. search
+for <code>&lt;Geometry::TRIANGLE&gt;::Edges</code> or <code>&lt;Geometry::CUBE&gt;::FaceVert</code>.</p>
 <p>Here is the result of this numbering for the beam mesh</p>
 <p><img alt="beam-quad-num" src="../img/format-v1.x/beam-quad-num.png" /></p>
 <p>In addition to a number, each edges and face is also given a global orientation.</p>
-<p>In 2D and 3D, an edge is oriented from the vertex with the lower vertex id to the vertex with the higher vertex id.</p>
-<p>In 3D, a face is oriented according to the face-to-vertex mappings in the first element in which the face is enumerated. See the <code>fem/geom.cpp</code> for the definitions of the <a href="https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L503-L505">tetrahedral</a> and <a href="https://github.com/mfem/mfem/blob/master/fem/geom.cpp#L524-L529">hexahedral</a> mappings on the reference element, as well as the <code>Mesh::GenerateFaces</code> method in <code>mesh/mesh.cpp</code>. In particular, the normal of the face between two elements points from the element with lower number to the element with higher number. Face orientation however includes not just the normal direction, but also any rotation of the vertices compared to the base, i.e. <em>orientation</em> here means permutation of vertices.</p>
+<p>In 2D and 3D, an edge is oriented from the vertex with the lower vertex id to
+the vertex with the higher vertex id.</p>
+<p>In 3D, a face is oriented according to the face-to-vertex mappings in the first
+element in which the face is enumerated. See the <code>FaceVert</code> arrays in
+<a href="https://docs.mfem.org/html/geom_8cpp_source.html"><code>fem/geom.cpp</code></a> mentioned
+above, as well as the <code>Mesh::GenerateFaces</code> method in
+<a href="https://docs.mfem.org/html/mesh_8cpp_source.html"><code>mesh/mesh.cpp</code></a>. In
+particular, the normal of the face between two elements points from the element
+with lower number to the element with higher number. Face orientation however
+includes not just the normal direction, but also any rotation of the vertices
+compared to the base, i.e. <em>orientation</em> here means permutation of vertices.</p>
 <p>The global numbering of degrees of freedom is now performed as follows:</p>
 <pre><code>loop over vertices
   list the dofs associated with each vertex

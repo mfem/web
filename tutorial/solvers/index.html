@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#solvers-and-scalability">&nbsp; Solvers and Scalability</a></li>
+        
+            <li><a href="#scalable-algebraic-multigrid-preconditioners-from-hypre">&nbsp; Scalable algebraic multigrid preconditioners from hypre</a></li>
+        
+            <li><a href="#mfems-native-multigrid-solver">&nbsp; MFEM's native Multigrid solver</a></li>
+        
+            <li><a href="#low-order-refined-methods">&nbsp; Low-order-refined methods</a></li>
+        
+            <li><a href="#additional-solver-integrations">&nbsp; Additional solver integrations</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="solvers-and-scalability"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</h2>
+<p><span class="label label-default">45 minutes</span>
+<span class="label label-default">intermediate</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Learn about MFEM's parallel scalability.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn about MFEM's support for efficient solvers and preconditioners.
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Please complete the <a href="../start"><i class="fa fa-play-circle"></i>&nbsp; Getting Started</a>
+and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages before this lesson.
+</div>
+</div>
+
+<p>MFEM is designed to be highly scalable and efficient on a wide variety of
+platforms: from laptops to
+<a href="https://mfem.org/features/#parallel-scalable-and-gpu-ready">GPU-accelerated supercomputers</a>.
+The solvers described in this lesson play a critical role in this parallel
+scalability.</p>
+<hr />
+<h3 id="scalable-algebraic-multigrid-preconditioners-from-hypre"><i class="fa fa-check-square-o"></i>&nbsp; Scalable algebraic multigrid preconditioners from <em>hypre</em></h3>
+<p>MFEM comes with a large number of <a href="/examples/">example codes</a> that demonstrate
+different physical applications, finite element discretizations, and linear
+solvers:</p>
+<ul>
+<li><a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">Example 1</a> solves a Poisson problem,</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp">Example 2</a> solves a linear elasticity problem,</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp">Example 3</a> solves a definite Maxwell (electromagnetics) problem, and</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/examples/ex4.cpp">Example 4</a> solves grad-div diffusion problem.</li>
+</ul>
+<p>The parallel versions of these examples (<code>ex1p</code>, <code>ex2p</code>, <code>ex3p</code>, and <code>ex4p</code>) each use
+suitable <strong>algebraic multigrid (AMG) preconditioners</strong> from the
+<a href="https://github.com/hypre-space/hypre/"><em>hypre</em></a> solvers library. We describe sample runs with
+each of these examples in more details below.</p>
+<hr />
+<h4 id="example-1-poisson-problem-and-amg"><i class="fa fa-arrow-circle-right"></i>&nbsp; Example 1: Poisson problem and AMG</h4>
+<ul>
+<li>
+<p>First, make sure you are in the examples subdirectory: <code>cd ~/mfem/examples</code></p>
+</li>
+<li>
+<p>Build the parallel version of Example 1: <code>make ex1p</code></p>
+</li>
+<li>
+<p>Run the parallel version of Example 1, solving a Poisson problem: <code>./ex1p</code></p>
+</li>
+<li>
+<p>After forming the linear system, MFEM uses <em>hypre</em> to construct and apply an
+  AMG preconditioner. Details of the AMG preconditioner are
+  provided in the example output under the headers <code>BoomerAMG SETUP PARAMETERS</code>
+  and <code>BoomerAMG SOLVER PARAMETERS</code>.</p>
+</li>
+<li>
+<p><details>
+    <summary> Click here to view the terminal output <i class="fa fa-arrow-down"></i></summary>
+    <img class="tight" src="../img/solvers1.png">
+  </details></p>
+</li>
+<li>
+<p>A key feature of AMG methods is their scalability: with default options,
+  convergence is achieved in only 18 conjugate gradient iterations.</p>
+</li>
+<li>
+<p>Let's see what happens if we increase the mesh refinement. Edit <code>ex1p.cpp</code>
+  changing line 153 as follows:</p>
+</li>
+</ul>
+<div class="container" style="width:96%; margin:auto;">
+<pre><code class="diff">@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
+    ParMesh pmesh(MPI_COMM_WORLD, mesh);
+    mesh.Clear();
+    {
+-      int par_ref_levels = 2;
++      int par_ref_levels = 3;
+       for (int l = 0; l &lt; par_ref_levels; l++)
+       {
+          pmesh.UniformRefinement();
+</code></pre>
+
+</div>
+<ul>
+<li>
+<p>This adds one additional level of refinement, making the problem roughly 4 times as
+  large in 2D, or 8 times as large in 3D.</p>
+</li>
+<li>
+<p>Rebuild the example (<code>make ex1p</code>) and re-run it: <code>./ex1p</code></p>
+</li>
+<li>
+<p>Although the number of unknowns for this problem has increased by roughly
+  4x, the iteration count remains at 18 due to the
+  <strong>scalability</strong> of the AMG preconditioner.</p>
+</li>
+<li>
+<p>Let's now try a 3D problem. For that, we just need to choose a 3D mesh using
+  the <code>-m</code> or <code>--mesh</code> command line argument.</p>
+</li>
+<li>
+<p>Because these problems are more computationally
+  expensive, let's first reduce the refinement level, setting
+  <code>int par_ref_levels = 1;</code> in the <code>ex1p.cpp</code> source code.</p>
+</li>
+<li>
+<p>Rebuild the example (<code>make ex1p</code>) and re-run it using the three-dimensional
+  <em>Fichera</em> mesh: <code>./ex1p -m ../data/fichera.mesh</code>. Convergence is attained in
+  only 16 iterations.</p>
+</li>
+</ul>
+<p><img class="tight" width="300" style="padding: 30px;" src="../img/solvers2.png"></p>
+<ul>
+<li>Finally, let's take a look at the parallel scalability of the solvers.<ul>
+<li>Increase the refinement level: <code>int par_ref_levels = 2;</code></li>
+<li>Recompile: <code>make ex1p</code></li>
+<li>Now run the 3D example on 8 cores: <code>mpirun -np 8 ./ex1p -m ../data/fichera.mesh</code></li>
+<li>This is an example of a <a href="https://en.wikipedia.org/wiki/Scalability#Weak_versus_strong_scaling">weak scaling test</a>:
+  the problem size and the number of processors are both increased by a
+  factor of 8.</li>
+<li>Because the PCG iteration counts remain roughly constant, the total time
+  to solution should remain roughly fixed (minus some overhead and
+  communication cost), even though we are solving a problem that is 8 times
+  larger.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="example-2-linear-elasticity"><i class="fa fa-arrow-circle-right"></i>&nbsp; Example 2: Linear Elasticity</h4>
+<ul>
+<li>
+<p>This example demonstrates solving a
+  <a href="https://en.wikipedia.org/wiki/Linear_elasticity">linear elasticity</a>
+  cantilever beam problem with different materials.</p>
+</li>
+<li>
+<p>This example is designed to work with any of the "beam" meshes provided by
+  MFEM. Run <code>ls ../data | grep beam</code> to list the available 2D and 3D meshes:
+  <code>beam-hex-nurbs.mesh</code>, <code>beam-hex.mesh</code>, <code>beam-hex.vtk</code>, <code>beam-quad-amr.mesh</code>,
+  <code>beam-quad-nurbs.mesh</code>, <code>beam-quad.mesh</code>, <code>beam-quad.vtk</code>, <code>beam-tet.mesh</code>,
+  <code>beam-tet.vtk</code>, <code>beam-tri.mesh</code>, <code>beam-tri.vtk</code>, <code>beam-wedge.mesh</code>, and
+  <code>beam-wedge.vtk</code>.</p>
+</li>
+<li>
+<p>The elements and boundaries of these meshes are assigned attributes/materials
+  suitable for the cantilever problem:</p>
+</li>
+</ul>
+<div class="container" style="width:96%; margin:auto;">
+<pre><code class="text">                         +----------+----------+
+            boundary ---&gt;| material | material |&lt;--- boundary
+            attribute 1  |    1     |    2     |     attribute 2
+            (fixed)      +----------+----------+     (pull down)
+</code></pre>
+
+</div>
+<ul>
+<li>
+<p>Try running <code>./ex2p</code> to run a 2D elasticity problem.</p>
+</li>
+<li>
+<p>As in Example 1, the linear system is solved using AMG.</p>
+</li>
+<li>
+<p>For this example, two types of AMG solvers can be used:</p>
+<ol>
+<li>
+<p>A special version of AMG designed specifically for elasticity (<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/nla.688">see this
+   paper</a>).</p>
+</li>
+<li>
+<p>AMG for systems.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>To enable the special elasticity AMG, add the flag <code>-elast</code>. Otherwise, AMG
+  for systems will be used.</p>
+</li>
+<li>
+<p>The polynomial degree (order) can be changed with the <code>--order</code> argument (<code>-o</code>
+  for short). By default, low-order $(p=1)$ elements are used.</p>
+</li>
+</ul>
+<div class="panel panel-danger" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+Using higher-order elements can quickly become computationally expensive. See the section below on
+<a href="#low-order-refined-methods">Low-order-refined methods</a>
+for a more efficient approach.
+</div>
+</div>
+
+<ul>
+<li>
+<p>Additionally, <em>static condensation</em> can be used to eliminate interior
+  high-order degrees of freedom and obtain a smaller system. For <code>-order 1</code>,
+  this has no effect. For higher-order problems, static condensation can improve
+  efficiency.</p>
+</li>
+<li>
+<p>In this example, as before, the mesh refinement level can be controlled in the
+  source code through <code>par_ref_levels</code>.</p>
+</li>
+</ul>
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Remember to recompile the example after editing the source code (<code>make ex2p</code>).
+</div>
+</div>
+
+<ul>
+<li>
+<p>Running with more than one MPI rank will partition the mesh and run the
+  problem in parallel. Here is a sample 3D run: <code>mpirun -np 8 ./ex2p -m ../data/beam-hex.mesh</code></p>
+</li>
+<li>
+<p>Try experimenting with different discretization, solver, and parallelization
+  options.</p>
+</li>
+</ul>
+<hr />
+<h4 id="examples-3-and-4-the-de-rham-complex"><i class="fa fa-arrow-circle-right"></i>&nbsp; Examples 3 and 4: the de Rham Complex</h4>
+<ul>
+<li>
+<p>The next two examples demonstrate the use of <em>vector finite element spaces</em>.</p>
+<ul>
+<li>
+<p>Example 3 solves an electromagnetics problem using $H(\mathrm{curl})$
+  finite elements.</p>
+</li>
+<li>
+<p>Example 4 solves a grad-div problem using $H(\mathrm{div})$ finite
+  elements.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Standard multigrid methods don't always work well for these problems, so
+  <em>we need specialized solvers!</em>
+  (See <a href="https://link.springer.com/article/10.1007/PL00005386">here</a> for a paper on this topic.)</p>
+</li>
+<li>
+<p>For $H(\mathrm{curl})$ problems, we use the <a href="https://hypre.readthedocs.io/en/latest/solvers-ams.html">AMS solver</a> from hypre.</p>
+</li>
+<li>
+<p>For $H(\mathrm{div})$ problems, we either use the
+  <a href="https://hypre.readthedocs.io/en/latest/solvers-ads.html">ADS solver</a>
+  from hypre or a special
+  <a href="https://epubs.siam.org/doi/abs/10.1137/17M1132562">hybridization solver</a>.</p>
+</li>
+<li>
+<p>Try experimenting with different options to get a feel for the performance of
+  the discretizations and solvers:</p>
+<ul>
+<li>
+<p>Change the mesh (2D or 3D) using the <code>--mesh</code> (<code>-m</code>) command line
+  argument.</p>
+</li>
+<li>
+<p>Change the polynomial degree using the <code>--order</code> (<code>-o</code>) command line
+  argument.</p>
+</li>
+<li>
+<p>Run problems in parallel using <code>mpirun</code>.</p>
+</li>
+<li>
+<p>For <code>ex4p</code>, enable hybridization using the <code>-hb</code> flag.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Remember to build the examples first: <code>make ex3 ex4 ex3p ex4p</code>
+</div>
+</div>
+
+<hr />
+<h3 id="mfems-native-multigrid-solver"><i class="fa fa-check-square-o"></i>&nbsp; MFEM's native Multigrid solver</h3>
+<ul>
+<li>
+<p>The previous examples (<code>ex1p</code>, <code>ex2p</code>, <code>ex3p</code>, and <code>ex4p</code>) all used
+  <em>algebraic</em> multigrid methods. MFEM also supports <em>geometric</em> ($h$- and
+  $p$-multigrid) methods.</p>
+</li>
+<li>
+<p>These solvers are illustrated in Example 26 (and its parallel variant); see the
+  <a href="https://github.com/mfem/mfem/blob/master/examples/ex26.cpp">ex26.cpp</a> and <a href="https://github.com/mfem/mfem/blob/master/examples/ex26p.cpp">ex26p.cpp</a> source files.</p>
+</li>
+<li>
+<p>Mesh refinement can be set using the <code>--geometric-refinements</code> (<code>-gr</code>) command
+  line argument.</p>
+</li>
+<li>
+<p>The finite element order can be controlled using the <code>--order-refinements</code>
+  (<code>-or</code>) command line argument.</p>
+</li>
+</ul>
+<div class="panel panel-danger" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+Each additional order refinement increases the order by a factor of 2. This
+quickly becomes computationally expensive, so be careful when increasing the order refinements.
+</div>
+</div>
+
+<ul>
+<li>
+<p>This example runs <strong>matrix-free</strong> using MFEM's <a href="/performance">partial assembly algorithms</a>. Matrix-free methods are <strong>much</strong> more efficient for high-order problems and
+  also work better on GPU architectures.</p>
+</li>
+<li>
+<p>Try comparing the performance of <code>ex1p</code> and <code>ex26p</code> for higher-order
+  problems. For example, compare the run time of the following two runs:</p>
+</li>
+</ul>
+<div class="container" style="width:96%; margin:auto;">
+<pre><code class="java">mpirun -np 8 ./ex26p -m ../data/fichera.mesh -or 2
+mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
+</code></pre>
+
+</div>
+<ul>
+<li>
+<p>Both examples solve a degree-4 Poisson problem with 1,884,545 degrees of
+  freedom, but one of them is significantly faster.</p>
+</li>
+<li>
+<p>Explore how the number of CG iterations changes as <code>-or</code> and <code>-gr</code> are
+  increased. (For large problems, it may be worth running <code>ex26p</code> in parallel
+  with <code>mpirun</code>.)</p>
+</li>
+</ul>
+<hr />
+<h3 id="low-order-refined-methods"><i class="fa fa-check-square-o"></i>&nbsp; Low-order-refined methods</h3>
+<div class="col-md-6">
+<p><img src="../img/solvers3.png" width="240"></p>
+</div>
+<div class="col-md-6">
+<p><img src="../img/solvers4.png" width="240"></p>
+</div>
+<div class="col-md-12" style="padding-left:0;">
+<ul>
+<li>
+<p><a href="#scalable-algebraic-multigrid-preconditioners-from-hypre">Examples 1, 2, 3, and 4</a>
+  used <em>algebraic</em> methods applied to the discretization matrix for
+  each of the problems. <a href="#mfems-native-multigrid-solver">Example 26</a> showed how to use <em>geometric</em>
+  multigrid together with <em>matrix-free</em> methods.</p>
+</li>
+<li>
+<p><em>Low-order-refined</em> (LOR) is an alternative matrix-free methodology for
+  solving these problems. The <strong>LOR solvers</strong> miniapp provides matrix-free solvers for the same problems
+  solved in Examples 1, 3, and 4.</p>
+</li>
+<li>
+<p>Go to the LOR solvers miniapp directory: <code>cd ~/mfem/miniapps/solvers</code></p>
+</li>
+<li>
+<p>Run <code>make plor_solvers</code> to build the parallel LOR solvers miniapp.</p>
+</li>
+<li>
+<p>The <code>--fe-type</code> (or <code>-fe</code>) command line argument can be used to choose the
+  problem type.</p>
+<ul>
+<li>
+<p><code>-fe h</code> solves an $H^1$ problem (Poisson, equivalent to <code>ex1</code>).</p>
+</li>
+<li>
+<p><code>-fe n</code> solves a Nedelec problem (Maxwell in $H(\mathrm{curl})$, equivalent
+  to <code>ex3</code>).</p>
+</li>
+<li>
+<p><code>-fe r</code> solves a Raviart-Thomas problem (grad-div in $H(\mathrm{div})$,
+  equivalent to <code>ex4</code>).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>As usual, the <code>--mesh</code> (<code>-m</code>) argument can be used to choose the mesh file.
+  (Keep in mind that MFEM's meshes in the data directory are now found in
+  <code>../../data</code> relative to the miniapp directory.)</p>
+</li>
+<li>
+<p>The number of mesh refinements in serial and parallel can be controlled with
+  the <code>--refine-serial</code> and <code>--refine-parallel</code> (<code>-rs</code> and <code>-rp</code>) command line
+  arguments</p>
+</li>
+<li>
+<p>The polynomial degree can be controlled with the <code>--order</code> (<code>-o</code>) argument.</p>
+</li>
+<li>
+<p>Compare the performance of high-order problems with <code>plor_solvers</code> to that of
+  Examples 1, 3, and 4. Here are some sample runs to compare:</p>
+</li>
+</ul>
+<pre><code class="java">//  2D, 5th order, 256,800 DOFs
+mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
+mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
+
+// 3D, 2nd order, 2,378,016 DOFs
+mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 2 -no-vis
+mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2
+</code></pre>
+
+<ul>
+<li>For more details on how LOR solvers work in MFEM, see the <em>High-Order Matrix-Free Solvers</em> talk (<a href="../../pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf">PDF</a>, <a href="https://youtu.be/d6Ic9itl21g">video</a>) from the 2021 MFEM community <a href="https://mfem.org/workshop">workshop</a>.</li>
+</ul>
+<hr />
+<h3 id="additional-solver-integrations"><i class="fa fa-check-square-o"></i>&nbsp; Additional solver integrations</h3>
+<p>In addition to the <em>hypre</em> AMG solvers and MFEM's built-in solvers illustrated
+above, MFEM also integrates with a number of third-party solver libraries,
+including:</p>
+<ul>
+<li>
+<p><a href="https://petsc.org/release/">PETSc</a> &mdash; see the <code>~/mfem/examples/petsc</code> directory</p>
+</li>
+<li>
+<p><a href="https://portal.nersc.gov/project/sparse/superlu/">SuperLU</a> &mdash; see the <code>~/mfem/examples/superlu</code> directory</p>
+</li>
+<li>
+<p><a href="https://portal.nersc.gov/project/sparse/strumpack/">STRUMPACK</a> &mdash; see <code>~/mfem/examples/ex11p.cpp</code></p>
+</li>
+<li>
+<p><a href="https://ginkgo-project.github.io">Ginkgo</a> &mdash; see the <code>~/mfem/examples/ginkgo</code> directory</p>
+</li>
+<li>
+<p><a href="https://developer.nvidia.com/amgx">AmgX</a> &mdash; see the <code>~/mfem/examples/amgx</code> directory</p>
+</li>
+</ul>
+<p>These third-party libraries are not pre-installed in the AWS image, but you can still
+peruse the example source code to see the capabilities of the various integrations.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+If you <a href="../further/#install-mfem-glvis-on-your-own-machine">install MFEM locally</a>,
+you can enable these third-party solver library integrations with the <code>MFEM_USE_*</code>
+configuration variables, e.g., by specifying <code>MFEM_USE_PETSC=YES</code>.
+</div>
+</div>
+
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+Depending on your interests pick one of the following lessons:<br>
+<ul>
+<li> <a href="../examples"><i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples</a>
+<li> <a href="../meshvis"><i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization</a>
+<li> <a href="../further"><i class="fa fa-rocket"></i>&nbsp; Further Steps</a>
+</ul>
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+
+</div></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#solvers-and-scalability">&nbsp; Solvers and Scalability</a></li>
+        
+            <li><a href="#scalable-algebraic-multigrid-preconditioners-from-hypre">&nbsp; Scalable algebraic multigrid preconditioners from hypre</a></li>
+        
+            <li><a href="#mfems-native-multigrid-solver">&nbsp; MFEM's native Multigrid solver</a></li>
+        
+            <li><a href="#low-order-refined-methods">&nbsp; Low-order-refined methods</a></li>
+        
+            <li><a href="#additional-solver-integrations">&nbsp; Additional solver integrations</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

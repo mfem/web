@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#getting-started">&nbsp; Getting Started</a></li>
+        
+            <li><a href="#set-up-vs-code">&nbsp; Set up VS Code</a></li>
+        
+            <li><a href="#set-up-glvis">&nbsp; Set up GLVis</a></li>
+        
+            <li><a href="#simple-test">&nbsp; Simple test</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="getting-started"><i class="fa fa-play-circle"></i>&nbsp; Getting Started</h2>
+<p><span class="label label-default">15 minutes</span>
+<span class="label label-default">basic</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Setup a browser-based MFEM development environment.<br>
+<i class="fa fa-square-o"></i>&nbsp; Run a simple MFEM code to test the environment.
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+You should have received an email with the AWS instance IP address allocated to
+you for this tutorial. Use that in place of <code>IP</code> in the instructions below.
+</div>
+</div>
+
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+If you use VPN, make sure to <b>turn it off</b> before following the instructions below.
+</div>
+</div>
+
+<hr />
+<h3 id="set-up-vs-code"><i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code</h3>
+<ul>
+<li>
+<p>Open a new browser window and load <code>http://IP:3000</code>.</p>
+</li>
+<li>
+<p>You should see the Visual Studio Code (VS Code) interface.</p>
+</li>
+<li>
+<p>Click on <code>Mark Done</code> to continue.</p>
+</li>
+</ul>
+<p><img class="tight" src="../img/start1.png"></p>
+<ul>
+<li>
+<p>Click on <code>open a folder</code> (under <code>Recent</code>), then select <code>mfem</code>, then click <code>OK</code>.</p>
+</li>
+<li>
+<p>In the left pane, open <code>examples</code> and select <code>ex1.cpp</code>.</p>
+</li>
+<li>
+<p>Open a new terminal by clicking on &nbsp;<i class="fa fa-bars"></i>&nbsp; in the upper left corner, then <code>Terminal</code>, and then <code>New Terminal</code>.</p>
+</li>
+<li>
+<p>Alternatively you can open a new terminal by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>.</p>
+</li>
+<li>
+<p>You should now see the MFEM source tree and a terminal in the <code>~/mfem</code> directory.</p>
+</li>
+</ul>
+<p><img class="tight" src="../img/start2.png"></p>
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The browser window contains a fully functioning copy of Visual Studio Code. You can customize it further,
+and adjust it similarly to the desktop version.
+</div>
+</div>
+
+<hr />
+<h3 id="set-up-glvis"><i class="fa fa-check-square-o"></i>&nbsp; Set up GLVis</h3>
+<p>In this tutorial we use <a href="https://glvis.org">GLVis</a> for finite element visualization based on MFEM.</p>
+<ul>
+<li>
+<p>Open a new browser window and load <code>http://IP:8000/live</code>.</p>
+</li>
+<li>
+<p>When you move the mouse to the top of the window you should see the GLVis interface:</p>
+</li>
+</ul>
+<p><img class="tight" src="../img/start3.png"></p>
+<ul>
+<li>Click on the <strong>Connect to socket</strong> icon <img style="display: inline; height:30pt; vertical-align: center;" src="../img/mdi-lan-connect.png"> in the upper left corner, then click <code>CONNECT</code>.</li>
+</ul>
+<div class="panel panel-info" style="width:92%; margin-top: -15pt; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog matches your <code>IP</code>.
+</div>
+</div>
+
+<ul>
+<li>
+<p>When the button switches to <code>DISCONNECT</code>, click outside of the <strong>Connect to socket</strong> dialog to close it.</p>
+</li>
+<li>
+<p>Your environment should now look like:</p>
+</li>
+</ul>
+<p><img style="width:90%" src="../img/start4.png"></p>
+<hr />
+<h3 id="simple-test"><i class="fa fa-check-square-o"></i>&nbsp; Simple test</h3>
+<ul>
+<li>
+<p>To test your environment, run <code>ex1p</code>, which together with the MFEM library itself,
+  comes pre-build in the AWS image.</p>
+</li>
+<li>
+<p>In the VS Code terminal, type</p>
+<pre><code>euler@IP:~/mfem$ cd examples
+euler@IP:~/mfem/examples$ ./ex1
+</code></pre>
+</li>
+<li>
+<p>You should see <code>111</code> iterations printed in the terminal and the image in the
+GLVis window should change:</p>
+</li>
+</ul>
+<p><img style="width:90%" src="../img/start5.png"></p>
+<ul>
+<li>To test the visualization, click in the GLVis window, and make sure you can
+rotate the plot with the <kbd>Left</kbd> mouse button and zoom in/out with the
+<kbd>Right</kbd> mouse button.</li>
+</ul>
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body">
+Go to the <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> page.
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#getting-started">&nbsp; Getting Started</a></li>
+        
+            <li><a href="#set-up-vs-code">&nbsp; Set up VS Code</a></li>
+        
+            <li><a href="#set-up-glvis">&nbsp; Set up GLVis</a></li>
+        
+            <li><a href="#simple-test">&nbsp; Simple test</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

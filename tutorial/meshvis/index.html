@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#meshing-and-visualization">&nbsp; Meshing and Visualization</a></li>
+        
+            <li><a href="#importing-meshes-from-gmsh-and-cubit">&nbsp; Importing meshes from Gmsh and Cubit</a></li>
+        
+            <li><a href="#mfems-meshing-tools">&nbsp; MFEM's meshing tools</a></li>
+        
+            <li><a href="#visualizing-results-in-visit-and-paraview">&nbsp; Visualizing results in VisIt and ParaView</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="meshing-and-visualization"><i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization</h2>
+<p><span class="label label-default">30 minutes</span>
+<span class="label label-default">intermediate</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Learn about external mesh generators that can be used with MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn about MFEM's internal meshing tools.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn about external visualization tools that can be used with MFEM.
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Please complete the <a href="../start"><i class="fa fa-play-circle"></i>&nbsp; Getting Started</a>
+and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages before this lesson.
+</div>
+</div>
+
+<hr />
+<h3 id="importing-meshes-from-gmsh-and-cubit"><i class="fa fa-check-square-o"></i>&nbsp; Importing meshes from Gmsh and Cubit</h3>
+<p>First, we will demonstrate the common steps necessary for generating high-quality meshes in <a href="https://gmsh.info/">Gmsh</a> and <a href="https://cubit.sandia.gov/">Cubit</a> and how to use them in finite element simulations with MFEM.</p>
+<p>Gmsh is an open-source, freely available mesh generation tool with built-in computer-aided design (CAD) functionality and a postprocessor. The input to Gmsh can be a simple text file that provides a description of the geometry of the finite element model. The geometry can be generated using the Gmsh graphical user interface (GUI), simple text editors such as Vi/Vim/Emacs, or using more sophisticated CAD tools such as SolidWorks or Autocad. CAD models in IGES or STEP formats can be imported by the CAD engine of Gmsh, meshed, and prepared as inputs to the MFEM examples. Here, however, we focus on simpler examples showing the process of generating meshes suitable for MFEM and not on the actual geometry. </p>
+<p>Many examples together with documentation on the input syntax can be found at the <a href="https://gmsh.info/">Gmsh website</a>. Users familiar with Gmsh can skip the first steps and <a href="../cross_heat.geo">download</a> already prepared geometries for meshing. If Gmsh is not installed on your local machine, please download it and follow the installation <a href="https://gmsh.info/">instructions</a>. </p>
+<p>We will start with the definitions of a cube with edge length L=1 and two cylinders with a radius L/10 and heights equal to L. The following snippets define the above objects, and a screenshot of the GUI of GMSH with the generated objects is shown below.</p>
+<pre><code class="diff">SetFactory(&quot;OpenCASCADE&quot;);
+
+Mesh.Algorithm = 6;
+Mesh.CharacteristicLengthMin = 0.1;
+Mesh.CharacteristicLengthMax = 0.1;
+
+L=1.0;
+
+Box(1) = {0,0,0,L,L,L};
+
+Rc=L/10;
+Cylinder(2) = {L/8, 0.0, L/4, 0, L, 0, Rc , 2*Pi};
+Cylinder(3) = {4*L/8, 0.0, L/4, 0, L, 0, Rc , 2*Pi};
+</code></pre>
+
+<p><img style="width:90%" src="../img/gmsh01.png"></p>
+<p>The first line in the Gmsh input file defines the geometric engine. Here it is assumed that Gmsh is compiled with CAD support. Such precompiled binaries for Windows, Mac, and Linux can be downloaded from the <a href="https://gmsh.info/">Gmsh website</a>. The next three lines define the mesh algorithm, which will be used later for generating the mesh and the associated characteristic length scale. Finer or coarser meshes can be obtained by adjusting these numbers. The following line defines a parameter L which is utilized in the definition of the cube. A parameter R defines the radius of the base of the two cylinders. The final geometry, which will be used for simulations, is obtained by subtracting the two cylinders from the cube as:</p>
+<pre><code class="diff">BooleanDifference(50) = { Volume{1}; Delete; }{ Volume{2,3}; Delete; };
+</code></pre>
+
+<p>Gmsh uses the obtained geometry for generating the mesh. However, without additional specifications, we cannot impose boundary conditions without any attributes assigned to the boundaries. Different attributes can be assigned to the volumetric part of the mesh for using different material coefficients within the domain. Here, however, we use only a single attribute, as the first example uses only a single diffusion coefficient.</p>
+<pre><code class="diff">Physical Volume(1) = {50};
+Physical Surface(1) = {1,6,8};
+
+Mesh.MshFileVersion = 2.2;
+</code></pre>
+
+<p>The first line from the above snippet defines physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the Boolean operation. The second line defines physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last line specifies the file format. Note that MFEM can only read ASCII Gmsh format version 2.2.</p>
+<p><img style="width:60%" src="../img/gmsh02.png"> 
+<img style="width:60%" src="../img/gmsh03.png"></p>
+<p>The generated mesh is shown in the figures above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by refining the mesh. We encourage you to play with the mesh and to generate finer discretizations for the simulations.  </p>
+<p>You can download the Gmsh input file <a href="../cross_heat.geo">here</a> and the mesh <a href="../cross_heat.msh">here</a>. For users without access to the Gmsh GUI, a mesh can be generated in your local terminal with the following command:</p>
+<pre><code class="diff">gmsh -3 cross_heat.geo
+</code></pre>
+
+<p>To run simulations with the generated mesh, drag-and-drop the mesh file from your computer to the AWS browser window in the MFEM <code>examples</code> directory. To run Example 1 with the newly prepared mesh, be sure you are in the <code>examples</code> directory and then run the appropriate command:</p>
+<pre><code class="diff">mpirun -np 24 ./ex1p -m cross_heat.geo
+mpirun -np 24 ./ex1p -m cross_heat.msh
+</code></pre>
+
+<p>The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-visit-and-paraview">end</a>   of this tutorial session.</p>
+<p><img style="width:60%" src="../img/parav00002.png"></p>
+<p>If we want to enforce Dirichlet boundary conditions different than zero on some other surface, we must export it as a physical surface. For example, to enforce value one on the other cylindrical surface, add the following line to the <code>cross_heat.geo</code> file:</p>
+<pre><code class="diff">Physical Surface(2) = {7};
+</code></pre>
+
+<p>The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the boolean operation defining the final geometry. </p>
+<p>If we run <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a> without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, modify section 10 in <a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>:</p>
+<pre><code class="c++">   // 10. Define the solution vector x as a parallel finite element grid
+   //     function corresponding to fespace. Initialize x with initial guess of
+   //     zero, which satisfies the boundary conditions.
+   ParGridFunction x(&amp;fespace);
+   x = 0.0;
+   {
+      Array&lt;int&gt; ess_bdr(pmesh.bdr_attributes.Max());
+      ess_bdr = 0;
+      ess_bdr[1] = 1;
+      ConstantCoefficient zero(0.0);
+      Coefficient* coeff[1];
+      coeff[0]=&amp;one;
+      x.ProjectBdrCoefficient(coeff,ess_bdr);
+   }
+</code></pre>
+
+<p>In the above snippet, we project coefficient one on the degrees of freedom associated with physical surface 2 (in C/C++, the indexing starts at zero). Executing the modified code with the newly created mesh will result in the following solution:</p>
+<p><img style="width:60%" src="../img/parav00003.png"></p>
+<p>The results can be seen in the GlVis windows as well. However, the users will see only the defined physical surfaces (1,2) and the boundaries between the parallel partitions. Any 2D cuts will work as usual. </p>
+<p>MFEM can import meshes saved in Exodus II format generated with <a href="https://cubit.sandia.gov/">Cubit</a>. However, this feature requires compilation of the library with HDF5, NetCDF, and Exodus, which is not currently available on the AWS machines. </p>
+<hr />
+<h3 id="mfems-meshing-tools"><i class="fa fa-check-square-o"></i>&nbsp; MFEM's meshing tools</h3>
+<ul>
+<li>Mesh Explorer</li>
+<li>Mesh Optimizer</li>
+<li>Shaper</li>
+</ul>
+<hr />
+<h3 id="visualizing-results-in-visit-and-paraview"><i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and ParaView</h3>
+<p>To save the simulation results from the parallel version of Example 1 (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>) in ParaView format, add the following lines just before step 17 in the file.</p>
+<pre><code class="c++">   {
+      ParaViewDataCollection *pd = NULL;
+      pd = new ParaViewDataCollection(&quot;Example1P&quot;, &amp;pmesh);
+      pd-&gt;SetPrefixPath(&quot;ParaView&quot;);
+      pd-&gt;RegisterField(&quot;solution&quot;, &amp;x);
+      pd-&gt;SetLevelsOfDetail(order);
+      pd-&gt;SetDataFormat(VTKFormat::BINARY);
+      pd-&gt;SetHighOrderOutput(true);
+      pd-&gt;SetCycle(0);
+      pd-&gt;SetTime(0.0);
+      pd-&gt;Save();
+      delete pd;
+   }
+</code></pre>
+
+<p>The first line defines a <code>ParaViewDataCollection</code> for saving data in ParaView data format. The following two lines define the name of the data collection and the prefix path, which is set to ParaView. Thus, the data set will be written in the directory <code>ParaView</code> relative to the current execution path. The following line registers the <code>ParGridFunction x</code> in the data collection. The remaining lines set different parameters for the format and the data set, and finally, the set is saved and deleted. See <a href="https://mfem.org/dox/">MFEM documentation</a> for more detailed information about ParaView. </p>
+<p>Compile and execute the modified example.</p>
+<p>To download the results saved in ParaView format to your local machine, compress and gather all files in a single archive with the following command:</p>
+<pre><code class="diff">tar cvfz paraview.tgz ParaView/
+</code></pre>
+
+<p>which will generate the file <code>paraview.tgz</code> in the current directory. Download the file via the Explorer window, then go to the download directory and extract the archive: </p>
+<pre><code class="diff">tar vxfz paraview.tgz ParaView/
+</code></pre>
+
+<p>The above assumes a UNIX type of environment. Windows users could use the GUI or WSL/WSL2 engines.  </p>
+<p><a href="https://www.paraview.org/">ParaView</a> can be freely downloaded both as a source code or precompiled binaries. The precompiled binaries are available for Linux, macOS, and Windows. Please follow the instructions for the corresponding operating system for installation instructions.</p>
+<p>To visualize the downloaded simulation data, run ParaView and open the file <code>Example1P.pvd</code> in the <code>ParaView/Example1P</code> directory, where the path is relative to the directory where the archive was downloaded. Next, click on the Apply button and select Solution in the drop-down menu in the second row of buttons. The geometry, together with the solution, can be rotated on the screen by holding and dragging the mouse. </p>
+<p><img style="width:80%" src="../img/parav00004.png"></p>
+<p>Replacing <code>ParaviewDataCollection</code> with <code>VisItDataCollection</code> allows you to write data in VisIt data format. <a href="https://visit-dav.github.io/visit-website/">VisIt</a> can be freely downloaded and installed on Linux, macOS, and Windows and provides another alternative to ParaView. The steps for downloading and the simulation data are the same as the steps outlined above for ParaView.</p>
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+Depending on your interests pick one of the following lessons:<br>
+<ul>
+<li> <a href="../examples"><i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples</a>
+<li> <a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+<li> <a href="../further"><i class="fa fa-rocket"></i>&nbsp; Further Steps</a>
+</ul>
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#meshing-and-visualization">&nbsp; Meshing and Visualization</a></li>
+        
+            <li><a href="#importing-meshes-from-gmsh-and-cubit">&nbsp; Importing meshes from Gmsh and Cubit</a></li>
+        
+            <li><a href="#mfems-meshing-tools">&nbsp; MFEM's meshing tools</a></li>
+        
+            <li><a href="#visualizing-results-in-visit-and-paraview">&nbsp; Visualizing results in VisIt and ParaView</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

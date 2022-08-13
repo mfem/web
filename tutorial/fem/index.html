@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#finite-element-basics">&nbsp; Finite Element Basics</a></li>
+        
+            <li><a href="#poisson-equation">&nbsp; Poisson Equation</a></li>
+        
+            <li><a href="#annotated-example-1">&nbsp; Annotated Example 1</a></li>
+        
+            <li><a href="#parallel-example-1p">&nbsp; Parallel Example 1p</a></li>
+        
+            <li><a href="#serial-and-parallel-runs">&nbsp; Serial and parallel runs</a></li>
+        
+            <li><a href="#glvis-interface">&nbsp; GLVis interface</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="finite-element-basics"><i class="fa fa-book"></i>&nbsp; Finite Element Basics</h2>
+<p><span class="label label-default">45 minutes</span>
+<span class="label label-default">basic</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Understand a basic finite element discretization of the Poisson equation in MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to launch serial and parallel runs of MFEM examples.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to visualize the results of MFEM simulations.
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Please complete the <a href="../start"><i class="fa fa-play-circle"></i>&nbsp; Getting Started</a>
+page before this lesson.
+</div>
+</div>
+
+<hr />
+<h3 id="poisson-equation"><i class="fa fa-check-square-o"></i>&nbsp; Poisson Equation</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Poisson's_equation"><em>Poisson Equation</em></a> is a
+partial differential equation (PDE) that can be used to model steady-state heat
+conduction, electric potentials, and gravitational fields. In mathematical terms</p>
+<p>$$
+-\Delta u = f
+$$</p>
+<p>where <em>u</em> is the potential field and <em>f</em> is the source function. This PDE is a
+generalization of the <a href="https://en.wikipedia.org/wiki/Laplace%27s_equation"><em>Laplace Equation</em></a>.</p>
+<p>To approximately solve the above continuous equation on computers, we need to
+<a href="https://en.wikipedia.org/wiki/Discretization">discretize</a> it by introducing a
+finite (discrete) number of unknowns to compute for. In the
+<a href="https://en.wikipedia.org/wiki/Finite_element_method"><em>Finite Element Method</em></a> (FEM),
+this is done using the concept of <em>basis functions</em>.</p>
+<p>Instead of calculating the exact analytic solution <em>u</em>, we approximate it</p>
+<p>$$
+u \approx u_h := \sum_{j=1}^n c_j \varphi_j
+$$</p>
+<p>where $u_h$ is the finite element approximation with degrees of freedom (unknown
+coefficients) $c_j$, and $\varphi_j$ are known <em>basis functions</em>. The FEM basis
+functions are typically piecewise-polynomial functions on a given computational mesh,
+which are only non-zero on small portions of the mesh.</p>
+<p><img src="../img/fem1.png" width="300"></p>
+<p>With finite elements, the mesh can be totally unstructured, curved, and
+non-conforming:</p>
+<p><img src="../img/fem2.png" width="300"></p>
+<p>To solve for the unknown coefficients, we multiply Poisson's equation by another
+(test) basis function $\varphi_i$ and integrate by parts to obtain</p>
+<p>$$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$</p>
+<p>for every basis function $\varphi_i$. (Here we are assuming homogeneous
+Dirichlet boundary conditions corresponding, for example, to zero temperature on
+the whole boundary.)</p>
+<p>Since the basis functions are known, we can rewrite (3) as</p>
+<p>$$
+A x = b
+$$</p>
+<p>where</p>
+<p>$$
+A_{ij} = \int_\Omega \nabla \varphi_j \cdot \nabla \varphi_i
+$$</p>
+<p>$$
+b_i = \int_\Omega f \varphi_i
+$$</p>
+<p>$$
+x_j = c_j
+$$</p>
+<p>This is a $n \times n$ linear system that can be solved directly or iteratively
+for the unknown coefficients. Note that we are free to choose the computational
+mesh and the basis functions $\varphi_i$, and therefore the finite space, as we
+see fit.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The above is a basic introduction to finite elements in the simplest possible settings.
+To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</a> page.
+</div>
+</div>
+
+<hr />
+<h3 id="annotated-example-1"><i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 1</h3>
+<p>MFEM's Example 1 implements the above simple FEM for the Poisson problem
+in the source file <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">examples/ex1.cpp</a>.
+We set $f=1$ in (1) and enforce homogeneous Dirichlet boundary conditions on the whole boundary.</p>
+<p>Below we highlight selected portions of the example code and connect them with
+the description in the previous section. You can follow along by browsing
+<code>ex1.cpp</code> in your VS Code browser window. In the settings of this tutorial, the
+visualization will automatically update in the GLVis browser window.</p>
+<p>The computational mesh is provided as input (option <code>-m</code>), it could be 3D, 2D,
+surface, hex/tet, etc. The following code
+(lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L137">120-137</a>)
+loads the mesh from the given file, <code>mesh_file</code>; creates the corresponding
+MFEM object <code>mesh</code> of class <code>Mesh</code>; and refines the mesh uniformly to about
+50,000 elements. You can easily modify the refinement by changing the definition of <code>ref_levels</code>.</p>
+<pre><code class="c++">Mesh mesh(mesh_file, 1, 1);
+int dim = mesh.Dimension();
+
+int ref_levels = (int)floor(log(50000./mesh.GetNE())/log(2.)/dim);
+for (int l = 0; l &lt; ref_levels; l++)
+{
+   mesh.UniformRefinement();
+}
+</code></pre>
+
+<p>In the next section we create the finite element space, i.e., specify the finite
+element basis functions $\varphi_j$ on the mesh. This involves the MFEM classes
+<code>FiniteElementCollection</code>, which specifies the space (including its <code>order</code>,
+provided as input via <code>-o</code>), and <code>FiniteElementSpace</code>, which connects the space
+and the mesh.</p>
+<p>Focusing on the common case <code>order &gt; 0</code>, the code in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L139-L162">139-162</a>
+is essentially:</p>
+<pre><code class="c++">FiniteElementCollection *fec = new H1_FECollection(order, dim);
+FiniteElementSpace fespace(&amp;mesh, fec);
+cout &lt;&lt; &quot;Number of finite element unknowns: &quot; &lt;&lt; fespace.GetTrueVSize() &lt;&lt; endl;
+</code></pre>
+
+<p>The printed number of finite element unknowns (typically) corresponds to the
+size of the linear system $n$ from the previous section.</p>
+<p>The finite element degrees of freedom that are on the domain boundary are then
+extracted in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L164-L174">164-174</a>.
+We need those to impose the Dirichlet boundary conditions.</p>
+<pre><code class="c++">Array&lt;int&gt; ess_tdof_list;
+if (mesh.bdr_attributes.Size())
+{
+   Array&lt;int&gt; ess_bdr(mesh.bdr_attributes.Max());
+   ess_bdr = 1;
+   fespace.GetEssentialTrueDofs(ess_bdr, ess_tdof_list);
+}
+</code></pre>
+
+<p>The method <code>GetEssentialTrueDofs</code> takes a marker array of <code>Mesh</code> boundary
+attributes and returns the <code>FiniteElementSpace</code> degrees of freedom that belong
+to the marked attributes (the non-zero entries of <code>ess_bdr</code>).</p>
+<p>The right-hand side $b$ is constructed in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L176-L182">176-182</a>.
+In MFEM terminology, integrals of the form (6) are implemented in the
+class <code>LinearForm</code>. The <code>Coefficient</code> object corresponds to $f$ from the
+previous section, which here is set to $1$. You can easily specify more general
+$f$ with other coefficient classes, e.g., <code>FunctionCoefficient</code>.</p>
+<pre><code class="c++">LinearForm b(&amp;fespace);
+ConstantCoefficient one(1.0);
+b.AddDomainIntegrator(new DomainLFIntegrator(one));
+b.Assemble();
+</code></pre>
+
+<p>The finite element approximation $u_h$ is described in MFEM as a <code>GridFunction</code>
+belonging to the <code>FiniteElementSpace</code>. Note that a <code>GridFunction</code> object can be
+viewed both as the function $u_h$ in (2) as well as the vector of degrees of
+freedom $x$ in (7). See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L184-L188">184-188</a>.</p>
+<pre><code class="c++">GridFunction x(&amp;fespace);
+x = 0.0;
+</code></pre>
+
+<p>We need to initialize <code>x</code> with the boundary values we want to impose as Dirichlet
+boundary conditions (for simplicity, here we just set <code>x=0</code> in the whole domain).</p>
+<p>The matrix $A$ is represented as a <code>BilinearForm</code> object, with a specific
+<code>DiffusionIntegrator</code> corresponding to the weak form (5). See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L203">190-203</a>.</p>
+<pre><code class="c++">BilinearForm a(&amp;fespace);
+if (pa) { a.SetAssemblyLevel(AssemblyLevel::PARTIAL); }
+if (fa) { a.SetAssemblyLevel(AssemblyLevel::FULL); }
+a.AddDomainIntegrator(new DiffusionIntegrator(one));
+a.Assemble();
+</code></pre>
+
+<p>MFEM supports different assembly levels for $A$ (from global matrix to
+matrix-free) and many different <a href="https://mfem.org/bilininteg/">integrators</a>.
+You can also provide a variety of coefficients to the integrator, for example,
+<code>PWConstCoefficient</code> to specify different material properties in different
+portions of the domain.</p>
+<p>The linear system (4) is formed in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L205-L207">205-207</a>
+and solved with a variety of options in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L211-L245">211-245</a>.
+One simple case is:</p>
+<pre><code class="c++">OperatorPtr A;
+Vector B, X;
+
+a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
+cout &lt;&lt; &quot;Size of linear system: &quot; &lt;&lt; A-&gt;Height() &lt;&lt; endl;
+
+GSSmoother M((SparseMatrix&amp;)(*A));
+PCG(*A, M, B, X, 1, 200, 1e-12, 0.0);
+</code></pre>
+
+<p>The method <code>FormLinearSystem</code> takes the <code>BilinearForm</code>, <code>LinearForm</code>,
+<code>GridFunction</code>, and boundary conditions (i.e., <code>a</code>, <code>b</code>, <code>x</code>, and <code>ess_tdof_list</code>);
+applies any necessary transformations such as eliminating boundary conditions
+(specified by the boundary values of <code>x</code>, applying conforming constraints for
+non-conforming AMR, static condensation, etc.); and produces the corresponding
+matrix $A$, right-hand side vector $B$, and unknown vector $X$.</p>
+<p>In the above example, we then solve <code>A X = B</code> with a
+<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method">conjugate gradient</a> iteration,
+using a simple <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method">Gauss-Seidel</a>
+preconditioner. We set the maximum number of iterations to <code>200</code> and a convergence
+criteria of residual norm reduction by 6 orders of magnitude (<code>1e-12</code> is the square of
+that relative tolerance).</p>
+<p>Solving the linear system is one of the main computational bottlenecks
+in the FEM. It can take many preconditioned conjugate gradient (PCG) iterations
+depending on the problem size, the difficulty of the problem, and the choice of the
+preconditioner.</p>
+<p>Once the linear system is solved, we recover the solution as a finite element
+grid function, and then visualize and save the final results to disk (files
+<code>refined.mesh</code> and <code>sol.gf</code>). See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L247-L267">247-267</a>.</p>
+<pre><code class="c++">a.RecoverFEMSolution(X, b, x);
+
+ofstream mesh_ofs(&quot;refined.mesh&quot;);
+mesh.Print(mesh_ofs);
+ofstream sol_ofs(&quot;sol.gf&quot;);
+x.Save(sol_ofs);
+
+socketstream sol_sock(&quot;localhost&quot;, 19916);
+sol_sock &lt;&lt; &quot;solution\n&quot; &lt;&lt; mesh &lt;&lt; x &lt;&lt; flush;
+</code></pre>
+
+<hr />
+<h3 id="parallel-example-1p"><i class="fa fa-check-square-o"></i>&nbsp; Parallel Example 1p</h3>
+<p>Like most MFEM examples, Example 1 has also a parallel version in the source file
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">examples/ex1p.cpp</a>, which
+illustrates the ease of transition between sequential and MPI-parallel code. The
+parallel version supports all options of the serial example, and can be executed
+on varying numbers of MPI ranks, e.g., with <code>mpirun -np</code>. Besides MPI, in parallel
+we also depend on METIS for mesh partitioning and <a href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"><em>hypre</em></a> for solvers.</p>
+<p>The differences between the two versions are small, and you can compare them for
+yourself by opening both files in your VS Code window.</p>
+<p>The main additions in <code>ex1p.cpp</code> compared to <code>ex1.cpp</code> are:</p>
+<p><em>Initializing MPI and hypre</em></p>
+<pre><code class="c++">Mpi::Init();
+Hypre::Init();
+</code></pre>
+
+<p><em>Splitting the serial mesh in parallel with additional parallel refinement</em></p>
+<pre><code class="c++">ParMesh pmesh(MPI_COMM_WORLD, mesh);
+int par_ref_levels = 2;
+for (int l = 0; l &lt; par_ref_levels; l++)
+{
+   pmesh.UniformRefinement();
+}
+</code></pre>
+
+<p><em>Using the <code>Par</code>-prefixed versions of the classes</em></p>
+<pre><code class="c++">ParFiniteElementSpace fespace(&amp;pmesh, fec);
+ParLinearForm b(&amp;fespace);
+ParGridFunction x(&amp;fespace);
+ParBilinearForm a(&amp;fespace);
+</code></pre>
+
+<p><em>Parallel PCG with hypre's algebraic multigrid BoomerAMG preconditioner</em></p>
+<pre><code class="c++">Solver *prec = new HypreBoomerAMG;
+CGSolver cg(MPI_COMM_WORLD);
+cg.SetRelTol(1e-12);
+cg.SetMaxIter(2000);
+cg.SetPrintLevel(1);
+cg.SetPreconditioner(*prec);
+cg.SetOperator(*A);
+cg.Mult(B, X);
+</code></pre>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Unlike in the serial version, we expect the number of PCG iterations to remain
+relatively bounded with the <code>BoomerAMG</code> preconditioner independent of
+the mesh size, coefficient jumps, and number of MPI ranks. Note, however, that
+algebraic multigrid has a non-trivial setup phase, which can be comparable in
+terms of time with the PCG solve phase.
+</div> </div>
+
+<hr />
+<h3 id="serial-and-parallel-runs"><i class="fa fa-check-square-o"></i>&nbsp; Serial and parallel runs</h3>
+<p>Both <code>ex1</code> and <code>ex1p</code> come pre-built in the tutorial environment. You can see a
+number of sample runs at the beginning of their corresponding source files when
+you open them in VS Code.</p>
+<p>To get a feel for how these examples work, you can copy and paste some of these
+runs from the source to the terminal in VS Code. For example try these runs in the
+VS Code terminal.</p>
+<pre><code class="java">./ex1 -m ../data/escher.mesh
+./ex1 -m ../data/l-shape.mesh
+./ex1 -m ../data/mobius-strip.mesh
+</code></pre>
+
+<p><img alt="" src="../img/fem3.png" /></p>
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+The current directory is not in the VS Code <code>PATH</code> so make
+sure to add <code>./</code> before the executable, e.g.,
+<code>./ex1 -m ../data/pipe-nurbs.mesh</code> not
+<code>ex1 -m ../data/pipe-nurbs.mesh</code>.
+</div>
+</div>
+
+<p>Here are some sample parallel runs:</p>
+<pre><code class="java">mpirun -np 16 ex1p
+mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
+mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+</code></pre>
+
+<p><img alt="" src="../img/fem4.png" /></p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The GLVis visualization is local to your browser, so it may take a while 
+to update after a sample run. Once the data arrives, interaction with
+the visualization window should be fast.
+</div>
+</div>
+
+<hr />
+<h3 id="glvis-interface"><i class="fa fa-check-square-o"></i>&nbsp; GLVis interface</h3>
+<p><a href="https://glvis.org">GLVis</a> is a lightweight tool for accurate and flexible
+finite element visualization based on MFEM. In this tutorial we use its web
+version, which should work on any machine with a modern browser, including mobile
+touch devices such as tablets and phones.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The GLVis and VS Code browser windows do not need to be on the same device.
+For example, you can run VS Code on a computer, while GLVis shows the results
+on your phone/tablet.
+</div>
+</div>
+
+<p>GLVis natively understands finite element data and can manipulate it in various
+ways through the web interface or by typing (case sensitive) keystrokes in the
+GLVis window.</p>
+<p>To access the web interface, move to the top right of the GLVis window and press
+the <code>Visualization controls</code> icon <i class="fa fa-gear"></i>. This will open a
+number of buttons for controlling the mesh, colors, and position of the plot:</p>
+<p><img alt="" src="../img/fem5.png" /></p>
+<p>You can perform additional operations with the GLVis key commands and mouse
+functions. Most of them are described in the <code>Help</code> window that appears when
+clicking the <i class="fa fa-question"></i> icon in the upper left corner, or
+by pressing the <kbd>h</kbd> key.</p>
+<p>Some of the more useful key commands and mouse functions are:</p>
+<ul>
+<li><kbd>A</kbd> &mdash; Turn on/off the use of anti-aliasing/multi-sampling</li>
+<li><kbd>b</kbd> &mdash; Toggle the boundary in 2D scalar mode</li>
+<li><kbd>c</kbd> &mdash; Show/hide color bar</li>
+<li><kbd>F11</kbd> / <kbd>F12</kbd> &mdash; Shrink/Zoom parallel subdomains</li>
+<li><kbd>g</kbd> &mdash; Toggle background color (white/black)</li>
+<li><kbd>i</kbd> &mdash; Toggle cutting plane</li>
+<li><kbd>j</kbd> &mdash; Turn on/off perspective</li>
+<li><kbd>Left</kbd> &mdash; Rotate the plot</li>
+<li><kbd>Left</kbd> + <kbd>Shift</kbd> &mdash; Spin the plot (according to the dragging vector)</li>
+<li><kbd>m</kbd> &mdash; Toggle the mesh state.</li>
+<li><kbd>p</kbd> / <kbd>P</kbd> &mdash; Cycle through color palettes (lots of options)</li>
+<li><kbd>r</kbd> &mdash; Reset the plot to 3D view</li>
+<li><kbd>R</kbd> &mdash; Cycle through 2D projections (looking above/below in <code>x</code>/<code>y</code>/<code>z</code> directions)</li>
+<li><kbd>Right</kbd> &mdash; Zoom in/out</li>
+<li><kbd>S</kbd> &mdash; Take an image snapshot</li>
+<li><kbd>space</kbd> &mdash; Pause solution update in time-dependent simulations</li>
+<li><kbd>t</kbd> &mdash; Cycle materials and lights</li>
+<li><kbd>x</kbd> / <kbd>X</kbd> &mdash; Rotate cutting plane (<code>\phi</code>) in 3D</li>
+<li><kbd>y</kbd> / <kbd>Y</kbd> &mdash; Rotate cutting plane (<code>\theta</code>) in 3D</li>
+<li><kbd>z</kbd> / <kbd>Z</kbd> &mdash; Translate cutting plane in 3D</li>
+</ul>
+<p>For more details, see the full list of
+<a href="https://github.com/GLVis/glvis/blob/master/README.md#key-commands">key commands</a> and
+<a href="https://github.com/GLVis/glvis/blob/master/README.md#mouse-functions">mouse functions</a>
+in the GLVis <a href="https://github.com/GLVis/glvis/blob/master/README.md">README</a>.</p>
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+If the GLVis window becomes unresponsive, try
+<a href="../start/#set-up-glvis">disconnecting and connecting</a> again.
+If this doesn't help,
+run the following in the VS Code terminal:
+<code>pkill -f glvis-browser-server</code>, then force-reload the GLVis
+browser window and <a href="../start/#set-up-glvis">connect</a> again.
+</div>
+</div>
+
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+Depending on your interests pick one of the following lessons:<br>
+<ul>
+<li> <a href="../examples"><i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples</a>
+<li> <a href="../meshvis"><i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization</a>
+<li> <a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+</ul>
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#finite-element-basics">&nbsp; Finite Element Basics</a></li>
+        
+            <li><a href="#poisson-equation">&nbsp; Poisson Equation</a></li>
+        
+            <li><a href="#annotated-example-1">&nbsp; Annotated Example 1</a></li>
+        
+            <li><a href="#parallel-example-1p">&nbsp; Parallel Example 1p</a></li>
+        
+            <li><a href="#serial-and-parallel-runs">&nbsp; Serial and parallel runs</a></li>
+        
+            <li><a href="#glvis-interface">&nbsp; GLVis interface</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#tour-of-mfem-examples">&nbsp; Tour of MFEM Examples</a></li>
+        
+            <li><a href="#high-order-methods">&nbsp; High-order methods</a></li>
+        
+            <li><a href="#discontinuous-galerkin">&nbsp; Discontinuous Galerkin</a></li>
+        
+            <li><a href="#nonlinear-elasticity">&nbsp; Nonlinear elasticity</a></li>
+        
+            <li><a href="#adaptive-mesh-refinement">&nbsp; Adaptive mesh refinement</a></li>
+        
+            <li><a href="#complex-valued-problems">&nbsp; Complex-valued problems</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="tour-of-mfem-examples"><i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples</h2>
+<p><span class="label label-default">30 minutes</span>
+<span class="label label-default">intermediate</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Learn about MFEM's main features through several of the examples included with the library. <br>
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Please complete the <a href="../start"><i class="fa fa-play-circle"></i>&nbsp; Getting Started</a>
+and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages before this lesson.
+</div>
+</div>
+
+<hr />
+<h3 id="high-order-methods"><i class="fa fa-check-square-o"></i>&nbsp; High-order methods</h3>
+<ul>
+<li>
+<p>MFEM includes support for the full <a href="https://en.wikipedia.org/wiki/De_Rham_cohomology"><em>de Rham complex</em></a>, $H^1-$conforming (continuous), $H(curl)-$conforming (continuous tangential component), $H(div)-$conforming (continuous normal component), and $L^2-$conforming (discontinuous) energy spaces in 2D and 3D. A compatible high-order de Rham complex on the discrete level can be constructed using the <code>*_FECollection</code> with <code>*</code> replaced by <code>H1</code>, <code>ND</code>, <code>RT</code>, and <code>L2</code>, respectively. The first four MFEM examples serve as an introduction on how to construct and use these discrete spaces for the solution of various PDEs.</p>
+</li>
+<li>
+<p>Building the example codes:</p>
+<ul>
+<li>Make sure that the MFEM source code is already compiled</li>
+<li>Enter the <code>examples</code> directory: <code>cd ~/mfem/examples</code> </li>
+</ul>
+</li>
+</ul>
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Remember to compile each numbered example before executing its sample runs: <code>make ex?</code> for the serial version or <code>make ex?p</code> for the parallel version. You can build multiple examples in the same command: <code>make ex3 ex4 ex3p ex4p</code>
+</div>
+</div>
+
+<p><img class="floatright" src="../../img/examples/ex1.png", width="200"/></p>
+<ul>
+<li>
+<p><strong>Example 1</strong> (<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a> and
+     <a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>) solves a simple Poisson problem using a scalar $H^1$ space. More specifically, it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex1 -m ../data/square-disc.mesh
+./ex1 -m ../data/fichera.mesh
+mpirun -np 4 ex1p -m ../data/star-surf.mesh
+mpirun -np 4 ex1p -m ../data/mobius-strip.mesh
+</pre></code></p>
+</li>
+</ul>
+<p><img class="floatright" src="../../img/examples/ex2.png", width="200"></p>
+<ul>
+<li>
+<p><strong>Example 2</strong> (<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp">ex2.cpp</a> and
+     <a href="https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp">ex2p.cpp</a>) solves a linear elasticity problem using a vector $H^1$ space. The problem describes a multi-material cantilever beam. The weak form is $$-{\rm div}({\sigma}({\bf u})) = 0$$ where $${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$ is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$ are the material Lame constants. The boundary conditions are ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being a constant pull down vector on boundary elements with attribute 2, and zero otherwise.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex2 -m ../data/beam-tri.mesh
+./ex2 -m ../data/beam-hex.mesh
+mpirun -np 4 ex2p -m ../data/beam-wedge.mesh
+mpirun -np 4 ex2p -m ../data/beam-quad.mesh -o 3 -elast
+</pre></code></p>
+</li>
+</ul>
+<p><img class="floatright" src="../../img/examples/ex3.png", width="200"/></p>
+<ul>
+<li>
+<p><strong>Example 3</strong>  (<a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp">ex3.cpp</a> and
+     <a href="https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp">ex3p.cpp</a>) solves a 3D electromagnetic diffusion problem (definite Maxwell) using an $H(curl)$ finite element space. It solves the equation $$\nabla\times\nabla\times\, E + E = f$$ with boundary condition $ E \times n $ = "given tangential field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $E$.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex3 -m ../data/star.mesh
+./ex3 -m ../data/beam-tri.mesh -o 2
+mpirun -np 4 ex3p -m ../data/fichera.mesh
+mpirun -np 4 ex3p -m ../data/escher.mesh -o 2
+</pre></code>
+<img class="floatright" src="../../img/examples/ex4.png", width="200"/></p>
+</li>
+<li>
+<p><strong>Example 4</strong> (<a href="https://github.com/mfem/mfem/blob/master/examples/ex4.cpp">ex4.cpp</a> and
+     <a href="https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp">ex4p.cpp</a>) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
+     diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $F$. </p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex4 -m ../data/square-disc.mesh
+./ex4 -m ../data/periodic-square.mesh -no-bc
+mpirun -np 4 ex4p -m ../data/fichera-q2.vtk
+mpirun -np 4 ex4p -m ../data/amr-quad.mesh
+</pre></code>
+</pre></code></p>
+</li>
+</ul>
+<hr />
+<h3 id="discontinuous-galerkin"><i class="fa fa-check-square-o"></i>&nbsp; Discontinuous Galerkin</h3>
+<ul>
+<li>Example 9</li>
+</ul>
+<hr />
+<h3 id="nonlinear-elasticity"><i class="fa fa-check-square-o"></i>&nbsp; Nonlinear elasticity</h3>
+<ul>
+<li>Example 10</li>
+</ul>
+<hr />
+<h3 id="adaptive-mesh-refinement"><i class="fa fa-check-square-o"></i>&nbsp; Adaptive mesh refinement</h3>
+<p><img class="floatright" src="../../img/examples/ex15.png", width="200"/></p>
+<p>MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary-order hanging nodes, anisotropic refinement, derefinement, and parallel load balancing. The AMR support covers the full de Rham complex, i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. You can choose from several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the AMRs. We recommend looking at examples 6, 15, 21, and 30 for some simulations with AMR.</p>
+<p>In particular, <strong>Example 16</strong> demonstrates MFEM's capability to refine, derefine, and load balance non-conforming meshes in 2D and 3D as well as on linear, curved, and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes that are refined based on a simple ZZ estimator. At the end of the refinement process, the error estimates are used to identify elements that are over-refined, and a single derefinement step is performed. Finally, in the parallel case, a load-balancing step is executed.</p>
+<p>The implementation can be found in
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex15.cpp">ex15.cpp</a> and
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp">ex15p.cpp</a>.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex15 -p 1 -n 3
+./ex15 -m ../data/square-disc.mesh
+./ex15 -est 1 -e 0.0001
+mpirun -np 4 ex15p -m ../data/mobius-strip.mesh
+mpirun -np 4 ex15p -m ../data/fichera.mesh -tf 0.5
+</pre></code></p>
+<hr />
+<h3 id="complex-valued-problems"><i class="fa fa-check-square-o"></i>&nbsp; Complex-valued problems</h3>
+<p>MFEM provides a user-friendly interface for solving complex valued systems.
+These kinds of problems can be formulated using the classes <code>ComplexOperator</code>,
+<code>ComplexLinearForm</code>, <code>SesquilinearForm</code>, <code>ComplexGridFunction</code>, and their parallel
+counterparts. You can define the weak formulation by providing the integrators
+of real and imaginary parts independently and then use similar methods as in
+the real problems (such us <code>Assemble</code>, <code>FormLinearSystem</code>, and <code>RecoverFEMSolution</code>)
+to recover the solution.</p>
+<p>Currently, there are two examples demonstrating the use of complex-valued systems.</p>
+<p><img class="floatright" src="../../img/examples/ex22.gif", width="200"/></p>
+<ul>
+<li>
+<p><strong>Example 22</strong> implements three variants of a damped harmonic oscillator:</p>
+<ul>
+<li>
+<p>A scalar $H^1$ field:
+  $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$</p>
+</li>
+<li>
+<p>A vector $H(curl)$ field:
+  $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$</p>
+</li>
+<li>
+<p>A vector $H(div)$ field:
+  $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0$$</p>
+</li>
+</ul>
+<p>In each case the field is driven by a forced oscillation, with angular
+frequency $\omega$ imposed at the boundary or a portion of the boundary.
+The implementation can be found in
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex22.cpp">ex22.cpp</a> and
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp">ex22p.cpp</a>.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex22 -m ../data/inline-quad.mesh -o 3 -p 1
+./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa
+mpirun -np 4 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
+mpirun -np 4 ex22p -m ../data/inline-pyramid.mesh -o 1
+</pre></code></p>
+</li>
+</ul>
+<p><img class="floatright" src="../../img/examples/ex25.gif", width="200"/></p>
+<ul>
+<li>
+<p><strong>Example 25</strong> illustrates the use of a <a href="https://en.wikipedia.org/wiki/Perfectly_matched_layer">Perfectly Matched Layer</a>
+    (PML) for the simulation of time-harmonic electromagnetic waves propagating in unbounded
+    domains. The implementation involves the introduction of an artificial absorbing
+    layer that minimizes undesired reflections. Inside this layer a complex coordinate
+    stretching map forces the wave modes to decay exponentially.</p>
+<p>The example solves the indefinite Maxwell equations
+$$ \nabla \times (a \nabla \times E) - \omega^2 b E = f $$ where $a = \mu^{-1} |J|^{-1} J^T J$,
+$b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is the Jacobian matrix of the coordinate
+transformation. The implementation can be found in
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex25.cpp">ex25.cpp</a> and
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp">ex25p.cpp</a>.</p>
+<p>Try the following sample runs:
+<code class="language-java"><pre>
+./ex25 -o 3 -f 10.0 -ref 2 -prob 1
+./ex25 -o 2 -f 1.0 -ref 2 -prob 3
+mpirun -np 4 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
+mpirun -np 4 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
+</pre></code></p>
+</li>
+</ul>
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+Depending on your interests pick one of the following lessons:<br>
+<ul>
+<li> <a href="../meshvis"><i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization</a>
+<li> <a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+<li> <a href="../further"><i class="fa fa-rocket"></i>&nbsp; Further Steps</a>
+</ul>
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#tour-of-mfem-examples">&nbsp; Tour of MFEM Examples</a></li>
+        
+            <li><a href="#high-order-methods">&nbsp; High-order methods</a></li>
+        
+            <li><a href="#discontinuous-galerkin">&nbsp; Discontinuous Galerkin</a></li>
+        
+            <li><a href="#nonlinear-elasticity">&nbsp; Nonlinear elasticity</a></li>
+        
+            <li><a href="#adaptive-mesh-refinement">&nbsp; Adaptive mesh refinement</a></li>
+        
+            <li><a href="#complex-valued-problems">&nbsp; Complex-valued problems</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>
