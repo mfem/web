@@ -139,7 +139,7 @@ don't hesitate to ask if you have any implementation questions.
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-trophy"></i>&nbsp; We want to see your creativity!</h3>
 </div>
-<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+<div class="panel-body" style="line-height: 1.8;">
 Post your visualization images in the <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a> for a chance to be featured on MFEM's <a href="http://mfem.org/gallery/">gallery page</a>!
 </div>
 </div>
@@ -168,7 +168,9 @@ tutorial such as:
 
 - Python support with the [PyMFEM](https://github.com/mfem/PyMFEM) wrapper.
 
-- Jupyter support with Python [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/GLVis/pyglvis/HEAD?filepath=examples%2Fex1.ipynb "PythonJupyter notebok") and C++ [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb "C++ Jupyter notebok") notebooks.
+- Jupyter support with Python notebooks: [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/GLVis/pyglvis/HEAD?filepath=examples%2Fex1.ipynb "Python Jupyter notebok") or [![Launch Cllab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/drive/13m6KwuHnGL9_AhA65P42JuRxfKcgWMBj?usp=sharing "Python Jupyter notebok").
+
+- Jupyter support with C++ notebooks: [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb "C++ Jupyter notebok").
 
 ---
 
@@ -213,7 +215,7 @@ or at [mfem-dev@llnl.gov](mailto:mfem-dev@llnl.gov).
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-thumbs-up"></i>&nbsp; Thank you!</h3>
 </div>
-<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
+<div class="panel-body" style="line-height: 1.8;">
 Thank you for participating in the MFEM tutorial. Please let us know if you have any questions in the <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
 </div>
 </div>
