@@ -1,6 +1,6 @@
 ## <i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples
 
-<span class="label label-default">30 minutes</span>
+<span class="label label-default">45 minutes</span>
 <span class="label label-default">intermediate</span>
 
 ---
@@ -156,7 +156,7 @@ inversion of a Jacobian matrix, which is done through a (preconditioned) inner
 solver.
 
 Before trying this example, modify the source code of `ex10.cpp` to disable the
-second stream visualization as follows:
+second visualization stream as follows:
 ```diff
 @@ -298,7 +298,7 @@ int main(int argc, char *argv[])
        vis_v.precision(8);
@@ -188,6 +188,8 @@ Now rebuild both examples: `make ex10 ex10p` and try the following sample runs:
     ./ex10 -m ../data/beam-tri.mesh -s 3 -r 2 -o 2 -dt 3
     mpirun -np 4 ex10p -m ../data/beam-wedge.mesh -s 2 -rs 1 -dt 3
     mpirun -np 4 ex10p -m ../data/beam-tet.mesh -s 2 -rs 1 -dt 3
+
+The plot on the right corresponds to the 1st sample run.
 
 ---
 
@@ -222,9 +224,9 @@ to recover the solution.
 
 Currently, there are two examples demonstrating the use of complex-valued systems.
 
-<img class="floatright" src="../../img/examples/ex22.gif", width="200"/>
-
 <i class="fa fa-arrow-circle-right"></i>&nbsp; **Example 22** ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp) and [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) implements three variants of a damped harmonic oscillator:
+
+<img class="floatright" src="../../img/examples/ex22.gif", width="200"/>
 
 * A scalar $H^1$ field:
   $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$

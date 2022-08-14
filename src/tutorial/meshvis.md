@@ -32,15 +32,15 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 
 First, we will demonstrate the common steps necessary for generating high-quality meshes in [Gmsh](https://gmsh.info/) and [Cubit](https://cubit.sandia.gov/) and how to use them in finite element simulations with MFEM.
 
-Gmsh is an open-source, freely available mesh generation tool with built-in computer-aided design (CAD) functionality and a postprocessor. The input to Gmsh can be a simple text file that provides a description of the geometry of the finite element model. The geometry can be generated using the Gmsh graphical user interface (GUI), simple text editors such as Vi/Vim/Emacs, or using more sophisticated CAD tools such as SolidWorks or Autocad. CAD models in IGES or STEP formats can be imported by the CAD engine of Gmsh, meshed, and prepared as inputs to the MFEM examples. Here, however, we focus on simpler examples showing the process of generating meshes suitable for MFEM and not on the actual geometry. 
+Gmsh is an open-source, freely available mesh generation tool with built-in computer-aided design (CAD) functionality and a postprocessor. The input to Gmsh can be a simple text file that provides a description of the geometry of the finite element model. The geometry can be generated using the Gmsh graphical user interface (GUI), simple text editors such as Vi/Vim/Emacs, or using more sophisticated CAD tools such as SolidWorks or Autocad. CAD models in IGES or STEP formats can be imported by the CAD engine of Gmsh, meshed, and prepared as inputs to the MFEM examples. Here, however, we focus on simpler examples showing the process of generating meshes suitable for MFEM and not on the actual geometry.
 
-Many examples together with documentation on the input syntax can be found at the [Gmsh website](https://gmsh.info/). Users familiar with Gmsh can skip the first steps and [download](cross_heat.geo) already prepared geometries for meshing. If Gmsh is not installed on your local machine, please download it and follow the installation [instructions](https://gmsh.info/). 
+Many examples together with documentation on the input syntax can be found at the [Gmsh website](https://gmsh.info/). Users familiar with Gmsh can skip the first steps and [download](cross_heat.geo) already prepared geometries for meshing. If Gmsh is not installed on your local machine, please download it and follow the installation [instructions](https://gmsh.info/).
 
-We will start with the definitions of a cube with edge length L=1 and two cylinders with a radius L/10 and heights equal to L. The following snippets define the above objects, and a screenshot of the GUI of GMSH with the generated objects is shown below.
+We will start with the definitions of a cube with edge length L=1 and two cylinders with a radius L/10 and heights equal to L. The following snippets define the above objects, and a screenshot of the GUI of Gmsh with the generated objects is shown below.
 
 ```diff
 SetFactory("OpenCASCADE");
-  
+
 Mesh.Algorithm = 6;
 Mesh.CharacteristicLengthMin = 0.1;
 Mesh.CharacteristicLengthMax = 0.1;
@@ -73,10 +73,10 @@ Mesh.MshFileVersion = 2.2;
 
 The first line from the above snippet defines physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the Boolean operation. The second line defines physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last line specifies the file format. Note that MFEM can only read ASCII Gmsh format version 2.2.
 
-<img style="width:60%" src="../img/gmsh02.png"> 
+<img style="width:60%" src="../img/gmsh02.png">
 <img style="width:60%" src="../img/gmsh03.png">
 
-The generated mesh is shown in the figures above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by refining the mesh. We encourage you to play with the mesh and to generate finer discretizations for the simulations.  
+The generated mesh is shown in the figures above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by refining the mesh. We encourage you to play with the mesh and to generate finer discretizations for the simulations.
 
 You can download the Gmsh input file [here](cross_heat.geo) and the mesh [here](cross_heat.msh). For users without access to the Gmsh GUI, a mesh can be generated in your local terminal with the following command:
 
@@ -89,7 +89,7 @@ To run simulations with the generated mesh, drag-and-drop the mesh file from you
 ```diff
 mpirun -np 24 ./ex1p -m cross_heat.geo
 mpirun -np 24 ./ex1p -m cross_heat.msh
-``` 
+```
 
 The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-visit-and-paraview">end</a>   of this tutorial session.
 
@@ -100,7 +100,7 @@ If we want to enforce Dirichlet boundary conditions different than zero on some 
 ```diff
 Physical Surface(2) = {7};
 ```
-The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the boolean operation defining the final geometry. 
+The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the boolean operation defining the final geometry.
 
 If we run [ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, modify section 10 in [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp):
 
@@ -126,18 +126,18 @@ In the above snippet, we project coefficient one on the degrees of freedom assoc
 <img style="width:60%" src="../img/parav00003.png">
 
 
-The results can be seen in the GlVis windows as well. However, the users will see only the defined physical surfaces (1,2) and the boundaries between the parallel partitions. Any 2D cuts will work as usual. 
+The results can be seen in the GlVis windows as well. However, the users will see only the defined physical surfaces (1,2) and the boundaries between the parallel partitions. Any 2D cuts will work as usual.
 
-MFEM can import meshes saved in Exodus II format generated with [Cubit](https://cubit.sandia.gov/). However, this feature requires compilation of the library with HDF5, NetCDF, and Exodus, which is not currently available on the AWS machines. 
+MFEM can import meshes saved in Exodus II format generated with [Cubit](https://cubit.sandia.gov/). However, this feature requires compilation of the library with HDF5, NetCDF, and Exodus, which is not currently available on the AWS machines.
 
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's meshing tools
 
-MFEM provides many tools, routines, and examples for mesh manipulation. The miniapp examples illustrate a large part of the MFEM functionality in the miniapps/meshing subdirectory. Here we will explain more details about only two of them. However, users are strongly encouraged to play with the other miniapps. 
+MFEM provides many tools, routines, and examples for mesh manipulation. The miniapp examples illustrate a large part of the MFEM functionality in the miniapps/meshing subdirectory. Here we will explain more details about only two of them. However, users are strongly encouraged to play with the other miniapps.
 
 - Mesh Explorer
-The mesh explorer miniapp is a handy tool to examine, visualize and manipulate a given mesh. Users have to compile it in the miniapps/meshing subdirectory. Once compiled, it can be executed in the same directory by typing in the terminal 
+The mesh explorer miniapp is a handy tool to examine, visualize and manipulate a given mesh. Users have to compile it in the miniapps/meshing subdirectory. Once compiled, it can be executed in the same directory by typing in the terminal
 ```diff
 ./mesh-explorer
 ```
@@ -146,7 +146,7 @@ Before executing it, users should ensure that the GlVis window is [open](../star
 <img style="width:60%" src="../img/mesh_tools01.png">
 
 
-Selecting v in the prompt and pressing enter will display the default mesh of a hex-meshed beam in the GlVis window. To display different mesh, users should exit the miniapp and start it again with the following line  
+Selecting v in the prompt and pressing enter will display the default mesh of a hex-meshed beam in the GlVis window. To display different mesh, users should exit the miniapp and start it again with the following line
 ```diff
 ./mesh-explorer -m new_mesh_file.msh
 ```
@@ -177,7 +177,7 @@ To save the simulation results from the parallel version of Example 1 ([ex1p.cpp
    }
 ```
 
-The first line defines a `ParaViewDataCollection` for saving data in ParaView data format. The following two lines define the name of the data collection and the prefix path, which is set to ParaView. Thus, the data set will be written in the directory `ParaView` relative to the current execution path. The following line registers the `ParGridFunction x` in the data collection. The remaining lines set different parameters for the format and the data set, and finally, the set is saved and deleted. See [MFEM documentation](https://mfem.org/dox/) for more detailed information about ParaView. 
+The first line defines a `ParaViewDataCollection` for saving data in ParaView data format. The following two lines define the name of the data collection and the prefix path, which is set to ParaView. Thus, the data set will be written in the directory `ParaView` relative to the current execution path. The following line registers the `ParGridFunction x` in the data collection. The remaining lines set different parameters for the format and the data set, and finally, the set is saved and deleted. See [MFEM documentation](https://mfem.org/dox/) for more detailed information about ParaView.
 
 Compile and execute the modified example.
 
@@ -187,17 +187,17 @@ To download the results saved in ParaView format to your local machine, compress
 tar cvfz paraview.tgz ParaView/
 ```
 
-which will generate the file `paraview.tgz` in the current directory. Download the file via the Explorer window, then go to the download directory and extract the archive: 
+which will generate the file `paraview.tgz` in the current directory. Download the file via the Explorer window, then go to the download directory and extract the archive:
 
 ```diff
 tar vxfz paraview.tgz ParaView/
 ```
 
-The above assumes a UNIX type of environment. Windows users could use the GUI or WSL/WSL2 engines.  
+The above assumes a UNIX type of environment. Windows users could use the GUI or WSL/WSL2 engines.
 
 [ParaView](https://www.paraview.org/) can be freely downloaded both as a source code or precompiled binaries. The precompiled binaries are available for Linux, macOS, and Windows. Please follow the instructions for the corresponding operating system for installation instructions.
 
-To visualize the downloaded simulation data, run ParaView and open the file `Example1P.pvd` in the `ParaView/Example1P` directory, where the path is relative to the directory where the archive was downloaded. Next, click on the Apply button and select Solution in the drop-down menu in the second row of buttons. The geometry, together with the solution, can be rotated on the screen by holding and dragging the mouse. 
+To visualize the downloaded simulation data, run ParaView and open the file `Example1P.pvd` in the `ParaView/Example1P` directory, where the path is relative to the directory where the archive was downloaded. Next, click on the Apply button and select Solution in the drop-down menu in the second row of buttons. The geometry, together with the solution, can be rotated on the screen by holding and dragging the mouse.
 
 <img style="width:80%" src="../img/parav00004.png">
 
