@@ -154,6 +154,8 @@ Selecting v in the prompt and pressing enter will display the default mesh of a 
 
 - Shaper
 
+<img style="width:60%" src="../img/mesh_tools02.png">
+
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and ParaView
