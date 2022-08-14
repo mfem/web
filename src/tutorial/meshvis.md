@@ -34,7 +34,7 @@ First, we will demonstrate the common steps necessary for generating high-qualit
 
 Gmsh is an open-source, freely available mesh generation tool with built-in computer-aided design (CAD) functionality and a postprocessor. The input to Gmsh can be a simple text file that provides a description of the geometry of the finite element model. The geometry can be generated using the Gmsh graphical user interface (GUI), simple text editors such as Vi/Vim/Emacs, or using more sophisticated CAD tools such as SolidWorks or Autocad. CAD models in IGES or STEP formats can be imported by the CAD engine of Gmsh, meshed, and prepared as inputs to the MFEM examples. Here, however, we focus on simpler examples showing the process of generating meshes suitable for MFEM and not on the actual geometry. 
 
-Many examples together with documentation on the input syntax can be found at the [Gmsh website](https://gmsh.info/). Users familiar with Gmsh can skip the first steps and [download](../cross_heat.geo) already prepared geometries for meshing. If Gmsh is not installed on your local machine, please download it and follow the installation [instructions](https://gmsh.info/). 
+Many examples together with documentation on the input syntax can be found at the [Gmsh website](https://gmsh.info/). Users familiar with Gmsh can skip the first steps and [download](cross_heat.geo) already prepared geometries for meshing. If Gmsh is not installed on your local machine, please download it and follow the installation [instructions](https://gmsh.info/). 
 
 We will start with the definitions of a cube with edge length L=1 and two cylinders with a radius L/10 and heights equal to L. The following snippets define the above objects, and a screenshot of the GUI of GMSH with the generated objects is shown below.
 
@@ -78,7 +78,7 @@ The first line from the above snippet defines physical volume 1 to coincide with
 
 The generated mesh is shown in the figures above. Careful inspection reveals that the cylindrical surface is not represented well by the linear elements. We can improve the representation by refining the mesh. We encourage you to play with the mesh and to generate finer discretizations for the simulations.  
 
-You can download the Gmsh input file [here](../cross_heat.geo) and the mesh [here](../cross_heat.msh). For users without access to the Gmsh GUI, a mesh can be generated in your local terminal with the following command:
+You can download the Gmsh input file [here](cross_heat.geo) and the mesh [here](cross_heat.msh). For users without access to the Gmsh GUI, a mesh can be generated in your local terminal with the following command:
 
 ```diff
 gmsh -3 cross_heat.geo
@@ -104,7 +104,7 @@ The line should be inserted in any place after the definition of geometrical sur
 
 If we run [ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, modify section 10 in [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp):
 
-```diff
+```c++
    // 10. Define the solution vector x as a parallel finite element grid
    //     function corresponding to fespace. Initialize x with initial guess of
    //     zero, which satisfies the boundary conditions.
@@ -159,7 +159,7 @@ Selecting v in the prompt and pressing enter will display the default mesh of a 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Visualizing results in VisIt and ParaView
 To save the simulation results from the parallel version of Example 1 ([ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) in ParaView format, add the following lines just before step 17 in the file.
 
-```diff
+```c++
    {
       ParaViewDataCollection *pd = NULL;
       pd = new ParaViewDataCollection("Example1P", &pmesh);
