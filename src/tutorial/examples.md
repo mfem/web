@@ -102,13 +102,53 @@ Remember to compile each numbered example before executing its sample runs: <cod
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Discontinuous Galerkin
-- Example 9
+### <i class="fa fa-check-square-o"></i>&nbsp; Discontinuous Galerkin 
+<img class="floatright" src="../../img/examples/ex9.png", width="200">
+</a>
+MFEM supports high-order Discontinuous Galerkin (DG) discretizations through various face integrators. Additionally, it includes numerous explicit and implicit ODE time integrators which are used for the solution of time-dependent PDEs.
+
+**Example 9** ([ex9.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9.cpp) and
+     [ex9p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex9p.cpp)) solves the time-dependent advection equation $$\frac{\partial u}{\partial t} + v \cdot \nabla u = 0,$$ where $v$ is a given fluid
+velocity, and $u_0(x)=u(0,x)$ is a given initial condition.
+
+The example demonstrates the use of DG bilinear forms, the use of explicit and implicit (with block ILU
+preconditioning) ODE time integrators, the definition of periodic boundary conditions through periodic meshes, as well as the use of
+[GLVis](https://glvis.org) for persistent visualization of a time-evolving
+solution. 
+
+Try the following sample runs:
+
+    ./ex9 -m ../data/periodic-square.mesh -p 3 -r 4 -dt 0.0025 -tf 9 -vs 20
+    ./ex9 -m ../data/disc-nurbs.mesh -p 1 -r 3 -dt 0.005 -tf 9
+    mpirun -np 4 ex9p -m ../data/star-q3.mesh -p 1 -rp 1 -dt 0.004 -tf 9
+    mpirun -np 3 ex9p -m ../data/amr-hex.mesh -p 1 -rs 1 -rp 0 -dt 0.005 -tf 0.5
+
+The picture is similar to the 1st sample run with <kbd>R</kbd>, <kbd>j</kbd> and <kbd>l</kbd> pressed in the GLVis window.
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Nonlinear elasticity
-- Example 10
+### <i class="fa fa-check-square-o"></i>&nbsp; Nonlinear Elasticity
+<img class="floatright" src="../../img/examples/ex10.png", width="250">
+
+**Example 10** ([ex10.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10.cpp) and
+[ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) solves a time dependent nonlinear elasticity problem of the form $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$
+where $H$ is a hyperelastic model and $S$ is a viscosity operator of
+Laplacian type. The geometry of the domain is assumed to be as follows:
+
+![](../../img/examples/ex10-domain.png)
+
+The example demonstrates the use of nonlinear operators, as well as their
+implicit time integration using a Newton method for solving an associated
+reduced backward-Euler type nonlinear equation. Each Newton step requires the
+inversion of a Jacobian matrix, which is done through a (preconditioned) inner
+solver.
+
+Try the following sample runs:
+
+    ./ex10 -m ../data/beam-hex.mesh -s 2 -r 1 -o 2 -dt 3
+    ./ex10 -m ../data/beam-tri.mesh -s 3 -r 2 -o 2 -dt 3
+    mpirun -np 4 ex10p -m ../data/beam-wedge.mesh -s 2 -rs 1 -dt 3
+    mpirun -np 4 ex10p -m ../data/beam-tet.mesh -s 2 -rs 1 -dt 3
 
 ---
 
@@ -117,11 +157,8 @@ Remember to compile each numbered example before executing its sample runs: <cod
 
 MFEM provides support for local conforming and non-conforming adaptive mesh refinement (AMR) with arbitrary-order hanging nodes, anisotropic refinement, derefinement, and parallel load balancing. The AMR support covers the full de Rham complex, i.e., the energy spaces $H^1$, $H(curl)$, $H(div)$ and $L^2$. You can choose from several error estimators, such as the Zienkiewicz - Zhu (ZZ) or the Kelly estimator, to drive the AMRs. We recommend looking at examples 6, 15, 21, and 30 for some simulations with AMR.
 
-In particular, <strong>Example 16</strong> demonstrates MFEM's capability to refine, derefine, and load balance non-conforming meshes in 2D and 3D as well as on linear, curved, and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes that are refined based on a simple ZZ estimator. At the end of the refinement process, the error estimates are used to identify elements that are over-refined, and a single derefinement step is performed. Finally, in the parallel case, a load-balancing step is executed.
-
-The implementation can be found in
-[ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp) and
-[ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp).
+In particular, **Example 15** ([ex15.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp) and
+[ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp)) demonstrates MFEM's capability to refine, derefine, and load balance non-conforming meshes in 2D and 3D as well as on linear, curved, and surface meshes. In this example the mesh is adapted to a time-dependent solution. At each time step the problem is solved on a sequence of adaptive meshes that are refined based on a simple ZZ estimator. At the end of the refinement process, the error estimates are used to identify elements that are over-refined, and a single derefinement step is performed. Finally, in the parallel case, a load-balancing step is executed.
 
 Try the following sample runs:
 
@@ -147,7 +184,8 @@ Currently, there are two examples demonstrating the use of complex-valued system
 
 <img class="floatright" src="../../img/examples/ex22.gif", width="200"/>
 
-- <strong>Example 22</strong> implements three variants of a damped harmonic oscillator:
+- **Example 22** ([ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp) and
+    [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp)) implements three variants of a damped harmonic oscillator:
 
     * A scalar $H^1$ field:
       $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0$$
@@ -160,9 +198,6 @@ Currently, there are two examples demonstrating the use of complex-valued system
 
     In each case the field is driven by a forced oscillation, with angular
     frequency $\omega$ imposed at the boundary or a portion of the boundary.
-    The implementation can be found in
-    [ex22.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22.cpp) and
-    [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp).
 
     Try the following sample runs:
 
@@ -173,18 +208,13 @@ Currently, there are two examples demonstrating the use of complex-valued system
 
 <img class="floatright" src="../../img/examples/ex25.gif", width="200"/>
 
-- <strong>Example 25</strong> illustrates the use of a [Perfectly Matched Layer](https://en.wikipedia.org/wiki/Perfectly_matched_layer)
-    (PML) for the simulation of time-harmonic electromagnetic waves propagating in unbounded
-    domains. The implementation involves the introduction of an artificial absorbing
-    layer that minimizes undesired reflections. Inside this layer a complex coordinate
-    stretching map forces the wave modes to decay exponentially.
+- **Example 25** ([ex25.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25.cpp) and
+    [ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp)) illustrates the use of a [Perfectly Matched Layer](https://en.wikipedia.org/wiki/Perfectly_matched_layer) (PML) for the simulation of time-harmonic electromagnetic waves propagating in unbounded domains. The implementation involves the introduction of an artificial absorbing layer that minimizes undesired reflections. Inside this layer a complex coordinate stretching map forces the wave modes to decay exponentially.
 
     The example solves the indefinite Maxwell equations
     $$ \nabla \times (a \nabla \times E) - \omega^2 b E = f $$ where $a = \mu^{-1} |J|^{-1} J^T J$,
     $b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is the Jacobian matrix of the coordinate
-    transformation. The implementation can be found in
-    [ex25.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25.cpp) and
-    [ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp).
+    transformation.
 
     Try the following sample runs:
 
