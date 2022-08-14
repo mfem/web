@@ -153,8 +153,19 @@ Selecting v in the prompt and pressing enter will display the default mesh of a 
 , where new_mesh_file.msh is the mesh file selected by the user. The input mesh can be in any format supported by MFEM. In addition, the miniapp can save the loaded mesh in native MFEM and VTK formats.
 
 - Shaper
-
+Shaper is another miniapp that performs multiple levels of adaptive mesh refinement to resolve the interfaces between different "materials" in the mesh, as specified by a given material function. To experiment with it, the interested users should go to the miniapps/meshing subdirectory, compile the miniapps, and type in the terminal
+```diff
+./shaper
+```
+The result of the execution with five levels of refinement and default setting can be seen in the following screenshot. 
 <img style="width:60%" src="../img/mesh_tools02.png">
+
+
+Users can specify different material distributions by modifying the function
+``` c++
+int material(Vector &x, Vector &xmin, Vector &xmax)
+```
+in the begging of shaper.cpp. The current function returns integer values of 1 if a point is located within a simple annulus/shell with a relative inner radius of 0.4 and outer radius of 0.6 and 2 otherwise. The coordinates of a point within the mesh are mapped to values between minus one and one. Users are strongly encouraged to modify the material distribution function and use different meshes as input. The refinement level is controlled in the terminal by pressing "y" for further refinement or "n" for completing the run. The resulting mesh is written in a file shaper.mesh. Once the mesh is written, users can use it as an input to other examples or miniapps. 
 
 ---
 
