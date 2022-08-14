@@ -93,8 +93,7 @@ The plot on the right corresponds to the 3rd sample run with <kbd>m</kbd> and <k
 
 <img class="floatright" src="../../img/examples/ex4.png", width="200"/>
 
-<i class="fa fa-arrow-circle-right"></i>&nbsp; **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
-     diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $F$.
+<i class="fa fa-arrow-circle-right"></i>&nbsp; **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$ diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $F$.
 
 Try the following sample runs:
 
@@ -157,8 +156,8 @@ solver.
 
 Before trying this example, modify the source code of `ex10.cpp` to disable the
 second visualization stream as follows:
-```diff
-@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
+
+<pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
        vis_v.precision(8);
        v.SetFromTrueVector(); x.SetFromTrueVector();
        visualize(vis_v, mesh, &x, &v, "Velocity", true);
@@ -167,22 +166,11 @@ second visualization stream as follows:
        if (vis_w)
        {
           oper.GetElasticEnergyDensity(x, w);
-```
+</code></pre>
 
-Similarly, make the following changes in `ex10p.cpp`:
-```diff
-@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
-       // Make sure all ranks have sent their 'v' solution before initiating
-       // another set of GLVis connections (one from each rank):
-       MPI_Barrier(pmesh->GetComm());
--      vis_w.open(vishost, visport);
-+      // vis_w.open(vishost, visport);
-       if (vis_w)
-       {
-          oper.GetElasticEnergyDensity(x_gf, w_gf);
-```
+Make identical change in `ex10p.cpp`, line 347.
 
-Now rebuild both examples: `make ex10 ex10p` and try the following sample runs:
+Now rebuild both examples: `make ex10 ex10p`, and try the following sample runs:
 
     ./ex10 -m ../data/beam-hex.mesh -s 2 -r 1 -o 2 -dt 3
     ./ex10 -m ../data/beam-tri.mesh -s 3 -r 2 -o 2 -dt 3
@@ -240,12 +228,64 @@ Currently, there are two examples demonstrating the use of complex-valued system
 In each case the field is driven by a forced oscillation, with angular
 frequency $\omega$ imposed at the boundary or a portion of the boundary.
 
-Try the following sample runs:
+Before trying this example, modify the source code of `ex22.cpp` to disable the
+additional visualization stream as follows:
+
+<pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -272,8 +272,8 @@ int main(int argc, char *argv[])
+    {
+       char vishost[] = "localhost";
+       int  visport   = 19916;
+-      socketstream sol_sock_r(vishost, visport);
+-      socketstream sol_sock_i(vishost, visport);
++      socketstream sol_sock_r(vishost, visport+1);
++      socketstream sol_sock_i(vishost, visport+2);
+       sol_sock_r.precision(8);
+       sol_sock_i.precision(8);
+       sol_sock_r << "solution\n" << *mesh << u_exact->real()
+@@ -482,8 +482,8 @@ int main(int argc, char *argv[])
+    {
+       char vishost[] = "localhost";
+       int  visport   = 19916;
+-      socketstream sol_sock_r(vishost, visport);
+-      socketstream sol_sock_i(vishost, visport);
++      socketstream sol_sock_r(vishost, visport+3);
++      socketstream sol_sock_i(vishost, visport+4);
+       sol_sock_r.precision(8);
+       sol_sock_i.precision(8);
+       sol_sock_r << "solution\n" << *mesh << u.real()
+@@ -497,8 +497,8 @@ int main(int argc, char *argv[])
+       char vishost[] = "localhost";
+       int  visport   = 19916;
+-      socketstream sol_sock_r(vishost, visport);
+-      socketstream sol_sock_i(vishost, visport);
++      socketstream sol_sock_r(vishost, visport+5);
++      socketstream sol_sock_i(vishost, visport+6);
+       sol_sock_r.precision(8);
+       sol_sock_i.precision(8);
+       sol_sock_r << "solution\n" << *mesh << u_exact->real()
+@@ -522,7 +522,7 @@ int main(int argc, char *argv[])
+            << " Press space (in the GLVis window) to resume it.\n";
+       int num_frames = 32;
+       int i = 0;
+-      while (sol_sock)
++      while (sol_sock && i < 3*num_frames)
+       {
+          double t = (double)(i % num_frames) / num_frames;
+          ostringstream oss;
+</code></pre>
+
+Make identical changes in `ex22p.cpp`, lines 304-305, 532-533, 549-550 and 577.
+
+Now rebuild both examples: `make ex22 ex22p`, and try the following sample runs:
 
     ./ex22 -m ../data/inline-quad.mesh -o 3 -p 1
     ./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa
-    mpirun -np 4 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
-    mpirun -np 4 ex22p -m ../data/inline-pyramid.mesh -o 1
+    mpirun -np 1 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
+    mpirun -np 16 ex22p -m ../data/star.mesh -o 2 -sigma 10.0 -rs 4 -rp 3 -no-vis
+    mpirun -np 1 ex22p -m ../data/inline-pyramid.mesh -o 1
+    mpirun -np 16 ex22p -m ../data/inline-pyramid.mesh -o 1 -rs 2 -rp 2 -no-vis
+
+The plot on the right corresponds to the 3rd and 4th sample runs with <kbd>R</kbd>, <kbd>j</kbd> and <kbd>l</kbd> pressed in the GLVis window.
 
 ---
 
@@ -258,12 +298,48 @@ $$ \nabla \times (a \nabla \times E) - \omega^2 b E = f $$ where $a = \mu^{-1} |
 $b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is the Jacobian matrix of the coordinate
 transformation.
 
-Try the following sample runs:
+Before trying this example, modify the source code of `ex25.cpp` to disable the
+additional visualization stream as follows:
 
-    ./ex25 -o 3 -f 10.0 -ref 2 -prob 1
+<pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -570,13 +570,13 @@ int main(int argc, char *argv[])
+       char vishost[] = "localhost";
+       int visport = 19916;
+
+-      socketstream sol_sock_re(vishost, visport);
++      socketstream sol_sock_re(vishost, visport+1);
+       sol_sock_re.precision(8);
+       sol_sock_re << "solution\n"
+                   << *mesh << x.real() << keys
+                   << "window_title 'Solution real part'" << flush;
+
+-      socketstream sol_sock_im(vishost, visport);
++      socketstream sol_sock_im(vishost, visport+2);
+       sol_sock_im.precision(8);
+       sol_sock_im << "solution\n"
+                   << *mesh << x.imag() << keys
+@@ -594,7 +594,7 @@ int main(int argc, char *argv[])
+            << " Press space (in the GLVis window) to resume it.\n";
+       int num_frames = 32;
+       int i = 0;
+-      while (sol_sock)
++      while (sol_sock && i < 3*num_frames)
+       {
+          double t = (double)(i % num_frames) / num_frames;
+          ostringstream oss;
+</code></pre>
+
+Make identical changes in `ex25p.cpp`, lines 638, 647 and 674.
+
+Now rebuild both examples: `make ex25 ex25p`, and try the following sample runs:
+
+    ./ex25 -o 2 -f 5.0 -ref 4 -prob 2
     ./ex25 -o 2 -f 1.0 -ref 2 -prob 3
-    mpirun -np 4 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
-    mpirun -np 4 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
+    mpirun -np 1 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
+    mpirun -np 32 ex25p -o 2 -f 8.0 -rs 3 -rp 3 -prob 4 -m ../data/inline-quad.mesh -no-vis
+    mpirun -np 1 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
+    mpirun -np 48 ex25p -o 2 -f 1.0 -rs 4 -rp 4 -prob 0 -m ../data/beam-quad.mesh -no-vis
+
+The plot on the right corresponds to the 1st sample run with <kbd>aaa</kbd>, <kbd>mm</kbd>, <kbd>c</kbd> and severl  <kbd>p</kbd> pressed in the GLVis window.
 
 ---
 

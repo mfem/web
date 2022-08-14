@@ -75,9 +75,7 @@ each of these examples in more details below.
 - Let's see what happens if we increase the mesh refinement. Edit `ex1p.cpp`
   changing line 153 as follows:
 
-<div class="container" markdown="1" style="width:96%; margin:auto;">
-```diff
-@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
+    <pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
     ParMesh pmesh(MPI_COMM_WORLD, mesh);
     mesh.Clear();
     {
@@ -86,8 +84,7 @@ each of these examples in more details below.
        for (int l = 0; l < par_ref_levels; l++)
        {
           pmesh.UniformRefinement();
-```
-</div>
+    </code></pre>
 
 - This adds one additional level of refinement, making the problem roughly 4 times as
   large in 2D, or 8 times as large in 3D.
