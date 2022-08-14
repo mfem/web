@@ -133,8 +133,25 @@ MFEM can import meshes saved in Exodus II format generated with [Cubit](https://
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; MFEM's meshing tools
+
+MFEM provides many tools, routines, and examples for mesh manipulation. The miniapp examples illustrate a large part of the MFEM functionality in the miniapps/meshing subdirectory. Here we will explain more details about only two of them. However, users are strongly encouraged to play with the other miniapps. 
+
 - Mesh Explorer
-- Mesh Optimizer
+The mesh explorer miniapp is a handy tool to examine, visualize and manipulate a given mesh. Users have to compile it in the miniapps/meshing subdirectory. Once compiled, it can be executed in the same directory by typing in the terminal 
+```diff
+./mesh-explorer
+```
+Before executing it, users should ensure that the GlVis window is [open](../start#set-up-glvis)  and connected to the AWS machine. Once started, many options will appear in the terminal window. An example screenshot of provided below
+
+<img style="width:60%" src="../img/mesh_tools01.png">
+
+
+Selecting v in the prompt and pressing enter will display the default mesh of a hex-meshed beam in the GlVis window. To display different mesh, users should exit the miniapp and start it again with the following line  
+```diff
+./mesh-explorer -m new_mesh_file.msh
+```
+, where new_mesh_file.msh is the mesh file selected by the user. The input mesh can be in any format supported by MFEM. In addition, the miniapp can save the loaded mesh in native MFEM and VTK formats.
+
 - Shaper
 
 ---
