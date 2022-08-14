@@ -28,7 +28,7 @@ page before this lesson.
 
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; Poisson Equation
+### <i class="fa fa-check-square-o"></i>&nbsp; Poisson equation
 
 The [_Poisson Equation_](https://en.wikipedia.org/wiki/Poisson's_equation) is a
 partial differential equation (PDE) that can be used to model steady-state heat
