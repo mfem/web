@@ -87,7 +87,7 @@ In this tutorial we use [GLVis](https://glvis.org) for finite element visualizat
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog matches your <code>IP</code>.
+The <b>Host</b> field in the <b>Connect to socket</b> dialog should match your <code>IP</code>.
 </div>
 </div>
 
@@ -106,8 +106,8 @@ You can verify that the <b>Host</b> field in the <b>Connect to socket</b> dialog
 
 - In the VS Code terminal, type
 
-        euler@IP:~/mfem$ cd examples
-        euler@IP:~/mfem/examples$ ./ex1
+        cd examples
+        ./ex1
 
 - You should see `111` iterations printed in the terminal and the image in the
 GLVis window should change:

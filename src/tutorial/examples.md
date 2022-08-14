@@ -31,14 +31,14 @@ and <a href="../fem"><i class="fa fa-book"></i> Finite Element Basics</a> pages 
 
 - Building the example codes:
     - Make sure that the MFEM source code is already compiled
-    - Enter the `examples` directory: `cd ~/mfem/examples` 
+    - Enter the `examples` directory: `cd ~/mfem/examples`
 
 <div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Remember to compile each numbered example before executing its sample runs: <code>make ex?</code> for the serial version or <code>make ex?p</code> for the parallel version. You can build multiple examples in the same command: <code>make ex3 ex4 ex3p ex4p</code>
+Remember to compile each numbered example before executing its sample runs: <code>make ex*</code> for the serial version or <code>make ex*p</code> for the parallel version. You can build multiple examples in the same command: <code>make ex3 ex4 ex3p ex4p</code>
 </div>
 </div>
 
@@ -47,14 +47,15 @@ Remember to compile each numbered example before executing its sample runs: <cod
 - **Example 1** ([ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) and
      [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp)) solves a simple Poisson problem using a scalar $H^1$ space. More specifically, it solves the problem $$-\Delta u = 1$$ with homogeneous Dirichlet boundary conditions.
 
-    Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex1 -m ../data/square-disc.mesh
-    ./ex1 -m ../data/fichera.mesh
-    mpirun -np 4 ex1p -m ../data/star-surf.mesh
-    mpirun -np 4 ex1p -m ../data/mobius-strip.mesh
-    </pre></code>
 
+    Try the following sample runs:
+
+        ./ex1 -m ../data/square-disc.mesh
+        ./ex1 -m ../data/fichera.mesh
+        mpirun -np 4 ex1p -m ../data/star-surf.mesh
+        mpirun -np 4 ex1p -m ../data/mobius-strip.mesh
+
+    The picture corresponds to the 2nd sample run with <kbd>i</kbd>, <kbd>Z</kbd> and <kbd>m</kbd> pressed in the GLVis window.
 
 <img class="floatright" src="../../img/examples/ex2.png", width="200">
 
@@ -62,12 +63,13 @@ Remember to compile each numbered example before executing its sample runs: <cod
      [ex2p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp)) solves a linear elasticity problem using a vector $H^1$ space. The problem describes a multi-material cantilever beam. The weak form is $$-{\rm div}({\sigma}({\bf u})) = 0$$ where $${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$ is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$ are the material Lame constants. The boundary conditions are ${\bf u}=0$ on the fixed part of the boundary with attribute 1, and ${\sigma}({\bf u})\cdot n = f$ on the remainder with $f$ being a constant pull down vector on boundary elements with attribute 2, and zero otherwise.
 
     Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex2 -m ../data/beam-tri.mesh
-    ./ex2 -m ../data/beam-hex.mesh
-    mpirun -np 4 ex2p -m ../data/beam-wedge.mesh
-    mpirun -np 4 ex2p -m ../data/beam-quad.mesh -o 3 -elast
-    </pre></code>
+
+        ./ex2 -m ../data/beam-tri.mesh
+        ./ex2 -m ../data/beam-hex.mesh
+        mpirun -np 4 ex2p -m ../data/beam-wedge.mesh
+        mpirun -np 4 ex2p -m ../data/beam-quad.mesh -o 3 -elast
+
+    The picture corresponds to the 2nd sample run with <kbd>m</kbd> pressed in the GLVis window.
 
 <img class="floatright" src="../../img/examples/ex3.png", width="200"/>
 
@@ -75,26 +77,28 @@ Remember to compile each numbered example before executing its sample runs: <cod
      [ex3p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex3p.cpp)) solves a 3D electromagnetic diffusion problem (definite Maxwell) using an $H(curl)$ finite element space. It solves the equation $$\nabla\times\nabla\times\, E + E = f$$ with boundary condition $ E \times n $ = "given tangential field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $E$.
 
     Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex3 -m ../data/star.mesh
-    ./ex3 -m ../data/beam-tri.mesh -o 2
-    mpirun -np 4 ex3p -m ../data/fichera.mesh
-    mpirun -np 4 ex3p -m ../data/escher.mesh -o 2
-    </pre></code>
+
+        ./ex3 -m ../data/star.mesh
+        ./ex3 -m ../data/beam-tri.mesh -o 2
+        mpirun -np 4 ex3p -m ../data/fichera.mesh
+        mpirun -np 4 ex3p -m ../data/escher.mesh -o 2
+
+    The picture corresponds to the 3rd sample run with <kbd>m</kbd> pressed in the GLVis window.
+
 <img class="floatright" src="../../img/examples/ex4.png", width="200"/>
 
 - **Example 4** ([ex4.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4.cpp) and
      [ex4p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex4p.cpp)) solves a 2D/3D $H(div)$ diffusion problem using an $H(div)$ finite element space. The $H(div)$
-     diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $F$. 
+     diffusion problem corresponds to the second-order definite equation $$-{\rm grad}(\alpha\,{\rm div}(F)) + \beta F = f$$ with boundary condition $F \cdot n$ = "given normal field". Here, the r.h.s. $f$ and the boundary condition data are computed using a given exact solution $F$.
 
     Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex4 -m ../data/square-disc.mesh
-    ./ex4 -m ../data/periodic-square.mesh -no-bc
-    mpirun -np 4 ex4p -m ../data/fichera-q2.vtk
-    mpirun -np 4 ex4p -m ../data/amr-quad.mesh
-    </pre></code>
-</pre></code>
+
+        ./ex4 -m ../data/square-disc.mesh
+        ./ex4 -m ../data/periodic-square.mesh -no-bc
+        mpirun -np 4 ex4p -m ../data/fichera-q2.vtk
+        mpirun -np 4 ex4p -m ../data/amr-quad.mesh
+
+    The picture is similar to the 1st sample run with <kbd>R</kbd>, <kbd>j</kbd> and <kbd>l</kbd> pressed in the GLVis window.
 
 ---
 
@@ -120,13 +124,12 @@ The implementation can be found in
 [ex15p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex15p.cpp).
 
 Try the following sample runs:
-<code class="language-java"><pre>
-./ex15 -p 1 -n 3
-./ex15 -m ../data/square-disc.mesh
-./ex15 -est 1 -e 0.0001
-mpirun -np 4 ex15p -m ../data/mobius-strip.mesh
-mpirun -np 4 ex15p -m ../data/fichera.mesh -tf 0.5
-</pre></code>
+
+    ./ex15 -p 1 -n 3
+    ./ex15 -m ../data/square-disc.mesh
+    ./ex15 -est 1 -e 0.0001
+    mpirun -np 4 ex15p -m ../data/mobius-strip.mesh
+    mpirun -np 4 ex15p -m ../data/fichera.mesh -tf 0.5
 
 ---
 
@@ -162,12 +165,11 @@ Currently, there are two examples demonstrating the use of complex-valued system
     [ex22p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex22p.cpp).
 
     Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex22 -m ../data/inline-quad.mesh -o 3 -p 1
-    ./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa
-    mpirun -np 4 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
-    mpirun -np 4 ex22p -m ../data/inline-pyramid.mesh -o 1
-    </pre></code>
+
+        ./ex22 -m ../data/inline-quad.mesh -o 3 -p 1
+        ./ex22 -m ../data/inline-hex.mesh -o 2 -p 2 -pa
+        mpirun -np 4 ex22p -m ../data/star.mesh -o 2 -sigma 10.0
+        mpirun -np 4 ex22p -m ../data/inline-pyramid.mesh -o 1
 
 <img class="floatright" src="../../img/examples/ex25.gif", width="200"/>
 
@@ -185,12 +187,11 @@ Currently, there are two examples demonstrating the use of complex-valued system
     [ex25p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex25p.cpp).
 
     Try the following sample runs:
-    <code class="language-java"><pre>
-    ./ex25 -o 3 -f 10.0 -ref 2 -prob 1
-    ./ex25 -o 2 -f 1.0 -ref 2 -prob 3
-    mpirun -np 4 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
-    mpirun -np 4 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
-    </pre></code>
+
+        ./ex25 -o 3 -f 10.0 -ref 2 -prob 1
+        ./ex25 -o 2 -f 1.0 -ref 2 -prob 3
+        mpirun -np 4 ex25p -o 2 -f 8.0 -rs 2 -rp 2 -prob 4 -m ../data/inline-quad.mesh
+        mpirun -np 4 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
 
 ---
 

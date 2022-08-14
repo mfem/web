@@ -285,7 +285,9 @@ Like most MFEM examples, Example 1 has also a parallel version in the source fil
 illustrates the ease of transition between sequential and MPI-parallel code. The
 parallel version supports all options of the serial example, and can be executed
 on varying numbers of MPI ranks, e.g., with `mpirun -np`. Besides MPI, in parallel
-we also depend on METIS for mesh partitioning and [*hypre*](https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods) for solvers.
+we also depend on METIS for mesh partitioning and
+[*hypre*](https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods)
+for solvers.
 
 The differences between the two versions are small, and you can compare them for
 yourself by opening both files in your VS Code window.
@@ -337,7 +339,9 @@ Unlike in the serial version, we expect the number of PCG iterations to remain
 relatively bounded with the <code>BoomerAMG</code> preconditioner independent of
 the mesh size, coefficient jumps, and number of MPI ranks. Note, however, that
 algebraic multigrid has a non-trivial setup phase, which can be comparable in
-terms of time with the PCG solve phase.
+terms of time with the PCG solve phase. For more details, see the
+<a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+page.
 </div> </div>
 
 ---
@@ -352,11 +356,9 @@ To get a feel for how these examples work, you can copy and paste some of these
 runs from the source to the terminal in VS Code. For example try these runs in the
 VS Code terminal.
 
-```java
-./ex1 -m ../data/escher.mesh
-./ex1 -m ../data/l-shape.mesh
-./ex1 -m ../data/mobius-strip.mesh
-```
+    ./ex1 -m ../data/escher.mesh
+    ./ex1 -m ../data/l-shape.mesh
+    ./ex1 -m ../data/mobius-strip.mesh
 
 ![](img/fem3.png)
 
@@ -372,26 +374,29 @@ sure to add <code>./</code> before the executable, e.g.,
 </div>
 </div>
 
-Here are some sample parallel runs:
-
-```java
-mpirun -np 16 ex1p
-mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
-mpirun -np 48 ex1p -m ../data/escher-p2.mesh
-```
-
-![](img/fem4.png)
-
 <div class="panel panel-info">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-The GLVis visualization is local to your browser, so it may take a while 
+The GLVis visualization is local to your browser, so it may take a while
 to update after a sample run. Once the data arrives, interaction with
 the visualization window should be fast.
 </div>
 </div>
+
+Here are some sample parallel runs:
+
+    mpirun -np 16 ex1p
+    mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
+    mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+
+![](img/fem4.png)
+
+The above plot shows the parallel decomposition in the first sample run,
+with the following manipulations in the GLVis window: pressing keys <kbd>R</kbd>,
+<kbd>j</kbd>, <kbd>b</kbd>, <kbd>g</kbd>, <kbd>F11</kbd> twice, <kbd>p</kbd> a
+number of times, and zooming in with the <kbd>Right</kbd> mouse button.
 
 ---
 
@@ -450,6 +455,9 @@ Some of the more useful key commands and mouse functions are:
 - <kbd>x</kbd> / <kbd>X</kbd> &mdash; Rotate cutting plane (`\phi`) in 3D
 - <kbd>y</kbd> / <kbd>Y</kbd> &mdash; Rotate cutting plane (`\theta`) in 3D
 - <kbd>z</kbd> / <kbd>Z</kbd> &mdash; Translate cutting plane in 3D
+
+Note that you may need to press <kbd>fn</kbd> and/or <kbd>Ctrl</kbd> to escape some
+of the function keys.
 
 For more details, see the full list of
 [key commands](https://github.com/GLVis/glvis/blob/master/README.md#key-commands) and

@@ -111,7 +111,8 @@ each of these examples in more details below.
 
 <img class="tight" width="300" style="padding: 30px;" src="../img/solvers2.png">
 
-- Finally, let's take a look at the parallel scalability of the solvers.
+- Finally, let's take a look at the parallel scalability of the solvers:
+
     - Increase the refinement level: `int par_ref_levels = 2;`
     - Recompile: `make ex1p`
     - Now run the 3D example on 8 cores: `mpirun -np 8 ./ex1p -m ../data/fichera.mesh`
@@ -150,7 +151,9 @@ each of these examples in more details below.
 ```
 </div>
 
-- Try running `./ex2p` to run a 2D elasticity problem.
+- Build the example with `make ex2p`.
+
+- Try running `./ex2p` in the terminal to run a 2D elasticity problem.
 
 - As in Example 1, the linear system is solved using AMG.
 
@@ -161,11 +164,11 @@ each of these examples in more details below.
 
     2. AMG for systems.
 
-- To enable the special elasticity AMG, add the flag `-elast`. Otherwise, AMG
-  for systems will be used.
+- To enable the special elasticity AMG, add the flag `-elast` to the command line,
+  otherwise, AMG for systems will be used. For example: `./ex2p -elast`.
 
-- The polynomial degree (order) can be changed with the `--order` argument (`-o`
-  for short). By default, low-order $(p=1)$ elements are used.
+- The polynomial degree (order) can be changed with the `--order` command line argument (`-o`
+  for short). For example: `./ex2p -o 2`. By default, low-order $(p=1)$ elements are used.
 
 <div class="panel panel-danger" style="width:92%; margin-left: auto; margin-right: auto;">
 <div class="panel-heading">
@@ -179,7 +182,7 @@ for a more efficient approach.
 </div>
 
 - Additionally, _static condensation_ can be used to eliminate interior
-  high-order degrees of freedom and obtain a smaller system. For `-order 1`,
+  high-order degrees of freedom and obtain a smaller system. For `--order 1`,
   this has no effect. For higher-order problems, static condensation can improve
   efficiency.
 
@@ -228,14 +231,15 @@ Remember to recompile the example after editing the source code (<code>make ex2p
   the discretizations and solvers:
 
     - Change the mesh (2D or 3D) using the `--mesh` (`-m`) command line
-      argument.
+      argument. For example: `mpirun -np 16 ex3p -m ../data/beam-hex.mesh`.
 
     - Change the polynomial degree using the `--order` (`-o`) command line
-      argument.
+      argument. For example: `mpirun -np 32 ex4p -m ../data/square-disc-nurbs.mesh -o 3`.
 
     - Run problems in parallel using `mpirun`.
 
     - For `ex4p`, enable hybridization using the `-hb` flag.
+      For example: `mpirun -np 48 ex4p -m ../data/star-surf.mesh -o 3 -hb`.
 
 <div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
 <div class="panel-heading">
@@ -279,12 +283,8 @@ quickly becomes computationally expensive, so be careful when increasing the ord
 - Try comparing the performance of `ex1p` and `ex26p` for higher-order
   problems. For example, compare the run time of the following two runs:
 
-<div class="container" markdown="1" style="width:96%; margin:auto;">
-```java
-mpirun -np 8 ./ex26p -m ../data/fichera.mesh -or 2
-mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
-```
-</div>
+        mpirun -np 32 ./ex26p -m ../data/fichera.mesh -or 2
+        mpirun -np 32 ./ex1p -m ../data/fichera.mesh -o 1
 
 - Both examples solve a degree-4 Poisson problem with 1,884,545 degrees of
   freedom, but one of them is significantly faster.
@@ -343,15 +343,13 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 - Compare the performance of high-order problems with `plor_solvers` to that of
   Examples 1, 3, and 4. Here are some sample runs to compare:
 
-```java
-//  2D, 5th order, 256,800 DOFs
-mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
-mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
+        //  2D, 5th order, 256,800 DOFs
+        mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
+        mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
 
-// 3D, 2nd order, 2,378,016 DOFs
-mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 2 -no-vis
-mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2
-```
+        // 3D, 2nd order, 2,378,016 DOFs
+        mpirun -np 24 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 3 -no-vis
+        mpirun -np 24 ../../examples/ex3p -m ../../data/fichera.mesh -o 3
 
 - For more details on how LOR solvers work in MFEM, see the _High-Order Matrix-Free Solvers_ talk ([PDF](../pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf), [video](https://youtu.be/d6Ic9itl21g)) from the 2021 MFEM community [workshop](https://mfem.org/workshop).
 

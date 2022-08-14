@@ -53,7 +53,7 @@ on your interests, but we recommend starting with the ones marked with a ⭐.
 - [Example 8](https://docs.mfem.org/html/ex8_8cpp_source.html) &mdash; Discontinuous Petrov-Galerkin (DPG) for the Laplace problem.
 - [Example 9](https://docs.mfem.org/html/ex9_8cpp_source.html) &mdash; Discontinuous Galerkin (DG) time-dependent advection. ⭐
 - [Example 10](https://docs.mfem.org/html/ex10_8cpp_source.html) &mdash; time-dependent implicit nonlinear elasticity. ⭐
-- [Example 11](https://docs.mfem.org/html/examples_2ex11p_8cpp_source.html) &mdash; parallel Laplace eigensolver.
+- [Example 11](https://docs.mfem.org/html/ex11p_8cpp_source.html) &mdash; parallel Laplace eigensolver.
 - [Example 12](https://docs.mfem.org/html/ex12p_8cpp_source.html) &mdash; parallel linear elasticity eigensolver.
 - [Example 13](https://docs.mfem.org/html/ex13p_8cpp_source.html) &mdash; parallel Maxwell eigensolver.
 - [Example 14](https://docs.mfem.org/html/ex14_8cpp_source.html) &mdash; DG for the Laplace problem.
@@ -74,8 +74,7 @@ on your interests, but we recommend starting with the ones marked with a ⭐.
 - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html) &mdash; solving PDEs on embedded surfaces.
 - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html) &mdash; mesh preprocessing, resolving problem data.
 - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html) &mdash; Nedelec H(curl) FEM for the anisotropic definite Maxwell problem.
-- [Example 32](https://docs.mfem.org/html/ex32_8cpp_source.html) &mdash; parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
-- [Example 33](https://docs.mfem.org/html/ex33_8cpp_source.html) &mdash; nodal C0 FEM for the fractional Laplacian problem.
+- [Example 32](https://docs.mfem.org/html/ex32p_8cpp_source.html) &mdash; parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
 
 Most of these examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -97,7 +96,7 @@ Beyond the examples, a number of miniapps are available that are more representa
 - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp) &mdash; Schwarz coupling of single- and multi-physics problems.
 - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html) &mdash; finite element extrapolation solver.
 - [Distance](https://docs.mfem.org/html/distance_8cpp_source.html) &mdash; finite element distance solver.
-- [Shifted Diffusion](https://docs.mfem.org/html/shifted_8cpp_source.html) &mdash; high-order shifted boundary method for non body-fitted meshes.
+- [Shifted Diffusion](https://docs.mfem.org/html/diffusion_8cpp_source.html) &mdash; high-order shifted boundary method for non body-fitted meshes.
 - [Minimal Surface](https://docs.mfem.org/html/minimal-surface_8cpp_source.html) &mdash; compute the minimal surface of a given mesh.
 - [Display Basis](https://docs.mfem.org/html/display-basis_8cpp_source.html) &mdash; visualize finite element basis functions.
 - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html) &mdash; map functions between high-order and low-order-refined spaces.
@@ -108,7 +107,7 @@ In addition, the sources for several external benchmark/proxy-apps built on top 
 
 - [Laghos](https://github.com/CEED/Laghos) &mdash; high-order Lagrangian hydrodynamics miniapp.
 - [Remhos](https://github.com/CEED/Remhos) &mdash; high-order advection remap miniapp.
-- [Mulard](https://computing.llnl.gov/projects/co-design/mulard) &mdash; multigroup thermal radiation diffusion miniapp.
+- [Mulard](https://www.osti.gov/servlets/purl/1092516) &mdash; multigroup thermal radiation diffusion miniapp.
 
 A handful of "toy" miniapps of a less serious nature demonstrate the flexibility of MFEM (and provide a bit of fun):
 
@@ -205,7 +204,7 @@ simplifications; new mesh, discretization, or solver capabilities; improved docu
 new examples and miniapps; HPC performance improvements; etc.
 See [CONTRIBUTING.md](https://github.com/mfem/mfem/blob/master/CONTRIBUTING.md) for more details.
 
-You can contact the MFEM team by posting to the GitHub [issue tracker](https://github.com/mfem/mfem)
+You can contact the MFEM team by posting to the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 or at [mfem-dev@llnl.gov](mailto:mfem-dev@llnl.gov).
 
 ---
