@@ -229,7 +229,7 @@ In each case the field is driven by a forced oscillation, with angular
 frequency $\omega$ imposed at the boundary or a portion of the boundary.
 
 Before trying this example, modify the source code of `ex22.cpp` to disable the
-additional visualization stream as follows:
+additional visualization streams as follows:
 
 <pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -272,8 +272,8 @@ int main(int argc, char *argv[])
     {
@@ -299,7 +299,7 @@ $b= \epsilon |J| J^{-1} J^{-T}$ and $J$ is the Jacobian matrix of the coordinate
 transformation.
 
 Before trying this example, modify the source code of `ex25.cpp` to disable the
-additional visualization stream as follows:
+additional visualization streams as follows:
 
 <pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -570,13 +570,13 @@ int main(int argc, char *argv[])
        char vishost[] = "localhost";
@@ -339,7 +339,7 @@ Now rebuild both examples: `make ex25 ex25p`, and try the following sample runs:
     mpirun -np 1 ex25p -o 2 -f 1.0 -rs 2 -rp 2 -prob 0 -m ../data/beam-quad.mesh
     mpirun -np 48 ex25p -o 2 -f 1.0 -rs 4 -rp 4 -prob 0 -m ../data/beam-quad.mesh -no-vis
 
-The plot on the right corresponds to the 1st sample run with <kbd>aaa</kbd>, <kbd>mm</kbd>, <kbd>c</kbd> and severl  <kbd>p</kbd> pressed in the GLVis window.
+The plot on the right corresponds to the 1st sample run with <kbd>aaa</kbd>, <kbd>mm</kbd>, <kbd>c</kbd> and several  <kbd>p</kbd> pressed in the GLVis window.
 
 ---
 
