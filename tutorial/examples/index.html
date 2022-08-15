@@ -438,7 +438,7 @@ or click the &nbsp;<i class="fa fa-pause"></i>&nbsp; icon in the upper center po
 <h3 id="nonlinear-elasticity"><i class="fa fa-check-square-o"></i>&nbsp; Nonlinear elasticity</h3>
 <p><img class="floatright" src="../../img/examples/ex10.png", width="250"></p>
 <p><i class="fa fa-arrow-circle-right"></i>&nbsp; <strong>Example 10</strong> (<a href="https://github.com/mfem/mfem/blob/master/examples/ex10.cpp">ex10.cpp</a> and <a href="https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp">ex10p.cpp</a>) solves a time dependent nonlinear elasticity problem of the form $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$ where $H$ is a hyperelastic model and $S$ is a viscosity operator of Laplacian type. The geometry of the domain is assumed to be as follows:</p>
-<p><img alt="" src="../../img/examples/ex10-domain.png" /></p>
+<p><img src="../../img/examples/ex10-domain.png"></p>
 <p>The example demonstrates the use of nonlinear operators, as well as their
 implicit time integration using a Newton method for solving an associated
 reduced backward-Euler type nonlinear equation. Each Newton step requires the
