@@ -11,6 +11,8 @@ markdown_extensions:
 repo_url: https://github.com/mfem/mfem
 remote_name: origin
 
+# pages starting with '_' are hidden from the menu
+
 nav:
 - Home: index.md
 - Features: features.md
@@ -49,10 +51,11 @@ nav:
   - 'About': about.md
   - '🔎 Search...': search.md
 - Community:
-  - 'News': news.md   # pages starting with '_' are hidden from the menu
+  - 'News': news.md
   - 'Videos': videos.md
   - 'Seminar': seminar.md
   - 'Workshop': workshop.md
+  - 'Tutorial': tutorial/index.md
 - Gallery: gallery.md
 - Download: download.md
 

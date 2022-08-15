@@ -87,7 +87,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Aug 15, 2022 | MFEM [tutorial](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/) on AWS.
+Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
 Mar 21, 2022 | Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 Nov 30, 2021 | New [page](videos.md) with recorded talks + videos.
