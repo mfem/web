@@ -400,22 +400,17 @@ each of these examples in more details below.</p>
 <li>
 <p>Let's see what happens if we increase the mesh refinement. Edit <code>ex1p.cpp</code>
   changing line 153 as follows:</p>
-</li>
-</ul>
-<div class="container" style="width:96%; margin:auto;">
-<pre><code class="diff">@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
-    ParMesh pmesh(MPI_COMM_WORLD, mesh);
-    mesh.Clear();
-    {
+<p><pre style="background-color:white;"><code class="language-diff" style="font-size: 12px;">@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
+ParMesh pmesh(MPI_COMM_WORLD, mesh);
+mesh.Clear();
+{
 -      int par_ref_levels = 2;
 +      int par_ref_levels = 3;
-       for (int l = 0; l &lt; par_ref_levels; l++)
-       {
-          pmesh.UniformRefinement();
-</code></pre>
-
-</div>
-<ul>
+   for (int l = 0; l &lt; par_ref_levels; l++)
+   {
+      pmesh.UniformRefinement();
+</code></pre></p>
+</li>
 <li>
 <p>This adds one additional level of refinement, making the problem roughly 4 times as
   large in 2D, or 8 times as large in 3D.</p>
@@ -445,7 +440,9 @@ each of these examples in more details below.</p>
 </ul>
 <p><img class="tight" width="300" style="padding: 30px;" src="../img/solvers2.png"></p>
 <ul>
-<li>Finally, let's take a look at the parallel scalability of the solvers.<ul>
+<li>
+<p>Finally, let's take a look at the parallel scalability of the solvers:</p>
+<ul>
 <li>Increase the refinement level: <code>int par_ref_levels = 2;</code></li>
 <li>Recompile: <code>make ex1p</code></li>
 <li>Now run the 3D example on 8 cores: <code>mpirun -np 8 ./ex1p -m ../data/fichera.mesh</code></li>
@@ -490,7 +487,10 @@ each of these examples in more details below.</p>
 </div>
 <ul>
 <li>
-<p>Try running <code>./ex2p</code> to run a 2D elasticity problem.</p>
+<p>Build the example with <code>make ex2p</code>.</p>
+</li>
+<li>
+<p>Try running <code>./ex2p</code> in the terminal to run a 2D elasticity problem.</p>
 </li>
 <li>
 <p>As in Example 1, the linear system is solved using AMG.</p>
@@ -508,12 +508,12 @@ each of these examples in more details below.</p>
 </ol>
 </li>
 <li>
-<p>To enable the special elasticity AMG, add the flag <code>-elast</code>. Otherwise, AMG
-  for systems will be used.</p>
+<p>To enable the special elasticity AMG, add the flag <code>-elast</code> to the command line,
+  otherwise, AMG for systems will be used. For example: <code>./ex2p -elast</code>.</p>
 </li>
 <li>
-<p>The polynomial degree (order) can be changed with the <code>--order</code> argument (<code>-o</code>
-  for short). By default, low-order $(p=1)$ elements are used.</p>
+<p>The polynomial degree (order) can be changed with the <code>--order</code> command line argument (<code>-o</code>
+  for short). For example: <code>./ex2p -o 2</code>. By default, low-order $(p=1)$ elements are used.</p>
 </li>
 </ul>
 <div class="panel panel-danger" style="width:92%; margin-left: auto; margin-right: auto;">
@@ -530,7 +530,7 @@ for a more efficient approach.
 <ul>
 <li>
 <p>Additionally, <em>static condensation</em> can be used to eliminate interior
-  high-order degrees of freedom and obtain a smaller system. For <code>-order 1</code>,
+  high-order degrees of freedom and obtain a smaller system. For <code>--order 1</code>,
   this has no effect. For higher-order problems, static condensation can improve
   efficiency.</p>
 </li>
@@ -594,17 +594,18 @@ Remember to recompile the example after editing the source code (<code>make ex2p
 <ul>
 <li>
 <p>Change the mesh (2D or 3D) using the <code>--mesh</code> (<code>-m</code>) command line
-  argument.</p>
+  argument. For example: <code>mpirun -np 16 ex3p -m ../data/beam-hex.mesh</code>.</p>
 </li>
 <li>
 <p>Change the polynomial degree using the <code>--order</code> (<code>-o</code>) command line
-  argument.</p>
+  argument. For example: <code>mpirun -np 32 ex4p -m ../data/square-disc-nurbs.mesh -o 3</code>.</p>
 </li>
 <li>
 <p>Run problems in parallel using <code>mpirun</code>.</p>
 </li>
 <li>
-<p>For <code>ex4p</code>, enable hybridization using the <code>-hb</code> flag.</p>
+<p>For <code>ex4p</code>, enable hybridization using the <code>-hb</code> flag.
+  For example: <code>mpirun -np 48 ex4p -m ../data/star-surf.mesh -o 3 -hb</code>.</p>
 </li>
 </ul>
 </li>
@@ -657,15 +658,10 @@ quickly becomes computationally expensive, so be careful when increasing the ord
 <li>
 <p>Try comparing the performance of <code>ex1p</code> and <code>ex26p</code> for higher-order
   problems. For example, compare the run time of the following two runs:</p>
-</li>
-</ul>
-<div class="container" style="width:96%; margin:auto;">
-<pre><code class="java">mpirun -np 8 ./ex26p -m ../data/fichera.mesh -or 2
-mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
+<pre><code>mpirun -np 32 ./ex26p -m ../data/fichera.mesh -or 2
+mpirun -np 32 ./ex1p -m ../data/fichera.mesh -o 1
 </code></pre>
-
-</div>
-<ul>
+</li>
 <li>
 <p>Both examples solve a degree-4 Poisson problem with 1,884,545 degrees of
   freedom, but one of them is significantly faster.</p>
@@ -736,19 +732,18 @@ mpirun -np 8 ./ex1p -m ../data/fichera.mesh -o 4
 <li>
 <p>Compare the performance of high-order problems with <code>plor_solvers</code> to that of
   Examples 1, 3, and 4. Here are some sample runs to compare:</p>
-</li>
-</ul>
-<pre><code class="java">//  2D, 5th order, 256,800 DOFs
+<pre><code>//  2D, 5th order, 256,800 DOFs
 mpirun -np 8 ./plor_solvers -fe n -m ../../data/star.mesh -rs 2 -rp 2 -o 5 -no-vis
 mpirun -np 8 ../../examples/ex3p -m ../../data/star.mesh -o 5
 
 // 3D, 2nd order, 2,378,016 DOFs
-mpirun -np 8 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 2 -no-vis
-mpirun -np 8 ../../examples/ex3p -m ../../data/fichera.mesh -o 2
+mpirun -np 24 ./plor_solvers -fe n -m ../../data/fichera.mesh -rs 2 -rp 2 -o 3 -no-vis
+mpirun -np 24 ../../examples/ex3p -m ../../data/fichera.mesh -o 3
 </code></pre>
-
-<ul>
-<li>For more details on how LOR solvers work in MFEM, see the <em>High-Order Matrix-Free Solvers</em> talk (<a href="../../pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf">PDF</a>, <a href="https://youtu.be/d6Ic9itl21g">video</a>) from the 2021 MFEM community <a href="https://mfem.org/workshop">workshop</a>.</li>
+</li>
+<li>
+<p>For more details on how LOR solvers work in MFEM, see the <em>High-Order Matrix-Free Solvers</em> talk (<a href="../../pdf/workshop21/15_WillPazner_High_Order_Solvers.pdf">PDF</a>, <a href="https://youtu.be/d6Ic9itl21g">video</a>) from the 2021 MFEM community <a href="https://mfem.org/workshop">workshop</a>.</p>
+</li>
 </ul>
 <hr />
 <h3 id="additional-solver-integrations"><i class="fa fa-check-square-o"></i>&nbsp; Additional solver integrations</h3>

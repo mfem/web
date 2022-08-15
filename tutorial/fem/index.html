@@ -306,7 +306,7 @@
     
         <li class="main active"><a href="#finite-element-basics">&nbsp; Finite Element Basics</a></li>
         
-            <li><a href="#poisson-equation">&nbsp; Poisson Equation</a></li>
+            <li><a href="#poisson-equation">&nbsp; Poisson equation</a></li>
         
             <li><a href="#annotated-example-1">&nbsp; Annotated Example 1</a></li>
         
@@ -353,7 +353,7 @@ page before this lesson.
 </div>
 
 <hr />
-<h3 id="poisson-equation"><i class="fa fa-check-square-o"></i>&nbsp; Poisson Equation</h3>
+<h3 id="poisson-equation"><i class="fa fa-check-square-o"></i>&nbsp; Poisson equation</h3>
 <p>The <a href="https://en.wikipedia.org/wiki/Poisson's_equation"><em>Poisson Equation</em></a> is a
 partial differential equation (PDE) that can be used to model steady-state heat
 conduction, electric potentials, and gravitational fields. In mathematical terms</p>
@@ -560,7 +560,9 @@ sol_sock &lt;&lt; &quot;solution\n&quot; &lt;&lt; mesh &lt;&lt; x &lt;&lt; flush
 illustrates the ease of transition between sequential and MPI-parallel code. The
 parallel version supports all options of the serial example, and can be executed
 on varying numbers of MPI ranks, e.g., with <code>mpirun -np</code>. Besides MPI, in parallel
-we also depend on METIS for mesh partitioning and <a href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"><em>hypre</em></a> for solvers.</p>
+we also depend on METIS for mesh partitioning and
+<a href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"><em>hypre</em></a>
+for solvers.</p>
 <p>The differences between the two versions are small, and you can compare them for
 yourself by opening both files in your VS Code window.</p>
 <p>The main additions in <code>ex1p.cpp</code> compared to <code>ex1.cpp</code> are:</p>
@@ -605,7 +607,9 @@ Unlike in the serial version, we expect the number of PCG iterations to remain
 relatively bounded with the <code>BoomerAMG</code> preconditioner independent of
 the mesh size, coefficient jumps, and number of MPI ranks. Note, however, that
 algebraic multigrid has a non-trivial setup phase, which can be comparable in
-terms of time with the PCG solve phase.
+terms of time with the PCG solve phase. For more details, see the
+<a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+page.
 </div> </div>
 
 <hr />
@@ -616,11 +620,10 @@ you open them in VS Code.</p>
 <p>To get a feel for how these examples work, you can copy and paste some of these
 runs from the source to the terminal in VS Code. For example try these runs in the
 VS Code terminal.</p>
-<pre><code class="java">./ex1 -m ../data/escher.mesh
+<pre><code>./ex1 -m ../data/escher.mesh
 ./ex1 -m ../data/l-shape.mesh
 ./ex1 -m ../data/mobius-strip.mesh
 </code></pre>
-
 <p><img alt="" src="../img/fem3.png" /></p>
 <div class="panel panel-danger">
 <div class="panel-heading">
@@ -634,24 +637,27 @@ sure to add <code>./</code> before the executable, e.g.,
 </div>
 </div>
 
-<p>Here are some sample parallel runs:</p>
-<pre><code class="java">mpirun -np 16 ex1p
-mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
-mpirun -np 48 ex1p -m ../data/escher-p2.mesh
-</code></pre>
-
-<p><img alt="" src="../img/fem4.png" /></p>
 <div class="panel panel-info">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-The GLVis visualization is local to your browser, so it may take a while 
+The GLVis visualization is local to your browser, so it may take a while
 to update after a sample run. Once the data arrives, interaction with
 the visualization window should be fast.
 </div>
 </div>
 
+<p>Here are some sample parallel runs:</p>
+<pre><code>mpirun -np 16 ex1p
+mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
+mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+</code></pre>
+<p><img alt="" src="../img/fem4.png" /></p>
+<p>The above plot shows the parallel decomposition in the first sample run,
+with the following manipulations in the GLVis window: pressing keys <kbd>R</kbd>,
+<kbd>j</kbd>, <kbd>b</kbd>, <kbd>g</kbd>, <kbd>F11</kbd> twice, <kbd>p</kbd> a
+number of times, and zooming in with the <kbd>Right</kbd> mouse button.</p>
 <hr />
 <h3 id="glvis-interface"><i class="fa fa-check-square-o"></i>&nbsp; GLVis interface</h3>
 <p><a href="https://glvis.org">GLVis</a> is a lightweight tool for accurate and flexible
@@ -703,6 +709,8 @@ by pressing the <kbd>h</kbd> key.</p>
 <li><kbd>y</kbd> / <kbd>Y</kbd> &mdash; Rotate cutting plane (<code>\theta</code>) in 3D</li>
 <li><kbd>z</kbd> / <kbd>Z</kbd> &mdash; Translate cutting plane in 3D</li>
 </ul>
+<p>Note that you may need to press <kbd>fn</kbd> and/or <kbd>Ctrl</kbd> to escape some
+of the function keys.</p>
 <p>For more details, see the full list of
 <a href="https://github.com/GLVis/glvis/blob/master/README.md#key-commands">key commands</a> and
 <a href="https://github.com/GLVis/glvis/blob/master/README.md#mouse-functions">mouse functions</a>
@@ -755,7 +763,7 @@ Depending on your interests pick one of the following lessons:<br>
     
         <li class="main active"><a href="#finite-element-basics">&nbsp; Finite Element Basics</a></li>
         
-            <li><a href="#poisson-equation">&nbsp; Poisson Equation</a></li>
+            <li><a href="#poisson-equation">&nbsp; Poisson equation</a></li>
         
             <li><a href="#annotated-example-1">&nbsp; Annotated Example 1</a></li>
         
