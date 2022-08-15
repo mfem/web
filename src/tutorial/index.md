@@ -11,7 +11,7 @@ in collaboration with [AWS](https://aws.amazon.com/blogs/hpc/call-for-participat
 methods developed at [CASC](https://computing.llnl.gov/casc/),
 [LLNL](https://www.llnl.gov/) with the help of the MFEM [community](https://github.com/mfem/mfem/graphs/contributors).
 
-The pages below provide a self-paced overview of MFEM, and its use for scalable
+The pages below provide a self-paced overview of MFEM and its use for scalable
 finite element discretizations and application development. You can follow
 along on your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance.
 No previous experience is necessary.
@@ -51,7 +51,7 @@ No previous experience is necessary.
 We recommend that you start with the
 [<i class="fa fa-play-circle"></i> Getting Started](start.md) and
 [<i class="fa fa-book"></i> Finite Element Basics](fem.md) lessons,
-and then, depending on your interests pick some of the next 3 lessons:
+and then, depending on your interests, pick some of the next 3 lessons:
 [<i class="fa fa-gears"></i> Tour of MFEM Examples](examples.md),
 [<i class="fa fa-picture-o"></i> Meshing and Visualization](meshvis.md), and
 [<i class="fa fa-tasks"></i> Solvers and Scalability](solvers.md).
