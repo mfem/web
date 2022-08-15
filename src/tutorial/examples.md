@@ -135,7 +135,7 @@ The plot on the right corresponds to the 1st sample run with <kbd>R</kbd>, <kbd>
 In time-dependent simulations, the GLVis window will be automatically updated with the solutions at
 the new time steps as they are computed (how frequently this is done is governed by the <code>-vs</code>
 command line parameter above). To start/pause these updates press <kbd>space</kbd> in the GLVis window,
-or click the &nbsp;<i class="fa fa-pause"></i>&nbsp; icon in the upper center portion of the window.
+or click the <span class="mdi mdi-pause-circle-outline mdi-24px"></span> icon in the upper center portion of the window.
 </div>
 </div>
 
@@ -146,7 +146,7 @@ or click the &nbsp;<i class="fa fa-pause"></i>&nbsp; icon in the upper center po
 
 <i class="fa fa-arrow-circle-right"></i>&nbsp; **Example 10** ([ex10.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10.cpp) and [ex10p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex10p.cpp)) solves a time dependent nonlinear elasticity problem of the form $$ \frac{dv}{dt} = H(x) + S v\,,\qquad \frac{dx}{dt} = v\,, $$ where $H$ is a hyperelastic model and $S$ is a viscosity operator of Laplacian type. The geometry of the domain is assumed to be as follows:
 
-![](../../img/examples/ex10-domain.png)
+<img src="../../img/examples/ex10-domain.png">
 
 The example demonstrates the use of nonlinear operators, as well as their
 implicit time integration using a Newton method for solving an associated
@@ -372,3 +372,4 @@ Back to the [MFEM tutorial page](index.md)
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css" rel="stylesheet">

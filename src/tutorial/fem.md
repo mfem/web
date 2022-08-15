@@ -423,15 +423,15 @@ ways through the web interface or by typing (case sensitive) keystrokes in the
 GLVis window.
 
 To access the web interface, move to the top right of the GLVis window and press
-the `Visualization controls` icon <i class="fa fa-gear"></i>. This will open a
+the `Visualization controls` icon <span class="mdi mdi-settings mdi-18px"></span>. This will open a
 number of buttons for controlling the mesh, colors, and position of the plot:
 
 ![](img/fem5.png)
 
 You can perform additional operations with the GLVis key commands and mouse
 functions. Most of them are described in the `Help` window that appears when
-clicking the <i class="fa fa-question"></i> icon in the upper left corner, or
-by pressing the <kbd>h</kbd> key.
+clicking the<span class="mdi mdi-help mdi-18px"></span>icon in the upper
+left corner, or by pressing the <kbd>h</kbd> key.
 
 Some of the more useful key commands and mouse functions are:
 
@@ -509,3 +509,4 @@ Back to the [MFEM tutorial page](index.md)
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">

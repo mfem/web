@@ -80,9 +80,10 @@ In this tutorial we use [GLVis](https://glvis.org) for finite element visualizat
 
 <img class="tight" src="../img/start3.png">
 
-- Click on the **Connect to socket** icon <img style="display: inline; height:30pt; vertical-align: center;" src="../img/mdi-lan-connect.png"> in the upper left corner, then click `CONNECT`.
+- Click on the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in
+  the upper left corner, then click `CONNECT`.
 
-<div class="panel panel-info" style="width:92%; margin-top: -15pt; margin-left: auto; margin-right: auto;">
+<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
@@ -144,3 +145,4 @@ Back to the [MFEM tutorial page](index.md)
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
