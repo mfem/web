@@ -4,9 +4,9 @@
 
 **Speakers' slides** are linked in the agenda below. Read the
 [**article**](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop)
-about the workshop on LLNL's Computing website. Watch the 
-[**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2vXwWJctvLAKz5xYjTRcR9) of 
-workshop presentations (linked individually below and available on the [videos page](videos.md)), 
+about the workshop on LLNL's Computing website. Watch the
+[**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2vXwWJctvLAKz5xYjTRcR9) of
+workshop presentations (linked individually below and available on the [videos page](videos.md)),
 and view **contest submissions** in the [gallery](gallery.md).
 
 ![MFEM Logo](img/logo-300.png)
