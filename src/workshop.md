@@ -18,7 +18,7 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 18th**](https://forms.gle/voPNCQWwXDHZ96uQ6).
+If you plan to attend, [please register no later than **October 11th**](https://forms.gle/voPNCQWwXDHZ96uQ6).
 There is no registration fee. WebEx details will be distributed to participants prior to the event date.
 
 ### Meeting format
@@ -41,7 +41,7 @@ MFEM workshop.
 
 The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-7):
 
-#### Wednesday, October 25
+#### Tuesday, October 25
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
