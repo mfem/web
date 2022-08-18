@@ -19,7 +19,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Ricardo Vinuesa (KTH)
 ##### *Modeling and controlling turbulent flows through deep learning*
-##### [**9am PDT, TBD, 2022**](https://everytimezone.com/)
+##### [**9am PDT, August 23rd, 2022**](https://everytimezone.com/s/902d94ce)
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
