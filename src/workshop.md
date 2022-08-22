@@ -7,7 +7,7 @@
 ### Overview
 
 The MFEM team is happy to announce the second MFEM Community Workshop, which will
-take place on October 25, 2022, virtually, using WebEx for videoconferencing.
+take place on October 25, 2022, virtually, using Zoom for videoconferencing.
 The goal of the workshop is to foster collaboration among all MFEM users and
 developers, share the latest MFEM features with the broader community, deepen
 application engagements, and solicit feedback to guide future development
@@ -19,7 +19,7 @@ directions for the project.
 ### Registration
 
 If you plan to attend, [please register no later than **October 11th**](https://forms.gle/voPNCQWwXDHZ96uQ6).
-There is no registration fee. WebEx details will be distributed to participants prior to the event date.
+There is no registration fee. Zoom details will be distributed to participants prior to the event date.
 
 ### Meeting format
 
