@@ -20,8 +20,11 @@
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-You should have received an email with the AWS instance IP address allocated to
-you for this tutorial. Use that in place of <code>IP</code> in the instructions below.
+<s>You should have received an email with the AWS instance IP address allocated to
+you for this tutorial. Use that in place of <code>IP</code> in the instructions below.</s>
+<br><br>
+If you setup your Docker container locally, you can replace <code>IP</code> with
+the computers IP address or hostname that runs Docker. If you setup a cloud instance with the Docker container, you should use the cloud instance IP address.
 </div>
 </div>
 

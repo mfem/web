@@ -13,7 +13,7 @@ methods developed at [CASC](https://computing.llnl.gov/casc/),
 
 The pages below provide a self-paced overview of MFEM and its use for scalable
 finite element discretizations and application development. You can follow
-along on your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance.
+along on your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance or [local docker container](docker.md).
 No previous experience is necessary.
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
