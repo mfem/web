@@ -13,8 +13,7 @@ methods developed at [CASC](https://computing.llnl.gov/casc/),
 
 The pages below provide a self-paced overview of MFEM and its use for scalable
 finite element discretizations and application development. You can follow
-along on your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance or [local docker container](docker.md).
-No previous experience is necessary.
+along in your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance or in a [<span class="mdi mdi-docker"></span> Local Docker Container](docker.md) <span class="mdi mdi-new-box mdi-18px" style="color:#dd5034"></span>&nbsp;. No previous experience is necessary.
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <div class="mermaid">
@@ -134,3 +133,4 @@ This is the final lesson with further activities, including:
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
