@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#local-docker-container">&nbsp; Local Docker Container</a></li>
+        
+            <li><a href="#linux">&nbsp; Linux</a></li>
+        
+            <li><a href="#macos">&nbsp; macOS</a></li>
+        
+            <li><a href="#running-the-tutorial-locally">&nbsp; Running the tutorial locally</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="local-docker-container"><span class="mdi mdi-docker"></span>&nbsp; Local Docker Container</h2>
+<p><span class="label label-default">15 minutes</span>
+<span class="label label-default">basic</span></p>
+<hr />
+<p>You don't need a cloud instance to run the MFEM tutorial. Instead, you can
+directly run the MFEM <a href="https://github.com/mfem/containers">Docker container</a>
+on your local computer.</p>
+<p>This <code>mfem/developer</code> container has been specifically created to kickstart the exploration of
+MFEM and its capabilities in a variety of computing environments: from the cloud
+(like AWS), to HPC clusters, and your own laptop.</p>
+<p>Below are instructions on how to start the container on <a href="#linux">Linux</a> and <a href="#macos">macOS</a>,
+and how to use it to <a href="#running-the-tutorial-locally">run the tutorial locally</a>.</p>
+<p>You can also use the container (and similar commands) to setup your own cloud instance. See
+for example this <a href="https://github.com/mfem/containers/blob/main/developer/user-data.sh">AWS script</a>.</p>
+<hr />
+<h3 id="linux"><i class="fa fa-check-square-o"></i>&nbsp; Linux</h3>
+<p>Depending on your Linux distribution, you have to first install <a href="https://www.docker.com/">Docker</a>.
+See the official instructions for e.g. <a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>.</p>
+<p>Once the installation is complete and the <code>docker</code> command is in your path,
+pull the <code>mfem/developer</code> container with:</p>
+<pre><code>docker pull ghcr.io/mfem/containers/developer:latest
+</code></pre>
+<p>Depending on your connection, this may take a while to download and extract (the image is about 2GB).</p>
+<p>To start the container, run:</p>
+<pre><code>docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+</code></pre>
+<p>You can later stop this by pressing <kbd>Ctrl-C</kbd>.
+See the docker <a href="https://docs.docker.com/engine/reference/commandline/cli/">documenation</a> for more details.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The forwarding of ports <code>3000</code>, <code>8000</code> and <code>8080</code>
+is needed for
+<a href="../start/#set-up-vs-code">VS Code</a>, <a href="../start/#set-up-glvis">GLVis</a> and the websocket connection between them.
+The <code>--cap-add=SYS_PTRACE</code> option is added to resolve MPI warnings.
+</div>
+</div>
+
+<hr />
+<h3 id="macos"><i class="fa fa-check-square-o"></i>&nbsp; macOS</h3>
+<p>On macOS we recommend using <a href="https://podman.io">Podman</a>. See the official
+installation instructions <a href="https://podman.io/getting-started/installation">here</a>.</p>
+<p>After installing it, use the following commands to create a Podman machine and pull the <code>mfem/developer</code> container:</p>
+<pre><code>podman machine init
+podman pull ghcr.io/mfem/containers/developer:latest
+</code></pre>
+<p>Both of these can take a while, depending on your hardware and network connection.</p>
+<p>To start the virtual machine and the container in it, run:</p>
+<pre><code>podman machine start
+podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+</code></pre>
+<p>You can later stop these by pressing <kbd>Ctrl-C</kbd> and typing <code>podman machine stop</code>.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+One can also use <a href="https://docs.docker.com/desktop/install/mac-install/">Docker Desktop</a>
+on macOS and follow the Linux <a href="#linux">instructions</a> above.
+</div>
+</div>
+
+<hr />
+<h3 id="running-the-tutorial-locally"><i class="fa fa-check-square-o"></i>&nbsp; Running the tutorial locally</h3>
+<p>Once the <code>mfem/developer</code> container is running, you can proceed with the
+<a href="../start/"><i class="fa fa-play-circle"></i> Getting Started</a> page using the
+following <code>IP</code>: <code>127.0.0.1</code>. You can alternatively use <code>localhost</code> for the <code>IP</code>.</p>
+<p>In particular, the VS Code and GLVis windows can be accessed at
+<a href="http://localhost:3000">localhost:3000</a> and
+<a href="http://localhost:8000/live">localhost:8000/live</a> respectively.</p>
+<p>Furthermore, you can use the above pages from any other devices (tablets,
+phones) that are connected to the same network as the machine running the
+container.</p>
+<p>For example you can run an example from the VS Code terminal on your laptop and
+visualize the results on a GLVis window on your phone.</p>
+<p>To connect other devices, first run <code>hostname -s</code> to get the local host name and then
+use that <code>{hostname}</code> for the <code>IP</code> in the rest of the tutorial.</p>
+<hr />
+<div class="panel panel-warning">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
+</div>
+<div class="panel-body">
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
+</div>
+<div class="panel-body">
+Go to the <a href="../start"><i class="fa fa-play-circle"></i> Getting Started</a> page.
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../">MFEM tutorial page</a></p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"></p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#local-docker-container">&nbsp; Local Docker Container</a></li>
+        
+            <li><a href="#linux">&nbsp; Linux</a></li>
+        
+            <li><a href="#macos">&nbsp; macOS</a></li>
+        
+            <li><a href="#running-the-tutorial-locally">&nbsp; Running the tutorial locally</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>
