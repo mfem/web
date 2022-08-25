@@ -56,13 +56,32 @@ The <code>--cap-add=SYS_PTRACE</code> option is added to resolve MPI warnings.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; macOS
 
-On macOS we recommend using [podman](https://podman.io). See the official
-instructions [here](https://podman.io/getting-started/installation).
+On macOS we recommend using [Podman](https://podman.io). See the official
+installation instructions [here](https://podman.io/getting-started/installation).
 
-The `podman` commands to pull, extract, and start the container are identical to the `docker` commands [above](#linux):
+After installing it, use the following commands to create a Podman machine and pull the `mfem/developer` container:
 
+    podman machine init
     podman pull ghcr.io/mfem/containers/developer:latest
+
+Both of these can take a while, depending on your hardware and network connection.
+
+To start the virtual machine and the container in it, run:
+
+    podman machine start
     podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+
+You can later stop these by pressing <kbd>Ctrl-C</kbd> and typing `podman machine stop`.
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+One can also use <a href="https://docs.docker.com/desktop/install/mac-install/">Docker Desktop</a>
+on macOS and follow the Linux <a href="#linux">instructions</a> above.
+</div>
+</div>
 
 ---
 
