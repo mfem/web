@@ -4,7 +4,6 @@
 
 We are happy to announce a new FEM@LLNL seminar series, starting in 2022, which will focus on finite element research and applications talks of interest to the MFEM community. We have lined up some excellent speakers for our first year and plan to keep adding more. Videos will be added to a [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj) as well as this site's [videos page](videos.md).
 
-
 ### <i class="fa fa-envelope-o" aria-hidden="true"></i> Sign-Up
 
 Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcETKJnhWaU7_Wa2V3d7WIPdf3_JYK4JmA/viewform?usp=sf_link) to sign-up for future FEM@LLNL seminar announcements.
@@ -13,22 +12,39 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/ogiermann.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Dennis Ogiermann (University of Bochum)
+##### *Computing Meets Cardiology: Making Heart Simulations Fast and Accurate*
+##### **September 13, 2022**
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>]()
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/vinuesa.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Ricardo Vinuesa (KTH)
-##### *Modeling and controlling turbulent flows through deep learning*
-##### [**9am PDT, August 23rd, 2022**](https://everytimezone.com/s/902d94ce)
+##### *Modeling and Controlling Turbulent Flows through Deep Learning*
+##### August 23, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>]()
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -45,7 +61,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=l_Ds7jfTBUU&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=9)
 
 **Abstract:** Predictive simulation increasingly involves the dynamics of complex systems with multiple interacting physical processes. In designing simulation tools for these problems, both the formulation of individual constituent solvers, as well as coupling of such solvers into a cohesive simulation tool must be addressed. In this talk, I discuss both of these aspects in the context of fluid-structure interaction, where we have recently developed a new class of stable and accurate partitioned solvers that overcome added-mass instability through the use of so-called compatibility boundary conditions. Here I will present partitioned coupling strategies for incompressible FSI. One interesting aspect of CBC-based coupling is the occurrence of nonstandard and/or high-derivative operators, which can make adoption of the techniques challenging, e.g. in the context of FEM methods. To address this, I will also discuss our newly developed Galerkin Difference approximations, which may provide a natural pathway for CBCs in an FEM context. Although GD is fundamentally a finite element approximation based on a Galerkin projection, the underlying GD space is nonstandard and is derived using profitable ideas from the finite difference literature. The resulting schemes possess remarkable properties including nodal superconvergence and the ability to use large CFL-one time steps. I will also present preliminary results for GD discretizations on unstructured grids using MFEM.
 
@@ -217,12 +233,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Dennis Ogiermann (University of Bochum)
-##### *Computing meets Cardiology: Making heart simulations fast and accurate*
-##### **September 13, 2022**
-
----
 
 #### Clark Dohrmann (SNL)
 ##### *High-Order Finite Elements and Applications to Elastic Wave Propagation*
