@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Jeffrey Banks (RPI)
+#### *Efficient Techniques for Fluid Structure Interaction: Compatibility Coupling and Galerkin Differences*
+##### **July 26, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](l_Ds7jfTBUU)
+
+Predictive simulation increasingly involves the dynamics of complex systems with multiple interacting physical processes. In designing simulation tools for these problems, both the formulation of individual constituent solvers, as well as coupling of such solvers into a cohesive simulation tool must be addressed. In this talk, I discuss both of these aspects in the context of fluid-structure interaction, where we have recently developed a new class of stable and accurate partitioned solvers that overcome added-mass instability through the use of so-called compatibility boundary conditions. Here I will present partitioned coupling strategies for incompressible FSI. One interesting aspect of CBC-based coupling is the occurrence of nonstandard and/or high-derivative operators, which can make adoption of the techniques challenging, e.g. in the context of FEM methods. To address this, I will also discuss our newly developed Galerkin Difference approximations, which may provide a natural pathway for CBCs in an FEM context. Although GD is fundamentally a finite element approximation based on a Galerkin projection, the underlying GD space is nonstandard and is derived using profitable ideas from the finite difference literature. The resulting schemes possess remarkable properties including nodal superconvergence and the ability to use large CFL-one time steps. I will also present preliminary results for GD discretizations on unstructured grids using MFEM.
+
+---
+
 #### Paul Fischer (UIUC/ANL)
 #### *Outlook for Exascale Fluid Dynamics Simulations*
 ##### **June 21, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -36,7 +46,7 @@ Many of the most interesting phenomena in solid mechanics occurs at material int
 
 The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Tamas Horvath (Oakland University)
 #### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
@@ -46,7 +56,7 @@ The University of Illinois at Urbana-Champaign’s Center for Hypersonics and En
 
 Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Tobin Isaac (Georgia Tech)
 #### *Unifying the Analysis of Geometric Decomposition in FEEC*
