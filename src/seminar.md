@@ -18,7 +18,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Dennis Ogiermann (University of Bochum)
 ##### *Computing Meets Cardiology: Making Heart Simulations Fast and Accurate*
-##### **September 13, 2022**
+##### [**9am PDT, September 13, 2022**](https://everytimezone.com/s/ee858c90)
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
