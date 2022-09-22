@@ -21,7 +21,7 @@ MFEM can also be installed as part of
 - [RADIUSS](https://software.llnl.gov/radiuss)
 - [CEED](https://ceed.exascaleproject.org/software)
 
-Pre-build version of MFEM is also available in a container form, see our
+A pre-built version of MFEM is also available in a container form, see our
 [AWS tutorial](tutorial/index.md) and the
 [mfem/containers](https://github.com/mfem/containers) repo.
 
