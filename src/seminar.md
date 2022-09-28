@@ -12,13 +12,13 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/wells.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Garth Wells (University of Cambridge)
 ##### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
-##### [**9am PDT, November 8, 2022**]()
+##### [**9am PDT, November 8, 2022**](https://everytimezone.com/s/bfe68e18)
 **Abstract:** TBD
 
 ---
