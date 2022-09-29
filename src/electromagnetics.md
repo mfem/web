@@ -228,7 +228,9 @@ The magnetostatics mini application, named `tesla` after the unit of magnetic
 field strength (and of course the man Nikola Tesla), is intended to demonstrate
 how to solve standard magnetostatics problems in MFEM. Its source terms and
 boundary conditions are simple but they should indicate how more specialized
-sources of boundary conditions could be implemented.
+sources of boundary conditions could be implemented.  A detailed overview of
+the equations being solved and their discretization can be found here:
+[Tesla Theory Notes](tesla-notes.md).
 
 ![](img/examples/tesla-screenshot-small.png)
 
@@ -329,7 +331,9 @@ The electrodynamics mini application, named `maxwell` after James Clerk Maxwell
 who first formulated the classical theory of electromagnetic radiation, is
 intended to demonstrate how to solve transient wave problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
-specialized sources or boundary conditions could be implemented.
+specialized sources or boundary conditions could be implemented.  A detailed 
+overview of the equations being solved and their discretization can be found here:
+[Maxwell Theory Notes](maxwell-notes.md).
 
 An example simulation is depicted below (click to animate the wave propagation).
 
