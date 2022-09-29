@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Ricardo Vinuesa (KTH)
+#### *Modeling and Controlling Turbulent Flows through Deep Learning*
+##### **August 23, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](0_y70sNTcrY)
+
+The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.
+
+---
+
 #### Jeffrey Banks (RPI)
 #### *Efficient Techniques for Fluid Structure Interaction: Compatibility Coupling and Galerkin Differences*
 ##### **July 26, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)

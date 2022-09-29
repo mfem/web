@@ -12,35 +12,37 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/wells.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Garth Wells (University of Cambridge)
+##### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
+##### [**9am PDT, November 8, 2022**](https://everytimezone.com/s/bfe68e18)
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/ogiermann.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Dennis Ogiermann (University of Bochum)
 ##### *Computing Meets Cardiology: Making Heart Simulations Fast and Accurate*
-##### [**9am PDT, September 13, 2022**](https://everytimezone.com/s/ee858c90)
+##### September 13, 2022
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/ogiermann.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
+**Talk Recording**
 </button>]()
 
-Heart diseases are an ubiquitous societal burden responsible for a majority of deaths world wide.
-A central problem in developing effective treatments for heart diseases is the inherent complexity of the heart as an organ.
-
-From a modeling perspective, the heart can be interpreted as a biological pump involving multiple physical fields, namely fluid and solid mechanics, as well as chemistry and electricity, all interacting on different time scales.
-This multiphysics and multiscale aspect makes simulations inherently expensive, especially when approached with naive numerical techniques.
-However, computational models can be extraordinarily useful in helping us understanding how the healthy heart functions and especially how malfunctions influence different diseases. 
-In this context, also information about possible weaknesses of therapies can be obtained to ultimately improve clinical treatment and decision support.
-
-In this talk, we will focus primarily on two important model classes in computational cardiology and their respective efficient numerical treatment without compromising significant accuracy.
-The first class is the problem of computing electrocardiograms (ECG) from electrical heart simulations.
-Since ECG measurements can give a wide range of insights about a wide range of heart diseases they offer suitable data to validate our electrophysiological models and verify our numerical schemes on organ-scale.
-Known numerical issues, arising in the context of electrophysiological models, will be reviewed.
-The second class addresses bidirectionally coupled electromechanical models and their efficient numerical treatment. 
-Focus will be on a unified space-time adaptive operator splitting framework developed on top of MFEM which proves highly efficient so far for the investigated model classes while still preserving high accuracy.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+**Abstract:** Heart diseases are an ubiquitous societal burden responsible for a majority of deaths world wide. A central problem in developing effective treatments for heart diseases is the inherent complexity of the heart as an organ. From a modeling perspective, the heart can be interpreted as a biological pump involving multiple physical fields, namely fluid and solid mechanics, as well as chemistry and electricity, all interacting on different time scales. This multiphysics and multiscale aspect makes simulations inherently expensive, especially when approached with naive numerical techniques. However, computational models can be extraordinarily useful in helping us understanding how the healthy heart functions and especially how malfunctions influence different diseases. In this context, also information about possible weaknesses of therapies can be obtained to ultimately improve clinical treatment and decision support. In this talk, we will focus primarily on two important model classes in computational cardiology and their respective efficient numerical treatment without compromising significant accuracy. The first class is the problem of computing electrocardiograms (ECG) from electrical heart simulations. Since ECG measurements can give a wide range of insights about a wide range of heart diseases they offer suitable data to validate our electrophysiological models and verify our numerical schemes on organ-scale. Known numerical issues, arising in the context of electrophysiological models, will be reviewed. The second class addresses bidirectionally coupled electromechanical models and their efficient numerical treatment. Focus will be on a unified space-time adaptive operator splitting framework developed on top of MFEM which proves highly efficient so far for the investigated model classes while still preserving high accuracy.
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -57,7 +59,7 @@ Focus will be on a unified space-time adaptive operator splitting framework deve
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=0_y70sNTcrY&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=10)
 
 **Abstract:** The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.
 
@@ -97,10 +99,9 @@ Focus will be on a unified space-time adaptive operator splitting framework deve
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=WqrwDarTdss&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=8)
 
-**Abstract:** We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED).  Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms--it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red.  There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability.  Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used.
+**Abstract:** We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED). Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms--it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red. There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability. Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used.
 
-When running on large-scale HPC platforms, three of the most common user
-questions are
+When running on large-scale HPC platforms, three of the most common user questions are
 
 + How long will my job take?
 
@@ -108,7 +109,7 @@ questions are
 
 + Is there anything I can do to make my job run faster?
 
-Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times.  This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user.  We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
+Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -146,7 +147,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=Z7jJZ1Z5gz0&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=6)
 
-**Abstract:** The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
+**Abstract:** The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight. CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -248,18 +249,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Clark Dohrmann (SNL)
-##### *High-Order Finite Elements and Applications to Elastic Wave Propagation*
-##### **October 11, 2022**
-
----
-
-#### Garth Wells (University of Cambridge)
-##### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
-##### **November 8, 2022**
-
----
 
 #### Lin Mu (University of Georgia)
 ##### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
