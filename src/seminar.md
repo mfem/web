@@ -254,6 +254,12 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ##### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
 ##### **December 13, 2022**
 
+&nbsp;
+
+#### Stefan Henneking (University of Texas at Austin)
+##### *Bayesian Inversion of an Acoustic-Gravity Model for Predictive Tsunami Simulation*
+##### **January 10, 2023**
+
 ---
 
 &nbsp;
