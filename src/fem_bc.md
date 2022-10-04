@@ -201,7 +201,7 @@ the same change to the right-hand-side as the Neumann boundary
 condition as well as a new term in the bilinear form before `a.Assemble()`:
 
 ```c++
-// Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
+// Add Robin BCs n.(matCoef Grad u) + rbcACoef u = rbcBCoef on the boundary
 // marked in the rbc_marker array.
 b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
 
