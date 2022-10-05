@@ -46,9 +46,9 @@ class SumSolver : mfem::Solver
 
 ```
 
-In this example we defined a new MFEM solver that can be applies as a preconditioner for a broader
+In this example we defined a new MFEM solver that can be applied as a preconditioner for a broader
 solution.  In this case we demonstrated an example where we have a matrix M, the action of the inverse
 of a matrix A, and we want to define the action of a preconditioner that is the sum of the two.  In this
-case we cannot simply sum the matrices to form the new preconditioner because we no access to the elements
+case we cannot simply sum the matrices to form the new preconditioner because we don't have access to the elements
 of Ainv.  As you can see this approach is quite flexible and can be utilized to create custom preconditioners
 of arbitrary complexity.
