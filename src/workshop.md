@@ -47,7 +47,7 @@ The meeting activities will take place 7:45am-4:00pm Pacific Daylight Time (GMT-
 | 7:45-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
 | 8:00-8:30 | **The State of MFEM & Roadmap** | **Tzanio Kolev** (LLNL) |
 | 8:30-9:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
-| 9:00-10:00 | **Talks, Session I**<br>(20 mins each) | **Ben Zwick** (University of Western Australia)<br> *Solution of the electroencephalography forward problem using MFEM*<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and modern C++17 shape, density and topology optimization framework*<br>**Tobias Duswald** (CERN)<br> *Solving stochastic, fractional PDEs with MFEM with applications to random field generation and topology optimization* |
+| 9:00-10:00 | **Talks, Session I**<br>(20 mins each) | **Ben Zwick** (University of Western Australia)<br> *Solution of the electroencephalography forward problem using MFEM*<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and modern C++17 shape, density and topology optimization framework*<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving stochastic, fractional PDEs with MFEM with applications to random field generation and topology optimization* |
 | 10:00-10:30 | **Break & Group Photo**| **All**<br>Download a virtual background below |
 | 10:30-11:30 | **Talks, Session II**<br>(20 mins each) | **Alvaro Sanchez Villar** (PPPL)<br> *MFEM application to EM-wave simulation in ECR space plasma thrusters*<br>**Brian Young**<br> *OpenParEM2D: A 2D Simulator for Guided Waves*<br>**Christina Migliore** (MIT)<br> *The development of the EM RF edge interactions mini-app “Stix” using MFEM*
 | 11:30-12:00 | **Break** | All |
