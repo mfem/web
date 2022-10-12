@@ -53,7 +53,7 @@ The meeting activities will take place 7:45am-4:00pm Pacific Daylight Time (GMT-
 | 11:30-12:00 | **Break** | All |
 | 12:00-1:00 |  **Talks, Session III**<br>(20 mins each) | **Devlin Hayduke** (ReLogic)<br> *Accelerated deployment of MFEM based solvers in large scale industrial problems*<br>**Jorge-Luis Barrera** (LLNL)<br> *Systematic design optimization powered by MFEM*<br>**Siu Wun Cheung** (LLNL)<br> *Reduced order modeling*
 | 1:00-1:30 | **Break** | All |
-| 1:30-2:30 | **Talks, Session IV**<br>(20 mins each) | **Will Pazner** (PDX)<br> *HO Solvers == Solved*<br> **Julian Andrej** (LLNL)<br> *MFEM on AWS tutorial*<br> **TBD**<br> *TBD*|
+| 1:30-2:30 | **Talks, Session IV**<br>(20 mins each) | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration*<br> **Julian Andrej** (LLNL)<br> *MFEM on AWS tutorial*<br> **TBD**<br> *TBD*|
 | 2:30-2:45 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
 | 2:45-4:00 | **Q&A Session** | **MFEM team** available on WebEx + Slack|
 
