@@ -18,8 +18,7 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 11th**](https://forms.gle/voPNCQWwXDHZ96uQ6).
-There is no registration fee. Zoom details will be distributed to participants prior to the event date.
+Registration closed on October 11th.
 
 ### Meeting format
 
@@ -39,22 +38,24 @@ Workshop participants are encouraged to join the
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
 
-The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-7):
+The meeting activities will take place 7:45am-4:00pm Pacific Daylight Time (GMT-7):
 
 #### Tuesday, October 25
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 7:45-8:00 | **Welcome & Overview** | Aaron Fisher |
-| 8:00-8:30 | **The State of MFEM & Roadmap** | Tzanio Kolev |
-| 8:30-9:00 | **Recent Developments** | Veselin Dobrev |
-| 9:00-10:00 | **Applications/Demos, Session I**<br>(20 mins each) | 3 Speakers TBD |
-| 10:00-10:30 | **Break** | All |
-| 10:30-12:30 | **Applications/Demos, Session II**<br>(20 mins each) | 6 Speakers TBD |
-| 12:30-1:00 | **Break** | All |
-| 1:00-2:00 | **Applications/Demos, Session III**<br>(20 mins each) | 3 Speakers TBD |
-| 2:00-2:30 | **Breakout Sessions** | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
-| 2:30-2:45 | **Wrap-up & Contest Winners** | Aaron Fisher |
+| 7:45-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
+| 8:00-8:30 | **The State of MFEM & Roadmap** | **Tzanio Kolev** (LLNL) |
+| 8:30-9:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
+| 9:00-10:00 | **Talks, Session I**<br>(20 mins each) | **Ben Zwick** (University of Western Australia)<br> *Solution of the electroencephalography forward problem using MFEM*<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and modern C++17 shape, density and topology optimization framework*<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving stochastic, fractional PDEs with MFEM with applications to random field generation and topology optimization* |
+| 10:00-10:30 | **Break & Group Photo**| **All**<br>Download a virtual background below |
+| 10:30-11:30 | **Talks, Session II**<br>(20 mins each) | **Alvaro Sanchez Villar** (PPPL)<br> *MFEM application to EM-wave simulation in ECR space plasma thrusters*<br>**Brian Young**<br> *OpenParEM2D: A 2D Simulator for Guided Waves*<br>**Christina Migliore** (MIT)<br> *The development of the EM RF edge interactions mini-app “Stix” using MFEM*
+| 11:30-12:00 | **Break** | All |
+| 12:00-1:00 |  **Talks, Session III**<br>(20 mins each) | **Devlin Hayduke** (ReLogic)<br> *Accelerated deployment of MFEM based solvers in large scale industrial problems*<br>**Jorge-Luis Barrera** (LLNL)<br> *Systematic design optimization powered by MFEM*<br>**Siu Wun Cheung** (LLNL)<br> *Reduced order modeling*
+| 1:00-1:30 | **Break** | All |
+| 1:30-2:30 | **Talks, Session IV**<br>(20 mins each) | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration*<br> **Julian Andrej** (LLNL)<br> *MFEM AWS tutorial*<br> **TBD**<br> *TBD*|
+| 2:30-2:45 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
+| 2:45-4:00 | **Q&A Session** | **MFEM team** available on WebEx + Slack|
 
 ---
 
