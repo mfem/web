@@ -634,7 +634,7 @@ $\gamma$.</p>
 <p>The implementation of a Robin boundary condition requires precisely
 the same change to the right-hand-side as the Neumann boundary
 condition as well as a new term in the bilinear form before <code>a.Assemble()</code>:</p>
-<pre><code class="c++">// Add Robin BCs n.(matCoef Grad u) rbcACoef u = rbcBCoef on the boundary
+<pre><code class="c++">// Add Robin BCs n.(matCoef Grad u) + rbcACoef u = rbcBCoef on the boundary
 // marked in the rbc_marker array.
 b.AddBoundaryIntegrator(new BoundaryLFIntegrator(rbcBCoef), rbc_marker);
 
