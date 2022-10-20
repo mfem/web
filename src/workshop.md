@@ -48,18 +48,21 @@ The meeting activities will take place 7:45am-4:00pm Pacific Daylight Time (GMT-
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 7:45-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
-| 8:00-8:30 | **The State of MFEM & Roadmap** | **Tzanio Kolev** (LLNL) |
-| 8:30-9:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
-| 9:00-10:00 | **Talks, Session I**<br>(20 mins each)<br><br>Chair: Will Pazner | **Ben Zwick** (University of Western Australia)<br> *Solution of the electroencephalography forward problem using MFEM*<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and modern C++17 shape, density and topology optimization framework*<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving stochastic, fractional PDEs with MFEM with applications to random field generation and topology optimization* |
-| 10:00-10:30 | **Break & Group Photo**| **All**<br>Download a virtual background below |
-| 10:30-11:30 | **Talks, Session II**<br>(20 mins each)<br><br>Chair: Socratis Petrides | **Alvaro Sanchez Villar** (PPPL)<br> *MFEM application to EM-wave simulation in ECR space plasma thrusters*<br>**Brian Young**<br> *OpenParEM2D: A 2D Simulator for Guided Waves*<br>**Christina Migliore** (MIT)<br> *The development of the EM RF edge interactions mini-app “Stix” using MFEM*
-| 11:30-12:00 | **Break** | All |
-| 12:00-1:00 |  **Talks, Session III**<br>(20 mins each)<br><br>Chair: Aaron Fisher | **Devlin Hayduke** (ReLogic)<br> *Accelerated deployment of MFEM based solvers in large scale industrial problems*<br>**Jorge-Luis Barrera** (LLNL)<br> *Systematic design optimization powered by MFEM*<br>**Siu Wun Cheung** (LLNL)<br> *Reduced order modeling*
-| 1:00-1:30 | **Break** | All |
-| 1:30-2:30 | **Talks, Session IV**<br>(20 mins each)<br><br>Chair: Tzanio Kolev | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration*<br> **Julian Andrej** (LLNL)<br> *MFEM AWS tutorial*<br> **TBD**<br> *TBD*|
-| 2:30-2:45 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
-| 2:45-4:00 | **Q&A Session** | **MFEM team** available on WebEx + Slack|
+| 7:40-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
+| 8:00-8:20 | **The State of MFEM** | **Tzanio Kolev** (LLNL) |
+| 8:20-8:40 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
+| 8:40-9:00 | **Break** | All |
+| 9:00-10:00 | **Talks, Session I**<br>(20 mins each)<br><br>Chair: Will Pazner | **Ben Zwick** (University of Western Australia)<br> *Solution of the Electroencephalography Forward Problem Using MFEM*<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework*<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving Stochastic, Fractional PDEs with MFEM with Applications to Random Field Generation and Topology Optimization* |
+| 10:00-10:20 | **Break & Group Photo**| **All**<br>Download a virtual background below |
+| 10:20-11:20 | **Talks, Session II**<br>(20 mins each)<br><br>Chair: Socratis Petrides | **Alvaro Sanchez Villar** (PPPL)<br> *MFEM Application to EM-wave Simulation in ECR Space Plasma Thrusters*<br>**Brian Young**<br> *OpenParEM2D: A 2D Simulator for Guided Waves*<br>**Christina Migliore** (MIT)<br> *The Development of the EM RF Edge Interactions Miniapp “Stix” Using MFEM*
+| 11:20-11:40 | **Break** | All |
+| 11:40-12:40 |  **Talks, Session III**<br>(20 mins each)<br><br>Chair: Aaron Fisher | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration*<br>**Jorge-Luis Barrera** (LLNL)<br> *Systematic Design Optimization Powered by MFEM*<br>**Siu Wun Cheung** (LLNL)<br> *Reduced Order Modeling*
+| 12:40-1:00 | **Break** | All |
+| 1:00-2:00 | **Talks, Session IV**<br>(20 mins each)<br><br>Chair: Tzanio Kolev | **Devlin Hayduke** (ReLogic)<br> *Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems*<br> **Tim Brewer** (Synthetik)<br> *blastFEM: a GPU-accelerated, Very High-performance and Energy-efficient Solver for Highly Compressible Flows*<br> **Adolfo Rodriguez** (OpenSim)<br> *Using MFEM for Wellbore Stability Analysis*|
+| 2:00-2:20 | **Break** | All |
+| 2:20-2:40 | **MFEM AWS tutorial** | **Julian Andrej** (LLNL) |
+| 2:40-3:00 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
+| 3:00-4:00 | **Q&A Session** | **MFEM team** available on WebEx + Slack|
 
 ---
 
