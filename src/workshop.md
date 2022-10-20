@@ -42,7 +42,7 @@ Workshop participants are encouraged to join the
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
 
-The meeting activities will take place 7:45am-4:00pm Pacific Daylight Time (GMT-7):
+The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-7):
 
 #### Tuesday, October 25
 
