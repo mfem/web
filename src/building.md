@@ -186,31 +186,41 @@ Build the parallel version of MFEM, setting the options `MFEM_USE_METIS_5` and
 ```
 
 ## CUDA version of MFEM
+To build the CUDA version of MFEM, one needs to specify the [CUDA compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag. In the examples below we use `CUDA_ARCH=sm_70` to build the MFEM serial and parallel versions for compute cability 7.0 (V100).
+
 Build the serial CUDA version of MFEM:
 ```sh
-~/mfem> make cuda -j
+~/mfem> make cuda CUDA_ARCH=sm_70-j
 ```
 
 Build the parallel CUDA version of MFEM:
 ```sh
-~/mfem> make pcuda -j
-```
-
-It can be useful to specify the [compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag, corresponding to your NVidia GPU.
-Build the parallel CUDA version of MFEM for `sm_70` (NVidia V100):
-```sh
 ~/mfem> make pcuda CUDA_ARCH=sm_70 -j
 ```
 
+To use hypre with CUDA support in MFEM, follow the instructions [above](#parallel-mpi-version-of-mfem) but configure it with the following command, specifying the CUDA compute capability:
+
+```sh
+~/hypre-2.26.0/src> ./configure --with-cuda --with-gpu-arch="70" --disable-fortran
+```
+
 ## HIP version of MFEM
+To build the HIP version of MFEM, one needs to specify the [HIP architecture](https://llvm.org/docs/AMDGPUUsage.html#processors), with the `HIP_ARCH` flag. In the examples below we use `HIP_ARCH=gfx908` to build the MFEM serial and parallel versions for `gfx908` (MI100).
+
 Build the serial HIP version of MFEM:
 ```sh
-~/mfem> make hip -j
+~/mfem> make hip HIP_ARCH=gfx908 -j
 ```
 
 Build the parallel HIP version of MFEM:
 ```sh
-~/mfem> make phip -j
+~/mfem> make phip HIP_ARCH=gfx908 -j
+```
+
+To use hypre with HIP support in MFEM, follow the instructions [above](#parallel-mpi-version-of-mfem) but configure it with the following command, specifying the HIP architecture:
+
+```sh
+~/hypre-2.26.0/src> ./configure --with-hip --with-gpu-arch="gfx908" --disable-fortran
 ```
 
 ## Installing MFEM with Spack
