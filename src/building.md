@@ -190,7 +190,7 @@ To build the CUDA version of MFEM, one needs to specify the [CUDA compute capabi
 
 Build the serial CUDA version of MFEM:
 ```sh
-~/mfem> make cuda CUDA_ARCH=sm_70-j
+~/mfem> make cuda CUDA_ARCH=sm_70 -j
 ```
 
 Build the parallel CUDA version of MFEM:
