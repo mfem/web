@@ -32,33 +32,33 @@ Download MFEM and GLVis
   - [https://mfem.org](https://mfem.org)
   - [https://glvis.org](https://glvis.org)
 
-Below we assume that we are working with versions `mfem-4.4` and `glvis-4.2`.
+Below we assume that we are working with versions `mfem-4.5` and `glvis-4.2`.
 
 ## Serial version of MFEM and GLVis
 
 Put everything in the same directory:
 ```sh
 ~> ls
-glvis-4.2.tgz   mfem-4.4.tgz
+glvis-4.2.tgz   mfem-4.5.tgz
 ```
 
 Build the serial version of MFEM:
 ```sh
-~> tar -zxvf mfem-4.4.tgz
-~> cd mfem-4.4
-~/mfem-4.4> make serial -j
-~/mfem-4.4> cd ..
+~> tar -zxvf mfem-4.5.tgz
+~> cd mfem-4.5
+~/mfem-4.5> make serial -j
+~/mfem-4.5> cd ..
 ```
 
 Build GLVis:
 ```sh
 ~> tar -zxvf glvis-4.2.tgz
 ~> cd glvis-4.2
-~/glvis-4.2> make MFEM_DIR=../mfem-4.4 -j
+~/glvis-4.2> make MFEM_DIR=../mfem-4.5 -j
 ~/glvis-4.2> cd ..
 ```
 
-That's it! The MFEM library can be found in `mfem-4.4/libmfem.a`, while the
+That's it! The MFEM library can be found in `mfem-4.5/libmfem.a`, while the
 `glvis` executable will be in the `glvis-4.2` directory.
 
 Note: as of version 4.0, GLVis has additional dependencies that need to be installed
@@ -72,14 +72,14 @@ To start a GLVis server, open a **new terminal** and type
 
 The serial examples can be build with:
 ```sh
-~> cd mfem-4.4/examples
-~/mfem-4.4/examples> make -j
+~> cd mfem-4.5/examples
+~/mfem-4.5/examples> make -j
 ```
 
 All serial examples and miniapps can be build with:
 ```sh
-~> cd mfem-4.4
-~/mfem-4.4> make all -j
+~> cd mfem-4.5
+~/mfem-4.5> make all -j
 ```
 
 ## Parallel MPI version of MFEM
@@ -94,24 +94,24 @@ Note: We recommend MFEM's mirror of `metis-4.0.3` and `metis-5.1.0` above becaus
 is often down and we don't support yet the new
 [GitHub repo](https://github.com/KarypisLab/METIS).
 
-Below we assume that we are working with `hypre-2.25.0` and [metis-4.0.3](https://github.com/mfem/tpls/raw/gh-pages/metis-4.0.3.tar.gz)
+Below we assume that we are working with `hypre-2.26.0` and [metis-4.0.3](https://github.com/mfem/tpls/raw/gh-pages/metis-4.0.3.tar.gz)
 (see [below](#parallel-build-using-metis-5) for METIS version 5 and later). We also assume that the serial version
 of MFEM and GLVis have been built as described above.
 
 Put everything in the same directory:
 ```sh
 ~> ls
-glvis-4.2/  hypre-2.25.0.tar.gz   metis-4.0.3.tar.gz   mfem-4.4/
+glvis-4.2/  hypre-2.26.0.tar.gz   metis-4.0.3.tar.gz   mfem-4.5/
 ```
 
 Build hypre:
 ```sh
-~> tar -zxvf hypre-2.25.0.tar.gz
-~> cd hypre-2.25.0/src/
-~/hypre-2.25.0/src> ./configure --disable-fortran
-~/hypre-2.25.0/src> make -j
-~/hypre-2.25.0/src> cd ../..
-~> ln -s hypre-2.25.0 hypre
+~> tar -zxvf hypre-2.26.0.tar.gz
+~> cd hypre-2.26.0/src/
+~/hypre-2.26.0/src> ./configure --disable-fortran
+~/hypre-2.26.0/src> make -j
+~/hypre-2.26.0/src> cd ../..
+~> ln -s hypre-2.26.0 hypre
 ```
 
 Build METIS:
@@ -128,9 +128,9 @@ Build METIS:
 
 Build the parallel version of MFEM:
 ```sh
-~> cd mfem-4.4
-~/mfem-4.4> make parallel -j
-~/mfem-4.4> cd ..
+~> cd mfem-4.5
+~/mfem-4.5> make parallel -j
+~/mfem-4.5> cd ..
 ```
 
 Note that if hypre or METIS are in different locations, or you have different
@@ -142,27 +142,27 @@ file, or create you own `config/user.mk`, as described in the
 
 The parallel examples can be build with:
 ```sh
-~> cd mfem-4.4/examples
-~/mfem-4.4/examples> make -j
+~> cd mfem-4.5/examples
+~/mfem-4.5/examples> make -j
 ```
 
 The serial examples can also be build with the parallel version of the library,
 e.g.
 ```sh
-~/mfem-4.4/examples> make ex1 ex2
+~/mfem-4.5/examples> make ex1 ex2
 ```
 
 All parallel examples and miniapps can be build with:
 ```sh
-~> cd mfem-4.4
-~/mfem-4.4> make all -j
+~> cd mfem-4.5
+~/mfem-4.5> make all -j
 ```
 
 One can also use the parallel library to optionally (re-)build GLVis:
 ```sh
 ~> cd glvis-4.2
 ~/glvis-4.2> make clean
-~/glvis-4.2> make MFEM_DIR=../mfem-4.4 -j
+~/glvis-4.2> make MFEM_DIR=../mfem-4.5 -j
 ```
 This, however, is generally _not recommended_, since the additional MPI thread
 can interfere with the other GLVis threads.
@@ -181,8 +181,8 @@ Build METIS 5:
 Build the parallel version of MFEM, setting the options `MFEM_USE_METIS_5` and
 `METIS_DIR`, e.g.:
 ```sh
-~> cd mfem-4.4
-~/mfem-4.4> make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
+~> cd mfem-4.5
+~/mfem-4.5> make parallel -j MFEM_USE_METIS_5=YES METIS_DIR=@MFEM_DIR@/../metis-5.1.0
 ```
 
 ## CUDA version of MFEM
