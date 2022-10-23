@@ -87,7 +87,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Oct XX, 2022 | Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).
+Oct 22, 2022 | Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).
 Aug 18, 2022 | [MFEM Community Workshop](workshop.md) in October 2022.
 Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
