@@ -87,21 +87,21 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Oct 22, 2022 | Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).
 Aug 18, 2022 | [MFEM Community Workshop](workshop.md) in October 2022.
 Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
-Mar 21, 2022 | Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.4.tgz**
-</button>](https://bit.ly/mfem-4-4)
+**Download mfem-4.5.tgz**
+</button>](https://bit.ly/mfem-4-5)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](
