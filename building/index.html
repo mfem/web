@@ -495,7 +495,7 @@ can interfere with the other GLVis threads.</p>
 <h2 id="cuda-version-of-mfem">CUDA version of MFEM</h2>
 <p>To build the CUDA version of MFEM, one needs to specify the <a href="https://developer.nvidia.com/cuda-gpus#compute">CUDA compute capability</a>, with the <code>CUDA_ARCH</code> flag. In the examples below we use <code>CUDA_ARCH=sm_70</code> to build the MFEM serial and parallel versions for compute cability 7.0 (V100).</p>
 <p>Build the serial CUDA version of MFEM:</p>
-<pre><code class="sh">~/mfem&gt; make cuda CUDA_ARCH=sm_70-j
+<pre><code class="sh">~/mfem&gt; make cuda CUDA_ARCH=sm_70 -j
 </code></pre>
 
 <p>Build the parallel CUDA version of MFEM:</p>
