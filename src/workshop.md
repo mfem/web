@@ -38,7 +38,7 @@ See also the agenda for the previous [2021](../workshop21) MFEM workshop.
 ### Meeting format
 
 Workshop participants are encouraged to join the
-[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1eaok7edx-XcxRND6bw3c3GGH7vjZNuA)
+[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1hxasxnlt-erkRWQTMLmBoHUdXlB0Wfg)
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
 
@@ -62,7 +62,7 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 | 2:00-2:20 | **Break** | All |
 | 2:20-2:40 | **MFEM AWS tutorial** | **Julian Andrej** (LLNL) |
 | 2:40-3:00 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
-| 3:00-4:00 | **Q&A Session** | **MFEM team** available on WebEx + Slack|
+| 3:00-4:00 | **Q&A Session** | **MFEM team** available on Zoom + Slack|
 
 ---
 
