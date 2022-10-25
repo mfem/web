@@ -8,6 +8,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-6"  markdown="1">
 
+#### Dennis Ogiermann (University of Bochum)
+#### *Computing Meets Cardiology: Making Heart Simulations Fast and Accurate*
+##### **September 13, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](h0tviC32kE8)
+
+Heart diseases are an ubiquitous societal burden responsible for a majority of deaths world wide. A central problem in developing effective treatments for heart diseases is the inherent complexity of the heart as an organ. From a modeling perspective, the heart can be interpreted as a biological pump involving multiple physical fields, namely fluid and solid mechanics, as well as chemistry and electricity, all interacting on different time scales. This multiphysics and multiscale aspect makes simulations inherently expensive, especially when approached with naive numerical techniques. However, computational models can be extraordinarily useful in helping us understanding how the healthy heart functions and especially how malfunctions influence different diseases. In this context, also information about possible weaknesses of therapies can be obtained to ultimately improve clinical treatment and decision support. In this talk, we will focus primarily on two important model classes in computational cardiology and their respective efficient numerical treatment without compromising significant accuracy. The first class is the problem of computing electrocardiograms (ECG) from electrical heart simulations. Since ECG measurements can give a wide range of insights about a wide range of heart diseases they offer suitable data to validate our electrophysiological models and verify our numerical schemes on organ-scale. Known numerical issues, arising in the context of electrophysiological models, will be reviewed. The second class addresses bidirectionally coupled electromechanical models and their efficient numerical treatment. Focus will be on a unified space-time adaptive operator splitting framework developed on top of MFEM which proves highly efficient so far for the investigated model classes while still preserving high accuracy.
+
+---
+
 #### Ricardo Vinuesa (KTH)
 #### *Modeling and Controlling Turbulent Flows through Deep Learning*
 ##### **August 23, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -46,7 +56,7 @@ We consider design, development, and use of simulation software for exascale com
 
 Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Robert Chiodi (UIUC)
 #### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
@@ -56,7 +66,7 @@ Many of the most interesting phenomena in solid mechanics occurs at material int
 
 The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Tamas Horvath (Oakland University)
 #### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
