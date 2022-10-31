@@ -10,6 +10,7 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
     <li data-target="#myCarousel" data-slide-to="6"></li>
+    <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -18,15 +19,21 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      [<img class="d-block w-100" width="260" height="260" src="img/gallery/workshop22/heat_thumbnail_small.png">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Dennis Ogiermann
+        2022 Visualization Contest Winner Tobias Duswald
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      [<img class="d-block w-100" width="240" height="240" src="img/gallery/workshop22/coil_small.png">](gallery.md)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Tamas Horvath
+        2022 Visualization Contest Winner Will Pazner
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="250" height="250" src="img/gallery/workshop22/brain_electric_field_small.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2022 Visualization Contest Winner Ben Zwick
       </div>
     </div>
     <div class="item">
