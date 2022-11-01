@@ -85,6 +85,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+<div id="pazner" class="anchor"></div>
+
 [![](img/gallery/workshop22/coil_small.png)](img/gallery/workshop22/coil.mp4)
 
 *Magnetic diffusion problem solved to compute the magnetic field induced by current running through copper wire in air. The problem is solved using the A-phi formulation, using GPU-accelerated low-order-refined solvers in H1 and H(curl). Image courtesy of Will Pazner, **winner** of the 2022 MFEM Workshop Visualization Contest.*
@@ -104,6 +106,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ---
 
+<div id="nstx" class="anchor"></div>
+
 [![](img/gallery/nstxu_hhfw.png)](img/gallery/nstxu_hhfw.png)
 
 *Slice image of the high harmonic fast wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) magnetic fusion device. Computed using MFEM's 4th order H(curl) elements by the [RF-SciDAC project](https://www.rfscidac4.org).*
@@ -115,6 +119,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 *An electromagnetic eigenmode of a star-shaped domain computed with 3rd order finite elements computed with [Example 13](https://docs.mfem.org/html/ex13p_8cpp_source.html).*
 
 ----
+
+<div id="blast" class="anchor"></div>
 
 [![](img/gallery/hres_icfcyl_4096_5.jpg)](img/gallery/hres_icfcyl_4096_5-full.jpg)
 
@@ -146,6 +152,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 ----
 
+<div id="drone" class="anchor"></div>
+
 [![](img/gallery/drone.png)](img/gallery/drone.png)
 
 *Topology optimization of a drone body using LLNL's [LiDO project](https://str.llnl.gov/2018-03/tortorelli), based on MFEM.*
@@ -175,6 +183,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 *Adaptive, implicit resistive MHD solver (from [TDS-SciDAC](https://tds-scidac.github.io/)) resolves multi-scale features of plasmoid instability.*
 
 ----
+
+<div id="duswald" class="anchor"></div>
 
 [![](img/gallery/workshop22/heat_thumbnail_small.png)](img/gallery/workshop22/heat.mp4)
 
@@ -259,6 +269,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 *Visualization of time-averaged mean flow from a compressible, DG Navier-Stokes solver using MFEM.  The geometry matches the internal flow domain of a cylindrical plasma torch where gas is injected into four small diamond ports. Image courtesy of Karl W. Schulz, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
+
+<div id="zwick" class="anchor"></div>
 
 [![](img/gallery/workshop22/brain_electric_field_small.png)](img/gallery/workshop22/brain_electric_field.png)
 
