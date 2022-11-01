@@ -10,6 +10,7 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
     <li data-target="#myCarousel" data-slide-to="6"></li>
+    <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -18,31 +19,37 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="280" height="280" src="img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png">](gallery.md)
+      [<img class="d-block w-100" width="240" height="240" src="img/gallery/workshop22/coil_small.png">](gallery.md#pazner)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Dennis Ogiermann
+        2022 Visualization Contest Winner Will Pazner
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" style="width:60%; margin-top:50px;" src="img/gallery/workshop21/turbine_small.png">](gallery.md)
+      [<img class="d-block w-100" width="260" height="260" src="img/gallery/workshop22/heat_thumbnail_small.png">](gallery.md#duswald)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2021 Visualization Contest Winner Tamas Horvath
+        2022 Visualization Contest Winner Tobias Duswald
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md)
+      [<img class="d-block w-100" width="250" height="250" src="img/gallery/workshop22/brain_electric_field_small.png">](gallery.md#zwick)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2022 Visualization Contest Winner Ben Zwick
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md#nstx)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
         Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md)
+      [<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md#blast)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
         High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md)
+      [<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md#drone)
       <div class="carousel-caption d-none" style="margin-top:-10px;">
         Topology optimization of a drone body using <br> LLNL's [LiDO code](https://str.llnl.gov/2018-03/tortorelli), based on MFEM
       </div>
@@ -79,7 +86,10 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * ... and [many more](features.md).
 
 MFEM is used in many projects, including [BLAST](https://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](https://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://scidac5-fastmath.lbl.gov/), [xSDK](https://xsdk.info/), and [CEED](https://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
+We host an annual [workshop](workshop.md) and a [seminar](seminar.md) series.
+
 See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
+
 
 </div><div class="col-md-6 news-table" markdown="1">
 
@@ -88,6 +98,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Oct 22, 2022 | Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).
+Oct 11, 2022 | New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project for efficient AD.
 Aug 18, 2022 | [MFEM Community Workshop](workshop.md) in October 2022.
 Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
 Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
