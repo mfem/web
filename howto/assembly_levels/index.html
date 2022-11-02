@@ -420,7 +420,7 @@ Backends are accessible by configuring the <code>mfem::Device</code> accordingly
 </tr>
 </tbody>
 </table>
-<p>It is also possible to request the backend of a backend, for instance if we want to use the <code>/gpu/cuda/shared</code> backend of libCEED one can specify this with the following syntax:</p>
+<p>It is also possible to request the backend of a backend, for instance if we want to use the <code>/gpu/cuda/shared</code> backend of libCEED, one can specify this with the following syntax:</p>
 <pre><code class="c++">mfem::Device device(&quot;ceed-cuda:/gpu/cuda/shared&quot;);
 </code></pre>
 
@@ -559,7 +559,7 @@ Backends are accessible by configuring the <code>mfem::Device</code> accordingly
 <td>Mixed elements support</td>
 <td align="center">❌</td>
 <td align="center">❌</td>
-<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Assembly: None</td>
