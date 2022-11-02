@@ -45,7 +45,7 @@ Backends are accessible by configuring the `mfem::Device` accordingly.
 | `ceed-hip` | CEED HIP backend working together with the HIP backend. Enabled when MFEM_USE_CEED = YES and MFEM_USE_HIP = YES. |
 | `debug` | Debug backend: host memory is READ/WRITE protected while a device is in use. It allows to test the "device" code-path (using separate host/device memory pools and host <-> device transfers) without any GPU hardware. As 'DEBUG' is sometimes used as a macro, `_DEVICE` has been added to avoid conflicts. |
 
-It is also possible to request the backend of a backend, for instance if we want to use the `/gpu/cuda/shared` backend of libCEED one can specify this with the following syntax:
+It is also possible to request the backend of a backend, for instance if we want to use the `/gpu/cuda/shared` backend of libCEED, one can specify this with the following syntax:
 ```c++
 mfem::Device device("ceed-cuda:/gpu/cuda/shared");
 ```
@@ -75,7 +75,7 @@ The native MFEM backend and the RAJA backend support the same features and Integ
 |-----------------------------------|:-----------:|:------------:|:---------------:|
 | Tensor elements support           | ✅          | ✅           | ✅              |
 | Simplices support                 | ❌          | ❌           | ✅              |
-| Mixed elements support            | ❌          | ❌           | ❌              |
+| Mixed elements support            | ❌          | ❌           | ✅              |
 | Assembly: None                    | ❌          | ❌           | ✅              |
 | Assembly: Partial                 | ✅          | ✅           | ✅              |
 | Assembly: Element                 | ✅          | ❌           | ❌              |
