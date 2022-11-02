@@ -50,6 +50,7 @@ It is also possible to request the backend of a backend, for instance if we want
 mfem::Device device("ceed-cuda:/gpu/cuda/shared");
 ```
 
+# Device support
 The native MFEM backend and the RAJA backend support the same features and Integrators. However, the OCCA backend, and the libCEED backend each offer different features, and support different Integrators with different performance characteristics.
 
 | Supported Integrators             | native MFEM | OCCA backend | libCEED backend |

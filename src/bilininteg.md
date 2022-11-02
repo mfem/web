@@ -386,5 +386,9 @@ information.
 | MixedScalarWeakGradientIntegrator   | $(-\lambda u, \div\vec\{v})$                        | $\grad(\lambda u)$                   | $-\lambda u\,\hat\{n}$                   |
 | MixedWeakGradDotIntegrator          | $(-\vec\{\lambda}\cdot\vec\{u},\div\vec\{v})$       | $\grad(\vec\{\lambda}\cdot\vec\{u})$ | $-\vec\{\lambda}\cdot\vec\{u}\,\hat\{n}$ |
 
+## Device support
+
+A list of the MFEM integrators that support device acceleration is available [here](howto/assembly_levels.md#device-support).
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
