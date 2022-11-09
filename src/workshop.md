@@ -48,7 +48,7 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 7:40-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
+| 7:40-8:00 | **Welcome & Overview** ([PDF](pdf/workshop22/01_Fisher_MFEM_Workshop_Intro.pdf)) | **Aaron Fisher** (LLNL) |
 | 8:00-8:20 | **The State of MFEM** ([PDF](pdf/workshop22/02_Kolev_State_of_MFEM.pdf)) | **Tzanio Kolev** (LLNL) |
 | 8:20-8:40 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
 | 8:40-9:00 | **Break** | All |
