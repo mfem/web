@@ -60,7 +60,7 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 | 1:00-2:00 | **Talks, Session IV**<br>(20 mins each)<br><br>Chair: Tzanio Kolev | **Devlin Hayduke** (ReLogic)<br> *Project Minerva: Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems* ([PDF](pdf/workshop22/13_Hayduke_ReLogic.pdf))<br> **Tim Brewer** (Synthetik)<br> *blastFEM: A GPU-accelerated, Very High-performance and Energy-efficient Solver for Highly Compressible Flows* ([PDF](pdf/workshop22/14_Brewer_blastFEM.pdf))<br> **Adolfo Rodriguez** (OpenSim)<br> *Using MFEM for Wellbore Stability Analysis* ([PDF](pdf/workshop22/15_Rodriguez_Wellbore.pdf)) |
 | 2:00-2:20 | **Break** | All |
 | 2:20-2:40 | **MFEM AWS tutorial** | **Julian Andrej** (LLNL) |
-| 2:40-3:00 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
+| 2:40-3:00 | **Wrap-up & Contest Winners** ([PDF](pdf/workshop22/01_Fisher_MFEM_Workshop_Intro.pdf)) | **Aaron Fisher** (LLNL) |
 | 3:00-4:00 | **Q&A Session** | **MFEM team** available on Zoom + Slack|
 
 ---
