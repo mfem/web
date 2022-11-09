@@ -48,7 +48,7 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 7:40-8:00 | **Welcome & Overview** | **Aaron Fisher** (LLNL) |
+| 7:40-8:00 | **Welcome & Overview** ([PDF](pdf/workshop22/01_Fisher_MFEM_Workshop_Intro.pdf)) | **Aaron Fisher** (LLNL) |
 | 8:00-8:20 | **The State of MFEM** ([PDF](pdf/workshop22/02_Kolev_State_of_MFEM.pdf)) | **Tzanio Kolev** (LLNL) |
 | 8:20-8:40 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
 | 8:40-9:00 | **Break** | All |
@@ -59,8 +59,8 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 | 11:40-12:40 |  **Talks, Session III**<br>(20 mins each)<br><br>Chair: Aaron Fisher | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration* ([PDF](pdf/workshop22/10_Pazner_HO_Solvers.pdf))<br>**Jorge-Luis Barrera** (LLNL)<br> *Shape and Topology Optimization Powered by MFEM* ([PDF](pdf/workshop22/11_Barrera_Shape_Optimization.pdf))<br>**Siu Wun Cheung** (LLNL)<br> *Reduced Order Modeling for Finite Element Simulations through the Partnership of MFEM and libROM* ([PDF](pdf/workshop22/12_Cheung_libROM.pdf)) | 12:40-1:00 | **Break** | All |
 | 1:00-2:00 | **Talks, Session IV**<br>(20 mins each)<br><br>Chair: Tzanio Kolev | **Devlin Hayduke** (ReLogic)<br> *Project Minerva: Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems* ([PDF](pdf/workshop22/13_Hayduke_ReLogic.pdf))<br> **Tim Brewer** (Synthetik)<br> *blastFEM: A GPU-accelerated, Very High-performance and Energy-efficient Solver for Highly Compressible Flows* ([PDF](pdf/workshop22/14_Brewer_blastFEM.pdf))<br> **Adolfo Rodriguez** (OpenSim)<br> *Using MFEM for Wellbore Stability Analysis* ([PDF](pdf/workshop22/15_Rodriguez_Wellbore.pdf)) |
 | 2:00-2:20 | **Break** | All |
-| 2:20-2:40 | **MFEM AWS tutorial** | **Julian Andrej** (LLNL) |
-| 2:40-3:00 | **Wrap-up & Contest Winners** | **Aaron Fisher** (LLNL) |
+| 2:20-2:40 | **MFEM AWS tutorial** ([Instructions](../tutorial/)) | **Julian Andrej** (LLNL) |
+| 2:40-3:00 | **Wrap-up & Contest Winners** ([PDF](pdf/workshop22/16_Fisher_MFEM_Workshop_Wrap.pdf)) | **Aaron Fisher** (LLNL) |
 | 3:00-4:00 | **Q&A Session** | **MFEM team** available on Zoom + Slack|
 
 ---
