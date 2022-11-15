@@ -18,6 +18,8 @@ MFEM_FORALL(i, u.Size(),     // Abstract the loop: for(int i=0; i<u.Size(); i++)
 });
 ```
 
+A list of the MFEM integrators that support device acceleration is available [here](howto/assembly_levels.md#device-support).
+
 ## Memory manager
 In order to make the use of host/device memory as simple as possible, MFEM relies on internal memory manager.
 Instead of storing a pointer of type `T*`, each object that can be accessed on a device contains `Memory<T>` objects.
