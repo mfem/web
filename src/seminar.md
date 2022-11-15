@@ -12,7 +12,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/mu.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
@@ -20,7 +20,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ##### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
 ##### [**9am PDT, December 13, 2022**](https://everytimezone.com/s/3c779936)
 
-**Abstract:** TBD
+**Abstract:** The Diffusion equation with strong anisotropy has broad applications. In this project, we discuss numerical solution of diffusion equations with strong anisotropy on meshes not aligned with the anisotropic vector field, focusing on application to magnetic confinement fusion. In order to resolve the numerical pollution for simulations on a non-anisotropy-aligned mesh and reduce the associated high computational cost, we developed a high-order discontinuous Galerkin scheme with an efficient preconditioner. The auxiliary space preconditioning framework is designed by employing a continuous finite element space as the auxiliary space for the discontinuous finite element space. An effective line smoother that can mitigate the high-frequency error perpendicular to the magnetic field has been designed by a graph-based approach to pick the line smoother that is approximately perpendicular to the vector fields when the mesh does not align with anisotropy. Numerical experiments for several benchmark problems are presented to validate the effectiveness and robustness.
 
 ---
 
