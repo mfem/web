@@ -2,207 +2,207 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://mfem.org/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/features/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/examples/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/electromagnetics/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/fluids/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/meshing-miniapps/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/autodiff/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/tools/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/toys/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/getting-started/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/building/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/serial-tutorial/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/parallel-tutorial/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/code-overview/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/howto/howto-index/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/fem/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/pri-dual-vec/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/bilininteg/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/lininteg/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/coefficient/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/nonlininteg/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/lininterp/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/fem_weak_form/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/fem_bc/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/performance/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/tperformance/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/gpu-support/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/mesh-formats/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/mesh-format-v1.0/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/mesh-format-v1.x/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/dox/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/publications/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/about/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/search/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/news/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/videos/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/seminar/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/workshop/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/tutorial/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/gallery/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://mfem.org/download/</loc>
-     <lastmod>2022-11-14</lastmod>
+     <lastmod>2022-11-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
