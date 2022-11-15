@@ -331,7 +331,7 @@ The electrodynamics mini application, named `maxwell` after James Clerk Maxwell
 who first formulated the classical theory of electromagnetic radiation, is
 intended to demonstrate how to solve transient wave problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
-specialized sources or boundary conditions could be implemented.  A detailed 
+specialized sources or boundary conditions could be implemented.  A detailed
 overview of the equations being solved and their discretization can be found here:
 [Maxwell Theory Notes](maxwell-notes.md).
 

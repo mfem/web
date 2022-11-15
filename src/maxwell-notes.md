@@ -103,7 +103,7 @@ important in wave equations as well. Imagine modeling a current carrying
 conductor surrounded by some insulating material. The current density
 ${\bf J}$ may be non-zero inside the conductor but it should be
 identically zero outside of it. Assuming the computational mesh conforms
-to the surface of this conductor, an H(Div) field can can accurately
+to the surface of this conductor, an H(Div) field can accurately
 represent such a current flow as long as the current at the surface of
 the conductor remains parallel to that surface. In other words the
 current will not "leak" out of the conductor as long as the normal
@@ -158,7 +158,7 @@ operator by simply evaluating the curl of our H(Curl) basis functions in
 terms of our H(Div) basis functions. This evaluation is handled by a
 `DiscreteInterpolator` called ` CurlInterpolator`. The process of
 looping over each element to compute these interpolations is conducted
-by the the ` ParDiscreteLinearOperator`. In the `MaxwellSolver` this
+by the ` ParDiscreteLinearOperator`. In the `MaxwellSolver` this
 curl operator is simply named `Curl_` and its negative, needed by the
 `SIAVSolver`, is named `NegCurl_`. These operators are setup between
 lines 227 and 236 of the file `maxwell_solver.cpp`.
@@ -194,7 +194,7 @@ $$\begin{align}
   \int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}{\bf B})] d\Omega
   &=& \int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}\sum\_j b\_j{\bf F}\_j(\vec{x}))] d\Omega \\\\
   &=& \sum\_j b\_j\{\int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}{\bf F}\_j(\vec{x}))] d\Omega \}
-\end{align}$$ 
+\end{align}$$
 
 The expression in curly braces depends only on our
 material coefficient and our basis functions so we can precompute this
@@ -270,9 +270,9 @@ c-style function, avoid the continuity concerns raised in
 ### Setting up the solver
 
 The time derivative in Ampère's Law is of the form:
-$$\frac{\partial\epsilon{\bf E}}{\partial t} \approx 
-  \frac{\partial}{\partial t}(\epsilon\sum\_ie(t){\bf W}\_i) = 
-  \epsilon\sum\_i\dot{e}(t){\bf W}\_i$$ 
+$$\frac{\partial\epsilon{\bf E}}{\partial t} \approx
+  \frac{\partial}{\partial t}(\epsilon\sum\_ie(t){\bf W}\_i) =
+  \epsilon\sum\_i\dot{e}(t){\bf W}\_i$$
 
 Where we have assumed that
 $\epsilon$ is constant in time. For the weak form of Ampère's we need to
@@ -280,7 +280,7 @@ again multiply by the H(Curl) basis functions and integrate over the
 problem domain.
 $$\int\_\Omega{\bf W}_i\cdot(\epsilon\sum\_j\dot{e}(t){\bf W}_j)d\Omega
 = \sum\_j\dot{e}(t)\{\int\_\Omega{\bf W}_i\cdot(\epsilon{\bf W}_j)d\Omega
-\}$$ 
+\}$$
 
 The integral in the curly braces is a mass matrix which is
 again computed using the `BilinearFormIntegrator` named
@@ -316,12 +316,12 @@ The only remaining thing to discuss is the way in which we use a
 combination of primal and dual vectors within the simulation code.
 However, it's hard to know what level of detail will be useful here. At
 this point I would recommend referring to our online documentation which
-can be found at [Primal and Dual Vectors](pri-dual-vec.md) 
+can be found at [Primal and Dual Vectors](pri-dual-vec.md)
 for an overview of this concept.
 
 
 [^1]: A list of the various ` BilinearFormIntegrators` can be found at
-    [Bilinear Form Integrators](bilininteg.md). More detailed descriptions 
+    [Bilinear Form Integrators](bilininteg.md). More detailed descriptions
     can be found in the files `fem/biliniteg.[ch]pp`.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>

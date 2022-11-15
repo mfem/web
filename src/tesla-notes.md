@@ -5,10 +5,10 @@ tag-electromagnetics:
 The magnetostatic equations that we start from are the following:
 $$\nabla\times\bf H = \bf J \label{ampere}$$
 $$\nabla\cdot{\bf B}= 0 \label{mag_gauss}$$
-$${\bf B} = \mu{\bf H}+\mu_0{\bf M} \label{const}$$ 
+$${\bf B} = \mu{\bf H}+\mu_0{\bf M} \label{const}$$
 Where \eqref{ampere} is Ampère's Law,
 \eqref{mag_gauss} is Gauss's Law for Magnetism, and
-\eqref{const} is a somewhat atypical way to write the Constitutive Relation 
+\eqref{const} is a somewhat atypical way to write the Constitutive Relation
 between ${\bf B}$ and ${\bf H}$. The constitutive relation used here
 follows "Classical Electrodynamics" 3rd edition by J.D. Jackson and uses
 ${\bf M}$, measured in A/m, to represent the magnetization of a
@@ -42,9 +42,9 @@ situations.
 The `tesla` miniapp models the magnetostatic equation for the magnetic
 vector potential ${\bf A}$. It includes source terms derived from a
 volumetric current source ${\bf J}$, magnetization vector
-${\bf M}$, or surface currents ${\bf K}$. 
+${\bf M}$, or surface currents ${\bf K}$.
 $$\nabla\times(\mu^{-1}\nabla\times{\bf A}) = {\bf J}+\nabla\times(\mu^{-1}\mu_0{\bf M})$$
-$$\hat{n}\times(\mu^{-1}\nabla\times{\bf A}) = \hat{n}\times{\bf K}$$ 
+$$\hat{n}\times(\mu^{-1}\nabla\times{\bf A}) = \hat{n}\times{\bf K}$$
 
 The magnetic vector potential will be approximated in
 H(Curl) so that the left hand side operator is well defined.
@@ -52,12 +52,12 @@ $${\bf A} \approx \sum_i a_i {\bf W}_i (\vec{x})$$
 
 Inserting this into the left hand side of the equation and integrating the resulting
 equation against each H(Curl) basis function leads to the following weak
-form: 
+form:
 $$\begin{align}
-\int\_{\Omega}{\bf W}\_{i}(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf A})]d\Omega & \approx 
+\int\_{\Omega}{\bf W}\_{i}(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf A})]d\Omega & \approx
 \int\_\Omega{\bf W}_i(\vec{x})\cdot\{\nabla\times[\mu^{-1}\nabla\times(\sum_j a_j{\bf W}_j(\vec{x}))]\}d\Omega \\\\
   & = \sum\_j a_j\{\int\_\Omega{\bf W}_i(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf W}_j(\vec{x}))]d\Omega\}
-\end{align}$$ 
+\end{align}$$
 
 
 The expression in curly braces depends only on our material coefficient and our basis functions. This particular integral
@@ -90,12 +90,12 @@ in the range of the curl operator. Another way to say this is that the
 divergence of ${\bf J}$ must be zero. If
 $\nabla\cdot{\bf J}\neq 0$ we can correct this by adding the
 gradient of a scalar field. If we start with some initial estimate of
-the current density which we call ${\bf J}_0$, 
+the current density which we call ${\bf J}_0$,
 $$\begin{aligned}
   \nabla\cdot({\bf J}_0-\nabla\Psi) &=& 0 \\\\
   \nabla\cdot\nabla\Psi &=& \nabla\cdot{\bf J}_0 \\\\
   {\bf J}& = & {\bf J}_0 - \nabla\Psi
-\end{aligned}$$ 
+\end{aligned}$$
 
 The current density ${\bf J}$ computed in this
 manner will be divergence free and therefore it will be in the range of
@@ -176,7 +176,7 @@ constitutive equation ${\bf B}=\mu{\bf H}$. Inserting our
 approximations and integrating this equation against each H(Curl) basis
 function we obtain the following:
 $$\sum\_j h_j\int\_\Omega\mu{\bf W}_i\cdot{\bf W}_j\,d\Omega =
-\sum\_k b_k\int\_\Omega{\bf W}_i\cdot{\bf F}_k\,d\Omega$$ 
+\sum\_k b_k\int\_\Omega{\bf W}_i\cdot{\bf F}_k\,d\Omega$$
 
 This set of linear equations is equivalent to the matrix equation:
 $$M_1(\mu)h = M_{21}b$$
@@ -227,14 +227,16 @@ many ways to compute this quantity in MFEM but perhaps the most
 convenient is to make use of a `VectorCoefficient` and a
 `ParLinearForm`. For example let's assume we have a coefficient for
 $\mu^{-1}$ and a `GridFunction` for ${\bf B}$ called `Bgf`:
-```C++
-    VectorGridFunctionCoefficient BCoef(&Bgf);
-    ScalarVectorProductCoefficient HCoef(muInvCoef, BCoef);
-    ParLinearForm Hlf(&HDivFESpace);
-    Hlf.AddDomainIntegrator(new VectorFEDomainIntegrator(HCoef));
-    Hlf.Assemble();
+```c++
+{
+   VectorGridFunctionCoefficient BCoef(&Bgf);
+   ScalarVectorProductCoefficient HCoef(muInvCoef, BCoef);
+   ParLinearForm Hlf(&HDivFESpace);
+   Hlf.AddDomainIntegrator(new VectorFEDomainIntegrator(HCoef));
+   Hlf.Assemble();
 
-    double energy = 0.5 * Hlf(Bgf);
+   double energy = 0.5 * Hlf(Bgf);
+}
 ```
 
 This integral can be restricted to some region, defined by a set of
@@ -283,175 +285,175 @@ Section [Computation of H](#sec:h_comp)).
 
 # Appendix A:  Magnetic Energy
 
-```C++
-    class MagneticEnergy
-    {
-    private:
-       const ParGridFunction & b_;
-       const ParGridFunction & h_;
+```c++
+class MagneticEnergy
+{
+private:
+   const ParGridFunction & b_;
+   const ParGridFunction & h_;
 
-    public:
-       MagneticEnergy(const ParGridFunction & b,
-                      const ParGridFunction & h)
-          : b_(b), h_(h) {}
+public:
+   MagneticEnergy(const ParGridFunction & b,
+                  const ParGridFunction & h)
+      : b_(b), h_(h) {}
 
-       double ComputeEnergy()
-       {
-          VectorGridFunctionCoefficient h_coef(&h_);
+   double ComputeEnergy()
+   {
+      VectorGridFunctionCoefficient h_coef(&h_);
 
-          ParLinearForm h_lf(b_.ParFESpace());
-          h_lf.AddDomainIntegrator(new VectorFEDomainLFIntegrator(h_coef));
-          h_lf.Assemble();
+      ParLinearForm h_lf(b_.ParFESpace());
+      h_lf.AddDomainIntegrator(new VectorFEDomainLFIntegrator(h_coef));
+      h_lf.Assemble();
 
-          return 0.5 * h_lf(b_);
-       }
+      return 0.5 * h_lf(b_);
+   }
 
-       double ComputeEnergy(const Array<int> & elem_attr_marker)
-       {
-          VectorGridFunctionCoefficient h_coef(&h_);
+   double ComputeEnergy(const Array<int> & elem_attr_marker)
+   {
+      VectorGridFunctionCoefficient h_coef(&h_);
 
-          ParLinearForm h_lf(b_.ParFESpace());
-          h_lf.AddDomainIntegrator(new VectorFEDomainLFIntegrator(h_coef),
-                                   const_cast<Array<int>&>(elem_attr_marker));
-          h_lf.Assemble();
+      ParLinearForm h_lf(b_.ParFESpace());
+      h_lf.AddDomainIntegrator(new VectorFEDomainLFIntegrator(h_coef),
+                               const_cast<Array<int>&>(elem_attr_marker));
+      h_lf.Assemble();
 
-          return 0.5 * h_lf(b_);
-       }
-    };
+      return 0.5 * h_lf(b_);
+   }
+};
 ```
 
 # Appendix B:  Torque
-```C++
-    class Torque
-    {
-    private:
-       const ParGridFunction & b_;
-       const ParGridFunction & h_;
-       const ParGridFunction & j_;
+```c++
+class Torque
+{
+private:
+   const ParGridFunction & b_;
+   const ParGridFunction & h_;
+   const ParGridFunction & j_;
 
-    public:
-       Torque(const ParGridFunction & b,
-              const ParGridFunction & h,
-              const ParGridFunction & j)
-          : b_(b), h_(h), j_(j) {}
+public:
+   Torque(const ParGridFunction & b,
+          const ParGridFunction & h,
+          const ParGridFunction & j)
+      : b_(b), h_(h), j_(j) {}
 
-       void ComputeTorqueOnSurface(const Array<int> &bdr_attr_marker,
-                                   const Vector &cent, Vector &T);
-       void ComputeTorqueOnVolume(const Array<int> &vol_attr_marker,
-                                  const Vector &cent, Vector &T);
-    };
+   void ComputeTorqueOnSurface(const Array<int> &bdr_attr_marker,
+                               const Vector &cent, Vector &T);
+   void ComputeTorqueOnVolume(const Array<int> &vol_attr_marker,
+                              const Vector &cent, Vector &T);
+};
 
-    void Torque::ComputeTorqueOnSurface(const Array<int> &bdr_attr_marker,
-                                        const Vector &cent, Vector &trq)
-    {
-       trq = 0.0;
+void Torque::ComputeTorqueOnSurface(const Array<int> &bdr_attr_marker,
+                                    const Vector &cent, Vector &trq)
+{
+   trq = 0.0;
 
-       ParFiniteElementSpace * fes = b_.ParFESpace();
-       ParMesh *mesh = b_.ParFESpace()->GetParMesh();
-       ElementTransformation *eltrans = NULL;
+   ParFiniteElementSpace * fes = b_.ParFESpace();
+   ParMesh *mesh = b_.ParFESpace()->GetParMesh();
+   ElementTransformation *eltrans = NULL;
 
-       Vector b, h, ht(3), nor(3), x(3), f(3), loc_trq(3);
-       loc_trq = 0.0;
+   Vector b, h, ht(3), nor(3), x(3), f(3), loc_trq(3);
+   loc_trq = 0.0;
 
-       for (int i=0; i<fes->GetNBE(); i++)
-       {
-          const int bdr_attr = mesh->GetBdrAttribute(i);
-          if (bdr_attr_marker[bdr_attr-1] == 0) { continue; }
+   for (int i=0; i<fes->GetNBE(); i++)
+   {
+      const int bdr_attr = mesh->GetBdrAttribute(i);
+      if (bdr_attr_marker[bdr_attr-1] == 0) { continue; }
 
-          eltrans = fes->GetBdrElementTransformation(i);
-          const FiniteElement &el = *fes->GetBE(i);
+      eltrans = fes->GetBdrElementTransformation(i);
+      const FiniteElement &el = *fes->GetBE(i);
 
-          const IntegrationRule *ir = NULL;
-          if (ir == NULL)
-          {
-             const int order = 2*el.GetOrder() + eltrans->OrderW(); // <-----
-             ir = &IntRules.Get(eltrans->GetGeometryType(), order);
-          }
+      const IntegrationRule *ir = NULL;
+      if (ir == NULL)
+      {
+         const int order = 2*el.GetOrder() + eltrans->OrderW(); // <-----
+         ir = &IntRules.Get(eltrans->GetGeometryType(), order);
+      }
 
-          for (int pi = 0; pi < ir->GetNPoints(); ++pi)
-          {
-             const IntegrationPoint &ip = ir->IntPoint(pi);
+      for (int pi = 0; pi < ir->GetNPoints(); ++pi)
+      {
+         const IntegrationPoint &ip = ir->IntPoint(pi);
 
-             eltrans->SetIntPoint(&ip);
+         eltrans->SetIntPoint(&ip);
 
-             CalcOrtho(eltrans->Jacobian(), nor);
+         CalcOrtho(eltrans->Jacobian(), nor);
 
-             double a = nor.Norml2();
+         double a = nor.Norml2();
 
-             eltrans->Transform(ip, x);
+         eltrans->Transform(ip, x);
 
-             b_.GetVectorValue(*eltrans, ip, b);
-             h_.GetVectorValue(*eltrans, ip, h);
+         b_.GetVectorValue(*eltrans, ip, b);
+         h_.GetVectorValue(*eltrans, ip, h);
 
-             double bn = b * nor / a;
-             double hn = h * nor / a;
-             add(h, -hn / a, nor, ht);
+         double bn = b * nor / a;
+         double hn = h * nor / a;
+         add(h, -hn / a, nor, ht);
 
-             f.Set(ip.weight * bn * bn / mu0_, nor);
-             f.Add(ip.weight * a * bn, ht);
-             f.Add(-0.5 * ip.weight * (mu0_ * (ht * ht) + bn * bn / mu0_), nor);
+         f.Set(ip.weight * bn * bn / mu0_, nor);
+         f.Add(ip.weight * a * bn, ht);
+         f.Add(-0.5 * ip.weight * (mu0_ * (ht * ht) + bn * bn / mu0_), nor);
 
-             loc_trq[0] += (x[1]-cent[1]) * f[2] - (x[2]-cent[2]) * f[1];
-             loc_trq[1] += (x[2]-cent[2]) * f[0] - (x[0]-cent[0]) * f[2];
-             loc_trq[2] += (x[0]-cent[0]) * f[1] - (x[1]-cent[1]) * f[0];
-          }
-       }
+         loc_trq[0] += (x[1]-cent[1]) * f[2] - (x[2]-cent[2]) * f[1];
+         loc_trq[1] += (x[2]-cent[2]) * f[0] - (x[0]-cent[0]) * f[2];
+         loc_trq[2] += (x[0]-cent[0]) * f[1] - (x[1]-cent[1]) * f[0];
+      }
+   }
 
-       MPI_Allreduce(loc_trq, trq, 3, MPI_DOUBLE, MPI_SUM, fes->GetComm());
-    }
+   MPI_Allreduce(loc_trq, trq, 3, MPI_DOUBLE, MPI_SUM, fes->GetComm());
+}
 
-    void Torque::ComputeTorqueOnVolume(const Array<int> &attr_marker,
-                                       const Vector &cent, Vector &trq)
-    {
-       trq = 0.0;
+void Torque::ComputeTorqueOnVolume(const Array<int> &attr_marker,
+                                   const Vector &cent, Vector &trq)
+{
+   trq = 0.0;
 
-       ParFiniteElementSpace * fes = b_.ParFESpace();
-       ParMesh *mesh = b_.ParFESpace()->GetParMesh();
-       ElementTransformation *eltrans = NULL;
+   ParFiniteElementSpace * fes = b_.ParFESpace();
+   ParMesh *mesh = b_.ParFESpace()->GetParMesh();
+   ElementTransformation *eltrans = NULL;
 
-       Vector b, j, x(3), f(3), t(3), loc_trq(3);
-       loc_trq = 0.0;
+   Vector b, j, x(3), f(3), t(3), loc_trq(3);
+   loc_trq = 0.0;
 
-       for (int i=0; i<fes->GetNE(); i++)
-       {
-          const int attr = mesh->GetAttribute(i);
-          if (attr_marker[attr-1] == 0) { continue; }
+   for (int i=0; i<fes->GetNE(); i++)
+   {
+      const int attr = mesh->GetAttribute(i);
+      if (attr_marker[attr-1] == 0) { continue; }
 
-          eltrans = fes->GetElementTransformation(i);
-          const FiniteElement &el = *fes->GetFE(i);
+      eltrans = fes->GetElementTransformation(i);
+      const FiniteElement &el = *fes->GetFE(i);
 
-          const IntegrationRule *ir = NULL;
-          if (ir == NULL)
-          {
-             const int order = 2*el.GetOrder() + eltrans->OrderW(); // <-----
-             ir = &IntRules.Get(eltrans->GetGeometryType(), order);
-          }
+      const IntegrationRule *ir = NULL;
+      if (ir == NULL)
+      {
+         const int order = 2*el.GetOrder() + eltrans->OrderW(); // <-----
+         ir = &IntRules.Get(eltrans->GetGeometryType(), order);
+      }
 
-          for (int pi = 0; pi < ir->GetNPoints(); ++pi)
-          {
-             const IntegrationPoint &ip = ir->IntPoint(pi);
+      for (int pi = 0; pi < ir->GetNPoints(); ++pi)
+      {
+         const IntegrationPoint &ip = ir->IntPoint(pi);
 
-             eltrans->SetIntPoint(&ip);
+         eltrans->SetIntPoint(&ip);
 
-             eltrans->Transform(ip, x);
+         eltrans->Transform(ip, x);
 
-             b_.GetVectorValue(*eltrans, ip, b);
-             j_.GetVectorValue(*eltrans, ip, j);
+         b_.GetVectorValue(*eltrans, ip, b);
+         j_.GetVectorValue(*eltrans, ip, j);
 
-             f[0] = j[1] * b[2] - j[2] * b[1];
-             f[1] = j[2] * b[0] - j[0] * b[2];
-             f[2] = j[0] * b[1] - j[1] * b[0];
+         f[0] = j[1] * b[2] - j[2] * b[1];
+         f[1] = j[2] * b[0] - j[0] * b[2];
+         f[2] = j[0] * b[1] - j[1] * b[0];
 
-             t[0] = (x[1]-cent[1]) * f[2] - (x[2]-cent[2]) * f[1];
-             t[1] = (x[2]-cent[2]) * f[0] - (x[0]-cent[0]) * f[2];
-             t[2] = (x[0]-cent[0]) * f[1] - (x[1]-cent[1]) * f[0];
+         t[0] = (x[1]-cent[1]) * f[2] - (x[2]-cent[2]) * f[1];
+         t[1] = (x[2]-cent[2]) * f[0] - (x[0]-cent[0]) * f[2];
+         t[2] = (x[0]-cent[0]) * f[1] - (x[1]-cent[1]) * f[0];
 
-             loc_trq.Add(ip.weight * eltrans->Weight(), t);
-          }
-       }
+         loc_trq.Add(ip.weight * eltrans->Weight(), t);
+      }
+   }
 
-       MPI_Allreduce(loc_trq, trq, 3, MPI_DOUBLE, MPI_SUM, fes->GetComm());
-    }
+   MPI_Allreduce(loc_trq, trq, 3, MPI_DOUBLE, MPI_SUM, fes->GetComm());
+}
 ```
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
