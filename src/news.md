@@ -2,6 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Nov 16, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of the [2022 Workshop](workshop.md), held on October 25.*
 **Oct 22, 2022** | *Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).*
 **Oct 11, 2022** | *New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project to efficiently differentiate large-scale finite element applications.*
 **Aug 18, 2022** | *The second [MFEM Community Workshop](workshop.md) will take place on October 25th, 2022.*
