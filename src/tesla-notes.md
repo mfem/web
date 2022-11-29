@@ -55,8 +55,8 @@ equation against each H(Curl) basis function leads to the following weak
 form:
 $$\begin{align}
 \int\_{\Omega}{\bf W}\_{i}(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf A})]d\Omega & \approx
-\int\_\Omega{\bf W}_i(\vec{x})\cdot\{\nabla\times[\mu^{-1}\nabla\times(\sum_j a_j{\bf W}_j(\vec{x}))]\}d\Omega \\\\
-  & = \sum\_j a_j\{\int\_\Omega{\bf W}_i(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf W}_j(\vec{x}))]d\Omega\}
+\int\_\Omega{\bf W}_i(\vec{x})\cdot\\{\nabla\times[\mu^{-1}\nabla\times(\sum_j a_j{\bf W}_j(\vec{x}))]\\}d\Omega \\\\
+  & = \sum\_j a_j\\{\int\_\Omega{\bf W}_i(\vec{x})\cdot[\nabla\times(\mu^{-1}\nabla\times{\bf W}_j(\vec{x}))]d\Omega\\}
 \end{align}$$
 
 
