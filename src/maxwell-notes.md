@@ -193,7 +193,7 @@ an equation corresponding to each basis function in H(Curl). For example
 $$\begin{align}
   \int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}{\bf B})] d\Omega
   &=& \int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}\sum\_j b\_j{\bf F}\_j(\vec{x}))] d\Omega \\\\
-  &=& \sum\_j b\_j\{\int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}{\bf F}\_j(\vec{x}))] d\Omega \}
+  &=& \sum\_j b\_j\\{\int\_\Omega{\bf W}\_i(\vec{x})\cdot[\nabla\times(\mu^{-1}{\bf F}\_j(\vec{x}))] d\Omega \\}
 \end{align}$$
 
 The expression in curly braces depends only on our
