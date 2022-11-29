@@ -279,8 +279,8 @@ $\epsilon$ is constant in time. For the weak form of Ampère's we need to
 again multiply by the H(Curl) basis functions and integrate over the
 problem domain.
 $$\int\_\Omega{\bf W}_i\cdot(\epsilon\sum\_j\dot{e}(t){\bf W}_j)d\Omega
-= \sum\_j\dot{e}(t)\{\int\_\Omega{\bf W}_i\cdot(\epsilon{\bf W}_j)d\Omega
-\}$$
+= \sum\_j\dot{e}(t)\\{\int\_\Omega{\bf W}_i\cdot(\epsilon{\bf W}_j)d\Omega
+\\}$$
 
 The integral in the curly braces is a mass matrix which is
 again computed using the `BilinearFormIntegrator` named
