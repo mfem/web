@@ -142,7 +142,7 @@ tangential part of the magnetic field i.e.
 $\hat{n}\times{\bf H}=0$. Another possibility is to set a surface
 current boundary condition i.e.
 $\hat{n}\times{\bf H}=\hat{n}\times{\bf K}$. This could be
-done by using a `ParLinerForm` object to integrate
+done by using a `ParLinearForm` object to integrate
 $\hat{n}\times{\bf K}$ over the portion of the boundary where
 ${\bf K}$ is non-zero and adding the resulting vector to the right
 hand side of the linear system.
