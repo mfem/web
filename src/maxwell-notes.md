@@ -275,7 +275,7 @@ $$\frac{\partial\epsilon{\bf E}}{\partial t} \approx
   \epsilon\sum\_i\dot{e}(t){\bf W}\_i$$
 
 Where we have assumed that
-$\epsilon$ is constant in time. For the weak form of Ampère's we need to
+$\epsilon$ is constant in time. For the weak form of Ampère's Law we need to
 again multiply by the H(Curl) basis functions and integrate over the
 problem domain.
 $$\int\_\Omega{\bf W}_i\cdot(\epsilon\sum\_j\dot{e}(t){\bf W}_j)d\Omega
@@ -293,7 +293,7 @@ simple Sommerfeld first order radiation boundary condition. Each of
 these implicit terms multiplies the electric field which we approximate
 at the time $t+\Delta t/2$.
 
-Each of these pieces bilinear forms which multiply the time derivative
+Each of these bilinear forms which multiply the time derivative
 are mass matrices so a conjugate gradient iterative solver with a
 diagonal scaling preconditioner should work quite well. These are setup
 between lines 423 and 428 of the file `maxwell_solver.cpp`.
