@@ -136,7 +136,7 @@ Immersed/embedded/unfitted boundary methods obviate the need for continual re-me
 
 #### Vladimir Tomov (LLNL)
 #### *Finite Element Algorithms and Research Topics in ALE Hydrodynamics*
-##### **November 17, 2022** | [Texas A&M University-Corpus Christi](https://www.tamucc.edu/)
+##### **November 17, 2022** | [Texas A&M University-Corpus Christi Department of Math & Statistics](https://www.tamucc.edu/science/departments/math-and-statistics/index.php)
 
 ![YouTube](WrV_rB4pAnE)
 
