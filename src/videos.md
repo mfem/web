@@ -134,6 +134,16 @@ Immersed/embedded/unfitted boundary methods obviate the need for continual re-me
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Vladimir Tomov (LLNL)
+#### *Finite Element Algorithms and Research Topics in ALE Hydrodynamics*
+##### **November 17, 2022** | [Texas A&M University-Corpus Christi Department of Math & Statistics](https://www.tamucc.edu/science/departments/math-and-statistics/index.php)
+
+![YouTube](WrV_rB4pAnE)
+
+LLNL computational mathematician Vladimir Tomov discussed high-order finite element methods research, development, and application in the context of shock hydrodynamics simulations. The method is based on an Arbitrary Lagrangian-Eulerian (ALE) formulation consisting of separate Lagrangian, mesh optimization, and remap phases. The presentation addressed the following topics: Lagrangian shock hydrodynamics on curved meshes; multi-material closure models; coupling to multigroup radiation diffusion; optimization, r-adaptivity, and surface fitting of high-order meshes; advection-based remap with nonlinear sharpening of material interfaces; synchronization between the max/min bounds of primal and conservative fields during remap; computationally efficient finite element kernels based on partial assembly and sum factorization. The talk also covered the existing methods followed by a discussion about the outstanding research challenges and ongoing work to address them.
+
+</div><div class="col-md-6"  markdown="1">
+
 #### John Camier (LLNL)
 #### *All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations*
 ##### **March 21–24, 2022** | [NVIDIA GTC22](https://www.nvidia.com/gtc/)
