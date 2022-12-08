@@ -2,11 +2,80 @@
 
 A collection of MFEM-related videos, including recorded talks from the MFEM workshops and conference presentations.
 
+<div class="col-md-12"  markdown="1">
+
+## MFEM Workshop 2022
+
+---
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Aaron Fisher (LLNL)
+#### *Welcome and Overview*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](vaAA9zB1IQ8)
+
+Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&A session, and a visualization contest.
+Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.
+
+---
+
+#### Tzanio Kolev (LLNL)
+#### *The State of MFEM*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](I4pLPBYFR8o)
+
+MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
+
+---
+
+#### Ben Zwick (University of Western Australia)
+#### *Solution of the Electroencephalography (EEG) Forward Problem*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](2BgDwwCERm8)
+
+Ben Zwick of the University of Western Australia presented "Solution of the Electroencephalography (EEG) Forward Problem." The brain's electrical activity can be measured using EEG with electrodes attached to the scalp, or electrocorticography (ECoG), also known as intracranial EEG (iEEG), with electrodes implanted on the brain's surface. EEG source localization combines measurements from EEG or iEEG with data from medical imaging to estimate the location and strengths of the current sources that generated the measured electric potential at the electrodes. Source localization can be used to locate the epileptic zone in pharmaco-resistant focal epilepsies and study evoked related potentials. Accurate source localization requires fast and accurate solutions of the EEG forward problem, which involves calculating the electric potential within the brain volume given a predefined source. This presentation demonstrates how MFEM can be used to solve the EEG forward problem using patient-specific geometry and tissue conductivity obtained from medical images.
+
+---
+
+#### Carlos Brito Pacheco (Université Grenoble Alpes)
+#### *Rodin: Density and Topology Optimization Framework*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](ZhfDFRJjnU0)
+
+Carlos Brito Pacheco of Université Grenoble Alpes presented "Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework." He introduced the shape optimization library Rodin; a lightweight and modular shape optimization framework which provides many of the associated functionalities that are needed when implementing shape and topology optimization algorithms. These functionalities range from refining and remeshing the underlying shape, to providing elegant mechanisms to specify and solve variational problems. Learn more about [Rodin on GitHub](https://cbritopacheco.github.io/rodin/).
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Alvaro Sánchez Villar (Princeton Plasma Physics Laboratory)
+#### *MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](PgsQwKFq9Yo)
+
+Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters." The solution of Maxwell equations using the cold-plasma approximation is shown in the context of the design of electron cyclotron resonance plasma thrusters for space propulsion applications. This thruster class utilizes the electron cyclotron resonance to energize the plasma constituents and to sustain the plasma discharge. MFEM finite element discretization is used to solve for the time-harmonic electromagnetic waves. The shape and magnitude of the electromagnetic power density absorbed by the plasma is coupled to the plasma transport variables, and therefore determines the thruster operation performance parameters. Coupled simulations of the electromagnetic-wave and the plasma transport problems are used to interpret thruster operational principles, to understand its sensitivity to operational and design parameters, and compared to experimental measurements to both assess the accuracy of the current numerical model and to highlight its main limitations.
+
+---
+
+#### Christina Migliore (MIT)
+#### *The Development of the EM RF-Edge Interactions Mini-app “Stix” Using MFEM*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](44VeX-AVxU8)
+
+Christina Migliore of MIT presented "The Development of the EM RF-Edge Interactions Mini-App Stix Using MFEM." Ion cyclotron radio frequency range (ICRF) power plays an important role in heating and current drive in fusion devices. However, experiments show that in the ICRF regime there is a formation of a radio frequency (RF) sheath at the material and antenna boundaries that influences sputtering and power dissipation. Given the size of the sheath relative to the scale of the device, it can be approximated as a boundary condition (BC). Electromagnetic field solvers in the ICRF regime typically treat material boundaries as perfectly conducting, thus ignoring the effect of the RF sheath. Here it is described progress of implementing a model for the RF sheath based on a finite impedance sheath BC formulated by J. Myra and D. A. D’Ippolito, Physics of Plasmas 22 (2015) which provides a representation of the RF rectified sheath including capacitive and resistive effects. This research will discuss the results from the development of a parallelized cold-plasma wave equation solver Stix that implements this non-linear sheath impedance BC through the method of finite elements in pseudo-1D and pseudo-2D using the MFEM library.
+
+</div><div class="col-md-12"  markdown="1">
+
 ## FEM@LLNL Seminars
 
 ---
 
-<div class="col-md-6"  markdown="1">
+</div><div class="col-md-6"  markdown="1">
 
 #### Garth Wells (University of Cambridge)
 #### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
@@ -162,7 +231,7 @@ LLNL research scientist John Camier described recent improvements of high-order 
 
 #### Aaron Fisher (LLNL)
 #### *Wrap-Up and Simulation Contest Winners*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](9WViLXI7wx4)
 
@@ -173,7 +242,7 @@ Aaron Fisher of LLNL concluded the workshop by announcing the results of the sim
 
 #### Will Pazner (LLNL)
 #### *High-Order Matrix-Free Solvers*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](d6Ic9itl21g)
 
@@ -183,7 +252,7 @@ For users unfamiliar with MFEM’s solver library, Will Pazner of LLNL demonstra
 
 #### Vladimir Tomov (LLNL)
 #### *MFEM Capabilities for High-Order Mesh Optimization*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](c-VcclDfT7Y)
 
@@ -193,7 +262,7 @@ Vladimir Tomov of LLNL described MFEM’s mesh optimization strategies including
 
 #### William Dawn (NCSU)
 #### *Unstructured Finite Element Neutron Transport using MFEM*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](Gfq6HFOpKmA)
 
@@ -205,7 +274,7 @@ Traditional neutron transport methods use a “sweeping” method to transport p
 
 #### Syun’ichi Shiraiwa (PPPL)
 #### *Development of PyMFEM Python Wrapper for MFEM & Scalable RF Wave Simulation for Nuclear Fusion*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](8MBXq1PwUV8)
 
@@ -215,7 +284,7 @@ Syun’ichi Shiraiwa of Pacific Northwest National Laboratory introduced PyMFEM,
 
 #### Qi Tang (LANL)
 #### *An Adaptive, Scalable Fully Implicit Resistive MHD Solver*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](-YPgim5GrqE)
 
@@ -225,7 +294,7 @@ Qi Tang of Los Alamos National Laboratory described his team’s development of 
 
 #### Jan Nikl (ELI Beamlines)
 #### *Laser Plasma Modeling with High-Order Finite Elements*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](N7kwS0FdaD8)
 
@@ -235,7 +304,7 @@ Jan Nikl outlined how his team at the ELI Beamlines Centre uses MFEM for laser p
 
 #### Mathias Davids (Harvard)
 #### *Modeling Peripheral Nerve Stimulations (PNS) in Magnetic Resonance Imaging (MRI)*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](Mkz13lAH9Ak)
 
@@ -245,7 +314,7 @@ Mathias Davids from Harvard Medical School presented MFEM’s use in a medical s
 
 #### Marc Bolinches (UT)
 #### *Development of DG Compressible Navier-Stokes Solver with MFEM*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](3T9dQI1SU88)
 
@@ -255,7 +324,7 @@ Marc Bolinches from the University of Texas at Austin described a compressible N
 
 #### Robert Rieben (LLNL)
 #### *The Multiphysics on Advanced Platforms Project: Performance, Portability and Scaling*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](4BK0-VzM1Po)
 
@@ -265,7 +334,7 @@ High-energy-density physics (HEDP) experiments performed at LLNL and other Depar
 
 #### Felipe Gómez, Carlos del Valle, & Julián Jiménez (National University of Colombia)
 #### *Phase Change Heat and Mass Transfer Simulation with MFEM*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](OPRIpc2o_EA)
 
@@ -275,7 +344,7 @@ Three undergraduate students—Felipe Gómez, Carlos del Valle, and Julián Jim�
 
 #### Thomas Helfer (CEA)
 #### *MFEM-MGIS-MFront, a MFEM-Based Library for Nonlinear Solid Thermomechanic*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](K6HrhFWdfx8)
 
@@ -285,7 +354,7 @@ Thomas Helfer from the French Atomic Energy Commission (CEA) introduced the MFEM
 
 #### Jamie Bramwell (LLNL)
 #### *Serac: User-Friendly Abstractions for MFEM-Based Engineering Applications*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](EHUID3fnHwU)
 
@@ -295,7 +364,7 @@ Jamie Bramwell of LLNL presented an overview of the open-source [Serac project](
 
 #### Veselin Dobrev (LLNL)
 #### *Recent Developments in MFEM*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](oUk6tkHWjI4)
 
@@ -305,7 +374,7 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including me
 
 #### Tzanio Kolev (LLNL)
 #### *The State of MFEM*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](p4u4AlUhamY)
 
@@ -315,7 +384,7 @@ MFEM principal investigator Tzanio Kolev described the project’s past, present
 
 #### Aaron Fisher (LLNL)
 #### *Welcome and Overview*
-##### **October 20, 2021** | [MFEM Workshop 2021](https://mfem.org/workshop/)
+##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
 ![YouTube](534cBuede4w)
 
