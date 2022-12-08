@@ -50,7 +50,7 @@ The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-
 |---|---|---|
 | 7:40-8:00 | **Welcome & Overview** ([PDF](pdf/workshop22/01_Fisher_MFEM_Workshop_Intro.pdf)) | **Aaron Fisher** (LLNL) |
 | 8:00-8:20 | **The State of MFEM** ([PDF](pdf/workshop22/02_Kolev_State_of_MFEM.pdf)) | **Tzanio Kolev** (LLNL) |
-| 8:20-8:40 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
+| 8:20-8:40 | **Recent Developments** ([PDF](pdf/workshop22/03_Dobrev_MFEM_Recent_Developments.pdf)) | **Veselin Dobrev** (LLNL) |
 | 8:40-9:00 | **Break** | All |
 | 9:00-10:00 | **Talks, Session I**<br>(20 mins each)<br><br>Chair: Will Pazner | **Ben Zwick** (University of Western Australia)<br> *Solution of the Electroencephalography Forward Problem Using MFEM* ([PDF](pdf/workshop22/04_Zwick_EEG.pdf))<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework* ([PDF](pdf/workshop22/05_BritoPacheco_Rodin.pdf))<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving Stochastic, Fractional PDEs with MFEM with Applications to Random Field Generation and Topology Optimization* ([PDF](pdf/workshop22/06_Duswald_Fractional.pdf)) |
 | 10:00-10:20 | **Break & Group Photo**| **All**<br>Download a virtual background below |
