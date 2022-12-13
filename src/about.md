@@ -32,6 +32,7 @@ Please cite with:
 - [Thomas Anderson](https://www.krellinst.org/csgf/fellows/profile?n=anderson2014)
 - [Julian Andrej](https://github.com/jandrej)
 - [Mikhail Artemyev](https://github.com/martemyev)
+- [Nabil Atallah](https://scholar.google.com/citations?user=4HTud3cAAAAJ)
 - [Tucker Babcock](https://move.rpi.edu/people/tucker-babcock)
 - [Cody Balos](https://people.llnl.gov/balos1)
 - [Andrew Barker](https://scholar.google.com/citations?user=m1pd15IAAAAJ&hl=en)
@@ -52,6 +53,7 @@ Please cite with:
 - [Veselin Dobrev](https://people.llnl.gov/dobrev1)
 - [Daniel Drzisga](https://www.drzisga.dev)
 - [Yohann Dudouit](https://people.llnl.gov/dudouit1)
+- [Tobias Duswald](https://www.linkedin.com/in/tobias-duswald-8a5726158/)
 - [Truman Ellis](https://github.com/trumanellis)
 - [Josh Essman](https://github.com/joshessman-llnl)
 - [Aaron Fisher](https://people.llnl.gov/fisher47)
@@ -91,6 +93,7 @@ Please cite with:
 - [Syun'ichi Shiraiwa](https://scholar.google.com/citations?user=17PZFkoAAAAJ&hl=en)
 - [Morteza Siboni](https://www.scorec.rpi.edu/~hakimm2)
 - [Cameron Smith](https://www.scorec.rpi.edu/~cwsmith)
+- [Vanessa Sochat](https://vsoch.github.io)
 - [Ben Southworth](https://scholar.google.com/citations?user=TsGhEAUAAAAJ&hl=en)
 - [Thomas Stitt](https://github.com/tomstitt)
 - [Mark Stowell](https://people.llnl.gov/stowell1)
@@ -106,8 +109,10 @@ Please cite with:
 - [Brad Whitlock](https://github.com/BradWhitlock)
 - [Christian Woltering](https://github.com/wo80)
 - [Jonathan Wong](https://github.com/jonwong12)
+- [Max Yang](https://github.com/kanye-quest)
 - [George Zagaris](https://github.com/gzagaris)
 - [Stefano Zampini](https://ecrc.kaust.edu.sa/Pages/People.aspx)
+- [Patrick Zulian](https://www.ics.usi.ch/index.php/people-detail-page/93-patrick-zulian-sp-1923892153)
 
 
 ## License

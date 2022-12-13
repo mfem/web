@@ -2,6 +2,13 @@
 #### October 25, 2022
 #### Virtual Meeting
 
+**Speakers' slides** are linked in the agenda below. Read the
+[**article**](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022)
+about the workshop on LLNL's Computing website. Watch the
+[**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of
+workshop presentations (linked individually below and available on the [videos page](videos.md)),
+and view **contest submissions** in the [gallery](gallery.md).
+
 ![MFEM Logo](img/logo-300.png)
 
 ### Overview
@@ -16,10 +23,10 @@ directions for the project.
 **For questions, please contact the meeting organizers at**
 **[mfem@llnl.gov](mailto:mfem@llnl.gov).**
 
+<!--
 ### Registration
 
-If you plan to attend, [please register no later than **October 11th**](https://forms.gle/voPNCQWwXDHZ96uQ6).
-There is no registration fee. Zoom details will be distributed to participants prior to the event date.
+Registration closed on October 11th.
 
 ### Meeting format
 
@@ -33,28 +40,35 @@ Depending on the interest and user feedback, the meeting will include the follow
   Structural Mechanics applications
 
 See also the agenda for the previous [2021](../workshop21) MFEM workshop.
+-->
+
+### Meeting format
 
 Workshop participants are encouraged to join the
-[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1eaok7edx-XcxRND6bw3c3GGH7vjZNuA)
+[MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1hxasxnlt-erkRWQTMLmBoHUdXlB0Wfg)
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
 
-The meeting activities will take place 7:45am-2:45pm Pacific Daylight Time (GMT-7):
+The meeting activities will take place 7:40am-4:00pm Pacific Daylight Time (GMT-7):
 
 #### Tuesday, October 25
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
-| 7:45-8:00 | **Welcome & Overview** | Aaron Fisher |
-| 8:00-8:30 | **The State of MFEM & Roadmap** | Tzanio Kolev |
-| 8:30-9:00 | **Recent Developments** | Veselin Dobrev |
-| 9:00-10:00 | **Applications/Demos, Session I**<br>(20 mins each) | 3 Speakers TBD |
-| 10:00-10:30 | **Break** | All |
-| 10:30-12:30 | **Applications/Demos, Session II**<br>(20 mins each) | 6 Speakers TBD |
-| 12:30-1:00 | **Break** | All |
-| 1:00-2:00 | **Applications/Demos, Session III**<br>(20 mins each) | 3 Speakers TBD |
-| 2:00-2:30 | **Breakout Sessions** | - Electromagnetics<br> - Fluids<br> - Structural Mechanics |
-| 2:30-2:45 | **Wrap-up & Contest Winners** | Aaron Fisher |
+| 7:40-8:00 | **Welcome & Overview** ([PDF](pdf/workshop22/01_Fisher_MFEM_Workshop_Intro.pdf), [video](https://youtu.be/vaAA9zB1IQ8)) | **Aaron Fisher** (LLNL) |
+| 8:00-8:20 | **The State of MFEM** ([PDF](pdf/workshop22/02_Kolev_State_of_MFEM.pdf), [video](https://youtu.be/I4pLPBYFR8o)) | **Tzanio Kolev** (LLNL) |
+| 8:20-8:40 | **Recent Developments** ([PDF](pdf/workshop22/03_Dobrev_MFEM_Recent_Developments.pdf)) | **Veselin Dobrev** (LLNL) |
+| 8:40-9:00 | **Break** | All |
+| 9:00-10:00 | **Talks, Session I**<br>(20 mins each)<br><br>Chair: Will Pazner | **Ben Zwick** (University of Western Australia)<br> *Solution of the Electroencephalography Forward Problem Using MFEM* ([PDF](pdf/workshop22/04_Zwick_EEG.pdf), [video](https://youtu.be/2BgDwwCERm8))<br>**Carlos Brito Pacheco** (Université Grenoble Alpes)<br> *Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework* ([PDF](pdf/workshop22/05_BritoPacheco_Rodin.pdf), [video](https://youtu.be/ZhfDFRJjnU0))<br>**Tobias Duswald** (CERN \| TUM)<br> *Solving Stochastic, Fractional PDEs with MFEM with Applications to Random Field Generation and Topology Optimization* ([PDF](pdf/workshop22/06_Duswald_Fractional.pdf)) |
+| 10:00-10:20 | **Break & Group Photo**| **All**<br>Download a virtual background below |
+| 10:20-11:20 | **Talks, Session II**<br>(20 mins each)<br><br>Chair: Socratis Petrides | **Alvaro Sanchez Villar** (PPPL)<br> *MFEM Application to EM-wave Simulation in ECR Space Plasma Thrusters* ([PDF](pdf/workshop22/07_SanchezVillar_PlasmaThrusters.pdf), [video](https://youtu.be/PgsQwKFq9Yo))<br>**Brian Young**<br> *OpenParEM2D: A 2D Simulator for Guided Waves* ([PDF](pdf/workshop22/08_Young_OpenParEM2D.pdf))<br>**Christina Migliore** (MIT)<br> *The Development of the EM RF Edge Interactions Miniapp “Stix” Using MFEM* ([PDF](pdf/workshop22/09_Migliore_Stix.pdf), [video](https://youtu.be/44VeX-AVxU8))
+| 11:20-11:40 | **Break** | All |
+| 11:40-12:40 |  **Talks, Session III**<br>(20 mins each)<br><br>Chair: Aaron Fisher | **Will Pazner** (PDX)<br> *High-Order Solvers + GPU Acceleration* ([PDF](pdf/workshop22/10_Pazner_HO_Solvers.pdf))<br>**Jorge-Luis Barrera** (LLNL)<br> *Shape and Topology Optimization Powered by MFEM* ([PDF](pdf/workshop22/11_Barrera_Shape_Optimization.pdf))<br>**Siu Wun Cheung** (LLNL)<br> *Reduced Order Modeling for Finite Element Simulations through the Partnership of MFEM and libROM* ([PDF](pdf/workshop22/12_Cheung_libROM.pdf)) | 12:40-1:00 | **Break** | All |
+| 1:00-2:00 | **Talks, Session IV**<br>(20 mins each)<br><br>Chair: Tzanio Kolev | **Devlin Hayduke** (ReLogic)<br> *Project Minerva: Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems* ([PDF](pdf/workshop22/13_Hayduke_ReLogic.pdf))<br> **Tim Brewer** (Synthetik)<br> *blastFEM: A GPU-accelerated, Very High-performance and Energy-efficient Solver for Highly Compressible Flows* ([PDF](pdf/workshop22/14_Brewer_blastFEM.pdf))<br> **Adolfo Rodriguez** (OpenSim)<br> *Using MFEM for Wellbore Stability Analysis* ([PDF](pdf/workshop22/15_Rodriguez_Wellbore.pdf)) |
+| 2:00-2:20 | **Break** | All |
+| 2:20-2:40 | **MFEM AWS tutorial** ([Instructions](../tutorial/)) | **Julian Andrej** (LLNL) |
+| 2:40-3:00 | **Wrap-up & Contest Winners** ([PDF](pdf/workshop22/16_Fisher_MFEM_Workshop_Wrap.pdf)) | **Aaron Fisher** (LLNL) |
+| 3:00-4:00 | **Q&A Session** | **MFEM team** available on Zoom + Slack|
 
 ---
 
@@ -64,7 +78,7 @@ We will be holding a simulation and visualization contest open to all attendees.
 Participants can submit visualizations (images or videos) from MFEM-related
 simulations. The winner of the competition (selected by the organizing
 committee) will receive an MFEM T-shirt. We will also feature the images in the
-[gallery](gallery.md). Here the winners from the 2021 workshop:
+[gallery](gallery.md). Here are the winners from the 2021 workshop:
 
 <div class="col-md-6" markdown="1">
 <a href="https://mfem.org/img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann.png"><img src="https://mfem.org/img/gallery/workshop21/rabbit-biventricular-e_field-ogiermann_small.png" width="250"></a>
