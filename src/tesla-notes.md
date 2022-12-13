@@ -77,8 +77,7 @@ onto the H(Curl) basis function. $$\begin{aligned}
 implemented in MFEM as a `BilinearFormIntegrator` named
 `CurlCurlIntegrator`. The second integral, the boundary integral, gives
 rise to a Neumann boundary condition which will be discussed further in
-Section [2.1.3](#sec:surf_current){reference-type="ref"
-reference="sec:surf_current"}.
+Section [2.1.3](#sec:surf_current).
 
 ## Source Terms
 
