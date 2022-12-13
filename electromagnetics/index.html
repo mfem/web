@@ -139,6 +139,10 @@
                         
                     
                         
+                    
+                        
+                    
+                        
                             <li >
                                  <a href="../howto/howto-index/">HowTo Articles</a>
                             </li>
@@ -544,7 +548,9 @@ results in a magnetic flux density which must be tangent to that surface.</p>
 field strength (and of course the man Nikola Tesla), is intended to demonstrate
 how to solve standard magnetostatics problems in MFEM. Its source terms and
 boundary conditions are simple but they should indicate how more specialized
-sources of boundary conditions could be implemented.</p>
+sources of boundary conditions could be implemented.  A detailed overview of
+the equations being solved and their discretization can be found here:
+<a href="../tesla-notes/">Tesla Theory Notes</a>.</p>
 <p><img alt="" src="../img/examples/tesla-screenshot-small.png" /></p>
 <p>Note that this application assumes the mesh coordinates are given in meters.</p>
 <h4 id="mini-application-features_1">Mini Application Features</h4>
@@ -625,7 +631,9 @@ these sources in a single simulation.</p>
 who first formulated the classical theory of electromagnetic radiation, is
 intended to demonstrate how to solve transient wave problems in MFEM. Its source
 terms and boundary conditions are simple but they should indicate how more
-specialized sources or boundary conditions could be implemented.</p>
+specialized sources or boundary conditions could be implemented.  A detailed
+overview of the equations being solved and their discretization can be found here:
+<a href="../maxwell-notes/">Maxwell Theory Notes</a>.</p>
 <p>An example simulation is depicted below (click to animate the wave propagation).</p>
 <p><a href="https://mfem.org/img/examples/maxwell.gif"><img alt="" src="../img/examples/maxwell.png" /></a></p>
 <p>Time integration is handled by a variable order symplectic time integration
