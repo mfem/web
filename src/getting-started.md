@@ -27,3 +27,8 @@ We recommend that new users start with these articles:
 - [Fluid Dynamics Miniapp](fluids.md)
 - [Meshing Miniapps](meshing-miniapps.md)
 - [AD Miniapps](autodiff.md)
+
+### Mini Application Theory Notes
+
+- [Tesla Miniapp Theory](tesla-notes.md)
+- [Maxwell Miniapp Theory](maxwell-notes.md)

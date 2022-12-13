@@ -30,6 +30,8 @@ nav:
   - '_Serial Tutorial': serial-tutorial.md
   - '_Parallel Tutorial': parallel-tutorial.md
   - '_Code Overview': code-overview.md
+  - '_Tesla Notes': tesla-notes.md
+  - '_Maxwell Notes': maxwell-notes.md    
   - 'HowTo Articles': howto/howto-index.md
   - 'Finite Elements': fem.md
   - '_Primal and Dual Vectors': pri-dual-vec.md
