@@ -16,8 +16,7 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 ![YouTube](vaAA9zB1IQ8)
 
-Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&A session, and a visualization contest.
-Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.
+Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&A session, and a visualization contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.
 
 ---
 
@@ -28,6 +27,16 @@ Aaron Fisher of LLNL kicked off the event with an overview of the workshop agend
 ![YouTube](I4pLPBYFR8o)
 
 MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
+
+---
+
+#### Veselin Dobrev (LLNL)
+#### *Recent Developments in MFEM*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](pZQP0Q4SbWU)
+
+Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
 
 ---
 
@@ -49,7 +58,7 @@ Ben Zwick of the University of Western Australia presented "Solution of the Elec
 
 Carlos Brito Pacheco of Université Grenoble Alpes presented "Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework." He introduced the shape optimization library Rodin; a lightweight and modular shape optimization framework which provides many of the associated functionalities that are needed when implementing shape and topology optimization algorithms. These functionalities range from refining and remeshing the underlying shape, to providing elegant mechanisms to specify and solve variational problems. Learn more about [Rodin on GitHub](https://cbritopacheco.github.io/rodin/).
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Alvaro Sánchez Villar (Princeton Plasma Physics Laboratory)
 #### *MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters*
@@ -61,6 +70,16 @@ Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFE
 
 ---
 
+#### Brian Young
+#### *OpenParEM2D: A 2D Simulator for Guided Waves*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](_CqFJUu7E8E)
+
+Independent software developer Brian Young presented "OpenParEM2D: A Free, Open-Source Electromagnetic Simulator for 2D Waveguides and Transmission Lines." An overview is provided on a 2D electromagnetic simulator for guided waves called OpenParEM2D. It is an open-source and free project licensed under GPLv3 or later and released at its [website](https://openparem.org). Capabilities and methodology are presented.
+
+---
+
 #### Christina Migliore (MIT)
 #### *The Development of the EM RF-Edge Interactions Mini-app “Stix” Using MFEM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
@@ -68,6 +87,86 @@ Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFE
 ![YouTube](44VeX-AVxU8)
 
 Christina Migliore of MIT presented "The Development of the EM RF-Edge Interactions Mini-App Stix Using MFEM." Ion cyclotron radio frequency range (ICRF) power plays an important role in heating and current drive in fusion devices. However, experiments show that in the ICRF regime there is a formation of a radio frequency (RF) sheath at the material and antenna boundaries that influences sputtering and power dissipation. Given the size of the sheath relative to the scale of the device, it can be approximated as a boundary condition (BC). Electromagnetic field solvers in the ICRF regime typically treat material boundaries as perfectly conducting, thus ignoring the effect of the RF sheath. Here it is described progress of implementing a model for the RF sheath based on a finite impedance sheath BC formulated by J. Myra and D. A. D’Ippolito, Physics of Plasmas 22 (2015) which provides a representation of the RF rectified sheath including capacitive and resistive effects. This research will discuss the results from the development of a parallelized cold-plasma wave equation solver Stix that implements this non-linear sheath impedance BC through the method of finite elements in pseudo-1D and pseudo-2D using the MFEM library.
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Will Pazner (Portland State University)
+#### *High-Order Solvers + GPU Acceleration*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](dIC7d1q27hM)
+
+Will Pazner of Portland State University presented "High-Order Solvers + GPU Acceleration." He discussed the benefits of high-order (HO) methods in modeling under-resolved physics and on modern computing architectures, acknowledging that solving HO finite element problems remains challenging. His talk included details about how MFEM supports matrix-free solvers for HO methods, HO operator setup and application, low-order-refined (LOR) preconditioning and matrix assembly, LOR assembly throughput on GPUs (including CPU and GPU comparisons and parallel scalability), and LOR adaptive mesh refinement preconditioning.
+
+---
+
+#### Jorge-Luis Barrera (LLNL)
+#### *Shape and Topology Optimization Powered by MFEM*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](eD6Xr2jRrss)
+
+Jorge-Luis Barrera of LLNL presented "Shape and Topology Optimization Powered by MFEM." He discussed the Livermore Design Optimization (LiDO) code, which solves optimization problems for a wide range of Lab-relevant engineering applications. Leveraging MFEM and the LLNL-developed engineering simulation code Serac, LiDO delivers a powerful suite of design tools that run on HPC systems. The talk highlighted several design examples that benefit from LiDO’s integration with MFEM, including multi-material geometries, octet truss lattices, and a concrete dam under stress. LiDO’s graph architecture that seamlessly integrates MFEM features ensures robust topology optimization, as well as shape optimization using nodal coordinates and level set fields as optimization variables.
+
+---
+
+#### Siu Wun Cheung (LLNL)
+#### *Reduced Order Modeling for FE Simulations with MFEM & libROM*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](QfczefW8Xgk)
+
+Siu Wun Cheung of LLNL presented "Reduced Order Modeling for Finite Element Simulations Through the Partnership of MFEM and libROM." MFEM provides a wide variety of mesh types and high-order finite element discretizations. However, subject to the model complexity and fine resolution of the discretization, the computational cost can be high, requiring a long time to complete a single forward simulation. In this talk, we will introduce various reduced order modeling techniques, which aim to lower the computational complexity and maintain good accuracy, including intrusive projection-based model reduction and non-intrusive approaches. We will demonstrate the use of reduced order modeling techniques in libROM (www.librom.net), which can be applied to various MFEM examples, including the Poisson problem, linear elasticity, linear advection, mixed nonlinear diffusion, nonlinear elasticity, nonlinear heat conduction, Euler equation, and optimal control problems.
+
+---
+
+#### Devlin Hayduke (ReLogic Research)
+#### *Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](JT3RwzEeq8k)
+
+Devlin Hayduke of ReLogic Research presented "Project Minerva: Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems." While many Advanced Scientific Computing Research (ASCR) supported software packages are open source, they are often complicated to use, distributed primarily in source-code form targeting HPC systems, and potential adopters lack options for purchasing commercial support, training, and custom-development services. In response to this need, ReLogic Research, Inc., in collaboration with LLNL, is developing a secure, cloud deployable platform based on the MFEM software termed Minerva. Minerva will feature an integration layer allowing users of commercially available finite element pre/post-processing software (e.g., Abaqus/CAE, Hypermesh, Femap) for use with the Abaqus solver to run simulation studies with the MFEM discretization library and will strengthen further MFEM implemented solvers to make them applicable for solving large scale industrial design and optimization problems.
+
+---
+
+#### Synthetik Applied Technologies
+#### *blastFEM: GPU-Accelerated, High-Performance, Energy-Efficient Solver*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](tzQUlm0hlvE)
+
+Tim Brewer, Ben Shields, Peter Vonk, Jeff Heylmun, and Barlev Raymond of Synthetik Applied Technologies presented "blastFEM: A GPU-Accelerated, Very High-Performance and Energy-Efficient Solver for Highly Compressible Flows." Highly compressible multiphase and reactive flows are important, and manifest across a myriad of practical applications: novel energy production and propulsion methods, building design, safety and energy efficiency, material discovery, and maintenance of our nuclear arsenal. There are, however, few tools available to industry capable of simulating these flows at a resolution and scale suitable make predictions of adequate detail—at least within reasonable timeframes and budgetary constraints—to inform engineers and designers. A next generation, highly efficient simulation code is needed that can deliver results within useful timeframes, with sufficient detail to be useful to support simulation-driven design, discovery, and optimization. Furthermore, the code must be designed to run on modern and emerging heterogeneous architectures, and can efficiently leverage these architectures though the use of numerical schemes designed to maximized computational efficiency.
+
+---
+
+#### Adolfo Rodriguez (OpenSim Technology)
+#### *Using MFEM for Wellbore Stability Analysis*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](gBEApU1V_80)
+
+Adolfo Rodriguez of OpenSim Technology presented "Using MFEM for Wellbore Stability Analysis." He discussed the results from a Department of Energy Small Business Innovation Research project regarding the implementation of wellbore stability analysis for hydrocarbon producing wells.
+
+---
+
+#### Julian Andrej (LLNL)
+#### *AWS Tutorial*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](tsr6vza_7DM)
+
+In this tutorial, Julian Andrej of LLNL demonstrated how to use MFEM in the cloud (e.g., an Amazon Web Services instance) for scalable finite element discretization application development. Step-by-step instructions for the tutorial can be found on the [tutorial page](https://mfem.org/tutorial/).
+
+---
+
+#### Aaron Fisher (LLNL)
+#### *Wrap-Up and Simulation Contest Winners*
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+
+![YouTube](7uExaQm8Dmk)
+
+Aaron Fisher of LLNL concluded the workshop by announcing the winners of the simulation and visualization contest: (1) streamlines of the electric field generated by a current dipole source located in the temporal lobe of an epilepsy patient, rendered by Ben Zwick of the University of Western Australia; (2) a topology-optimized heat sink, rendered by Tobias Duswald of CERN/Technical University of Munich; (3) the magnetic field induced by current running through copper wire in air, rendered by Will Pazner of Portland State University. Contest winners are featured in the MFEM [gallery](gallery.md).
 
 </div><div class="col-md-12"  markdown="1">
 
