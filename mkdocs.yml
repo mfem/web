@@ -58,6 +58,7 @@ nav:
   - 'Seminar': seminar.md
   - 'Workshop': workshop.md
   - 'Tutorial': tutorial/index.md
+  - 'Real World': realworld.md
 - Gallery: gallery.md
 - Download: download.md
 
