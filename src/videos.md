@@ -186,6 +186,16 @@ Aaron Fisher of LLNL concluded the workshop by announcing the winners of the sim
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Lin Mu (University of Georgia)
+#### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
+##### **December 13, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](2b9XKH4lcHE)
+
+The Diffusion equation with strong anisotropy has broad applications. In this project, we discuss numerical solution of diffusion equations with strong anisotropy on meshes not aligned with the anisotropic vector field, focusing on application to magnetic confinement fusion. In order to resolve the numerical pollution for simulations on a non-anisotropy-aligned mesh and reduce the associated high computational cost, we developed a high-order discontinuous Galerkin scheme with an efficient preconditioner. The auxiliary space preconditioning framework is designed by employing a continuous finite element space as the auxiliary space for the discontinuous finite element space. An effective line smoother that can mitigate the high-frequency error perpendicular to the magnetic field has been designed by a graph-based approach to pick the line smoother that is approximately perpendicular to the vector fields when the mesh does not align with anisotropy. Numerical experiments for several benchmark problems are presented to validate the effectiveness and robustness.
+
+---
+
 #### Garth Wells (University of Cambridge)
 #### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
 ##### **November 8, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -234,7 +244,7 @@ Predictive simulation increasingly involves the dynamics of complex systems with
 
 We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED). Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms—it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red. There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability. Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used. When running on large-scale HPC platforms, three of the most common user questions are: How long will my job take? How many nodes will be required? Is there anything I can do to make my job run faster? Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results? Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Mike Puso (LLNL)
 #### *Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research*
@@ -244,7 +254,7 @@ We consider design, development, and use of simulation software for exascale com
 
 Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Robert Chiodi (UIUC)
 #### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
