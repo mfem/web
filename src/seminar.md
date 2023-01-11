@@ -318,13 +318,18 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Freddie Witherden (Texas A&M)
+#### Freddie Witherden (Texas A&M University)
 ##### **June 20, 2023**
 
 &nbsp;
 
 #### Natasha Sharma (University of Texas at El Paso)
 ##### **July 18, 2023**
+
+&nbsp;
+
+#### Jesse Chan (Rice University)
+##### **August 8, 2023**
 
 &nbsp;
 
