@@ -30,6 +30,8 @@ Through my talk I will present how models at two ends of the spatio-temporal res
 
 The work presented here has been facilitated by funding through DOE’s National Virtual Biotechnology Laboratory (NVBL).
 
+---
+
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
