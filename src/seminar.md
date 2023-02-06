@@ -22,7 +22,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 [<button type="button" class="btn btn-success">
 **WebEx**
-</button>](https://llnlfed.webex.com/meet/mittal3)
+</button>](https://llnlfed.webex.com/llnlfed/j.php?MTID=m1c59adf16ab8a266cd30c248ecf234d1)
 
 **Abstract:** The ongoing Covid-19 pandemic has redefined our understanding of respiratory infectious disease transmission. The primary modes of transmission of the SARS-CoV-2 virus has been identified to be airborne, with human generated respiratory aerosols being the main carrier of the virus. Understanding the dispersion of these aerosols/droplets generated during speaking and coughing, has helped quantify potential for transmission and design effective mitigation strategies.
 
