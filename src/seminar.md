@@ -12,27 +12,46 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/gavini.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Vikram Gavini (University of Michigan)
+##### *Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling*
+##### [**9am PDT, March 7, 2023**](https://everytimezone.com/s/679d23f3)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/llnlfed/j.php?MTID=m1c59adf16ab8a266cd30c248ecf234d1)
+
+**Abstract:** Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world’s largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
+This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released [DFT-FE open-source code](https://github.com/dftfeDevelopers/dftfe). Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/dutta.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Som Dutta (Utah State University)
 ##### *Quantifying the Potential of Covid-19 Transmission Across Scales: Using SEM based Navier-Stokes solver and the CEAT*
-##### [**9am PDT, February 7, 2023**](https://everytimezone.com/?t=63e19480,3fc)
+##### February 7, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/dutta.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/llnlfed/j.php?MTID=m1c59adf16ab8a266cd30c248ecf234d1)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=tbd)
 
 **Abstract:** The ongoing Covid-19 pandemic has redefined our understanding of respiratory infectious disease transmission. The primary modes of transmission of the SARS-CoV-2 virus has been identified to be airborne, with human generated respiratory aerosols being the main carrier of the virus. Understanding the dispersion of these aerosols/droplets generated during speaking and coughing, has helped quantify potential for transmission and design effective mitigation strategies.
-
 Through my talk I will present how models at two ends of the spatio-temporal resolution spectrum helped quantify the physics and aid NASA Ames administrators design mitigation strategies. For the higher spatio-temporal resolution I will illustrate how the high-order SEM based Navier-Stokes solver Nek5000/NekRS was utilized to develop the models, including algorithms developed through CEED. I will present the two main modes of respiratory aerosol/droplet dispersal indoors, first at a shorter time-scale through expiratory events like coughing, and second at a longer time-scale through the room ventilation system induced flow and turbulence. At the other end of the spatio-temporal resolution, I will talk briefly about Covid-19 Exposure Assessment Tool (CEAT), a novel tool developed to account for multiple factors that affect transmission. I will end my talk by briefly discussing how we can bridge the scales and heterogeneities in the problem with the aid of cutting edge computing and data-driven methods, so that we are fully prepared for the next pandemic.
-
 The work presented here has been facilitated by funding through DOE’s National Virtual Biotechnology Laboratory (NVBL).
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -314,11 +333,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Vikram Gavini (University of Michigan)
-##### **March 07, 2023**
 
 &nbsp;
 
