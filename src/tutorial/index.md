@@ -1,5 +1,5 @@
 # MFEM Tutorial on AWS
-<h4>August 15, 2022</h4>
+<!-- <h4>August 15, 2022</h4> -->
 
 ![MFEM on AWS](img/mfem-aws.png)
 
