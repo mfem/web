@@ -135,7 +135,8 @@ Click each image to enlarge, then right-click to save locally.
 ---
 
 ### Organizing Committee
-[*Aaron Fisher*](https://people.llnl.gov/fisher47)
+[*Holly Auten*](https://people.llnl.gov/auten1)
+┊  [*Aaron Fisher*](https://people.llnl.gov/fisher47)
 ┊  [*Tzanio Kolev*](https://people.llnl.gov/kolev1)
 ┊  [*Ketan Mittal*](https://people.llnl.gov/mittal3)
 ┊  [*Will Pazner*](https://pazner.github.io)
