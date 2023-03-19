@@ -12,11 +12,11 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 #### Tzanio Kolev (LLNL)
 #### *PDE Simulations on Unstructured Grids with Finite Element Discretizations*
-##### **March 15, 2023** | [IPAM at UCLA](http://www.ipam.ucla.edu/programs/workshops/new-mathematics-for-the-exascale-applications-to-materials-science-tutorials/?tab=overview)
+##### **March 15, 2023** | [IPAM at UCLA](https://www.ipam.ucla.edu/programs/long-programs/new-mathematics-for-the-exascale-applications-to-materials-science/)
 
 ![YouTube](lJl1_LkyU1g)
 
-LLNL computational mathematician Tzanio Kolev discussed ...
+LLNL computational mathematician Tzanio Kolev presented an overview of MFEM as part of the long program on *New Mathematics for the Exascale: Applications to Materials Science* at the Institute for Pure and Applied Mathematics.
 
 </div>
 
