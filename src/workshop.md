@@ -130,3 +130,24 @@ Click each image to enlarge, then right-click to save locally.
 </div>
 
 </center>
+
+<div class="col-md-12" markdown="1" style="padding-left:0;">
+---
+
+### Organizing Committee
+[*Holly Auten*](https://people.llnl.gov/auten1)
+┊  [*Aaron Fisher*](https://people.llnl.gov/fisher47)
+┊  [*Tzanio Kolev*](https://people.llnl.gov/kolev1)
+┊  [*Ketan Mittal*](https://people.llnl.gov/mittal3)
+┊  [*Will Pazner*](https://pazner.github.io)
+┊  [*Socratis Petrides*](https://people.llnl.gov/petrides1)
+
+---
+
+### Previous Workshops
+
+[MFEM Community Workshop 2021](https://mfem.org/workshop21/)
+
+---
+</div>
+

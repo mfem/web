@@ -67,7 +67,6 @@ The 2021 MFEM Workshop featured a simulation and visualization contest. The
 submitted entries can be viewed in the [gallery](gallery.md).
 
 ### Virtual Backgrounds
-
 We invite workshop participants to use the virtual backgrounds designed for this event.
 Click each image to enlarge, then right-click to save locally.
 
@@ -93,3 +92,16 @@ Click each image to enlarge, then right-click to save locally.
 
 </div>
 </center>
+
+<div class="col-md-12" markdown="1" style="padding-left:0;">
+---
+
+### Organizing Committee
+[*Holly Auten*](https://people.llnl.gov/auten1)
+┊  [*Aaron Fisher*](https://people.llnl.gov/fisher47)
+┊  [*Tzanio Kolev*](https://people.llnl.gov/kolev1)
+┊  [*Will Pazner*](https://pazner.github.io)
+┊  [*Mark Stowell*](https://people.llnl.gov/stowell1)
+
+---
+</div>
