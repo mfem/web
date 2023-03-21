@@ -12,24 +12,44 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/schoeberl.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Joachim Schöberl (Vienna University of Technology)
+##### *Title: TBD*
+##### [**9am PDT, March 28, 2023**](https://everytimezone.com/s/b6811e0c)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>]()
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/gavini.jpg)
 
 </div><div class="col-md-12"  markdown="1">
 
 #### Vikram Gavini (University of Michigan)
 ##### *Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling*
-##### [**9am PDT, March 7, 2023**](https://everytimezone.com/s/679d23f3)
+##### March 7, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/gavini.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/llnlfed/j.php?MTID=m1c59adf16ab8a266cd30c248ecf234d1)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=qBTe46xu42Q)
 
 **Abstract:** Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world’s largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
 This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released [DFT-FE open-source code](https://github.com/dftfeDevelopers/dftfe). Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -333,11 +353,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Joachim Schöberl (Vienna University of Technology)
-##### **March 28, 2023**
 
 &nbsp;
 
