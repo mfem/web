@@ -97,6 +97,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar 23, 2023 | Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).
 Jan 5, 2023  | [Playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of [2022 Workshop](workshop.md) videos.
 Nov 16, 2022 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of [2022 Workshop](workshop.md).
 Oct 22, 2022 | Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).
@@ -106,14 +107,14 @@ Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.5.tgz**
-</button>](https://bit.ly/mfem-4-5)
+**Download mfem-4.5.2.tgz**
+</button>](https://bit.ly/mfem-4-5-2)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](
