@@ -7,15 +7,22 @@
 
 ## Selected Publications
 
-#### 2022
+#### 2023
 
-  1. W. Pazner, Tz. Kolev, and C. Dohrmann, [Low-order preconditioning for the high-order finite element de Rham complex](https://arxiv.org/abs/2203.02465), *in review*, **2022**. Also available as [arXiv:2203.02465](https://arxiv.org/abs/2203.02465).
-  1. A. Vargas, T. Stitt, K. Weiss, V. Tomov, J. Camier, Tz. Kolev, and R. Rieben, [Matrix-free approaches for GPU acceleration of a high-order finite element hydrodynamics application using MFEM, Umpire, and RAJA](https://arxiv.org/abs/2112.07075), *in review*, **2022**. Also available as [arXiv:2112.07075](https://arxiv.org/abs/2112.07075).
+  1. W. Pazner, Tz. Kolev, and J. Camier, [End-to-end GPU acceleration of low-order-refined preconditioning for high-order finite element discretizations](https://arxiv.org/abs/2210.12253), *in review*, **2023**. Also available as [arXiv:2210.12253](https://arxiv.org/abs/2210.12253).
+  1. W. Pazner, Tz. Kolev, and C. Dohrmann, [Low-order preconditioning for the high-order finite element de Rham complex](https://arxiv.org/abs/2203.02465), *in review*, **2023**. Also available as [arXiv:2203.02465](https://arxiv.org/abs/2203.02465).
+  1. J. Barrera, Tz. Kolev, K. Mittal, and V. Tomov, [High-Order Mesh Morphing for Boundary and Interface Fitting to Implicit Geometries](https://doi.org/10.1016/j.cad.2023.103499), *Computer-Aided Design*, 158, 103499, **2023**. Also available as [arXiv:2208.05062](https://arxiv.org/abs/2208.05062).
+  1. J. Camier, V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, R. Rieben,  and V. Tomov, [Accelerating high-order mesh optimization using finite element partial assembly on GPUs](https://doi.org/10.1016/j.jcp.2022.111808), *Journal of Computational Physics*, 474, 111808, **2023**. Also available as [arXiv:2205.12721](https://arxiv.org/abs/2205.12721).
+
+---
+
+#### 2022
+  1. A. Vargas, T. Stitt, K. Weiss, V. Tomov, J. Camier, Tz. Kolev, and R. Rieben, [Matrix-free approaches for GPU acceleration of a high-order finite element hydrodynamics application using MFEM, Umpire, and RAJA](https://doi.org/10.1177/10943420221100262), *The International Journal of High Performance Computing Applications*, 36(4):492-509, **2022**. Also available as [arXiv:2112.07075](https://arxiv.org/abs/2112.07075).
   1. J. Nikl, M. Kuchařík, and S. Weber, [High-Order Curvilinear Finite Element Magneto-Hydrodynamics I: A Conservative Lagrangian Scheme](https://doi.org/10.1016/j.jcp.2022.111158), *Journal of Computational Physics*, 464, 111158, **2022**. Also available as [arXiv:2110.11669](https://arxiv.org/abs/2110.11669).
   1. T. L. Horvath and S. Rhebergen, [A conforming sliding mesh technique for an embedded-hybridized discontinuous Galerkin discretization for fluid-rigid body interaction](https://arxiv.org/abs/2105.12542), *in review*, **2022**.
   1. N. Yavich, N. Koshev, M. Malovichko, A. Razorenova and M. Fedorov, [Conservative Finite Element Modeling of EEG and MEG on Unstructured Grids](https://doi.org/10.1109/TMI.2021.3119851), *IEEE Transactions on Medical Imaging*, 41(3):647-656, **2022**.
   1. Q. Tang, L. Chacon, Tz. Kolev, J. N. Shadid and X.-Z. Tang, [An adaptive scalable fully implicit algorithm based on stabilized finite element for reduced visco-resistive MHD](https://doi.org/10.1016/j.jcp.2022.110967), *Journal of Computational Physics*, (454) 110967, **2022**. Also available as [arXiv:2106.00260](https://arxiv.org/abs/2106.00260).
-  1. J. A. Turner, J. Belak, N. Barton, M. Bement, N. Carlson, R. Carson, S. DeWitt, J.-L. Fattebert, N. Hodge, Z. Jibben, W. King, L. Levine, C. Newman, A. Plotkowski, B. Radhakrishnan, S. T. Reeve, M. Rolchigo, A. Sabau, S. Slattery, and B. Stump. [ExaAM: Metal additive manufacturing simulation at the fidelity of the microstructure.](https://doi.org/10.1177/10943420211042558) *The International Journal of High Performance Computing Applications*, 36(1):13–39, **2022**.
+  1. J. A. Turner, J. Belak, N. Barton, M. Bement, N. Carlson, R. Carson, S. DeWitt, J.-L. Fattebert, N. Hodge, Z. Jibben, W. King, L. Levine, C. Newman, A. Plotkowski, B. Radhakrishnan, S. T. Reeve, M. Rolchigo, A. Sabau, S. Slattery, and B. Stump. [ExaAM: Metal additive manufacturing simulation at the fidelity of the microstructure.](https://doi.org/10.1177/10943420211042558) *The International Journal of High Performance Computing Applications*, 36(1):13-39, **2022**.
   1. Tz. Kolev and W. Pazner, [Conservative and accurate solution transfer between high-order and low-order refined finite element spaces](https://doi.org/10.1137/21M1403916), *SIAM Journal on Scientific Computing*, 44(1), A1-A27, **2022**. Also available as [arXiv:2103.05283](https://arxiv.org/abs/2103.05283).
 
 ---
