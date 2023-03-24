@@ -2,6 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Mar 23, 2023** | *Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).*
 **Jan 6, 2023** | *Complete [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of [2022 Workshop](workshop.md) videos now available.*
 **Nov 16, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of the [2022 Workshop](workshop.md), held on October 25.*
 **Oct 22, 2022** | *Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).*
