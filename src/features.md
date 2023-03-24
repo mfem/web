@@ -181,14 +181,14 @@ MFEM is an open-source software, and can be freely used under the terms of the [
 <!-- To update the SVG images: in the gh-pages branch of mfem/doxygen do:
      grep 'id="node1" href="$classmfem_1_1FiniteElementCollection.html"' html/inherit*map -->
 
-[FiniteElement]:           https://docs.mfem.org/html/inherit_graph_389.svg
-[FiniteElementCollection]: https://docs.mfem.org/html/inherit_graph_119.svg
-[Element]:                 https://docs.mfem.org/html/inherit_graph_94.svg
-[HyperelasticModel]:       https://docs.mfem.org/html/inherit_graph_175.svg
-[NonlinearFormIntegrator]: https://docs.mfem.org/html/inherit_graph_296.svg
-[LinearFormIntegrator]:    https://docs.mfem.org/html/inherit_graph_203.svg
-[Operator]:                https://docs.mfem.org/html/inherit_graph_361.svg
-[Vector]:                  https://docs.mfem.org/html/inherit_graph_437.svg
+[FiniteElement]:           https://docs.mfem.org/html/classmfem_1_1FiniteElement.html
+[FiniteElementCollection]: https://docs.mfem.org/html/classmfem_1_1FiniteElementCollection.html
+[Element]:                 https://docs.mfem.org/html/classmfem_1_1Element.html
+[HyperelasticModel]:       https://docs.mfem.org/html/classmfem_1_1HyperelasticModel.html
+[NonlinearFormIntegrator]: https://docs.mfem.org/html/classmfem_1_1NonlinearFormIntegrator.html
+[LinearFormIntegrator]:    https://docs.mfem.org/html/classmfem_1_1LinearFormIntegrator.html
+[Operator]:                https://docs.mfem.org/html/classmfem_1_1Operator.html
+[Vector]:                  https://docs.mfem.org/html/classmfem_1_1Vector.html
 
 [BlockMatrix]:             https://docs.mfem.org/html/classmfem_1_1BlockMatrix.html
 [ElementTransformation]:   https://docs.mfem.org/html/classmfem_1_1ElementTransformation.html
