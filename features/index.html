@@ -344,14 +344,14 @@
 <p>Conceptually, MFEM can be viewed as a finite element toolbox that provides the building blocks for developing finite element algorithms in a manner similar to that of MATLAB for linear algebra methods.</p>
 <h2 id="higher-order-finite-element-spaces">Higher-order Finite Element Spaces</h2>
 <p><img src="../img/ho-spaces-padding.png" align="right" alt="H(curl) and H(div) spaces"></p>
-<p>MFEM supports a wide variety of <a href="https://docs.mfem.org/html/inherit_graph_389.svg">finite element</a> <a href="https://docs.mfem.org/html/inherit_graph_119.svg">spaces</a> in 2D and 3D, including arbitrary high-order:</p>
+<p>MFEM supports a wide variety of <a href="https://docs.mfem.org/html/classmfem_1_1FiniteElement.html">finite element</a> <a href="https://docs.mfem.org/html/classmfem_1_1FiniteElementCollection.html">spaces</a> in 2D and 3D, including arbitrary high-order:</p>
 <ul>
 <li><a href="../examples/?h1">H<sup>1</sup></a>-conforming, <a href="../examples/?hdiv">H(div)</a>-conforming, <a href="../examples/?hcurl">H(curl)</a>-conforming spaces,</li>
 <li>discontinuous <a href="../examples/?l2">L<sub>2</sub></a> spaces,</li>
 <li>numerical trace (<a href="../examples/?h12">interfacial</a>) spaces,</li>
 <li><a href="../examples/?nurbs">NURBS</a> spaces for isogeometric analysis.</li>
 </ul>
-<p>Many <a href="https://docs.mfem.org/html/inherit_graph_296.svg">bilinear</a> and <a href="https://docs.mfem.org/html/inherit_graph_203.svg">linear</a> forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.</p>
+<p>Many <a href="https://docs.mfem.org/html/classmfem_1_1NonlinearFormIntegrator.html">bilinear</a> and <a href="https://docs.mfem.org/html/classmfem_1_1LinearFormIntegrator.html">linear</a> forms defined on these spaces, as well as linear operators such as gradient, curl and embedding between these spaces, are available in the code.</p>
 <h2 id="flexible-discretization">Flexible Discretization</h2>
 <p>In addition to classical Galerkin methods, MFEM enables the quick prototyping of</p>
 <ul>
@@ -365,11 +365,11 @@
 <h2 id="wide-range-of-mesh-types">Wide Range of Mesh Types</h2>
 <p>MFEM supports arbitrary element <a href="https://docs.mfem.org/html/classmfem_1_1ElementTransformation.html">transformations</a> and includes classes for dealing with:</p>
 <ul>
-<li>triangular, quadrilateral, tetrahedral, wedge, and hexahedral <a href="https://docs.mfem.org/html/inherit_graph_94.svg">elements</a>,</li>
+<li>triangular, quadrilateral, tetrahedral, wedge, and hexahedral <a href="https://docs.mfem.org/html/classmfem_1_1Element.html">elements</a>,</li>
 <li>uniform refinement (all element types),</li>
 <li>conforming local mesh refinement (triangular/tetrahedral meshes),</li>
 <li>non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,</li>
-<li><a href="https://docs.mfem.org/html/inherit_graph_175.svg">mesh optimization</a> based on the Target-Matrix Optimization Paradigm (TMOP),</li>
+<li><a href="https://docs.mfem.org/html/classmfem_1_1HyperelasticModel.html">mesh optimization</a> based on the Target-Matrix Optimization Paradigm (TMOP),</li>
 <li>higher-order elements with <a href="../mesh-formats/#curvilinear-vtk-meshes">curved</a> boundaries,</li>
 <li><a href="https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh">surface</a> meshes embedded in 3D, topologically <a href="https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh">periodic</a> meshes, 1D meshes.</li>
 </ul>
@@ -383,13 +383,13 @@
 </ul>
 <p>A serial MFEM application typically requires <a href="https://docs.mfem.org/html/examples_2ex1_8cpp_source.html">minimal</a> <a href="https://docs.mfem.org/html/examples_2ex1p_8cpp_source.html">changes</a> to transition to a scalable parallel version of the code, where it can take advantage of the integrated scalable linear solvers from the <em><a href="https://www.llnl.gov/CASC/hypre">hypre</a></em> library. Both of these versions can be further transitioned to <a href="https://docs.mfem.org/html/miniapps_2performance_2ex1_8cpp_source.html">high-performing</a> <a href="https://docs.mfem.org/html/miniapps_2performance_2ex1p_8cpp_source.html">templated variants</a>, where operator assembly/evaluation is fully inlined for particular runtime parameters. As of version 4.0, GPU acceleration of several <a href="../examples/?pa">examples</a> and many <a href="https://docs.mfem.org/html/vector_8cpp_source.html">linear algebra</a> and <a href="https://docs.mfem.org/html/bilininteg__diffusion_8cpp_source.html">finite element</a> operations is available.</p>
 <h2 id="built-in-solvers">Built-in Solvers</h2>
-<p>MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra <a href="https://docs.mfem.org/html/inherit_graph_437.svg">vectors</a> and <a href="https://docs.mfem.org/html/classmfem_1_1SparseMatrix.html">sparse matrices</a>.</p>
+<p>MFEM is commonly used as a "finite element to linear algebra translator", since it can take a problem described in terms of finite element-type objects, and produce the corresponding linear algebra <a href="https://docs.mfem.org/html/classmfem_1_1Vector.html">vectors</a> and <a href="https://docs.mfem.org/html/classmfem_1_1SparseMatrix.html">sparse matrices</a>.</p>
 <p>Several matrix storage formats are available including dense, compressed sparse row (<a href="https://docs.mfem.org/html/classmfem_1_1SparseMatrix.html">CSR</a>) and parallel compressed sparse row (<a href="https://docs.mfem.org/html/classmfem_1_1HypreParMatrix.html">ParCSR</a>). Block vectors, operators and <a href="https://docs.mfem.org/html/classmfem_1_1BlockMatrix.html">matrices</a> are also supported.</p>
 <p>A variety of solvers are available for the resulting linear algebra systems (or semi-discrete time-integration problems):</p>
 <ul>
 <li>point-wise and polynomial <a href="https://docs.mfem.org/html/classmfem_1_1SparseSmoother.html">serial</a> and <a href="https://docs.mfem.org/html/classmfem_1_1HypreSmoother.html">parallel</a> smoothers,
 <img src="../img/hypre_wiw.gif" align="right" width="250"></li>
-<li><a href="https://docs.mfem.org/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="https://docs.mfem.org/html/inherit_graph_361.svg">operators</a> in serial and in parallel,</li>
+<li><a href="https://docs.mfem.org/html/classmfem_1_1IterativeSolver.html">Krylov solvers</a>, such as PCG, MINRES and GMRES applicable to general <a href="https://docs.mfem.org/html/classmfem_1_1Operator.html">operators</a> in serial and in parallel,</li>
 <li>parallel <a href="../examples/?lobpcg">eigensolvers</a>: LOBPCG and AME,</li>
 <li>high-performance preconditioners from the <em><a href="https://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
 <li>many linear and nonlinear solvers, preconditioners and time integrators from the <a href="https://www.mcs.anl.gov/petsc">PETSc</a> suite,</li>
