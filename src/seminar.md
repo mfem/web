@@ -17,14 +17,20 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Joachim Schöberl (Vienna University of Technology)
-##### *Title: TBD*
+##### *The Netgen/NGSolve Finite Element Software*
 ##### [**9am PDT, March 28, 2023**](https://everytimezone.com/s/b6811e0c)
 
 [<button type="button" class="btn btn-success">
 **WebEx**
-</button>]()
+</button>](https://llnlfed.webex.com/meet/kolev1)
 
-**Abstract:** TBD
+**Abstract:** In this talk we give an overview of the open source finite element software Netgen/NGSolve,
+available from [www.ngsolve.org](https://www.ngsolve.org). We show how to setup various physical models using
+FEniCS-like Python scripting. We discuss how we use NGSolve for teaching finite element methods, and how
+recent research projects have contributed to the further development of the NGSolve software. Some recent
+highlights are matrix-valued finite elements with applications in elasticity, fluid dynamics, and numerical
+relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
+for linear solvers, as well as time-dependent problems.
 
 ---
 
