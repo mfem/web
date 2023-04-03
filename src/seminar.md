@@ -10,6 +10,28 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+&nbsp;
+
+</div><div class="col-md-3"  markdown="1">
+
+![](img/seminar/demkowicz.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Leszek F. Demkowicz (University of Texas at Austin)
+##### *Title: TBD*
+##### [**9am PDT, April 25, 2023**](https://everytimezone.com/s/0264f803)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/meet/kolev1)
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-3"  markdown="1">
 
 ![](img/seminar/schoeberl.jpg)
@@ -18,11 +40,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Joachim Schöberl (Vienna University of Technology)
 ##### *The Netgen/NGSolve Finite Element Software*
-##### [**9am PDT, March 28, 2023**](https://everytimezone.com/s/b6811e0c)
+##### March 28, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](https://github.com/NGSolve/Talk-LLNL/blob/main/talk_LLNL.ipynb)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=qBTe46xu42Q)
 
 **Abstract:** In this talk we give an overview of the open source finite element software Netgen/NGSolve,
 available from [www.ngsolve.org](https://www.ngsolve.org). We show how to setup various physical models using
@@ -31,10 +57,6 @@ recent research projects have contributed to the further development of the NGSo
 highlights are matrix-valued finite elements with applications in elasticity, fluid dynamics, and numerical
 relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
 for linear solvers, as well as time-dependent problems.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -359,11 +381,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Leszek F. Demkowicz (University of Texas at Austin)
-##### **April 25, 2023**
 
 &nbsp;
 
