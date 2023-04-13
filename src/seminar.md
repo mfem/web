@@ -19,14 +19,52 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Leszek F. Demkowicz (University of Texas at Austin)
-##### *Title: TBD*
+##### *Full Envelope DPG Approximation for Electromagnetic Waveguides.Stability and Convergence Analysis*
 ##### [**9am PDT, April 25, 2023**](https://everytimezone.com/s/0264f803)
 
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>](https://llnlfed.webex.com/meet/kolev1)
 
-**Abstract:** TBD
+**Abstract:** The presented work started with a convergence and stability analysis for
+the so-called full envelope approximation used in analyzing optical amplifiers
+(lasers). The specific problem of interest was the simulation of Transverse
+Mode Instabilities (TMI). The problem translates into the solution of a system
+of two nonlinear time-harmonic Maxwell equations coupled with a transient
+heat equation. Simulation of a 1 m long fiber involves the resolution of 10 M
+wavelenghts. A superefficient MPI/openMP hp FE code run on a supercomputer gets you
+to the range of ten thousand wavelenghts. The resolution of the additional
+thousand wavelenghths is done using an exponential ansatz e^{ikz} in the
+z-coordinate. This results in a non-standard Maxwell problem.
+
+The stability and convergence analysis for the problem has been restricted to
+the linear case only. It turns out that the modified Maxwell problem is stable
+if and only if the original waveguide problem is stable and the boundedness
+below stability constants are identical. We have converged to the task of
+determining the boundedness below constant.
+
+The stability analysis started with an easier, acoustic waveguide problem.
+Separation of variables leads to an eigenproblem for a self-adjoint
+operator in the transverse plane (in x,y). Expansion of the solution
+in terms of the corresponding eigenvectors leads then to a decoupled
+system of ODEs, and a stability analysis for a two-point BVP for an ODE
+parametrized with the corresponding eigenvalues. The L^2-orthogonality
+of the eigenmodes and the stability result for a single mode, lead then
+to the final result: the inverse boundedness below constant depends inversely
+linearly upon the length L of the waveguide.
+
+The corresponding stability for the Maxwell waveguide turned out to be
+unexpectedly difficult. The equation is vector-valued so a direct separation
+of variables is out to begin with. An exponential ansatz in z leads to
+a non-standard eigenproblem involving an operator that is non-self
+adjoint even for the easiest, homogeneous case. The answer to the problem
+came from a tricky analysis of the eigenproblem combined with the perturbation
+technique for perturbed self-adjoint operators. The use of perturbation
+theory requires an assumption on the smallness of perturbation of
+the dielectric constant (around a constant value) but with no additional
+assumptions on its differentiability (discontinuities are allowed).
+In the end, the final result is similar to that for the acoustic waveguide -
+the boundedness below constant depends inversely linearly on L.
 
 ---
 
