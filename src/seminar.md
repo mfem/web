@@ -19,7 +19,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Leszek F. Demkowicz (University of Texas at Austin)
-##### *Full Envelope DPG Approximation for Electromagnetic Waveguides.Stability and Convergence Analysis*
+##### *Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis*
 ##### [**9am PDT, April 25, 2023**](https://everytimezone.com/s/0264f803)
 
 [<button type="button" class="btn btn-success">
