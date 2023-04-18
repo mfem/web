@@ -24,7 +24,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 [<button type="button" class="btn btn-success">
 **WebEx**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+</button>](https://llnlfed.webex.com/meet/petrides1)
 
 **Abstract:** The presented work started with a convergence and stability analysis for
 the so-called full envelope approximation used in analyzing optical amplifiers
@@ -32,9 +32,9 @@ the so-called full envelope approximation used in analyzing optical amplifiers
 Mode Instabilities (TMI). The problem translates into the solution of a system
 of two nonlinear time-harmonic Maxwell equations coupled with a transient
 heat equation. Simulation of a 1 m long fiber involves the resolution of 10 M
-wavelenghts. A superefficient MPI/openMP hp FE code run on a supercomputer gets you
-to the range of ten thousand wavelenghts. The resolution of the additional
-thousand wavelenghths is done using an exponential ansatz e^{ikz} in the
+wavelengths. A superefficient MPI/openMP hp FE code run on a supercomputer gets you
+to the range of ten thousand wavelengths. The resolution of the additional
+thousand wavelengths is done using an exponential ansatz e^{ikz} in the
 z-coordinate. This results in a non-standard Maxwell problem.
 
 The stability and convergence analysis for the problem has been restricted to
