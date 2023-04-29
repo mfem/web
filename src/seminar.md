@@ -10,7 +10,26 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
-&nbsp;
+</div><div class="col-md-3"  markdown="1">
+
+![](img/seminar/giraldo.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Frank Giraldo (Naval Postgraduate School)
+##### *Title: TBD*
+##### **May 16, 2023**
+##### [**9am PDT, May 16, 2023**](https://everytimezone.com/s/328e95bd)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/meet/kolev1)
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -20,11 +39,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Leszek F. Demkowicz (University of Texas at Austin)
 ##### *Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis*
-##### [**9am PDT, April 25, 2023**](https://everytimezone.com/s/0264f803)
+##### April 25, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/demkowicz.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/petrides1)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=qBTe46xu42Q)
 
 **Abstract:** The presented work started with a convergence and stability analysis for
 the so-called full envelope approximation used in analyzing optical amplifiers
@@ -65,10 +88,6 @@ the dielectric constant (around a constant value) but with no additional
 assumptions on its differentiability (discontinuities are allowed).
 In the end, the final result is similar to that for the acoustic waveguide -
 the boundedness below constant depends inversely linearly on L.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -419,11 +438,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Frank Giraldo (Naval Postgraduate School)
-##### **May 16, 2023**
 
 &nbsp;
 
