@@ -17,7 +17,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12"  markdown="1">
 
 #### Frank Giraldo (Naval Postgraduate School)
-##### *Title: TBD*
+##### *Using High-Order Element-based Galerkin Methods to capture Hurricane Intensification*
 ##### **May 16, 2023**
 ##### [**9am PDT, May 16, 2023**](https://everytimezone.com/s/328e95bd)
 
@@ -25,7 +25,27 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 **WebEx**
 </button>](https://llnlfed.webex.com/meet/kolev1)
 
-**Abstract:** TBD
+**Abstract:** Properly capture hurricane rapid intensification (where the winds
+increase by 30 knots in the first 24 hours) remains challenging for atmospheric
+models. The reason is that we need LES-type scales 𝒪(100m) which is still
+elusive due to computational cost. In this talk, I describe the work that we are
+doing in this area and how element- based Galerkin Methods are being used to
+approximate spatial derivatives. I will also discuss the time-integration
+strategy that we are exploring for this class of problems. In particular, we are
+exploring process Multirate methods whereby each process in a system of
+nonlinear partial different equations (PDEs) uses a time- integrator and
+time-step commensurate with the wave-speed of that process. We have constructed
+Multirate methods of any order using extrapolation methods. Along this same
+idea, we have also developed a multi-modeling framework (MMF) designed to
+replace the physical parameterizations used in weather/climate models. Our
+approach is to view the coarse-scale and fine-scale models through the lens of
+Variational Multi-Scale (VMS) methods in order to give MMF a more rigorous
+mathematical foundation. Our end goal is to use MMF in order to better resolve
+the inner core of hurricanes. In addition, I will show some results using flux
+differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
+Preserving and Entropy Stable methods and discuss why we need scalable models in
+order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
+model that runs on large CPU clusters and on GPUs.
 
 ---
 
@@ -59,13 +79,11 @@ wavelengths. A superefficient MPI/openMP hp FE code run on a supercomputer gets 
 to the range of ten thousand wavelengths. The resolution of the additional
 thousand wavelengths is done using an exponential ansatz e^{ikz} in the
 z-coordinate. This results in a non-standard Maxwell problem.
-
 The stability and convergence analysis for the problem has been restricted to
 the linear case only. It turns out that the modified Maxwell problem is stable
 if and only if the original waveguide problem is stable and the boundedness
 below stability constants are identical. We have converged to the task of
 determining the boundedness below constant.
-
 The stability analysis started with an easier, acoustic waveguide problem.
 Separation of variables leads to an eigenproblem for a self-adjoint
 operator in the transverse plane (in x,y). Expansion of the solution
@@ -75,7 +93,6 @@ parametrized with the corresponding eigenvalues. The L^2-orthogonality
 of the eigenmodes and the stability result for a single mode, lead then
 to the final result: the inverse boundedness below constant depends inversely
 linearly upon the length L of the waveguide.
-
 The corresponding stability for the Maxwell waveguide turned out to be
 unexpectedly difficult. The equation is vector-valued so a direct separation
 of variables is out to begin with. An exponential ansatz in z leads to
@@ -133,7 +150,7 @@ for linear solvers, as well as time-dependent problems.
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=qBTe46xu42Q)
 
-**Abstract:** Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world’s largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
+**Abstract:** Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world's largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
 This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released [DFT-FE open-source code](https://github.com/dftfeDevelopers/dftfe). Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.
 
 </div><div class="col-md-3"  markdown="1">
@@ -156,7 +173,7 @@ This talk will present our recent advances towards the development of computatio
 
 **Abstract:** The ongoing Covid-19 pandemic has redefined our understanding of respiratory infectious disease transmission. The primary modes of transmission of the SARS-CoV-2 virus has been identified to be airborne, with human generated respiratory aerosols being the main carrier of the virus. Understanding the dispersion of these aerosols/droplets generated during speaking and coughing, has helped quantify potential for transmission and design effective mitigation strategies.
 Through my talk I will present how models at two ends of the spatio-temporal resolution spectrum helped quantify the physics and aid NASA Ames administrators design mitigation strategies. For the higher spatio-temporal resolution I will illustrate how the high-order SEM based Navier-Stokes solver Nek5000/NekRS was utilized to develop the models, including algorithms developed through CEED. I will present the two main modes of respiratory aerosol/droplet dispersal indoors, first at a shorter time-scale through expiratory events like coughing, and second at a longer time-scale through the room ventilation system induced flow and turbulence. At the other end of the spatio-temporal resolution, I will talk briefly about Covid-19 Exposure Assessment Tool (CEAT), a novel tool developed to account for multiple factors that affect transmission. I will end my talk by briefly discussing how we can bridge the scales and heterogeneities in the problem with the aid of cutting edge computing and data-driven methods, so that we are fully prepared for the next pandemic.
-The work presented here has been facilitated by funding through DOE’s National Virtual Biotechnology Laboratory (NVBL).
+The work presented here has been facilitated by funding through DOE's National Virtual Biotechnology Laboratory (NVBL).
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -176,7 +193,7 @@ The work presented here has been facilitated by funding through DOE’s National
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=wMZqz3AoL3E&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=14)
 
-**Abstract:** To improve tsunami preparedness, early-alert systems and real-time monitoring are essential. We use a novel approach for predictive tsunami modeling within the Bayesian inversion framework. This effort focuses on informing the immediate response to an occurring tsunami event using near-field data observation. Our forward model is based on a coupled acoustic-gravity model (e.g., Lotto and Dunham, Comput Geosci (2015) 19:327—340). Similar to other tsunami models, our forward model relies on transient boundary data describing the location and magnitude of the seafloor deformation. In a real-time scenario, these parameter fields must be inferred from a variety of measurements, including observations from pressure gauges mounted on the seafloor. One particular difficulty of this inference problem lies in the accurate inversion from sparse pressure data recorded in the near-field where strong hydroacoustic waves propagate in the compressible ocean; these acoustic waves complicate the task of estimating the hydrostatic pressure changes related to the forming surface gravity wave. Our space-time model is discretized with finite elements in space and finite differences in time. The forward model incurs a high computational complexity, since the pressure waves must be resolved in the 3D compressible ocean over a sufficiently long time span. Due to the infeasibility of rapidly solving the corresponding inverse problem for the fully discretized space-time operator, we discuss approaches for using compact representations of the parameter-to-observable map.
+**Abstract:** To improve tsunami preparedness, early-alert systems and real-time monitoring are essential. We use a novel approach for predictive tsunami modeling within the Bayesian inversion framework. This effort focuses on informing the immediate response to an occurring tsunami event using near-field data observation. Our forward model is based on a coupled acoustic-gravity model (e.g., Lotto and Dunham, Comput Geosci (2015) 19:327-340). Similar to other tsunami models, our forward model relies on transient boundary data describing the location and magnitude of the seafloor deformation. In a real-time scenario, these parameter fields must be inferred from a variety of measurements, including observations from pressure gauges mounted on the seafloor. One particular difficulty of this inference problem lies in the accurate inversion from sparse pressure data recorded in the near-field where strong hydroacoustic waves propagate in the compressible ocean; these acoustic waves complicate the task of estimating the hydrostatic pressure changes related to the forming surface gravity wave. Our space-time model is discretized with finite elements in space and finite differences in time. The forward model incurs a high computational complexity, since the pressure waves must be resolved in the 3D compressible ocean over a sufficiently long time span. Due to the infeasibility of rapidly solving the corresponding inverse problem for the fully discretized space-time operator, we discuss approaches for using compact representations of the parameter-to-observable map.
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -456,7 +473,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### David Moxey (King’s College, London)
+#### David Moxey (King's College, London)
 ##### **September 12, 2023**
 
 &nbsp;
