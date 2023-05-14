@@ -344,6 +344,25 @@
 <hr />
 </div>
 <div class="col-md-6">
+<h4 id="joachim-schoberl-vienna-university-of-technology">Joachim Schöberl (Vienna University of Technology)</h4>
+<h4 id="the-netgenngsolve-finite-element-software"><em>The Netgen/NGSolve Finite Element Software</em></h4>
+<h5 id="march-28-2023-femllnl-seminar-series"><strong>March 28, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><img alt="YouTube" src="3aYoeoNBq94" /></p>
+<p>In this talk we give an overview of the open source finite element software Netgen/NGSolve,
+available from <a href="https://www.ngsolve.org">www.ngsolve.org</a>. We show how to setup various physical models using
+FEniCS-like Python scripting. We discuss how we use NGSolve for teaching finite element methods, and how
+recent research projects have contributed to the further development of the NGSolve software. Some recent
+highlights are matrix-valued finite elements with applications in elasticity, fluid dynamics, and numerical
+relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
+for linear solvers, as well as time-dependent problems.</p>
+<hr />
+<h4 id="vikram-gavini-university-of-michigan">Vikram Gavini (University of Michigan)</h4>
+<h4 id="fast-accurate-and-large-scale-ab-initio-calculations-for-materials-modeling"><em>Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling</em></h4>
+<h5 id="march-7-2023-femllnl-seminar-series"><strong>March 7, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><img alt="YouTube" src="K8Hl7udBvlg" /></p>
+<p>Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world's largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
+This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released <a href="https://github.com/dftfeDevelopers/dftfe">DFT-FE open-source code</a>. Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.</p>
+<hr />
 <h4 id="stefan-henneking-university-of-texas-at-austin">Stefan Henneking (University of Texas at Austin)</h4>
 <h4 id="bayesian-inversion-of-an-acoustic-gravity-model-for-predictive-tsunami-simulation"><em>Bayesian Inversion of an Acoustic-Gravity Model for Predictive Tsunami Simulation</em></h4>
 <h5 id="january-10-2023-femllnl-seminar-series"><strong>January 10, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -373,7 +392,8 @@
 <h5 id="august-23-2022-femllnl-seminar-series"><strong>August 23, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><img alt="YouTube" src="0_y70sNTcrY" /></p>
 <p>The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.</p>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="jeffrey-banks-rpi">Jeffrey Banks (RPI)</h4>
 <h4 id="efficient-techniques-for-fluid-structure-interaction-compatibility-coupling-and-galerkin-differences"><em>Efficient Techniques for Fluid Structure Interaction: Compatibility Coupling and Galerkin Differences</em></h4>
 <h5 id="july-26-2022-femllnl-seminar-series"><strong>July 26, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -385,8 +405,7 @@
 <h5 id="june-21-2022-femllnl-seminar-series"><strong>June 21, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><img alt="YouTube" src="WqrwDarTdss" /></p>
 <p>We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED). Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms—it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red. There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability. Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used. When running on large-scale HPC platforms, three of the most common user questions are: How long will my job take? How many nodes will be required? Is there anything I can do to make my job run faster? Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results? Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.</p>
-</div>
-<div class="col-md-6">
+<hr />
 <h4 id="mike-puso-llnl">Mike Puso (LLNL)</h4>
 <h4 id="topics-in-immersed-boundary-and-contact-methods-current-llnl-projects-and-research"><em>Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research</em></h4>
 <h5 id="may-24-2022-femllnl-seminar-series"><strong>May 24, 2022</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
