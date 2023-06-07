@@ -337,15 +337,44 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/witherden.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="freddie-witherden-texas-am-university">Freddie Witherden (Texas A&amp;M University)</h4>
+<h5 id="fsspmdmaccelerating-small-sparse-matrix-multiplications-by-run-time-code-generation"><em>FSSpMDM—Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation</em></h5>
+<h5 id="9am-pdt-june-20-2023"><a href="https://everytimezone.com/s/6fcdb099"><strong>9am PDT, June 20, 2023</strong></a></h5>
+<p><a href="https://llnlfed.webex.com/meet/kolev1"><button type="button" class="btn btn-success">
+<strong>WebEx</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> Small matrix multiplications are a key building block of modern
+high-order finite element method solvers. Such multiplications describe the act
+of applying a specific finite element operator onto a set of state vectors. The
+small and irregular size of these multiplications makes them poor candidates for
+generic matrix multiplication routines. Moreover, for elements with a tensor
+product construction, the operators themselves can exhibit a significant degree
+of sparsity. In this talk, I will describe the code generation strategies
+employed by our Fixed Size Sparse Matrix-Dense Matrix (FSSpMDM) routine in
+libxsmm and show how these result in performant operator kernels for prismatic
+and hexahedral elements. Strategies will be described for both x86-64
+(AVX2/AVX-512) and AARCH64 (NEON/SVE) instruction sets. Results will be
+presented on recent Intel and Apple CPUs and compared against the well-known
+GiMMiK C code generation library.</p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/giraldo.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="frank-giraldo-naval-postgraduate-school">Frank Giraldo (Naval Postgraduate School)</h4>
 <h5 id="using-high-order-element-based-galerkin-methods-to-capture-hurricane-intensification"><em>Using High-Order Element-based Galerkin Methods to capture Hurricane Intensification</em></h5>
 <h5 id="may-16-2023"><strong>May 16, 2023</strong></h5>
-<h5 id="9am-pdt-may-16-2023"><a href="https://everytimezone.com/s/328e95bd"><strong>9am PDT, May 16, 2023</strong></a></h5>
-<p><a href="https://llnlfed.webex.com/meet/kolev1"><button type="button" class="btn btn-success">
-<strong>WebEx</strong>
+<p><a href="../pdf/seminar/giraldo.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href=""><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> Properly capture hurricane rapid intensification (where the winds
 increase by 30 knots in the first 24 hours) remains challenging for atmospheric
@@ -368,8 +397,6 @@ differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
 Preserving and Entropy Stable methods and discuss why we need scalable models in
 order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
 model that runs on large CPU clusters and on GPUs.</p>
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/demkowicz.jpg" /></p>
@@ -717,9 +744,6 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><strong>Abstract:</strong> Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named "shifted boundary method" (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
-<p>&nbsp;</p>
-<h4 id="freddie-witherden-texas-am-university">Freddie Witherden (Texas A&amp;M University)</h4>
-<h5 id="june-20-2023"><strong>June 20, 2023</strong></h5>
 <p>&nbsp;</p>
 <h4 id="natasha-sharma-university-of-texas-at-el-paso">Natasha Sharma (University of Texas at El Paso)</h4>
 <h5 id="july-18-2023"><strong>July 18, 2023</strong></h5>
