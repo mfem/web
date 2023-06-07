@@ -12,6 +12,39 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3"  markdown="1">
 
+![](img/seminar/witherden.jpg)
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Freddie Witherden (Texas A&M University)
+##### *FSSpMDM—Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation*
+##### [**9am PDT, June 20, 2023**](https://everytimezone.com/s/6fcdb099)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/meet/kolev1)
+
+**Abstract:** Small matrix multiplications are a key building block of modern
+high-order finite element method solvers. Such multiplications describe the act
+of applying a specific finite element operator onto a set of state vectors. The
+small and irregular size of these multiplications makes them poor candidates for
+generic matrix multiplication routines. Moreover, for elements with a tensor
+product construction, the operators themselves can exhibit a significant degree
+of sparsity. In this talk, I will describe the code generation strategies
+employed by our Fixed Size Sparse Matrix-Dense Matrix (FSSpMDM) routine in
+libxsmm and show how these result in performant operator kernels for prismatic
+and hexahedral elements. Strategies will be described for both x86-64
+(AVX2/AVX-512) and AARCH64 (NEON/SVE) instruction sets. Results will be
+presented on recent Intel and Apple CPUs and compared against the well-known
+GiMMiK C code generation library.
+
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3"  markdown="1">
+
 ![](img/seminar/giraldo.jpg)
 
 </div><div class="col-md-12"  markdown="1">
@@ -19,11 +52,14 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Frank Giraldo (Naval Postgraduate School)
 ##### *Using High-Order Element-based Galerkin Methods to capture Hurricane Intensification*
 ##### **May 16, 2023**
-##### [**9am PDT, May 16, 2023**](https://everytimezone.com/s/328e95bd)
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/giraldo.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>]()
 
 **Abstract:** Properly capture hurricane rapid intensification (where the winds
 increase by 30 knots in the first 24 hours) remains challenging for atmospheric
@@ -46,10 +82,6 @@ differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
 Preserving and Entropy Stable methods and discuss why we need scalable models in
 order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
 model that runs on large CPU clusters and on GPUs.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -455,11 +487,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Freddie Witherden (Texas A&M University)
-##### **June 20, 2023**
 
 &nbsp;
 
