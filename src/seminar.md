@@ -38,7 +38,6 @@ and hexahedral elements. Strategies will be described for both x86-64
 presented on recent Intel and Apple CPUs and compared against the well-known
 GiMMiK C code generation library.
 
-
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
@@ -50,8 +49,8 @@ GiMMiK C code generation library.
 </div><div class="col-md-12"  markdown="1">
 
 #### Frank Giraldo (Naval Postgraduate School)
-##### *Using High-Order Element-based Galerkin Methods to capture Hurricane Intensification*
-##### **May 16, 2023**
+##### *Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification*
+##### May 16, 2023
 
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -59,17 +58,17 @@ GiMMiK C code generation library.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=yesKLcqYWZU)
 
 **Abstract:** Properly capture hurricane rapid intensification (where the winds
 increase by 30 knots in the first 24 hours) remains challenging for atmospheric
 models. The reason is that we need LES-type scales 𝒪(100m) which is still
 elusive due to computational cost. In this talk, I describe the work that we are
-doing in this area and how element- based Galerkin Methods are being used to
+doing in this area and how element-based Galerkin Methods are being used to
 approximate spatial derivatives. I will also discuss the time-integration
 strategy that we are exploring for this class of problems. In particular, we are
 exploring process Multirate methods whereby each process in a system of
-nonlinear partial different equations (PDEs) uses a time- integrator and
+nonlinear partial different equations (PDEs) uses a time-integrator and
 time-step commensurate with the wave-speed of that process. We have constructed
 Multirate methods of any order using extrapolation methods. Along this same
 idea, we have also developed a multi-modeling framework (MMF) designed to
@@ -99,7 +98,7 @@ model that runs on large CPU clusters and on GPUs.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=HboMmtGvCW4)
 
 **Abstract:** The presented work started with a convergence and stability analysis for
 the so-called full envelope approximation used in analyzing optical amplifiers
