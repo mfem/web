@@ -10,6 +10,81 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Frank Giraldo (Naval Postgraduate School)
+#### *Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification*
+##### **May 16, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](yesKLcqYWZU)
+
+Properly capture hurricane rapid intensification (where the winds
+increase by 30 knots in the first 24 hours) remains challenging for atmospheric
+models. The reason is that we need LES-type scales 𝒪(100m) which is still
+elusive due to computational cost. In this talk, I describe the work that we are
+doing in this area and how element-based Galerkin Methods are being used to
+approximate spatial derivatives. I will also discuss the time-integration
+strategy that we are exploring for this class of problems. In particular, we are
+exploring process Multirate methods whereby each process in a system of
+nonlinear partial different equations (PDEs) uses a time-integrator and
+time-step commensurate with the wave-speed of that process. We have constructed
+Multirate methods of any order using extrapolation methods. Along this same
+idea, we have also developed a multi-modeling framework (MMF) designed to
+replace the physical parameterizations used in weather/climate models. Our
+approach is to view the coarse-scale and fine-scale models through the lens of
+Variational Multi-Scale (VMS) methods in order to give MMF a more rigorous
+mathematical foundation. Our end goal is to use MMF in order to better resolve
+the inner core of hurricanes. In addition, I will show some results using flux
+differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
+Preserving and Entropy Stable methods and discuss why we need scalable models in
+order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
+model that runs on large CPU clusters and on GPUs.
+
+---
+
+#### Leszek F. Demkowicz (University of Texas at Austin)
+#### *Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis*
+##### **April 25, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](HboMmtGvCW4)
+
+The presented work started with a convergence and stability analysis for
+the so-called full envelope approximation used in analyzing optical amplifiers
+(lasers). The specific problem of interest was the simulation of Transverse
+Mode Instabilities (TMI). The problem translates into the solution of a system
+of two nonlinear time-harmonic Maxwell equations coupled with a transient
+heat equation. Simulation of a 1 m long fiber involves the resolution of 10 M
+wavelengths. A superefficient MPI/openMP hp FE code run on a supercomputer gets you
+to the range of ten thousand wavelengths. The resolution of the additional
+thousand wavelengths is done using an exponential ansatz e^{ikz} in the
+z-coordinate. This results in a non-standard Maxwell problem.
+The stability and convergence analysis for the problem has been restricted to
+the linear case only. It turns out that the modified Maxwell problem is stable
+if and only if the original waveguide problem is stable and the boundedness
+below stability constants are identical. We have converged to the task of
+determining the boundedness below constant.
+The stability analysis started with an easier, acoustic waveguide problem.
+Separation of variables leads to an eigenproblem for a self-adjoint
+operator in the transverse plane (in x,y). Expansion of the solution
+in terms of the corresponding eigenvectors leads then to a decoupled
+system of ODEs, and a stability analysis for a two-point BVP for an ODE
+parametrized with the corresponding eigenvalues. The L^2-orthogonality
+of the eigenmodes and the stability result for a single mode, lead then
+to the final result: the inverse boundedness below constant depends inversely
+linearly upon the length L of the waveguide.
+The corresponding stability for the Maxwell waveguide turned out to be
+unexpectedly difficult. The equation is vector-valued so a direct separation
+of variables is out to begin with. An exponential ansatz in z leads to
+a non-standard eigenproblem involving an operator that is non-self
+adjoint even for the easiest, homogeneous case. The answer to the problem
+came from a tricky analysis of the eigenproblem combined with the perturbation
+technique for perturbed self-adjoint operators. The use of perturbation
+theory requires an assumption on the smallness of perturbation of
+the dielectric constant (around a constant value) but with no additional
+assumptions on its differentiability (discontinuities are allowed).
+In the end, the final result is similar to that for the acoustic waveguide -
+the boundedness below constant depends inversely linearly on L.
+
+---
+
 #### Joachim Schöberl (Vienna University of Technology)
 #### *The Netgen/NGSolve Finite Element Software*
 ##### **March 28, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -75,7 +150,7 @@ The [FEniCS Project](https://fenicsproject.org/) provides libraries for solving 
 
 Heart diseases are an ubiquitous societal burden responsible for a majority of deaths world wide. A central problem in developing effective treatments for heart diseases is the inherent complexity of the heart as an organ. From a modeling perspective, the heart can be interpreted as a biological pump involving multiple physical fields, namely fluid and solid mechanics, as well as chemistry and electricity, all interacting on different time scales. This multiphysics and multiscale aspect makes simulations inherently expensive, especially when approached with naive numerical techniques. However, computational models can be extraordinarily useful in helping us understanding how the healthy heart functions and especially how malfunctions influence different diseases. In this context, also information about possible weaknesses of therapies can be obtained to ultimately improve clinical treatment and decision support. In this talk, we will focus primarily on two important model classes in computational cardiology and their respective efficient numerical treatment without compromising significant accuracy. The first class is the problem of computing electrocardiograms (ECG) from electrical heart simulations. Since ECG measurements can give a wide range of insights about a wide range of heart diseases they offer suitable data to validate our electrophysiological models and verify our numerical schemes on organ-scale. Known numerical issues, arising in the context of electrophysiological models, will be reviewed. The second class addresses bidirectionally coupled electromechanical models and their efficient numerical treatment. Focus will be on a unified space-time adaptive operator splitting framework developed on top of MFEM which proves highly efficient so far for the investigated model classes while still preserving high accuracy.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Ricardo Vinuesa (KTH)
 #### *Modeling and Controlling Turbulent Flows through Deep Learning*
@@ -85,7 +160,7 @@ Heart diseases are an ubiquitous societal burden responsible for a majority of d
 
 The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Jeffrey Banks (RPI)
 #### *Efficient Techniques for Fluid Structure Interaction: Compatibility Coupling and Galerkin Differences*
