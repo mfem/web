@@ -312,7 +312,7 @@
         
             <li><a href="#memory-manager">Memory manager</a></li>
         
-            <li><a href="#mfem_forall">MFEM_FORALL</a></li>
+            <li><a href="#mfemforall">mfem::forall</a></li>
         
     
         <li class="main "><a href="#achieving-high-performance-on-gpus">Achieving high performance on GPUs</a></li>
@@ -346,16 +346,18 @@
 <p>MFEM relies mainly on two features for running algorithms on devices such as GPUs:</p>
 <ul>
 <li>The memory manager handles transparently the moving of data between the host (CPU) and the device (e.g. GPU),</li>
-<li>The <code>MFEM_FORALL</code> macro allows to abstract <code>for</code> loops to parallelize the execution on an arbitrary device.</li>
+<li>The <code>mfem::forall</code> function to abstract <code>for</code> loops to parallelize the execution on an arbitrary device.</li>
 </ul>
 <pre><code class="c++">Vector u;
 Vector v;
 // ...
-auto u_data = u.Read();      // Express the intent to read u
+const auto u_data = u.Read(); // Express the intent to read u
 auto v_data = v.ReadWrite(); // Express the intent to read and write v
-MFEM_FORALL(i, u.Size(),     // Abstract the loop: for(int i=0; i&lt;u.Size(); i++)
+
+// Abstract the loop: for(int i=0; i&lt;u.Size(); i++)
+mfem::forall(u.Size(), [=] MFEM_HOST_DEVICE (int i)
 {
-   v_data[i] *= u_data[i];   // This block of code is executed on the chosen device
+      v_data[i] *= u_data[i]; // This block of code is executed on the chosen device
 });
 </code></pre>
 
@@ -382,8 +384,8 @@ const double *device_ptr = v.Read();
 const double *host_ptr = v.HostRead();
 </code></pre>
 
-<h2 id="mfem_forall">MFEM_FORALL</h2>
-<p>The idea behind the <code>MFEM_FORALL</code> macro is to have the same behavior as a <code>for</code> loop and hide all device-specific code in order to enable performance portability.
+<h2 id="mfemforall">mfem::forall</h2>
+<p>The idea behind the <code>mfem::forall</code> function is to have the same behavior as a <code>for</code> loop and hide all device-specific code in order to enable performance portability.
 Example:</p>
 <pre><code class="c++">for (int i = 0; i &lt; N; i++)
 {
@@ -392,13 +394,13 @@ Example:</p>
 </code></pre>
 
 <p>becomes</p>
-<pre><code class="c++">MFEM_FORALL(i, N,
+<pre><code class="c++">mfem::forall(N, [=] MFEM_HOST_DEVICE (int i)
 {
    ...
 });
 </code></pre>
 
-<p>One class that is convenient to use in combination with the memory manager and <code>MFEM_FORALL</code> is <code>DeviceTensor&lt;N,T&gt;</code>: an <code>N</code> dimensional array containing elements of type <code>T</code>, which by default is <code>double</code>.
+<p>One class that is convenient to use in combination with the memory manager and <code>mfem::forall</code> is <code>DeviceTensor&lt;N,T&gt;</code>: an <code>N</code> dimensional array containing elements of type <code>T</code>, which by default is <code>double</code>.
 The <code>Reshape</code> function reshapes its input into such an <code>N</code> dimensional array:</p>
 <pre><code class="c++">Vector a;
 a.UseDevice(true);
@@ -407,7 +409,8 @@ const int q = ...;
 const int r = ...;
 const int N = ...;
 auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor&lt;4,double&gt;
-MFEM_FORALL(n, N,
+
+mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    for (int k = 0; k &lt; r; k++)
       for (int j = 0; j &lt; q; j++)
@@ -416,12 +419,12 @@ MFEM_FORALL(n, N,
 });
 </code></pre>
 
-<p>Several variants of <code>MFEM_FORALL</code> exist, such as <code>MFEM_FORALL_2D</code> and <code>MFEM_FORALL_3D</code>, to help map 2D or 3D blocks of threads to the hardware more efficiently.
-In the case of a GPU, <code>MFEM_FORALL_3D(i,N,X,Y,Z,{...})</code> will declare <code>N</code> block of threads each of size <code>X</code>x<code>Y</code>x<code>Z</code> threads, whereas <code>MFEM_FORALL</code> uses <code>N/256</code> block of threads each of size <code>256</code> threads.
-Using <code>MFEM_FORALL_3D</code> (and <code>MFEM_FORALL_2D</code>) over <code>MFEM_FORALL</code> results in a higher level of parallelism, the former using <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> software threads and the latter only <code>N</code> software threads.</p>
+<p>Several variants of <code>mfem::forall</code> exist, such as <code>mfem::forall_2D</code> and <code>mfem::forall_3D</code>, to help map 2D or 3D blocks of threads to the hardware more efficiently.
+In the case of a GPU, <code>mfem::forall_3D(N, X,Y,Z, [=] MFEM_HOST_DEVICE (int n){...})</code> will declare <code>N</code> block of threads each of size <code>X</code>x<code>Y</code>x<code>Z</code> threads, whereas <code>mfem::forall</code> uses <code>N/MFEM_CUDA_BLOCKS</code> block of threads each of size <code>MFEM_CUDA_BLOCKS = 256</code> threads.
+Using <code>mfem::forall_3D</code> (and <code>mfem::forall_2D</code>) over <code>mfem::forall</code> results in a higher level of parallelism, the former using <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> software threads and the latter only <code>N</code> software threads.</p>
 <p>In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro <code>MFEM_FOREACH_THREAD(i,x,p)</code> to use threads as a <code>for</code> loop.
 The first variable <code>i</code> is the name of the "loop" variable, <code>x</code> is the threadId (it can take the values <code>x</code>, <code>y</code>, or <code>z</code>), and <code>p</code> is the loop upper bound.
-If we rewrite the previous example using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code>, we get:</p>
+If we rewrite the previous example using <code>mfem::forall_3D</code> and <code>MFEM_FOREACH_THREAD</code>, we get:</p>
 <pre><code class="c++">Vector a;
 a.UseDevice(true);
 const int p = ...;
@@ -429,7 +432,8 @@ const int q = ...;
 const int r = ...;
 const int N = ...;
 auto A = Reshape(a.Write(), p, q, r, N); // returns a DeviceTensor&lt;4,double&gt;
-MFEM_FORALL_3D(n, N, p, q, r,
+
+mfem::forall_3D(N, p, q, r,  [=] MFEM_HOST_DEVICE (int n)
 {
    MFEM_FOREACH_THREAD(k,z,r)
       MFEM_FOREACH_THREAD(j,y,q)
@@ -439,9 +443,9 @@ MFEM_FORALL_3D(n, N, p, q, r,
 </code></pre>
 
 <p>The reasons for this more complex syntax is to better utilize the hardware, GPUs in particular.
-Using <code>MFEM_FORALL_3D</code> and <code>MFEM_FOREACH_THREAD</code> allows to use more concurrency <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> threads instead of only <code>N</code> threads with <code>MFEM_FORALL</code>,
-but more importantly the memory accesses on <code>A(i,j,k,n)</code> are much better with <code>MFEM_FORALL_3D</code>.
-With <code>MFEM_FORALL_3D</code>, threads access consecutive memory (i.e. <em>coalesced</em> memory access).
+Using <code>mfem::forall_3D</code> and <code>MFEM_FOREACH_THREAD</code> allows to use more concurrency <code>N</code>x<code>X</code>x<code>Y</code>x<code>Z</code> threads instead of only <code>N</code> threads with <code>mfem::forall</code>,
+but more importantly the memory accesses on <code>A(i,j,k,n)</code> are much better with <code>mfem::forall_3D</code>.
+With <code>mfem::forall_3D</code>, threads access consecutive memory (i.e. <em>coalesced</em> memory access).
 Because most applied math algorithms are memory bound, having coalesced memory accesses is critical to achieve high performance.</p>
 <h1 id="achieving-high-performance-on-gpus">Achieving high performance on GPUs</h1>
 <p>Finite element algorithms are usually <a href="https://developer.download.nvidia.com/video/gputechconf/gtc/2019/presentation/s9624-performance-analysis-of-gpu-accelerated-applications-using-the-roofline-model.pdf">memory bound</a> on GPUs, and therefore in order to achieve peak performance one has to maximize the utilization of the different <a href="https://stackoverflow.com/questions/37732735/nvprof-option-for-bandwidth">memory bandwidths</a>.
@@ -490,7 +494,7 @@ As mentioned above, efficiency issues are critical to achieve peak performance a
 <li><em>Instruction Fetch</em> — The next assembly instruction has not yet been fetched.</li>
 <li><em>Memory Throttle</em> — A large number of pending memory operations prevent further forward progress. These can be reduced by combining several memory transactions into one.</li>
 <li><em>Memory Dependency</em> — A load/store cannot be made because the required resources are not available or are fully utilized, or too many requests of a given type are outstanding. Memory dependency stalls can potentially be reduced by optimizing memory alignment and access patterns.</li>
-<li><em>Synchronization</em> — The warp is blocked at a <code>_syncthreads()</code> call.</li>
+<li><em>Synchronization</em> — The warp is blocked at a <code>__syncthreads()</code> call.</li>
 <li><em>Execution Dependency</em> — An input required by the instruction is not yet available. Execution dependency stalls can potentially be reduced by increasing instruction-level parallelism.</li>
 </ul>
 <p>You can use <code>nvprof --metrics</code> with:</p>
@@ -544,21 +548,22 @@ If you really need to allocate frequently GPU memory, consider using a memory po
 </code></pre>
 
 <p>Be aware that <code>UseDevice()</code> is not the same as <code>UseDevice(true)</code>, the first one just returns a boolean that tells you whether the object is intended for computation on the device or not.</p>
-<h3 id="using-constexpr-inside-mfem_forall">Using constexpr inside MFEM_FORALL</h3>
+<h3 id="using-constexpr-inside-mfemforall">Using constexpr inside mfem::forall</h3>
 <pre><code class="c++">constexpr P = ...; // Results in an error on MSVC
-MFEM_FORALL(I,N,
+mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
 });
 </code></pre>
 
-<p>The <code>MFEM_FORALL</code> macro relies on lambda capturing in C++. One issue comes up with compilers such as <a href="https://visualstudio.microsoft.com/">MSVC</a> is the capturing of <code>constexpr</code> variables inside <code>MFEM_FORALL</code>.
+<p>The <code>mfem::forall</code> macro relies on lambda capturing in C++. 
+One issue comes up with compilers such as <a href="https://visualstudio.microsoft.com/">MSVC</a> is the capturing of <code>constexpr</code> variables inside <code>mfem::forall</code>.
 According to the C++ standard, <code>constexpr</code> variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in errors like:</p>
 <p><code>error C2131: expression did not evaluate to a constant</code></p>
 <p>A simple fix for this error is to declare the <code>constexpr</code> variable as <code>static constexpr</code>.</p>
 <pre><code class="c++">static constexpr P = ...; // Omitting the static results in an error on MSVC
-MFEM_FORALL(I,N,
+mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
 });
@@ -590,19 +595,13 @@ cout &lt;&lt; &quot;IsHost(w) = &quot; &lt;&lt; IsHostMemory(w.GetMemory().GetMe
 Vector z; z.UseDevice(true); z.SetSize(vSize);
 auto dz = z.Write();
 auto dw = w.Read();
-MFEM_FORALL(i, vSize,
-{
-   dz[i] = dw[i];
-});
+mfem::forall(vSize, [=] MFEM_HOST_DEVICE (int i) { dz[i] = dw[i]; });
 z.HostRead();
 cout &lt;&lt; &quot;norm(z) = &quot; &lt;&lt; z.Norml2() &lt;&lt; endl;
 
 dz = z.Write();
 auto dv = v.Read();
-MFEM_FORALL(i, vSize,
-{
-   dz[i] = dv[i];
-});
+mfem::forall(vSize, [=] MFEM_HOST_DEVICE (int i) { dz[i] = dv[i]; });
 z.HostRead();
 cout &lt;&lt; &quot;norm(z) = &quot; &lt;&lt; z.Norml2() &lt;&lt; endl;
 </code></pre>
@@ -633,7 +632,7 @@ This way the whole <code>Vector v</code> gets the real data in one location -- b
         
             <li><a href="#memory-manager">Memory manager</a></li>
         
-            <li><a href="#mfem_forall">MFEM_FORALL</a></li>
+            <li><a href="#mfemforall">mfem::forall</a></li>
         
     
         <li class="main "><a href="#achieving-high-performance-on-gpus">Achieving high performance on GPUs</a></li>
