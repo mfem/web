@@ -10,6 +10,30 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+
+
+</div><div class="col-md-3"  markdown="1">
+
+<img src="img/seminar/sharma.jpg" alt="sharma" width="200"/>
+
+</div><div class="col-md-12"  markdown="1">
+
+#### Natasha Sharma (University of Texas at El Paso)
+##### *A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions*
+##### [**9am PDT, July 18, 2023**](https://everytimezone.com/s/6fcdb099)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>](https://llnlfed.webex.com/meet/kolev1)
+
+**Abstract:** The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
+
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
 </div><div class="col-md-3"  markdown="1">
 
 ![](img/seminar/witherden.jpg)
@@ -37,10 +61,6 @@ and hexahedral elements. Strategies will be described for both x86-64
 (AVX2/AVX-512) and AARCH64 (NEON/SVE) instruction sets. Results will be
 presented on recent Intel and Apple CPUs and compared against the well-known
 GiMMiK C code generation library.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3"  markdown="1">
 
@@ -79,7 +99,7 @@ mathematical foundation. Our end goal is to use MMF in order to better resolve
 the inner core of hurricanes. In addition, I will show some results using flux
 differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
 Preserving and Entropy Stable methods and discuss why we need scalable models in
-order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
+order to achieve our goals. Our model, NUMA, is a 3D nonhydrostatic atmospheric
 model that runs on large CPU clusters and on GPUs.
 
 </div><div class="col-md-3"  markdown="1">
@@ -487,12 +507,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
-&nbsp;
-
-#### Natasha Sharma (University of Texas at El Paso)
-##### **July 18, 2023**
-
-&nbsp;
 
 #### Jesse Chan (Rice University)
 ##### **August 8, 2023**
