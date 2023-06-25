@@ -85,8 +85,9 @@ and [spaces](features.md#higher-order-finite-element-spaces).
 * Scalable from laptops to [GPU-accelerated](features#parallel-scalable-and-gpu-ready) supercomputers.
 * ... and [many more](features.md).
 
-MFEM is used in many projects, including [BLAST](https://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [VisIt](https://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://scidac5-fastmath.lbl.gov/), [xSDK](https://xsdk.info/), and [CEED](https://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
-We host an annual [workshop](workshop.md) and a [seminar](seminar.md) series.
+MFEM is used in many projects, including [BLAST](https://www.llnl.gov/casc/blast), [Cardioid](https://github.com/llnl/cardioid), [Palace](https://github.com/awslabs/palace), [VisIt](https://visit.llnl.gov), [RF-SciDAC](https://www.rfscidac4.org/), [FASTMath](https://scidac5-fastmath.lbl.gov/), [xSDK](https://xsdk.info/), and [CEED](https://ceed.exascaleproject.org) in the [Exascale Computing Project](https://exascaleproject.org).
+
+We host an annual [workshop](workshop.md) and [FEM@LLNL seminar series](seminar.md) series.
 
 See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
 
@@ -97,11 +98,11 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Aug 10, 2023 | Upcoming MFEM [tutorial](tutorial/index.md) on AWS.
+Apr 11, 2023 | GitHub [ReadME article](https://github.com/readme/featured/nuclear-fusion-open-source) mentions MFEM.
 Mar 23, 2023 | Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).
-Jan 5, 2023  | [Playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) and [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of [2022 Workshop](workshop.md).
+Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
 Oct 11, 2022 | New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project for efficient AD.
-Aug 15, 2022 | MFEM [tutorial](tutorial/index.md) on AWS.
-Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 
 ## Latest Release
 
@@ -117,7 +118,7 @@ Jan 20, 2022 | [FEM@LLNL seminar series](seminar.md) starting.
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](
 https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb
- "C++ Jupiter notebok")
+ "C++ Jupiter notebook")
 
 ## Documentation
 
