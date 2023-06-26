@@ -8,6 +8,8 @@ We are happy to announce a new FEM@LLNL seminar series, starting in 2022, which 
 
 Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcETKJnhWaU7_Wa2V3d7WIPdf3_JYK4JmA/viewform?usp=sf_link) to sign-up for future FEM@LLNL seminar announcements.
 
+---
+
 ### <i class="fa fa-star"></i> Next Talk
 
 </div><div class="col-md-3" markdown="1">
@@ -510,11 +512,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Jesse Chan (Rice University)
-##### **August 8, 2023**
-
-&nbsp;
-
 #### David Moxey (King's College, London)
 ##### **September 12, 2023**
 
@@ -528,8 +525,10 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 #### Youngsoo Choi (Lawrence Livermore National Laboratory)
 ##### **November 7, 2023**
 
----
-
 &nbsp;
+
+#### Jesse Chan (Rice University)
+##### **December 5, 2023**
+
 
 </div>
