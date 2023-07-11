@@ -51,7 +51,7 @@ The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-
 | 8:00-8:20 | **Welcome & Overview** | **TBD** (LLNL) |
 | 8:20-8:40 | **The State of MFEM** | **Tzanio Kolev** (LLNL) |
 | 8:40-9:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
-| 8:00-9:20 | **Break** | All |
+| 9:00-9:20 | **Break** | All |
 | 9:20-10:20 | **Talks, Session I** | (20 mins each) |
 | 10:20-10:40 | **Break & Group Photo**| Download a virtual background below |
 | 10:40-11:40 | **Talks, Session II** | (20 mins each) |
