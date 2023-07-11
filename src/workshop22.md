@@ -14,7 +14,7 @@ and view **contest submissions** in the [gallery](gallery.md).
 ### Overview
 
 The MFEM team is happy to announce the third MFEM Community Workshop, which will
-take place on October 25, 2022, virtually, using Zoom for videoconferencing.
+take place on October 25, 2022, virtually, using Zoom for video conferencing.
 The goal of the workshop is to foster collaboration among all MFEM users and
 developers, share the latest MFEM features with the broader community, deepen
 application engagements, and solicit feedback to guide future development
