@@ -53,7 +53,7 @@ The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-
 | 8:40-9:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
 | 9:00-9:20 | **Break** | All |
 | 9:20-10:20 | **Talks, Session I** | (20 mins each) |
-| 10:20-10:40 | **Break & Group Photo**| Download a virtual background below |
+| 10:20-10:40 | **Break & Group Photo** | Download a virtual background below |
 | 10:40-11:40 | **Talks, Session II** | (20 mins each) |
 | 11:40-12:00 | **Break** | All |
 | 12:00-1:00 |  **Talks, Session III** | (20 mins each) |
