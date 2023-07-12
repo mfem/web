@@ -1084,6 +1084,29 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex34" markdown="1">
+##Example 34: Obstacle Problem
+<img class="floatright" width="280pt" src="../img/examples/ex33.png">
+
+This example code solves the pointwise bound-constrained energy minimization problem
+$$ \text{minimize } \frac{1}{2}\\|\nabla u\\|^2 \text{ in } H^1_0(\Omega) \text{ subject to } u \ge \varphi\,.$$
+This is known as the obstacle problem, and it is a classical motivating example in the
+study of variational inequalities and free boundary problems. In this example, the obstacle $\varphi$
+is the graph of a half-sphere centered at the origin of a circular domain $\Omega$. After solving to
+a specified tolerance, the numerical solution is compared to a closed-form exact solution to assess
+its accuracy.
+
+The problem is solved using the Proximal Galerkin finite element method, which is a high-order
+nonlinear mixed method for pointwise bound constraints. In turn, this example highlights MFEM's ability
+to deliver high-order solutions to variational inequalities and showcases how to set up and solve
+nonlinear mixed methods.
+
+_The example has a serial ([ex34.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34.cpp))
+and a parallel ([ex34p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
