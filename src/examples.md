@@ -1086,9 +1086,9 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
-<div id="ex34" markdown="1">
-##Example 34: Obstacle Problem
-<img class="floatright" width="280pt" src="../img/examples/ex34.png">
+<div id="ex36" markdown="1">
+##Example 36: Obstacle Problem
+<img class="floatright" width="280pt" src="../img/examples/ex36.png">
 
 This example code solves the pointwise bound-constrained energy minimization problem
 $$ \text{minimize } \frac{1}{2}\\|\nabla u\\|^2 \text{ in } H^1_0(\Omega) \text{ subject to } u \ge \varphi\,.$$
@@ -1104,8 +1104,8 @@ structure-preserving mixed method for pointwise bound constraints proposed by
 MFEM's ability to deliver high-order solutions to variational inequalities and showcases how to
 set up and solve nonlinear mixed methods.
 
-_The example has a serial ([ex34.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34.cpp))
-and a parallel ([ex34p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34p.cpp)) version.
+_The example has a serial ([ex36.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp))
+and a parallel ([ex36p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1962,7 +1962,7 @@ function update()
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
-   + showElement("ex34", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
