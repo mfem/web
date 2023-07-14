@@ -102,7 +102,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="petsc">PETSc solvers</option>
       <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
-      <option id="pre">Preprocessing</option>
+      <option id="none">None</option>
    </select>
 </div>
 </div>
@@ -1099,7 +1099,8 @@ a specified tolerance, the numerical solution is compared to a closed-form exact
 its accuracy.
 
 The problem is solved using the Proximal Galerkin finite element method, which is a nonlinear,
-structure-preserving mixed method for pointwise bound constraints. In turn, this example highlights
+structure-preserving mixed method for pointwise bound constraints proposed by
+[Keith and Surowiec](https://arxiv.org/abs/2307.xxxxx). In turn, this example highlights
 MFEM's ability to deliver high-order solutions to variational inequalities and showcases how to
 set up and solve nonlinear mixed methods.
 
@@ -1957,7 +1958,7 @@ function update()
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
-   + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr) && pre)
+   + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr) && none)
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
