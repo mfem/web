@@ -57,6 +57,8 @@ nav:
   - 'Videos': videos.md
   - 'Seminar': seminar.md
   - 'Workshop': workshop.md
+  - '_Workshop22': workshop22.md
+  - '_Workshop21': workshop21.md
   - 'Tutorial': tutorial/index.md
 - Gallery: gallery.md
 - Download: download.md

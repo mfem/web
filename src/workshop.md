@@ -1,5 +1,5 @@
 # MFEM Community Workshop
-#### October 24, 2023
+#### October 26, 2023
 #### Virtual Meeting
 
 ![MFEM Logo](img/logo-300.png)
@@ -7,7 +7,7 @@
 ### Overview
 
 The MFEM team is happy to announce the second MFEM Community Workshop, which will
-take place on October 24, 2023, virtually, using Zoom for videoconferencing.
+take place on October 26, 2023, virtually, using Zoom for videoconferencing.
 The goal of the workshop is to foster collaboration among all MFEM users and
 developers, share the latest MFEM features with the broader community, deepen
 application engagements, and solicit feedback to guide future development
@@ -44,7 +44,7 @@ MFEM workshop.
 
 The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-7):
 
-#### Tuesday, October 24
+#### Thursday, October 26
 
 | Time (PDT, GMT-7) | Activity | Presenter |
 |---|---|---|
