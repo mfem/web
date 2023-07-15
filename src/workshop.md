@@ -35,12 +35,12 @@ Depending on the interest and user feedback, the meeting will include the follow
 
 See also the agenda for the previous [2022](../workshop22), [2021](../workshop21) MFEM workshops.
 
-### Meeting format
-
 Workshop participants are encouraged to join the
 [MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1hxasxnlt-erkRWQTMLmBoHUdXlB0Wfg)
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
+
+### Agenda
 
 The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-7):
 
