@@ -98,8 +98,8 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Aug 10, 2023 | Upcoming MFEM [tutorial](tutorial/index.md) on AWS.
-Apr 11, 2023 | GitHub [ReadME article](https://github.com/readme/featured/nuclear-fusion-open-source) mentions MFEM.
+Aug 10, 2023 | Upcoming MFEM [Tutorial](tutorial/index.md) on AWS.
+Jul 17, 2023 | MFEM [Community Workshop](workshop.md) on Oct 26, 2023.
 Mar 23, 2023 | Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
 Oct 11, 2022 | New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project for efficient AD.
