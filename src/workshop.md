@@ -18,7 +18,7 @@ directions for the project.
 
 ### Registration
 
-If you plan to attend, [please register no later than **October 17th**](https://docs.google.com/forms/d/e/1FAIpQLSf_YKPpCuzXjK2ZeX-lJzPsgd6Cfdv3UCOzWtPUiwgPoXzhMA/viewform?usp=sf_link).
+If you plan to attend, [please register no later than **October 19th**](https://docs.google.com/forms/d/e/1FAIpQLSf_YKPpCuzXjK2ZeX-lJzPsgd6Cfdv3UCOzWtPUiwgPoXzhMA/viewform?usp=sf_link).
 
 There is no registration fee. Zoom details will be distributed to participants prior to the event date.
 
