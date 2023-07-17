@@ -2,8 +2,8 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
-**Aug 10, 2023** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/) series.*
 **Jul 17, 2023** | *The third [MFEM Community Workshop](workshop.md) will take place on October 26th, 2023.*
+**Jul 11, 2023** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/) series.*
 **Apr 11, 2023** | *GitHub ReadME project [article](https://github.com/readme/featured/nuclear-fusion-open-source) on open-source software for fusion mentions MFEM.
 **Mar 23, 2023** | *Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).*
 **Feb 22, 2023** | *AWS releases the [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) code for cloud-based electromagnetics simulations of quantum computing hardware based on MFEM*
