@@ -1100,7 +1100,7 @@ its accuracy.
 
 The problem is solved using the Proximal Galerkin finite element method, which is a nonlinear,
 structure-preserving mixed method for pointwise bound constraints proposed by
-[Keith and Surowiec](https://arxiv.org/abs/2307.xxxxx). In turn, this example highlights
+[Keith and Surowiec](https://arxiv.org/abs/2307.12444). In turn, this example highlights
 MFEM's ability to deliver high-order solutions to variational inequalities and showcases how to
 set up and solve nonlinear mixed methods.
 
