@@ -5,7 +5,7 @@
 
 Welcome to the MFEM tutorial, part of the
 [RADIUSS Tutorial Series](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/)
-in collaboration with [AWS](https://aws.amazon.com/).
+in collaboration with [AWS](https://aws.amazon.com/blogs/hpc/call-for-participation-radiuss-tutorial-series-2023/).
 
 [MFEM](https://mfem.org/) is a modular parallel C++ library for finite element
 methods developed at [CASC](https://computing.llnl.gov/casc/),
