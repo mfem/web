@@ -10,6 +10,38 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Natasha Sharma (University of Texas at El Paso)
+#### *A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions*
+##### **July 18, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](5O4Uv9agXHU)
+
+The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
+
+---
+
+#### Freddie Witherden (Texas A&M University)
+#### *FSSpMDM — Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation*
+##### **June 20, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](dBiAImFDNUk)
+
+Small matrix multiplications are a key building block of modern
+high-order finite element method solvers. Such multiplications describe the act
+of applying a specific finite element operator onto a set of state vectors. The
+small and irregular size of these multiplications makes them poor candidates for
+generic matrix multiplication routines. Moreover, for elements with a tensor
+product construction, the operators themselves can exhibit a significant degree
+of sparsity. In this talk, I will describe the code generation strategies
+employed by our Fixed Size Sparse Matrix-Dense Matrix (FSSpMDM) routine in
+libxsmm and show how these result in performant operator kernels for prismatic
+and hexahedral elements. Strategies will be described for both x86-64
+(AVX2/AVX-512) and AARCH64 (NEON/SVE) instruction sets. Results will be
+presented on recent Intel and Apple CPUs and compared against the well-known
+GiMMiK C code generation library.
+
+---
+
 #### Frank Giraldo (Naval Postgraduate School)
 #### *Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification*
 ##### **May 16, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
