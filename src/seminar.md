@@ -14,23 +14,45 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+<!-- ![](img/seminar/sharma.jpg) -->
+
+</div><div class="col-md-12" markdown="1">
+
+#### David Moxey (King's College, London)
+<!-- ##### *Talk Title* -->
+##### [**Time TBD, September 12, 2023**](https://everytimezone.com/s/f2e71199)
+
+<!-- [<button type="button" class="btn btn-success">
+**WebEx**
+</button>]() -->
+
+<!--**Abstract:** -->
+
+</div><div class="col-md-12" markdown="1">
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/sharma.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Natasha Sharma (University of Texas at El Paso)
 ##### *A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions*
-##### [**9am PDT, July 18, 2023**](https://everytimezone.com/s/f2e71199)
+##### July 18, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/sharma.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
-</button>](https://llnlfed.webex.com/meet/gillette7)
+**Talk Recording**
+</button>](https://www.youtube.com/watch?v=5O4Uv9agXHU)
 
 **Abstract:** The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -48,7 +70,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=dBiAImFDNUk)
 
 **Abstract:** Small matrix multiplications are a key building block of modern
 high-order finite element method solvers. Such multiplications describe the act
@@ -509,11 +531,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### David Moxey (King's College, London)
-##### **September 12, 2023**
 
 &nbsp;
 
