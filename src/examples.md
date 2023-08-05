@@ -48,6 +48,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
       <option id="nonlocal">Nonlocal models</option>
+      <option id="freeboundary">Free boundary problems</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -101,6 +102,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="petsc">PETSc solvers</option>
       <option id="slepc">SLEPc eigensolvers</option>
       <option id="hiop">HiOp solvers</option>
+      <option id="none">None</option>
    </select>
 </div>
 </div>
@@ -1084,6 +1086,30 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex36" markdown="1">
+##Example 36: Obstacle Problem
+<img class="floatright" width="280pt" src="../img/examples/ex36.png">
+
+This example code solves the pointwise bound-constrained energy minimization problem
+$$ \text{minimize } \frac{1}{2}\\|\nabla u\\|^2 \text{ in } H^1_0(\Omega) \text{ subject to } u \ge \varphi\,.$$
+This is known as the obstacle problem, and it is a classical motivating example in the
+study of variational inequalities and free boundary problems. In this example, the obstacle $\varphi$
+is the graph of a half-sphere centered at the origin of a circular domain $\Omega$. After solving to
+a specified tolerance, the numerical solution is compared to a closed-form exact solution to assess
+its accuracy.
+
+The problem is solved using the Proximal Galerkin finite element method, which is a nonlinear,
+structure-preserving mixed method for pointwise bound constraints proposed by
+[Keith and Surowiec](https://arxiv.org/abs/2307.12444). In turn, this example highlights
+MFEM's ability to deliver high-order solutions to variational inequalities and showcases how to
+set up and solve nonlinear mixed methods.
+
+_The example has a serial ([ex36.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp))
+and a parallel ([ex36p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -1932,10 +1958,11 @@ function update()
    + showElement("ex27", (conduction || diffusion) && (h1 || l2) && (galerkin || dg) && (gs || pcg || gmres || amg || umfpack))
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
-   + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr))
+   + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr) && none)
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
+   + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
