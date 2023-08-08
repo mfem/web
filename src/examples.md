@@ -48,6 +48,8 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
       <option id="nonlocal">Nonlocal models</option>
+      <option id="randomload">Random load</option>
+      <option id="fractional">Fractional operator</option>
       <option id="freeboundary">Free boundary problems</option>
    </select>
 </div>
@@ -1872,6 +1874,50 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="spde" markdown="1">
+##Generating Gaussian Random Fields via the SPDE Method
+<img class="floatright" width="250" style="border:1px solid black" src="../img/examples/spde.png">
+
+This miniapp generates Gaussian random fields on meshed domains via the SPDE
+method. The method builds on Whittle's results from 1954/1963 who realized
+that the solution of a particular, stochastic, fractinonal PDE yields a Gaussian
+random field with Matérn covariance. The method was introduced and popularized
+by [Lindgren et. al](https://doi.org/10.1111/j.1467-9868.2011.00777.x) in 2010.
+In this miniapp, we use a slightly modified representation following
+[Khristenko et. al](https://doi.org/10.1137/19M1259286), i.e., we solve the
+equation
+\begin{equation}
+  \left(
+  -\frac{1}{2\nu} \nabla \cdot
+  \left( \Theta \nabla \right)
+  + \mathbf{1}
+  \right)^{\frac{2\nu+n}{4}}
+  u(x,w) = \eta W(x,w)
+\end{equation}
+and obtain a Gaussian random field with zero mean and Matérn covariance, e.g.,
+\begin{align}\label{eq:MaternCovariance}
+  C(x,y) &= \sigma^2M_\nu \left(\sqrt{2\nu} \cdot d(x,y) \right) \ \ \text{with} \\
+  M_\nu(z) =
+  \frac{2^{1-\nu}}{\Gamma(\nu)}
+  z ^{\nu}
+  K_\nu \left( z \right) \  \ \ \text{and,} \\
+  d(x,y) = \sqrt{(x-y)\Theta (x-y)} .
+\end{align}
+In particular, this formulation offers two convenient parameters, $\nu$ and
+$\Theta$, which determine the regularity and spatial structure (correlation
+length) of the random field. For more details, consider the references or
+the miniapp
+(README)[https://github.com/mfem/mfem/blob/master/miniapps/spde/README.md].
+
+We recommend viewing [ex33p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp)
+before viewing this miniapp.
+
+_This miniapp has only a parallel implementation. It further requires MFEM to be
+built with LAPACK, otherwise you may only use predefined values for $\nu$.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -1998,6 +2044,9 @@ function update()
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
    + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
 
+   // Misc miniapps
+   + showElement("spde", (diffusion || nonlocal) && h1 && galerkin && amg && randomload && fractional)
+  
    ; // ...end of expression
 
    // show/hide the message "No examples match your criteria"
