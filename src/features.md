@@ -140,6 +140,9 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Convert DC](https://docs.mfem.org/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces,
  - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library.
+ - [SPDE](ToDo:AddLink): 
+   generate a Gaussian random field via the SPDE method, i.e., by solving a
+   fractional PDE with random load.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
