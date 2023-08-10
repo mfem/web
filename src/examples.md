@@ -47,10 +47,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
-      <option id="nonlocal">Nonlocal models</option>
-      <option id="randomload">Random load</option>
-      <option id="fractional">Fractional operator</option>
-      <option id="freeboundary">Free boundary problems</option>
+      <option id="nonlocal">Nonlocal</option>
+      <option id="stochastic">Stochastic</option>
+      <option id="freeboundary">Free boundary</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1876,16 +1875,15 @@ moving to the miniapps.**_
 
 <div id="spde" markdown="1">
 ##Generating Gaussian Random Fields via the SPDE Method
-<img class="floatright" width="250" style="border:1px solid black" src="../img/examples/spde.png">
+<img class="floatright" width="300" src="../img/examples/spde.png">
 
-This miniapp generates Gaussian random fields on meshed domains via the SPDE
-method. The method builds on Whittle's results from 1954/1963 who realized
-that the solution of a particular, stochastic, fractinonal PDE yields a Gaussian
-random field with Matérn covariance. The method was introduced and popularized
+This miniapp generates Gaussian random fields on meshed domains $\Omega \subset \mathbb{R}^n$ via the SPDE
+method. The method exploits a stochastic, fractional PDE whose full-space solutions yield Gaussian
+random fields with a Matérn covariance. The method was introduced and popularized
 by [Lindgren et. al](https://doi.org/10.1111/j.1467-9868.2011.00777.x) in 2010.
 In this miniapp, we use a slightly modified representation following
-[Khristenko et. al](https://doi.org/10.1137/19M1259286), i.e., we solve the
-equation
+[Khristenko et. al](https://doi.org/10.1137/19M1259286).
+More specifically, we solve the equation
 \begin{equation}
   \left(
   -\frac{1}{2\nu} \nabla \cdot
@@ -1893,26 +1891,32 @@ equation
   + \mathbf{1}
   \right)^{\frac{2\nu+n}{4}}
   u(x,w) = \eta W(x,w)
+  \ \ \ \text{in} \ \ \Omega,
 \end{equation}
-and obtain a Gaussian random field with zero mean and Matérn covariance, e.g.,
+with various boundary conditions.
+Solving this equation on $\Omega = \mathbb{R}^n$ delivers a homogeneous Gaussian random field with zero mean and Matérn covariance,
 \begin{align}\label{eq:MaternCovariance}
-  C(x,y) &= \sigma^2M_\nu \left(\sqrt{2\nu} \cdot d(x,y) \right) \ \ \text{with} \\
-  M_\nu(z) =
+  C(x,y) &= \sigma^2M_\nu \left(\sqrt{2\nu}\, \\| x-y \\|\_{\Theta} \right)
+  ,
+\end{align}
+where
+$M_\nu(z) =
   \frac{2^{1-\nu}}{\Gamma(\nu)}
   z ^{\nu}
-  K_\nu \left( z \right) \  \ \ \text{and,} \\
-  d(x,y) = \sqrt{(x-y)\Theta (x-y)} .
-\end{align}
-In particular, this formulation offers two convenient parameters, $\nu$ and
-$\Theta$, which determine the regularity and spatial structure (correlation
-length) of the random field. For more details, consider the references or
-the miniapp
-(README)[https://github.com/mfem/mfem/blob/master/miniapps/spde/README.md].
+  K_\nu \left( z \right)$
+  and $\\| x-y \\|\_{\Theta}^2 = (x-y)^\top\Theta (x-y)$.
+The Matérn model provides the regularity parameter $\nu > 0$ and the
+anisotropic diffusion tensor
+$\Theta \in \mathbb{R}^{n\times n}$, which determines the spatial structure (correlation
+lengths).
+However, applying boundary conditions to the SPDE above provides the ability to model a significantly larger class of inhomogeneous random fields on complex domains.
+For futher details, see the miniapp
+[README](https://github.com/mfem/mfem/blob/master/miniapps/spde/README.md).
 
 We recommend viewing [ex33p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp)
 before viewing this miniapp.
 
-_This miniapp has only a parallel implementation. It further requires MFEM to be
+_This miniapp ([generate_random_field.cpp](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp)) only has a parallel implementation. It further requires MFEM to be
 built with LAPACK, otherwise you may only use predefined values for $\nu$.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
@@ -2045,7 +2049,7 @@ function update()
    + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
 
    // Misc miniapps
-   + showElement("spde", (diffusion || nonlocal) && h1 && galerkin && amg && randomload && fractional)
+   + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
   
    ; // ...end of expression
 
