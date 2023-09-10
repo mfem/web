@@ -1910,18 +1910,18 @@ anisotropic diffusion tensor
 $\Theta \in \mathbb{R}^{n\times n}$, which determines the spatial structure (correlation
 lengths).
 However, applying boundary conditions to the SPDE above provides the ability to model a significantly larger class of inhomogeneous random fields on complex domains.
-For futher details, see the miniapp
+For further details, see the miniapp
 [README](https://github.com/mfem/mfem/blob/master/miniapps/spde/README.md).
 
 We recommend viewing [ex33p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp)
 before viewing this miniapp.
 
-_This miniapp ([generate_random_field.cpp](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp)) only has a parallel implementation. It further requires MFEM to be
+_This miniapp ([generate_random_field.cpp](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp)) has only a parallel implementation. It further requires MFEM to be
 built with LAPACK, otherwise you may only use predefined values for $\nu$.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
-<br></div>
+<br></div>3
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -2050,7 +2050,7 @@ function update()
 
    // Misc miniapps
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
-  
+
    ; // ...end of expression
 
    // show/hide the message "No examples match your criteria"
