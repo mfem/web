@@ -47,8 +47,9 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
       <option id="meshing">Meshing</option>
-      <option id="nonlocal">Nonlocal models</option>
-      <option id="freeboundary">Free boundary problems</option>
+      <option id="nonlocal">Nonlocal</option>
+      <option id="stochastic">Stochastic</option>
+      <option id="freeboundary">Free boundary</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1872,6 +1873,55 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="spde" markdown="1">
+##Generating Gaussian Random Fields via the SPDE Method
+<img class="floatright" width="300" src="../img/examples/spde.png">
+
+This miniapp generates Gaussian random fields on meshed domains $\Omega \subset \mathbb{R}^n$ via the SPDE
+method. The method exploits a stochastic, fractional PDE whose full-space solutions yield Gaussian
+random fields with a Matérn covariance. The method was introduced and popularized
+by [Lindgren et. al](https://doi.org/10.1111/j.1467-9868.2011.00777.x) in 2010.
+In this miniapp, we use a slightly modified representation following
+[Khristenko et. al](https://doi.org/10.1137/19M1259286).
+More specifically, we solve the equation
+\begin{equation}
+  \left(
+  -\frac{1}{2\nu} \nabla \cdot
+  \left( \Theta \nabla \right)
+  + \mathbf{1}
+  \right)^{\frac{2\nu+n}{4}}
+  u(x,w) = \eta W(x,w)
+  \ \ \ \text{in} \ \ \Omega,
+\end{equation}
+with various boundary conditions.
+Solving this equation on $\Omega = \mathbb{R}^n$ delivers a homogeneous Gaussian random field with zero mean and Matérn covariance,
+\begin{align}\label{eq:MaternCovariance}
+  C(x,y) &= \sigma^2M_\nu \left(\sqrt{2\nu}\, \\| x-y \\|\_{\Theta} \right)
+  ,
+\end{align}
+where
+$M_\nu(z) =
+  \frac{2^{1-\nu}}{\Gamma(\nu)}
+  z ^{\nu}
+  K_\nu \left( z \right)$
+  and $\\| x-y \\|\_{\Theta}^2 = (x-y)^\top\Theta (x-y)$.
+The Matérn model provides the regularity parameter $\nu > 0$ and the
+anisotropic diffusion tensor
+$\Theta \in \mathbb{R}^{n\times n}$, which determines the spatial structure (correlation
+lengths).
+However, applying boundary conditions to the SPDE above provides the ability to model a significantly larger class of inhomogeneous random fields on complex domains.
+For further details, see the miniapp
+[README](https://github.com/mfem/mfem/blob/master/miniapps/spde/README.md).
+
+We recommend viewing [ex33p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex33p.cpp)
+before viewing this miniapp.
+
+_This miniapp ([generate_random_field.cpp](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp)) has only a parallel implementation. It further requires MFEM to be
+built with LAPACK, otherwise you may only use predefined values for $\nu$.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -1997,6 +2047,9 @@ function update()
    + showElement("block-solvers", darcy && (l2 || hdiv || hcurl) && mixed && (gmres || pcg || minres || amg))
    + showElement("overlapping", (incompressibleflow || diffusion || meshing) && (h1) && (galerkin) && (gmres || pcg))
    + showElement("parelag", (maxwell || graddiv) && (hdiv || hcurl) && (galerkin) && (ams || ads || pcg))
+
+   // Misc miniapps
+   + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
 
    ; // ...end of expression
 
