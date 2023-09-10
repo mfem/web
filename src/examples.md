@@ -1921,7 +1921,7 @@ built with LAPACK, otherwise you may only use predefined values for $\nu$.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
-<br></div>3
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
