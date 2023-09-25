@@ -18,9 +18,8 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-12" markdown="1">
 
-#### David Moxey (King's College, London)
-<!-- ##### *Talk Title* -->
-##### [**Time TBD, September 12, 2023**](https://everytimezone.com/s/f2e71199)
+#### Ben Southworth (Los Alamos National Laboratory)
+##### [**Time TBD, October 10, 2023**](https://everytimezone.com/s/f2e71199)
 
 <!-- [<button type="button" class="btn btn-success">
 **WebEx**
@@ -531,11 +530,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Ben Southworth (Los Alamos National Laboratory)
-##### **October 10, 2023**
 
 &nbsp;
 
