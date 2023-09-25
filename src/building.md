@@ -10,6 +10,7 @@ together with GLVis. For more details, see the
 In addition to the native build system described below, MFEM packages are
 also available in the following package managers:
 
+- [Homebrew](https://brew.sh/)
 - [Spack](https://github.com/spack/spack)
 - [OpenHPC](https://openhpc.community/downloads)
 
