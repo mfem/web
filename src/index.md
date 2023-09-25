@@ -1,3 +1,15 @@
+<div class="col-md-12" markdown="1">
+<center>
+[<button type="button" class="btn btn-success">
+**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop on October 26th**
+</button>](workshop.md)
+&nbsp;
+[<button type="button" class="btn btn-primary">
+**<i class="fa fa-check" aria-hidden="true"></i>&nbsp; Register**
+</button>](https://docs.google.com/forms/d/e/1FAIpQLSf_YKPpCuzXjK2ZeX-lJzPsgd6Cfdv3UCOzWtPUiwgPoXzhMA/viewform?usp=sf_link)
+</center>
+</div>
+
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
@@ -99,10 +111,10 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Sep 11, 2023 | MFEM now available in [Homebrew](https://formulae.brew.sh/formula/mfem).
-Jul 17, 2023 | MFEM [Community Workshop](workshop.md) on Oct 26, 2023.
 Jul 11, 2023 | Upcoming MFEM [Tutorial](tutorial/index.md) on AWS.
 Mar 23, 2023 | Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
+Oct 11, 2022 | New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project for efficient AD.
 
 ## Latest Release
 
