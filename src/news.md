@@ -2,6 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Sep 11, 2023** | *MFEM now available in [Homebrew](https://formulae.brew.sh/formula/mfem).*
 **Jul 17, 2023** | *The third [MFEM Community Workshop](workshop.md) will take place on October 26th, 2023.*
 **Jul 11, 2023** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/) series.*
 **Apr 11, 2023** | *GitHub ReadME project [article](https://github.com/readme/featured/nuclear-fusion-open-source) on open-source software for fusion mentions MFEM.*
