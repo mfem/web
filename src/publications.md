@@ -9,6 +9,8 @@
 
 #### 2023
 
+  1. J. Yang, K. Mittal, T. Dzanic, S. Petrides, B. Keith, B. Petersen, D. Faissol, R. Anderson, [Multi-Agent Reinforcement Learning for Adaptive Mesh Refinement](https://dl.acm.org/doi/abs/10.5555/3545946.3598614), *Proceedings of the 2023 International Conference on Autonomous Agents and Multiagent Systems*, **2023**.
+  1. J. Yang, T. Dzanic, B. Petersen, J. Kudo, K. Mittal, V. Tomov, J.S. Camier, T. Zhao, H. Zha, T. Kolev, R. Anderson, [Reinforcement learning for adaptive mesh refinement](https://proceedings.mlr.press/v206/yang23e.html), *Proceedings of the International Conference on Artificial Intelligence and Statistics*, **2023**.
   1. W. Pazner, Tz. Kolev, and J. Camier, [End-to-end GPU acceleration of low-order-refined preconditioning for high-order finite element discretizations](https://arxiv.org/abs/2210.12253), *in review*, **2023**. Also available as [arXiv:2210.12253](https://arxiv.org/abs/2210.12253).
   1. W. Pazner, Tz. Kolev, and C. Dohrmann, [Low-order preconditioning for the high-order finite element de Rham complex](https://arxiv.org/abs/2203.02465), *in review*, **2023**. Also available as [arXiv:2203.02465](https://arxiv.org/abs/2203.02465).
   1. J. Barrera, Tz. Kolev, K. Mittal, and V. Tomov, [High-Order Mesh Morphing for Boundary and Interface Fitting to Implicit Geometries](https://doi.org/10.1016/j.cad.2023.103499), *Computer-Aided Design*, 158, 103499, **2023**. Also available as [arXiv:2208.05062](https://arxiv.org/abs/2208.05062).
