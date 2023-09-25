@@ -14,12 +14,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-<!-- ![](img/seminar/sharma.jpg) -->
+![](img/seminar/southworth.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Ben Southworth (Los Alamos National Laboratory)
-##### [**Time TBD, October 10, 2023**](https://everytimezone.com/s/f2e71199)
+##### *Title: TBD*
+##### [**9am PDT, October 17, 2023**](https://everytimezone.com/s/2515b09a)
+
+**Abstract:** TBD
 
 <!-- [<button type="button" class="btn btn-success">
 **WebEx**
