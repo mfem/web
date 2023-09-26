@@ -9,6 +9,9 @@
 
 #### 2023
 
+  1. B. Keith, T.M. Surowiec, [Proximal Galerkin: A structure-preserving finite element method for pointwise bound constraints](https://arxiv.org/abs/2307.12444), **2023**.
+  1. R. Bollapragada, C. Karamanli, B. Keith, B. Lazarov, S. Petrides, J. Wang, [An Adaptive Sampling Augmented Lagrangian Method for Stochastic Optimization with Deterministic Constraints](https://arxiv.org/abs/2305.01018), *Computers & Mathematics with Applications (to appear)*, **2023**. Also available as [arXiv:2305.01018](https://arxiv.org/abs/2305.01018).
+  1. A. Gillette, B. Keith, S. Petrides, [Learning robust marking policies for adaptive mesh refinement](https://arxiv.org/abs/2207.06339), *SIAM Journal on Scientific Computing (to appear)*, **2023**. Also available as [arXiv:2207.06339](https://arxiv.org/abs/2207.06339).
   1. J. Yang, K. Mittal, T. Dzanic, S. Petrides, B. Keith, B. Petersen, D. Faissol, R. Anderson, [Multi-Agent Reinforcement Learning for Adaptive Mesh Refinement](https://dl.acm.org/doi/abs/10.5555/3545946.3598614), *Proceedings of the 2023 International Conference on Autonomous Agents and Multiagent Systems*, **2023**.
   1. J. Yang, T. Dzanic, B. Petersen, J. Kudo, K. Mittal, V. Tomov, J.S. Camier, T. Zhao, H. Zha, T. Kolev, R. Anderson, [Reinforcement learning for adaptive mesh refinement](https://proceedings.mlr.press/v206/yang23e.html), *Proceedings of the International Conference on Artificial Intelligence and Statistics*, **2023**.
   1. W. Pazner, Tz. Kolev, and J. Camier, [End-to-end GPU acceleration of low-order-refined preconditioning for high-order finite element discretizations](https://arxiv.org/abs/2210.12253), *in review*, **2023**. Also available as [arXiv:2210.12253](https://arxiv.org/abs/2210.12253).
