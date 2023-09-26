@@ -1092,7 +1092,7 @@ We recommend viewing Example 1 before viewing this example._
 <img class="floatright" width="280pt" src="../img/examples/ex36.png">
 
 This example code solves the pointwise bound-constrained energy minimization problem
-$$ \text{minimize } \frac{1}{2}\\|\nabla u\\|^2 \text{ in } H^1_0(\Omega) \text{ subject to } u \ge \varphi\,.$$
+$$ \text{minimize } \frac{1}{2}\\|\nabla u\\|^2 \text{ in } H^1_0(\Omega)\, \text{ subject to } u \ge \varphi\,.$$
 This is known as the obstacle problem, and it is a classical motivating example in the
 study of variational inequalities and free boundary problems. In this example, the obstacle $\varphi$
 is the graph of a half-sphere centered at the origin of a circular domain $\Omega$. After solving to
@@ -1108,6 +1108,24 @@ set up and solve nonlinear mixed methods.
 _The example has a serial ([ex36.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp))
 and a parallel ([ex36p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex36p.cpp)) version.
 We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex37" markdown="1">
+##Example 37: Topology Optimization
+<img class="floatright" width="420pt" src="../img/examples/ex37.png">
+
+This example code solves a classical cantilevel beam topology optimization problem.
+The aim is to find an optimal material density field $\rho$ in $L^1(\Omega)$ to minimize the elastic compliance; i.e.,
+$$ \text{minimize} \int_\Omega \mathbf{f} \cdot \mathbf{u}(\rho)\, \mathrm{d}x\, \text{ subject to } 0 \leq \rho \leq 1 \text{ and } \int_\Omega \rho\, \mathrm{d}x = \theta\, \mathrm{vol}(\Omega) \,.$$
+In this problem, $\mathbf{f}$ is a localized force and the linearly elastic displacement field $\mathbf{u} = \mathbf{u}(\rho)$ is determined by a material density field $\rho$ with total volume fraction $0<\theta<1$.
+
+The problem is solved using a mirror descent algorithm proposed by [Keith and Surowiec](https://arxiv.org/abs/2307.12444).
+For further details, see the more elaborate description of this PDE-constrained optimization problem given in the example code and the aforementioned paper.
+
+_The example has a serial ([ex37.cpp](https://github.com/mfem/mfem/blob/master/examples/ex37.cpp))
+and a parallel ([ex37p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex37p.cpp)) version.
+We recommend viewing Example 2 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -2013,6 +2031,7 @@ function update()
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
    + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
