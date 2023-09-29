@@ -22,7 +22,42 @@ of these approaches has advantages for certain types of problems.
 ## Components as Scalar-Valued Fields
 
 This may be considered the traditional approach to representing
-vector-valued fields numerically. Etc....
+vector-valued fields numerically. For example, in structural mechanics
+each component of a displacement field is typically represented by a
+continuous scalar field (which MFEM refers to as an "H1" field). MFEM
+allows the user to define finite element spaces consisting of any number
+of copies of an H1 or L2 field although these two types of fields cannot
+be combined into a single finite element space. When combining components
+in this way two interleave strategies are available;
+`Ordering::byNODES`: $x_0, x_1, x_2, \ldots, y_0, y_1, y_2, \ldots,
+z_0, z_1, z_2, \ldots$
+or
+`Ordering::byVDIM`: $x_0, y_0, z_0, x_1, y_1, z_1, x_2, y_2, z_2, \ldots$.
+The choice of strategy is made when defining the `[Par]FiniteElementSpace`
+object so the choice need not be uniform throughout an application.
+
+MFEM provides a handful of bilinear form integrators which assume this
+type of vector field construction.
+See [Vector Field Operators](bilininteg.md#vector-field-operators) for a
+complete listing. These integrators assume `Ordering::byNODES` internally
+but they should be compatible with any global odering choice.
+
+Vector fields constructed in this manner often store the Cartesian
+components of the vector field using three scalar fields but this is by
+no means the only option. The various components could just as easily be
+defined in a cylindrical or spherical coordinate system or even a
+non-coordinate basis. Any number of scalar fields which can be
+interpretted in any manner that may be required should be possible.
+
+The freedom afforded by this type of vector field construction can be
+very powerful but a looser construction utilizing `BlockVector` and
+`BlockOperator` classes may be preferable in some cases. Many such
+constructions will require specialized bilinear form integrator classes
+which are specifically designed to implement the necessary differential
+operators. Another consideration is the type of available solver that
+may be required for a custom operator. In many cases an iterative solver
+with a block diagonal preconditioner may be more efficient than solving
+a monolithic operator when a specialized preconditioner is not available.
 
 ## Vector-Valued Basis Functions
 
@@ -36,7 +71,7 @@ tangential components across element interfaces.
 
 Raviart-Thomas basis functions (referred to as "RT" in MFEM classes)
 can be used to approximate the H(div) space of vector fields which
-have a well-defined divergence. The basis RT functions are designed to
+have a well-defined divergence. The RT basis functions are designed to
 contain the curls of the vector basis functions of the Nedelec
 basis. Furthermore these RT representations produce approximations
 which have continuous normal components across element
@@ -46,7 +81,7 @@ contained in the space of discontinous scalar basis functions
 
 The containment property mentioned above means that these derivatives
 can simply be interpolated locally by the appropriate set of basis
-functions. These interpolations are computed using MFEM's
+functions. These interpolations can be computed using MFEM's
 `DiscreteInterpolator` classes. Specifically,
 
 | Derivative | MFEM Class               | Notation  | Domain | Range |
@@ -55,24 +90,31 @@ functions. These interpolations are computed using MFEM's
 | Curl       | `CurlInterpolator`       | $T_\{12}$ |   ND   |   RT  |
 | Divergence | `DivergenceInterpolator` | $T_\{23}$ |   RT   |   L2  |
 
-The subscripts used in the above notation refer to the spaces H1, ND,
-RT, and L2 by the integers 0, 1, 2, and 3 respectively. This
-corresponds to the interpretation of these discrete spaces as spaces
-of discrete differential forms, see [Acta Numerica
+`DiscreteInterpolator` operators do not involve computing integrals
+over the elements or access to any non-local information so they are
+much less computationally expensive than bilinear form operators.  The
+subscripts used in the above notation refer to the spaces H1, ND, RT,
+and L2 by the integers 0, 1, 2, and 3 respectively. This corresponds
+to the interpretation of these discrete spaces as spaces of discrete
+differential forms, see [Acta Numerica
 2006](https://www-users.cse.umn.edu/~arnold//papers/acta.pdf).
 
 ### Vector calculus identities: $\curl\grad\phi=0$ and $\div\curl\vec{F}=0$
 
 The design of the H1, ND, RT, and L2 bases leads to precise support
 for certain vector calculus identities. For example the Curl of the
-Gradient of any continuous scalar field should be zero. In terms of
-the interpolator objects mentioned above this could be written as:
+Gradient of any continuous scalar field should be zero and the
+divergence of the curl of any vector field in H(curl) should also be
+zero. In terms of the interpolator objects mentioned above this could
+be written as:
 $$\begin{align}
 T_{12}T_{01}\,v&=0\, \forall\, v \in H_1 \\\\
 T_{23}T_{12}\,v&=0\, \forall\, v \in H(Curl)
 \end{align}$$
 When using MFEM's interpolation objects the resulting matrices satisfy
-$T_{12}T_{01} = 0$ and $T_{23}T_{12} = 0$ to machine precision.
+$T_{12}T_{01} = 0$ and $T_{23}T_{12} = 0$ to machine precision and so
+these important identities are satisfied when using the correct
+discretizations.
 
 It is also possible to compute [weak derivatives](fem_weak_form.md) of
 vector fields. These cannot be computed locally but require global
@@ -86,8 +128,9 @@ $M_0$, $M_1$, $M_2$, and $M_3$.
 | Curl       | `MixedVectorWeakCurlIntegrator`       | $D_\{21}\, v= M_1\, dv$ | $\{M_1}^\{-1}\, D_\{21}$ | $v\in$ RT | $dv\in$ ND |
 | Divergence | `MixedVectorWeakDivergenceIntegrator` | $D_\{10}\, v= M_0\, dv$ | $\{M_0}^\{-1}\, D_\{10}$ | $v\in$ ND | $dv\in$ H1 |
 
-It is not [obvious](#bilinear-forms-and-discrete-interpolators) but these weak linear algebra operators are related
-to the discrete interpolation operators.
+It is not [obvious](#bilinear-forms-and-discrete-interpolators) but
+these weak linear algebra operators are related to the discrete
+interpolation operators.
 
 $$\begin{align}
 D_\{32} &= -\{T_\{23}}^T\, M_3 \\\\
@@ -95,11 +138,12 @@ D_\{21} &= \{T_\{12}}^T\, M_2 \\\\
 D_\{10} &= -\{T_\{01}}^T\, M_1 \\\\
 \end{align}$$
 
-This implies that the weak operators also satisfy the these basic
-vector calculus identities:
+This implies that the weak operators also satisfy the
+$\curl\grad\phi=0$ and $\div\curl\vec{F}=0$ vector calculus
+identities:
 $$\begin{align}
-({M_1}^{-1}\, D_{21})\, ({M_2}^{-1}\, D_{32}) &= ({M_1}^{-1}\, {T_{12}}^T\, M_2)\, (-{M_2}^{-1}\, {T_{23}}^T\, M_3) = -{M_1}^{-1}\, {T_{12}}^T\, {T_{23}}^T\, M_3 = 0 \\\\
-({M_0}^{-1}\, D_{10})\, ({M_1}^{-1}\, D_{21}) &= (-{M_0}^{-1}\, {T_{01}}^T\, M_1)\, ({M_1}^{-1}\, {T_\{12}}^T\, M_2) = -{M_0}^{-1}\, {T_\{01}}^T\, {T_{12}}^T\, M_2 = 0 \\\\
+({M_1}^{-1}\, D_{21})\, ({M_2}^{-1}\, D_{32}) &= ({M_1}^{-1}\, {T_{12}}^T\, M_2)\, (-{M_2}^{-1}\, {T_{23}}^T\, M_3) = -{M_1}^{-1}\, {T_{12}}^T\, {T_{23}}^T\, M_3 = -{M_1}^{-1}\,\left(T_{23}\, T_{12}\right)^T\,M_3 = 0 \\\\
+({M_0}^{-1}\, D_{10})\, ({M_1}^{-1}\, D_{21}) &= (-{M_0}^{-1}\, {T_{01}}^T\, M_1)\, ({M_1}^{-1}\, {T_\{12}}^T\, M_2) = -{M_0}^{-1}\, {T_\{01}}^T\, {T_{12}}^T\, M_2 = -{M_0}^{-1}\,\left( {T_\{12}\,T_{01}}\right)^T\, M_2 = 0 \\\\
 \end{align}$$
 
 In many applications the linear solves used to evaluate these weak
@@ -127,8 +171,7 @@ can compute the electric field, $\vec{E}$ using a form of Ampère's law:
 
 $$ \curl\mu^{-1}\vec{B} = \sigma\vec{E} \nonumber $$
 
-Will $E\in$ ND be divergence free if we compute it by solving the
-discrete equation:
+Will $E\in$ ND be divergence free with respect to $\sigma$, i.e. $\div(\sigma\vec{E})\stackrel{?}{=}0$, if we compute it by solving the discrete equation:
 
 $$ E = {M_1}(\sigma)^{-1}D_{21}(\mu^{-1})B \nonumber $$
 
@@ -167,8 +210,8 @@ when projected onto a discrete approximation. A common example is the
 current-driven Maxwell wave equation:
 
 $$
-\epsilon\vec{E} - \curl\left(\mu^{-1}\curl\vec{E}\right) = \vec{J}
-\implies \div\left(\epsilon\vec{E}\right) = \div\vec{J} \nonumber
+\omega^2\epsilon\vec{E} - \curl\left(\mu^{-1}\curl\vec{E}\right) = i\omega\vec{J}
+\implies -i\omega\div\left(\epsilon\vec{E}\right) = \div\vec{J} \nonumber
 $$
 
 A simulation of this equation might have an analytic expression for
@@ -189,8 +232,8 @@ gradient of a scalar field as follows:
 
 $$
 \begin{align}
-D_{01}(\lambda)\left(J+T_{01}\psi\right) &= M_0\rho \nonumber \\\\
-D_{01}(\lambda)T_{01}\psi \equiv -S_0(\lambda)\psi &= M_0\rho - D_{01}(\lambda)J \nonumber
+D_{10}(\lambda)\left(J+T_{01}\psi\right) &= M_0\rho \nonumber \\\\
+D_{10}(\lambda)T_{01}\psi \equiv -S_0(\lambda)\psi &= M_0\rho - D_{10}(\lambda)J \nonumber
 \end{align}
 \nonumber
 $$
@@ -216,7 +259,7 @@ the RT space may be preferred (divergence cleaning may still be
 necessary for $J\in$ RT but this can often be done locally and
 maintain causality).
 
-## Bilinear Forms and Discrete Interpolators
+### Bilinear Forms and Discrete Interpolators
 
 Consider the `MixedVectorWeakDivergenceIntegrator` which computes the
 divergence of the product of a coefficient and a vector field,
@@ -266,7 +309,14 @@ or
 
 $$D_{10}(\lambda) = -\{T_{01}}^T M_1(\lambda)$$
 
-Other weak derivatives can be factored in a similar manner.
+Where $M_1(\lambda)$ is the Nedelec "mass" matrix with coefficient
+$\lambda$. Other weak derivatives can be factored in a similar manner.
+
+## Choosing a Vector Field Discretization
+
+
+
+## Periodic Vector Fields
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']], processEscapes: true, processEnvironments: false}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
