@@ -1087,6 +1087,48 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex34" markdown="1">
+##Example 34: Source Function using a SubMesh Transfer
+<img class="floatright" width="500pt" src="../img/examples/ex34.png">
+
+This example demonstrates the use of a SubMesh object to transfer solution
+data from a sub-domain and use this as a source function on the full domain.
+In this case we compute a volumetric current density $\vec{J}$ as the gradient
+of a scalar potential $\varphi$ on a portion of the domain.
+
+$$\nabla\cdot(\sigma\nabla\varphi)=0$$
+$$\vec{J} = -\sigma\nabla\varphi$$
+
+Where a voltage difference is applied on surfaces of the sub-domain (shown on
+the left) to generate the current density restricted to this sub-domain. The
+current density is then transferred to the full domain (shown on the right)
+using a SubMesh object.
+
+We then use this current density on the full domain as a source term in a
+magnetostatic solve for a vector potential $\vec{A}$.
+
+$$\nabla\times(\mu^{-1}\nabla\times\vec{A})=\vec{J}$$
+$$\vec{B} = \nabla\times\vec{A}$$
+
+This example verifies the recreation of boundary attributes on a sub-domain
+mesh as well as transfer of Raviart-Thomas vector fields between the SubMesh
+and the full Mesh. Note that the data transfer in this particular example
+involves arbitrary order Raviart-Thomas degrees of freedom on a mixture of
+tetrahedral and triangular prism elements.
+
+_The example has a serial ([ex34.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34.cpp))
+and a parallel ([ex34p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34p.cpp)) version.
+We recommend viewing Examples 1 and 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex35" markdown="1">
+##Example 35: Port Boundary Conditions using SubMesh Transfers
+<img class="floatright" width="280pt" src="../img/examples/ex34_b_r3_o3.png">
+
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="ex36" markdown="1">
 ##Example 36: Obstacle Problem
 <img class="floatright" width="280pt" src="../img/examples/ex36.png">
