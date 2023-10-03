@@ -2114,6 +2114,8 @@ function update()
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
+   + showElement("ex34", maxwell && (hcurl || h1 || hdiv) && galerkin && (pcg || amg || ams))
+   + showElement("ex35", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads || superlu || lobpcg))
    + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
 
