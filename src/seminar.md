@@ -19,14 +19,14 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Ben Southworth (Los Alamos National Laboratory)
-##### *Title: TBD*
+##### *Title: Superior discretizations and AMG solvers for extremely anisotropic diffusion via hyperbolic operators*
 ##### [**9am PDT, October 17, 2023**](https://everytimezone.com/s/2515b09a)
 
-**Abstract:** TBD
+**Abstract:** Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.
 
-<!-- [<button type="button" class="btn btn-success">
+[<button type="button" class="btn btn-success">
 **WebEx**
-</button>]() -->
+</button>](https://llnlfed.webex.com/meet/kolev1)
 
 <!--**Abstract:** -->
 
