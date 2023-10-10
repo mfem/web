@@ -112,8 +112,10 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html): mesh preprocessing, resolving problem data,
  - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html): Nedelec H(curl) FEM for the anisotropic definite Maxwell problem,
  - [Example 32](https://docs.mfem.org/html/ex32p_8cpp_source.html): parallel Nedelec Maxwell eigensolver with anisotropic permittivity,
- - [Example 33](https://docs.mfem.org/html/ex33_8cpp_source.html): nodal C0 FEM for the fractional Laplacian problem.
- - [Example 36](https://docs.mfem.org/html/ex36_8cpp_source.html): high-order FEM for the obstacle problem.
+ - [Example 33](https://docs.mfem.org/html/ex33_8cpp_source.html): nodal C0 FEM for the fractional Laplacian problem,
+ - [Example 34](https://docs.mfem.org/html/ex34_8cpp_source.html): source function from SubMesh,
+ - [Example 35](https://docs.mfem.org/html/ex35_8cpp_source.html): port boundary condition from SubMesh,
+ - [Example 36](https://docs.mfem.org/html/ex36_8cpp_source.html): high-order FEM for the obstacle problem,
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.

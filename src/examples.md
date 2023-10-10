@@ -1087,6 +1087,90 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex34" markdown="1">
+##Example 34: Source Function using a SubMesh Transfer
+<img class="floatright" width="500pt" src="../img/examples/ex34.png">
+
+This example demonstrates the use of a SubMesh object to transfer solution
+data from a sub-domain and use this as a source function on the full domain.
+In this case we compute a volumetric current density $\vec{J}$ as the gradient
+of a scalar potential $\varphi$ on a portion of the domain.
+
+$$\nabla\cdot(\sigma\nabla\varphi)=0$$
+$$\vec{J} = -\sigma\nabla\varphi$$
+
+Where a voltage difference is applied on surfaces of the sub-domain (shown on
+the left) to generate the current density restricted to this sub-domain. The
+current density is then transferred to the full domain (shown on the right)
+using a SubMesh object.
+
+We then use this current density on the full domain as a source term in a
+magnetostatic solve for a vector potential $\vec{A}$.
+
+$$\nabla\times(\mu^{-1}\nabla\times\vec{A})=\vec{J}$$
+$$\vec{B} = \nabla\times\vec{A}$$
+
+This example verifies the recreation of boundary attributes on a sub-domain
+mesh as well as transfer of Raviart-Thomas vector fields between the SubMesh
+and the full Mesh. Note that the data transfer in this particular example
+involves arbitrary order Raviart-Thomas degrees of freedom on a mixture of
+tetrahedral and triangular prism elements.
+
+_The example has a serial ([ex34.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34.cpp))
+and a parallel ([ex34p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex34p.cpp)) version.
+We recommend viewing Examples 1 and 3 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex35" markdown="1">
+##Example 35: Port Boundary Conditions using SubMesh Transfers
+<img class="floatright" width="500pt" src="../img/examples/ex35p1.gif">
+
+This example demonstrates the use of a SubMesh object to transfer a `port
+boundary condition` from a portion of the boundary to the corresponding portion
+of the full domain. 
+
+Just as in Example 22 this example implements three variants of a damped
+harmonic oscillator:
+
+- A scalar $H^1$ field:
+  $$-\nabla\cdot\left(a \nabla u\right) - \omega^2 b\,u + i\,\omega\,c\,u = 0\mbox{ with }u|_\Gamma=v$$
+
+- A vector $H(curl)$ field:
+  $$\nabla\times\left(a\nabla\times\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0\mbox{ with }\hat{n}\times(\vec{u}\times\hat{n})|_\Gamma=\vec{v}$$
+
+- A vector $H(div)$ field:
+  $$-\nabla\left(a \nabla\cdot\vec{u}\right) - \omega^2 b\,\vec{u} + i\,\omega\,c\,\vec{u} = 0\mbox{ with }\hat{n}\cdot\vec{u}|_\Gamma=v$$
+
+Where $\Gamma$ is a portion of the boundary called the `port`. In each case the
+field is driven by a forced oscillation, with angular frequency $\omega$,
+imposed at the boundary or a portion of the boundary.
+<img class="floatright" width="500pt" src="../img/examples/ex35p2.gif">
+In Example 22 this boundary condition was simply a constant in space. In this
+example the boundary condition is an eigenmode of a lower dimensional
+eignevalue problem defined on a portion of the boundary as follows:
+
+- For the scalar $H^1$ field:
+  $$-\nabla\cdot\left(\nabla v\right) = \lambda\,v\mbox{ with }v|_{\partial\Gamma}=0$$
+
+- For the vector $H(curl)$ field:
+  $$\nabla\times\left(\nabla\times\vec{v}\right) = \lambda\,\vec{v}\mbox{ with }\hat{n}\_{\partial\Gamma}\times\vec{v}|_{\partial\Gamma}=0$$
+
+- For the vector $H(div)$ field:
+  $$-\nabla\cdot\left(\nabla v\right) = \lambda\,v\mbox{ with }\hat{n}\_{\partial\Gamma}\cdot\nabla v|_{\partial\Gamma}=0$$
+
+The different cases implemented in this example can be used to verify the
+transfer of an $H^1$ scalar field, the tangential components of an $H(curl)$
+vector field, and the normal component of an $H(div)$ vector field (as a scalar
+$L^2$ field in this case) between a SubMesh and its parent mesh.
+
+_The example has only a parallel ([ex35p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex35p.cpp))
+version because the eigenmode solver used to compute the field on the port is
+only implemented in parallel. We recommend viewing Examples 11, 13, and 22
+before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="ex36" markdown="1">
 ##Example 36: Obstacle Problem
 <img class="floatright" width="280pt" src="../img/examples/ex36.png">
@@ -2030,6 +2114,8 @@ function update()
    + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
+   + showElement("ex34", maxwell && (hcurl || h1 || hdiv) && galerkin && (pcg || amg || ams))
+   + showElement("ex35", (diffusion || maxwell || graddiv) && (h1 || hcurl || hdiv) && galerkin && (gmres || amg || ams || ads || superlu || lobpcg))
    + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
 
