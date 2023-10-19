@@ -368,8 +368,11 @@ directions for the project.</p>
 <p><strong>For questions, please contact the meeting organizers at</strong>
 <strong><a href="mailto:mfem@llnl.gov">mfem@llnl.gov</a>.</strong></p>
 <h3 id="registration">Registration</h3>
-<p>If you plan to attend, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_YKPpCuzXjK2ZeX-lJzPsgd6Cfdv3UCOzWtPUiwgPoXzhMA/viewform?usp=sf_link">please register no later than <strong>October 19th</strong></a>.</p>
-<p>There is no registration fee. Zoom details will be distributed to participants prior to the event date.</p>
+<p>Registration closed on October 19th.</p>
+<!-- If you plan to attend, [please register no later than **October 19th**](https://docs.google.com/forms/d/e/1FAIpQLSf_YKPpCuzXjK2ZeX-lJzPsgd6Cfdv3UCOzWtPUiwgPoXzhMA/viewform?usp=sf_link). -->
+
+<!-- There is no registration fee. Zoom details will be distributed to participants prior to the event date. -->
+
 <h3 id="meeting-format">Meeting format</h3>
 <p>Depending on the interest and user feedback, the meeting will include the following elements:</p>
 <ul>
@@ -391,7 +394,7 @@ MFEM workshop.</p>
 <table>
 <thead>
 <tr>
-<th>Time (PDT, GMT-7)</th>
+<th>Time</th>
 <th>Activity</th>
 <th>Presenter</th>
 </tr>
@@ -400,7 +403,7 @@ MFEM workshop.</p>
 <tr>
 <td>8:00-8:20</td>
 <td><strong>Welcome &amp; Overview</strong></td>
-<td><strong>TBD</strong> (LLNL)</td>
+<td><strong>Aaron Fisher</strong> (LLNL)</td>
 </tr>
 <tr>
 <td>8:20-8:40</td>
@@ -415,52 +418,52 @@ MFEM workshop.</p>
 <tr>
 <td>9:00-9:20</td>
 <td><strong>Break</strong></td>
-<td>All</td>
+<td>Discussions on <a href="https://mfemworkshop.slack.com">Slack</a></td>
 </tr>
 <tr>
 <td>9:20-10:20</td>
-<td><strong>Talks, Session I</strong></td>
-<td>(20 mins each)</td>
+<td><strong>Session I</strong><br>(20 mins each)<br><br>Chair:<br> <strong>Tzanio Kolev</strong></td>
+<td><strong>Sebastian Grimberg</strong> (Amazon Web Services) <br><details><summary> <em>Palace: PArallel LArge-scale Computational Electromagnetics</em> </summary><h6> Palace, for PArallel, LArge-scale Computational Electromagnetics, is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. In this talk we will give an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.</h6></details><br><strong>Jacob Lotz</strong> (Delft University of Technology) <br><details><summary> <em>Computation and Reduced Order Modelling of Periodic Flows in Space-Time with a Fully Coupled Time Discretisation</em> </summary><h6> Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. Our work aims to reduce the cost of these computations. We solve periodic flows in a space-time domain in which both ends in time are periodic such that we only have to model one period. MFEM is used to discretise the space-time domain and solve our discretised system of equations.  We apply a hyper-reduced  Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation we show (results of) our full order model and our advances in de reduced order modelling.</h6></details><br><strong>Boyan Lazarov</strong> (LLNL) <br><details><summary><em>Scalable Design and Optimization with MFEM</em> </summary><h6> The talk aims to present recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.</h6></details></td>
 </tr>
 <tr>
 <td>10:20-10:40</td>
 <td><strong>Break &amp; Group Photo</strong></td>
-<td>Download a virtual background below</td>
+<td>Download a <a href="#virtual-backgrounds">virtual background</a> below</td>
 </tr>
 <tr>
 <td>10:40-11:40</td>
-<td><strong>Talks, Session II</strong></td>
-<td>(20 mins each)</td>
+<td><strong>Session II</strong> <br>(5 mins each)<br><br>Chair:<br> <strong>Milan Holec</strong></td>
+<td><strong>Shani Martinez Weissberg</strong> (Tel Aviv University) <br><details><summary> <em>µFEA of a Rabbit Femur</em> </summary><h6> Given the ethical and practical limitations of conducting preliminary medical studies on humans, New Zealand White (NZW) rabbits serve as a common model for treatment validation. An important such medical study is the prediction of the risk of fracture in femurs with metastatic bone tumors following radiation therapy and image-based treatment. For such studies,  micro-computed tomography (µCT) scans of NZW rabit femurs are essential for capturing the detailed bone architecture. These µCT scans are used to construct micro finite element models (µFEMs) of the femurs that are being virtually loaded to predict the mechanical response required for validation of the µFEMs via experiments on fresh frozen rabbit femurs. This presentation outlines the step-by-step process of creating patient-specific µFEMs of rabbit femurs using MFEM. The workflow spans from µCT imaging to segmentation and 3D reconstruction, culminating in the MFEM solution of a linear elastic problem with over 125 million degrees of freedom.</h6></details><br> <strong>Alejandro Muñoz</strong> (Universidad de Granada) <br><details><summary> <em>DGTD for Maxwell Equations</em> </summary><h6> The Discontinuous Galerkin method is a type of finite element method which uses discontinuous basis functions, almost always piecewise polynomials. Through the use of MFEM, we aim to implement an explicit scheme Maxwell Equations' solver capable of 1D, 2D and 3D problem solving. Thanks to the library's capabilities, we can focus on the implementation of operators and integrators while retaining the capacity to use multiple types of meshes with various element types and the posterior visualization through GLVIS or Paraview.</h6></details><br> <strong>Paul Moujaes</strong> (TU-Dortmund) <br><details><summary> <em>Entropy Stabilization and Slope-Limiting for DG-Approximations</em> </summary><h6> Dissipation-based entropy stabilization for slope-limited DG-approximations of hyperbolic problems with focus on the Euler equations.</h6></details><br> <strong>Bill Ellis</strong> (UKAEA) <br><details><summary> <em>Comparing Thermo-Mechanical Solves in MFEM and MOOSE</em> </summary><h6> Fusion energy requires confinement of a very hot plasma. Given these high temperature, it is necessary to model how materials and components react in these environments. The Multiphysics Object-Oriented Simulation Environment (MOOSE) offers functionality to model the mechanical effects of these temperature fields. As MFEM is increasingly utilised for electromagnetic modelling in fusion, interest as to the benefits of a purely MFEM workflow have arisen. This short talk aims to offer a comparison of the performance and stability of some thermal expansion problems in MFEM and MOOSE by modelling some fusion relevant components.</h6></details><br> <strong>Alexander Mote</strong> (Oregon State University)<br><details><summary> <em>A Surrogate Model for Nonlocal Thermal Flux Calculations</em> </summary><h6> Mathematically, a neural network can produce a prediction of thermal flux in a plasma physics simulation as much as 1,000,000 times faster than it would take to calculate computationally. Using a dataset of MFEM simulations, we were able to train a neural network to predict nonlocal thermal flux within a 1D2V ICF simulation with 99.3% accuracy. This model was then used to evolve temperature over time in a similar simulation setup, demonstrating accurate nonlocal heat transport properties useful to experimenters.</h6></details><br> <strong>Amit Rotem</strong> (Virginia Tech)<br><details><summary> <em>GPU Acceleration of DG Diffusion</em> </summary><h6> This talk will present the new partial assembly implementation of the DGDiffusion bilinear form integrator. The partial assembly implementation uses sum factorization and can be compiled with CUDA to gain a substantial speed up. In the second half of the talk, an example solving the Wave Equation will be presented.</h6></details><br> <strong>Josiah Brown</strong> (Relogic Research)<br><details><summary> <em>TBD</em> </summary><h6> MFEM is a very fast solver for structural problems due to it being efficiently made and its parallel capability, but due to it being for the most part strictly a c++ library that is used by programming a c++ script, it can be difficult to make a structural mesh. Material solver like Abacus, thought slow in solving for a solution, has many visual aids in creating a structural mesh making it very user friendly. Relogic has created a c++ code that takes Abacus input data, parsers it, generates a mesh file, and then runs MFEM on this data. This program allows one to create a structural mesh in Abacus and solve it in MFEM, this was done in hopes of making MFEM more user friendly and accessible.</h6></details><br><strong>Mike Pozulp</strong> (LLNL)<br><details><summary> <em>Noisy Radiation Diffusion in MFEM</em> </summary><h6>This is a joint research project with Terry Haut to use Monte Carlo to compute a linear form arising in one of Sam Olivier's DG discretizations of radiation diffusion that Olivier described in his PhD thesis and implemented using MFEM. We are investigating the impact of the Monte Carlo noise on the radiation diffusion solution quality.</h6></details></td>
 </tr>
 <tr>
 <td>11:40-12:00</td>
 <td><strong>Break</strong></td>
-<td>All</td>
+<td>Discussions on <a href="https://mfemworkshop.slack.com">Slack</a></td>
 </tr>
 <tr>
 <td>12:00-1:00</td>
-<td><strong>Talks, Session III</strong></td>
-<td>(20 mins each)</td>
+<td><strong>Session III</strong> <br>(20 mins each)<br><br>Chair:<br> <strong>Will Pazner</strong></td>
+<td><strong>Syun'ichi Shiraiwa</strong> (PPPL) <br><details><summary> <em>Differential Operator for a Non-Local Plasma Conductivity</em> </summary><h6> In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ &lt; 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.</h6></details><br> <strong>Tamas Horvath</strong> (Oakland University) <br><details><summary> <em>Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch</em> </summary><h6> In this talk, we present the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. We showcase these enhancements and provide insights into their versatile usage across different problems.</h6></details><br> <strong>Yohann Dudouit</strong> (LLNL) <br><details><summary> <em>Empowering MFEM Using libCEED: Features and Performance Analysis</em> </summary><h6> This presentation will begin with an overview of the features introduced to MFEM through the integration of libCEED. We will particularly emphasize capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software's suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation will conclude by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.</h6></details></td>
 </tr>
 <tr>
 <td>1:00-1:20</td>
 <td><strong>Break</strong></td>
-<td>All</td>
+<td>Discussions on <a href="https://mfemworkshop.slack.com">Slack</a></td>
 </tr>
 <tr>
 <td>1:20-2:20</td>
-<td><strong>Talks, Session IV</strong></td>
-<td>(20 mins each)</td>
+<td><strong>Session IV</strong> <br>(20 mins each)<br><br>Chair:<br> <strong>Ketan Mittal</strong></td>
+<td><strong>Zhang Chunyu</strong> (Sun Yat-Sen University) <br><details><summary> <em>Homogenized Energy Theory  for Solution of Elasticity Problems with Consideration of Higher-order Microscopic Deformations</em> </summary><h6> The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy  proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.</h6></details><br> <strong>Eric Chin</strong> (LLNL) <br><details><summary> <em>Contact Constraint Enforcement Using the Tribol Interface Physics Library</em> </summary><h6> In this talk, we will discuss recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM.  Tribol is an open-source software package available on Github (https://github.com/LLNL/Tribol) and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank.  Tribol’s features are designed to interact seamlessly with MFEM, and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix.  We highlight the simplicity of adding Tribol features to an MFEM-based code by looking at integration with Serac: an open-source implicit nonlinear thermal-structural simulation code (https://github.com/LLNL/serac).</h6></details><br> <strong>Milan Holec</strong> (LLNL) <br><details><summary> <em>Deterministic Transport MFEM-Miniapp: Advancing Fidelity of Fusion Energy Simulations</em> </summary><h6> We introduce a new multi-dimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, we carefully design discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, we show how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.</h6></details></td>
 </tr>
 <tr>
 <td>2:20-2:40</td>
 <td><strong>Break</strong></td>
-<td>All</td>
+<td>Discussions on <a href="https://mfemworkshop.slack.com">Slack</a></td>
 </tr>
 <tr>
 <td>2:40-3:00</td>
 <td><strong>Wrap-up &amp; Contest Winners</strong></td>
-<td><strong>TBD</strong> (LLNL)</td>
+<td><strong>Aaron Fisher</strong> (LLNL)</td>
 </tr>
 <tr>
 <td>3:00-4:00</td>
