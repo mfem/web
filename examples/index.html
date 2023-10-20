@@ -1311,7 +1311,7 @@ We recommend viewing Examples 1 and 3 before viewing this example.</em>
 <p><img class="floatright" width="500pt" src="../img/examples/ex35p1.gif"></p>
 <p>This example demonstrates the use of a SubMesh object to transfer a <code>port
 boundary condition</code> from a portion of the boundary to the corresponding portion
-of the full domain. </p>
+of the full domain.</p>
 <p>Just as in Example 22 this example implements three variants of a damped
 harmonic oscillator:</p>
 <ul>
@@ -2117,6 +2117,42 @@ moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="multidomain">
+<h2 id="multidomain-and-submesh-demonstration-miniapp">Multidomain and SubMesh demonstration Miniapp</h2>
+<p><img class="floatright" width="300" style="border:0px solid black" src="../img/examples/multidomain.png"></p>
+<p>This
+<a href="https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp">miniapp</a>
+aims to demonstrate how to solve two PDEs, that represent different physics, on
+the same domain. MFEM's SubMesh interface is used to compute on and transfer
+between the spaces of predefined parts of the domain. For the sake of
+simplicity, the spaces on each domain are using the same order H1 finite
+elements. This does not mean that the approach is limited to this configuration.</p>
+<p>A 3D domain comprised of an outer box with a cylinder shaped inside is used.</p>
+<p>A heat equation is described on the outer box domain</p>
+<p>\begin{align}
+   \frac{\partial T}{\partial t} &amp;= \kappa \Delta T &amp;&amp;\mbox{in outer box}\\
+   T &amp;= T_{wall} &amp;&amp;\mbox{on outside wall}\\
+   \nabla T \cdot \vec{n} &amp;= 0 &amp;&amp;\mbox{on inside (cylinder) wall}
+\end{align}</p>
+<p>with temperature $T$ and coefficient $\kappa$ (non-physical in this example).
+A convection-diffusion equation is described inside the cylinder domain</p>
+<p>\begin{align}
+   \frac{\partial T}{\partial t} &amp;= \kappa \Delta T - \alpha \nabla \cdot (\vec{b} T) &amp; &amp;\mbox{in inner cylinder}\\
+   T &amp;= T_{wall} &amp; &amp;\mbox{on cylinder wall}\\
+   \nabla T \cdot \vec{n} &amp;= 0 &amp; &amp;\mbox{else}
+\end{align}</p>
+<p>with temperature $T$, coefficients $\kappa$, $\alpha$ and prescribed velocity profile $\vec{b}$, and
+$T_{wall}$ obtained from the heat equation.</p>
+<p>To couple the solutions of both equations, a segregated solve with one way
+coupling approach is used. The heat equation of the outer box is solved from the
+timestep $T_{box}(t)$ to $T_{box}(t+dt)$. Then for the convection-diffusion
+equation $T_{wall}$ is set to $T_{box}(t+dt)$ and the equation is solved for
+$T(t+dt)$ which results in a first-order one way coupling.</p>
+<p><em>This miniapp has only a parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp">multidomain.cpp</a>) implementation.
+<strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2232,6 +2268,7 @@ function update()
    + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
    + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
+   + showElement("multidomain", meshing && all2 && all3 && all4)
 
    // shifted methods miniapps
    + showElement("extrapolate", advection && l2 && dg && rk)
