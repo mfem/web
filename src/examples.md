@@ -1128,7 +1128,7 @@ We recommend viewing Examples 1 and 3 before viewing this example._
 
 This example demonstrates the use of a SubMesh object to transfer a `port
 boundary condition` from a portion of the boundary to the corresponding portion
-of the full domain. 
+of the full domain.
 
 Just as in Example 22 this example implements three variants of a damped
 harmonic oscillator:
@@ -2027,8 +2027,7 @@ moving to the miniapps.**_
 
 <div id="multidomain" markdown="1">
 ##Multidomain and SubMesh demonstration Miniapp
-<img class="floatright" width="250" style="border:0px solid black" src="../img/examples/multidomain_cylinder.png">
-<img class="floatright" width="250" style="border:0px solid black" src="../img/examples/multidomain_box.png">
+<img class="floatright" width="300" style="border:0px solid black" src="../img/examples/multidomain.png">
 
 This
 [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp)
@@ -2043,22 +2042,22 @@ A 3D domain comprised of an outer box with a cylinder shaped inside is used.
 A heat equation is described on the outer box domain
 
 \begin{align}
-   \frac{\partial T}{\partial t} &= \kappa \Delta T &\mbox{ in outer box }\\\\
-   T &= T_{wall} &\mbox{ on outside wall }\\\\
-   \nabla T \cdot \vec{n} &= 0 &\mbox{ on inside (cylinder) wall }
+   \frac{\partial T}{\partial t} &= \kappa \Delta T &&\mbox{in outer box}\\\\
+   T &= T_{wall} &&\mbox{on outside wall}\\\\
+   \nabla T \cdot \vec{n} &= 0 &&\mbox{on inside (cylinder) wall}
 \end{align}
 
 with temperature $T$ and coefficient $\kappa$ (non-physical in this example).
-
 A convection-diffusion equation is described inside the cylinder domain
 
 \begin{align}
-   \frac{\partial T}{\partial t} &= \kappa \Delta T - \alpha \nabla \cdot (\vec{b} T) &\mbox{  in inner cylinder }\\\\
-   T &= T_{wall} &\mbox{ on cylinder wall (obtained from heat equation) }\\\\
-   \nabla T \cdot \vec{n} &= 0 &\mbox{ else }
+   \frac{\partial T}{\partial t} &= \kappa \Delta T - \alpha \nabla \cdot (\vec{b} T) & &\mbox{in inner cylinder}\\\\
+   T &= T_{wall} & &\mbox{on cylinder wall}\\\\
+   \nabla T \cdot \vec{n} &= 0 & &\mbox{else}
 \end{align}
 
-with temperature $T$, coefficients $\kappa$, $\alpha$ and prescribed velocity profile $\vec{b}$.
+with temperature $T$, coefficients $\kappa$, $\alpha$ and prescribed velocity profile $\vec{b}$, and
+$T_{wall}$ obtained from the heat equation.
 
 To couple the solutions of both equations, a segregated solve with one way
 coupling approach is used. The heat equation of the outer box is solved from the
@@ -2066,6 +2065,8 @@ timestep $T_{box}(t)$ to $T_{box}(t+dt)$. Then for the convection-diffusion
 equation $T_{wall}$ is set to $T_{box}(t+dt)$ and the equation is solved for
 $T(t+dt)$ which results in a first-order one way coupling.
 
+_This miniapp has only a parallel ([multidomain.cpp](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp)) implementation.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
