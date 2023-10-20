@@ -2025,7 +2025,7 @@ moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
 
-<div id="parelag" markdown="1">
+<div id="multidomain" markdown="1">
 ##Multidomain and SubMesh demonstration Miniapp
 <img class="floatright" width="250" style="border:0px solid black" src="../img/examples/multidomain_cylinder.png">
 <img class="floatright" width="250" style="border:0px solid black" src="../img/examples/multidomain_box.png">
