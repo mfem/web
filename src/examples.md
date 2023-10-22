@@ -1197,11 +1197,21 @@ We recommend viewing Example 1 before viewing this example._
 
 <div id="ex37" markdown="1">
 ##Example 37: Topology Optimization
-<img class="floatright" width="420pt" src="../img/examples/ex37.png">
+<div class="parent" style="float:right">
+  <center> Density field $\rho$ <center>
+  <img class="img" width="280pt" src="../img/examples/ex37a.gif">
+  <center> Problem set-up and domain $\Omega$ <center>
+  <img class="img" width="300pt" src="../img/examples/ex37b.png">
+</div>
 
 This example code solves a classical cantilevel beam topology optimization problem.
 The aim is to find an optimal material density field $\rho$ in $L^1(\Omega)$ to minimize the elastic compliance; i.e.,
-$$ \text{minimize} \int_\Omega \mathbf{f} \cdot \mathbf{u}(\rho)\, \mathrm{d}x\, \text{ subject to } 0 \leq \rho \leq 1 \text{ and } \int_\Omega \rho\, \mathrm{d}x = \theta\, \mathrm{vol}(\Omega) \,.$$
+$$\begin{align}
+  &\text{minimize} \int_\Omega \mathbf{f} \cdot \mathbf{u}(\rho)\, \mathrm{d}x\,
+  \text{ over }\, \rho \in L^1(\Omega)
+  \\\
+  &\text{subject to }\, 0 \leq \rho \leq 1\, \text{ and } \int_\Omega \rho\, \mathrm{d}x = \theta\, \mathrm{vol}(\Omega) \,.
+\end{align}$$
 In this problem, $\mathbf{f}$ is a localized force and the linearly elastic displacement field $\mathbf{u} = \mathbf{u}(\rho)$ is determined by a material density field $\rho$ with total volume fraction $0<\theta<1$.
 
 The problem is solved using a mirror descent algorithm proposed by [Keith and Surowiec](https://arxiv.org/abs/2307.12444).
