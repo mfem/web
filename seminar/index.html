@@ -351,13 +351,26 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/choi.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="youngsoo-choi-lawrence-livermore-national-laboratory">Youngsoo Choi (Lawrence Livermore National Laboratory)</h4>
+<h5 id="physics-guided-interpretable-data-driven-simulations"><em>Physics-guided interpretable data-driven simulations</em></h5>
+<h5 id="9am-pdt-november-14-2023"><a href="https://everytimezone.com/s/c4168d8c"><strong>9am PDT, November 14, 2023</strong></a></h5>
+<p><a href=""><button type="button" class="btn btn-success">
+<strong>WebEx</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> A computationally demanding physical simulation often presents a significant impediment to scientific and technological progress. Fortunately, recent advancements in machine learning (ML) and artificial intelligence have given rise to data-driven methods that can expedite these simulations. For instance, a well-trained 2D convolutional deep neural network can provide a 100,000-fold acceleration in solving complex problems like Richtmyer-Meshkov instability [<a href="https://arxiv.org/abs/2208.11477">1</a>]. However, conventional black-box ML models lack the integration of fundamental physics principles, such as the conservation of mass, momentum, and energy. Consequently, they often run afoul of critical physical laws, raising concerns among physicists. These models attempt to compensate for the absence of physics information by relying on vast amounts of data. Additionally, they suffer from various drawbacks, including a lack of structure-preservation, computationally intensive training phases, reduced interpretability, and susceptibility to extrapolation issues. To address these shortcomings, we propose an approach that incorporates physics into the data-driven framework. This integration occurs at different stages of the modeling process, including the sampling and model-building phases. A physics-informed greedy sampling procedure minimizes the necessary training data while maintaining target accuracy [<a href="https://arxiv.org/abs/2204.12005">2</a>]. A physics-guided data-driven model not only preserves the underlying physical structure more effectively but also demonstrates greater robustness in extrapolation compared to traditional black-box ML models. We will showcase numerical results in areas such as hydrodynamics [<a href="https://arxiv.org/abs/2104.11404">3</a>,<a href="https://arxiv.org/abs/2009.11990">4</a>], particle transport [<a href="https://doi.org/10.1016/j.jcp.2020.109845">5</a>], plasma physics, pore-collapse, and 3D printing to highlight the efficacy of these data-driven approaches. The advantages of these methods will also become apparent in multi-query decision-making applications, such as design optimization [<a href="https://doi.org/10.1016/j.cma.2021.113813">6</a>,<a href="https://doi.org/10.1016/j.jcp.2020.109787">7</a>].</p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/southworth.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="ben-southworth-los-alamos-national-laboratory">Ben Southworth (Los Alamos National Laboratory)</h4>
-<h5 id="title-superior-discretizations-and-amg-solvers-for-extremely-anisotropic-diffusion-via-hyperbolic-operators"><em>Title: Superior discretizations and AMG solvers for extremely anisotropic diffusion via hyperbolic operators</em></h5>
-<h5 id="9am-pdt-october-17-2023"><a href="https://everytimezone.com/s/2515b09a"><strong>9am PDT, October 17, 2023</strong></a></h5>
-<p><strong>Abstract:</strong> Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.</p>
+<h5 id="superior-discretizations-and-amg-solvers-for-extremely-anisotropic-diffusion-via-hyperbolic-operators"><em>Superior discretizations and AMG solvers for extremely anisotropic diffusion via hyperbolic operators</em></h5>
+<h5 id="october-17-2023">October 17, 2023</h5>
 <p><a href="../pdf/seminar/southworth.pdf"><button type="button" class="btn btn-primary">
 <strong>Slides</strong>
 </button></a>
@@ -365,10 +378,7 @@
 <a href=""><button type="button" class="btn btn-success">
 <strong>Talk Recording</strong>
 </button></a></p>
-</div>
-<div class="col-md-12">
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+<p><strong>Abstract:</strong> Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.</p>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/sharma.jpg" /></p>
@@ -796,9 +806,6 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><strong>Abstract:</strong> Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named "shifted boundary method" (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
-<p>&nbsp;</p>
-<h4 id="youngsoo-choi-lawrence-livermore-national-laboratory">Youngsoo Choi (Lawrence Livermore National Laboratory)</h4>
-<h5 id="november-7-2023"><strong>November 7, 2023</strong></h5>
 <p>&nbsp;</p>
 <h4 id="jesse-chan-rice-university">Jesse Chan (Rice University)</h4>
 <h5 id="december-5-2023"><strong>December 5, 2023</strong></h5>
