@@ -555,5 +555,10 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 #### Jesse Chan (Rice University)
 ##### **December 5, 2023**
 
+<!--
+Title: High order positivity-preserving entropy stable discontinuous Galerkin discretizations
+Abstract: High order discontinuous Galerkin (DG) methods provide high order accuracy and geometric flexibility, but are known to be unstable when applied to nonlinear conservation laws whose solutions exhibit shocks and under-resolved solution features. Entropy stable schemes improve robustness by ensuring that physically relevant solutions satisfy a semi-discrete cell entropy inequality independently of numerical resolution and solution regularization while retaining formal high order accuracy. In this talk, we will review the construction of entropy stable high order discontinuous Galerkin methods and describe approaches for enforcing that solutions are "physically relevant" (i.e., the thermodynamic variables remain positive).
+-->
+
 
 </div>
