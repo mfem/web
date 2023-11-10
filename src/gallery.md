@@ -217,7 +217,6 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/workshop22/heat.mp4)
 *Topology-optimized heat sink obtained with a new algorithm. The objective is to minimize the thermal energy in a domain with constant internal heating. In this problem, there is only one exit point for heat to escape, namely, at the central region of the upper boundary. Image courtesy of Tobias Duswald, **winner** of the 2022 MFEM Workshop Visualization Contest.*
-<!--[🎥 ▶️ 🎦 🎬](img/gallery/workshop22/heat.mp4)-->
 
 ----
 
