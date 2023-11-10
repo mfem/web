@@ -1,6 +1,9 @@
 # Gallery
 
-This page collects screenshots from various simulations based on MFEM. Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/).
+This page collects screenshots from various simulations based on MFEM. 
+
+Image captions with 🎬 indicates that the image is hyperlinked to an animation.
+Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/).
 
 <br>
 <center>
@@ -75,22 +78,41 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/workshop21/turbine_small.png)](img/gallery/workshop21/turbine.mp4)
 
+[🎬](img/gallery/workshop21/turbine.mp4)
 *Incompressible fluid flow around a rotating turbine. Fluid-rigid body simulation using space-time embedded-hybridized discontinuous Galerkin discretization. Image courtesy of Tamas Horvath, **winner** of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
 [![](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.png)](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
 
+[🎬](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.mp4)
 *Axisymmetric computation of an air flow in a tube with continuous Galerkin discretization. Image courtesy of Raphael Zanella, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
 <div id="pazner" class="anchor"></div>
 
+
 [![](img/gallery/workshop22/coil_small.png)](img/gallery/workshop22/coil.mp4)
 
+[🎬](img/gallery/workshop22/coil.mp4)
 *Magnetic diffusion problem solved to compute the magnetic field induced by current running through copper wire in air. The problem is solved using the A-phi formulation, using GPU-accelerated low-order-refined solvers in H1 and H(curl). Image courtesy of Will Pazner, **winner** of the 2022 MFEM Workshop Visualization Contest.*
 
+----
+
+[![](img/gallery/workshop23/shock-bubble.png)](img/gallery/workshop23/shock-bubble.mp4)
+
+[🎬](img/gallery/workshop23/shock-bubble.mp4)
+*Shock-bubble-interaction using a Property-preserving discontinuous Galerkin scheme, see [article](https://doi.org/10.1142/13466). Image courtesy of Hennes Hajduk, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop23/plane_wave.png)](img/gallery/workshop23/plane_wave.mp4)
+
+[🎬](img/gallery/workshop23/plane_wave.mp4)
+*Plane wave scattering from a cube. The simulation is using MFEM's DPG Ultraweak formulation to solve the time-harmonic linear acoustics equations. More precisely the problem formulation is as follows. We solve for the scattered wave with essential BCs on the scatterer and PML (absorbing BCs) on the outer boundary. The final animation is obtained by superimposing the incident (plane wave) with the numerical solution (scattered wave). For the final visualization we also used MFEM's "ParSubMesh" support to exclude the PML region from the visualization. Image courtesy of Socratis Petrides, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
 </div><div class="col-md-5"  markdown="1">
 
 
@@ -142,7 +164,8 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
 
-*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](https://visit.llnl.gov). Click [here](img/gallery/gas_impact.gif) for a movie.*
+[🎬](img/gallery/gas_impact.gif)
+*Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](https://visit.llnl.gov).*
 
 ----
 
@@ -168,19 +191,23 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/workshop21/kh_small.png)](img/gallery/workshop21/kh.mp4)
 
+[🎬](img/gallery/workshop21/kh.mp4)
 *Inviscid Kelvin-Helmholtz instability using high-order invariant domain preserving discontinuous Galerkin methods with convex limiting. Image courtesy of Will Pazner, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
 [![](img/gallery/workshop21/mfem_small.png)](img/gallery/workshop21/mfem.mp4)
 
+[🎬](img/gallery/workshop21/mfem.mp4)
 *Compressible Euler in Lagrangian frame using the [Laghos](https://github.com/CEED/Laghos) miniapp. Image courtesy of Vladimir Tomov, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
 [![](img/gallery/island_coalescence.png)](img/gallery/island_coalescence.mp4)
 
+[🎬](img/gallery/island_coalescence.mp4)
 *Adaptive, implicit resistive MHD solver (from [TDS-SciDAC](https://tds-scidac.github.io/)) resolves multi-scale features of plasmoid instability.*
+[[movie]](img/gallery/island_coalescence.mp4)
 
 ----
 
@@ -188,7 +215,36 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 
 [![](img/gallery/workshop22/heat_thumbnail_small.png)](img/gallery/workshop22/heat.mp4)
 
+[🎬](img/gallery/workshop22/heat.mp4)
 *Topology-optimized heat sink obtained with a new algorithm. The objective is to minimize the thermal energy in a domain with constant internal heating. In this problem, there is only one exit point for heat to escape, namely, at the central region of the upper boundary. Image courtesy of Tobias Duswald, **winner** of the 2022 MFEM Workshop Visualization Contest.*
+<!--[🎥 ▶️ 🎦 🎬](img/gallery/workshop22/heat.mp4)-->
+
+----
+
+<div id="ebrahimi" class="anchor"></div>
+
+[![](img/gallery/workshop23/excavator.png)](img/gallery/workshop23/excavator.png)
+
+*Displacement distribution of a loaded excavator arm under static equilibrium. Using MFEM, a library has been developed for simulating deformable articulated mechanical assemblies, consisting of elastic bodies interconnected via various joint types.  Additionally, utilizing MFEM's API, a solution algorithm—the projected conjugate gradient—has been implemented to iteratively solve the saddle point system arising from the finite element discretization of these assemblies. Image courtesy of Mehran Ebrahimi, **winner** of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop23/MBBBeam2D.png)](img/gallery/workshop23/MBBBeam2D.mp4)
+
+[🎬](img/gallery/workshop23/MBBBeam2D.mp4)
+*Topology optimization to maximize beam stiffness under a downward force on the right wall. A conformal mesh is obtained at each optimization iteration using the [TMOP-based mesh optimization technique](https://computing.llnl.gov/projects/ethos-enabling-technologies-high-order-simulations). Level-set based topology optimization is done in [LiDO](https://str.llnl.gov/2018-03/tortorelli) using MFEM as the discretization engine. Colors in the animation represent the displacement magnitude normalized with respect to the initial displacement.  Image courtesy of Ketan Mittal and Mathias Schmidt, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+<div id="camier" class="anchor"></div>
+
+[![](img/gallery/workshop23/lf_vortex_rings.png)](img/gallery/workshop23/lf_vortex_rings.mp4)
+
+[🎬](img/gallery/workshop23/LeapfroggingVortexRings.mp4)
+*Leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, which captures thin vortex dynamics without advection and non-linear terms. Image courtesy of John Camier, **winner** of the 2023 MFEM Workshop Visualization Contest.*
+
+
+----
 
 </div><div class="col-md-3" markdown="1">
 
@@ -281,6 +337,28 @@ This page collects screenshots from various simulations based on MFEM. Additiona
 [![](img/gallery/workshop22/gyroid_microcell_small.png)](img/gallery/workshop22/gyroid_microcell.png)
 
 *Flow through periodic Gyroid micro-cell, MFEM [Navier mini-app](https://mfem.org/fluids/) with additional Brinkman penalization. Image courtesy of Mathias Schmidt, as part of the 2022 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop23/airfoil_NACA0012.png){:width="100%"}](img/gallery/workshop23/airfoil_NACA0012.mp4)
+
+[🎬](img/gallery/workshop23/airfoil_NACA0012.mp4)
+*Re= 50,000 incompressible Navier-Stokes wall-resolved LES of a NACA 0012 airfoil in stall regime using MFEM's navier miniapp. The video shows the norm of the velocity vector. Image courtesy of Étienne Spieser, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop23/KHI2D.png)](img/gallery/workshop23/KHI2D.mp4)
+
+[🎬](img/gallery/workshop23/KHI2D.mp4)
+*Turbulence effect of the Kelvin-Helmholtz instability in tokamak edge plasma, energy conserving, incompressible, high-order (p=3) DG with 0.1 upwinding, MHDeX code developed at LLNL. Image courtesy of Milan Holec, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop23/penrose.png)](img/gallery/workshop23/penrose.png)
+
+*Penrose unilluminable room appears rather illuminable in 3D (at least when constructed as a solid of revolution). Solution to Helmholtz equation computed using the WaveHoltz iterative algorithm with the symmetric interior penalty DG discretization accelerated on GPU. Image courtesy of Amit Rotem, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
 
 </div>
 
