@@ -2,7 +2,9 @@
 #### October 26, 2023
 #### Virtual Meeting
 
-**Speakers' slides** are linked in the agenda below. View **contest submissions** in the [gallery](gallery.md).
+**Speakers' slides** are linked in the agenda below. Read the
+[**article**](https://computing.llnl.gov/about/newsroom/mfem-workshop-2023)
+about the workshop on LLNL's Computing website. View **contest submissions** in the [gallery](gallery.md).
 
 ![MFEM Logo](img/logo-300.png)
 

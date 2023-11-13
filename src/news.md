@@ -2,6 +2,8 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Nov 13, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2023) of the [2023 Workshop](workshop.md), held on October 26.*
+**Oct 26, 2023** | *2023 [MFEM community workshop](workshop.md).*
 **Sep 27, 2023** | *Version 4.6 [released](https://github.com/mfem/mfem/blob/v4.6/CHANGELOG).*
 **Sep 11, 2023** | *MFEM now available in [Homebrew](https://formulae.brew.sh/formula/mfem).*
 **Jul 17, 2023** | *The third [MFEM Community Workshop](workshop.md) will take place on October 26th, 2023.*
@@ -9,18 +11,18 @@
 **Apr 11, 2023** | *GitHub ReadME project [article](https://github.com/readme/featured/nuclear-fusion-open-source) on open-source software for fusion mentions MFEM.*
 **Mar 23, 2023** | *Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).*
 **Feb 22, 2023** | *AWS releases the [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) code for cloud-based electromagnetics simulations of quantum computing hardware based on MFEM*
-**Jan 6, 2023** | *Complete [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of [2022 Workshop](workshop.md) videos now available.*
-**Nov 16, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of the [2022 Workshop](workshop.md), held on October 25.*
+**Jan 6, 2023** | *Complete [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of [2022 Workshop](workshop22.md) videos now available.*
+**Nov 16, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022) of the [2022 Workshop](workshop22.md), held on October 25.*
 **Oct 22, 2022** | *Version 4.5 [released](https://github.com/mfem/mfem/blob/v4.5/CHANGELOG).*
 **Oct 11, 2022** | *New [Enzyme + MFEM](https://www.hpcwire.com/off-the-wire/doe-funds-llnl-project-to-improve-differentiation-of-extreme-scale-science-applications/) project to efficiently differentiate large-scale finite element applications.*
-**Aug 18, 2022** | *The second [MFEM Community Workshop](workshop.md) will take place on October 25th, 2022.*
+**Aug 18, 2022** | *The second [MFEM Community Workshop](workshop22.md) will take place on October 25th, 2022.*
 **Aug 15, 2022** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/) series.*
 **Mar 21, 2022** | *Version 4.4 [released](https://github.com/mfem/mfem/blob/v4.4/CHANGELOG).*
 **Jan 20, 2022** | *[FEM@LLNL seminar series](seminar.md) starting.*
 **Nov 30, 2021** | *New [page](videos.md) with recorded talks + videos.*
-**Nov 12, 2021** | *[Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) summarizing the October 20th, 2021, community workshop.*
+**Nov 12, 2021** | *[Article](https://computing.llnl.gov/about/newsroom/mfem-team-hosts-first-community-workshop) summarizing the October 20th, 2021, community [workshop](workshop21.md).*
 **Jul 29, 2021** | *Version 4.3 [released](https://github.com/mfem/mfem/blob/v4.3/CHANGELOG).*
-**Jul 10, 2021** | *The inaugural [MFEM Community Workshop](workshop.md) will take place on October 20th, 2021.*
+**Jul 10, 2021** | *The inaugural [MFEM Community Workshop](workshop21.md) will take place on October 20th, 2021.*
 **Apr 22, 2021** | *MFEM featured on *S&TR* magazine [cover](https://str.llnl.gov/2021-02).*
 **Mar 1, 2021**  | *Logo featured throughout LLNL 2020 [annual report](https://annual.llnl.gov/sites/annual/files/2021-11/fy2020annual.pdf).*
 **Feb 16, 2021** | *New documentation page on [GPU performance](gpu-support.md).*
