@@ -19,21 +19,15 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="240" height="240" src="img/gallery/workshop22/coil_small.png">](gallery.md#pazner)
+      [<img class="d-block w-100" width="260" height="160" src="img/gallery/workshop23/lf_vortex_rings.png">](gallery.md#camier)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2022 Visualization Contest Winner Will Pazner
+        2023 Visualization Contest Winner John Camier
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="260" height="260" src="img/gallery/workshop22/heat_thumbnail_small.png">](gallery.md#duswald)
+      [<img class="d-block w-100" width="450" height="260" src="img/gallery/workshop23/excavator.png">](gallery.md#ebrahimi)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2022 Visualization Contest Winner Tobias Duswald
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="250" height="250" src="img/gallery/workshop22/brain_electric_field_small.png">](gallery.md#zwick)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2022 Visualization Contest Winner Ben Zwick
+        2023 Visualization Contest Winner Mehran Ebrahimi
       </div>
     </div>
     <div class="item">
