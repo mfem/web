@@ -1,8 +1,8 @@
 # Gallery
 
-This page collects screenshots from various simulations based on MFEM. 
+This page collects screenshots from various simulations based on MFEM.
 
-Image captions with 🎬 indicates that the image is hyperlinked to an animation.
+Image captions with 🎬 link to simulation videos.
 Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/).
 
 <br>
@@ -85,13 +85,12 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [![](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.png)](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
 
-[🎬](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.mp4)
+[🎬](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
 *Axisymmetric computation of an air flow in a tube with continuous Galerkin discretization. Image courtesy of Raphael Zanella, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
 <div id="pazner" class="anchor"></div>
-
 
 [![](img/gallery/workshop22/coil_small.png)](img/gallery/workshop22/coil.mp4)
 
@@ -107,14 +106,21 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+[![](img/gallery/workshop23/airfoil_NACA0012.png){:width="100%"}](img/gallery/workshop23/airfoil_NACA0012.mp4)
+
+[🎬](img/gallery/workshop23/airfoil_NACA0012.mp4)
+*Re=50,000 incompressible Navier-Stokes wall-resolved LES of a NACA 0012 airfoil in stall regime using MFEM's Navier miniapp. Image courtesy of Étienne Spieser, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
 [![](img/gallery/workshop23/plane_wave.png)](img/gallery/workshop23/plane_wave.mp4)
 
 [🎬](img/gallery/workshop23/plane_wave.mp4)
 *Plane wave scattering from a cube using a DPG Ultraweak formulation in MFEM to solve the time-harmonic linear acoustics equations. Image courtesy of Socratis Petrides, as part of the 2023 MFEM Workshop Visualization Contest.*
 
 ----
-</div><div class="col-md-5"  markdown="1">
 
+</div><div class="col-md-5"  markdown="1">
 
 [![](img/gallery/uorbs-small.png)](img/gallery/uorbs.png)
 
@@ -207,7 +213,6 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/island_coalescence.mp4)
 *Adaptive, implicit resistive MHD solver (from [TDS-SciDAC](https://tds-scidac.github.io/)) resolves multi-scale features of plasmoid instability.*
-[[movie]](img/gallery/island_coalescence.mp4)
 
 ----
 
@@ -217,6 +222,15 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/workshop22/heat.mp4)
 *Topology-optimized heat sink obtained by minimizing the thermal energy in a domain with constant internal heating. Image courtesy of Tobias Duswald, **winner** of the 2022 MFEM Workshop Visualization Contest.*
+
+----
+
+<div id="camier" class="anchor"></div>
+
+[![](img/gallery/workshop23/lf_vortex_rings.png)](img/gallery/workshop23/lf_vortex_rings.mp4)
+
+[🎬](img/gallery/workshop23/lf_vortex_rings.mp4)
+*Leapfrogging vortex rings using an incompressible Schrödinger fluid solver in MFEM. Image courtesy of John Camier, **winner** of the 2023 MFEM Workshop Visualization Contest.*
 
 ----
 
@@ -232,15 +246,6 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/workshop23/MBBBeam2D.mp4)
 *Topology optimization with [conformal meshes](https://computing.llnl.gov/projects/ethos-enabling-technologies-high-order-simulations) to maximize beam stiffness under a downward force on the right wall. Image courtesy of Ketan Mittal and Mathias Schmidt, as part of the 2023 MFEM Workshop Visualization Contest.*
-
-----
-
-<div id="camier" class="anchor"></div>
-
-[![](img/gallery/workshop23/lf_vortex_rings.png)](img/gallery/workshop23/lf_vortex_rings.mp4)
-
-[🎬](img/gallery/workshop23/LeapfroggingVortexRings.mp4)
-*Leapfrogging vortex rings using an incompressible Schrödinger fluid solver in MFEM. Image courtesy of John Camier, **winner** of the 2023 MFEM Workshop Visualization Contest.*
 
 ----
 
@@ -320,7 +325,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [![](img/gallery/workshop21/flow-vis3-final_small.png)](img/gallery/workshop21/flow-vis3-final.png)
 
-*Visualization of time-averaged mean flow from a compressible, DG Navier-Stokes solver using MFEM. Image courtesy of Karl W. Schulz, as part of the 2021 MFEM Workshop Visualization Contest.*
+*Visualization of time-averaged mean flow from a compressible, DG Navier-Stokes solver using MFEM modeling a plasma torch. Image courtesy of Karl W. Schulz, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
@@ -335,13 +340,6 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 [![](img/gallery/workshop22/gyroid_microcell_small.png)](img/gallery/workshop22/gyroid_microcell.png)
 
 *Flow through periodic Gyroid micro-cell, MFEM [Navier mini-app](https://mfem.org/fluids/) with additional Brinkman penalization. Image courtesy of Mathias Schmidt, as part of the 2022 MFEM Workshop Visualization Contest.*
-
-----
-
-[![](img/gallery/workshop23/airfoil_NACA0012.png){:width="100%"}](img/gallery/workshop23/airfoil_NACA0012.mp4)
-
-[🎬](img/gallery/workshop23/airfoil_NACA0012.mp4)
-*Re= 50,000 incompressible Navier-Stokes wall-resolved LES of a NACA 0012 airfoil in stall regime using MFEM's navier miniapp. Image courtesy of Étienne Spieser, as part of the 2023 MFEM Workshop Visualization Contest.*
 
 ----
 
