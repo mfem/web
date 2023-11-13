@@ -168,9 +168,9 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
-[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.gif)
+[![](img/gallery/gas_impact.jpg)](img/gallery/gas_impact.mp4)
 
-[🎬](img/gallery/gas_impact.gif)
+[🎬](img/gallery/gas_impact.mp4)
 *Simulation-driven r-adaptivity using [TMOP](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp) for a three-material high-velocity gas impact in [BLAST](https://computing.llnl.gov/projects/blast).  Visualization with [VisIt](https://visit.llnl.gov).*
 
 ----
