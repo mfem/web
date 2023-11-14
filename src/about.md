@@ -62,7 +62,7 @@ Please cite with:
 - [Pieter Ghysels](https://crd.lbl.gov/departments/applied-mathematics/scalable-solvers/members/staff-members/pieter-ghysels-2)
 - [Andrew Gillette](https://akgillette.github.io)
 - [Sebastian Grimberg](https://scholar.google.com/citations?user=p2FEptUAAAAJ&hl=en)
-- [Hennes Hajduk](https://www.mathematik.tu-dortmund.de/lsiii/cms/en/mitarbeiter/member/id=Hennes+Hajduk.html)
+- [Hennes Hajduk](https://www.mn.uio.no/geo/english/people/aca/metos/hennesh/index.html)
 - [Cyrus Harrison](https://people.llnl.gov/harrison37)
 - [Stefan Henneking](https://www.oden.utexas.edu/people/1497)
 - [Milan Holec](https://people.llnl.gov/holec1)
