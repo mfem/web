@@ -8,7 +8,9 @@
 ## Selected Publications
 
 #### 2023
-
+  1. J. Vedral, [Dissipative WENO stabilization of high-order discontinuous Galerkin methods for hyperbolic problems](https://arxiv.org/abs/2309.12019), *in review*.
+  1. D. Kuzmin, H. Hajduk, [Property-Preserving Numerical Schemes for Conservation Laws](https://doi.org/10.1142/13466), *World Scientific*, **2023**
+  1. D. Kuzmin, J. Vedral, [Dissipation-based WENO stabilization of high-order finite element methods for scalar conservation laws](https://doi.org/10.1016/j.jcp.2023.112153), *Journal of Computational Physics*, 487, 112153, **2023**
   1. B. Keith, T.M. Surowiec, [Proximal Galerkin: A structure-preserving finite element method for pointwise bound constraints](https://arxiv.org/abs/2307.12444), **2023**.
   1. W. Pazner, Tz. Kolev, P. Vassilevski, [Matrix-free GPU-accelerated saddle-point solvers for high-order problems in _H_(div)](https://arxiv.org/abs/2304.12387), *in review*. Also available as [arXiv:2304.12387](https://arxiv.org/abs/2304.12387).
   1. R. Bollapragada, C. Karamanli, B. Keith, B. Lazarov, S. Petrides, J. Wang, [An Adaptive Sampling Augmented Lagrangian Method for Stochastic Optimization with Deterministic Constraints](https://arxiv.org/abs/2305.01018), *Computers & Mathematics with Applications (to appear)*, **2023**. Also available as [arXiv:2305.01018](https://arxiv.org/abs/2305.01018).
@@ -24,6 +26,7 @@
 ---
 
 #### 2022
+  1. D. Kuzmin, J.-P. Bäcker, [An unfitted finite element method using level set functions for extrapolation into deformable diffuse interfaces](https://doi.org/10.1016/j.jcp.2022.111218), *Journal of Computational Physics*, 461, 111218, **2022**
   1. A. Vargas, T. Stitt, K. Weiss, V. Tomov, J. Camier, Tz. Kolev, and R. Rieben, [Matrix-free approaches for GPU acceleration of a high-order finite element hydrodynamics application using MFEM, Umpire, and RAJA](https://doi.org/10.1177/10943420221100262), *The International Journal of High Performance Computing Applications*, 36(4):492-509, **2022**. Also available as [arXiv:2112.07075](https://arxiv.org/abs/2112.07075).
   1. J. Nikl, M. Kuchařík, and S. Weber, [High-Order Curvilinear Finite Element Magneto-Hydrodynamics I: A Conservative Lagrangian Scheme](https://doi.org/10.1016/j.jcp.2022.111158), *Journal of Computational Physics*, 464, 111158, **2022**. Also available as [arXiv:2110.11669](https://arxiv.org/abs/2110.11669).
   1. T. L. Horvath and S. Rhebergen, [A conforming sliding mesh technique for an embedded-hybridized discontinuous Galerkin discretization for fluid-rigid body interaction](https://arxiv.org/abs/2105.12542), *in review*, **2022**.

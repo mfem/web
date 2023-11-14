@@ -102,7 +102,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 [![](img/gallery/workshop23/shock-bubble.png)](img/gallery/workshop23/shock-bubble.mp4)
 
 [🎬](img/gallery/workshop23/shock-bubble.mp4)
-*Shock-bubble-interaction using a Property-preserving discontinuous Galerkin scheme, see [article](https://doi.org/10.1142/13466). Image courtesy of Hennes Hajduk, as part of the 2023 MFEM Workshop Visualization Contest.*
+*Shock-bubble-interaction using a Property-preserving discontinuous Galerkin scheme, see [book](https://doi.org/10.1142/13466). Image courtesy of Hennes Hajduk, as part of the 2023 MFEM Workshop Visualization Contest.*
 
 ----
 
