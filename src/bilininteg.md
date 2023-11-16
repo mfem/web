@@ -215,8 +215,8 @@ block structure.
 
 | Class Name                 | Domain           | Range   | Coef. | Dimension  | Operator                     |
 |----------------------------|------------------|---------|:-----:|:----------:|------------------------------|
-| VectorDivergenceIntegrator | H1$^d$, L2$^d$ | H1, L2 | S     | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$    |
-| GradientIntegrator         | H1             | H1$^d$ | S     | 1D, 2D, 3D | $(\lambda\grad u, \vec\{v})$ |
+| VectorDivergenceIntegrator | H1$^d$, L2$^d$ | H1, L2         | S     | 1D, 2D, 3D | $(\lambda\div\vec\{u},v)$    |
+| GradientIntegrator         | H1             | H1$^d$, L2$^d$ | S     | 1D, 2D, 3D | $(\lambda\grad u, \vec\{v})$ |
 
 ## Discontinuous Galerkin Operators
 
