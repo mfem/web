@@ -16,7 +16,7 @@ accessor methods in mesh:
 | `const Table &ElementToFaceTable()`   | 1D, 2D, 3D  |          Yes          |
 | `const Table &ElementToEdgeTable()`   | 1D, 2D, 3D  |          Yes          |
 | `Table *GetFaceEdgeTable()`           |     3D      |          Yes          |
-| `Table *GetEdgeVertexTable()`         |     3D      |          Yes          |
+| `Table *GetEdgeVertexTable()`         | 1D, 2D, 3D  |          Yes          |
 | `Table *GetVertexToElementTable()`    | 1D, 2D, 3D  |          No           |
 | `Table *GetFaceToElementTable()`      | 1D, 2D, 3D  |          No           |
 
