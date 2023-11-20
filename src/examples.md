@@ -1227,12 +1227,20 @@ We recommend viewing Example 2 before viewing this example._
 ##Example 38: Cut-Volume and Cut-Surface Integration
 <img class="floatright" width="285pt" src="../img/examples/ex38.png">
 
-This example code demonstrates construction of cut-surface and cut-volume IntegrationRules. The cut is specified by the zero level set of a given Coefficient $\phi$. The resulting IntegrationRules are combined with standard LinearFormIntegrators to demonstrate integration of a function $u$ over an implicit interface, and a subdomain bounded by an implicit interface:
+This example code demonstrates construction of cut-surface and cut-volume IntegrationRules.
+The cut is specified by the zero level set of a given Coefficient $\phi$.
+The resulting IntegrationRules are combined with standard LinearFormIntegrators to demonstrate
+integration of a function $u$ over an implicit interface, and a subdomain bounded by an implicit interface:
 $$ S = \int_{\phi = 0} u(x) ~ ds, \quad V = \int_{\phi > 0} u(x) ~ dx. $$
 
-The IntegrationRules are constructed by the moment-fitting algorithm introduced by [Müller, Kummer and Oberlack](https://doi.org/10.1002/nme.4569). Through a set of basis functions, for each element the method defines and solves a local under-determined system for the vector of quadrature weights. All surface and volume integrals, which are required to form the system, are reduced to 1D integration over intersected segments.
+The IntegrationRules are constructed by the moment-fitting algorithm introduced by
+[Müller, Kummer and Oberlack](https://doi.org/10.1002/nme.4569). Through a set of basis functions,
+for each element the method defines and solves a local under-determined system for the vector of quadrature weights
+All surface and volume integrals, which are required to form the system, are reduced to 1D integration over intersected segments.
 
-_The example has only a serial ([ex38.cpp](https://github.com/mfem/mfem/blob/master/examples/ex38.cpp)) version, because the  construction of the integration rules is an element-local procedure. It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._ 
+_The example has only a serial ([ex38.cpp](https://github.com/mfem/mfem/blob/master/examples/ex38.cpp))
+version, because the  construction of the integration rules is an element-local procedure.
+It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._ 
 <div style="clear:both;"/></div>
 <br></div>
 
