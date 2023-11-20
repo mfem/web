@@ -1235,7 +1235,7 @@ $$ S = \int_{\phi = 0} u(x) ~ ds, \quad V = \int_{\phi > 0} u(x) ~ dx. $$
 
 The IntegrationRules are constructed by the moment-fitting algorithm introduced by
 [Müller, Kummer and Oberlack](https://doi.org/10.1002/nme.4569). Through a set of basis functions,
-for each element the method defines and solves a local under-determined system for the vector of quadrature weights
+for each element the method defines and solves a local under-determined system for the vector of quadrature weights.
 All surface and volume integrals, which are required to form the system, are reduced to 1D integration over intersected segments.
 
 _The example has only a serial ([ex38.cpp](https://github.com/mfem/mfem/blob/master/examples/ex38.cpp))
