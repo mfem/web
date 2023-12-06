@@ -4,6 +4,142 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-12"  markdown="1">
 
+## MFEM Workshop 2023
+
+---
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Aaron Fisher (LLNL)
+#### *Welcome and Overview*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](wgx0e8mdKu8)
+
+Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.
+
+---
+
+#### Tzanio Kolev (LLNL)
+#### *The State of MFEM*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](95OJe5DjjkA)
+
+MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
+
+---
+
+#### Veselin Dobrev (LLNL)
+#### *Recent Developments*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](1FCP0T5oIeE)
+
+Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
+
+---
+
+#### Sebastian Grimberg (AWS)
+#### *Palace: PArallel LArge-scale Computational Electromagnetics*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](jSuFUdLc8i0)
+
+Palace is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. Grimberg provided an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.
+
+---
+
+#### Jacob Lotz (Delft University of Technology)
+#### *Computation and Reduced Order Modelling of Periodic Flows*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](lNIXeirM6Gg)
+
+Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. His work aims to reduce the cost of these computations. His team solves periodic flows in a space-time domain in which both ends in time are periodic such that they only have to model one period. MFEM is used to discretize the space-time domain and solve our discretized system of equations. Lotz applies a hyper-reduced Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation he showed (results of) their full order model and their advances in reduced order modelling.
+
+---
+
+#### Boyan Lazarov (LLNL)
+#### *Scalable Design and Optimization with MFEM*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](7W8OCl5MLfw)
+
+Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Student Lightning Talks
+#### *Part 1*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](c8WVPnTpvtI)
+
+The following four students presented in this video:
+
+- Shani Martinez Weissberg (Tel Aviv University): “µFEA of a Rabbit Femur”
+- Paul Moujaes (TU-Dortmund): “Dissipation-Based Entropy Stabilization for Slope-Limited Discontinuous Galerkin Approximations of Hyperbolic Problems”
+- Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”
+- Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”
+
+---
+
+#### Student Lightning Talks
+#### *Part 2*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Gp88u3Eql2Y)
+
+The following four students presented in this video:
+
+- Alexander Mote (Oregon State University): “A Neural Network Surrogate Model for Nonlocal Thermal Flux Calculations” (LLNL-PRES-854134)
+- Amit Rotem (Virginia Tech): “GPU Acceleration of IPDG in MFEM”
+- Josiah Brown (Relogic Research): “Project Minerva”
+- Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”
+
+---
+
+#### Yohann Dudouit (LLNL)
+#### *Empowering MFEM Using libCEED*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](32JWerSEQyA)
+
+Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.
+
+---
+
+#### Eric Chin (LLNL)
+#### *Contact Constraint Enforcement Using the Tribol Interface Physics Library*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](OCurPCdTcno)
+
+Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. [Tribol](https://github.com/LLNL/Tribol) is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with [Serac](https://github.com/LLNL/serac), an open-source implicit nonlinear thermal-structural simulation code.
+
+---
+
+#### Milan Holec (LLNL)
+#### *Deterministic Transport MFEM-Miniapp*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Ijqv0v3zSQU)
+
+Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.
+
+---
+
+#### Aaron Fisher (LLNL)
+#### *Wrap-Up and Visualization Contest Winners*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](DfqH7n1Sekg)
+
+The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the [gallery](gallery.md).
+
+</div><div class="col-md-12"  markdown="1">
+
 ## FEM@LLNL Seminars
 
 ---
@@ -320,7 +456,7 @@ LLNL computational mathematician Tzanio Kolev presented an overview of MFEM as p
 
 #### Aaron Fisher (LLNL)
 #### *Welcome and Overview*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](vaAA9zB1IQ8)
 
@@ -330,7 +466,7 @@ Held on October 25, 2022, the second annual MFEM community workshop brought toge
 
 #### Tzanio Kolev (LLNL)
 #### *The State of MFEM*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](I4pLPBYFR8o)
 
@@ -340,7 +476,7 @@ MFEM principal investigator Tzanio Kolev described the project’s past, present
 
 #### Veselin Dobrev (LLNL)
 #### *Recent Developments in MFEM*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](pZQP0Q4SbWU)
 
@@ -350,7 +486,7 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including su
 
 #### Ben Zwick (University of Western Australia)
 #### *Solution of the Electroencephalography (EEG) Forward Problem*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](2BgDwwCERm8)
 
@@ -360,7 +496,7 @@ Ben Zwick of the University of Western Australia presented "Solution of the Elec
 
 #### Carlos Brito Pacheco (Université Grenoble Alpes)
 #### *Rodin: Density and Topology Optimization Framework*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](ZhfDFRJjnU0)
 
@@ -370,7 +506,7 @@ Carlos Brito Pacheco of Université Grenoble Alpes presented "Rodin: Lightweight
 
 #### Tobias Duswald (CERN/TUM)
 #### *Stochastic Fractional PDEs: Random Field Generation & Topology Optimization*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](s2s2YyxdTmU)
 
@@ -380,7 +516,7 @@ Tobias Duswald of CERN/Technical University of Munich presented "Stochastic Frac
 
 #### Alvaro Sánchez Villar (Princeton Plasma Physics Laboratory)
 #### *MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](PgsQwKFq9Yo)
 
@@ -390,7 +526,7 @@ Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFE
 
 #### Brian Young
 #### *OpenParEM2D: A 2D Simulator for Guided Waves*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](_CqFJUu7E8E)
 
@@ -400,7 +536,7 @@ Independent software developer Brian Young presented "OpenParEM2D: A Free, Open-
 
 #### Christina Migliore (MIT)
 #### *The Development of the EM RF-Edge Interactions Mini-app “Stix” Using MFEM*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](44VeX-AVxU8)
 
@@ -410,7 +546,7 @@ Christina Migliore of MIT presented "The Development of the EM RF-Edge Interacti
 
 #### Will Pazner (Portland State University)
 #### *High-Order Solvers + GPU Acceleration*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](dIC7d1q27hM)
 
@@ -420,7 +556,7 @@ Will Pazner of Portland State University presented "High-Order Solvers + GPU Acc
 
 #### Jorge-Luis Barrera (LLNL)
 #### *Shape and Topology Optimization Powered by MFEM*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](eD6Xr2jRrss)
 
@@ -430,7 +566,7 @@ Jorge-Luis Barrera of LLNL presented "Shape and Topology Optimization Powered by
 
 #### Siu Wun Cheung (LLNL)
 #### *Reduced Order Modeling for FE Simulations with MFEM & libROM*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](QfczefW8Xgk)
 
@@ -440,7 +576,7 @@ Siu Wun Cheung of LLNL presented "Reduced Order Modeling for Finite Element Simu
 
 #### Devlin Hayduke (ReLogic Research)
 #### *Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](JT3RwzEeq8k)
 
@@ -450,7 +586,7 @@ Devlin Hayduke of ReLogic Research presented "Project Minerva: Accelerated Deplo
 
 #### Synthetik Applied Technologies
 #### *blastFEM: GPU-Accelerated, High-Performance, Energy-Efficient Solver*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](tzQUlm0hlvE)
 
@@ -460,7 +596,7 @@ Tim Brewer, Ben Shields, Peter Vonk, Jeff Heylmun, and Barlev Raymond of Synthet
 
 #### Adolfo Rodriguez (OpenSim Technology)
 #### *Using MFEM for Wellbore Stability Analysis*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](gBEApU1V_80)
 
@@ -470,7 +606,7 @@ Adolfo Rodriguez of OpenSim Technology presented "Using MFEM for Wellbore Stabil
 
 #### Julian Andrej (LLNL)
 #### *AWS Tutorial*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](tsr6vza_7DM)
 
@@ -480,7 +616,7 @@ In this tutorial, Julian Andrej of LLNL demonstrated how to use MFEM in the clou
 
 #### Aaron Fisher (LLNL)
 #### *Wrap-Up and Simulation Contest Winners*
-##### **October 25, 2022** | [MFEM Workshop 2022](workshop.md)
+##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
 ![YouTube](7uExaQm8Dmk)
 
