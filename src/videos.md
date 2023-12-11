@@ -68,7 +68,7 @@ Many types of periodic flows can be found in nature and industrial applications 
 
 Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Student Lightning Talks
 #### *Part 1*
@@ -83,7 +83,7 @@ The following four students presented in this video:
 - Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”
 - Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Student Lightning Talks
 #### *Part 2*
@@ -97,6 +97,16 @@ The following four students presented in this video:
 - Amit Rotem (Virginia Tech): “GPU Acceleration of IPDG in MFEM”
 - Josiah Brown (Relogic Research): “Project Minerva”
 - Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”
+
+---
+
+#### Syun'ichi Shiraiwa (PPPL)
+#### *Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](feUk70vXB7k)
+
+In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ < 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.
 
 ---
 
