@@ -394,8 +394,7 @@
 <h5 id="october-26-2023-mfem-workshop-2023_5"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
 <p><img alt="YouTube" src="7W8OCl5MLfw" /></p>
 <p>Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.</p>
-</div>
-<div class="col-md-6">
+<hr />
 <h4 id="student-lightning-talks">Student Lightning Talks</h4>
 <h4 id="part-1"><em>Part 1</em></h4>
 <h5 id="october-26-2023-mfem-workshop-2023_6"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
@@ -407,7 +406,8 @@
 <li>Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”</li>
 <li>Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”</li>
 </ul>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="student-lightning-talks_1">Student Lightning Talks</h4>
 <h4 id="part-2"><em>Part 2</em></h4>
 <h5 id="october-26-2023-mfem-workshop-2023_7"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
@@ -420,27 +420,33 @@
 <li>Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”</li>
 </ul>
 <hr />
+<h4 id="syunichi-shiraiwa-pppl">Syun'ichi Shiraiwa (PPPL)</h4>
+<h4 id="radio-frequency-wave-simulation-in-hot-magnetized-plasma-using-differential-operator-for-non-local-conductivity-response"><em>Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response</em></h4>
+<h5 id="october-26-2023-mfem-workshop-2023_8"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<p><img alt="YouTube" src="feUk70vXB7k" /></p>
+<p>In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ &lt; 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.</p>
+<hr />
 <h4 id="yohann-dudouit-llnl">Yohann Dudouit (LLNL)</h4>
 <h4 id="empowering-mfem-using-libceed"><em>Empowering MFEM Using libCEED</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_8"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_9"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
 <p><img alt="YouTube" src="32JWerSEQyA" /></p>
 <p>Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.</p>
 <hr />
 <h4 id="eric-chin-llnl">Eric Chin (LLNL)</h4>
 <h4 id="contact-constraint-enforcement-using-the-tribol-interface-physics-library"><em>Contact Constraint Enforcement Using the Tribol Interface Physics Library</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_9"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_10"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
 <p><img alt="YouTube" src="OCurPCdTcno" /></p>
 <p>Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. <a href="https://github.com/LLNL/Tribol">Tribol</a> is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with <a href="https://github.com/LLNL/serac">Serac</a>, an open-source implicit nonlinear thermal-structural simulation code.</p>
 <hr />
 <h4 id="milan-holec-llnl">Milan Holec (LLNL)</h4>
 <h4 id="deterministic-transport-mfem-miniapp"><em>Deterministic Transport MFEM-Miniapp</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_10"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_11"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
 <p><img alt="YouTube" src="Ijqv0v3zSQU" /></p>
 <p>Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.</p>
 <hr />
 <h4 id="aaron-fisher-llnl_1">Aaron Fisher (LLNL)</h4>
 <h4 id="wrap-up-and-visualization-contest-winners"><em>Wrap-Up and Visualization Contest Winners</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_11"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_12"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
 <p><img alt="YouTube" src="DfqH7n1Sekg" /></p>
 <p>The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the <a href="../gallery/">gallery</a>.</p>
 </div>
@@ -819,7 +825,7 @@ Aaron Fisher of LLNL concluded the workshop by announcing the results of the sim
 <p>William Dawn from North Carolina State University described his work with unstructured neutron transport. His team models microreactors, a new class of compact reactor with relatively small electrical output. As part of the Exascale Computing Project, Dawn’s team is modeling the MARVEL reactor, which is planned for construction at Idaho National Laboratory. MFEM satisfies their need for a finite element framework with GPU support and rapid prototyping. With MFEM, the team discretizes a neutron transport equation with six independent variables in space, direction, and energy.</p>
 <p>Traditional neutron transport methods use a “sweeping” method to transport particles through a problem, but this is not feasible for generally unstructured meshes. In Dawn’s models, the Self-Adjoint Angular Flux (SAAF) form of the neutron transport equation is used to transform the neutron transport equation from a first-order hyperbolic form to a second-order elliptic form. Then, the SAAF equations are discretized with the finite element method and solved using MFEM. Due to the dependence of the neutron flux on angle and direction, these problems have a high vector-dimension with hundreds to thousands of degrees of freedom (DOF) per mesh vertex. Also, due to the second-order nature of these equations, highly refined meshes are required to sufficiently resolve reactor geometries with millions of vertices in a mesh. Results have been prepared for problems with billions of DOF using the Summit supercomputer at Oak Ridge National Laboratory.</p>
 <hr />
-<h4 id="syunichi-shiraiwa-pppl">Syun’ichi Shiraiwa (PPPL)</h4>
+<h4 id="syunichi-shiraiwa-pppl_1">Syun’ichi Shiraiwa (PPPL)</h4>
 <h4 id="development-of-pymfem-python-wrapper-for-mfem-scalable-rf-wave-simulation-for-nuclear-fusion"><em>Development of PyMFEM Python Wrapper for MFEM &amp; Scalable RF Wave Simulation for Nuclear Fusion</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_4"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><img alt="YouTube" src="8MBXq1PwUV8" /></p>
