@@ -14,23 +14,43 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/empty.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Brian Young
+##### *TBD*
+##### [**9am PDT, January 9, 2024**](https://everytimezone.com/s/7837a9f7)
+
+[<button type="button" class="btn btn-success">
+**WebEx**
+</button>]()
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/chan.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Jesse Chan (Rice University)
 ##### *High order positivity-preserving entropy stable discontinuous Galerkin discretizations*
-##### [**9am PDT, December 5, 2023**](https://everytimezone.com/s/2de6f821)
+##### December 5, 2023
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/chan.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**WebEx**
+**Talk Recording**
 </button>]()
 
 **Abstract:** High order discontinuous Galerkin (DG) methods provide high order accuracy and geometric flexibility, but are known to be unstable when applied to nonlinear conservation laws whose solutions exhibit shocks and under-resolved solution features. Entropy stable schemes improve robustness by ensuring that physically relevant solutions satisfy a semi-discrete cell entropy inequality independently of numerical resolution and solution regularization while retaining formal high order accuracy. In this talk, we will review the construction of entropy stable high order discontinuous Galerkin methods and describe approaches for enforcing that solutions are "physically relevant" (i.e., the thermodynamic variables remain positive).
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -569,11 +589,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Brian Young
-##### **January 9, 2024**
 
 &nbsp;
 
