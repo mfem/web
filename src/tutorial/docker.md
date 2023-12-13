@@ -7,11 +7,14 @@
 
 You don't need a cloud instance to run the MFEM tutorial. Instead, you can
 directly run the MFEM [Docker container](https://github.com/mfem/containers)
-on your local computer.
+on a computer available to you.
 
 This `mfem/developer` container has been specifically created to kickstart the exploration of
 MFEM and its capabilities in a variety of computing environments: from the cloud
 (like AWS), to HPC clusters, and your own laptop.
+
+There are CPU and GPU variations of the image, we will refer to it generically
+as `mfem/developer` during the tutorial.
 
 Below are instructions on how to start the container on [Linux](#linux) and [macOS](#macos),
 and how to use it to [run the tutorial locally](#running-the-tutorial-locally).
@@ -27,18 +30,40 @@ Depending on your Linux distribution, you have to first install [Docker](https:/
 See the official instructions for e.g. [Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
 Once the installation is complete and the `docker` command is in your path,
-pull the `mfem/developer` container with:
+pull the prebuilt `mfem/developer-cpu` container with:
 
-    docker pull ghcr.io/mfem/containers/developer:latest
+    docker pull ghcr.io/mfem/containers/developer-cpu:latest
 
 Depending on your connection, this may take a while to download and extract (the image is about 2GB).
 
 To start the container, run:
 
-    docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+    docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
 
 You can later stop this by pressing <kbd>Ctrl-C</kbd>.
 See the docker [documenation](https://docs.docker.com/engine/reference/commandline/cli/) for more details.
+
+We provide two variations of our containers that are configured with CPU or CPU
+and GPU capabilities. If you have an Nvidia supported CUDA GPU you have to
+install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
+
+Our CUDA images are built with the SM_70 architecture by default. If your GPU is
+an SM_70 you can use the prebuilt `mfem/developer-cuda-sm70` image with:
+
+    docker pull ghcr.io/mfem/containers/developer-cuda-sm70:latest
+
+To start the container use
+
+    docker run --gpus all --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cuda-sm70:latest
+
+If you don't have an SM_70 GPU you can clone the `mfem/containers`
+[repository](https://github.com/mfem/containers) and build your architecture
+(e.g. SM_80) with
+
+    docker-compose build --build-arg cuda_arch_sm=80 cuda && docker image tag cuda:latest cuda-sm80:latest
+    docker-compose build --build-arg cuda_arch_sm=80 cuda-tpls && docker image tag cuda-tpls:latest cuda-tpls-sm80:latest
+
+This automatically builds all libraries with the correctly supported architecture.
 
 <div class="panel panel-info">
 <div class="panel-heading">
@@ -62,14 +87,14 @@ installation instructions [here](https://podman.io/getting-started/installation)
 After installing it, use the following commands to create a Podman machine and pull the `mfem/developer` container:
 
     podman machine init
-    podman pull ghcr.io/mfem/containers/developer:latest
+    podman pull ghcr.io/mfem/containers/developer-cpu:latest
 
 Both of these can take a while, depending on your hardware and network connection.
 
 To start the virtual machine and the container in it, run:
 
     podman machine start
-    podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+    podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
 
 You can later stop these by pressing <kbd>Ctrl-C</kbd> and typing `podman machine stop`.
 
