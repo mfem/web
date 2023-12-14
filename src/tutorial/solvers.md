@@ -368,8 +368,14 @@ including:
 
 - [AmgX](https://developer.nvidia.com/amgx) &mdash; see the `~/mfem/examples/amgx` directory
 
-These third-party libraries are not pre-installed in the AWS image, but you can still
+Most third-party libraries are not pre-installed in the AWS image, but you can still
 peruse the example source code to see the capabilities of the various integrations.
+
+You can check the
+[containers](https://github.com/mfem/containers/blob/main/README.md) repository
+which third-party libraries are available for the image you chose. At the time
+of writing we pre-install PETSc and SuperLU for the CPU images and AmgX for the
+CUDA image. This configuration is subject to change.
 
 <div class="panel panel-info">
 <div class="panel-heading">
