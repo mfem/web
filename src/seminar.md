@@ -14,19 +14,19 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/young.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Brian Young
-##### *TBD*
+##### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
 ##### [**9am PDT, January 9, 2024**](https://everytimezone.com/s/7837a9f7)
 
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
 
-**Abstract:** TBD
+**Abstract:** An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters.  Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections.  Matrix solutions are performed using complex computations.  Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI.  Implementation details are presented along with sample results and accuracy demonstrations.
 
 ---
 
