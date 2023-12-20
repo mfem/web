@@ -402,7 +402,7 @@ If your container supports CUDA you can explore GPU computations with:
 
     mpirun -np 4 ex1p -pa -d cuda
 
-Additionally you can try out AMGX by changing your directory to `examples/amgx`
+Additionally you can try out AmgX by changing your directory to `examples/amgx`
 and building:
 
     cd amgx && make ex1p
