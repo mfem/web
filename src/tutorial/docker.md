@@ -44,11 +44,11 @@ You can later stop this by pressing <kbd>Ctrl-C</kbd>.
 See the docker [documenation](https://docs.docker.com/engine/reference/commandline/cli/) for more details.
 
 We provide two variations of our containers that are configured with CPU or CPU
-and GPU capabilities. If you have an Nvidia supported CUDA GPU you have to
+and GPU capabilities. If you have an NVIDIA supported CUDA GPU you have to
 install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
-Our CUDA images are built with the SM_70 architecture by default. If your GPU is
-an SM_70 you can use the prebuilt `mfem/developer-cuda-sm70` image with:
+Our CUDA images are built with the `sm_70` compute capability by default. If your GPU is
+an `sm_70` you can use the prebuilt `mfem/developer-cuda-sm70` image with:
 
     docker pull ghcr.io/mfem/containers/developer-cuda-sm70:latest
 
@@ -56,14 +56,15 @@ To start the container use
 
     docker run --gpus all --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cuda-sm70:latest
 
-If you don't have an SM_70 GPU you can clone the `mfem/containers`
-[repository](https://github.com/mfem/containers) and build your architecture
-(e.g. SM_80) with
+If you need a different compute capability, you can clone the `mfem/containers`
+[repository](https://github.com/mfem/containers) and build an image e.g., for`sm_80`, with
 
+    git clone git@github.com:mfem/containers.git
+    cd containers
     docker-compose build --build-arg cuda_arch_sm=80 cuda && docker image tag cuda:latest cuda-sm80:latest
     docker-compose build --build-arg cuda_arch_sm=80 cuda-tpls && docker image tag cuda-tpls:latest cuda-tpls-sm80:latest
 
-This automatically builds all libraries with the correctly supported architecture.
+This automatically builds all libraries with the correctly supported CUDA compute capability.
 
 <div class="panel panel-info">
 <div class="panel-heading">
