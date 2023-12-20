@@ -675,6 +675,16 @@ mpirun -np 48 ex1p -m ../data/escher-p2.mesh
 with the following manipulations in the GLVis window: pressing keys <kbd>R</kbd>,
 <kbd>j</kbd>, <kbd>b</kbd>, <kbd>g</kbd>, <kbd>F11</kbd> twice, <kbd>p</kbd> a
 number of times, and zooming in with the <kbd>Right</kbd> mouse button.</p>
+<p>If your container supports CUDA you can explore GPU computations with:</p>
+<pre><code>mpirun -np 4 ex1p -pa -d cuda
+</code></pre>
+<p>Additionally you can try out AmgX by changing your directory to <code>examples/amgx</code>
+and building:</p>
+<pre><code>cd amgx &amp;&amp; make ex1p
+</code></pre>
+<p>After that you can run the example with</p>
+<pre><code>mpirun -np 4 ex1p -d cuda --amgx-file amg_pcg.json
+</code></pre>
 <hr />
 <h3 id="glvis-interface"><i class="fa fa-check-square-o"></i>&nbsp; GLVis interface</h3>
 <p><a href="https://glvis.org">GLVis</a> is a lightweight tool for accurate and flexible

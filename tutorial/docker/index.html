@@ -346,10 +346,12 @@
 <hr />
 <p>You don't need a cloud instance to run the MFEM tutorial. Instead, you can
 directly run the MFEM <a href="https://github.com/mfem/containers">Docker container</a>
-on your local computer.</p>
+on a computer available to you.</p>
 <p>This <code>mfem/developer</code> container has been specifically created to kickstart the exploration of
 MFEM and its capabilities in a variety of computing environments: from the cloud
 (like AWS), to HPC clusters, and your own laptop.</p>
+<p>There are CPU and GPU variations of the image, we will refer to it generically
+as <code>mfem/developer</code> during the tutorial.</p>
 <p>Below are instructions on how to start the container on <a href="#linux">Linux</a> and <a href="#macos">macOS</a>,
 and how to use it to <a href="#running-the-tutorial-locally">run the tutorial locally</a>.</p>
 <p>You can also use the container (and similar commands) to setup your own cloud instance. See
@@ -359,15 +361,33 @@ for example this <a href="https://github.com/mfem/containers/blob/main/developer
 <p>Depending on your Linux distribution, you have to first install <a href="https://www.docker.com/">Docker</a>.
 See the official instructions for e.g. <a href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>.</p>
 <p>Once the installation is complete and the <code>docker</code> command is in your path,
-pull the <code>mfem/developer</code> container with:</p>
-<pre><code>docker pull ghcr.io/mfem/containers/developer:latest
+pull the prebuilt <code>mfem/developer-cpu</code> container with:</p>
+<pre><code>docker pull ghcr.io/mfem/containers/developer-cpu:latest
 </code></pre>
 <p>Depending on your connection, this may take a while to download and extract (the image is about 2GB).</p>
 <p>To start the container, run:</p>
-<pre><code>docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+<pre><code>docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
 </code></pre>
 <p>You can later stop this by pressing <kbd>Ctrl-C</kbd>.
 See the docker <a href="https://docs.docker.com/engine/reference/commandline/cli/">documenation</a> for more details.</p>
+<p>We provide two variations of our containers that are configured with CPU or CPU
+and GPU capabilities. If you have an NVIDIA supported CUDA GPU you have to
+install the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit</a>.</p>
+<p>Our CUDA images are built with the <code>sm_70</code> compute capability by default. If your GPU is
+an <code>sm_70</code> you can use the prebuilt <code>mfem/developer-cuda-sm70</code> image with:</p>
+<pre><code>docker pull ghcr.io/mfem/containers/developer-cuda-sm70:latest
+</code></pre>
+<p>To start the container use</p>
+<pre><code>docker run --gpus all --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cuda-sm70:latest
+</code></pre>
+<p>If you need a different compute capability, you can clone the <code>mfem/containers</code>
+<a href="https://github.com/mfem/containers">repository</a> and build an image e.g., for<code>sm_80</code>, with</p>
+<pre><code>git clone git@github.com:mfem/containers.git
+cd containers
+docker-compose build --build-arg cuda_arch_sm=80 cuda &amp;&amp; docker image tag cuda:latest cuda-sm80:latest
+docker-compose build --build-arg cuda_arch_sm=80 cuda-tpls &amp;&amp; docker image tag cuda-tpls:latest cuda-tpls-sm80:latest
+</code></pre>
+<p>This automatically builds all libraries with the correctly supported CUDA compute capability.</p>
 <div class="panel panel-info">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
@@ -386,12 +406,12 @@ The <code>--cap-add=SYS_PTRACE</code> option is added to resolve MPI warnings.
 installation instructions <a href="https://podman.io/getting-started/installation">here</a>.</p>
 <p>After installing it, use the following commands to create a Podman machine and pull the <code>mfem/developer</code> container:</p>
 <pre><code>podman machine init
-podman pull ghcr.io/mfem/containers/developer:latest
+podman pull ghcr.io/mfem/containers/developer-cpu:latest
 </code></pre>
 <p>Both of these can take a while, depending on your hardware and network connection.</p>
 <p>To start the virtual machine and the container in it, run:</p>
 <pre><code>podman machine start
-podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer:latest
+podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
 </code></pre>
 <p>You can later stop these by pressing <kbd>Ctrl-C</kbd> and typing <code>podman machine stop</code>.</p>
 <div class="panel panel-info">
