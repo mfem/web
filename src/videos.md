@@ -83,7 +83,7 @@ The following four students presented in this video:
 - Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”
 - Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Student Lightning Talks
 #### *Part 2*
@@ -98,7 +98,7 @@ The following four students presented in this video:
 - Josiah Brown (Relogic Research): “Project Minerva”
 - Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Syun'ichi Shiraiwa (PPPL)
 #### *Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response*
@@ -110,6 +110,16 @@ In high-temperature plasmas, the dielectric response to the RF fields is caused 
 
 ---
 
+#### Tamas Horvath (Oakland University)
+#### *Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](cajYzhxBDkw)
+
+Horvath presented the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. He showcased these enhancements and provide insights into their versatile usage across different problems.
+
+---
+
 #### Yohann Dudouit (LLNL)
 #### *Empowering MFEM Using libCEED*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
@@ -117,6 +127,16 @@ In high-temperature plasmas, the dielectric response to the RF fields is caused 
 ![YouTube](32JWerSEQyA)
 
 Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.
+
+---
+
+#### Zhang Chunyu (Sun Yat-Sen University)
+#### *Homogenized Energy Theory for Solution of Elasticity Problems with Consideration of Higher-Order Microscopic Deformations*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Ic5bujKlHh4)
+
+The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.
 
 ---
 
