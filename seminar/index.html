@@ -351,12 +351,26 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/chung.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="kevin-chung-llnl">Kevin Chung (LLNL)</h4>
+<h5 id="scalable-robust-physics-simulator-via-reduced-order-modeling-and-domain-decomposition"><em>Scalable robust physics simulator via reduced order modeling and domain decomposition</em></h5>
+<h5 id="9am-pdt-feb-6th-2024"><a href="https://everytimezone.com/s/8bf3f373"><strong>9am PDT, Feb 6th, 2024</strong></a></h5>
+<p><a href=""><button type="button" class="btn btn-success">
+<strong>Webex</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.</p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/young.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="brian-young">Brian Young</h4>
 <h5 id="a-full-wave-electromagnetic-simulator-for-frequency-domain-s-parameter-calculations"><em>A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations</em></h5>
-<h5 id="9am-pdt-january-9-2024"><a href="https://everytimezone.com/s/7837a9f7"><strong>9am PDT, January 9, 2024</strong></a></h5>
+<h5 id="january-9-2024">January 9, 2024</h5>
 <p><a href="../pdf/seminar/young.pdf"><button type="button" class="btn btn-primary">
 <strong>Slides</strong>
 </button></a>
@@ -366,7 +380,6 @@
 </button></a></p>
 <p><strong>Abstract:</strong> An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters.  Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections.  Matrix solutions are performed using complex computations.  Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI.  Implementation details are presented along with sample results and accuracy demonstrations.</p>
 <hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/chan.jpg" /></p>
@@ -842,9 +855,6 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><strong>Abstract:</strong> Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named "shifted boundary method" (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
-<p>&nbsp;</p>
-<h4 id="kevin-chung-lawrence-livermore-national-laboratory">Kevin Chung (Lawrence Livermore National Laboratory)</h4>
-<h5 id="february-6-2024"><strong>February 6, 2024</strong></h5>
 <p>&nbsp;</p>
 <h4 id="sungho-lee-university-of-memphis">Sungho Lee (University of Memphis)</h4>
 <h5 id="march-5-2024"><strong>March 5, 2024</strong></h5>
