@@ -398,6 +398,19 @@ with the following manipulations in the GLVis window: pressing keys <kbd>R</kbd>
 <kbd>j</kbd>, <kbd>b</kbd>, <kbd>g</kbd>, <kbd>F11</kbd> twice, <kbd>p</kbd> a
 number of times, and zooming in with the <kbd>Right</kbd> mouse button.
 
+If your container supports CUDA you can explore GPU computations with:
+
+    mpirun -np 4 ex1p -pa -d cuda
+
+Additionally you can try out AmgX by changing your directory to `examples/amgx`
+and building:
+
+    cd amgx && make ex1p
+
+After that you can run the example with
+
+    mpirun -np 4 ex1p -d cuda --amgx-file amg_pcg.json
+
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; GLVis interface
