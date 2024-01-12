@@ -22,6 +22,10 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ##### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
 ##### [**9am PDT, January 9, 2024**](https://everytimezone.com/s/7837a9f7)
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/young.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **WebEx**
 </button>]()
