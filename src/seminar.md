@@ -14,13 +14,33 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/chung.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Kevin Chung (LLNL)
+##### *Scalable robust physics simulator via reduced order modeling and domain decomposition*
+##### [**9am PDT, Feb 6th, 2024**](https://everytimezone.com/s/8bf3f373)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/young.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Brian Young
 ##### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
-##### [**9am PDT, January 9, 2024**](https://everytimezone.com/s/7837a9f7)
+##### January 9, 2024
 
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -33,8 +53,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 **Abstract:** An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters.  Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections.  Matrix solutions are performed using complex computations.  Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI.  Implementation details are presented along with sample results and accuracy demonstrations.
 
 ---
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -593,11 +611,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Kevin Chung (Lawrence Livermore National Laboratory)
-##### **February 6, 2024**
 
 &nbsp;
 
