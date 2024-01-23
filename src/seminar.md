@@ -52,8 +52,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 **Abstract:** An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters.  Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections.  Matrix solutions are performed using complex computations.  Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI.  Implementation details are presented along with sample results and accuracy demonstrations.
 
----
-
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/chan.jpg)
@@ -616,5 +614,8 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 #### Sungho Lee (University of Memphis)
 ##### **March 5, 2024**
+
+#### Nat Trask (University of Pennsylvania)
+##### **April 2, 2024**
 
 </div>
