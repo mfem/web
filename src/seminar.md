@@ -618,4 +618,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 #### Nat Trask (University of Pennsylvania)
 ##### **April 2, 2024**
 
+#### Patrick Farrell (University of Oxford)
+##### **November 12, 2024**
+
 </div>
