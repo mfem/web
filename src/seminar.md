@@ -615,11 +615,17 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 #### Sungho Lee (University of Memphis)
 ##### **March 5, 2024**
 
+&nbsp;
+
 #### Nat Trask (University of Pennsylvania)
 ##### **April 2, 2024**
 
+&nbsp;
+
 #### Rubén Sevilla (Swansea University)
 ##### **September 17, 2024**
+
+&nbsp;
 
 #### Patrick Farrell (University of Oxford)
 ##### **November 12, 2024**
