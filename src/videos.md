@@ -4,177 +4,31 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 <div class="col-md-12"  markdown="1">
 
-## MFEM Workshop 2023
-
----
-
-</div><div class="col-md-6"  markdown="1">
-
-#### Aaron Fisher (LLNL)
-#### *Welcome and Overview*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](wgx0e8mdKu8)
-
-Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.
-
----
-
-#### Tzanio Kolev (LLNL)
-#### *The State of MFEM*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](95OJe5DjjkA)
-
-MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
-
----
-
-#### Veselin Dobrev (LLNL)
-#### *Recent Developments*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](1FCP0T5oIeE)
-
-Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
-
----
-
-#### Sebastian Grimberg (AWS)
-#### *Palace: PArallel LArge-scale Computational Electromagnetics*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](jSuFUdLc8i0)
-
-Palace is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. Grimberg provided an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.
-
----
-
-#### Jacob Lotz (Delft University of Technology)
-#### *Computation and Reduced Order Modelling of Periodic Flows*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](lNIXeirM6Gg)
-
-Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. His work aims to reduce the cost of these computations. His team solves periodic flows in a space-time domain in which both ends in time are periodic such that they only have to model one period. MFEM is used to discretize the space-time domain and solve our discretized system of equations. Lotz applies a hyper-reduced Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation he showed (results of) their full order model and their advances in reduced order modelling.
-
----
-
-#### Boyan Lazarov (LLNL)
-#### *Scalable Design and Optimization with MFEM*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](7W8OCl5MLfw)
-
-Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.
-
----
-
-#### Student Lightning Talks
-#### *Part 1*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](c8WVPnTpvtI)
-
-The following four students presented in this video:
-
-- Shani Martinez Weissberg (Tel Aviv University): “µFEA of a Rabbit Femur”
-- Paul Moujaes (TU-Dortmund): “Dissipation-Based Entropy Stabilization for Slope-Limited Discontinuous Galerkin Approximations of Hyperbolic Problems”
-- Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”
-- Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”
-
----
-
-#### Student Lightning Talks
-#### *Part 2*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](Gp88u3Eql2Y)
-
-The following four students presented in this video:
-
-- Alexander Mote (Oregon State University): “A Neural Network Surrogate Model for Nonlocal Thermal Flux Calculations” (LLNL-PRES-854134)
-- Amit Rotem (Virginia Tech): “GPU Acceleration of IPDG in MFEM”
-- Josiah Brown (Relogic Research): “Project Minerva”
-- Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”
-
-</div><div class="col-md-6"  markdown="1">
-
-#### Syun'ichi Shiraiwa (PPPL)
-#### *Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](feUk70vXB7k)
-
-In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ < 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.
-
----
-
-#### Tamas Horvath (Oakland University)
-#### *Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](cajYzhxBDkw)
-
-Horvath presented the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. He showcased these enhancements and provide insights into their versatile usage across different problems.
-
----
-
-#### Yohann Dudouit (LLNL)
-#### *Empowering MFEM Using libCEED*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](32JWerSEQyA)
-
-Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.
-
----
-
-#### Zhang Chunyu (Sun Yat-Sen University)
-#### *Homogenized Energy Theory for Solution of Elasticity Problems with Consideration of Higher-Order Microscopic Deformations*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](Ic5bujKlHh4)
-
-The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.
-
----
-
-#### Eric Chin (LLNL)
-#### *Contact Constraint Enforcement Using the Tribol Interface Physics Library*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](OCurPCdTcno)
-
-Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. [Tribol](https://github.com/LLNL/Tribol) is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with [Serac](https://github.com/LLNL/serac), an open-source implicit nonlinear thermal-structural simulation code.
-
----
-
-#### Milan Holec (LLNL)
-#### *Deterministic Transport MFEM-Miniapp*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](Ijqv0v3zSQU)
-
-Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.
-
----
-
-#### Aaron Fisher (LLNL)
-#### *Wrap-Up and Visualization Contest Winners*
-##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
-
-![YouTube](DfqH7n1Sekg)
-
-The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the [gallery](gallery.md).
-
-</div><div class="col-md-12"  markdown="1">
-
 ## FEM@LLNL Seminars
 
 ---
 
 </div><div class="col-md-6"  markdown="1">
+
+#### Brian Young
+#### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
+##### **January 9, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](uknQqYw-d0o)
+
+An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters. Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections. Matrix solutions are performed using complex computations. Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI. Implementation details are presented along with sample results and accuracy demonstrations.
+
+---
+
+#### Jesse Chan (Rice University)
+#### *High order positivity-preserving entropy stable discontinuous Galerkin discretizations*
+##### **December 5, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](x33D171lXjc)
+
+High order discontinuous Galerkin (DG) methods provide high order accuracy and geometric flexibility, but are known to be unstable when applied to nonlinear conservation laws whose solutions exhibit shocks and under-resolved solution features. Entropy stable schemes improve robustness by ensuring that physically relevant solutions satisfy a semi-discrete cell entropy inequality independently of numerical resolution and solution regularization while retaining formal high order accuracy. In this talk, we will review the construction of entropy stable high order discontinuous Galerkin methods and describe approaches for enforcing that solutions are "physically relevant" (i.e., the thermodynamic variables remain positive).
+
+---
 
 #### Youngsoo Choi (LLNL)
 #### *Physics-guided interpretable data-driven simulations*
@@ -348,7 +202,7 @@ To improve tsunami preparedness, early-alert systems and real-time monitoring ar
 
 The Diffusion equation with strong anisotropy has broad applications. In this project, we discuss numerical solution of diffusion equations with strong anisotropy on meshes not aligned with the anisotropic vector field, focusing on application to magnetic confinement fusion. In order to resolve the numerical pollution for simulations on a non-anisotropy-aligned mesh and reduce the associated high computational cost, we developed a high-order discontinuous Galerkin scheme with an efficient preconditioner. The auxiliary space preconditioning framework is designed by employing a continuous finite element space as the auxiliary space for the discontinuous finite element space. An effective line smoother that can mitigate the high-frequency error perpendicular to the magnetic field has been designed by a graph-based approach to pick the line smoother that is approximately perpendicular to the vector fields when the mesh does not align with anisotropy. Numerical experiments for several benchmark problems are presented to validate the effectiveness and robustness.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Garth Wells (University of Cambridge)
 #### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
@@ -458,7 +312,7 @@ An axisymmetric model leads, when suitable, to a substantial cut in the computat
 
 As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Guglielmo Scovazzi (Duke)
 #### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
@@ -467,6 +321,176 @@ As additively manufactured (AM) parts become increasingly more popular in indust
 ![YouTube](WJ5dAhOR6Gg)
 
 Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.
+
+</div><div class="col-md-12"  markdown="1">
+
+## MFEM Workshop 2023
+
+---
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Aaron Fisher (LLNL)
+#### *Welcome and Overview*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](wgx0e8mdKu8)
+
+Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.
+
+---
+
+#### Tzanio Kolev (LLNL)
+#### *The State of MFEM*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](95OJe5DjjkA)
+
+MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
+
+---
+
+#### Veselin Dobrev (LLNL)
+#### *Recent Developments*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](1FCP0T5oIeE)
+
+Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
+
+---
+
+#### Sebastian Grimberg (AWS)
+#### *Palace: PArallel LArge-scale Computational Electromagnetics*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](jSuFUdLc8i0)
+
+Palace is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. Grimberg provided an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.
+
+---
+
+#### Jacob Lotz (Delft University of Technology)
+#### *Computation and Reduced Order Modelling of Periodic Flows*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](lNIXeirM6Gg)
+
+Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. His work aims to reduce the cost of these computations. His team solves periodic flows in a space-time domain in which both ends in time are periodic such that they only have to model one period. MFEM is used to discretize the space-time domain and solve our discretized system of equations. Lotz applies a hyper-reduced Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation he showed (results of) their full order model and their advances in reduced order modelling.
+
+---
+
+#### Boyan Lazarov (LLNL)
+#### *Scalable Design and Optimization with MFEM*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](7W8OCl5MLfw)
+
+Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.
+
+---
+
+#### Student Lightning Talks
+#### *Part 1*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](c8WVPnTpvtI)
+
+The following four students presented in this video:
+
+- Shani Martinez Weissberg (Tel Aviv University): “µFEA of a Rabbit Femur”
+- Paul Moujaes (TU-Dortmund): “Dissipation-Based Entropy Stabilization for Slope-Limited Discontinuous Galerkin Approximations of Hyperbolic Problems”
+- Alejandro Muñoz (Universidad de Granada): “Discontinuous Galerkin in the Time Domain for Maxwell’s Equations”
+- Bill Ellis (UK Atomic Energy Authority): “Comparing Thermo-Mechanical Solves in MOOSE and MFEM”
+
+---
+
+#### Student Lightning Talks
+#### *Part 2*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Gp88u3Eql2Y)
+
+The following four students presented in this video:
+
+- Alexander Mote (Oregon State University): “A Neural Network Surrogate Model for Nonlocal Thermal Flux Calculations” (LLNL-PRES-854134)
+- Amit Rotem (Virginia Tech): “GPU Acceleration of IPDG in MFEM”
+- Josiah Brown (Relogic Research): “Project Minerva”
+- Mike Pozulp (UC Berkeley): “An Implicit Monte Carlo Acceleration Scheme”
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Syun'ichi Shiraiwa (PPPL)
+#### *Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](feUk70vXB7k)
+
+In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ < 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.
+
+---
+
+#### Tamas Horvath (Oakland University)
+#### *Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](cajYzhxBDkw)
+
+Horvath presented the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. He showcased these enhancements and provide insights into their versatile usage across different problems.
+
+---
+
+#### Yohann Dudouit (LLNL)
+#### *Empowering MFEM Using libCEED*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](32JWerSEQyA)
+
+Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.
+
+---
+
+#### Zhang Chunyu (Sun Yat-Sen University)
+#### *Homogenized Energy Theory for Solution of Elasticity Problems with Consideration of Higher-Order Microscopic Deformations*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Ic5bujKlHh4)
+
+The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.
+
+---
+
+#### Eric Chin (LLNL)
+#### *Contact Constraint Enforcement Using the Tribol Interface Physics Library*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](OCurPCdTcno)
+
+Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. [Tribol](https://github.com/LLNL/Tribol) is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with [Serac](https://github.com/LLNL/serac), an open-source implicit nonlinear thermal-structural simulation code.
+
+---
+
+#### Milan Holec (LLNL)
+#### *Deterministic Transport MFEM-Miniapp*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](Ijqv0v3zSQU)
+
+Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.
+
+---
+
+#### Aaron Fisher (LLNL)
+#### *Wrap-Up and Visualization Contest Winners*
+##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
+
+![YouTube](DfqH7n1Sekg)
+
+The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the [gallery](gallery.md).
+
+</div><div class="col-md-12"  markdown="1">
+
+
 
 </div><div class="col-md-12"  markdown="1">
 
