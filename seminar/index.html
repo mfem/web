@@ -351,18 +351,34 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/lee.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="sungho-lee-university-of-memphis">Sungho Lee (University of Memphis)</h4>
+<h5 id="laghost-development-of-lagrangian-high-order-solver-for-tectonics"><em>LAGHOST: Development of Lagrangian High-Order Solver for Tectonics</em></h5>
+<h5 id="9am-pdt-mar-5th-2024"><a href="https://everytimezone.com/s/cdf37c0d"><strong>9am PDT, Mar 5th, 2024</strong></a></h5>
+<p><a href="https://llnlfed.webex.com/meet/fisher47"><button type="button" class="btn btn-success">
+<strong>Webex</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building,  mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory. </p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/chung.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="kevin-chung-llnl">Kevin Chung (LLNL)</h4>
 <h5 id="scalable-robust-physics-simulator-via-reduced-order-modeling-and-domain-decomposition"><em>Scalable robust physics simulator via reduced order modeling and domain decomposition</em></h5>
-<h5 id="9am-pdt-feb-6th-2024"><a href="https://everytimezone.com/s/8bf3f373"><strong>9am PDT, Feb 6th, 2024</strong></a></h5>
-<p><a href="https://llnlfed.webex.com/meet/fisher47"><button type="button" class="btn btn-success">
-<strong>Webex</strong>
+<h5 id="february-6th-2024">February 6th, 2024</h5>
+<p><a href="../pdf/seminar/chung.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href=""><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.</p>
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/young.jpg" /></p>
@@ -855,7 +871,7 @@ The work presented here has been facilitated by funding through DOE's National V
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
 <p>&nbsp;</p>
-<h4 id="sungho-lee-university-of-memphis">Sungho Lee (University of Memphis)</h4>
+<h4 id="sungho-lee-university-of-memphis_1">Sungho Lee (University of Memphis)</h4>
 <h5 id="march-5-2024"><strong>March 5, 2024</strong></h5>
 <p>&nbsp;</p>
 <h4 id="nat-trask-university-of-pennsylvania">Nat Trask (University of Pennsylvania)</h4>
