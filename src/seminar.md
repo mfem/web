@@ -20,7 +20,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### William Moses (University of Illinois Urbana-Champaign)
 ##### *TBD*
-##### [**11am PDT, Mar 5th, 2024**](https://everytimezone.com/s/879b65e2)
+##### [**11am PDT, Mar 14, 2024**](https://everytimezone.com/s/879b65e2)
 
 [<button type="button" class="btn btn-success">
 **Webex**
@@ -40,7 +40,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Sungho Lee (University of Memphis)
 ##### *LAGHOST: Development of Lagrangian High-Order Solver for Tectonics*
-##### March 5th, 2024
+##### March 5, 2024
 
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -60,7 +60,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Kevin Chung (LLNL)
 ##### *Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition*
-##### February 6th, 2024
+##### February 6, 2024
 
 [<button type="button" class="btn btn-primary">
 **Slides**
