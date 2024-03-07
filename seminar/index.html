@@ -351,18 +351,34 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/moses.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="william-moses-university-of-illinois-urbana-champaign">William Moses (University of Illinois Urbana-Champaign)</h4>
+<h5 id="tbd"><em>TBD</em></h5>
+<h5 id="11am-pdt-mar-5th-2024"><a href="https://everytimezone.com/s/879b65e2"><strong>11am PDT, Mar 5th, 2024</strong></a></h5>
+<p><a href="TBD"><button type="button" class="btn btn-success">
+<strong>Webex</strong>
+</button></a></p>
+<p><strong>Abstract:</strong></p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/lee.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="sungho-lee-university-of-memphis">Sungho Lee (University of Memphis)</h4>
 <h5 id="laghost-development-of-lagrangian-high-order-solver-for-tectonics"><em>LAGHOST: Development of Lagrangian High-Order Solver for Tectonics</em></h5>
-<h5 id="9am-pdt-mar-5th-2024"><a href="https://everytimezone.com/s/cdf37c0d"><strong>9am PDT, Mar 5th, 2024</strong></a></h5>
-<p><a href="https://llnlfed.webex.com/meet/fisher47"><button type="button" class="btn btn-success">
-<strong>Webex</strong>
+<h5 id="march-5th-2024">March 5th, 2024</h5>
+<p><a href="pdf/seminar/lee.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href="TBD"><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building,  mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory.</p>
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/chung.jpg" /></p>
@@ -870,9 +886,6 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><strong>Abstract:</strong> Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named "shifted boundary method" (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
-<p>&nbsp;</p>
-<h4 id="sungho-lee-university-of-memphis_1">Sungho Lee (University of Memphis)</h4>
-<h5 id="march-5-2024"><strong>March 5, 2024</strong></h5>
 <p>&nbsp;</p>
 <h4 id="nat-trask-university-of-pennsylvania">Nat Trask (University of Pennsylvania)</h4>
 <h5 id="april-2-2024"><strong>April 2, 2024</strong></h5>
