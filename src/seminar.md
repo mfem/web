@@ -19,14 +19,16 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### William Moses (University of Illinois Urbana-Champaign)
-##### *TBD*
+##### *Supercharging Programming Through Compiler Technology*
 ##### [**11am PDT, Mar 14, 2024**](https://everytimezone.com/s/879b65e2)
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>](TBD)
+</button>](https://llnlfed.webex.com/meet/kolev1)
 
-**Abstract:**
+**Abstract:** The decline of Moore's law and an increasing reliance on computation has led to an explosion of specialized software packages and hardware architectures. While this diversity enables unprecedented flexibility, it also requires domain-experts to learn how to customize programs to efficiently leverage the latest platform-specific API's and data structures, instead of working on their intended problem. Rather than forcing each user to bear this burden, I propose building high-level abstractions within general-purpose compilers that enable fast, portable, and composable programs to be automatically generated.
+
+This talk will demonstrate this approach through compilers that I built for two domains: automatic differentiation and parallelism. These domains are critical to both scientific computing and machine learning, forming the basis of neural network training, uncertainty quantification, and high-performance computing. For example, a researcher hoping to incorporate their climate simulation into a machine learning model must also provide a corresponding derivative simulation. My compiler, Enzyme, automatically generates these derivatives from existing computer programs, without modifying the original application. Moreover, operating within the compiler enables Enzyme to combine differentiation with program optimization, resulting in asymptotically and empirically faster code. Looking forward, this talk will also touch on how this domain-agnostic compiler approach can be applied to new directions, including probabilistic programming.
 
 ---
 
