@@ -354,7 +354,7 @@ for (int it = 0; it &lt; fespace-&gt;GetNBE(); it++)
   Vector normal(dim);
   ElementTransformation *Trans = fespace-&gt;GetBdrElementTransformation(it);
   Trans-&gt;SetIntPoint(&amp;Geometries.GetCenter(Trans-&gt;GetGeometryType()));
-  CalcOrtho(Trans-&gt;Jacobian(), n);
+  CalcOrtho(Trans-&gt;Jacobian(), normal);
   ... Do something of interest with the normals
 }
 </code></pre>
