@@ -15,7 +15,7 @@ for (int it = 0; it < fespace->GetNBE(); it++)
   Vector normal(dim);
   ElementTransformation *Trans = fespace->GetBdrElementTransformation(it);
   Trans->SetIntPoint(&Geometries.GetCenter(Trans->GetGeometryType()));
-  CalcOrtho(Trans->Jacobian(), n);
+  CalcOrtho(Trans->Jacobian(), normal);
   ... Do something of interest with the normals
 }
 ```
