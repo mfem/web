@@ -18,6 +18,7 @@ nav:
 - Features: features.md
 - Examples:
   - 'Example Codes': examples.md
+  - 'NURBS Discretization': nurbs.md
   - 'Electromagnetics': electromagnetics.md
   - 'Fluid Dynamics': fluids.md
   - 'Meshing': meshing-miniapps.md
