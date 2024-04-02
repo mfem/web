@@ -14,23 +14,44 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/dediego.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Gonzalez de Diego (Courant Institute)
+##### *Numerical Solvers for Viscous Contact Problems in Glaciology*
+##### [**11am PDT, May 6, 2024**](https://everytimezone.com/s/2a0f9bb5)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Viscous contact problems are time-dependent viscous flow problems where the fluid is in contact with a solid surface from which it can detach and reattach. Over sufficiently long timescales, ice is assumed to flow like a viscous fluid with a nonlinear rheology. Therefore, certain phenomena in glaciology, like the formation of subglacial cavities in the base of an ice sheet or the dynamics of marine ice sheets (continental ice sheets that slide into the ocean and go afloat at a grounding line, detaching from the bedrock), can be modelled as viscous contact problems. In particular, these problems can be described by coupling the Stokes equations with contact boundary conditions to free boundary equations that evolve the ice domain in time. In this talk, I will describe the difficulties that arise when attempting to solve this system numerically and I will introduce a method that is capable of overcoming them.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/trask.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Nat Trask (University of Pennsylvania)
 ##### *A Data Driven Finite Element Exterior Calculus*
-##### [**9am PDT, Apr 2, 2024**](https://everytimezone.com/s/d77141cc)
+##### Apr 2, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/trask.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>](TBD)
 
 **Abstract:** Despite the recent flurry of work employing machine learning to develop surrogate models to accelerate scientific computation, the "black-box" underpinnings of current techniques fail to provide the verification and validation guarantees provided by modern finite element methods. In this talk we present a data-driven finite element exterior calculus for developing reduced-order models of multiphysics systems when the governing equations are either unknown or require closure. The framework employs deep learning architectures typically used for logistic classification to construct a trainable partition of unity which provides notions of control volumes with associated boundary operators. This alternative to a traditional finite element mesh is fully differentiable and allows construction of a discrete de Rham complex with a corresponding Hodge theory. We demonstrate how models may be obtained with the same robustness guarantees as traditional mixed finite element discretization, with deep connections to contemporary techniques in graph neural networks. For applications developing digital twins where surrogates are intended to support real time data assimilation and optimal control, we further develop the framework to support Bayesian optimization of unknown physics on the underlying adjacency matrices of the chain complex. By framing the learning of fluxes via an optimal recovery problem with a computationally tractable posterior distribution, we are able to develop models with intrinsic representations of epistemic uncertainty.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -672,21 +693,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Gonzalez de Diego (Courant Institute)
-##### **May 6, 2024**
-
-<!--
-
-![](img/seminar/dediego.jpg)
-
-Numerical Solvers for Viscous Contact Problems in Glaciology
-
-Viscous contact problems are time-dependent viscous flow problems where the fluid is in contact with a solid surface from which it can detach and reattach. Over sufficiently long timescales, ice is assumed to flow like a viscous fluid with a nonlinear rheology. Therefore, certain phenomena in glaciology, like the formation of subglacial cavities in the base of an ice sheet or the dynamics of marine ice sheets (continental ice sheets that slide into the ocean and go afloat at a grounding line, detaching from the bedrock), can be modelled as viscous contact problems. In particular, these problems can be described by coupling the Stokes equations with contact boundary conditions to free boundary equations that evolve the ice domain in time. In this talk, I will describe the difficulties that arise when attempting to solve this system numerically and I will introduce a method that is capable of overcoming them.
-
--->
 
 &nbsp;
 
