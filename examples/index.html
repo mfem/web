@@ -867,12 +867,12 @@ must become smaller. This example currently uses a simple estimate derived by
 <a href="https://link.springer.com/article/10.1023/A:1012873910884">Cockburn and Shu</a>
 for the 1D RKDG method. An additional factor can be tuned by passing the <code>--cfl</code>
 (or <code>-c</code> shorter) flag.</p>
-<p>The example demonstrates user-defined bilinear and nonlinear form integrators
-for systems of equations that are defined with block vectors, and how these are
-used with an operator for explicit time integrators. In this case the system
-also involves an external approximate Riemann solver for the DG interface flux.
-It also demonstrates how to use GLVis for in-situ visualization of vector grid
-functions.</p>
+<p>The example demonstrates user-defined nonlinear form with hyperbolic form
+integrator for systems of equations that are defined with block vectors,
+and how these are used with an operator for explicit time integrators.
+In this case the system also involves an external approximate Riemann
+solver for the DG interface flux. It also demonstrates how to use GLVis
+for in-situ visualization of vector grid functions.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18.cpp">ex18.cpp</a>)
 and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp">ex18p.cpp</a>) version.
 We recommend viewing examples 9, 14 and 17 before viewing this example.</em>
