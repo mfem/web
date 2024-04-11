@@ -47,6 +47,11 @@ Specifically, MFEM supports:
 - Mixed meshes with all element types.
 - `XML` format with inline or appended binary data, including `zlib` compression.
 
+<i class="fa fa-info-circle" style="color:green"></i>&nbsp;
+If the VTK or VTU file has a cell data array named "material" or "attribute",
+this cell data will be used for MFEM's element attribute numbers. If both data
+arrays are present, the one named "material" will take precedence.
+
 ### Gmsh Mesh Formats
 
 MFEM supports reading version 2.2 of the [Gmsh](https://gmsh.info/) ASCII and
