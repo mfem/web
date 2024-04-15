@@ -2,8 +2,8 @@ tag-gettingstarted:
 
 # Building MFEM
 
-A simple tutorial how to build and run the serial and parallel version of MFEM
-together with GLVis. For more details, see the
+A simple tutorial on how to build and run the serial and parallel versions of
+MFEM together with GLVis. For more details, see the
 [INSTALL](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL) file and
 `make help`.
 
@@ -71,13 +71,13 @@ To start a GLVis server, open a **new terminal** and type
 ~/glvis-4.2> ./glvis
 ```
 
-The serial examples can be build with:
+The serial examples can be built with:
 ```sh
 ~> cd mfem-4.5/examples
 ~/mfem-4.5/examples> make -j
 ```
 
-All serial examples and miniapps can be build with:
+All serial examples and miniapps can be built with:
 ```sh
 ~> cd mfem-4.5
 ~/mfem-4.5> make all -j
@@ -141,19 +141,19 @@ the
 file, or create you own `config/user.mk`, as described in the
 [`INSTALL`](https://raw.githubusercontent.com/mfem/mfem/master/INSTALL) file.
 
-The parallel examples can be build with:
+The parallel examples can be built with:
 ```sh
 ~> cd mfem-4.5/examples
 ~/mfem-4.5/examples> make -j
 ```
 
-The serial examples can also be build with the parallel version of the library,
+The serial examples can also be built with the parallel version of the library,
 e.g.
 ```sh
 ~/mfem-4.5/examples> make ex1 ex2
 ```
 
-All parallel examples and miniapps can be build with:
+All parallel examples and miniapps can be built with:
 ```sh
 ~> cd mfem-4.5
 ~/mfem-4.5> make all -j
@@ -187,7 +187,7 @@ Build the parallel version of MFEM, setting the options `MFEM_USE_METIS_5` and
 ```
 
 ## CUDA version of MFEM
-To build the CUDA version of MFEM, one needs to specify the [CUDA compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag. In the examples below we use `CUDA_ARCH=sm_70` to build the MFEM serial and parallel versions for compute cability 7.0 (V100).
+To build the CUDA version of MFEM, one needs to specify the [CUDA compute capability](https://developer.nvidia.com/cuda-gpus#compute), with the `CUDA_ARCH` flag. In the examples below we use `CUDA_ARCH=sm_70` to build the MFEM serial and parallel versions for compute capability 7.0 (V100).
 
 Build the serial CUDA version of MFEM:
 ```sh
