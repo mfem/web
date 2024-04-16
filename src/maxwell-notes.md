@@ -11,7 +11,7 @@ With electric current density, ${\bf J}$, magnetic current density,
 ${\bf M}$, electric conductivity, $\overline{\sigma}$, magnetic
 conductivity, $\overline{\sigma}_M$, and electric charge density,
 $\rho$. We will sometimes refer to these equations by the names Ampère's
-Law, Faraday's Law, Guass' Law, and the Transversality Condition
+Law, Faraday's Law, Gauss's Law, and the Transversality Condition
 respectively. It is also necessary to define the constitutive relations
 ${\bf D}\equiv\epsilon{\bf E}$ and
 ${\bf B}\equiv\mu{\bf H}$.
