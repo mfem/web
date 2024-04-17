@@ -355,8 +355,8 @@
             <div class="col-md-9" role="main">
 
 <h1 id="building-mfem">Building MFEM</h1>
-<p>A simple tutorial how to build and run the serial and parallel version of MFEM
-together with GLVis. For more details, see the
+<p>A simple tutorial on how to build and run the serial and parallel versions of
+MFEM together with GLVis. For more details, see the
 <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL">INSTALL</a> file and
 <code>make help</code>.</p>
 <p>In addition to the native build system described below, MFEM packages are
@@ -413,12 +413,12 @@ first, see its building <a href="https://glvis.org/building/">documentation</a>.
 ~/glvis-4.2&gt; ./glvis
 </code></pre>
 
-<p>The serial examples can be build with:</p>
+<p>The serial examples can be built with:</p>
 <pre><code class="sh">~&gt; cd mfem-4.5/examples
 ~/mfem-4.5/examples&gt; make -j
 </code></pre>
 
-<p>All serial examples and miniapps can be build with:</p>
+<p>All serial examples and miniapps can be built with:</p>
 <pre><code class="sh">~&gt; cd mfem-4.5
 ~/mfem-4.5&gt; make all -j
 </code></pre>
@@ -472,17 +472,17 @@ the
 <a href="https://raw.githubusercontent.com/mfem/mfem/master/config/defaults.mk"><code>config/defaults.mk</code></a>
 file, or create you own <code>config/user.mk</code>, as described in the
 <a href="https://raw.githubusercontent.com/mfem/mfem/master/INSTALL"><code>INSTALL</code></a> file.</p>
-<p>The parallel examples can be build with:</p>
+<p>The parallel examples can be built with:</p>
 <pre><code class="sh">~&gt; cd mfem-4.5/examples
 ~/mfem-4.5/examples&gt; make -j
 </code></pre>
 
-<p>The serial examples can also be build with the parallel version of the library,
+<p>The serial examples can also be built with the parallel version of the library,
 e.g.</p>
 <pre><code class="sh">~/mfem-4.5/examples&gt; make ex1 ex2
 </code></pre>
 
-<p>All parallel examples and miniapps can be build with:</p>
+<p>All parallel examples and miniapps can be built with:</p>
 <pre><code class="sh">~&gt; cd mfem-4.5
 ~/mfem-4.5&gt; make all -j
 </code></pre>
@@ -511,7 +511,7 @@ can interfere with the other GLVis threads.</p>
 </code></pre>
 
 <h2 id="cuda-version-of-mfem">CUDA version of MFEM</h2>
-<p>To build the CUDA version of MFEM, one needs to specify the <a href="https://developer.nvidia.com/cuda-gpus#compute">CUDA compute capability</a>, with the <code>CUDA_ARCH</code> flag. In the examples below we use <code>CUDA_ARCH=sm_70</code> to build the MFEM serial and parallel versions for compute cability 7.0 (V100).</p>
+<p>To build the CUDA version of MFEM, one needs to specify the <a href="https://developer.nvidia.com/cuda-gpus#compute">CUDA compute capability</a>, with the <code>CUDA_ARCH</code> flag. In the examples below we use <code>CUDA_ARCH=sm_70</code> to build the MFEM serial and parallel versions for compute capability 7.0 (V100).</p>
 <p>Build the serial CUDA version of MFEM:</p>
 <pre><code class="sh">~/mfem&gt; make cuda CUDA_ARCH=sm_70 -j
 </code></pre>
