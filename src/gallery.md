@@ -319,7 +319,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [![](img/gallery/workshop21/arteryStreamlinesQ01_small.png)](img/gallery/workshop21/arteryStreamlinesQ01.png)
 
-*Viscoealstic flow of blood through an artery with aneurysm modeled by the Hookean dumbbell model discretized with BCF-method (Navier-Stokes+SUPG). Image courtesy of Andreas Meier, as part of the 2021 MFEM Workshop Visualization Contest.*
+*Viscoelastic flow of blood through an artery with aneurysm modeled by the Hookean dumbbell model discretized with BCF-method (Navier-Stokes+SUPG). Image courtesy of Andreas Meier, as part of the 2021 MFEM Workshop Visualization Contest.*
 
 ----
 
