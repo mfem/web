@@ -635,12 +635,12 @@ must become smaller. This example currently uses a simple estimate derived by
 for the 1D RKDG method. An additional factor can be tuned by passing the `--cfl`
 (or `-c` shorter) flag.
 
-The example demonstrates user-defined bilinear and nonlinear form integrators
-for systems of equations that are defined with block vectors, and how these are
-used with an operator for explicit time integrators. In this case the system
-also involves an external approximate Riemann solver for the DG interface flux.
-It also demonstrates how to use GLVis for in-situ visualization of vector grid
-functions.
+The example demonstrates user-defined nonlinear form with hyperbolic form
+integrator for systems of equations that are defined with block vectors,
+and how these are used with an operator for explicit time integrators.
+In this case the system also involves an external approximate Riemann
+solver for the DG interface flux. It also demonstrates how to use GLVis
+for in-situ visualization of vector grid functions.
 
 _The example has a serial ([ex18.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18.cpp))
 and a parallel ([ex18p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex18p.cpp)) version.
@@ -1148,7 +1148,7 @@ imposed at the boundary or a portion of the boundary.
 <img class="floatright" width="500pt" src="../img/examples/ex35p2.gif">
 In Example 22 this boundary condition was simply a constant in space. In this
 example the boundary condition is an eigenmode of a lower dimensional
-eignevalue problem defined on a portion of the boundary as follows:
+eigenvalue problem defined on a portion of the boundary as follows:
 
 - For the scalar $H^1$ field:
   $$-\nabla\cdot\left(\nabla v\right) = \lambda\,v\mbox{ with }v|_{\partial\Gamma}=0$$
@@ -1204,7 +1204,7 @@ We recommend viewing Example 1 before viewing this example._
   <img class="img" width="300pt" src="../img/examples/ex37b.png">
 </div>
 
-This example code solves a classical cantilevel beam topology optimization problem.
+This example code solves a classical cantilever beam topology optimization problem.
 The aim is to find an optimal material density field $\rho$ in $L^1(\Omega)$ to minimize the elastic compliance; i.e.,
 $$\begin{align}
   &\text{minimize} \int_\Omega \mathbf{f} \cdot \mathbf{u}(\rho)\, \mathrm{d}x\,
@@ -1643,7 +1643,7 @@ This miniapp solves Plateau's problem: the Dirichlet problem for the minimal sur
 
 Options to solve the minimal surface equations of both parametric surfaces as well as
 surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
-number of examples such as the Catenoid, Helicoid, Costa and Schrek surfaces.
+number of examples such as the Catenoid, Helicoid, Costa and Scherk surfaces.
 
 For more details, please see the [documentation](meshing-miniapps.md) in the `miniapps/meshing` directory.
 

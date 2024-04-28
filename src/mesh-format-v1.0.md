@@ -173,7 +173,7 @@ Topologically periodic meshes can also be described in this format, see for exam
 
 ## MFEM NC mesh v1.0
 
-The `MFEM NC mesh v1.0` is a format for nonconfoming meshes in MFEM. It is
+The `MFEM NC mesh v1.0` is a format for nonconforming meshes in MFEM. It is
 similar in style to the default (conforming) `MFEM mesh v1.0` format, but is
 in fact independent and supports advanced AMR features such as
 
