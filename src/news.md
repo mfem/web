@@ -2,7 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
-**Nov 13, 2022** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2023) of the [2023 Workshop](workshop.md), held on October 26.*
+**Nov 13, 2023** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2023) of the [2023 Workshop](workshop.md), held on October 26.*
 **Oct 26, 2023** | *2023 [MFEM community workshop](workshop.md).*
 **Sep 27, 2023** | *Version 4.6 [released](https://github.com/mfem/mfem/blob/v4.6/CHANGELOG).*
 **Sep 11, 2023** | *MFEM now available in [Homebrew](https://formulae.brew.sh/formula/mfem).*
