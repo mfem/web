@@ -10,6 +10,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Nat Trask (University of Pennsylvania)
+#### *A Data Driven Finite Element Exterior Calculus*
+##### **April 2, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+![YouTube](7B8GotJP_Y0)
+
+Despite the recent flurry of work employing machine learning to develop surrogate models to accelerate scientific computation, the "black-box" underpinnings of current techniques fail to provide the verification and validation guarantees provided by modern finite element methods. In this talk we present a data-driven finite element exterior calculus for developing reduced-order models of multiphysics systems when the governing equations are either unknown or require closure. The framework employs deep learning architectures typically used for logistic classification to construct a trainable partition of unity which provides notions of control volumes with associated boundary operators. This alternative to a traditional finite element mesh is fully differentiable and allows construction of a discrete de Rham complex with a corresponding Hodge theory. We demonstrate how models may be obtained with the same robustness guarantees as traditional mixed finite element discretization, with deep connections to contemporary techniques in graph neural networks. For applications developing digital twins where surrogates are intended to support real time data assimilation and optimal control, we further develop the framework to support Bayesian optimization of unknown physics on the underlying adjacency matrices of the chain complex. By framing the learning of fluxes via an optimal recovery problem with a computationally tractable posterior distribution, we are able to develop models with intrinsic representations of epistemic uncertainty.
+
+---
+
 #### William Moses (University of Illinois Urbana-Champaign)
 #### *Supercharging Programming Through Compiler Technology*
 ##### **March 14, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -201,7 +211,7 @@ highlights are matrix-valued finite elements with applications in elasticity, fl
 relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
 for linear solvers, as well as time-dependent problems.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Vikram Gavini (University of Michigan)
 #### *Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling*
@@ -212,7 +222,7 @@ for linear solvers, as well as time-dependent problems.
 Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world's largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
 This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released [DFT-FE open-source code](https://github.com/dftfeDevelopers/dftfe). Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Stefan Henneking (University of Texas at Austin)
 #### *Bayesian Inversion of an Acoustic-Gravity Model for Predictive Tsunami Simulation*
