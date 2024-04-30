@@ -18,13 +18,13 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-12" markdown="1">
 
-#### Gonzalez de Diego (Courant Institute)
+#### Gonzalo de Diego (Courant Institute)
 ##### *Numerical Solvers for Viscous Contact Problems in Glaciology*
 ##### [**11am PDT, May 6, 2024**](https://everytimezone.com/s/2a0f9bb5)
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>]()
+</button>](https://llnlfed.webex.com/meet/kolev1)
 
 **Abstract:** Viscous contact problems are time-dependent viscous flow problems where the fluid is in contact with a solid surface from which it can detach and reattach. Over sufficiently long timescales, ice is assumed to flow like a viscous fluid with a nonlinear rheology. Therefore, certain phenomena in glaciology, like the formation of subglacial cavities in the base of an ice sheet or the dynamics of marine ice sheets (continental ice sheets that slide into the ocean and go afloat at a grounding line, detaching from the bedrock), can be modelled as viscous contact problems. In particular, these problems can be described by coupling the Stokes equations with contact boundary conditions to free boundary equations that evolve the ice domain in time. In this talk, I will describe the difficulties that arise when attempting to solve this system numerically and I will introduce a method that is capable of overcoming them.
 
