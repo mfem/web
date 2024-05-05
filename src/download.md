@@ -7,7 +7,7 @@
 
 [<button type="button" class="btn btn-success">
 **Download mfem-4.7.tgz**
-</button>](https://bit.ly/mfem-4-6)
+</button>](https://bit.ly/mfem-4-7)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
