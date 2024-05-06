@@ -149,6 +149,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library,
  - [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
  - [Contact](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library.
+ - [DPG](https://github.com/mfem/mfem/blob/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 

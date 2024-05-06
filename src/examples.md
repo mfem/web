@@ -37,8 +37,10 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
+      <option id="convection-diffusion">Convection-diffusion</option>
       <option id="elasticity">Elasticity</option>
       <option id="maxwell">Electromagnetics</option>
+      <option id="acoustics">Acoustics</option>
       <option id="graddiv">grad-div</option>
       <option id="darcy">Darcy</option>
       <option id="advection">Advection</option>
@@ -60,7 +62,8 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="l2">L2 discontinuous elements</option>
       <option id="hcurl">H(curl) Nedelec elements</option>
       <option id="hdiv">H(div) Raviart-Thomas elements</option>
-      <option id="h12">H^{-1/2} interfacial elements</option>
+      <option id="h12">H^{1/2} interfacial elements</option>
+      <option id="hminus12">H^{-1/2} interfacial elements</option>
    </select>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
@@ -2128,6 +2131,54 @@ _This miniapp has only a parallel ([multidomain.cpp](https://github.com/mfem/mfe
 <div style="clear:both;"/></div>
 <br></div>
 
+
+
+<div id="dpg-miniapp" markdown="1">
+##DPG miniapp
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/dpg) demonstrates how to discretize and solve various PDEs using the Discontinuous Petov-Galerkin (DPG) method. 
+It utilizes a new user-friendly interface to assemble the block DPG systems arizing from the discretization of any DPG formulation (such as Ultraweak or Primal). In addition, the miniapp supports complex-valued systems, static condensensation for block systems, and AMR using the built-in DPG residual-based error indicator. This cabability is showcased in the following DPG examples in [miniapps/dpg](https://github.com/mfem/mfem/blob/master/miniapps/dpg).
+
+- **Ultraweak DPG formulation for diffusion**. 
+<img class="floatright"  width="122" src="../img/examples/dpg-diffusion.png">
+<!--  -->
+This example solves the simple Poisson equation $$-Δ u = f$$ and computes rates of convergence under successive uniform h-refinements for a smooth manufactured solution. The parallel version  also includes an AMR implementation for the L-shape benchmark problem. This example has a serial ([diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/diffusion.cpp)) and a parallel
+([pdiffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pdiffusion.cpp)) version.
+
+- **Ultraweak DPG formulation for convection-diffusion**. 
+<img class="floatright"  width="122" src="../img/examples/dpg-convection-diffusion.png">
+This example solves the 
+ convection-diffusion problem: 
+\begin{align}
+   -\epsilon \Delta u + \nabla \cdot (\beta u) &= f\\\\
+\end{align} 
+using AMR. The example demonstrates the use of _mesh-dependent test norms_ which are suitable for problems with solutions that exhibit large gradients present in _internal_ or _boundary layers_. The example has a serial ([convection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/convection-diffusion.cpp)) and a parallel ([pconvection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pconvection-diffusion.cpp)) version.
+
+
+- **Ultraweak DPG formulation for time-harmonic linear acoustics**. 
+<img class="floatright"  width="122" src="../img/examples/dpg-acoustics.gif">
+This example solves the indefinite Helmholtz equation 
+\begin{align}
+   -\Delta u - \omega^2 u &= f\\\\
+\end{align}
+The example includes formulations with manufactured plane-wave solutions as well as high-frequency scattering problems and the use of Perfectly Match Layers (PML). It also demononstrates how to set up complex-valued systems and preconditioners for their solutions.
+The example has a serial 
+([acoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/acoustics.cpp)) and parallel
+([pacoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pacoustics.cpp)) version.
+
+- **Ultraweak DPG formulation for time-harmonic Maxwell**. 
+<img class="floatright"  width="122" src="../img/examples/dpg-maxwell.png">
+  This example solves 
+the indefinite Maxwell problem 
+\begin{align}
+   \nabla × (\mu^{-1} \nabla \times E) - \omega^2 \epsilon E&= J\\\\
+\end{align}
+The example includes formulations with smooth manufactured solutions, AMR formulations for high-frequency scattering problems as well as a problem with a singular solution. The example has a serial
+([maxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/maxwell.cpp)) and a parallel
+([pmaxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pmaxwell.cpp)) version.
+
+<div style="clear:both;"/></div>
+<br></div>
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2187,11 +2238,11 @@ function update()
    + showElement("ex1",  (diffusion) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
-   + showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
+   + showElement("ex4",  graddiv && (hdiv || hminus12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
    + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
    + showElement("ex6",  (diffusion) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex7",  (diffusion || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
-   + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
+   + showElement("ex8",  diffusion && (l2 || h1 || hminus12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
    + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
@@ -2240,6 +2291,7 @@ function update()
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
    + showElement("mesh-optimizer", meshing && all2 && all3 && all4)
+   + showElement("mesh-fitting", meshing && all2 && all3 && all4)
    + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
    + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
@@ -2260,6 +2312,7 @@ function update()
 
    // Misc miniapps
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
+   + showElement("dpg-miniapp", (diffusion || convection-diffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
 
    ; // ...end of expression
 
