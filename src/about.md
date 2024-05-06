@@ -113,7 +113,7 @@ Please cite with:
 - [Arturo Vargas](https://artv3.github.io)
 - [Umberto Villa](https://engineering.wustl.edu/faculty/Umberto-Villa.html)
 - [Chris Vogl](https://people.llnl.gov/vogl2)
-- [Seth Watts](https://github.com/sethwatts)
+- [Seth Watts](https://people.llnl.gov/watts24)
 - [Kenneth Weiss](https://people.llnl.gov/weiss27)
 - [Daniel White](https://people.llnl.gov/white37)
 - [Brad Whitlock](https://github.com/BradWhitlock)
