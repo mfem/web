@@ -7,6 +7,11 @@
 
 ## Selected Publications
 
+#### 2024
+  1. T. Dzanic, K. Mittal, D. Kim, J. Yang, S. Petrides, B. Keith, R. Anderson, [DynAMO: Multi-agent reinforcement learning for dynamic anticipatory mesh optimization with applications to hyperbolic conservation laws](https://doi.org/10.1016/j.jcp.2024.112924), *Journal of Computational Physics*, 506, 112924, **2024**
+
+---
+
 #### 2023
   1. J. Vedral, [Dissipative WENO stabilization of high-order discontinuous Galerkin methods for hyperbolic problems](https://arxiv.org/abs/2309.12019), *in review*.
   1. D. Kuzmin, H. Hajduk, [Property-Preserving Numerical Schemes for Conservation Laws](https://doi.org/10.1142/13466), *World Scientific*, **2023**
