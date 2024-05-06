@@ -1601,9 +1601,11 @@ _The miniapp has only a serial
 <img class="floatright" src="../img/examples/mesh-optimizer.png">
 
 This miniapp performs mesh optimization using the Target-Matrix Optimization
-Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
-approach. It minimizes the quantity
-
+Paradigm (TMOP) by  [P. Knupp](https://link.springer.com/article/10.1007/s00366-011-0230-1), 
+and a global variational minimization approach
+([Dobrev et al.](https://epubs.siam.org/doi/abs/10.1137/18M1167206)).
+It minimizes the quantity
+ 
 $$\sum_T \int_T \mu(J(x)),$$
 
 where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
@@ -1621,12 +1623,37 @@ the utilized Newton methods are oriented towards avoiding invalid meshes with
 negative Jacobian determinants. Each Newton step requires the inversion of a
 Jacobian matrix, which is done through an inner linear solver.
 
-For more details, please see the [documentation](meshing-miniapps.md) in the
-`miniapps/meshing` directory.
-
 _The miniapp has a serial
 ([mesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)) and a
 parallel ([pmesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="mesh-fitting" markdown="1">
+##Mesh Fitting Miniapp
+<a href="http://127.0.0.1:8000/img/gallery/workshop23/MBBBeam2D.mp4" target="_blank">
+<img class="floatright" width="350" src="../img/gallery/workshop23/MBBBeam2D.png">
+</a>
+
+This miniapp builds upon the mesh optmizer miniapp to enable mesh 
+alignment with the zero isosurface of a discrete level-set. The approach 
+is based on [Dobrev et al.](https://www.internationalmeshingroundtable.com/assets/papers/2021/11-Knupp.pdf) 
+and [Mittal et al.](https://www.sciencedirect.com/science/article/abs/pii/S0010448523000313),
+where we minimize the quantity
+
+$$\sum_T \int_T \mu(J(x)) + \sum_{s \in S} w \,\, \sigma^2(x_s).$$
+
+Here, the first term controls mesh quality and the second term enforces
+weak alignment of a selected subset of mesh-nodes ($s \in S$) with the zero
+isosurface of the discrete level-set function ($\sigma$).
+
+Click on the image on the right to see a demonstration of this method for 
+generating body-fitted meshes for topology optimization in LiDO to maximize beam
+stiffness under a downward force on the right wall.
+
+_The miniapp has a parallel ([pmesh-fitting.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-fitting.cpp))
 version.
 **We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
