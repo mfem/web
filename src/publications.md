@@ -7,6 +7,12 @@
 
 ## Selected Publications
 
+#### 2024
+  1. K. Mittal, V. Dobrev, P. Knupp, T. Kolev, F. Ledoux, C. Roche, V. Tomov, [Mixed-Order Meshes through rp-adaptivity for Surface Fitting to Implicit Geometries](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.10), *Proceedings of the 2024 International Meshing Roundtable (IMR)*. **2024**.
+  1. V. Dobrev, P. Knupp, T. Kolev, K. Mittal, R. Rieben, M. Stees, V. Tomov, [Asymptotic Analysis of Compound Volume+ Shape Metrics for Mesh Optimization](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.9), *Proceedings of the 2024 International Meshing Roundtable (IMR)*. **2024**.
+  
+---
+
 #### 2023
   1. J. Vedral, [Dissipative WENO stabilization of high-order discontinuous Galerkin methods for hyperbolic problems](https://arxiv.org/abs/2309.12019), *in review*.
   1. D. Kuzmin, H. Hajduk, [Property-Preserving Numerical Schemes for Conservation Laws](https://doi.org/10.1142/13466), *World Scientific*, **2023**
