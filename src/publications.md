@@ -8,9 +8,10 @@
 ## Selected Publications
 
 #### 2024
-  1. K. Mittal, V. Dobrev, P. Knupp, T. Kolev, F. Ledoux, C. Roche, V. Tomov, [Mixed-Order Meshes through rp-adaptivity for Surface Fitting to Implicit Geometries](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.10), *Proceedings of the 2024 International Meshing Roundtable (IMR)*. **2024**.
-  1. V. Dobrev, P. Knupp, T. Kolev, K. Mittal, R. Rieben, M. Stees, V. Tomov, [Asymptotic Analysis of Compound Volume+ Shape Metrics for Mesh Optimization](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.9), *Proceedings of the 2024 International Meshing Roundtable (IMR)*. **2024**.
-  
+  1. T. Dzanic, K. Mittal, D. Kim, J. Yang, S. Petrides, B. Keith, R. Anderson, [DynAMO: Multi-agent reinforcement learning for dynamic anticipatory mesh optimization with applications to hyperbolic conservation laws](https://doi.org/10.1016/j.jcp.2024.112924), *Journal of Computational Physics*, 506, 112924, **2024**
+  1. K. Mittal, V. Dobrev, P. Knupp, T. Kolev, F. Ledoux, C. Roche, V. Tomov, [Mixed-Order Meshes through rp-adaptivity for Surface Fitting to Implicit Geometries](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.10), *Proceedings of the 2024 SIAM International Meshing Roundtable (IMR)*. **2024**.
+  1. V. Dobrev, P. Knupp, T. Kolev, K. Mittal, R. Rieben, M. Stees, V. Tomov, [Asymptotic Analysis of Compound Volume+ Shape Metrics for Mesh Optimization](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.9), *Proceedings of the 2024 SIAM International Meshing Roundtable (IMR)*. **2024**.
+
 ---
 
 #### 2023
