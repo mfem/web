@@ -101,7 +101,7 @@ Please cite with:
 - [Joseph Signorelli](https://github.com/j-signorelli)
 - [Cameron Smith](https://www.scorec.rpi.edu/~cwsmith)
 - [Vanessa Sochat](https://vsoch.github.io)
-- [Gabriel Soto](https://github.com/homeomorfismo)
+- [Gabriel Pinochet-Soto](https://web.pdx.edu/~gpin2/)
 - [Ben Southworth](https://scholar.google.com/citations?user=TsGhEAUAAAAJ&hl=en)
 - [Mike Stees](https://github.com/mstees)
 - [Thomas Stitt](https://github.com/tomstitt)
