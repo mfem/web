@@ -133,6 +133,8 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Mesh Fitting](https://docs.mfem.org/html/pmesh-fitting_8cpp.html): optimize mesh to conform to the zero isosurface of a discrete level-set,
+ - [Mesh Quality](https://docs.mfem.org/html/mesh-quality_8cpp.html): visualize and check mesh quality,
  - [Interpolation](https://docs.mfem.org/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html): finite element extrapolation solver,
