@@ -37,7 +37,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
-      <option id="convection-diffusion">Convection-diffusion</option>
+      <option id="convectiondiffusion">Convection-diffusion</option>
       <option id="elasticity">Elasticity</option>
       <option id="maxwell">Electromagnetics</option>
       <option id="acoustics">Acoustics</option>
@@ -2151,7 +2151,7 @@ _This miniapp has only a parallel ([multidomain.cpp](https://github.com/mfem/mfe
 <br></div>
 
 
-<div id="dpg-miniapp" markdown="1">
+<div id="dpgminiapp" markdown="1">
 ##DPG miniapp
 
 This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/dpg) demonstrates how to discretize and solve various PDEs using the Discontinuous Petrov-Galerkin (DPG) method.
@@ -2196,6 +2196,34 @@ The example includes formulations with smooth manufactured solutions, AMR formul
 
 <div style="clear:both;"/></div>
 <br></div>
+
+<div id="tribol" markdown="1">
+##Tribol miniapp
+<img class="floatright"  width="250" src="../img/examples/tribol.png">
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/ContactPatchTest.cpp) demonstrates how to use [Tribol's](https://github.com/LLNL/Tribol) mortar method to solve a contact patch test. A contact patch test places two aligned, linear elastic
+cubes in contact, then verifies that the exact elasticity solution for this problem
+is recovered. The exact solution requires transmission of a uniform pressure
+field across a (not necessarily conforming) interface (i.e. the contact
+surface). Mortar methods (including the one implemented in Tribol) are generally
+able to pass the contact patch test. The test assumes small deformations and no
+accelerations, so the relationship between forces/contact pressures and
+deformations/contact gaps is linear and, therefore, the problem can be solved
+exactly with a single linear solve. The mortar implementation is based on [Puso
+and Laursen (2004)](https://doi.org/10.1016/j.cma.2003.10.010). A description of
+the Tribol implementation is available in [Serac
+documentation](https://serac.readthedocs.io/en/latest/sphinx/theory_reference/solid.html#contact-mechanics).
+Lagrange multipliers are used to solve for the pressure required to prevent
+violation of the contact constraints.
+
+_This miniapp has only a parallel ([ContactPatchTest.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/ContactPatchTest.cpp)) implementation. For more details, please see the documentation in [miniapps/tribol/README.md](https://github.com/mfem/mfem/blob/master/miniapps/tribol/README.md).
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+
+<div style="clear:both;"/></div>
+<br></div>
+
+
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2290,6 +2318,7 @@ function update()
    + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
    + showElement("ex38", all1 && all2 && all3 && none)
+   + showElement("ex39", diffusion && h1 && galerkin && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -2329,7 +2358,8 @@ function update()
 
    // Misc miniapps
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
-   + showElement("dpg-miniapp", (diffusion || convection-diffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
+   + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
+   + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi) )
 
    ; // ...end of expression
 
