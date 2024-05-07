@@ -2201,7 +2201,7 @@ The example includes formulations with smooth manufactured solutions, AMR formul
 ##Tribol miniapp
 <img class="floatright"  width="250" src="../img/examples/tribol.png">
 
-This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/ContactPatchTest.cpp) demonstrates how to use [Tribol's](https://github.com/LLNL/Tribol) mortar method to solve a contact patch test. A contact patch test places two aligned, linear elastic
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp) demonstrates how to use [Tribol's](https://github.com/LLNL/Tribol) mortar method to solve a contact patch test. A contact patch test places two aligned, linear elastic
 cubes in contact, then verifies that the exact elasticity solution for this problem
 is recovered. The exact solution requires transmission of a uniform pressure
 field across a (not necessarily conforming) interface (i.e. the contact
@@ -2216,7 +2216,7 @@ documentation](https://serac.readthedocs.io/en/latest/sphinx/theory_reference/so
 Lagrange multipliers are used to solve for the pressure required to prevent
 violation of the contact constraints.
 
-_This miniapp has only a parallel ([ContactPatchTest.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/ContactPatchTest.cpp)) implementation. For more details, please see the documentation in [miniapps/tribol/README.md](https://github.com/mfem/mfem/blob/master/miniapps/tribol/README.md).
+_This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp)) implementation. For more details, please see the documentation in [miniapps/tribol/README.md](https://github.com/mfem/mfem/blob/master/miniapps/tribol/README.md).
 **We recommend that new users start with the example codes before moving to the miniapps.**_
 
 <div style="clear:both;"/></div>
