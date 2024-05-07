@@ -1243,7 +1243,7 @@ All surface and volume integrals, which are required to form the system, are red
 
 _The example has only a serial ([ex38.cpp](https://github.com/mfem/mfem/blob/master/examples/ex38.cpp))
 version, because the  construction of the integration rules is an element-local procedure.
-It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._ 
+It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1604,11 +1604,11 @@ _The miniapp has only a serial
 <img class="floatright" src="../img/examples/mesh-optimizer.png">
 
 This miniapp performs mesh optimization using the Target-Matrix Optimization
-Paradigm (TMOP) by  [P. Knupp](https://link.springer.com/article/10.1007/s00366-011-0230-1), 
+Paradigm (TMOP) by  [P. Knupp](https://link.springer.com/article/10.1007/s00366-011-0230-1),
 and a global variational minimization approach
 ([Dobrev et al.](https://epubs.siam.org/doi/abs/10.1137/18M1167206)).
 It minimizes the quantity
- 
+
 $$\sum_T \int_T \mu(J(x)),$$
 
 where $T$ are the target (ideal) elements, $J$ is the Jacobian of the
@@ -1636,13 +1636,13 @@ version.
 
 <div id="mesh-fitting" markdown="1">
 ##Mesh Fitting Miniapp
-<a href="http://127.0.0.1:8000/img/gallery/workshop23/MBBBeam2D.mp4" target="_blank">
+<a href="https://mfem.org/img/gallery/workshop23/MBBBeam2D.mp4" target="_blank">
 <img class="floatright" width="350" src="../img/gallery/workshop23/MBBBeam2D.png">
 </a>
 
-This miniapp builds upon the mesh optmizer miniapp to enable mesh 
-alignment with the zero isosurface of a discrete level-set. The approach 
-is based on [Dobrev et al.](https://www.internationalmeshingroundtable.com/assets/papers/2021/11-Knupp.pdf) 
+This miniapp builds upon the mesh optimizer miniapp to enable mesh
+alignment with the zero isosurface of a discrete level-set. The approach
+is based on [Dobrev et al.](https://www.internationalmeshingroundtable.com/assets/papers/2021/11-Knupp.pdf)
 and [Mittal et al.](https://www.sciencedirect.com/science/article/abs/pii/S0010448523000313),
 where we minimize the quantity
 
@@ -1652,7 +1652,7 @@ Here, the first term controls mesh quality and the second term enforces
 weak alignment of a selected subset of mesh-nodes ($s \in S$) with the zero
 isosurface of the discrete level-set function ($\sigma$).
 
-Click on the image on the right to see a demonstration of this method for 
+Click on the image on the right to see a demonstration of this method for
 generating body-fitted meshes for topology optimization in LiDO to maximize beam
 stiffness under a downward force on the right wall.
 
@@ -1836,7 +1836,7 @@ The computational motives captured in Laghos include:
   partially assembled) and is applied just twice per "assembly". Both the
   preparation and the application costs are important for this operator.
 - Domain-decomposed MPI parallelism.
-- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+- Optional in-situ visualization with [GLVis](https://glvis.org) and data output
   for visualization / data analysis with [VisIt](https://visit.llnl.gov).
 
 The Laghos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
@@ -1877,7 +1877,7 @@ The computational motives captured in Remhos include:
   time step. This operator is constant in time (transport mode) or
   changing in time (remap mode). Options for full or partial assembly.
 - Domain-decomposed MPI parallelism.
-- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+- Optional in-situ visualization with [GLVis](https://glvis.org) and data output
   for visualization and data analysis with [VisIt](https://visit.llnl.gov).
 
 The Remhos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
@@ -2132,44 +2132,42 @@ _This miniapp has only a parallel ([multidomain.cpp](https://github.com/mfem/mfe
 <br></div>
 
 
-
 <div id="dpg-miniapp" markdown="1">
 ##DPG miniapp
 
-This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/dpg) demonstrates how to discretize and solve various PDEs using the Discontinuous Petov-Galerkin (DPG) method. 
-It utilizes a new user-friendly interface to assemble the block DPG systems arizing from the discretization of any DPG formulation (such as Ultraweak or Primal). In addition, the miniapp supports complex-valued systems, static condensensation for block systems, and AMR using the built-in DPG residual-based error indicator. This cabability is showcased in the following DPG examples in [miniapps/dpg](https://github.com/mfem/mfem/blob/master/miniapps/dpg).
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/dpg) demonstrates how to discretize and solve various PDEs using the Discontinuous Petrov-Galerkin (DPG) method.
+It utilizes a new user-friendly interface to assemble the block DPG systems arising from the discretization of any DPG formulation (such as Ultraweak or Primal). In addition, the miniapp supports complex-valued systems, static condensation for block systems, and AMR using the built-in DPG residual-based error indicator. This capability is showcased in the following DPG examples in [miniapps/dpg](https://github.com/mfem/mfem/blob/master/miniapps/dpg).
 
-- **Ultraweak DPG formulation for diffusion**. 
+- **Ultraweak DPG formulation for diffusion**.
 <img class="floatright"  width="122" src="../img/examples/dpg-diffusion.png">
 <!--  -->
 This example solves the simple Poisson equation $$-Δ u = f$$ and computes rates of convergence under successive uniform h-refinements for a smooth manufactured solution. The parallel version  also includes an AMR implementation for the L-shape benchmark problem. This example has a serial ([diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/diffusion.cpp)) and a parallel
 ([pdiffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pdiffusion.cpp)) version.
 
-- **Ultraweak DPG formulation for convection-diffusion**. 
+- **Ultraweak DPG formulation for convection-diffusion**.
 <img class="floatright"  width="122" src="../img/examples/dpg-convection-diffusion.png">
-This example solves the 
- convection-diffusion problem: 
+This example solves the
+ convection-diffusion problem:
 \begin{align}
    -\epsilon \Delta u + \nabla \cdot (\beta u) &= f\\\\
-\end{align} 
+\end{align}
 using AMR. The example demonstrates the use of _mesh-dependent test norms_ which are suitable for problems with solutions that exhibit large gradients present in _internal_ or _boundary layers_. The example has a serial ([convection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/convection-diffusion.cpp)) and a parallel ([pconvection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pconvection-diffusion.cpp)) version.
 
-
-- **Ultraweak DPG formulation for time-harmonic linear acoustics**. 
+- **Ultraweak DPG formulation for time-harmonic linear acoustics**.
 <img class="floatright"  width="122" src="../img/examples/dpg-acoustics.gif">
-This example solves the indefinite Helmholtz equation 
+This example solves the indefinite Helmholtz equation
 \begin{align}
    -\Delta u - \omega^2 u &= f\\\\
 \end{align}
-The example includes formulations with manufactured plane-wave solutions as well as high-frequency scattering problems and the use of Perfectly Match Layers (PML). It also demononstrates how to set up complex-valued systems and preconditioners for their solutions.
-The example has a serial 
+The example includes formulations with manufactured plane-wave solutions as well as high-frequency scattering problems and the use of Perfectly Match Layers (PML). It also demonstrates how to set up complex-valued systems and preconditioners for their solutions.
+The example has a serial
 ([acoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/acoustics.cpp)) and parallel
 ([pacoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pacoustics.cpp)) version.
 
-- **Ultraweak DPG formulation for time-harmonic Maxwell**. 
+- **Ultraweak DPG formulation for time-harmonic Maxwell**.
 <img class="floatright"  width="122" src="../img/examples/dpg-maxwell.png">
-  This example solves 
-the indefinite Maxwell problem 
+  This example solves
+the indefinite Maxwell problem
 \begin{align}
    \nabla × (\mu^{-1} \nabla \times E) - \omega^2 \epsilon E&= J\\\\
 \end{align}
