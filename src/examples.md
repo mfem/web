@@ -37,8 +37,10 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
    <select id="group1" onchange="update()">
       <option id="all1">All</option>
       <option id="diffusion">Diffusion</option>
+      <option id="convectiondiffusion">Convection-diffusion</option>
       <option id="elasticity">Elasticity</option>
       <option id="maxwell">Electromagnetics</option>
+      <option id="acoustics">Acoustics</option>
       <option id="graddiv">grad-div</option>
       <option id="darcy">Darcy</option>
       <option id="advection">Advection</option>
@@ -60,7 +62,8 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="l2">L2 discontinuous elements</option>
       <option id="hcurl">H(curl) Nedelec elements</option>
       <option id="hdiv">H(div) Raviart-Thomas elements</option>
-      <option id="h12">H^{-1/2} interfacial elements</option>
+      <option id="h12">H^{1/2} interfacial elements</option>
+      <option id="hminus12">H^{-1/2} interfacial elements</option>
    </select>
 </div>
 <div class="clearfix hidden-md hidden-lg"></div>
@@ -1240,7 +1243,26 @@ All surface and volume integrals, which are required to form the system, are red
 
 _The example has only a serial ([ex38.cpp](https://github.com/mfem/mfem/blob/master/examples/ex38.cpp))
 version, because the  construction of the integration rules is an element-local procedure.
-It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._ 
+It requires MFEM to be built with LAPACK, which is used to find the optimal solution of an under-determined system of equations._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex39" markdown="1">
+##Example 39: Named Attribute Sets
+<img class="floatright" width="285pt" src="../img/examples/ex39.png">
+<img class="floatright" width="240pt" src="../img/compass.png">
+
+This example uses the Poisson equation to demonstrate the use of named attribute sets in MFEM to specify material regions, boundary regions, or source regions by name rather than attribute numbers.
+It also demonstrates how new named attribute sets may be created from arbitrary groupings of attribute numbers and used as a convenient shorthand to refer to those groupings in other portions of the application or through the command line.
+
+Named attribute sets also required changes to MFEM's mesh file formats.
+This example makes use of a custom input mesh file ([compass.msh](https://github.com/mfem/mfem/blob/master/data/compass.msh)) produced using Gmsh which includes named regions and boundaries.
+A related mesh file ([compass.mesh](https://github.com/mfem/mfem/blob/master/data/compass.mesh)) illustrates MFEM's representation of the new named attribute sets.
+See [file formats](mesh-format-v1.0.md) for details of the augmented mesh file format.
+
+_The example has a serial ([ex39.cpp](https://github.com/mfem/mfem/blob/master/examples/ex39.cpp))
+and a parallel ([ex39p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex39p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1601,8 +1623,10 @@ _The miniapp has only a serial
 <img class="floatright" src="../img/examples/mesh-optimizer.png">
 
 This miniapp performs mesh optimization using the Target-Matrix Optimization
-Paradigm (TMOP) by P.Knupp et al., and a global variational minimization
-approach. It minimizes the quantity
+Paradigm (TMOP) by  [P. Knupp](https://link.springer.com/article/10.1007/s00366-011-0230-1),
+and a global variational minimization approach
+([Dobrev et al.](https://epubs.siam.org/doi/abs/10.1137/18M1167206)).
+It minimizes the quantity
 
 $$\sum_T \int_T \mu(J(x)),$$
 
@@ -1621,12 +1645,37 @@ the utilized Newton methods are oriented towards avoiding invalid meshes with
 negative Jacobian determinants. Each Newton step requires the inversion of a
 Jacobian matrix, which is done through an inner linear solver.
 
-For more details, please see the [documentation](meshing-miniapps.md) in the
-`miniapps/meshing` directory.
-
 _The miniapp has a serial
 ([mesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-optimizer.cpp)) and a
 parallel ([pmesh-optimizer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp))
+version.
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="mesh-fitting" markdown="1">
+##Mesh Fitting Miniapp
+<a href="https://mfem.org/img/gallery/workshop23/MBBBeam2D.mp4" target="_blank">
+<img class="floatright" width="350" src="../img/gallery/workshop23/MBBBeam2D.png">
+</a>
+
+This miniapp builds upon the mesh optimizer miniapp to enable mesh
+alignment with the zero isosurface of a discrete level-set. The approach
+is based on [Dobrev et al.](https://www.internationalmeshingroundtable.com/assets/papers/2021/11-Knupp.pdf)
+and [Mittal et al.](https://www.sciencedirect.com/science/article/abs/pii/S0010448523000313),
+where we minimize the quantity
+
+$$\sum_T \int_T \mu(J(x)) + \sum_{s \in S} w \,\, \sigma^2(x_s).$$
+
+Here, the first term controls mesh quality and the second term enforces
+weak alignment of a selected subset of mesh-nodes ($s \in S$) with the zero
+isosurface of the discrete level-set function ($\sigma$).
+
+Click on the image on the right to see a demonstration of this method for
+generating body-fitted meshes for topology optimization in LiDO to maximize beam
+stiffness under a downward force on the right wall.
+
+_The miniapp has a parallel ([pmesh-fitting.cpp](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-fitting.cpp))
 version.
 **We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
@@ -1806,7 +1855,7 @@ The computational motives captured in Laghos include:
   partially assembled) and is applied just twice per "assembly". Both the
   preparation and the application costs are important for this operator.
 - Domain-decomposed MPI parallelism.
-- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+- Optional in-situ visualization with [GLVis](https://glvis.org) and data output
   for visualization / data analysis with [VisIt](https://visit.llnl.gov).
 
 The Laghos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
@@ -1847,7 +1896,7 @@ The computational motives captured in Remhos include:
   time step. This operator is constant in time (transport mode) or
   changing in time (remap mode). Options for full or partial assembly.
 - Domain-decomposed MPI parallelism.
-- Optional in-situ visualization with [GLVis](http:/glvis.org) and data output
+- Optional in-situ visualization with [GLVis](https://glvis.org) and data output
   for visualization and data analysis with [VisIt](https://visit.llnl.gov).
 
 The Remhos miniapp is part of the [CEED software suite](https://ceed.exascaleproject.org/software),
@@ -2101,6 +2150,80 @@ _This miniapp has only a parallel ([multidomain.cpp](https://github.com/mfem/mfe
 <div style="clear:both;"/></div>
 <br></div>
 
+
+<div id="dpgminiapp" markdown="1">
+##DPG miniapp
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/dpg) demonstrates how to discretize and solve various PDEs using the Discontinuous Petrov-Galerkin (DPG) method.
+It utilizes a new user-friendly interface to assemble the block DPG systems arising from the discretization of any DPG formulation (such as Ultraweak or Primal). In addition, the miniapp supports complex-valued systems, static condensation for block systems, and AMR using the built-in DPG residual-based error indicator. This capability is showcased in the following DPG examples in [miniapps/dpg](https://github.com/mfem/mfem/blob/master/miniapps/dpg).
+
+- **Ultraweak DPG formulation for diffusion**.
+<img class="floatright"  width="122" src="../img/examples/dpg-diffusion.png">
+<!--  -->
+This example solves the simple Poisson equation $$-Δ u = f$$ and computes rates of convergence under successive uniform h-refinements for a smooth manufactured solution. The parallel version  also includes an AMR implementation for the L-shape benchmark problem. This example has a serial ([diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/diffusion.cpp)) and a parallel
+([pdiffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pdiffusion.cpp)) version.
+
+- **Ultraweak DPG formulation for convection-diffusion**.
+<img class="floatright"  width="122" src="../img/examples/dpg-convection-diffusion.png">
+This example solves the
+ convection-diffusion problem:
+\begin{align}
+   -\epsilon \Delta u + \nabla \cdot (\beta u) &= f\\\\
+\end{align}
+using AMR. The example demonstrates the use of _mesh-dependent test norms_ which are suitable for problems with solutions that exhibit large gradients present in _internal_ or _boundary layers_. The example has a serial ([convection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/convection-diffusion.cpp)) and a parallel ([pconvection-diffusion.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pconvection-diffusion.cpp)) version.
+
+- **Ultraweak DPG formulation for time-harmonic linear acoustics**.
+<img class="floatright"  width="122" src="../img/examples/dpg-acoustics.gif">
+This example solves the indefinite Helmholtz equation
+\begin{align}
+   -\Delta u - \omega^2 u &= f\\\\
+\end{align}
+The example includes formulations with manufactured plane-wave solutions as well as high-frequency scattering problems and the use of Perfectly Match Layers (PML). It also demonstrates how to set up complex-valued systems and preconditioners for their solutions.
+The example has a serial
+([acoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/acoustics.cpp)) and parallel
+([pacoustics.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pacoustics.cpp)) version.
+
+- **Ultraweak DPG formulation for time-harmonic Maxwell**.
+<img class="floatright"  width="122" src="../img/examples/dpg-maxwell.png">
+  This example solves
+the indefinite Maxwell problem
+\begin{align}
+   \nabla × (\mu^{-1} \nabla \times E) - \omega^2 \epsilon E&= J\\\\
+\end{align}
+The example includes formulations with smooth manufactured solutions, AMR formulations for high-frequency scattering problems as well as a problem with a singular solution. The example has a serial
+([maxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/maxwell.cpp)) and a parallel
+([pmaxwell.cpp](https://github.com/mfem/mfem/blob/master/miniapps/dpg/pmaxwell.cpp)) version.
+
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="tribol" markdown="1">
+##Tribol miniapp
+<img class="floatright"  width="250" src="../img/examples/tribol.png">
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp) demonstrates how to use [Tribol's](https://github.com/LLNL/Tribol) mortar method to solve a contact patch test. A contact patch test places two aligned, linear elastic
+cubes in contact, then verifies that the exact elasticity solution for this problem
+is recovered. The exact solution requires transmission of a uniform pressure
+field across a (not necessarily conforming) interface (i.e. the contact
+surface). Mortar methods (including the one implemented in Tribol) are generally
+able to pass the contact patch test. The test assumes small deformations and no
+accelerations, so the relationship between forces/contact pressures and
+deformations/contact gaps is linear and, therefore, the problem can be solved
+exactly with a single linear solve. The mortar implementation is based on [Puso
+and Laursen (2004)](https://doi.org/10.1016/j.cma.2003.10.010). A description of
+the Tribol implementation is available in [Serac
+documentation](https://serac.readthedocs.io/en/latest/sphinx/theory_reference/solid.html#contact-mechanics).
+Lagrange multipliers are used to solve for the pressure required to prevent
+violation of the contact constraints.
+
+_This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp)) implementation. For more details, please see the documentation in [miniapps/tribol/README.md](https://github.com/mfem/mfem/blob/master/miniapps/tribol/README.md).
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+
+<div style="clear:both;"/></div>
+<br></div>
+
+
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2160,11 +2283,11 @@ function update()
    + showElement("ex1",  (diffusion) && h1 && (galerkin || nurbs || staticcond || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
-   + showElement("ex4",  graddiv && (hdiv || h12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
+   + showElement("ex4",  graddiv && (hdiv || hminus12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
    + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
    + showElement("ex6",  (diffusion) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex7",  (diffusion || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
-   + showElement("ex8",  diffusion && (l2 || h1 || h12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
+   + showElement("ex8",  diffusion && (l2 || h1 || hminus12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
    + showElement("ex9",  (advection) && l2 && (dg || pa) && (pcg || rk || sundials || petsc || hiop || gmres || sdirk))
    + showElement("ex10", elasticity && (l2 || h1) && galerkin && (jacobi || pcg || minres || umfpack || newton || rk || sdirk || sundials || petsc))
    + showElement("ex11", diffusion && h1 && (galerkin || nurbs) && (lobpcg || amg || superlu || slepc))
@@ -2195,6 +2318,7 @@ function update()
    + showElement("ex36", (diffusion || freeboundary) && h1 && (galerkin || mixed) && (gmres || newton))
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
    + showElement("ex38", all1 && all2 && all3 && none)
+   + showElement("ex39", diffusion && h1 && galerkin && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -2213,6 +2337,7 @@ function update()
    + showElement("shaper", meshing && all2 && all3 && all4)
    + showElement("mesh-explorer", meshing && all2 && all3 && all4)
    + showElement("mesh-optimizer", meshing && all2 && all3 && all4)
+   + showElement("mesh-fitting", meshing && all2 && all3 && all4)
    + showElement("minimal-surface", meshing && all2 && (galerkin || amr || pa) && all4)
    + showElement("lor-transfer", meshing && (l2 || h1) && all3 && all4)
    + showElement("gslib-interpolation", meshing && all2 && all3 && all4)
@@ -2233,6 +2358,8 @@ function update()
 
    // Misc miniapps
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
+   + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
+   + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi) )
 
    ; // ...end of expression
 

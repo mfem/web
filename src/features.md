@@ -117,7 +117,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 35](https://docs.mfem.org/html/ex35_8cpp_source.html): port boundary condition from SubMesh,
  - [Example 36](https://docs.mfem.org/html/ex36_8cpp_source.html): high-order FEM for the obstacle problem,
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization,
- - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration.
+ - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
+ - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -132,6 +133,8 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
+ - [Mesh Fitting](https://docs.mfem.org/html/pmesh-fitting_8cpp.html): optimize mesh to conform to the zero isosurface of a discrete level-set,
+ - [Mesh Quality](https://docs.mfem.org/html/mesh-quality_8cpp.html): visualize and check mesh quality,
  - [Interpolation](https://docs.mfem.org/html/findpts_8cpp_source.html): evaluation of high-order finite element functions in physical space,
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html): finite element extrapolation solver,
@@ -143,8 +146,11 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Load DC](https://docs.mfem.org/html/load-dc_8cpp_source.html): visualize fields saved via DataCollection classes,
  - [Convert DC](https://docs.mfem.org/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces,
- - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library.
- - [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load.
+ - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library,
+ - [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
+ - [Contact](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library,
+ - [Multidomain](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp): Multidomain and SubMesh demonstration Miniapp,
+ - [DPG](https://github.com/mfem/mfem/blob/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
