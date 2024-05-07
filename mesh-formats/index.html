@@ -366,6 +366,7 @@ formats</a> page.</p>
     curvilinear</a> and
     more general meshes.</li>
 <li>MFEM's mesh v1.2 format, which adds support for parallel meshes.</li>
+<li>MFEM's <a href="mesh-format-v.1.0.md#mfem-meshv13">mesh v1.3 format</a>, which adds support for named attribute sets.</li>
 <li>MFEM's <a href="../mesh-format-v1.0/#mfem-nc-mesh-v10">NC mesh v1.0 format</a>,
     supporting non-conforming (AMR) meshes.</li>
 <li>MFEM's format for <a href="../mesh-format-v1.0/#nurbs-meshes">NURBS</a> meshes.</li>
@@ -382,6 +383,10 @@ Wiki</a>.</p>
 <li>Mixed meshes with all element types.</li>
 <li><code>XML</code> format with inline or appended binary data, including <code>zlib</code> compression.</li>
 </ul>
+<p><i class="fa fa-info-circle" style="color:green"></i>&nbsp;
+If the VTK or VTU file has a cell data array named "material" or "attribute",
+this cell data will be used for MFEM's element attribute numbers. If both data
+arrays are present, the one named "material" will take precedence.</p>
 <h3 id="gmsh-mesh-formats">Gmsh Mesh Formats</h3>
 <p>MFEM supports reading version 2.2 of the <a href="https://gmsh.info/">Gmsh</a> ASCII and
 binary formats for 2D and 3D meshes. High-order elements (up to order 9) are

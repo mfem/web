@@ -327,6 +327,8 @@
         
             <li><a href="#mfem-nc-mesh-v10">MFEM NC mesh v1.0</a></li>
         
+            <li><a href="#mfem-mesh-v13">MFEM mesh v1.3</a></li>
+        
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         
             <li><a href="#curvilinear-vtk-meshes">Curvilinear VTK meshes</a></li>
@@ -645,6 +647,40 @@ case.</p>
 <a href="https://github.com/mfem/mfem/blob/master/data/fichera-amr.mesh">fichera-amr.mesh</a>
 (visualized below) in the <code>data</code> directory of MFEM.</p>
 <p><img alt="" src="../img/fichera-amr.png" /></p>
+<h2 id="mfem-mesh-v13">MFEM mesh v1.3</h2>
+<p>Version 1.3 of the MFEM mesh file format adds support for named attribute sets.
+This is a convenience feature which allows application users (or developers) to refer to a set of attribute numbers or boundary attribute numbers using a text string as a shorthand.
+Domain attribute numbers and boundary attribute numbers cannot coexist in the same set.
+Attribute numbers can appear in more than one set so that a given region may be referenced for different purposes in different parts of an application.</p>
+<p><img class="floatcenter" width="400pt" src="../img/compass.png"></p>
+<p>Domain attribute sets are listed after the <code>elements</code> section of the mesh file in a new section titled <code>attribute_sets</code>. Similarly, boundary attribute sets follow <code>boundary</code> in a new section titled <code>bdr_attribute_sets</code>.</p>
+<pre><code class="sh">MFEM mesh v1.3
+
+...
+
+elements
+...
+
+attribute_sets
+&lt;number of attribute sets&gt;
+&quot;&lt;attribute set 1 name&gt;&quot; &lt;number of attributes in set&gt; &lt;attribute 1&gt; ...
+...
+
+boundary
+...
+
+bdr_attribute_sets
+&lt;number of boundary attribute sets&gt;
+&quot;&lt;boundary attribute set 1 name&gt;&quot; &lt;number of attributes in set&gt; &lt;attribute 1&gt; ...
+...
+
+vertices
+...
+
+mfem_mesh_end
+</code></pre>
+
+<p>A specific example of a v1.3 mesh file can be seen in <a href="https://github.com/mfem/mfem/blob/master/data/compass.mesh">compass.mesh</a>, shown above, which includes names based on compass directions for illustration.</p>
 <h2 id="nurbs-meshes">NURBS meshes</h2>
 <p>MFEM provides full support for meshes and discretization spaces based on Non-uniform Rational B-Splines (NURBS). These are treated similarly to general <a href="#curvilinear-and-more-general-meshes">curvilinear meshes</a> where the NURBS nodes are specified as a grid function at the end of the mesh file.</p>
 <p>For example, here is a simple quadratic NURBS mesh for a square domain with a (perfectly) circular hole in the middle. (The exact representation of conical sections is a major advantage of the NURBS approach over high-order finite elements.)</p>
@@ -843,6 +879,8 @@ LOOKUP_TABLE default
             <li><a href="#mfem-mesh-v10">MFEM mesh v1.0</a></li>
         
             <li><a href="#mfem-nc-mesh-v10">MFEM NC mesh v1.0</a></li>
+        
+            <li><a href="#mfem-mesh-v13">MFEM mesh v1.3</a></li>
         
             <li><a href="#nurbs-meshes">NURBS meshes</a></li>
         

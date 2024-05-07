@@ -364,11 +364,7 @@ method with the desired <code>mfem::Mesh</code> or <code>mfem::ParMesh</code>.</
 <li>
 <p>Next, use the <code>FindPointsGSLIB::FindPoints(xyz)</code> method with the
 <code>mfem::Vector xyz</code> of physical-space coordinates where we seek to
-interpolate the desired grid function.
-The ordering of the coordinates in <code>xyz</code> must be by <code>vdim</code>,
-i.e. (<strong>x</strong> = x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...,x<sub>N</sub>,
-              y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>...,y<sub>N</sub>,
-              z<sub>1</sub>,z<sub>2</sub>,z<sub>3</sub>...,z<sub>N</sub>).</p>
+interpolate the desired grid function.</p>
 <p>At this step, <code>findpts</code> determines the computational coordinates
 (<strong>q</strong><sub>j</sub> = {e<sub>j</sub>, <strong>r</strong><sub>j</sub>,
 p<sub>j</sub>}) for each point.
@@ -403,7 +399,7 @@ the <code>setup</code> phase.</p>
 <p>For convenience, <code>FindPointsGSLIB</code> class provides methods such as
 <code>FindPointsGSLIB::Interpolate(mesh, xyz, u, ui)</code> which combines the three steps
 described above (setup, finding the computational coordinates of the sought points, and
-interpolation) into a single method. Please see the <a href="https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45">class definition</a>
+interpolation) into a single method. Please see the <a href="https://github.com/mfem/mfem/blob/master/fem/gslib.hpp">class definition</a>
 for more details.</p>
 <h2 id="application-of-findpointsgslib">Application of FindPointsGSLIB</h2>
 <p>The <code>gslib</code> miniapps demonstrate several application of <code>FindPointsGSLIB</code>:</p>
