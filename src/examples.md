@@ -1247,6 +1247,25 @@ It requires MFEM to be built with LAPACK, which is used to find the optimal solu
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex39" markdown="1">
+##Example 39: Named Attribute Sets
+<img class="floatright" width="285pt" src="../img/examples/ex39.png">
+<img class="floatright" width="240pt" src="../img/compass.png">
+
+This example uses the Poisson equation to demonstrate the use of named attribute sets in MFEM to specify material regions, boundary regions, or source regions by name rather than attribute numbers.
+It also demonstrates how new named attribute sets may be created from arbitrary groupings of attribute numbers and used as a convenient shorthand to refer to those groupings in other portions of the application or through the command line.
+
+Named attribute sets also required changes to MFEM's mesh file formats.
+This example makes use of a custom input mesh file ([compass.msh](https://github.com/mfem/mfem/blob/master/data/compass.msh)) produced using Gmsh which includes named regions and boundaries.
+A related mesh file ([compass.mesh](https://github.com/mfem/mfem/blob/master/data/compass.mesh)) illustrates MFEM's representation of the new named attribute sets.
+See [file formats](mesh-format-v1.0.md) for details of the augmented mesh file format.
+
+_The example has a serial ([ex39.cpp](https://github.com/mfem/mfem/blob/master/examples/ex39.cpp))
+and a parallel ([ex39p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex39p.cpp)) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
