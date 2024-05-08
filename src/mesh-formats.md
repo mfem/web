@@ -29,7 +29,7 @@ MFEM supports:
     curvilinear](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) and
     more general meshes.
   - MFEM's mesh v1.2 format, which adds support for parallel meshes.
-  - MFEM's [mesh v1.3 format](mesh-format-v.1.0.md#mfem-meshv13), which adds support for named attribute sets.
+  - MFEM's [mesh v1.3 format](mesh-format-v1.0.md#mfem-mesh-v13), which adds support for named attribute sets.
   - MFEM's [NC mesh v1.0 format](mesh-format-v1.0.md#mfem-nc-mesh-v10),
     supporting non-conforming (AMR) meshes.
   - MFEM's format for [NURBS](mesh-format-v1.0.md#nurbs-meshes) meshes.
