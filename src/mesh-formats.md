@@ -29,6 +29,7 @@ MFEM supports:
     curvilinear](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) and
     more general meshes.
   - MFEM's mesh v1.2 format, which adds support for parallel meshes.
+  - MFEM's [mesh v1.3 format](mesh-format-v1.0.md#mfem-mesh-v13), which adds support for named attribute sets.
   - MFEM's [NC mesh v1.0 format](mesh-format-v1.0.md#mfem-nc-mesh-v10),
     supporting non-conforming (AMR) meshes.
   - MFEM's format for [NURBS](mesh-format-v1.0.md#nurbs-meshes) meshes.
@@ -46,6 +47,11 @@ Specifically, MFEM supports:
   elements](https://blog.kitware.com/modeling-arbitrary-order-lagrange-finite-elements-in-the-visualization-toolkit/).
 - Mixed meshes with all element types.
 - `XML` format with inline or appended binary data, including `zlib` compression.
+
+<i class="fa fa-info-circle" style="color:green"></i>&nbsp;
+If the VTK or VTU file has a cell data array named "material" or "attribute",
+this cell data will be used for MFEM's element attribute numbers. If both data
+arrays are present, the one named "material" will take precedence.
 
 ### Gmsh Mesh Formats
 

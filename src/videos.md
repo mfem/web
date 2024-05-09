@@ -10,11 +10,41 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Nat Trask (University of Pennsylvania)
+#### *A Data Driven Finite Element Exterior Calculus*
+##### **April 2, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="http://youtube.com/watch?v=7B8GotJP_Y0"><img src="http://i3.ytimg.com/vi/7B8GotJP_Y0/maxresdefault.jpg"></img></a>
+
+Despite the recent flurry of work employing machine learning to develop surrogate models to accelerate scientific computation, the "black-box" underpinnings of current techniques fail to provide the verification and validation guarantees provided by modern finite element methods. In this talk we present a data-driven finite element exterior calculus for developing reduced-order models of multiphysics systems when the governing equations are either unknown or require closure. The framework employs deep learning architectures typically used for logistic classification to construct a trainable partition of unity which provides notions of control volumes with associated boundary operators. This alternative to a traditional finite element mesh is fully differentiable and allows construction of a discrete de Rham complex with a corresponding Hodge theory. We demonstrate how models may be obtained with the same robustness guarantees as traditional mixed finite element discretization, with deep connections to contemporary techniques in graph neural networks. For applications developing digital twins where surrogates are intended to support real time data assimilation and optimal control, we further develop the framework to support Bayesian optimization of unknown physics on the underlying adjacency matrices of the chain complex. By framing the learning of fluxes via an optimal recovery problem with a computationally tractable posterior distribution, we are able to develop models with intrinsic representations of epistemic uncertainty.
+
+---
+
+#### William Moses (University of Illinois Urbana-Champaign)
+#### *Supercharging Programming Through Compiler Technology*
+##### **March 14, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=EZrICuXp8FE"><img src="../img/videos/EZrICuXp8FE-1280x720.png"></img></a>
+
+The decline of Moore's law and an increasing reliance on computation has led to an explosion of specialized software packages and hardware architectures. While this diversity enables unprecedented flexibility, it also requires domain-experts to learn how to customize programs to efficiently leverage the latest platform-specific API's and data structures, instead of working on their intended problem. Rather than forcing each user to bear this burden, I propose building high-level abstractions within general-purpose compilers that enable fast, portable, and composable programs to be automatically generated. This talk will demonstrate this approach through compilers that I built for two domains: automatic differentiation and parallelism. These domains are critical to both scientific computing and machine learning, forming the basis of neural network training, uncertainty quantification, and high-performance computing. For example, a researcher hoping to incorporate their climate simulation into a machine learning model must also provide a corresponding derivative simulation. My compiler, Enzyme, automatically generates these derivatives from existing computer programs, without modifying the original application. Moreover, operating within the compiler enables Enzyme to combine differentiation with program optimization, resulting in asymptotically and empirically faster code. Looking forward, this talk will also touch on how this domain-agnostic compiler approach can be applied to new directions, including probabilistic programming.
+
+---
+
+#### Sungho Lee (University of Memphis)
+#### *LAGHOST: Development of Lagrangian High-Order Solver for Tectonics*
+##### **March 5, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=7APgvXM7xH0"><img src="https://img.youtube.com/vi/7APgvXM7xH0/maxresdefault.jpg"></img></a>
+
+Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building, mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory.
+
+---
+
 #### Kevin Chung (LLNL)
 #### *Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition*
 ##### **February 6, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](CfRSzUOM0Ug)
+<a class="youtube" href="https://www.youtube.com/watch?v=CfRSzUOM0Ug"><img src="https://img.youtube.com/vi/CfRSzUOM0Ug/maxresdefault.jpg"></img></a>
 
 Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.
 
@@ -24,7 +54,7 @@ Numerous cutting-edge scientific technologies originate at the laboratory scale,
 #### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
 ##### **January 9, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](uknQqYw-d0o)
+<a class="youtube" href="https://www.youtube.com/watch?v=uknQqYw-d0o"><img src="https://img.youtube.com/vi/uknQqYw-d0o/maxresdefault.jpg"></img></a>
 
 An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters. Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections. Matrix solutions are performed using complex computations. Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI. Implementation details are presented along with sample results and accuracy demonstrations.
 
@@ -34,7 +64,7 @@ An open-source and free full-wave electromagnetic simulator is presented that ad
 #### *High order positivity-preserving entropy stable discontinuous Galerkin discretizations*
 ##### **December 5, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](x33D171lXjc)
+<a class="youtube" href="https://www.youtube.com/watch?v=x33D171lXjc"><img src="https://img.youtube.com/vi/x33D171lXjc/maxresdefault.jpg"></img></a>
 
 High order discontinuous Galerkin (DG) methods provide high order accuracy and geometric flexibility, but are known to be unstable when applied to nonlinear conservation laws whose solutions exhibit shocks and under-resolved solution features. Entropy stable schemes improve robustness by ensuring that physically relevant solutions satisfy a semi-discrete cell entropy inequality independently of numerical resolution and solution regularization while retaining formal high order accuracy. In this talk, we will review the construction of entropy stable high order discontinuous Galerkin methods and describe approaches for enforcing that solutions are "physically relevant" (i.e., the thermodynamic variables remain positive).
 
@@ -44,7 +74,7 @@ High order discontinuous Galerkin (DG) methods provide high order accuracy and g
 #### *Physics-guided interpretable data-driven simulations*
 ##### **November 14, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](nWOC_BR3x-8)
+<a class="youtube" href="https://www.youtube.com/watch?v=nWOC_BR3x-8"><img src="../img/videos/nWOC_BR3x-8-1280x720.png"></img></a>
 
 A computationally demanding physical simulation often presents a significant impediment to scientific and technological progress. Fortunately, recent advancements in machine learning (ML) and artificial intelligence have given rise to data-driven methods that can expedite these simulations. For instance, a well-trained 2D convolutional deep neural network can provide a 100,000-fold acceleration in solving complex problems like Richtmyer-Meshkov instability [[1](https://arxiv.org/abs/2208.11477)]. However, conventional black-box ML models lack the integration of fundamental physics principles, such as the conservation of mass, momentum, and energy. Consequently, they often run afoul of critical physical laws, raising concerns among physicists. These models attempt to compensate for the absence of physics information by relying on vast amounts of data. Additionally, they suffer from various drawbacks, including a lack of structure-preservation, computationally intensive training phases, reduced interpretability, and susceptibility to extrapolation issues. To address these shortcomings, we propose an approach that incorporates physics into the data-driven framework. This integration occurs at different stages of the modeling process, including the sampling and model-building phases. A physics-informed greedy sampling procedure minimizes the necessary training data while maintaining target accuracy [[2](https://arxiv.org/abs/2204.12005)]. A physics-guided data-driven model not only preserves the underlying physical structure more effectively but also demonstrates greater robustness in extrapolation compared to traditional black-box ML models. We will showcase numerical results in areas such as hydrodynamics [[3](https://arxiv.org/abs/2104.11404),[4](https://arxiv.org/abs/2009.11990)], particle transport [[5](https://doi.org/10.1016/j.jcp.2020.109845)], plasma physics, pore-collapse, and 3D printing to highlight the efficacy of these data-driven approaches. The advantages of these methods will also become apparent in multi-query decision-making applications, such as design optimization [[6](https://doi.org/10.1016/j.cma.2021.113813),[7](https://doi.org/10.1016/j.jcp.2020.109787)].
 
@@ -54,7 +84,7 @@ A computationally demanding physical simulation often presents a significant imp
 #### *Superior discretizations and AMG solvers for extremely anisotropic diffusion via hyperbolic operators*
 ##### **October 17, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](MZ9qPFbWw68)
+<a class="youtube" href="https://www.youtube.com/watch?v=MZ9qPFbWw68"><img src="https://img.youtube.com/vi/MZ9qPFbWw68/maxresdefault.jpg"></img></a>
 
 Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.
 
@@ -64,7 +94,7 @@ Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10
 #### *A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions*
 ##### **July 18, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](5O4Uv9agXHU)
+<a class="youtube" href="https://www.youtube.com/watch?v=5O4Uv9agXHU"><img src="https://img.youtube.com/vi/5O4Uv9agXHU/maxresdefault.jpg"></img></a>
 
 The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
 
@@ -74,7 +104,7 @@ The focus of this talk is on presenting unconditionally stable, uniquely solvabl
 #### *FSSpMDM — Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation*
 ##### **June 20, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](dBiAImFDNUk)
+<a class="youtube" href="https://www.youtube.com/watch?v=dBiAImFDNUk"><img src="../img/videos/dBiAImFDNUk-1280x720.png"></img></a>
 
 Small matrix multiplications are a key building block of modern
 high-order finite element method solvers. Such multiplications describe the act
@@ -96,7 +126,7 @@ GiMMiK C code generation library.
 #### *Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification*
 ##### **May 16, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](yesKLcqYWZU)
+<a class="youtube" href="https://www.youtube.com/watch?v=yesKLcqYWZU"><img src="https://img.youtube.com/vi/yesKLcqYWZU/maxresdefault.jpg"></img></a>
 
 Properly capture hurricane rapid intensification (where the winds
 increase by 30 knots in the first 24 hours) remains challenging for atmospheric
@@ -126,7 +156,7 @@ model that runs on large CPU clusters and on GPUs.
 #### *Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis*
 ##### **April 25, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](HboMmtGvCW4)
+<a class="youtube" href="https://www.youtube.com/watch?v=HboMmtGvCW4"><img src="https://img.youtube.com/vi/HboMmtGvCW4/maxresdefault.jpg"></img></a>
 
 The presented work started with a convergence and stability analysis for
 the so-called full envelope approximation used in analyzing optical amplifiers
@@ -171,7 +201,7 @@ the boundedness below constant depends inversely linearly on L.
 #### *The Netgen/NGSolve Finite Element Software*
 ##### **March 28, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](3aYoeoNBq94)
+<a class="youtube" href="https://www.youtube.com/watch?v=3aYoeoNBq94"><img src="https://img.youtube.com/vi/3aYoeoNBq94/maxresdefault.jpg"></img></a>
 
 In this talk we give an overview of the open source finite element software Netgen/NGSolve,
 available from [www.ngsolve.org](https://www.ngsolve.org). We show how to setup various physical models using
@@ -181,13 +211,13 @@ highlights are matrix-valued finite elements with applications in elasticity, fl
 relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
 for linear solvers, as well as time-dependent problems.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Vikram Gavini (University of Michigan)
 #### *Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling*
 ##### **March 7, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](K8Hl7udBvlg)
+<a class="youtube" href="https://www.youtube.com/watch?v=K8Hl7udBvlg"><img src="https://img.youtube.com/vi/K8Hl7udBvlg/maxresdefault.jpg"></img></a>
 
 Electronic structure calculations, especially those using density functional theory (DFT), have been very useful in understanding and predicting a wide range of materials properties. The importance of DFT calculations to engineering and physical sciences is evident from the fact that ~20% of computational resources on some of the world's largest public supercomputers are devoted to DFT calculations. Despite the wide adoption of DFT, the state-of-the-art implementations of DFT suffer from cell-size and geometry limitations, with the widely used codes in solid state physics being limited to periodic geometries and typical simulation domains containing a few hundred atoms.
 This talk will present our recent advances towards the development of computational methods and numerical algorithms for conducting fast and accurate large-scale DFT calculations using adaptive finite-element discretization, which form the basis for the recently released [DFT-FE open-source code](https://github.com/dftfeDevelopers/dftfe). Details of the implementation, including mixed precision algorithms and asynchronous computing, will be presented. The computational efficiency, scalability and performance of DFT-FE will be presented, which demonstrates a significant outperformance of widely used plane-wave DFT codes.
@@ -198,17 +228,17 @@ This talk will present our recent advances towards the development of computatio
 #### *Bayesian Inversion of an Acoustic-Gravity Model for Predictive Tsunami Simulation*
 ##### **January 10, 2023** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](wMZqz3AoL3E)
+<a class="youtube" href="https://www.youtube.com/watch?v=wMZqz3AoL3E"><img src="https://img.youtube.com/vi/wMZqz3AoL3E/maxresdefault.jpg"></img></a>
 
 To improve tsunami preparedness, early-alert systems and real-time monitoring are essential. We use a novel approach for predictive tsunami modeling within the Bayesian inversion framework. This effort focuses on informing the immediate response to an occurring tsunami event using near-field data observation. Our forward model is based on a coupled acoustic-gravity model (e.g., Lotto and Dunham, Comput Geosci (2015) 19:327—340). Similar to other tsunami models, our forward model relies on transient boundary data describing the location and magnitude of the seafloor deformation. In a real-time scenario, these parameter fields must be inferred from a variety of measurements, including observations from pressure gauges mounted on the seafloor. One particular difficulty of this inference problem lies in the accurate inversion from sparse pressure data recorded in the near-field where strong hydroacoustic waves propagate in the compressible ocean; these acoustic waves complicate the task of estimating the hydrostatic pressure changes related to the forming surface gravity wave. Our space-time model is discretized with finite elements in space and finite differences in time. The forward model incurs a high computational complexity, since the pressure waves must be resolved in the 3D compressible ocean over a sufficiently long time span. Due to the infeasibility of rapidly solving the corresponding inverse problem for the fully discretized space-time operator, we discuss approaches for using compact representations of the parameter-to-observable map.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Lin Mu (University of Georgia)
 #### *An Efficient and Effective FEM Solver for Diffusion Equation with Strong Anisotropy*
 ##### **December 13, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](2b9XKH4lcHE)
+<a class="youtube" href="https://www.youtube.com/watch?v=wMZqz3AoL3E"><img src="https://img.youtube.com/vi/2b9XKH4lcHE/maxresdefault.jpg"></img></a>
 
 The Diffusion equation with strong anisotropy has broad applications. In this project, we discuss numerical solution of diffusion equations with strong anisotropy on meshes not aligned with the anisotropic vector field, focusing on application to magnetic confinement fusion. In order to resolve the numerical pollution for simulations on a non-anisotropy-aligned mesh and reduce the associated high computational cost, we developed a high-order discontinuous Galerkin scheme with an efficient preconditioner. The auxiliary space preconditioning framework is designed by employing a continuous finite element space as the auxiliary space for the discontinuous finite element space. An effective line smoother that can mitigate the high-frequency error perpendicular to the magnetic field has been designed by a graph-based approach to pick the line smoother that is approximately perpendicular to the vector fields when the mesh does not align with anisotropy. Numerical experiments for several benchmark problems are presented to validate the effectiveness and robustness.
 
@@ -218,7 +248,7 @@ The Diffusion equation with strong anisotropy has broad applications. In this pr
 #### *FEniCSx: design of the next generation FEniCS libraries for finite element methods*
 ##### **November 8, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](D-YcVd4-_2E)
+<a class="youtube" href="https://www.youtube.com/watch?v=D-YcVd4-_2E"><img src="https://img.youtube.com/vi/D-YcVd4-_2E/maxresdefault.jpg"></img></a>
 
 The [FEniCS Project](https://fenicsproject.org/) provides libraries for solving partial differential equations using the finite element method. An aim of the FEniCS Project has been to provide high-performance solver environments that closely mirror mathematical syntax, with the hypothesis that high-level representations means that solvers are faster to write, easier to debug, and can deliver faster runtime performance than is reasonably possible by hand. Using domain-specific languages and code generation techniques, arguably the FEniCS libraries delivered on these goals for a set of problems. However, over time limitations, including performance and extensibility, become clear and maintainability/sustainability became an issue.Building on experiences from the FEniCS libraries, I will present and discuss the design on the next generation of tools, FEniCSx. The new design retains strengths of the past approach, and addresses limitations using new designs and new tools. Solvers can be written in C++ or Python, and a number of design changes allow the creation of flexible, fast solvers in Python. In the second part of my presentation, I will discuss high-performance finite element kernels (limited to CPUs on this occasion), motivated by the Center for Efficient Exascale Discretizations 'bake-off' problems, and which would not have been possible in the original FEniCS libraries. Double, single and half-precision kernels are considered, and results include (i) the observation that kernels with vector intrinsics can be slower than auto-vectorised kernels for common cases, and (ii) a cache-aware performance model which is remarkably accurate in predicting performance across architectures.
 
@@ -228,7 +258,7 @@ The [FEniCS Project](https://fenicsproject.org/) provides libraries for solving 
 #### *Computing Meets Cardiology: Making Heart Simulations Fast and Accurate*
 ##### **September 13, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](h0tviC32kE8)
+<a class="youtube" href="https://www.youtube.com/watch?v=h0tviC32kE8"><img src="https://img.youtube.com/vi/h0tviC32kE8/maxresdefault.jpg"></img></a>
 
 Heart diseases are an ubiquitous societal burden responsible for a majority of deaths world wide. A central problem in developing effective treatments for heart diseases is the inherent complexity of the heart as an organ. From a modeling perspective, the heart can be interpreted as a biological pump involving multiple physical fields, namely fluid and solid mechanics, as well as chemistry and electricity, all interacting on different time scales. This multiphysics and multiscale aspect makes simulations inherently expensive, especially when approached with naive numerical techniques. However, computational models can be extraordinarily useful in helping us understanding how the healthy heart functions and especially how malfunctions influence different diseases. In this context, also information about possible weaknesses of therapies can be obtained to ultimately improve clinical treatment and decision support. In this talk, we will focus primarily on two important model classes in computational cardiology and their respective efficient numerical treatment without compromising significant accuracy. The first class is the problem of computing electrocardiograms (ECG) from electrical heart simulations. Since ECG measurements can give a wide range of insights about a wide range of heart diseases they offer suitable data to validate our electrophysiological models and verify our numerical schemes on organ-scale. Known numerical issues, arising in the context of electrophysiological models, will be reviewed. The second class addresses bidirectionally coupled electromechanical models and their efficient numerical treatment. Focus will be on a unified space-time adaptive operator splitting framework developed on top of MFEM which proves highly efficient so far for the investigated model classes while still preserving high accuracy.
 
@@ -238,7 +268,7 @@ Heart diseases are an ubiquitous societal burden responsible for a majority of d
 #### *Modeling and Controlling Turbulent Flows through Deep Learning*
 ##### **August 23, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](0_y70sNTcrY)
+<a class="youtube" href="https://www.youtube.com/watch?v=0_y70sNTcrY"><img src="https://img.youtube.com/vi/0_y70sNTcrY/maxresdefault.jpg"></img></a>
 
 The advent of new powerful deep neural networks (DNNs) has fostered their application in a wide range of research areas, including more recently in fluid mechanics. In this presentation, we will cover some of the fundamentals of deep learning applied to computational fluid dynamics (CFD). Furthermore, we explore the capabilities of DNNs to perform various predictions in turbulent flows: we will use convolutional neural networks (CNNs) for non-intrusive sensing, i.e. to predict the flow in a turbulent open channel based on quantities measured at the wall. We show that it is possible to obtain very good flow predictions, outperforming traditional linear models, and we showcase the potential of transfer learning between friction Reynolds numbers of 180 and 550. We also discuss other modelling methods based on autoencoders (AEs) and generative adversarial networks (GANs), and we present results of deep-reinforcement-learning-based flow control.
 
@@ -248,7 +278,7 @@ The advent of new powerful deep neural networks (DNNs) has fostered their applic
 #### *Efficient Techniques for Fluid Structure Interaction: Compatibility Coupling and Galerkin Differences*
 ##### **July 26, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](l_Ds7jfTBUU)
+<a class="youtube" href="https://www.youtube.com/watch?v=l_Ds7jfTBUU"><img src="https://img.youtube.com/vi/l_Ds7jfTBUU/maxresdefault.jpg"></img></a>
 
 Predictive simulation increasingly involves the dynamics of complex systems with multiple interacting physical processes. In designing simulation tools for these problems, both the formulation of individual constituent solvers, as well as coupling of such solvers into a cohesive simulation tool must be addressed. In this talk, I discuss both of these aspects in the context of fluid-structure interaction, where we have recently developed a new class of stable and accurate partitioned solvers that overcome added-mass instability through the use of so-called compatibility boundary conditions. Here I will present partitioned coupling strategies for incompressible FSI. One interesting aspect of CBC-based coupling is the occurrence of nonstandard and/or high-derivative operators, which can make adoption of the techniques challenging, e.g. in the context of FEM methods. To address this, I will also discuss our newly developed Galerkin Difference approximations, which may provide a natural pathway for CBCs in an FEM context. Although GD is fundamentally a finite element approximation based on a Galerkin projection, the underlying GD space is nonstandard and is derived using profitable ideas from the finite difference literature. The resulting schemes possess remarkable properties including nodal superconvergence and the ability to use large CFL-one time steps. I will also present preliminary results for GD discretizations on unstructured grids using MFEM.
 
@@ -258,7 +288,7 @@ Predictive simulation increasingly involves the dynamics of complex systems with
 #### *Outlook for Exascale Fluid Dynamics Simulations*
 ##### **June 21, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](WqrwDarTdss)
+<a class="youtube" href="https://www.youtube.com/watch?v=WqrwDarTdss"><img src="https://img.youtube.com/vi/WqrwDarTdss/maxresdefault.jpg"></img></a>
 
 We consider design, development, and use of simulation software for exascale computing, with a particular emphasis on fluid dynamics simulation. Our perspective is through the lens of the high-order code Nek5000/RS, which has been developed under DOE's Center for Efficient Exascale Discretizations (CEED). Nek5000/RS is an open source thermal fluids simulation code with a long development history on leadership computing platforms—it was the first commercial software on distributed memory platforms and a Gordon Bell Prize winner on Intel's ASCII Red. There are a myriad of objectives that drive software design choices in HPC, such as scalability, low-memory, portability, and maintainability. Throughout, our design objective has been to address the needs of the user, including facilitating data analysis and ensuring flexibility with respect to platform and number of processors that can be used. When running on large-scale HPC platforms, three of the most common user questions are: How long will my job take? How many nodes will be required? Is there anything I can do to make my job run faster? Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results? Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.
 
@@ -268,7 +298,7 @@ We consider design, development, and use of simulation software for exascale com
 #### *Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research*
 ##### **May 24, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](RasTXV6IYC0)
+<a class="youtube" href="https://www.youtube.com/watch?v=RasTXV6IYC0"><img src="https://img.youtube.com/vi/RasTXV6IYC0/maxresdefault.jpg"></img></a>
 
 Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
 
@@ -278,9 +308,9 @@ Many of the most interesting phenomena in solid mechanics occurs at material int
 #### *CHyPS: An MFEM-Based Material Response Solver for Hypersonic Thermal Protection Systems*
 ##### **April 16, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](Z7jJZ1Z5gz0)
+<a class="youtube" href="https://www.youtube.com/watch?v=Z7jJZ1Z5gz0"><img src="https://img.youtube.com/vi/Z7jJZ1Z5gz0/maxresdefault.jpg"></img></a>
 
-The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight.  CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
+The University of Illinois at Urbana-Champaign’s Center for Hypersonics and Entry Systems Studies has developed a material response solver, named CHyPS, to predict the behavior of thermal protection systems for hypersonic flight. CHyPS uses MFEM to provide the underlying discontinuous Galerkin spatial discretization and linear solvers used to solve the equations. In this talk, we will briefly present the physics and corresponding equations governing material response in hypersonic environments. We will also include a discussion on the implementation of a direct Arbitrary Lagrangian-Eulerian approach to handle mesh movement resulting from the ablation of the material surface. Results for standard community test cases developed at a series of Ablation Workshop meetings over the past decade will be presented and compared to other material response solvers. We will also show the potential of high-order solutions for simulating thermal protection system material response.
 
 ---
 
@@ -288,7 +318,7 @@ The University of Illinois at Urbana-Champaign’s Center for Hypersonics and En
 #### *Space-Time Hybridizable Discontinuous Galerkin with MFEM*
 ##### **March 29, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](v8-EubYMT-A)
+<a class="youtube" href="https://www.youtube.com/watch?v=v8-EubYMT-A"><img src="../img/videos/v8-EubYMT-A-1280x720.png"></img></a>
 
 Unsteady partial differential equations on deforming domains appear in many real-life scenarios, such as wind turbines, helicopter rotors, car wheels, free-surface flows, etc. We will focus on the space-time finite element method, which is an excellent approach to discretize problems on evolving domains. This method uses discontinuous Galerkin to discretize both in the spatial and temporal directions, allowing for an arbitrarily high-order approximation in space and time. Furthermore, this method automatically satisfies the geometric conservation law, which is essential for accurate solutions on time-dependent domains. The biggest criticism is that the application of space-time discretization increases the computational complexity significantly. To overcome this, we can use the high-order accurate Hybridizable or Embedded discontinuous Galerkin method. Numerical results will be presented to illustrate the applicability of the method for fluid flow around rigid bodies.
 
@@ -298,7 +328,7 @@ Unsteady partial differential equations on deforming domains appear in many real
 #### *Unifying the Analysis of Geometric Decomposition in FEEC*
 ##### **March 22, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](edK62yPUtIs)
+<a class="youtube" href="https://www.youtube.com/watch?v=edK62yPUtIs"><img src="https://img.youtube.com/vi/edK62yPUtIs/maxresdefault.jpg"></img></a>
 
 Two operations take function spaces and make them suitable for finite element computations. The first is the construction of trace-free subspaces (which creates "bubble" functions) and the second is the extension of functions from cell boundaries into cell interiors (which create edge functions with the correct continuity): together these operations define the _geometric decomposition_ of a function space. In finite element exterior calculus (FEEC), these two operations have been treated separately for the two main families of finite elements: full polynomial elements and trimmed polynomial elements. In this talk we will see how one constructor of trace-free functions and one extension operator can be used for both families, and indeed for all differential forms. We will also examine the practicality of these two operators as tools for implementing geometric decompositions in actual finite element codes.
 
@@ -308,7 +338,7 @@ Two operations take function spaces and make them suitable for finite element co
 #### *Axisymmetric MFEM-Based Solvers for the Compressible Navier-Stokes Equations and Other Problems*
 ##### **March 1, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](qCW60wWmv4Y)
+<a class="youtube" href="https://www.youtube.com/watch?v=qCW60wWmv4Y"><img src="https://img.youtube.com/vi/qCW60wWmv4Y/maxresdefault.jpg"></img></a>
 
 An axisymmetric model leads, when suitable, to a substantial cut in the computational cost with respect to a 3D model. Although not as accurate, the axisymmetric model allows to quickly obtain a result which can be satisfying. Simple modifications to a 2D finite element solver allow to obtain an axisymmetric solver. We present MFEM-based parallel axisymmetric solvers for different problems. We first present simple axisymmetric solvers for the Laplacian problem and the heat equation. We then present an axisymmetric solver for the compressible Navier-Stokes equations. All solvers are based on H^1-conforming finite element spaces. The correctness of the implementation is verified with convergence tests on manufactured solutions. The Navier-Stokes solver is used to simulate axisymmetric flows with an analytical solution (Poiseuille and Taylor-Couette) and an air flow in a plasma torch geometry.
 
@@ -318,7 +348,7 @@ An axisymmetric model leads, when suitable, to a substantial cut in the computat
 #### *An Overview of ExaConstit and Its Use in the ExaAM Project*
 ##### **February 1, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](I0kTJdR8oZU)
+<a class="youtube" href="https://www.youtube.com/watch?v=I0kTJdR8oZU"><img src="https://img.youtube.com/vi/I0kTJdR8oZU/maxresdefault.jpg"></img></a>
 
 As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
 
@@ -328,7 +358,7 @@ As additively manufactured (AM) parts become increasingly more popular in indust
 #### *The Shifted Boundary Method: An Immersed Approach for Computational Mechanics*
 ##### **January 20, 2022** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
 
-![YouTube](WJ5dAhOR6Gg)
+<a class="youtube" href="https://www.youtube.com/watch?v=WJ5dAhOR6Gg"><img src="../img/videos/WJ5dAhOR6Gg-1280x720.png"></img></a>
 
 Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named “shifted boundary method” (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.
 
@@ -344,7 +374,7 @@ Immersed/embedded/unfitted boundary methods obviate the need for continual re-me
 #### *Welcome and Overview*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](wgx0e8mdKu8)
+<a class="youtube" href="https://www.youtube.com/watch?v=wgx0e8mdKu8"><img src="https://img.youtube.com/vi/wgx0e8mdKu8/maxresdefault.jpg"></img></a>
 
 Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.
 
@@ -354,7 +384,7 @@ Aaron Fisher of LLNL kicked off the event with an overview of the workshop agend
 #### *The State of MFEM*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](95OJe5DjjkA)
+<a class="youtube" href="https://www.youtube.com/watch?v=95OJe5DjjkA"><img src="https://img.youtube.com/vi/95OJe5DjjkA/maxresdefault.jpg"></img></a>
 
 MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
 
@@ -364,7 +394,7 @@ MFEM principal investigator Tzanio Kolev described the project’s past, present
 #### *Recent Developments*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](1FCP0T5oIeE)
+<a class="youtube" href="https://www.youtube.com/watch?v=1FCP0T5oIeE"><img src="https://img.youtube.com/vi/1FCP0T5oIeE/maxresdefault.jpg"></img></a>
 
 Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
 
@@ -374,7 +404,7 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including su
 #### *Palace: PArallel LArge-scale Computational Electromagnetics*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](jSuFUdLc8i0)
+<a class="youtube" href="https://www.youtube.com/watch?v=jSuFUdLc8i0"><img src="https://img.youtube.com/vi/jSuFUdLc8i0/maxresdefault.jpg"></img></a>
 
 Palace is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. Grimberg provided an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.
 
@@ -384,7 +414,7 @@ Palace is a parallel finite element code for full-wave electromagnetics simulati
 #### *Computation and Reduced Order Modelling of Periodic Flows*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](lNIXeirM6Gg)
+<a class="youtube" href="https://www.youtube.com/watch?v=lNIXeirM6Gg"><img src="https://img.youtube.com/vi/lNIXeirM6Gg/maxresdefault.jpg"></img></a>
 
 Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. His work aims to reduce the cost of these computations. His team solves periodic flows in a space-time domain in which both ends in time are periodic such that they only have to model one period. MFEM is used to discretize the space-time domain and solve our discretized system of equations. Lotz applies a hyper-reduced Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation he showed (results of) their full order model and their advances in reduced order modelling.
 
@@ -394,7 +424,7 @@ Many types of periodic flows can be found in nature and industrial applications 
 #### *Scalable Design and Optimization with MFEM*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](7W8OCl5MLfw)
+<a class="youtube" href="https://www.youtube.com/watch?v=7W8OCl5MLfw"><img src="https://img.youtube.com/vi/7W8OCl5MLfw/maxresdefault.jpg"></img></a>
 
 Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.
 
@@ -404,7 +434,7 @@ Lazarov discussed recently added and ongoing code development facilitating the s
 #### *Part 1*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](c8WVPnTpvtI)
+<a class="youtube" href="https://www.youtube.com/watch?v=c8WVPnTpvtI"><img src="https://img.youtube.com/vi/c8WVPnTpvtI/maxresdefault.jpg"></img></a>
 
 The following four students presented in this video:
 
@@ -419,7 +449,7 @@ The following four students presented in this video:
 #### *Part 2*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](Gp88u3Eql2Y)
+<a class="youtube" href="https://www.youtube.com/watch?v=Gp88u3Eql2Y"><img src="https://img.youtube.com/vi/Gp88u3Eql2Y/maxresdefault.jpg"></img></a>
 
 The following four students presented in this video:
 
@@ -434,7 +464,7 @@ The following four students presented in this video:
 #### *Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](feUk70vXB7k)
+<a class="youtube" href="https://www.youtube.com/watch?v=feUk70vXB7k"><img src="https://img.youtube.com/vi/feUk70vXB7k/maxresdefault.jpg"></img></a>
 
 In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ < 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.
 
@@ -444,7 +474,7 @@ In high-temperature plasmas, the dielectric response to the RF fields is caused 
 #### *Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](cajYzhxBDkw)
+<a class="youtube" href="https://www.youtube.com/watch?v=cajYzhxBDkw"><img src="https://img.youtube.com/vi/cajYzhxBDkw/maxresdefault.jpg"></img></a>
 
 Horvath presented the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. He showcased these enhancements and provide insights into their versatile usage across different problems.
 
@@ -454,7 +484,7 @@ Horvath presented the HDG branch, which was initially developed for HDG discreti
 #### *Empowering MFEM Using libCEED*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](32JWerSEQyA)
+<a class="youtube" href="https://www.youtube.com/watch?v=32JWerSEQyA"><img src="https://img.youtube.com/vi/32JWerSEQyA/maxresdefault.jpg"></img></a>
 
 Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.
 
@@ -464,7 +494,7 @@ Dudouit began with an overview of the features introduced to MFEM through the in
 #### *Homogenized Energy Theory for Solution of Elasticity Problems with Consideration of Higher-Order Microscopic Deformations*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](Ic5bujKlHh4)
+<a class="youtube" href="https://www.youtube.com/watch?v=Ic5bujKlHh4"><img src="https://img.youtube.com/vi/Ic5bujKlHh4/maxresdefault.jpg"></img></a>
 
 The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.
 
@@ -474,7 +504,7 @@ The classical continuum mechanics faces difficulties in solving problems involvi
 #### *Contact Constraint Enforcement Using the Tribol Interface Physics Library*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](OCurPCdTcno)
+<a class="youtube" href="https://www.youtube.com/watch?v=OCurPCdTcno"><img src="https://img.youtube.com/vi/OCurPCdTcno/maxresdefault.jpg"></img></a>
 
 Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. [Tribol](https://github.com/LLNL/Tribol) is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with [Serac](https://github.com/LLNL/serac), an open-source implicit nonlinear thermal-structural simulation code.
 
@@ -484,7 +514,7 @@ Chin discussed recent additions to the Tribol interface physics library to simpl
 #### *Deterministic Transport MFEM-Miniapp*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](Ijqv0v3zSQU)
+<a class="youtube" href="https://www.youtube.com/watch?v=Ijqv0v3zSQU"><img src="https://img.youtube.com/vi/Ijqv0v3zSQU/maxresdefault.jpg"></img></a>
 
 Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.
 
@@ -494,7 +524,7 @@ Holec introduced a new multidimensional discretization in MFEM enabling efficien
 #### *Wrap-Up and Visualization Contest Winners*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop.md)
 
-![YouTube](DfqH7n1Sekg)
+<a class="youtube" href="https://www.youtube.com/watch?v=DfqH7n1Sekg"><img src="https://img.youtube.com/vi/DfqH7n1Sekg/maxresdefault.jpg"></img></a>
 
 The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the [gallery](gallery.md).
 
@@ -514,7 +544,7 @@ The workshop concluded with the announcement of winners of the simulation and vi
 #### *PDE Simulations on Unstructured Grids with Finite Element Discretizations*
 ##### **March 15, 2023** | [IPAM at UCLA](https://www.ipam.ucla.edu/programs/long-programs/new-mathematics-for-the-exascale-applications-to-materials-science/)
 
-![YouTube](lJl1_LkyU1g)
+<a class="youtube" href="https://www.youtube.com/watch?v=lJl1_LkyU1g"><img src="https://img.youtube.com/vi/lJl1_LkyU1g/maxresdefault.jpg"></img></a>
 
 LLNL computational mathematician Tzanio Kolev presented an overview of MFEM as part of the long program on *New Mathematics for the Exascale: Applications to Materials Science* at the Institute for Pure and Applied Mathematics.
 
@@ -532,7 +562,7 @@ LLNL computational mathematician Tzanio Kolev presented an overview of MFEM as p
 #### *Welcome and Overview*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](vaAA9zB1IQ8)
+<a class="youtube" href="https://www.youtube.com/watch?v=vaAA9zB1IQ8"><img src="https://img.youtube.com/vi/vaAA9zB1IQ8/maxresdefault.jpg"></img></a>
 
 Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&A session, and a visualization contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.
 
@@ -542,7 +572,7 @@ Held on October 25, 2022, the second annual MFEM community workshop brought toge
 #### *The State of MFEM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](I4pLPBYFR8o)
+<a class="youtube" href="https://www.youtube.com/watch?v=I4pLPBYFR8o"><img src="https://img.youtube.com/vi/I4pLPBYFR8o/maxresdefault.jpg"></img></a>
 
 MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.
 
@@ -552,7 +582,7 @@ MFEM principal investigator Tzanio Kolev described the project’s past, present
 #### *Recent Developments in MFEM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](pZQP0Q4SbWU)
+<a class="youtube" href="https://www.youtube.com/watch?v=pZQP0Q4SbWU"><img src="https://img.youtube.com/vi/pZQP0Q4SbWU/maxresdefault.jpg"></img></a>
 
 Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.
 
@@ -562,7 +592,7 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including su
 #### *Solution of the Electroencephalography (EEG) Forward Problem*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](2BgDwwCERm8)
+<a class="youtube" href="https://www.youtube.com/watch?v=2BgDwwCERm8"><img src="https://img.youtube.com/vi/2BgDwwCERm8/maxresdefault.jpg"></img></a>
 
 Ben Zwick of the University of Western Australia presented "Solution of the Electroencephalography (EEG) Forward Problem." The brain's electrical activity can be measured using EEG with electrodes attached to the scalp, or electrocorticography (ECoG), also known as intracranial EEG (iEEG), with electrodes implanted on the brain's surface. EEG source localization combines measurements from EEG or iEEG with data from medical imaging to estimate the location and strengths of the current sources that generated the measured electric potential at the electrodes. Source localization can be used to locate the epileptic zone in pharmaco-resistant focal epilepsies and study evoked related potentials. Accurate source localization requires fast and accurate solutions of the EEG forward problem, which involves calculating the electric potential within the brain volume given a predefined source. This presentation demonstrates how MFEM can be used to solve the EEG forward problem using patient-specific geometry and tissue conductivity obtained from medical images.
 
@@ -572,7 +602,7 @@ Ben Zwick of the University of Western Australia presented "Solution of the Elec
 #### *Rodin: Density and Topology Optimization Framework*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](ZhfDFRJjnU0)
+<a class="youtube" href="https://www.youtube.com/watch?v=ZhfDFRJjnU0"><img src="https://img.youtube.com/vi/ZhfDFRJjnU0/maxresdefault.jpg"></img></a>
 
 Carlos Brito Pacheco of Université Grenoble Alpes presented "Rodin: Lightweight and Modern C++17 Shape, Density and Topology Optimization Framework." He introduced the shape optimization library Rodin; a lightweight and modular shape optimization framework which provides many of the associated functionalities that are needed when implementing shape and topology optimization algorithms. These functionalities range from refining and remeshing the underlying shape, to providing elegant mechanisms to specify and solve variational problems. Learn more about [Rodin on GitHub](https://cbritopacheco.github.io/rodin/).
 
@@ -582,7 +612,7 @@ Carlos Brito Pacheco of Université Grenoble Alpes presented "Rodin: Lightweight
 #### *Stochastic Fractional PDEs: Random Field Generation & Topology Optimization*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](s2s2YyxdTmU)
+<a class="youtube" href="https://www.youtube.com/watch?v=s2s2YyxdTmU"><img src="https://img.youtube.com/vi/s2s2YyxdTmU/maxresdefault.jpg"></img></a>
 
 Tobias Duswald of CERN/Technical University of Munich presented "Stochastic Fractional PDEs with MFEM with Applications to Random Field Generation and Topology Optimization." Over the last several centuries, engineers, physicists, and mathematicians have learned how to describe their problems accurately with partial differential equations (PDEs). PDEs govern the laws of continuum mechanics, quantum mechanics, heat transfer, and many other phenomena. More recently, fractional PDEs have gained popularity in the scientific community because they allow for a more general description of complicated systems (e.g., multiphysics) by leveraging a real-valued exponent for the operators. Besides fractional operators, stochastic PDEs have also sparked the community's interest because they generalize the PDE framework to account for randomness appearing in many disciplines. This talk addresses the numerical solution of stochastic, fractional PDEs with MFEM. To deal with these two flavors of PDEs, Duswald introduced MFEM’s WhiteNoiseIntegrator to treat a stochastic linear form and adopt a rational approximation for the fractional operator. He presented results for three different use cases. First, he showed numerical results for the fractional Laplace problem with homogeneous Dirichlet boundary conditions. Second, he generated Matérn-type Gaussian random fields (GRFs) by solving a specific stochastic, fractional PDE using an approach commonly referred to as SPDE method in the spatial statistics literature. Thirdly, he used GRFs to model geometric uncertainties in additive manufacturing processes and apply the model for topology optimization under uncertainty.
 
@@ -592,7 +622,7 @@ Tobias Duswald of CERN/Technical University of Munich presented "Stochastic Frac
 #### *MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](PgsQwKFq9Yo)
+<a class="youtube" href="https://www.youtube.com/watch?v=PgsQwKFq9Yo"><img src="https://img.youtube.com/vi/PgsQwKFq9Yo/maxresdefault.jpg"></img></a>
 
 Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFEM Application to EM-Wave Simulation in ECR Space Plasma Thrusters." The solution of Maxwell equations using the cold-plasma approximation is shown in the context of the design of electron cyclotron resonance plasma thrusters for space propulsion applications. This thruster class utilizes the electron cyclotron resonance to energize the plasma constituents and to sustain the plasma discharge. MFEM finite element discretization is used to solve for the time-harmonic electromagnetic waves. The shape and magnitude of the electromagnetic power density absorbed by the plasma is coupled to the plasma transport variables, and therefore determines the thruster operation performance parameters. Coupled simulations of the electromagnetic-wave and the plasma transport problems are used to interpret thruster operational principles, to understand its sensitivity to operational and design parameters, and compared to experimental measurements to both assess the accuracy of the current numerical model and to highlight its main limitations.
 
@@ -602,7 +632,7 @@ Alvaro Sánchez Villar of the Princeton Plasma Physics Laboratory presented "MFE
 #### *OpenParEM2D: A 2D Simulator for Guided Waves*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](_CqFJUu7E8E)
+<a class="youtube" href="https://www.youtube.com/watch?v=_CqFJUu7E8E"><img src="https://img.youtube.com/vi/_CqFJUu7E8E/maxresdefault.jpg"></img></a>
 
 Independent software developer Brian Young presented "OpenParEM2D: A Free, Open-Source Electromagnetic Simulator for 2D Waveguides and Transmission Lines." An overview is provided on a 2D electromagnetic simulator for guided waves called OpenParEM2D. It is an open-source and free project licensed under GPLv3 or later and released at its [website](https://openparem.org). Capabilities and methodology are presented.
 
@@ -612,7 +642,7 @@ Independent software developer Brian Young presented "OpenParEM2D: A Free, Open-
 #### *The Development of the EM RF-Edge Interactions Mini-app “Stix” Using MFEM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](44VeX-AVxU8)
+<a class="youtube" href="https://www.youtube.com/watch?v=44VeX-AVxU8"><img src="https://img.youtube.com/vi/44VeX-AVxU8/maxresdefault.jpg"></img></a>
 
 Christina Migliore of MIT presented "The Development of the EM RF-Edge Interactions Mini-App Stix Using MFEM." Ion cyclotron radio frequency range (ICRF) power plays an important role in heating and current drive in fusion devices. However, experiments show that in the ICRF regime there is a formation of a radio frequency (RF) sheath at the material and antenna boundaries that influences sputtering and power dissipation. Given the size of the sheath relative to the scale of the device, it can be approximated as a boundary condition (BC). Electromagnetic field solvers in the ICRF regime typically treat material boundaries as perfectly conducting, thus ignoring the effect of the RF sheath. Here it is described progress of implementing a model for the RF sheath based on a finite impedance sheath BC formulated by J. Myra and D. A. D’Ippolito, Physics of Plasmas 22 (2015) which provides a representation of the RF rectified sheath including capacitive and resistive effects. This research will discuss the results from the development of a parallelized cold-plasma wave equation solver Stix that implements this non-linear sheath impedance BC through the method of finite elements in pseudo-1D and pseudo-2D using the MFEM library.
 
@@ -622,7 +652,7 @@ Christina Migliore of MIT presented "The Development of the EM RF-Edge Interacti
 #### *High-Order Solvers + GPU Acceleration*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](dIC7d1q27hM)
+<a class="youtube" href="https://www.youtube.com/watch?v=dIC7d1q27hM"><img src="https://img.youtube.com/vi/dIC7d1q27hM/maxresdefault.jpg"></img></a>
 
 Will Pazner of Portland State University presented "High-Order Solvers + GPU Acceleration." He discussed the benefits of high-order (HO) methods in modeling under-resolved physics and on modern computing architectures, acknowledging that solving HO finite element problems remains challenging. His talk included details about how MFEM supports matrix-free solvers for HO methods, HO operator setup and application, low-order-refined (LOR) preconditioning and matrix assembly, LOR assembly throughput on GPUs (including CPU and GPU comparisons and parallel scalability), and LOR adaptive mesh refinement preconditioning.
 
@@ -632,7 +662,7 @@ Will Pazner of Portland State University presented "High-Order Solvers + GPU Acc
 #### *Shape and Topology Optimization Powered by MFEM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](eD6Xr2jRrss)
+<a class="youtube" href="https://www.youtube.com/watch?v=eD6Xr2jRrss"><img src="https://img.youtube.com/vi/eD6Xr2jRrss/maxresdefault.jpg"></img></a>
 
 Jorge-Luis Barrera of LLNL presented "Shape and Topology Optimization Powered by MFEM." He discussed the Livermore Design Optimization (LiDO) code, which solves optimization problems for a wide range of Lab-relevant engineering applications. Leveraging MFEM and the LLNL-developed engineering simulation code Serac, LiDO delivers a powerful suite of design tools that run on HPC systems. The talk highlighted several design examples that benefit from LiDO’s integration with MFEM, including multi-material geometries, octet truss lattices, and a concrete dam under stress. LiDO’s graph architecture that seamlessly integrates MFEM features ensures robust topology optimization, as well as shape optimization using nodal coordinates and level set fields as optimization variables.
 
@@ -642,7 +672,7 @@ Jorge-Luis Barrera of LLNL presented "Shape and Topology Optimization Powered by
 #### *Reduced Order Modeling for FE Simulations with MFEM & libROM*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](QfczefW8Xgk)
+<a class="youtube" href="https://www.youtube.com/watch?v=QfczefW8Xgk"><img src="https://img.youtube.com/vi/QfczefW8Xgk/maxresdefault.jpg"></img></a>
 
 Siu Wun Cheung of LLNL presented "Reduced Order Modeling for Finite Element Simulations Through the Partnership of MFEM and libROM." MFEM provides a wide variety of mesh types and high-order finite element discretizations. However, subject to the model complexity and fine resolution of the discretization, the computational cost can be high, requiring a long time to complete a single forward simulation. In this talk, we will introduce various reduced order modeling techniques, which aim to lower the computational complexity and maintain good accuracy, including intrusive projection-based model reduction and non-intrusive approaches. We will demonstrate the use of reduced order modeling techniques in libROM (www.librom.net), which can be applied to various MFEM examples, including the Poisson problem, linear elasticity, linear advection, mixed nonlinear diffusion, nonlinear elasticity, nonlinear heat conduction, Euler equation, and optimal control problems.
 
@@ -652,7 +682,7 @@ Siu Wun Cheung of LLNL presented "Reduced Order Modeling for Finite Element Simu
 #### *Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](JT3RwzEeq8k)
+<a class="youtube" href="https://www.youtube.com/watch?v=JT3RwzEeq8k"><img src="https://img.youtube.com/vi/JT3RwzEeq8k/maxresdefault.jpg"></img></a>
 
 Devlin Hayduke of ReLogic Research presented "Project Minerva: Accelerated Deployment of MFEM Based Solvers in Large Scale Industrial Problems." While many Advanced Scientific Computing Research (ASCR) supported software packages are open source, they are often complicated to use, distributed primarily in source-code form targeting HPC systems, and potential adopters lack options for purchasing commercial support, training, and custom-development services. In response to this need, ReLogic Research, Inc., in collaboration with LLNL, is developing a secure, cloud deployable platform based on the MFEM software termed Minerva. Minerva will feature an integration layer allowing users of commercially available finite element pre/post-processing software (e.g., Abaqus/CAE, Hypermesh, Femap) for use with the Abaqus solver to run simulation studies with the MFEM discretization library and will strengthen further MFEM implemented solvers to make them applicable for solving large scale industrial design and optimization problems.
 
@@ -662,7 +692,7 @@ Devlin Hayduke of ReLogic Research presented "Project Minerva: Accelerated Deplo
 #### *blastFEM: GPU-Accelerated, High-Performance, Energy-Efficient Solver*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](tzQUlm0hlvE)
+<a class="youtube" href="https://www.youtube.com/watch?v=tzQUlm0hlvE"><img src="https://img.youtube.com/vi/tzQUlm0hlvE/maxresdefault.jpg"></img></a>
 
 Tim Brewer, Ben Shields, Peter Vonk, Jeff Heylmun, and Barlev Raymond of Synthetik Applied Technologies presented "blastFEM: A GPU-Accelerated, Very High-Performance and Energy-Efficient Solver for Highly Compressible Flows." Highly compressible multiphase and reactive flows are important, and manifest across a myriad of practical applications: novel energy production and propulsion methods, building design, safety and energy efficiency, material discovery, and maintenance of our nuclear arsenal. There are, however, few tools available to industry capable of simulating these flows at a resolution and scale suitable make predictions of adequate detail—at least within reasonable timeframes and budgetary constraints—to inform engineers and designers. A next generation, highly efficient simulation code is needed that can deliver results within useful timeframes, with sufficient detail to be useful to support simulation-driven design, discovery, and optimization. Furthermore, the code must be designed to run on modern and emerging heterogeneous architectures, and can efficiently leverage these architectures though the use of numerical schemes designed to maximized computational efficiency.
 
@@ -672,7 +702,7 @@ Tim Brewer, Ben Shields, Peter Vonk, Jeff Heylmun, and Barlev Raymond of Synthet
 #### *Using MFEM for Wellbore Stability Analysis*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](gBEApU1V_80)
+<a class="youtube" href="https://www.youtube.com/watch?v=gBEApU1V_80"><img src="https://img.youtube.com/vi/gBEApU1V_80/maxresdefault.jpg"></img></a>
 
 Adolfo Rodriguez of OpenSim Technology presented "Using MFEM for Wellbore Stability Analysis." He discussed the results from a Department of Energy Small Business Innovation Research project regarding the implementation of wellbore stability analysis for hydrocarbon producing wells.
 
@@ -682,7 +712,7 @@ Adolfo Rodriguez of OpenSim Technology presented "Using MFEM for Wellbore Stabil
 #### *AWS Tutorial*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](tsr6vza_7DM)
+<a class="youtube" href="https://www.youtube.com/watch?v=tsr6vza_7DM"><img src="https://img.youtube.com/vi/tsr6vza_7DM/maxresdefault.jpg"></img></a>
 
 In this tutorial, Julian Andrej of LLNL demonstrated how to use MFEM in the cloud (e.g., an Amazon Web Services instance) for scalable finite element discretization application development. Step-by-step instructions for the tutorial can be found on the [tutorial page](https://mfem.org/tutorial/).
 
@@ -692,7 +722,7 @@ In this tutorial, Julian Andrej of LLNL demonstrated how to use MFEM in the clou
 #### *Wrap-Up and Simulation Contest Winners*
 ##### **October 25, 2022** | [MFEM Workshop 2022](workshop22.md)
 
-![YouTube](7uExaQm8Dmk)
+<a class="youtube" href="https://www.youtube.com/watch?v=7uExaQm8Dmk"><img src="https://img.youtube.com/vi/7uExaQm8Dmk/maxresdefault.jpg"></img></a>
 
 Aaron Fisher of LLNL concluded the workshop by announcing the winners of the simulation and visualization contest: (1) streamlines of the electric field generated by a current dipole source located in the temporal lobe of an epilepsy patient, rendered by Ben Zwick of the University of Western Australia; (2) a topology-optimized heat sink, rendered by Tobias Duswald of CERN/Technical University of Munich; (3) the magnetic field induced by current running through copper wire in air, rendered by Will Pazner of Portland State University. Contest winners are featured in the MFEM [gallery](gallery.md).
 
@@ -708,7 +738,7 @@ Aaron Fisher of LLNL concluded the workshop by announcing the winners of the sim
 #### *Finite Element Algorithms and Research Topics in ALE Hydrodynamics*
 ##### **November 17, 2022** | [Texas A&M University-Corpus Christi Department of Math & Statistics](https://www.tamucc.edu/science/departments/math-and-statistics/index.php)
 
-![YouTube](WrV_rB4pAnE)
+<a class="youtube" href="https://www.youtube.com/watch?v=WrV_rB4pAnE"><img src="https://img.youtube.com/vi/WrV_rB4pAnE/maxresdefault.jpg"></img></a>
 
 LLNL computational mathematician Vladimir Tomov discussed high-order finite element methods research, development, and application in the context of shock hydrodynamics simulations. The method is based on an Arbitrary Lagrangian-Eulerian (ALE) formulation consisting of separate Lagrangian, mesh optimization, and remap phases. The presentation addressed the following topics: Lagrangian shock hydrodynamics on curved meshes; multi-material closure models; coupling to multigroup radiation diffusion; optimization, r-adaptivity, and surface fitting of high-order meshes; advection-based remap with nonlinear sharpening of material interfaces; synchronization between the max/min bounds of primal and conservative fields during remap; computationally efficient finite element kernels based on partial assembly and sum factorization. The talk also covered the existing methods followed by a discussion about the outstanding research challenges and ongoing work to address them.
 
@@ -718,7 +748,7 @@ LLNL computational mathematician Vladimir Tomov discussed high-order finite elem
 #### *All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations*
 ##### **March 21–24, 2022** | [NVIDIA GTC22](https://www.nvidia.com/gtc/)
 
-![YouTube](M2a1eW9XMJQ)
+<a class="youtube" href="https://www.youtube.com/watch?v=M2a1eW9XMJQ"><img src="https://img.youtube.com/vi/M2a1eW9XMJQ/maxresdefault.jpg"></img></a>
 
 LLNL research scientist John Camier described recent improvements of high-order finite element CUDA kernels that can reduce the time-to-solution by a factor of 10. Augmenting traditional compiler representations with a general mathematical description enables a sustainable way to generate optimized kernels, matching the peak performance of hand-tuned CUDA code. Such intermediate graph-based representation provides significant potential for optimization, both in terms of minimizing the number of kernel launches and in reducing the memory bandwidth. Camier also presented results on single and multiple GPUs that demonstrate significant reduction in the local problem size required to reach peak performance, leading to faster time-to-solution in finite element applications.
 
@@ -734,10 +764,9 @@ LLNL research scientist John Camier described recent improvements of high-order 
 #### *Wrap-Up and Simulation Contest Winners*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](9WViLXI7wx4)
+<a class="youtube" href="https://www.youtube.com/watch?v=9WViLXI7wx4"><img src="https://img.youtube.com/vi/9WViLXI7wx4/maxresdefault.jpg"></img></a>
 
-MFEM’s first community workshop was held virtually on October 20, 2021, with participants around the world.
-Aaron Fisher of LLNL concluded the workshop by announcing the results of the simulation and visualization contest. The winners represent two very different research applications using MFEM: (1) the electric field generated by electrocardiogram waves of a rabbit’s heart ventricles, rendered by Dennis Ogiermann of Ruhr-University Bochum (Germany); (2) incompressible fluid flow around a rotating turbine, animated by Tamas Horvath of Oakland University (Michigan). Contest submissions are featured in the [gallery](gallery.md).
+MFEM’s first community workshop was held virtually on October 20, 2021, with participants around the world. Aaron Fisher of LLNL concluded the workshop by announcing the results of the simulation and visualization contest. The winners represent two very different research applications using MFEM: (1) the electric field generated by electrocardiogram waves of a rabbit’s heart ventricles, rendered by Dennis Ogiermann of Ruhr-University Bochum (Germany); (2) incompressible fluid flow around a rotating turbine, animated by Tamas Horvath of Oakland University (Michigan). Contest submissions are featured in the [gallery](gallery.md).
 
 ---
 
@@ -745,7 +774,7 @@ Aaron Fisher of LLNL concluded the workshop by announcing the results of the sim
 #### *High-Order Matrix-Free Solvers*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](d6Ic9itl21g)
+<a class="youtube" href="https://www.youtube.com/watch?v=d6Ic9itl21g"><img src="https://img.youtube.com/vi/d6Ic9itl21g/maxresdefault.jpg"></img></a>
 
 For users unfamiliar with MFEM’s solver library, Will Pazner of LLNL demonstrated a few ways—in some cases adding just a single line of code—to run scalable solvers for differential equations. These solvers execute hierarchical finite element discretizations for both low- and high-order problems.
 
@@ -755,7 +784,7 @@ For users unfamiliar with MFEM’s solver library, Will Pazner of LLNL demonstra
 #### *MFEM Capabilities for High-Order Mesh Optimization*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](c-VcclDfT7Y)
+<a class="youtube" href="https://www.youtube.com/watch?v=c-VcclDfT7Y"><img src="https://img.youtube.com/vi/c-VcclDfT7Y/maxresdefault.jpg"></img></a>
 
 Vladimir Tomov of LLNL described MFEM’s mesh optimization strategies including ways the user can define target elements. He demonstrated optimizing a mesh’s shape by limiting displacements to preserve a boundary layer and by changing the size of a uniform mesh in a specific region. MFEM’s mesh-optimizing miniapps are [available online](https://mfem.org/meshing-miniapps).
 
@@ -765,7 +794,7 @@ Vladimir Tomov of LLNL described MFEM’s mesh optimization strategies including
 #### *Unstructured Finite Element Neutron Transport using MFEM*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](Gfq6HFOpKmA)
+<a class="youtube" href="https://www.youtube.com/watch?v=Gfq6HFOpKmA"><img src="https://img.youtube.com/vi/Gfq6HFOpKmA/maxresdefault.jpg"></img></a>
 
 William Dawn from North Carolina State University described his work with unstructured neutron transport. His team models microreactors, a new class of compact reactor with relatively small electrical output. As part of the Exascale Computing Project, Dawn’s team is modeling the MARVEL reactor, which is planned for construction at Idaho National Laboratory. MFEM satisfies their need for a finite element framework with GPU support and rapid prototyping. With MFEM, the team discretizes a neutron transport equation with six independent variables in space, direction, and energy.
 
@@ -777,7 +806,7 @@ Traditional neutron transport methods use a “sweeping” method to transport p
 #### *Development of PyMFEM Python Wrapper for MFEM & Scalable RF Wave Simulation for Nuclear Fusion*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](8MBXq1PwUV8)
+<a class="youtube" href="https://www.youtube.com/watch?v=8MBXq1PwUV8"><img src="https://img.youtube.com/vi/8MBXq1PwUV8/maxresdefault.jpg"></img></a>
 
 Syun’ichi Shiraiwa of Pacific Northwest National Laboratory introduced PyMFEM, a Python wrapper for MFEM that his team uses in radiofrequency (RF) wave simulations for the RF-SciDAC project. RF waves can be used to heat plasma in a nuclear fusion reaction. Simulations of this process present multiple challenges when incorporating a variety of antenna structures at different frequencies, waves with different wave lengths in the same space or spatially diverse, and RF wave effects on background plasma. To integrate MFEM, a C++ software library, into their multiphysics platform, Shiraiwa’s team created a code “wrapper” that binds MFEM to the external Python components of RF wave simulations, ultimately extending MFEM’s features to Python users. Shiraiwa described how the PyMFEM module works in serial and parallel and invited the audience to contribute to the open-source code.
 
@@ -787,7 +816,7 @@ Syun’ichi Shiraiwa of Pacific Northwest National Laboratory introduced PyMFEM,
 #### *An Adaptive, Scalable Fully Implicit Resistive MHD Solver*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](-YPgim5GrqE)
+<a class="youtube" href="https://www.youtube.com/watch?v=-YPgim5GrqE"><img src="../img/videos/YPgim5GrqE-1280x720.png"></img></a>
 
 Qi Tang of Los Alamos National Laboratory described his team’s development of an efficient, scalable solver for tokamak plasma simulations. Magnetohydrodynamics (MHD) equations are important for studying plasma systems, but efficient numerical solutions for MHD are extremely challenging due to disparate time and length scales, strong hyperbolic phenomena, and nonlinearity. Tang’s team has developed a high-order stabilized finite element algorithm for incompressible resistive MHD equations based on MFEM, which provides physics-based preconditioners, adaptive mesh refinement, parallelization, and load balancing. Tang showed animated examples of the model’s scalable and efficient results.
 
@@ -797,7 +826,7 @@ Qi Tang of Los Alamos National Laboratory described his team’s development of 
 #### *Laser Plasma Modeling with High-Order Finite Elements*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](N7kwS0FdaD8)
+<a class="youtube" href="https://www.youtube.com/watch?v=N7kwS0FdaD8"><img src="https://img.youtube.com/vi/N7kwS0FdaD8/maxresdefault.jpg"></img></a>
 
 Jan Nikl outlined how his team at the ELI Beamlines Centre uses MFEM for laser plasma modeling. Lasers have found their application in many scientific disciplines, where generation of plasma, the fourth state of matter, holds great potential for the future. A detailed description of laser produced plasmas is then essential for many applications, like (pre)pulses of ultra-intense lasers and ion acceleration beamlines, laboratory astrophysics, inertial confinement fusion, and many others. All of the mentioned are investigated at ELI Beamlines in the Czech Republic, a European laser facility aiming to operate the most intense laser system in the world. In this context, Nikl described the numerical construction based on the finite element method. This effort concentrates mainly on the Lagrangian hydrodynamics and Vlasov–Fokker–Planck–Maxwell kinetic description of plasma, utilizing the MFEM library for its flexibility and scalability.
 
@@ -807,7 +836,7 @@ Jan Nikl outlined how his team at the ELI Beamlines Centre uses MFEM for laser p
 #### *Modeling Peripheral Nerve Stimulations (PNS) in Magnetic Resonance Imaging (MRI)*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](Mkz13lAH9Ak)
+<a class="youtube" href="https://www.youtube.com/watch?v=Mkz13lAH9Ak"><img src="https://img.youtube.com/vi/Mkz13lAH9Ak/maxresdefault.jpg"></img></a>
 
 Mathias Davids from Harvard Medical School presented MFEM’s use in a medical setting. Peripheral nerve stimulation (PNS) limits the usable image encoding performance in the latest generation of magnetic resonance imaging (MRI) scanners. The rapid switching of the MRI gradient coils’ magnetic fields induces electric fields in the human body strong enough to evoke unwanted action potential in peripheral nerves, leading to muscle contractions or touch perceptions. Despite its limiting role in MRI, PNS effects are not directly included during the coil design phase. Davids’ team developed a modeling tool to predict PNS thresholds and locations in the human body, allowing them to directly incorporate PNS metrics in the numeric coil winding optimization to design PNS-optimized coil layouts. This modeling tool relies on electromagnetic field simulations in heterogeneous finite element body models coupled to neurodynamic models of myelinated nerve fibers. This tool enables researchers to develop strategies that mitigate PNS effects without building expensive prototype MRI systems, maximizing the usable image encoding performance.
 
@@ -817,9 +846,9 @@ Mathias Davids from Harvard Medical School presented MFEM’s use in a medical s
 #### *Development of DG Compressible Navier-Stokes Solver with MFEM*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](3T9dQI1SU88)
+<a class="youtube" href="https://www.youtube.com/watch?v=3T9dQI1SU88"><img src="https://img.youtube.com/vi/3T9dQI1SU88/maxresdefault.jpg"></img></a>
 
-Marc Bolinches from the University of Texas at Austin described a compressible Navier-Stokes solver using MFEM v4,2 which did not include full support for GPUs. The solver uses the discontinuous Galerkin (DG) method as a space discretization and an explicit Runge-Kutta time-integration scheme. An effort has been made to fully support GPU computation by taking over some of the loops internal to the NonLinearForm class. This has also allowed us to implement overlap between computation and communication. The team hopes their open-source code will help other researchers in creating high-fidelity simulations of compressible flows.
+Marc Bolinches from the University of Texas at Austin described a compressible Navier-Stokes solver using MFEM v4.2 which did not include full support for GPUs. The solver uses the discontinuous Galerkin (DG) method as a space discretization and an explicit Runge-Kutta time-integration scheme. An effort has been made to fully support GPU computation by taking over some of the loops internal to the NonLinearForm class. This has also allowed us to implement overlap between computation and communication. The team hopes their open-source code will help other researchers in creating high-fidelity simulations of compressible flows.
 
 ---
 
@@ -827,7 +856,7 @@ Marc Bolinches from the University of Texas at Austin described a compressible N
 #### *The Multiphysics on Advanced Platforms Project: Performance, Portability and Scaling*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](4BK0-VzM1Po)
+<a class="youtube" href="https://www.youtube.com/watch?v=4BK0-VzM1Po"><img src="https://img.youtube.com/vi/4BK0-VzM1Po/maxresdefault.jpg"></img></a>
 
 High-energy-density physics (HEDP) experiments performed at LLNL and other Department of Energy laboratories require multiphysics simulations to predict the behavior of complex physical systems for applications including inertial confinement fusion, pulsed power, and material strength/equations-of-state studies. Robert Rieben described the variety of mathematical algorithms needed for these simulations, including ALE methods, unstructured adaptive mesh refinement, and high-order discretizations. LLNL’s Multiphysics on Advanced Platforms Project (MAPP) is developing a next-generation multiphysics code, called MARBL, based on high-order numerical methods and modular infrastructure for deployment on advanced HPC architectures. MARBL’s use of high-order methods produce better throughput on GPUs. MARBL uses MFEM for finite elements and mesh/field/operator abstractions while leveraging its support for efficient memory management. Rieben explained that co-design efforts among the MARBL, MFEM, and RAJA (portability software) teams led to better device utilization and improved performance for the MARBL code.
 
@@ -837,7 +866,7 @@ High-energy-density physics (HEDP) experiments performed at LLNL and other Depar
 #### *Phase Change Heat and Mass Transfer Simulation with MFEM*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](OPRIpc2o_EA)
+<a class="youtube" href="https://www.youtube.com/watch?v=OPRIpc2o_EA"><img src="https://img.youtube.com/vi/OPRIpc2o_EA/maxresdefault.jpg"></img></a>
 
 Three undergraduate students—Felipe Gómez, Carlos del Valle, and Julián Jiménez—from the National University of Colombia presented their work using MFEM in an oceanographic model. Below the Arctic sea ice, and under the right conditions, a flux of icy brine flows down into the sea. The icy brine has a much lower fusion point and a higher density than normal seawater. As a result, it sinks while freezing everything around it, forming an ice channel called a brinicle (also known as ice stalactite). The team shared their simulations of this phenomenon assuming cylindrical symmetry. The fluid is considered viscous and quasi-stationary, and the problem is simulated taking advantage of the setup symmetries. The heat and salt transport are weakly coupled to the fluid motion and are modeled with the corresponding conservation equations, taking into account diffusive and convective effects. The coupled system of partial differential equations is discretized and solved with the help of the MFEM finite element library.
 
@@ -847,7 +876,7 @@ Three undergraduate students—Felipe Gómez, Carlos del Valle, and Julián Jim�
 #### *MFEM-MGIS-MFront, a MFEM-Based Library for Nonlinear Solid Thermomechanic*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](K6HrhFWdfx8)
+<a class="youtube" href="https://www.youtube.com/watch?v=K6HrhFWdfx8"><img src="https://img.youtube.com/vi/K6HrhFWdfx8/maxresdefault.jpg"></img></a>
 
 Thomas Helfer from the French Atomic Energy Commission (CEA) introduced the MFEM-MGIS-MFront library (MMM), which aims for efficient use of supercomputers in the field of implicit nonlinear thermomechanics. His team’s primary focus is to develop advanced nuclear fuel element simulations where the evolution of materials under irradiation are influenced by multiple phenomena (e.g., viscoplasticity, damage, phase transitions, swelling due to solid and gaseous fission products). MFEM provides this project with finite element abstractions, adaptive mesh refinement, and a parallel API. However, as applications dedicated to solid mechanics in MFEM are mostly limited to a few constitutive equations such as elasticity and hyperelasticity, Helfer explained that his team extended the software’s functionality to cover a broader spectrum of mechanics. Thus, this MMM project combines MFEM with the MFrontGenericInterfaceSupport (MGIS), an open-source C++ library that provides data structures to support arbitrarily complex nonlinear constitutive equations generated by the MFront code generator. MMM is developed within the scope of CEA’s PLEIADES project. Helfer’s presentation provided (1) an introduction to MMM goals; (2) a tutorial of MMM usage with a focus on the high-level user interface; (3) an overview of the core design choices of MMM and how MFEM was extended to support a range of scenarios; and (4) feedback on the two main issues encountered during MMM development.
 
@@ -857,7 +886,7 @@ Thomas Helfer from the French Atomic Energy Commission (CEA) introduced the MFEM
 #### *Serac: User-Friendly Abstractions for MFEM-Based Engineering Applications*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](EHUID3fnHwU)
+<a class="youtube" href="https://www.youtube.com/watch?v=EHUID3fnHwU"><img src="https://img.youtube.com/vi/EHUID3fnHwU/maxresdefault.jpg"></img></a>
 
 Jamie Bramwell of LLNL presented an overview of the open-source [Serac project](https://serac.readthedocs.io/en/latest), whose goal is to provide user-friendly abstractions and modules that enable rapid development of complex nonlinear multiphysics simulation codes. She provided an overview of both the high-level physics modules (thermal conduction, solid mechanics, incompressible flow, electromagnetics) as well as the serac::Functional framework for quickly developing nonlinear GPU-enabled finite element method kernels.
 
@@ -867,7 +896,7 @@ Jamie Bramwell of LLNL presented an overview of the open-source [Serac project](
 #### *Recent Developments in MFEM*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](oUk6tkHWjI4)
+<a class="youtube" href="https://www.youtube.com/watch?v=oUk6tkHWjI4"><img src="https://img.youtube.com/vi/oUk6tkHWjI4/maxresdefault.jpg"></img></a>
 
 Veselin Dobrev of LLNL detailed the project’s recent developments including memory manager improvements; serial support for p- and hp-refinement; high-order/low-order refined solution transfer; GLVis visualization via Jupyter Notebooks; and additional GPU support regarding HYPRE preconditioners, PETSc tools, and mesh optimization. MFEM now also integrates with various new libraries (AmgX, Gingko, FMS, and others), and continuous integration testing has been conducted on LLNL’s Quartz, Lassen, and Corona machines. Additionally, Dobrev summarized MFEM’s integrations with other software libraries and the team’s engagements with the Exascale Computing Project, SciDAC, the FASTMath Institute, and other projects.
 
@@ -877,7 +906,7 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including me
 #### *The State of MFEM*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](p4u4AlUhamY)
+<a class="youtube" href="https://www.youtube.com/watch?v=p4u4AlUhamY"><img src="https://img.youtube.com/vi/p4u4AlUhamY/maxresdefault.jpg"></img></a>
 
 MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities of discretization algorithms, built-in solvers, parallel scalability, adaptive mesh refinement, and support for a range of computing architectures. Kolev also highlighted the global community’s contributions as well as features included in the recent v4.3 software release.
 
@@ -887,7 +916,7 @@ MFEM principal investigator Tzanio Kolev described the project’s past, present
 #### *Welcome and Overview*
 ##### **October 20, 2021** | [MFEM Workshop 2021](workshop21.md)
 
-![YouTube](534cBuede4w)
+<a class="youtube" href="https://www.youtube.com/watch?v=534cBuede4w"><img src="https://img.youtube.com/vi/534cBuede4w/maxresdefault.jpg"></img></a>
 
 The MFEM community workshop held virtually on October 20, 2021, brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, collaborative breakout sessions, and a simulation contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.
 
@@ -903,7 +932,7 @@ The MFEM community workshop held virtually on October 20, 2021, brought together
 #### *Efficient Finite Element Discretizations for Exascale Applications*
 ##### **February 25, 2021** | [ExCALIBUR SLE 3 workshop](https://excalibur-sle.github.io/)
 
-![YouTube](lsBSctsSMFY)
+<a class="youtube" href="https://www.youtube.com/watch?v=lsBSctsSMFY"><img src="../img/videos/lsBSctsSMFY-1280x720.png"></img></a>
 
 </div><div class="col-md-12"  markdown="1">
 
@@ -917,7 +946,7 @@ The MFEM community workshop held virtually on October 20, 2021, brought together
 #### *Unstructured Meshing Technologies*
 ##### **August 6, 2018** | [ATPESC 2018](https://extremecomputingtraining.anl.gov/)
 
-![YouTube](Zh6pFjkmr0g)
+<a class="youtube" href="https://www.youtube.com/watch?v=Zh6pFjkmr0g"><img src="https://img.youtube.com/vi/Zh6pFjkmr0g/maxresdefault.jpg"></img></a>
 
 Presented at the Argonne Training Program on Extreme-Scale Computing 2018.
 Slides for this presentation are available [here](https://extremecomputingtraining.anl.gov/files/2018/08/ATPESC_2018_Track-4_5_8-6_11am_Kolev-Shephard-Smith-Unstructured_Meshing_Technologies.pdf).
@@ -928,7 +957,7 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 #### *Unstructured Meshing Technologies*
 ##### **August 7, 2017** | [ATPESC 2017](https://extremecomputingtraining.anl.gov/)
 
-![YouTube](eJ6hRN7TeEU)
+<a class="youtube" href="https://www.youtube.com/watch?v=eJ6hRN7TeEU"><img src="https://img.youtube.com/vi/eJ6hRN7TeEU/maxresdefault.jpg"></img></a>
 
 Presented at the Argonne Training Program on Extreme-Scale Computing 2017.
 Slides for this presentation are available [here](https://extremecomputingtraining.anl.gov/files/2017/08/ATPESC_2017_Track-4_07_8-7_1145am_Kolev-Shephard-Unstructured_Mesh_Technologies.pdf).
@@ -939,7 +968,7 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 #### *Conforming & Nonconforming Adaptivity for Unstructured Meshes*
 ##### **August 7, 2017** | [ATPESC 2017](https://extremecomputingtraining.anl.gov/)
 
-![YouTube](RLIZWXggXqU)
+<a class="youtube" href="https://www.youtube.com/watch?v=RLIZWXggXqU"><img src="https://img.youtube.com/vi/RLIZWXggXqU/maxresdefault.jpg"></img></a>
 
 Presented at the Argonne Training Program on Extreme-Scale Computing 2017.
 Slides for this presentation are available [here](https://extremecomputingtraining.anl.gov/files/2017/08/ATPESC_2017_Track-4_13_8-7_630pm_Kolev-Shephard-Adaptivity_for_Unstructured_Meshes.pdf).
@@ -953,27 +982,27 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 </div><div class="col-md-6"  markdown="1">
 
 #### *MFEM: Advanced Simulation Algorithms for HPC Applications*
-##### **Jun 24, 2020** | [YouTube](https://www.youtube.com/watch?v=Rpccj3NopSE)
+##### **Jun 24, 2020**
 
-![YouTube](Rpccj3NopSE)
+<a class="youtube" href="https://www.youtube.com/watch?v=Rpccj3NopSE"><img src="https://img.youtube.com/vi/Rpccj3NopSE/maxresdefault.jpg"></img></a>
 
 Overview of MFEM 4.0 featuring some of its developers.
 
 ---
 
 #### *Center for Applied Scientific Computing*
-##### **Jul 12, 2019** | [YouTube](https://www.youtube.com/watch?v=5CIeSLWs7hI&t=45s)
+##### **Jul 12, 2019**
 
-![YouTube](5CIeSLWs7hI)
+<a class="youtube" href="https://www.youtube.com/watch?v=5CIeSLWs7hI"><img src="https://img.youtube.com/vi/5CIeSLWs7hI/maxresdefault.jpg"></img></a>
 
 Overview of the Center for Applied Scientific Computing at Lawrence Livermore National Laboratory, including a highlight of MFEM.
 
 </div><div class="col-md-6"  markdown="1">
 
 #### *S&TR Preview: Exascale Computing*
-##### **October 6, 2016** | [YouTube](https://www.youtube.com/watch?v=ePWyiDf_XTg&t=172s)
+##### **October 6, 2016**
 
-![YouTube](ePWyiDf_XTg)
+<a class="youtube" href="https://www.youtube.com/watch?v=ePWyiDf_XTg"><img src="../img/videos/ePWyiDf_XTg-1280x720.png"></img></a>
 
 Some early MFEM results in the [BLAST](https://computing.llnl.gov/projects/blast) project.
 
