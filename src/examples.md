@@ -1272,15 +1272,15 @@ We recommend viewing Example 1 before viewing this example._
 <img class="floatright" src="../img/examples/ex1.png">
 </a>
 
-This example code demonstrates the use of MFEM to define a simple isogeometric NURBS discretization of 
+This example code demonstrates the use of MFEM to define a simple isogeometric NURBS discretization of
 the Laplace problem $$-\Delta u = 1$$ with
 homogeneous Dirichlet boundary conditions. The problem solved in
-this example is the same as [ex1](#ex1).
+this example is the same as [Example 1](#ex1).
 
 _The example has a serial ([nurbs_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1.cpp))
 and a parallel ([nurbs_ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1p.cpp)) version.
-There is also a version that demonstrates efficient patchwise quadrature 
-([nurbs_ex1 patch.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1 patch.cpp))._
+There is also a version that demonstrates efficient patchwise quadrature
+([nurbs_ex1 patch.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_patch_ex1.cpp))._
 <div style="clear:both;"></div>
 <br></div>
 
@@ -1297,7 +1297,7 @@ equation $$\nabla\times\nabla\times\, E + E = f$$
 with boundary condition $ E \times n $ = "given tangential field".
 Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
 $f$. We discretize with NURBS-based $H(curl)$elements in 2D or 3D.
-The problem solved in this example is the same as [ex3](#ex3).
+The problem solved in this example is the same as [Ezample 3](#ex3).
 
 _The example has only a serial ([nurbs_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex3.cpp)) version._
 <div style="clear:both;"></div>
@@ -1318,9 +1318,9 @@ $$ \begin{array}{rcl}
 \end{array} $$
 with natural boundary condition $-p = $ "given pressure".
 Here we use a given exact solution $({\bf u},p)$ and compute the
-corresponding right hand side $(f, g)$. We discretize  thevelocity ($\bf u$) with NURBS-based $H(div)$ elements and 
+corresponding right hand side $(f, g)$. We discretize  the velocity ($\bf u$) with NURBS-based $H(div)$ elements and
  the pressure ($p$) with a compatible NURBS-based $H_1$ elements.
-The problem solved in this example is the same as [ex5](#ex5).
+The problem solved in this example is the same as [Example 5](#ex5).
 
 _The example only has a serial ([nurbs_ex5.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex5.cpp))._
 <div style="clear:both;"/></div>
@@ -1343,7 +1343,7 @@ BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
 STRUMPACK parallel direct solvers. Reusing a single [GLVis](https://glvis.org)
 visualization window for multiple eigenfunctions is also illustrated.
 
-The problem solved in this example is the same as [ex11](#ex11).
+The problem solved in this example is the same as [Example 11](#ex11).
 
 _The example has only a parallel
 ([nurbs_ex11p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex11p.cpp)) version._
@@ -1354,7 +1354,7 @@ _The example has only a parallel
 ##NURBS Example 24: Mixed finite element spaces
 <img class="floatright" src="../img/examples/ex24.png">
 
-The problem solved in this example is the same as [ex24](#ex24), but NURBS-based elements are also supported.
+The problem solved in this example is the same as [Example 24](#ex24), but NURBS-based elements are also supported.
 
 This example code illustrates usage of mixed finite element
 spaces, with three variants:
