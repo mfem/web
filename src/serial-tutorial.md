@@ -58,7 +58,7 @@ If a GLVis server is running, the computed finite element solution will appear i
 
 ![](img/tutorial/ex1-star.png)
 
-You can examine the solution using the mouse and the GLVis [command keystrokes](https://raw.githubusercontent.com/GLVis/glvis/master/README).
+You can examine the solution using the mouse and the GLVis [command keystrokes](https://github.com/GLVis/glvis/blob/master/README.md).
 Pressing "`RAfjlmm`", for example, will give us a 2D view without light or perspective showing the computed level lines:
 
 ![](img/tutorial/ex1-star-2.png)
