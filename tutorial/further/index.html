@@ -415,6 +415,13 @@ on your interests, but we recommend starting with the ones marked with a ⭐.</p
 <li><a href="https://docs.mfem.org/html/ex30_8cpp_source.html">Example 30</a> &mdash; Mesh preprocessing, resolving problem data.</li>
 <li><a href="https://docs.mfem.org/html/ex31_8cpp_source.html">Example 31</a> &mdash; Nedelec H(curl) FEM for the anisotropic definite Maxwell problem.</li>
 <li><a href="https://docs.mfem.org/html/ex32p_8cpp_source.html">Example 32</a> &mdash; Parallel Nedelec Maxwell eigensolver with anisotropic permittivity.</li>
+<li><a href="https://docs.mfem.org/html/ex33_8cpp_source.html">Example 33</a> &mdash; Nodal C0 FEM for the fractional Laplacian problem.</li>
+<li><a href="https://docs.mfem.org/html/ex34_8cpp_source.html">Example 34</a> &mdash; Source function from SubMesh.</li>
+<li><a href="https://docs.mfem.org/html/ex35p_8cpp_source.html">Example 35</a> &mdash; Port boundary condition from SubMesh.</li>
+<li><a href="https://docs.mfem.org/html/ex36_8cpp_source.html">Example 36</a> &mdash; High-order FEM for the obstacle problem.</li>
+<li><a href="https://docs.mfem.org/html/ex37_8cpp_source.html">Example 37</a> &mdash; Topology optimization.</li>
+<li><a href="https://docs.mfem.org/html/ex38_8cpp_source.html">Example 38</a> &mdash; Cut-surface and cut-volume integration.</li>
+<li><a href="https://docs.mfem.org/html/ex39_8cpp_source.html">Example 39</a> &mdash; Named mesh attributes.</li>
 </ul>
 <p>Most of these examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.</p>
 <p>Many examples also have modifications that take advantage of optional third-party libraries such as <a href="https://docs.mfem.org/html/petsc_8hpp.html">PETSc</a>, <a href="https://docs.mfem.org/html/slepc_8hpp.html">SLEPc</a>, <a href="https://docs.mfem.org/html/sundials_8hpp.html">SUNDIALS</a>, <a href="https://docs.mfem.org/html/pumi_8hpp.html">PUMI</a>, <a href="https://docs.mfem.org/html/ginkgo_8hpp.html">Ginkgo</a>, and <a href="https://docs.mfem.org/html/hiop_8hpp.html">HiOp</a>.</p>
@@ -423,7 +430,7 @@ on your interests, but we recommend starting with the ones marked with a ⭐.</p
 <li><a href="https://docs.mfem.org/html/volta_8cpp_source.html">Volta</a> &mdash; Simple electrostatics simulation code.</li>
 <li><a href="https://docs.mfem.org/html/tesla_8cpp_source.html">Tesla</a> &mdash; Simple magnetostatics simulation code.
 <img class="floatright" src="../../img/examples/maxwell.gif", width="200"/></li>
-<li><a href="https://docs.mfem.org/html/maxwell_8cpp_source.html">Maxwell</a> &mdash; Transient electromagnetics simulation code.</li>
+<li><a href="https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html">Maxwell</a> &mdash; Transient electromagnetics simulation code.</li>
 <li><a href="https://docs.mfem.org/html/joule_8cpp_source.html">Joule</a> &mdash; Transient magnetics and Joule heating miniapp.</li>
 <li><a href="https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details">Navier</a> &mdash; Solver for the incompressible time-dependent Navier-Stokes equations.</li>
 <li><a href="https://docs.mfem.org/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a> &mdash; Visualize and manipulate meshes.</li>
@@ -434,10 +441,14 @@ on your interests, but we recommend starting with the ones marked with a ⭐.</p
 <li><a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp">Overlapping Grids</a> &mdash; Schwarz coupling of single- and multi-physics problems.</li>
 <li><a href="https://docs.mfem.org/html/extrapolate_8cpp_source.html">Extrapolation</a> &mdash; Finite element extrapolation solver.</li>
 <li><a href="https://docs.mfem.org/html/distance_8cpp_source.html">Distance</a> &mdash; Finite element distance solver.</li>
-<li><a href="https://docs.mfem.org/html/diffusion_8cpp_source.html">Shifted Diffusion</a> &mdash; High-Order shifted boundary method for non body-fitted meshes.</li>
+<li><a href="https://docs.mfem.org/html/miniapps_2shifted_2diffusion_8cpp_source.html">Shifted Diffusion</a> &mdash; High-Order shifted boundary method for non body-fitted meshes.</li>
 <li><a href="https://docs.mfem.org/html/minimal-surface_8cpp_source.html">Minimal Surface</a> &mdash; Compute the minimal surface of a given mesh.</li>
 <li><a href="https://docs.mfem.org/html/display-basis_8cpp_source.html">Display Basis</a> &mdash; Visualize finite element basis functions.</li>
 <li><a href="https://docs.mfem.org/html/lor-transfer_8cpp_source.html">LOR Transfer</a> &mdash; Map functions between high-order and low-order-refined spaces.</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp">SPDE</a> &mdash; Generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load.</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp">Contact</a> &mdash; Mortar contact patch test for elasticity using the <a href="https://github.com/LLNL/Tribol">Tribol</a> library.</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp">Multidomain</a> &mdash; Multidomain and SubMesh demonstration Miniapp.</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/miniapps/dpg">DPG</a> &mdash; Discontinuous Petrov-Galerkin (DPG) for various examples.</li>
 </ul>
 <p><img class="floatright" src="../../img/examples/laghos.png", width="150"/></p>
 <p>In addition, the sources for several external benchmark/proxy-apps built on top of MFEM are available:</p>
