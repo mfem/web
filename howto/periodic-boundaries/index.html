@@ -403,6 +403,10 @@ vectors</em>. Any two vertices that are coincident under any of the given transl
 considered topologically identical. MFEM can generate a vertex mapping from these translation
 vectors using the <code>Mesh::CreatePeriodicVertexMapping</code>. An example using this functionality to create
 a mesh of the periodic square is shown <a href="#square">here</a>.</p>
+<p><em>(Note that periodic meshes use a discontinuous nodal function for mapping the reference space
+to the physical one (see <code>Mesh::SetCurvature</code>). The vertex coordinates are no longer meaningful
+after calling <code>Mesh::MakePeriodic</code>. You should refrain from accessing them and use the nodal
+grid function returned by <code>Mesh::GetNodes</code> or single nodes through <code>Mesh::GetNode</code> instead.)</em></p>
 <h3 id="example-creating-a-periodic-line-segment-with-a-vertex-map"><a name="line-segment"></a>Example: creating a periodic line segment with a vertex map</h3>
 <pre><code class="c++">Mesh mesh = Mesh::MakeCartesian1D(10);// Make a mesh of the unit interval with 10 elements
 // Create the vertex mapping. To begin, create the identity mapping.
