@@ -55,6 +55,11 @@ considered topologically identical. MFEM can generate a vertex mapping from thes
 vectors using the `Mesh::CreatePeriodicVertexMapping`. An example using this functionality to create
 a mesh of the periodic square is shown [here](#square).
 
+_(Note that periodic meshes use a discontinuous nodal function for mapping the reference space
+to the physical one (see `Mesh::SetCurvature`). The vertex coordinates are no longer meaningful
+after calling `Mesh::MakePeriodic`. You should refrain from accessing them and use the nodal
+grid function returned by `Mesh::GetNodes` or single nodes through `Mesh::GetNode` instead.)_
+
 ### <a name="line-segment"></a>Example: creating a periodic line segment with a vertex map
 
 ```c++
