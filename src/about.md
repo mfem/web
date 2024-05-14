@@ -34,7 +34,7 @@ Please cite with:
 - [Mikhail Artemyev](https://github.com/martemyev)
 - [Nabil Atallah](https://scholar.google.com/citations?user=4HTud3cAAAAJ)
 - [Tucker Babcock](https://move.rpi.edu/people/tucker-babcock)
-- [Jan-Phillip Bäcker](http://www.mathematik.tu-dortmund.de/lsiii/cms/de/mitarbeiter/member/id=Jan-Phillip+Baecker.html)
+- [Jan-Phillip Bäcker](http://www.mathematik.tu-dortmund.de/lsiii/cms/en/mitarbeiter/member/id=Jan-Phillip+Baecker.html)
 - [Cody Balos](https://people.llnl.gov/balos1)
 - [Andrew Barker](https://scholar.google.com/citations?user=m1pd15IAAAAJ&hl=en)
 - [Natalie Beams](https://scholar.google.com/citations?user=i67cEEQAAAAJ&hl=en)
