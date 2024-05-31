@@ -16,6 +16,7 @@ This example code solves a simple Laplace problem
 \end{align}
  with
 homogeneous Dirichlet boundary conditions.
+For implementation see [`miniapps/nurbs/nurbs__ex1`](https://docs.mfem.org/html/nurbs__ex1_8cpp_source.html).
 
 ### NURBS Ex 3: Maxwell problem
 
@@ -34,6 +35,7 @@ spaces with the curl-curl and the (vector finite element) mass
 bilinear form, as well as the computation of discretization
 error when the exact solution is known. Static condensation is
 also illustrated.
+For implementation see [`miniapps/nurbs/nurbs__ex1`](https://docs.mfem.org/html/nurbs__ex3_8cpp_source.html).
 
 ### NURBS Ex 5: Darcy problem
 
@@ -50,6 +52,8 @@ Here we use a given exact solution $({\bf u},p)$ and compute the
 corresponding right hand side $(f, g)$. We discretize with Raviart-Thomas
 finite elements (velocity $\bf u$) and piecewise discontinuous
 polynomials (pressure $p$).
+For implementation see [`miniapps/nurbs/nurbs__ex5`](https://docs.mfem.org/html/nurbs__ex5_8cpp_source.html).
+
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
