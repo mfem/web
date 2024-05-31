@@ -21,10 +21,6 @@ method with the desired `mfem::Mesh` or `mfem::ParMesh`.
 * Next, use the `FindPointsGSLIB::FindPoints(xyz)` method with the
 `mfem::Vector xyz` of physical-space coordinates where we seek to
 interpolate the desired grid function.
-The ordering of the coordinates in `xyz` must be by `vdim`,
-i.e. (**x** = x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>...,x<sub>N</sub>,
-              y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>...,y<sub>N</sub>,
-              z<sub>1</sub>,z<sub>2</sub>,z<sub>3</sub>...,z<sub>N</sub>).
 
     At this step, `findpts` determines the computational coordinates
 (**q**<sub>j</sub> = {e<sub>j</sub>, **r**<sub>j</sub>,
@@ -59,7 +55,7 @@ the `setup` phase.
 For convenience, `FindPointsGSLIB` class provides methods such as
 `FindPointsGSLIB::Interpolate(mesh, xyz, u, ui)` which combines the three steps
 described above (setup, finding the computational coordinates of the sought points, and
-interpolation) into a single method. Please see the [class definition](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45)
+interpolation) into a single method. Please see the [class definition](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp)
 for more details.
 
 ## Application of FindPointsGSLIB

@@ -185,8 +185,8 @@ following.
 | Operator | Continuous Operator | Robin BC |
 |----------|---------------------|----------|
 | $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)+\gamma\,u=f$ on $\Gamma_R$|
-| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u}+\gamma\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_R$|
-| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}+\gamma\,u=\hat\{n}\cdot\vec\{f}$ on $\Gamma_R$ |
+| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u}+\gamma\,\hat\{n}\cross\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_R$|
+| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}+\gamma\,\hat\{n}\cdot\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\Gamma_R$ |
 | $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)+\gamma\,u=f$ on $\Gamma_R$   |
 
 Robin boundary conditions are applied in the same manner as Neumann

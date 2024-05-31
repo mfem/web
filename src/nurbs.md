@@ -10,7 +10,7 @@ These miniapps demonstrate the use of NURBS-based Isogeometric analysis[^1],[^2]
 
 ### NURBS Ex 1: Laplace problem
 
-This example code solves a simple Laplace problem 
+This example code solves a simple Laplace problem
 \begin{align}
 -\Delta u = 1
 \end{align}
@@ -22,7 +22,7 @@ For implementation see [`miniapps/nurbs/nurbs__ex1`](https://docs.mfem.org/html/
 
 This example code solves a simple 3D electromagnetic diffusion
 problem corresponding to the second order definite Maxwell
-equation 
+equation
 \begin{align}
 \nabla\times\nabla\times\, E + E = f
 \end{align}

@@ -173,7 +173,7 @@ Topologically periodic meshes can also be described in this format, see for exam
 
 ## MFEM NC mesh v1.0
 
-The `MFEM NC mesh v1.0` is a format for nonconfoming meshes in MFEM. It is
+The `MFEM NC mesh v1.0` is a format for nonconforming meshes in MFEM. It is
 similar in style to the default (conforming) `MFEM mesh v1.0` format, but is
 in fact independent and supports advanced AMR features such as
 
@@ -336,6 +336,46 @@ For examples of meshes using the `NC mesh v1.0` format, see
 
 ![](img/fichera-amr.png)
 
+
+## MFEM mesh v1.3
+
+Version 1.3 of the MFEM mesh file format adds support for named attribute sets.
+This is a convenience feature which allows application users (or developers) to refer to a set of attribute numbers or boundary attribute numbers using a text string as a shorthand.
+Domain attribute numbers and boundary attribute numbers cannot coexist in the same set.
+Attribute numbers can appear in more than one set so that a given region may be referenced for different purposes in different parts of an application.
+
+<img class="floatcenter" width="400pt" src="../img/compass.png">
+
+Domain attribute sets are listed after the `elements` section of the mesh file in a new section titled `attribute_sets`. Similarly, boundary attribute sets follow `boundary` in a new section titled `bdr_attribute_sets`.
+
+```sh
+MFEM mesh v1.3
+
+...
+
+elements
+...
+
+attribute_sets
+<number of attribute sets>
+"<attribute set 1 name>" <number of attributes in set> <attribute 1> ...
+...
+
+boundary
+...
+
+bdr_attribute_sets
+<number of boundary attribute sets>
+"<boundary attribute set 1 name>" <number of attributes in set> <attribute 1> ...
+...
+
+vertices
+...
+
+mfem_mesh_end
+```
+
+A specific example of a v1.3 mesh file can be seen in [compass.mesh](https://github.com/mfem/mfem/blob/master/data/compass.mesh), shown above, which includes names based on compass directions for illustration.
 
 
 ## NURBS meshes
