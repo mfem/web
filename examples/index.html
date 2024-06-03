@@ -1443,6 +1443,23 @@ We recommend viewing Example 1 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="ex40">
+<h2 id="example-40-eikonal-equation">Example 40: Eikonal Equation</h2>
+<p><img class="floatright" width="280pt" src="../img/examples/ex40.png"></p>
+<p>This example highlights MFEM's ability to solve a fully-nonlinear, first-order PDE with high-order finite elements.
+In particular this example uses the <a href="https://arxiv.org/abs/2307.12444">proximal Galerkin</a> method to solve the eikonal equation,
+$$ |\nabla u| = 1 \text{ in } \Omega,  \quad u = 0 \text{ on } \partial \Omega. $$
+At each point $x$ in the domain $\Omega$, the solution of this PDE provides the Euclidean distance to the domain boundary, $u(x) = \min \{ | x - y| : y \in \partial \Omega\}$.
+The problem is solved by recasting $u$ as the solution of the nonlinear program
+$$ \text{maximize } \int_\Omega u\, \mathrm{d} x\, \text{ in } W^{1,\infty}_0(\Omega)\, \text{ subject to } |\nabla u | \leq 1 \text{ a.e. in } \Omega.$$
+A solution is then obtained by discretizing and solving a sequence of nonlinear saddle-point problems.
+See the example code for a more detailed description of the method.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex40.cpp">ex40.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex40p.cpp">ex40p.cpp</a>) version.
+We recommend viewing Example 5 and Example 36 before viewing this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -2393,6 +2410,7 @@ function update()
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
+   + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
