@@ -1266,6 +1266,25 @@ We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex40" markdown="1">
+##Example 40: Eikonal Equation
+<img class="floatright" width="280pt" src="../img/examples/ex40.png">
+
+This example highlights MFEM's ability to solve a fully-nonlinear, first-order PDE with high-order finite elements.
+In particular this example uses the [proximal Galerkin](https://arxiv.org/abs/2307.12444) method to solve the eikonal equation,
+$$ |\nabla u| = 1 \text{ in } \Omega,  \quad u = 0 \text{ on } \partial \Omega. $$
+At each point $x$ in the domain $\Omega$, the solution of this PDE provides the Euclidean distance to the domain boundary, $u(x) = \min \\{ | x - y| : y \in \partial \Omega\\}$.
+The problem is solved by recasting $u$ as the solution of the nonlinear program
+$$ \text{maximize } \\int_\\Omega u\, \mathrm{d} x\, \text{ in } W^{1,\infty}_0(\Omega)\, \text{ subject to } |\nabla u | \leq 1 \text{ a.e. in } \Omega.$$
+A solution is then obtained by discretizing and solving a sequence of nonlinear saddle-point problems.
+See the example code for a more detailed description of the method.
+
+_The example has a serial ([ex40.cpp](https://github.com/mfem/mfem/blob/master/examples/ex40.cpp))
+and a parallel ([ex40p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex40p.cpp)) version.
+We recommend viewing Example 5 and Example 36 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -2319,6 +2338,7 @@ function update()
    + showElement("ex37", elasticity && (l2 || h1) && galerkin && (pcg || amg))
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
+   + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
