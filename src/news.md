@@ -2,8 +2,9 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Jun 5, 2024** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) series.*
 **May 7, 2024** | *Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).*
-**May 2, 2024** |  New MFEM [paper](https://arxiv.org/abs/2402.15940) to appear in the International Journal of High Performance Computing Application.
+**May 2, 2024** |  *New MFEM [paper](https://arxiv.org/abs/2402.15940) to appear in the International Journal of High Performance Computing Application.*
 **Nov 13, 2023** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2023) of the [2023 Workshop](workshop.md), held on October 26.*
 **Oct 26, 2023** | *2023 [MFEM community workshop](workshop.md).*
 **Sep 27, 2023** | *Version 4.6 [released](https://github.com/mfem/mfem/blob/v4.6/CHANGELOG).*

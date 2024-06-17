@@ -1,10 +1,10 @@
 # MFEM Tutorial on AWS
-<!-- <h4>August 15, 2022</h4> -->
+<!-- <h4>August 22, 2024</h4> -->
 
 ![MFEM on AWS](img/mfem-aws.png)
 
 Welcome to the MFEM tutorial, part of the
-[RADIUSS Tutorial Series](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/)
+[HPCIC Tutorial Series](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials)
 in collaboration with [AWS](https://aws.amazon.com/blogs/hpc/call-for-participation-radiuss-tutorial-series-2023/).
 
 [MFEM](https://mfem.org/) is a modular parallel C++ library for finite element

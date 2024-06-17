@@ -57,15 +57,16 @@ containing *co-vectors* a.k.a. *dual vectors*.  In this context a *dual vector*
 is a linear functional of a *primal vector* meaning that the action of a
 *dual vector* upon a *primal vector* is a real number.  For example, the
 integral of a field over a domain,
-$\;\alpha=\int_\Omega f(\vec{x})d\vec{x}$, is a linear functional because the
+$\;\alpha=\int_\Omega g(\vec{x})d\vec{x}$, is a linear functional because the
 integral is linear with respect to the function being integrated and the result
 is a real number.  Indeed we can derive similar linear functionals using
-compatible functions, $\;g(\vec{x})$, in this way
+compatible functions, $\;f(\vec{x})$, in a variety of ways, for example
 $G(f)=\int_\Omega g(\vec{x})f(\vec{x})d\vec{x}$. If we compute the action of our
 functional on the finite element basis functions,
 $$G_i=G(\phi_i(\vec{x})) =
 \int_\Omega g(\vec{x})\phi_i(\vec{x})d\vec{x}\label{dualvec},$$
-and we collect the results into a vector we call this a *dual vector*.
+and we collect the results into a vector with entries $\;G_i$, we call this a
+*dual vector* of $\;g(\vec{x})$.
 
 Integrals such as this often arise when enforcing energy balance in physical
 systems. For example, if $\vec{J}$ is a current density describing a flow of
@@ -74,17 +75,17 @@ particles, then $\int_\Omega\vec{J}\cdot\vec{E}\,d\vec{x}$ is the rate at which
 work is being done by the field on the charged particles.
 
 MFEM provides `LinearForm` objects (or `ParLinearForm` objects in parallel)
-which can compute *dual vectors* from a given function, $\;g(\vec{x})$.  These
-objects require not only the mesh, basis functions, and the field
-$\;g(\vec{x})$ but also a `LinearFormIntegrator` which defines precisely what
-type of linear functional is being computed.
+which can compute *dual vectors* from a given function, $\;g(\vec{x})$,
+described by a `Coefficient` object.
+`(Par)LinearForm` objects require not only the mesh, basis functions, and the
+field $\;g(\vec{x})$ but also a `LinearFormIntegrator` which defines precisely
+what type of linear functional is being computed.
 See [Linear Form Integrators](lininteg.md) for more information about MFEM's
 linear form integrators.
 
-A `LinearForm` objects provide one means for computing dual vectors if you have
-a `Coefficient` describing the function $\;g(\vec{x})$.  If, on the other hand,
-you have a *primal vector*, $\;g_i$, representing $\;g(\vec{x})$ you can form a
-*dual vector* by multiplying $\;g_i$ by a bilinear form,
+If, instead of a `Coefficient` object,
+you have a *primal vector*, $\;g_j$, representing $\;g(\vec{x})$ you can form a
+*dual vector* by multiplying $\;g_j$ by a bilinear form,
 see [Bilinear Form Integrators](bilininteg.md) for more information on
 bilinear forms.  To understand why this is so, consider inserting the expansion
 \eqref{expan} into \eqref{dualvec}.
@@ -93,9 +94,9 @@ G_i=\int_\Omega \left(\sum_j g_j \phi_j(\vec{x})\right)\phi_i(\vec{x})d\vec{x}
 = \sum_j \left(\int_\Omega \phi_j(\vec{x})\phi_i(\vec{x})d\vec{x}\right)g_j
 \label{dualvecprod}$$
 The last integral contains two indices and can therefore be viewed as an entry
-in a square matrix.  Furthermore each *dual vector* entry, $\;G_i$, is
+in a square matrix.  Furthermore, each *dual vector* entry, $\;G_i$, is
 equivalent to one row of a matrix-vector product between this matrix of basis
-function integrals and the *primal vector* $\;g_i$.  This particular matrix,
+function integrals and the *primal vector* $\;g_j$.  This particular matrix,
 involving only the product of basis functions, is traditionally called a
 *mass matrix*. However, the action of any matrix, resulting from a bilinear
 form, upon a *primal vector* will produce a *dual vector*.  In general, such
@@ -176,7 +177,7 @@ two choices should produce nearly identical results if the
 `BilinearFormIntegrator` and the `LinearFormIntegrator` use the same
 integration rule order.  The order of the summation might differ between
 `BilinearFormIntegrator` and `LinearFormIntegrator`, potentially resulting in
-round-off errors differences.
+round-off error differences.
 
 When considering to use a BilinearForm or a LinearForm, one must be aware of
 their different computational and memory costs. A bilinear form must create a

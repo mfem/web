@@ -47,7 +47,7 @@ Additional support for automated adaptive analysis and parallel unstructured mod
 
 MFEM supports MPI-based parallelism throughout the library, and can readily be used as a scalable unstructured finite element problem generator.
 
- - MFEM-based [applications](https://www.llnl.gov/casc/blast) have been [scaled](https://computing.llnl.gov/blast/parallel-performance) to hundreds of thousands of parallel cores.
+ - MFEM-based [applications](https://www.llnl.gov/casc/blast) have been [scaled](https://computing.llnl.gov/projects/blast/parallel-performance) to hundreds of thousands of parallel cores.
  - The library supports [efficient operator assembly/evaluation](performance.md) for tensor-product high-order elements.
  - Support for hardware devices, such as [GPUs](gpu-support.md), and programming models, such as CUDA, HIP, [OCCA](https://libocca.org), [RAJA](https://github.com/LLNL/RAJA) and OpenMP is also included.
 
@@ -90,7 +90,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 8](https://docs.mfem.org/html/ex8_8cpp_source.html): Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,
  - [Example 9](https://docs.mfem.org/html/ex9_8cpp_source.html): Discontinuous Galerkin (DG) time-dependent advection,
  - [Example 10](https://docs.mfem.org/html/ex10_8cpp_source.html): time-dependent implicit nonlinear elasticity,
- - [Example 11](https://docs.mfem.org/html/examples_2ex11p_8cpp_source.html): parallel Laplace eigensolver,
+ - [Example 11](https://docs.mfem.org/html/ex11p_8cpp_source.html): parallel Laplace eigensolver,
  - [Example 12](https://docs.mfem.org/html/ex12p_8cpp_source.html): parallel linear elasticity eigensolver,
  - [Example 13](https://docs.mfem.org/html/ex13p_8cpp_source.html): parallel Maxwell eigensolver,
  - [Example 14](https://docs.mfem.org/html/ex14_8cpp_source.html): Discontinuous Galerkin (DG) for the Laplace problem,
@@ -114,11 +114,12 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 32](https://docs.mfem.org/html/ex32p_8cpp_source.html): parallel Nedelec Maxwell eigensolver with anisotropic permittivity,
  - [Example 33](https://docs.mfem.org/html/ex33_8cpp_source.html): nodal C0 FEM for the fractional Laplacian problem,
  - [Example 34](https://docs.mfem.org/html/ex34_8cpp_source.html): source function from SubMesh,
- - [Example 35](https://docs.mfem.org/html/ex35_8cpp_source.html): port boundary condition from SubMesh,
+ - [Example 35](https://docs.mfem.org/html/ex35p_8cpp_source.html): port boundary condition from SubMesh,
  - [Example 36](https://docs.mfem.org/html/ex36_8cpp_source.html): high-order FEM for the obstacle problem,
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization,
  - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
- - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes.
+ - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
+ - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -128,7 +129,7 @@ Beyond the examples, a number of miniapps are available that are more representa
 
  - [Volta](https://docs.mfem.org/html/volta_8cpp_source.html): simple electrostatics simulation code,
  - [Tesla](https://docs.mfem.org/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
- - [Maxwell](https://docs.mfem.org/html/maxwell_8cpp_source.html): transient electromagnetics simulation code,
+ - [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
@@ -139,7 +140,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp): Schwarz coupling of single- and multi-physics problems,
  - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html): finite element extrapolation solver,
  - [Distance](https://docs.mfem.org/html/distance_8cpp_source.html): finite element distance solver,
- - [Shifted Diffusion](https://docs.mfem.org/html/shifted_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
+ - [Shifted Diffusion](https://docs.mfem.org/html/miniapps_2shifted_2diffusion_8cpp_source.html): high-order shifted boundary method for non body-fitted meshes,
  - [Minimal Surface](https://docs.mfem.org/html/minimal-surface_8cpp_source.html): compute the minimal surface of a given mesh,
  - [Display Basis](https://docs.mfem.org/html/display-basis_8cpp_source.html): visualize finite element basis functions,
  - [Get Values](https://docs.mfem.org/html/get-values_8cpp_source.html): extract field values via DataCollection classes,

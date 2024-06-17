@@ -44,7 +44,7 @@ If a GLVis server is running, the computed finite element solution **combined fr
 
 ![](img/tutorial/ex1p-np16-1.png)
 
-You can examine the solution using the mouse and the GLVis [command keystrokes](https://raw.githubusercontent.com/glvis/glvis/master/README).
+You can examine the solution using the mouse and the GLVis [command keystrokes](https://raw.githubusercontent.com/GLVis/glvis/master/README).
 To view the parallel partitioning, for example, press the following keys in the GLVis window: "`RAjlmm`" followed by F11/F12 and zooming with the right mouse button.
 
 ![](img/tutorial/ex1p-np16-2.png)

@@ -75,6 +75,13 @@ on your interests, but we recommend starting with the ones marked with a ⭐.
 - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html) &mdash; Mesh preprocessing, resolving problem data.
 - [Example 31](https://docs.mfem.org/html/ex31_8cpp_source.html) &mdash; Nedelec H(curl) FEM for the anisotropic definite Maxwell problem.
 - [Example 32](https://docs.mfem.org/html/ex32p_8cpp_source.html) &mdash; Parallel Nedelec Maxwell eigensolver with anisotropic permittivity.
+- [Example 33](https://docs.mfem.org/html/ex33_8cpp_source.html) &mdash; Nodal C0 FEM for the fractional Laplacian problem.
+- [Example 34](https://docs.mfem.org/html/ex34_8cpp_source.html) &mdash; Source function from SubMesh.
+- [Example 35](https://docs.mfem.org/html/ex35p_8cpp_source.html) &mdash; Port boundary condition from SubMesh.
+- [Example 36](https://docs.mfem.org/html/ex36_8cpp_source.html) &mdash; High-order FEM for the obstacle problem.
+- [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html) &mdash; Topology optimization.
+- [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html) &mdash; Cut-surface and cut-volume integration.
+- [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html) &mdash; Named mesh attributes.
 
 Most of these examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -85,7 +92,7 @@ Beyond the examples, a number of miniapps are available that are more representa
 - [Volta](https://docs.mfem.org/html/volta_8cpp_source.html) &mdash; Simple electrostatics simulation code.
 - [Tesla](https://docs.mfem.org/html/tesla_8cpp_source.html) &mdash; Simple magnetostatics simulation code.
 <img class="floatright" src="../../img/examples/maxwell.gif", width="200"/>
-- [Maxwell](https://docs.mfem.org/html/maxwell_8cpp_source.html) &mdash; Transient electromagnetics simulation code.
+- [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html) &mdash; Transient electromagnetics simulation code.
 - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html) &mdash; Transient magnetics and Joule heating miniapp.
 - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details) &mdash; Solver for the incompressible time-dependent Navier-Stokes equations.
 - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html) &mdash; Visualize and manipulate meshes.
@@ -96,10 +103,14 @@ Beyond the examples, a number of miniapps are available that are more representa
 - [Overlapping Grids](https://github.com/mfem/mfem/blob/master/miniapps/gslib/schwarz_ex1.cpp) &mdash; Schwarz coupling of single- and multi-physics problems.
 - [Extrapolation](https://docs.mfem.org/html/extrapolate_8cpp_source.html) &mdash; Finite element extrapolation solver.
 - [Distance](https://docs.mfem.org/html/distance_8cpp_source.html) &mdash; Finite element distance solver.
-- [Shifted Diffusion](https://docs.mfem.org/html/diffusion_8cpp_source.html) &mdash; High-Order shifted boundary method for non body-fitted meshes.
+- [Shifted Diffusion](https://docs.mfem.org/html/miniapps_2shifted_2diffusion_8cpp_source.html) &mdash; High-Order shifted boundary method for non body-fitted meshes.
 - [Minimal Surface](https://docs.mfem.org/html/minimal-surface_8cpp_source.html) &mdash; Compute the minimal surface of a given mesh.
 - [Display Basis](https://docs.mfem.org/html/display-basis_8cpp_source.html) &mdash; Visualize finite element basis functions.
 - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html) &mdash; Map functions between high-order and low-order-refined spaces.
+- [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp) &mdash; Generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load.
+- [Contact](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp) &mdash; Mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library.
+- [Multidomain](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp) &mdash; Multidomain and SubMesh demonstration Miniapp.
+- [DPG](https://github.com/mfem/mfem/blob/master/miniapps/dpg) &mdash; Discontinuous Petrov-Galerkin (DPG) for various examples.
 
 <img class="floatright" src="../../img/examples/laghos.png", width="150"/>
 
