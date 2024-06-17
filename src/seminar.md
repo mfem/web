@@ -705,6 +705,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
+#### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
+##### **September 3, 2024**
+
+&nbsp;
+
 #### Rubén Sevilla (Swansea University)
 ##### **September 17, 2024**
 
