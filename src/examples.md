@@ -1285,6 +1285,110 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="nurbs_ex1" markdown="1">
+##NURBS Example 1: Laplace Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex1.png">
+</a>
+
+This example code demonstrates the use of MFEM to define a simple isogeometric NURBS discretization of
+the Laplace problem $$-\Delta u = 1$$ with
+homogeneous Dirichlet boundary conditions. The problem solved in
+this example is the same as [Example 1](#ex1).
+
+_The example has a serial ([nurbs_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1.cpp))
+and a parallel ([nurbs_ex1p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1p.cpp)) version.
+There is also a version that demonstrates efficient patchwise quadrature
+([nurbs_ex1 patch.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_patch_ex1.cpp))._
+<div style="clear:both;"></div>
+<br></div>
+
+
+<div id="nurbs_ex3" markdown="1">
+##NURBS Example 3: Definite Maxwell Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex3.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex3.png">
+</a>
+
+This example code solves a simple electromagnetic diffusion
+problem corresponding to the second order definite Maxwell
+equation $$\nabla\times\nabla\times\, E + E = f$$
+with boundary condition $ E \times n $ = "given tangential field".
+Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
+$f$. We discretize with NURBS-based $H(curl)$elements in 2D or 3D.
+The problem solved in this example is the same as [Ezample 3](#ex3).
+
+_The example has only a serial ([nurbs_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex3.cpp)) version._
+<div style="clear:both;"></div>
+<br></div>
+
+
+<div id="nurbs_ex5" markdown="1">
+##NURBS Example 5: Darcy Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex5.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex5.png">
+</a>
+
+This example code solves a simple 2D/3D mixed Darcy problem
+corresponding to the saddle point system
+$$ \begin{array}{rcl}
+   k\,{\bf u} + {\rm grad}\,p &=& f \\\\
+   -{\rm div}\,{\bf u} &=& g
+\end{array} $$
+with natural boundary condition $-p = $ "given pressure".
+Here we use a given exact solution $({\bf u},p)$ and compute the
+corresponding right hand side $(f, g)$. We discretize  the velocity ($\bf u$) with NURBS-based $H(div)$ elements and
+ the pressure ($p$) with a compatible NURBS-based $H_1$ elements.
+The problem solved in this example is the same as [Example 5](#ex5).
+
+_The example only has a serial ([nurbs_ex5.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex5.cpp))._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="nurbs_ex11" markdown="1">
+##NURBS Example 11: Laplace Eigenproblem
+<img class="floatright" src="../img/examples/ex11.png">
+
+This example code demonstrates the use of MFEM to solve the eigenvalue problem
+$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.
+
+We compute a number of the lowest eigenmodes by discretizing the Laplacian and
+Mass operators using a finite element space of the specified order, or an
+isoparametric/isogeometric space if order < 1 (quadratic for quadratic
+curvilinear mesh, NURBS for NURBS mesh, etc.)
+
+The example highlights the use of the LOBPCG eigenvalue solver together with the
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
+STRUMPACK parallel direct solvers. Reusing a single [GLVis](https://glvis.org)
+visualization window for multiple eigenfunctions is also illustrated.
+
+The problem solved in this example is the same as [Example 11](#ex11).
+
+_The example has only a parallel
+([nurbs_ex11p.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex11p.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="nurbs_ex24" markdown="1">
+##NURBS Example 24: Mixed finite element spaces
+<img class="floatright" src="../img/examples/ex24.png">
+
+The problem solved in this example is the same as [Example 24](#ex24), but NURBS-based elements are also supported.
+
+This example code illustrates usage of mixed finite element
+spaces, with three variants:
+
+- $H^1 \times H(curl)$
+- $H(curl) \times H(div)$
+- $H(div) \times L_2$
+
+Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.
+
+_The example has a serial ([nurbs_ex24.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp))._
+
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -2339,6 +2443,12 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+
+   // nurbs miniapps
+   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
+   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
+   + showElement("nurbs_ex11", diffusion && nurbs)
+   + showElement("nurbs_ex24", nurbs && ( hcurl || hdiv))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
