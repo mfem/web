@@ -106,6 +106,12 @@
                     
                         
                             <li >
+                                 <a href="../nurbs/">NURBS Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
                                  <a href="../autodiff/">Automatic Differentiation</a>
                             </li>
                         
@@ -1460,6 +1466,91 @@ We recommend viewing Example 5 and Example 36 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="nurbs_ex1">
+<h2 id="nurbs-example-1-laplace-problem">NURBS Example 1: Laplace Problem</h2>
+<p><a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex1.png">
+</a></p>
+<p>This example code demonstrates the use of MFEM to define a simple isogeometric NURBS discretization of
+the Laplace problem $$-\Delta u = 1$$ with
+homogeneous Dirichlet boundary conditions. The problem solved in
+this example is the same as <a href="#ex1">Example 1</a>.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1.cpp">nurbs_ex1.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1p.cpp">nurbs_ex1p.cpp</a>) version.
+There is also a version that demonstrates efficient patchwise quadrature
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_patch_ex1.cpp">nurbs_ex1 patch.cpp</a>).</em>
+<div style="clear:both;"></div>
+<br></p>
+</div>
+<div id="nurbs_ex3">
+<h2 id="nurbs-example-3-definite-maxwell-problem">NURBS Example 3: Definite Maxwell Problem</h2>
+<p><a href="https://glvis.org/live/?stream=../data/streams/ex3.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex3.png">
+</a></p>
+<p>This example code solves a simple electromagnetic diffusion
+problem corresponding to the second order definite Maxwell
+equation $$\nabla\times\nabla\times\, E + E = f$$
+with boundary condition $ E \times n $ = "given tangential field".
+Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
+$f$. We discretize with NURBS-based $H(curl)$elements in 2D or 3D.
+The problem solved in this example is the same as <a href="#ex3">Ezample 3</a>.</p>
+<p><em>The example has only a serial (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex3.cpp">nurbs_ex1.cpp</a>) version.</em>
+<div style="clear:both;"></div>
+<br></p>
+</div>
+<div id="nurbs_ex5">
+<h2 id="nurbs-example-5-darcy-problem">NURBS Example 5: Darcy Problem</h2>
+<p><a href="https://glvis.org/live/?stream=../data/streams/ex5.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex5.png">
+</a></p>
+<p>This example code solves a simple 2D/3D mixed Darcy problem
+corresponding to the saddle point system
+$$ \begin{array}{rcl}
+   k\,{\bf u} + {\rm grad}\,p &amp;=&amp; f \\
+   -{\rm div}\,{\bf u} &amp;=&amp; g
+\end{array} $$
+with natural boundary condition $-p = $ "given pressure".
+Here we use a given exact solution $({\bf u},p)$ and compute the
+corresponding right hand side $(f, g)$. We discretize  the velocity ($\bf u$) with NURBS-based $H(div)$ elements and
+ the pressure ($p$) with a compatible NURBS-based $H_1$ elements.
+The problem solved in this example is the same as <a href="#ex5">Example 5</a>.</p>
+<p><em>The example only has a serial (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex5.cpp">nurbs_ex5.cpp</a>).</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+<div id="nurbs_ex11">
+<h2 id="nurbs-example-11-laplace-eigenproblem">NURBS Example 11: Laplace Eigenproblem</h2>
+<p><img class="floatright" src="../img/examples/ex11.png"></p>
+<p>This example code demonstrates the use of MFEM to solve the eigenvalue problem
+$$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.</p>
+<p>We compute a number of the lowest eigenmodes by discretizing the Laplacian and
+Mass operators using a finite element space of the specified order, or an
+isoparametric/isogeometric space if order &lt; 1 (quadratic for quadratic
+curvilinear mesh, NURBS for NURBS mesh, etc.)</p>
+<p>The example highlights the use of the LOBPCG eigenvalue solver together with the
+BoomerAMG preconditioner in HYPRE, as well as optionally the SuperLU or
+STRUMPACK parallel direct solvers. Reusing a single <a href="https://glvis.org">GLVis</a>
+visualization window for multiple eigenfunctions is also illustrated.</p>
+<p>The problem solved in this example is the same as <a href="#ex11">Example 11</a>.</p>
+<p><em>The example has only a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex11p.cpp">nurbs_ex11p.cpp</a>) version.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+<div id="nurbs_ex24">
+<h2 id="nurbs-example-24-mixed-finite-element-spaces">NURBS Example 24: Mixed finite element spaces</h2>
+<p><img class="floatright" src="../img/examples/ex24.png"></p>
+<p>The problem solved in this example is the same as <a href="#ex24">Example 24</a>, but NURBS-based elements are also supported.</p>
+<p>This example code illustrates usage of mixed finite element
+spaces, with three variants:</p>
+<ul>
+<li>$H^1 \times H(curl)$</li>
+<li>$H(curl) \times H(div)$</li>
+<li>$H(div) \times L_2$</li>
+</ul>
+<p>Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
+divergence in the appropriate spaces, comparing the errors in each case.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp">nurbs_ex24.cpp</a>).</em></p>
 <div id="volta">
 <h2 id="volta-miniapp-electrostatics">Volta Miniapp: Electrostatics</h2>
 <p><img class="floatright" src="../img/examples/volta.png"></p>
@@ -1477,14 +1568,14 @@ in the field of linear electrostatics.  Its features include:</p>
 <li>advanced visualization</li>
 </ul>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
-<code>miniapps/electromagnetics</code> directory.</p>
+<code>miniapps/electromagnetics</code> dire</p>
+</div>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/volta.cpp">volta.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="tesla">
 <h2 id="tesla-miniapp-magnetostatics">Tesla Miniapp: Magnetostatics</h2>
 <p><img class="floatright" src="../img/examples/tesla.png"></p>
@@ -1502,14 +1593,14 @@ of realistic magnetostatics problems.  Its features include:</p>
 <li>advanced visualization</li>
 </ul>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
-<code>miniapps/electromagnetics</code> directory.</p>
+<code>miniapps/electromagnetics</code> dire</p>
+</div>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/tesla.cpp">tesla.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="maxwell">
 <h2 id="maxwell-miniapp-transient-full-wave-electromagnetics">Maxwell Miniapp: Transient Full-Wave Electromagnetics</h2>
 <p><img class="floatright" src="../img/examples/maxwell.png"></p>
@@ -1530,14 +1621,14 @@ moving to the miniapps.</strong></em>
 <li>advanced visualization</li>
 </ul>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
-<code>miniapps/electromagnetics</code> directory.</p>
+<code>miniapps/electromagnetics</code> dire</p>
+</div>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/maxwell.cpp">maxwell.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="joule">
 <h2 id="joule-miniapp-transient-magnetics-and-joule-heating">Joule Miniapp: Transient Magnetics and Joule Heating</h2>
 <p><img class="floatright" src="../img/examples/joule.png" ></p>
@@ -1558,14 +1649,14 @@ by the electromagnetic Joule heating.</p>
 <li>advanced visualization</li>
 </ul>
 <p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
-<code>miniapps/electromagnetics</code> directory.</p>
+<code>miniapps/electromagnetics</code> dire</p>
+</div>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp">joule.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="mobius-strip">
 <h2 id="mobius-strip-miniapp">Mobius Strip Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
@@ -1576,14 +1667,14 @@ way to generate complex surface meshes.</p>
 <p>Manipulating the mesh topology and performing mesh transformation are demonstrated.</p>
 <p>The <code>mobius-strip</code> mesh in the <code>data</code> directory was generated with this miniapp.</p>
 <p>For more details, please see the <a href="../meshing-miniapps/">documentation</a> in the
-<code>miniapps/meshing</code> directory.</p>
+<code>miniapps/meshing</code> dire</p>
+</div>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mobius-strip.cpp">mobius-strip.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="klein-bottle">
 <h2 id="klein-bottle-miniapp">Klein Bottle Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/klein-bottle.saved" target="_blank">
@@ -1695,14 +1786,14 @@ assigned new or user specified boundary attributes.</p>
 <li>NURBS meshes are <em>not</em> supported</li>
 </ul>
 <p>This miniapp provides another demonstration of how simple meshes can be
-constructed in MFEM.</p>
+constructed in</p>
+</div>
 <p><em>This miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/trimmer.cpp">trimmer.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="polar-nc">
 <h2 id="polar-nc-miniapp">Polar-NC Miniapp</h2>
 <p><img class="floatright" src="../img/examples/polar-nc.png"></p>
@@ -1758,13 +1849,13 @@ mesh. Some of its features are:</p>
 <li>quantitative and visual reports of mesh quality</li>
 </ul>
 <p>For more details, please see the <a href="../meshing-miniapps/">documentation</a> in the
-<code>miniapps/meshing</code> directory.</p>
+<code>miniapps/meshing</code> dire</p>
+</div>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/mesh-explorer.cpp">mesh-explorer.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="mesh-optimizer">
 <h2 id="mesh-optimizer-miniapp">Mesh Optimizer Miniapp</h2>
 <p><img class="floatright" src="../img/examples/mesh-optimizer.png"></p>
@@ -1810,13 +1901,13 @@ weak alignment of a selected subset of mesh-nodes ($s \in S$) with the zero
 isosurface of the discrete level-set function ($\sigma$).</p>
 <p>Click on the image on the right to see a demonstration of this method for
 generating body-fitted meshes for topology optimization in LiDO to maximize beam
-stiffness under a downward force on the right wall.</p>
+stiffness under a downward force on the right</p>
+</div>
 <p><em>The miniapp has a parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-fitting.cpp">pmesh-fitting.cpp</a>)
 version.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="minimal-surface">
 <h2 id="minimal-surface-miniapp">Minimal Surface Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/minimal-surface.saved" target="_blank">
@@ -1826,15 +1917,15 @@ version.
 <p>Options to solve the minimal surface equations of both parametric surfaces as well as
 surfaces restricted to be graphs of the form $z=f(x,y)$ are supported, including a
 number of examples such as the Catenoid, Helicoid, Costa and Scherk surfaces.</p>
-<p>For more details, please see the <a href="../meshing-miniapps/">documentation</a> in the <code>miniapps/meshing</code> directory.</p>
+<p>For more details, please see the <a href="../meshing-miniapps/">documentation</a> in the <code>miniapps/meshing</code> dire</p>
+</div>
 <p><em>The miniapp has a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/minimal-surface.cpp">minimal-surface.cpp</a>) and a
 parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pminimal-surface.cpp">pminimal-surface.cpp</a>)
 version.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="lor-transfer">
 <h2 id="low-order-refined-transfer-miniapp">Low-Order Refined Transfer Miniapp</h2>
 <p><img class="floatright"  width="450" src="../img/examples/lor-transfer.png"></p>
@@ -1846,13 +1937,13 @@ low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
 function that was obtained by restricting a high-order grid function to the
-low-order refined space.</p>
+low-order refined </p>
+</div>
 <p><em>The miniapp has only a serial
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp">lor-transfer.cpp</a>) version.</em>
 <em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="gslib-interpolation">
 <h2 id="interpolation-miniapps">Interpolation Miniapps</h2>
 <p><img class="floatright"  width="450" src="../img/examples/gslib.png"></p>
@@ -1933,13 +2024,13 @@ to enforce Dirichlet boundary conditions on the (non-aligned) mesh faces,
 therefore "shifting" the location where boundary conditions are imposed. The
 implementation in the miniapp is a high-order extension of the
 second-generation
-<a href="https://www.sciencedirect.com/science/article/pii/S0045782520305260">shifted boundary method</a>.</p>
+[shifted boundary method](https://www.sciencedirect.com/science/article/pii/S004578252030</p>
+</div>
 <p><em>The miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/shifted/distance.cpp">diffusion.cpp</a>) version.</em>
 <em><strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="laghos">
 <h2 id="laghos-miniapp">Laghos Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/laghos.saved" target="_blank">
@@ -2016,11 +2107,11 @@ Lagrangian Eulerian (ALE) simulations.</p>
 a collection of software benchmarks, miniapps, libraries and APIs for
 efficient exascale discretizations based on high-order finite element
 and spectral element methods. See https://github.com/ceed for more
-information and source code availability.</p>
+information and source code availab</p>
+</div>
 <p><em>This is an external miniapp, available at <a href="https://github.com/CEED/Remhos">https://github.com/CEED/Remhos</a>.</em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="navier">
 <h2 id="navier-miniapp">Navier Miniapp</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/navier.saved" target="_blank">
@@ -2043,15 +2134,15 @@ the equation.</p>
 <li>High order mesh elements</li>
 <li>IMEX (EXTk-BDFk) time-stepping up to third order</li>
 <li>Convenient interface for new users</li>
-<li>A variety of test cases and benchmarks</li>
+<li>A variety of test cases and benc</li>
 </ul>
+</div>
 <p><em>This miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_solver.cpp">navier_solver.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="block-solvers">
 <h2 id="block-solvers-miniapp">Block Solvers Miniapp</h2>
 <p><img class="floatright" width="400" src="../img/examples/block-solvers.png"></p>
@@ -2075,15 +2166,15 @@ directory.</p>
 <ul>
 <li>Arbitrary order mixed finite element pair (Raviart-Thomas elements + piecewise discontinuous polynomials)</li>
 <li>Various combination of essential and natural boundary conditions</li>
-<li>Homogeneous or heterogeneous scalar coefficient k</li>
+<li>Homogeneous or heterogeneous scalar coeffic</li>
 </ul>
+</div>
 <p><em>This miniapp has only a parallel
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/solvers/block-solvers.cpp">block-solvers.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="overlapping">
 <h2 id="overlapping-grids-miniapps">Overlapping Grids Miniapps</h2>
 <p><img class="floatright"  width="450" src="../img/examples/overlapping.png"></p>
@@ -2106,14 +2197,14 @@ overlapping grids.</p>
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp">navier_cht.cpp</a>)
 demonstrates how a conjugate heat transfer problem can be solved with the fluid
 dynamics (incompressible Navier-Stokes equations) and heat transfer
-(advection-diffusion equation) PDEs modeled on different meshes.</p>
+(advection-diffusion equation) PDEs modeled on different m</p>
 </li>
 </ul>
+</div>
 <p><em>These miniapps require installation of the <a href="https://github.com/gslib/gslib"><code>gslib</code></a> library.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="parelag">
 <h2 id="parelag-amge-for-hcurl-and-hdiv-miniapp">ParELAG AMGe for H(curl) and H(div) Miniapp</h2>
 <p><img class="floatright" width="250" style="border:1px solid black" src="../img/examples/amge-2d-aes.png"></p>
@@ -2234,12 +2325,12 @@ $T_{wall}$ obtained from the heat equation.</p>
 coupling approach is used. The heat equation of the outer box is solved from the
 timestep $T_{box}(t)$ to $T_{box}(t+dt)$. Then for the convection-diffusion
 equation $T_{wall}$ is set to $T_{box}(t+dt)$ and the equation is solved for
-$T(t+dt)$ which results in a first-order one way coupling.</p>
+$T(t+dt)$ which results in a first-order one way cou</p>
+</div>
 <p><em>This miniapp has only a parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp">multidomain.cpp</a>) implementation.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em>
 <div style="clear:both;"/></div>
-<br></p>
-</div>
+<br></div></p>
 <div id="dpgminiapp">
 <h2 id="dpg-miniapp">DPG miniapp</h2>
 <p>This <a href="https://github.com/mfem/mfem/blob/master/miniapps/dpg">miniapp</a> demonstrates how to discretize and solve various PDEs using the Discontinuous Petrov-Galerkin (DPG) method.
@@ -2311,7 +2402,7 @@ violation of the contact constraints.</p>
 <p><em>This miniapp has only a parallel (<a href="https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp">contact-patch-test.cpp</a>) implementation. For more details, please see the documentation in <a href="https://github.com/mfem/mfem/blob/master/miniapps/tribol/README.md">miniapps/tribol/README.md</a>.
 <strong>We recommend that new users start with the example codes before moving to the miniapps.</strong></em></p>
 <div style="clear:both;"/></div>
-<br>
+<br></div>
 
 </div>
 <!-- ------------------------------------------------------------------------- -->
@@ -2326,7 +2417,6 @@ No examples or miniapps match your criteria.
 </div>
 
 <div style="clear:both;"/></div>
-
 <script type="text/javascript"><!--
 
 function showElement(id, show)
@@ -2412,6 +2502,12 @@ function update()
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
+   // nurbs miniapps
+   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
+   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
+   + showElement("nurbs_ex11", diffusion && nurbs)
+   + showElement("nurbs_ex24", nurbs && ( hcurl || hdiv))
+
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
@@ -2480,7 +2576,10 @@ document.getElementsByTagName("body")[0].style = "overflow-y: scroll"
 // parse URL part after '?', e.g., http://.../index.html?elasticity&nurbs
 initCombos();
 
-//--></script></div>
+//--></script>
+
+
+</div></div>
 
             
         </div>
