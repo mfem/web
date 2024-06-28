@@ -705,6 +705,35 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
+#### Patrick Farrell (University of Oxford)
+##### **July 30, 2024**
+
+<!--
+Title: Designing conservative and accurately dissipative numerical integrators in time
+
+Numerical methods for the simulation of transient systems with
+structure-preserving properties are known to exhibit greater accuracy and
+physical reliability, in particular over long durations. These schemes are often
+built on powerful geometric ideas for broad classes of problems, such as
+Hamiltonian or reversible systems. However, there remain difficulties in
+devising higher-order- in-time structure-preserving discretizations for
+nonlinear problems, and in conserving non-polynomial  invariants.
+
+In this work we propose a new, general framework for the construction of
+structure-preserving timesteppers via finite elements in time and the systematic
+introduction of auxiliary variables. The framework reduces to Gauss methods
+where those are structure-preserving, but extends to generate arbitrary-order
+structure-preserving schemes for nonlinear problems, and allows for the
+construction of schemes that conserve multiple higher-order invariants. We
+demonstrate the ideas by devising novel schemes that exactly conserve all known
+invariants of the Kepler and Kovalevskaya problems, arbitrary-order schemes for
+the compressible Navier–Stokes equations that conserve mass, momentum, and
+energy, and provably dissipate entropy, and multi-conservative schemes for the
+Benjamin-Bona-Mahony equation.
+-->
+
+&nbsp;
+
 #### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
 ##### **September 3, 2024**
 
@@ -715,7 +744,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Patrick Farrell (University of Oxford)
+#### Pablo Brubeck (University of Oxford)
 ##### **November 12, 2024**
 
 </div>
