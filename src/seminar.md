@@ -740,6 +740,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
+#### Daniele Panozzo (Courant Institute, NYU)
+##### **October 1, 2024**
+
+&nbsp;
+
 #### Pablo Brubeck (University of Oxford)
 ##### **November 12, 2024**
 
