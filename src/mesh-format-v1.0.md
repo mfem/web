@@ -12,7 +12,7 @@ In the simple case of a mesh with straight edges the format looks as follows
 ```sh
 MFEM mesh v1.0
 
-# Space dimension: 2 or 3
+# Dimension of the mesh: 1, 2 or 3 (e.g. 2 for a 2D surface mesh in 3D space)
 dimension
 <dimension>
 
@@ -125,7 +125,7 @@ The MFEM mesh v1.0 format also support the general description of meshes based o
 ```sh
 MFEM mesh v1.0
 
-# Space dimension: 2 or 3
+# Dimension of the mesh: 1, 2 or 3 (e.g. 2 for a 2D surface mesh in 3D space)
 dimension
 <dimension>
 
