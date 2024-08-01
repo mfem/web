@@ -2,7 +2,7 @@
 
 # FEM@LLNL Seminar Series
 
-We are happy to announce a new FEM@LLNL seminar series, starting in 2022, which will focus on finite element research and applications talks of interest to the MFEM community. We have lined up some excellent speakers for our first year and plan to keep adding more. Videos will be added to a [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj) as well as this site's [videos page](videos.md).
+The FEM@LLNL seminar series is focused on finite element research and applications talks of interest to the MFEM community. Videos will be added to a [YouTube playlist](https://www.youtube.com/playlist?list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj) as well as this site's [videos page](videos.md).
 
 ### <i class="fa fa-envelope-o" aria-hidden="true"></i> Sign-Up
 
@@ -12,6 +12,39 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+
+&nbsp;
+
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/ferrer.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Esteban Ferrer (Universidad Politécnica de Madrid)
+##### *New avenues in high order fluid dynamics*
+##### [**9am PDT, September 3, 2024**](https://everytimezone.com/s/01cb2da8)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>](TBD)
+
+**Abstract:** We present the latest developments of our High-Order Spectral
+Element Solver (HORSES3D), an open source high-order discontinuous Galerkin
+framework capable of solving a variety of flow applications, including
+compressible flows (with or without shocks), incompressible flows, various RANS
+and LES turbulence models, particle dynamics, multiphase flows, and aeroacoustics
+[[1](https://arxiv.org/abs/2206.09733)]. Recent developments allow us to
+simulate challenging multiphysics including turbulent flows, multiphase and
+moving bodies, using local h and p-adaption. In addition, we present recent work
+that couples Machine Learning and reinforcement learning techniques with high
+order simulations.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/farrell.jpg)
@@ -20,11 +53,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Patrick Farrell (University of Oxford)
 ##### *Designing conservative and accurately dissipative numerical integrators in time*
-##### [**9am PDT, July 30, 2024**](https://everytimezone.com/s/03f89eb8)
+##### July 30, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/farrell.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>]()
 
 **Abstract:** Numerical methods for the simulation of transient systems with
 structure-preserving properties are known to exhibit greater accuracy and
@@ -44,11 +81,6 @@ invariants of the Kepler and Kovalevskaya problems, arbitrary-order schemes for
 the compressible Navier–Stokes equations that conserve mass, momentum, and
 energy, and provably dissipate entropy, and multi-conservative schemes for the
 Benjamin-Bona-Mahony equation
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
 
 </div><div class="col-md-3" markdown="1">
 
@@ -727,11 +759,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
-##### **September 3, 2024**
 
 &nbsp;
 
