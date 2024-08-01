@@ -16,13 +16,13 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;
 
 
-</div><div class="col-md-3" markdown="1">
+</div><div class="col-md-6" markdown="1">
 
-![](img/seminar/ferrer.jpg)
+![](img/seminar/ferrer+huergo.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### Esteban Ferrer (Universidad Politécnica de Madrid)
+#### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
 ##### *New avenues in high order fluid dynamics*
 ##### [**9am PDT, September 3, 2024**](https://everytimezone.com/s/01cb2da8)
 
@@ -769,6 +769,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 #### Daniele Panozzo (Courant Institute, NYU)
 ##### **October 1, 2024**
+
+&nbsp;
+
+#### Denis Ridzal (Sandia National Laboratories)
+##### **October 15, 2024**
 
 &nbsp;
 
