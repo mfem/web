@@ -23,7 +23,7 @@ directions for the project.
 
 If you plan to attend, either in-person or virtually, [please register no later than **October 15th**](https://docs.google.com/forms/d/e/1FAIpQLSfv419dXX4yPS7Tk1sNbfi_2YXgt3DpW56KCd3TZjjsswKpBw/viewform?usp=sf_link).
 
-In-person attendees will receive a follow-up form for the registration fee (*exact amount TBD, but in the $100-$200 range*), which will cover food and the conference dinner. In-person attendees will also be welcomed to select optional MFEM-branded items for purchase.
+In-person attendees will receive a follow-up form for the registration fee (*exact amount TBD, but in the $100-$200 range*), which will cover food and the workshop dinner. In-person attendees will also be welcomed to select optional MFEM-branded items (t-shirt, pint glass, etc.) for purchase.
 
 There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
 
