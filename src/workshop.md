@@ -59,7 +59,7 @@ MFEM workshop.
 
 The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-7) on October 22, 23 and 24, with office hours and hackathon in the afternoon of the last day.
 
-Full agenda will be announced on October 1.
+The full agenda will be announced on October 1.
 
 ---
 
