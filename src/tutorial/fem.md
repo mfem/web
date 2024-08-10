@@ -208,7 +208,7 @@ boundary conditions (for simplicity, here we just set `x=0` in the whole domain)
 
 The matrix $A$ is represented as a `BilinearForm` object, with a specific
 `DiffusionIntegrator` corresponding to the weak form (5). See lines
-[190-203](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L203).
+[190-210](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L210).
 
 ```c++
 BilinearForm a(&fespace);
@@ -225,9 +225,9 @@ You can also provide a variety of coefficients to the integrator, for example,
 portions of the domain.
 
 The linear system (4) is formed in lines
-[205-207](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L205-L207)
+[212-216](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L212-L216)
 and solved with a variety of options in lines
-[211-245](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L211-L245).
+[218-252](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L218-L252).
 One simple case is:
 
 ```c++
