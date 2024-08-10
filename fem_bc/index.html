@@ -673,11 +673,12 @@ a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
 <h2 id="discontinuous-galerkin-formulations">Discontinuous Galerkin Formulations</h2>
 <p>In the Discontinuous Galerkin (DG) formulation the
 <a href="#natural-boundary-conditions">Natural</a>,
-<a href="#neumann-boundary-conditions">Neumann</a>, and
-<a href="#robin-boundary-conditions">Robin</a> can be implemented in precisely
-the same manner as in the continuous case.  However, since DG basis
-functions have no degrees of freedom associated with the boundary,
-Dirichlet boundary conditions must be handled differently.</p>
+<a href="#neumann-boundary-conditions">Neumann</a>, and <a href="#robin-boundary-conditions">Robin</a>
+can be implemented in a similar the same manner as in the continuous case
+(adding the appropriate <code>LinearFormIntegrator</code> as a <em>boundary face integrator</em>
+instead of a <em>boundary integrator</em>).  However, since DG basis functions
+have no degrees of freedom associated with the boundary, Dirichlet boundary
+conditions must be handled differently.</p>
 <pre><code class="c++">// Add the desired value for the Dirichlet constraint on the boundary
 // marked in the dbc_marker array.
 b.AddBdrFaceIntegrator(new DGDirichletLFIntegrator(dbcCoef, matCoef, sigma, kappa),
