@@ -262,7 +262,7 @@ preconditioner.
 Once the linear system is solved, we recover the solution as a finite element
 grid function, and then visualize and save the final results to disk (files
 `refined.mesh` and `sol.gf`). See lines
-[247-267](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L247-L267).
+[254-274](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L254-L274).
 
 ```c++
 a.RecoverFEMSolution(X, b, x);
