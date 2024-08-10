@@ -247,8 +247,8 @@ applies any necessary transformations such as eliminating boundary conditions
 non-conforming AMR, static condensation, etc.); and produces the corresponding
 matrix $A$, right-hand side vector $B$, and unknown vector $X$.
 
-In the above example, we then solve `A X = B` with a
-[conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iteration,
+In the above example, we then solve `A X = B` with
+[conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iterations,
 using a simple [Gauss-Seidel](https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method)
 preconditioner. We set the maximum number of iterations to `200` and a convergence
 criteria of residual norm reduction by 6 orders of magnitude (`1e-12` is the square of
