@@ -177,11 +177,7 @@ tutorial such as:
 
 - Integrations with [PETSc](https://docs.mfem.org/html/petsc_8hpp.html), [SUNDIALS](https://docs.mfem.org/html/sundials_8hpp.html), [SuperLU](https://docs.mfem.org/html/superlu_8hpp.html), [libCEED](https://github.com/CEED/libCEED), [PUMI](https://docs.mfem.org/html/pumi_8hpp.html), [Ginkgo](https://docs.mfem.org/html/ginkgo_8hpp.html), [HiOp](https://docs.mfem.org/html/hiop_8hpp.html), and more.
 
-- Python support with the [PyMFEM](https://github.com/mfem/PyMFEM) wrapper.
-
-- Jupyter support with Python notebooks: [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/GLVis/pyglvis/HEAD?filepath=examples%2Fex1.ipynb "Python Jupyter notebook") or [![Launch Cllab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/drive/13m6KwuHnGL9_AhA65P42JuRxfKcgWMBj?usp=sharing "Python Jupyter notebook")
-
-- Jupyter support with C++ notebooks: [![Launch Binder](https://mybinder.org/badge_logo.svg){style="display:inline;margin:0"}](https://mybinder.org/v2/gh/mfem/mfem/master?filepath=examples%2Fjupyter%2Fex.ipynb "C++ Jupyter notebook")
+- Python support with the [PyMFEM](https://github.com/mfem/PyMFEM) wrapper and Jupyter notebooks [![Launch Cllab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/drive/13m6KwuHnGL9_AhA65P42JuRxfKcgWMBj?usp=sharing "Python Jupyter notebook").
 
 ---
 

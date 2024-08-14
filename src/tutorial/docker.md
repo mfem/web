@@ -9,11 +9,13 @@ You don't need a cloud instance to run the MFEM tutorial. Instead, you can
 directly run the MFEM [Docker container](https://github.com/mfem/containers)
 on a computer available to you.
 
-This `mfem/developer` container has been specifically created to kickstart the exploration of
+The `mfem/developer` containers has been specifically created to kickstart the exploration of
 MFEM and its capabilities in a variety of computing environments: from the cloud
 (like AWS), to HPC clusters, and your own laptop.
 
-There are CPU and GPU variations of the image, we will refer to it generically
+There are [CPU](https://github.com/mfem/containers/pkgs/container/containers%2Fdeveloper-cpu)
+and [GPU](https://github.com/mfem/containers/pkgs/container/containers%2Fdeveloper-cuda-sm70)
+variations of the image, we will refer to it generically
 as `mfem/developer` during the tutorial.
 
 Below are instructions on how to start the container on [Linux](#linux) and [macOS](#macos),

@@ -373,9 +373,9 @@ peruse the example source code to see the capabilities of the various integratio
 
 You can check the
 [containers](https://github.com/mfem/containers/blob/main/README.md) repository
-to see which third-party libraries are available for the image you chose. As of 
-December 2023, we pre-install PETSc and SuperLU for the CPU images and AmgX for 
-the CUDA images. 
+to see which third-party libraries are available for the image you chose. As of
+December 2023, we pre-install PETSc and SuperLU for the CPU images and AmgX for
+the CUDA images.
 
 <div class="panel panel-info">
 <div class="panel-heading">

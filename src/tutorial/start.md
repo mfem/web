@@ -23,7 +23,7 @@
 You need an <code>IP</code> address to follow the steps described below.
 <p><p>
 <i class="fa fa-arrow-circle-right"></i>&nbsp; If you are part of the
-<a href="https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/">RADIUSS AWS tutorial</a>,
+<a href="https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials">HPCIC tutorial</a>,
 you should have received an email with the AWS instance IP address allocated to you.
 Use that in place of <code>IP</code> in the instructions below.
 <p><p>
@@ -111,7 +111,7 @@ The <b>Host</b> field in the <b>Connect to socket</b> dialog should match your <
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Simple test
 
-- To test your environment, run `ex1p`, which together with the MFEM library itself,
+- To test your environment, run `ex1`, which together with the MFEM library itself,
   comes pre-build in the AWS image.
 
 - In the VS Code terminal, type
