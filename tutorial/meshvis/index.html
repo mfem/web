@@ -425,7 +425,7 @@ Mesh.MshFileVersion = 2.2;
 <pre><code class="text">mpirun -np 24 ./ex1p -m cross_heat.msh -no-vis
 </code></pre>
 
-<p>The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-visit-and-paraview">end</a>   of this tutorial session.</p>
+<p>The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-paraview-and-visit">end</a>   of this tutorial session.</p>
 <p><img style="width:60%" src="../img/paraview2.png"></p>
 <p>If we want to enforce Dirichlet boundary conditions different than zero on some other surface, we must export it as a physical surface. For example, to enforce value one on the other cylindrical surface, add the following line to the <code>cross_heat.geo</code> file:</p>
 <pre><code class="text">Physical Surface(2) = {7};
