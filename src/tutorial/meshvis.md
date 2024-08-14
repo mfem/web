@@ -100,7 +100,7 @@ To run Example 1 with the newly prepared mesh, be sure you are in the `examples`
 mpirun -np 24 ./ex1p -m cross_heat.msh -no-vis
 ```
 
-The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-visit-and-paraview">end</a>   of this tutorial session.
+The solution of the diffusion equation for the generated mesh is shown in the following two pictures. The figures are generated with ParaView, and the process of visualization is explained at the <a href="../meshvis/#visualizing-results-in-paraview-and-visit">end</a>   of this tutorial session.
 
 <img style="width:60%" src="../img/paraview2.png">
 

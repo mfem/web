@@ -208,7 +208,7 @@ boundary conditions (for simplicity, here we just set `x=0` in the whole domain)
 
 The matrix $A$ is represented as a `BilinearForm` object, with a specific
 `DiffusionIntegrator` corresponding to the weak form (5). See lines
-[190-203](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L203).
+[190-210](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L210).
 
 ```c++
 BilinearForm a(&fespace);
@@ -225,9 +225,9 @@ You can also provide a variety of coefficients to the integrator, for example,
 portions of the domain.
 
 The linear system (4) is formed in lines
-[205-207](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L205-L207)
+[212-216](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L212-L216)
 and solved with a variety of options in lines
-[211-245](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L211-L245).
+[218-252](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L218-L252).
 One simple case is:
 
 ```c++
@@ -247,8 +247,8 @@ applies any necessary transformations such as eliminating boundary conditions
 non-conforming AMR, static condensation, etc.); and produces the corresponding
 matrix $A$, right-hand side vector $B$, and unknown vector $X$.
 
-In the above example, we then solve `A X = B` with a
-[conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iteration,
+In the above example, we then solve `A X = B` with
+[conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iterations,
 using a simple [Gauss-Seidel](https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method)
 preconditioner. We set the maximum number of iterations to `200` and a convergence
 criteria of residual norm reduction by 6 orders of magnitude (`1e-12` is the square of
@@ -262,7 +262,7 @@ preconditioner.
 Once the linear system is solved, we recover the solution as a finite element
 grid function, and then visualize and save the final results to disk (files
 `refined.mesh` and `sol.gf`). See lines
-[247-267](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L247-L267).
+[254-274](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L254-L274).
 
 ```c++
 a.RecoverFEMSolution(X, b, x);
