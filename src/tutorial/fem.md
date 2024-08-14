@@ -65,9 +65,9 @@ non-conforming:
 
 <img src="../img/fem2.png" width="300">
 
-In order to solve for the unknown coefficients of $u_h$, we must convert our equation
+In order to solve for the unknown coefficients of $u_h$, we convert our equation
 into its <a href="../../fem_weak_form/">weak form</a> (also known as its *variational form*).
-To do so, we multiply the equation by a _test function_, 
+To do so, we multiply the entire equation (1) by a _test function_, 
 $v \approx v_h = \sum_{i=1}^n c_i \varphi_i$, and integrate over the domain, $\Omega$:
 
 $$\sum_{j=1}^n \sum_{i=1}^n - \int_\Omega c_j \nabla \cdot (\nabla \varphi_j) c_i \varphi_i = \sum_{i=1}^n \int_\Omega f c_i \varphi_i$$
@@ -77,17 +77,17 @@ this equation must hold for any choice of $c_i$ which allows us to simplify:
 
 $$\sum_{j=1}^n \int_\Omega - c_j \nabla \cdot (\nabla \varphi_j) \varphi_i = \int_\Omega f \varphi_i$$
 
-We simplify further, reducing the order of derivative through application of 
+We simplify further by reducing the order of derivative through application of 
 integration by parts and the [divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem),
 
-$$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i + \int_{\partial\Omega} c_j \nabla \varphi_j \varphi_i = \int_\Omega f \varphi_i$$
+$$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i - \int_{\partial\Omega} c_j \nabla \varphi_j \varphi_i = \int_\Omega f \varphi_i$$
 
-Here we assume homogeneous Dirichlet boundary conditions corresponding, for example, 
-to zero temperature on the whole boundary: $c_j = 0 ~~\text{on}~~ \partial\Omega$. Plugging in, we obtain
+We assume homogeneous Dirichlet boundary conditions corresponding, for example, 
+to zero temperature on the whole boundary. This eliminates the boundary term to give
 
 $$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$
 
-Since the basis functions are known, we can rewrite (3) as
+which holds for all $\varphi_i$. Since the basis functions are known, we can rewrite (6) as
 
 $$
 A x = b
@@ -193,7 +193,7 @@ to the marked attributes (the non-zero entries of `ess_bdr`).
 
 The right-hand side $b$ is constructed in lines
 [176-182](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L176-L182).
-In MFEM terminology, integrals of the form (6) are implemented in the
+In MFEM terminology, integrals of the form (9) are implemented in the
 class `LinearForm`. The `Coefficient` object corresponds to $f$ from the
 previous section, which here is set to $1$. You can easily specify more general
 $f$ with other coefficient classes, e.g., `FunctionCoefficient`.
@@ -208,7 +208,7 @@ b.Assemble();
 The finite element approximation $u_h$ is described in MFEM as a `GridFunction`
 belonging to the `FiniteElementSpace`. Note that a `GridFunction` object can be
 viewed both as the function $u_h$ in (2) as well as the vector of degrees of
-freedom $x$ in (7). See lines
+freedom $x$ in (10). See lines
 [184-188](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L184-L188).
 
 ```c++
@@ -220,7 +220,7 @@ We need to initialize `x` with the boundary values we want to impose as Dirichle
 boundary conditions (for simplicity, here we just set `x=0` in the whole domain).
 
 The matrix $A$ is represented as a `BilinearForm` object, with a specific
-`DiffusionIntegrator` corresponding to the weak form (5). See lines
+`DiffusionIntegrator` corresponding to the weak form (8). See lines
 [190-210](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L210).
 
 ```c++
@@ -237,7 +237,7 @@ You can also provide a variety of coefficients to the integrator, for example,
 `PWConstCoefficient` to specify different material properties in different
 portions of the domain.
 
-The linear system (4) is formed in lines
+The linear system (7) is formed in lines
 [212-216](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L212-L216)
 and solved with a variety of options in lines
 [218-252](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L218-L252).
