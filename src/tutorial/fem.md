@@ -67,22 +67,22 @@ non-conforming:
 
 In order to solve for the unknown coefficients of $u_h$, we convert our equation
 into its <a href="../../fem_weak_form/">weak form</a> (also known as its *variational form*).
-To do so, we multiply the entire equation (1) by a _test function_, 
+To do so, we multiply the entire equation (1) by a _test function_,
 $v \approx v_h = \sum_{i=1}^n c_i \varphi_i$, and integrate over the domain, $\Omega$:
 
 $$\sum_{j=1}^n \sum_{i=1}^n - \int_\Omega c_j \nabla \cdot (\nabla \varphi_j) c_i \varphi_i = \sum_{i=1}^n \int_\Omega f c_i \varphi_i$$
 
-Because the test function coefficients have not been explicitly specified, 
+Because the test function coefficients have not been explicitly specified,
 this equation must hold for any choice of $c_i$ which allows us to simplify:
 
 $$\sum_{j=1}^n \int_\Omega - c_j \nabla \cdot (\nabla \varphi_j) \varphi_i = \int_\Omega f \varphi_i$$
 
-We simplify further by reducing the order of derivative through application of 
+We simplify further by reducing the order of derivative through application of
 integration by parts and the [divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem),
 
 $$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i - \int_{\partial\Omega} c_j \nabla \varphi_j \varphi_i = \int_\Omega f \varphi_i$$
 
-We assume homogeneous Dirichlet boundary conditions corresponding, for example, 
+We assume homogeneous Dirichlet boundary conditions corresponding, for example,
 to zero temperature on the whole boundary. This eliminates the boundary term to give
 
 $$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$
@@ -403,6 +403,15 @@ Here are some sample parallel runs:
     mpirun -np 16 ex1p
     mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
     mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+If you are getting errors from <code>mpirun</code> that there are <i>"not enough slots available in the system"</i>, try adding the <code>--oversubscribe</code> option. For example: <code>mpirun --oversubscribe -np 16 ex1p</code>
+</div>
+</div>
 
 ![](img/fem4.png)
 
