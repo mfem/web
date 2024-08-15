@@ -406,13 +406,14 @@ which are only non-zero on small portions of the mesh.</p>
 <p>With finite elements, the mesh can be totally unstructured, curved, and
 non-conforming:</p>
 <p><img src="../img/fem2.png" width="300"></p>
-<p>To solve for the unknown coefficients, we multiply Poisson's equation by another
-(test) basis function $\varphi_i$ and integrate by parts to obtain</p>
-<p>$$\sum_{j=1}^n\int_\Omega c_j \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$</p>
-<p>for every basis function $\varphi_i$. (Here we are assuming homogeneous
+<p>To solve for the unknown coefficients in (2), we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the Poisson equation. This is obtained by first multiplying with another (test) basis function $\varphi_i$:</p>
+<p>$$-\sum_{j=1}^n c_j \int_\Omega \Delta \varphi_j \varphi_i = \int_\Omega f \varphi_i$$</p>
+<p>and then integrating by parts using the <a href="https://en.wikipedia.org/wiki/Divergence_theorem">divergence theorem</a>:</p>
+<p>$$\sum_{j=1}^n c_j \int_\Omega \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$</p>
+<p>Here we are assuming that the boundary term vanishes due to homogeneous
 Dirichlet boundary conditions corresponding, for example, to zero temperature on
-the whole boundary.)</p>
-<p>Since the basis functions are known, we can rewrite (3) as</p>
+the whole boundary.</p>
+<p>Since the basis functions are known, we can rewrite (4) as</p>
 <p>$$
 A x = b
 $$</p>
@@ -498,7 +499,7 @@ attributes and returns the <code>FiniteElementSpace</code> degrees of freedom th
 to the marked attributes (the non-zero entries of <code>ess_bdr</code>).</p>
 <p>The right-hand side $b$ is constructed in lines
 <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L176-L182">176-182</a>.
-In MFEM terminology, integrals of the form (6) are implemented in the
+In MFEM terminology, integrals of the form (7) are implemented in the
 class <code>LinearForm</code>. The <code>Coefficient</code> object corresponds to $f$ from the
 previous section, which here is set to $1$. You can easily specify more general
 $f$ with other coefficient classes, e.g., <code>FunctionCoefficient</code>.</p>
@@ -511,7 +512,7 @@ b.Assemble();
 <p>The finite element approximation $u_h$ is described in MFEM as a <code>GridFunction</code>
 belonging to the <code>FiniteElementSpace</code>. Note that a <code>GridFunction</code> object can be
 viewed both as the function $u_h$ in (2) as well as the vector of degrees of
-freedom $x$ in (7). See lines
+freedom $x$ in (8). See lines
 <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L184-L188">184-188</a>.</p>
 <pre><code class="c++">GridFunction x(&amp;fespace);
 x = 0.0;
@@ -520,7 +521,7 @@ x = 0.0;
 <p>We need to initialize <code>x</code> with the boundary values we want to impose as Dirichlet
 boundary conditions (for simplicity, here we just set <code>x=0</code> in the whole domain).</p>
 <p>The matrix $A$ is represented as a <code>BilinearForm</code> object, with a specific
-<code>DiffusionIntegrator</code> corresponding to the weak form (5). See lines
+<code>DiffusionIntegrator</code> corresponding to the weak form (6). See lines
 <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L210">190-210</a>.</p>
 <pre><code class="c++">BilinearForm a(&amp;fespace);
 if (pa) { a.SetAssemblyLevel(AssemblyLevel::PARTIAL); }
@@ -534,7 +535,7 @@ matrix-free) and many different <a href="https://mfem.org/bilininteg/">integrato
 You can also provide a variety of coefficients to the integrator, for example,
 <code>PWConstCoefficient</code> to specify different material properties in different
 portions of the domain.</p>
-<p>The linear system (4) is formed in lines
+<p>The linear system (5) is formed in lines
 <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L212-L216">212-216</a>
 and solved with a variety of options in lines
 <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L218-L252">218-252</a>.
@@ -680,6 +681,15 @@ the visualization window should be fast.
 mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
 mpirun -np 48 ex1p -m ../data/escher-p2.mesh
 </code></pre>
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+If you are getting errors from <code>mpirun</code> that there are <i>"not enough slots available in the system"</i>, try adding the <code>--oversubscribe</code> option. For example: <code>mpirun --oversubscribe -np 16 ex1p</code>
+</div>
+</div>
+
 <p><img alt="" src="../img/fem4.png" /></p>
 <p>The above plot shows the parallel decomposition in the first sample run,
 with the following manipulations in the GLVis window: pressing keys <kbd>R</kbd>,
