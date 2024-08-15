@@ -391,6 +391,15 @@ Here are some sample parallel runs:
     mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
     mpirun -np 48 ex1p -m ../data/escher-p2.mesh
 
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+If you are getting errors from <code>mpirun</code> that there are <i>"not enough slots available in the system"</i>, try adding the <code>--oversubscribe</code> option. For example: <code>mpirun --oversubscribe -np 16 ex1p</code>
+</div>
+</div>
+
 ![](img/fem4.png)
 
 The above plot shows the parallel decomposition in the first sample run,
