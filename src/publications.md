@@ -2,8 +2,8 @@
 
 ## Google Scholar Citations
 
- - [Recent](https://scholar.google.com/scholar?as_vis=1&q=%22mfem.org%22+OR+%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.org%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&scisbd=2&as_sdt=1,5)
- - [All time](https://scholar.google.com/scholar?q=%22mfem.org%22+OR+%22mfem.googlecode.com%22+OR+%22code.google.com/p/mfem%22+OR+%22mfem+package%22+OR+%22AggieFEM%22++OR+%22unstructured+finite+element+package+aFEM%22+OR+%22scalable+finite+element+package+aFEM%22+OR+%22aFEM+finite+element+package%22+OR+%22glvis.org%22+OR+%22glvis.googlecode%22+OR+%22code.google.com/p/glvis%22&hl=en&as_sdt=1,5&as_vis=1)
+ - [Recent](https://scholar.google.com/scholar?scisbd=2&q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR++%22j.camwa.2020.06.009%22&hl=en&as_sdt=1,5)
+ - [All time](https://scholar.google.com/scholar?q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR++%22j.camwa.2020.06.009%22&hl=en&as_sdt=1,5)
 
 ## Selected Publications
 
