@@ -142,6 +142,7 @@ For more than 70 years, LLNL has applied science and technology to make the worl
 ┊  [*Ketan Mittal*](https://people.llnl.gov/mittal3)
 ┊  [*Will Pazner*](https://pazner.github.io)
 ┊  [*Sohail Reddy*](https://scholar.google.com/citations?user=trH03DQAAAAJ&hl=en)
+┊  [*Haley Shuey*](https://www.linkedin.com/in/haley-shuey)
 
 ---
 
