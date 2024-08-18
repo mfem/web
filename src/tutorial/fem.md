@@ -399,7 +399,10 @@ Here are some sample parallel runs:
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
 </div>
 <div class="panel-body">
-If you are getting errors from <code>mpirun</code> that there are <i>"not enough slots available in the system"</i>, try adding the <code>--oversubscribe</code> option. For example: <code>mpirun --oversubscribe -np 16 ex1p</code>
+If you are getting errors from <code>mpirun</code> that there are
+<i>"not enough slots available in the system"</i>, try adding the
+<code>--oversubscribe</code> option.
+For example: <code>mpirun --oversubscribe -np 16 ex1p</code>
 </div>
 </div>
 

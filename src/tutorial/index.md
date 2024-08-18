@@ -4,7 +4,7 @@
 ![MFEM on AWS](img/mfem-aws.png)
 
 Welcome to the MFEM tutorial, part of the
-[HPC Software Tutorial Series](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials)
+[LLNL HPC Software Tutorials Series](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials)
 in collaboration with [AWS](https://aws.amazon.com/blogs/hpc/call-for-participation-hpc-tutorial-series-from-the-hpcic/).
 
 [MFEM](https://mfem.org/) is a modular parallel C++ library for finite element
