@@ -43,7 +43,7 @@ To start the container, run:
     docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
 
 You can later stop this by pressing <kbd>Ctrl-C</kbd>.
-See the docker [documenation](https://docs.docker.com/engine/reference/commandline/cli/) for more details.
+See the docker [documentation](https://docs.docker.com/engine/reference/commandline/cli/) for more details.
 
 We provide two variations of our containers that are configured with CPU or CPU
 and GPU capabilities. If you have an NVIDIA supported CUDA GPU you have to

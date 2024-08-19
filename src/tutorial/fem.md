@@ -125,17 +125,25 @@ the description in the previous section. You can follow along by browsing
 `ex1.cpp` in your VS Code browser window. In the settings of this tutorial, the
 visualization will automatically update in the GLVis browser window.
 
-The computational mesh is provided as input (option `-m`), it could be 3D, 2D,
-surface, hex/tet, etc. The following code
-(lines [120-137](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L137))
-loads the mesh from the given file, `mesh_file`; creates the corresponding
-MFEM object `mesh` of class `Mesh`; and refines the mesh uniformly to about
-50,000 elements. You can easily modify the refinement by changing the definition of `ref_levels`.
+The computational mesh is provided as input (option `-m`) that could be 3D, 2D,
+surface, hex/tet, etc. (It defaults to `star.mesh` in line
+[77](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L77).) The code in
+lines [120-124](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L124)
+loads the mesh from the given file, `mesh_file` and creates the corresponding MFEM
+object `mesh` of class `Mesh`.
 
 ```c++
 Mesh mesh(mesh_file, 1, 1);
 int dim = mesh.Dimension();
+```
 
+The following code (lines 
+[126-137](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L126-L137))
+refines the mesh uniformly to about 50,000 elements. You can easily modify the
+refinement by changing the definition of `ref_levels`.
+
+
+```c++
 int ref_levels = (int)floor(log(50000./mesh.GetNE())/log(2.)/dim);
 for (int l = 0; l < ref_levels; l++)
 {
@@ -353,15 +361,23 @@ page.
 
 Both `ex1` and `ex1p` come pre-built in the tutorial environment. You can see a
 number of sample runs at the beginning of their corresponding source files when
-you open them in VS Code.
+you open them in VS Code. To get a feel for how these examples work, you can copy
+and paste some of these runs from the source to the terminal in VS Code. 
 
-To get a feel for how these examples work, you can copy and paste some of these
-runs from the source to the terminal in VS Code. For example try these runs in the
-VS Code terminal.
-
-    ./ex1 -m ../data/escher.mesh
-    ./ex1 -m ../data/l-shape.mesh
-    ./ex1 -m ../data/mobius-strip.mesh
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Specify a couple different meshes with <kbd>-m</kbd>  in the VS Code terminal
+to see how the image rendered by GLVis changes. Run
+<pre>
+./ex1 -m ../data/escher.mesh
+./ex1 -m ../data/l-shape.mesh
+./ex1 -m ../data/mobius-strip.mesh
+</pre>
+</div>
+</div>
 
 ![](img/fem3.png)
 
@@ -388,11 +404,20 @@ the visualization window should be fast.
 </div>
 </div>
 
-Here are some sample parallel runs:
 
-    mpirun -np 16 ex1p
-    mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
-    mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Now try out some sample parallel runs:
+<pre>
+mpirun -np 16 ex1p
+mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
+mpirun -np 48 ex1p -m ../data/escher-p2.mesh
+</pre>
+</div>
+</div>   
 
 <div class="panel panel-danger">
 <div class="panel-heading">
@@ -490,6 +515,18 @@ Some of the more useful key commands and mouse functions are:
 
 Note that you may need to press <kbd>fn</kbd> and/or <kbd>Ctrl</kbd> to escape some
 of the function keys.
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+After running Example 1, experiment with the key command <kbd>m</kbd> in the GLVis
+window to change the appearance of the mesh. Use <kbd>i</kbd> to make a cut through the
+visual and <kbd>y</kbd> to change the position of the cutting plane.
+</div>
+</div>
+
 
 For more details, see the full list of
 [key commands](https://github.com/GLVis/glvis/blob/master/README.md#key-commands) and
