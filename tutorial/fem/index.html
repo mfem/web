@@ -450,16 +450,21 @@ We set $f=1$ in (1) and enforce homogeneous Dirichlet boundary conditions on the
 the description in the previous section. You can follow along by browsing
 <code>ex1.cpp</code> in your VS Code browser window. In the settings of this tutorial, the
 visualization will automatically update in the GLVis browser window.</p>
-<p>The computational mesh is provided as input (option <code>-m</code>), it could be 3D, 2D,
-surface, hex/tet, etc. The following code
-(lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L137">120-137</a>)
-loads the mesh from the given file, <code>mesh_file</code>; creates the corresponding
-MFEM object <code>mesh</code> of class <code>Mesh</code>; and refines the mesh uniformly to about
-50,000 elements. You can easily modify the refinement by changing the definition of <code>ref_levels</code>.</p>
+<p>The computational mesh is provided as input (option <code>-m</code>) that could be 3D, 2D,
+surface, hex/tet, etc. (It defaults to <code>star.mesh</code> in line
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L77">77</a>.) The code in
+lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L124">120-124</a>
+loads the mesh from the given file, <code>mesh_file</code> and creates the corresponding MFEM
+object <code>mesh</code> of class <code>Mesh</code>.</p>
 <pre><code class="c++">Mesh mesh(mesh_file, 1, 1);
 int dim = mesh.Dimension();
+</code></pre>
 
-int ref_levels = (int)floor(log(50000./mesh.GetNE())/log(2.)/dim);
+<p>The following code (lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L126-L137">126-137</a>)
+refines the mesh uniformly to about 50,000 elements. You can easily modify the
+refinement by changing the definition of <code>ref_levels</code>.</p>
+<pre><code class="c++">int ref_levels = (int)floor(log(50000./mesh.GetNE())/log(2.)/dim);
 for (int l = 0; l &lt; ref_levels; l++)
 {
    mesh.UniformRefinement();
@@ -644,14 +649,24 @@ page.
 <h3 id="serial-and-parallel-runs"><i class="fa fa-check-square-o"></i>&nbsp; Serial and parallel runs</h3>
 <p>Both <code>ex1</code> and <code>ex1p</code> come pre-built in the tutorial environment. You can see a
 number of sample runs at the beginning of their corresponding source files when
-you open them in VS Code.</p>
-<p>To get a feel for how these examples work, you can copy and paste some of these
-runs from the source to the terminal in VS Code. For example try these runs in the
-VS Code terminal.</p>
-<pre><code>./ex1 -m ../data/escher.mesh
+you open them in VS Code. To get a feel for how these examples work, you can copy
+and paste some of these runs from the source to the terminal in VS Code.</p>
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Specify a couple different meshes with <kbd>-m</kbd>  in the VS Code terminal
+to see how the image rendered by GLVis changes. Run
+<p>
+<pre>
+./ex1 -m ../data/escher.mesh
 ./ex1 -m ../data/l-shape.mesh
 ./ex1 -m ../data/mobius-strip.mesh
-</code></pre>
+</pre>
+</div>
+</div>
+
 <p><img alt="" src="../img/fem3.png" /></p>
 <div class="panel panel-danger">
 <div class="panel-heading">
@@ -676,11 +691,21 @@ the visualization window should be fast.
 </div>
 </div>
 
-<p>Here are some sample parallel runs:</p>
-<pre><code>mpirun -np 16 ex1p
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Now try out some sample parallel runs:
+<p>
+<pre>
+mpirun -np 16 ex1p
 mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
 mpirun -np 48 ex1p -m ../data/escher-p2.mesh
-</code></pre>
+</pre>
+</div>
+</div>
+
 <div class="panel panel-danger">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
@@ -763,6 +788,17 @@ left corner, or by pressing the <kbd>h</kbd> key.</p>
 </ul>
 <p>Note that you may need to press <kbd>fn</kbd> and/or <kbd>Ctrl</kbd> to escape some
 of the function keys.</p>
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+After running Example 1, experiment with the key command <kbd>m</kbd> in the GLVis
+window to change the appearance of the mesh. Use <kbd>i</kbd> to make a cut through the
+visual and <kbd>y</kbd> to change the position of the cutting plane.
+</div>
+</div>
+
 <p>For more details, see the full list of
 <a href="https://github.com/GLVis/glvis/blob/master/README.md#key-commands">key commands</a> and
 <a href="https://github.com/GLVis/glvis/blob/master/README.md#mouse-functions">mouse functions</a>
