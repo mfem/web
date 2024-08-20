@@ -137,7 +137,7 @@ Mesh mesh(mesh_file, 1, 1);
 int dim = mesh.Dimension();
 ```
 
-The following code (lines 
+The following code (lines
 [126-137](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L126-L137))
 refines the mesh uniformly to about 50,000 elements. You can easily modify the
 refinement by changing the definition of `ref_levels`.
@@ -362,7 +362,7 @@ page.
 Both `ex1` and `ex1p` come pre-built in the tutorial environment. You can see a
 number of sample runs at the beginning of their corresponding source files when
 you open them in VS Code. To get a feel for how these examples work, you can copy
-and paste some of these runs from the source to the terminal in VS Code. 
+and paste some of these runs from the source to the terminal in VS Code.
 
 <div class="panel panel-success">
 <div class="panel-heading">
@@ -371,6 +371,7 @@ and paste some of these runs from the source to the terminal in VS Code.
 <div class="panel-body">
 Specify a couple different meshes with <kbd>-m</kbd>  in the VS Code terminal
 to see how the image rendered by GLVis changes. Run
+<p>
 <pre>
 ./ex1 -m ../data/escher.mesh
 ./ex1 -m ../data/l-shape.mesh
@@ -411,13 +412,14 @@ the visualization window should be fast.
 </div>
 <div class="panel-body">
 Now try out some sample parallel runs:
+<p>
 <pre>
 mpirun -np 16 ex1p
 mpirun -np 16 ex1p -m ../data/pipe-nurbs.mesh
 mpirun -np 48 ex1p -m ../data/escher-p2.mesh
 </pre>
 </div>
-</div>   
+</div>
 
 <div class="panel panel-danger">
 <div class="panel-heading">
