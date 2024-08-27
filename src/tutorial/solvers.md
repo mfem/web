@@ -223,6 +223,7 @@ Remember to recompile the example after editing the source code (<code>make ex2p
   [ADS solver](https://hypre.readthedocs.io/en/latest/solvers-ads.html)
   from hypre or a special
   [hybridization solver](https://epubs.siam.org/doi/abs/10.1137/17M1132562).
+  A recent saddle-point $H(\mathrm{div})$ solver is also available in the `miniapps/hdiv-linear-solver` [directory](https://github.com/mfem/mfem/tree/master/miniapps/hdiv-linear-solver). See [this paper](https://doi.org/10.1137/23M1568806) for more details.
 
 - Try experimenting with different options to get a feel for the performance of
   the discretizations and solvers:
