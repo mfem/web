@@ -348,7 +348,7 @@ equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `CurlCurlIntegrator` one could provide a known function for
-$\lambda\,\curl\vec\{u}$ to the `VectorFEBoundaryTangentLFIntegrator`
+$-\lambda\,\curl\vec\{u}$ to the `VectorFEBoundaryTangentLFIntegrator`
 which would then integrate the product of the tangential portion of
 this function with that of the ND basis function over the boundary of
 the domain.  See [Linear Form Integrators](lininteg.md) for more
@@ -356,14 +356,14 @@ information.
 
 | Class Name                          | Operator                                            | Continuous Op.                             | Continuous Boundary Op.                             |
 |-------------------------------------|-----------------------------------------------------|--------------------------------------------|-----------------------------------------------------|
-| CurlCurlIntegrator                  | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              |
-| MixedCurlCurlIntegrator             | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              |
-| MixedCrossCurlCurlIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\times(\vec\{\lambda}\cross\curl\vec\{u})$ |
-| MixedCrossGradCurlIntegrator        | $(\vec\{\lambda}\cross\grad u,\curl\vec\{v})$       | $\curl(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\times(\vec\{\lambda}\cross\grad u)$       |
-| MixedVectorWeakCurlIntegrator       | $(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | $\lambda\,\hat\{n}\times\vec\{u}$                   |
-| MixedScalarWeakCurlIntegrator       | $(\lambda u,\curl\vec\{v})$                         | $\curl(\lambda\,u\,\hat\{z})\;$            | $\lambda\,u\,\hat\{n}\times\hat\{z}$                |
-| MixedWeakCurlCrossIntegrator        | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
-| MixedScalarWeakCurlCrossIntegrator  | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
+| CurlCurlIntegrator                  | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $-\lambda\,\hat\{n}\times\curl\vec\{u}$              |
+| MixedCurlCurlIntegrator             | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $-\lambda\,\hat\{n}\times\curl\vec\{u}$              |
+| MixedCrossCurlCurlIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | $-\hat\{n}\times(\vec\{\lambda}\cross\curl\vec\{u})$ |
+| MixedCrossGradCurlIntegrator        | $(\vec\{\lambda}\cross\grad u,\curl\vec\{v})$       | $\curl(\vec\{\lambda}\cross\grad u)$       | $-\hat\{n}\times(\vec\{\lambda}\cross\grad u)$       |
+| MixedVectorWeakCurlIntegrator       | $(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | $-\lambda\,\hat\{n}\times\vec\{u}$                   |
+| MixedScalarWeakCurlIntegrator       | $(\lambda u,\curl\vec\{v})$                         | $\curl(\lambda\,u\,\hat\{z})\;$            | $-\lambda\,u\,\hat\{n}\times\hat\{z}$                |
+| MixedWeakCurlCrossIntegrator        | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $-\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
+| MixedScalarWeakCurlCrossIntegrator  | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $-\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
 
 The following weak operators require the range (or test) space to be
 H(Div) i.e. a vector basis function with a divergence operator.  The
