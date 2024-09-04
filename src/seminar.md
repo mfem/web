@@ -51,7 +51,7 @@ For transient problems, the use of high order methods provides several advantage
 
 [<button type="button" class="btn btn-primary">
 **Slides**
-</button>]()
+</button>](pdf/seminar/ferrer+huergo.pdf)
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
