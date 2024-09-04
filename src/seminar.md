@@ -15,6 +15,29 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 &nbsp;
 
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/sevilla.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Rubén Sevilla (Swansea University)
+##### *Mesh generation and adaptation using green AI*
+##### [**9am PDT, September 17, 2024**](https://everytimezone.com/s/022a03be)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>](https://llnlfed.webex.com/meet/mittal3)
+
+**Abstract:** Most methods used to solve partial differential equations require creating a mesh that represents the model's geometry. Today, unstructured mesh technology is widely used, allowing three-dimensional meshes with hundreds of millions of elements to be generated in just a few minutes. However, when optimising a design, many simulations are needed for different operating conditions and geometric configurations. Creating the best mesh for each setup becomes time-consuming due to the requirement of excessive human intervention and expertise.
+
+This talk will cover our recent work on using artificial intelligence to predict near-optimal meshes suitable for simulations. The main idea is to take advantage of the large amount of data that already exists in the industry to improve the selection of a suitable spacing function, including anisotropic spacing. The proposed approach aims to use knowledge from previous simulations to guide the mesh generation process. I will assess the proposed method based on the accuracy of the predictions, efficiency, and environmental impact. This includes considering the carbon footprint and energy consumption of the computations required for a parametric CFD analysis under different flow conditions and angles of attack.
+
+For transient problems, the use of high order methods provides several advantages due to the low dissipation and dispersion errors associated to these schemes. An attractive approach to simulate these problems is to incorporate degree adaptive schemes to enhance the approximation only where needed. In this talk I will also present our recent work on using artificial intelligence to aid a degree adaptive process.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-6" markdown="1">
 
@@ -24,11 +47,15 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
 ##### *New avenues in high order fluid dynamics*
-##### [**9am PDT, September 3, 2024**](https://everytimezone.com/s/01cb2da8)
+##### September 3, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/ferrer+huergo.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>]()
 
 **Abstract:** We present the latest developments of our High-Order Spectral
 Element Solver (HORSES3D), an open source high-order discontinuous Galerkin
@@ -40,10 +67,6 @@ simulate challenging multiphysics including turbulent flows, multiphase and
 moving bodies, using local h and p-adaption. In addition, we present recent work
 that couples Machine Learning and reinforcement learning techniques with high
 order simulations.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -759,11 +782,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Rubén Sevilla (Swansea University)
-##### **September 17, 2024**
 
 &nbsp;
 
