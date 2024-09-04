@@ -47,11 +47,15 @@ For transient problems, the use of high order methods provides several advantage
 
 #### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
 ##### *New avenues in high order fluid dynamics*
-##### [**9am PDT, September 3, 2024**](https://everytimezone.com/s/01cb2da8)
+##### September 3, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>]()
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>]()
 
 **Abstract:** We present the latest developments of our High-Order Spectral
 Element Solver (HORSES3D), an open source high-order discontinuous Galerkin
@@ -778,11 +782,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Rubén Sevilla (Swansea University)
-##### **September 17, 2024**
 
 &nbsp;
 
