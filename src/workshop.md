@@ -57,9 +57,47 @@ MFEM workshop.
 
 ### Agenda
 
-The meeting activities will take place 8:00am-4:00pm Pacific Daylight Time (GMT-7) on October 22, 23 and 24, with office hours and hackathon in the afternoon of the last day.
+The meeting activities will take place 8:00am-5:00pm Pacific Daylight Time (GMT-7) on October 22, 23 and 24, with office hours and hackathon in the afternoon of the last day.
 
-The full agenda will be announced on October 1.
+The preliminary agenda is listed below. Full agenda will be announced on October 1.
+
+#### Tuesday, October 22
+
+| Time | Activity | Presenter |
+|---|---|---|
+| 8:30-9:00 | **Registration** <br> | |
+| 9:00-9:30 | **Welcome & Overview** <br> | **Aaron Fisher** (LLNL) |
+| 9:30-10:00 | **The State of MFEM** <br> | **Tzanio Kolev** (LLNL) |
+| 10:00-10:30 | **Coffee Break** <br> |  |
+| 10:30-12:00 | **Session I** <br> 3 talks | TBD (30min talks)|
+| 12:00-1:00 | **Lunch** <br> on site |  |
+| 1:00-3:00 | **Student Session** <br> 8 talks | TBD (10min talks) |
+| 3:00-3:30 | **Coffee Break & Group Photo** <br> | |
+| 3:30-4:30 | **Session II** <br> 2 talks | TBD (30min talks) |
+| 4:30-5:00 | **Day 1 Wrap-Up** <br> | MFEM team |
+| 6:00-8:00 | **Workshop Dinner** <br> | |
+
+#### Wednesday, October 23
+
+| Time | Activity | Presenter |
+|---|---|---|
+| 8:30-9:00 | **Registration** <br> | |
+| 9:00-9:30 | **Visualization Contest Winners** <br> | **Will Pazner** (PDX) |
+| 9:30-10:00 |  **Recent Developments** <br> | **Veselin Dobrev** (LLNL) |
+| 10:00-10:30 | **Coffee Break** <br> |  |
+| 10:30-12:00 | **Session III** <br> 3 talks | TBD (30min talks) |
+| 12:00-1:00 | **Lunch** <br> on site |  |
+| 1:00-3:00 | **Breakout Sessions** <br> split in discussion groups | TBD |
+| 3:00-3:30 | **Coffee Break** <br> | |
+| 3:30-4:30 | **Session IV** <br> 2 talks | TBD (30min talks) |
+| 4:30-5:00 | **Day 2 Wrap-Up** <br> | MFEM team |
+
+#### Thursday, October 24
+
+| Time | Activity | Presenter |
+|---|---|---|
+| 8:30-12:00 | **Office Hours** <br> | Q&A with MFEM team |
+| 12:00-1:00 | **Lunch** <br> |
 
 ---
 
