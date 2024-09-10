@@ -110,7 +110,7 @@ Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-comput
 </button>](https://bit.ly/mfem-4-7)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
-[![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook").
+[![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")
 
 ## Documentation
 
