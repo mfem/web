@@ -1,6 +1,6 @@
 # MFEM Community Workshop
-#### October 22-24, 2024
-#### LLNL + Virtual
+<h4>October 22-24, 2024</h4>
+<h4>LLNL + Virtual</h4>
 
 ![MFEM Logo](img/logo-300.png)
 
