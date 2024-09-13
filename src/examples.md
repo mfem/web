@@ -1386,7 +1386,8 @@ Using different approaches for demonstration purposes, we project or interpolate
 divergence in the appropriate spaces, comparing the errors in each case.
 
 _The example has a serial ([nurbs_ex24.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp))._
-
+<div style="clear:both;"/></div>
+<br></div>
 
 
 <div id="volta" markdown="1">
@@ -2445,10 +2446,11 @@ function update()
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
    // nurbs miniapps
+   + showElement("nurbs_ex1", diffusion && nurbs && h1)
    + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
    + showElement("nurbs_ex5", darcy && nurbs && hdiv)
    + showElement("nurbs_ex11", diffusion && nurbs)
-   + showElement("nurbs_ex24", nurbs && ( hcurl || hdiv))
+   + showElement("nurbs_ex24", nurbs && (hcurl || hdiv))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
@@ -2489,7 +2491,7 @@ function update()
    // Misc miniapps
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
    + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
-   + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi) )
+   + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi))
 
    ; // ...end of expression
 
