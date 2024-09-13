@@ -63,7 +63,7 @@ The tutorial concludes with additional suggestions in the
 ---
 
 <!-- fa-cloud, fa-bookmark-o, see https://fontawesome.com/v4/icons -->
-### <i class="fa fa-play-circle"></i>&nbsp; [Getting Started](start.md)
+### <i class="fa fa-play-circle"></i> [Getting Started](start.md)
 
 This is the first page you should visit to setup your tutorial environment.
 You will learn about:
@@ -74,7 +74,7 @@ You will learn about:
 
 ---
 
-### <i class="fa fa-book"></i>&nbsp; [Finite Element Basics](fem.md)
+### <i class="fa fa-book"></i> [Finite Element Basics](fem.md)
 
 Once you have the tutorial environment working, visit this page to learn about
 the basics of the finite element method and its implementation in MFEM. The
@@ -86,7 +86,7 @@ lesson covers:
 
 ---
 
-### <i class="fa fa-gears"></i>&nbsp; [Tour of MFEM Examples](examples.md)
+### <i class="fa fa-gears"></i> [Tour of MFEM Examples](examples.md)
 
 This is an optional lesson where you can learn about MFEM's main features: support
 for high-order methods, adaptive mesh refinement, $H^1$, $H(curl)$, $H(div)$ and $L^2$
@@ -100,7 +100,7 @@ discretizations, through several of the examples included with the library:
 
 ---
 
-### <i class="fa fa-picture-o"></i>&nbsp; [Meshing and Visualization](meshvis.md)
+### <i class="fa fa-picture-o"></i> [Meshing and Visualization](meshvis.md)
 
 This is an optional lesson that illustrates MFEM's support for external mesh generators,
 internal meshing tools, and external visualization tools.
@@ -112,7 +112,7 @@ You will learn about:
 
 ---
 
-### <i class="fa fa-tasks"></i>&nbsp; [Solvers and Scalability](solvers.md)
+### <i class="fa fa-tasks"></i> [Solvers and Scalability](solvers.md)
 
 This is an optional lesson that showcases MFEM's parallel scalability and support for efficient
 solvers and preconditioners. The lesson covers:
@@ -124,7 +124,7 @@ solvers and preconditioners. The lesson covers:
 
 ---
 
-### <i class="fa fa-rocket"></i>&nbsp; [Further Steps](further.md)
+### <i class="fa fa-rocket"></i> [Further Steps](further.md)
 
 This is the final lesson with further activities, including:
 
