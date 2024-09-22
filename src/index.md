@@ -95,7 +95,7 @@ Date         | Message
 Oct 22, 2024 | 2024 [MFEM Community Workshop](workshop.md).
  Jun 5, 2024 | [Register](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) for MFEM [tutorial](tutorial/index.md) on Aug 22.
  May 7, 2024 | Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).
- May 2, 2024 | New MFEM [paper](https://arxiv.org/abs/2402.15940) in IJHPCA.
+ May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
 
 ## Latest Release
