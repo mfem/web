@@ -22,14 +22,39 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Daniele Panozzo (Courant Institute, NYU)
-##### *Title: TBA*
+##### *Geometric Predicates for Unconditionally Robust Elastodynamics Simulation*
 ##### [**9am PDT, October 1, 2024**](https://everytimezone.com/s/0ed214f7)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** TBA
+**Abstract:** The numerical solution of partial differential equations (PDE) is
+ubiquitously used for physical simulation in scientific computing and
+engineering. Ideally, a PDE solver should be opaque: the user provides as input
+the domain boundary, boundary conditions, and the governing equations, and the
+code returns an evaluator that can compute the value of the solution at any
+point of the input domain. This is surprisingly far from being the case for all
+existing open-source or commercial software, despite the research efforts in
+this direction and the large academic and industrial interest. To a large
+extent, this is due to lack of robustness in geometric algorithms used to create
+the discretization, detect collisions, and evaluate element validity.
+I will present the incremental potential contact simulation paradigm, which
+provides strong robustness guarantees in simulation codes, ensuring, for the
+first time, validity of the trajectories accounting for floating point rounding
+errors over an entire elastodynamic simulation with contact. A core part of this
+approach is the use of a conservative line-search to check for collisions
+between geometric primitives and for ensuring validity of the deforming elements
+over linear trajectories.
+I will discuss both problems in depth, showing that SOTA approaches favor
+numerical efficiency but are unfortunately not robust to floating point
+rounding, leading to major failures in simulation. I will then present an
+alternative approach based on judiciously using rational and interval types to
+ensure provable correctness, while keeping a running time comparable with
+non-conservative methods.
+To conclude, I will discuss a set of applications enabled by this approach in
+microscopy and biomechanics, including traction force estimation on a live
+zebrafish and efficient modeling and simulation of fibrous materials.
 
 ---
 
