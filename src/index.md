@@ -1,3 +1,15 @@
+<div class="col-md-12" markdown="1">
+<center>
+[<button type="button" class="btn btn-success">
+**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop on October 22th**
+</button>](workshop.md)
+&nbsp;
+[<button type="button" class="btn btn-primary">
+**<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Register**
+</button>](https://docs.google.com/forms/d/e/1FAIpQLSfv419dXX4yPS7Tk1sNbfi_2YXgt3DpW56KCd3TZjjsswKpBw/viewform?usp=sf_link)
+</center>
+</div>
+
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
