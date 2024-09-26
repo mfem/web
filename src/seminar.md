@@ -147,7 +147,7 @@ order simulations.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=Cp8bhpSIia4)
 
 **Abstract:** Numerical methods for the simulation of transient systems with
 structure-preserving properties are known to exhibit greater accuracy and
@@ -166,7 +166,7 @@ demonstrate the ideas by devising novel schemes that exactly conserve all known
 invariants of the Kepler and Kovalevskaya problems, arbitrary-order schemes for
 the compressible Navier–Stokes equations that conserve mass, momentum, and
 energy, and provably dissipate entropy, and multi-conservative schemes for the
-Benjamin-Bona-Mahony equation
+Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-3" markdown="1">
 
