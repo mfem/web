@@ -15,6 +15,10 @@ The pages below provide a self-paced overview of MFEM and its use for scalable
 finite element discretizations and application development. You can follow
 along in your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud) instance or in a [<span class="mdi mdi-docker"></span> Local Docker Container](docker.md) <span class="mdi mdi-new-box mdi-18px" style="color:#dd5034"></span>&nbsp;. No previous experience is necessary.
 
+[<button type="button" class="btn btn-success">
+**Watch the video**
+</button>](https://www.youtube.com/watch?v=Ps0wAuMbLVU)
+
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
