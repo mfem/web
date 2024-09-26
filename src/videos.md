@@ -10,6 +10,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Patrick Farrell (University of Oxford)
+#### *Designing conservative and accurately dissipative numerical integrators in time*
+##### **July 30, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=Cp8bhpSIia4"><img src="https://img.youtube.com/vi/Cp8bhpSIia4/maxresdefault.jpg"></img></a>
+
+Numerical methods for the simulation of transient systems with structure-preserving properties are known to exhibit greater accuracy and physical reliability, in particular over long durations. These schemes are often built on powerful geometric ideas for broad classes of problems, such as Hamiltonian or reversible systems. However, there remain difficulties in devising higher-order- in-time structure-preserving discretizations for nonlinear problems, and in conserving non-polynomial  invariants. In this work we propose a new, general framework for the construction of structure-preserving timesteppers via finite elements in time and the systematic introduction of auxiliary variables. The framework reduces to Gauss methods where those are structure-preserving, but extends to generate arbitrary-order structure-preserving schemes for nonlinear problems, and allows for the construction of schemes that conserve multiple higher-order invariants. We demonstrate the ideas by devising novel schemes that exactly conserve all known invariants of the Kepler and Kovalevskaya problems, arbitrary-order schemes for the compressible Navier–Stokes equations that conserve mass, momentum, and energy, and provably dissipate entropy, and multi-conservative schemes for the Benjamin-Bona-Mahony equation.
+
+---
+
 #### Gonzalo de Diego (Courant Institute)
 #### *Numerical Solvers for Viscous Contact Problems in Glaciology*
 ##### **May 6, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -991,6 +1001,15 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 
 </div><div class="col-md-6"  markdown="1">
 
+#### *LLNL HPC Software Tutorials: MFEM*
+##### **Aug 22, 2024**
+
+<a class="youtube" href="https://www.youtube.com/watch?v=Ps0wAuMbLVU"><img src="https://img.youtube.com/vi/Ps0wAuMbLVU/maxresdefault.jpg"></img></a>
+
+Instructions for a self-paced overview of MFEM.
+
+---
+
 #### *MFEM: Advanced Simulation Algorithms for HPC Applications*
 ##### **Jun 24, 2020**
 
@@ -998,7 +1017,7 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 
 Overview of MFEM 4.0 featuring some of its developers.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### *Center for Applied Scientific Computing*
 ##### **Jul 12, 2019**
@@ -1007,7 +1026,7 @@ Overview of MFEM 4.0 featuring some of its developers.
 
 Overview of the Center for Applied Scientific Computing at Lawrence Livermore National Laboratory, including a highlight of MFEM.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### *S&TR Preview: Exascale Computing*
 ##### **October 6, 2016**
