@@ -119,8 +119,8 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|--------|------------------------------------|------------------| ---------- |
 | VectorBoundaryLFIntegrator    | H1, L2 | $( \vec\{f}, \vec\{v} )$ | $\vec\{f}$ | 1D, 2D, 3D |
-| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 1D, 2D, 3D |
-| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 2D, 3D |
+| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec\{v} \cdot \vec\{n} )$ | $f \vec\{n}$ | 1D, 2D, 3D |
+| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec\{v} \cdot \vec\{n} )$ | $f \vec\{n}$ | 2D, 3D |
 | VectorFEBoundaryTangentLFIntegrator  | ND | $( \vec\{n} \times \vec\{f}, \vec\{v} )$ | $\vec\{n} \times \vec\{f}$ | 2D, 3D |
 
 ### Face Integrators
