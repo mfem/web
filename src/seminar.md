@@ -17,16 +17,59 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/ridzal.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Denis Ridzal (Sandia National Laboratories)
+##### *R-Adaptive Mesh Optimization to Enhance Finite Element Basis Compression*
+##### [**9am PDT, October 15, 2024**](https://everytimezone.com/s/a32301f2)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Modern computing systems are capable of exascale calculations.
+While these systems continue to grow in processing power, the available system
+memory has not increased commensurately. A predominant approach to limit the
+memory usage in large-scale applications is to exploit the abundant processing
+power and continually recompute many low-level simulation quantities, rather
+than storing them. However, this approach can adversely impact the throughput of
+the simulation and diminish the benefits of modern computing architectures.
+We present two novel contributions to reduce the memory burden while maintaining
+performance in simulations based on finite element discretizations. The first
+contribution develops dictionary-based data compression schemes that detect and
+exploit the structure of the discretization, due to redundancies across the
+finite element mesh. These schemes are shown to reduce the memory requirements
+of key computational kernels by more than 99% on meshes with large numbers of
+nearly identical mesh cells. For applications where this structure does not
+exist, our second contribution leverages a recently developed augmented
+Lagrangian sequential quadratic programming algorithm to enable r-adaptive mesh
+optimization, with the goal of enhancing redundancies in the mesh. Numerical
+results demonstrate the effectiveness of the proposed methods to detect, exploit
+and enhance mesh structure on examples inspired by large-scale applications.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/panozzo.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Daniele Panozzo (Courant Institute, NYU)
 ##### *Geometric Predicates for Unconditionally Robust Elastodynamics Simulation*
-##### [**9am PDT, October 1, 2024**](https://everytimezone.com/s/0ed214f7)
+##### October 1, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/panozzo.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The numerical solution of partial differential equations (PDE) is
@@ -55,11 +98,6 @@ non-conservative methods.
 To conclude, I will discuss a set of applications enabled by this approach in
 microscopy and biomechanics, including traction force estimation on a live
 zebrafish and efficient modeling and simulation of fibrous materials.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
 
 </div><div class="col-md-3" markdown="1">
 
@@ -845,11 +883,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ---
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
-
-&nbsp;
-
-#### Denis Ridzal (Sandia National Laboratories)
-##### **October 15, 2024**
 
 &nbsp;
 
