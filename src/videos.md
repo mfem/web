@@ -10,6 +10,26 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Rubén Sevilla (Swansea University)
+#### *Mesh Generation and Adaptation using Green AI*
+##### **September 17, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=2_bLfUg_Ok0"><img src="https://img.youtube.com/vi/2_bLfUg_Ok0/maxresdefault.jpg"></img></a>
+
+Most methods used to solve partial differential equations require creating a mesh that represents the model's geometry. Today, unstructured mesh technology is widely used, allowing three-dimensional meshes with hundreds of millions of elements to be generated in just a few minutes. However, when optimising a design, many simulations are needed for different operating conditions and geometric configurations. Creating the best mesh for each setup becomes time-consuming due to the requirement of excessive human intervention and expertise.  This talk will cover our recent work on using artificial intelligence to predict near-optimal meshes suitable for simulations. The main idea is to take advantage of the large amount of data that already exists in the industry to improve the selection of a suitable spacing function, including anisotropic spacing. The proposed approach aims to use knowledge from previous simulations to guide the mesh generation process. I will assess the proposed method based on the accuracy of the predictions, efficiency, and environmental impact. This includes considering the carbon footprint and energy consumption of the computations required for a parametric CFD analysis under different flow conditions and angles of attack.  For transient problems, the use of high order methods provides several advantages due to the low dissipation and dispersion errors associated to these schemes. An attractive approach to simulate these problems is to incorporate degree adaptive schemes to enhance the approximation only where needed. In this talk I will also present our recent work on using artificial intelligence to aid a degree adaptive process.
+
+---
+
+#### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
+#### *New Avenues in High Order Fluid Dynamics*
+##### **September 3, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=VM7wMq7luJU"><img src="https://img.youtube.com/vi/VM7wMq7luJU/maxresdefault.jpg"></img></a>
+
+We present the latest developments of our High-Order Spectral Element Solver (HORSES3D), an open source high-order discontinuous Galerkin framework capable of solving a variety of flow applications, including compressible flows (with or without shocks), incompressible flows, various RANS and LES turbulence models, particle dynamics, multiphase flows, and aeroacoustics [[1](https://arxiv.org/abs/2206.09733)]. Recent developments allow us to simulate challenging multiphysics including turbulent flows, multiphase and moving bodies, using local h and p-adaption. In addition, we present recent work that couples Machine Learning and reinforcement learning techniques with high order simulations.
+
+---
+
 #### Patrick Farrell (University of Oxford)
 #### *Designing conservative and accurately dissipative numerical integrators in time*
 ##### **July 30, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -215,7 +235,7 @@ assumptions on its differentiability (discontinuities are allowed).
 In the end, the final result is similar to that for the acoustic waveguide -
 the boundedness below constant depends inversely linearly on L.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Joachim Schöberl (Vienna University of Technology)
 #### *The Netgen/NGSolve Finite Element Software*
@@ -231,7 +251,7 @@ highlights are matrix-valued finite elements with applications in elasticity, fl
 relativity. We show how the recently extended framework of linear operators allows the utilization of GPUs
 for linear solvers, as well as time-dependent problems.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Vikram Gavini (University of Michigan)
 #### *Fast, Accurate and Large-scale Ab-initio Calculations for Materials Modeling*
