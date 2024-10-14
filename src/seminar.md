@@ -106,7 +106,7 @@ zebrafish and efficient modeling and simulation of fibrous materials.
 </div><div class="col-md-12" markdown="1">
 
 #### Rubén Sevilla (Swansea University)
-##### *Mesh generation and adaptation using green AI*
+##### *Mesh Generation and Adaptation using Green AI*
 ##### September 17, 2024
 
 [<button type="button" class="btn btn-primary">
@@ -115,7 +115,7 @@ zebrafish and efficient modeling and simulation of fibrous materials.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=2_bLfUg_Ok0)
 
 **Abstract:** Most methods used to solve partial differential equations require
 creating a mesh that represents the model's geometry. Today, unstructured mesh
@@ -147,7 +147,7 @@ artificial intelligence to aid a degree adaptive process.
 </div><div class="col-md-12" markdown="1">
 
 #### Esteban Ferrer and David Huergo (Universidad Politécnica de Madrid)
-##### *New avenues in high order fluid dynamics*
+##### *New Avenues in High Order Fluid Dynamics*
 ##### September 3, 2024
 
 [<button type="button" class="btn btn-primary">
@@ -156,7 +156,7 @@ artificial intelligence to aid a degree adaptive process.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://www.youtube.com/watch?v=VM7wMq7luJU)
 
 **Abstract:** We present the latest developments of our High-Order Spectral
 Element Solver (HORSES3D), an open source high-order discontinuous Galerkin
