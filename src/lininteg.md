@@ -46,7 +46,7 @@ more exotic, forms are possible:
 + Integrals involving mix of Scalar and Vector rhs $\,\vec{f}$ and basis functions: $\int_\Omega f\,\vec\{\lambda}\cdot\vec\{v}$ and $\int_\Omega v\,\vec\{\lambda}\cdot\vec\{f}$
 
 The `LinearFormIntegrator` classes allow MFEM to produce a wide variety of local
-element matrices without modifying the `LinearForm` class. Many of the possible
+element vectors without modifying the `LinearForm` class. Many of the possible
 operators are collected below into tables that briefly describe their action and
 requirements.
 
@@ -92,15 +92,15 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
 | BoundaryLFIntegrator    | H1, L2 | $(f, v)$ | $f$ | 1D, 2D, 3D |
-| BoundaryNormalLFIntegrator  | H1, L2 | $(\vec\{f} \cdot \vec\{n}, v)$ | $\vec\{f} \cdot \vec\{n}$ | 1D, 2D, 3D |
-| BoundaryTangentialLFIntegrator | H1, L2 | $(\vec\{f} \cdot \vec\{\tau}, v)$ | $\vec\{f} \cdot \vec\{\tau}$ | 2D |
-| BoundaryFlowIntegrator | H1, L2 | $\frac\{\alpha}\{2}\, \left< (\vec\{u} \cdot \vec\{n})\, f, v \right> - \beta\, \left<\mid \vec\{u} \cdot \vec\{n} \mid f, v \right>$ | $\frac\{\alpha}\{2} (\vec\{u} \cdot \vec\{n})\, f - \beta \mid \vec\{u} \cdot \vec\{n} \mid f$ | 1D, 2D, 3D |
+| BoundaryNormalLFIntegrator  | H1, L2 | $(\vec\{f} \cdot \hat\{n}, v)$ | $\vec\{f} \cdot \hat\{n}$ | 1D, 2D, 3D |
+| BoundaryTangentialLFIntegrator | H1, L2 | $(\vec\{f} \cdot \hat\{\tau}, v)$ | $\vec\{f} \cdot \hat\{\tau}$ | 2D |
+| BoundaryFlowIntegrator | H1, L2 | $\frac\{\alpha}\{2}\, \left< (\vec\{u} \cdot \hat\{n})\, f, v \right> - \beta\, \left<\mid \vec\{u} \cdot \hat\{n} \mid f, v \right>$ | $\frac\{\alpha}\{2} (\vec\{u} \cdot \hat\{n})\, f - \beta \mid \vec\{u} \cdot \hat\{n} \mid f$ | 1D, 2D, 3D |
 
 ### Face Integrators
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
-| DGDirichletLFIntegrator | L2 | $\sigma \left< u_D, Q \nabla v \cdot \vec\{n} \right> + \kappa \left< \\\{h^\{-1} Q\\\} u_D, v \right>$ | DG essential BCs for $u_D$ | 1D, 2D, 3D
+| DGDirichletLFIntegrator | L2 | $\sigma \left< u_D, Q \nabla v \cdot \hat\{n} \right> + \kappa \left< \\\{h^\{-1} Q\\\} u_D, v \right>$ | DG essential BCs for $u_D$ | 1D, 2D, 3D
 
 
 ## Vector Field Operators
@@ -119,15 +119,15 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|--------|------------------------------------|------------------| ---------- |
 | VectorBoundaryLFIntegrator    | H1, L2 | $( \vec\{f}, \vec\{v} )$ | $\vec\{f}$ | 1D, 2D, 3D |
-| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 1D, 2D, 3D |
-| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec\{v} \cdot \vec\{n} )$ | $\vec\{f}$ | 2D, 3D |
-| VectorFEBoundaryTangentLFIntegrator  | ND | $( \vec\{n} \times \vec\{f}, \vec\{v} )$ | $\vec\{n} \times \vec\{f}$ | 2D, 3D |
+| VectorBoundaryFluxLFIntegrator  | H1, L2 | $( f, \vec\{v} \cdot \hat\{n} )$ | $f \hat\{n}$ | 1D, 2D, 3D |
+| VectorFEBoundaryFluxLFIntegrator  | RT | $( f, \vec\{v} \cdot \hat\{n} )$ | $f \hat\{n}$ | 2D, 3D |
+| VectorFEBoundaryTangentLFIntegrator  | ND | $( \hat\{n} \times \vec\{f}, \vec\{v} )$ | $\hat\{n} \times \vec\{f}$ | 2D, 3D |
 
 ### Face Integrators
 
 | Class Name             | Space  | Operator                           | Continuous Op.   | Dimension  |
 |------------------------|-------|------------------------------------|------------------| ---------- |
-| DGElasticityDirichletLFIntegrator | L2 | $\alpha\left<\vec\{u_D}, \left(\lambda \left(\div \vec\{v}\right) I + \mu \left(\nabla\vec\{v} + \nabla\vec\{v}^T\right)\right) \cdot \vec\{n}\right> \\\\ + \kappa\left< h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v} \right>$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
+| DGElasticityDirichletLFIntegrator | L2 | $\alpha\left<\vec\{u_D}, \left(\lambda \left(\div \vec\{v}\right) I + \mu \left(\nabla\vec\{v} + \nabla\vec\{v}^T\right)\right) \cdot \hat\{n}\right> \\\\ + \kappa\left< h^\{-1} (\lambda + 2 \mu) \vec\{u_D}, \vec\{v} \right>$ | DG essential BCs for $\vec\{u_D}$ | 1D, 2D, 3D
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>

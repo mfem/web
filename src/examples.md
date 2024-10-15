@@ -2248,7 +2248,7 @@ A heat equation is described on the outer box domain
 \begin{align}
    \frac{\partial T}{\partial t} &= \kappa \Delta T &&\mbox{in outer box}\\\\
    T &= T_{wall} &&\mbox{on outside wall}\\\\
-   \nabla T \cdot \vec{n} &= 0 &&\mbox{on inside (cylinder) wall}
+   \nabla T \cdot \hat{n} &= 0 &&\mbox{on inside (cylinder) wall}
 \end{align}
 
 with temperature $T$ and coefficient $\kappa$ (non-physical in this example).
@@ -2257,7 +2257,7 @@ A convection-diffusion equation is described inside the cylinder domain
 \begin{align}
    \frac{\partial T}{\partial t} &= \kappa \Delta T - \alpha \nabla \cdot (\vec{b} T) & &\mbox{in inner cylinder}\\\\
    T &= T_{wall} & &\mbox{on cylinder wall}\\\\
-   \nabla T \cdot \vec{n} &= 0 & &\mbox{else}
+   \nabla T \cdot \hat{n} &= 0 & &\mbox{else}
 \end{align}
 
 with temperature $T$, coefficients $\kappa$, $\alpha$ and prescribed velocity profile $\vec{b}$, and

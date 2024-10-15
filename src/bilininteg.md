@@ -226,7 +226,7 @@ block structure.
 | DGDiffusionIntegrator     | H1, L2 | H1, L2 | $-\left<\\\{Q\grad u\cdot\hat\{n}\\\},[v]\right> \\\\ + \sigma \left<[u],\\\{Q\grad v\cdot\hat\{n}\\\}\right> \\\\ + \kappa \left<\\\{h^\{-1}Q\\\}[u],[v]\right> $ | |
 | DGElasticityIntegrator    | H1, L2 | H1, L2 | see $(\ref\{dg-elast})$ | |
 | TraceJumpIntegrator       |        |        | $\left< v, [w] \right>$ | |
-| NormalTraceJumpIntegrator |        |        | $\left< v, \left[\vec\{w}\cdot \vec\{n}\right] \right>$ | |
+| NormalTraceJumpIntegrator |        |        | $\left< v, \left[\vec\{w}\cdot \hat\{n}\right] \right>$ | |
 
 Integrator for the DG elasticity form, for the formulations see:
 
@@ -246,13 +246,13 @@ where $ \left< u, v\right> = \int_\{F} u \cdot v $, and $ F $ is a
     an interior face $ F_i $ separating elements $ K_1 $ and $ K_2 $.
 
 In the bilinear form above $ \tau(u) $ is traction, and it's also
-    $ \tau(u) = \sigma(u) \cdot \vec\{n} $, where $ \sigma(u) $ is
-    stress, and $ \vec\{n} $ is the unit normal vector w.r.t. to $ F $.
+    $ \tau(u) = \sigma(u) \cdot \hat\{n} $, where $ \sigma(u) $ is
+    stress, and $ \hat\{n} $ is the unit normal vector w.r.t. to $ F $.
 
 In other words, we have
     $$\label\{dg-elast}
-    - \left< \\{ \sigma(u) \cdot \vec\{n} \\}, [v] \right> + \alpha \left< \\{
-        \sigma(v) \cdot \vec\{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
+    - \left< \\{ \sigma(u) \cdot \hat\{n} \\}, [v] \right> + \alpha \left< \\{
+        \sigma(v) \cdot \hat\{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
         \lambda + 2 \mu \\} [u], [v] \right>
     $$
 
@@ -309,7 +309,8 @@ situations rather than needing to reimplement their functionality.
 Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
 that is often assumed to be zero but can be used to apply a
-non-homogeneous Neumann boundary condition.
+non-homogeneous Neumann boundary condition given a known function
+$u_\mathrm{bc}$ (or $\vec{u}_\mathrm{bc}$ for operators with a vector domain).
 
 ### Operator with Scalar Range
 
@@ -321,22 +322,22 @@ zero.  On the other hand an inhomogeneous Neumann boundary condition
 can be applied by using a linear form boundary integrator to compute
 this boundary term for a known function e.g. when using the
 `DiffusionIntegrator` one could provide a known function for
-$\lambda\,\grad u$ to the `BoundaryNormalLFIntegrator` which would
+$\lambda\,\grad u_\mathrm{bc}$ to the `BoundaryNormalLFIntegrator` which would
 then integrate the normal component of this function over the boundary
 of the domain.  See [Linear Form Integrators](lininteg.md) for more
 information.
 
 | Class Name                          | Operator                                      | Continuous Op.                             | Continuous Boundary Op.                            |
 |-------------------------------------|-----------------------------------------------|--------------------------------------------|----------------------------------------------------|
-| DiffusionIntegrator                 | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u$                    |
-| MixedGradGradIntegrator             | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u$                    |
-| MixedCrossGradGradIntegrator        | $(\vec\{\lambda}\cross\grad u,\grad v)$       | $-\div(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\cdot(\vec\{\lambda}\times\grad u)$       |
-| MixedScalarWeakDivergenceIntegrator | $(-\vec\{\lambda}u,\grad v)$                  | $\div(\vec\{\lambda}u)$                    | $-\hat\{n}\cdot\vec\{\lambda}\,u$                  |
-| MixedScalarWeakDerivativeIntegrator | $(-\lambda u, \ddx\{v})$                      | $\ddx\{}(\lambda u)\;$                     | $-\hat\{n}\cdot\hat\{x}\,\lambda\,u$               |
-| MixedVectorWeakDivergenceIntegrator | $(-\lambda\vec\{u},\grad v)$                  | $\div(\lambda\vec\{u})$                    | $-\hat\{n}\cdot(\lambda\,\vec\{u})$                |
-| MixedWeakDivCrossIntegrator         | $(-\vec\{\lambda}\cross\vec\{u},\grad v)$     | $\div(\vec\{\lambda}\cross\vec\{u})$       | $-\hat\{n}\cdot(\vec\{\lambda}\times\vec\{u})$     |
-| MixedCrossCurlGradIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\grad v)$ | $-\div(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\cdot(\vec\{\lambda}\cross\curl\vec\{u})$ |
-| MixedDivGradIntegrator              | $(\vec\{\lambda}\div\vec\{u}, \grad v)$       | $-\div(\vec\{\lambda}\div\vec\{u})$        | $\hat\{n}\cdot(\vec\{\lambda}\div\vec\{u})$        |
+| DiffusionIntegrator                 | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u_\mathrm\{bc}$                    |
+| MixedGradGradIntegrator             | $(\lambda\grad u, \grad v)$                   | $-\div(\lambda\grad u)$                    | $\lambda\,\hat\{n}\cdot\grad u_\mathrm\{bc}$                    |
+| MixedCrossGradGradIntegrator        | $(\vec\{\lambda}\cross\grad u,\grad v)$       | $-\div(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\cdot(\vec\{\lambda}\times\grad u_\mathrm\{bc})$       |
+| MixedScalarWeakDivergenceIntegrator | $(-\vec\{\lambda}u,\grad v)$                  | $\div(\vec\{\lambda}u)$                    | $-\hat\{n}\cdot\vec\{\lambda}\,u_\mathrm\{bc}$                  |
+| MixedScalarWeakDerivativeIntegrator | $(-\lambda u, \ddx\{v})$                      | $\ddx\{}(\lambda u)\;$                     | $-\hat\{n}\cdot\hat\{x}\,\lambda\,u_\mathrm\{bc}$               |
+| MixedVectorWeakDivergenceIntegrator | $(-\lambda\vec\{u},\grad v)$                  | $\div(\lambda\vec\{u})$                    | $-\hat\{n}\cdot(\lambda\,\vec\{u}_\mathrm\{bc})$                |
+| MixedWeakDivCrossIntegrator         | $(-\vec\{\lambda}\cross\vec\{u},\grad v)$     | $\div(\vec\{\lambda}\cross\vec\{u})$       | $-\hat\{n}\cdot(\vec\{\lambda}\times\vec\{u}_\mathrm\{bc})$     |
+| MixedCrossCurlGradIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\grad v)$ | $-\div(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\cdot(\vec\{\lambda}\cross\curl\vec\{u}_\mathrm\{bc})$ |
+| MixedDivGradIntegrator              | $(\vec\{\lambda}\div\vec\{u}, \grad v)$       | $-\div(\vec\{\lambda}\div\vec\{u})$        | $\hat\{n}\cdot(\vec\{\lambda}\div\vec\{u}_\mathrm\{bc})$        |
 
 ### Operator with Vector Range
 
@@ -348,7 +349,7 @@ equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `CurlCurlIntegrator` one could provide a known function for
-$\lambda\,\curl\vec\{u}$ to the `VectorFEBoundaryTangentLFIntegrator`
+$-\lambda\,\curl\vec\{u}_\mathrm{bc}$ to the `VectorFEBoundaryTangentLFIntegrator`
 which would then integrate the product of the tangential portion of
 this function with that of the ND basis function over the boundary of
 the domain.  See [Linear Form Integrators](lininteg.md) for more
@@ -356,14 +357,14 @@ information.
 
 | Class Name                          | Operator                                            | Continuous Op.                             | Continuous Boundary Op.                             |
 |-------------------------------------|-----------------------------------------------------|--------------------------------------------|-----------------------------------------------------|
-| CurlCurlIntegrator                  | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              |
-| MixedCurlCurlIntegrator             | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $\lambda\,\hat\{n}\times\curl\vec\{u}$              |
-| MixedCrossCurlCurlIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | $\hat\{n}\times(\vec\{\lambda}\cross\curl\vec\{u})$ |
-| MixedCrossGradCurlIntegrator        | $(\vec\{\lambda}\cross\grad u,\curl\vec\{v})$       | $\curl(\vec\{\lambda}\cross\grad u)$       | $\hat\{n}\times(\vec\{\lambda}\cross\grad u)$       |
-| MixedVectorWeakCurlIntegrator       | $(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | $\lambda\,\hat\{n}\times\vec\{u}$                   |
-| MixedScalarWeakCurlIntegrator       | $(\lambda u,\curl\vec\{v})$                         | $\curl(\lambda\,u\,\hat\{z})\;$            | $\lambda\,u\,\hat\{n}\times\hat\{z}$                |
-| MixedWeakCurlCrossIntegrator        | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
-| MixedScalarWeakCurlCrossIntegrator  | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $\hat\{n}\times(\vec\{\lambda}\cross\vec\{u})$      |
+| CurlCurlIntegrator                  | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $-\lambda\,\hat\{n}\times\curl\vec\{u}_\mathrm\{bc}$              |
+| MixedCurlCurlIntegrator             | $(\lambda\curl\vec\{u},\curl\vec\{v})$              | $\curl(\lambda\curl\vec\{u})$              | $-\lambda\,\hat\{n}\times\curl\vec\{u}_\mathrm\{bc}$              |
+| MixedCrossCurlCurlIntegrator        | $(\vec\{\lambda}\cross\curl\vec\{u},\curl\vec\{v})$ | $\curl(\vec\{\lambda}\cross\curl\vec\{u})$ | $-\hat\{n}\times(\vec\{\lambda}\cross\curl\vec\{u}_\mathrm\{bc})$ |
+| MixedCrossGradCurlIntegrator        | $(\vec\{\lambda}\cross\grad u,\curl\vec\{v})$       | $\curl(\vec\{\lambda}\cross\grad u)$       | $-\hat\{n}\times(\vec\{\lambda}\cross\grad u_\mathrm\{bc})$       |
+| MixedVectorWeakCurlIntegrator       | $(\lambda\vec\{u},\curl\vec\{v})$                   | $\curl(\lambda\vec\{u})$                   | $-\lambda\,\hat\{n}\times\vec\{u}_\mathrm\{bc}$                   |
+| MixedScalarWeakCurlIntegrator       | $(\lambda u,\curl\vec\{v})$                         | $\curl(\lambda\,u\,\hat\{z})\;$            | $-\lambda\,u_\mathrm\{bc}\,\hat\{n}\times\hat\{z}$                |
+| MixedWeakCurlCrossIntegrator        | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $-\hat\{n}\times(\vec\{\lambda}\cross\vec\{u}_\mathrm\{bc})$      |
+| MixedScalarWeakCurlCrossIntegrator  | $(\vec\{\lambda}\cross\vec\{u},\curl\vec\{v})$      | $\curl(\vec\{\lambda}\cross\vec\{u})$      | $-\hat\{n}\times(\vec\{\lambda}\cross\vec\{u}_\mathrm\{bc})$      |
 
 The following weak operators require the range (or test) space to be
 H(Div) i.e. a vector basis function with a divergence operator.  The
@@ -373,7 +374,7 @@ equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 `DivDivIntegrator` one could provide a known function for
-$\lambda\,\div\vec\{u}$ to the `VectorFEBoundaryFluxLFIntegrator`
+$\lambda\,\div\vec\{u}_\mathrm{bc}$ to the `VectorFEBoundaryFluxLFIntegrator`
 which would then integrate the product of this function with the
 normal component of the RT basis function over the boundary of the
 domain.  See [Linear Form Integrators](lininteg.md) for more
@@ -381,10 +382,10 @@ information.
 
 | Class Name                          | Operator                                            | Continuous Op.                       | Continuous Boundary Op.                  |
 |-------------------------------------|-----------------------------------------------------|--------------------------------------|------------------------------------------|
-| DivDivIntegrator                    | $(\lambda\div\vec\{u},\div\vec\{v})$                | $-\grad(\lambda\div\vec\{u})$        | $\lambda\div\vec\{u}\,\hat\{n}$          |
-| MixedGradDivIntegrator              | $(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$        | $-\grad(\vec\{\lambda}\cdot\grad u)$ | $\vec\{\lambda}\cdot\grad u\,\hat\{n}$   |
-| MixedScalarWeakGradientIntegrator   | $(-\lambda u, \div\vec\{v})$                        | $\grad(\lambda u)$                   | $-\lambda u\,\hat\{n}$                   |
-| MixedWeakGradDotIntegrator          | $(-\vec\{\lambda}\cdot\vec\{u},\div\vec\{v})$       | $\grad(\vec\{\lambda}\cdot\vec\{u})$ | $-\vec\{\lambda}\cdot\vec\{u}\,\hat\{n}$ |
+| DivDivIntegrator                    | $(\lambda\div\vec\{u},\div\vec\{v})$                | $-\grad(\lambda\div\vec\{u})$        | $\lambda\div\vec\{u}_\mathrm\{bc}\,\hat\{n}$          |
+| MixedGradDivIntegrator              | $(\vec\{\lambda}\cdot\grad u, \div\vec\{v})$        | $-\grad(\vec\{\lambda}\cdot\grad u)$ | $\vec\{\lambda}\cdot\grad u_\mathrm\{bc}\,\hat\{n}$   |
+| MixedScalarWeakGradientIntegrator   | $(-\lambda u, \div\vec\{v})$                        | $\grad(\lambda u)$                   | $-\lambda u_\mathrm\{bc}\,\hat\{n}$                   |
+| MixedWeakGradDotIntegrator          | $(-\vec\{\lambda}\cdot\vec\{u},\div\vec\{v})$       | $\grad(\vec\{\lambda}\cdot\vec\{u})$ | $-\vec\{\lambda}\cdot\vec\{u}_\mathrm\{bc}\,\hat\{n}$ |
 
 ## Device support
 
