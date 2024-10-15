@@ -226,7 +226,7 @@ block structure.
 | DGDiffusionIntegrator     | H1, L2 | H1, L2 | $-\left<\\\{Q\grad u\cdot\hat\{n}\\\},[v]\right> \\\\ + \sigma \left<[u],\\\{Q\grad v\cdot\hat\{n}\\\}\right> \\\\ + \kappa \left<\\\{h^\{-1}Q\\\}[u],[v]\right> $ | |
 | DGElasticityIntegrator    | H1, L2 | H1, L2 | see $(\ref\{dg-elast})$ | |
 | TraceJumpIntegrator       |        |        | $\left< v, [w] \right>$ | |
-| NormalTraceJumpIntegrator |        |        | $\left< v, \left[\vec\{w}\cdot \vec\{n}\right] \right>$ | |
+| NormalTraceJumpIntegrator |        |        | $\left< v, \left[\vec\{w}\cdot \hat\{n}\right] \right>$ | |
 
 Integrator for the DG elasticity form, for the formulations see:
 
@@ -246,13 +246,13 @@ where $ \left< u, v\right> = \int_\{F} u \cdot v $, and $ F $ is a
     an interior face $ F_i $ separating elements $ K_1 $ and $ K_2 $.
 
 In the bilinear form above $ \tau(u) $ is traction, and it's also
-    $ \tau(u) = \sigma(u) \cdot \vec\{n} $, where $ \sigma(u) $ is
-    stress, and $ \vec\{n} $ is the unit normal vector w.r.t. to $ F $.
+    $ \tau(u) = \sigma(u) \cdot \hat\{n} $, where $ \sigma(u) $ is
+    stress, and $ \hat\{n} $ is the unit normal vector w.r.t. to $ F $.
 
 In other words, we have
     $$\label\{dg-elast}
-    - \left< \\{ \sigma(u) \cdot \vec\{n} \\}, [v] \right> + \alpha \left< \\{
-        \sigma(v) \cdot \vec\{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
+    - \left< \\{ \sigma(u) \cdot \hat\{n} \\}, [v] \right> + \alpha \left< \\{
+        \sigma(v) \cdot \hat\{n} \\}, [u] \right> + \kappa \left< h^{-1} \\{
         \lambda + 2 \mu \\} [u], [v] \right>
     $$
 
