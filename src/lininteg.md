@@ -93,7 +93,7 @@ and are denoted with $\left<\cdot,\cdot\right>$.
 |------------------------|-------|------------------------------------|------------------| ---------- |
 | BoundaryLFIntegrator    | H1, L2 | $(f, v)$ | $f$ | 1D, 2D, 3D |
 | BoundaryNormalLFIntegrator  | H1, L2 | $(\vec\{f} \cdot \hat\{n}, v)$ | $\vec\{f} \cdot \hat\{n}$ | 1D, 2D, 3D |
-| BoundaryTangentialLFIntegrator | H1, L2 | $(\vec\{f} \cdot \vec\{\tau}, v)$ | $\vec\{f} \cdot \vec\{\tau}$ | 2D |
+| BoundaryTangentialLFIntegrator | H1, L2 | $(\vec\{f} \cdot \hat\{\tau}, v)$ | $\vec\{f} \cdot \hat\{\tau}$ | 2D |
 | BoundaryFlowIntegrator | H1, L2 | $\frac\{\alpha}\{2}\, \left< (\vec\{u} \cdot \hat\{n})\, f, v \right> - \beta\, \left<\mid \vec\{u} \cdot \hat\{n} \mid f, v \right>$ | $\frac\{\alpha}\{2} (\vec\{u} \cdot \hat\{n})\, f - \beta \mid \vec\{u} \cdot \hat\{n} \mid f$ | 1D, 2D, 3D |
 
 ### Face Integrators
