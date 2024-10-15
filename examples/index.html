@@ -2315,14 +2315,14 @@ elements. This does not mean that the approach is limited to this configuration.
 <p>\begin{align}
    \frac{\partial T}{\partial t} &amp;= \kappa \Delta T &amp;&amp;\mbox{in outer box}\\
    T &amp;= T_{wall} &amp;&amp;\mbox{on outside wall}\\
-   \nabla T \cdot \vec{n} &amp;= 0 &amp;&amp;\mbox{on inside (cylinder) wall}
+   \nabla T \cdot \hat{n} &amp;= 0 &amp;&amp;\mbox{on inside (cylinder) wall}
 \end{align}</p>
 <p>with temperature $T$ and coefficient $\kappa$ (non-physical in this example).
 A convection-diffusion equation is described inside the cylinder domain</p>
 <p>\begin{align}
    \frac{\partial T}{\partial t} &amp;= \kappa \Delta T - \alpha \nabla \cdot (\vec{b} T) &amp; &amp;\mbox{in inner cylinder}\\
    T &amp;= T_{wall} &amp; &amp;\mbox{on cylinder wall}\\
-   \nabla T \cdot \vec{n} &amp;= 0 &amp; &amp;\mbox{else}
+   \nabla T \cdot \hat{n} &amp;= 0 &amp; &amp;\mbox{else}
 \end{align}</p>
 <p>with temperature $T$, coefficients $\kappa$, $\alpha$ and prescribed velocity profile $\vec{b}$, and
 $T_{wall}$ obtained from the heat equation.</p>

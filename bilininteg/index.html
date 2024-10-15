@@ -1157,7 +1157,7 @@ block structure.</p>
 <td>NormalTraceJumpIntegrator</td>
 <td></td>
 <td></td>
-<td>$\left&lt; v, \left[\vec{w}\cdot \vec{n}\right] \right&gt;$</td>
+<td>$\left&lt; v, \left[\vec{w}\cdot \hat{n}\right] \right&gt;$</td>
 <td></td>
 </tr>
 </tbody>
@@ -1178,12 +1178,12 @@ $$</p>
     face which is either a boundary face $ F_b $ of an element $ K $ or
     an interior face $ F_i $ separating elements $ K_1 $ and $ K_2 $.</p>
 <p>In the bilinear form above $ \tau(u) $ is traction, and it's also
-    $ \tau(u) = \sigma(u) \cdot \vec{n} $, where $ \sigma(u) $ is
-    stress, and $ \vec{n} $ is the unit normal vector w.r.t. to $ F $.</p>
+    $ \tau(u) = \sigma(u) \cdot \hat{n} $, where $ \sigma(u) $ is
+    stress, and $ \hat{n} $ is the unit normal vector w.r.t. to $ F $.</p>
 <p>In other words, we have
     $$\label{dg-elast}
-    - \left&lt; \{ \sigma(u) \cdot \vec{n} \}, [v] \right&gt; + \alpha \left&lt; \{
-        \sigma(v) \cdot \vec{n} \}, [u] \right&gt; + \kappa \left&lt; h^{-1} \{
+    - \left&lt; \{ \sigma(u) \cdot \hat{n} \}, [v] \right&gt; + \alpha \left&lt; \{
+        \sigma(v) \cdot \hat{n} \}, [u] \right&gt; + \kappa \left&lt; h^{-1} \{
         \lambda + 2 \mu \} [u], [v] \right&gt;
     $$</p>
 <p>For isotropic media
@@ -1256,7 +1256,8 @@ situations rather than needing to reimplement their functionality.</p>
 <p>Weak operators use integration by parts to move a spatial derivative
 onto the test function.  This results in an implied boundary integral
 that is often assumed to be zero but can be used to apply a
-non-homogeneous Neumann boundary condition.</p>
+non-homogeneous Neumann boundary condition given a known function
+$u_\mathrm{bc}$ (or $\vec{u}_\mathrm{bc}$ for operators with a vector domain).</p>
 <h3 id="operator-with-scalar-range">Operator with Scalar Range</h3>
 <p>The following weak operators require the range (or test) space to be
 $H_1$ i.e. a scalar basis function with a gradient operator.  The implied
@@ -1266,7 +1267,7 @@ zero.  On the other hand an inhomogeneous Neumann boundary condition
 can be applied by using a linear form boundary integrator to compute
 this boundary term for a known function e.g. when using the
 <code>DiffusionIntegrator</code> one could provide a known function for
-$\lambda\,\grad u$ to the <code>BoundaryNormalLFIntegrator</code> which would
+$\lambda\,\grad u_\mathrm{bc}$ to the <code>BoundaryNormalLFIntegrator</code> which would
 then integrate the normal component of this function over the boundary
 of the domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
 information.</p>
@@ -1284,55 +1285,55 @@ information.</p>
 <td>DiffusionIntegrator</td>
 <td>$(\lambda\grad u, \grad v)$</td>
 <td>$-\div(\lambda\grad u)$</td>
-<td>$\lambda\,\hat{n}\cdot\grad u$</td>
+<td>$\lambda\,\hat{n}\cdot\grad u_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedGradGradIntegrator</td>
 <td>$(\lambda\grad u, \grad v)$</td>
 <td>$-\div(\lambda\grad u)$</td>
-<td>$\lambda\,\hat{n}\cdot\grad u$</td>
+<td>$\lambda\,\hat{n}\cdot\grad u_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedCrossGradGradIntegrator</td>
 <td>$(\vec{\lambda}\cross\grad u,\grad v)$</td>
 <td>$-\div(\vec{\lambda}\cross\grad u)$</td>
-<td>$\hat{n}\cdot(\vec{\lambda}\times\grad u)$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\times\grad u_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedScalarWeakDivergenceIntegrator</td>
 <td>$(-\vec{\lambda}u,\grad v)$</td>
 <td>$\div(\vec{\lambda}u)$</td>
-<td>$-\hat{n}\cdot\vec{\lambda}\,u$</td>
+<td>$-\hat{n}\cdot\vec{\lambda}\,u_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedScalarWeakDerivativeIntegrator</td>
 <td>$(-\lambda u, \ddx{v})$</td>
 <td>$\ddx{}(\lambda u)\;$</td>
-<td>$-\hat{n}\cdot\hat{x}\,\lambda\,u$</td>
+<td>$-\hat{n}\cdot\hat{x}\,\lambda\,u_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedVectorWeakDivergenceIntegrator</td>
 <td>$(-\lambda\vec{u},\grad v)$</td>
 <td>$\div(\lambda\vec{u})$</td>
-<td>$-\hat{n}\cdot(\lambda\,\vec{u})$</td>
+<td>$-\hat{n}\cdot(\lambda\,\vec{u}_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedWeakDivCrossIntegrator</td>
 <td>$(-\vec{\lambda}\cross\vec{u},\grad v)$</td>
 <td>$\div(\vec{\lambda}\cross\vec{u})$</td>
-<td>$-\hat{n}\cdot(\vec{\lambda}\times\vec{u})$</td>
+<td>$-\hat{n}\cdot(\vec{\lambda}\times\vec{u}_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedCrossCurlGradIntegrator</td>
 <td>$(\vec{\lambda}\cross\curl\vec{u},\grad v)$</td>
 <td>$-\div(\vec{\lambda}\cross\curl\vec{u})$</td>
-<td>$\hat{n}\cdot(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\cross\curl\vec{u}_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedDivGradIntegrator</td>
 <td>$(\vec{\lambda}\div\vec{u}, \grad v)$</td>
 <td>$-\div(\vec{\lambda}\div\vec{u})$</td>
-<td>$\hat{n}\cdot(\vec{\lambda}\div\vec{u})$</td>
+<td>$\hat{n}\cdot(\vec{\lambda}\div\vec{u}_\mathrm{bc})$</td>
 </tr>
 </tbody>
 </table>
@@ -1345,7 +1346,7 @@ equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 <code>CurlCurlIntegrator</code> one could provide a known function for
-$\lambda\,\curl\vec{u}$ to the <code>VectorFEBoundaryTangentLFIntegrator</code>
+$-\lambda\,\curl\vec{u}_\mathrm{bc}$ to the <code>VectorFEBoundaryTangentLFIntegrator</code>
 which would then integrate the product of the tangential portion of
 this function with that of the ND basis function over the boundary of
 the domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
@@ -1364,49 +1365,49 @@ information.</p>
 <td>CurlCurlIntegrator</td>
 <td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\lambda\curl\vec{u})$</td>
-<td>$\lambda\,\hat{n}\times\curl\vec{u}$</td>
+<td>$-\lambda\,\hat{n}\times\curl\vec{u}_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedCurlCurlIntegrator</td>
 <td>$(\lambda\curl\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\lambda\curl\vec{u})$</td>
-<td>$\lambda\,\hat{n}\times\curl\vec{u}$</td>
+<td>$-\lambda\,\hat{n}\times\curl\vec{u}_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedCrossCurlCurlIntegrator</td>
 <td>$(\vec{\lambda}\cross\curl\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\vec{\lambda}\cross\curl\vec{u})$</td>
-<td>$\hat{n}\times(\vec{\lambda}\cross\curl\vec{u})$</td>
+<td>$-\hat{n}\times(\vec{\lambda}\cross\curl\vec{u}_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedCrossGradCurlIntegrator</td>
 <td>$(\vec{\lambda}\cross\grad u,\curl\vec{v})$</td>
 <td>$\curl(\vec{\lambda}\cross\grad u)$</td>
-<td>$\hat{n}\times(\vec{\lambda}\cross\grad u)$</td>
+<td>$-\hat{n}\times(\vec{\lambda}\cross\grad u_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedVectorWeakCurlIntegrator</td>
 <td>$(\lambda\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\lambda\vec{u})$</td>
-<td>$\lambda\,\hat{n}\times\vec{u}$</td>
+<td>$-\lambda\,\hat{n}\times\vec{u}_\mathrm{bc}$</td>
 </tr>
 <tr>
 <td>MixedScalarWeakCurlIntegrator</td>
 <td>$(\lambda u,\curl\vec{v})$</td>
 <td>$\curl(\lambda\,u\,\hat{z})\;$</td>
-<td>$\lambda\,u\,\hat{n}\times\hat{z}$</td>
+<td>$-\lambda\,u_\mathrm{bc}\,\hat{n}\times\hat{z}$</td>
 </tr>
 <tr>
 <td>MixedWeakCurlCrossIntegrator</td>
 <td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
-<td>$\hat{n}\times(\vec{\lambda}\cross\vec{u})$</td>
+<td>$-\hat{n}\times(\vec{\lambda}\cross\vec{u}_\mathrm{bc})$</td>
 </tr>
 <tr>
 <td>MixedScalarWeakCurlCrossIntegrator</td>
 <td>$(\vec{\lambda}\cross\vec{u},\curl\vec{v})$</td>
 <td>$\curl(\vec{\lambda}\cross\vec{u})$</td>
-<td>$\hat{n}\times(\vec{\lambda}\cross\vec{u})$</td>
+<td>$-\hat{n}\times(\vec{\lambda}\cross\vec{u}_\mathrm{bc})$</td>
 </tr>
 </tbody>
 </table>
@@ -1418,7 +1419,7 @@ equal to zero.  On the other hand a non-homogeneous Neumann boundary
 condition can be applied by using a linear form boundary integrator to
 compute this boundary term for a known function e.g. when using the
 <code>DivDivIntegrator</code> one could provide a known function for
-$\lambda\,\div\vec{u}$ to the <code>VectorFEBoundaryFluxLFIntegrator</code>
+$\lambda\,\div\vec{u}_\mathrm{bc}$ to the <code>VectorFEBoundaryFluxLFIntegrator</code>
 which would then integrate the product of this function with the
 normal component of the RT basis function over the boundary of the
 domain.  See <a href="../lininteg/">Linear Form Integrators</a> for more
@@ -1437,25 +1438,25 @@ information.</p>
 <td>DivDivIntegrator</td>
 <td>$(\lambda\div\vec{u},\div\vec{v})$</td>
 <td>$-\grad(\lambda\div\vec{u})$</td>
-<td>$\lambda\div\vec{u}\,\hat{n}$</td>
+<td>$\lambda\div\vec{u}_\mathrm{bc}\,\hat{n}$</td>
 </tr>
 <tr>
 <td>MixedGradDivIntegrator</td>
 <td>$(\vec{\lambda}\cdot\grad u, \div\vec{v})$</td>
 <td>$-\grad(\vec{\lambda}\cdot\grad u)$</td>
-<td>$\vec{\lambda}\cdot\grad u\,\hat{n}$</td>
+<td>$\vec{\lambda}\cdot\grad u_\mathrm{bc}\,\hat{n}$</td>
 </tr>
 <tr>
 <td>MixedScalarWeakGradientIntegrator</td>
 <td>$(-\lambda u, \div\vec{v})$</td>
 <td>$\grad(\lambda u)$</td>
-<td>$-\lambda u\,\hat{n}$</td>
+<td>$-\lambda u_\mathrm{bc}\,\hat{n}$</td>
 </tr>
 <tr>
 <td>MixedWeakGradDotIntegrator</td>
 <td>$(-\vec{\lambda}\cdot\vec{u},\div\vec{v})$</td>
 <td>$\grad(\vec{\lambda}\cdot\vec{u})$</td>
-<td>$-\vec{\lambda}\cdot\vec{u}\,\hat{n}$</td>
+<td>$-\vec{\lambda}\cdot\vec{u}_\mathrm{bc}\,\hat{n}$</td>
 </tr>
 </tbody>
 </table>

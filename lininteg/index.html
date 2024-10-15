@@ -395,7 +395,7 @@ more exotic, forms are possible:</p>
 <li>Integrals involving mix of Scalar and Vector rhs $\,\vec{f}$ and basis functions: $\int_\Omega f\,\vec{\lambda}\cdot\vec{v}$ and $\int_\Omega v\,\vec{\lambda}\cdot\vec{f}$</li>
 </ul>
 <p>The <code>LinearFormIntegrator</code> classes allow MFEM to produce a wide variety of local
-element matrices without modifying the <code>LinearForm</code> class. Many of the possible
+element vectors without modifying the <code>LinearForm</code> class. Many of the possible
 operators are collected below into tables that briefly describe their action and
 requirements.</p>
 <p>In the tables below the <em>Space</em> column refers to finite element spaces which
@@ -488,22 +488,22 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <tr>
 <td>BoundaryNormalLFIntegrator</td>
 <td>H1, L2</td>
-<td>$(\vec{f} \cdot \vec{n}, v)$</td>
-<td>$\vec{f} \cdot \vec{n}$</td>
+<td>$(\vec{f} \cdot \hat{n}, v)$</td>
+<td>$\vec{f} \cdot \hat{n}$</td>
 <td>1D, 2D, 3D</td>
 </tr>
 <tr>
 <td>BoundaryTangentialLFIntegrator</td>
 <td>H1, L2</td>
-<td>$(\vec{f} \cdot \vec{\tau}, v)$</td>
-<td>$\vec{f} \cdot \vec{\tau}$</td>
+<td>$(\vec{f} \cdot \hat{\tau}, v)$</td>
+<td>$\vec{f} \cdot \hat{\tau}$</td>
 <td>2D</td>
 </tr>
 <tr>
 <td>BoundaryFlowIntegrator</td>
 <td>H1, L2</td>
-<td>$\frac{\alpha}{2}\, \left&lt; (\vec{u} \cdot \vec{n})\, f, v \right&gt; - \beta\, \left&lt;\mid \vec{u} \cdot \vec{n} \mid f, v \right&gt;$</td>
-<td>$\frac{\alpha}{2} (\vec{u} \cdot \vec{n})\, f - \beta \mid \vec{u} \cdot \vec{n} \mid f$</td>
+<td>$\frac{\alpha}{2}\, \left&lt; (\vec{u} \cdot \hat{n})\, f, v \right&gt; - \beta\, \left&lt;\mid \vec{u} \cdot \hat{n} \mid f, v \right&gt;$</td>
+<td>$\frac{\alpha}{2} (\vec{u} \cdot \hat{n})\, f - \beta \mid \vec{u} \cdot \hat{n} \mid f$</td>
 <td>1D, 2D, 3D</td>
 </tr>
 </tbody>
@@ -523,7 +523,7 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <tr>
 <td>DGDirichletLFIntegrator</td>
 <td>L2</td>
-<td>$\sigma \left&lt; u_D, Q \nabla v \cdot \vec{n} \right&gt; + \kappa \left&lt; \{h^{-1} Q\} u_D, v \right&gt;$</td>
+<td>$\sigma \left&lt; u_D, Q \nabla v \cdot \hat{n} \right&gt; + \kappa \left&lt; \{h^{-1} Q\} u_D, v \right&gt;$</td>
 <td>DG essential BCs for $u_D$</td>
 <td>1D, 2D, 3D</td>
 </tr>
@@ -594,22 +594,22 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <tr>
 <td>VectorBoundaryFluxLFIntegrator</td>
 <td>H1, L2</td>
-<td>$( f, \vec{v} \cdot \vec{n} )$</td>
-<td>$\vec{f}$</td>
+<td>$( f, \vec{v} \cdot \hat{n} )$</td>
+<td>$f \hat{n}$</td>
 <td>1D, 2D, 3D</td>
 </tr>
 <tr>
 <td>VectorFEBoundaryFluxLFIntegrator</td>
 <td>RT</td>
-<td>$( f, \vec{v} \cdot \vec{n} )$</td>
-<td>$\vec{f}$</td>
+<td>$( f, \vec{v} \cdot \hat{n} )$</td>
+<td>$f \hat{n}$</td>
 <td>2D, 3D</td>
 </tr>
 <tr>
 <td>VectorFEBoundaryTangentLFIntegrator</td>
 <td>ND</td>
-<td>$( \vec{n} \times \vec{f}, \vec{v} )$</td>
-<td>$\vec{n} \times \vec{f}$</td>
+<td>$( \hat{n} \times \vec{f}, \vec{v} )$</td>
+<td>$\hat{n} \times \vec{f}$</td>
 <td>2D, 3D</td>
 </tr>
 </tbody>
@@ -629,7 +629,7 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 <tr>
 <td>DGElasticityDirichletLFIntegrator</td>
 <td>L2</td>
-<td>$\alpha\left&lt;\vec{u_D}, \left(\lambda \left(\div \vec{v}\right) I + \mu \left(\nabla\vec{v} + \nabla\vec{v}^T\right)\right) \cdot \vec{n}\right&gt; \\ + \kappa\left&lt; h^{-1} (\lambda + 2 \mu) \vec{u_D}, \vec{v} \right&gt;$</td>
+<td>$\alpha\left&lt;\vec{u_D}, \left(\lambda \left(\div \vec{v}\right) I + \mu \left(\nabla\vec{v} + \nabla\vec{v}^T\right)\right) \cdot \hat{n}\right&gt; \\ + \kappa\left&lt; h^{-1} (\lambda + 2 \mu) \vec{u_D}, \vec{v} \right&gt;$</td>
 <td>DG essential BCs for $\vec{u_D}$</td>
 <td>1D, 2D, 3D</td>
 </tr>
