@@ -46,7 +46,7 @@ more exotic, forms are possible:
 + Integrals involving mix of Scalar and Vector rhs $\,\vec{f}$ and basis functions: $\int_\Omega f\,\vec\{\lambda}\cdot\vec\{v}$ and $\int_\Omega v\,\vec\{\lambda}\cdot\vec\{f}$
 
 The `LinearFormIntegrator` classes allow MFEM to produce a wide variety of local
-element matrices without modifying the `LinearForm` class. Many of the possible
+element vectors without modifying the `LinearForm` class. Many of the possible
 operators are collected below into tables that briefly describe their action and
 requirements.
 
