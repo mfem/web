@@ -1,15 +1,3 @@
-<div class="col-md-12" markdown="1">
-<center>
-[<button type="button" class="btn btn-success">
-**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop on October 22th**
-</button>](workshop.md)
-&nbsp;
-[<button type="button" class="btn btn-primary">
-**<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Register**
-</button>](https://docs.google.com/forms/d/e/1FAIpQLSfv419dXX4yPS7Tk1sNbfi_2YXgt3DpW56KCd3TZjjsswKpBw/viewform?usp=sf_link)
-</center>
-</div>
-
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
@@ -104,8 +92,8 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Oct 28, 2024 |  [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher)**
 Oct 22, 2024 | 2024 [MFEM Community Workshop](workshop.md).
- Jun 5, 2024 | [Register](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) for MFEM [tutorial](tutorial/index.md) on Aug 22.
  May 7, 2024 | Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).
  May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
