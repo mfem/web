@@ -260,7 +260,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 [![](img/gallery/workshop24/conf-topopt.png)](img/gallery/workshop24/conf-topopt.mp4)
 
 [🎬](img/gallery/workshop24/conf-topopt.mp4)
-*Multi-component topology optimization with conformal meshes. Image courtesy of Mathias Schmidt, **winner** of the 2024 MFEM Workshop Visualization Contest.*
+*Multi-component [topology optimization](https://doi.org/10.1007/s00158-024-03870-3) with conformal meshes. Image courtesy of Mathias Schmidt, **winner** of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
 
