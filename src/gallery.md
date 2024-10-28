@@ -83,13 +83,6 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
-[![](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.png)](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
-
-[🎬](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
-*Axisymmetric computation of an air flow in a tube with continuous Galerkin discretization. Image courtesy of Raphael Zanella, as part of the 2021 MFEM Workshop Visualization Contest.*
-
-----
-
 <div id="pazner" class="anchor"></div>
 
 [![](img/gallery/workshop22/coil_small.png)](img/gallery/workshop22/coil.mp4)
@@ -117,6 +110,19 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/workshop23/plane_wave.mp4)
 *Plane wave scattering from a cube using a DPG Ultraweak formulation in MFEM to solve the time-harmonic linear acoustics equations. Image courtesy of Socratis Petrides, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop24/canti3.png)](img/gallery/workshop24/canti3.png)
+
+*Density-based Topology Optimization for Cantilever beam with [SiMPL method](https://arxiv.org/abs/2409.19341). Image courtesy of Dohyun Kim, as part of the 2024 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop24/T-SB.png)](img/gallery/workshop24/T-SB.mp4)
+
+[🎬](img/gallery/workshop24/T-SB.mp4)
+*Shape interpolation between a torus and a bunny by computing their generalized Wasserstein barycenter. This barycenter is obtained by solving a mean-field optimal control problem. Image courtesy of Arjun Vijaywargiya, as part of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
 
@@ -195,6 +201,13 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+[![](img/gallery/workshop21/v34_mux1_vz_t0_t2_small.png)](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
+
+[🎬](img/gallery/workshop21/v34_mux1_vz_t0_t2.mp4)
+*Axisymmetric computation of an air flow in a tube with continuous Galerkin discretization. Image courtesy of Raphael Zanella, as part of the 2021 MFEM Workshop Visualization Contest.*
+
+----
+
 [![](img/gallery/workshop21/kh_small.png)](img/gallery/workshop21/kh.mp4)
 
 [🎬](img/gallery/workshop21/kh.mp4)
@@ -242,10 +255,12 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
-[![](img/gallery/workshop23/MBBBeam2D.png)](img/gallery/workshop23/MBBBeam2D.mp4)
+<div id="schmidt" class="anchor"></div>
 
-[🎬](img/gallery/workshop23/MBBBeam2D.mp4)
-*Topology optimization with [conformal meshes](https://computing.llnl.gov/projects/ethos-enabling-technologies-high-order-simulations) to maximize beam stiffness under a downward force on the right wall. Image courtesy of Ketan Mittal and Mathias Schmidt, as part of the 2023 MFEM Workshop Visualization Contest.*
+[![](img/gallery/workshop24/conf-topopt.png)](img/gallery/workshop24/conf-topopt.mp4)
+
+[🎬](img/gallery/workshop24/conf-topopt.mp4)
+*Multi-component topology optimization with conformal meshes. Image courtesy of Mathias Schmidt, **winner** of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
 
@@ -350,9 +365,24 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+[![](img/gallery/workshop23/MBBBeam2D.png)](img/gallery/workshop23/MBBBeam2D.mp4)
+
+[🎬](img/gallery/workshop23/MBBBeam2D.mp4)
+*Topology optimization with [conformal meshes](https://computing.llnl.gov/projects/ethos-enabling-technologies-high-order-simulations) to maximize beam stiffness under a downward force on the right wall. Image courtesy of Ketan Mittal and Mathias Schmidt, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
 [![](img/gallery/workshop23/penrose.png)](img/gallery/workshop23/penrose.png)
 
 *Penrose unilluminable room appears rather illuminable in 3D (at least when constructed as a solid of revolution). Image courtesy of Amit Rotem, as part of the 2023 MFEM Workshop Visualization Contest.*
+
+----
+
+<div id="nikl" class="anchor"></div>
+
+[![](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png)](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png)
+
+*Heat flux magnitude in a [convection - (anisotropic) diffusion simulation](https://github.com/mfem/mfem/blob/darcy-hdg-dev/examples/ex5-aniso.cpp) with MFEM text as the initial temperature profile. A single implicit step of the [HDG scheme](https://github.com/mfem/mfem/pull/4350) was used. Image courtesy of Jan Nikl, **winner** of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
 

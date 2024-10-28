@@ -19,15 +19,15 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="260" height="160" src="img/gallery/workshop23/lf_vortex_rings.png">](gallery.md#camier)
+      [<img class="d-block w-100" width="375" height="300" src="img/gallery/workshop24/conf-topopt.png">](gallery.md#schmidt)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2023 Visualization Contest Winner John Camier
+        2024 Visualization Contest Winner Mathias Schmidt
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="450" height="260" src="img/gallery/workshop23/excavator.png">](gallery.md#ebrahimi)
+      [<img class="d-block w-100" width="250" height="160" src="img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png">](gallery.md#nikl)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2023 Visualization Contest Winner Mehran Ebrahimi
+        2024 Visualization Contest Winner Jan Nikl
       </div>
     </div>
     <div class="item">
