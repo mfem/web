@@ -17,16 +17,62 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/brubeck.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Pablo Brubeck (University of Oxford)
+##### *FIAT: from basis functions to efficient finite element solvers*
+##### [**9am PDT, November 12, 2024**](https://everytimezone.com/s/855b32a4)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** The FInite element Automatic Tabulator (FIAT) is a powerful Python
+library for tabulating basis functions. In this talk, we present two major
+recent developments in FIAT.  First, we have extended the FIAT abstraction to
+natively support macroelements. Macroelements offer conforming discretizations
+with highly desirable properties, such as divergence-free vector fields, and
+divergence-conforming symmetric tensors with low-order polynomial
+degrees. Elements implemented include the Hsieh-Clough-Tocher macroelement for
+biharmonic problems, the divergence-free, H1-conforming, inf-sup stable
+Guzmán-Neilan macroelement for Stokes, and the Johnson-Mercier macroelement for
+strongly-symmetric, H(div)-conforming stresses in solid mechanics.  We also
+improved the performance of tabulation and quadrature for simplicial high-order
+elements, and introduced novel basis functions, leading to solvers with better
+complexity in polynomial degree.  Inspired by the fast diagonalization method,
+we define new degrees of freedom on simplices as moments against a
+numerically-computed orthogonal polynomial basis to decouple element interiors
+in the stiffness matrix. We exploit this decoupling in a domain decomposition
+method with vertex or edge subdomains on the interface degrees of freedom, and
+Jacobi relaxation for the interior degrees of freedom. This enables fast solvers
+for high-order discretizations of the Riesz maps of the spaces of the de Rham
+complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini).  For
+each case, we illustrate the performance gains with numerical examples in
+Firedrake.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/ridzal.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Denis Ridzal (Sandia National Laboratories)
 ##### *R-Adaptive Mesh Optimization to Enhance Finite Element Basis Compression*
-##### [**9am PDT, October 15, 2024**](https://everytimezone.com/s/a32301f2)
+##### October 15, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/ridzal.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Modern computing systems are capable of exascale calculations.
@@ -48,11 +94,6 @@ Lagrangian sequential quadratic programming algorithm to enable r-adaptive mesh
 optimization, with the goal of enhancing redundancies in the mesh. Numerical
 results demonstrate the effectiveness of the proposed methods to detect, exploit
 and enhance mesh structure on examples inspired by large-scale applications.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
 
 </div><div class="col-md-3" markdown="1">
 
@@ -884,9 +925,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
+<!--
 &nbsp;
 
 #### Pablo Brubeck (University of Oxford)
 ##### **November 12, 2024**
+--->
 
 </div>
