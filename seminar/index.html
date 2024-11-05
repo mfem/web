@@ -360,14 +360,53 @@
 <p>&nbsp;</p>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/brubeck.jpg" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="pablo-brubeck-university-of-oxford">Pablo Brubeck (University of Oxford)</h4>
+<h5 id="fiat-from-basis-functions-to-efficient-finite-element-solvers"><em>FIAT: from basis functions to efficient finite element solvers</em></h5>
+<h5 id="9am-pdt-november-12-2024"><a href="https://everytimezone.com/s/855b32a4"><strong>9am PDT, November 12, 2024</strong></a></h5>
+<p><a href=""><button type="button" class="btn btn-success">
+<strong>Webex</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> The FInite element Automatic Tabulator (FIAT) is a powerful Python
+library for tabulating basis functions. In this talk, we present two major
+recent developments in FIAT.  First, we have extended the FIAT abstraction to
+natively support macroelements. Macroelements offer conforming discretizations
+with highly desirable properties, such as divergence-free vector fields, and
+divergence-conforming symmetric tensors with low-order polynomial
+degrees. Elements implemented include the Hsieh-Clough-Tocher macroelement for
+biharmonic problems, the divergence-free, H1-conforming, inf-sup stable
+Guzmán-Neilan macroelement for Stokes, and the Johnson-Mercier macroelement for
+strongly-symmetric, H(div)-conforming stresses in solid mechanics.  We also
+improved the performance of tabulation and quadrature for simplicial high-order
+elements, and introduced novel basis functions, leading to solvers with better
+complexity in polynomial degree.  Inspired by the fast diagonalization method,
+we define new degrees of freedom on simplices as moments against a
+numerically-computed orthogonal polynomial basis to decouple element interiors
+in the stiffness matrix. We exploit this decoupling in a domain decomposition
+method with vertex or edge subdomains on the interface degrees of freedom, and
+Jacobi relaxation for the interior degrees of freedom. This enables fast solvers
+for high-order discretizations of the Riesz maps of the spaces of the de Rham
+complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini).  For
+each case, we illustrate the performance gains with numerical examples in
+Firedrake.</p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/ridzal.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="denis-ridzal-sandia-national-laboratories">Denis Ridzal (Sandia National Laboratories)</h4>
 <h5 id="r-adaptive-mesh-optimization-to-enhance-finite-element-basis-compression"><em>R-Adaptive Mesh Optimization to Enhance Finite Element Basis Compression</em></h5>
-<h5 id="9am-pdt-october-15-2024"><a href="https://everytimezone.com/s/a32301f2"><strong>9am PDT, October 15, 2024</strong></a></h5>
-<p><a href=""><button type="button" class="btn btn-success">
-<strong>Webex</strong>
+<h5 id="october-15-2024">October 15, 2024</h5>
+<p><a href="../pdf/seminar/ridzal.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href=""><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> Modern computing systems are capable of exascale calculations.
 While these systems continue to grow in processing power, the available system
@@ -388,8 +427,6 @@ Lagrangian sequential quadratic programming algorithm to enable r-adaptive mesh
 optimization, with the goal of enhancing redundancies in the mesh. Numerical
 results demonstrate the effectiveness of the proposed methods to detect, exploit
 and enhance mesh structure on examples inspired by large-scale applications.</p>
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/panozzo.jpg" /></p>
@@ -1097,9 +1134,13 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><strong>Abstract:</strong> Immersed/embedded/unfitted boundary methods obviate the need for continual re-meshing in many applications involving rapid prototyping and design. Unfortunately, many finite element embedded boundary methods are also difficult to implement due to the need to perform complex cell cutting operations at boundaries, and the consequences that these operations may have on the overall conditioning of the ensuing algebraic problems. We present a new, stable, and simple embedded boundary method, named "shifted boundary method" (SBM), which eliminates the need to perform cell cutting. Boundary conditions are imposed on a surrogate discrete boundary, lying on the interior of the true boundary interface. We then construct appropriate field extension operators, by way of Taylor expansions, with the purpose of preserving accuracy when imposing the boundary conditions. We demonstrate the SBM on large-scale solid and fracture mechanics problems; thermomechanics problems; porous media flow problems; incompressible flow problems governed by the Navier-Stokes equations (also including free surfaces); and problems governed by hyperbolic conservation laws.</p>
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
-<p>&nbsp;</p>
-<h4 id="pablo-brubeck-university-of-oxford">Pablo Brubeck (University of Oxford)</h4>
-<h5 id="november-12-2024"><strong>November 12, 2024</strong></h5>
+<!--
+&nbsp;
+
+#### Pablo Brubeck (University of Oxford)
+##### **November 12, 2024**
+--->
+
 </div></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
