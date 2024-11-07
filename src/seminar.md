@@ -12,9 +12,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
-
-&nbsp;
-
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/brubeck.jpg)
