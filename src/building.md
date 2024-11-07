@@ -239,3 +239,76 @@ git clone https://github.com/spack/spack.git
 cd spack
 ./bin/spack install -v mfem
 ```
+
+## Building MFEM with CMake
+To build a serial form of MFEM with CMake first create a build directory. For example, using a build directory named `build`:
+```sh 
+mkdir build 
+cd build 
+```
+
+Run the CMake configuration on the MFEM source directory.
+```sh 
+cmake ..
+```
+
+Run the build command associated with the CMake configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
+```sh 
+cmake --build . -j 4
+```
+### Parallel build using CMake
+To build a parallel form of MFEM with CMake first build METIS and Hypre as described above.
+From the MFEM source directory, create a build directory. For example, using a build directory named `build`:
+```sh 
+cd mfem-4.5
+mkdir build 
+cd build 
+```
+
+Run the CMake configuration on the MFEM source directory using the `MFEM_USE_MPI` CMake variable to enable MPI. 
+This will automatically search for the system MPI implementation, the METIS installation (in `<mfem-source-dir>/../metis-4.0`), and Hypre installation (in `<mfem-source-dir/../hypre`).
+```sh 
+cmake .. -DMFEM_USE_MPI=YES
+```
+Run the build command associated with the cmake configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
+```sh 
+cmake --build . -j 4
+```
+
+### Alternate configuration steps
+To build with CUDA:
+```sh 
+cmake .. -DMFEM_USE_CUDA=YES
+```
+Note that this requires CMake 3.8 or newer
+
+To build with METIS 5, after following the instructions to build METIS 5 above:
+```sh 
+cmake .. -DMFEM_USE_MPI=YES -DMFEM_USE_METIS_5=YES -DMETIS_DIR=../../metis-5.1.0
+```
+
+### Alternate build steps
+Different targets can be built with the --target flag in the build step 
+```sh 
+cmake --build . -j 4 --target <target-name>
+```
+To build the examples use the `examples` target (the executables will be in the `build/examples` directory).
+```sh
+cmake --build . -j 4 --target examples 
+```
+
+To quickly check if the code is succesfully built using example 1/1p use the `check` target.
+```sh
+cmake --build . -j 4 --target check 
+```
+
+To build the miniapps use the `miniapps` target
+```sh
+cmake --build . -j 4 --target miniapps 
+```
+
+To build everything use the `exec` target
+```sh
+cmake --build . -j 4 --target exec 
+```
+
