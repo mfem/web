@@ -2446,11 +2446,11 @@ function update()
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
    // nurbs miniapps
-   + showElement("nurbs_ex1", diffusion && nurbs && h1)
-   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
-   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
-   + showElement("nurbs_ex11", diffusion && nurbs)
-   + showElement("nurbs_ex24", nurbs && (hcurl || hdiv))
+   + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
+   + showElement("nurbs_ex3", maxwell && hcurl && nurbs && all4)
+   + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
+   + showElement("nurbs_ex11", diffusion && all2 && nurbs && all4)
+   + showElement("nurbs_ex24", all1 && (hcurl || hdiv) && nurbs && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
