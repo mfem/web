@@ -49,6 +49,11 @@ defined in a cylindrical or spherical coordinate system or even a
 non-coordinate basis. Any number of scalar fields which can be
 interpretted in any manner that may be required should be possible.
 
+Various derivatives of these vector fields can be constructed from the
+gradients of the scalar components. This provides a great deal of flexibility
+but care must be taken because these gradients are typically discontinuous at
+element interfaces. 
+
 The freedom afforded by this type of vector field construction can be
 very powerful but a looser construction utilizing `BlockVector` and
 `BlockOperator` classes may be preferable in some cases. Many such
@@ -122,11 +127,11 @@ solves involving "mass" matrices. In the following we will use this
 notation for the mass matrices of the four basis function families;
 $M_0$, $M_1$, $M_2$, and $M_3$.
 
-| Derivative | MFEM Class                            | Linear Algebra Notation | Full Operator            | Domain    | Range      |
-|------------|---------------------------------------|-------------------------|--------------------------|-----------|------------|
-| Gradient   | `MixedScalarWeakGradientIntegrator`   | $D_\{32}\, v= M_2\, dv$ | $\{M_2}^\{-1}\, D_\{32}$ | $v\in$ L2 | $dv\in$ RT |
-| Curl       | `MixedVectorWeakCurlIntegrator`       | $D_\{21}\, v= M_1\, dv$ | $\{M_1}^\{-1}\, D_\{21}$ | $v\in$ RT | $dv\in$ ND |
-| Divergence | `MixedVectorWeakDivergenceIntegrator` | $D_\{10}\, v= M_0\, dv$ | $\{M_0}^\{-1}\, D_\{10}$ | $v\in$ ND | $dv\in$ H1 |
+| Derivative | MFEM Class                            | Continuous Op. | Linear Algebra Notation | Full Operator            | Domain    | Range      |
+|------------|---------------------------------------|----------------|-------------------------|--------------------------|-----------|------------|
+| Gradient   | `MixedScalarWeakGradientIntegrator`   | $dv=\grad v$   | $M_2\, dv= D_\{32}\, v$ | $\{M_2}^\{-1}\, D_\{32}$ | $v\in$ L2 | $dv\in$ RT |
+| Curl       | `MixedVectorWeakCurlIntegrator`       | $dv = \curl v$ | $M_1\, dv= D_\{21}\, v$ | $\{M_1}^\{-1}\, D_\{21}$ | $v\in$ RT | $dv\in$ ND |
+| Divergence | `MixedVectorWeakDivergenceIntegrator` | $dv = \div v$  | $M_0\, dv= D_\{10}\, v$ | $\{M_0}^\{-1}\, D_\{10}$ | $v\in$ ND | $dv\in$ H1 |
 
 It is not [obvious](#bilinear-forms-and-discrete-interpolators) but
 these weak linear algebra operators are related to the discrete
@@ -148,7 +153,9 @@ $$\begin{align}
 
 In many applications the linear solves used to evaluate these weak
 operators can produce results which are only zero to solver tolerance
-rather than machine precision.
+rather than machine precision. However, with careful choices of discretization,
+these identities can still ensure conservation of quantities such as charge,
+mass, or energy to at least the level of solver tolerance.
 
 ### Enforcement of $\div\vec{F}=0$
 
@@ -182,7 +189,7 @@ the discrete equations where the following relations hold:
 $$
 \begin{align}
 \div\vec{E} \leadsto {M_0}^{-1}D_{10}E = {M_0}^{-1}\left(-\{T_\{01}}^T\, M_1\right)\left({M_1}(\sigma)^{-1}\{T_\{12}}^TM_2(\mu^{-1})B\right) \neq 0 \nonumber \\\\
-\div(\sigma\vec{E}) \leadsto {M_0}^{-1}D_{10}(\sigma)E = {M_0}^{-1}\left(-\{T_\{01}}^T\, M_1(\sigma)\right)\left({M_1}(\sigma)^{-1}\{T_\{12}}^TM_2(\mu^{-1})B\right) = 0 \nonumber
+\div(\sigma\vec{E}) \leadsto {M_0}^{-1}D_{10}(\sigma)E = {M_0}^{-1}\left(-\{T_\{01}}^T\, M_1(\sigma)\right)\left({M_1}(\sigma)^{-1}\{T_\{12}}^TM_2(\mu^{-1})B\right) = -{M_0}^{-1}\left(\{T_\{12}}\{T_\{01}}\right)^TM_2(\mu^{-1})B = 0 \nonumber
 \end{align} \nonumber
 $$
 
@@ -259,7 +266,7 @@ the RT space may be preferred (divergence cleaning may still be
 necessary for $J\in$ RT but this can often be done locally and
 maintain causality).
 
-### Bilinear Forms and Discrete Interpolators
+### Bilinear Forms and Discrete Interpolators (non-trivial details)
 
 Consider the `MixedVectorWeakDivergenceIntegrator` which computes the
 divergence of the product of a coefficient and a vector field,
@@ -317,6 +324,10 @@ $\lambda$. Other weak derivatives can be factored in a similar manner.
 
 
 ## Periodic Vector Fields
+
+MFEM's default mechanism for representing fields on periodic domains is to make use of topologically periodic meshes. For examples of how this is accomplished see [HowTo: Use periodic meshes](https://mfem.org/howto/periodic-boundaries). This scheme leads to discretizations which share a common set of degrees of freedom. In the vector field context scalar field components require more care to avoid non-intuitive results.
+
+
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']], processEscapes: true, processEnvironments: false}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
