@@ -3,7 +3,8 @@
 <h4>LLNL + Virtual</h4>
 
 **Speakers' slides** are linked in the agenda below. Watch the
-workshop presentations linked individually below and available on the [videos page](videos.md),
+[**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG0yTf7zZZ0o0_VAOG2Z4rSj) of
+workshop presentations (linked individually below and available on the [videos page](videos.md)),
 and view **contest submissions** in the [gallery](gallery.md).
 
 ![MFEM Logo](img/logo-300.png)
