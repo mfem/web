@@ -922,11 +922,9 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
-<!--
 &nbsp;
 
-#### Pablo Brubeck (University of Oxford)
-##### **November 12, 2024**
---->
+#### Stefan Turek (Technical University Dortmund)
+##### **March 11, 2025**
 
 </div>
