@@ -331,6 +331,8 @@
     
         <li class="main active"><a href="#mfem-videos">MFEM Videos</a></li>
         
+            <li><a href="#mfem-workshop-2024">MFEM Workshop 2024</a></li>
+        
             <li><a href="#femllnl-seminars">FEM@LLNL Seminars</a></li>
         
             <li><a href="#mfem-workshop-2023">MFEM Workshop 2023</a></li>
@@ -362,6 +364,72 @@
 
 <h1 id="mfem-videos">MFEM Videos</h1>
 <p>A collection of MFEM-related videos, including recorded talks from the MFEM workshops and conference presentations.</p>
+<div class="col-md-12">
+<h2 id="mfem-workshop-2024">MFEM Workshop 2024</h2>
+<hr />
+</div>
+<div class="col-md-6">
+<h4 id="aaron-fisher-llnl">Aaron Fisher  (LLNL)</h4>
+<h4 id="welcome-and-overview"><em>Welcome and Overview</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/NX_PNUCdf2w"><img src="https://img.youtube.com/vi/NX_PNUCdf2w/maxresdefault.jpg"></img></a></p>
+<p>Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.</p>
+<hr />
+<h4 id="tzanio-kolev-llnl">Tzanio Kolev (LLNL)</h4>
+<h4 id="the-state-of-mfem"><em>The State of MFEM</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_1"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://www.youtube.com/watch?v=uqjR-yr3ggs"><img src="../img/videos/uqjR-yr3ggs-1280x720.png"></img></a></p>
+<p>MFEM project lead Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities, examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features developed during 2024.</p>
+<hr />
+<h4 id="veselin-dobrev-llnl">Veselin Dobrev (LLNL)</h4>
+<h4 id="recent-developments"><em>Recent Developments</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_2"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/9ee8e9KXDuU"><img src="https://img.youtube.com/vi/9ee8e9KXDuU/maxresdefault.jpg"></img></a></p>
+<p>Veselin Dobrev of LLNL detailed the project’s recent developments including meshing and discretization improvements, GPU acceleration and partial/full assembly support, new examples and mini-apps, and more. He also highlighted functionality such as anisotropic refinement, conforming H1 spaces, square pyramid shaped elements, and hybridized discontinuous Galerkin solutions.</p>
+<hr />
+<h4 id="ketan-mittal-llnl">Ketan Mittal (LLNL)</h4>
+<h4 id="interpolation-at-arbitrary-points-in-high-order-meshes-on-gpus"><em>Interpolation at Arbitrary Points in High-Order Meshes on GPUs</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_3"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/jVQvPvgNr9I"><img src="https://img.youtube.com/vi/jVQvPvgNr9I/maxresdefault.jpg"></img></a></p>
+<p>Robust and scalable arbitrary point interpolation is required in the finite element method and spectral element method for querying the partial differential equation solution at points of interest in the domain, comparison of solution between different meshes, and Lagrangian particle tracking. This is a challenging problem, particularly for high-order unstructured meshes partitioned in parallel with MPI, as it requires identifying the element that overlaps a given point and computing the reference space coordinates inside the element corresponding to the point. We present a robust and efficient way to address this problem for large-scale high-order meshes. First, a combination of globally partitioned and processor-local maps are used to determine a list of candidate MPI ranks and element pairs that could contain the point. Next, element-wise bounding boxes are used to further narrow down the list of candidate elements. Finally, Newton's method with trust region-based approach is used to invert the affine map for the candidate elements and determine the reference space coordinates corresponding to the point. Since GPU-based architectures have demonstrated to accelerate computational analyses using meshes with tensor-product elements, specialized kernel have been developed to effect the arbitrary point search and interpolation on GPUs. We demonstrate the effectiveness of this approach using various high-order meshes.</p>
+<hr />
+<h4 id="michael-tupek-llnl">Michael Tupek (LLNL)</h4>
+<h4 id="automatic-parameter-sensitivities-in-serac-for-engineering-applications"><em>Automatic Parameter Sensitivities in Serac for Engineering Applications</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_4"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/KSQg-QE4Mpw"><img src="https://img.youtube.com/vi/KSQg-QE4Mpw/maxresdefault.jpg"></img></a></p>
+<p>We present a framework for automatically calculating sensitivities for both topology and shape design optimization workflows. Building on MFEM infrastructure, we provide abstractions for quickly specifying, solving, coupling, and differentiating new PDEs for engineering applications. Recent developments in Serac include: highly robust nonlinear solvers, integration of the Tribol library for contact enforcement, coupled thermal-mechanics, differentiable material model library, and checkpointing for transient adjoint calculations.</p>
+<hr />
+<h4 id="jan-nikl-llnl">Jan Nikl (LLNL)</h4>
+<h4 id="hybridization-of-convection-diffusion-systems-in-mfem"><em>Hybridization of Convection-Diffusion Systems in MFEM</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_5"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/xLe-zF-W994"><img src="https://img.youtube.com/vi/xLe-zF-W994/maxresdefault.jpg"></img></a></p>
+<p>Convection-diffusion systems are likely the most common class of partial differential equations appearing in practically all different applications. However, their mixed formulation typically suffers from prohibitively high computational costs and difficult preconditioning, especially close to the steady state where the system becomes a saddle point problem. The hybridization technique offers an appealing answer to these issues. The new framework for mixed systems enables single-line hybridization, reducing the problem to face traces of the total flux only. Solution of such system is then inexpensive, and preconditioning becomes nearly trivial. Non-linear convection is also supported with the action-based regime of operation. Description of the mechanism as well as code examples to show ease of usage are presented.</p>
+</div>
+<div class="col-md-6">
+<h4 id="vladimir-tomov-llnl">Vladimir Tomov (LLNL)</h4>
+<h4 id="miniapps-for-shock-hydro-field-remap-and-mesh-optimization"><em>Miniapps for Shock Hydro, Field Remap, and Mesh Optimization</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_6"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/EGFBm7A5S6o"><img src="https://img.youtube.com/vi/EGFBm7A5S6o/maxresdefault.jpg"></img></a></p>
+<p>This presentation discusses recent advancements, research, and exploratory work in the MFEM miniapps for shock hydrodynamics (Laghos), field remap (Remhos), and mesh optimization. For shock hydro, we present the implementation of slip wall boundary conditions for curved domains, along with research involving material interfaces using the shifted interface method or cut-element integration through Algoim and moments-based integration. In the field remap miniapp, we cover developments in stabilized remap for continuous fields, interface sharpening techniques, and matrix-free methods for GPU execution. Lastly, we explore recent progress in mesh optimization, including surface fitting and its GPU implementation, tangential relaxation, automatic differentiation (AD) for complex objective functionals, enhanced metric theory and quality metrics, and hpr-adaptivity for the mesh representation. While some of these advancements are public, general methods that can be applied across various practical miniapps, others are exploratory, demonstrating how the miniapps can serve as a starting point for research in specific areas.</p>
+<hr />
+<h4 id="dylan-copeland-llnl">Dylan Copeland (LLNL)</h4>
+<h4 id="sparse-approximate-quadrature-for-acceleration-of-isogeometric-analysis-roms"><em>Sparse, Approximate Quadrature for Acceleration of Isogeometric Analysis &amp; ROMs</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_7"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/rhd665deQvQ"><img src="https://img.youtube.com/vi/rhd665deQvQ/maxresdefault.jpg"></img></a></p>
+<p>Numerical integration for assembly of FEM systems typically employs quadrature rules selected for the polynomial order of basis functions in each element. In some cases, a much sparser rule can maintain accuracy. We present an algebraic method for constructing sparse rules, by formulating a constraint system of states required to be integrated accurately. A nonnegative least squares solver finds a sparse, approximate solution to this constraint system, yielding a quadrature rule with fewer points. One application we demonstrate is isogeometric analysis, where a NURBS FEM space is defined on patches consisting of many elements. Setup times are greatly accelerated, by using patch-wise integration with sum factorization and reduced quadrature rules constructed on patches. Another area of application is reduced order models (ROM), where the FEM system is restricted to a reduced POD basis formed from training data. Instead of hyper-reduction methods such as DEIM, the empirical quadrature procedure (EQP) can be used to accelerate ROM simulations with a sparse quadrature rule in the reduced subspace. We demonstrate this on several benchmark problems in the Laghos miniapp and show that energy conservation is maintained.</p>
+<hr />
+<h4 id="mathias-schmidt-llnl">Mathias Schmidt (LLNL)</h4>
+<h4 id="level-set-topology-optimization-with-pde-generated-conformal-meshes"><em>Level-Set Topology Optimization with PDE Generated Conformal Meshes</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_8"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/q3qCPVLJXn0"><img src="https://img.youtube.com/vi/q3qCPVLJXn0/maxresdefault.jpg"></img></a></p>
+<p>The promise of topology optimization (TO) is to provide engineers with a systematic computational tool to support the development of optimal designs. A shortcoming of classic density based multi-material TO designs is the nebulous interphase region between materials, which leads to inaccurate response predictions in these very regions. In contrast, designs based on boundary and interface regions, rather than interphase regions, yield accurate response predictions. Level-set based TO is an example of such; however, the analysis of the response often requires repeated mesh generation or non-standard finite element computations. We present a solely PDE-based, level-set topology optimization approach in which geometries are described through the iso-contour of one or multiple level-set fields which are discretized over a mesh. The nodal heights serve as the design parameters. The governing field equations are discretized by a conformal discretization over a separate “analysis” mesh. In the optimization, the “analysis” mesh is morphed such that its boundary and interfaces conform with the isocontours of the LS fields. The mesh morphing is performed using the Target-Matrix Optimization Paradigm (TMOP) approach. Our TMOP formulation is a PDE-based mesh morphing operation which aims to improve the interface conformity while preserving mesh quality. Design sensitivities of the optimization cost and constraint functions with respect to all design level-set fields are computed through an adjoint approach which accounts for the mesh morphing process. The proposed analysis and optimization framework is based on MFEM, a free, lightweight, scalable C++ library for finite element methods which supports the optimization of large-scale problems. We investigate the robustness of the proposed optimization methodology by solving two- and three-dimensional multi-material optimization problems involving linear diffusion and elasticity. We discuss the advantages and challenges of our approach with regards to the mesh morphing process. LS regularization techniques are employed to produce a well-behaved mesh morphing problem throughout the optimization. Finally, select aspects and challenges of our approach with respect to parallel computing and processor decomposition are discussed.</p>
+<hr />
+<h4 id="yohann-dudouit-llnl">Yohann Dudouit (LLNL)</h4>
+<h4 id="mitigating-rays-effect-in-phase-space-advection-with-matrix-free-hd-dg-methods"><em>Mitigating Rays-Effect in Phase-Space Advection with Matrix-Free HD DG Methods</em></h4>
+<h5 id="october-22-24-2024-mfem-workshop-2024_9"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
+<p><a class="youtube" href="https://youtu.be/mC3tIq56FXU"><img src="https://img.youtube.com/vi/mC3tIq56FXU/maxresdefault.jpg"></img></a></p>
+<p>The mitigation of the rays-effect in phase-space advection problems is a critical challenge in deterministic transport simulations, particularly when using traditional methods that struggle with numerical artifacts. In this work, we propose a novel high-dimensional matrix-free discontinuous Galerkin (DG) approach designed to address the rays-effect by fully discretizing phase space, including velocity components, up to six dimensions. This methodology avoids the excessive computational cost associated with Monte Carlo simulations while offering a deterministic alternative that preserves accuracy and scalability. A key component of our approach is the use of advanced coordinate transformations, which optimize the coordinate system to minimize the rays-effect by aligning the coordinate system with the net flux. Our matrix-free formulation minimizes memory usage and improves computational efficiency by avoiding the assembly of large sparse matrices, a critical factor when scaling to high-dimensional problems. Numerical experiments demonstrate the effectiveness of this approach in reducing rays-effect artifacts, providing a robust and scalable solution for high-dimensional transport problems.</p>
+</div>
 <div class="col-md-12">
 <h2 id="femllnl-seminars">FEM@LLNL Seminars</h2>
 <hr />
@@ -639,45 +707,45 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="aaron-fisher-llnl">Aaron Fisher (LLNL)</h4>
-<h4 id="welcome-and-overview"><em>Welcome and Overview</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h4 id="aaron-fisher-llnl_1">Aaron Fisher (LLNL)</h4>
+<h4 id="welcome-and-overview_1"><em>Welcome and Overview</em></h4>
+<h5 id="october-26-2023-mfem-workshop-2023"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=wgx0e8mdKu8"><img src="https://img.youtube.com/vi/wgx0e8mdKu8/maxresdefault.jpg"></img></a></p>
 <p>Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl">Tzanio Kolev (LLNL)</h4>
-<h4 id="the-state-of-mfem"><em>The State of MFEM</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_1"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h4 id="tzanio-kolev-llnl_1">Tzanio Kolev (LLNL)</h4>
+<h4 id="the-state-of-mfem_1"><em>The State of MFEM</em></h4>
+<h5 id="october-26-2023-mfem-workshop-2023_1"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=95OJe5DjjkA"><img src="https://img.youtube.com/vi/95OJe5DjjkA/maxresdefault.jpg"></img></a></p>
 <p>MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.</p>
 <hr />
-<h4 id="veselin-dobrev-llnl">Veselin Dobrev (LLNL)</h4>
-<h4 id="recent-developments"><em>Recent Developments</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_2"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h4 id="veselin-dobrev-llnl_1">Veselin Dobrev (LLNL)</h4>
+<h4 id="recent-developments_1"><em>Recent Developments</em></h4>
+<h5 id="october-26-2023-mfem-workshop-2023_2"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=1FCP0T5oIeE"><img src="https://img.youtube.com/vi/1FCP0T5oIeE/maxresdefault.jpg"></img></a></p>
 <p>Veselin Dobrev of LLNL detailed the project’s recent developments including sub-mesh extraction, linear form assembly on GPUs, coefficient evaluation on GPUs, new mini-apps and examples, Windows 2022 CI testing on GitHub, and more. He also summarized MFEM’s integrations with other software libraries and the team’s engagements with the Extreme-scale Scientific Software Development Kit, SciDAC, and the FASTMath Institute.</p>
 <hr />
 <h4 id="sebastian-grimberg-aws">Sebastian Grimberg (AWS)</h4>
 <h4 id="palace-parallel-large-scale-computational-electromagnetics"><em>Palace: PArallel LArge-scale Computational Electromagnetics</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_3"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_3"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=jSuFUdLc8i0"><img src="https://img.youtube.com/vi/jSuFUdLc8i0/maxresdefault.jpg"></img></a></p>
 <p>Palace is a parallel finite element code for full-wave electromagnetics simulations based on the MFEM library. Palace is used at the AWS Center for Quantum Computing to perform large-scale 3D simulations of complex electromagnetics models and enable the design of quantum computing hardware. Grimberg provided an overview of the simulation capabilities of Palace as well as some recent developments for conforming and nonconforming adaptive mesh refinement, operator partial assembly, and GPU support.</p>
 <hr />
 <h4 id="jacob-lotz-delft-university-of-technology">Jacob Lotz (Delft University of Technology)</h4>
 <h4 id="computation-and-reduced-order-modelling-of-periodic-flows"><em>Computation and Reduced Order Modelling of Periodic Flows</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_4"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_4"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=lNIXeirM6Gg"><img src="https://img.youtube.com/vi/lNIXeirM6Gg/maxresdefault.jpg"></img></a></p>
 <p>Many types of periodic flows can be found in nature and industrial applications and their computation is expensive due to lengthy time simulations. His work aims to reduce the cost of these computations. His team solves periodic flows in a space-time domain in which both ends in time are periodic such that they only have to model one period. MFEM is used to discretize the space-time domain and solve our discretized system of equations. Lotz applies a hyper-reduced Proper Orthogonal Decomposition Galerkin reduced order model to speed up our computations. During the presentation he showed (results of) their full order model and their advances in reduced order modelling.</p>
 <hr />
 <h4 id="boyan-lazarov-llnl">Boyan Lazarov (LLNL)</h4>
 <h4 id="scalable-design-and-optimization-with-mfem"><em>Scalable Design and Optimization with MFEM</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_5"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_5"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=7W8OCl5MLfw"><img src="https://img.youtube.com/vi/7W8OCl5MLfw/maxresdefault.jpg"></img></a></p>
 <p>Lazarov discussed recently added and ongoing code development facilitating the solution of shape and topology optimization problems. Both topology and shape optimization are gradient-based iterative algorithms aiming to find a material distribution that minimizes an objective and fulfills a set of constraints. Every optimization step includes a solution to a forward optimization problem, an evaluation of the objective and constraints, a solution to an adjoint problem associated with every objective or constraint, an evaluation of gradients, and an update of the design based on mathematical programming techniques. All these steps can be easily implemented and executed by using MFEM in a scalable manner, allowing the design and optimization of large-scale realistic industrial problems. Thus, the goal is to exemplify these features, highlight the techniques that simplify the implementation of new problems, and provide a glimpse into the future.</p>
 <hr />
 <h4 id="student-lightning-talks">Student Lightning Talks</h4>
 <h4 id="part-1"><em>Part 1</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_6"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_6"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=c8WVPnTpvtI"><img src="https://img.youtube.com/vi/c8WVPnTpvtI/maxresdefault.jpg"></img></a></p>
 <p>The following four students presented in this video:</p>
 <ul>
@@ -689,7 +757,7 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 <h4 id="student-lightning-talks_1">Student Lightning Talks</h4>
 <h4 id="part-2"><em>Part 2</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_7"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_7"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=Gp88u3Eql2Y"><img src="https://img.youtube.com/vi/Gp88u3Eql2Y/maxresdefault.jpg"></img></a></p>
 <p>The following four students presented in this video:</p>
 <ul>
@@ -702,43 +770,43 @@ This talk will present our recent advances towards the development of computatio
 <div class="col-md-6">
 <h4 id="syunichi-shiraiwa-pppl">Syun'ichi Shiraiwa (PPPL)</h4>
 <h4 id="radio-frequency-wave-simulation-in-hot-magnetized-plasma-using-differential-operator-for-non-local-conductivity-response"><em>Radio-Frequency Wave Simulation in Hot Magnetized Plasma using Differential Operator for Non-Local Conductivity Response</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_8"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_8"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=feUk70vXB7k"><img src="https://img.youtube.com/vi/feUk70vXB7k/maxresdefault.jpg"></img></a></p>
 <p>In high-temperature plasmas, the dielectric response to the RF fields is caused by freely moving charged particles, which naturally makes such a response non-local and correspondingly, the Maxwell wave problem becomes an integro-differential equation. A differential form of dielectric operator, based on the small k⊥ρ expansion, is widely used. However, they typically includes up-to the second order terms, and thus the use of such an operator is limited to the waves that satisfy k⊥ρ &lt; 1. We propose an alternative approach to construct a dielectric operator, which includes all-order finite Larmor radius effects without explicitly containing higher order derivatives. We use a rational approximation of the plasma dielectric tensor in the wave number space, in order to yield a differential operator acting on the dielectric current (J). The 1D O-X-B mode-conversion of the electron Bernstein wave in the non-relativistic Maxwellian plasma was modeled using this approach. An agreement with analytic calculation and the conservation of wave energy carried by the Poynting flux and electron thermal motion (“sloshing”) is found. The connection between our construction method and superposition of Green’s function for these screened Poisson’s equations is presented. An approach to extend the operator in a multi-dimensional setting will also be discussed.</p>
 <hr />
 <h4 id="tamas-horvath-oakland-university_1">Tamas Horvath (Oakland University)</h4>
 <h4 id="implementation-of-hybridizable-discontinuous-galerkin-methods-via-the-hdg-branch"><em>Implementation of Hybridizable Discontinuous Galerkin Methods via the HDG Branch</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_9"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_9"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=cajYzhxBDkw"><img src="https://img.youtube.com/vi/cajYzhxBDkw/maxresdefault.jpg"></img></a></p>
 <p>Horvath presented the HDG branch, which was initially developed for HDG discretizations of advection-diffusion problems. Recent updates have made the branch highly adaptable for various applications, allowing a flexible implementation of HDG for many different PDEs. He showcased these enhancements and provide insights into their versatile usage across different problems.</p>
 <hr />
-<h4 id="yohann-dudouit-llnl">Yohann Dudouit (LLNL)</h4>
+<h4 id="yohann-dudouit-llnl_1">Yohann Dudouit (LLNL)</h4>
 <h4 id="empowering-mfem-using-libceed"><em>Empowering MFEM Using libCEED</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_10"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_10"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=32JWerSEQyA"><img src="https://img.youtube.com/vi/32JWerSEQyA/maxresdefault.jpg"></img></a></p>
 <p>Dudouit began with an overview of the features introduced to MFEM through the integration of libCEED. He emphasized capabilities that are distinct from native MFEM functionalities, marking an enhancement in the software’s suite of tools, such as support for simplices, handling of mixed meshes, and support for p-adaptivity. The presentation concluded by showcasing benchmarks for various problems executed on different HPC architectures, illustrating the performance gains and efficiencies achieved through the libCEED integration.</p>
 <hr />
 <h4 id="zhang-chunyu-sun-yat-sen-university">Zhang Chunyu (Sun Yat-Sen University)</h4>
 <h4 id="homogenized-energy-theory-for-solution-of-elasticity-problems-with-consideration-of-higher-order-microscopic-deformations"><em>Homogenized Energy Theory for Solution of Elasticity Problems with Consideration of Higher-Order Microscopic Deformations</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_11"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_11"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=Ic5bujKlHh4"><img src="https://img.youtube.com/vi/Ic5bujKlHh4/maxresdefault.jpg"></img></a></p>
 <p>The classical continuum mechanics faces difficulties in solving problems involving highly inhomogeneous deformations. The proposed theory investigates the impact of high-order microscopic deformation on modeling of material behaviors and provides a refined interpretation of strain gradients through the averaged strain energy density. Only one scale parameter, i.e., the size of the Representative Volume Element(RVE), is required by the proposed theory. By employing the variational approach and the Augmented Lagrangian Method(ALM), the governing equations for deformation as well as the numerical solution procedure are derived. It is demonstrated that the homogenized energy theory offers plausible explanations and reasonable predictions for the problems yet unsolved by the classical theory such as the size effect of deformation and the stress singularity at the crack tip. The concept of averaged strain energy proves to be more suitable for describing the intricate mechanical behavior of materials. And high order partial differential equations can be effectively solved by the ALM by introducing supplementary variables to lower the highest order of the equations.</p>
 <hr />
 <h4 id="eric-chin-llnl">Eric Chin (LLNL)</h4>
 <h4 id="contact-constraint-enforcement-using-the-tribol-interface-physics-library"><em>Contact Constraint Enforcement Using the Tribol Interface Physics Library</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_12"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_12"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=OCurPCdTcno"><img src="https://img.youtube.com/vi/OCurPCdTcno/maxresdefault.jpg"></img></a></p>
 <p>Chin discussed recent additions to the Tribol interface physics library to simplify MPI parallel contact constraint enforcement in large deformation, implicit and explicit continuum solid mechanics simulations using MFEM. <a href="https://github.com/LLNL/Tribol">Tribol</a> is an open-source software package available on GitHub and includes tools for contact detection, state-of-the-art Lagrangian contact methods such as common plane and mortar, and various enforcement techniques such as penalty and Lagrange multiplier. Additionally, Tribol recently added a domain redecomposer for coalescing proximal contact pairs on a single rank. Tribol’s features are designed to interact seamlessly with MFEM and other codes that use MFEM, with native support for MFEM data structures such as ParMesh, ParGridFunction, and HypreParMatrix. Chin highlighted the simplicity of adding Tribol features to an MFEM-based code by looking at integration with <a href="https://github.com/LLNL/serac">Serac</a>, an open-source implicit nonlinear thermal-structural simulation code.</p>
 <hr />
 <h4 id="milan-holec-llnl">Milan Holec (LLNL)</h4>
 <h4 id="deterministic-transport-mfem-miniapp"><em>Deterministic Transport MFEM-Miniapp</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_13"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_13"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=Ijqv0v3zSQU"><img src="https://img.youtube.com/vi/Ijqv0v3zSQU/maxresdefault.jpg"></img></a></p>
 <p>Holec introduced a new multidimensional discretization in MFEM enabling efficient high-order phase-space simulations of various types of Boltzmann transport. In terms of a generalized form of the standard discrete ordinate SN method for the phase-space, his team carefully designs discrete analogs obeying important continuous properties such as conservation of energy, preservation of positivity, preservation of the diffusion limit of transport, preservation of symmetry leading to rays-effect mitigation, and other laws of physics. Finally, Holec showed how to apply this new phase-space MFEM feature to increase the fidelity of modeling of fusion energy experiments.</p>
 <hr />
-<h4 id="aaron-fisher-llnl_1">Aaron Fisher (LLNL)</h4>
+<h4 id="aaron-fisher-llnl_2">Aaron Fisher (LLNL)</h4>
 <h4 id="wrap-up-and-visualization-contest-winners"><em>Wrap-Up and Visualization Contest Winners</em></h4>
-<h5 id="october-26-2023-mfem-workshop-2023_14"><strong>October 26, 2023</strong> | <a href="../workshop/">MFEM Workshop 2023</a></h5>
+<h5 id="october-26-2023-mfem-workshop-2023_14"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=DfqH7n1Sekg"><img src="https://img.youtube.com/vi/DfqH7n1Sekg/maxresdefault.jpg"></img></a></p>
 <p>The workshop concluded with the announcement of winners of the simulation and visualization contest: (1) displacement distribution of a loaded excavator arm under static equilibrium, rendered by Mehran Ebrahimi from Autodesk Research; and (2) leapfrogging vortex rings based on an MFEM incompressible Schrödinger fluid solver, rendered by John Camier from LLNL. Contest winners are featured in the <a href="../gallery/">gallery</a>.</p>
 </div>
@@ -748,7 +816,7 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="tzanio-kolev-llnl_1">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_2">Tzanio Kolev (LLNL)</h4>
 <h4 id="pde-simulations-on-unstructured-grids-with-finite-element-discretizations"><em>PDE Simulations on Unstructured Grids with Finite Element Discretizations</em></h4>
 <h5 id="march-15-2023-ipam-at-ucla"><strong>March 15, 2023</strong> | <a href="https://www.ipam.ucla.edu/programs/long-programs/new-mathematics-for-the-exascale-applications-to-materials-science/">IPAM at UCLA</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=lJl1_LkyU1g"><img src="https://img.youtube.com/vi/lJl1_LkyU1g/maxresdefault.jpg"></img></a></p>
@@ -759,19 +827,19 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="aaron-fisher-llnl_2">Aaron Fisher (LLNL)</h4>
-<h4 id="welcome-and-overview_1"><em>Welcome and Overview</em></h4>
+<h4 id="aaron-fisher-llnl_3">Aaron Fisher (LLNL)</h4>
+<h4 id="welcome-and-overview_2"><em>Welcome and Overview</em></h4>
 <h5 id="october-25-2022-mfem-workshop-2022"><strong>October 25, 2022</strong> | <a href="../workshop22/">MFEM Workshop 2022</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=vaAA9zB1IQ8"><img src="https://img.youtube.com/vi/vaAA9zB1IQ8/maxresdefault.jpg"></img></a></p>
 <p>Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&amp;A session, and a visualization contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_2">Tzanio Kolev (LLNL)</h4>
-<h4 id="the-state-of-mfem_1"><em>The State of MFEM</em></h4>
+<h4 id="tzanio-kolev-llnl_3">Tzanio Kolev (LLNL)</h4>
+<h4 id="the-state-of-mfem_2"><em>The State of MFEM</em></h4>
 <h5 id="october-25-2022-mfem-workshop-2022_1"><strong>October 25, 2022</strong> | <a href="../workshop22/">MFEM Workshop 2022</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=I4pLPBYFR8o"><img src="https://img.youtube.com/vi/I4pLPBYFR8o/maxresdefault.jpg"></img></a></p>
 <p>MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities (including adaptive mesh refinement, GPU support, and FEM operator decomposition and partial assembly), examples, and mini-apps. Kolev also highlighted the growth of the global community as well as features included in the recent v4.5 software release.</p>
 <hr />
-<h4 id="veselin-dobrev-llnl_1">Veselin Dobrev (LLNL)</h4>
+<h4 id="veselin-dobrev-llnl_2">Veselin Dobrev (LLNL)</h4>
 <h4 id="recent-developments-in-mfem"><em>Recent Developments in MFEM</em></h4>
 <h5 id="october-25-2022-mfem-workshop-2022_2"><strong>October 25, 2022</strong> | <a href="../workshop22/">MFEM Workshop 2022</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=pZQP0Q4SbWU"><img src="https://img.youtube.com/vi/pZQP0Q4SbWU/maxresdefault.jpg"></img></a></p>
@@ -856,7 +924,7 @@ This talk will present our recent advances towards the development of computatio
 <p><a class="youtube" href="https://www.youtube.com/watch?v=tsr6vza_7DM"><img src="https://img.youtube.com/vi/tsr6vza_7DM/maxresdefault.jpg"></img></a></p>
 <p>In this tutorial, Julian Andrej of LLNL demonstrated how to use MFEM in the cloud (e.g., an Amazon Web Services instance) for scalable finite element discretization application development. Step-by-step instructions for the tutorial can be found on the <a href="https://mfem.org/tutorial/">tutorial page</a>.</p>
 <hr />
-<h4 id="aaron-fisher-llnl_3">Aaron Fisher (LLNL)</h4>
+<h4 id="aaron-fisher-llnl_4">Aaron Fisher (LLNL)</h4>
 <h4 id="wrap-up-and-simulation-contest-winners"><em>Wrap-Up and Simulation Contest Winners</em></h4>
 <h5 id="october-25-2022-mfem-workshop-2022_16"><strong>October 25, 2022</strong> | <a href="../workshop22/">MFEM Workshop 2022</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=7uExaQm8Dmk"><img src="https://img.youtube.com/vi/7uExaQm8Dmk/maxresdefault.jpg"></img></a></p>
@@ -867,7 +935,7 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="vladimir-tomov-llnl">Vladimir Tomov (LLNL)</h4>
+<h4 id="vladimir-tomov-llnl_1">Vladimir Tomov (LLNL)</h4>
 <h4 id="finite-element-algorithms-and-research-topics-in-ale-hydrodynamics"><em>Finite Element Algorithms and Research Topics in ALE Hydrodynamics</em></h4>
 <h5 id="november-17-2022-texas-am-university-corpus-christi-department-of-math-statistics"><strong>November 17, 2022</strong> | <a href="https://www.tamucc.edu/science/departments/math-and-statistics/index.php">Texas A&amp;M University-Corpus Christi Department of Math &amp; Statistics</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=WrV_rB4pAnE"><img src="https://img.youtube.com/vi/WrV_rB4pAnE/maxresdefault.jpg"></img></a></p>
@@ -885,7 +953,7 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="aaron-fisher-llnl_4">Aaron Fisher (LLNL)</h4>
+<h4 id="aaron-fisher-llnl_5">Aaron Fisher (LLNL)</h4>
 <h4 id="wrap-up-and-simulation-contest-winners_1"><em>Wrap-Up and Simulation Contest Winners</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=9WViLXI7wx4"><img src="https://img.youtube.com/vi/9WViLXI7wx4/maxresdefault.jpg"></img></a></p>
@@ -897,7 +965,7 @@ This talk will present our recent advances towards the development of computatio
 <p><a class="youtube" href="https://www.youtube.com/watch?v=d6Ic9itl21g"><img src="https://img.youtube.com/vi/d6Ic9itl21g/maxresdefault.jpg"></img></a></p>
 <p>For users unfamiliar with MFEM’s solver library, Will Pazner of LLNL demonstrated a few ways—in some cases adding just a single line of code—to run scalable solvers for differential equations. These solvers execute hierarchical finite element discretizations for both low- and high-order problems.</p>
 <hr />
-<h4 id="vladimir-tomov-llnl_1">Vladimir Tomov (LLNL)</h4>
+<h4 id="vladimir-tomov-llnl_2">Vladimir Tomov (LLNL)</h4>
 <h4 id="mfem-capabilities-for-high-order-mesh-optimization"><em>MFEM Capabilities for High-Order Mesh Optimization</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_2"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=c-VcclDfT7Y"><img src="https://img.youtube.com/vi/c-VcclDfT7Y/maxresdefault.jpg"></img></a></p>
@@ -965,20 +1033,20 @@ This talk will present our recent advances towards the development of computatio
 <p><a class="youtube" href="https://www.youtube.com/watch?v=EHUID3fnHwU"><img src="https://img.youtube.com/vi/EHUID3fnHwU/maxresdefault.jpg"></img></a></p>
 <p>Jamie Bramwell of LLNL presented an overview of the open-source <a href="https://serac.readthedocs.io/en/latest">Serac project</a>, whose goal is to provide user-friendly abstractions and modules that enable rapid development of complex nonlinear multiphysics simulation codes. She provided an overview of both the high-level physics modules (thermal conduction, solid mechanics, incompressible flow, electromagnetics) as well as the serac::Functional framework for quickly developing nonlinear GPU-enabled finite element method kernels.</p>
 <hr />
-<h4 id="veselin-dobrev-llnl_2">Veselin Dobrev (LLNL)</h4>
+<h4 id="veselin-dobrev-llnl_3">Veselin Dobrev (LLNL)</h4>
 <h4 id="recent-developments-in-mfem_1"><em>Recent Developments in MFEM</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_13"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=oUk6tkHWjI4"><img src="https://img.youtube.com/vi/oUk6tkHWjI4/maxresdefault.jpg"></img></a></p>
 <p>Veselin Dobrev of LLNL detailed the project’s recent developments including memory manager improvements; serial support for p- and hp-refinement; high-order/low-order refined solution transfer; GLVis visualization via Jupyter Notebooks; and additional GPU support regarding HYPRE preconditioners, PETSc tools, and mesh optimization. MFEM now also integrates with various new libraries (AmgX, Gingko, FMS, and others), and continuous integration testing has been conducted on LLNL’s Quartz, Lassen, and Corona machines. Additionally, Dobrev summarized MFEM’s integrations with other software libraries and the team’s engagements with the Exascale Computing Project, SciDAC, the FASTMath Institute, and other projects.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_3">Tzanio Kolev (LLNL)</h4>
-<h4 id="the-state-of-mfem_2"><em>The State of MFEM</em></h4>
+<h4 id="tzanio-kolev-llnl_4">Tzanio Kolev (LLNL)</h4>
+<h4 id="the-state-of-mfem_3"><em>The State of MFEM</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_14"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=p4u4AlUhamY"><img src="https://img.youtube.com/vi/p4u4AlUhamY/maxresdefault.jpg"></img></a></p>
 <p>MFEM principal investigator Tzanio Kolev described the project’s past, present, and future with an emphasis on its key capabilities of discretization algorithms, built-in solvers, parallel scalability, adaptive mesh refinement, and support for a range of computing architectures. Kolev also highlighted the global community’s contributions as well as features included in the recent v4.3 software release.</p>
 <hr />
-<h4 id="aaron-fisher-llnl_5">Aaron Fisher (LLNL)</h4>
-<h4 id="welcome-and-overview_2"><em>Welcome and Overview</em></h4>
+<h4 id="aaron-fisher-llnl_6">Aaron Fisher (LLNL)</h4>
+<h4 id="welcome-and-overview_3"><em>Welcome and Overview</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_15"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=534cBuede4w"><img src="https://img.youtube.com/vi/534cBuede4w/maxresdefault.jpg"></img></a></p>
 <p>The MFEM community workshop held virtually on October 20, 2021, brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, collaborative breakout sessions, and a simulation contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.</p>
@@ -988,7 +1056,7 @@ This talk will present our recent advances towards the development of computatio
 <hr />
 </div>
 <div class="col-md-6">
-<h4 id="tzanio-kolev-llnl_4">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_5">Tzanio Kolev (LLNL)</h4>
 <h4 id="efficient-finite-element-discretizations-for-exascale-applications"><em>Efficient Finite Element Discretizations for Exascale Applications</em></h4>
 <h5 id="february-25-2021-excalibur-sle-3-workshop"><strong>February 25, 2021</strong> | <a href="https://excalibur-sle.github.io/">ExCALIBUR SLE 3 workshop</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=lsBSctsSMFY"><img src="../img/videos/lsBSctsSMFY-1280x720.png"></img></a></p>
@@ -1050,6 +1118,8 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#mfem-videos">MFEM Videos</a></li>
+        
+            <li><a href="#mfem-workshop-2024">MFEM Workshop 2024</a></li>
         
             <li><a href="#femllnl-seminars">FEM@LLNL Seminars</a></li>
         
