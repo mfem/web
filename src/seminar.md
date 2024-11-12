@@ -14,16 +14,40 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/empty.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### TBD
+##### *TBD*
+##### [**9am PDT**](https://everytimezone.com)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/brubeck.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Pablo Brubeck (University of Oxford)
 ##### *FIAT: from basis functions to efficient finite element solvers*
-##### [**9am PDT, November 12, 2024**](https://everytimezone.com/s/855b32a4)
+##### November 12, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/brubeck.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The FInite element Automatic Tabulator (FIAT) is a powerful Python
@@ -48,11 +72,6 @@ for high-order discretizations of the Riesz maps of the spaces of the de Rham
 complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini).  For
 each case, we illustrate the performance gains with numerical examples in
 Firedrake.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
 
 </div><div class="col-md-3" markdown="1">
 
