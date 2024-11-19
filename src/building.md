@@ -284,7 +284,17 @@ To specify what CUDA architecture to target:
 ```sh
 cmake .. -DCUDA_ARCH="sm_70"
 ```
-The CUDA architecture is formatted as `sm_{CC}`, where CC is the GPU compute capability of the target GPU without the decimal point. A list of Nvidia GPU compute capabilities can be found in [the Nividia developers documentation](https://developer.nvidia.com/cuda-gpus).
+The CUDA architecture is formatted as `sm_{CC}`, or just `{CC}`, where CC is the GPU compute capability of the target GPU without the decimal point. A list of Nvidia GPU compute capabilities can be found in [the Nividia developers documentation](https://developer.nvidia.com/cuda-gpus). Multiple CUDA architectures can be targeted with a comma or semicolon separated list.
+```sh 
+cmake .. -DCUDA_ARCH="{ARCH1},{ARCH2},{ARCH3}"
+```
+or 
+```sh
+cmake .. -DCUDA_ARCH="{ARCH1};{ARCH2};{ARCH3}"
+```
+Other accepted architecture identifies are `"all"` which targets all CUDA architectures,
+`"all-major"` which targets all major versions `sm_{*0}`, and `"native"` which targets the visible GPUs on the system. 
+
 To build with METIS 5, after following the instructions to build METIS 5 above:
 ```sh 
 cmake .. -DMFEM_USE_MPI=YES -DMFEM_USE_METIS_5=YES -DMETIS_DIR=../../metis-5.1.0
