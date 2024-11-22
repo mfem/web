@@ -68,7 +68,7 @@ We present a framework for automatically calculating sensitivities for both topo
 
 Convection-diffusion systems are likely the most common class of partial differential equations appearing in practically all different applications. However, their mixed formulation typically suffers from prohibitively high computational costs and difficult preconditioning, especially close to the steady state where the system becomes a saddle point problem. The hybridization technique offers an appealing answer to these issues. The new framework for mixed systems enables single-line hybridization, reducing the problem to face traces of the total flux only. Solution of such system is then inexpensive, and preconditioning becomes nearly trivial. Non-linear convection is also supported with the action-based regime of operation. Description of the mechanism as well as code examples to show ease of usage are presented.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Vladimir Tomov (LLNL)
 #### *Miniapps for Shock Hydro, Field Remap, and Mesh Optimization*
@@ -78,7 +78,7 @@ Convection-diffusion systems are likely the most common class of partial differe
 
 This presentation discusses recent advancements, research, and exploratory work in the MFEM miniapps for shock hydrodynamics (Laghos), field remap (Remhos), and mesh optimization. For shock hydro, we present the implementation of slip wall boundary conditions for curved domains, along with research involving material interfaces using the shifted interface method or cut-element integration through Algoim and moments-based integration. In the field remap miniapp, we cover developments in stabilized remap for continuous fields, interface sharpening techniques, and matrix-free methods for GPU execution. Lastly, we explore recent progress in mesh optimization, including surface fitting and its GPU implementation, tangential relaxation, automatic differentiation (AD) for complex objective functionals, enhanced metric theory and quality metrics, and hpr-adaptivity for the mesh representation. While some of these advancements are public, general methods that can be applied across various practical miniapps, others are exploratory, demonstrating how the miniapps can serve as a starting point for research in specific areas.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Dylan Copeland (LLNL)
 #### *Sparse, Approximate Quadrature for Acceleration of Isogeometric Analysis & ROMs*
@@ -87,6 +87,16 @@ This presentation discusses recent advancements, research, and exploratory work 
 <a class="youtube" href="https://youtu.be/rhd665deQvQ"><img src="https://img.youtube.com/vi/rhd665deQvQ/maxresdefault.jpg"></img></a>
 
 Numerical integration for assembly of FEM systems typically employs quadrature rules selected for the polynomial order of basis functions in each element. In some cases, a much sparser rule can maintain accuracy. We present an algebraic method for constructing sparse rules, by formulating a constraint system of states required to be integrated accurately. A nonnegative least squares solver finds a sparse, approximate solution to this constraint system, yielding a quadrature rule with fewer points. One application we demonstrate is isogeometric analysis, where a NURBS FEM space is defined on patches consisting of many elements. Setup times are greatly accelerated, by using patch-wise integration with sum factorization and reduced quadrature rules constructed on patches. Another area of application is reduced order models (ROM), where the FEM system is restricted to a reduced POD basis formed from training data. Instead of hyper-reduction methods such as DEIM, the empirical quadrature procedure (EQP) can be used to accelerate ROM simulations with a sparse quadrature rule in the reduced subspace. We demonstrate this on several benchmark problems in the Laghos miniapp and show that energy conservation is maintained.
+
+---
+
+#### Jacob Spainhour (CU Boulder)
+#### *Robust Containment Queries over Collections of Parametric Curves via Generalized Winding Numbers*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+
+<a class="youtube" href="https://youtu.be/rk_NfKkbVe0"><img src="https://img.youtube.com/vi/rk_NfKkbVe0/maxresdefault.jpg"></img></a>
+
+The containment query is an important geometric primitive in many multiphysics applications. For example, when initializing multimaterial Arbitrary Lagrangian-Eulerian (ALE) simulations, we often need to determine whether arbitrary quadrature points from the background mesh are inside or outside the regions associated with each material. However, existing methods require expensive refinement to accurately capture curved regions. At the same time, many methods are wholly incompatible with user-defined geometries that contain geometric and numeric gaps and/or self-intersections. In this work, we develop a containment query for 2D regions defined by rational Bezier curves that operates directly on curved objects. Our method relies on the generalized winding number (GWN), a mathematical construction that can be evaluated for each curve independently, making the derived containment query robust to non-watertightness. We use an adaptive algorithm to compute the GWN field exactly, which permits fast evaluation for points considered "distant" to the curve while being numerically stable for points that are arbitrarily close. Overall, this classification scheme greatly expands the types of bounding geometry that can be used directly in shaping applications without the need for otherwise expensive repair techniques. If time permits, we will also discuss our extensions of this idea to 3D shapes defined by parametric surfaces.
 
 ---
 
@@ -115,6 +125,16 @@ The mitigation of the rays-effect in phase-space advection problems is a critica
 ---
 
 </div><div class="col-md-6"  markdown="1">
+
+#### Denis Ridzal (Sandia National Laboratories)
+#### *R-Adaptive Mesh Optimization to Enhance Finite Element Basis Compression*
+##### **October 15, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+
+<a class="youtube" href="https://www.youtube.com/watch?v=4t7QOuPK-8g"><img src="https://img.youtube.com/vi/4t7QOuPK-8g/maxresdefault.jpg"></img></a>
+
+Modern computing systems are capable of exascale calculations. While these systems continue to grow in processing power, the available system memory has not increased commensurately. A predominant approach to limit the memory usage in large-scale applications is to exploit the abundant processing power and continually recompute many low-level simulation quantities, rather than storing them. However, this approach can adversely impact the throughput of the simulation and diminish the benefits of modern computing architectures. We present two novel contributions to reduce the memory burden while maintaining performance in simulations based on finite element discretizations. The first contribution develops dictionary-based data compression schemes that detect and exploit the structure of the discretization, due to redundancies across the finite element mesh. These schemes are shown to reduce the memory requirements of key computational kernels by more than 99% on meshes with large numbers of nearly identical mesh cells. For applications where this structure does not exist, our second contribution leverages a recently developed augmented Lagrangian sequential quadratic programming algorithm to enable r-adaptive mesh optimization, with the goal of enhancing redundancies in the mesh. Numerical results demonstrate the effectiveness of the proposed methods to detect, exploit and enhance mesh structure on examples inspired by large-scale applications.
+
+---
 
 #### Rubén Sevilla (Swansea University)
 #### *Mesh Generation and Adaptation using Green AI*
@@ -296,7 +316,7 @@ Preserving and Entropy Stable methods and discuss why we need scalable models in
 order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
 model that runs on large CPU clusters and on GPUs.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Leszek F. Demkowicz (University of Texas at Austin)
 #### *Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis*
@@ -341,7 +361,7 @@ assumptions on its differentiability (discontinuities are allowed).
 In the end, the final result is similar to that for the acoustic waveguide -
 the boundedness below constant depends inversely linearly on L.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Joachim Schöberl (Vienna University of Technology)
 #### *The Netgen/NGSolve Finite Element Software*
