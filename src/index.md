@@ -92,8 +92,8 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Nov 25, 2024 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop.md).
 Oct 28, 2024 |  [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher)**
-Oct 22, 2024 | 2024 [MFEM Community Workshop](workshop.md).
  May 7, 2024 | Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).
  May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
