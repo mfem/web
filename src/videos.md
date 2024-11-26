@@ -108,6 +108,16 @@ The containment query is an important geometric primitive in many multiphysics a
 
  The promise of topology optimization (TO) is to provide engineers with a systematic computational tool to support the development of optimal designs. A shortcoming of classic density based multi-material TO designs is the nebulous interphase region between materials, which leads to inaccurate response predictions in these very regions. In contrast, designs based on boundary and interface regions, rather than interphase regions, yield accurate response predictions. Level-set based TO is an example of such; however, the analysis of the response often requires repeated mesh generation or non-standard finite element computations. We present a solely PDE-based, level-set topology optimization approach in which geometries are described through the iso-contour of one or multiple level-set fields which are discretized over a mesh. The nodal heights serve as the design parameters. The governing field equations are discretized by a conformal discretization over a separate “analysis” mesh. In the optimization, the “analysis” mesh is morphed such that its boundary and interfaces conform with the isocontours of the LS fields. The mesh morphing is performed using the Target-Matrix Optimization Paradigm (TMOP) approach. Our TMOP formulation is a PDE-based mesh morphing operation which aims to improve the interface conformity while preserving mesh quality. Design sensitivities of the optimization cost and constraint functions with respect to all design level-set fields are computed through an adjoint approach which accounts for the mesh morphing process. The proposed analysis and optimization framework is based on MFEM, a free, lightweight, scalable C++ library for finite element methods which supports the optimization of large-scale problems. We investigate the robustness of the proposed optimization methodology by solving two- and three-dimensional multi-material optimization problems involving linear diffusion and elasticity. We discuss the advantages and challenges of our approach with regards to the mesh morphing process. LS regularization techniques are employed to produce a well-behaved mesh morphing problem throughout the optimization. Finally, select aspects and challenges of our approach with respect to parallel computing and processor decomposition are discussed.
 
+ ---
+
+#### Milan Holec (Xcimer)
+#### *Predictive Modeling of the World's Most Powerful Fusion Laser at Xcimer*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+
+<a class="youtube" href="https://youtu.be/vzpHeLb1QVs"><img src="https://img.youtube.com/vi/vzpHeLb1QVs/maxresdefault.jpg"></img></a>
+
+According to the techno-economic studies, the ultraviolet Xcimer lasers offer the most straightforward path to the commercial fusion given the lowest J/$ price and their capacity to withstand MJ laser pulses, a fluence when the traditional solid state lasers break. We present our vision on how to model the future laser system spanning the micro-scales at 248nm laser wavelength and macro-scales at tens of meters of the actual laser beamline, where MFEM allows us to design a computationally efficient and accurate discretization based on mathematical details which we will describe in the presentation.
+
 ---
 
 #### Yohann Dudouit (LLNL)
