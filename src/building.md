@@ -241,7 +241,7 @@ cd spack
 ```
 
 ## Building MFEM with CMake
-To build a serial form of MFEM with CMake first create a build directory. For example, using a build directory named `build`:
+To build a serial version of MFEM with CMake first create a build directory. For example, using a build directory named `build`:
 ```sh 
 mkdir build 
 cd build 
@@ -257,7 +257,7 @@ Run the build command associated with the CMake configuration, specifying the nu
 cmake --build . -j 4
 ```
 ### Parallel build using CMake
-To build a parallel form of MFEM with CMake first build METIS and Hypre as described above.
+To build a parallel version of MFEM with CMake first build METIS and Hypre as described above.
 From the MFEM source directory, create a build directory. For example, using a build directory named `build`:
 ```sh 
 cd mfem-4.5
@@ -275,7 +275,7 @@ Run the build command associated with the cmake configuration, specifying the nu
 cmake --build . -j 4
 ```
 
-### Alternate configuration steps
+### Advanced configuration steps
 To build with CUDA:
 ```sh 
 cmake .. -DMFEM_USE_CUDA=YES
