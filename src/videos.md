@@ -40,6 +40,26 @@ Veselin Dobrev of LLNL detailed the project’s recent developments including me
 
 ---
 
+#### Máté Kovács (Braid Technologies)
+#### *Rust Wrapper for MFEM*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+
+<a class="youtube" href="https://youtu.be/4X8Q06kKcFA"><img src="https://img.youtube.com/vi/4X8Q06kKcFA/maxresdefault.jpg"></img></a>
+
+Rust is quickly emerging as a modern alternative to C++ for systems and performance-critical programming. With a user-centered design, "batteries included" philosophy around tooling, and principled approach to correctness, Rust holds a lot of potential to make complex libraries easier to use. Building a Rust wrapper for MFEM would achieve most of the benefits of a rewrite at a fraction of the effort. By showcasing this prototype, I hope to convince you that creating and maintaining a Rust wrapper for MFEM is a worthy goal. I will further argue that the small modifications to the C++ API that may be necessary to reach optimal integration with Rust would also improve the usability for C++.
+
+---
+
+#### Adrian Butscher (Autodesk Research)
+#### *Geometrically Constrained Level Set Topology Optimization Using a Novel Hilbert Space Extension Method*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+
+<a class="youtube" href="https://youtu.be/Xqt_pVMe05Y"><img src="https://img.youtube.com/vi/Xqt_pVMe05Y/maxresdefault.jpg"></img></a>
+
+pdates with highly constrained shape updates along a user-specified part of the shape boundary. It is intended for the optimal design of shapes where certain parts of the shape boundary are required to preserve their geometry, up to well-defined parametric variations such as translations, rotations, and scalings. For instance, our approach could be used to optimize a shape that must include a circular aperture of optimal radius to accommodate a pin joint to another shape. Our approach allows us to optimize both the free-form geometry of the shape, as well as the position, orientation, and scale of the circular aperture. To generate the shape updates we construct a velocity field over the entire design space and transport the level-set function defining the shape along the field at each iteration. We construct this velocity field using a novel constrained Hilbert space extension (C-HSE) method that expands upon existing Hilbert space extension methods by incorporating the affine motion constraints into the variational problem. As a result, the C-HSE method generates a velocity field for the entire design domain that constitutes a descent direction for a user-specified optimization objective function, while ensuring that all constraints are met. The C-HSE allows multiple distinct regions to have different constraints, with many possible constraint types such as translation, rotation and scaling (or all three simultaneously). We show results on a variety of geometrically constrained boundary conditions on some canonical problems.
+
+---
+
 #### Ketan Mittal (LLNL)
 #### *Interpolation at Arbitrary Points in High-Order Meshes on GPUs*
 ##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
@@ -78,7 +98,7 @@ Convection-diffusion systems are likely the most common class of partial differe
 
 This presentation discusses recent advancements, research, and exploratory work in the MFEM miniapps for shock hydrodynamics (Laghos), field remap (Remhos), and mesh optimization. For shock hydro, we present the implementation of slip wall boundary conditions for curved domains, along with research involving material interfaces using the shifted interface method or cut-element integration through Algoim and moments-based integration. In the field remap miniapp, we cover developments in stabilized remap for continuous fields, interface sharpening techniques, and matrix-free methods for GPU execution. Lastly, we explore recent progress in mesh optimization, including surface fitting and its GPU implementation, tangential relaxation, automatic differentiation (AD) for complex objective functionals, enhanced metric theory and quality metrics, and hpr-adaptivity for the mesh representation. While some of these advancements are public, general methods that can be applied across various practical miniapps, others are exploratory, demonstrating how the miniapps can serve as a starting point for research in specific areas.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Hui-Chia Yu (Michigan State University)
 #### *Battery Electrode Simulation Toolkit using MFEM (BESFEM)*
@@ -88,7 +108,7 @@ This presentation discusses recent advancements, research, and exploratory work 
 
 Conventional sharp-interface simulations require mesh systems conformal to the domain of interest for solving governing equations. Our research team employs an alternative approach, the smoothed boundary method (SBM), that utilizes a continuous domain function to describe geometries and reformulate governing equations. This formulation enables solving governing equations on a regular Cartesian grid, eliminating the need for body-conforming meshes. We have been developing an Open-Source Battery Electrode Simulation Toolkit using MFEM (BESFEM). This toolkit integrates the SBM approach on the MFEM solver library (a product of the DOE's Exascale Computing Project). To enhance accuracy and computational efficiency, our team leverage MFEM's built-in adaptive mesh refinement (AMR) functionality, where elements near SBM diffuse interfaces are multilevel refined. BESFEM will be made fully available as a research and education tool for the battery science and materials science communities.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Dylan Copeland (LLNL)
 #### *Sparse, Approximate Quadrature for Acceleration of Isogeometric Analysis & ROMs*
