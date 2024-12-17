@@ -70,6 +70,28 @@ Robust and scalable arbitrary point interpolation is required in the finite elem
 
 ---
 
+#### 2024 Student Lightning Talks
+#### *Part 1*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/DXM9_HAk13Y"><img src="https://img.youtube.com/vi/DXM9_HAk13Y/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2024 workshop page](workshop.md) for abstracts.
+
+- Julian Lüken (University of Antwerp): “Simulating Atom Probe Tomography Using MFEM”
+- Aditya Parik (Utah State University): “Arbitrary Point Search and Interpolation on Surface Meshes”
+- Gabriel Pinochet-Soto (Portland State University): “Exploring Generalized Jacobi Preconditioners and Smoothers in MFEM”
+
+---
+
+#### Yu Leng (Los Alamos National Laboratory)
+#### *Arbitrary Order Virtual Element Methods for High-Order Phase-Field Modeling of Dynamic Fracture*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/R1WC2RO6B7Q"><img src="https://img.youtube.com/vi/R1WC2RO6B7Q/maxresdefault.jpg"></img></a>
+
+Accurate modeling of fracture nucleation and propagation in brittle and ductile materials subjected to dynamic loading is important in predicting material damage and failure under extreme conditions. Phase-field fracture models have garnered a lot of attention in recent years due to their success in representing damage and fracture processes in a wide class of materials and under a variety of loading conditions. Second-order phase-field fracture models are by far the most popular among researchers (and increasingly, among practitioners), but fourth-order models have started to gain broader acceptance since their more recent introduction. The exact solution corresponding to these high-order phase-field fracture models has higher regularity. Thus, numerical solutions of the model equations can achieve improved accuracy and higher spatial convergence rates. In this work, we develop a virtual element framework for the high-order phase-field model of dynamic fracture. The virtual element method (VEM) can be regarded as a generalization of the classical finite element method. In addition to many other desirable characteristics, the VEM allows computing on polytopal meshes. Here, we use H1-conforming virtual elements and the generalized-α time integration method for the momentum balance equation, and adopt H2-conforming virtual elements for the high-order phase-field equation. We verify our virtual element framework using classical quasi-static benchmark problems and demonstrate its capabilities with the aid of numerical simulations of dynamic fracture in brittle materials.
+
+---
+
 #### Michael Tupek (LLNL)
 #### *Automatic Parameter Sensitivities in Serac for Engineering Applications*
 ##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
@@ -88,7 +110,7 @@ We present a framework for automatically calculating sensitivities for both topo
 
 Convection-diffusion systems are likely the most common class of partial differential equations appearing in practically all different applications. However, their mixed formulation typically suffers from prohibitively high computational costs and difficult preconditioning, especially close to the steady state where the system becomes a saddle point problem. The hybridization technique offers an appealing answer to these issues. The new framework for mixed systems enables single-line hybridization, reducing the problem to face traces of the total flux only. Solution of such system is then inexpensive, and preconditioning becomes nearly trivial. Non-linear convection is also supported with the action-based regime of operation. Description of the mechanism as well as code examples to show ease of usage are presented.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Vladimir Tomov (LLNL)
 #### *Miniapps for Shock Hydro, Field Remap, and Mesh Optimization*
@@ -98,7 +120,7 @@ Convection-diffusion systems are likely the most common class of partial differe
 
 This presentation discusses recent advancements, research, and exploratory work in the MFEM miniapps for shock hydrodynamics (Laghos), field remap (Remhos), and mesh optimization. For shock hydro, we present the implementation of slip wall boundary conditions for curved domains, along with research involving material interfaces using the shifted interface method or cut-element integration through Algoim and moments-based integration. In the field remap miniapp, we cover developments in stabilized remap for continuous fields, interface sharpening techniques, and matrix-free methods for GPU execution. Lastly, we explore recent progress in mesh optimization, including surface fitting and its GPU implementation, tangential relaxation, automatic differentiation (AD) for complex objective functionals, enhanced metric theory and quality metrics, and hpr-adaptivity for the mesh representation. While some of these advancements are public, general methods that can be applied across various practical miniapps, others are exploratory, demonstrating how the miniapps can serve as a starting point for research in specific areas.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Hui-Chia Yu (Michigan State University)
 #### *Battery Electrode Simulation Toolkit using MFEM (BESFEM)*
@@ -636,7 +658,7 @@ Lazarov discussed recently added and ongoing code development facilitating the s
 
 ---
 
-#### Student Lightning Talks
+#### 2023 Student Lightning Talks
 #### *Part 1*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop23.md)
 
@@ -651,7 +673,7 @@ The following four students presented in this video:
 
 ---
 
-#### Student Lightning Talks
+#### 2023 Student Lightning Talks
 #### *Part 2*
 ##### **October 26, 2023** | [MFEM Workshop 2023](workshop23.md)
 
