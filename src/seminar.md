@@ -14,23 +14,43 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/tokareva.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Svetlana Tokareva (Los Alamos National Laboratory)
+##### *TBA*
+##### [**9am PDT, January 14, 2025**](https://everytimezone.com/s/079ead5c)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/kronbichler.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Martin Kronbichler (Ruhr University Bochum)
 ##### *Efficient Simulation of Fluid Flows using High-Order Finite Elements with the deal.II Library*
-##### [**9am PDT, December 17, 2024**](https://everytimezone.com/s/43cee703)
+##### December 17, 2024
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/kronbichler.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+**Talk Recording**
+</button>]()
 
 **Abstract:** This talk will present research on high-order discontinuous Galerkin methods for incompressible fluid flow. Starting from a formulation that enforces the inter-element continuity of the normal velocities and point-wise divergence-free velocities, akin to H(div) finite element spaces, we look into the efficient execution of the resulting discrete formulations. For high-order methods, matrix-free operator evaluation based on sum factorization is highly attractive. It is aligned with the properties of modern multi-core processors and GPUs: By replacing memory-intensive sparse matrices of traditional solvers by redundant computations of integrals, considerably higher performance can be reached because of a better balance between arithmetic work and memory transfer. The talk will look into the use of these techniques for iterative solvers arising from time integration with splitting methods, including both the pressure Poisson equation solved with multigrid preconditioners, Helmholtz-like equations with diagonal or block-diagonal preconditioners, and the H(div)-enforcing penalty step with block-wise inverses based on the fast diagonalization method combined with the Sherman-Morrison-Woodbury formula. The application efficiency will be analyzed and the general-purpose implementation of the algorithms within the deal.II finite element library.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -943,11 +963,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Svetlana Tokareva (Los Alamos National Laboratory)
-##### **January 14, 2025**
-
----
-
 #### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
 ##### **February 18, 2025**
 
@@ -960,6 +975,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 #### Łukasz Kaczmarczyk (University of Glasgow)
 ##### **April 8, 2025**
+
+---
+
+#### David Williams (Penn State)
+##### **May 6, 2025**
 
 </div>
 
