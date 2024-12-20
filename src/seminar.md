@@ -19,14 +19,33 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Svetlana Tokareva (Los Alamos National Laboratory)
-##### *TBA*
+##### *A high-order matrix-free finite element method for hyperbolic problems*
 ##### [**9am PDT, January 14, 2025**](https://everytimezone.com/s/079ead5c)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** TBA
+**Abstract:** Many multiphysics applications require high-order, physically
+consistent and computationally efficient discretizations of hyperbolic PDEs. In
+this talk, we will present a mass-matrix-free finite element (MF-FE) scheme,
+which provides an explicit and arbitrary high order approximation of the smooth
+solutions of the hyperbolic PDEs both in space and time. The design of the
+scheme allows for an efficient diagonalization of the mass matrix without any
+loss of accuracy. This is achieved by coupling the FEM formulation
+[[1]](https://doi.org/10.1016/j.camwa.2018.05.009) with a Deferred Correction
+(DeC) type method [[2]](https://global-sci.org/intro/article_detail/jcm/8648.html)
+for the discretization in time. The advantage of such a matrix-free approach
+consists in preserving a compact approximation stencil even at high orders,
+which reduces the computational cost compared to classical finite element
+techniques and provides potential benefit for exascale computing on future
+computer architectures.  In this talk we focus on the staggered grid MF-FEM (SG
+MF-FEM) scheme for the Lagrangian hydrodynamics. We will present the simulation
+results for several challenging benchmark problems.  Finally, will discuss how
+structure-preserving properties (such as positivity and preservation of local
+bounds) of the proposed MF-FE method can be enforced using convex limiting for
+blending the high-order and low-order element residuals
+[[3]](https://doi.org/10.1016/j.cma.2018.11.036).
 
 ---
 
