@@ -152,6 +152,15 @@ The containment query is an important geometric primitive in many multiphysics a
 
 ---
 
+#### Qi Tang (Georgia Institute of Technology)
+#### *An Adaptive Newton-Based Free-Boundary Grad-Shafranov Solver*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/Lpm0qOdhVpI"><img src="https://img.youtube.com/vi/Lpm0qOdhVpI/maxresdefault.jpg"></img></a>
+
+Equilibriums in magnetic confinement devices result from force balancing between the Lorentz force and the plasma pressure gradient. In an axisymmetric configuration like a tokamak, such an equilibrium is described by an elliptic equation for the poloidal magnetic flux, commonly known as the Grad-Shafranov equation. It is challenging to develop a scalable and accurate free-boundary Grad-Shafranov solver, since it is a fully nonlinear optimization problem that simultaneously solves for the magnetic field coil current outside the plasma to control the plasma shape. In this work, we develop a Newton-based free-boundary Grad-Shafranov solver using adaptive finite elements and preconditioning strategies. The free-boundary interaction leads to the evaluation of a domain-dependent nonlinear form of which its contribution to the Jacobian matrix is achieved through shape calculus. The optimization problem aims to minimize the distance between the plasma boundary and specified control points while satisfying two non-trivial constraints, which correspond to the nonlinear finite element discretization of the Grad-Shafranov equation and a constraint on the total plasma current involving a nonlocal coupling term. The linear system is solved by a block factorization, and AMG is called for sub-block elliptic operators. The unique contributions of this work include the treatment of a global constraint, preconditioning strategies, nonlocal reformulation, and the implementation of adaptive finite elements. It is found that the resulting Newton solver is robust, successfully reducing the nonlinear residual to 1e-6 and lower in a small handful of iterations while addressing the challenging case to find a Taylor state equilibrium where conventional Picard-based solvers fail to converge.
+
+---
+
 #### Mathias Schmidt (LLNL)
 #### *Level-Set Topology Optimization with PDE Generated Conformal Meshes*
 ##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
