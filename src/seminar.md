@@ -20,7 +20,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Svetlana Tokareva (Los Alamos National Laboratory)
 ##### *A high-order matrix-free finite element method for hyperbolic problems*
-##### [**9am PDT, January 14, 2025**](https://everytimezone.com/s/079ead5c)
+##### [**9:30am PDT, January 14, 2025**](https://everytimezone.com/s/38e4b3ba)
 
 [<button type="button" class="btn btn-success">
 **Webex**
