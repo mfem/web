@@ -110,7 +110,7 @@ We present a framework for automatically calculating sensitivities for both topo
 
 Convection-diffusion systems are likely the most common class of partial differential equations appearing in practically all different applications. However, their mixed formulation typically suffers from prohibitively high computational costs and difficult preconditioning, especially close to the steady state where the system becomes a saddle point problem. The hybridization technique offers an appealing answer to these issues. The new framework for mixed systems enables single-line hybridization, reducing the problem to face traces of the total flux only. Solution of such system is then inexpensive, and preconditioning becomes nearly trivial. Non-linear convection is also supported with the action-based regime of operation. Description of the mechanism as well as code examples to show ease of usage are presented.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Vladimir Tomov (LLNL)
 #### *Miniapps for Shock Hydro, Field Remap, and Mesh Optimization*
@@ -120,7 +120,7 @@ Convection-diffusion systems are likely the most common class of partial differe
 
 This presentation discusses recent advancements, research, and exploratory work in the MFEM miniapps for shock hydrodynamics (Laghos), field remap (Remhos), and mesh optimization. For shock hydro, we present the implementation of slip wall boundary conditions for curved domains, along with research involving material interfaces using the shifted interface method or cut-element integration through Algoim and moments-based integration. In the field remap miniapp, we cover developments in stabilized remap for continuous fields, interface sharpening techniques, and matrix-free methods for GPU execution. Lastly, we explore recent progress in mesh optimization, including surface fitting and its GPU implementation, tangential relaxation, automatic differentiation (AD) for complex objective functionals, enhanced metric theory and quality metrics, and hpr-adaptivity for the mesh representation. While some of these advancements are public, general methods that can be applied across various practical miniapps, others are exploratory, demonstrating how the miniapps can serve as a starting point for research in specific areas.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Hui-Chia Yu (Michigan State University)
 #### *Battery Electrode Simulation Toolkit using MFEM (BESFEM)*
@@ -149,6 +149,15 @@ Numerical integration for assembly of FEM systems typically employs quadrature r
 <a class="youtube" href="https://youtu.be/rk_NfKkbVe0"><img src="https://img.youtube.com/vi/rk_NfKkbVe0/maxresdefault.jpg"></img></a>
 
 The containment query is an important geometric primitive in many multiphysics applications. For example, when initializing multimaterial Arbitrary Lagrangian-Eulerian (ALE) simulations, we often need to determine whether arbitrary quadrature points from the background mesh are inside or outside the regions associated with each material. However, existing methods require expensive refinement to accurately capture curved regions. At the same time, many methods are wholly incompatible with user-defined geometries that contain geometric and numeric gaps and/or self-intersections. In this work, we develop a containment query for 2D regions defined by rational Bezier curves that operates directly on curved objects. Our method relies on the generalized winding number (GWN), a mathematical construction that can be evaluated for each curve independently, making the derived containment query robust to non-watertightness. We use an adaptive algorithm to compute the GWN field exactly, which permits fast evaluation for points considered "distant" to the curve while being numerically stable for points that are arbitrarily close. Overall, this classification scheme greatly expands the types of bounding geometry that can be used directly in shaping applications without the need for otherwise expensive repair techniques. If time permits, we will also discuss our extensions of this idea to 3D shapes defined by parametric surfaces.
+
+---
+
+#### Alexander Blair (UK Atomic Energy Authority)
+#### *Platypus: An Open-Source Application for MFEM Problem Set-Up and Assembly in the MOOSE Framework*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/gTdB6eLRd8I"><img src="https://img.youtube.com/vi/gTdB6eLRd8I/maxresdefault.jpg"></img></a>
+
+The large-scale open-source finite element simulation framework MOOSE has built an extensive user community around its capabilities in solving large-scale FE problems across a wide range of physics domains whilst maintaining a simple interface for users. However, it currently lacks support for problem set-up and solution on GPU architectures, due in part to its default finite element library backend libMesh, restricting the range of facilities that it may effectively leverage. Here we present Platypus, an open-source MOOSE application under development for the massively parallel multiphysics simulations of finite element problems using the MFEM finite element library, supporting problem assembly and solves on both CPU and GPU architectures. We shall show some initial results on simple thermal and electromagnetic test problems and outline our development plans for supporting upcoming experiments at UKAEA at the HIVE and CHIMERA facilities.
 
 ---
 
