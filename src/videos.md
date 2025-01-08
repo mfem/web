@@ -83,6 +83,20 @@ The following students presented lightning talks in this video. See the [2024 wo
 
 ---
 
+#### 2024 Student Lightning Talks
+#### *Part 2*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/X0hZ2N01gbs"><img src="https://img.youtube.com/vi/X0hZ2N01gbs/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2024 workshop page](workshop.md) for abstracts.
+
+- Matthew Blomquist (University of California Merced): “Semi-Lagrangian Characteristic Reconstruction and Projection for Transport under Incompressible Velocity Fields”
+- Paul Moujaes (Technical University Dortmund): “Clip and Scale Limiting for Remapping H1 Velocity Fields in Lagrangian Hydrodynamics Simulations”
+- Arjun Vijaywargiya (University of Notre Dame): “High Order Computation of MFC Barycenters with MFEM”
+- Yi Zong (Tsinghua University): “FP16 Acceleration in Structured Multigrid Preconditioner for Real-World Problems”
+
+---
+
 #### Yu Leng (Los Alamos National Laboratory)
 #### *Arbitrary Order Virtual Element Methods for High-Order Phase-Field Modeling of Dynamic Fracture*
 ##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
