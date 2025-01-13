@@ -261,9 +261,9 @@ For isotropic media
     \begin{split}
     \sigma(u) &= \lambda \nabla \cdot u I + 2 \mu \varepsilon(u) \\\\
               &= \lambda \nabla \cdot u I + 2 \mu \frac{1}{2} \left( \nabla u +
-	         \nabla u^T \right) \\\\
+                 \nabla u^T \right) \\\\
               &= \lambda \nabla \cdot u I + \mu \left( \nabla u + \nabla u^T
-	         \right)
+                 \right)
     \end{split}
     $$
 

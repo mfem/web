@@ -144,9 +144,9 @@ more complicated nonlinear expression.
 
 The solutions to equation~\refEq{poisson} are non unique because they
 can be shifted by any additive constant.  This means that we must
-apply a Dirichlet boundary condition at at least one point in the
+apply a Dirichlet boundary condition at least at one point in the
 problem domain in order to obtain a solution.  Typically this point
-will be on the boundry but it need not be so.  Such a Dirichlet value
+will be on the boundary but it need not be so.  Such a Dirichlet value
 is equivalent to fixing the voltage (aka potential) at one or more
 locations.  Additionally, this equation admits a normal derivative
 boundary condition.  This means setting $\hat{n}\cdot\vec{D}$ to a
@@ -214,7 +214,7 @@ meters.
   surface charge density is zero then the Neumann BCs are not needed
   because this is the natural boundary condition.  Only piecewise
   constant Neumann boundary conditions are supported.  They can be set
-  analygously to piecewise Dirichlet boundary conditions but using
+  analogously to piecewise Dirichlet boundary conditions but using
   options {\tt -nbcs} and {\tt -nbcv}.
 
 \end{description}
@@ -312,7 +312,7 @@ coordinates are given in meters.
   \begin{center}{\tt -vbcs '2 3' -vbcv '1 -1' -kbcs '4 6'}\end{center}
   Any surfaces not listed as voltage or current surfaces will be
   assigned as homogeneous Dirichlet boundaries.  Note that when this
-  option is selected an auxilliary electrostatic problem will be
+  option is selected an auxiliary electrostatic problem will be
   solved on the surface of the geometry to compute the surface
   current.
 
@@ -322,7 +322,7 @@ coordinates are given in meters.
   condition must be applied on all of them.  The default boundary
   condition is a homogeneous Dirichlet boundary condition on all outer
   surfaces.  This means that the normal component of $\vec{B}$ will be
-  zero at the outer boudnary.  An alternative is to specify a desire
+  zero at the outer boundary.  An alternative is to specify a desire
   uniform magnetic flux density on the entire outer surface.  This is
   accomplished with the {\tt -ubbc} command line option followed by
   the desired $\vec{B}$ vector.

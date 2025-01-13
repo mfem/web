@@ -114,4 +114,3 @@ glvis -np 16 -m mesh -g sol -k "ooottmiEF"
 ```
 
 ![](img/tutorial/ex3p-np16-fichera-q3-2.png)
-

@@ -3,7 +3,7 @@
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
 **Nov 25, 2024** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop.md).*
-**Oct 28, 2024** | *[Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher) on the MFEM team at LLNL.*
+**Oct 28, 2024** | *[Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher) on the MFEM team at LLNL. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990005678264-fem-discretizations-and-ad-algorithms-postdoctoral-researcher)***
 **Oct 22, 2024** | *2024 [MFEM community workshop](workshop.md).*
 **Jun 5, 2024** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) series.*
 **May 7, 2024** | *Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).*

@@ -1316,7 +1316,7 @@ equation $$\nabla\times\nabla\times\, E + E = f$$
 with boundary condition $ E \times n $ = "given tangential field".
 Here, we use a given exact solution $E$ and compute the corresponding r.h.s.
 $f$. We discretize with NURBS-based $H(curl)$elements in 2D or 3D.
-The problem solved in this example is the same as [Ezample 3](#ex3).
+The problem solved in this example is the same as [Example 3](#ex3).
 
 _The example has only a serial ([nurbs_ex1.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex3.cpp)) version._
 <div style="clear:both;"></div>

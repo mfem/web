@@ -148,4 +148,3 @@ Click each image to enlarge, then right-click to save locally.
 
 ---
 </div>
-

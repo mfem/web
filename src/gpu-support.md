@@ -235,7 +235,7 @@ mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
    double my_data[P];
 });
 ```
-The `mfem::forall` macro relies on lambda capturing in C++. 
+The `mfem::forall` macro relies on lambda capturing in C++.
 One issue comes up with compilers such as [MSVC](https://visualstudio.microsoft.com/) is the capturing of `constexpr` variables inside `mfem::forall`.
 According to the C++ standard, `constexpr` variables do not need to be captured, and should not lose their const-ness in a lambda.
 However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in errors like:

@@ -198,4 +198,3 @@ Average reduction factor = 0.917548
 ![](img/tutorial/ex3-escher-sc0.png)
 
 The discontinuity of the Nedelec functions is clearly seen in the above plot.
-
