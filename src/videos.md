@@ -184,6 +184,15 @@ Equilibriums in magnetic confinement devices result from force balancing between
 
 ---
 
+#### Dohyun Kim (Brown University)
+#### *SiMPL Method: A Fast and Simple Method for Density-Based Topology Optimization*
+##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
+<a class="youtube" href="https://youtu.be/4Tg4OyqBXlw"><img src="https://img.youtube.com/vi/4Tg4OyqBXlw/maxresdefault.jpg"></img></a>
+
+This talk will present a new first-order method for density-based topology optimization called SiMPL: Sigmoidal Mirror descent with Projected Lagrangian. This method delivers point-wise bound preserving density fields at every iteration. The design updates are based only on the first-order derivative information of the objective function, significantly simplifying practical implementations. We accelerate this method with adaptive step size and back-tracking line search. We numerically verified the mesh-independent behavior of the SiMPL method and observed significantly faster convergence compared to other popular first-order optimization algorithms for topology optimization. To outline the general applicability of the technique, we also include examples with (self-load) compliance minimization and compliant mechanism problems.
+
+---
+
 #### Mathias Schmidt (LLNL)
 #### *Level-Set Topology Optimization with PDE Generated Conformal Meshes*
 ##### **October 22-24, 2024** | [MFEM Workshop 2024](workshop.md)
