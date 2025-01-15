@@ -14,16 +14,76 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/zulian.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
+##### *Immersed domain approach for fluid-structure-contact interaction problems*
+##### [**9:00am PDT, February 18, 2025**](https://everytimezone.com/s/5fee1dd0)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** The study of fluid-structure interaction (FSI) has gained
+significant traction in recent decades, with applications spanning various
+disciplines, including geophysics and biomedicine. In FSI, computational
+techniques are defined by the choice of discrete domain representation, falling
+into two main categories: "boundary-fitted" or "non-boundary-fitted"
+meshes. Boundary-fitted methods explicitly represent the fluid-solid interface
+and deform the fluid mesh in tandem with the solid mesh, typically within an
+arbitrary Eulerian-Lagrangian (ALE) framework. While these methods offer high
+accuracy, substantial solid deformations can severely distort the fluid mesh,
+leading to numerical problems and the need for remeshing. Non-boundary-fitted
+methods, on the other hand, maintain separate and non-matching fluid and
+structure meshes. The structure is described within a Lagrangian framework,
+while the fluid is typically described in a fully Eulerian framework. This
+flexibility demands higher mesh resolution to maintain comparable accuracy,
+necessitating the consideration of parallel computing.
+
+We present an immersed domain approach for the numerical solution of
+fluid-structure-contact-interaction (FSCI) problems. Within the overlapping
+volume, the fluid and structure are coupled, while mortar-based techniques are
+employed to couple different structures in contact on their
+surfaces. Specifically, we utilize dual Lagrange multipliers, which, within the
+nonlinear solution procedure, enable discrete field transfer using standard
+matrix-vector multiplication or storage of the linearized system of equations in
+a single matrix, thus facilitating algebraic multigrid strategies. We illustrate
+our general algorithmic framework and our primary parallel computing tools and
+discuss two studies conducted using variations of our approach.
+
+The first study simulates the complete dynamics of a bio-prosthetic heart
+valve. We model the interactions between blood and the valve, blood and the
+aortic wall, and leaflets during valve closure. This solution strategy is
+specifically designed to address the contact problem using non-smooth methods,
+with solid and structure sub-problems solved in a segregated and iterative
+manner.
+
+The second study simulates a diaphragm pump and the contact interaction between
+an elastic valve displaced by the fluid and the valve seats. This approach is
+monolithic, and penalty methods are employed to impose contact conditions.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/tokareva.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Svetlana Tokareva (Los Alamos National Laboratory)
 ##### *A high-order matrix-free finite element method for hyperbolic problems*
-##### [**9:30am PDT, January 14, 2025**](https://everytimezone.com/s/38e4b3ba)
+##### January 14, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/tokareva.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Many multiphysics applications require high-order, physically
@@ -46,10 +106,6 @@ structure-preserving properties (such as positivity and preservation of local
 bounds) of the proposed MF-FE method can be enforced using convex limiting for
 blending the high-order and low-order element residuals
 [[3]](https://doi.org/10.1016/j.cma.2018.11.036).
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -982,11 +1038,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
-##### **February 18, 2025**
-
----
-
 #### Stefan Turek (Technical University Dortmund)
 ##### **March 11, 2025**
 
@@ -1001,18 +1052,3 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ##### **May 6, 2025**
 
 </div>
-
-
-<!--
-Patrick Zulian - Feb 18, 2025
-
-Title: Immersed domain approach for fluid-structure-contact interaction problems
-
-Abstract: The study of fluid-structure interaction (FSI) has gained significant traction in recent decades, with applications spanning various disciplines, including geophysics and biomedicine. In FSI, computational techniques are defined by the choice of discrete domain representation, falling into two main categories: "boundary-fitted" or "non-boundary-fitted" meshes. Boundary-fitted methods explicitly represent the fluid-solid interface and deform the fluid mesh in tandem with the solid mesh, typically within an arbitrary Eulerian-Lagrangian (ALE) framework. While these methods offer high accuracy, substantial solid deformations can severely distort the fluid mesh, leading to numerical problems and the need for remeshing. Non-boundary-fitted methods, on the other hand, maintain separate and non-matching fluid and structure meshes. The structure is described within a Lagrangian framework, while the fluid is typically described in a fully Eulerian framework. This flexibility demands higher mesh resolution to maintain comparable accuracy, necessitating the consideration of parallel computing.
-
-We present an immersed domain approach for the numerical solution of fluid-structure-contact-interaction (FSCI) problems. Within the overlapping volume, the fluid and structure are coupled, while mortar-based techniques are employed to couple different structures in contact on their surfaces. Specifically, we utilize dual Lagrange multipliers, which, within the nonlinear solution procedure, enable discrete field transfer using standard matrix-vector multiplication or storage of the linearized system of equations in a single matrix, thus facilitating algebraic multigrid strategies. We illustrate our general algorithmic framework and our primary parallel computing tools and discuss two studies conducted using variations of our approach.
-
-The first study simulates the complete dynamics of a bio-prosthetic heart valve. We model the interactions between blood and the valve, blood and the aortic wall, and leaflets during valve closure. This solution strategy is specifically designed to address the contact problem using non-smooth methods, with solid and structure sub-problems solved in a segregated and iterative manner.
-
-The second study simulates a diaphragm pump and the contact interaction between an elastic valve displaced by the fluid and the valve seats. This approach is monolithic, and penalty methods are employed to impose contact conditions.
--->
