@@ -512,6 +512,18 @@
 <hr />
 </div>
 <div class="col-md-6">
+<h4 id="martin-kronbichler-ruhr-university-bochum">Martin Kronbichler (Ruhr University Bochum)</h4>
+<h4 id="efficient-simulation-of-fluid-flows-using-high-order-finite-elements-with-the-dealii-library"><em>Efficient Simulation of Fluid Flows using High-Order Finite Elements with the deal.II Library</em></h4>
+<h5 id="december-17-2024-femllnl-seminar-series"><strong>December 17, 2024</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><a class="youtube" href="https://youtu.be/46xUzWbU2GI"><img src="https://img.youtube.com/vi/46xUzWbU2GI/maxresdefault.jpg"></img></a></p>
+<p>This talk will present research on high-order discontinuous Galerkin methods for incompressible fluid flow. Starting from a formulation that enforces the inter-element continuity of the normal velocities and point-wise divergence-free velocities, akin to H(div) finite element spaces, we look into the efficient execution of the resulting discrete formulations. For high-order methods, matrix-free operator evaluation based on sum factorization is highly attractive. It is aligned with the properties of modern multi-core processors and GPUs: By replacing memory-intensive sparse matrices of traditional solvers by redundant computations of integrals, considerably higher performance can be reached because of a better balance between arithmetic work and memory transfer. The talk will look into the use of these techniques for iterative solvers arising from time integration with splitting methods, including both the pressure Poisson equation solved with multigrid preconditioners, Helmholtz-like equations with diagonal or block-diagonal preconditioners, and the H(div)-enforcing penalty step with block-wise inverses based on the fast diagonalization method combined with the Sherman-Morrison-Woodbury formula. The application efficiency will be analyzed and the general-purpose implementation of the algorithms within the deal.II finite element library.</p>
+<hr />
+<h4 id="pablo-brubeck-university-of-oxford">Pablo Brubeck (University of Oxford)</h4>
+<h4 id="fiat-from-basis-functions-to-efficient-finite-element-solvers"><em>FIAT: From Basis Functions to Efficient Finite Element Solvers</em></h4>
+<h5 id="november-12-2024-femllnl-seminar-series"><strong>November 12, 2024</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><a class="youtube" href="https://youtu.be/QJW-fduOKBI"><img src="https://img.youtube.com/vi/QJW-fduOKBI/maxresdefault.jpg"></img></a></p>
+<p>The FInite element Automatic Tabulator (FIAT) is a powerful Python library for tabulating basis functions. In this talk, we present two major recent developments in FIAT. First, we have extended the FIAT abstraction to natively support macroelements. Macroelements offer conforming discretizations with highly desirable properties, such as divergence-free vector fields, and divergence-conforming symmetric tensors with low-order polynomial degrees. Elements implemented include the Hsieh-Clough-Tocher macroelement for biharmonic problems, the divergence-free, H1-conforming, inf-sup stable Guzmán-Neilan macroelement for Stokes, and the Johnson-Mercier macroelement for strongly-symmetric, H(div)-conforming stresses in solid mechanics. We also improved the performance of tabulation and quadrature for simplicial high-order elements, and introduced novel basis functions, leading to solvers with better complexity in polynomial degree. Inspired by the fast diagonalization method, we define new degrees of freedom on simplices as moments against a numerically-computed orthogonal polynomial basis to decouple element interiors in the stiffness matrix. We exploit this decoupling in a domain decomposition method with vertex or edge subdomains on the interface degrees of freedom, and Jacobi relaxation for the interior degrees of freedom. This enables fast solvers for high-order discretizations of the Riesz maps of the spaces of the de Rham complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini). For each case, we illustrate the performance gains with numerical examples in Firedrake.</p>
+<hr />
 <h4 id="denis-ridzal-sandia-national-laboratories">Denis Ridzal (Sandia National Laboratories)</h4>
 <h4 id="r-adaptive-mesh-optimization-to-enhance-finite-element-basis-compression"><em>R-Adaptive Mesh Optimization to Enhance Finite Element Basis Compression</em></h4>
 <h5 id="october-15-2024-femllnl-seminar-series"><strong>October 15, 2024</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -619,7 +631,8 @@ and hexahedral elements. Strategies will be described for both x86-64
 (AVX2/AVX-512) and AARCH64 (NEON/SVE) instruction sets. Results will be
 presented on recent Intel and Apple CPUs and compared against the well-known
 GiMMiK C code generation library.</p>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="frank-giraldo-naval-postgraduate-school">Frank Giraldo (Naval Postgraduate School)</h4>
 <h4 id="using-high-order-element-based-galerkin-methods-to-capture-hurricane-intensification"><em>Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification</em></h4>
 <h5 id="may-16-2023-femllnl-seminar-series"><strong>May 16, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -645,8 +658,7 @@ differencing discontinuous Galerkin Methods for constructing both Kinetic Energy
 Preserving and Entropy Stable methods and discuss why we need scalable models in
 order to achieve our goals.Our model, NUMA, is a 3D nonhydrostatic atmospheric
 model that runs on large CPU clusters and on GPUs.</p>
-</div>
-<div class="col-md-6">
+<hr />
 <h4 id="leszek-f-demkowicz-university-of-texas-at-austin">Leszek F. Demkowicz (University of Texas at Austin)</h4>
 <h4 id="full-envelope-dpg-approximation-for-electromagnetic-waveguides-stability-and-convergence-analysis"><em>Full Envelope DPG Approximation for Electromagnetic Waveguides. Stability and Convergence Analysis</em></h4>
 <h5 id="april-25-2023-femllnl-seminar-series"><strong>April 25, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
