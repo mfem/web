@@ -123,7 +123,7 @@ blending the high-order and low-order element residuals
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/46xUzWbU2GI)
 
 **Abstract:** This talk will present research on high-order discontinuous Galerkin methods for incompressible fluid flow. Starting from a formulation that enforces the inter-element continuity of the normal velocities and point-wise divergence-free velocities, akin to H(div) finite element spaces, we look into the efficient execution of the resulting discrete formulations. For high-order methods, matrix-free operator evaluation based on sum factorization is highly attractive. It is aligned with the properties of modern multi-core processors and GPUs: By replacing memory-intensive sparse matrices of traditional solvers by redundant computations of integrals, considerably higher performance can be reached because of a better balance between arithmetic work and memory transfer. The talk will look into the use of these techniques for iterative solvers arising from time integration with splitting methods, including both the pressure Poisson equation solved with multigrid preconditioners, Helmholtz-like equations with diagonal or block-diagonal preconditioners, and the H(div)-enforcing penalty step with block-wise inverses based on the fast diagonalization method combined with the Sherman-Morrison-Woodbury formula. The application efficiency will be analyzed and the general-purpose implementation of the algorithms within the deal.II finite element library.
 
@@ -134,7 +134,7 @@ blending the high-order and low-order element residuals
 </div><div class="col-md-12" markdown="1">
 
 #### Pablo Brubeck (University of Oxford)
-##### *FIAT: from basis functions to efficient finite element solvers*
+##### *FIAT: From Basis Functions to Efficient Finite Element Solvers*
 ##### November 12, 2024
 
 [<button type="button" class="btn btn-primary">
@@ -143,7 +143,7 @@ blending the high-order and low-order element residuals
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/QJW-fduOKBI)
 
 **Abstract:** The FInite element Automatic Tabulator (FIAT) is a powerful Python
 library for tabulating basis functions. In this talk, we present two major
