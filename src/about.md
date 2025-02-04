@@ -98,6 +98,7 @@ Please cite with:
 - [Dennis Ogiermann](https://github.com/termi-official)
 - [Geoffrey Oxberry](https://github.com/goxberry)
 - [Edward Palmer](https://github.com/EdwardPalmer99)
+- [Aditya Parik](https://github.com/aparikusu)
 - [Will Pazner](https://pazner.github.io)
 - [Cosmin Petra](https://people.llnl.gov/petra1)
 - [Socratis Petrides](https://people.llnl.gov/petrides1)
