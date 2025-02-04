@@ -12,6 +12,7 @@
   1. N. Atallah, K. Mittal, G. Scovazzi, V. Tomov, [A high-order Shifted Interface Method for Lagrangian shock hydrodynamics](https://www.sciencedirect.com/science/article/pii/S0021999124008854), *Journal of Computational Physics*, 523, 113637, **2025**.
 
 #### 2024
+  1. N. Atallah, V. Tomov, G. Scovazzi, [Weak boundary conditions for Lagrangian shock hydrodynamics: A high-order finite element implementation on curved boundaries](https://www.sciencedirect.com/science/article/pii/S0021999124002080), *Journal of Computational Physics*, 507, 112959, **2024**.
   1. T. Dzanic, K. Mittal, D. Kim, J. Yang, S. Petrides, B. Keith, R. Anderson, [DynAMO: Multi-agent reinforcement learning for dynamic anticipatory mesh optimization with applications to hyperbolic conservation laws](https://doi.org/10.1016/j.jcp.2024.112924), *Journal of Computational Physics*, 506, 112924, **2024**
   1. K. Mittal, V. Dobrev, P. Knupp, T. Kolev, F. Ledoux, C. Roche, V. Tomov, [Mixed-Order Meshes through rp-adaptivity for Surface Fitting to Implicit Geometries](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.10), *Proceedings of the 2024 SIAM International Meshing Roundtable (IMR)*. **2024**.
   1. T. Stitt, K. Belcher, A. Campos, T. Kolev, P. Mocz, R. Rieben, A. Skinner, V. Tomov, A. Vargas, K. Weiss, [Performance portable GPU acceleration of a high-order finite element multiphysics application](https://doi.org/10.1115/1.4064493), *Journal of Fluids Engineering*, 146(4):041102, **2024**.
