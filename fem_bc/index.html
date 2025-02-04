@@ -674,9 +674,11 @@ a.AddBoundaryIntegrator(new MassIntegrator(rbcACoef), rbc_marker);
 <p>In the Discontinuous Galerkin (DG) formulation the
 <a href="#natural-boundary-conditions">Natural</a>,
 <a href="#neumann-boundary-conditions">Neumann</a>, and <a href="#robin-boundary-conditions">Robin</a>
-can be implemented in a similar the same manner as in the continuous case
+can be implemented in a similar manner as in the continuous case
 (adding the appropriate <code>LinearFormIntegrator</code> as a <em>boundary face integrator</em>
-instead of a <em>boundary integrator</em>).  However, since DG basis functions
+instead of a <em>boundary integrator</em> and, for Robin conditions, using
+<code>BoundaryMassIntegrator</code> instead of <code>MassIntegrator</code> for the $\gamma$ term).
+However, since DG basis functions
 have no degrees of freedom associated with the boundary, Dirichlet boundary
 conditions must be handled differently.</p>
 <pre><code class="c++">// Add the desired value for the Dirichlet constraint on the boundary
