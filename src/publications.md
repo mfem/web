@@ -8,6 +8,7 @@
 ## Selected Publications
 
 #### 2025
+  1. D. Serino, Q. Tang, X.-Z. Tang, T. Kolev, K. Lipnikov, [An adaptive Newton-based free-boundary Grad-Shafranov solver](https://arxiv.org/abs/2407.03499), *in review*, **2025**. Also available as [arXiv:2407.03499](https://arxiv.org/abs/2407.03499).
   1. N. Atallah, K. Mittal, G. Scovazzi, V. Tomov, [A high-order Shifted Interface Method for Lagrangian shock hydrodynamics](https://www.sciencedirect.com/science/article/pii/S0021999124008854), *Journal of Computational Physics*, 523, 113637, **2025**.
 
 #### 2024
