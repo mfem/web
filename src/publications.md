@@ -38,6 +38,7 @@
   1. J. Barrera, Tz. Kolev, K. Mittal, and V. Tomov, [High-Order Mesh Morphing for Boundary and Interface Fitting to Implicit Geometries](https://doi.org/10.1016/j.cad.2023.103499), *Computer-Aided Design*, 158, 103499, **2023**. Also available as [arXiv:2208.05062](https://arxiv.org/abs/2208.05062).
   1. J. Camier, V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, R. Rieben,  and V. Tomov, [Accelerating high-order mesh optimization using finite element partial assembly on GPUs](https://doi.org/10.1016/j.jcp.2022.111808), *Journal of Computational Physics*, 474, 111808, **2023**. Also available as [arXiv:2205.12721](https://arxiv.org/abs/2205.12721).
   1. F. Gómez-Lozada, C. Andrés del Valle, J. D. Jiménez-Paz, B. S. Lazarov and J. Galvis, [Modelling and simulation of brinicle formation](https://royalsocietypublishing.org/doi/10.1098/rsos.230268), *Royal Society Open Science*, 10, 10, 230268, **2023**.
+  1.  C. Vogl, I. Joseph, and M. Holec, [Mesh refinement for anisotropic diffusion in magnetized plasmas](https://doi.org/10.1016/j.camwa.2023.06.019), *Computers & Mathematics with Applications*, **2023**. Also available as [arXiv:2210.16442](https://arxiv.org/abs/2210.16442). 
 
 ---
 
