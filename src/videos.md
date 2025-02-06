@@ -229,6 +229,16 @@ The mitigation of the rays-effect in phase-space advection problems is a critica
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Svetlana Tokareva (Los Alamos National Laboratory)
+#### *A High-Order Matrix-Free Finite Element Method for Hyperbolic Problems*
+##### **January 14, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/xy_c_NYDXb8"><img src="https://img.youtube.com/vi/xy_c_NYDXb8/maxresdefault.jpg"></img></a>
+
+Many multiphysics applications require high-order, physically consistent and computationally efficient discretizations of hyperbolic PDEs. In this talk, we will present a mass-matrix-free finite element (MF-FE) scheme, which provides an explicit and arbitrary high order approximation of the smooth solutions of the hyperbolic PDEs both in space and time. The design of the scheme allows for an efficient diagonalization of the mass matrix without any loss of accuracy. This is achieved by coupling the FEM formulation [[1]](https://doi.org/10.1016/j.camwa.2018.05.009) with a Deferred Correction (DeC) type method [[2]](https://global-sci.org/intro/article_detail/jcm/8648.html) for the discretization in time. The advantage of such a matrix-free approach consists in preserving a compact approximation stencil even at high orders, which reduces the computational cost compared to classical finite element techniques and provides potential benefit for exascale computing on future computer architectures. In this talk we focus on the staggered grid MF-FEM (SG MF-FEM) scheme for the Lagrangian hydrodynamics. We will present the simulation results for several challenging benchmark problems. Finally, will discuss how structure-preserving properties (such as positivity and preservation of local
+bounds) of the proposed MF-FE method can be enforced using convex limiting for blending the high-order and low-order element residuals [[3]](https://doi.org/10.1016/j.cma.2018.11.036).
+
+---
+
 #### Martin Kronbichler (Ruhr University Bochum)
 #### *Efficient Simulation of Fluid Flows using High-Order Finite Elements with the deal.II Library*
 ##### **December 17, 2024** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -394,7 +404,7 @@ Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10
 
 The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Freddie Witherden (Texas A&M University)
 #### *FSSpMDM — Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation*
@@ -416,7 +426,7 @@ and hexahedral elements. Strategies will be described for both x86-64
 presented on recent Intel and Apple CPUs and compared against the well-known
 GiMMiK C code generation library.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Frank Giraldo (Naval Postgraduate School)
 #### *Using High-Order Element-Based Galerkin Methods to Capture Hurricane Intensification*
