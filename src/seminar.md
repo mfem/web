@@ -19,7 +19,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
-##### *Immersed domain approach for fluid-structure-contact interaction problems*
+##### *Immersed Domain Approach for Fluid-Structure-Contact Interaction Problems*
 ##### [**9:00am PDT, February 18, 2025**](https://everytimezone.com/s/5fee1dd0)
 
 [<button type="button" class="btn btn-success">
@@ -75,7 +75,7 @@ monolithic, and penalty methods are employed to impose contact conditions.
 </div><div class="col-md-12" markdown="1">
 
 #### Svetlana Tokareva (Los Alamos National Laboratory)
-##### *A high-order matrix-free finite element method for hyperbolic problems*
+##### *A High-Order Matrix-Free Finite Element Method for Hyperbolic Problems*
 ##### January 14, 2025
 
 [<button type="button" class="btn btn-primary">
@@ -84,7 +84,7 @@ monolithic, and penalty methods are employed to impose contact conditions.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/xy_c_NYDXb8)
 
 **Abstract:** Many multiphysics applications require high-order, physically
 consistent and computationally efficient discretizations of hyperbolic PDEs. In
@@ -99,9 +99,9 @@ for the discretization in time. The advantage of such a matrix-free approach
 consists in preserving a compact approximation stencil even at high orders,
 which reduces the computational cost compared to classical finite element
 techniques and provides potential benefit for exascale computing on future
-computer architectures.  In this talk we focus on the staggered grid MF-FEM (SG
+computer architectures. In this talk we focus on the staggered grid MF-FEM (SG
 MF-FEM) scheme for the Lagrangian hydrodynamics. We will present the simulation
-results for several challenging benchmark problems.  Finally, will discuss how
+results for several challenging benchmark problems. Finally, will discuss how
 structure-preserving properties (such as positivity and preservation of local
 bounds) of the proposed MF-FE method can be enforced using convex limiting for
 blending the high-order and low-order element residuals
