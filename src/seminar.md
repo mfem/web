@@ -14,16 +14,40 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/turek.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Stefan Turek (Technical University Dortmund)
+##### *TBA*
+##### [**9:00am PDT, March 11, 2025**](https://everytimezone.com/s/88f3acb3)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/zulian.png)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
 ##### *Immersed Domain Approach for Fluid-Structure-Contact Interaction Problems*
-##### [**9:00am PDT, February 18, 2025**](https://everytimezone.com/s/5fee1dd0)
+##### February 18, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/zulian.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The study of fluid-structure interaction (FSI) has gained
@@ -63,10 +87,6 @@ manner.
 The second study simulates a diaphragm pump and the contact interaction between
 an elastic valve displaced by the fluid and the valve seats. This approach is
 monolithic, and penalty methods are employed to impose contact conditions.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1037,11 +1057,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Stefan Turek (Technical University Dortmund)
-##### **March 11, 2025**
-
----
 
 #### Łukasz Kaczmarczyk (University of Glasgow)
 ##### **April 8, 2025**
