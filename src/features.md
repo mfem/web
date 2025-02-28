@@ -131,6 +131,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](https://docs.mfem.org/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
  - [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
+ - [Lorentz](https://docs.mfem.org/html/lorentz_8cpp_source.html): particle trajectory calculation miniapp,
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
