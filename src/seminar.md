@@ -52,6 +52,46 @@ lower precision hardware might get feasible. In our talk, we provide for both
 aspects numerical results as "proof-of-concept" and discuss the challenges,
 particularly for large scale flow problems.
 
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/witherden.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Freddie Witherden (Texas A&M University)
+##### *High Performance Asynchronous I/O for Exascale Spectral Element Methods*
+##### [**9:00am PDT, April 22, 2025**](https://everytimezone.com/s/e29a6abd)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Despite recent developments in solid-state storage technology,
+disk I/O in leadership-class machines has not kept pace with memory bandwidth
+or arithmetic capabilities. As a consequence, simulations are spending
+proportionally more time writing out checkpoint files than ever before. This
+problem is compounded by the fact that most I/O middleware libraries offer only
+limited support for non-blocking I/O, and where this capability is present, it
+is almost always mutually exclusive with parallel I/O.
+
+In this talk, we will provide an overview of the new massively parallel
+asynchronous file format, which will debut with PyFR v3. The format, specifically
+developed for discontinuous spectral element methods, offers a host of desirable
+features. These include: a space-efficient node-based mesh description with
+support for mixed elements and curvature; compact connectivity arrays that
+enable fast parallel interface construction through neighbourhood collectives;
+self-describing nodal solution representations with embedded metadata; support
+for partial (subset) solutions; provisions for multiple pre-computed partitionings;
+and output files that are independent of the chosen partitioning.
+All of this is combined with disk I/O patterns that are entirely contiguous.
+The format itself is based on the archival-grade HDF5 format but includes custom
+I/O routines to enable more efficient parallel I/O and asynchronous capabilities.
+
+After describing the format and its implementation in PyFR, we will conclude the
+talk by discussing the benefits the new format provides in terms of ease of
+deployment, particularly in how it enables users to bypass potentially outdated
+vendor-provided builds of HDF5.
+
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
