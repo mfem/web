@@ -92,22 +92,22 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Mar XX, 2025 | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
 Nov 25, 2024 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop.md).
 Jun 5, 2024  | MFEM in the cloud [tutorial](tutorial/index.md).
- May 7, 2024 | Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).
  May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
 Feb 22, 2023 | AWS releases [Palace](https://aws.amazon.com/blogs/quantum-computing/aws-releases-open-source-software-palace-for-cloud-based-electromagnetics-simulations-of-quantum-computing-hardware/) based on MFEM.
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.7.tgz**
-</button>](https://bit.ly/mfem-4-7)
+**Download mfem-4.8.tgz**
+</button>](https://bit.ly/mfem-4-8)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")
