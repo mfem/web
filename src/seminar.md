@@ -14,46 +14,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/turek.jpg)
-
-</div><div class="col-md-12" markdown="1">
-
-#### Stefan Turek (Technical University Dortmund)
-##### *Hardware-oriented Numerics for Massively Parallel & Low Precision Accelerator Hardware and Application to "large scale" CFD Problems*
-##### [**9:00am PDT, March 11, 2025**](https://everytimezone.com/s/88f3acb3)
-
-[<button type="button" class="btn btn-success">
-**Webex**
-</button>]()
-
-**Abstract:** The aim of this talk is to present and to discuss how modern High
-Performance Computing (HPC) facilities including massively parallel hardware
-with millions of cores together with very fast, but lower precision accelerator
-hardware can be exploited via techniques from hardware-oriented Numerics for
-PDEs so that a very high computational and numerical efficiency can be
-obtained. Here, as prototypical large scale PDE-based applications, we
-concentrate on nonstationary flow simulations with hundreds of millions or even
-billions of spatial unknowns in long-time computations with many thousands up to
-millions of time steps. For the expected huge computational resources in the
-coming exascale era, such spatially discretized problems which typically are
-treated sequentially in time, that means one time step after the other, are
-still too small to exploit adequately the huge number of compute nodes, resp.,
-cores so that further parallelism, for instance w.r.t. time, might get
-necessary. In this context, we discuss how "parallel-in-space global-in-time"
-Newton-Krylov Multigrid approaches can be designed which allow a much higher
-degree of parallelism. Moreover, to exploit current accelerator hardware in
-lower precision (for instance, GPUs), that means mainly working in single or
-even half precision, we discuss the concept of "prehandling" (in contrast to
-"preconditioning") of the corresponding ill-conditioned systems of equations,
-for instance arising from Poisson-like problems in incompressible flow
-simulations. Here, we assume a transformation into an equivalent linear system
-with similar sparsity but with much lower condition numbers so that the use of
-lower precision hardware might get feasible. In our talk, we provide for both
-aspects numerical results as "proof-of-concept" and discuss the challenges,
-particularly for large scale flow problems.
-
-</div><div class="col-md-3" markdown="1">
-
 ![](img/seminar/witherden.jpg)
 
 </div><div class="col-md-12" markdown="1">
@@ -98,6 +58,50 @@ vendor-provided builds of HDF5.
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/turek.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Stefan Turek (Technical University Dortmund)
+##### *Hardware-oriented Numerics for Massively Parallel & Low Precision Accelerator Hardware and Application to "large scale" CFD Problems*
+##### March 11, 2025
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/turek.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
+
+**Abstract:** The aim of this talk is to present and to discuss how modern High
+Performance Computing (HPC) facilities including massively parallel hardware
+with millions of cores together with very fast, but lower precision accelerator
+hardware can be exploited via techniques from hardware-oriented Numerics for
+PDEs so that a very high computational and numerical efficiency can be
+obtained. Here, as prototypical large scale PDE-based applications, we
+concentrate on nonstationary flow simulations with hundreds of millions or even
+billions of spatial unknowns in long-time computations with many thousands up to
+millions of time steps. For the expected huge computational resources in the
+coming exascale era, such spatially discretized problems which typically are
+treated sequentially in time, that means one time step after the other, are
+still too small to exploit adequately the huge number of compute nodes, resp.,
+cores so that further parallelism, for instance w.r.t. time, might get
+necessary. In this context, we discuss how "parallel-in-space global-in-time"
+Newton-Krylov Multigrid approaches can be designed which allow a much higher
+degree of parallelism. Moreover, to exploit current accelerator hardware in
+lower precision (for instance, GPUs), that means mainly working in single or
+even half precision, we discuss the concept of "prehandling" (in contrast to
+"preconditioning") of the corresponding ill-conditioned systems of equations,
+for instance arising from Poisson-like problems in incompressible flow
+simulations. Here, we assume a transformation into an equivalent linear system
+with similar sparsity but with much lower condition numbers so that the use of
+lower precision hardware might get feasible. In our talk, we provide for both
+aspects numerical results as "proof-of-concept" and discuss the challenges,
+particularly for large scale flow problems.
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/zulian.png)
 
 </div><div class="col-md-12" markdown="1">
@@ -129,7 +133,6 @@ structure meshes. The structure is described within a Lagrangian framework,
 while the fluid is typically described in a fully Eulerian framework. This
 flexibility demands higher mesh resolution to maintain comparable accuracy,
 necessitating the consideration of parallel computing.
-
 We present an immersed domain approach for the numerical solution of
 fluid-structure-contact-interaction (FSCI) problems. Within the overlapping
 volume, the fluid and structure are coupled, while mortar-based techniques are
@@ -140,14 +143,12 @@ matrix-vector multiplication or storage of the linearized system of equations in
 a single matrix, thus facilitating algebraic multigrid strategies. We illustrate
 our general algorithmic framework and our primary parallel computing tools and
 discuss two studies conducted using variations of our approach.
-
 The first study simulates the complete dynamics of a bio-prosthetic heart
 valve. We model the interactions between blood and the valve, blood and the
 aortic wall, and leaflets during valve closure. This solution strategy is
 specifically designed to address the contact problem using non-smooth methods,
 with solid and structure sub-problems solved in a segregated and iterative
 manner.
-
 The second study simulates a diaphragm pump and the contact interaction between
 an elastic valve displaced by the fluid and the valve seats. This approach is
 monolithic, and penalty methods are employed to impose contact conditions.
