@@ -60,7 +60,7 @@ particularly for large scale flow problems.
 
 #### Freddie Witherden (Texas A&M University)
 ##### *High Performance Asynchronous I/O for Exascale Spectral Element Methods*
-##### [**9:00am PDT, April 22, 2025**](https://everytimezone.com/s/e29a6abd)
+##### [**10:00am PDT, April 22, 2025**](https://everytimezone.com/s/a4390204)
 
 [<button type="button" class="btn btn-success">
 **Webex**
