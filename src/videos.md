@@ -467,6 +467,15 @@ Immersed/embedded/unfitted boundary methods obviate the need for continual re-me
 </div><div class="col-md-6"  markdown="1">
 
 #### Tzanio Kolev (LLNL)
+#### *MFEM: Accelerating Efficient Solution of PDEs at Exascale*
+##### **March 20, 2025** | [Banff International Research Station for Mathematical Innovation and Discovery](https://www.birs.ca/events/2025/5-day-workshops/25w5441)
+<a class="youtube" href="https://www.birs.ca/events/2025/5-day-workshops/25w5441/videos/watch/202503201053-Kolev.html"><img src="../img/videos/birs-kolev-march2025-1280x720.png"></img></a>
+
+Tzanio Kolev presented at the Banff International Research Station's (BIRS) Geometric Mechanics Formulations for Continuum Mechanics workshop. Modern GPU-based exascale architectures require rethinking of the numerical algorithms used in large-scale PDE-based applications. These architectures favor algorithms, such as high-order finite elements, that expose fine-grain parallelism and maximize the ratio of floating-point operations to energy intensive data movement. He presented an overview of MFEM, a scalable library for high-order finite element discretization of PDEs on general unstructured grids that employs partial assembly and matrix-free algorithms to power a wide variety of HPC applications. Our approach to efficient operator evaluation is based on a decomposed representation of the finite element operator, that factors a bilinear form into a series of sparse and dense components corresponding to the parallelism, mesh topology, basis, geometry, and pointwise physics in the problem. This exposes several layers of parallelism, enables the use of batched dgemss and tensor contractions, and only requires quadrature point values to be assembled for computing the action. The "partial assembly" formulation is a natural fit for modern HPC hardware because it results both in less (nearly optimal) computation and less (optimal) data movement compared to assembling a global sparse matrix, therefore increasing performance and reducing time to solution. In addition to discussing MFEM's capabilities and algorithms, and demonstrate their impact in several large-scale applications from the US Department of Energy.
+
+---
+
+#### Tzanio Kolev (LLNL)
 #### *Advancing Computational Science with High-Order Finite Elements*
 ##### **February 12, 2025** | [SIAM Activity Group on Supercomputing](https://siag-sc.org)
 <a class="youtube" href="https://youtu.be/Fa_KqW7np14"><img src="https://img.youtube.com/vi/Fa_KqW7np14/maxresdefault.jpg"></img></a>
@@ -495,7 +504,7 @@ LLNL computational mathematician Tzanio Kolev presented an overview of MFEM as p
 
 LLNL computational mathematician Vladimir Tomov discussed high-order finite element methods research, development, and application in the context of shock hydrodynamics simulations. The method is based on an Arbitrary Lagrangian-Eulerian (ALE) formulation consisting of separate Lagrangian, mesh optimization, and remap phases. The presentation addressed the following topics: Lagrangian shock hydrodynamics on curved meshes; multi-material closure models; coupling to multigroup radiation diffusion; optimization, r-adaptivity, and surface fitting of high-order meshes; advection-based remap with nonlinear sharpening of material interfaces; synchronization between the max/min bounds of primal and conservative fields during remap; computationally efficient finite element kernels based on partial assembly and sum factorization. The talk also covered the existing methods followed by a discussion about the outstanding research challenges and ongoing work to address them.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### John Camier (LLNL)
 #### *All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations*
@@ -505,7 +514,7 @@ LLNL computational mathematician Vladimir Tomov discussed high-order finite elem
 
 LLNL research scientist John Camier described recent improvements of high-order finite element CUDA kernels that can reduce the time-to-solution by a factor of 10. Augmenting traditional compiler representations with a general mathematical description enables a sustainable way to generate optimized kernels, matching the peak performance of hand-tuned CUDA code. Such intermediate graph-based representation provides significant potential for optimization, both in terms of minimizing the number of kernel launches and in reducing the memory bandwidth. Camier also presented results on single and multiple GPUs that demonstrate significant reduction in the local problem size required to reach peak performance, leading to faster time-to-solution in finite element applications.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Tzanio Kolev (LLNL)
 #### *Efficient Finite Element Discretizations for Exascale Applications*
