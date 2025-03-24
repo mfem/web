@@ -673,13 +673,19 @@ This talk will present our recent advances towards the development of computatio
 </div>
 <div class="col-md-6">
 <h4 id="tzanio-kolev-llnl">Tzanio Kolev (LLNL)</h4>
+<h4 id="mfem-accelerating-efficient-solution-of-pdes-at-exascale"><em>MFEM: Accelerating Efficient Solution of PDEs at Exascale</em></h4>
+<h5 id="march-20-2025-banff-international-research-station-for-mathematical-innovation-and-discovery"><strong>March 20, 2025</strong> | <a href="https://www.birs.ca/events/2025/5-day-workshops/25w5441">Banff International Research Station for Mathematical Innovation and Discovery</a></h5>
+<p><a class="youtube" href="https://www.birs.ca/events/2025/5-day-workshops/25w5441/videos/watch/202503201053-Kolev.html"><img src="../img/videos/birs-kolev-march2025-1280x720.png"></img></a></p>
+<p>Tzanio Kolev presented at the Banff International Research Station's (BIRS) workshop on <a href="https://www.birs.ca/events/2025/5-day-workshops/25w5441">Geometric Mechanics Formulations for Continuum Mechanics</a>. Modern GPU-based exascale architectures require rethinking of the numerical algorithms used in large-scale PDE-based applications. These architectures favor algorithms, such as high-order finite elements, that expose fine-grain parallelism and maximize the ratio of floating-point operations to energy intensive data movement. He presented an overview of MFEM, a scalable library for high-order finite element discretization of PDEs on general unstructured grids that employs partial assembly and matrix-free algorithms to power a wide variety of HPC applications. Our approach to efficient operator evaluation is based on a decomposed representation of the finite element operator, that factors a bilinear form into a series of sparse and dense components corresponding to the parallelism, mesh topology, basis, geometry, and pointwise physics in the problem. This exposes several layers of parallelism, enables the use of batched dgemss and tensor contractions, and only requires quadrature point values to be assembled for computing the action. The "partial assembly" formulation is a natural fit for modern HPC hardware because it results both in less (nearly optimal) computation and less (optimal) data movement compared to assembling a global sparse matrix, therefore increasing performance and reducing time to solution. In addition to discussing MFEM's capabilities and algorithms, the talk demonstrated their impact in several large-scale applications from the US Department of Energy.</p>
+<hr />
+<h4 id="tzanio-kolev-llnl_1">Tzanio Kolev (LLNL)</h4>
 <h4 id="advancing-computational-science-with-high-order-finite-elements"><em>Advancing Computational Science with High-Order Finite Elements</em></h4>
 <h5 id="february-12-2025-siam-activity-group-on-supercomputing"><strong>February 12, 2025</strong> | <a href="https://siag-sc.org">SIAM Activity Group on Supercomputing</a></h5>
 <p><a class="youtube" href="https://youtu.be/Fa_KqW7np14"><img src="https://img.youtube.com/vi/Fa_KqW7np14/maxresdefault.jpg"></img></a></p>
 <p>The demand for modeling and simulation in large-scale computational science has consistently driven the development of new numerical algorithms that are tailored to new architectures. For example, exascale architectures favor algorithms, such as high-order finite elements, that expose fine-grain parallelism and maximize the ratio of floating-point operations to energy intensive data movement. In <a href="https://siag-sc.org/advancing-computational-science-with-high-order-finite-elements.html">this talk</a> we review recent work on GPU-oriented algorithms and software for high-order meshing, discretizations and solvers, and demonstrate their impact in several large-scale applications from the US Department of Energy.</p>
 <p>SIAM-SC's Supercomputing Spotlights is a new webinar series featuring short presentations that highlight the impact and successes of HPC.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_1">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_2">Tzanio Kolev (LLNL)</h4>
 <h4 id="pde-simulations-on-unstructured-grids-with-finite-element-discretizations"><em>PDE Simulations on Unstructured Grids with Finite Element Discretizations</em></h4>
 <h5 id="march-15-2023-ipam-at-ucla"><strong>March 15, 2023</strong> | <a href="https://www.ipam.ucla.edu/programs/long-programs/new-mathematics-for-the-exascale-applications-to-materials-science/">IPAM at UCLA</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=lJl1_LkyU1g"><img src="https://img.youtube.com/vi/lJl1_LkyU1g/maxresdefault.jpg"></img></a></p>
@@ -690,15 +696,15 @@ This talk will present our recent advances towards the development of computatio
 <h5 id="november-17-2022-texas-am-university-corpus-christi-department-of-math-statistics"><strong>November 17, 2022</strong> | <a href="https://www.tamucc.edu/science/departments/math-and-statistics/index.php">Texas A&amp;M University-Corpus Christi Department of Math &amp; Statistics</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=WrV_rB4pAnE"><img src="https://img.youtube.com/vi/WrV_rB4pAnE/maxresdefault.jpg"></img></a></p>
 <p>LLNL computational mathematician Vladimir Tomov discussed high-order finite element methods research, development, and application in the context of shock hydrodynamics simulations. The method is based on an Arbitrary Lagrangian-Eulerian (ALE) formulation consisting of separate Lagrangian, mesh optimization, and remap phases. The presentation addressed the following topics: Lagrangian shock hydrodynamics on curved meshes; multi-material closure models; coupling to multigroup radiation diffusion; optimization, r-adaptivity, and surface fitting of high-order meshes; advection-based remap with nonlinear sharpening of material interfaces; synchronization between the max/min bounds of primal and conservative fields during remap; computationally efficient finite element kernels based on partial assembly and sum factorization. The talk also covered the existing methods followed by a discussion about the outstanding research challenges and ongoing work to address them.</p>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="john-camier-llnl">John Camier (LLNL)</h4>
 <h4 id="all-out-kernel-fusion-reaching-peak-performance-faster-in-high-order-finite-element-simulations"><em>All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations</em></h4>
 <h5 id="march-2124-2022-nvidia-gtc22"><strong>March 21–24, 2022</strong> | <a href="https://www.nvidia.com/gtc/">NVIDIA GTC22</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=M2a1eW9XMJQ"><img src="https://img.youtube.com/vi/M2a1eW9XMJQ/maxresdefault.jpg"></img></a></p>
 <p>LLNL research scientist John Camier described recent improvements of high-order finite element CUDA kernels that can reduce the time-to-solution by a factor of 10. Augmenting traditional compiler representations with a general mathematical description enables a sustainable way to generate optimized kernels, matching the peak performance of hand-tuned CUDA code. Such intermediate graph-based representation provides significant potential for optimization, both in terms of minimizing the number of kernel launches and in reducing the memory bandwidth. Camier also presented results on single and multiple GPUs that demonstrate significant reduction in the local problem size required to reach peak performance, leading to faster time-to-solution in finite element applications.</p>
-</div>
-<div class="col-md-6">
-<h4 id="tzanio-kolev-llnl_2">Tzanio Kolev (LLNL)</h4>
+<hr />
+<h4 id="tzanio-kolev-llnl_3">Tzanio Kolev (LLNL)</h4>
 <h4 id="efficient-finite-element-discretizations-for-exascale-applications"><em>Efficient Finite Element Discretizations for Exascale Applications</em></h4>
 <h5 id="february-25-2021-excalibur-sle-3-workshop"><strong>February 25, 2021</strong> | <a href="https://excalibur-sle.github.io/">ExCALIBUR SLE 3 workshop</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=lsBSctsSMFY"><img src="../img/videos/lsBSctsSMFY-1280x720.png"></img></a></p>
@@ -736,7 +742,7 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
 <p><a class="youtube" href="https://youtu.be/NX_PNUCdf2w"><img src="https://img.youtube.com/vi/NX_PNUCdf2w/maxresdefault.jpg"></img></a></p>
 <p>Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_3">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_4">Tzanio Kolev (LLNL)</h4>
 <h4 id="the-state-of-mfem"><em>The State of MFEM</em></h4>
 <h5 id="october-22-24-2024-mfem-workshop-2024_1"><strong>October 22-24, 2024</strong> | <a href="../workshop/">MFEM Workshop 2024</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=uqjR-yr3ggs"><img src="../img/videos/uqjR-yr3ggs-1280x720.png"></img></a></p>
@@ -879,7 +885,7 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
 <p><a class="youtube" href="https://www.youtube.com/watch?v=wgx0e8mdKu8"><img src="https://img.youtube.com/vi/wgx0e8mdKu8/maxresdefault.jpg"></img></a></p>
 <p>Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community resources.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_4">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_5">Tzanio Kolev (LLNL)</h4>
 <h4 id="the-state-of-mfem_1"><em>The State of MFEM</em></h4>
 <h5 id="october-26-2023-mfem-workshop-2023_1"><strong>October 26, 2023</strong> | <a href="../workshop23/">MFEM Workshop 2023</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=95OJe5DjjkA"><img src="https://img.youtube.com/vi/95OJe5DjjkA/maxresdefault.jpg"></img></a></p>
@@ -987,7 +993,7 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
 <p><a class="youtube" href="https://www.youtube.com/watch?v=vaAA9zB1IQ8"><img src="https://img.youtube.com/vi/vaAA9zB1IQ8/maxresdefault.jpg"></img></a></p>
 <p>Held on October 25, 2022, the second annual MFEM community workshop brought together users and developers for a review of software features and the development roadmap, a showcase of technical talks and applications, an interactive Q&amp;A session, and a visualization contest. Aaron Fisher of LLNL kicked off the event with an overview of the workshop agenda, participant demographics, and community survey results.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_5">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_6">Tzanio Kolev (LLNL)</h4>
 <h4 id="the-state-of-mfem_2"><em>The State of MFEM</em></h4>
 <h5 id="october-25-2022-mfem-workshop-2022_1"><strong>October 25, 2022</strong> | <a href="../workshop22/">MFEM Workshop 2022</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=I4pLPBYFR8o"><img src="https://img.youtube.com/vi/I4pLPBYFR8o/maxresdefault.jpg"></img></a></p>
@@ -1175,7 +1181,7 @@ Slides for this presentation are available <a href="https://extremecomputingtrai
 <p><a class="youtube" href="https://www.youtube.com/watch?v=oUk6tkHWjI4"><img src="https://img.youtube.com/vi/oUk6tkHWjI4/maxresdefault.jpg"></img></a></p>
 <p>Veselin Dobrev of LLNL detailed the project’s recent developments including memory manager improvements; serial support for p- and hp-refinement; high-order/low-order refined solution transfer; GLVis visualization via Jupyter Notebooks; and additional GPU support regarding HYPRE preconditioners, PETSc tools, and mesh optimization. MFEM now also integrates with various new libraries (AmgX, Gingko, FMS, and others), and continuous integration testing has been conducted on LLNL’s Quartz, Lassen, and Corona machines. Additionally, Dobrev summarized MFEM’s integrations with other software libraries and the team’s engagements with the Exascale Computing Project, SciDAC, the FASTMath Institute, and other projects.</p>
 <hr />
-<h4 id="tzanio-kolev-llnl_6">Tzanio Kolev (LLNL)</h4>
+<h4 id="tzanio-kolev-llnl_7">Tzanio Kolev (LLNL)</h4>
 <h4 id="the-state-of-mfem_3"><em>The State of MFEM</em></h4>
 <h5 id="october-20-2021-mfem-workshop-2021_14"><strong>October 20, 2021</strong> | <a href="../workshop21/">MFEM Workshop 2021</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=p4u4AlUhamY"><img src="https://img.youtube.com/vi/p4u4AlUhamY/maxresdefault.jpg"></img></a></p>
