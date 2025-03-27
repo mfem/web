@@ -85,6 +85,7 @@ Please cite with:
 - [Boyan Lazarov](https://scholar.google.com/citations?user=06WPX88AAAAJ&hl=en)
 - [Chak Shing Lee](https://scholar.google.com/citations?user=WyqnLwsAAAAJ&hl=en)
 - [Alex Lindsay](https://github.com/lindsayad)
+- [Tim Linke](https://github.com/talinke)
 - [Jacob Lotz](https://github.com/JacobLotz)
 - [Scott MacLachlan](https://www.math.mun.ca/~smaclachlan)
 - [Peter Maginot](https://www.krellinst.org/csgf/alumni/profile?n=maginot2010)
