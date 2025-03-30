@@ -42,22 +42,22 @@ subdirectories of your VS Code terminal.
 The full list of examples is below. Feel free to explore any of them depending
 on your interests, but we recommend starting with the ones marked with a ⭐.
 
-- [Example 0](https://docs.mfem.org/html/ex0_8cpp_source.html) &mdash; Simplest MFEM example, good starting point for new users (nodal H1 FEM for the Laplace problem). ⭐
-- [Example 1](https://docs.mfem.org/html/examples_2ex1_8cpp_source.html) &mdash; Nodal H1 FEM for the Laplace problem. ⭐
+- [Example 0](https://docs.mfem.org/html/ex0_8cpp_source.html) &mdash; Simplest MFEM example, good starting point for new users (nodal H1 FEM for the Poisson problem). ⭐
+- [Example 1](https://docs.mfem.org/html/examples_2ex1_8cpp_source.html) &mdash; Nodal H1 FEM for the Poisson problem. ⭐
 - [Example 2](https://docs.mfem.org/html/ex2_8cpp_source.html) &mdash; Vector FEM for linear elasticity.
 - [Example 3](https://docs.mfem.org/html/ex3_8cpp_source.html) &mdash; Nedelec H(curl) FEM for the definite Maxwell problem.
 - [Example 4](https://docs.mfem.org/html/ex4_8cpp_source.html) &mdash; Raviart-Thomas H(div) FEM for the grad-div problem.
 - [Example 5](https://docs.mfem.org/html/ex5_8cpp_source.html) &mdash; Mixed pressure-velocity FEM for the Darcy problem.
-- [Example 6](https://docs.mfem.org/html/ex6_8cpp_source.html) &mdash; Non-conforming adaptive mesh refinement (AMR) for the Laplace problem.
-- [Example 7](https://docs.mfem.org/html/ex7_8cpp_source.html) &mdash; Laplace problem on a surface (the unit sphere). ⭐
-- [Example 8](https://docs.mfem.org/html/ex8_8cpp_source.html) &mdash; Discontinuous Petrov-Galerkin (DPG) for the Laplace problem.
+- [Example 6](https://docs.mfem.org/html/ex6_8cpp_source.html) &mdash; Non-conforming adaptive mesh refinement (AMR) for the Poisson problem.
+- [Example 7](https://docs.mfem.org/html/ex7_8cpp_source.html) &mdash; Screened Poisson equation on a surface (the unit sphere). ⭐
+- [Example 8](https://docs.mfem.org/html/ex8_8cpp_source.html) &mdash; Discontinuous Petrov-Galerkin (DPG) for the Poisson problem.
 - [Example 9](https://docs.mfem.org/html/ex9_8cpp_source.html) &mdash; Discontinuous Galerkin (DG) time-dependent advection. ⭐
 - [Example 10](https://docs.mfem.org/html/ex10_8cpp_source.html) &mdash; Time-dependent implicit nonlinear elasticity. ⭐
 - [Example 11](https://docs.mfem.org/html/ex11p_8cpp_source.html) &mdash; Parallel Laplace eigensolver.
 - [Example 12](https://docs.mfem.org/html/ex12p_8cpp_source.html) &mdash; Parallel linear elasticity eigensolver.
 - [Example 13](https://docs.mfem.org/html/ex13p_8cpp_source.html) &mdash; Parallel Maxwell eigensolver.
-- [Example 14](https://docs.mfem.org/html/ex14_8cpp_source.html) &mdash; DG for the Laplace problem.
-- [Example 15](https://docs.mfem.org/html/ex15_8cpp_source.html) &mdash; Dynamic AMR for Laplace with prescribed time-dependent source. ⭐
+- [Example 14](https://docs.mfem.org/html/ex14_8cpp_source.html) &mdash; DG for the Poisson problem.
+- [Example 15](https://docs.mfem.org/html/ex15_8cpp_source.html) &mdash; Dynamic AMR for Poisson with prescribed time-dependent source. ⭐
 - [Example 16](https://docs.mfem.org/html/ex16_8cpp_source.html) &mdash; Time-dependent nonlinear heat equation.
 - [Example 17](https://docs.mfem.org/html/ex17_8cpp_source.html) &mdash; DG for linear elasticity.
 - [Example 18](https://docs.mfem.org/html/ex18_8cpp_source.html) &mdash; DG for the Euler equations.
@@ -68,8 +68,8 @@ on your interests, but we recommend starting with the ones marked with a ⭐.
 - [Example 23](https://docs.mfem.org/html/ex23_8cpp_source.html) &mdash; Second-order in time wave equation. ⭐
 - [Example 24](https://docs.mfem.org/html/ex24_8cpp_source.html) &mdash; Mixed finite element spaces and interpolators.
 - [Example 25](https://docs.mfem.org/html/ex25_8cpp_source.html) &mdash; Perfectly Matched Layer (PML) for Maxwell equations.
-- [Example 26](https://docs.mfem.org/html/ex26_8cpp_source.html) &mdash; Multigrid preconditioner for the Laplace problem. ⭐
-- [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html) &mdash; Boundary conditions for the Laplace problem.
+- [Example 26](https://docs.mfem.org/html/ex26_8cpp_source.html) &mdash; Multigrid preconditioner for the Poisson problem. ⭐
+- [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html) &mdash; Boundary conditions for Laplace's equation.
 - [Example 28](https://docs.mfem.org/html/ex28_8cpp_source.html) &mdash; Constraints and sliding boundary conditions.
 - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html) &mdash; Solving PDEs on embedded surfaces.
 - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html) &mdash; Mesh preprocessing, resolving problem data.

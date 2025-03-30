@@ -41,7 +41,7 @@ g++ -O3 -I.. ex10.cpp -o ex10 -L.. -lmfem
 ## Example 1
 
 This example code demonstrates the use of MFEM to define a simple
-linear finite element discretization of the Laplace problem
+linear finite element discretization of the Poisson problem
 $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions. To run it, simply specify the input mesh file (which will be refined to a final mesh with no more than 50,000 elements):
 ```sh
 ~/mfem/examples> ex1 -m ../data/star.mesh
