@@ -106,7 +106,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 24](https://docs.mfem.org/html/ex24_8cpp_source.html): mixed finite element spaces and interpolators,
  - [Example 25](https://docs.mfem.org/html/ex25_8cpp_source.html): Perfectly Matched Layer (PML) for Maxwell equations,
  - [Example 26](https://docs.mfem.org/html/ex26_8cpp_source.html): multigrid preconditioner for the Poisson problem,
- - [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html): boundary conditions for the Poisson problem,
+ - [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html): boundary conditions for Laplace's equation,
  - [Example 28](https://docs.mfem.org/html/ex28_8cpp_source.html): constraints and sliding boundary conditions,
  - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html): solving PDEs on embedded surfaces,
  - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html): mesh preprocessing, resolving problem data,
