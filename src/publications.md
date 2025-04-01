@@ -7,16 +7,21 @@
 
 ## Selected Publications
 
+#### 2025
+  1. D. Serino, Q. Tang, X.-Z. Tang, T. Kolev, K. Lipnikov, [An adaptive Newton-based free-boundary Grad-Shafranov solver](https://arxiv.org/abs/2407.03499), *in review*, **2025**. Also available as [arXiv:2407.03499](https://arxiv.org/abs/2407.03499).
+  1. N. Atallah, K. Mittal, G. Scovazzi, V. Tomov, [A high-order Shifted Interface Method for Lagrangian shock hydrodynamics](https://www.sciencedirect.com/science/article/pii/S0021999124008854), *Journal of Computational Physics*, 523, 113637, **2025**.
+
 #### 2024
   1. J.E. Lotz, G.D. Weymouth, I. Akkerman. [Projection-based reduced-order modelling of time-periodic problems, with application to flow past flapping hydrofoils](https://doi.org/10.1016/j.cma.2024.117161), *Computer Methods in Applied Mechanics and Engineering*, 429, 117161, **2024**.
-  1. T. Dzanic, K. Mittal, D. Kim, J. Yang, S. Petrides, B. Keith, R. Anderson, [DynAMO: Multi-agent reinforcement learning for dynamic anticipatory mesh optimization with applications to hyperbolic conservation laws](https://doi.org/10.1016/j.jcp.2024.112924), *Journal of Computational Physics*, 506, 112924, **2024**.
+  1. N. Atallah, V. Tomov, G. Scovazzi, [Weak boundary conditions for Lagrangian shock hydrodynamics: A high-order finite element implementation on curved boundaries](https://www.sciencedirect.com/science/article/pii/S0021999124002080), *Journal of Computational Physics*, 507, 112959, **2024**.
+  1. T. Dzanic, K. Mittal, D. Kim, J. Yang, S. Petrides, B. Keith, R. Anderson, [DynAMO: Multi-agent reinforcement learning for dynamic anticipatory mesh optimization with applications to hyperbolic conservation laws](https://doi.org/10.1016/j.jcp.2024.112924), *Journal of Computational Physics*, 506, 112924, **2024**
   1. K. Mittal, V. Dobrev, P. Knupp, T. Kolev, F. Ledoux, C. Roche, V. Tomov, [Mixed-Order Meshes through rp-adaptivity for Surface Fitting to Implicit Geometries](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.10), *Proceedings of the 2024 SIAM International Meshing Roundtable (IMR)*. **2024**.
   1. T. Stitt, K. Belcher, A. Campos, T. Kolev, P. Mocz, R. Rieben, A. Skinner, V. Tomov, A. Vargas, K. Weiss, [Performance portable GPU acceleration of a high-order finite element multiphysics application](https://doi.org/10.1115/1.4064493), *Journal of Fluids Engineering*, 146(4):041102, **2024**.
   1. J.E. Lotz, M.F.P. ten Eikelder, I. Akkerman. [Space–time computations of exactly time-periodic flows past hydrofoils](https://doi.org/10.1016/j.compfluid.2024.106286), *Computers & Fluids*, 277, 106286, **2024**.
   1. V. Dobrev, P. Knupp, T. Kolev, K. Mittal, R. Rieben, M. Stees, V. Tomov, [Asymptotic Analysis of Compound Volume+ Shape Metrics for Mesh Optimization](https://epubs.siam.org/doi/pdf/10.1137/1.9781611978001.9), *Proceedings of the 2024 SIAM International Meshing Roundtable (IMR)*. **2024**.
   1. W. Pazner, Tz. Kolev, P. Vassilevski, [Matrix-free high-performance saddle-point solvers for high-order problems in H(div)](http://dx.doi.org/10.1137/23m1568806), *SIAM Journal on Scientific Computing*, **2024**. Also available as [arXiv:2304.12387](https://arxiv.org/abs/2304.12387).
   1. G. Fu, S. Osher, W. Pazner, and W. Li. [Generalized optimal transport and mean field control problems for reaction-diffusion systems with high-order finite element computation](http://dx.doi.org/10.1016/j.jcp.2024.112994), *Journal of Computational Physics*, **2024**. Also available as [arXiv:2306.06287](https://arxiv.org/abs/2306.06287).
-  1. J. Andrej, N. Atallah, J.-P. Bäcker, J. Camier, D. Copeland, V. Dobrev, Y. Dudouit, T. Duswald, B. Keith, D. Kim, Tz. Kolev, B. Lazarov, K. Mittal, W. Pazner, S. Petrides, S. Shiraiwa, M. Stowell, V. Tomov. [High-performance finite elements with MFEM](https://arxiv.org/abs/2402.15940), accepted for publication in the International Journal of High Performance Computing Applications, **2024**. Also available as [arXiv:2402.15940](https://arxiv.org/abs/2402.15940).
+  1. J. Andrej, N. Atallah, J.-P. Bäcker, J. Camier, D. Copeland, V. Dobrev, Y. Dudouit, T. Duswald, B. Keith, D. Kim, Tz. Kolev, B. Lazarov, K. Mittal, W. Pazner, S. Petrides, S. Shiraiwa, M. Stowell, V. Tomov. [High-performance finite elements with MFEM](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981), *International Journal of High Performance Computing Applications*, **2024**. Also available as [arXiv:2402.15940](https://arxiv.org/abs/2402.15940).
   1. A. Gillette, B. Keith, S. Petrides, [Learning robust marking policies for adaptive mesh refinement](https://doi.org/10.1137/22M1510613), *SIAM Journal on Scientific Computing*, **2024**. Also available as [arXiv:2207.06339](https://arxiv.org/abs/2207.06339).
   1. T. Duswald, B. Keith, B. Lazarov, S. Petrides, B. Wohlmuth, [Finite elements for Mat&eacute;rn-type random fields: Uncertainty in computational mechanics and design optimization](https://arxiv.org/abs/2403.03658)(in-review). Also available as [arXiv:2403.03658](https://arxiv.org/abs/2403.03658)
 
@@ -35,6 +40,7 @@
   1. J. Barrera, Tz. Kolev, K. Mittal, and V. Tomov, [High-Order Mesh Morphing for Boundary and Interface Fitting to Implicit Geometries](https://doi.org/10.1016/j.cad.2023.103499), *Computer-Aided Design*, 158, 103499, **2023**. Also available as [arXiv:2208.05062](https://arxiv.org/abs/2208.05062).
   1. J. Camier, V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, R. Rieben,  and V. Tomov, [Accelerating high-order mesh optimization using finite element partial assembly on GPUs](https://doi.org/10.1016/j.jcp.2022.111808), *Journal of Computational Physics*, 474, 111808, **2023**. Also available as [arXiv:2205.12721](https://arxiv.org/abs/2205.12721).
   1. F. Gómez-Lozada, C. Andrés del Valle, J. D. Jiménez-Paz, B. S. Lazarov and J. Galvis, [Modelling and simulation of brinicle formation](https://royalsocietypublishing.org/doi/10.1098/rsos.230268), *Royal Society Open Science*, 10, 10, 230268, **2023**.
+  1.  C. Vogl, I. Joseph, and M. Holec, [Mesh refinement for anisotropic diffusion in magnetized plasmas](https://doi.org/10.1016/j.camwa.2023.06.019), *Computers & Mathematics with Applications*, **2023**. Also available as [arXiv:2210.16442](https://arxiv.org/abs/2210.16442). 
 
 ---
 
