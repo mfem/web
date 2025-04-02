@@ -9,6 +9,8 @@
 
 #### 2025
   1. D. Serino, Q. Tang, X.-Z. Tang, T. Kolev, K. Lipnikov, [An adaptive Newton-based free-boundary Grad-Shafranov solver](https://arxiv.org/abs/2407.03499), *in review*, **2025**. Also available as [arXiv:2407.03499](https://arxiv.org/abs/2407.03499).
+  1. A. Vargas, V. Tomov, A. Skinner, V. Dobrev, J. Nikl, T. Kolev, R. Rieben, [Multi-Material Ale Remap with Interface Sharpening Using High-Order Matrix-Free Finite Element Methods](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5159472), *in review*, **2025**.
+  1. K. Mittal, A. Parik, S. Dutta, P. Fischer, T. Kolev, J. Lottes, [General Field Evaluation in High-Order Meshes on GPUs](https://arxiv.org/abs/2501.12349), *to appear*, **2025**. Also available as [arXiv:2501.12349](https://arxiv.org/abs/2501.12349).
   1. N. Atallah, K. Mittal, G. Scovazzi, V. Tomov, [A high-order Shifted Interface Method for Lagrangian shock hydrodynamics](https://www.sciencedirect.com/science/article/pii/S0021999124008854), *Journal of Computational Physics*, 523, 113637, **2025**.
 
 #### 2024
@@ -40,7 +42,7 @@
   1. J. Barrera, Tz. Kolev, K. Mittal, and V. Tomov, [High-Order Mesh Morphing for Boundary and Interface Fitting to Implicit Geometries](https://doi.org/10.1016/j.cad.2023.103499), *Computer-Aided Design*, 158, 103499, **2023**. Also available as [arXiv:2208.05062](https://arxiv.org/abs/2208.05062).
   1. J. Camier, V. Dobrev, P. Knupp, Tz. Kolev, K. Mittal, R. Rieben,  and V. Tomov, [Accelerating high-order mesh optimization using finite element partial assembly on GPUs](https://doi.org/10.1016/j.jcp.2022.111808), *Journal of Computational Physics*, 474, 111808, **2023**. Also available as [arXiv:2205.12721](https://arxiv.org/abs/2205.12721).
   1. F. Gómez-Lozada, C. Andrés del Valle, J. D. Jiménez-Paz, B. S. Lazarov and J. Galvis, [Modelling and simulation of brinicle formation](https://royalsocietypublishing.org/doi/10.1098/rsos.230268), *Royal Society Open Science*, 10, 10, 230268, **2023**.
-  1.  C. Vogl, I. Joseph, and M. Holec, [Mesh refinement for anisotropic diffusion in magnetized plasmas](https://doi.org/10.1016/j.camwa.2023.06.019), *Computers & Mathematics with Applications*, **2023**. Also available as [arXiv:2210.16442](https://arxiv.org/abs/2210.16442). 
+  1.  C. Vogl, I. Joseph, and M. Holec, [Mesh refinement for anisotropic diffusion in magnetized plasmas](https://doi.org/10.1016/j.camwa.2023.06.019), *Computers & Mathematics with Applications*, **2023**. Also available as [arXiv:2210.16442](https://arxiv.org/abs/2210.16442).
 
 ---
 

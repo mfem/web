@@ -111,6 +111,8 @@ Please cite with:
 - [Syun'ichi Shiraiwa](https://scholar.google.com/citations?user=17PZFkoAAAAJ&hl=en)
 - [Morteza Siboni](https://www.scorec.rpi.edu/~hakimm2)
 - [Joseph Signorelli](https://github.com/j-signorelli)
+- [Adam Schmidt](https://github.com/adam-sim-dev)
+- [Mathias Schmidt](https://github.com/SchmidtMat)
 - [Cameron Smith](https://www.scorec.rpi.edu/~cwsmith)
 - [Vanessa Sochat](https://vsoch.github.io)
 - [Gabriel Pinochet-Soto](https://web.pdx.edu/~gpin2/)
