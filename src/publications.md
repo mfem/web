@@ -8,6 +8,8 @@
 ## Selected Publications
 
 #### 2025
+  1. B. Keith, D. Kim, B. S. Lazarov, T. M. Surowiec, [Analysis of the SiMPL method for density-based topology optimization](https://arxiv.org/abs/2409.19341), *to appear*, **2025**. Also available as [arXiv:2409.19341](https://arxiv.org/abs/2409.19341).
+  1. D. Kim, B. S. Lazarov, T. M. Surowiec, B. Keith, [A Simple Introduction to the SiMPL Method for Density-Based Topology Optimization](https://arxiv.org/abs/2411.19421), *to appear*, **2025**. Also available as [arXiv:2411.19421](https://arxiv.org/abs/2411.19421).
   1. D. Serino, Q. Tang, X.-Z. Tang, T. Kolev, K. Lipnikov, [An adaptive Newton-based free-boundary Grad-Shafranov solver](https://arxiv.org/abs/2407.03499), *in review*, **2025**. Also available as [arXiv:2407.03499](https://arxiv.org/abs/2407.03499).
   1. A. Vargas, V. Tomov, A. Skinner, V. Dobrev, J. Nikl, T. Kolev, R. Rieben, [Multi-Material Ale Remap with Interface Sharpening Using High-Order Matrix-Free Finite Element Methods](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5159472), *in review*, **2025**.
   1. K. Mittal, A. Parik, S. Dutta, P. Fischer, T. Kolev, J. Lottes, [General Field Evaluation in High-Order Meshes on GPUs](https://arxiv.org/abs/2501.12349), *to appear*, **2025**. Also available as [arXiv:2501.12349](https://arxiv.org/abs/2501.12349).
