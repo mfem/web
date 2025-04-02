@@ -10,7 +10,118 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ---
 
-### <i class="fa fa-star"></i> Next Talk
+### <i class="fa fa-star"></i> Next Talks
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/kaczmarczyk.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Łukasz Kaczmarczyk (University of Glasgow)
+##### *Mixed finite element formulation for solid mechanics problems*
+##### [**9:00am PDT, April 8, 2025**](https://everytimezone.com/s/5e8b27ab)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** During the talk, I will focus on the implementation of the mixed finite element method for small-strain elasticity and its extension to large-strain nearly incompressible problems. The finite element formulation includes four independently approximated fields: stresses, logarithmic stretches, rotation vectors, and displacements. The first two are associated with conserving linear and angular momentum, respectively. The other two fields are associated with the constitutive equation and the consistency between displacements and deformation. An exponential map establishes the relationship between the rotation vectors and the rotation tensor. The stresses are approximated in the H-div space, while the remaining three fields are in the L2 space.
+
+This formulation results in a very sparse system of equations that can be efficiently solved in parallel using hybridisation with a block solver, thereby enabling highly scalable and robust solvers. The system hybridisation involves 'breaking' the H-div space, such that continuity of normal fluxes, i.e., tractions, is no longer enforced a priori, and introducing a hybridised field on mesh skeleton faces and contact surfaces. Such a field acts as a kinematic Lagrange multiplier enforcing continuity of normal tractions. Moreover, the hybridised Lagrange multiplier field is conveniently used to enforce contact conditions. Since hybridised Lagrange multipliers are approximated on skeleton faces and are interpreted as displacements, this leads to a dual mixed formulation of contact.
+
+Moreover, since continuity of the displacement field is enforced in a weak sense by continuity of fluxes, this enables a natural methodology to simulate cracks, such that the mesh topology does not change while the crack is propagating. Furthermore, since the H-div space provides traces of fluxes on faces, the mixed element enables efficient calculation of face crack release energy. Since this methodology enables crack propagation on fixed mesh technology, and if it is based on an energy-based crack propagation criterion, it inherits the robustness of the phase field while being as efficient as methods which resolves crack discreetly.
+
+In an algebraic sense, since all fields in the interior become fields in the L2 space, and fields on skeleton faces are in H1/2, the system of equations is extremely sparse and can be solved using a Schur complement, eliminating interior fields. The resulting Schur matrix is extremely sparse and consists of five blocks in each row in 3D and four blocks in 2D. This structure resembles the matrix structure emerging from the finite volume method on hexahedral or quadrilateral elements, making it suitable for multigrid solvers and exploitable in parallel implementations on GPUs.
+
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/witherden.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Freddie Witherden (Texas A&M University)
+##### *High Performance Asynchronous I/O for Exascale Spectral Element Methods*
+##### [**10:00am PDT, April 22, 2025**](https://everytimezone.com/s/a4390204)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Despite recent developments in solid-state storage technology,
+disk I/O in leadership-class machines has not kept pace with memory bandwidth
+or arithmetic capabilities. As a consequence, simulations are spending
+proportionally more time writing out checkpoint files than ever before. This
+problem is compounded by the fact that most I/O middleware libraries offer only
+limited support for non-blocking I/O, and where this capability is present, it
+is almost always mutually exclusive with parallel I/O.
+
+In this talk, we will provide an overview of the new massively parallel
+asynchronous file format, which will debut with PyFR v3. The format, specifically
+developed for discontinuous spectral element methods, offers a host of desirable
+features. These include: a space-efficient node-based mesh description with
+support for mixed elements and curvature; compact connectivity arrays that
+enable fast parallel interface construction through neighbourhood collectives;
+self-describing nodal solution representations with embedded metadata; support
+for partial (subset) solutions; provisions for multiple pre-computed partitionings;
+and output files that are independent of the chosen partitioning.
+All of this is combined with disk I/O patterns that are entirely contiguous.
+The format itself is based on the archival-grade HDF5 format but includes custom
+I/O routines to enable more efficient parallel I/O and asynchronous capabilities.
+
+After describing the format and its implementation in PyFR, we will conclude the
+talk by discussing the benefits the new format provides in terms of ease of
+deployment, particularly in how it enables users to bypass potentially outdated
+vendor-provided builds of HDF5.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/turek.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Stefan Turek (Technical University Dortmund)
+##### *Hardware-oriented Numerics for Massively Parallel & Low Precision Accelerator Hardware and Application to "large scale" CFD Problems*
+##### March 11, 2025
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/turek.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
+
+**Abstract:** The aim of this talk is to present and to discuss how modern High
+Performance Computing (HPC) facilities including massively parallel hardware
+with millions of cores together with very fast, but lower precision accelerator
+hardware can be exploited via techniques from hardware-oriented Numerics for
+PDEs so that a very high computational and numerical efficiency can be
+obtained. Here, as prototypical large scale PDE-based applications, we
+concentrate on nonstationary flow simulations with hundreds of millions or even
+billions of spatial unknowns in long-time computations with many thousands up to
+millions of time steps. For the expected huge computational resources in the
+coming exascale era, such spatially discretized problems which typically are
+treated sequentially in time, that means one time step after the other, are
+still too small to exploit adequately the huge number of compute nodes, resp.,
+cores so that further parallelism, for instance w.r.t. time, might get
+necessary. In this context, we discuss how "parallel-in-space global-in-time"
+Newton-Krylov Multigrid approaches can be designed which allow a much higher
+degree of parallelism. Moreover, to exploit current accelerator hardware in
+lower precision (for instance, GPUs), that means mainly working in single or
+even half precision, we discuss the concept of "prehandling" (in contrast to
+"preconditioning") of the corresponding ill-conditioned systems of equations,
+for instance arising from Poisson-like problems in incompressible flow
+simulations. Here, we assume a transformation into an equivalent linear system
+with similar sparsity but with much lower condition numbers so that the use of
+lower precision hardware might get feasible. In our talk, we provide for both
+aspects numerical results as "proof-of-concept" and discuss the challenges,
+particularly for large scale flow problems.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -19,12 +130,16 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
-##### *Immersed domain approach for fluid-structure-contact interaction problems*
-##### [**9:00am PDT, February 18, 2025**](https://everytimezone.com/s/5fee1dd0)
+##### *Immersed Domain Approach for Fluid-Structure-Contact Interaction Problems*
+##### February 18, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/zulian.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>]()
+**Talk Recording**
+</button>](https://youtu.be/8YOEUaD8jdg)
 
 **Abstract:** The study of fluid-structure interaction (FSI) has gained
 significant traction in recent decades, with applications spanning various
@@ -41,7 +156,6 @@ structure meshes. The structure is described within a Lagrangian framework,
 while the fluid is typically described in a fully Eulerian framework. This
 flexibility demands higher mesh resolution to maintain comparable accuracy,
 necessitating the consideration of parallel computing.
-
 We present an immersed domain approach for the numerical solution of
 fluid-structure-contact-interaction (FSCI) problems. Within the overlapping
 volume, the fluid and structure are coupled, while mortar-based techniques are
@@ -52,21 +166,15 @@ matrix-vector multiplication or storage of the linearized system of equations in
 a single matrix, thus facilitating algebraic multigrid strategies. We illustrate
 our general algorithmic framework and our primary parallel computing tools and
 discuss two studies conducted using variations of our approach.
-
 The first study simulates the complete dynamics of a bio-prosthetic heart
 valve. We model the interactions between blood and the valve, blood and the
 aortic wall, and leaflets during valve closure. This solution strategy is
 specifically designed to address the contact problem using non-smooth methods,
 with solid and structure sub-problems solved in a segregated and iterative
 manner.
-
 The second study simulates a diaphragm pump and the contact interaction between
 an elastic valve displaced by the fluid and the valve seats. This approach is
 monolithic, and penalty methods are employed to impose contact conditions.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -75,7 +183,7 @@ monolithic, and penalty methods are employed to impose contact conditions.
 </div><div class="col-md-12" markdown="1">
 
 #### Svetlana Tokareva (Los Alamos National Laboratory)
-##### *A high-order matrix-free finite element method for hyperbolic problems*
+##### *A High-Order Matrix-Free Finite Element Method for Hyperbolic Problems*
 ##### January 14, 2025
 
 [<button type="button" class="btn btn-primary">
@@ -84,7 +192,7 @@ monolithic, and penalty methods are employed to impose contact conditions.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/xy_c_NYDXb8)
 
 **Abstract:** Many multiphysics applications require high-order, physically
 consistent and computationally efficient discretizations of hyperbolic PDEs. In
@@ -99,9 +207,9 @@ for the discretization in time. The advantage of such a matrix-free approach
 consists in preserving a compact approximation stencil even at high orders,
 which reduces the computational cost compared to classical finite element
 techniques and provides potential benefit for exascale computing on future
-computer architectures.  In this talk we focus on the staggered grid MF-FEM (SG
+computer architectures. In this talk we focus on the staggered grid MF-FEM (SG
 MF-FEM) scheme for the Lagrangian hydrodynamics. We will present the simulation
-results for several challenging benchmark problems.  Finally, will discuss how
+results for several challenging benchmark problems. Finally, will discuss how
 structure-preserving properties (such as positivity and preservation of local
 bounds) of the proposed MF-FE method can be enforced using convex limiting for
 blending the high-order and low-order element residuals
@@ -1037,16 +1145,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Stefan Turek (Technical University Dortmund)
-##### **March 11, 2025**
-
----
-
-#### Łukasz Kaczmarczyk (University of Glasgow)
-##### **April 8, 2025**
-
----
 
 #### David Williams (Penn State)
 ##### **May 6, 2025**
