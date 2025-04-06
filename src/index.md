@@ -92,7 +92,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Mar XX, 2025 | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
+Apr XX, 2025 | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
 Nov 25, 2024 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop.md).
 Jun 5, 2024  | MFEM in the cloud [tutorial](tutorial/index.md).
  May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.

@@ -168,6 +168,7 @@ A handful of "toy" miniapps of less serious nature demonstrate the flexibility o
  - [Mondrian](https://docs.mfem.org/html/mondrian_8cpp_source.html): convert any image to an AMR mesh,
  - [Rubik](https://docs.mfem.org/html/rubik_8cpp_source.html): interactive Rubik's Cube&trade; puzzle,
  - [Snake](https://docs.mfem.org/html/snake_8cpp_source.html): model of the Rubik's Snake&trade; puzzle.
+ - [Spiral](https://docs.mfem.org/html/spiral_8cpp_source.html): animation of a spiral cone toy.
 
 ## Accurate and Flexible Visualization
 
