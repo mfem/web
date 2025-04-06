@@ -8,9 +8,9 @@ These miniapps demonstrate the use of NURBS-based Isogeometric analysis[^1],[^2]
 
 [^2]: T.J.R. Hughes, J.A. Cottrell, Y. Bazilevs: "Isogeometric analysis: toward integration of CAD and FEA", Wiley&Sons 2009
 
-### NURBS Ex 1: Laplace problem
+### NURBS Ex 1: Poisson problem
 
-This example code solves a simple Laplace problem
+This example code solves a simple Poisson problem
 \begin{align}
 -\Delta u = 1
 \end{align}
