@@ -10,30 +10,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ---
 
-### <i class="fa fa-star"></i> Next Talks
-
-</div><div class="col-md-3" markdown="1">
-
-![](img/seminar/kaczmarczyk.png)
-
-</div><div class="col-md-12" markdown="1">
-
-#### Łukasz Kaczmarczyk (University of Glasgow)
-##### *Mixed finite element formulation for solid mechanics problems*
-##### [**9:00am PDT, April 8, 2025**](https://everytimezone.com/s/5e8b27ab)
-
-[<button type="button" class="btn btn-success">
-**Webex**
-</button>]()
-
-**Abstract:** During the talk, I will focus on the implementation of the mixed finite element method for small-strain elasticity and its extension to large-strain nearly incompressible problems. The finite element formulation includes four independently approximated fields: stresses, logarithmic stretches, rotation vectors, and displacements. The first two are associated with conserving linear and angular momentum, respectively. The other two fields are associated with the constitutive equation and the consistency between displacements and deformation. An exponential map establishes the relationship between the rotation vectors and the rotation tensor. The stresses are approximated in the H-div space, while the remaining three fields are in the L2 space.
-
-This formulation results in a very sparse system of equations that can be efficiently solved in parallel using hybridisation with a block solver, thereby enabling highly scalable and robust solvers. The system hybridisation involves 'breaking' the H-div space, such that continuity of normal fluxes, i.e., tractions, is no longer enforced a priori, and introducing a hybridised field on mesh skeleton faces and contact surfaces. Such a field acts as a kinematic Lagrange multiplier enforcing continuity of normal tractions. Moreover, the hybridised Lagrange multiplier field is conveniently used to enforce contact conditions. Since hybridised Lagrange multipliers are approximated on skeleton faces and are interpreted as displacements, this leads to a dual mixed formulation of contact.
-
-Moreover, since continuity of the displacement field is enforced in a weak sense by continuity of fluxes, this enables a natural methodology to simulate cracks, such that the mesh topology does not change while the crack is propagating. Furthermore, since the H-div space provides traces of fluxes on faces, the mixed element enables efficient calculation of face crack release energy. Since this methodology enables crack propagation on fixed mesh technology, and if it is based on an energy-based crack propagation criterion, it inherits the robustness of the phase field while being as efficient as methods which resolves crack discreetly.
-
-In an algebraic sense, since all fields in the interior become fields in the L2 space, and fields on skeleton faces are in H1/2, the system of equations is extremely sparse and can be solved using a Schur complement, eliminating interior fields. The resulting Schur matrix is extremely sparse and consists of five blocks in each row in 3D and four blocks in 2D. This structure resembles the matrix structure emerging from the finite volume method on hexahedral or quadrilateral elements, making it suitable for multigrid solvers and exploitable in parallel implementations on GPUs.
-
+### <i class="fa fa-star"></i> Next Talk
 
 </div><div class="col-md-3" markdown="1">
 
@@ -78,6 +55,62 @@ vendor-provided builds of HDF5.
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/kaczmarczyk.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Łukasz Kaczmarczyk (University of Glasgow)
+##### *Mixed finite element formulation for solid mechanics problems*
+##### April 8, 2025
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/kaczmarczyk.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
+
+**Abstract:** During the talk, I will focus on the implementation of the mixed
+finite element method for small-strain elasticity and its extension to
+large-strain nearly incompressible problems. The finite element formulation
+includes four independently approximated fields: stresses, logarithmic
+stretches, rotation vectors, and displacements. The first two are associated
+with conserving linear and angular momentum, respectively. The other two fields
+are associated with the constitutive equation and the consistency between
+displacements and deformation. An exponential map establishes the relationship
+between the rotation vectors and the rotation tensor. The stresses are
+approximated in the H-div space, while the remaining three fields are in the L2
+space.  This formulation results in a very sparse system of equations that can
+be efficiently solved in parallel using hybridisation with a block solver,
+thereby enabling highly scalable and robust solvers. The system hybridisation
+involves 'breaking' the H-div space, such that continuity of normal fluxes,
+i.e., tractions, is no longer enforced a priori, and introducing a hybridised
+field on mesh skeleton faces and contact surfaces. Such a field acts as a
+kinematic Lagrange multiplier enforcing continuity of normal
+tractions. Moreover, the hybridised Lagrange multiplier field is conveniently
+used to enforce contact conditions. Since hybridised Lagrange multipliers are
+approximated on skeleton faces and are interpreted as displacements, this leads
+to a dual mixed formulation of contact.  Moreover, since continuity of the
+displacement field is enforced in a weak sense by continuity of fluxes, this
+enables a natural methodology to simulate cracks, such that the mesh topology
+does not change while the crack is propagating. Furthermore, since the H-div
+space provides traces of fluxes on faces, the mixed element enables efficient
+calculation of face crack release energy. Since this methodology enables crack
+propagation on fixed mesh technology, and if it is based on an energy-based
+crack propagation criterion, it inherits the robustness of the phase field while
+being as efficient as methods which resolves crack discreetly.  In an algebraic
+sense, since all fields in the interior become fields in the L2 space, and
+fields on skeleton faces are in H1/2, the system of equations is extremely
+sparse and can be solved using a Schur complement, eliminating interior
+fields. The resulting Schur matrix is extremely sparse and consists of five
+blocks in each row in 3D and four blocks in 2D. This structure resembles the
+matrix structure emerging from the finite volume method on hexahedral or
+quadrilateral elements, making it suitable for multigrid solvers and exploitable
+in parallel implementations on GPUs.
 
 </div><div class="col-md-3" markdown="1">
 
