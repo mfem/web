@@ -333,7 +333,7 @@
         
             <li><a href="#sign-up"> Sign-Up</a></li>
         
-            <li><a href="#next-talks"> Next Talks</a></li>
+            <li><a href="#next-talk"> Next Talk</a></li>
         
             <li><a href="#previous-talks"> Previous Talks</a></li>
         
@@ -356,22 +356,7 @@
 <h3 id="sign-up"><i class="fa fa-envelope-o" aria-hidden="true"></i> Sign-Up</h3>
 <p>Fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcETKJnhWaU7_Wa2V3d7WIPdf3_JYK4JmA/viewform?usp=sf_link">this form</a> to sign-up for future FEM@LLNL seminar announcements.</p>
 <hr />
-<h3 id="next-talks"><i class="fa fa-star"></i> Next Talks</h3>
-</div>
-<div class="col-md-3">
-<p><img alt="" src="../img/seminar/kaczmarczyk.png" /></p>
-</div>
-<div class="col-md-12">
-<h4 id="ukasz-kaczmarczyk-university-of-glasgow">Łukasz Kaczmarczyk (University of Glasgow)</h4>
-<h5 id="mixed-finite-element-formulation-for-solid-mechanics-problems"><em>Mixed finite element formulation for solid mechanics problems</em></h5>
-<h5 id="900am-pdt-april-8-2025"><a href="https://everytimezone.com/s/5e8b27ab"><strong>9:00am PDT, April 8, 2025</strong></a></h5>
-<p><a href="https://llnlfed.webex.com/meet/kolev1"><button type="button" class="btn btn-success">
-<strong>Webex</strong>
-</button></a></p>
-<p><strong>Abstract:</strong> During the talk, I will focus on the implementation of the mixed finite element method for small-strain elasticity and its extension to large-strain nearly incompressible problems. The finite element formulation includes four independently approximated fields: stresses, logarithmic stretches, rotation vectors, and displacements. The first two are associated with conserving linear and angular momentum, respectively. The other two fields are associated with the constitutive equation and the consistency between displacements and deformation. An exponential map establishes the relationship between the rotation vectors and the rotation tensor. The stresses are approximated in the H-div space, while the remaining three fields are in the L2 space.</p>
-<p>This formulation results in a very sparse system of equations that can be efficiently solved in parallel using hybridisation with a block solver, thereby enabling highly scalable and robust solvers. The system hybridisation involves 'breaking' the H-div space, such that continuity of normal fluxes, i.e., tractions, is no longer enforced a priori, and introducing a hybridised field on mesh skeleton faces and contact surfaces. Such a field acts as a kinematic Lagrange multiplier enforcing continuity of normal tractions. Moreover, the hybridised Lagrange multiplier field is conveniently used to enforce contact conditions. Since hybridised Lagrange multipliers are approximated on skeleton faces and are interpreted as displacements, this leads to a dual mixed formulation of contact.</p>
-<p>Moreover, since continuity of the displacement field is enforced in a weak sense by continuity of fluxes, this enables a natural methodology to simulate cracks, such that the mesh topology does not change while the crack is propagating. Furthermore, since the H-div space provides traces of fluxes on faces, the mixed element enables efficient calculation of face crack release energy. Since this methodology enables crack propagation on fixed mesh technology, and if it is based on an energy-based crack propagation criterion, it inherits the robustness of the phase field while being as efficient as methods which resolves crack discreetly.</p>
-<p>In an algebraic sense, since all fields in the interior become fields in the L2 space, and fields on skeleton faces are in H1/2, the system of equations is extremely sparse and can be solved using a Schur complement, eliminating interior fields. The resulting Schur matrix is extremely sparse and consists of five blocks in each row in 3D and four blocks in 2D. This structure resembles the matrix structure emerging from the finite volume method on hexahedral or quadrilateral elements, making it suitable for multigrid solvers and exploitable in parallel implementations on GPUs.</p>
+<h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/witherden.jpg" /></p>
@@ -408,6 +393,58 @@ deployment, particularly in how it enables users to bypass potentially outdated
 vendor-provided builds of HDF5.</p>
 <hr />
 <h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
+<p><img alt="" src="../img/seminar/kaczmarczyk.png" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="ukasz-kaczmarczyk-university-of-glasgow">Łukasz Kaczmarczyk (University of Glasgow)</h4>
+<h5 id="mixed-finite-element-formulation-for-solid-mechanics-problems"><em>Mixed finite element formulation for solid mechanics problems</em></h5>
+<h5 id="april-8-2025">April 8, 2025</h5>
+<p><a href="pdf/seminar/kaczmarczyk.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href=""><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> During the talk, I will focus on the implementation of the mixed
+finite element method for small-strain elasticity and its extension to
+large-strain nearly incompressible problems. The finite element formulation
+includes four independently approximated fields: stresses, logarithmic
+stretches, rotation vectors, and displacements. The first two are associated
+with conserving linear and angular momentum, respectively. The other two fields
+are associated with the constitutive equation and the consistency between
+displacements and deformation. An exponential map establishes the relationship
+between the rotation vectors and the rotation tensor. The stresses are
+approximated in the H-div space, while the remaining three fields are in the L2
+space.  This formulation results in a very sparse system of equations that can
+be efficiently solved in parallel using hybridisation with a block solver,
+thereby enabling highly scalable and robust solvers. The system hybridisation
+involves 'breaking' the H-div space, such that continuity of normal fluxes,
+i.e., tractions, is no longer enforced a priori, and introducing a hybridised
+field on mesh skeleton faces and contact surfaces. Such a field acts as a
+kinematic Lagrange multiplier enforcing continuity of normal
+tractions. Moreover, the hybridised Lagrange multiplier field is conveniently
+used to enforce contact conditions. Since hybridised Lagrange multipliers are
+approximated on skeleton faces and are interpreted as displacements, this leads
+to a dual mixed formulation of contact.  Moreover, since continuity of the
+displacement field is enforced in a weak sense by continuity of fluxes, this
+enables a natural methodology to simulate cracks, such that the mesh topology
+does not change while the crack is propagating. Furthermore, since the H-div
+space provides traces of fluxes on faces, the mixed element enables efficient
+calculation of face crack release energy. Since this methodology enables crack
+propagation on fixed mesh technology, and if it is based on an energy-based
+crack propagation criterion, it inherits the robustness of the phase field while
+being as efficient as methods which resolves crack discreetly.  In an algebraic
+sense, since all fields in the interior become fields in the L2 space, and
+fields on skeleton faces are in H1/2, the system of equations is extremely
+sparse and can be solved using a Schur complement, eliminating interior
+fields. The resulting Schur matrix is extremely sparse and consists of five
+blocks in each row in 3D and four blocks in 2D. This structure resembles the
+matrix structure emerging from the finite volume method on hexahedral or
+quadrilateral elements, making it suitable for multigrid solvers and exploitable
+in parallel implementations on GPUs.</p>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/turek.jpg" /></p>
@@ -1337,7 +1374,7 @@ The work presented here has been facilitated by funding through DOE's National V
         
             <li><a href="#sign-up"> Sign-Up</a></li>
         
-            <li><a href="#next-talks"> Next Talks</a></li>
+            <li><a href="#next-talk"> Next Talk</a></li>
         
             <li><a href="#previous-talks"> Previous Talks</a></li>
         
