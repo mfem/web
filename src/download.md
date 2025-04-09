@@ -1,13 +1,13 @@
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG)
 ┊ [Example codes](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.7.tgz**
-</button>](https://bit.ly/mfem-4-7)
+**Download mfem-4.8.tgz**
+</button>](https://bit.ly/mfem-4-8)
 
 Please use the GitHub [issue tracker](https://github.com/mfem/mfem/issues)
 to report [bugs](https://github.com/mfem/mfem/issues/new?labels=bug)
@@ -17,6 +17,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
 
  **Filename** | **Version** | **Release Date**  | **Size** | **[SLOC](https://github.com/AlDanial/cloc)** | **Notes** | **Documentation** |
  ------------ | ----------- | ----------------- | -------- | -------------------------------------------- | --------- | ----------------- |
+ [mfem-4.8.tgz](https://bit.ly/mfem-4-8) | v4.8 | Apr 2025 | 4.1M | 458K | | [docs/4.8](https://docs.mfem.org/4.8) |
  [mfem-4.7.tgz](https://bit.ly/mfem-4-7) | v4.7 | May 2024 | 3.8M | 420K | | [docs/4.7](https://docs.mfem.org/4.7) |
  [mfem-4.6.tgz](https://bit.ly/mfem-4-6) | v4.6 | Sep 2023 | 3.6M | 397K | | [docs/4.6](https://docs.mfem.org/4.6) |
  [mfem-4.5.2.tgz](https://bit.ly/mfem-4-5-2) | v4.5.2 | Mar 2023 | 3.3M | 367K | | [docs/4.5.2](https://docs.mfem.org/4.5.2) |

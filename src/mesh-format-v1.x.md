@@ -107,7 +107,7 @@ vertices
 
 Compared to the non-periodic version, e.g. [Listing 2](#listing-2), the main difference above is that we have fused vertices 8 and 0 and vertices 17 and 9.
 
-The difference between the two topologies can be illustrated by solving a simple Laplace problem with homogeneous essential boundary conditions on the resulting mesh.
+The difference between the two topologies can be illustrated by solving a simple Poisson problem with homogeneous essential boundary conditions on the resulting mesh.
 
 In the periodic case we get:
 
