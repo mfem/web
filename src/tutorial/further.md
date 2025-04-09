@@ -69,7 +69,7 @@ on your interests, but we recommend starting with the ones marked with a ⭐.
 - [Example 24](https://docs.mfem.org/html/ex24_8cpp_source.html) &mdash; Mixed finite element spaces and interpolators.
 - [Example 25](https://docs.mfem.org/html/ex25_8cpp_source.html) &mdash; Perfectly Matched Layer (PML) for Maxwell equations.
 - [Example 26](https://docs.mfem.org/html/ex26_8cpp_source.html) &mdash; Multigrid preconditioner for the Poisson problem. ⭐
-- [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html) &mdash; Boundary conditions for Laplace's equation.
+- [Example 27](https://docs.mfem.org/html/ex27_8cpp_source.html) &mdash; Boundary conditions for the Laplace problem.
 - [Example 28](https://docs.mfem.org/html/ex28_8cpp_source.html) &mdash; Constraints and sliding boundary conditions.
 - [Example 29](https://docs.mfem.org/html/ex29_8cpp_source.html) &mdash; Solving PDEs on embedded surfaces.
 - [Example 30](https://docs.mfem.org/html/ex30_8cpp_source.html) &mdash; Mesh preprocessing, resolving problem data.

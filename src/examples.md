@@ -918,7 +918,7 @@ We recommend viewing Example 1 before viewing this example._
 
 
 <div id="ex27" markdown="1">
-##Example 27: Boundary Conditions for Elliptic Problems
+##Example 27: Boundary Conditions for the Laplace Problem
 <a href="https://glvis.org/live/?stream=../data/streams/ex27.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex27.png">
 </a>
