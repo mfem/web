@@ -425,22 +425,22 @@
 <h2 id="extensive-examples">Extensive Examples</h2>
 <p>MFEM includes a number of well-documented <a href="../examples/">example codes</a> that can be used as tutorials, as well as simple starting points for user applications. Some of the included example codes are:</p>
 <ul>
-<li><a href="https://docs.mfem.org/html/ex0_8cpp_source.html">Example 0</a>: simplest MFEM example, good starting point for new users (nodal H1 FEM for the Laplace problem),</li>
-<li><a href="https://docs.mfem.org/html/examples_2ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Laplace problem,</li>
+<li><a href="https://docs.mfem.org/html/ex0_8cpp_source.html">Example 0</a>: simplest MFEM example, good starting point for new users (nodal H1 FEM for the Poisson problem),</li>
+<li><a href="https://docs.mfem.org/html/examples_2ex1_8cpp_source.html">Example 1</a>: nodal H1 FEM for the Poisson problem,</li>
 <li><a href="https://docs.mfem.org/html/ex2_8cpp_source.html">Example 2</a>: vector FEM for linear elasticity,</li>
 <li><a href="https://docs.mfem.org/html/ex3_8cpp_source.html">Example 3</a>: Nedelec H(curl) FEM for the definite Maxwell problem,</li>
 <li><a href="https://docs.mfem.org/html/ex4_8cpp_source.html">Example 4</a>: Raviart-Thomas H(div) FEM for the grad-div problem,</li>
 <li><a href="https://docs.mfem.org/html/ex5_8cpp_source.html">Example 5</a>: mixed pressure-velocity FEM for the Darcy problem,</li>
-<li><a href="https://docs.mfem.org/html/ex6_8cpp_source.html">Example 6</a>: non-conforming adaptive mesh refinement (AMR) for the Laplace problem,</li>
-<li><a href="https://docs.mfem.org/html/ex7_8cpp_source.html">Example 7</a>: Laplace problem on a surface (the unit sphere),</li>
-<li><a href="https://docs.mfem.org/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Laplace problem,</li>
+<li><a href="https://docs.mfem.org/html/ex6_8cpp_source.html">Example 6</a>: non-conforming adaptive mesh refinement (AMR) for the Poisson problem,</li>
+<li><a href="https://docs.mfem.org/html/ex7_8cpp_source.html">Example 7</a>: Screened Poisson equation on a surface (the unit sphere),</li>
+<li><a href="https://docs.mfem.org/html/ex8_8cpp_source.html">Example 8</a>: Discontinuous Petrov-Galerkin (DPG) for the Poisson problem,</li>
 <li><a href="https://docs.mfem.org/html/ex9_8cpp_source.html">Example 9</a>: Discontinuous Galerkin (DG) time-dependent advection,</li>
 <li><a href="https://docs.mfem.org/html/ex10_8cpp_source.html">Example 10</a>: time-dependent implicit nonlinear elasticity,</li>
 <li><a href="https://docs.mfem.org/html/ex11p_8cpp_source.html">Example 11</a>: parallel Laplace eigensolver,</li>
 <li><a href="https://docs.mfem.org/html/ex12p_8cpp_source.html">Example 12</a>: parallel linear elasticity eigensolver,</li>
 <li><a href="https://docs.mfem.org/html/ex13p_8cpp_source.html">Example 13</a>: parallel Maxwell eigensolver,</li>
-<li><a href="https://docs.mfem.org/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Laplace problem,</li>
-<li><a href="https://docs.mfem.org/html/ex15_8cpp_source.html">Example 15</a>: dynamic AMR for Laplace with prescribed time-dependent source,</li>
+<li><a href="https://docs.mfem.org/html/ex14_8cpp_source.html">Example 14</a>: Discontinuous Galerkin (DG) for the Poisson problem,</li>
+<li><a href="https://docs.mfem.org/html/ex15_8cpp_source.html">Example 15</a>: dynamic AMR for Poisson with prescribed time-dependent source,</li>
 <li><a href="https://docs.mfem.org/html/ex16_8cpp_source.html">Example 16</a>: time-dependent nonlinear heat equation,</li>
 <li><a href="https://docs.mfem.org/html/ex17_8cpp_source.html">Example 17</a>: Discontinuous Galerkin (DG) for linear elasticity,</li>
 <li><a href="https://docs.mfem.org/html/ex18_8cpp_source.html">Example 18</a>: Discontinuous Galerkin (DG) for the Euler equations,</li>
@@ -451,7 +451,7 @@
 <li><a href="https://docs.mfem.org/html/ex23_8cpp_source.html">Example 23</a>: second order in time wave equation,</li>
 <li><a href="https://docs.mfem.org/html/ex24_8cpp_source.html">Example 24</a>: mixed finite element spaces and interpolators,</li>
 <li><a href="https://docs.mfem.org/html/ex25_8cpp_source.html">Example 25</a>: Perfectly Matched Layer (PML) for Maxwell equations,</li>
-<li><a href="https://docs.mfem.org/html/ex26_8cpp_source.html">Example 26</a>: multigrid preconditioner for the Laplace problem,</li>
+<li><a href="https://docs.mfem.org/html/ex26_8cpp_source.html">Example 26</a>: multigrid preconditioner for the Poisson problem,</li>
 <li><a href="https://docs.mfem.org/html/ex27_8cpp_source.html">Example 27</a>: boundary conditions for the Laplace problem,</li>
 <li><a href="https://docs.mfem.org/html/ex28_8cpp_source.html">Example 28</a>: constraints and sliding boundary conditions,</li>
 <li><a href="https://docs.mfem.org/html/ex29_8cpp_source.html">Example 29</a>: solving PDEs on embedded surfaces,</li>
@@ -512,6 +512,7 @@
 <li><a href="https://docs.mfem.org/html/mondrian_8cpp_source.html">Mondrian</a>: convert any image to an AMR mesh,</li>
 <li><a href="https://docs.mfem.org/html/rubik_8cpp_source.html">Rubik</a>: interactive Rubik's Cube&trade; puzzle,</li>
 <li><a href="https://docs.mfem.org/html/snake_8cpp_source.html">Snake</a>: model of the Rubik's Snake&trade; puzzle.</li>
+<li><a href="https://docs.mfem.org/html/spiral_8cpp_source.html">Spiral</a>: animation of a spiral cone toy.</li>
 </ul>
 <h2 id="accurate-and-flexible-visualization">Accurate and Flexible Visualization</h2>
 <p>The general (high-order) meshes and finite element functions in MFEM can be visualized accurately using the companion OpenGL visualization tool <a href="https://glvis.org">GLVis</a>, which is built on top of MFEM.</p>

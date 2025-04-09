@@ -441,11 +441,11 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="ex0">
-<h2 id="example-0-simplest-laplace-problem">Example 0: Simplest Laplace Problem</h2>
+<h2 id="example-0-simplest-poisson-problem">Example 0: Simplest Poisson Problem</h2>
 <p><img class="floatright" src="../img/examples/ex0.png"></p>
 <p>This is the simplest MFEM example and a good starting point for new users.
 The example demonstrates the use of MFEM to define and solve an $H^1$ finite
-element discretization of the Laplace problem
+element discretization of the Poisson equation
 $$-\Delta u = 1 \quad\text{in } \Omega$$
 with homogeneous Dirichlet boundary conditions
 $$ u = 0 \quad\text{on } \partial\Omega$$</p>
@@ -459,12 +459,12 @@ versions.</em>
 <br></p>
 </div>
 <div id="ex1">
-<h2 id="example-1-laplace-problem">Example 1: Laplace Problem</h2>
+<h2 id="example-1-poisson-problem">Example 1: Poisson Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
 </a></p>
 <p>This example code demonstrates the use of MFEM to define a simple isoparametric
-finite element discretization of the Laplace problem $$-\Delta u = 1$$ with
+finite element discretization of the Poisson equation $$-\Delta u = 1$$ with
 homogeneous Dirichlet boundary conditions. Specifically, we discretize with the
 finite element space coming from the mesh (linear by default, quadratic for
 quadratic curvilinear mesh, NURBS for NURBS mesh, etc.) The problem solved in
@@ -592,10 +592,10 @@ We recommend viewing examples 1-4 before viewing this example.</em>
 <br></p>
 </div>
 <div id="ex6">
-<h2 id="example-6-laplace-problem-with-amr">Example 6: Laplace Problem with AMR</h2>
+<h2 id="example-6-poisson-problem-with-amr">Example 6: Poisson Problem with AMR</h2>
 <p><img class="floatright" src="../img/examples/ex6.png"></p>
 <p>This is a version of Example 1 with a simple adaptive mesh
-refinement loop. The problem being solved is again the Laplace
+refinement loop. The problem being solved is again the Poisson
 equation $$-\Delta u = 1$$ with homogeneous Dirichlet boundary
 conditions. The problem is solved on a sequence of meshes which
 are locally refined in a conforming (triangles, tetrahedrons)
@@ -620,8 +620,8 @@ We recommend viewing Example 1 before viewing this example.</em>
 <p><img class="floatright" src="../img/examples/ex7.png"></p>
 <p>This example code demonstrates the use of MFEM to define a
 triangulation of a unit sphere and a simple isoparametric
-finite element discretization of the Laplace problem with mass
-term, $$-\Delta u + u = f.$$</p>
+finite element discretization of the screened Poisson equation,
+$$-\Delta u + u = f.$$</p>
 <p>The example highlights mesh generation, the use of mesh
 refinement, high-order meshes and finite elements, as well as
 surface-based linear and bilinear forms corresponding to the
@@ -634,11 +634,11 @@ We recommend viewing Example 1 before viewing this example.</em>
 <br></p>
 </div>
 <div id="ex8">
-<h2 id="example-8-dpg-for-the-laplace-problem">Example 8: DPG for the Laplace Problem</h2>
+<h2 id="example-8-dpg-for-the-poisson-problem">Example 8: DPG for the Poisson Problem</h2>
 <p><img class="floatright" src="../img/examples/ex8.png"></p>
 <p>This example code demonstrates the use of the Discontinuous
 Petrov-Galerkin (DPG) method in its primal 2x2 block form as a
-simple finite element discretization of the Laplace problem
+simple finite element discretization of the Poisson problem
 $$-\Delta u = f$$ with homogeneous Dirichlet boundary conditions. We
 use high-order continuous trial space, a high-order interfacial
 (trace) space, and a high-order discontinuous test space
@@ -700,7 +700,7 @@ We recommend viewing examples 2 and 9 before viewing this example.</em>
 <br></p>
 </div>
 <div id="ex11">
-<h2 id="example-11-laplace-eigenproblem">Example 11: Laplace Eigenproblem</h2>
+<h2 id="example-11-laplacian-eigenproblem">Example 11: Laplacian Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex11.png"></p>
 <p>This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.</p>
@@ -769,7 +769,7 @@ We recommend viewing examples 3 and 11 before viewing this example.</em>
 <p><img class="floatright" src="../img/examples/ex14.png"></p>
 <p>This example code demonstrates the use of MFEM to define a
 discontinuous Galerkin (DG) finite element discretization of
-the Laplace problem  $$-\Delta u = 1$$ with homogeneous Dirichlet
+the Poisson equation $$-\Delta u = 1$$ with homogeneous Dirichlet
 boundary conditions. Finite element spaces of any order,
 including zero on regular grids, are supported. The example highlights the use
 of discontinuous spaces and DG-specific face integrators.</p>
@@ -1102,7 +1102,7 @@ We recommend viewing Example 22 before viewing this example.</em>
 <p><img class="floatright" src="../img/examples/ex26.png"></p>
 <p>This example code demonstrates the use of MFEM to define a
 simple isoparametric finite element discretization of the
-Laplace problem $$-\Delta u = 1$$ with homogeneous Dirichlet
+Poisson equation $$-\Delta u = 1$$ with homogeneous Dirichlet
 boundary conditions and how to solve it efficiently using a
 matrix-free multigrid preconditioner.</p>
 <p>The example highlights on the creation of a hierarchy of
@@ -1120,12 +1120,12 @@ We recommend viewing Example 1 before viewing this example.</em>
 <br></p>
 </div>
 <div id="ex27">
-<h2 id="example-27-laplace-boundary-conditions">Example 27: Laplace Boundary Conditions</h2>
+<h2 id="example-27-boundary-conditions-for-the-laplace-problem">Example 27: Boundary Conditions for the Laplace Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/ex27.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex27.png">
 </a></p>
 <p>This example code demonstrates the use of MFEM to define a
-simple finite element discretization of the Laplace problem:
+simple finite element discretization of Laplace's equation:
 $$
 -\Delta u = 0
 $$
@@ -1187,7 +1187,7 @@ We recommend viewing example 2 before viewing this example.</em>
 <div id="ex29">
 <h2 id="example-29-solving-pdes-on-embedded-surfaces">Example 29: Solving PDEs on embedded surfaces</h2>
 <p><img class="floatright" src="../img/examples/ex29.png"></p>
-<p>This example demonstrates setting up and solving an anisotropic Laplace problem
+<p>This example demonstrates setting up and solving an anisotropic Poisson problem
 $$-\nabla\cdot(\sigma\nabla u) = 1 \quad\text{in } \Omega$$
 with homogeneous Dirichlet boundary conditions
 $$ u = 0 \quad\text{on } \partial\Omega$$
@@ -1469,12 +1469,12 @@ We recommend viewing Example 5 and Example 36 before viewing this example.</em>
 <br></p>
 </div>
 <div id="nurbs_ex1">
-<h2 id="nurbs-example-1-laplace-problem">NURBS Example 1: Laplace Problem</h2>
+<h2 id="nurbs-example-1-poisson-problem">NURBS Example 1: Poisson Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
 <img class="floatright" src="../img/examples/ex1.png">
 </a></p>
 <p>This example code demonstrates the use of MFEM to define a simple isogeometric NURBS discretization of
-the Laplace problem $$-\Delta u = 1$$ with
+the Poisson equation $$-\Delta u = 1$$ with
 homogeneous Dirichlet boundary conditions. The problem solved in
 this example is the same as <a href="#ex1">Example 1</a>.</p>
 <p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex1.cpp">nurbs_ex1.cpp</a>)
@@ -1521,7 +1521,7 @@ The problem solved in this example is the same as <a href="#ex5">Example 5</a>.<
 <br></p>
 </div>
 <div id="nurbs_ex11">
-<h2 id="nurbs-example-11-laplace-eigenproblem">NURBS Example 11: Laplace Eigenproblem</h2>
+<h2 id="nurbs-example-11-laplacian-eigenproblem">NURBS Example 11: Laplacian Eigenproblem</h2>
 <p><img class="floatright" src="../img/examples/ex11.png"></p>
 <p>This example code demonstrates the use of MFEM to solve the eigenvalue problem
 $$-\Delta u = \lambda u$$ with homogeneous Dirichlet boundary conditions.</p>
