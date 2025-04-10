@@ -363,6 +363,21 @@
 <hr />
 </div>
 <div class="col-md-6">
+<h4 id="stefan-turek-technical-university-dortmund">Stefan Turek (Technical University Dortmund)</h4>
+<h4 id="hardware-oriented-numerics-for-massively-parallel-low-precision-accelerator-hardware-and-application-to-large-scale-cfd-problems"><em>Hardware-oriented Numerics for Massively Parallel &amp; Low Precision Accelerator Hardware and Application to "large scale" CFD Problems</em></h4>
+<h5 id="march-11-2025-femllnl-seminar-series"><strong>March 11, 2025</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><a class="youtube" href="https://youtu.be/8nmblHRXsos"><img src="https://img.youtube.com/vi/8nmblHRXsos/maxresdefault.jpg"></img></a></p>
+<p>The aim of this talk is to present and to discuss how modern High
+Performance Computing (HPC) facilities including massively parallel hardware
+with millions of cores together with very fast, but lower precision accelerator
+hardware can be exploited via techniques from hardware-oriented Numerics for
+PDEs so that a very high computational and numerical efficiency can be
+obtained. Here, as prototypical large scale PDE-based applications, we
+concentrate on nonstationary flow simulations with hundreds of millions or even
+billions of spatial unknowns in long-time computations with many thousands up to
+millions of time steps. For the expected huge computational resources in the
+coming exascale era, such spatially discretized problems which typically are treated sequentially in time, that means one time step after the other, are still too small to exploit adequately the huge number of compute nodes, resp., cores so that further parallelism, for instance w.r.t. time, might get necessary. In this context, we discuss how "parallel-in-space global-in-time" Newton-Krylov Multigrid approaches can be designed which allow a much higher degree of parallelism. Moreover, to exploit current accelerator hardware in lower precision (for instance, GPUs), that means mainly working in single or even half precision, we discuss the concept of "prehandling" (in contrast to "preconditioning") of the corresponding ill-conditioned systems of equations, for instance arising from Poisson-like problems in incompressible flow simulations. Here, we assume a transformation into an equivalent linear system with similar sparsity but with much lower condition numbers so that the use of lower precision hardware might get feasible. In our talk, we provide for both aspects numerical results as "proof-of-concept" and discuss the challenges, particularly for large scale flow problems.</p>
+<hr />
 <h4 id="patrick-zulian-universita-della-svizzera-italiana-unidistance-suisse">Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)</h4>
 <h4 id="immersed-domain-approach-for-fluid-structure-contact-interaction-problems"><em>Immersed Domain Approach for Fluid-Structure-Contact Interaction Problems</em></h4>
 <h5 id="february-18-2025-femllnl-seminar-series"><strong>February 18, 2025</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -471,14 +486,14 @@ bounds) of the proposed MF-FE method can be enforced using convex limiting for b
 <h5 id="october-17-2023-femllnl-seminar-series"><strong>October 17, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=MZ9qPFbWw68"><img src="https://img.youtube.com/vi/MZ9qPFbWw68/maxresdefault.jpg"></img></a></p>
 <p>Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.</p>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="natasha-sharma-university-of-texas-at-el-paso">Natasha Sharma (University of Texas at El Paso)</h4>
 <h4 id="a-continuous-interior-penalty-method-framework-for-sixth-order-cahn-hilliard-type-equations-with-applications-to-microstructure-evolution-and-microemulsions"><em>A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions</em></h4>
 <h5 id="july-18-2023-femllnl-seminar-series"><strong>July 18, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=5O4Uv9agXHU"><img src="https://img.youtube.com/vi/5O4Uv9agXHU/maxresdefault.jpg"></img></a></p>
 <p>The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.</p>
-</div>
-<div class="col-md-6">
+<hr />
 <h4 id="freddie-witherden-texas-am-university">Freddie Witherden (Texas A&amp;M University)</h4>
 <h4 id="fsspmdm-accelerating-small-sparse-matrix-multiplications-by-run-time-code-generation"><em>FSSpMDM — Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation</em></h4>
 <h5 id="june-20-2023-femllnl-seminar-series"><strong>June 20, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
