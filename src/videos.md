@@ -10,6 +10,24 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Stefan Turek (Technical University Dortmund)
+#### *Hardware-oriented Numerics for Massively Parallel & Low Precision Accelerator Hardware and Application to "large scale" CFD Problems*
+##### **March 11, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/8nmblHRXsos"><img src="https://img.youtube.com/vi/8nmblHRXsos/maxresdefault.jpg"></img></a>
+
+The aim of this talk is to present and to discuss how modern High
+Performance Computing (HPC) facilities including massively parallel hardware
+with millions of cores together with very fast, but lower precision accelerator
+hardware can be exploited via techniques from hardware-oriented Numerics for
+PDEs so that a very high computational and numerical efficiency can be
+obtained. Here, as prototypical large scale PDE-based applications, we
+concentrate on nonstationary flow simulations with hundreds of millions or even
+billions of spatial unknowns in long-time computations with many thousands up to
+millions of time steps. For the expected huge computational resources in the
+coming exascale era, such spatially discretized problems which typically are treated sequentially in time, that means one time step after the other, are still too small to exploit adequately the huge number of compute nodes, resp., cores so that further parallelism, for instance w.r.t. time, might get necessary. In this context, we discuss how "parallel-in-space global-in-time" Newton-Krylov Multigrid approaches can be designed which allow a much higher degree of parallelism. Moreover, to exploit current accelerator hardware in lower precision (for instance, GPUs), that means mainly working in single or even half precision, we discuss the concept of "prehandling" (in contrast to "preconditioning") of the corresponding ill-conditioned systems of equations, for instance arising from Poisson-like problems in incompressible flow simulations. Here, we assume a transformation into an equivalent linear system with similar sparsity but with much lower condition numbers so that the use of lower precision hardware might get feasible. In our talk, we provide for both aspects numerical results as "proof-of-concept" and discuss the challenges, particularly for large scale flow problems.
+
+---
+
 #### Patrick Zulian (Università della Svizzera italiana / UniDistance Suisse)
 #### *Immersed Domain Approach for Fluid-Structure-Contact Interaction Problems*
 ##### **February 18, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -184,7 +202,7 @@ A computationally demanding physical simulation often presents a significant imp
 
 Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10^9-10^10, and in complex problems the direction of anisotropy may not be aligned with (or is impossible to align with) the spatial mesh. Such problems pose major challenges for both discretization accuracy and efficient implicit linear solvers. Although the underlying problem is elliptic or parabolic in nature, we argue that the problem is better approached from the perspective of hyperbolic operators. The problem is posed in a directional gradient first order formulation, introducing a directional heat flux along magnetic field lines as an auxiliary variable. We then develop novel continuous and discontinuous discretizations of the mixed system, using stabilization techniques developed for hyperbolic problems. The resulting block matrix system is then reordered so that the advective operators are on the diagonal, and the system is solved using AMG based on approximate ideal restriction (AIR), which is particularly efficient for upwind discretizations of advection. Compared with traditional discretizations and AMG solvers, we achieve orders of magnitude reduction in error and AMG iterations in the extremely anisotropic regime.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Natasha Sharma (University of Texas at El Paso)
 #### *A Continuous Interior Penalty Method Framework for Sixth Order Cahn-Hilliard-type Equations with applications to microstructure evolution and microemulsions*
@@ -194,7 +212,7 @@ Heat conduction in magnetic confinement fusion can reach anisotropy ratios of 10
 
 The focus of this talk is on presenting unconditionally stable, uniquely solvable, and convergent numerical methods to solve two classes of the sixth-order Cahn-Hilliard-type equations. The first class arises as the so-called phase field crystal atomistic model of crystal growth, which has been employed to simulate a number of physical phenomena such as crystal growth in a supercooled liquid, crack propagation in ductile material, dendritic and eutectic solidification. The second class, henceforth referred to as Microemulsion systems (ME systems) appears as a model capturing the dynamics of phase transitions in ternary oil-water-surfactant systems in which three phases namely a microemulsion, almost pure oil, and almost pure water can coexist in equilibrium. ME systems have several applications ranging from enhanced oil recovery to the development of environmentally friendly solvents and drug delivery systems. Despite the widespread applications of these models, the major challenge impeding their use has been and continues to be a lack of understanding of the complex systems which they model. Thus, building computational models for these systems is crucial to the understanding of these systems. The presence of the higher order derivative in combination with a time-dependent process poses many challenges to the creation of stable, convergent, and efficient numerical methods approximating solutions to these equations. In this talk, we present a continuous interior penalty Galerkin framework for solving these equations and theoretically establish the desirable properties of stability, unique solvability, and first-order convergence. We close the talk by presenting the numerical results of some benchmark problems to verify the practical performance of the proposed approach and discuss some exciting current and future applications.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Freddie Witherden (Texas A&M University)
 #### *FSSpMDM — Accelerating Small Sparse Matrix Multiplications by Run-Time Code Generation*
