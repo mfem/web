@@ -128,7 +128,7 @@ in parallel implementations on GPUs.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/8nmblHRXsos)
 
 **Abstract:** The aim of this talk is to present and to discuss how modern High
 Performance Computing (HPC) facilities including massively parallel hardware
