@@ -63,7 +63,7 @@ vendor-provided builds of HDF5.
 </div><div class="col-md-12" markdown="1">
 
 #### Łukasz Kaczmarczyk (University of Glasgow)
-##### *Mixed finite element formulation for solid mechanics problems*
+##### *Mixed Finite Element Formulation for Solid Mechanics Problems*
 ##### April 8, 2025
 
 [<button type="button" class="btn btn-primary">
@@ -72,7 +72,7 @@ vendor-provided builds of HDF5.
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/fdv_pi4NYlw)
 
 **Abstract:** During the talk, I will focus on the implementation of the mixed
 finite element method for small-strain elasticity and its extension to
