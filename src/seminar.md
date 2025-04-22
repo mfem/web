@@ -14,16 +14,40 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/williams.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### David Williams (Penn State)
+##### *TBA*
+##### [**9:00am PDT, May 6, 2025**](https://everytimezone.com/s/8e781623)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/witherden.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Freddie Witherden (Texas A&M University)
 ##### *High Performance Asynchronous I/O for Exascale Spectral Element Methods*
-##### [**10:00am PDT, April 22, 2025**](https://everytimezone.com/s/a4390204)
+##### April 22, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/witherden2.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Despite recent developments in solid-state storage technology,
@@ -33,7 +57,6 @@ proportionally more time writing out checkpoint files than ever before. This
 problem is compounded by the fact that most I/O middleware libraries offer only
 limited support for non-blocking I/O, and where this capability is present, it
 is almost always mutually exclusive with parallel I/O.
-
 In this talk, we will provide an overview of the new massively parallel
 asynchronous file format, which will debut with PyFR v3. The format, specifically
 developed for discontinuous spectral element methods, offers a host of desirable
@@ -46,15 +69,10 @@ and output files that are independent of the chosen partitioning.
 All of this is combined with disk I/O patterns that are entirely contiguous.
 The format itself is based on the archival-grade HDF5 format but includes custom
 I/O routines to enable more efficient parallel I/O and asynchronous capabilities.
-
 After describing the format and its implementation in PyFR, we will conclude the
 talk by discussing the benefits the new format provides in terms of ease of
 deployment, particularly in how it enables users to bypass potentially outdated
 vendor-provided builds of HDF5.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1178,8 +1196,5 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### David Williams (Penn State)
-##### **May 6, 2025**
 
 </div>
