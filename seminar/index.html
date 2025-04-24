@@ -618,24 +618,24 @@ blending the high-order and low-order element residuals
 </button></a></p>
 <p><strong>Abstract:</strong> The FInite element Automatic Tabulator (FIAT) is a powerful Python
 library for tabulating basis functions. In this talk, we present two major
-recent developments in FIAT.  First, we have extended the FIAT abstraction to
+recent developments in FIAT. First, we have extended the FIAT abstraction to
 natively support macroelements. Macroelements offer conforming discretizations
 with highly desirable properties, such as divergence-free vector fields, and
 divergence-conforming symmetric tensors with low-order polynomial
 degrees. Elements implemented include the Hsieh-Clough-Tocher macroelement for
 biharmonic problems, the divergence-free, H1-conforming, inf-sup stable
 Guzmán-Neilan macroelement for Stokes, and the Johnson-Mercier macroelement for
-strongly-symmetric, H(div)-conforming stresses in solid mechanics.  We also
+strongly-symmetric, H(div)-conforming stresses in solid mechanics. We also
 improved the performance of tabulation and quadrature for simplicial high-order
 elements, and introduced novel basis functions, leading to solvers with better
-complexity in polynomial degree.  Inspired by the fast diagonalization method,
+complexity in polynomial degree. Inspired by the fast diagonalization method,
 we define new degrees of freedom on simplices as moments against a
 numerically-computed orthogonal polynomial basis to decouple element interiors
 in the stiffness matrix. We exploit this decoupling in a domain decomposition
 method with vertex or edge subdomains on the interface degrees of freedom, and
 Jacobi relaxation for the interior degrees of freedom. This enables fast solvers
 for high-order discretizations of the Riesz maps of the spaces of the de Rham
-complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini).  For
+complex (Lagrange, Nédélec, Raviart-Thomas, and Brezzi-Douglas-Marini). For
 each case, we illustrate the performance gains with numerical examples in
 Firedrake.</p>
 </div>
@@ -735,7 +735,7 @@ millions of elements to be generated in just a few minutes. However, when
 optimising a design, many simulations are needed for different operating
 conditions and geometric configurations. Creating the best mesh for each setup
 becomes time-consuming due to the requirement of excessive human intervention
-and expertise.  This talk will cover our recent work on using artificial
+and expertise. This talk will cover our recent work on using artificial
 intelligence to predict near-optimal meshes suitable for simulations. The main
 idea is to take advantage of the large amount of data that already exists in the
 industry to improve the selection of a suitable spacing function, including
@@ -744,7 +744,7 @@ simulations to guide the mesh generation process. I will assess the proposed
 method based on the accuracy of the predictions, efficiency, and environmental
 impact. This includes considering the carbon footprint and energy consumption of
 the computations required for a parametric CFD analysis under different flow
-conditions and angles of attack.  For transient problems, the use of high order
+conditions and angles of attack. For transient problems, the use of high order
 methods provides several advantages due to the low dissipation and dispersion
 errors associated to these schemes. An attractive approach to simulate these
 problems is to incorporate degree adaptive schemes to enhance the approximation
@@ -796,7 +796,7 @@ physical reliability, in particular over long durations. These schemes are often
 built on powerful geometric ideas for broad classes of problems, such as
 Hamiltonian or reversible systems. However, there remain difficulties in
 devising higher-order- in-time structure-preserving discretizations for
-nonlinear problems, and in conserving non-polynomial  invariants.
+nonlinear problems, and in conserving non-polynomial invariants.
 In this work we propose a new, general framework for the construction of
 structure-preserving timesteppers via finite elements in time and the systematic
 introduction of auxiliary variables. The framework reduces to Gauss methods
@@ -871,7 +871,7 @@ Benjamin-Bona-Mahony equation.</p>
 <a href="https://www.youtube.com/watch?v=7APgvXM7xH0"><button type="button" class="btn btn-success">
 <strong>Talk Recording</strong>
 </button></a></p>
-<p><strong>Abstract:</strong> Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building,  mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory.</p>
+<p><strong>Abstract:</strong> Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building, mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory.</p>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/chung.jpg" /></p>
@@ -1264,7 +1264,7 @@ The work presented here has been facilitated by funding through DOE's National V
 <p>Is there anything I can do to make my job run faster?</p>
 </li>
 </ul>
-<p>Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?  Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.</p>
+<p>Additionally, one might have concerns about storage, post-processing (Will I be able to analyze the results?Where?), and queue times. This talk will seek to answer several of these questions over a broad range of fluid-thermal problems from the perspective of a Nek5000/RS user. We specifically address performance with data for NekRS on several of the DOE's pre-exascale architectures, which feature AMD MI250X or NVIDIA V100 or A100 GPUs.</p>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/puso.jpg" /></p>
