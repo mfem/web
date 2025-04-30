@@ -95,7 +95,7 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 
 <div class="col-md-12" markdown="1" style="padding-left:0;">
 To submit an entry in the contest, please fill out the
-[Google form](https://docs.google.com/forms/d/e/1FAIpQLSe7iIn0KJvu0Iu9Nyp6S0gi9D-l_unsO-WGupBWE3d0l8TgLg/viewform?usp=sf_link).
+[Google form](https://docs.google.com/forms/d/e/1FAIpQLSdDpasPq0V-q2v_UFpmMyEjV14C67DNrmGbTdnkP57Tzsc3Gg/viewform?usp=dialog).
 
 Alternatively, you may email your submission to
 [mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
@@ -175,7 +175,6 @@ faculty of over 30 members and a vibrant community of undergraduate and graduate
 ┊  [*Ketan Mittal*](https://people.llnl.gov/mittal3)
 ┊  [*Will Pazner*](https://pazner.github.io)
 ┊  [*Sohail Reddy*](https://scholar.google.com/citations?user=trH03DQAAAAJ&hl=en)
-┊  [*Haley Shuey*](https://www.linkedin.com/in/haley-shuey)
 
 ---
 
