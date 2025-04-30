@@ -175,6 +175,7 @@ faculty of over 30 members and a vibrant community of undergraduate and graduate
 ┊  [*Ketan Mittal*](https://people.llnl.gov/mittal3)
 ┊  [*Will Pazner*](https://pazner.github.io)
 ┊  [*Sohail Reddy*](https://scholar.google.com/citations?user=trH03DQAAAAJ&hl=en)
+┊  [*Qi Tang*](https://tangqi.github.io)
 
 ---
 
