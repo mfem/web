@@ -67,7 +67,7 @@ MFEM workshop.
 
 ### Agenda
 
-The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (GMT-7) on Wedneday, September 10 and Thursday, Speptember 11.
+The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (GMT-7) on Wednesday, September 10 and Thursday, September 11.
 
 The full agenda will be announced shortly.
 
