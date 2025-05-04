@@ -125,7 +125,7 @@ Click each image to enlarge, then right-click to save locally.
 
 <div class="col-md-4"  markdown="1">
 [![](img/workshop-vb/mfem-tron-wave-text.png)](img/workshop-vb/mfem-tron-wave-text.png)
-[![](img/workshop-vb/mfem-grey-text.png)](img/workshop-vb/mfem-dark-blue-text.png)
+[![](img/workshop-vb/mfem-grey-text.png)](img/workshop-vb/mfem-grey-text.png)
 </div>
 
 </center>
