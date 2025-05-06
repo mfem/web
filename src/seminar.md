@@ -14,23 +14,43 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/empty.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### TBD (TBD)
+##### *TBD*
+##### [**May XX, 2025**](https://everytimezone.com/s/8e781623)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/williams.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### David Williams (Penn State)
 ##### *Finite element exterior calculus in four-dimensional space*
-##### [**9:00am PDT, May 6, 2025**](https://everytimezone.com/s/8e781623)
+##### May 6, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/williams.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The purpose of this talk is to explain the key differences between standard finite element methods for 3D applications, and space-time finite element methods for 4D applications. These differences are elucidated through the lens of finite element exterior calculus (FEEC). Through FEEC, we can leverage the language of differential geometry and algebraic topology to construct finite element spaces in any number of dimensions. In this work, we use techniques from FEEC to construct derivative operators in 3D and 4D space. We explain the differences between these operators, and the associated Sobolev spaces. Thereafter, we construct conforming, high-order, finite element spaces on the tesseract, pentatope, and tetrahedral prism in 4D. These shapes are fundamental geometric quantities in 4D, as they correspond to the four-dimensional analogs of the cube, tetrahedron, and triangular prism, respectively.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
