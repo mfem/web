@@ -20,7 +20,7 @@ future development directions for the project.
 ### Registration
 
 Please [register for the workshop](https://docs.google.com/forms/d/e/1FAIpQLSc31dyl4hUQi8TvQryPYZUjbUPAAdyVTqS0ccahCoIdpFMjrg/viewform?usp=header) online.
-The deadline to register is Wednesday, August 27.
+The deadline to register is **Wednesday, August 27**.
 
 After registering, in-person attendees will receive a follow-up form for the registration fee
 (*exact amount TBD, but in the $100-$200 range*), which will cover food and other expenses.
