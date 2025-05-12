@@ -52,6 +52,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
       <option id="freeboundary">Free boundary</option>
+      <option id="pic">Particle-In-Cell</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1510,6 +1511,39 @@ moving to the miniapps.**_
 <br></div>
 
 
+<div id="lorentz" markdown="1">
+## Lorentz Miniapp: Particle Trajectory Calculation
+<img class="floatright" src="../img/examples/lorentz.png">
+
+This miniapp reads VisItDataCollection objects produced by applications such as
+Volta and Tesla (described above) and computes particle trajectories subject
+to the electric and magnetic fields described therein.
+
+This code uses the Boris algorithm to approximate the Lorentz force,
+
+$$\frac{d\vec{p}}{dt} = q \left(\vec{E} + \vec{v}\times\vec{B}\right),$$
+
+exerted on a test particle with a given mass, charge, initial position and
+momentum.
+
+The Lorentz miniapp musts be run on the same number of processors as the
+applications which produced the VisItDataCollection objects. However, the
+electric and magnetic fields do not need to be defined on the same mesh. The
+Lorentz miniapp relies on the `FindPoints` functionality available through
+MFEM's parallel mesh classes to query the field values even when those field
+values are located on different processors.
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([lorentz.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/lorentz.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
 <a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
@@ -2446,17 +2480,18 @@ function update()
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
 
    // nurbs miniapps
-   + showElement("nurbs_ex1", diffusion && nurbs && h1)
-   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
-   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
-   + showElement("nurbs_ex11", diffusion && nurbs)
-   + showElement("nurbs_ex24", nurbs && (hcurl || hdiv))
+   + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
+   + showElement("nurbs_ex3", maxwell && hcurl && nurbs && all4)
+   + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
+   + showElement("nurbs_ex11", diffusion && all2 && nurbs && all4)
+   + showElement("nurbs_ex24", all1 && (hcurl || hdiv) && nurbs && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
+   + showElement("lorentz", (maxwell || pic) && all2 && all3 && all4)
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)
