@@ -14,13 +14,13 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/evans.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### TBD (TBD)
+#### John Evans (CU Boulder)
 ##### *TBD*
-##### [**May XX, 2025**](https://everytimezone.com/s/8e781623)
+##### [**June 12, 2025**](https://everytimezone.com/s/f88e2a7d)
 
 [<button type="button" class="btn btn-success">
 **Webex**
