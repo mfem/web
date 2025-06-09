@@ -365,12 +365,15 @@
 </div>
 <div class="col-md-12">
 <h4 id="john-evans-cu-boulder">John Evans (CU Boulder)</h4>
-<h5 id="tbd"><em>TBD</em></h5>
-<h5 id="june-12-2025"><a href="https://everytimezone.com/s/f88e2a7d"><strong>June 12, 2025</strong></a></h5>
+<h5 id="interpolation-based-immersed-finite-element-and-isogeometric-analysis"><em>Interpolation-Based Immersed Finite Element and Isogeometric Analysis</em></h5>
+<h5 id="900am-pdt-june-12-2025"><a href="https://everytimezone.com/s/f88e2a7d"><strong>9:00am PDT, June 12, 2025</strong></a></h5>
 <p><a href=""><button type="button" class="btn btn-success">
 <strong>Webex</strong>
 </button></a></p>
-<p><strong>Abstract:</strong> TBD</p>
+<p><strong>Abstract:</strong> Immersed finite element methods enable the simulation of physical systems out of reach by classical finite element analysis, and they also streamline the development of powerful shape and topology optimization technologies. However, the development of an immersed finite element analysis code is a daunting and burdensome task even for domain experts. This talk introduces a novel approach to immersed finite element analysis that dramatically reduces implementation complexity.</p>
+<p>Our method begins by interpolating finite element basis functions defined on a non-body-fitted background mesh onto a Lagrange basis defined over a body-fitted integration mesh. These interpolated basis functions are then used to perform immersed finite element analysis. Crucially, they can be represented locally using Lagrange shape functions via Lagrange extraction operators. This structure allows a classical finite element code to be converted into an immersed finite element code with minimal modifications. Specifically, the only additional ingredients required are: the Lagrange extraction operators, a connectivity array mapping local to global degrees of freedom, and the ability to evaluate the background basis function approximations and their derivatives via the extraction operators. The same framework also extends naturally to immersed isogeometric analysis.</p>
+<p>The presentation will begin with an overview of the method, followed by a theoretical discussion on stability and convergence for a model problem. We will then demonstrate the method’s effectiveness on a range of examples from structural mechanics and fluid dynamics. Next, we will introduce our open-source software that generates the necessary data structures, enabling immersed finite element and isogeometric analysis within the popular FEniCS platform. Finally, we will show how interpolation onto a body-fitted integration mesh can also be used to convert classical finite element analysis codes into meshless analysis codes based on the Reproducing Kernel Particle Method.</p>
+<p>This work is in collaboration with Jennifer Fromm, Ru Xiang, Han Zhao, and J.S. Chen (University of California San Diego), Nils Wunsch and Kurt Maute (University of Colorado Boulder), and David Kamensky (formerly University of California San Diego).</p>
 <hr />
 <h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
