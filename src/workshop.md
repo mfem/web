@@ -24,7 +24,7 @@ The deadline to register is **Wednesday, August 27**.
 
 * **In person:** After registering, please proceed to this [payment page](https://commerce.cashnet.com/pdxMFEM)
 to submit your registration fee ($100), which will cover food and other expenses.
-You are also welcome to select optional MFEM-branded items (t-shirt, pint glass, etc.) for purchase at a later date.
+MFEM-branded items (t-shirt, pint glass, etc.) will also be made available for purchase at a later date.
 
 * **Students:** Thanks to generous sponsorship of the workshop by LLNL, the in-person registration fee is waived for students.
 You may apply for travel reimbursement via [this form](https://docs.google.com/forms/d/e/1FAIpQLSegY2TT6UhJVdhMzwL-BOTPr2JEm7A3RsZ5OvIYA5JU3pQEfg/viewform).
