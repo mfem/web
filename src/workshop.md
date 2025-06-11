@@ -22,13 +22,15 @@ future development directions for the project.
 Please [register for the workshop](https://docs.google.com/forms/d/e/1FAIpQLSc31dyl4hUQi8TvQryPYZUjbUPAAdyVTqS0ccahCoIdpFMjrg/viewform?usp=header) online.
 The deadline to register is **Wednesday, August 27**.
 
-A couple weeks after registering, in-person attendees will receive a follow-up form for the registration fee
+* **In person:** A couple weeks after registering, in-person attendees will receive a follow-up form for the registration fee
 ($100), which will cover food and other expenses.
 In-person attendees will also be welcomed to select optional MFEM-branded items (t-shirt, pint
 glass, etc.) for purchase.
 
-There is no registration fee for remote participants. Zoom details will be distributed prior to the
-event date.
+* **Students:** Thanks to generous sponsorship of the workshop by LLNL, the in-person registration fee is waived for students.
+Students may also apply for travel reimbursement via [this form](https://docs.google.com/forms/d/e/1FAIpQLSegY2TT6UhJVdhMzwL-BOTPr2JEm7A3RsZ5OvIYA5JU3pQEfg/viewform).
+
+* **Remote:** There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
 
 ### Venue
 
