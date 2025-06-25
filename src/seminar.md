@@ -12,6 +12,12 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+Coming soon...
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/evans.jpg)
@@ -20,11 +26,11 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### John Evans (CU Boulder)
 ##### *Interpolation-Based Immersed Finite Element and Isogeometric Analysis*
-##### [**June 12, 2025**](https://everytimezone.com/s/f88e2a7d)
+##### June 12, 2025
 
 [<button type="button" class="btn btn-success">
-**Webex**
-</button>]()
+**Talk Recording**
+</button>](https://youtu.be/c3jJwj-St1Y)
 
 **Abstract:** Immersed finite element methods enable the simulation of physical systems out of reach by classical finite element analysis, and they also streamline the development of powerful shape and topology optimization technologies. However, the development of an immersed finite element analysis code is a daunting and burdensome task even for domain experts. This talk introduces a novel approach to immersed finite element analysis that dramatically reduces implementation complexity.
 
@@ -33,10 +39,6 @@ Our method begins by interpolating finite element basis functions defined on a n
 The presentation will begin with an overview of the method, followed by a theoretical discussion on stability and convergence for a model problem. We will then demonstrate the method’s effectiveness on a range of examples from structural mechanics and fluid dynamics. Next, we will introduce our open-source software that generates the necessary data structures, enabling immersed finite element and isogeometric analysis within the popular FEniCS platform. Finally, we will show how interpolation onto a body-fitted integration mesh can also be used to convert classical finite element analysis codes into meshless analysis codes based on the Reproducing Kernel Particle Method.
 
 This work is in collaboration with Jennifer Fromm, Ru Xiang, Han Zhao, and J.S. Chen (University of California San Diego), Nils Wunsch and Kurt Maute (University of Colorado Boulder), and David Kamensky (formerly University of California San Diego).
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
