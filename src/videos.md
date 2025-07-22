@@ -391,7 +391,7 @@ The Diffusion equation with strong anisotropy has broad applications. In this pr
 
 <a class="youtube" href="https://www.youtube.com/watch?v=D-YcVd4-_2E"><img src="https://img.youtube.com/vi/D-YcVd4-_2E/maxresdefault.jpg"></img></a>
 
-The [FEniCS Project](https://fenicsproject.org/) provides libraries for solving partial differential equations using the finite element method. An aim of the FEniCS Project has been to provide high-performance solver environments that closely mirror mathematical syntax, with the hypothesis that high-level representations means that solvers are faster to write, easier to debug, and can deliver faster runtime performance than is reasonably possible by hand. Using domain-specific languages and code generation techniques, arguably the FEniCS libraries delivered on these goals for a set of problems. However, over time limitations, including performance and extensibility, become clear and maintainability/sustainability became an issue.Building on experiences from the FEniCS libraries, I will present and discuss the design on the next generation of tools, FEniCSx. The new design retains strengths of the past approach, and addresses limitations using new designs and new tools. Solvers can be written in C++ or Python, and a number of design changes allow the creation of flexible, fast solvers in Python. In the second part of my presentation, I will discuss high-performance finite element kernels (limited to CPUs on this occasion), motivated by the Center for Efficient Exascale Discretizations 'bake-off' problems, and which would not have been possible in the original FEniCS libraries. Double, single and half-precision kernels are considered, and results include (i) the observation that kernels with vector intrinsics can be slower than auto-vectorised kernels for common cases, and (ii) a cache-aware performance model which is remarkably accurate in predicting performance across architectures.
+The [FEniCS Project](https://fenicsproject.org/) provides libraries for solving partial differential equations using the finite element method. An aim of the FEniCS Project has been to provide high-performance solver environments that closely mirror mathematical syntax, with the hypothesis that high-level representations means that solvers are faster to write, easier to debug, and can deliver faster runtime performance than is reasonably possible by hand. Using domain-specific languages and code generation techniques, arguably the FEniCS libraries delivered on these goals for a set of problems. However, over time limitations, including performance and extensibility, become clear and maintainability/sustainability became an issue. Building on experiences from the FEniCS libraries, I will present and discuss the design on the next generation of tools, FEniCSx. The new design retains strengths of the past approach, and addresses limitations using new designs and new tools. Solvers can be written in C++ or Python, and a number of design changes allow the creation of flexible, fast solvers in Python. In the second part of my presentation, I will discuss high-performance finite element kernels (limited to CPUs on this occasion), motivated by the Center for Efficient Exascale Discretizations 'bake-off' problems, and which would not have been possible in the original FEniCS libraries. Double, single and half-precision kernels are considered, and results include (i) the observation that kernels with vector intrinsics can be slower than auto-vectorised kernels for common cases, and (ii) a cache-aware performance model which is remarkably accurate in predicting performance across architectures.
 
 ---
 
@@ -551,6 +551,15 @@ LLNL computational mathematician Vladimir Tomov discussed high-order finite elem
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Aaron Fisher (LLNL) and collaborators
+#### *Unstructured Meshes with MFEM/PUMI*
+##### **August 9, 2022** | [ATPESC 2022](https://extremecomputingtraining.anl.gov/agenda-2022/)
+<a class="youtube" href="https://youtu.be/1TCi9CccNHo"><img src="https://img.youtube.com/vi/1TCi9CccNHo/maxresdefault.jpg"></img></a>
+
+Presented at the Argonne Training Program on Extreme-Scale Computing 2022.
+
+---
+
 #### John Camier (LLNL)
 #### *All-Out Kernel Fusion: Reaching Peak Performance Faster in High-Order Finite Element Simulations*
 ##### **March 21–24, 2022** | [NVIDIA GTC22](https://www.nvidia.com/gtc/)
@@ -600,7 +609,7 @@ Slides for this presentation are available [here](https://extremecomputingtraini
 <a class="youtube" href="https://www.youtube.com/watch?v=RLIZWXggXqU"><img src="https://img.youtube.com/vi/RLIZWXggXqU/maxresdefault.jpg"></img></a>
 
 Presented at the Argonne Training Program on Extreme-Scale Computing 2017.
-Slides for this presentation are available [here](https://extremecomputingtraining.anl.gov/files/2017/08/ATPESC_2017_Track-4_13_8-7_630pm_Kolev-Shephard-Adaptivity_for_Unstructured_Meshes.pdf)
+Slides for this presentation are available [here](https://extremecomputingtraining.anl.gov/files/2017/08/ATPESC_2017_Track-4_13_8-7_630pm_Kolev-Shephard-Adaptivity_for_Unstructured_Meshes.pdf).
 
 </div><div class="col-md-12"  markdown="1">
 
