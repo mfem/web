@@ -169,6 +169,25 @@ faculty of over 30 members and a vibrant community of undergraduate and graduate
 
 ---
 
+### Workshop Sponsors
+
+We gratefully acknowledge the contributions of our **gold tier** workshop sponsors, **Amazon Web Services (AWS)** and **Lawrence Livermore National Laboratory (LLNL)**.
+
+</div>
+
+<center>
+<div class="col-md-6"  markdown="1">
+<img src="/img/aws_logo.png" width="150">
+</div>
+<div class="col-md-6"  markdown="1">
+<img src="/img/llnl_logo.png" width="300">
+</div>
+</center>
+
+<div class="col-md-12" markdown="1" style="padding-left:0;">
+
+---
+
 ### Organizing Committee
 [*Holly Auten*](https://people.llnl.gov/auten1)
 ┊  [*Aaron Fisher*](https://people.llnl.gov/fisher47)
