@@ -37,7 +37,7 @@ The workshop will take place at [Portland State University](https://www.pdx.edu)
 Oregon. PSU is located in downtown Portland, about a 25 minute drive from the Portland International
 Airport.
 
-The meeting will be held in Smith Memorial Student Union (SMSU) room 298. This location is
+The meeting will be held in Smith Memorial Student Union (SMSU) room 296/8. This location is
 highlighted on the map below. See also the [interactive campus map](https://map.pdx.edu/?building=SMSU) and [this diagram](img/psu_campus_map_smsu.png).
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.912285253112!2d-122.68682832352792!3d45.511844330258114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a16c6b61c87%3A0x2d1664732d286db7!2sSmith%20Memorial%20Student%20Union!5e0!3m2!1sen!2sus!4v1745949341371!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -71,7 +71,45 @@ MFEM workshop.
 
 The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (GMT-7) on Wednesday, September 10 and Thursday, September 11.
 
-The full agenda will be announced shortly.
+<br>
+
+#### Tuesday, October 22
+
+| Time | Activity | Presenter |
+|---|---|---|
+| 8:00-8:30 | **Breakfast + Registration** <br> | [PSU SMSU 296/8](https://maps.app.goo.gl/aarCK3W6w2Cfzvxp6) |
+| 8:30-9:00 | **Welcome & Overview** | **Will Pazner** (PSU) |
+| 9:00-9:30 | **The State of MFEM** | **Tzanio Kolev** (LLNL) |
+| 9:30-10:00 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
+| 10:00-10:30 | **Coffee Break** | discussions on [Slack](https://mfemworkshop.slack.com) |
+| 10:30-12:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Will Pazner** | **Stefan Henneking** (UT Austin) <br><details><summary> *Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone*</summary><h6> We present a Bayesian inversion-based digital twin that employs acoustic pressure data from seafloor sensors, along with 3D coupled acoustic-gravity wave equations, to infer earthquake-induced spatiotemporal seafloor motion in real time and forecast tsunami propagation toward coastlines for early warning with quantified uncertainties. Our target is the Cascadia subduction zone, with one billion parameters. Computing the posterior mean alone would require 50 years on a 512 GPU machine. Instead, exploiting the shift invariance of the parameter-to-observable map and devising novel parallel algorithms, we induce a fast offline-online decomposition. The offline component requires just one adjoint wave propagation per sensor; using MFEM, we scale this part of the computation to the full El Capitan system (43,520 GPUs) with 92% weak parallel efficiency. Moreover, given real-time data, the online component exactly solves the Bayesian inverse and forecasting problems in 0.2 seconds on a modest GPU system, a ten-billion-fold speedup. </h6></details><br> **Ziheng Yu** (Cambridge University) <br><details><summary> *Application of MFEM in some common geodynamical problems*</summary><h6> We present how MFEM is applied in our geodynamical computations, i.e., about the viscoelastic deformations of the Earth, coupled with multiphysics effects in planetary length scales and paleo time scales. Some common computing challenges are covered in the talk with a focus on new MFEM extensions we developed to facilitate the solution. The first topic is on dealing with the boundary at infinity (not computationally accessible) for self-gravitation computations, for which we developed the Dirichlet-to-Neumann Operator class. Then, we introduce new classes for supporting the block-system computation of coupled fields that are defined on different but partially overlapping meshes, e.g. Earth's deformation and gravity potential fields. We close by discussing the structure of a tailored TimeDependentOperator class specifically for differential-algebraic systems of equations (DAE), which are notorious but common in geophysical settings. </h6></details><br> **John Camier** (LLNL) <br><details><summary> *A Guided Tour of MFEM GPU Kernel Optimization Techniques*</summary><h6> This presentation explores a variety of kernel optimization strategies for MFEM, leveraging its GPU abstraction layer to achieve high performance on AMD and NVIDIA GPUs. Focusing on the Cascadia application code, we detail the journey toward optimal implementations, highlighting techniques to navigate compiler possibilities and to unlock architectural opportunities. Our discussion provides practical insights for enhancing finite element computations in high-performance computing environments. Joint work with Veselin Dobrev (LLNL), Stefan Henneking (UT Austin), Tzanio Kolev (LLNL), and Jiqun Tu (NVIDIA). </h6></details><br>|
+| 12:00-1:00 | **Lunch** | [PSU SMSU 296/8](https://maps.app.goo.gl/aarCK3W6w2Cfzvxp6) |
+| 1:00-1:30 | **Student Session 1** <br> (10 mins each)<br><br>Chair:<br> **Ketan Mittal** | **Leonardo Molinari** (Emory University) <br><details><summary> *A Domain-Decomposition Framework for Multiphysics Biomedical Modeling: Application to Cardiac Radiofrequency Ablation* </summary><h6> TBD. </h6></details><br> **Matthew Blomquist** (UC Merced) <br><details><summary> *Characteristic Bending - A Robust Advection Scheme for Incompressible Flows*</summary><h6> TBD. </h6></details><br> **Ramin Pahnabi** (Brigham Young University) <br><details><summary> *High-Order Space–Time Finite Element Simulations of Fluid Mechanics Using MFEM* </summary><h6> TBD. </h6></details><br> |
+| 1:40-2:10 | **Student Session 2** <br> (10 mins each)<br><br>Chair:<br> **Ketan Mittal** | **Topher Eyre** (Brigham Young University) <br><details><summary> *Parameter extraction from electromagnetic eigenmode simulations of multimodal cavities using MFEM* </summary><h6> TBD. </h6></details><br> **Tyler Fara** (Oregon State University) <br><details><summary> *A Stable FEM Framework for Coupled PDE–ODE Bioheat Models with Nonlinear Boundary Conditions* </summary><h6> TBD. </h6></details><br> **Barry Fadness** (Portland State University) <br><details><summary> *Algebraic hybridization for the Darcy problem* </summary><h6> TBD. </h6></details></br> |
+| 2:20-2:50 | **Student Session 3** <br> (10 mins each)<br><br>Chair:<br> **Ketan Mittal** | **Anthony Kolshorn** (Portland State University) <br><details><summary> *IMEX time integration for DG convection diffusion* </summary><h6> TBD. </h6></details><br> **Rushan	Zhang** (Georgia Institute of Technology) <br><details><summary> *Structure-Preserving Transfer of Grad-Shafranov Equilibria to Magnetohydrodynamic Solvers* </summary><h6> TBD. </h6></details><br> **Patrick Saber** (Pennsylvania State University) <br><details><summary> *An explicit description of implementation of 4D, H(div)-conforming simplicial finite elements in MFEM* </summary><h6> TBD. </h6></details></br> |
+| 3:00-3:30 | **Coffee Break & Group Photo** | download a [virtual background](#virtual-backgrounds) below |
+| 3:30-5:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Justin Laughlin** | **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> |
+| 5:00 | **Day 1 Wrap-up** | MFEM team |
+| 6:00-8:00 | **Workshop Dinner** <br> | Location TBD |
+
+<br>
+
+#### Wednesday, October 23
+
+| Time | Activity | Presenter |
+|---|---|---|
+| 8:00-8:30 | **Breakfast** <br> | [PSU SMSU 296/8](https://maps.app.goo.gl/aarCK3W6w2Cfzvxp6) |
+| 8:30-9:00 | **Visualization Contest Winners** <br> | **Will Pazner** (LLNL) |
+| 9:00-10:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Tzanio Kolev** | **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> |
+| 10:00-10:30 | **Coffee Break** | discussions on [Slack](https://mfemworkshop.slack.com) |
+| 10:30-12:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Sohail Reddy** | **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD)<br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> |
+| 12:00-1:00 | **Lunch** | [PSU SMSU 296/8](https://maps.app.goo.gl/aarCK3W6w2Cfzvxp6) |
+| 1:00-3:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Qi Tang** | **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> |
+| 3:00-3:30 | **Coffee Break** | discussions on [Slack](https://mfemworkshop.slack.com) |
+| 3:30-5:00 | **Presentations** <br>(30 mins each)<br><br>Chair:<br> **Tzanio Kolev** | **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> **TBD** (TBD) <br><details><summary> *TBD* </summary><h6> TBD. </h6></details><br> |
+| 5:00 | **Day 2 Wrap-up** | MFEM team |
+
+<br>
 
 ### Simulation and Visualization Contest
 
