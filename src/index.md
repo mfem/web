@@ -1,7 +1,7 @@
 <div class="col-md-12" markdown="1">
 <center>
 [<button type="button" class="btn btn-success">
-**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop<br/>(<small>September 10–11, 2025</small>)**
+**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop**
 </button>](workshop.md)
 &nbsp;
 [<button type="button" class="btn btn-primary">
