@@ -8,7 +8,7 @@
 
 The MFEM team and Portland State University's Fariborz Maseeh Department of Mathematics are happy to
 invite you to the 2025 MFEM Community Workshop, which will take place on September 10-11, 2025 in a
-hybrid format: in-person at [Portland State University](#venue) + virtually on Zoom. The goal of
+hybrid format: in-person at [Portland State University](#venue) + [virtually on Zoom](https://pdx.zoom.us/j/82929966415). The goal of
 the workshop is to foster collaboration among all MFEM users and developers, share the latest MFEM
 features with the broader community, deepen application engagements, and solicit feedback to guide
 future development directions for the project.
@@ -71,6 +71,10 @@ Workshop participants are encouraged to join the
 to communicate with other MFEM users and developers before, during and after the
 MFEM workshop.
 
+### Workshop Zoom
+
+Join Zoom Meeting: [https://pdx.zoom.us/j/82929966415](https://pdx.zoom.us/j/82929966415).
+
 ### Agenda
 
 The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (GMT-7) on Wednesday, September 10 and Thursday, September 11.
@@ -78,6 +82,8 @@ The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (
 <br>
 
 #### Wednesday, September 10
+
+Remote Participants: [Join via Zoom](https://pdx.zoom.us/j/82929966415)
 
 | Time | Activity | Presenter |
 |---|---|---|
@@ -99,6 +105,8 @@ The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (
 <br>
 
 #### Thursday, September 11
+
+Remote Participants: [Join via Zoom](https://pdx.zoom.us/j/82929966415)
 
 | Time | Activity | Presenter |
 |---|---|---|
