@@ -320,3 +320,9 @@ input {
   margin-top: -100px;
   visibility: hidden;
 }
+
+.zoom-logo {
+  height: 1.25em;
+  display: inline;
+  margin: -0.125em 0 0 0.25em;
+}
