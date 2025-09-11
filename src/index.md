@@ -1,15 +1,3 @@
-<div class="col-md-12" markdown="1">
-<center>
-[<button type="button" class="btn btn-success">
-**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop**
-</button>](workshop.md)
-&nbsp;
-[<button type="button" class="btn btn-primary">
-**<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Register**
-</button>](https://docs.google.com/forms/d/e/1FAIpQLSc31dyl4hUQi8TvQryPYZUjbUPAAdyVTqS0ccahCoIdpFMjrg/viewform?usp=header)
-</center>
-</div>
-
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
@@ -104,7 +92,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Apr 29, 2025 | Fifth annual [MFEM workshop](workshop.md) announced (Sept 2025).
+Apr 29, 2025 | 2025 [MFEM Community workshop](workshop.md).
 Apr 15, 2025 | MOOSE [incorporates MFEM](https://github.com/idaholab/moose/pull/29633) as a backend.
 Apr 9, 2025  | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
 Nov 25, 2024 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop24.md).
