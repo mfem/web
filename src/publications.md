@@ -8,6 +8,7 @@
 ## Selected Publications
 
 #### 2025
+  1. J. Andrej, T. Kolev, B. S. Lazarov, [Scalable Analysis and Design Using Automatic Differentiation](https://arxiv.org/abs/2506.00746), *to appear*, **2025**. Also available as [arXiv:2506.00746](https://arxiv.org/abs/2506.00746).
   1. B. Keith, D. Kim, B. S. Lazarov, T. M. Surowiec, [Analysis of the SiMPL method for density-based topology optimization](https://arxiv.org/abs/2409.19341), *to appear*, **2025**. Also available as [arXiv:2409.19341](https://arxiv.org/abs/2409.19341).
   1. D. Kim, B. S. Lazarov, T. M. Surowiec, B. Keith, [A Simple Introduction to the SiMPL Method for Density-Based Topology Optimization](https://arxiv.org/abs/2411.19421), *to appear*, **2025**. Also available as [arXiv:2411.19421](https://arxiv.org/abs/2411.19421).
   1. D. Serino, Q. Tang, X.-Z. Tang, T. Kolev, K. Lipnikov, [An adaptive Newton-based free-boundary Grad-Shafranov solver](https://arxiv.org/abs/2407.03499), *in review*, **2025**. Also available as [arXiv:2407.03499](https://arxiv.org/abs/2407.03499).
