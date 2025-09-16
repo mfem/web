@@ -12,7 +12,21 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
-Coming soon...
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/schafer.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Florian Schäfer (Courant Institute, NYU)
+##### *Toward Information Geometric Mechanics*
+##### [**9:00am PDT, September 30, 2025**](https://everytimezone.com/s/c79bd41d)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Shock waves in high-speed gas dynamics cause severe numerical difficulties for classical solvers and scientific machine learning. This talk begins with the observation that shock formation arises from the flow map reaching the boundary of the manifold of diffeomorphisms. We modify its geometry such that geodesics approach but never reach the boundary. The resulting information geometric regularization (IGR) has smooth solutions while avoiding the excessive dissipation of viscous regularizations, accelerating and simplifying the simulation of flows with shocks. We prove the existence of global strong IGR solutions in the unidimensional pressureless case and illustrate its practical utility on multidimensional examples with complex shock interactions. With S. Bryngelson and other collaborators, we use IGR to conduct the first compressible flow simulation exceeding a quadrillion degrees of freedom.
 
 ---
 
