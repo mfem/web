@@ -109,7 +109,7 @@ If we want to enforce Dirichlet boundary conditions different than zero on some 
 ```text
 Physical Surface(2) = {7};
 ```
-The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the boolean operation defining the final geometry.
+The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the Boolean operation defining the final geometry.
 
 If we run [ex1.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1.cpp) without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, modify section 10 in [ex1p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp):
 
@@ -206,7 +206,7 @@ Users can specify different material distributions by modifying the function
 
     int material(Vector &x, Vector &xmin, Vector &xmax)
 
-in the begging of `shaper.cpp`.
+in the beginning of `shaper.cpp`.
 
 The current function returns integer values of 1 if a point is located within a simple annulus/shell with a relative inner radius of 0.4 and outer radius of 0.6 and 2 otherwise. The coordinates of a point within the mesh are mapped to values between minus one and one.
 
