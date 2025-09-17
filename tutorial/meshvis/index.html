@@ -433,7 +433,7 @@ Mesh.MshFileVersion = 2.2;
 <pre><code class="text">Physical Surface(2) = {7};
 </code></pre>
 
-<p>The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the boolean operation defining the final geometry.</p>
+<p>The line should be inserted in any place after the definition of geometrical surface 7, e.g., after the Boolean operation defining the final geometry.</p>
 <p>If we run <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp">ex1.cpp</a> without modifications, a zero value will be assigned to the newly defined surface. Thus, in order to set it to one, modify section 10 in <a href="https://github.com/mfem/mfem/blob/master/examples/ex1p.cpp">ex1p.cpp</a>:</p>
 <pre><code class="c++">   // 10. Define the solution vector x as a parallel finite element grid
    //     function corresponding to fespace. Initialize x with initial guess of
@@ -509,7 +509,7 @@ make shaper
 <p>Users can specify different material distributions by modifying the function</p>
 <pre><code>int material(Vector &amp;x, Vector &amp;xmin, Vector &amp;xmax)
 </code></pre>
-<p>in the begging of <code>shaper.cpp</code>.</p>
+<p>in the beginning of <code>shaper.cpp</code>.</p>
 <p>The current function returns integer values of 1 if a point is located within a simple annulus/shell with a relative inner radius of 0.4 and outer radius of 0.6 and 2 otherwise. The coordinates of a point within the mesh are mapped to values between minus one and one.</p>
 <p>Users are encouraged to modify the material distribution function and use different meshes as input. The refinement level is controlled in the terminal by pressing <kbd>y</kbd> for further refinement or <kbd>n</kbd> for completing the run. The resulting mesh is written in a file <code>shaper.mesh</code>. Once the mesh is written, users can use it as an input to other examples or miniapps.</p>
 <div class="panel panel-info">
