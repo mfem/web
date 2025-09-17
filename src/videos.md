@@ -1350,7 +1350,16 @@ The MFEM community workshop held virtually on October 20, 2021, brought together
 </div><div class="col-md-6"  markdown="1">
 
 #### *LLNL HPC Software Tutorials: MFEM*
-##### **Aug 22, 2024**
+##### **September 9, 2025**
+
+<a class="youtube" href="https://youtu.be/Sq1EwYyjFzc"><img src="https://img.youtube.com/vi/Sq1EwYyjFzc/maxresdefault.jpg"></img></a>
+
+Instructions for a self-paced overview of MFEM.
+
+---
+
+#### *LLNL HPC Software Tutorials: MFEM*
+##### **August 22, 2024**
 
 <a class="youtube" href="https://www.youtube.com/watch?v=Ps0wAuMbLVU"><img src="https://img.youtube.com/vi/Ps0wAuMbLVU/maxresdefault.jpg"></img></a>
 
@@ -1359,7 +1368,7 @@ Instructions for a self-paced overview of MFEM.
 ---
 
 #### *MFEM: Advanced Simulation Algorithms for HPC Applications*
-##### **Jun 24, 2020**
+##### **June 24, 2020**
 
 <a class="youtube" href="https://www.youtube.com/watch?v=Rpccj3NopSE"><img src="https://img.youtube.com/vi/Rpccj3NopSE/maxresdefault.jpg"></img></a>
 
@@ -1368,7 +1377,7 @@ Overview of MFEM 4.0 featuring some of its developers.
 </div><div class="col-md-6"  markdown="1">
 
 #### *Center for Applied Scientific Computing*
-##### **Jul 12, 2019**
+##### **July 12, 2019**
 
 <a class="youtube" href="https://www.youtube.com/watch?v=5CIeSLWs7hI"><img src="https://img.youtube.com/vi/5CIeSLWs7hI/maxresdefault.jpg"></img></a>
 
