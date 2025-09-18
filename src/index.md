@@ -92,11 +92,12 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Apr 29, 2025 | 2025 [MFEM Community workshop](workshop.md).
+Sep 18, 2025 | [PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0)
+Sep 10, 2025 | 2025 [MFEM community workshop](workshop.md).
+Sep 9, 2025  | MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials) series.
 Apr 15, 2025 | MOOSE [incorporates MFEM](https://github.com/idaholab/moose/pull/29633) as a backend.
 Apr 9, 2025  | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
-Nov 25, 2024 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop24.md).
- May 2, 2024 | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
+May 2, 2024  | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
 
 ## Latest Release
 
