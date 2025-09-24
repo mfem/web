@@ -19,15 +19,15 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="375" height="300" src="img/gallery/workshop24/conf-topopt.png">](gallery.md#schmidt)
+      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#camier2)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2024 Visualization Contest Winner Mathias Schmidt
+        2024 Visualization Contest Winner John Camier
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="250" height="160" src="img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png">](gallery.md#nikl)
+      [<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2024 Visualization Contest Winner Jan Nikl
+        2025 Visualization Contest Winner Leonardo Molinari
       </div>
     </div>
     <div class="item">
