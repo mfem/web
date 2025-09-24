@@ -17,11 +17,11 @@ along in your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Comp
 
 No previous experience is necessary.
 
-<!--
 [<button type="button" class="btn btn-success">
 **Watch the video**
-</button>](https://www.youtube.com/watch?v=Ps0wAuMbLVU)
--->
+</button>](https://www.youtube.com/watch?v=Sq1EwYyjFzc)
+
+<!-- 2024 video: https://www.youtube.com/watch?v=Ps0wAuMbLVU -->
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
