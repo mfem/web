@@ -279,6 +279,12 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+[![](img/gallery/workshop25/contact.png)](img/gallery/workshop25/contact.mp4)
+[🎬](img/gallery/workshop25/contact.mp4)
+*Layered spherical shell compressed by half-elliptical beams, modeled as a nonlinear Neo-Hookean solid. Contact constraints are provided by [Tribol](https://github.com/LLNL/Tribol), enforced with an Interior Point method, and linear systems solved by [AMGF](https://arxiv.org/abs/2505.18576)-preconditioned PCG. Image courtesy of Socratis Petrides, as part of the 2025 MFEM Workshop Visualization Contest.*
+
+----
+
 </div><div class="col-md-3" markdown="1">
 
 [![](img/gallery/mri.png)](img/gallery/mri-full.png)
@@ -406,6 +412,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 *Conservative and bounded remap of Lagrangian hydrodynamics to a uniform mesh with Laghos and Remhos. Image courtesy of Vladimir Tomov, as part of the 2025 MFEM Workshop Visualization Contest.*
 
 ----
+
 
 </div>
 
