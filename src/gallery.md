@@ -272,6 +272,16 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+<div id="cascadia" class="anchor"></div>
+
+[![](img/gallery/workshop25/cascadia.png)](img/gallery/workshop25/cascadia.mp4)
+
+[🎬](img/gallery/workshop25/cascadia.mp4)
+*[Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone.](https://arxiv.org/abs/2504.16344).
+Image courtesy of the Cascadia team, **winners** of the 2025 MFEM Workshop Visualization Contest.*
+
+----
+
 [![](img/gallery/workshop25/FSI2-Turek.png)](img/gallery/workshop25/FSI2-Turek.mp4)
 
 [🎬](img/gallery/workshop25/FSI2-Turek.mp4)
