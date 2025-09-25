@@ -134,6 +134,13 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+[![](img/gallery/workshop25/FSI2-Turek.png)](img/gallery/workshop25/FSI2-Turek.mp4)
+
+[🎬](img/gallery/workshop25/FSI2-Turek.mp4)
+*Visualization of a two-dimensional incompressible flow past a cylinder with an attached deformable elastic beam. The simulation uses a strongly coupled partitioned fluid-structure interaction (FSI) solver. Image courtesy of Leonardo Molinari as part of the 2025 MFEM Workshop Visualization Contest.*
+
+
+
 </div><div class="col-md-5"  markdown="1">
 
 [![](img/gallery/uorbs-small.png)](img/gallery/uorbs.png)
@@ -277,23 +284,15 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 [![](img/gallery/workshop25/cascadia.png)](img/gallery/workshop25/cascadia.mp4)
 
 [🎬](img/gallery/workshop25/cascadia.mp4)
-*[Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone.](https://arxiv.org/abs/2504.16344).
-Image courtesy of the Cascadia team, **winners** of the 2025 MFEM Workshop Visualization Contest.*
+*Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. Image courtesy of the [Cascadia team](https://arxiv.org/abs/2504.16344), **winners** of the 2025 MFEM Workshop Visualization Contest.*
 
 ----
 
-[![](img/gallery/workshop25/FSI2-Turek.png)](img/gallery/workshop25/FSI2-Turek.mp4)
+[![](img/gallery/workshop25/particles.png)](img/gallery/workshop25/particles.mp4)
+[🎬](img/gallery/workshop25/particles.mp4)
+*Fluid particles advected in a 2D bifurcated channel flow, using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
 
-[🎬](img/gallery/workshop25/FSI2-Turek.mp4)
-*Visualization of a two-dimensional incompressible flow past a cylinder with an attached deformable elastic beam. The simulation uses a strongly coupled partitioned fluid-structure interaction (FSI) solver. Image courtesy of Leonardo Molinari as part of the 2025 MFEM Workshop Visualization Contest.*
 
-----
-
-[![](img/gallery/workshop25/contact.png)](img/gallery/workshop25/contact.mp4)
-[🎬](img/gallery/workshop25/contact.mp4)
-*Layered spherical shell compressed by half-elliptical beams, modeled as a nonlinear Neo-Hookean solid. Contact constraints are provided by [Tribol](https://github.com/LLNL/Tribol), enforced with an Interior Point method, and linear systems solved by [AMGF](https://arxiv.org/abs/2505.18576)-preconditioned PCG. Image courtesy of Socratis Petrides, as part of the 2025 MFEM Workshop Visualization Contest.*
-
-----
 
 </div><div class="col-md-3" markdown="1">
 
@@ -422,6 +421,11 @@ Image courtesy of the Cascadia team, **winners** of the 2025 MFEM Workshop Visua
 *Conservative and bounded remap of Lagrangian hydrodynamics to a uniform mesh with Laghos and Remhos. Image courtesy of Vladimir Tomov, as part of the 2025 MFEM Workshop Visualization Contest.*
 
 ----
+
+[![](img/gallery/workshop25/contact.png)](img/gallery/workshop25/contact.mp4)
+
+[🎬](img/gallery/workshop25/contact.mp4)
+*Layered spherical shell compressed by half-elliptical beams, modeled as a nonlinear Neo-Hookean solid. Contact constraints are provided by [Tribol](https://github.com/LLNL/Tribol), enforced with an Interior Point method, and linear systems solved by [AMGF](https://arxiv.org/abs/2505.18576)-preconditioned PCG. Image courtesy of Socratis Petrides, as part of the 2025 MFEM Workshop Visualization Contest.*
 
 
 </div>
