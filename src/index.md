@@ -19,9 +19,9 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#camier2)
+      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2024 Visualization Contest Winner John Camier
+        2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
       </div>
     </div>
     <div class="item">
