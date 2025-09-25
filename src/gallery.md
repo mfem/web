@@ -290,7 +290,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [![](img/gallery/workshop25/particles.png)](img/gallery/workshop25/particles.mp4)
 [🎬](img/gallery/workshop25/particles.mp4)
-*Fluid particles advected in a 2D bifurcated channel flow, using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
+*Particle-laden fluid flow in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
 
 
 
