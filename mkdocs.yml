@@ -38,6 +38,7 @@ nav:
   - '_Primal and Dual Vectors': pri-dual-vec.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
+  - '_Integration': integration.md
   - '_Coefficients': coefficient.md
   - '_Nonlinear Form Integrators': nonlininteg.md
   - '_Linear Interpolators': lininterp.md
