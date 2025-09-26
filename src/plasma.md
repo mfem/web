@@ -112,6 +112,26 @@ non-trivial plane wave solutions which arise in homogeneous plasmas.
 
 <img class="floatright" src="../img/examples/stix-r1d-eb.gif">
 
+The equation being solved is the second order frequency domain version
+of the Maxwell equations which can be written as:
+
+$$
+\curl\left(\frac{1}{\mu}\curl\E\right) - \omega^2 \epsilon \E = i \omega \J
+$$
+
+In 1D this becomes:
+
+$$
+\begin{align\*}
+-\omega^2\left(\epsilon\E\right)_x &= i\omega J_x\\\\
+-\frac{1}{\mu}E''_y-\omega^2\left(\epsilon\E\right)_y &= i\omega J_y\\\\
+-\frac{1}{\mu}E''_z-\omega^2\left(\epsilon\E\right)_z &= i\omega J_z
+\end{align\*}
+$$
+
+Where the anisotropic $\epsilon$ provides the coupling between these
+three equations.
+
 The four most simple solutions in 1D occur when the background
 magnetic field is either parallel or perpendicular to the 1D
 domain. In addition to the direction of propagation each configuration
@@ -127,16 +147,25 @@ $$\B = \frac{1}{\omega}\left(\vec{k}_p\times\E_p\right) e^{i(\vec{k}_p\cdot\vec{
 These four plane wave solutions are often referred to by single
 character abbreviations:
 
-| Abbreviation | $\E_p$ | $\frac\{\vec{k}_p}\{\omega\sqrt\{\epsilon_0\mu_0}}$ | $\vec\{k}_p$ vs. $\B_0$ | Description |
-|-------|--------|-------|--------|----------------------------|
-| L | $\|\E_L\|\frac\{(\hat\{y}-i\,\hat\{z})}\{\sqrt\{2}}$ | $\sqrt\{S-D}\,\hat\{x}$ | $\vec\{k}_L \parallel \B_0$ | Left Circularly Polarized  |
-| R | $\|\E_R\|\frac\{(\hat\{y}+i\,\hat\{z})}\{\sqrt\{2}}$ | $\sqrt\{S+D}\,\hat\{x}$ | $\vec\{k}_R \parallel \B_0$ | Right Circularly Polarized |
-| O | $\|\E_O\|\,\hat\{y}$ | $\sqrt\{P}\,\hat\{x}$ | $\vec\{k}_O \perp \B_0$ | Ordinary Wave |
-| X | $\frac\{\|\E_X\|}\{\sqrt\{D^2-S^2}}\left(D\,\hat\{x}+i\,S\,\hat\{z}\right)$ | $\sqrt\{S-\frac\{D^2}\{S}}\,\hat\{x}$ | $\vec\{k}_X \perp \B_0$ | Extraordinary Wave |
+| Abbreviation | $\E_p$ | $\frac\{\vec{k}_p}\{\omega\sqrt\{\epsilon_0\mu_0}}$ | $\vec\{k}_p$ vs. $\B_0$ | $\hat\{b}$ | Description |
+|-------|--------|-------|--------|----|----------------------------|
+| L | $\|\E_L\|\frac\{(\hat\{y}-i\,\hat\{z})}\{\sqrt\{2}}$ | $\sqrt\{S-D}\,\hat\{x}$ | $\vec\{k}_L \parallel \B_0$ | $\hat\{x}$ | Left Circularly Polarized  |
+| R | $\|\E_R\|\frac\{(\hat\{y}+i\,\hat\{z})}\{\sqrt\{2}}$ | $\sqrt\{S+D}\,\hat\{x}$ | $\vec\{k}_R \parallel \B_0$ | $\hat\{x}$ | Right Circularly Polarized |
+| O | $\|\E_O\|\,\hat\{y}$ | $\sqrt\{P}\,\hat\{x}$ | $\vec\{k}_O \perp \B_0$ | $\hat\{y}$ | Ordinary Wave |
+| X | $\frac\{\|\E_X\|}\{\sqrt\{D^2-S^2}}\left(D\,\hat\{x}+i\,S\,\hat\{z}\right)$ | $\sqrt\{S-\frac\{D^2}\{S}}\,\hat\{x}$ | $\vec\{k}_X \perp \B_0$ | $\hat\{y}$ | Extraordinary Wave |
 
 The first three types of waves could be realized in isotropic media
 although, in that case, their wave vectors would be of the same
 magnitude. The fourth type has no analogue in isotropic media.
+
+As an example of the challenge of accurately modeling electromagnetic
+waves in a magnetized plasma consider ionized hydrogen gas with a
+density of $10^{19}$ particles$/m^3$ in a background 1 Tesla magnetic
+field. In this case the wavelengths of the $R$ and $X$ waves are
+roughly 80cm and 60cm respectively. Such waves can be accurately
+captured with mesh spacings of a few centimeters. However, the $L$ and
+$O$ waves decay on the length scale of a few millimeters requiring a
+mesh spacing hundreds of times smaller.
 
 #### Mini Application Features
 
