@@ -126,6 +126,21 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+<div id="molinari" class="anchor"></div>
+
+[![](img/gallery/workshop25/RFA-ElectricField.png)](img/gallery/workshop25/RFA-ElectricField.png)
+
+*Electric field distribution during a radiofrequency (RF) ablation procedure on an idealized intracardiac geometry. The simulation solves a Poisson problem across three heterogeneous domains using a nonoverlapping domain decomposition approach. Image courtesy of Leonardo Molinari, **winner** of the 2025 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop25/FSI2-Turek.png)](img/gallery/workshop25/FSI2-Turek.mp4)
+
+[🎬](img/gallery/workshop25/FSI2-Turek.mp4)
+*Visualization of a two-dimensional incompressible flow past a cylinder with an attached deformable elastic beam. The simulation uses a strongly coupled partitioned fluid-structure interaction (FSI) solver. Image courtesy of Leonardo Molinari as part of the 2025 MFEM Workshop Visualization Contest.*
+
+
+
 </div><div class="col-md-5"  markdown="1">
 
 [![](img/gallery/uorbs-small.png)](img/gallery/uorbs.png)
@@ -264,6 +279,21 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 ----
 
+<div id="cascadia" class="anchor"></div>
+
+[![](img/gallery/workshop25/cascadia.png)](img/gallery/workshop25/cascadia.mp4)
+
+[🎬](img/gallery/workshop25/cascadia.mp4)
+*Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. Image courtesy of the [Cascadia team](https://arxiv.org/abs/2504.16344), **winners** of the 2025 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop25/particles.png)](img/gallery/workshop25/particles.mp4)
+[🎬](img/gallery/workshop25/particles.mp4)
+*Particle-laden fluid flow in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
+
+
+
 </div><div class="col-md-3" markdown="1">
 
 [![](img/gallery/mri.png)](img/gallery/mri-full.png)
@@ -385,6 +415,18 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 *Heat flux magnitude in a [convection - (anisotropic) diffusion simulation](https://github.com/mfem/mfem/blob/darcy-hdg-dev/examples/ex5-aniso.cpp) with MFEM text as the initial temperature profile. A single implicit step of the [HDG scheme](https://github.com/mfem/mfem/pull/4350) was used. Image courtesy of Jan Nikl, **winner** of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
+
+[![](img/gallery/workshop25/remap.png)](img/gallery/workshop25/remap.png)
+
+*Conservative and bounded remap of Lagrangian hydrodynamics to a uniform mesh with Laghos and Remhos. Image courtesy of Vladimir Tomov, as part of the 2025 MFEM Workshop Visualization Contest.*
+
+----
+
+[![](img/gallery/workshop25/contact.png)](img/gallery/workshop25/contact.mp4)
+
+[🎬](img/gallery/workshop25/contact.mp4)
+*Layered spherical shell compressed by half-elliptical beams, modeled as a nonlinear Neo-Hookean solid. Contact constraints are provided by [Tribol](https://github.com/LLNL/Tribol), enforced with an Interior Point method, and linear systems solved by [AMGF](https://arxiv.org/abs/2505.18576)-preconditioned PCG. Image courtesy of Socratis Petrides, as part of the 2025 MFEM Workshop Visualization Contest.*
+
 
 </div>
 
