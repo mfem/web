@@ -111,6 +111,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://mfem.org/integration/</loc>
+     <lastmod>2025-09-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://mfem.org/coefficient/</loc>
      <lastmod>2025-09-26</lastmod>
      <changefreq>daily</changefreq>
