@@ -14,25 +14,36 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/empty.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### TBD (TBD)
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/schafer.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Florian Schäfer (Courant Institute, NYU)
 ##### *Toward Information Geometric Mechanics*
-##### [**9:00am PDT, September 30, 2025**](https://everytimezone.com/s/c79bd41d)
+##### September 30, 2025
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/schafer.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Shock waves in high-speed gas dynamics cause severe numerical difficulties for classical solvers and scientific machine learning. This talk begins with the observation that shock formation arises from the flow map reaching the boundary of the manifold of diffeomorphisms. We modify its geometry such that geodesics approach but never reach the boundary. The resulting information geometric regularization (IGR) has smooth solutions while avoiding the excessive dissipation of viscous regularizations, accelerating and simplifying the simulation of flows with shocks. We prove the existence of global strong IGR solutions in the unidimensional pressureless case and illustrate its practical utility on multidimensional examples with complex shock interactions. With S. Bryngelson and other collaborators, we use IGR to conduct the first compressible flow simulation exceeding a quadrillion degrees of freedom.
-
 The modified geometry of the diffeomorphism manifold is the information geometry of the mass density. The last part of the talk explains how this observation motivates information geometric mechanics that views the solutions of continuum mechanical PDEs as parameters of probability distributions originating from statistical physics. Replacing the Euclidean geometry of individual particles with the information geometry of statistical families promises performant numerical methods that preserve the positivity of densities and energies and readily integrate with scientific machine learning.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
