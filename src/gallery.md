@@ -290,8 +290,15 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [![](img/gallery/workshop25/particles.png)](img/gallery/workshop25/particles.mp4)
 [🎬](img/gallery/workshop25/particles.mp4)
-*Particle-laden fluid flow in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
+*[Particle-laden fluid flow](https://github.com/mfem/mfem/pull/4986) in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Workshop Visualization Contest.*
 
+----
+
+[![](img/gallery/workshop25/mfem-particles.png)](img/gallery/workshop25/mfem-particles.mp4)
+
+[🎬](img/gallery/workshop25/mfem-particles.mp4)
+* **Particles lighting up MFEM**.
+The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to inject particles into the MFEM mesh at random positions and velocities, with perfectly elastic collisions to model interaction with domain boundaries. Visualization with [Blender](https://www.blender.org/). Image courtesy of Ketan Mittal and Joe Signorelli .*
 
 
 </div><div class="col-md-3" markdown="1">
