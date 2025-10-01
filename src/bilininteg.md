@@ -92,7 +92,7 @@ Note that any operators involving a derivative of the range function
 $v$ or $\vec\{v}$ are computed using integration by parts.  This leads
 to a boundary integral which can be used to apply Neumann boundary
 conditions.  Some of these operators are listed along with their
-boundary terms in section [Weak Operators](#weak-operators-and-their-boundary-integrals).
+boundary terms in section [Weak Operators and Their Boundary Integrals](#weak-operators-and-their-boundary-integrals).
 
 ## Scalar Field Operators
 
@@ -102,7 +102,7 @@ require a gradient operator should be used with H1.
 
 ### Square Operators
 
-These integrators are designed to be used with the BilinearForm object
+These integrators are designed to be used with a `BilinearForm` object
 to assemble square linear operators.
 
 | Class Name          | Spaces | Coef.| Operator                    | Continuous Op.          | Dimension  |
@@ -112,7 +112,7 @@ to assemble square linear operators.
 
 ### Mixed Operators
 
-These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.
+These integrators are designed to be used with a `MixedBilinearForm` object to assemble square or rectangular linear operators.
 
 | Class Name                            | Domain | Range  | Coef.   | Operator                                       | Continuous Op.                       | Dimension  |
 |---------------------------------------|--------|--------|:-------:|------------------------------------------------|--------------------------------------|:----------:|
@@ -150,7 +150,7 @@ functions but others require one or the other.
 
 ### Square Operators
 
-These integrators are designed to be used with the BilinearForm object
+These integrators are designed to be used with a `BilinearForm` object
 to assemble square linear operators.
 
 | Class Name             | Spaces | Coef.   | Operator                               | Continuous Op.                | Dimension  |
@@ -161,7 +161,7 @@ to assemble square linear operators.
 
 ### Mixed Operators
 
-These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.
+These integrators are designed to be used with a `MixedBilinearForm` object to assemble square or rectangular linear operators.
 
 | Class Name                           | Domain | Range  | Coef.   | Operator                                                 | Continuous Op.                                | Dimension  |
 |--------------------------------------|--------|--------|:-------:|----------------------------------------------------------|-----------------------------------------------|:----------:|
@@ -190,9 +190,9 @@ These integrators are designed to be used with the MixedBilinearForm object to a
 
 | Class Name                       | Domain | Range  | Coef. | Operator                                                               | Dimension | Notes |
 |----------------------------------|--------|--------|-------|------------------------------------------------------------------------|:---------:|-------|
-| VectorFEDivergenceIntegrator     | RT     | H1, L2 |   S   | $(\lambda\div\vec\{u}, v)$                                             | 2D, 3D    | Alternate implementation of MixedScalarDivergenceIntegrator. |
-| VectorFEWeakDivergenceIntegrator | ND     | H1     |   S   | $(-\lambda\vec\{u},\grad v)$                                           | 2D, 3D    | See MixedVectorWeakDivergenceIntegrator for a more general implementation. |
-| VectorFECurlIntegrator           | ND, RT | ND, RT |   S   | $(\lambda\curl\vec\{u},\vec\{v})$ or $(\lambda\vec\{u},\curl\vec\{v})$ | 3D        | If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations. |
+| VectorFEDivergenceIntegrator     | RT     | H1, L2 |   S   | $(\lambda\div\vec\{u}, v)$                                             | 2D, 3D    | Alternate implementation of `MixedScalarDivergenceIntegrator`. |
+| VectorFEWeakDivergenceIntegrator | ND     | H1     |   S   | $(-\lambda\vec\{u},\grad v)$                                           | 2D, 3D    | See `MixedVectorWeakDivergenceIntegrator` for a more general implementation. |
+| VectorFECurlIntegrator           | ND, RT | ND, RT |   S   | $(\lambda\curl\vec\{u},\vec\{v})$ or $(\lambda\vec\{u},\curl\vec\{v})$ | 3D        | If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See `MixedVectorCurlIntegrator` and `MixedVectorWeakCurlIntegrator` for more general implementations. |
 
 ## Vector Field Operators
 
@@ -299,9 +299,9 @@ situations rather than needing to reimplement their functionality.
 
 | Class Name          | Description                                                                                                            |
 |---------------------|------------------------------------------------------------------------------------------------------------------------|
-| TransposeIntegrator | Returns the transpose of the local matrix computed by another BilinearFormIntegrator                                   |
-| LumpedIntegrator    | Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another BilinearFormIntegrator (only implemented for square matrices) |
-| InverseIntegrator   | Returns the inverse of the local matrix computed by another BilinearFormIntegrator which produces a square local matrix |
+| TransposeIntegrator | Returns the transpose of the local matrix computed by another `BilinearFormIntegrator`                                 |
+| LumpedIntegrator    | Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another `BilinearFormIntegrator` (only implemented for square matrices) |
+| InverseIntegrator   | Returns the inverse of the local matrix computed by another `BilinearFormIntegrator` which produces a square local matrix |
 | SumIntegrator       | Returns the sum of a series of integrators with compatible dimensions (only implemented for square matrices)           |
 
 ## Weak Operators and Their Boundary Integrals
