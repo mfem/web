@@ -2,6 +2,7 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Nov XX, 2025** | *Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).*
 **Sep 18, 2025** | *[PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0)*
 **Sep 10, 2025** | *2025 [MFEM community workshop](workshop.md).*
 **Sep 9, 2025** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials) series.*
