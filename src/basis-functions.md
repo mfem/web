@@ -44,6 +44,12 @@ $x_{i \in {0,...,n}} = (1/2+i)/(n+1)$.
 subintervals in-between the quadrature points of the Gauss-Lobatto quadrature
 rule with $n+2$ points. These points are the $[0,1]$ interval endpoints plus
 the zeros of the first derivative of the Legendre polynomial of degree $n+1$.
+The integral of each basis function over its respective subinterval equals one
+(or, alternatively, the length of the subinterval) and is zero over all other
+$n$ subintervals, meaning that all DoFs associated with this basis correspond
+to integrals (or, alternatively, mean values) of the approximated function over
+the respective subinterval. See also [Gerritsma, M. (2011). Edge Functions for
+Spectral Element Methods](https://doi.org/10.1007/978-3-642-15337-2_17).
 
 - `GaussLobatto`: closed and nodal basis; the basis of order $n$ interpolates
 all the quadrature points of the Gauss-Lobatto quadrature rule with $n+1$
@@ -71,7 +77,7 @@ a given order and dimension, the user can often specify one, for
 [ND](ND_FECollection) and [RT](RT_FECollection) spaces, of the one-dimensional
 bases described above. In most cases the user can simply use the provided
 defaults, Gauss-Lobatto for H1 spaces, Gauss-Lobatto plus Gauss-Legendre for
-ND and RT spaces, and Gauss-Lobatto for L2 spaces. This should not be confused
+ND and RT spaces, and Gauss-Legendre for L2 spaces. This should not be confused
 with the integration rule default, which remains Gauss-Legendre for all cases.
 
 For tensor product elements, e.g. quadrilaterals or hexahedra, the basis
