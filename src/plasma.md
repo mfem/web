@@ -124,8 +124,8 @@ In 1D this becomes:
 $$
 \begin{align\*}
 -\omega^2\left(\epsilon\E\right)_x &= i\omega J_x\\\\
--\frac{1}{\mu}E''_y-\omega^2\left(\epsilon\E\right)_y &= i\omega J_y\\\\
--\frac{1}{\mu}E''_z-\omega^2\left(\epsilon\E\right)_z &= i\omega J_z
+-\frac{1}{\mu}\frac{\partial^2 E_y}{\partial x^2}-\omega^2\left(\epsilon\E\right)_y &= i\omega J_y\\\\
+-\frac{1}{\mu}\frac{\partial^2 E_z}{\partial x^2}-\omega^2\left(\epsilon\E\right)_z &= i\omega J_z
 \end{align\*}
 $$
 
@@ -138,11 +138,11 @@ domain. In addition to the direction of propagation each configuration
 supports two distinct polarizations. In each case the plane wave
 solution can be written as:
 
-$$\E = \E_p e^{i(\vec{k}_p\cdot\vec{x} - \omega t)}$$
+$$\E = \E_p e^{i(\vec{k}_p\cdot\vec{x} - \omega t)}\label{pw_e}$$
 
 and
 
-$$\B = \frac{1}{\omega}\left(\vec{k}_p\times\E_p\right) e^{i(\vec{k}_p\cdot\vec{x} - \omega t)}$$
+$$\B = \frac{1}{\omega}\left(\vec{k}_p\times\E_p\right) e^{i(\vec{k}_p\cdot\vec{x} - \omega t)}\label{pw_b}$$
 
 These four plane wave solutions are often referred to by single
 character abbreviations:
@@ -168,6 +168,55 @@ $O$ waves decay on the length scale of a few millimeters requiring a
 mesh spacing hundreds of times smaller.
 
 #### Mini Application Features
+
+**Problem Domain:** The 1D problem domain is $n_e$ equally sized
+  elements covering the interval $[0,L_x]$. The number of elements
+  $n_e$ can be set using the `-ne` or `--num-elems` options. The
+  length of the interval $L_x$ can be set using `-Lx` or `--length-x`.
+
+**Frequency:** The frequency can be specified in Hertz using `-f` or
+  `--frequency`. The default value is 1 MHz.
+
+**Plane Wave Type:** The type of plane wave being modeled can be
+  specified using the `-w` or `--wave-type` option followed by one of
+  the single character abbreviations shown above; 'L', 'R', 'O', or
+  'X'. By default a special wave type of 'Z' is used which indicates
+  the zero vector field.
+
+**Dirichlet BC:** Dirichlet boundary conditions can be specified at
+  $x=0$ using `-dbcs 1`, at $x=L_x$ using `-dbcs 2`, or `-dbcs '1 2'`
+  to set ends of the interval. The values applied are taken from
+  equation \ref{pw_e} where $\vec{E}_p$ and $\vec{k}_p$ are taken from
+  the table of plane wave solutions for the appropriate wave type.
+
+**Neumann BC:** Neumann boundary conditions can be specified at $x=0$
+  using `-nbcs 1`, at $x=L_x$ using `-nbcs 2`, or `-nbcs '1 2'` to set
+  ends of the interval. The values applied are taken from equation
+  \ref{pw_b} (divided by $\mu_0$) where $\vec{E}_p$ and $\vec{k}_p$
+  are taken from the table of plane wave solutions for the appropriate
+  wave type.
+
+**Sommerfeld BC:** First order Sommerfeld absorbing boundary
+  conditions can be applied at either end of the domain using `-abcs
+  1`, `-abcs 2`, or `-abcs '1 2'`. The admittance value,
+  $\frac{1}{\eta}$, used to apply this boundary condition depends on
+  the wave type; L$\rightarrow\sqrt{(S-D)\mu_0/\epsilon_0}$,
+  R$\rightarrow\sqrt{(S+D)\mu_0/\epsilon_0}$,
+  O$\rightarrow\sqrt{P\mu_0/\epsilon_0}$,
+  X$\rightarrow\sqrt{(S-D^2/S)\mu_0/\epsilon_0}$.
+
+**Plasma Profiles:** More advanced options include specification of
+  the plasma density, temperature, and collision profiles. These can
+  be constant, a linear gradient, or transition in the shape of a
+  hyperbolic tangent. Refer to the code in
+  `cold_plasma_dielectric_coefs.hpp` for specifics.
+
+**Adaptive Mesh Refinement:** The code includes two AMR loops. The
+  first refines the initial mesh to accurately capture the plasma
+  profile. This is most useful when using sharp hyperbolic tangent
+  transitions. The electric field solve also supports AMR but the only
+  stopping criteria is the user defined number of AMR iterations (or
+  10 million degrees of freedom).
 
 ## Anisotropic Thermal Diffusion in Magnetized Plasma
 
