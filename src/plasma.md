@@ -220,5 +220,40 @@ mesh spacing hundreds of times smaller.
 
 ## Anisotropic Thermal Diffusion in Magnetized Plasma
 
+Magnetic fields influence charged particles through the Lorentz force
+term $q\,\vec{v}\times\vec{B}$ which leads to helical particle
+trajectories. Particles moving parallel to the magnetic field will be
+unaffected but particles moving transverse to the field will have
+their path wrapped around the magnetic field direction thereby
+impeding their progress in transverse directions. This, of course, is
+the mechanism which makes it possible to magnetically confine
+plasmas. This confinement restricts the diffusion of various
+quantities in plasmas including the mixing of different ion species as
+well as the diffusion of thermal energy in transverse directions.
+
+For example, the thermal diffusion in a magnetized plasma can be
+$10^9-10^{12}$ times stronger along the magnetic field compared to the
+transverse directions. This can be expressed as an anisotropic thermal
+conductivity, $\kappa$:
+
+$$
+\kappa = \hat\{b}\otimes\hat\{b}\,\kappa_\parallel + (I - \hat\{b}\otimes\hat\{b})\,\kappa_\perp
+$$
+
+Where, again, $\hat{b}\equiv\frac{\B_0}{\|\B_0\|}$ and $\vec{B}_0$ is
+the background magnetic field.
+
+Strong anisotropies where $\frac{\kappa_\parallel}{\kappa_\perp}$ is
+greater than a few orders of magnitude can be very challenging to
+accurately simulate numerically due to loss of accuracy. MFEM is
+developing a small collection of simple miniapps to investigate
+different approaches to addressing these challenges. These miniapps
+solve the Poisson problem in two space dimensions,
+
+$$-\div\left(\kappa\grad\varphi\right) = \rho$$
+
+with various source functions, $\rho$, and/or boundary conditions,
+$\varphi\|\_\Gamma = \varphi_\{BC}$.
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
