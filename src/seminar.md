@@ -14,11 +14,19 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/empty.jpg)
+![](img/seminar/henshaw.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### TBD (TBD)
+#### Bill Henshaw (RPI)
+##### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
+##### [**9:00am PDT, November 4, 2025**](https://everytimezone.com/s/46f772ae)
+
+ [<button type="button" class="btn btn-success">
+**Webex**
+ </button>]()
+
+**Abstract:** An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The the wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.
 
 ---
 
@@ -1253,6 +1261,10 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
+#### Robert Falgout (Lawrence Livermore National Laboratory)
+##### **November 18, 2025**
+
+---
 
 #### David Moxey and Edward Erasmie-Jones (King’s College London)
 ##### **February 10, 2026**
