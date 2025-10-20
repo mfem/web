@@ -1275,3 +1275,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ##### **May 5, 2026**
 
 </div>
+
+<!--
+Rob Falgout
+
+Title: New advances in hypre 3.0 for mixed precision and semi-structured problems
+
+Abstract: The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
+-->
