@@ -1266,8 +1266,18 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ---
 
+#### Jay Gopalakrishnan (Portland State University)
+##### **December 16, 2025**
+
+---
+
 #### David Moxey and Edward Erasmie-Jones (King’s College London)
 ##### **February 10, 2026**
+
+---
+
+#### Ido Akkerman (Delft university of Technology)
+##### **March 10, 2026**
 
 ---
 
