@@ -1271,6 +1271,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ---
 
+#### Andrea Beck (University of Stuttgart)
+##### **January 12, 2026**
+
+---
+
 #### David Moxey and Edward Erasmie-Jones (King’s College London)
 ##### **February 10, 2026**
 
