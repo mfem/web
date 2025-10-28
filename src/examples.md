@@ -2346,7 +2346,23 @@ _This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/m
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="contact" markdown="1">
+##Contact miniapp
 
+<a href="../img/gallery/workshop25/contact.mp4" target="_blank">
+<img class="floatright" width="250" src="../img/gallery/workshop25/contact.png">
+</a>
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp) demonstrates how to use MFEM in combination with [Tribol](https://github.com/LLNL/Tribol)
+ to simulate frictionless contact between deformable solids. The contact gap **function** and its Jacobian is computed using Tribol’s mortar segment-to-segment method.  An **Interior-Point (IP)** optimization solver is used to solve an inequality-constrained minimization problem enforcing a non-penetration condition. Linear systems arising in the IP iterations are solved using **Conjugate Gradient (CG)** preconditioned with the [**AMG with Filtering (AMGF)**](https://arxiv.org/abs/2505.18576) solver.
+
+ Several benchmark problems are provided, including the two-block compression, ironing and beam-sphere tests. These examples illustrate how MFEM and Tribol can be combined to build large-scale scalable simulations of contact mechanics problems.
+
+_This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp)) implementation. For more details, please see the documentation in [miniapps/contact/README.md](https://github.com/mfem/mfem/blob/master/miniapps/contact/README.md).
+**We recommend that new users start with the example codes before moving to the miniapps.**_
+
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -2492,6 +2508,7 @@ function update()
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
    + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
    + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi))
+   + showElement("contact", elasticity && h1 && galerkin && (pcg || amg))
 
    ; // ...end of expression
 

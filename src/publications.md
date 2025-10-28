@@ -8,6 +8,7 @@
 ## Selected Publications
 
 #### 2025
+  1. S. Petrides, T. Hartland, T. Kolev, C. S. Lee, M. Puso, J. Solberg, E. B. Chin, J. Wang, C. Petra, [AMG with Filtering: An Efficient Preconditioner for Interior Point Methods in Large-Scale Contact Mechanics Optimization](https://arxiv.org/abs/2505.18576), *in review*, **2025**. Also available as [arXiv:2505.18576](https://arxiv.org/abs/2505.18576).
   1. J. Andrej, T. Kolev, B. S. Lazarov, [Scalable Analysis and Design Using Automatic Differentiation](https://arxiv.org/abs/2506.00746), *to appear*, **2025**. Also available as [arXiv:2506.00746](https://arxiv.org/abs/2506.00746).
   1. B. Keith, D. Kim, B. S. Lazarov, T. M. Surowiec, [Analysis of the SiMPL method for density-based topology optimization](https://arxiv.org/abs/2409.19341), *to appear*, **2025**. Also available as [arXiv:2409.19341](https://arxiv.org/abs/2409.19341).
   1. D. Kim, B. S. Lazarov, T. M. Surowiec, B. Keith, [A Simple Introduction to the SiMPL Method for Density-Based Topology Optimization](https://arxiv.org/abs/2411.19421), *to appear*, **2025**. Also available as [arXiv:2411.19421](https://arxiv.org/abs/2411.19421).
