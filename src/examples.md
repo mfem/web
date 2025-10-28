@@ -1285,6 +1285,23 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex41" markdown="1">
+##Example 41: Clamped Biharmonic
+<img class="floatright" width="280pt" src="../img/examples/ex41.png">
+
+This example demonstrates one way that MFEM can be used to solve PDEs with higher-order derivatives by using the $C^0$ interior penalty by [Brenner and Sung](https://doi.org/10.1007/s10915-004-4135-7). The biharmonic equation with clamped boundary conditions,
+
+$$\nabla^4u=1 \text{ in } \Omega,$$
+$$\nabla u\cdot \hat{n}=0 \text{ on } \partial\Omega,$$
+
+is solved using $H^1$-conforming finite elements. Development of custom domain and face integrators are shown. See the example code for a more detailed description of the method.
+
+_The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version.
+We recommend viewing Example 1 and Example 14 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem
 <a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
@@ -2444,6 +2461,8 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex41", all1 && h1 && galerkin && pcg)
+   
 
    // nurbs miniapps
    + showElement("nurbs_ex1", diffusion && nurbs && h1)
