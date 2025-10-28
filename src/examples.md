@@ -1289,7 +1289,7 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 ##Example 41: Clamped Biharmonic
 <img class="floatright" width="280pt" src="../img/examples/ex41.png">
 
-This example demonstrates one way that MFEM can be used to solve PDEs with higher-order derivatives by using the $C^0$ interior penalty by [Brenner and Sung](https://doi.org/10.1007/s10915-004-4135-7). The biharmonic equation with clamped boundary conditions,
+This example demonstrates one way that MFEM can be used to solve PDEs with higher-order derivatives by using the $C^0$ interior penalty method by [Brenner and Sung](https://doi.org/10.1007/s10915-004-4135-7). The biharmonic equation with clamped boundary conditions,
 
 $$\nabla^4u=1 \text{ in } \Omega,$$
 $$\nabla u\cdot \hat{n}=0 \text{ on } \partial\Omega,$$
