@@ -1292,7 +1292,7 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 This example demonstrates one way that MFEM can be used to solve PDEs with higher-order derivatives by using the $C^0$ interior penalty method by [Brenner and Sung](https://doi.org/10.1007/s10915-004-4135-7). The biharmonic equation with clamped boundary conditions,
 
 $$\nabla^4u=1 \text{ in } \Omega,$$
-$$\nabla u\cdot \hat{n}=0 \text{ on } \partial\Omega,$$
+$$u=0 \text{ and } \nabla u\cdot \hat{n}=0 \text{ on } \partial\Omega,$$
 
 is solved using $H^1$-conforming finite elements. Development of custom domain and face integrators are shown. See the example code for a more detailed description of the method.
 
