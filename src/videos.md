@@ -10,6 +10,16 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Florian Schäfer (Courant Institute, NYU)
+#### *Toward Information Geometric Mechanics*
+##### **September 30, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/tQnLkI8sE-Y"><img src="https://img.youtube.com/vi/tQnLkI8sE-Y/maxresdefault.jpg"></img></a>
+
+Shock waves in high-speed gas dynamics cause severe numerical difficulties for classical solvers and scientific machine learning. This talk begins with the observation that shock formation arises from the flow map reaching the boundary of the manifold of diffeomorphisms. We modify its geometry such that geodesics approach but never reach the boundary. The resulting information geometric regularization (IGR) has smooth solutions while avoiding the excessive dissipation of viscous regularizations, accelerating and simplifying the simulation of flows with shocks. We prove the existence of global strong IGR solutions in the unidimensional pressureless case and illustrate its practical utility on multidimensional examples with complex shock interactions. With S. Bryngelson and other collaborators, we use IGR to conduct the first compressible flow simulation exceeding a quadrillion degrees of freedom.
+The modified geometry of the diffeomorphism manifold is the information geometry of the mass density. The last part of the talk explains how this observation motivates information geometric mechanics that views the solutions of continuum mechanical PDEs as parameters of probability distributions originating from statistical physics. Replacing the Euclidean geometry of individual particles with the information geometry of statistical families promises performant numerical methods that preserve the positivity of densities and energies and readily integrate with scientific machine learning.
+
+---
+
 #### John Evans (CU Boulder)
 #### *Interpolation-Based Immersed Finite Element and Isogeometric Analysis*
 ##### **June 12, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -199,7 +209,7 @@ Numerous cutting-edge scientific technologies originate at the laboratory scale,
 
 An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters. Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections. Matrix solutions are performed using complex computations. Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI. Implementation details are presented along with sample results and accuracy demonstrations.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Jesse Chan (Rice University)
 #### *High order positivity-preserving entropy stable discontinuous Galerkin discretizations*
@@ -209,7 +219,7 @@ An open-source and free full-wave electromagnetic simulator is presented that ad
 
 High order discontinuous Galerkin (DG) methods provide high order accuracy and geometric flexibility, but are known to be unstable when applied to nonlinear conservation laws whose solutions exhibit shocks and under-resolved solution features. Entropy stable schemes improve robustness by ensuring that physically relevant solutions satisfy a semi-discrete cell entropy inequality independently of numerical resolution and solution regularization while retaining formal high order accuracy. In this talk, we will review the construction of entropy stable high order discontinuous Galerkin methods and describe approaches for enforcing that solutions are "physically relevant" (i.e., the thermodynamic variables remain positive).
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Youngsoo Choi (LLNL)
 #### *Physics-guided interpretable data-driven simulations*
