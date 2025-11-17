@@ -11,6 +11,7 @@
   1. T. Dzanic, T. Kolev, K. Mittal, [A method for bounding high-order finite element functions: Applications to mesh validity and bounds-preserving limiters](https://www.sciencedirect.com/science/article/pii/S0021999125007260), *Journal of Computational Physics*, 545, 114444, **2026**. Also available as [arXiv:2504.11688](https://arxiv.org/abs/2504.11688).
 
 #### 2025
+  1. K. Mittal, J.-L. Barrera, T. Kolev, M. Schmidt, V. Tomov, [High-Order Mesh hr-Adaptivity for Surface Fitting to Implicit Geometries](https://link.springer.com/chapter/10.1007/978-3-031-76988-7_18). *Lecture Notes in Computational Science and Engineering*, **2025**.
   1. T. Kolev, B. Lazarov, K. Mittal, M. Schmidt, V. Tomov, [PDE-Constrained High-Order Mesh Optimization](https://arxiv.org/pdf/2507.01917), *to appear*, **2025**.
   1. J. Andrej, T. Kolev, B. S. Lazarov, [Scalable Analysis and Design Using Automatic Differentiation](https://arxiv.org/abs/2506.00746), *to appear*, **2025**. Also available as [arXiv:2506.00746](https://arxiv.org/abs/2506.00746).
   1. B. Keith, D. Kim, B. S. Lazarov, T. M. Surowiec, [Analysis of the SiMPL method for density-based topology optimization](https://arxiv.org/abs/2409.19341), *to appear*, **2025**. Also available as [arXiv:2409.19341](https://arxiv.org/abs/2409.19341).
