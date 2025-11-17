@@ -186,11 +186,46 @@ The variable `H1fes` will hold our solutions $u_h$, and the variable
 `L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal
 with the many bilinear and linear forms present in (4), we will use block
 matrices (which will be built using `offsets` defined below) and block vectors
-(`rhs`) to assign each bilinear and linear form a block. The offsets are
-calculated in lines
-[142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149)
-and will be used in the main loop of the proximal Galerkin method. The block
-vector `x` will contain $u_h$ and $\delta \psi_h$.
+(`rhs`) to assign each bilinear and linear form a block.
+
+The block vector `x` will contain two blocks, one for the DOFs of $u_h$ and one
+for the DOFs of $\delta \psi_h$. The block sizes, then, are determined by the
+number of DOFs in each finite element space. In MFEM, we use the `GetVSize`
+method of the `FiniteElementSpace` class to get the number of (vector) DOFs for
+a given finite element space. Furthermore, we construct block vectors by
+specifying the offsets of each block through an `Array<int>` object of size
+equal to the number of blocks plus one.
+
+We compute the offsets in lines
+[142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149).
+The `PartialSum` method of the `Array<T>` class is used so that we need only
+specify the sizes of each block in lines
+[144-145](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L144-L145).
+After line
+[146](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L146), the
+resulting `offsets` array will read `[0, H1fes.GetVSize(), H1fes.GetVSize() +
+L2fes.GetVSize()]`, so that the first block in `x` and `rhs` has size
+
+$$
+\begin{aligned}
+\mathtt{offsets[1]} - \mathtt{offsets[0]}
+&= \mathtt{H1fes.GetVSize()} - 0 \\\\
+&= \mathtt{H1fes.GetVSize()}
+\end{aligned}
+$$
+
+and the second block has size
+
+$$
+\begin{aligned}
+\mathtt{offsets[2]} - \mathtt{offsets[1]}
+&= (\mathtt{H1fes.GetVSize()} + \mathtt{L2fes.GetVSize()}) -
+\mathtt{H1fes.GetVSize()} \\\\
+&= \mathtt{L2fes.GetVSize()}.
+\end{aligned}
+$$
+
+In sum, our code reads
 
 ```c++
 Array<int> offsets(3);
