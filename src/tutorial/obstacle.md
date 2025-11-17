@@ -182,7 +182,15 @@ cout << "Number of L2 finite element unknowns: "
      << L2fes.GetTrueVSize() << endl;
 ```
 
-The variable `H1fes` will hold our solutions $u_h$, and the variable `L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal with the many bilinear and linear forms present in (4), we will use block matrices (which will be built using `offsets` defined below) and block vectors (`rhs`) to assign each bilinear and linear form a block. The offsets are calculated in lines [142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149) and will be used in the main loop of the proximal Galerkin method. The block vector `x` will contain $u_h$ and $\delta \psi_h$.
+The variable `H1fes` will hold our solutions $u_h$, and the variable
+`L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal
+with the many bilinear and linear forms present in (4), we will use block
+matrices (which will be built using `offsets` defined below) and block vectors
+(`rhs`) to assign each bilinear and linear form a block. The offsets are
+calculated in lines
+[142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149)
+and will be used in the main loop of the proximal Galerkin method. The block
+vector `x` will contain $u_h$ and $\delta \psi_h$.
 
 ```c++
 Array<int> offsets(3);
@@ -209,7 +217,9 @@ if (mesh.bdr_attributes.Size())
 }
 ```
 
-Next, in lines [159-169](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L159-L169), we make an initial guess for the solution, namely that $u(x) = 1 - \\|x\\|^2$.
+Next, in lines
+[159-169](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L159-L169),
+we make an initial guess for the solution, namely that $u(x) = 1 - \\|x\\|^2$.
 Note that such a guess preserves the boundary condition, $u(x) = 0$ when
 $\\|x\\| = 1$.
 
@@ -302,7 +312,10 @@ a00.Finalize();
 SparseMatrix &A00 = a00.SpMat();
 ```
 
-Lines [267-268](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L267-L268) represent $-(\delta \psi_h \exp \psi_h,w)$ present in (4), but particularly in (5).
+Lines
+[267-268](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L267-L268)
+represent $-(\delta \psi_h \exp \psi_h,w)$ present in (4), but particularly in
+(5).
 
 ```c++
 BilinearForm a11(&L2fes);
@@ -341,7 +354,10 @@ A.SetBlock(0,1,A01);
 A.SetBlock(1,1,&A11);
 ```
 
-The linear form $(\alpha_{k+1} f + \psi_h^k - \psi_h, v)$ present in (4) is constructed sequentially, and a similar construction is made for the other bilinear form; see lines [241-247](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L241-L247).
+The linear form $(\alpha_{k+1} f + \psi_h^k - \psi_h, v)$ present in (4) is
+constructed sequentially, and a similar construction is made for the other
+bilinear form; see lines
+[241-247](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L241-L247).
 
 ```c++
 b0.AddDomainIntegrator(new DomainLFIntegrator(alpha_f));
@@ -349,7 +365,16 @@ b0.AddDomainIntegrator(new DomainLFIntegrator(psi_old_minus_psi));
 b0.Assemble();
 ```
 
-The linear system $AX = B$ is solved using [GMRES](https://en.wikipedia.org/wiki/Generalized_minimal_residual_method), using a block diagonal preconditioner `prec`. In line [297](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L297), the matrix $A$ corresponds to `A`, the vector $B$ corresponds to `rhs`, and the solution $X$ is stored in `x`.
+The linear system $AX = B$ is solved using
+[GMRES](https://en.wikipedia.org/wiki/Generalized_minimal_residual_method),
+using a block diagonal preconditioner `prec`. In line
+[297](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L297), the
+matrix $A$ corresponds to `A`, the vector $B$ corresponds to `rhs`, and the
+solution $X$ is stored in `x`. The other parameters indicate that: we do not
+wish to print the number of GMRES iterations, we set the maximum number of
+iterations to 10,000, we set the size of the Krylov subspace to 500, we set the
+*squared* relative tolerance to $10^{-12}$, and we set the (squared) absolute
+tolerance to 0, respectively.
 
 ```c++
 GMRES(A,prec,rhs,x,0,10000,500,1e-12,0.0);
