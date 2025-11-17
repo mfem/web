@@ -45,11 +45,11 @@ $$
 where $\Omega$ is an open bounded domain with smooth boundary and $\varphi$ is
 a smooth function representing the obstacle.
 
-We will solve a discretization of this problem using the proximal Galerkin
-finite element method, introduced by [Keith and
-Surowiec](https://arxiv.org/abs/2307.12444). Indeed, given linear subspaces
-$V_h \subset H_0^1(\Omega)$ and $W_h \subset L^\infty(\Omega)$, we aim to find
-$u_h \in g_h + V_h$ and $\psi_h \in W_h$ such that
+We will discretize and solve this problem using the proximal Galerkin finite
+element method, introduced by [Keith and
+Surowiec](https://arxiv.org/abs/2307.12444). In this method, given linear
+subspaces $V_h \subset H_0^1(\Omega)$ and $W_h \subset L^\infty(\Omega)$, we
+aim to find $u_h \in g_h + V_h$ and $\psi_h \in W_h$ such that
 
 $$
 \begin{equation}
@@ -62,7 +62,7 @@ $$
 
 where $\alpha_k > 0$ is a sequence of step sizes and $g_h \in H^1(\Omega)$
 provides an approximation of the boundary values $g_h|_{\partial \Omega}
-\approx g$. In order to accomplish this, we apply the Quasi-Newton method[^1] and will solve the following linearized discrete saddle-point problem: find $u_h \in V_h$ and $\delta \psi_h \in W_h$ such that
+\approx g$. Equation (3) is a coupled system of $(u,\psi)$ and is nonlinear in $\psi$. Therefore, we apply the Newton-Raphson method[^1] and solve the following linearized discrete saddle-point problem: find $u_h \in V_h$ and $\delta \psi_h \in W_h$ such that
 
 $$
 \begin{equation}
@@ -112,7 +112,7 @@ the visualization will automatically update in the GLVis browser window.
 #### The Mesh
 
 The computational mesh for this problem is set to `disc-nurbs.mesh` in line
-[77](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L109). We can
+[109](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L109). We can
 use GLVis to generate a visualization of this mesh by running `glvis -m
 disc-nurbs.mesh`.
 
@@ -140,7 +140,7 @@ for (int l = 0; l < ref_levels; l++)
 }
 ```
 
-Next, we control potential geometry error by setting the curvature of our mesh
+Next, we control the geometric approximation by setting the curvature of our mesh
 to have order at least two in lines
 [122-123](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L122-L123).
 
@@ -182,7 +182,7 @@ cout << "Number of L2 finite element unknowns: "
      << L2fes.GetTrueVSize() << endl;
 ```
 
-The variable `H1fes` will hold our solutions $u_h$, and the variable `L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal with the many bilinear and linear forms present in (4), we will use block matrices (which will be built using `offsets` defined below) and block vectors (`rhs`) to assign each bilinear and linear form a block. This is accomplished in lines [142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149) and will be relevant in the main iteration loop. The block vector `x` will contain $u_h$ and $\delta \psi_h$.
+The variable `H1fes` will hold our solutions $u_h$, and the variable `L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal with the many bilinear and linear forms present in (4), we will use block matrices (which will be built using `offsets` defined below) and block vectors (`rhs`) to assign each bilinear and linear form a block. The offsets are calculated in lines [142-149](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L142-L149) and will be used in the main loop of the proximal Galerkin method. The block vector `x` will contain $u_h$ and $\delta \psi_h$.
 
 ```c++
 Array<int> offsets(3);
@@ -251,8 +251,12 @@ with the function `exact_solution_obstacle` defined in lines
 [423-439](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L423-L439),
 as well as its gradient `exact_solution_gradient_obstacle` in lines
 [441-459](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L441-L459),
-to compute error. Recall that the function `spherical_obstacle` represents our
-obstacle function $\varphi$ in (4).
+to compute error. We will need these for computing the error in our finite
+element solution. As our solution is a scalar function, we set the type of
+`exact_coef` to `FunctionCoefficient` and the type of its gradient
+`exact_grad_coef`, a vector valued function, to `VectorFunctionCoefficient`. is
+Recall that the function `spherical_obstacle` represents our obstacle function
+$\varphi$ in (4).
 
 ```c++
 FunctionCoefficient exact_coef(exact_solution_obstacle);
@@ -274,11 +278,11 @@ psi_old_gf = psi_gf;
 
 #### Solving the System
 
-The main iteration loop is found in lines
+The main loop for the proximal Galerkin method is found in lines
 [211-343](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L211-L343),
 and consists of an inner loop in lines
 [223-323](https://github.com/mfem/mfem/blob/master/examples/ex36.cpp#L223-L323)
-which implements (4), the Quasi-Newton method mentioned earlier.
+which implements (4), Newton's method.
 
 Each bilinear form in (4) corresponds to a block matrix. For example, the code
 in lines
