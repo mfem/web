@@ -14,25 +14,45 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/falgout.jpg)
+![](img/seminar/beck.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Falgout (Lawrence Livermore National Laboratory)
-##### *New advances in hypre 3.0 for mixed precision and semi-structured problems*
-##### [**9:00am PDT, November 18, 2025**](https://everytimezone.com/s/8fe4175a)
+#### Andrea Beck (University of Stuttgart)
+##### *TBA*
+##### [**9:00am PDT, January 12, 2026**](https://everytimezone.com/s/0d78f857)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
+**Abstract:** TBA
 
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-12" markdown="1">
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/falgout.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Robert Falgout (Lawrence Livermore National Laboratory)
+##### *New advances in hypre 3.0 for mixed precision and semi-structured problems*
+##### November 18, 2025
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/falgout.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
+
+**Abstract:** The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1283,13 +1303,13 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Jay Gopalakrishnan (Portland State University)
-##### **December 16, 2025**
+#### Andrea Beck (University of Stuttgart)
+##### **January 12, 2026**
 
 ---
 
-#### Andrea Beck (University of Stuttgart)
-##### **January 12, 2026**
+#### Jay Gopalakrishnan (Portland State University)
+##### **January 20, 2026**
 
 ---
 
