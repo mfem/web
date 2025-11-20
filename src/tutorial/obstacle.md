@@ -62,7 +62,7 @@ $$
 
 where $\alpha_k > 0$ is a sequence of step sizes and $g_h \in H^1(\Omega)$
 provides an approximation of the boundary values $g_h|_{\partial \Omega}
-\approx g$. Equation (3) is a coupled system of $(u,\psi)$ and is nonlinear in $\psi$. Therefore, we apply the Newton-Raphson method[^1] and solve the following linearized discrete saddle-point problem: find $u_h \in V_h$ and $\delta \psi_h \in W_h$ such that
+\approx g$. Equation (3) is a coupled system of $(u,\psi)$ and is nonlinear in $\psi$. Therefore, we apply the Newton-Raphson method[^1] and solve the following linearized discrete saddle-point problem: find $u_h \in V_h$ and $\delta \psi_h \in W_h$ such that[^2]
 
 $$
 \begin{equation}
@@ -183,7 +183,7 @@ cout << "Number of L2 finite element unknowns: "
 ```
 
 The variable `H1fes` will hold our solutions $u_h$, and the variable
-`L2fes`[^2] will hold our solutions $\delta \psi_h$ in (4). In order to deal
+`L2fes`[^3] will hold our solutions $\delta \psi_h$ in (4). In order to deal
 with the many bilinear and linear forms present in (4), we will use block
 matrices (which will be built using `offsets` defined below) and block vectors
 (`rhs`) to assign each bilinear and linear form a block.
@@ -500,4 +500,5 @@ Back to the [MFEM tutorial page](index.md)
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
 
 [^1]: For a more complete description of the algorithm, see Algorithm 4 in \[v5\] of the paper by Keith and Surowiec.
-[^2]: In (3) and (4), the space $W_h$ is a subset of $L^\infty(\Omega)$, but in our code, we are requiring that $W_h \subset L^2(\Omega)$. This is not an issue, as we are using piecewise polynomials for our basis.
+[^2]: Technically speaking, we should solve for the updates $\delta u_h$ and $\delta \psi_h$ in (4), but by the linearity in $u$ of the first equation in (4), we can directly solve for $u_h$.
+[^3]: In (3) and (4), the space $W_h$ is a subset of $L^\infty(\Omega)$, but in our code, we are requiring that $W_h \subset L^2(\Omega)$. This is not an issue, as we are using piecewise polynomials for our basis.
