@@ -4,6 +4,20 @@ MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM
 
 Please cite with:
 ```c
+@article{mfem-2024,
+  title = {{High-Performance Finite Elements with MFEM}},
+  author = {J. Andrej and N. Atallah and J.-P. Bäcker and  J.-S. Camier and
+            D. Copeland and V. Dobrev and Y. Dudouit and T. Duswald and
+            B. Keith and D. Kim and T. Kolev and B. Lazarov and  K. Mittal and
+            W. Pazner and S. Petrides and S. Shiraiwa and M. Stowell and V. Tomov},
+  journal={The International Journal of High Performance Computing Applications},
+  volume={38},
+  number={5},
+  pages={447-467},
+  year={2024},
+  publisher={SAGE Publications Sage UK: London, England}
+}
+
 @article{mfem,
   title = {{MFEM}: A Modular Finite Element Methods Library},
   author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
