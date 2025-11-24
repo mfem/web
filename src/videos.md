@@ -265,6 +265,15 @@ Pierson Guthrey of LLNL gave this talk. High-dimensional kinetic equations, such
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Bill Henshaw (RPI)
+#### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
+##### **November 4, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/ZiRymGF3YuY"><img src="https://img.youtube.com/vi/ZiRymGF3YuY/maxresdefault.jpg"></img></a>
+
+An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.
+
+---
+
 #### Florian Schäfer (Courant Institute, NYU)
 #### *Toward Information Geometric Mechanics*
 ##### **September 30, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
