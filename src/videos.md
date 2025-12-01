@@ -265,6 +265,15 @@ Pierson Guthrey of LLNL gave this talk. High-dimensional kinetic equations, such
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Robert Falgout (LLNL)
+#### *New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems*
+##### **November 18, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/DK8yVzOo9Og"><img src="https://img.youtube.com/vi/DK8yVzOo9Og/maxresdefault.jpg"></img></a>
+
+The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
+
+---
+
 #### Bill Henshaw (RPI)
 #### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
 ##### **November 4, 2025** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -463,7 +472,7 @@ Long-term geological and tectonic processes associated with large deformation hi
 
 Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Brian Young
 #### *A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations*
@@ -473,7 +482,7 @@ Numerous cutting-edge scientific technologies originate at the laboratory scale,
 
 An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters. Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections. Matrix solutions are performed using complex computations. Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI. Implementation details are presented along with sample results and accuracy demonstrations.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Jesse Chan (Rice University)
 #### *High order positivity-preserving entropy stable discontinuous Galerkin discretizations*

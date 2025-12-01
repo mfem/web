@@ -40,8 +40,8 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Falgout (Lawrence Livermore National Laboratory)
-##### *New advances in hypre 3.0 for mixed precision and semi-structured problems*
+#### Robert Falgout (LLNL)
+##### *New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems*
 ##### November 18, 2025
 
 [<button type="button" class="btn btn-primary">
@@ -50,7 +50,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/DK8yVzOo9Og)
 
 **Abstract:** The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
 
@@ -61,7 +61,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Bill Henshaw (RPI)
-##### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
+##### *An O(N) Helmholtz Solver by Time-Filtering the Wave Equation*
 ##### November 4, 2025
 
 [<button type="button" class="btn btn-primary">
@@ -770,7 +770,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Youngsoo Choi (Lawrence Livermore National Laboratory)
+#### Youngsoo Choi (LLNL)
 ##### *Physics-guided interpretable data-driven simulations*
 ##### November 14, 2023
 
