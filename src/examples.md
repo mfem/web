@@ -2347,7 +2347,7 @@ _This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/m
 <br></div>
 
 <div id="contact" markdown="1">
-##Contact miniapp
+## Contact miniapp
 
 <a href="../img/gallery/workshop25/contact.mp4" target="_blank">
 <img class="floatright" width="250" src="../img/gallery/workshop25/contact.png">
