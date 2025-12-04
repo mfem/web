@@ -2356,7 +2356,7 @@ _This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/m
 This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp) demonstrates how to use MFEM in combination with [Tribol](https://github.com/LLNL/Tribol)
  to simulate frictionless contact between deformable solids. The contact gap function and its Jacobian is computed using Tribol’s mortar segment-to-segment method.  An **Interior-Point (IP)** optimization solver is used to solve an inequality-constrained minimization problem enforcing a non-penetration condition. Linear systems arising in the IP iterations are solved using **Conjugate Gradient (CG)** preconditioned with the [**AMG with Filtering (AMGF)**](https://arxiv.org/abs/2505.18576) solver.
 
- Several benchmark problems are provided, including the two-block compression, ironing and beam-sphere tests. These examples illustrate how MFEM and Tribol can be combined to build large-scale scalable simulations of contact mechanics problems.
+Several benchmark problems are provided, including the two-block compression, ironing and beam-sphere tests. These examples illustrate how MFEM and Tribol can be combined to build large-scale scalable simulations of contact mechanics problems.
 
 _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp)) implementation. For more details, please see the documentation in [miniapps/contact/README.md](https://github.com/mfem/mfem/blob/master/miniapps/contact/README.md).
 **We recommend that new users start with the example codes before moving to the miniapps.**_
