@@ -270,7 +270,12 @@ This will automatically search for the system MPI implementation, the METIS inst
 ```sh 
 cmake .. -DMFEM_USE_MPI=YES
 ```
-Run the build command associated with the cmake configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
+Alternatively, run the CMake configuration also using the `MFEM_FETCH_TPLS` CMake variable to enable fetching of Hypre and METIS.
+This will automatically download, configure, and build Hypre and METIS alongside MFEM.
+```sh
+cmake .. -DMFEM_USE_MPI=YES -DMFEM_FETCH_TPLS=YES
+```
+For either CMake configuration approach, now run the build command associated with the configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
 ```sh 
 cmake --build . -j 4
 ```
