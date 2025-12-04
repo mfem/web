@@ -14,23 +14,45 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/falgout.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Robert Falgout (Lawrence Livermore National Laboratory)
+##### *New advances in hypre 3.0 for mixed precision and semi-structured problems*
+##### [**9:00am PDT, November 18, 2025**](https://everytimezone.com/s/8fe4175a)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-12" markdown="1">
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/henshaw.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Bill Henshaw (RPI)
 ##### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
-##### [**9:00am PDT, November 4, 2025**](https://everytimezone.com/s/46f772ae)
+##### November 4, 2025
 
- [<button type="button" class="btn btn-success">
-**Webex**
- </button>]()
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/henshaw.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
 
 **Abstract:** An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -48,7 +70,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/tQnLkI8sE-Y)
 
 **Abstract:** Shock waves in high-speed gas dynamics cause severe numerical difficulties for classical solvers and scientific machine learning. This talk begins with the observation that shock formation arises from the flow map reaching the boundary of the manifold of diffeomorphisms. We modify its geometry such that geodesics approach but never reach the boundary. The resulting information geometric regularization (IGR) has smooth solutions while avoiding the excessive dissipation of viscous regularizations, accelerating and simplifying the simulation of flows with shocks. We prove the existence of global strong IGR solutions in the unidimensional pressureless case and illustrate its practical utility on multidimensional examples with complex shock interactions. With S. Bryngelson and other collaborators, we use IGR to conduct the first compressible flow simulation exceeding a quadrillion degrees of freedom.
 The modified geometry of the diffeomorphism manifold is the information geometry of the mass density. The last part of the talk explains how this observation motivates information geometric mechanics that views the solutions of continuum mechanical PDEs as parameters of probability distributions originating from statistical physics. Replacing the Euclidean geometry of individual particles with the information geometry of statistical families promises performant numerical methods that preserve the positivity of densities and energies and readily integrate with scientific machine learning.
@@ -1261,13 +1283,28 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Robert Falgout (Lawrence Livermore National Laboratory)
-##### **November 18, 2025**
+#### Jay Gopalakrishnan (Portland State University)
+##### **December 16, 2025**
+
+---
+
+#### Andrea Beck (University of Stuttgart)
+##### **January 12, 2026**
 
 ---
 
 #### David Moxey and Edward Erasmie-Jones (King’s College London)
 ##### **February 10, 2026**
+
+---
+
+#### Ido Akkerman (Delft university of Technology)
+##### **March 10, 2026**
+
+---
+
+#### Jed Brown (CU Boulder)
+##### **April 7, 2026**
 
 ---
 

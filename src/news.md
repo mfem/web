@@ -2,6 +2,8 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Nov XX, 2025** | *Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).*
+**Nov 13, 2025** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of the [2025 Workshop](workshop.md), held on September 10-11.*
 **Oct 8, 2025** | *[Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)***
 **Sep 18, 2025** | *[PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0)*
 **Sep 10, 2025** | *2025 [MFEM community workshop](workshop.md).*
@@ -9,7 +11,7 @@
 **Apr 29, 2025** | *Fifth annual [MFEM workshop](workshop.md) announced (Sept 2025).*
 **Apr 15, 2025** | *MOOSE [incorporates MFEM](https://github.com/idaholab/moose/pull/29633) as a finite element backend.*
 **Apr 9, 2025** | *Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).*
-**Nov 25, 2024** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the 2024 [MFEM Community Workshop](workshop.md).*
+**Nov 25, 2024** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the [2024 Workshop](workshop24.md), held on October 22-24.*
 **Oct 22, 2024** | *2024 [MFEM community workshop](workshop.md).*
 **Jun 5, 2024** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) series.*
 **May 7, 2024** | *Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).*
