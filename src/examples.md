@@ -1285,6 +1285,30 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex41" markdown="1">
+##Example 41: Bounds-preserving DG advection
+<img class="floatright" width="280pt" src="../img/examples/ex41.png">
+
+
+This example code demonstrates bounds-preserving limiters for Discontinuous Galerkin (DG)
+approximations of the time-dependent advection equation
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u = 0,$$ where $v$ is a given fluid
+velocity and $u_0(x)=u(0,x)$ is a given initial condition. The solution of this equation 
+exhibits a minimum principle of the form $$\min u_0(x) \leq u(x,t) \leq \max u_0(x).$$
+
+This minimum principle is enforced on the solution using the bounds-preserving limiters
+of [Zhang & Shu](https://www.sciencedirect.com/science/article/abs/pii/S0021999109007165)
+or [Dzanic et al.](https://arxiv.org/abs/2504.11688). The Zhang & Shu limiter enforces the
+minimum principle discretely (i.e, on the discrete solution/quadrature nodes) while the
+Dzanic et al. limiter enforces the minimum principle continuously (i.e, across the entire
+solution polynomial within the element).
+
+_The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version.
+We recommend viewing Example 9 and Example 18 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem
 <a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
@@ -2444,6 +2468,7 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex41", advection && l2 && dg  && rk)
 
    // nurbs miniapps
    + showElement("nurbs_ex1", diffusion && nurbs && h1)
