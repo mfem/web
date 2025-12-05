@@ -288,7 +288,7 @@ To specify what CUDA architecture to target:
 ```sh
 cmake .. -DCUDA_ARCH="sm_70"
 ```
-The CUDA architecture is formatted as `sm_{CC}`, or just `{CC}`, where CC is the GPU compute capability of the target GPU without the decimal point. A list of Nvidia GPU compute capabilities can be found in [the Nividia developers documentation](https://developer.nvidia.com/cuda-gpus). Multiple CUDA architectures can be targeted with a comma or semicolon separated list.
+The CUDA architecture is formatted as `sm_{CC}`, or just `{CC}`, where CC is the GPU compute capability of the target GPU without the decimal point. A list of NVIDIA GPU compute capabilities can be found in [the NVIDIA developers documentation](https://developer.nvidia.com/cuda-gpus). Multiple CUDA architectures can be targeted with a comma or semicolon separated list.
 ```sh 
 cmake .. -DCUDA_ARCH="{ARCH1},{ARCH2},{ARCH3}"
 ```
@@ -329,7 +329,7 @@ To build the examples use the `examples` target (the executables will be in the 
 cmake --build . -j 4 --target examples 
 ```
 
-To quickly check if the code is succesfully built using example 1/1p use the `check` target.
+To quickly check if the code is successfully built using example 1/1p use the `check` target.
 ```sh
 cmake --build . -j 4 --target check 
 ```
