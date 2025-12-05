@@ -241,7 +241,7 @@ cd spack
 ```
 
 ## Building MFEM with CMake
-To build a serial version of MFEM with CMake first create a build directory. For example, using a build directory named `build`:
+To build a serial version of MFEM with CMake first create a build directory. For example, using a build directory named `build` inside the MFEM source directory:
 ```sh 
 mkdir build 
 cd build 
@@ -258,9 +258,8 @@ cmake --build . -j 4
 ```
 ### Parallel build using CMake
 To build a parallel version of MFEM with CMake first build METIS and Hypre as described above.
-From the MFEM source directory, create a build directory. For example, using a build directory named `build`:
+From the MFEM source directory, create a build directory. For example, using a build directory named `build` inside the MFEM source directory:
 ```sh 
-cd mfem-4.5
 mkdir build 
 cd build 
 ```
@@ -311,11 +310,16 @@ cmake .. -DMFEM_USE_HIP=YES
 
 To specify what HIP architecture(s) to target:
 ```sh
-cmake .. -DHIP_ARCH="gfx942;gfx90a"
+cmake .. -DCMAKE_HIP_ARCHITECTURES="gfx942;gfx90a"
 ```
 Multiple architectures can be targeted using a semi-colon separated list.
 The HIP architecture for different GPU models can be found in [the LLVM documentation](https://llvm.org/docs/AMDGPUUsage.html#processors)
-### Alternate build steps
+
+When building for GPUs, it is recommended to enable Umpire with `-DMFEM_USE_UMPIRE=ON`; if it is not automatically found by CMake the installation directory can be specified with `-DUMPIRE_DIR=<path-to-umpire-installation-dir>`. Umpire can be downloaded from 
+
+- [https://github.com/LLNL/Umpire/tags](https://github.com/LLNL/Umpire/tags)
+
+### Advanced build steps
 Different targets can be built with the --target flag in the build step 
 ```sh 
 cmake --build . -j 4 --target <target-name>
@@ -339,4 +343,3 @@ To build everything use the `exec` target
 ```sh
 cmake --build . -j 4 --target exec 
 ```
-
