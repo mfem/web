@@ -497,13 +497,13 @@ and are denoted with $\left&lt;\cdot,\cdot\right&gt;$.</p>
 $v$ or $\vec{v}$ are computed using integration by parts.  This leads
 to a boundary integral which can be used to apply Neumann boundary
 conditions.  Some of these operators are listed along with their
-boundary terms in section <a href="#weak-operators-and-their-boundary-integrals">Weak Operators</a>.</p>
+boundary terms in section <a href="#weak-operators-and-their-boundary-integrals">Weak Operators and Their Boundary Integrals</a>.</p>
 <h2 id="scalar-field-operators">Scalar Field Operators</h2>
 <p>These operators require scalar-valued trial spaces.  Many of these
 operators will work with either H1 or L2 basis functions but some that
 require a gradient operator should be used with H1.</p>
 <h3 id="square-operators">Square Operators</h3>
-<p>These integrators are designed to be used with the BilinearForm object
+<p>These integrators are designed to be used with a <code>BilinearForm</code> object
 to assemble square linear operators.</p>
 <table>
 <thead>
@@ -536,7 +536,7 @@ to assemble square linear operators.</p>
 </tbody>
 </table>
 <h3 id="mixed-operators">Mixed Operators</h3>
-<p>These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.</p>
+<p>These integrators are designed to be used with a <code>MixedBilinearForm</code> object to assemble square or rectangular linear operators.</p>
 <table>
 <thead>
 <tr>
@@ -753,7 +753,7 @@ to assemble square linear operators.</p>
 space.  Many of these operators will work with either ND or RT basis
 functions but others require one or the other.</p>
 <h3 id="square-operators_1">Square Operators</h3>
-<p>These integrators are designed to be used with the BilinearForm object
+<p>These integrators are designed to be used with a <code>BilinearForm</code> object
 to assemble square linear operators.</p>
 <table>
 <thead>
@@ -794,7 +794,7 @@ to assemble square linear operators.</p>
 </tbody>
 </table>
 <h3 id="mixed-operators_1">Mixed Operators</h3>
-<p>These integrators are designed to be used with the MixedBilinearForm object to assemble square or rectangular linear operators.</p>
+<p>These integrators are designed to be used with a <code>MixedBilinearForm</code> object to assemble square or rectangular linear operators.</p>
 <table>
 <thead>
 <tr>
@@ -1011,7 +1011,7 @@ to assemble square linear operators.</p>
 <td>S</td>
 <td>$(\lambda\div\vec{u}, v)$</td>
 <td align="center">2D, 3D</td>
-<td>Alternate implementation of MixedScalarDivergenceIntegrator.</td>
+<td>Alternate implementation of <code>MixedScalarDivergenceIntegrator</code>.</td>
 </tr>
 <tr>
 <td>VectorFEWeakDivergenceIntegrator</td>
@@ -1020,7 +1020,7 @@ to assemble square linear operators.</p>
 <td>S</td>
 <td>$(-\lambda\vec{u},\grad v)$</td>
 <td align="center">2D, 3D</td>
-<td>See MixedVectorWeakDivergenceIntegrator for a more general implementation.</td>
+<td>See <code>MixedVectorWeakDivergenceIntegrator</code> for a more general implementation.</td>
 </tr>
 <tr>
 <td>VectorFECurlIntegrator</td>
@@ -1029,7 +1029,7 @@ to assemble square linear operators.</p>
 <td>S</td>
 <td>$(\lambda\curl\vec{u},\vec{v})$ or $(\lambda\vec{u},\curl\vec{v})$</td>
 <td align="center">3D</td>
-<td>If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See MixedVectorCurlIntegrator and MixedVectorWeakCurlIntegrator for more general implementations.</td>
+<td>If the domain is ND then the Curl operator is returned, if the range is ND then the weak Curl is returned, otherwise a failure is encountered. See <code>MixedVectorCurlIntegrator</code> and <code>MixedVectorWeakCurlIntegrator</code> for more general implementations.</td>
 </tr>
 </tbody>
 </table>
@@ -1240,15 +1240,15 @@ situations rather than needing to reimplement their functionality.</p>
 <tbody>
 <tr>
 <td>TransposeIntegrator</td>
-<td>Returns the transpose of the local matrix computed by another BilinearFormIntegrator</td>
+<td>Returns the transpose of the local matrix computed by another <code>BilinearFormIntegrator</code></td>
 </tr>
 <tr>
 <td>LumpedIntegrator</td>
-<td>Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another BilinearFormIntegrator (only implemented for square matrices)</td>
+<td>Returns a diagonal local matrix where each entry is the sum of the corresponding row of a local matrix computed by another <code>BilinearFormIntegrator</code> (only implemented for square matrices)</td>
 </tr>
 <tr>
 <td>InverseIntegrator</td>
-<td>Returns the inverse of the local matrix computed by another BilinearFormIntegrator which produces a square local matrix</td>
+<td>Returns the inverse of the local matrix computed by another <code>BilinearFormIntegrator</code> which produces a square local matrix</td>
 </tr>
 <tr>
 <td>SumIntegrator</td>

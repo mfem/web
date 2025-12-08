@@ -363,48 +363,32 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
-<p><img alt="" src="../img/seminar/beck.jpg" /></p>
+<p><img alt="" src="../img/seminar/falgout.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="andrea-beck-university-of-stuttgart">Andrea Beck (University of Stuttgart)</h4>
-<h5 id="tba"><em>TBA</em></h5>
-<h5 id="900am-pdt-january-12-2026"><a href="https://everytimezone.com/s/0d78f857"><strong>9:00am PDT, January 12, 2026</strong></a></h5>
+<h4 id="robert-falgout-lawrence-livermore-national-laboratory">Robert Falgout (Lawrence Livermore National Laboratory)</h4>
+<h5 id="new-advances-in-hypre-30-for-mixed-precision-and-semi-structured-problems"><em>New advances in hypre 3.0 for mixed precision and semi-structured problems</em></h5>
+<h5 id="900am-pdt-november-18-2025"><a href="https://everytimezone.com/s/8fe4175a"><strong>9:00am PDT, November 18, 2025</strong></a></h5>
 <p><a href=""><button type="button" class="btn btn-success">
 <strong>Webex</strong>
 </button></a></p>
-<p><strong>Abstract:</strong> TBA</p>
+<p><strong>Abstract:</strong> The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.</p>
 <hr />
 <h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-12"></div>
 <div class="col-md-3">
-<p><img alt="" src="../img/seminar/falgout.jpg" /></p>
-</div>
-<div class="col-md-12">
-<h4 id="robert-falgout-llnl">Robert Falgout (LLNL)</h4>
-<h5 id="new-advances-in-hypre-30-for-mixed-precision-and-semi-structured-problems"><em>New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems</em></h5>
-<h5 id="november-18-2025">November 18, 2025</h5>
-<p><a href="../pdf/seminar/falgout.pdf"><button type="button" class="btn btn-primary">
-<strong>Slides</strong>
-</button></a>
-&nbsp;&nbsp;
-<a href="https://youtu.be/DK8yVzOo9Og"><button type="button" class="btn btn-success">
-<strong>Talk Recording</strong>
-</button></a></p>
-<p><strong>Abstract:</strong> The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.</p>
-</div>
-<div class="col-md-3">
 <p><img alt="" src="../img/seminar/henshaw.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="bill-henshaw-rpi">Bill Henshaw (RPI)</h4>
-<h5 id="an-on-helmholtz-solver-by-time-filtering-the-wave-equation"><em>An O(N) Helmholtz Solver by Time-Filtering the Wave Equation</em></h5>
+<h5 id="an-on-helmholtz-solver-by-time-filtering-the-wave-equation"><em>An O(N) Helmholtz Solver by time-filtering the Wave Equation</em></h5>
 <h5 id="november-4-2025">November 4, 2025</h5>
 <p><a href="../pdf/seminar/henshaw.pdf"><button type="button" class="btn btn-primary">
 <strong>Slides</strong>
 </button></a>
 &nbsp;&nbsp;
-<a href="https://youtu.be/ZiRymGF3YuY"><button type="button" class="btn btn-success">
+<a href=""><button type="button" class="btn btn-success">
 <strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.</p>
@@ -1014,7 +998,7 @@ Benjamin-Bona-Mahony equation.</p>
 <p><img alt="" src="../img/seminar/choi.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="youngsoo-choi-llnl">Youngsoo Choi (LLNL)</h4>
+<h4 id="youngsoo-choi-lawrence-livermore-national-laboratory">Youngsoo Choi (Lawrence Livermore National Laboratory)</h4>
 <h5 id="physics-guided-interpretable-data-driven-simulations"><em>Physics-guided interpretable data-driven simulations</em></h5>
 <h5 id="november-14-2023">November 14, 2023</h5>
 <p><a href="../pdf/seminar/choi.pdf"><button type="button" class="btn btn-primary">
@@ -1469,11 +1453,11 @@ The work presented here has been facilitated by funding through DOE's National V
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
 <p>&nbsp;</p>
-<h4 id="andrea-beck-university-of-stuttgart_1">Andrea Beck (University of Stuttgart)</h4>
-<h5 id="january-12-2026"><strong>January 12, 2026</strong></h5>
-<hr />
 <h4 id="jay-gopalakrishnan-portland-state-university">Jay Gopalakrishnan (Portland State University)</h4>
-<h5 id="january-20-2026"><strong>January 20, 2026</strong></h5>
+<h5 id="december-16-2025"><strong>December 16, 2025</strong></h5>
+<hr />
+<h4 id="andrea-beck-university-of-stuttgart">Andrea Beck (University of Stuttgart)</h4>
+<h5 id="january-12-2026"><strong>January 12, 2026</strong></h5>
 <hr />
 <h4 id="david-moxey-and-edward-erasmie-jones-kings-college-london">David Moxey and Edward Erasmie-Jones (King’s College London)</h4>
 <h5 id="february-10-2026"><strong>February 10, 2026</strong></h5>
@@ -1486,9 +1470,6 @@ The work presented here has been facilitated by funding through DOE's National V
 <hr />
 <h4 id="brendan-keith-brown">Brendan Keith (Brown)</h4>
 <h5 id="may-5-2026"><strong>May 5, 2026</strong></h5>
-<hr />
-<h4 id="xevi-roca-barcelona-supercomputing-center">Xevi Roca (Barcelona Supercomputing Center)</h4>
-<h5 id="june-9-2026"><strong>June 9, 2026</strong></h5>
 </div></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
