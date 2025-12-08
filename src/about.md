@@ -1,11 +1,13 @@
 # About MFEM
 
-MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project.
+MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](img/2000c-Lazarov.png) project.
+
+<!-- The AggieFEM/aFEM project used to be https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html. The above screenshot was taken in 2024. -->
 
 Please cite with:
 ```c
 @article{mfem-2024,
-  title = {{High-Performance Finite Elements with MFEM}},
+  title = {High-Performance Finite Elements with {MFEM}},
   author = {J. Andrej and N. Atallah and J.-P. Bäcker and  J.-S. Camier and
             D. Copeland and V. Dobrev and Y. Dudouit and T. Duswald and
             B. Keith and D. Kim and T. Kolev and B. Lazarov and  K. Mittal and
@@ -18,7 +20,7 @@ Please cite with:
   publisher={SAGE Publications Sage UK: London, England}
 }
 
-@article{mfem,
+@article{mfem-2021,
   title = {{MFEM}: A Modular Finite Element Methods Library},
   author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
             J. Cerveny and V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and
