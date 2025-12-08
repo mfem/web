@@ -2354,12 +2354,12 @@ _This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/m
 </a>
 
 This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp) demonstrates how to use MFEM in combination with [Tribol](https://github.com/LLNL/Tribol)
- to simulate frictionless contact between deformable solids. The contact gap function and its Jacobian are computed using Tribol’s mortar segment-to-segment method.  An **Interior-Point (IP)** optimization solver is used to solve an inequality-constrained minimization problem enforcing a non-penetration condition. Linear systems arising in the IP iterations are solved using **Conjugate Gradient (CG)** preconditioned with the [**AMG with Filtering (AMGF)**](https://arxiv.org/abs/2505.18576) solver.
+ to simulate frictionless contact between deformable solids. The contact gap function and its Jacobian are evaluated using Tribol’s mortar segment-to-segment method (see [Puso and Laursen, 2004](https://doi.org/10.1016/j.cma.2003.10.010)).  An **Interior-Point (IP)** optimization solver is used to solve an inequality-constrained minimization problem enforcing a non-penetration condition. Linear systems arising in the IP iterations are solved using **Conjugate Gradient (CG)** preconditioned with the [AMG with Filtering (AMGF)](https://arxiv.org/abs/2505.18576) solver.
 
 Several benchmark problems are provided, including the two-block compression, ironing and beam-sphere tests. These examples illustrate how MFEM and Tribol can be combined to build large-scale scalable simulations of contact mechanics problems.
 
 _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp)) implementation. For more details, please see the documentation in [miniapps/contact/README.md](https://github.com/mfem/mfem/blob/master/miniapps/contact/README.md).
-**We recommend that new users start with the example codes before moving to the miniapps.**_
+**We recommend viewing Example 2 and the Tribol miniapp before viewing this miniapp.**_
 
 <div style="clear:both;"/></div>
 <br></div>
