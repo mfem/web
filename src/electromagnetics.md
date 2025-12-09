@@ -487,10 +487,11 @@ which can otherwise be difficult to visualize.
 ### Lorentz Mini Application
 
 The Lorentz mini application approximates the trajectory of an individual
-particle using the explicit Boris algorithm. The equations being solved track
-the position ($\vec{x}$) and momentum ($\vec{p}$) of a particle with a given
-mass and charge as it moves subject to the provided electric ($\E$) and
-magnetic ($\B$) fields.
+particle using the explicit
+[Boris algorithm](https://doi.org/10.1063/1.4818428). The equations being
+solved track the position ($\vec{x}$) and momentum ($\vec{p}$) of a particle
+with a given mass and charge as it moves subject to the provided electric ($\E$)
+and magnetic ($\B$) fields.
 
 $$\begin{align}
   \frac{d\vec{x}}{dt} & = \frac{\vec{p}}{m} \\\\
@@ -551,7 +552,7 @@ tighten and eventually reflect back towards the opposite pole.
 
 **Other parameters:** A handful of other parameters can be adjusted from the
   command line. The most useful of these would be the time step and final time
-  which can be reset with `-dt` and `tf` respectively.
+  which can be reset with `-dt` and `-tf` respectively.
 
   The Lorentz mini application can create a "mesh" of the trajectory which
   can be displayed using GLVis and/or VisIt. The mesh is made up of
@@ -560,7 +561,7 @@ tighten and eventually reflect back towards the opposite pole.
   The adjacent edges are related to the acceleration of the particle i.e.
   $(\vec{p}\_{k} - \vec{p}\_{k-1})/(m \Delta t)$. To compute the edge length
   this acceleration is scaled by a user defined quantity (the `-rf` command
-  line option can be used to adust this "ribbon" factor).
+  line option can be used to adjust this "ribbon" factor).
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
