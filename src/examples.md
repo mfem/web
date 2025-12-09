@@ -1526,8 +1526,8 @@ $$\frac{d\vec{p}}{dt} = q \left(\vec{E} + \vec{v}\times\vec{B}\right),$$
 exerted on a test particle with a given mass, charge, initial position and
 momentum.
 
-The Lorentz miniapp musts be run on the same number of processors as the
-applications which produced the VisItDataCollection objects. However, the
+The Lorentz miniapp must be run on the same number of processors as the
+applications which produced the VisIt data collection objects. However, the
 electric and magnetic fields do not need to be defined on the same mesh. The
 Lorentz miniapp relies on the `FindPoints` functionality available through
 MFEM's parallel mesh classes to query the field values even when those field
@@ -1538,8 +1538,10 @@ For more details, please see the [documentation](electromagnetics.md) in the
 
 _The miniapp has only a parallel
 ([lorentz.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/lorentz.cpp)) version.
-**We recommend that new users start with the example codes before
-moving to the miniapps.**_
+**We recommend that new users become familiar with the
+[Volta](#volta-miniapp-electrostatics) and/or
+[Tesla](#tesla-miniapp-magnetostatics) miniapps before moving to this miniapp.
+**_
 <div style="clear:both;"/></div>
 <br></div>
 
