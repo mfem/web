@@ -488,7 +488,9 @@ which can otherwise be difficult to visualize.
 
 The Lorentz mini application approximates the trajectory of an individual
 particle using the explicit Boris algorithm. The equations being solved track
-the position and momentum of a particle with a given mass and charge.
+the position ($\vec{x}$) and momentum ($\vec{p}$) of a particle with a given
+mass and charge as it moves subject to the provided electric ($\E$) and
+magnetic ($\B$) fields.
 
 $$\begin{align}
   \frac{d\vec{x}}{dt} & = \frac{\vec{p}}{m} \\\\
@@ -497,7 +499,9 @@ $$\begin{align}
 \end{align}$$
 
 The Boris algorithm, while not a symplectic method, provides long term accuracy
-by conserving volume in phase space. The algorithm updates the position in a single step but splits the momentum update into multiple steps:
+by conserving volume in phase space. The algorithm updates the position in a
+single step but splits the momentum update into multiple steps between time
+levels $k$ and $k+1$:
 
 $$\begin{align}
   \vec{p}\_- & = \vec{p}\_k + \frac{q \Delta t}{2} \E\_k \\\\
@@ -510,7 +514,7 @@ $$\begin{align}
 
 While equation \eqref{boris2} may appear to be implicit it is clearly a linear
 equation so a small amount of algebra will produce an explicit, though more
-messy and less intuitive, formula.
+cumbersome and less intuitive, formula.
 
 [![](img/examples/lorentz.png)](img/examples/lorentz.png)
 
@@ -523,18 +527,18 @@ tighten and eventually reflect back towards the opposite pole.
 #### Mini Application Features
 
 **Electric Field:** The electric field is assumed to be zero unless a
-  VisItDataCollection is provided. The command line option `-er` can be used
+  VisIt data collection is provided. The command line option `-er` can be used
   to set the root name of the data collection e.g. `-er Volta-AMR-Parallel`.
   The field name within the data collection is assumed to be `E` unless
-  overridden with `-ef`. The cylce index is assumed to be 10 but this can be
+  overridden with `-ef`. The cycle index is assumed to be 10 but this can be
   reset with the `-ec` option. The numbers of digits needed to pad the cycle
   index and processor rank can also be overridden if necessary.
 
 **Magnetic Field:** The magnetic field is assumed to be zero unless a
-  VisItDataCollection is provided. The command line option `-br` can be used
+  VisIt data collection is provided. The command line option `-br` can be used
   to set the root name of the data collection e.g. `-br Tesla-AMR-Parallel`.
   The field name within the data collection is assumed to be `B` unless
-  overridden with `-bf`. The cylce index is assumed to be 10 but this can be
+  overridden with `-bf`. The cycle index is assumed to be 10 but this can be
   reset with the `-bc` option. The numbers of digits needed to pad the cycle
   index and processor rank can also be overridden if necessary.
 

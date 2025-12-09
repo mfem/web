@@ -52,7 +52,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
       <option id="freeboundary">Free boundary</option>
-      <option id="pic">Particle-In-Cell</option>
+      <option id="particle">Particle Methods</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1515,8 +1515,8 @@ moving to the miniapps.**_
 ## Lorentz Miniapp: Particle Trajectory Calculation
 <img class="floatright" src="../img/examples/lorentz.png">
 
-This miniapp reads VisItDataCollection objects produced by applications such as
-Volta and Tesla (described above) and computes particle trajectories subject
+This miniapp reads VisIt data collection objects produced by applications such
+as Volta and Tesla (described above) and computes particle trajectories subject
 to the electric and magnetic fields described therein.
 
 This code uses the Boris algorithm to approximate the Lorentz force,
@@ -2491,7 +2491,7 @@ function update()
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
-   + showElement("lorentz", (maxwell || pic) && all2 && all3 && all4)
+   + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)
