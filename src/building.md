@@ -270,7 +270,7 @@ This will automatically search for the system MPI implementation, the METIS inst
 cmake .. -DMFEM_USE_MPI=YES
 ```
 Alternatively, run the CMake configuration also using the `MFEM_FETCH_TPLS` CMake variable to enable fetching of Hypre and METIS.
-This will automatically download, configure, and build Hypre and METIS alongside MFEM.
+This will automatically download, configure, and build Hypre and METIS alongside MFEM (note that this option is **not** currently supported for GPU builds).
 ```sh
 cmake .. -DMFEM_USE_MPI=YES -DMFEM_FETCH_TPLS=YES
 ```
