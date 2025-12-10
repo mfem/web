@@ -2483,6 +2483,7 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex41", (advection || diffusion) && (l2 || h1) && (pcg || rk))
 
    // nurbs miniapps
    + showElement("nurbs_ex1", diffusion && nurbs && h1)
