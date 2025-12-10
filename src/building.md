@@ -242,31 +242,31 @@ cd spack
 
 ## Building MFEM with CMake
 To build a serial version of MFEM with CMake first create a build directory. For example, using a build directory named `build` inside the MFEM source directory:
-```sh 
-mkdir build 
-cd build 
+```sh
+mkdir build
+cd build
 ```
 
 Run the CMake configuration on the MFEM source directory.
-```sh 
+```sh
 cmake ..
 ```
 
-Run the build command associated with the CMake configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
-```sh 
+Run the build command associated with the CMake configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case).
+```sh
 cmake --build . -j 4
 ```
 ### Parallel build using CMake
 To build a parallel version of MFEM with CMake first build METIS and Hypre as described above.
 From the MFEM source directory, create a build directory. For example, using a build directory named `build` inside the MFEM source directory:
-```sh 
-mkdir build 
-cd build 
+```sh
+mkdir build
+cd build
 ```
 
-Run the CMake configuration on the MFEM source directory using the `MFEM_USE_MPI` CMake variable to enable MPI. 
+Run the CMake configuration on the MFEM source directory using the `MFEM_USE_MPI` CMake variable to enable MPI.
 This will automatically search for the system MPI implementation, the METIS installation (in `<mfem-source-dir>/../metis-4.0`), and Hypre installation (in `<mfem-source-dir/../hypre`).
-```sh 
+```sh
 cmake .. -DMFEM_USE_MPI=YES
 ```
 Alternatively, run the CMake configuration also using the `MFEM_FETCH_TPLS` CMake variable to enable fetching of Hypre and METIS.
@@ -274,14 +274,14 @@ This will automatically download, configure, and build Hypre and METIS alongside
 ```sh
 cmake .. -DMFEM_USE_MPI=YES -DMFEM_FETCH_TPLS=YES
 ```
-For either CMake configuration approach, now run the build command associated with the configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case). 
-```sh 
+For either CMake configuration approach, now run the build command associated with the configuration, specifying the number of parallel build tasks with the `-j` flag (4 tasks in this case).
+```sh
 cmake --build . -j 4
 ```
 
 ### Advanced configuration steps
 To build with CUDA:
-```sh 
+```sh
 cmake .. -DMFEM_USE_CUDA=YES
 ```
 To specify what CUDA architecture to target:
@@ -289,18 +289,18 @@ To specify what CUDA architecture to target:
 cmake .. -DCUDA_ARCH="sm_70"
 ```
 The CUDA architecture is formatted as `sm_{CC}`, or just `{CC}`, where CC is the GPU compute capability of the target GPU without the decimal point. A list of NVIDIA GPU compute capabilities can be found in [the NVIDIA developers documentation](https://developer.nvidia.com/cuda-gpus). Multiple CUDA architectures can be targeted with a comma or semicolon separated list.
-```sh 
+```sh
 cmake .. -DCUDA_ARCH="{ARCH1},{ARCH2},{ARCH3}"
 ```
-or 
+or
 ```sh
 cmake .. -DCUDA_ARCH="{ARCH1};{ARCH2};{ARCH3}"
 ```
 Other accepted architecture identifies are `"all"` which targets all CUDA architectures,
-`"all-major"` which targets all major versions `sm_{*0}`, and `"native"` which targets the visible GPUs on the system. 
+`"all-major"` which targets all major versions `sm_{*0}`, and `"native"` which targets the visible GPUs on the system.
 
 To build with METIS 5, after following the instructions to build METIS 5 above:
-```sh 
+```sh
 cmake .. -DMFEM_USE_MPI=YES -DMFEM_USE_METIS_5=YES -DMETIS_DIR=../../metis-5.1.0
 ```
 To build with HIP:
@@ -315,31 +315,31 @@ cmake .. -DCMAKE_HIP_ARCHITECTURES="gfx942;gfx90a"
 Multiple architectures can be targeted using a semi-colon separated list.
 The HIP architecture for different GPU models can be found in [the LLVM documentation](https://llvm.org/docs/AMDGPUUsage.html#processors)
 
-When building for GPUs, it is recommended to enable Umpire with `-DMFEM_USE_UMPIRE=ON`; if it is not automatically found by CMake the installation directory can be specified with `-DUMPIRE_DIR=<path-to-umpire-installation-dir>`. Umpire can be downloaded from 
+When building for GPUs, it is recommended to enable Umpire with `-DMFEM_USE_UMPIRE=ON`; if it is not automatically found by CMake the installation directory can be specified with `-DUMPIRE_DIR=<path-to-umpire-installation-dir>`. Umpire can be downloaded from
 
 - [https://github.com/LLNL/Umpire/tags](https://github.com/LLNL/Umpire/tags)
 
 ### Advanced build steps
-Different targets can be built with the --target flag in the build step 
-```sh 
+Different targets can be built with the --target flag in the build step
+```sh
 cmake --build . -j 4 --target <target-name>
 ```
 To build the examples use the `examples` target (the executables will be in the `build/examples` directory).
 ```sh
-cmake --build . -j 4 --target examples 
+cmake --build . -j 4 --target examples
 ```
 
 To quickly check if the code is successfully built using example 1/1p use the `check` target.
 ```sh
-cmake --build . -j 4 --target check 
+cmake --build . -j 4 --target check
 ```
 
 To build the miniapps use the `miniapps` target
 ```sh
-cmake --build . -j 4 --target miniapps 
+cmake --build . -j 4 --target miniapps
 ```
 
 To build everything use the `exec` target
 ```sh
-cmake --build . -j 4 --target exec 
+cmake --build . -j 4 --target exec
 ```
