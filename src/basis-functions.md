@@ -15,12 +15,16 @@ infinite range of possible bases spanning the very same discrete space.
 ## One-Dimensional Polynomial Bases
 
 Consider the $[0,1]$ interval on the real line and the space of real,
-univariate polynomials of degree less than or equal to $n$. We distinguish
-between open and closed bases. An *open* basis does *not* interpolate the
-interval endpoints, whereas a *closed* basis does. If a basis is entirely
-interpolatory, i.e. is a Lagrange basis, in the sense that it is entirely
-composed of Lagrange interpolating polynomials, we call it a *nodal* basis and
-all its associated DoFs correspond to values of the approximated function.
+univariate polynomials of degree less than or equal to $n$. Any set
+$\{l_{j \in {0,...,n}}\}$ of $n+1$ linearly independent polynomials of degree
+less than or equal to $n$ forms a basis of this space. We say a basis
+interpolates a given node $x$ if, for one of the basis functions $l_{j'}$ we
+have $l_{j'}(x)=1$, and $l_{j \neq j'}(x)=0$. We distinguish between open and
+closed bases. An *open* basis does *not* interpolate the interval endpoints,
+whereas a *closed* basis does. If a basis is entirely interpolatory on a set of
+nodes $x_{i \in {0,...,n}}$ in the sense that $l_j(x_i)=\delta_{ij}$, i.e. is a
+Lagrange basis, we call it a *nodal* basis and all its associated DoFs
+correspond to values of the approximated function.
 
 <center>**Cubic basis functions on [0,1]**</center>
 ![](img/basis-functions.pdf)
@@ -62,12 +66,20 @@ equidistant points. These points partition the $[0,1]$ interval in $n$
 subintervals of equal length, $x_{i \in {0,...,n}} = i/n$.
 
 - `ClosedGL`: closed and nodal basis; the basis of order $n$ interpolates the
-endpoints plus the midpoints of the subintervals in-between all the quadrature
-points of the Gauss-Legendre quadrature rule with $n$ points.
+$[0,1]$ interval endpoints plus the midpoints of the subintervals in-between
+all the quadrature points of the Gauss-Legendre quadrature rule with $n$
+points.
 
 - `Positive`: closed basis; the basis of order $n$ is simply the Bernstein
 polynomial basis of degree $n$ and only interpolates the $[0,1]$ interval
 endpoints, $b_{i \in {0,...,n}}(x) = {n \choose i} x^{i}(1-x)^{n-i}$.
+
+The [Poly_1D::Basis](Poly_1D::Basis) class includes member functions capable of
+evaluating all of the aforementioned bases, as well as their first and second
+derivatives, at an arbitrary point in the $[0,1]$ interval.
+In addition, the enclosing [Poly_1D](Poly_1D) class includes facilities to
+compute real, univariate polynomials forming hierarchical bases, including
+monomials, Chebyshev, and Legendre polynomials.
 
 ## Finite Element Collections and Elements of Different Types
 
@@ -82,15 +94,26 @@ with the integration rule default, which remains Gauss-Legendre for all cases.
 
 For tensor product elements, e.g. quadrilaterals or hexahedra, the basis
 functions are just products of one-dimensional closed and/or open basis
-functions. For simplices, e.g. triangles or tetrahedra, the process of
-constructing the basis functions is slightly more involved, but can essentially
-be pictured as starting from the one-dimensional bases above and extending in a
-triangular lattice on the faces and in the interior, thus retaining their
-property as open, closed and/or nodal. In practice, in MFEM, the basis
-functions for simplices are obtained as products of a hierarchical,
-one-dimensional basis of Chebyshev polynomials of the first kind. The user can
-use the [`display-basis` miniapp](tools.md#display-basis) to visualize various
-types of basis functions on a single mesh element of their choice.
+functions. Alternatively, for order two and above, the smaller serendipity
+basis, produces smaller system operators while converging at the same rate.
+Note that support for serendipity hexahedral elements is still work in
+progress and that for order one or in one dimension, the serendipity basis
+degenerates into the Gauss-Lobatto basis described above.
+For simplices, e.g. triangles or tetrahedra, the process of constructing the
+basis functions is slightly more involved, but can essentially be pictured as
+starting from the one-dimensional bases above and extending in a triangular
+lattice on the faces and in the interior, thus retaining their property as
+open, closed and/or nodal. In practice, in MFEM, the basis functions for
+simplices are obtained as products of a hierarchical, one-dimensional basis of
+Chebyshev polynomials of the first kind.
+Triangular prisms and, more generally, wedge elements are the tensor product of
+a triangle and segment element, while pyramids are based on [Fuentes, F. et al.
+(2015). Orientation embedded high order shape functions for the exact sequence
+elements of all shapes](https://doi.org/10.1016/j.camwa.2015.04.027).
+
+The user can use the [`display-basis` miniapp](tools.md#display-basis) to
+visualize various types of basis functions on a single mesh element of their
+choice.
 
 ## Some Notes on Choosing Basis Functions
 
