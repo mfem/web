@@ -1285,6 +1285,30 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+
+<div id="ex41" markdown="1">
+##Example 41: DG/CG Advection-Diffusion
+
+
+This example solves a time-dependent advection–diffusion equation 
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u -\nabla\cdot\kappa\nabla u = 0,$$ where $v$ is a given fluid
+velocity, and $u_0(x)=u(0,x)$ is a given initial condition, using high-order finite elements in space 
+and implicit–explicit (IMEX) Runge–Kutta methods in time. The spatial discretization is based on discontinuous 
+Galerkin (DG) or continuous Galerkin (CG) finite elements on periodic meshes in 2D or 3D, with several choices 
+of velocity fields and initial data. The advective part of the operator is treated explicitly, while the 
+diffusive part is handled implicitly using a symmetric interior-penalty formulation. The IMEX splitting is 
+realized through MFEM’s additive TimeDependentOperator interface, and the implicit solve is preconditioned 
+using a low-order refined (LOR) discretization of the diffusion operator (in parallel, via Hypre-based solvers). 
+The example illustrates how to combine operator splitting, DG/CG spatial discretizations, and IMEX time 
+integrators within MFEM. Serial and parallel versions are provided (ex41.cpp and ex41p.cpp). We recommend 
+reviewing examples 9, 14, 16, and 18 before this example.
+
+_The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem
 <a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
