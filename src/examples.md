@@ -1285,10 +1285,9 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
-
 <div id="ex41" markdown="1">
 ##Example 41: DG/CG Advection-Diffusion
-
+<img class="floatright" width="240pt" src="../img/examples/ex41.png">
 
 This example solves a time-dependent advection–diffusion equation
 $$\frac{\partial u}{\partial t} + v \cdot \nabla u -\nabla\cdot\kappa\nabla u = 0,$$ where $v$ is a given fluid
