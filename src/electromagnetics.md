@@ -517,7 +517,7 @@ While equation \eqref{boris2} may appear to be implicit it is clearly a linear
 equation so a small amount of algebra will produce an explicit, though more
 cumbersome and less intuitive, formula.
 
-[![](img/examples/lorentz.png)](img/examples/lorentz.png)
+[![](img/examples/lorentz-small.png)](img/examples/lorentz-full.png)
 
 The above image shows a trajectory computed by the Lorentz mini application
 for a charged particle in the presence of a strong bar magnet and a relatively

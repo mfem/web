@@ -1513,7 +1513,7 @@ moving to the miniapps.**_
 
 <div id="lorentz" markdown="1">
 ## Lorentz Miniapp: Particle Trajectory Calculation
-<img class="floatright" src="../img/examples/lorentz.png">
+<img class="floatright" width="280pt" src="../img/examples/lorentz-full.png">
 
 This miniapp reads VisIt data collection objects produced by applications such
 as Volta and Tesla (described above) and computes particle trajectories subject
