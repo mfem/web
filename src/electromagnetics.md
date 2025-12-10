@@ -478,5 +478,90 @@ to specify these regions. To change these, search the code for `std::map<int, do
 integer attribute to the floating-point material value.
 
 
+## Particle Trajectory Calculation
+
+Particle trajectory calculations are an important part of the Particle-In-Cell
+method but they can also provide an illuminating view of electromagnetic fields
+which can otherwise be difficult to visualize.
+
+### Lorentz Mini Application
+
+The Lorentz mini application approximates the trajectory of an individual
+particle using the explicit
+[Boris algorithm](https://doi.org/10.1063/1.4818428). The equations being
+solved track the position ($\vec{x}$) and momentum ($\vec{p}$) of a particle
+with a given mass and charge as it moves subject to the provided electric ($\E$)
+and magnetic ($\B$) fields.
+
+$$\begin{align}
+  \frac{d\vec{x}}{dt} & = \frac{\vec{p}}{m} \\\\
+  \frac{d\vec{p}}{dt} & =
+  q\left(\E + \frac{1}{m}\vec{p}\times\B\right)
+\end{align}$$
+
+The Boris algorithm, while not a symplectic method, provides long term accuracy
+by conserving volume in phase space. The algorithm updates the position in a
+single step but splits the momentum update into multiple steps between time
+levels $k$ and $k+1$:
+
+$$\begin{align}
+  \vec{p}\_- & = \vec{p}\_k + \frac{q \Delta t}{2} \E\_k \\\\
+  \vec{p}\_+ - \vec{p}\_- & =
+  \frac{q \Delta t}{2 m} \left(\vec{p}\_+ + \vec{p}\_-\right)\times\B\_k
+  \label{boris2} \\\\
+  \vec{p}\_{k+1} & = \vec{p}\_+ + \frac{q \Delta t}{2} \E\_k \\\\
+  \vec{x}\_{k+1} & = \vec{x}\_k + \frac{\Delta t}{m} \vec{p}\_{k+1}
+\end{align}$$
+
+While equation \eqref{boris2} may appear to be implicit it is clearly a linear
+equation so a small amount of algebra will produce an explicit, though more
+cumbersome and less intuitive, formula.
+
+[![](img/examples/lorentz-small.png)](img/examples/lorentz-full.png)
+
+The above image shows a trajectory computed by the Lorentz mini application
+for a charged particle in the presence of a strong bar magnet and a relatively
+weak charged sphere. The trajectory exhibits the magnetic mirror effect where
+the higher magnetic field density near the poles causes the helical orbits to
+tighten and eventually reflect back towards the opposite pole.
+
+#### Mini Application Features
+
+**Electric Field:** The electric field is assumed to be zero unless a
+  VisIt data collection is provided. The command line option `-er` can be used
+  to set the root name of the data collection e.g. `-er Volta-AMR-Parallel`.
+  The field name within the data collection is assumed to be `E` unless
+  overridden with `-ef`. The cycle index is assumed to be 10 but this can be
+  reset with the `-ec` option. The numbers of digits needed to pad the cycle
+  index and processor rank can also be overridden if necessary.
+
+**Magnetic Field:** The magnetic field is assumed to be zero unless a
+  VisIt data collection is provided. The command line option `-br` can be used
+  to set the root name of the data collection e.g. `-br Tesla-AMR-Parallel`.
+  The field name within the data collection is assumed to be `B` unless
+  overridden with `-bf`. The cycle index is assumed to be 10 but this can be
+  reset with the `-bc` option. The numbers of digits needed to pad the cycle
+  index and processor rank can also be overridden if necessary.
+
+**Initial Position:** The initial position can be set with `-x0` e.g.
+  `-x0 '0.1 0.2 0.3'`. The default position is the center of the intersection
+  of the bounding boxes for the electric and magnetic field meshes.
+
+**Initial Momentum:** The initial momentum can be set with `-p0` e.g.
+  `-p0 '1 0 0'`. The default initial momentum is zero.
+
+**Other parameters:** A handful of other parameters can be adjusted from the
+  command line. The most useful of these would be the time step and final time
+  which can be reset with `-dt` and `-tf` respectively.
+
+  The Lorentz mini application can create a "mesh" of the trajectory which
+  can be displayed using GLVis and/or VisIt. The mesh is made up of
+  quadrilateral elements forming a ribbon along the trajectory. One edge of
+  these quadrilaterals is aligned with the sequence of calculated positions.
+  The adjacent edges are related to the acceleration of the particle i.e.
+  $(\vec{p}\_{k} - \vec{p}\_{k-1})/(m \Delta t)$. To compute the edge length
+  this acceleration is scaled by a user defined quantity (the `-rf` command
+  line option can be used to adjust this "ribbon" factor).
+
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
