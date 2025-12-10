@@ -2,7 +2,7 @@ tag-howto:
 
 # HowTo: Use FindPointsGSLIB for high-order interpolation
 
-[`FindPointsGSLIB`](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45) provides a wrapper for high-order interpolation
+[`FindPointsGSLIB`](https://github.com/mfem/mfem/blob/v4.9/fem/gslib.hpp#L72) provides a wrapper for high-order interpolation
 via `findpts`, a set of routines that were developed as
 a part of the gather-scatter library, [gslib](https://github.com/Nek5000/gslib).
 While `findpts` was originally developed for interpolation of grid functions in
