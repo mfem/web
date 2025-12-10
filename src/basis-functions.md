@@ -7,7 +7,7 @@ approximated by a linear combination of piece-wise smooth functions (typically
 piece-wise polynomials) called *basis functions*. The coefficients of the
 linear combination are called *degrees of freedom (DoFs)* and are linear
 functionals of the approximated function, e.g. values at interpolation points
-or integrals over submanifolds of the domain. No matter the space the problem
+or integrals over sub-manifolds of the domain. No matter the space the problem
 is formulated in, H1, H(curl), H(div) or L2, or more precisely the discrete
 space the problem is [weakly-formulated](fem_weak_form.md) in, there is an
 infinite range of possible bases spanning the very same discrete space.
@@ -27,7 +27,7 @@ Lagrange basis, we call it a *nodal* basis and all its associated DoFs
 correspond to values of the approximated function.
 
 <center>**Cubic basis functions on [0,1]**</center>
-![](img/basis-functions.pdf)
+![](img/basis-functions.png)
 
 - `GaussLegendre`: open and nodal basis; the basis of order $n$ interpolates
 all the quadrature points of the Gauss-Legendre quadrature rule with $n+1$
