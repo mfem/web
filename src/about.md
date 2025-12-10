@@ -95,7 +95,7 @@ Please cite with:
 - [Dohyun Kim](https://github.com/dohyun-cse)
 - [Patrick Knupp](https://dblp.org/pid/38/3416.html)
 - [Tzanio Kolev](https://people.llnl.gov/kolev1) &mdash; Project Leader
-- [Anthony Kolshorn]()
+- [Anthony Kolshorn](https://github.com/Toni-ko)
 - [Chris Laganella](https://github.com/Laganellac)
 - [Justin Laughlin](https://github.com/justinlaughlin)
 - [Ilya Lashuk](https://scholar.google.com/citations?user=5KQiAUoAAAAJ&hl=en)
