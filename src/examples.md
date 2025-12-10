@@ -1299,11 +1299,11 @@ diffusive part is handled implicitly using a symmetric interior-penalty formulat
 realized through MFEM’s additive TimeDependentOperator interface, and the implicit solve is preconditioned
 using a low-order refined (LOR) discretization of the diffusion operator (in parallel, via Hypre-based solvers).
 The example illustrates how to combine operator splitting, DG/CG spatial discretizations, and IMEX time
-integrators within MFEM. Serial and parallel versions are provided (ex41.cpp and ex41p.cpp). We recommend
-reviewing examples 9, 14, 16, and 18 before this example.
+integrators within MFEM.
 
 _The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
-and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version._
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version.
+We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
 
