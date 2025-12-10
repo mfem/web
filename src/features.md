@@ -119,7 +119,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization,
  - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
  - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
- - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation.
+ - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation,
+ - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
