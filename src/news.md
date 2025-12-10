@@ -3,6 +3,7 @@
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
 **Dec XX, 2025** | *Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).*
+**Nov 22, 2025** | *[2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) awarded to [research](https://arxiv.org/pdf/2504.16344) using MFEM to achieve the largest known finite element simulation.*
 **Nov 13, 2025** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of the [2025 Workshop](workshop.md), held on September 10-11.*
 **Oct 8, 2025** | *[Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)***
 **Sep 18, 2025** | *[PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0)*
