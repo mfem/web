@@ -92,7 +92,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Dec XX, 2025 | Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).
+Dec 11, 2025 | Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).
 Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
 Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop.md).
 Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
