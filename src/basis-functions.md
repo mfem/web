@@ -74,19 +74,19 @@ points.
 polynomial basis of degree $n$ and only interpolates the $[0,1]$ interval
 endpoints, $b_{i \in {0,...,n}}(x) = {n \choose i} x^{i}(1-x)^{n-i}$.
 
-The [Poly_1D::Basis](Poly_1D::Basis) class includes member functions capable of
+The [Poly_1D::Basis](https://docs.mfem.org/html/classmfem_1_1Poly__1D_1_1Basis.html) class includes member functions capable of
 evaluating all of the aforementioned bases, as well as their first and second
 derivatives, at an arbitrary point in the $[0,1]$ interval.
-In addition, the enclosing [Poly_1D](Poly_1D) class includes facilities to
+In addition, the enclosing [Poly_1D](https://docs.mfem.org/html/classmfem_1_1Poly__1D.html) class includes facilities to
 compute real, univariate polynomials forming hierarchical bases, including
 monomials, Chebyshev, and Legendre polynomials.
 
 ## Finite Element Collections and Elements of Different Types
 
-When constructing a [finite element collection](FiniteElementCollection) for
+When constructing a [finite element collection](https://docs.mfem.org/html/classmfem_1_1FiniteElementCollection.html) for
 a given order and dimension, the user can often specify one, for
-[H1](H1_FECollection) and [L2](L2_FECollection) spaces, or two, for
-[ND](ND_FECollection) and [RT](RT_FECollection) spaces, of the one-dimensional
+[H1](https://docs.mfem.org/html/classmfem_1_1H1__FECollection.html) and [L2](https://docs.mfem.org/html/classmfem_1_1L2__FECollection.html) spaces, or two, for
+[ND](https://docs.mfem.org/html/classmfem_1_1ND__FECollection.html) and [RT](https://docs.mfem.org/html/classmfem_1_1RT__FECollection.html) spaces, of the one-dimensional
 bases described above. In most cases the user can simply use the provided
 defaults, Gauss-Lobatto for H1 spaces, Gauss-Lobatto plus Gauss-Legendre for
 ND and RT spaces, and Gauss-Legendre for L2 spaces. This should not be confused
