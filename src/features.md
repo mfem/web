@@ -119,7 +119,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization,
  - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
  - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
- - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation.
+ - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation,
+ - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
@@ -131,6 +132,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](https://docs.mfem.org/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
  - [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
+ - [Lorentz](https://docs.mfem.org/html/lorentz_8cpp_source.html): charged particle tracking miniapp,
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,

@@ -84,6 +84,12 @@ Finite element approximations are almost always less smooth than the
 solutions we hope to approximate.  Weak formulations provide a means
 of approximating derivatives of non-differentiable functions.
 
+### [Basis Functions](basis-functions.md)
+
+Basis functions are the building blocks of finite element approximations.
+This page gives an overview of the one-dimensional polynomial basis functions
+that are used to build the basis functions spanning higher-dimensional spaces.
+
 ### [Boundary Conditions](fem_bc.md)
 
 The types of available boundary conditions and how to apply them

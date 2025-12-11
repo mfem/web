@@ -2,13 +2,13 @@ tag-howto:
 
 # HowTo: Use FindPointsGSLIB for high-order interpolation
 
-[`FindPointsGSLIB`](https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45) provides a wrapper for high-order interpolation
+[`FindPointsGSLIB`](https://github.com/mfem/mfem/blob/v4.9/fem/gslib.hpp#L72) provides a wrapper for high-order interpolation
 via `findpts`, a set of routines that were developed as
 a part of the gather-scatter library, [gslib](https://github.com/Nek5000/gslib).
 While `findpts` was originally developed for interpolation of grid functions in
 `H1` for meshes with quadrilateral or hexahedron elements, `FindPointsGSLIB`
 also enables interpolation of functions in `L2, H(div), H(curl)` on meshes with
-triangle and tetrahedral elements.
+triangle and tetrahedral elements. `FindPointsGSLIB` has also been extended to support surface meshes and effect the functionality on GPUs, and the core methodology is described in [Mittal et al., "General Field Evaluation in High-Order Meshes on GPUs"](https://www.sciencedirect.com/science/article/abs/pii/S0045793025000660).
 
 The key steps of using `FindPointsGSLIB`, as demonstrated in the
 [gslib](https://github.com/mfem/mfem/tree/master/miniapps/gslib) miniapps
@@ -29,7 +29,7 @@ These computational coordinates include the element number
 (e<sub>j</sub> in `mfem::Array<int> gsl_elem`) in which the point is found,
 the reference-space coordinates (**r**<sub>j</sub> in `mfem::Vector gsl_ref`) inside e<sub>j</sub>,
 and the MPI rank that the element is partitioned on (p<sub>j</sub> in `mfem::Array<int> gsl_proc`).
-`FindPoints` also returns a code (`mfem::Array<int> gsl_code`) to indicate weather
+`FindPoints(xyz)` also returns a code (`mfem::Array<int> gsl_code`) to indicate whether
 the point was found inside an element (`gsl_code[j] = 0`), on the edge/face of an
 element (`gsl_code[j] = 1`), or not found at all (`gsl_code[j] = 2`) for the case
 when the point is located outside the mesh.
@@ -48,9 +48,9 @@ we use `findpts` only for communicating computational coordinates of each point
 across MPI ranks, followed by MFEM's internal methods (`mfem::GridFunction::GetValues`)
 for interpolation.
 
-* **Note**, the `FindPointsGSLIB::FreeData()` method must be used before the
-program is terminated to free up the memory setup internally by `findpts` during
-the `setup` phase.
+    For custom interpolation (e.g., evaluating strain rate tensor), we have added functions that allow the user to first transfer computational coordinates for each point to ranks that overlap the corresponding point (`DistributePointInfoToOwningMPIRanks()`) and later transfer interpolated values back to ranks where the queries originated from (`DistributeInterpolatedValues()`).
+
+* **Note** All gslib allocations are freed if the `FindPointsGSLIB` object is destroyed before `MPI_Finalize()`. If the object might outlive `MPI_Finalize()`, use `FindPointsGSLIB::FreeData()` to avoid memory leaks.
 
 For convenience, `FindPointsGSLIB` class provides methods such as
 `FindPointsGSLIB::Interpolate(mesh, xyz, u, ui)` which combines the three steps
@@ -59,7 +59,7 @@ interpolation) into a single method. Please see the [class definition](https://g
 for more details.
 
 ## Application of FindPointsGSLIB
-The `gslib` miniapps demonstrate several application of `FindPointsGSLIB`:
+The `gslib` miniapps demonstrate several applications of `FindPointsGSLIB`:
 
 * [findpts/pfindpts](https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp)
 miniapps demonstrate high-order interpolation of a function in `H1`, `L2`, `H(div)`, or `H(curl)` at an
@@ -81,6 +81,8 @@ at the inter-domain boundaries.
 
 * [cht](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp)
 Navier miniapp demonstrates how a conjugate heat transfer problem can be
-solve with the incompressible Navier-Stokes equations and the unsteady heat
+solved with the incompressible Navier-Stokes equations and the unsteady heat
 equation solved on different grids. Here, `FindPointsGSLIB` is used to
 transfer the solution from one mesh to another to couple the two PDEs.
+
+`FindPointsGSLIB` is also used in TMOP-based r-adaptivity miniapps (e.g., [meshing/pmesh-optimizer](https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp)) to remap grid functions from the initial mesh to optimized mesh.

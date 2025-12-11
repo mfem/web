@@ -36,6 +36,7 @@ nav:
   - 'HowTo Articles': howto/howto-index.md
   - 'Finite Elements': fem.md
   - '_Primal and Dual Vectors': pri-dual-vec.md
+  - '_Finite Element Basis Functions': basis-functions.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
   - '_Integration': integration.md

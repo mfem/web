@@ -1,10 +1,26 @@
 # About MFEM
 
-MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project.
+MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](img/2000c-Lazarov.png) project.
+
+<!-- The AggieFEM/aFEM project used to be https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html. The above screenshot was taken in 2024. -->
 
 Please cite with:
 ```c
-@article{mfem,
+@article{mfem-2024,
+  title = {High-Performance Finite Elements with {MFEM}},
+  author = {J. Andrej and N. Atallah and J.-P. Bäcker and  J.-S. Camier and
+            D. Copeland and V. Dobrev and Y. Dudouit and T. Duswald and
+            B. Keith and D. Kim and T. Kolev and B. Lazarov and  K. Mittal and
+            W. Pazner and S. Petrides and S. Shiraiwa and M. Stowell and V. Tomov},
+  journal={The International Journal of High Performance Computing Applications},
+  volume={38},
+  number={5},
+  pages={447-467},
+  year={2024},
+  publisher={SAGE Publications Sage UK: London, England}
+}
+
+@article{mfem-2021,
   title = {{MFEM}: A Modular Finite Element Methods Library},
   author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
             J. Cerveny and V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and
@@ -79,6 +95,7 @@ Please cite with:
 - [Dohyun Kim](https://github.com/dohyun-cse)
 - [Patrick Knupp](https://dblp.org/pid/38/3416.html)
 - [Tzanio Kolev](https://people.llnl.gov/kolev1) &mdash; Project Leader
+- [Anthony Kolshorn](https://github.com/Toni-ko)
 - [Chris Laganella](https://github.com/Laganellac)
 - [Justin Laughlin](https://github.com/justinlaughlin)
 - [Ilya Lashuk](https://scholar.google.com/citations?user=5KQiAUoAAAAJ&hl=en)

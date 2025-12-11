@@ -92,22 +92,22 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting).
-Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 workshop.
-Oct 8, 2025 | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
+Dec 11, 2025 | Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).
+Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
+Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop.md).
+Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
 Sep 18, 2025 | [PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0).
-Apr 9, 2025  | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.8.tgz**
-</button>](https://bit.ly/mfem-4-8)
+**Download mfem-4.9.tgz**
+</button>](https://bit.ly/mfem-4-9)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")
