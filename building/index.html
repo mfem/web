@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../performance/">Performance</a>
                             </li>
@@ -346,6 +348,8 @@
             <li><a href="#hip-version-of-mfem">HIP version of MFEM</a></li>
         
             <li><a href="#installing-mfem-with-spack">Installing MFEM with Spack</a></li>
+        
+            <li><a href="#building-mfem-with-cmake">Building MFEM with CMake</a></li>
         
     
     
@@ -563,6 +567,99 @@ can interfere with the other GLVis threads.</p>
 <pre><code class="sh">git clone https://github.com/spack/spack.git
 cd spack
 ./bin/spack install -v mfem
+</code></pre>
+
+<h2 id="building-mfem-with-cmake">Building MFEM with CMake</h2>
+<p>To build a serial version of MFEM with CMake first create a build directory. For example, using a build directory named <code>build</code> inside the MFEM source directory:</p>
+<pre><code class="sh">mkdir build
+cd build
+</code></pre>
+
+<p>Run the CMake configuration on the MFEM source directory.</p>
+<pre><code class="sh">cmake ..
+</code></pre>
+
+<p>Run the build command associated with the CMake configuration, specifying the number of parallel build tasks with the <code>-j</code> flag (4 tasks in this case).</p>
+<pre><code class="sh">cmake --build . -j 4
+</code></pre>
+
+<h3 id="parallel-build-using-cmake">Parallel build using CMake</h3>
+<p>To build a parallel version of MFEM with CMake first build METIS and Hypre as described above.
+From the MFEM source directory, create a build directory. For example, using a build directory named <code>build</code> inside the MFEM source directory:</p>
+<pre><code class="sh">mkdir build
+cd build
+</code></pre>
+
+<p>Run the CMake configuration on the MFEM source directory using the <code>MFEM_USE_MPI</code> CMake variable to enable MPI.
+This will automatically search for the system MPI implementation, the METIS installation (in <code>&lt;mfem-source-dir&gt;/../metis-4.0</code>), and Hypre installation (in <code>&lt;mfem-source-dir/../hypre</code>).</p>
+<pre><code class="sh">cmake .. -DMFEM_USE_MPI=YES
+</code></pre>
+
+<p>Alternatively, run the CMake configuration also using the <code>MFEM_FETCH_TPLS</code> CMake variable to enable fetching of Hypre and METIS.
+This will automatically download, configure, and build Hypre and METIS alongside MFEM (note that this option is <strong>not</strong> currently supported for GPU builds).</p>
+<pre><code class="sh">cmake .. -DMFEM_USE_MPI=YES -DMFEM_FETCH_TPLS=YES
+</code></pre>
+
+<p>For either CMake configuration approach, now run the build command associated with the configuration, specifying the number of parallel build tasks with the <code>-j</code> flag (4 tasks in this case).</p>
+<pre><code class="sh">cmake --build . -j 4
+</code></pre>
+
+<h3 id="advanced-configuration-steps">Advanced configuration steps</h3>
+<p>To build with CUDA:</p>
+<pre><code class="sh">cmake .. -DMFEM_USE_CUDA=YES
+</code></pre>
+
+<p>To specify what CUDA architecture to target:</p>
+<pre><code class="sh">cmake .. -DCUDA_ARCH=&quot;sm_70&quot;
+</code></pre>
+
+<p>The CUDA architecture is formatted as <code>sm_{CC}</code>, or just <code>{CC}</code>, where CC is the GPU compute capability of the target GPU without the decimal point. A list of NVIDIA GPU compute capabilities can be found in <a href="https://developer.nvidia.com/cuda-gpus">the NVIDIA developers documentation</a>. Multiple CUDA architectures can be targeted with a comma or semicolon separated list.</p>
+<pre><code class="sh">cmake .. -DCUDA_ARCH=&quot;{ARCH1},{ARCH2},{ARCH3}&quot;
+</code></pre>
+
+<p>or</p>
+<pre><code class="sh">cmake .. -DCUDA_ARCH=&quot;{ARCH1};{ARCH2};{ARCH3}&quot;
+</code></pre>
+
+<p>Other accepted architecture identifies are <code>"all"</code> which targets all CUDA architectures,
+<code>"all-major"</code> which targets all major versions <code>sm_{*0}</code>, and <code>"native"</code> which targets the visible GPUs on the system.</p>
+<p>To build with METIS 5, after following the instructions to build METIS 5 above:</p>
+<pre><code class="sh">cmake .. -DMFEM_USE_MPI=YES -DMFEM_USE_METIS_5=YES -DMETIS_DIR=../../metis-5.1.0
+</code></pre>
+
+<p>To build with HIP:</p>
+<pre><code class="sh">cmake .. -DMFEM_USE_HIP=YES
+</code></pre>
+
+<p>To specify what HIP architecture(s) to target:</p>
+<pre><code class="sh">cmake .. -DCMAKE_HIP_ARCHITECTURES=&quot;gfx942;gfx90a&quot;
+</code></pre>
+
+<p>Multiple architectures can be targeted using a semi-colon separated list.
+The HIP architecture for different GPU models can be found in <a href="https://llvm.org/docs/AMDGPUUsage.html#processors">the LLVM documentation</a></p>
+<p>When building for GPUs, it is recommended to enable Umpire with <code>-DMFEM_USE_UMPIRE=ON</code>; if it is not automatically found by CMake the installation directory can be specified with <code>-DUMPIRE_DIR=&lt;path-to-umpire-installation-dir&gt;</code>. Umpire can be downloaded from</p>
+<ul>
+<li><a href="https://github.com/LLNL/Umpire/tags">https://github.com/LLNL/Umpire/tags</a></li>
+</ul>
+<h3 id="advanced-build-steps">Advanced build steps</h3>
+<p>Different targets can be built with the --target flag in the build step</p>
+<pre><code class="sh">cmake --build . -j 4 --target &lt;target-name&gt;
+</code></pre>
+
+<p>To build the examples use the <code>examples</code> target (the executables will be in the <code>build/examples</code> directory).</p>
+<pre><code class="sh">cmake --build . -j 4 --target examples
+</code></pre>
+
+<p>To quickly check if the code is successfully built using example 1/1p use the <code>check</code> target.</p>
+<pre><code class="sh">cmake --build . -j 4 --target check
+</code></pre>
+
+<p>To build the miniapps use the <code>miniapps</code> target</p>
+<pre><code class="sh">cmake --build . -j 4 --target miniapps
+</code></pre>
+
+<p>To build everything use the <code>exec</code> target</p>
+<pre><code class="sh">cmake --build . -j 4 --target exec
 </code></pre></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
@@ -580,6 +677,8 @@ cd spack
             <li><a href="#hip-version-of-mfem">HIP version of MFEM</a></li>
         
             <li><a href="#installing-mfem-with-spack">Installing MFEM with Spack</a></li>
+        
+            <li><a href="#building-mfem-with-cmake">Building MFEM with CMake</a></li>
         
     
     

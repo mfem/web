@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../performance/">Performance</a>
                             </li>
@@ -511,7 +513,7 @@ Ordering: 0
 ...
 </code></pre>
 
-<p>Some possible <a href="https://github.com/mfem/mfem/blob/master/fem/fe_coll.hpp">finite element collection</a> choices are: <code>Linear</code>, <code>Quadratic</code> and <code>Cubic</code> corresponding to curvilinear P1/Q1, P2/Q2 and P3/Q3 meshes. The algorithm for the numbering of the degrees of freedom can be found in <a href="https://github.com/mfem/mfem/blob/master/fem/fespace.cpp#L739">MFEM's source code</a>.</p>
+<p>Some possible <a href="https://github.com/mfem/mfem/blob/master/fem/fe_coll.hpp">finite element collection</a> choices are: <code>Linear</code>, <code>Quadratic</code> and <code>Cubic</code> corresponding to curvilinear P1/Q1, P2/Q2 and P3/Q3 meshes. The algorithm for the numbering of the degrees of freedom can be found in <a href="https://github.com/mfem/mfem/blob/v4.9/fem/fespace.cpp#L2733">MFEM's source code</a>.</p>
 <p>For example, the <a href="https://github.com/mfem/mfem/blob/master/data/escher-p3.mesh">escher-p3.mesh</a> from MFEM's <a href="https://github.com/mfem/mfem/blob/master/data">data directory</a> describes a tetrahedral mesh with nodes given by a P3 vector Lagrangian finite element function. Visualizing this mesh with</p>
 <pre><code class="sh">glvis -m escher-p3.mesh -k &quot;Aaaoooooooooo**************tt&quot;
 </code></pre>

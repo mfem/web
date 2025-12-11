@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../../performance/">Performance</a>
                             </li>
@@ -456,8 +458,8 @@ the description in the previous section. You can follow along by browsing
 visualization will automatically update in the GLVis browser window.</p>
 <p>The computational mesh is provided as input (option <code>-m</code>) that could be 3D, 2D,
 surface, hex/tet, etc. (It defaults to <code>star.mesh</code> in line
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L77">77</a>.) The code in
-lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L120-L124">120-124</a>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L78">78</a>.) The code in
+lines <a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L121-L125">121-125</a>
 loads the mesh from the given file, <code>mesh_file</code> and creates the corresponding MFEM
 object <code>mesh</code> of class <code>Mesh</code>.</p>
 <pre><code class="c++">Mesh mesh(mesh_file, 1, 1);
@@ -465,7 +467,7 @@ int dim = mesh.Dimension();
 </code></pre>
 
 <p>The following code (lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L126-L137">126-137</a>)
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L127-L138">127-138</a>)
 refines the mesh uniformly to about 50,000 elements. You can easily modify the
 refinement by changing the definition of <code>ref_levels</code>.</p>
 <pre><code class="c++">int ref_levels = (int)floor(log(50000./mesh.GetNE())/log(2.)/dim);
@@ -481,7 +483,7 @@ element basis functions $\varphi_j$ on the mesh. This involves the MFEM classes
 provided as input via <code>-o</code>), and <code>FiniteElementSpace</code>, which connects the space
 and the mesh.</p>
 <p>Focusing on the common case <code>order &gt; 0</code>, the code in lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L139-L162">139-162</a>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L140-L163">140-163</a>
 is essentially:</p>
 <pre><code class="c++">FiniteElementCollection *fec = new H1_FECollection(order, dim);
 FiniteElementSpace fespace(&amp;mesh, fec);
@@ -492,7 +494,7 @@ cout &lt;&lt; &quot;Number of finite element unknowns: &quot; &lt;&lt; fespace.G
 size of the linear system $n$ from the previous section.</p>
 <p>The finite element degrees of freedom that are on the domain boundary are then
 extracted in lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L164-L174">164-174</a>.
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L165-L180">165-180</a>.
 We need those to impose the Dirichlet boundary conditions.</p>
 <pre><code class="c++">Array&lt;int&gt; ess_tdof_list;
 if (mesh.bdr_attributes.Size())
@@ -507,7 +509,7 @@ if (mesh.bdr_attributes.Size())
 attributes and returns the <code>FiniteElementSpace</code> degrees of freedom that belong
 to the marked attributes (the non-zero entries of <code>ess_bdr</code>).</p>
 <p>The right-hand side $b$ is constructed in lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L176-L182">176-182</a>.
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L182-L188">182-188</a>.
 In MFEM terminology, integrals of the form (7) are implemented in the
 class <code>LinearForm</code>. The <code>Coefficient</code> object corresponds to $f$ from the
 previous section, which here is set to $1$. You can easily specify more general
@@ -522,7 +524,7 @@ b.Assemble();
 belonging to the <code>FiniteElementSpace</code>. Note that a <code>GridFunction</code> object can be
 viewed both as the function $u_h$ in (2) as well as the vector of degrees of
 freedom $x$ in (8). See lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L184-L188">184-188</a>.</p>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L190-L194">190-194</a>.</p>
 <pre><code class="c++">GridFunction x(&amp;fespace);
 x = 0.0;
 </code></pre>
@@ -531,7 +533,7 @@ x = 0.0;
 boundary conditions (for simplicity, here we just set <code>x=0</code> in the whole domain).</p>
 <p>The matrix $A$ is represented as a <code>BilinearForm</code> object, with a specific
 <code>DiffusionIntegrator</code> corresponding to the weak form (6). See lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L190-L210">190-210</a>.</p>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L196-L216">196-216</a>.</p>
 <pre><code class="c++">BilinearForm a(&amp;fespace);
 if (pa) { a.SetAssemblyLevel(AssemblyLevel::PARTIAL); }
 if (fa) { a.SetAssemblyLevel(AssemblyLevel::FULL); }
@@ -545,9 +547,9 @@ You can also provide a variety of coefficients to the integrator, for example,
 <code>PWConstCoefficient</code> to specify different material properties in different
 portions of the domain.</p>
 <p>The linear system (5) is formed in lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L212-L216">212-216</a>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L218-L222">218-222</a>
 and solved with a variety of options in lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L218-L252">218-252</a>.
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L224-L258">224-258</a>.
 One simple case is:</p>
 <pre><code class="c++">OperatorPtr A;
 Vector B, X;
@@ -578,7 +580,7 @@ preconditioner.</p>
 <p>Once the linear system is solved, we recover the solution as a finite element
 grid function, and then visualize and save the final results to disk (files
 <code>refined.mesh</code> and <code>sol.gf</code>). See lines
-<a href="https://github.com/mfem/mfem/blob/master/examples/ex1.cpp#L254-L274">254-274</a>.</p>
+<a href="https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L260-L280">260-280</a>.</p>
 <pre><code class="c++">a.RecoverFEMSolution(X, b, x);
 
 ofstream mesh_ofs(&quot;refined.mesh&quot;);

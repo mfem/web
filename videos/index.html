@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../performance/">Performance</a>
                             </li>
@@ -547,6 +549,18 @@
 <hr />
 </div>
 <div class="col-md-6">
+<h4 id="robert-falgout-llnl">Robert Falgout (LLNL)</h4>
+<h4 id="new-advances-in-hypre-30-for-mixed-precision-and-semi-structured-problems"><em>New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems</em></h4>
+<h5 id="november-18-2025-femllnl-seminar-series"><strong>November 18, 2025</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><a class="youtube" href="https://youtu.be/DK8yVzOo9Og"><img src="https://img.youtube.com/vi/DK8yVzOo9Og/maxresdefault.jpg"></img></a></p>
+<p>The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.</p>
+<hr />
+<h4 id="bill-henshaw-rpi">Bill Henshaw (RPI)</h4>
+<h4 id="an-on-helmholtz-solver-by-time-filtering-the-wave-equation"><em>An O(N) Helmholtz Solver by time-filtering the Wave Equation</em></h4>
+<h5 id="november-4-2025-femllnl-seminar-series"><strong>November 4, 2025</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
+<p><a class="youtube" href="https://youtu.be/ZiRymGF3YuY"><img src="https://img.youtube.com/vi/ZiRymGF3YuY/maxresdefault.jpg"></img></a></p>
+<p>An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.</p>
+<hr />
 <h4 id="florian-schafer-courant-institute-nyu">Florian Schäfer (Courant Institute, NYU)</h4>
 <h4 id="toward-information-geometric-mechanics"><em>Toward Information Geometric Mechanics</em></h4>
 <h5 id="september-30-2025-femllnl-seminar-series"><strong>September 30, 2025</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
@@ -668,14 +682,14 @@ bounds) of the proposed MF-FE method can be enforced using convex limiting for b
 <h5 id="february-6-2024-femllnl-seminar-series"><strong>February 6, 2024</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=CfRSzUOM0Ug"><img src="https://img.youtube.com/vi/CfRSzUOM0Ug/maxresdefault.jpg"></img></a></p>
 <p>Numerous cutting-edge scientific technologies originate at the laboratory scale, but transitioning them to practical industry applications can be a formidable challenge. Traditional pilot projects at intermediate scales are costly and time-consuming. Alternatives such as E-pilots can rely on high-fidelity numerical simulations, but even these simulations can be computationally prohibitive at larger scales. To overcome these limitations, we propose a scalable, component reduced order model (CROM) method. We employ Discontinuous Galerkin Domain Decomposition (DG-DD) to decompose the physics governing equation for a large-scale system into repeated small-scale unit components. Critical physics modes are identified via proper orthogonal decomposition (POD) from small-scale unit component samples. The computationally expensive, high-fidelity discretization of the physics governing equation is then projected onto these modes to create a reduced order model (ROM) that retains essential physics details. The combination of DG-DD and POD enables ROMs to be used as building blocks comprised of unit components and interfaces, which can then be used to construct a global large-scale ROM without data at such large scales. This method is demonstrated on the Poisson and Stokes flow equations, showing that it can solve equations about 15−40 times faster with only ∼ 1% relative error, even at scales 1000 times larger than the unit components. This research is ongoing, with efforts to apply these methods to more complex physics such as Navier-Stokes equation, highlighting their potential for transitioning laboratory-scale technologies to practical industrial use.</p>
-<hr />
+</div>
+<div class="col-md-6">
 <h4 id="brian-young">Brian Young</h4>
 <h4 id="a-full-wave-electromagnetic-simulator-for-frequency-domain-s-parameter-calculations"><em>A Full-Wave Electromagnetic Simulator for Frequency-Domain S-Parameter Calculations</em></h4>
 <h5 id="january-9-2024-femllnl-seminar-series"><strong>January 9, 2024</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>
 <p><a class="youtube" href="https://www.youtube.com/watch?v=uknQqYw-d0o"><img src="https://img.youtube.com/vi/uknQqYw-d0o/maxresdefault.jpg"></img></a></p>
 <p>An open-source and free full-wave electromagnetic simulator is presented that addresses the engineering community’s need for the calculation of frequency-domain S-parameters. Two-dimensional port simulations are used to excite the 3D space and to extract S-parameters using modal projections. Matrix solutions are performed using complex computations. Features enabled by the MFEM library include adaptive mesh refinement, arbitrary order finite elements, and parallel processing using MPI. Implementation details are presented along with sample results and accuracy demonstrations.</p>
-</div>
-<div class="col-md-6">
+<hr />
 <h4 id="jesse-chan-rice-university">Jesse Chan (Rice University)</h4>
 <h4 id="high-order-positivity-preserving-entropy-stable-discontinuous-galerkin-discretizations"><em>High order positivity-preserving entropy stable discontinuous Galerkin discretizations</em></h4>
 <h5 id="december-5-2023-femllnl-seminar-series"><strong>December 5, 2023</strong> | <a href="https://mfem.org/seminar">FEM@LLNL Seminar Series</a></h5>

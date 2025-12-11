@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../performance/">Performance</a>
                             </li>
@@ -382,6 +384,7 @@ or post <a href="https://github.com/mfem/mfem/issues/new?labels=question">questi
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
       <option id="freeboundary">Free boundary</option>
+      <option id="particle">Particle Methods</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1472,6 +1475,26 @@ We recommend viewing Example 5 and Example 36 before viewing this example.</em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
+<div id="ex41">
+<h2 id="example-41-dgcg-advection-diffusion">Example 41: DG/CG Advection-Diffusion</h2>
+<p><img class="floatright" width="240pt" src="../img/examples/ex41.png"></p>
+<p>This example solves a time-dependent advection–diffusion equation
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u -\nabla\cdot\kappa\nabla u = 0,$$ where $v$ is a given fluid
+velocity, and $u_0(x)=u(0,x)$ is a given initial condition, using high-order finite elements in space
+and implicit–explicit (IMEX) Runge–Kutta methods in time. The spatial discretization is based on discontinuous
+Galerkin (DG) or continuous Galerkin (CG) finite elements on periodic meshes in 2D or 3D, with several choices
+of velocity fields and initial data. The advective part of the operator is treated explicitly, while the
+diffusive part is handled implicitly using a symmetric interior-penalty formulation. The IMEX splitting is
+realized through MFEM’s additive TimeDependentOperator interface, and the implicit solve is preconditioned
+using a low-order refined (LOR) discretization of the diffusion operator (in parallel, via Hypre-based solvers).
+The example illustrates how to combine operator splitting, DG/CG spatial discretizations, and IMEX time
+integrators within MFEM.</p>
+<p><em>The example has a serial (<a href="https://github.com/mfem/mfem/blob/master/examples/ex41.cpp">ex41.cpp</a>)
+and a parallel (<a href="https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp">ex41p.cpp</a>) version.
+We recommend reviewing examples 9, 14, 16, and 18 before this example.</em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
 <div id="nurbs_ex1">
 <h2 id="nurbs-example-1-poisson-problem">NURBS Example 1: Poisson Problem</h2>
 <p><a href="https://glvis.org/live/?stream=../data/streams/ex1.saved" target="_blank">
@@ -1663,6 +1686,33 @@ by the electromagnetic Joule heating.</p>
 (<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp">joule.cpp</a>) version.
 <strong>We recommend that new users start with the example codes before
 moving to the miniapps.</strong></em>
+<div style="clear:both;"/></div>
+<br></p>
+</div>
+<div id="lorentz">
+<h2 id="lorentz-miniapp-particle-trajectory-calculation">Lorentz Miniapp: Particle Trajectory Calculation</h2>
+<p><img class="floatright" width="280pt" src="../img/examples/lorentz-full.png"></p>
+<p>This miniapp reads VisIt data collection objects produced by applications such
+as Volta and Tesla (described above) and computes particle trajectories subject
+to the electric and magnetic fields described therein.</p>
+<p>This code uses the Boris algorithm to approximate the Lorentz force,</p>
+<p>$$\frac{d\vec{p}}{dt} = q \left(\vec{E} + \vec{v}\times\vec{B}\right),$$</p>
+<p>exerted on a test particle with a given mass, charge, initial position and
+momentum.</p>
+<p>The Lorentz miniapp must be run on the same number of processors as the
+applications which produced the VisIt data collection objects. However, the
+electric and magnetic fields do not need to be defined on the same mesh. The
+Lorentz miniapp relies on the <code>FindPoints</code> functionality available through
+MFEM's parallel mesh classes to query the field values even when those field
+values are located on different processors.</p>
+<p>For more details, please see the <a href="../electromagnetics/">documentation</a> in the
+<code>miniapps/electromagnetics</code> directory.</p>
+<p><em>The miniapp has only a parallel
+(<a href="https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/lorentz.cpp">lorentz.cpp</a>) version.
+<strong>We recommend that new users become familiar with the
+<a href="#volta-miniapp-electrostatics">Volta</a> and/or
+<a href="#tesla-miniapp-magnetostatics">Tesla</a> miniapps before moving to this miniapp.
+</strong></em>
 <div style="clear:both;"/></div>
 <br></p>
 </div>
@@ -2515,7 +2565,7 @@ function update()
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr) && none)
-   + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
+   + showElement("ex31", maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
    + showElement("ex34", maxwell && (hcurl || h1 || hdiv) && galerkin && (pcg || amg || ams))
@@ -2525,19 +2575,21 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex41", (advection || diffusion) && (l2 || h1) && (galerkin || dg) && (pcg || rk))
 
    // nurbs miniapps
-   + showElement("nurbs_ex1", diffusion && nurbs && h1)
-   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
-   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
-   + showElement("nurbs_ex11", diffusion && nurbs)
-   + showElement("nurbs_ex24", nurbs && (hcurl || hdiv))
+   + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
+   + showElement("nurbs_ex3", maxwell && hcurl && nurbs && all4)
+   + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
+   + showElement("nurbs_ex11", diffusion && all2 && nurbs && all4)
+   + showElement("nurbs_ex24", all1 && (hcurl || hdiv) && nurbs && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
+   + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)

@@ -188,6 +188,8 @@
                         
                     
                         
+                    
+                        
                             <li >
                                  <a href="../../performance/">Performance</a>
                             </li>
@@ -357,13 +359,13 @@
             <div class="col-md-9" role="main">
 
 <h1 id="howto-use-findpointsgslib-for-high-order-interpolation">HowTo: Use FindPointsGSLIB for high-order interpolation</h1>
-<p><a href="https://github.com/mfem/mfem/blob/master/fem/gslib.hpp#L45"><code>FindPointsGSLIB</code></a> provides a wrapper for high-order interpolation
+<p><a href="https://github.com/mfem/mfem/blob/v4.9/fem/gslib.hpp#L72"><code>FindPointsGSLIB</code></a> provides a wrapper for high-order interpolation
 via <code>findpts</code>, a set of routines that were developed as
 a part of the gather-scatter library, <a href="https://github.com/Nek5000/gslib">gslib</a>.
 While <code>findpts</code> was originally developed for interpolation of grid functions in
 <code>H1</code> for meshes with quadrilateral or hexahedron elements, <code>FindPointsGSLIB</code>
 also enables interpolation of functions in <code>L2, H(div), H(curl)</code> on meshes with
-triangle and tetrahedral elements.</p>
+triangle and tetrahedral elements. <code>FindPointsGSLIB</code> has also been extended to support surface meshes and effect the functionality on GPUs, and the core methodology is described in <a href="https://www.sciencedirect.com/science/article/abs/pii/S0045793025000660">Mittal et al., "General Field Evaluation in High-Order Meshes on GPUs"</a>.</p>
 <p>The key steps of using <code>FindPointsGSLIB</code>, as demonstrated in the
 <a href="https://github.com/mfem/mfem/tree/master/miniapps/gslib">gslib</a> miniapps
 are:</p>
@@ -384,7 +386,7 @@ These computational coordinates include the element number
 (e<sub>j</sub> in <code>mfem::Array&lt;int&gt; gsl_elem</code>) in which the point is found,
 the reference-space coordinates (<strong>r</strong><sub>j</sub> in <code>mfem::Vector gsl_ref</code>) inside e<sub>j</sub>,
 and the MPI rank that the element is partitioned on (p<sub>j</sub> in <code>mfem::Array&lt;int&gt; gsl_proc</code>).
-<code>FindPoints</code> also returns a code (<code>mfem::Array&lt;int&gt; gsl_code</code>) to indicate weather
+<code>FindPoints(xyz)</code> also returns a code (<code>mfem::Array&lt;int&gt; gsl_code</code>) to indicate whether
 the point was found inside an element (<code>gsl_code[j] = 0</code>), on the edge/face of an
 element (<code>gsl_code[j] = 1</code>), or not found at all (<code>gsl_code[j] = 2</code>) for the case
 when the point is located outside the mesh.</p>
@@ -401,11 +403,10 @@ and return the interpolated values in <code>mfem::Vector ui</code>.</p>
 we use <code>findpts</code> only for communicating computational coordinates of each point
 across MPI ranks, followed by MFEM's internal methods (<code>mfem::GridFunction::GetValues</code>)
 for interpolation.</p>
+<p>For custom interpolation (e.g., evaluating strain rate tensor), we have added functions that allow the user to first transfer computational coordinates for each point to ranks that overlap the corresponding point (<code>DistributePointInfoToOwningMPIRanks()</code>) and later transfer interpolated values back to ranks where the queries originated from (<code>DistributeInterpolatedValues()</code>).</p>
 </li>
 <li>
-<p><strong>Note</strong>, the <code>FindPointsGSLIB::FreeData()</code> method must be used before the
-program is terminated to free up the memory setup internally by <code>findpts</code> during
-the <code>setup</code> phase.</p>
+<p><strong>Note</strong> All gslib allocations are freed if the <code>FindPointsGSLIB</code> object is destroyed before <code>MPI_Finalize()</code>. If the object might outlive <code>MPI_Finalize()</code>, use <code>FindPointsGSLIB::FreeData()</code> to avoid memory leaks.</p>
 </li>
 </ul>
 <p>For convenience, <code>FindPointsGSLIB</code> class provides methods such as
@@ -414,7 +415,7 @@ described above (setup, finding the computational coordinates of the sought poin
 interpolation) into a single method. Please see the <a href="https://github.com/mfem/mfem/blob/master/fem/gslib.hpp">class definition</a>
 for more details.</p>
 <h2 id="application-of-findpointsgslib">Application of FindPointsGSLIB</h2>
-<p>The <code>gslib</code> miniapps demonstrate several application of <code>FindPointsGSLIB</code>:</p>
+<p>The <code>gslib</code> miniapps demonstrate several applications of <code>FindPointsGSLIB</code>:</p>
 <ul>
 <li>
 <p><a href="https://github.com/mfem/mfem/blob/master/miniapps/gslib/findpts.cpp">findpts/pfindpts</a>
@@ -441,11 +442,12 @@ at the inter-domain boundaries.</p>
 <li>
 <p><a href="https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_cht.cpp">cht</a>
 Navier miniapp demonstrates how a conjugate heat transfer problem can be
-solve with the incompressible Navier-Stokes equations and the unsteady heat
+solved with the incompressible Navier-Stokes equations and the unsteady heat
 equation solved on different grids. Here, <code>FindPointsGSLIB</code> is used to
 transfer the solution from one mesh to another to couple the two PDEs.</p>
 </li>
-</ul></div>
+</ul>
+<p><code>FindPointsGSLIB</code> is also used in TMOP-based r-adaptivity miniapps (e.g., <a href="https://github.com/mfem/mfem/blob/master/miniapps/meshing/pmesh-optimizer.cpp">meshing/pmesh-optimizer</a>) to remap grid functions from the initial mesh to optimized mesh.</p></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
