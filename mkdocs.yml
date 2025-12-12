@@ -45,6 +45,7 @@ nav:
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md
   - '_Boundary Conditions': fem_bc.md
+  - '_Vector Field Discretization': fem_vector_disc.md
   - 'Performance': performance.md
   - '_High Performance Templated Code': tperformance.md
   - 'GPU Support': gpu-support.md
