@@ -150,10 +150,11 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Convert DC](https://docs.mfem.org/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces,
  - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library,
- - [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
- - [Contact](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library,
- - [Multidomain](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp): Multidomain and SubMesh demonstration Miniapp,
- - [DPG](https://github.com/mfem/mfem/blob/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
+ - [SPDE](https://docs.mfem.org/html/generate__random__field_8cpp_source.html): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
+ - [Tribol](https://docs.mfem.org/html/contact-patch-test_8cpp_source.html): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library,
+ - [Contact](https://docs.mfem.org/html/contact_8cpp_source.html): Frictionless contact examples using [IP optimization](https://docs.mfem.org/html/ip_8hpp_source.html) and the [AMGF solver](https://docs.mfem.org/html/filteredsolver_8hpp_source.html),
+ - [Multidomain](https://docs.mfem.org/html/multidomain_8cpp_source.html): Multidomain and SubMesh demonstration Miniapp,
+ - [DPG](https://github.com/mfem/mfem/tree/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 
