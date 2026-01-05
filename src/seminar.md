@@ -14,19 +14,42 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/beck.jpg)
+![](img/seminar/jay.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### Andrea Beck (University of Stuttgart)
-##### *TBA*
-##### [**9:00am PDT, January 12, 2026**](https://everytimezone.com/s/0d78f857)
+#### Jay Gopalakrishnan (Portland State University)
+##### *Matrix-valued finite elements*
+##### [**9:30am PST, January 20, 2026**](https://everytimezone.com/s/80d13499)
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>]()
+</button>](https://llnlfed.webex.com/meet/kolev1)
 
-**Abstract:** TBA
+**Abstract:** Matrix-valued finite elements arise naturally in continuum models,
+with stress elements in structural mechanics as typical examples. This
+talk begins by describing a recent element for viscous stresses in
+fluid mechanics. Its development is motivated by recent
+H(div)-conforming approximations of fluid velocity, in which the
+divergence-free constraint of viscous incompressible flows can be
+enforced exactly. We identify a natural companion space for viscous
+stresses and develop simple elements with nt-continuity (where n and t
+denote normal and tangential components on element interfaces,
+respectively), corresponding to shear continuity of traceless viscous
+stresses. The associated Sobolev space is a low-regularity,
+nonstandard space H(curl div) of matrix-valued functions. The
+resulting method, termed the Mass-Conserving Stress-yielding (MCS)
+method, is exactly mass conserving, pressure robust, yields
+optimal-order approximations for velocity, pressure, stress, and
+vorticity, and relies only on facet-based coupling, making it amenable
+to hybridization. The talk then places these developments in the
+broader context of other matrix-valued finite elements, including
+nn-continuous Hellan–Herrmann–Johnson elements and tt-continuous Regge
+elements. We present a recent avenue for connecting these apparently
+disparate developments in nn-, nt-, and tt-continuous matrix-valued
+finite elements, and conclude with challenges in seeking unifying
+principles for tensor-valued discretizations beyond the de Rham
+complex.
 
 ---
 
