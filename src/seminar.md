@@ -14,17 +14,17 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/jay.jpg)
+![](img/seminar/gopalakrishnan.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Jay Gopalakrishnan (Portland State University)
 ##### *Matrix-valued finite elements*
-##### [**9:30am PST, January 20, 2026**](https://everytimezone.com/s/80d13499)
+##### [**9:30am PDT, January 20, 2026**](https://everytimezone.com/s/80d13499)
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>](https://llnlfed.webex.com/meet/kolev1)
+</button>]()
 
 **Abstract:** Matrix-valued finite elements arise naturally in continuum models,
 with stress elements in structural mechanics as typical examples. This
@@ -1327,12 +1327,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 &nbsp;
 
 #### Andrea Beck (University of Stuttgart)
-##### **January 12, 2026**
-
----
-
-#### Jay Gopalakrishnan (Portland State University)
-##### **January 20, 2026**
+##### **TBD**
 
 ---
 
