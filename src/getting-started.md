@@ -21,6 +21,11 @@ We recommend that new users start with these articles:
 - [GPU Support](gpu-support.md)
 - [Performance and Partial Assembly](performance.md)
 
+### Annotated MFEM Examples
+
+- [Example 1](tutorial/fem.md)
+- [Example 36](annotated/ex36.md)
+
 ### Example Mini Applications
 
 - [Electromagnetics Miniapps](electromagnetics.md)
