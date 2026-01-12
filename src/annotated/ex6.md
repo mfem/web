@@ -457,3 +457,7 @@ The figure is an example of refinement for example `pipe-nurbs.mesh`
 ---
 
 Back to the the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
+
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
