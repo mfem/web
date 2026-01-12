@@ -23,8 +23,10 @@ We recommend that new users start with these articles:
 
 ### Annotated MFEM Examples
 
-- [Example 1](tutorial/fem.md)
+- [Finite Element Basics / Example 1](tutorial/fem.md)
 - [Example 2](annotated/ex2.md)
+- [Example 3](annotated/ex3.md)
+- [Example 6](annotated/ex6.md)
 - [Example 36](annotated/ex36.md)
 
 ### Example Mini Applications

@@ -10,9 +10,8 @@
 <h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
 </div>
 <div class="panel-body" style="line-height: 1.8;">
-<i class="fa fa-square-o"></i>&nbsp; Understand the finite element discretization of simple Linear Elasticity problem in MFEM.<br>
-<i class="fa fa-square-o"></i>&nbsp; Learn how to launch serial and parallel runs of MFEM examples.<br>
-<i class="fa fa-square-o"></i>&nbsp; Learn how to visualize the results of MFEM simulations using GLVIS.
+<i class="fa fa-square-o"></i>&nbsp; Understand the finite element discretization of a simple elastic deformation problem in MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to handle vectorial solution variables in MFEM.<br>
 </div>
 </div>
 
@@ -21,7 +20,7 @@
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Please complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp; Example 1</a> tutorial before this lesson.
+Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp; Example 1</a> tutorial before starting this lesson.
 </div>
 </div>
 
@@ -42,7 +41,7 @@ $$
 \boldsymbol{\sigma(\boldsymbol{u})} = \lambda \nabla \cdot (\boldsymbol{u}) \boldsymbol{I} + \mu (\nabla \boldsymbol{u} + \nabla \boldsymbol{u}^T)
 $$
 
-where $\lambda$ and $\mu$ are Lame's constants which depend on material properties. 
+where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties. 
 
 To solve the above continuous equation numerically, we approximate it by converting it into a discrete problem with a finite number of unknowns. In the [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM), this is achieved using _basis functions_ to represent the solution over the domain.
 
@@ -394,7 +393,7 @@ to see how the image rendered by GLVis changes. Run
 </div>
 </div>
 
-![_Beam Displacement_](https://drive.google.com/uc?export=view&id=1dTiqc17wIiI3tiFcbOBQ2mAieHexNBAH)
+![_Beam Displacement_](img/ex2_1.png)
 <div class="panel panel-danger">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
@@ -434,154 +433,8 @@ mpirun -np 48 ex2p -m ../data/beam-tet.mesh
 </div>
 </div>
 
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
-</div>
-<div class="panel-body">
-If you are getting errors from <code>mpirun</code> that there are
-<i>"not enough slots available in the system"</i>, try adding the
-<code>--oversubscribe</code> option.
-For example: <code>mpirun --oversubscribe -np 16 ex2p</code>
-</div>
-</div>
-
 ---
 
-### <i class="fa fa-check-square-o"></i>&nbsp; GPU runs
-
-If your container supports CUDA you can explore GPU computations with:
-
-    mpirun -np 4 ex2p -pa -d cuda
-
-Additionally you can try out AmgX by changing your directory to `examples/amgx`
-and building:
-
-    cd amgx && make ex2p
-
-After that you can run the example with
-
-    mpirun -np 4 ex2p -d cuda --amgx-file amg_pcg.json
-
----
-
-### <i class="fa fa-check-square-o"></i>&nbsp; GLVis interface
-
-[GLVis](https://glvis.org) is a lightweight tool for accurate and flexible
-finite element visualization based on MFEM. In this tutorial we use its web
-version, which should work on any machine with a modern browser, including mobile
-touch devices such as tablets and phones.
-
-<div class="panel panel-info">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
-</div>
-<div class="panel-body">
-The GLVis and VS Code browser windows do not need to be on the same device.
-For example, you can run VS Code on a computer, while GLVis shows the results
-on your phone/tablet.
-</div>
-</div>
-
-GLVis natively understands finite element data and can manipulate it in various
-ways through the web interface or by typing (case sensitive) keystrokes in the
-GLVis window.
-
-To access the web interface, move to the top right of the GLVis window and press
-the `Visualization controls` icon <span class="mdi mdi-settings mdi-18px"></span>. This will open a
-number of buttons for controlling the mesh, colors, and position of the plot:
-
-![](img/fem5.png)
-
-You can perform additional operations with the GLVis key commands and mouse
-functions. Most of them are described in the `Help` window that appears when
-clicking the<span class="mdi mdi-help mdi-18px"></span>icon in the upper
-left corner, or by pressing the <kbd>h</kbd> key.
-
-Some of the more useful key commands and mouse functions are:
-
-- <kbd>A</kbd> &mdash; Turn on/off the use of anti-aliasing/multi-sampling
-- <kbd>b</kbd> &mdash; Toggle the boundary in 2D scalar mode
-- <kbd>c</kbd> &mdash; Show/hide color bar
-- <kbd>F11</kbd> / <kbd>F12</kbd> &mdash; Shrink/Zoom parallel subdomains
-- <kbd>g</kbd> &mdash; Toggle background color (white/black)
-- <kbd>i</kbd> &mdash; Toggle cutting plane
-- <kbd>j</kbd> &mdash; Turn on/off perspective
-- <kbd>Left</kbd> &mdash; Rotate the plot
-- <kbd>Left</kbd> + <kbd>Shift</kbd> &mdash; Spin the plot (according to the dragging vector)
-- <kbd>m</kbd> &mdash; Toggle the mesh state.
-- <kbd>p</kbd> / <kbd>P</kbd> &mdash; Cycle through color palettes (lots of options)
-- <kbd>r</kbd> &mdash; Reset the plot to 3D view
-- <kbd>R</kbd> &mdash; Cycle through 2D projections (looking above/below in `x`/`y`/`z` directions)
-- <kbd>Right</kbd> &mdash; Zoom in/out
-- <kbd>S</kbd> &mdash; Take an image snapshot
-- <kbd>space</kbd> &mdash; Pause solution update in time-dependent simulations
-- <kbd>t</kbd> &mdash; Cycle materials and lights
-- <kbd>x</kbd> / <kbd>X</kbd> &mdash; Rotate cutting plane (`\phi`) in 3D
-- <kbd>y</kbd> / <kbd>Y</kbd> &mdash; Rotate cutting plane (`\theta`) in 3D
-- <kbd>z</kbd> / <kbd>Z</kbd> &mdash; Translate cutting plane in 3D
-
-Note that you may need to press <kbd>fn</kbd> and/or <kbd>Ctrl</kbd> to escape some
-of the function keys.
-
-<div class="panel panel-success">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
-</div>
-<div class="panel-body">
-After running Example 2, experiment with the key command <kbd>m</kbd> in the GLVis
-window to change the appearance of the mesh. Use <kbd>i</kbd> to make a cut through the
-visual and <kbd>y</kbd> to change the position of the cutting plane.
-</div>
-</div>
-
-
-For more details, see the full list of
-[key commands](https://github.com/GLVis/glvis/blob/master/README.md#key-commands) and
-[mouse functions](https://github.com/GLVis/glvis/blob/master/README.md#mouse-functions)
-in the GLVis [README](https://github.com/GLVis/glvis/blob/master/README.md).
-
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
-</div>
-<div class="panel-body">
-If the GLVis window becomes unresponsive, try
-<a href="../start/#set-up-glvis">disconnecting and connecting</a> again.
-If this doesn't help,
-run the following in the VS Code terminal:
-<code>pkill -f glvis-browser-server</code>, then force-reload the GLVis
-browser window and <a href="../start/#set-up-glvis">connect</a> again.
-</div>
-</div>
-
----
-
-<div class="panel panel-warning">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
-</div>
-<div class="panel-body">
-Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
-</div>
-</div>
-
-<div class="panel panel-success">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-external-link"></i>&nbsp; Next Steps</h3>
-</div>
-<div class="panel-body" style="line-height: 1.8; margin-bottom: -10pt;">
-Depending on your interests pick one of the following lessons:<br>
-<ul>
-<li> <a href="../examples"><i class="fa fa-gears"></i>&nbsp; Tour of MFEM Examples</a>
-<li> <a href="../meshvis"><i class="fa fa-picture-o"></i>&nbsp; Meshing and Visualization</a>
-<li> <a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
-</ul>
-</div>
-</div>
-
----
-
-Back to the [MFEM tutorial page](index.md)
+Back to the the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
 
 
