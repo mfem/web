@@ -1,5 +1,7 @@
 ## <i class="fa fa-book"></i>&nbsp; Example 6: Poisson Problem with AMR
 
+by Jiahao Liu and Prathik Narayanan, Brown University
+
 <span class="label label-default">30 minutes </span>
 <span class="label label-default">intermediate</span>
 

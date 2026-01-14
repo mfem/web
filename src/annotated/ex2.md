@@ -1,5 +1,7 @@
 ## <i class="fa fa-book"></i>&nbsp; Linear Elasticity
 
+by Aashutosh Kulakarni Prachet and Jeetika Patangia, Brown University
+
 <span class="label label-default">45 minutes</span>
 <span class="label label-default">basic</span>
 
@@ -12,6 +14,7 @@
 <div class="panel-body" style="line-height: 1.8;">
 <i class="fa fa-square-o"></i>&nbsp; Understand the finite element discretization of a simple elastic deformation problem in MFEM.<br>
 <i class="fa fa-square-o"></i>&nbsp; Learn how to handle vectorial solution variables in MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to use Attributes to implement discontinuous material coefficients and multiple boundary conditions.<br>
 </div>
 </div>
 
@@ -27,64 +30,63 @@ Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp
 ---
 
 [_Linear elasticity_](https://en.wikipedia.org/wiki/Linear_elasticity) is a vectorial partial differential equation (PDE) that models how solid materials deform and develop stress under applied forces. It is widely used to analyze the stress-strain behavior of structural and mechanical systems.
-Mathematically writing,
+Beginning from the [_Conservation of Linear Momentum_](https://en.wikipedia.org/wiki/Momentum#Conservation), we have
 
 $$
-\nabla \cdot \boldsymbol{\sigma(\boldsymbol{u})} + \boldsymbol{F} = \rho \boldsymbol{\ddot{u}}    
+\nabla \cdot {\sigma({u})} + f = \rho {\ddot{u}},
 $$
 
-where $\boldsymbol{u}$ is the vector valued displacement field, $\boldsymbol{\sigma}$ is the [_stress tensor_](https://en.wikipedia.org/wiki/Cauchy_stress_tensor), $\boldsymbol{F}$ is the body force per unit volume and $\rho$ is the material density. This PDE is obtained by using the [_Conservation of Linear Momentum_](https://en.wikipedia.org/wiki/Momentum#Conservation).
-
-Using the [_Hooke's Law_](https://en.wikipedia.org/wiki/Hooke%27s_law) for an isotropic material,the stress tensor $\boldsymbol{\sigma}$ corresponding to the displacement field $\boldsymbol{u}$ is given as
+where ${u} \in \mathbb{R}^n$ is the vector-valued displacement field, ${\sigma}$ is the [_stress tensor_](https://en.wikipedia.org/wiki/Cauchy_stress_tensor), $f$ is the body force per unit volume and $\rho$ is the material density.
+Next, employing the [_Hooke's Law_](https://en.wikipedia.org/wiki/Hooke%27s_law) for an isotropic material, the stress tensor ${\sigma}$ corresponding to the displacement field ${u}$ is given as
 
 $$
-\boldsymbol{\sigma(\boldsymbol{u})} = \lambda \nabla \cdot (\boldsymbol{u}) \boldsymbol{I} + \mu (\nabla \boldsymbol{u} + \nabla \boldsymbol{u}^T)
+{\sigma({u})} = \lambda (\nabla \cdot {u}) {I} + \mu (\nabla {u} + \nabla {u}^T),
 $$
 
 where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties. 
 
-To solve the above continuous equation numerically, we approximate it by converting it into a discrete problem with a finite number of unknowns. In the [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM), this is achieved using _basis functions_ to represent the solution over the domain.
+To solve this system of equations numerically, we convert it into a discrete problem with a finite number of unknowns. The [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM) proceeds by constructing a linear combination of _basis functions_ to represent the solution over the domain.
 
-Instead of calculating the exact analytic solution $\boldsymbol{u}$, we approximate it 
-
-$$
-u \approx u_h := \sum c_j \varphi_j
-$$
-
-where $\boldsymbol{u}_h$ is the finite element approximation with degrees of freedom (unknown
-coefficients) $\boldsymbol{c}_j$, and $\varphi_j$ are known _basis functions_. The FEM basis
-functions are typically piecewise-polynomial functions on a given computational mesh,
-which are only non-zero on small portions of the mesh.
-
-For this Example problem, we solve our PDE by neglecting the body force, $\boldsymbol{F} = 0$ and also by setting the inertial term, $\rho  \boldsymbol{\ddot{u}} = 0$.
-
-To solve for the unknown coefficients, $\boldsymbol{c}_j$, we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the Elasticity PDE. This is obtained by first multiplying with another test function $\boldsymbol{v}$:
+In particular, instead of calculating the exact analytic solution ${u}$, we approximate each component $u_i$ as
 
 $$
-\int_{\Omega} \boldsymbol{v} \cdot \left( \nabla \cdot \boldsymbol{\sigma}(\boldsymbol{u}) \right)  d\boldsymbol{x} = 0
+u_i \approx u_{i,h} := \sum_{j=1}^{m} c_{ij} \varphi_{j},
+$$
+
+where $u_{i,h}$ is the finite element approximation with unknown coefficients $c_{ij}$, and $\varphi_{j}$ are scalar-valued _basis functions_. The FEM basis
+functions, $\varphi_{j}$, which do not depend on $i$, are typically piecewise-polynomial functions that are only non-zero on small portions of the domain.
+
+For this example problem, we compute a stationary, homogeneous solution to our PDE by setting the inertial term $\rho {\ddot{u}} = 0$ and neglecting the body force, $f = 0$.
+
+To solve for the unknown coefficients, $c_{ij}$, we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the Elasticity PDE. This is obtained by first multiplying with another test function ${v}$,
+
+$$
+\int_{\Omega} {v}_h \cdot \left( \nabla \cdot {\sigma}({u}_h) \right) \mathrm{d}{x} = 0,
 $$
 
 and then integrating by parts using the [divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem):
 
 $$
-\int_{\Omega} \nabla \boldsymbol{v} : \boldsymbol{\sigma}(\boldsymbol{u})  d\boldsymbol{x} = \int_{\partial \Omega} \boldsymbol{v} \cdot (\boldsymbol{\sigma}(\boldsymbol{u}) \cdot \boldsymbol{n})
-  d\boldsymbol{s}
+\int_{\Omega} \nabla v_h : {\sigma}(u_h)\, \mathrm{d}{x} = \int_{\partial \Omega} v_h \cdot ({\sigma}(u_h) \cdot {n})\, \mathrm{d}S
 $$
 
-The boundary is divided into two parts, the Dirichlet boundary and the Neumann boundary conditions. In this example problem, the boundary with attribute 1 has a Dirichlet Boundary condition whereas the rest have a Neumann boundary condition. The Neumann boundary is non-zero only on the boundary with attribute 2. Susbstituting these in our formulation, we obtain,
+The boundary is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogenous ($u = 0$) displacement boundary conditionm whereas the rest has a traction boundary condition. The traction boundary condition, ${\sigma} \cdot {n} = t$, is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$ in the above equation, we obtain,
 
 $$
-\int_{\Omega} \nabla \boldsymbol{v} : \boldsymbol{\sigma}(\boldsymbol{u})  d\boldsymbol{x} = \int_{\Gamma_N} \boldsymbol{v} \cdot \boldsymbol{f}  d\boldsymbol{s}
+\int_{\Omega} \lambda (\nabla\cdot u_h)(\nabla\cdot v_h) + \mu (\nabla u_h + \nabla {u}^T) : \nabla v_h \, \mathrm{d}{x} = \int_{\Gamma_T} v_h \cdot t\, \mathrm{d}S
+.
 $$
 
-Now using our constitutive law, which gives the relation between $\boldsymbol{\sigma}$ and the displacment field $\boldsymbol{u}$ in the above equation, testing it with basis functions and solving for $boldsymbol{u}_h$ ,Since the basis functions are known, we can rewrite (4) as
+Letting $e_i \in \mathbb{R}^n$ denote the standard Cartesian unit vectors and setting $v_h = \varphi_j e_i$, we can leverage the basis expansion formula (4) to rewrite (6) as
 
 $$
-\boldsymbol{A x} = \boldsymbol{b}
+{A x} = {b}
+.
 $$
 
 This is a $mn \times mn$ linear system that can be solved directly or iteratively
-for the unknown coefficients. Here, $m$ is the dimensionality of the solution field.  Note that we are free to choose the computational
+for the unknown coefficients.
+Note that we are free to choose the computational
 mesh and the basis functions $\varphi_i$, and therefore the finite space, as we
 see fit.
 
@@ -93,7 +95,7 @@ see fit.
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-The above is a basic introduction to finite elements in the simplest possible settings.
+The above is a basic introduction to finite elements in one of the simplest possible vectorial settings.
 To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</a> page.
 </div>
 </div>
@@ -104,15 +106,14 @@ To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</
 
 MFEM's Example 2 implements the above simple FEM for the Linear Elasticity problem consisting of two material domains 
 in the source file [examples/ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp).
-We set $f=-0.01$ and enforce our Dirichlet and Neumann boundary conditions on the whole boundary.
+We set $t=-0.01$ on the right-hand side of the domain and enforce the Dirichlet and Neumann boundary conditions over the corresponding subsets of the boundary.
 
 Below we highlight selected portions of the example code and connect them with
 the description in the previous section. You can follow along by browsing
 `ex2.cpp` in your VS Code browser window. In the settings of this tutorial, the
 visualization will automatically update in the GLVis browser window.
 
-The computational mesh is provided as input (option `-m`) that could be 3D, 2D,
-surface, triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to `beam-tri.mesh` in line
+The computational mesh is provided as input (option `-m`) that could be 2D or 3D domain made up of triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to `beam-tri.mesh` in line
 [50](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L50).) The code in
 lines [73-84](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L73-L84)
 loads the mesh from the given file, `mesh_file` and creates the corresponding MFEM
@@ -128,15 +129,6 @@ if (mesh->attributes.Max() < 2 || mesh->bdr_attributes.Max() < 2)
         << "two boundary attributes! (See schematic in ex2.cpp)\n"
         << endl;
     return 3;
-}
-```
-
-In the code lines [86-91](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L86-L91) [_NURBS_](https://en.wikipedia.org/wiki/Non-uniform_rational_B-spline) meshes are used to create more realistic arcs
-
-```c++
-if (mesh->NURBSext)
-{
-    mesh->DegreeElevate(order, order);
 }
 ```
 
