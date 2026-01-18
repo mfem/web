@@ -29,7 +29,7 @@ Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp
 
 ---
 
-[_Linear elasticity_](https://en.wikipedia.org/wiki/Linear_elasticity) is a vectorial partial differential equation (PDE) that models how solid materials deform and develop stress under applied forces. It is widely used to analyze the stress-strain behavior of structural and mechanical systems.
+[_Linear elasticity_](https://en.wikipedia.org/wiki/Linear_elasticity) is a vectorial partial differential equation (PDE) that models how elastic bodies deform and develop stress under applied forces. It is widely used to analyze the stress-strain behavior of structural and mechanical systems.
 Beginning from the [_Conservation of Linear Momentum_](https://en.wikipedia.org/wiki/Momentum#Conservation), we have
 
 $$
@@ -45,9 +45,9 @@ $$
 
 where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties. 
 
-To solve this system of equations numerically, we convert it into a discrete problem with a finite number of unknowns. The [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM) proceeds by constructing a linear combination of _basis functions_ to represent the solution over the domain.
+To solve this system of equations numerically, we convert it into a discrete problem with a finite number of unknowns. The [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM) proceeds by constructing a linear combination of _basis functions_ to represent the solution $u$ over the domain $\Omega\subset\mathbb{R}^n$.
 
-In particular, instead of calculating the exact analytic solution ${u}$, we approximate each component $u_i$ as
+In particular, instead of calculating the exact analytic solution, we approximate each component $u_i$ as
 
 $$
 u_i \approx u_{i,h} := \sum_{j=1}^{m} c_{ij} \varphi_{j},
@@ -58,37 +58,35 @@ functions, $\varphi_{j}$, which do not depend on $i$, are typically piecewise-po
 
 For this example problem, we compute a stationary, homogeneous solution to our PDE by setting the inertial term $\rho {\ddot{u}} = 0$ and neglecting the body force, $f = 0$.
 
-To solve for the unknown coefficients, $c_{ij}$, we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the Elasticity PDE. This is obtained by first multiplying with another test function ${v}$,
+To arrive an equation for the unknown coefficients $c_{ij}$, we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the PDE. This is obtained by substituting (3) into (1), followed multiplying with a test function ${v}_h$ and integrating over the domain $\Omega$,
 
 $$
-\int_{\Omega} {v}_h \cdot \left( \nabla \cdot {\sigma}({u}_h) \right) \mathrm{d}{x} = 0,
+\int_{\Omega} {v}_h \cdot \left( \nabla \cdot {\sigma}({u}_h) \right) \mathrm{d}{x} = 0.
 $$
 
-and then integrating by parts using the [divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem):
+After integrating by parts using the [divergence theorem](https://en.wikipedia.org/wiki/Divergence_theorem), we find
 
 $$
-\int_{\Omega} \nabla v_h : {\sigma}(u_h)\, \mathrm{d}{x} = \int_{\partial \Omega} v_h \cdot ({\sigma}(u_h) \cdot {n})\, \mathrm{d}S
+\int_{\Omega} \nabla v_h : {\sigma}(u_h)\, \mathrm{d}{x} = \int_{\partial \Omega} v_h \cdot ({\sigma}(u_h) \cdot {n})\, \mathrm{d}S.
 $$
 
-The boundary is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogenous ($u = 0$) displacement boundary conditionm whereas the rest has a traction boundary condition. The traction boundary condition, ${\sigma} \cdot {n} = t$, is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$ in the above equation, we obtain,
+The boundary of the domain, $\partial\Omega$, is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogenous ($u = 0$) displacement boundary condition, whereas the rest of the boundary has a traction boundary condition, ${\sigma} \cdot {n} = t$. In this problem, the traction force $t$ is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$, we obtain the weak formulation
 
 $$
-\int_{\Omega} \lambda (\nabla\cdot u_h)(\nabla\cdot v_h) + \mu (\nabla u_h + \nabla {u}^T) : \nabla v_h \, \mathrm{d}{x} = \int_{\Gamma_T} v_h \cdot t\, \mathrm{d}S
+\int_{\Omega} \lambda (\nabla\cdot u_h)(\nabla\cdot v_h) + \mu (\nabla u_h + \nabla {u}^T_h) : \nabla v_h \, \mathrm{d}{x} = \int_{\Gamma_T} v_h \cdot t\, \mathrm{d}S
 .
 $$
 
 Letting $e_i \in \mathbb{R}^n$ denote the standard Cartesian unit vectors and setting $v_h = \varphi_j e_i$, we can leverage the basis expansion formula (4) to rewrite (6) as
 
 $$
-{A x} = {b}
-.
+{A x} = {b},
 $$
 
-This is a $mn \times mn$ linear system that can be solved directly or iteratively
-for the unknown coefficients.
+with the vector $x\in\mathbb{R}^{nm}$ holding the unknown coefficients $c_{ij}$.
+This is a $mn \times mn$ linear system that can be solved directly or iteratively.
 Note that we are free to choose the computational
-mesh and the basis functions $\varphi_i$, and therefore the finite space, as we
-see fit.
+mesh and the basis functions $\varphi_i$ as we see fit.
 
 <div class="panel panel-info">
 <div class="panel-heading">
@@ -104,20 +102,20 @@ To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 2
 
-MFEM's Example 2 implements the above simple FEM for the Linear Elasticity problem consisting of two material domains 
-in the source file [examples/ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp).
-We set $t=-0.01$ on the right-hand side of the domain and enforce the Dirichlet and Neumann boundary conditions over the corresponding subsets of the boundary.
+The source file [examples/ex2.cpp](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp) implements the above FEM for a beam-shaped body consisting of two adjacent material subdomains.
+In particular, it sets $t=-0.01$ on the right-hand side of the boundary and enforces the Dirichlet and Neumann boundary conditions over the other corresponding subsets of the boundary.
 
 Below we highlight selected portions of the example code and connect them with
 the description in the previous section. You can follow along by browsing
 `ex2.cpp` in your VS Code browser window. In the settings of this tutorial, the
 visualization will automatically update in the GLVis browser window.
 
+MFEM uses `attributes` and `bdr_attributes` to distinguish between subdomains and subsets of the domain boundary, respectively.
 The computational mesh is provided as input (option `-m`) that could be 2D or 3D domain made up of triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to `beam-tri.mesh` in line
 [50](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L50).) The code in
 lines [73-84](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L73-L84)
 loads the mesh from the given file, `mesh_file` and creates the corresponding MFEM
-pointer `*mesh` of class `Mesh`. It then checks that the mesh file uploaded has atleast two different materials and corresponding number of boundary attributes.
+pointer `*mesh` of class `Mesh`. It then checks that the mesh file uploaded has at least two different materials and correct number of boundary attributes.
 
 ```c++
 Mesh *mesh = new Mesh(mesh_file, 1, 1);
@@ -147,15 +145,11 @@ for (int l = 0; l < ref_levels; l++)
 }
 ```
 
-In the next section we create the finite element space, i.e., specify the finite
+In the next block of code, lines [106-124](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L106-L124), we create the finite element space, i.e., specify the finite
 element basis functions $\varphi_j$ on the mesh.  This involves the MFEM classes
 `FiniteElementCollection`, which specifies the space (including its `order`,
 provided as input via `-o`), and `FiniteElementSpace`, which connects the space
-and the mesh. Vector valued finite elements are used for this example, by specifying it in the last argument of `FiniteElementSpace`. If we are using `NURBS` meshes, we use the `NURBS` space associated with our mesh
-
-The code in lines
-[106-124](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L106-L124)
-is essentially:
+and the mesh. The dimension of the vector-valued finite elements are specified in the last argument of `FiniteElementSpace`. If we are using `NURBS` meshes, we use the `NURBS` space associated with our mesh.
 
 ```c++
 if (mesh->NURBSext)
@@ -171,13 +165,13 @@ else
 cout << "Number of finite element unknowns: " << fespace->GetTrueVSize() << endl << "Assembling: " << flush;
 ```
 
-The printed number of finite element unknowns (typically) corresponds to the
+The printed number of finite element unknowns corresponds to the
 size of the linear system $mn$ from the previous section.
 
 The finite element degrees of freedom that are on the domain boundary are then
 extracted in lines
 [126-133](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L126-L133).
-The Dirichlet boundary conditions are then imposed only on the boundary with attribute 1 as the rest are subjected to Neumann boundary conditions.
+The Dirichlet boundary conditions are then imposed only on the boundary with the first boundary attribute, while the rest are given to Neumann boundary conditions.
 
 ```c++
 Array<int> ess_tdof_list, ess_bdr(mesh->bdr_attributes.Max());
@@ -192,9 +186,10 @@ to the marked attributes (the non-zero entries of `ess_bdr`).
 
 The right-hand side $b$ is constructed in lines
 [135-158](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L135-L158).
-In MFEM terminology, integrals of the form in the right hand side of the weak form are implemented in the
-class `LinearForm`. The `pull_force` object corresponds to $f$ from the
-previous section, which here is set to $-0.01$. The force on the boundary is specieid as a vector coefficient using the `VectorArayCoefficient` object. Piecewise constant coefficients `PWConstCoefficient` is used as f is non-zero on one of the boundaries. 
+In MFEM terminology, integrals of the form in the right hand side of (6) are implemented using the `AddBoundaryIntegrator` function in the class `LinearForm`.
+We now define the traction force over the entire boundary using a `VectorArrayCoefficient` object.
+To this end, a `pull_force` vector is created, which specifies the vertical component of the pointwise traction force for each boundary attribute. Note that `pull_force` is only non-zero for the final boundary attribute, which corresponds to the right-hand beam boundary.
+This vector is used to create a piecewise constant coefficient corresponding to the vertical component of the traction force density.
 
 ```c++
 VectorArrayCoefficient f(dim);
@@ -215,8 +210,7 @@ cout << "r.h.s. ... " << flush;
 b->Assemble();
 ```
 
-The finite element approximation $u_h$ is described in MFEM as a `GridFunction`
-belonging to the `FiniteElementSpace`. Note that a `GridFunction` object can be
+The finite element approximation $u_h$ resides in the MFEM `GridFunction` object `x` associated to the vector-valued `FiniteElementSpace` `fespace`. Note that a `GridFunction` object can be
 viewed both as the function $u_h$ in (2) as well as the vector of degrees of
 freedom $x$ in (8). See lines
 [160-164](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L160-L164).
@@ -227,11 +221,13 @@ x = 0.0;
 ```
 
 We need to initialize `x` with the boundary values we want to impose as Dirichlet
-boundary conditions (for simplicity, here we just set `x=0` in the whole domain).
+boundary conditions.
+Since we wish to assign zero-displacement boundary conditions on the only Dirichlet part of the boundary, we simple set `x=0.0` in the whole domain.
 
-Now to start forming the bilinear form, we first start by defining the Lame parameters  using `PWConstCoefficient` to specify different material properties in different
-portions of the domain. The matrix $A$ is represented as a `BilinearForm` object, with a specific
-`ElasticityIntegrator` corresponding to the weak form. See lines
+We now move on to assembling the bilinear form.
+We start by defining the Lamé parameters using the `PWConstCoefficient` class to specify different Lamé parameters in the two different
+segments of the beam. The left-hand side of (6) is represented as a `BilinearForm` object, with
+`ElasticityIntegrator` corresponding to the specific bilinear form. See lines
 [166-187](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L166-L187).
 
 ```c++
@@ -246,7 +242,7 @@ a->Assemble();
 
 MFEM supports different assembly levels for $A$  and many different [integrators](https://mfem.org/bilininteg/). Here we use the static condensation transformation to reduce the size of our original system to the remaining interfacial unknowns and assemble it.
 
-The linear system is formed in lines
+The linear system (7) is formed and solved in lines
 [189-207](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L189-L207):
 
 ```c++
@@ -264,7 +260,7 @@ The method `FormLinearSystem` takes the `BilinearForm`, `LinearForm`,
 applies any necessary transformations such as eliminating boundary conditions
 (specified by the boundary values of `x`, applying conforming constraints for
 non-conforming AMR, static condensation, etc.); and produces the corresponding
-matrix $A$, right-hand side vector $B$, and unknown vector $X$.
+matrix `A`, right-hand side vector `B`, and unknown vector `X`.
 
 In the above example, we then solve `A X = B` with
 [conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iterations,
@@ -353,12 +349,12 @@ pcg->Mult(B, X);
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Unlike in the serial version, we expect the number of PCG iterations to remain
-relatively bounded with the <code>BoomerAMG</code> preconditioner independent of
-the mesh size, coefficient jumps, and number of MPI ranks. Note, however, that
+Unlike in the serial version, we expect the number of PCG iterations to be
+independent, or grow modestly, with respect to
+the mesh size, coefficient jumps, and number of MPI ranks when using the <code>BoomerAMG</code> preconditioner. Note, however, that
 algebraic multigrid has a non-trivial setup phase, which can be comparable in
 terms of time with the PCG solve phase. For more details, see the
-<a href="../solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+<a href="../../tutorial/solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
 page.
 </div> </div>
 
