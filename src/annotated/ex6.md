@@ -35,10 +35,10 @@ Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp
 
 The [_Poisson Equation_](https://en.wikipedia.org/wiki/Poisson's_equation) is a
 partial differential equation (PDE) that can be used to model steady-state heat
-conduction, electric potentials, and gravitational fields. In mathematical terms
+conduction, electric potentials, and gravitational fields. In mathematical terms, we write
 
 $$
--\Delta u = f
+-\Delta u = f,
 $$
 
 where _u_ is the potential field and _f_ is the source function. This PDE is a
@@ -111,9 +111,8 @@ To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</
 
 ---
 ### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive Mesh Refinement (AMR)
-<!-- Prathik -->
 
-Adaptive mesh refinement (AMR) method has been widely used in scientific computing to get better accuracy with minimum degrees of freedom. Instead of uniformly refining the mesh, AMR dynamically refines the mesh only in regions where the solution requires higher resolution.
+Adaptive mesh refinement (AMR) method has been widely used in scientific computing to get better accuracy with minimal degrees of freedom. Instead of uniformly refining the mesh, AMR only refines the mesh in regions where the solution requires higher resolution.
 
 The main ideas behind AMR are:
 
@@ -123,7 +122,7 @@ The main ideas behind AMR are:
 
 - **Equidistribution of error** 
 
-   After sufficient refinement, the discretization error should be approximately uniform across the elements, optimizing resource usage.
+   After sufficient refinement, the discretization error should be approximately uniform across all elements, optimizing resource usage.
 
 - **Efficiency**
 
@@ -153,23 +152,20 @@ for all $v_h \in V_h.$
    For each element K, compute the local error indicator $\eta_K$ (explained in detail in next section).
 
 3. **Mark:**
-   Select elements K where $\eta_K$ is relatively large.
-
+   Select elements K where $\eta_K$ is relatively large. For instance, marking only the elements $K \in T_h$ satisfying
 $$
-\eta_K > \theta \max_{K' \in T_h} \eta_{K'}
+\eta_K > \theta \max_{K' \in T_h} \eta_{K'},
 $$
-
-   Where $\theta \in (0,1)$ controls the maximum fraction of error. This ensure elements with reltively large errors are refined.
+   where $\theta \in (0,1)$ controls the maximum fraction of error. This ensures that only the elements with relatively large errors are refined.
 
 4. **Refine:**
-   Refine the selected elements to create a new mesh $T_h'$. A conforming refinement is used for triangles/ tetrahedra, and a non-conforming refinement is used for quadrilaterals/ hexahedrals.
+   Refine the selected elements to create a new mesh $T_h'$. A conforming refinement is used for triangles/tetrahedra, and a non-conforming refinement is used for quadrilaterals/hexahedrals.
 
 5. **Transfer:**
    Interpolate or project $u_h$ onto the new finite element space $V_h'$.
 
 6. **Repeat:**
-    Solve \rightarrow Estimate \rightarrow Mark \rightarrow Refine \rightarrow Transfer 
-
+    Solve $\rightarrow$ Estimate $\rightarrow$ Mark $\rightarrow$ Refine $\rightarrow$ Transfer 
    until convergence is achieved or a target number of degrees of freedom (DoFs) is reached.
 
 **References**
@@ -178,6 +174,7 @@ $$
 - Berger, M.J. and Colella, P., 1989. Local adaptive mesh refinement for shock hydrodynamics. Journal of computational Physics, 82(1), pp.64-84.
 
 ---
+
 ### <i class="fa fa-check-square-o"></i>&nbsp; Zienkiewicz–Zhu (ZZ) Error Estimator
 The [_Zienkiewicz–Zhu (ZZ) error estimator_](https://docs.mfem.org/html/classmfem_1_1ZienkiewiczZhuEstimator.html) is a popular recovery-based a posteriori error indicator for finite element solutions. It works by comparing the raw finite-element gradient (or stress) field to a “smoothed” (recovered) field and using their difference as an estimate of the local discretization error.
 
@@ -190,14 +187,13 @@ $$
 $$
 
 - **Recovery**  
-   Build a higher-quality, continuous gradient field $\nabla u^*$ (or $\sigma^*$) by fitting a patch-wise polynomial through neighboring element values or applying a weighted averaging of nodal slopes.  
+   Build a higher-quality, continuous gradient field $\nabla u^\ast$ (or $\sigma^\ast$) by fitting a patch-wise polynomial through neighboring element values or applying a weighted averaging of nodal slopes.  
 
 - **Local Error Indicator**  
    On each element $K$, define  
-
 $$
-\eta_K = \|\nabla u^* - \nabla u_h\|_{L^2(K)}  
-\quad\bigl(\text{or } \|\sigma^* - \sigma_h\|\bigr).
+\eta_K = \\|\nabla u^\ast - \nabla u_h\\|_{L^2(K)}  
+\quad\bigl( \text{or } \\|\sigma^\ast - \sigma_h\\| \bigr).
 $$
 
 - **Global Estimate**  
@@ -216,8 +212,8 @@ $$
 #### Typical Workflow
 
 - Solve the PDE with your chosen finite element discretization.  
-- Compute elementwise gradients $\nabla u_h$.  
-- Recover a smoothed gradient $\nabla u^*$.  
+- Compute element-wise gradients $\nabla u_h$ or stresses $\sigma_h$.  
+- Recover a smoothed gradient $\nabla u^*$ or stress $\sigma^\ast$.  
 - Estimate $\eta_K$ on each element and mark for refinement.  
 - Refine mesh elements with largest $\eta_K$ and repeat.
 
@@ -227,7 +223,6 @@ $$
 [2] Zienkiewicz, O.C. and Zhu, J.Z., The superconvergent patch recovery and a posteriori error estimates. Part 2: Error estimates and adaptivity. Int. J. Num. Meth. Engng. 33, 1365-1382 (1992).
 
 ---
-
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 6
 
@@ -247,9 +242,11 @@ Below is the classification of each mesh file used in the sample runs, indicatin
 | `square-disc-surf.mesh`     | 2D surface  | triangles                     | conforming        |
 | `amr-quad.mesh`             | 2D          | quadrilaterals                | non-conforming    |
 
-MFEM's Example 6 implements the Laplace equation $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions, enriched by a simple adaptive mesh refinement (AMR) loop. The refinements can be conforming (triangles, tetrahedra) or non-conforming (quadrilaterals, hexahedra) based on a Zienkiewicz–Zhu (ZZ) error estimator. Example 6 demonstrates MFEM’s support for 2D/3D, linear/curved and surface meshes, as well as function interpolation between coarse and refined meshes and persistent GLVis visualization.  We recommend reviewing Example 1 before this example. The source file is [examples/ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp).
+MFEM's Example 6 implements the Laplace equation $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions, enriched by a simple adaptive mesh refinement (AMR) loop. The refinements can be conforming (triangles, tetrahedra) or non-conforming (quadrilaterals, hexahedra) based on a Zienkiewicz–Zhu (ZZ) error estimator. Example 6 demonstrates MFEM’s support for 2D/3D, linear/curved and surface meshes, as well as function interpolation between coarse and refined meshes and persistent GLVis visualization. The source file is [examples/ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp).
 
 Below we highlight selected portions of the example code and connect them with the description above. You can follow along by opening `ex6.cpp` in your editor. In the settings of this tutorial, the visualization will automatically update in the GLVis browser window.
+
+---
 
 #### The Mesh
 
@@ -258,7 +255,7 @@ pipe-nurbs.mesh`.
 
 <img src="../img/ex6_1.png" width="300">
 
-The code in lines [94-96](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L94-96)
+The code in [lines 94-96](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L94-96)
 loads the mesh from the given file, `mesh_file` and creates the corresponding
 MFEM object `mesh` of class `Mesh`.
 ```c++
@@ -266,7 +263,7 @@ Mesh mesh(mesh_file, 1, 1);
 int dim  = mesh.Dimension();
 int sdim = mesh.SpaceDimension();
 ```
-If the mesh is NURBS, it is uniformly refined twice and then converted to a quadratic curved mesh (lines [101-108](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L101-108)):
+If the mesh is NURBS, it is uniformly refined twice and then converted to a quadratic curved mesh ([lines 101-108](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L101-108)):
 ```c++
 if (mesh.NURBSext)
 {
@@ -278,19 +275,27 @@ if (mesh.NURBSext)
 }
 ```
 
+---
+
 #### Defining Variables and Spaces
-In the next section we create the finite element space, i.e., specify the finite element basis functions on the mesh. This involves the MFEM class and `FiniteElementSpace`, which connects the space and the mesh. The code in lines [112-113](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L112-113) is essentially:
+In the next block of code, we create the finite element space, i.e., specify the finite element basis functions on the mesh. This involves the MFEM class and `FiniteElementSpace`, which connects the space and the mesh. The code in [lines 112-113](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L112-113) is essentially:
 
 ```c++
 H1_FECollection fec(order, dim);
 FiniteElementSpace fespace(&mesh, &fec);
 ```
 
+---
+
 #### Set up the error estimator
-We use the metioned ZZ error estimator in lines [160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)
-- **Error Estimator**  
-  - `ZienkiewiczZhuEstimator`: computes element errors by subtracting a “smoothed” gradient (recovered via `DiffusionIntegrator`) from the original.  
+We use the mentioned ZZ error estimator in [lines 160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)
+
+**ErrorEstimator**  
+
+  - `ZienkiewiczZhuEstimator`: computes element errors by subtracting a “smoothed” gradient (recovered via `DiffusionIntegrator`) from the original.
+
   - `LSZienkiewiczZhuEstimator`: a least‐squares variant activated with `-ls`, useful for certain mesh types.  
+  
   - In 3D on non-hexahedral meshes, Tikhonov regularization improves conditioning.
 
 ```c++
@@ -310,20 +315,24 @@ if (LSZZ)
       dynamic_cast<ZienkiewiczZhuEstimator *>(estimator)->SetAnisotropic();
    }
 ```
-We create a threshold refiner to determine when to refine the mesh (lines [180-181](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)).
-- **ThresholdRefiner**  
-  - `SetTotalErrorFraction(0.7)`: marks elements whose cumulative error reaches 70% for refinement.  
+We create a threshold refiner to determine when to refine the mesh ([lines 180-181](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)).
+
+**ThresholdRefiner**  
+
+  - `SetTotalErrorFraction(0.7)`: marks elements whose cumulative error reaches 70% for refinement. This corresponds to setting $\theta=0.7$ in (10).
+
   - Supports both conforming (tri/tet) and non-conforming (quad/hex) refinements.
 ```c++
 ThresholdRefiner refiner(*estimator);
 refiner.SetTotalErrorFraction(0.7);
 ```
 
+---
 
 #### Adaptive Mesh Refinement loop
 
-The main AMR loop (in lines [185–275](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–275)). The process can be summarized as several steps.
-1. Iteration start & logging  (lines [185-189](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–189)). This begins a new AMR iteration, retrieve the current number of true DoFs (cdofs) and print iteration index and DoF count. 
+The main AMR loop (in [lines 185–275](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–275)). The process can be summarized as several steps.
+1. Iteration start & logging  ([lines 185-189](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–189)). This begins a new AMR iteration, retrieve the current number of true DoFs (cdofs) and print iteration index and DoF count. 
 ```c++
 for (int it = 0; ; it++)
 {
