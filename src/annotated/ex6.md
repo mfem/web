@@ -290,7 +290,7 @@ FiniteElementSpace fespace(&mesh, &fec);
 #### Set up the error estimator
 We use the mentioned ZZ error estimator in [lines 160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)
 
-**ErrorEstimator**  
+***ErrorEstimator***  
 
   - `ZienkiewiczZhuEstimator`: computes element errors by subtracting a “smoothed” gradient (recovered via `DiffusionIntegrator`) from the original.
 
@@ -317,7 +317,7 @@ if (LSZZ)
 ```
 We create a threshold refiner to determine when to refine the mesh ([lines 180-181](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)).
 
-**ThresholdRefiner**  
+***ThresholdRefiner***  
 
   - `SetTotalErrorFraction(0.7)`: marks elements whose cumulative error reaches 70% for refinement. This corresponds to setting $\theta=0.7$ in (10).
 
@@ -331,8 +331,11 @@ refiner.SetTotalErrorFraction(0.7);
 
 #### Adaptive Mesh Refinement loop
 
-The main AMR loop (in [lines 185–275](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–275)). The process can be summarized as several steps.
-1. Iteration start & logging  ([lines 185-189](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–189)). This begins a new AMR iteration, retrieve the current number of true DoFs (cdofs) and print iteration index and DoF count. 
+[Lines 185–275](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–275) comprise the main AMR loop. The process can be summarized as a sequence of several steps.
+
+**Iteration start & logging**
+
+This begins a new AMR iteration, retrieving the current number of true DoFs (cdofs) and printing the iteration index and DoF count. 
 ```c++
 for (int it = 0; ; it++)
 {
@@ -340,7 +343,10 @@ for (int it = 0; ; it++)
    cout << "\nAMR iteration " << it << endl;
    cout << "Number of unknowns: " << cdofs << endl;
 ```
-2. Assemble the right-hand side, stiffness matrix and apply Dirichlet boundary conditions (lines [192-201](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L192-201)).
+
+**Assembly and interpolation**
+
+Assemble the right-hand side and stiffness matrix and interpolate the Dirichlet boundary conditions onto the `GridFunction` `x`.
 ```c++
 b.Assemble();
 // 14. Set Dirichlet boundary values in the GridFunction x.
@@ -359,7 +365,9 @@ a.Assemble();
 
 **Forming the linear system**
 
-The linear system is formed (in lines [206-210](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L206-210)), solved (in lines [218-231](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L218-231)), and the solution is recovered through the following steps (in line [236](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L236)):
+The linear system is formed ([lines 206-210](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L206-210)), solved ([lines 218-231](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L218-231)), and the solution is recovered through the following steps ([line 236](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L236)):
+
+The method `FormLinearSystem` takes the bilinear form `a`, linear form `b`, current solution `x`, and a list of essential boundary degrees of freedom `ess_tdof_list`. It eliminates boundary conditions, handles any constraints, and sets up the system for the true degrees of freedom only. The flag `copy_interior = 1` ensures that the interior (unconstrained) DOFs are copied properly for consistency.
 
 ```c++
 OperatorPtr A;
@@ -367,11 +375,24 @@ Vector B, X;
 const int copy_interior = 1;
 a.FormLinearSystem(ess_tdof_list, x, b, A, X, B, copy_interior);
 ```
-The method `FormLinearSystem` takes the bilinear form a, linear form b, current solution x, and a list of essential boundary degrees of freedom `ess_tdof_list`. It eliminates boundary conditions, handles any constraints, and sets up the system for the true degrees of freedom only. The flag `copy_interior = 1` ensures that the interior (unconstrained) DOFs are copied properly for consistency.
 
 This process produces `A` (the assembled system matrix), `B` (the right-hand side vector), `X` (the unknowns vector to solve for).
 
-**Solving the linear system:**
+**Solving the linear system**
+
+There are two solving strategies depending on whether partial assembly (`pa`) is enabled:
+
+***Full Assembly Mode (`pa == false`)***
+
+- If MFEM is not compiled with `SuiteSparse`, a symmetric **Gauss-Seidel smoother (`GSSmoother`)** is used as a preconditioner for a preconditioned conjugate gradient (`PCG`) solver.
+
+- If MFEM is compiled with `SuiteSparse`, the system is solved directly using the **`UMFPackSolver`** (a direct sparse solver with METIS ordering for efficiency).
+
+***Partial Assembly Mode (`pa == true`)*** 
+
+- A simple diagonal (Jacobi) preconditioner (**`OperatorJacobiSmoother`**) is used.
+
+- `PCG` is used with more iterations allowed (up to 2000 iterations) since partial assembly typically results in slightly less robust preconditioning.
 
 ```c++
 if (!pa)
@@ -395,25 +416,17 @@ else
 }
 ```
 
-There are two solving strategies depending on whether partial assembly (`pa`) is enabled:
+**Recovering the finite element solution**
 
-**Full Assembly Mode (`pa == false`)** 
-- If MFEM is not compiled with `SuiteSparse`, a symmetric **Gauss-Seidel smoother (`GSSmoother`)** is used as a preconditioner for a preconditioned conjugate gradient (`PCG`) solver.
-- If MFEM is compiled with `SuiteSparse`, the system is solved directly using the **`UMFPackSolver`** (a direct sparse solver with METIS ordering for efficiency).
-
-**Partial Assembly Mode (`pa == true`)** 
-- A simple diagonal (Jacobi) preconditioner (**`OperatorJacobiSmoother`**) is used.
-- `PCG` is used with more iterations allowed (up to 2000 iterations) since partial assembly typically results in slightly less robust preconditioning.
-
-**Recovering the finite element solution:**
+After solving the system for the true DOFs `X`, the full finite element solution `x` is reconstructed. Constrained DOFs (like boundary conditions or hanging nodes) are interpolated appropriately. As a result, `x.Size()` may be larger than `X.Size()`.
 
 ```c++
 a.RecoverFEMSolution(X, b, x);
 ```
 
-After solving the system for the true DOFs `X`, the full finite element solution `x` is reconstructed. Constrained DOFs (like boundary conditions or hanging nodes) are interpolated appropriately. As a result, `x.Size()` may be larger than `X.Size()`.
+**Termination condition**
 
-**Termination condition (in lines [245-249](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L245-249)):**
+The loop terminates if the number of degrees of freedom exceeds a preset `limit max_dofs`, ensuring that the refinement or solution process doesn't consume too much memory or computation time.
 
 ```c++
 if (cdofs > max_dofs)
@@ -423,12 +436,12 @@ if (cdofs > max_dofs)
 }
 ```
 
-The loop terminates if the number of degrees of freedom exceeds a preset `limit max_dofs`, ensuring that the refinement or solution process doesn't consume too much memory or computation time.
-
 
 **Adaptive refinement loop**
 
-After solving the linear system, the mesh is refined adaptively based on error estimation (in lines [255-260](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L255-260)), and the finite element space and solution are updated (in lines [268-269](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L268-269)) accordingly:
+After solving the linear system, the mesh is refined adaptively ([lines 255-260](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L255-260)) using on the marking strategy (10), and the finite element space and solution are updated ([lines 268-269](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L268-269)) accordingly.
+
+The method `refiner.Apply(mesh)` first computes local error indicators using the error estimator, then selects elements for refinement based on a marking strategy. It refines the selected elements to be subdivided in order to improve solution accuracy ($h$-refinement). After refinement, `refiner.Stop()` checks if a stopping criterion, such as reaching a target error level or maximum mesh size, has been met, and exits the loop if necessary.
 
 ```c++
 refiner.Apply(mesh);
@@ -438,32 +451,30 @@ if (refiner.Stop())
     break;
 }
 ```
-The method `refiner.Apply(mesh)` first computes local error indicators using the error estimator, then selects elements for refinement based on a marking strategy. It refines the selected elements (h-refinement) to improve solution accuracy. After refinement, `refiner.Stop()` checks if a stopping criterion, such as reaching a target error level or maximum mesh size, has been met, and exits the loop if necessary.
 
-**Update the finite element space and solution:**
+**Update the finite element space and solution**
 
-```c++
-
-fespace.Update();
-x.Update();
-
-```
 After mesh refinement, `fespace.Update()` updates the finite element space to match the new mesh and computes an interpolation matrix. Then, `x.Update()` uses this matrix to transfer the old solution onto the new space, providing a good initial guess that helps reduce solver iterations in the next step.
 
-**Update bilinear and linear forms (in lines [273-274](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L273-274)) :**
+```c++
+fespace.Update();
+x.Update();
+```
+
+**Update bilinear and linear forms**
+
+The methods `a.Update()` and `b.Update()` rebuild the internal data structures associated with the new mesh and finite element space.
 
 ```c++
 a.Update();
 b.Update();
 ```
 
-`a.Update()` and `b.Update()` rebuild the internal data structures associated with the new mesh and finite element space.
-
-Finally, after the refinement loop is completed, the error estimator object is deleted to free memory (in line [277](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L277)).
-
-The figure is an example of refinement for example `pipe-nurbs.mesh`
+Finally, after the refinement loop is completed, the error estimator object is deleted to free memory ([line 277](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L277)).
 
 <img src="../img/ex6_2.png" width="1000">
+
+The figure above comes from running `ex6.cpp` with the mesh `pipe-nurbs.mesh`.
 
 ---
 
