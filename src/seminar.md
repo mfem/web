@@ -12,6 +12,27 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/empty.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### David Moxey and Edward Erasmie-Jones (King’s College London)
+##### *TBD*
+##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/beck.jpg)
@@ -20,20 +41,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Andrea Beck (University of Stuttgart)
 ##### *Efficient solution strategies for multiscale flow problems: combining adaptive high order discretizations, models and data*
-##### [**9:00am PDT, February 2, 2026**](https://everytimezone.com/s/8961d076)
+##### February 2, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/beck.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Multiscale and multiphysics problems are typically governed by a wide range of interacting temporal and spatial scales, with different physical processes often dominating the opposing ends of the scale range. The simulation of these phenomena requires highly accurate and efficient numerical schemes that should allow for adaptive and flexible discretization strategies to tailor the approximation scheme to the locally dominating physical effect. Still, for practical applications, the occurring scale range in relevant engineering applications typically remains too immense even for well-parallelized simulations on nascent exascale architectures. Here, scale-bridging models must supplement upscaled governing equations to enable simulations of for example turbulent flows, flows with phase interfaces and so on.
 <br> In this talk, I will present contributions and recent advances to both fields: First, I will discuss highly accurate and locally adaptive numerical schemes based on DGSEM for solving the compressible Navier-Stokes equations on pre-exascale systems and beyond with a focus on applications in the aerospace engineering sector. In the second part of my talk, I will discuss how and where (and where not) machine learning methods can help devise the necessary scale bridging models that are numerically and mathematically consistent and provide examples of successful CFD/ML hybrid applications.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
-</div><div class="col-md-12" markdown="1">
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1346,11 +1365,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### David Moxey and Edward Erasmie-Jones (King’s College London)
-##### **February 10, 2026**
-
----
 
 #### Ido Akkerman (Delft university of Technology)
 ##### **March 10, 2026**
