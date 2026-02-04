@@ -20,7 +20,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### David Moxey and Edward Erasmie-Jones (King's College London)
 ##### *NektarIR: A Domain-Specific Compiler for High-Order Finite Element Operations on Heterogeneous Hardware*
-##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com)
+##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com/s/0d0294f8)
 
 [<button type="button" class="btn btn-success">
 **Webex**
