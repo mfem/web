@@ -4,16 +4,16 @@
 ------------ | -----------------------------------------------------------------
 **Dec 11, 2025** | *Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).*
 **Nov 22, 2025** | *[2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) awarded to [research](https://arxiv.org/pdf/2504.16344) using MFEM to achieve the largest known finite element simulation.*
-**Nov 13, 2025** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of the [2025 Workshop](workshop.md), held on September 10-11.*
+**Nov 13, 2025** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of the [2025 Workshop](workshop25.md), held on September 10-11.*
 **Oct 8, 2025** | *[Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)***
 **Sep 18, 2025** | *[PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0)*
-**Sep 10, 2025** | *2025 [MFEM community workshop](workshop.md).*
+**Sep 10, 2025** | *2025 [MFEM community workshop](workshop25.md).*
 **Sep 9, 2025** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials) series.*
-**Apr 29, 2025** | *Fifth annual [MFEM workshop](workshop.md) announced (Sept 2025).*
+**Apr 29, 2025** | *Fifth annual [MFEM workshop](workshop25.md) announced (Sept 2025).*
 **Apr 15, 2025** | *MOOSE [incorporates MFEM](https://github.com/idaholab/moose/pull/29633) as a finite element backend.*
 **Apr 9, 2025** | *Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).*
 **Nov 25, 2024** | *[Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2024) of the [2024 Workshop](workshop24.md), held on October 22-24.*
-**Oct 22, 2024** | *2024 [MFEM community workshop](workshop.md).*
+**Oct 22, 2024** | *2024 [MFEM community workshop](workshop24.md).*
 **Jun 5, 2024** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [HPCIC Tutorial](https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials) series.*
 **May 7, 2024** | *Version 4.7 [released](https://github.com/mfem/mfem/blob/v4.7/CHANGELOG).*
 **May 2, 2024** |  *New MFEM [paper](https://arxiv.org/abs/2402.15940) to appear in the International Journal of High Performance Computing Application.*
@@ -21,7 +21,7 @@
 **Oct 26, 2023** | *2023 [MFEM community workshop](workshop23.md).*
 **Sep 27, 2023** | *Version 4.6 [released](https://github.com/mfem/mfem/blob/v4.6/CHANGELOG).*
 **Sep 11, 2023** | *MFEM now available in [Homebrew](https://formulae.brew.sh/formula/mfem).*
-**Jul 17, 2023** | *The third [MFEM Community Workshop](workshop.md) will take place on October 26th, 2023.*
+**Jul 17, 2023** | *The third [MFEM Community Workshop](workshop23.md) will take place on October 26th, 2023.*
 **Jul 11, 2023** | *MFEM in the cloud [tutorial](tutorial/index.md) as part of the [RADIUSS AWS Tutorial](https://software.llnl.gov/radiuss/event/2023/07/11/radiuss-on-aws/) series.*
 **Apr 11, 2023** | *GitHub ReadME project [article](https://github.com/readme/featured/nuclear-fusion-open-source) on open-source software for fusion mentions MFEM.*
 **Mar 23, 2023** | *Version 4.5.2 [released](https://github.com/mfem/mfem/blob/v4.5.2/CHANGELOG).*
