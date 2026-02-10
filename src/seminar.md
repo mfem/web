@@ -12,6 +12,27 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/akkerman.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+##### **March 10, 2026**
+#### Ido Akkerman (Delft university of Technology)
+##### *Title*
+##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com/s/33982442)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-6" markdown="1">
 
 ![](img/seminar/moxey+erasmie-jones.jpg)
@@ -20,18 +41,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### David Moxey and Edward Erasmie-Jones (King's College London)
 ##### *NektarIR: A Domain-Specific Compiler for High-Order Finite Element Operations on Heterogeneous Hardware*
-##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com/s/0d0294f8)
+##### February 10, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/moxey+erasmie-jones.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** The transition to heterogeneous or GPU-dominated hardware in high-performance computing (HPC) infrastructure has highlighted the need for hardware-extensible implementations of HPC applications in scientific computing and AI. Ensuring that these implementations are optimised for the specific hardware target poses a significant challenge, as the optimisation process requires specific hardware-level knowledge that is not only outside the scientific domain but also varies across different hardware types and vendors. In this talk, we present some of the approaches being used to enable this transition within the Nektar++ framework, which aims to present an interface for the development of solvers based on the spectral/hp element method. We first focus on our present redevelopment efforts to enable Nektar++ to transition from solely CPU to GPU architectures. Here, we have a particular interest in the performance of matrix-free operators for unstructured three-dimensional meshes of different element types (e.g. tetrahedra, prisms). These are a critical component in the simulation of problems that involve complex geometries, which is a key focus of our framework.
 <p> In the second half of the talk, we present a second approach that is designed to provide longer-term flexibility for Nektar++, and potentially other software frameworks based on the high-order finite element method. This project, NektarIR, is a domain-specific compiler for high-order finite element operations on CPU and GPU hardwares. Using the MLIR project, we have created an intermediate representation of a high-level abstraction of the operations that is rewritten and lowered through a series of passes to optimised and hardware-specific kernels. These kernels are then just-in-time (JIT) compiled for the specific hardware and architecture using LLVM and can be used in the construction of spectral/hp element solvers for computational fluid dynamics. We present benchmarks for the overhead introduced by our compiler pipeline and a run-time performance comparison of our kernels against the Nektar++ spectral/hp element framework.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1365,11 +1386,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Ido Akkerman (Delft university of Technology)
-##### **March 10, 2026**
-
----
 
 #### Jed Brown (CU Boulder)
 ##### **April 7, 2026**
