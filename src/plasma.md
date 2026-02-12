@@ -132,7 +132,7 @@ $$
 Where the anisotropic $\epsilon$ provides the coupling between these
 three equations.
 
-The four most simple solutions in 1D occur when the background
+The four most straightforward solutions in 1D occur when the background
 magnetic field is either parallel or perpendicular to the 1D
 domain. In addition to the direction of propagation each configuration
 supports two distinct polarizations. In each case the plane wave
@@ -254,6 +254,10 @@ $$-\div\left(\kappa\grad\varphi\right) = \rho$$
 
 with various source functions, $\rho$, and/or boundary conditions,
 $\varphi\|\_\Gamma = \varphi_\{BC}$.
+
+### Unnamed Anisotropic Thermal Diffusion Mini Application
+
+Under development...
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
