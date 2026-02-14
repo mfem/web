@@ -36,7 +36,7 @@ $$
 \nabla \cdot {\sigma({u})} + f = \rho {\ddot{u}},
 $$
 
-where ${u} \in \mathbb{R}^n$ is the vector-valued displacement field, ${\sigma}$ is the [_stress tensor_](https://en.wikipedia.org/wiki/Cauchy_stress_tensor), $f$ is the body force per unit volume and $\rho$ is the material density.
+where ${u} \in \mathbb{R}^n$ ($n = 2$ or $3$) is the vector-valued displacement field, ${\sigma}$ is the [_stress tensor_](https://en.wikipedia.org/wiki/Cauchy_stress_tensor), $f$ is the body force per unit volume and $\rho$ is the material density.
 Next, employing the [_Hooke's Law_](https://en.wikipedia.org/wiki/Hooke%27s_law) for an isotropic material, the stress tensor ${\sigma}$ corresponding to the displacement field ${u}$ is given as
 
 $$
@@ -53,8 +53,8 @@ $$
 u_i \approx u_{i,h} := \sum_{j=1}^{m} c_{ij} \varphi_{j},
 $$
 
-where $u_{i,h}$ is the finite element approximation with unknown coefficients $c_{ij}$, and $\varphi_{j}$ are scalar-valued _basis functions_. The FEM basis
-functions, $\varphi_{j}$, which do not depend on $i$, are typically piecewise-polynomial functions that are only non-zero on small portions of the domain.
+where $u_{i,h}$ is the $i$-th component of the vector-valued finite element approximation, $u_h$, with unknown coefficients $c_{ij}$, and $\varphi_{j}$ are scalar-valued _basis functions_.
+The FEM basis functions, $\varphi_{j}$, which do not depend on $i$, are typically piecewise-polynomial functions that are only non-zero on small portions of the domain.
 
 For this example problem, we compute a stationary, homogeneous solution to our PDE by setting the inertial term $\rho {\ddot{u}} = 0$ and neglecting the body force, $f = 0$.
 
@@ -77,7 +77,7 @@ $$
 .
 $$
 
-Letting $e_i \in \mathbb{R}^n$ denote the standard Cartesian unit vectors and setting $v_h = \varphi_j e_i$, we can leverage the basis expansion formula (4) to rewrite (6) as
+Letting $\\{e_k\\}_{k=1}^n \subset \mathbb{R}^n$ denote the standard Cartesian unit vectors and setting $v_h = \varphi_j e_k$, for each index $j$ and $k$, we can leverage the basis expansion formula (4) to rewrite (6) as
 
 $$
 {A x} = {b},
@@ -111,11 +111,11 @@ the description in the previous section. You can follow along by browsing
 visualization will automatically update in the GLVis browser window.
 
 MFEM uses `attributes` and `bdr_attributes` to distinguish between subdomains and subsets of the domain boundary, respectively.
-The computational mesh is provided as input (option `-m`) that could be 2D or 3D domain made up of triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to `beam-tri.mesh` in line
+The computational mesh is provided as input (option `-m`) that could be a 2D or 3D domain made up of triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to `beam-tri.mesh` in line
 [50](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L50).) The code in
 lines [73-84](https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L73-L84)
 loads the mesh from the given file, `mesh_file` and creates the corresponding MFEM
-pointer `*mesh` of class `Mesh`. It then checks that the mesh file uploaded has at least two different materials and correct number of boundary attributes.
+pointer `*mesh` of class `Mesh`. It then checks that the mesh file uploaded has at least two different materials and the correct number of boundary attributes.
 
 ```c++
 Mesh *mesh = new Mesh(mesh_file, 1, 1);
@@ -265,9 +265,7 @@ matrix `A`, right-hand side vector `B`, and unknown vector `X`.
 In the above example, we then solve `A X = B` with
 [conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method) iterations,
 using a simple [Gauss-Seidel](https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method)
-preconditioner. We set the maximum number of iterations to `500` and a convergence
-criteria of residual norm reduction by 6 orders of magnitude (`1e-8` is the square of
-that relative tolerance).
+preconditioner. We set the maximum number of iterations to `500` and the relative error tolerance to `1e-8`.
 
 Solving the linear system is one of the main computational bottlenecks
 in the FEM. It can take many preconditioned conjugate gradient (PCG) iterations
