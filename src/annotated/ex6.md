@@ -228,19 +228,19 @@ $$
 
 Below is the classification of each mesh file used in the sample runs, indicating the dimension, element type, and whether it is conforming or non-conforming:
 
-| Mesh File                   | Dimension   | Element Type                 | Classification    |
-|-----------------------------|-------------|-------------------------------|-------------------|
-| `square-disc.mesh`          | 2D          | triangles                     | conforming        |
-| `square-disc-nurbs.mesh`    | 2D          | NURBS quadrilaterals          | conforming    |
-| `star.mesh`                 | 2D          | quadrilaterals                     | conforming        |
-| `escher.mesh`               | 3D          | tetrahedrons                | conforming    |
-| `fichera.mesh`              | 3D          | hexahedrons                  | conforming        |
-| `disc-nurbs.mesh`           | 2D          | NURBS quadrilaterals          | conforming    |
-| `ball-nurbs.mesh`           | 3D          | NURBS hexahedra               | conforming    |
-| `pipe-nurbs.mesh`           | 3D          | NURBS hexahedra               | conforming    |
-| `star-surf.mesh`            | 2D surface  | quadrilaterals                     | conforming        |
-| `square-disc-surf.mesh`     | 2D surface  | triangles                     | conforming        |
-| `amr-quad.mesh`             | 2D          | quadrilaterals                | non-conforming    |
+| Mesh File                   | Dimension   | Element Type                  |
+|-----------------------------|-------------|-------------------------------|
+| `square-disc.mesh`          | 2D          | triangles                     |
+| `square-disc-nurbs.mesh`    | 2D          | NURBS quadrilaterals          |
+| `star.mesh`                 | 2D          | quadrilaterals                |
+| `escher.mesh`               | 3D          | tetrahedrons                  |
+| `fichera.mesh`              | 3D          | hexahedrons                   |
+| `disc-nurbs.mesh`           | 2D          | NURBS quadrilaterals          |
+| `ball-nurbs.mesh`           | 3D          | NURBS hexahedra               |
+| `pipe-nurbs.mesh`           | 3D          | NURBS hexahedra               |
+| `star-surf.mesh`            | 2D surface  | quadrilaterals                |
+| `square-disc-surf.mesh`     | 2D surface  | triangles                     |
+| `amr-quad.mesh`             | 2D          | quadrilaterals                |
 
 MFEM's Example 6 implements the Laplace equation $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions, enriched by a simple adaptive mesh refinement (AMR) loop. The refinements can be conforming (triangles, tetrahedra) or non-conforming (quadrilaterals, hexahedra) based on a Zienkiewicz–Zhu (ZZ) error estimator. Example 6 demonstrates MFEM’s support for 2D/3D, linear/curved and surface meshes, as well as function interpolation between coarse and refined meshes and persistent GLVis visualization. The source file is [examples/ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp).
 
@@ -278,7 +278,7 @@ if (mesh.NURBSext)
 ---
 
 #### Defining Variables and Spaces
-In the next block of code, we create the finite element space, i.e., specify the finite element basis functions on the mesh. This involves the MFEM class and `FiniteElementSpace`, which connects the space and the mesh. The code in [lines 112-113](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L112-113) is essentially:
+In the next block of code, we create the finite element space, i.e., specify the finite element basis functions on the mesh. This involves the MFEM class, `FiniteElementSpace`, which connects the space and the mesh. The code in [lines 112-113](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L112-113) is essentially:
 
 ```c++
 H1_FECollection fec(order, dim);
@@ -288,7 +288,7 @@ FiniteElementSpace fespace(&mesh, &fec);
 ---
 
 #### Set up the error estimator
-We use the mentioned ZZ error estimator in [lines 160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)
+We declare the ZZ error estimator, mentioned earlier, in [lines 160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174).
 
 ***ErrorEstimator***  
 
@@ -321,7 +321,7 @@ We create a threshold refiner to determine when to refine the mesh ([lines 180-1
 
   - `SetTotalErrorFraction(0.7)`: marks elements whose cumulative error reaches 70% for refinement. This corresponds to setting $\theta=0.7$ in (10).
 
-  - Supports both conforming (tri/tet) and non-conforming (quad/hex) refinements.
+  - Supports both conforming and non-conforming refinements. Non-conforming refinement is an option (`-nc`) for simplex meshes.
 ```c++
 ThresholdRefiner refiner(*estimator);
 refiner.SetTotalErrorFraction(0.7);
@@ -376,7 +376,7 @@ const int copy_interior = 1;
 a.FormLinearSystem(ess_tdof_list, x, b, A, X, B, copy_interior);
 ```
 
-This process produces `A` (the assembled system matrix), `B` (the right-hand side vector), `X` (the unknowns vector to solve for).
+This process produces `A` (an `OperatorPtr` for the assembled system matrix), `B` (the right-hand side vector), `X` (the unknowns vector to solve for).
 
 **Solving the linear system**
 
@@ -439,7 +439,7 @@ if (cdofs > max_dofs)
 
 **Adaptive refinement loop**
 
-After solving the linear system, the mesh is refined adaptively ([lines 255-260](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L255-260)) using on the marking strategy (10), and the finite element space and solution are updated ([lines 268-269](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L268-269)) accordingly.
+After solving the linear system, the mesh is refined adaptively ([lines 255-260](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L255-260)) using the marking strategy (10), and the finite element space and solution are updated ([lines 268-269](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L268-269)) accordingly.
 
 The method `refiner.Apply(mesh)` first computes local error indicators using the error estimator, then selects elements for refinement based on a marking strategy. It refines the selected elements to be subdivided in order to improve solution accuracy ($h$-refinement). After refinement, `refiner.Stop()` checks if a stopping criterion, such as reaching a target error level or maximum mesh size, has been met, and exits the loop if necessary.
 
@@ -474,7 +474,7 @@ Finally, after the refinement loop is completed, the error estimator object is d
 
 <img src="../img/ex6_2.png" width="1000">
 
-The figure above comes from running `ex6.cpp` with the mesh `pipe-nurbs.mesh`.
+The figure above shows a sequence of adaptively refined meshes produced by running `ex6.cpp` with the initial mesh `pipe-nurbs.mesh`.
 
 ---
 

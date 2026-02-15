@@ -79,7 +79,7 @@ We start the code ([lines 70-94](https://github.com/mfem/mfem/blob/master/exampl
 2. `-o`: Specifies the polynomial degree of the finite element (Nédélec element in this case). 
 3. `-f`: Specifies the variable `freq`, which sets the frequency parameter `kappa = freq * M_PI;` in  [line 96](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L96); cf. (3).
 4. `-sc`: Specifies whether or not to use Static Condensation in [line 179](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L179).
-5. `-pa`: Specifies whether or not to use Partial Assembly utilized in [line 171](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L171). This can reduce both the size of the problem and computational time.
+5. `-pa`: Specifies whether or not to use [Partial Assembly](https://mfem.org/performance/#partial-assembly-in-mfem) in [line 171](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L171). This can reduce both the size of the problem and computational time.
 6. `-nc`: Specifies whether or not the mesh should remain conforming during refinement.
 7. `-d`: Specifies the computation device. Possible options are shown in [lines 25-29](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L25-29). The user can choose to use RAJA, CUDA or, by default, cpu.
 8. `-vis`: Determines if visualization will be executed or not (with the help of GLVis server in [lines 229-236](https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L229-236)).
@@ -140,7 +140,7 @@ Here, the `FiniteElementCollection` corresponds to Nédélec basis functions bec
 <div class="panel-body">
 The Nédélec basis functions are intrinsically vector-valued.
 In particular, they cannot be constructed as a Cartesian product of a scalar basis, unlike the vector-valued basis used in <a href="../ex2"></i>Example 2</a> for linear elasticity.
-In turn, these basis functions are typically nonzero in all components and their degree-of-freedom numbering does not represent their active vector components.
+In turn, these basis functions are typically nonzero in all components, and their degree-of-freedom numbering does not represent their active vector components.
 </div>
 </div>
 
@@ -218,7 +218,7 @@ Here, static condensation is enabled if it was requested from the command line u
 ---
 
 #### Solving the linear system
-The next block of code solves the linear system `A X = B` for the unknown dofs `X`. If Partial Assembly (`pa`) is used, it employs the Preconditioned Conjugate Gradient (PCG) iterative solver with a simple Jacobi preconditioner (`OperatorJacobiSmoother`). Otherwise, in case of full assembly, the code checks if the [SuiteSparse library](https://mfem.org/code-overview/#:~:text=Direct%20sparse%20solvers) is used or not. If the `SuiteSparse` library has been used, then `UMFPACK` will be used to solve the system. Otherwise, a Gauss-Seidel preconditioner along with PCG will be used to solve the system.
+The next block of code solves the linear system `A X = B` for the unknown dofs `X`. If [Partial Assembly](https://mfem.org/performance/#partial-assembly-in-mfem) (`pa`) is used, it employs the Preconditioned Conjugate Gradient (PCG) iterative solver with a simple Jacobi preconditioner (`OperatorJacobiSmoother`). Otherwise, in case of full assembly, the code checks if the [SuiteSparse library](https://mfem.org/code-overview/#:~:text=Direct%20sparse%20solvers) is used or not. If the `SuiteSparse` library has been used, then `UMFPACK` will be used to solve the system. Otherwise, a Gauss-Seidel preconditioner along with PCG will be used to solve the system.
 
 ```cpp
 if (pa) // Jacobi preconditioning in partial assembly mode
