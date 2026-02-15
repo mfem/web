@@ -25,7 +25,7 @@ by Jiahao Liu and Prathik Narayanan, Brown University
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp; Example 1</a> tutorial before starting this lesson.
+Complete the <a href="../../tutorial/fem"></i>Example 1</a> tutorial before starting this lesson.
 </div>
 </div>
 
@@ -46,7 +46,7 @@ generalization of the [_Laplace Equation_](https://en.wikipedia.org/wiki/Laplace
 
 To approximately solve the above continuous equation on computers, we need to
 [discretize](https://en.wikipedia.org/wiki/Discretization) it by introducing a
-finite (discrete) number of unknowns to compute for. In the
+finite (discrete) number of unknowns to compute. In the
 [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM),
 this is done using the concept of _basis functions_.
 
@@ -112,7 +112,7 @@ To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</
 ---
 ### <i class="fa fa-check-square-o"></i>&nbsp; Adaptive Mesh Refinement (AMR)
 
-Adaptive mesh refinement (AMR) method has been widely used in scientific computing to get better accuracy with minimal degrees of freedom. Instead of uniformly refining the mesh, AMR only refines the mesh in regions where the solution requires higher resolution.
+Adaptive mesh refinement (AMR) has been widely used in scientific computing to get better accuracy with minimal degrees of freedom. Instead of uniformly refining the mesh, AMR only refines the mesh in regions where the solution requires higher resolution.
 
 The main ideas behind AMR are:
 
@@ -231,14 +231,14 @@ Below is the classification of each mesh file used in the sample runs, indicatin
 | Mesh File                   | Dimension   | Element Type                 | Classification    |
 |-----------------------------|-------------|-------------------------------|-------------------|
 | `square-disc.mesh`          | 2D          | triangles                     | conforming        |
-| `square-disc-nurbs.mesh`    | 2D          | NURBS quadrilaterals          | non-conforming    |
-| `star.mesh`                 | 2D          | triangles                     | conforming        |
-| `escher.mesh`               | 2D          | quadrilaterals                | non-conforming    |
-| `fichera.mesh`              | 3D          | tetrahedrons                  | conforming        |
-| `disc-nurbs.mesh`           | 2D          | NURBS quadrilaterals          | non-conforming    |
-| `ball-nurbs.mesh`           | 3D          | NURBS hexahedra               | non-conforming    |
-| `pipe-nurbs.mesh`           | 3D          | NURBS hexahedra               | non-conforming    |
-| `star-surf.mesh`            | 2D surface  | triangles                     | conforming        |
+| `square-disc-nurbs.mesh`    | 2D          | NURBS quadrilaterals          | conforming    |
+| `star.mesh`                 | 2D          | quadrilaterals                     | conforming        |
+| `escher.mesh`               | 3D          | tetrahedrons                | conforming    |
+| `fichera.mesh`              | 3D          | hexahedrons                  | conforming        |
+| `disc-nurbs.mesh`           | 2D          | NURBS quadrilaterals          | conforming    |
+| `ball-nurbs.mesh`           | 3D          | NURBS hexahedra               | conforming    |
+| `pipe-nurbs.mesh`           | 3D          | NURBS hexahedra               | conforming    |
+| `star-surf.mesh`            | 2D surface  | quadrilaterals                     | conforming        |
 | `square-disc-surf.mesh`     | 2D surface  | triangles                     | conforming        |
 | `amr-quad.mesh`             | 2D          | quadrilaterals                | non-conforming    |
 
@@ -296,7 +296,7 @@ We use the mentioned ZZ error estimator in [lines 160-174](https://github.com/mf
 
   - `LSZienkiewiczZhuEstimator`: a least‐squares variant activated with `-ls`, useful for certain mesh types.  
   
-  - In 3D on non-hexahedral meshes, Tikhonov regularization improves conditioning.
+  - In 3D on non-hexahedral meshes, [Tikhonov regularization](https://en.wikipedia.org/wiki/Ridge_regression#Tikhonov_regularization_for_linear_equations) improves conditioning.
 
 ```c++
 if (LSZZ)

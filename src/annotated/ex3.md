@@ -23,7 +23,7 @@ by Samik Mukhopadhyay and Erin Okey, Brown University
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Review  <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp; Examples 1</a> and <a href="../ex2"><i class="fa fa-play-circle"></i>&nbsp; 2</a> before starting this lesson.
+Review  <a href="../../tutorial/fem"></i>Examples 1</a> and <a href="../ex2"></i>2</a> before starting this lesson.
 </div>
 </div>
 
@@ -54,7 +54,7 @@ where $\kappa > 0$ is a prescribed frequency parameter.
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-To learn more about electromagnetics in MFEM, visit the  <a href="../../maxwell-notes"><i class="fa fa-play-circle"></i>&nbsp; Maxwell's Equations</a> and <a href="../../electromagnetics"><i class="fa fa-play-circle"></i>&nbsp; Electromagnetics Mini Applications</a> documentation pages.
+To learn more about electromagnetics in MFEM, visit the  <a href="../../maxwell-notes"></i>Maxwell's Equations</a> and <a href="../../electromagnetics"></i>Electromagnetics Mini Applications</a> documentation pages.
 </div>
 </div>
 
@@ -131,7 +131,19 @@ The next block of code defines the Finite Element Space on the mesh provided by 
    cout << "Number of finite element unknowns: "
         << fespace->GetTrueVSize() << endl;
 ```
-Here, the `FiniteElementCollection` corresponds to Nédélec basis functions because Nédélec finite elements have optimal approximation properties in $H(\mathrm{curl})$; i.e., the energy space over which problem (2) is well-defined. 
+Here, the `FiniteElementCollection` corresponds to Nédélec basis functions because Nédélec finite elements have optimal approximation properties in $H(\mathrm{curl})$; i.e., the energy space over which problem (2) is well-defined.
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The Nédélec basis functions are intrinsically vector-valued.
+In particular, they cannot be constructed as a Cartesian product of a scalar basis, unlike the vector-valued basis used in <a href="../ex2"></i>Example 2</a> for linear elasticity.
+In turn, these basis functions are typically nonzero in all components and their degree-of-freedom numbering does not represent their active vector components.
+</div>
+</div>
+
 
 ---
 

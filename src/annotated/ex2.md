@@ -23,7 +23,7 @@ by Aashutosh Kulakarni Prachet and Jeetika Patangia, Brown University
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-Complete the <a href="../../tutorial/fem"><i class="fa fa-play-circle"></i>&nbsp; Example 1</a> tutorial before starting this lesson.
+Complete the <a href="../../tutorial/fem"></i>Example 1</a> tutorial before starting this lesson.
 </div>
 </div>
 
