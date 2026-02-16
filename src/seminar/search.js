@@ -225,7 +225,7 @@
       var idx = m.index;
       var match = m[0];
       out += escapeHtml(raw.slice(last, idx));
-      out += '<mark style="background:#ffeb3b;">' + escapeHtml(match) + "</mark>";
+      out += '<mark class="seminar-search-mark">' + escapeHtml(match) + "</mark>";
       last = idx + match.length;
       if (re.lastIndex === idx) re.lastIndex++; // safety
     }
@@ -322,6 +322,11 @@
           buf += s.charAt(j);
           j++;
         }
+        if (j >= s.length) {
+          out.push({ t: "error", v: "Unterminated quote.", i: i });
+          i = j;
+          continue;
+        }
         out.push({ t: "phrase", v: buf.trim(), i: i });
         i = j < s.length ? j + 1 : j;
         continue;
@@ -409,6 +414,7 @@
         if (!tok.v) return err("Empty phrase.", tok);
         return { type: "phrase", raw: tok.v };
       }
+      if (tok.t === "error") return err(tok.v || "Invalid query.", tok);
       if (tok.t === "op") return err("Unexpected operator '" + tok.v + "'.", tok);
       if (tok.t === "rp") return err("Unexpected ')'.", tok);
       return err("Unexpected token.", tok);

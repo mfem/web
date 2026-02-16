@@ -102,12 +102,18 @@ def _cached_pdf_text_pages(
 
     # (Re)extract
     cache_dir.mkdir(parents=True, exist_ok=True)
-    proc = subprocess.run(
-        ["pdftotext", "-enc", "UTF-8", str(pdf_path), str(cache_txt)],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=True,
-    )
+    try:
+        proc = subprocess.run(
+            ["pdftotext", "-enc", "UTF-8", str(pdf_path), str(cache_txt)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=True,
+        )
+    except FileNotFoundError as e:
+        raise SystemExit(
+            "Missing required tool: pdftotext.\n"
+            "Install Poppler (macOS: brew install poppler; Ubuntu/Debian: apt-get install poppler-utils)."
+        ) from e
     _ = proc  # keep symmetry; output is in file
 
     raw = cache_txt.read_text(encoding="utf-8", errors="replace")

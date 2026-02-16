@@ -14,6 +14,7 @@ Search inside the FEM@LLNL seminar slides and talk recordings. Just start typing
 
 <div id="seminar-pdf-search" class="seminar-search-box" markdown="0">
   <div class="seminar-search-row">
+    <label for="seminar-pdf-search-input" class="sr-only">Search seminar slides and videos</label>
     <input id="seminar-pdf-search-input" type="search" class="form-control seminar-search-input" placeholder='e.g. MFEM' autocomplete="off" />
   </div>
   <div class="small text-muted seminar-search-status">
