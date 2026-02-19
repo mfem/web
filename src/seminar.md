@@ -21,7 +21,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 ##### **March 10, 2026**
 #### Ido Akkerman (Delft university of Technology)
 ##### *Title*
-##### [**9:00am PDT, February 10, 2026**](https://everytimezone.com/s/33982442)
+##### [**9:00am PDT, March 10, 2026**](https://everytimezone.com/s/33982442)
 
 [<button type="button" class="btn btn-success">
 **Webex**
@@ -70,7 +70,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/vMODQyiF4Xs)
 
 **Abstract:** Multiscale and multiphysics problems are typically governed by a wide range of interacting temporal and spatial scales, with different physical processes often dominating the opposing ends of the scale range. The simulation of these phenomena requires highly accurate and efficient numerical schemes that should allow for adaptive and flexible discretization strategies to tailor the approximation scheme to the locally dominating physical effect. Still, for practical applications, the occurring scale range in relevant engineering applications typically remains too immense even for well-parallelized simulations on nascent exascale architectures. Here, scale-bridging models must supplement upscaled governing equations to enable simulations of for example turbulent flows, flows with phase interfaces and so on.
 <br> In this talk, I will present contributions and recent advances to both fields: First, I will discuss highly accurate and locally adaptive numerical schemes based on DGSEM for solving the compressible Navier-Stokes equations on pre-exascale systems and beyond with a focus on applications in the aerospace engineering sector. In the second part of my talk, I will discuss how and where (and where not) machine learning methods can help devise the necessary scale bridging models that are numerically and mathematically consistent and provide examples of successful CFD/ML hybrid applications.
@@ -91,7 +91,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/aK_Q72evHQE)
 
 **Abstract:** Matrix-valued finite elements arise naturally in
 continuum models, with stress elements in structural mechanics as
