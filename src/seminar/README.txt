@@ -40,7 +40,7 @@ This repo marks them as “no diff” in `.gitattributes` to keep reviews readab
 
 Notes:
 
-- A talk will be searchable with only an abstract (step 1)—i.e. while waiting for subsequent steps, such as the video being processed—but you must still rebuld the search index (step 4).
+- A talk will be searchable with only an abstract (step 1)—i.e. while waiting for subsequent steps, such as the video being processed—but you must still rebuild the search index (step 4).
 - The index builder scripts are compatible with Python 3.6.9+ (the MkDocs environment constraint).
 - The PDF builder requires `pdftotext` (typically from Poppler).
 
