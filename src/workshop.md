@@ -13,16 +13,17 @@ and view **contest submissions** in the [gallery](gallery.md).
 
 ### Overview
 
-The MFEM team and Georgia Tech's School of Computational Science and Engineering are happy to
-invite you to the 2026 MFEM Community Workshop, which will take place on September 22-25, 2026 in a
-hybrid format: in-person at [Georgia Tech](#venue) + virtually on Zoom. The goal of
-the workshop is to foster collaboration among all MFEM users and developers, share the latest MFEM
-features with the broader community, deepen application engagements, and solicit feedback to guide
-future development directions for the project. The first day of the workshop will include a hands-on MFEM tutorial.
+The MFEM team and Georgia Tech's School of Computational Science and Engineering invite you to
+the 2026 MFEM Community Workshop, which will take place on September 22-25, 2026 in a hybrid
+format: in-person at [Georgia Tech](#venue) + virtually on Zoom. The goal of the workshop is
+to foster collaboration among all MFEM users and developers, share the latest MFEM features
+with the broader community, deepen application engagements, and solicit feedback to guide
+future development directions for the project.
 
-*We encourage you to join us in person if you can!*
-*For questions, please contact the meeting organizers at*
-*[mfem@llnl.gov](mailto:mfem@llnl.gov).*
+*We encourage you to join us in person if you can!* As you make travel plans, please note that
+the first day of the workshop (September 22) will be reserved for a hands-on MFEM tutorial.
+
+*Please contact the meeting organizers with any questions: [mfem@llnl.gov](mailto:mfem@llnl.gov)*
 
 ### Registration
 
@@ -41,9 +42,7 @@ You may apply for travel reimbursement via [this form](https://docs.google.com/f
 
 ### Venue
 
-The workshop will take place at [Georgia Tech](http://gatech.edu/) in Atlanta,
-Georgia. GT is about a 30-minute drive from Hartsfield-Jackson Atlanta International Airport.
-Information about the meeting room and a map will be available soon.
+The workshop will take place at [Georgia Tech](http://gatech.edu/) (GT) in Atlanta, Georgia. GT is about a 30-minute drive from Hartsfield-Jackson Atlanta International Airport. Information about the meeting room and a map will be available soon.
 
 <!--The meeting will be held in Smith Memorial Student Union (SMSU) room 296/8. This location is
 highlighted on the map below. See also the [interactive campus map](https://map.pdx.edu/?building=SMSU) and [this diagram](img/psu_campus_map_smsu.png).
@@ -63,15 +62,15 @@ There are several downtown hotels within easy walking distance of campus:
 
 ### Meeting Format
 
-This will be the third hybrid edition of the MFEM community workshop. Elements of the workshop under discussion:
+This will be the third hybrid edition of the MFEM community workshop and the sixth overall. Elements of the workshop under discussion:
 
+- Live, hands-on tutorial (**to be held on the first day of the workshop, September 22**)
 - Project news and development updates from the MFEM team
 - An overview of the latest features and future roadmap
 - Contributed talks from application developers utilizing MFEM
 - Student lightning talks
 - Office hours with the MFEM team
-- Poster session
-- Live, hands-on tutorial
+- In-person poster session
 - Visualization contest
 
 See also the agendas for the previous [2025](../workshop25), [2024](../workshop24), [2023](../workshop23), [2022](../workshop22), and [2021](../workshop21) MFEM workshops.
@@ -84,7 +83,7 @@ MFEM workshop.
 <!--
 ### Workshop Zoom
 
-Join Zoom Meeting: [https://pdx.zoom.us/j/82929966415](https://pdx.zoom.us/j/82929966415).
+Join Zoom Meeting: URL TBD.
 -->
 
 ### Agenda
@@ -92,7 +91,7 @@ Join Zoom Meeting: [https://pdx.zoom.us/j/82929966415](https://pdx.zoom.us/j/829
 Details will be posted soon.
 
 <!--
-The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (GMT-7) on Wednesday, September 10 and Thursday, September 11.
+Activities below are listed in *Eastern Daylight Time* (GMT-4).
 
 <br>
 
@@ -100,7 +99,7 @@ The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (
 
 Time TBD: Live, hands-on MFEM tutorial
 
-#### Wednesday, September 10
+#### Wednesday, September 23
 
 <!--
 Remote Participants: [Join via Zoom]()
@@ -113,7 +112,9 @@ Remote Participants: [Join via Zoom]()
 | 9:10-9:40 | **Recent Developments** | **Veselin Dobrev** (LLNL) |
 | 9:40-10:10 | **Coffee Break & Group Photo** | download a [virtual background](#virtual-backgrounds) below |
 
-#### Thursday, September 11
+#### Thursday, September 24
+
+#### Friday, September 25
 
 -->
 
@@ -130,14 +131,14 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 <div class="col-md-6" markdown="1">
 <a href="https://mfem.org/img/gallery/workshop25/cascadia.png"><img src="https://mfem.org/img/gallery/workshop25/cascadia.png" width="400"></a>
 <center>
-<strong>Cascadia team:</strong> <em>Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone</em>
+<strong>Cascadia team:</strong> <em>Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. This research won the <a href="https://awards.acm.org/bell/">2025 ACM Gordon Bell Prize</a>.</em>
 </center>
 </div>
 
 <div class="col-md-6" markdown="1">
 <a href="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png"><img src="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png" width="250"></a>
 <center>
-<strong>Leonardo Molinari:</strong> <em>Electric field distribution during a radiofrequency (RF) ablation procedure on an idealized intracardiac geometry</em>
+<strong>Leonardo Molinari:</strong> <em>Electric field distribution during a radiofrequency (RF) ablation procedure on an idealized intracardiac geometry.</em>
 </center>
 </div>
 
@@ -201,10 +202,10 @@ El Capitan.
 
 ### About GT's School of Computational Science and Engineering
 
-The [Georgia Institute of Technology](http://gatech.edu/) (Georgia Tech or GT), is one of the nation's
-top public research universities with more than 50,000 students who study in person at the main campus
-in Atlanta, at off-campus instructional sites such as Georgia Tech-Europe in France, and through distance
-and online learning.
+<img src="/img/GT_RGB_300wide.png" alt="GT logo" align="left" style="margin-right: 10px;"> The [Georgia Institute of
+Technology](http://gatech.edu/) (Georgia Tech or GT), is one of the nation's top public research universities with
+more than 50,000 students who study in person at the main campus in Atlanta, at off-campus instructional sites such
+as Georgia Tech-Europe in France, and through distance and online learning.
 
 GT's [School of Computational Science and Engineering](https://cse.gatech.edu/) creates future leaders who
 keep pace with and solve the most challenging problems in science, engineering, health, and social domains.
