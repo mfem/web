@@ -66,7 +66,7 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 </div>
 
 <div class="col-md-6" markdown="1">
-<a href="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png"><img src="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png" width="250"></a>
+<a href="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png"><img src="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png" width="220"></a>
 <center>
 <strong>Leonardo Molinari:</strong> <em>Electric field distribution during a radiofrequency (RF) ablation procedure on an idealized intracardiac geometry.</em>
 </center>
@@ -119,10 +119,12 @@ El Capitan.
 
 ### About GT's School of Computational Science and Engineering
 
-<img src="/img/GT_RGB_300wide.png" alt="GT logo" align="left" style="margin-right: 10px;"> The [Georgia Institute of
-Technology](http://gatech.edu/) (Georgia Tech or GT), is one of the nation's top public research universities with
-more than 50,000 students who study in person at the main campus in Atlanta, at off-campus instructional sites such
-as Georgia Tech-Europe in France, and through distance and online learning.
+<img src="/img/GT_RGB_300wide.png" alt="GT logo" align="left" style="margin-right: 10px;"></img>
+
+The [Georgia Institute of Technology](http://gatech.edu/) (Georgia Tech or GT), is one of the nation's
+top public research universities with more than 50,000 students who study in person at the main campus
+in Atlanta, at off-campus instructional sites such as Georgia Tech-Europe in France, and through distance
+and online learning.
 
 GT's [School of Computational Science and Engineering](https://cse.gatech.edu/) creates future leaders who
 keep pace with and solve the most challenging problems in science, engineering, health, and social domains.
