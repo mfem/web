@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+	<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS5XV5TFM6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NS5XV5TFM6');
+        </script>
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../nurbs/">NURBS Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tutorial/">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#linear-elasticity">&nbsp; Linear Elasticity</a></li>
+        
+            <li><a href="#annotated-example-2">&nbsp; Annotated Example 2</a></li>
+        
+            <li><a href="#parallel-example-2p">&nbsp; Parallel Example 2p</a></li>
+        
+            <li><a href="#serial-and-parallel-runs">&nbsp; Serial and parallel runs</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="linear-elasticity"><i class="fa fa-book"></i>&nbsp; Linear Elasticity</h2>
+<p>by Aashutosh Kulakarni Prachet and Jeetika Patangia, Brown University</p>
+<p><span class="label label-default">45 minutes</span>
+<span class="label label-default">basic</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Understand the finite element discretization of a simple elastic deformation problem in MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to handle vectorial solution variables in MFEM.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to use Attributes to implement discontinuous material coefficients and multiple boundary conditions.<br>
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Complete the <a href="../../tutorial/fem"></i>Example 1</a> tutorial before starting this lesson.
+</div>
+</div>
+
+<hr />
+<p><a href="https://en.wikipedia.org/wiki/Linear_elasticity"><em>Linear elasticity</em></a> is a vectorial partial differential equation (PDE) that models how elastic bodies deform and develop stress under applied forces. It is widely used to analyze the stress-strain behavior of structural and mechanical systems.
+Beginning from the <a href="https://en.wikipedia.org/wiki/Momentum#Conservation"><em>Conservation of Linear Momentum</em></a>, we have</p>
+<p>$$
+\nabla \cdot {\sigma({u})} + f = \rho {\ddot{u}},
+$$</p>
+<p>where ${u} \in \mathbb{R}^n$ ($n = 2$ or $3$) is the vector-valued displacement field, ${\sigma}$ is the <a href="https://en.wikipedia.org/wiki/Cauchy_stress_tensor"><em>stress tensor</em></a>, $f$ is the body force per unit volume and $\rho$ is the material density.
+Next, employing the <a href="https://en.wikipedia.org/wiki/Hooke%27s_law"><em>Hooke's Law</em></a> for an isotropic material, the stress tensor ${\sigma}$ corresponding to the displacement field ${u}$ is given as</p>
+<p>$$
+{\sigma({u})} = \lambda (\nabla \cdot {u}) {I} + \mu (\nabla {u} + \nabla {u}^T),
+$$</p>
+<p>where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties.</p>
+<p>To solve this system of equations numerically, we convert it into a discrete problem with a finite number of unknowns. The <a href="https://en.wikipedia.org/wiki/Finite_element_method"><em>Finite Element Method</em></a> (FEM) proceeds by constructing a linear combination of <em>basis functions</em> to represent the solution $u$ over the domain $\Omega\subset\mathbb{R}^n$.</p>
+<p>In particular, instead of calculating the exact analytic solution, we approximate each component $u_i$ as</p>
+<p>$$
+u_i \approx u_{i,h} := \sum_{j=1}^{m} c_{ij} \varphi_{j},
+$$</p>
+<p>where $u_{i,h}$ is the $i$-th component of the vector-valued finite element approximation, $u_h$, with unknown coefficients $c_{ij}$, and $\varphi_{j}$ are scalar-valued <em>basis functions</em>.
+The FEM basis functions, $\varphi_{j}$, which do not depend on $i$, are typically piecewise-polynomial functions that are only non-zero on small portions of the domain.</p>
+<p>For this example problem, we compute a stationary, homogeneous solution to our PDE by setting the inertial term $\rho {\ddot{u}} = 0$ and neglecting the body force, $f = 0$.</p>
+<p>To arrive an equation for the unknown coefficients $c_{ij}$, we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the PDE. This is obtained by substituting (3) into (1), followed multiplying with a test function ${v}_h$ and integrating over the domain $\Omega$,</p>
+<p>$$
+\int_{\Omega} {v}_h \cdot \left( \nabla \cdot {\sigma}({u}_h) \right) \mathrm{d}{x} = 0.
+$$</p>
+<p>After integrating by parts using the <a href="https://en.wikipedia.org/wiki/Divergence_theorem">divergence theorem</a>, we find</p>
+<p>$$
+\int_{\Omega} \nabla v_h : {\sigma}(u_h)\, \mathrm{d}{x} = \int_{\partial \Omega} v_h \cdot ({\sigma}(u_h) \cdot {n})\, \mathrm{d}S.
+$$</p>
+<p>The boundary of the domain, $\partial\Omega$, is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogeneous ($u = 0$) displacement boundary condition, whereas the rest of the boundary has a traction boundary condition, ${\sigma} \cdot {n} = t$. In this problem, the traction force $t$ is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$, we obtain the weak formulation</p>
+<p>$$
+\int_{\Omega} \lambda (\nabla\cdot u_h)(\nabla\cdot v_h) + \mu (\nabla u_h + \nabla {u}^T_h) : \nabla v_h \, \mathrm{d}{x} = \int_{\Gamma_T} v_h \cdot t\, \mathrm{d}S
+.
+$$</p>
+<p>Letting $\{e_k\}_{k=1}^n \subset \mathbb{R}^n$ denote the standard Cartesian unit vectors and setting $v_h = \varphi_j e_k$, for each index $j$ and $k$, we can leverage the basis expansion formula (4) to rewrite (6) as</p>
+<p>$$
+{A x} = {b},
+$$</p>
+<p>with the vector $x\in\mathbb{R}^{nm}$ holding the unknown coefficients $c_{ij}$.
+This is a $mn \times mn$ linear system that can be solved directly or iteratively.
+Note that we are free to choose the computational
+mesh and the basis functions $\varphi_i$ as we see fit.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The above is a basic introduction to finite elements in one of the simplest possible vectorial settings.
+To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</a> page.
+</div>
+</div>
+
+<hr />
+<h3 id="annotated-example-2"><i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 2</h3>
+<p>The source file <a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp">examples/ex2.cpp</a> implements the above FEM for a beam-shaped body consisting of two adjacent material subdomains.
+In particular, it sets $t=-0.01$ on the right-hand side of the boundary and enforces the Dirichlet and Neumann boundary conditions over the other corresponding subsets of the boundary.</p>
+<p>Below we highlight selected portions of the example code and connect them with
+the description in the previous section. You can follow along by browsing
+<code>ex2.cpp</code> in your VS Code browser window. In the settings of this tutorial, the
+visualization will automatically update in the GLVis browser window.</p>
+<p>MFEM uses <code>attributes</code> and <code>bdr_attributes</code> to distinguish between subdomains and subsets of the domain boundary, respectively.
+The computational mesh is provided as input (option <code>-m</code>) that could be a 2D or 3D domain made up of triangular/quadrilateral/tetrahedral/hexahedral elements, etc. (It defaults to <code>beam-tri.mesh</code> in line
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L50">50</a>.) The code in
+lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L73-L84">73-84</a>
+loads the mesh from the given file, <code>mesh_file</code> and creates the corresponding MFEM
+pointer <code>*mesh</code> of class <code>Mesh</code>. It then checks that the mesh file uploaded has at least two different materials and the correct number of boundary attributes.</p>
+<pre><code class="c++">Mesh *mesh = new Mesh(mesh_file, 1, 1);
+int dim = mesh-&gt;Dimension();
+
+if (mesh-&gt;attributes.Max() &lt; 2 || mesh-&gt;bdr_attributes.Max() &lt; 2)
+{
+    cerr &lt;&lt; &quot;\nInput mesh should have at least two materials and &quot;
+        &lt;&lt; &quot;two boundary attributes! (See schematic in ex2.cpp)\n&quot;
+        &lt;&lt; endl;
+    return 3;
+}
+</code></pre>
+
+<p>The following code (lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L93-L104">93-104</a>)
+refines the mesh uniformly to about 5,000 elements. You can easily modify the
+refinement by changing the definition of <code>ref_levels</code>.</p>
+<pre><code class="c++">int ref_levels =
+    (int)floor(log(5000./mesh-&gt;GetNE())/log(2.)/dim);
+for (int l = 0; l &lt; ref_levels; l++)
+{
+    mesh-&gt;UniformRefinement();
+}
+</code></pre>
+
+<p>In the next block of code, lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L106-L124">106-124</a>, we create the finite element space, i.e., specify the finite
+element basis functions $\varphi_j$ on the mesh.  This involves the MFEM classes
+<code>FiniteElementCollection</code>, which specifies the space (including its <code>order</code>,
+provided as input via <code>-o</code>), and <code>FiniteElementSpace</code>, which connects the space
+and the mesh. The dimension of the vector-valued finite elements are specified in the last argument of <code>FiniteElementSpace</code>. If we are using <code>NURBS</code> meshes, we use the <code>NURBS</code> space associated with our mesh.</p>
+<pre><code class="c++">if (mesh-&gt;NURBSext)
+{
+    FiniteElementCollection *fec = NULL;
+    FiniteElementSpace *fespace = mesh-&gt;GetNodes()-&gt;FESpace();
+}
+else
+{
+    FiniteElementCollection *fec = new H1_FECollection(order, dim);
+    FiniteElementSpace *fespace = new FiniteElementSpace(mesh, fec, dim);
+}
+cout &lt;&lt; &quot;Number of finite element unknowns: &quot; &lt;&lt; fespace-&gt;GetTrueVSize() &lt;&lt; endl &lt;&lt; &quot;Assembling: &quot; &lt;&lt; flush;
+</code></pre>
+
+<p>The printed number of finite element unknowns corresponds to the
+size of the linear system $mn$ from the previous section.</p>
+<p>The finite element degrees of freedom that are on the domain boundary are then
+extracted in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L126-L133">126-133</a>.
+The Dirichlet boundary conditions are then imposed only on the boundary with the first boundary attribute, while the rest are given to Neumann boundary conditions.</p>
+<pre><code class="c++">Array&lt;int&gt; ess_tdof_list, ess_bdr(mesh-&gt;bdr_attributes.Max());
+ess_bdr = 0;
+ess_bdr[0] = 1;
+fespace-&gt;GetEssentialTrueDofs(ess_bdr, ess_tdof_list);
+</code></pre>
+
+<p>The method <code>GetEssentialTrueDofs</code> takes a marker array of <code>Mesh</code> boundary
+attributes and returns the <code>FiniteElementSpace</code> degrees of freedom that belong
+to the marked attributes (the non-zero entries of <code>ess_bdr</code>).</p>
+<p>The right-hand side $b$ is constructed in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L135-L158">135-158</a>.
+In MFEM terminology, integrals of the form in the right hand side of (6) are implemented using the <code>AddBoundaryIntegrator</code> function in the class <code>LinearForm</code>.
+We now define the traction force over the entire boundary using a <code>VectorArrayCoefficient</code> object.
+To this end, a <code>pull_force</code> vector is created, which specifies the vertical component of the pointwise traction force for each boundary attribute. Note that <code>pull_force</code> is only non-zero for the final boundary attribute, which corresponds to the right-hand beam boundary.
+This vector is used to create a piecewise constant coefficient corresponding to the vertical component of the traction force density.</p>
+<pre><code class="c++">VectorArrayCoefficient f(dim);
+for (int i = 0; i &lt; dim-1; i++)
+{
+    f.Set(i, new ConstantCoefficient(0.0));
+}
+{
+    Vector pull_force(mesh-&gt;bdr_attributes.Max());
+    pull_force = 0.0;
+    pull_force(1) = -1.0e-2;
+    f.Set(dim-1, new PWConstCoefficient(pull_force));
+}
+
+LinearForm *b = new LinearForm(fespace);
+b-&gt;AddBoundaryIntegrator(new VectorBoundaryLFIntegrator(f));
+cout &lt;&lt; &quot;r.h.s. ... &quot; &lt;&lt; flush;
+b-&gt;Assemble();
+</code></pre>
+
+<p>The finite element approximation $u_h$ resides in the MFEM <code>GridFunction</code> object <code>x</code> associated to the vector-valued <code>FiniteElementSpace</code> <code>fespace</code>. Note that a <code>GridFunction</code> object can be
+viewed both as the function $u_h$ in (2) as well as the vector of degrees of
+freedom $x$ in (8). See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L160-L164">160-164</a>.</p>
+<pre><code class="c++">GridFunction x(fespace);
+x = 0.0;
+</code></pre>
+
+<p>We need to initialize <code>x</code> with the boundary values we want to impose as Dirichlet
+boundary conditions.
+Since we wish to assign zero-displacement boundary conditions on the only Dirichlet part of the boundary, we simple set <code>x=0.0</code> in the whole domain.</p>
+<p>We now move on to assembling the bilinear form.
+We start by defining the Lamé parameters using the <code>PWConstCoefficient</code> class to specify different Lamé parameters in the two different
+segments of the beam. The left-hand side of (6) is represented as a <code>BilinearForm</code> object, with
+<code>ElasticityIntegrator</code> corresponding to the specific bilinear form. See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L166-L187">166-187</a>.</p>
+<pre><code class="c++">PWConstCoefficient lambda_func(lambda);
+PWConstCoefficient mu_func(mu);
+BilinearForm *a = new BilinearForm(fespace);
+a-&gt;AddDomainIntegrator(new ElasticityIntegrator(lambda_func,mu_func));
+cout &lt;&lt; &quot;matrix ... &quot; &lt;&lt; flush;
+if (static_cond) { a-&gt;EnableStaticCondensation(); }
+a-&gt;Assemble();
+</code></pre>
+
+<p>MFEM supports different assembly levels for $A$  and many different <a href="https://mfem.org/bilininteg/">integrators</a>. Here we use the static condensation transformation to reduce the size of our original system to the remaining interfacial unknowns and assemble it.</p>
+<p>The linear system (7) is formed and solved in lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L189-L207">189-207</a>:</p>
+<pre><code class="c++">SparseMatrix A;
+Vector B, X;
+
+a-&gt;FormLinearSystem(ess_tdof_list, x, *b, A, X, B);
+cout &lt;&lt; &quot;Size of linear system: &quot; &lt;&lt; A.Height() &lt;&lt; endl;
+
+GSSmoother M(A);
+PCG(A, M, B, X, 1, 500, 1e-8, 0.0);
+</code></pre>
+
+<p>The method <code>FormLinearSystem</code> takes the <code>BilinearForm</code>, <code>LinearForm</code>,
+<code>GridFunction</code>, and boundary conditions (i.e., <code>a</code>, <code>b</code>, <code>x</code>, and <code>ess_tdof_list</code>);
+applies any necessary transformations such as eliminating boundary conditions
+(specified by the boundary values of <code>x</code>, applying conforming constraints for
+non-conforming AMR, static condensation, etc.); and produces the corresponding
+matrix <code>A</code>, right-hand side vector <code>B</code>, and unknown vector <code>X</code>.</p>
+<p>In the above example, we then solve <code>A X = B</code> with
+<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method">conjugate gradient</a> iterations,
+using a simple <a href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method">Gauss-Seidel</a>
+preconditioner. We set the maximum number of iterations to <code>500</code> and the relative error tolerance to <code>1e-8</code>.</p>
+<p>Solving the linear system is one of the main computational bottlenecks
+in the FEM. It can take many preconditioned conjugate gradient (PCG) iterations
+depending on the problem size, the difficulty of the problem, and the choice of the
+preconditioner.</p>
+<p>Once the linear system is solved, we recover the solution as a finite element
+grid function, and then visualize and save the final results to disk (files
+<code>displaced.mesh</code> and <code>sol.gf</code>). See lines
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2.cpp#L210-L248">210-248</a>.</p>
+<pre><code class="c++">a-&gt;RecoverFEMSolution(X, *b, x);
+
+ofstream mesh_ofs(&quot;displaced.mesh&quot;);
+mesh-&gt;Print(mesh_ofs);
+ofstream sol_ofs(&quot;sol.gf&quot;);
+x.Save(sol_ofs);
+
+socketstream sol_sock(&quot;localhost&quot;, 19916);
+sol_sock &lt;&lt; &quot;solution\n&quot; &lt;&lt; mesh &lt;&lt; x &lt;&lt; flush;
+</code></pre>
+
+<hr />
+<h3 id="parallel-example-2p"><i class="fa fa-check-square-o"></i>&nbsp; Parallel Example 2p</h3>
+<p>Like most MFEM examples, Example 2 has also a parallel version in the source file
+<a href="https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp">examples/ex2p.cpp</a>, which
+illustrates the ease of transition between sequential and MPI-parallel code. The
+parallel version supports all options of the serial example, and can be executed
+on varying numbers of MPI ranks, e.g., with <code>mpirun -np</code>. Besides MPI, in parallel
+we also depend on METIS for mesh partitioning and
+<a href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"><em>hypre</em></a>
+for solvers.</p>
+<p>The differences between the two versions are small, and you can compare them for
+yourself by opening both files in your VS Code window.</p>
+<p>The main additions in <code>ex2p.cpp</code> compared to <code>ex2.cpp</code> are:</p>
+<p><em>Initializing MPI and hypre</em></p>
+<pre><code class="c++">Mpi::Init();
+Hypre::Init();
+</code></pre>
+
+<p><em>Splitting the serial mesh in parallel with additional parallel refinement (Lines <a href="https://github.com/mfem/mfem/blob/master/examples/ex2p.cpp#L141-L149">141-149</a>)</em></p>
+<pre><code class="c++">ParMesh *pmesh = new ParMesh(MPI_COMM_WORLD, *mesh);
+int par_ref_levels = 2;
+for (int l = 0; l &lt; par_ref_levels; l++)
+{
+   pmesh.UniformRefinement();
+}
+</code></pre>
+
+<p><em>Using the <code>Par</code>-prefixed versions of the classes</em></p>
+<pre><code class="c++">ParFiniteElementSpace *fespace;
+ParLinearForm *b = new ParLinearForm(fespace)
+ParGridFunction x(fespace);
+ParBilinearForm *a = new ParBilinearForm(fespace);
+</code></pre>
+
+<p><em>Parallel PCG with hypre's algebraic multigrid BoomerAMG preconditioner</em></p>
+<pre><code class="c++">HypreBoomerAMG *amg = new HypreBoomerAMG(A);
+HyprePCG *pcg = new HyprePCG(A);
+pcg-&gt;SetTol(1e-8);
+pcg-&gt;SetMaxIter(500);
+pcg-&gt;SetPrintLevel(2);
+pcg-&gt;SetPreconditioner(*amg);
+pcg-&gt;Mult(B, X);
+</code></pre>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Unlike in the serial version, we expect the number of PCG iterations to be
+independent, or grow modestly, with respect to
+the mesh size, coefficient jumps, and number of MPI ranks when using the <code>BoomerAMG</code> preconditioner. Note, however, that
+algebraic multigrid has a non-trivial setup phase, which can be comparable in
+terms of time with the PCG solve phase. For more details, see the
+<a href="../../tutorial/solvers"><i class="fa fa-tasks"></i>&nbsp; Solvers and Scalability</a>
+page.
+</div> </div>
+
+<hr />
+<h3 id="serial-and-parallel-runs"><i class="fa fa-check-square-o"></i>&nbsp; Serial and parallel runs</h3>
+<p>Both <code>ex2</code> and <code>ex2p</code> come pre-built in the tutorial environment. You can see a
+number of sample runs at the beginning of their corresponding source files when
+you open them in VS Code. To get a feel for how these examples work, you can copy
+and paste some of these runs from the source to the terminal in VS Code.</p>
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Specify a couple different meshes with <kbd>-m</kbd>  in the VS Code terminal
+to see how the image rendered by GLVis changes. Run
+<p>
+<pre>
+./ex2 -m ../data/beam-tet.mesh
+</pre>
+</div>
+</div>
+
+<p><img alt="_Beam Displacement_" src="../img/ex2_1.png" />
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
+</div>
+<div class="panel-body">
+The current directory is not in the VS Code <code>PATH</code> so make
+sure to add <code>./</code> before the executable, e.g.,
+<code>./ex2 -m ../data/beam-tet.mesh</code> not
+<code>ex2 -m ../data/beam-tet.mesh</code>.
+</div>
+</div></p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The GLVis visualization is local to your browser, so it may take a while
+to update after a sample run. Once the data arrives, interaction with
+the visualization window should be fast.
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Try this!</h3>
+</div>
+<div class="panel-body">
+Now try out some sample parallel runs:
+<p>
+<pre>
+mpirun -np 16 ex2p
+mpirun -np 16 ex2p -m ../data/beam-tet.mesh
+mpirun -np 48 ex2p -m ../data/beam-tet.mesh
+</pre>
+</div>
+</div>
+
+<hr />
+<p>Back to the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"></p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#linear-elasticity">&nbsp; Linear Elasticity</a></li>
+        
+            <li><a href="#annotated-example-2">&nbsp; Annotated Example 2</a></li>
+        
+            <li><a href="#parallel-example-2p">&nbsp; Parallel Example 2p</a></li>
+        
+            <li><a href="#serial-and-parallel-runs">&nbsp; Serial and parallel runs</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

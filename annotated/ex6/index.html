@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+	<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS5XV5TFM6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NS5XV5TFM6');
+        </script>
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../nurbs/">NURBS Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tutorial/">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#poisson-problem-with-amr">&nbsp; Poisson Problem with AMR</a></li>
+        
+            <li><a href="#poissons-equation">&nbsp; Poisson's equation</a></li>
+        
+            <li><a href="#adaptive-mesh-refinement-amr">&nbsp; Adaptive Mesh Refinement (AMR)</a></li>
+        
+            <li><a href="#zienkiewiczzhu-zz-error-estimator">&nbsp; Zienkiewicz–Zhu (ZZ) Error Estimator</a></li>
+        
+            <li><a href="#annotated-example-6">&nbsp; Annotated Example 6</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="poisson-problem-with-amr"><i class="fa fa-book"></i>&nbsp; Poisson Problem with AMR</h2>
+<p>by Jiahao Liu and Prathik Narayanan, Brown University</p>
+<p><span class="label label-default">30 minutes </span>
+<span class="label label-default">intermediate</span></p>
+<hr />
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Example 6 Objectives</h3>
+  </div>
+  <div class="panel-body" style="line-height: 1.8;">
+    <i class="fa fa-square-o"></i>&nbsp; Understand how to set up and solve the Poisson equation with adaptive mesh refinement (AMR) in MFEM.<br>
+    <i class="fa fa-square-o"></i>&nbsp; Learn to use the ZZ error estimator to drive local mesh refinement in 2D and 3D.<br>
+    <i class="fa fa-square-o"></i>&nbsp; Explore both conforming and non-conforming refinements (triangles, quads, tetrahedra, hexes).<br>
+    <i class="fa fa-square-o"></i>&nbsp; Practice interpolation of solution fields between coarse and refined meshes.<br>
+  </div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Complete the <a href="../../tutorial/fem"></i>Example 1</a> tutorial before starting this lesson.
+</div>
+</div>
+
+<hr />
+<h3 id="poissons-equation"><i class="fa fa-check-square-o"></i>&nbsp; Poisson's equation</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Poisson's_equation"><em>Poisson Equation</em></a> is a
+partial differential equation (PDE) that can be used to model steady-state heat
+conduction, electric potentials, and gravitational fields. In mathematical terms, we write</p>
+<p>$$
+-\Delta u = f,
+$$</p>
+<p>where <em>u</em> is the potential field and <em>f</em> is the source function. This PDE is a
+generalization of the <a href="https://en.wikipedia.org/wiki/Laplace%27s_equation"><em>Laplace Equation</em></a>.</p>
+<p>To approximately solve the above continuous equation on computers, we need to
+<a href="https://en.wikipedia.org/wiki/Discretization">discretize</a> it by introducing a
+finite (discrete) number of unknowns to compute. In the
+<a href="https://en.wikipedia.org/wiki/Finite_element_method"><em>Finite Element Method</em></a> (FEM),
+this is done using the concept of <em>basis functions</em>.</p>
+<p>Instead of calculating the exact analytic solution <em>u</em>, we approximate it</p>
+<p>$$
+u \approx u_h := \sum_{j=1}^n c_j \varphi_j
+$$</p>
+<p>where $u_h$ is the finite element approximation with degrees of freedom (unknown
+coefficients) $c_j$, and $\varphi_j$ are known <em>basis functions</em>. The FEM basis
+functions are typically piecewise-polynomial functions on a given computational mesh,
+which are only non-zero on small portions of the mesh.</p>
+<p>To solve for the unknown coefficients in (2), we consider the <a href="../../fem_weak_form/">weak</a> (or variational) form of the Poisson equation. This is obtained by first multiplying with another (test) basis function $\varphi_i$:</p>
+<p>$$-\sum_{j=1}^n c_j \int_\Omega \Delta \varphi_j \varphi_i = \int_\Omega f \varphi_i$$</p>
+<p>and then integrating by parts using the <a href="https://en.wikipedia.org/wiki/Divergence_theorem">divergence theorem</a>:</p>
+<p>$$\sum_{j=1}^n c_j \int_\Omega \nabla \varphi_j \cdot \nabla \varphi_i = \int_\Omega f \varphi_i$$</p>
+<p>Here we are assuming that the boundary term vanishes due to homogeneous
+Dirichlet boundary conditions corresponding, for example, to zero temperature on
+the whole boundary.</p>
+<p>Since the basis functions are known, we can rewrite (4) as</p>
+<p>$$
+A x = b
+$$</p>
+<p>where</p>
+<p>$$
+A_{ij} = \int_\Omega \nabla \varphi_j \cdot \nabla \varphi_i
+$$</p>
+<p>$$
+b_i = \int_\Omega f \varphi_i
+$$</p>
+<p>$$
+x_j = c_j
+$$</p>
+<p>This is a $n \times n$ linear system that can be solved directly or iteratively
+for the unknown coefficients. Note that we are free to choose the computational
+mesh and the basis functions $\varphi_i$, and therefore the finite space, as we
+see fit.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The above is a basic introduction to finite elements in the simplest possible settings.
+To learn more, you can visit MFEM's <a href="../../fem/">Finite Element Method</a> page.
+</div>
+</div>
+
+<hr />
+<h3 id="adaptive-mesh-refinement-amr"><i class="fa fa-check-square-o"></i>&nbsp; Adaptive Mesh Refinement (AMR)</h3>
+<p>Adaptive mesh refinement (AMR) has been widely used in scientific computing to get better accuracy with minimal degrees of freedom. Instead of uniformly refining the mesh, AMR only refines the mesh in regions where the solution requires higher resolution.</p>
+<p>The main ideas behind AMR are:</p>
+<ul>
+<li><strong>Localized refinement</strong></li>
+</ul>
+<p>Refine the mesh where the solution needs more resolution (higher error regions).</p>
+<ul>
+<li><strong>Equidistribution of error</strong></li>
+</ul>
+<p>After sufficient refinement, the discretization error should be approximately uniform across all elements, optimizing resource usage.</p>
+<ul>
+<li><strong>Efficiency</strong></li>
+</ul>
+<p>Compared to uniform refinement, AMR achieves a desired accuracy with significantly fewer degrees of freedom (DoFs), leading to major computational savings.</p>
+<p><strong>Motivation for AMR in Poisson's equation</strong></p>
+<ul>
+<li>
+<p>Singularities at reentrant corners</p>
+</li>
+<li>
+<p>Sudden changes inside the domain caused by strong force terms</p>
+</li>
+<li>
+<p>Boundary layers near domain boundaries</p>
+</li>
+</ul>
+<p><strong>AMR Algorithm:</strong></p>
+<ol>
+<li><strong>Solve:</strong>
+Find $u_h \in V_h$ such that</li>
+</ol>
+<p>$$
+a(u_h, v_h) = (f, v_h)
+$$</p>
+<p>for all $v_h \in V_h.$</p>
+<ol>
+<li>
+<p><strong>Estimate:</strong>
+   For each element K, compute the local error indicator $\eta_K$ (explained in detail in next section).</p>
+</li>
+<li>
+<p><strong>Mark:</strong>
+   Select elements K where $\eta_K$ is relatively large. For instance, marking only the elements $K \in T_h$ satisfying
+$$
+\eta_K &gt; \theta \max_{K' \in T_h} \eta_{K'},
+$$
+   where $\theta \in (0,1)$ controls the maximum fraction of error. This ensures that only the elements with relatively large errors are refined.</p>
+</li>
+<li>
+<p><strong>Refine:</strong>
+   Refine the selected elements to create a new mesh $T_h'$. A conforming refinement is used for triangles/tetrahedra, and a non-conforming refinement is used for quadrilaterals/hexahedra.</p>
+</li>
+<li>
+<p><strong>Transfer:</strong>
+   Interpolate or project $u_h$ onto the new finite element space $V_h'$.</p>
+</li>
+<li>
+<p><strong>Repeat:</strong>
+    Solve $\rightarrow$ Estimate $\rightarrow$ Mark $\rightarrow$ Refine $\rightarrow$ Transfer
+   until convergence is achieved or a target number of degrees of freedom (DoFs) is reached.</p>
+</li>
+</ol>
+<p><strong>References</strong></p>
+<ul>
+<li>Berger, M.J. and Oliger, J., 1984. Adaptive mesh refinement for hyperbolic partial differential equations. Journal of computational Physics, 53(3), pp.484-512.</li>
+<li>Berger, M.J. and Colella, P., 1989. Local adaptive mesh refinement for shock hydrodynamics. Journal of computational Physics, 82(1), pp.64-84.</li>
+</ul>
+<hr />
+<h3 id="zienkiewiczzhu-zz-error-estimator"><i class="fa fa-check-square-o"></i>&nbsp; Zienkiewicz–Zhu (ZZ) Error Estimator</h3>
+<p>The <a href="https://docs.mfem.org/html/classmfem_1_1ZienkiewiczZhuEstimator.html"><em>Zienkiewicz–Zhu (ZZ) error estimator</em></a> is a popular recovery-based a posteriori error indicator for finite element solutions. It works by comparing the raw finite-element gradient (or stress) field to a “smoothed” (recovered) field and using their difference as an estimate of the local discretization error.</p>
+<h4 id="key-ideas">Key Ideas</h4>
+<ul>
+<li><strong>Finite Element Gradient</strong>
+   From the computed solution $u_h$, you can evaluate the element-wise gradient (or stress)</li>
+</ul>
+<p>$$
+\nabla u_h \quad (\text{or } \sigma_h) .
+$$</p>
+<ul>
+<li>
+<p><strong>Recovery</strong>
+   Build a higher-quality, continuous gradient field $\nabla u^\ast$ (or $\sigma^\ast$) by fitting a patch-wise polynomial through neighboring element values or applying a weighted averaging of nodal slopes.</p>
+</li>
+<li>
+<p><strong>Local Error Indicator</strong>
+   On each element $K$, define
+$$
+\eta_K = \|\nabla u^\ast - \nabla u_h\|_{L^2(K)}
+\quad\bigl( \text{or } \|\sigma^\ast - \sigma_h\| \bigr).
+$$</p>
+</li>
+<li>
+<p><strong>Global Estimate</strong>
+   Sum or square–sum over all elements to get a global error estimate:</p>
+</li>
+</ul>
+<p>$$
+\eta = \Bigl(\sum_{K} \eta_K^2\Bigr)^{1/2}.
+$$</p>
+<h4 id="advantages">Advantages</h4>
+<ul>
+<li><strong>Simplicity</strong>: Only requires post-processing of existing solution gradients.</li>
+<li><strong>Accuracy</strong>: Often yields reliable error localization even on unstructured meshes.</li>
+<li><strong>Efficiency</strong>: Computational cost is low compared to residual-based estimators.</li>
+</ul>
+<h4 id="typical-workflow">Typical Workflow</h4>
+<ul>
+<li>Solve the PDE with your chosen finite element discretization.</li>
+<li>Compute element-wise gradients $\nabla u_h$ or stresses $\sigma_h$.</li>
+<li>Recover a smoothed gradient $\nabla u^*$ or stress $\sigma^\ast$.</li>
+<li>Estimate $\eta_K$ on each element and mark for refinement.</li>
+<li>Refine mesh elements with largest $\eta_K$ and repeat.</li>
+</ul>
+<p><strong>Reference:</strong>
+[1] Zienkiewicz, O.C. and Zhu, J.Z., The superconvergent patch recovery and a posteriori error estimates. Part 1: The recovery technique. Int. J. Num. Meth. Engng. 33, 1331-1364 (1992).</p>
+<p>[2] Zienkiewicz, O.C. and Zhu, J.Z., The superconvergent patch recovery and a posteriori error estimates. Part 2: Error estimates and adaptivity. Int. J. Num. Meth. Engng. 33, 1365-1382 (1992).</p>
+<hr />
+<h3 id="annotated-example-6"><i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 6</h3>
+<p>Below is the classification of each mesh file used in the sample runs, indicating the dimension, element type, and whether it is conforming or non-conforming:</p>
+<table>
+<thead>
+<tr>
+<th>Mesh File</th>
+<th>Dimension</th>
+<th>Element Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>square-disc.mesh</code></td>
+<td>2D</td>
+<td>triangles</td>
+</tr>
+<tr>
+<td><code>square-disc-nurbs.mesh</code></td>
+<td>2D</td>
+<td>NURBS quadrilaterals</td>
+</tr>
+<tr>
+<td><code>star.mesh</code></td>
+<td>2D</td>
+<td>quadrilaterals</td>
+</tr>
+<tr>
+<td><code>escher.mesh</code></td>
+<td>3D</td>
+<td>tetrahedra</td>
+</tr>
+<tr>
+<td><code>fichera.mesh</code></td>
+<td>3D</td>
+<td>hexahedra</td>
+</tr>
+<tr>
+<td><code>disc-nurbs.mesh</code></td>
+<td>2D</td>
+<td>NURBS quadrilaterals</td>
+</tr>
+<tr>
+<td><code>ball-nurbs.mesh</code></td>
+<td>3D</td>
+<td>NURBS hexahedra</td>
+</tr>
+<tr>
+<td><code>pipe-nurbs.mesh</code></td>
+<td>3D</td>
+<td>NURBS hexahedra</td>
+</tr>
+<tr>
+<td><code>star-surf.mesh</code></td>
+<td>2D surface</td>
+<td>quadrilaterals</td>
+</tr>
+<tr>
+<td><code>square-disc-surf.mesh</code></td>
+<td>2D surface</td>
+<td>triangles</td>
+</tr>
+<tr>
+<td><code>amr-quad.mesh</code></td>
+<td>2D</td>
+<td>quadrilaterals</td>
+</tr>
+</tbody>
+</table>
+<p>MFEM's Example 6 implements the Laplace equation $-\Delta u = 1$ with homogeneous Dirichlet boundary conditions, enriched by a simple adaptive mesh refinement (AMR) loop. The refinements can be conforming (triangles, tetrahedra) or non-conforming (quadrilaterals, hexahedra) based on a Zienkiewicz–Zhu (ZZ) error estimator. Example 6 demonstrates MFEM’s support for 2D/3D, linear/curved and surface meshes, as well as function interpolation between coarse and refined meshes and persistent GLVis visualization. The source file is <a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp">examples/ex6.cpp</a>.</p>
+<p>Below we highlight selected portions of the example code and connect them with the description above. You can follow along by opening <code>ex6.cpp</code> in your editor. In the settings of this tutorial, the visualization will automatically update in the GLVis browser window.</p>
+<hr />
+<h4 id="the-mesh">The Mesh</h4>
+<p>The computational mesh for this problem is shown in the table. For instance, it could be set to <code>pipe-nurbs.mesh</code>. We can use GLVis to generate a visualization of this mesh by running <code>glvis -m
+pipe-nurbs.mesh</code>.</p>
+<p><img src="../img/ex6_1.png" width="300"></p>
+<p>The code in <a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L94-96">lines 94-96</a>
+loads the mesh from the given file, <code>mesh_file</code> and creates the corresponding
+MFEM object <code>mesh</code> of class <code>Mesh</code>.</p>
+<pre><code class="c++">Mesh mesh(mesh_file, 1, 1);
+int dim  = mesh.Dimension();
+int sdim = mesh.SpaceDimension();
+</code></pre>
+
+<p>If the mesh is NURBS, it is uniformly refined twice and then converted to a quadratic curved mesh (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L101-108">lines 101-108</a>):</p>
+<pre><code class="c++">if (mesh.NURBSext)
+{
+   for (int i = 0; i &lt; 2; i++)
+   {
+      mesh.UniformRefinement();
+   }
+   mesh.SetCurvature(2);
+}
+</code></pre>
+
+<hr />
+<h4 id="defining-variables-and-spaces">Defining Variables and Spaces</h4>
+<p>In the next block of code, we create the finite element space, i.e., specify the finite element basis functions on the mesh. This involves the MFEM class, <code>FiniteElementSpace</code>, which connects the space and the mesh. The code in <a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L112-113">lines 112-113</a> is essentially:</p>
+<pre><code class="c++">H1_FECollection fec(order, dim);
+FiniteElementSpace fespace(&amp;mesh, &amp;fec);
+</code></pre>
+
+<hr />
+<h4 id="set-up-the-error-estimator">Set up the error estimator</h4>
+<p>We declare the ZZ error estimator, mentioned earlier, in <a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174">lines 160-174</a>.</p>
+<p><strong><em>ErrorEstimator</em></strong></p>
+<ul>
+<li>
+<p><code>ZienkiewiczZhuEstimator</code>: computes element errors by subtracting a “smoothed” gradient (recovered via <code>DiffusionIntegrator</code>) from the original.</p>
+</li>
+<li>
+<p><code>LSZienkiewiczZhuEstimator</code>: a least‐squares variant activated with <code>-ls</code>, useful for certain mesh types.</p>
+</li>
+<li>
+<p>In 3D on non-hexahedral meshes, <a href="https://en.wikipedia.org/wiki/Ridge_regression#Tikhonov_regularization_for_linear_equations">Tikhonov regularization</a> improves conditioning.</p>
+</li>
+</ul>
+<pre><code class="c++">if (LSZZ)
+   {
+      estimator = new LSZienkiewiczZhuEstimator(*integ, x);
+      if (dim == 3 &amp;&amp; mesh.GetElementType(0) != Element::HEXAHEDRON)
+      {
+         dynamic_cast&lt;LSZienkiewiczZhuEstimator *&gt;
+         (estimator)-&gt;SetTichonovRegularization();
+      }
+   }
+   else
+   {
+      auto flux_fes = new FiniteElementSpace(&amp;mesh, &amp;fec, sdim);
+      estimator = new ZienkiewiczZhuEstimator(*integ, x, flux_fes);
+      dynamic_cast&lt;ZienkiewiczZhuEstimator *&gt;(estimator)-&gt;SetAnisotropic();
+   }
+</code></pre>
+
+<p>We create a threshold refiner to determine when to refine the mesh (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174">lines 180-181</a>).</p>
+<p><strong><em>ThresholdRefiner</em></strong></p>
+<ul>
+<li>
+<p><code>SetTotalErrorFraction(0.7)</code>: marks elements whose cumulative error reaches 70% for refinement. This corresponds to setting $\theta=0.7$ in (10).</p>
+</li>
+<li>
+<p>Supports both conforming and non-conforming refinements. Non-conforming refinement is an option (<code>-nc</code>) for simplex meshes.</p>
+</li>
+</ul>
+<pre><code class="c++">ThresholdRefiner refiner(*estimator);
+refiner.SetTotalErrorFraction(0.7);
+</code></pre>
+
+<hr />
+<h4 id="adaptive-mesh-refinement-loop">Adaptive Mesh Refinement loop</h4>
+<p><a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L185–275">Lines 185–275</a> comprise the main AMR loop. The process can be summarized as a sequence of several steps.</p>
+<p><strong>Iteration start &amp; logging</strong></p>
+<p>This begins a new AMR iteration, retrieving the current number of true DoFs (cdofs) and printing the iteration index and DoF count.</p>
+<pre><code class="c++">for (int it = 0; ; it++)
+{
+   int cdofs = fespace.GetTrueVSize();
+   cout &lt;&lt; &quot;\nAMR iteration &quot; &lt;&lt; it &lt;&lt; endl;
+   cout &lt;&lt; &quot;Number of unknowns: &quot; &lt;&lt; cdofs &lt;&lt; endl;
+</code></pre>
+
+<p><strong>Assembly and interpolation</strong></p>
+<p>Assemble the right-hand side and stiffness matrix and interpolate the Dirichlet boundary conditions onto the <code>GridFunction</code> <code>x</code>.</p>
+<pre><code class="c++">b.Assemble();
+// 14. Set Dirichlet boundary values in the GridFunction x.
+//     Determine the list of Dirichlet true DOFs in the linear system.
+Array&lt;int&gt; ess_tdof_list;
+x.ProjectBdrCoefficient(zero, ess_bdr);
+fespace.GetEssentialTrueDofs(ess_bdr, ess_tdof_list);
+
+// 15. Assemble the stiffness matrix.
+a.Assemble();
+</code></pre>
+
+<!-- Prathik -->
+
+<!-- Complete the other parts. -->
+
+<p><strong>Forming the linear system</strong></p>
+<p>The linear system is formed (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L206-210">lines 206-210</a>), solved (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L218-231">lines 218-231</a>), and the solution is recovered through the following steps (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L236">line 236</a>):</p>
+<p>The method <code>FormLinearSystem</code> takes the bilinear form <code>a</code>, linear form <code>b</code>, current solution <code>x</code>, and a list of essential boundary degrees of freedom <code>ess_tdof_list</code>. It eliminates boundary conditions, handles any constraints, and sets up the system for the true degrees of freedom only. The flag <code>copy_interior = 1</code> ensures that the interior (unconstrained) DOFs are copied properly for consistency.</p>
+<pre><code class="c++">OperatorPtr A;
+Vector B, X;
+const int copy_interior = 1;
+a.FormLinearSystem(ess_tdof_list, x, b, A, X, B, copy_interior);
+</code></pre>
+
+<p>This process produces <code>A</code> (an <code>OperatorPtr</code> for the assembled system matrix), <code>B</code> (the right-hand side vector), <code>X</code> (the unknowns vector to solve for).</p>
+<p><strong>Solving the linear system</strong></p>
+<p>There are two solving strategies depending on whether partial assembly (<code>pa</code>) is enabled:</p>
+<p><strong><em>Full Assembly Mode (<code>pa == false</code>)</em></strong></p>
+<ul>
+<li>
+<p>If MFEM is not compiled with <code>SuiteSparse</code>, a symmetric <strong>Gauss-Seidel smoother (<code>GSSmoother</code>)</strong> is used as a preconditioner for a preconditioned conjugate gradient (<code>PCG</code>) solver.</p>
+</li>
+<li>
+<p>If MFEM is compiled with <code>SuiteSparse</code>, the system is solved directly using the <strong><code>UMFPackSolver</code></strong> (a direct sparse solver with METIS ordering for efficiency).</p>
+</li>
+</ul>
+<p><strong><em>Partial Assembly Mode (<code>pa == true</code>)</em></strong></p>
+<ul>
+<li>
+<p>A simple diagonal (Jacobi) preconditioner (<strong><code>OperatorJacobiSmoother</code></strong>) is used.</p>
+</li>
+<li>
+<p><code>PCG</code> is used with more iterations allowed (up to 2000 iterations) since partial assembly typically results in slightly less robust preconditioning.</p>
+</li>
+</ul>
+<pre><code class="c++">if (!pa)
+{
+    // Full assembly mode
+#ifndef MFEM_USE_SUITESPARSE
+    GSSmoother M((SparseMatrix&amp;)(*A));
+    PCG(*A, M, B, X, 3, 200, 1e-12, 0.0);
+#else
+    UMFPackSolver umf_solver;
+    umf_solver.Control[UMFPACK_ORDERING] = UMFPACK_ORDERING_METIS;
+    umf_solver.SetOperator(*A);
+    umf_solver.Mult(B, X);
+#endif
+}
+else
+{
+    // Partial assembly mode
+    OperatorJacobiSmoother M(a, ess_tdof_list);
+    PCG(*A, M, B, X, 3, 2000, 1e-12, 0.0);
+}
+</code></pre>
+
+<p><strong>Recovering the finite element solution</strong></p>
+<p>After solving the system for the true DOFs <code>X</code>, the full finite element solution <code>x</code> is reconstructed. Constrained DOFs (like boundary conditions or hanging nodes) are interpolated appropriately. As a result, <code>x.Size()</code> may be larger than <code>X.Size()</code>.</p>
+<pre><code class="c++">a.RecoverFEMSolution(X, b, x);
+</code></pre>
+
+<p><strong>Termination condition</strong></p>
+<p>The loop terminates if the number of degrees of freedom exceeds a preset <code>limit max_dofs</code>, ensuring that the refinement or solution process doesn't consume too much memory or computation time.</p>
+<pre><code class="c++">if (cdofs &gt; max_dofs)
+{
+    cout &lt;&lt; &quot;Reached the maximum number of dofs. Stop.&quot; &lt;&lt; endl;
+    break;
+}
+</code></pre>
+
+<p><strong>Adaptive refinement loop</strong></p>
+<p>After solving the linear system, the mesh is refined adaptively (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L255-260">lines 255-260</a>) using the marking strategy (10), and the finite element space and solution are updated (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L268-269">lines 268-269</a>) accordingly.</p>
+<p>The method <code>refiner.Apply(mesh)</code> first computes local error indicators using the error estimator, then selects elements for refinement based on a marking strategy. It refines the selected elements to be subdivided in order to improve solution accuracy ($h$-refinement). After refinement, <code>refiner.Stop()</code> checks if a stopping criterion, such as reaching a target error level or maximum mesh size, has been met, and exits the loop if necessary.</p>
+<pre><code class="c++">refiner.Apply(mesh);
+if (refiner.Stop())
+{
+    cout &lt;&lt; &quot;Stopping criterion satisfied. Stop.&quot; &lt;&lt; endl;
+    break;
+}
+</code></pre>
+
+<p><strong>Update the finite element space and solution</strong></p>
+<p>After mesh refinement, <code>fespace.Update()</code> updates the finite element space to match the new mesh and computes an interpolation matrix. Then, <code>x.Update()</code> uses this matrix to transfer the old solution onto the new space, providing a good initial guess that helps reduce solver iterations in the next step.</p>
+<pre><code class="c++">fespace.Update();
+x.Update();
+</code></pre>
+
+<p><strong>Update bilinear and linear forms</strong></p>
+<p>The methods <code>a.Update()</code> and <code>b.Update()</code> rebuild the internal data structures associated with the new mesh and finite element space.</p>
+<pre><code class="c++">a.Update();
+b.Update();
+</code></pre>
+
+<p>Finally, after the refinement loop is completed, the error estimator object is deleted to free memory (<a href="https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L277">line 277</a>).</p>
+<p><img src="../img/ex6_2.png" width="1000"></p>
+<p>The figure above shows a sequence of adaptively refined meshes produced by running <code>ex6.cpp</code> with the initial mesh <code>pipe-nurbs.mesh</code>.</p>
+<hr />
+<p>Back to the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"></p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#poisson-problem-with-amr">&nbsp; Poisson Problem with AMR</a></li>
+        
+            <li><a href="#poissons-equation">&nbsp; Poisson's equation</a></li>
+        
+            <li><a href="#adaptive-mesh-refinement-amr">&nbsp; Adaptive Mesh Refinement (AMR)</a></li>
+        
+            <li><a href="#zienkiewiczzhu-zz-error-estimator">&nbsp; Zienkiewicz–Zhu (ZZ) Error Estimator</a></li>
+        
+            <li><a href="#annotated-example-6">&nbsp; Annotated Example 6</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>

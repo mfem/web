@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+	<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS5XV5TFM6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NS5XV5TFM6');
+        </script>
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../nurbs/">NURBS Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../../tutorial/">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#definite-maxwell-problem">&nbsp; Definite Maxwell Problem</a></li>
+        
+            <li><a href="#annotated-example-3">&nbsp; Annotated Example 3</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h2 id="definite-maxwell-problem"><i class="fa fa-book"></i>&nbsp; Definite Maxwell Problem</h2>
+<p>by Samik Mukhopadhyay and Erin Okey, Brown University</p>
+<p><span class="label label-default">45 minutes</span>
+<span class="label label-default">basic</span></p>
+<hr />
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-check"></i>&nbsp; Lesson Objectives</h3>
+</div>
+<div class="panel-body" style="line-height: 1.8;">
+<i class="fa fa-square-o"></i>&nbsp; Learn how to formulate a finite element discretization of the definite Maxwell problem.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to solve a problem using H(curl) finite element spaces.<br>
+<i class="fa fa-square-o"></i>&nbsp; Learn how to compute discretization errors when the exact solution is known.<br>
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Review  <a href="../../tutorial/fem"></i>Examples 1</a> and <a href="../ex2"></i>2</a> before starting this lesson.
+</div>
+</div>
+
+<hr />
+<p><a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations"><em>Maxwell's equations</em></a> are a set of coupled PDEs that form the basis for the study of electromagnetism. This annotated example demonstrates how to solve the second-order definite Maxwell equation,
+$$
+\nabla \times (\mu^{-1} \nabla \times E) + \sigma E = f,
+$$
+corresponding to a simple model of electromagnetic diffusion with permeability and conductivity parameters $\mu&gt;0$ and $\sigma&gt;0$, respectively. The boundary condition is given by setting $E \times n$ equal to some given tangential field $g$.</p>
+<p>After taking the inner product of (1) with a test vector field $F$, followed by integrating over the domain $\Omega$, we can apply <a href="https://en.wikipedia.org/wiki/Stokes_theorem">Stokes' theorem</a> to arrive at the following variational formulation: find $E \in H(\text{curl})$ with $E \times n = g$ on the boundary of our domain $\partial \Omega$ such that
+ $$a(E,F) := (\mu^{-1} \nabla \times E, \nabla \times F) + (\sigma E, F) = (f,F)=: b(F)$$</p>
+<p>for all $F \in H(\text{curl},\Omega)$ with $F \times n = 0$ on $\partial \Omega$.</p>
+<p>To find an approximate solution, we discretize (2) using the <a href="https://en.wikipedia.org/wiki/Finite_element_method"><em>Finite Element Method</em></a> (FEM). Since we are operating in the $H(\text{curl})$ space, we construct our discretization using first-order <a href="https://defelement.org/elements/nedelec1.html">Nédélec elements</a> to generate basis functions $\varphi_i$. Letting $V_h$ be the space generated by our basis functions, we want to find $E_h \in V_h^g$ such that the variational formulation is satisfied for all $F_h \in V_h^0$, where $V_h^g$ denotes all elements of $V_h$ that adhere to boundary condition $g$. As in <a href="../../tutorial/fem">Example 1</a>, the discretized variational formulation can be rewritten as a linear system $Ax=b$ because the basis functions are known.
+In particular, $A_{ij} = a(\varphi_i,\varphi_j)$, $b_i = b(\varphi_i)$, and $x$ is the vector of coefficients we are seeking in order to write our approximate solution as a linear combination of the basis functions.</p>
+<p>In this example, first the mesh and finite elements are specified, then the linear form $b$ and bilinear form $A$ are assembled. The resulting linear system is then solved via preconditioned conjugate gradient iterations. Finally, the solution is recovered and the error is calculated against the manufactured solution
+$$E(x) = (
+\sin(\kappa y),
+\sin(\kappa z),
+\sin(\kappa x)),$$
+where $\kappa &gt; 0$ is a prescribed frequency parameter.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+To learn more about electromagnetics in MFEM, visit the  <a href="../../maxwell-notes"></i>Maxwell's Equations</a> and <a href="../../electromagnetics"></i>Electromagnetics Mini Applications</a> documentation pages.
+</div>
+</div>
+
+<hr />
+<h3 id="annotated-example-3"><i class="fa fa-check-square-o"></i>&nbsp; Annotated Example 3</h3>
+<p>The source file <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp">examples/ex3.cpp</a> implements the electromagnetics problem described above.
+The main parts of the example code are annotated below.</p>
+<hr />
+<h4 id="possible-mesh-options">Possible mesh options:</h4>
+<p>Many possible mesh options are written in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L5-23">lines 5-23</a> for the convenience of the user along with example runs for <code>ex3.cpp</code> with each of those mesh files. A selection of mesh files are available in MFEM directory in the <code>../mfem/data</code> folder.  The user can also specify a custom file.</p>
+<hr />
+<h4 id="parse-command-line-options">Parse command-line options</h4>
+<p>We start the code (<a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L70-94">lines 70-94</a>) with several command line options:</p>
+<ol>
+<li><code>-m</code>: Specifies the mesh file. MFEM can handle various mesh types. Please check the <a href="https://mfem.org/mesh-formats/">official documentation</a> for further details.</li>
+<li><code>-o</code>: Specifies the polynomial degree of the finite element (Nédélec element in this case).</li>
+<li><code>-f</code>: Specifies the variable <code>freq</code>, which sets the frequency parameter <code>kappa = freq * M_PI;</code> in  <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L96">line 96</a>; cf. (3).</li>
+<li><code>-sc</code>: Specifies whether or not to use Static Condensation in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L179">line 179</a>.</li>
+<li><code>-pa</code>: Specifies whether or not to use <a href="https://mfem.org/performance/#partial-assembly-in-mfem">Partial Assembly</a> in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L171">line 171</a>. This can reduce both the size of the problem and computational time.</li>
+<li><code>-nc</code>: Specifies whether or not the mesh should remain conforming during refinement.</li>
+<li><code>-d</code>: Specifies the computation device. Possible options are shown in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L25-29">lines 25-29</a>. The user can choose to use RAJA, CUDA or, by default, cpu.</li>
+<li><code>-vis</code>: Determines if visualization will be executed or not (with the help of GLVis server in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L229-236">lines 229-236</a>).</li>
+</ol>
+<hr />
+<h4 id="device-choice">Device choice</h4>
+<pre><code class="cpp">   Device device(device_config);
+   device.Print();
+</code></pre>
+
+<p>MFEM allows GPUs and other programming models such as CUDA, RAJA, OpenMP, and OCCA. The command line option <code>-d</code> provides the device to be used. In <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L100">line 100</a>, the <code>device</code> is set from the command-line input <code>device_config</code>. It is then printed in output to confirm the execution to the user in line <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L101">line 101</a>.</p>
+<hr />
+<h4 id="mesh-creation">Mesh creation</h4>
+<pre><code class="cpp">   Mesh *mesh = new Mesh(mesh_file, 1, 1);
+   dim = mesh-&gt;Dimension();
+   int sdim = mesh-&gt;SpaceDimension();
+</code></pre>
+
+<p>This block of code defines the mesh after reading from the <code>mesh_file</code> provided by the user.
+The <code>1, 1</code> arguments control the generation of boundary elements and preparation for conforming or non-conforming refinement as selected by the <code>-nc</code> option.
+Then <code>dim</code> retrieves the dimension of the mesh elements (e.g., 2 for triangles, 3 for tetrahedrons). Then <code>sdim</code> retrieves the dimension of the ambient space.</p>
+<hr />
+<h4 id="mesh-refinement">Mesh refinement</h4>
+<pre><code class="cpp">   {
+      int ref_levels =
+         (int)floor(log(50000./mesh-&gt;GetNE())/log(2.)/dim);
+      for (int l = 0; l &lt; ref_levels; l++)
+      {
+         mesh-&gt;UniformRefinement();
+      }
+   }
+</code></pre>
+
+<p>This block of code refines the input mesh. It calculates the number of uniform refinement levels (<code>ref_levels</code>) needed so that the final mesh has roughly 50,000 elements or fewer. In <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L121">line 121</a>, the mesh refinement is done with a factor of 2 per dimension <code>dim</code>. Then in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L124">line 124</a>, the mesh is refined <code>ref_levels</code> times in an uniform manner.</p>
+<hr />
+<h4 id="finite-element-space-definition">Finite element space definition</h4>
+<p>The next block of code defines the Finite Element Space on the mesh provided by the user.</p>
+<pre><code class="cpp">   FiniteElementCollection *fec = new ND_FECollection(order, dim);
+   FiniteElementSpace *fespace = new FiniteElementSpace(mesh, fec);
+   cout &lt;&lt; &quot;Number of finite element unknowns: &quot;
+        &lt;&lt; fespace-&gt;GetTrueVSize() &lt;&lt; endl;
+</code></pre>
+
+<p>Here, the <code>FiniteElementCollection</code> corresponds to Nédélec basis functions because Nédélec finite elements have optimal approximation properties in $H(\mathrm{curl})$; i.e., the energy space over which problem (2) is well-defined.</p>
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+The Nédélec basis functions are intrinsically vector-valued.
+In particular, they cannot be constructed as a Cartesian product of a scalar basis, unlike the vector-valued basis used in <a href="../ex2"></i>Example 2</a> for linear elasticity.
+In turn, these basis functions are typically nonzero in all components, and their degree-of-freedom numbering does not represent their active vector components.
+</div>
+</div>
+
+<hr />
+<h4 id="identification-of-essential-boundary-dofs">Identification of essential boundary dofs</h4>
+<p>The next block of code marks the degrees of freedom associated with the conforming (i.e., 'true') essential/Dirichlet-type boundary conditions.</p>
+<pre><code class="cpp">   Array&lt;int&gt; ess_tdof_list;
+   if (mesh-&gt;bdr_attributes.Size())
+   {
+      Array&lt;int&gt; ess_bdr(mesh-&gt;bdr_attributes.Max());
+      ess_bdr = 1;
+      fespace-&gt;GetEssentialTrueDofs(ess_bdr, ess_tdof_list);
+   }
+</code></pre>
+
+<p>Note that $E \times n$ is specified over $\partial\Omega$ in (2). Therefore, all boundary attributes are marked as essential by setting <code>ess_bdr</code> = 1 <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L143">line 143</a>.</p>
+<hr />
+<h4 id="assembling-the-linear-form">Assembling the linear form</h4>
+<pre><code class="cpp">   VectorFunctionCoefficient f(sdim, f_exact);
+   LinearForm *b = new LinearForm(fespace);
+   b-&gt;AddDomainIntegrator(new VectorFEDomainLFIntegrator(f));
+   b-&gt;Assemble();
+</code></pre>
+
+<p>This block of code defines the linear form on the right-hand side of (2). More specifically, <code>VectorFEDomainLFIntegrator(f)</code> encodes the action of the linear form $\psi_i \mapsto \int_{\partial\Omega} f \cdot \psi_i\, \mathrm{d}S$, where $\psi_i$ are the Nédélec basis functions. The corresponding right-hand side vector $b$ is assembled using the <code>Assemble</code> function.</p>
+<hr />
+<h4 id="solution-gridfunction">Solution <code>GridFunction</code></h4>
+<pre><code class="cpp">   GridFunction x(fespace);
+   VectorFunctionCoefficient E(sdim, E_exact);
+   x.ProjectCoefficient(E);
+</code></pre>
+
+<p>In this code block, the <code>GridFunction</code> <code>x</code> is constructed using <code>fespace</code>. This <code>GridFunction</code> will hold the dof values representing the finite element solution vector on the mesh. In order to match the Dirichlet boundary conditions, <code>x</code> is initialized by interpolating the exact solution <code>E</code> using the function <code>ProjectCoefficient</code>.</p>
+<hr />
+<h4 id="defining-the-bilinear-form">Defining the bilinear form</h4>
+<p>The bilinear form $a(E, F)$ in (2) is defined in this code block.</p>
+<pre><code class="cpp">   Coefficient *muinv = new ConstantCoefficient(1.0);
+   Coefficient *sigma = new ConstantCoefficient(1.0);
+   BilinearForm *a = new BilinearForm(fespace);
+   if (pa) { a-&gt;SetAssemblyLevel(AssemblyLevel::PARTIAL); }
+   a-&gt;AddDomainIntegrator(new CurlCurlIntegrator(*muinv));
+   a-&gt;AddDomainIntegrator(new VectorFEMassIntegrator(*sigma));
+</code></pre>
+
+<p>Here, <code>muinv</code> and <code>sigma</code>, which correspond to the two parameters appearing the strong formulation (1), are both set to <code>1.0</code>. If partial assembly (<code>pa</code>) is enabled, it's set here in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L171">line 171</a>. Then <code>CurlCurlIntegrator</code> is applied on <code>a</code> using the constant coefficient <code>muinv</code>, and subsequently, <code>VectorFEMassIntegrator</code> is applied on <code>a</code> using the constant coefficient <code>sigma</code>. Now we are ready to assemble the bilinear form in the below block.</p>
+<hr />
+<h4 id="assembling-the-bilinear-form">Assembling the bilinear form</h4>
+<pre><code class="cpp">if (static_cond) { a-&gt;EnableStaticCondensation(); }
+   a-&gt;Assemble();
+
+   OperatorPtr A;
+   Vector B, X;
+   a-&gt;FormLinearSystem(ess_tdof_list, x, *b, A, X, B);
+
+   cout &lt;&lt; &quot;Size of linear system: &quot; &lt;&lt; A-&gt;Height() &lt;&lt; endl;
+</code></pre>
+
+<p>Here, static condensation is enabled if it was requested from the command line using the command <code>-sc</code>. Then <code>a-&gt;Assemble();</code> computes the element matrices and assembles the global stiffness matrix. The function <code>FormLinearSystm</code> transforms the assembled bilinear form <code>a</code> and linear form <code>b</code> into the final algebraic system <code>A X = B</code>; cf. lines 212-216 of <a href="https://mfem.org/tutorial/fem/#annotated-example-1">Annotated Example 1</a>). Note that the function
+<code>FormLinearSystem</code> also eliminates the essential boundary dofs declared in <code>ess_tdof_list</code>. Lastly, we print the size of the linear system for the convenience of the user.</p>
+<hr />
+<h4 id="solving-the-linear-system">Solving the linear system</h4>
+<p>The next block of code solves the linear system <code>A X = B</code> for the unknown dofs <code>X</code>. If <a href="https://mfem.org/performance/#partial-assembly-in-mfem">Partial Assembly</a> (<code>pa</code>) is used, it employs the Preconditioned Conjugate Gradient (PCG) iterative solver with a simple Jacobi preconditioner (<code>OperatorJacobiSmoother</code>). Otherwise, in case of full assembly, the code checks if the <a href="https://mfem.org/code-overview/#:~:text=Direct%20sparse%20solvers">SuiteSparse library</a> is used or not. If the <code>SuiteSparse</code> library has been used, then <code>UMFPACK</code> will be used to solve the system. Otherwise, a Gauss-Seidel preconditioner along with PCG will be used to solve the system.</p>
+<pre><code class="cpp">if (pa) // Jacobi preconditioning in partial assembly mode
+   {
+      OperatorJacobiSmoother M(*a, ess_tdof_list);
+      PCG(*A, M, B, X, 1, 1000, 1e-12, 0.0);
+   }
+   else
+   {
+#ifndef MFEM_USE_SUITESPARSE
+      // 11. Define a simple symmetric Gauss-Seidel preconditioner and use it to
+      //     solve the system Ax=b with PCG.
+      GSSmoother M((SparseMatrix&amp;)(*A));
+      PCG(*A, M, B, X, 1, 500, 1e-12, 0.0);
+#else
+      // 11. If MFEM was compiled with SuiteSparse, use UMFPACK to solve the
+      //     system.
+      UMFPackSolver umf_solver;
+      umf_solver.Control[UMFPACK_ORDERING] = UMFPACK_ORDERING_METIS;
+      umf_solver.SetOperator(*A);
+      umf_solver.Mult(B, X);
+#endif
+   }
+</code></pre>
+
+<p>Observe that, <code>PCG</code> takes several arguments in <a href="https://github.com/mfem/mfem/blob/master/examples/ex3.cpp#L200">line 200</a>, which we now describe. <code>A</code>, <code>B</code>, <code>X</code> refers to the linear system <code>A X = B</code>. <code>M</code> refers to the solver after preconditioner applied (if applicable). <code>1</code> refers to the value of the variable <a href="https://docs.mfem.org/html/solvers_8cpp_source.html#:~:text=956-,pcg,-.SetPrintLevel(print_iter)"><code>print_iter</code></a>, which implies a message about sending detailed information about each iteration. The maximum number of iterations allowed <code>max_num_iter</code> is <code>500</code>. The relative tolerance allowed for convergence <code>1e-12</code> and the absolute tolerance allowed for convergence is <code>0.0</code>. Users are encouraged to read the <code>Solvers</code> <a href="https://docs.mfem.org/html/solvers_8cpp_source.html">documentation</a> for a better understanding.</p>
+<hr />
+<h4 id="recovering-the-solution-as-a-finite-element-grid-function">Recovering the solution as a finite element grid function</h4>
+<p>After solving the system <code>A X = B</code>, the vector <code>X</code> only contains the values for the unknown (non-essential) degrees of freedom.</p>
+<pre><code class="cpp"> a-&gt;RecoverFEMSolution(X, *b, x);
+</code></pre>
+
+<p>This line uses the <code>RecoverFEMSolution</code> method to reconstruct the complete solution GridFunction <code>x</code>. It copies the computed values from <code>X</code> into the corresponding entries of <code>x</code>, and adds back the known essential boundary DOF values.</p>
+<hr />
+<h4 id="saving-the-refined-mesh-and-the-solution">Saving the refined mesh and the solution</h4>
+<p>This code block saves the final solution and refined mesh using line <code>x.Save(sol_ofs);</code>. It also prints the final mesh geometry. This mesh and solution can be visualized later using the GLVis server.</p>
+<pre><code class="cpp">   {
+    ofstream mesh_ofs(&quot;refined.mesh&quot;);
+    mesh_ofs.precision(8);
+    mesh-&gt;Print(mesh_ofs);
+    ofstream sol_ofs(&quot;sol.gf&quot;);
+    sol_ofs.precision(8);
+    x.Save(sol_ofs);
+   }
+</code></pre>
+
+<hr />
+<h4 id="visualization">Visualization</h4>
+<p>If the <code>visualization</code> flag is enabled with the <code>-vis</code> command-line, the code block connects to a GLVis server and plots the results using the GLVis server. A new GLVis window opens which produces the customizable plot. For further details, please go through the <a href="https://glvis.org/options-and-use/">GLVis Documentation</a>.</p>
+<pre><code class="cpp">   if (visualization)
+   {
+      char vishost[] = &quot;localhost&quot;;
+      int  visport   = 19916;
+      socketstream sol_sock(vishost, visport);
+      sol_sock.precision(8);
+      sol_sock &lt;&lt; &quot;solution\n&quot; &lt;&lt; *mesh &lt;&lt; x &lt;&lt; flush;
+   }
+</code></pre>
+
+<hr />
+<h4 id="freeing-the-used-memory">Freeing the used memory</h4>
+<p>Lastly, the variables are deleted to prevent a memory leak in C++, which might become an issue if the program is executed multiple times.</p>
+<pre><code class="cpp">   delete a;
+   delete sigma;
+   delete muinv;
+   delete b;
+   delete fespace;
+   delete fec;
+   delete mesh;
+</code></pre>
+
+<hr />
+<p>Back to the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.</p>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<p><link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet"></p></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#definite-maxwell-problem">&nbsp; Definite Maxwell Problem</a></li>
+        
+            <li><a href="#annotated-example-3">&nbsp; Annotated Example 3</a></li>
+        
+    
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../js/retina.min.js"></script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../search/main.js"></script>
+    </body>
+</html>
