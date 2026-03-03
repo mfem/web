@@ -1,4 +1,4 @@
-## <i class="fa fa-book"></i>&nbsp; Example 6: Poisson Problem with AMR
+## <i class="fa fa-book"></i>&nbsp; Poisson Problem with AMR
 
 by Jiahao Liu and Prathik Narayanan, Brown University
 
@@ -120,7 +120,7 @@ The main ideas behind AMR are:
 
    Refine the mesh where the solution needs more resolution (higher error regions).
 
-- **Equidistribution of error** 
+- **Equidistribution of error**
 
    After sufficient refinement, the discretization error should be approximately uniform across all elements, optimizing resource usage.
 
@@ -159,13 +159,13 @@ $$
    where $\theta \in (0,1)$ controls the maximum fraction of error. This ensures that only the elements with relatively large errors are refined.
 
 4. **Refine:**
-   Refine the selected elements to create a new mesh $T_h'$. A conforming refinement is used for triangles/tetrahedra, and a non-conforming refinement is used for quadrilaterals/hexahedrals.
+   Refine the selected elements to create a new mesh $T_h'$. A conforming refinement is used for triangles/tetrahedra, and a non-conforming refinement is used for quadrilaterals/hexahedra.
 
 5. **Transfer:**
    Interpolate or project $u_h$ onto the new finite element space $V_h'$.
 
 6. **Repeat:**
-    Solve $\rightarrow$ Estimate $\rightarrow$ Mark $\rightarrow$ Refine $\rightarrow$ Transfer 
+    Solve $\rightarrow$ Estimate $\rightarrow$ Mark $\rightarrow$ Refine $\rightarrow$ Transfer
    until convergence is achieved or a target number of degrees of freedom (DoFs) is reached.
 
 **References**
@@ -179,25 +179,25 @@ $$
 The [_Zienkiewicz–Zhu (ZZ) error estimator_](https://docs.mfem.org/html/classmfem_1_1ZienkiewiczZhuEstimator.html) is a popular recovery-based a posteriori error indicator for finite element solutions. It works by comparing the raw finite-element gradient (or stress) field to a “smoothed” (recovered) field and using their difference as an estimate of the local discretization error.
 
 #### Key Ideas
-- **Finite Element Gradient**  
-   From the computed solution $u_h$, you can evaluate the element-wise gradient (or stress)  
+- **Finite Element Gradient**
+   From the computed solution $u_h$, you can evaluate the element-wise gradient (or stress)
 
 $$
 \nabla u_h \quad (\text{or } \sigma_h) .
 $$
 
-- **Recovery**  
-   Build a higher-quality, continuous gradient field $\nabla u^\ast$ (or $\sigma^\ast$) by fitting a patch-wise polynomial through neighboring element values or applying a weighted averaging of nodal slopes.  
+- **Recovery**
+   Build a higher-quality, continuous gradient field $\nabla u^\ast$ (or $\sigma^\ast$) by fitting a patch-wise polynomial through neighboring element values or applying a weighted averaging of nodal slopes.
 
-- **Local Error Indicator**  
-   On each element $K$, define  
+- **Local Error Indicator**
+   On each element $K$, define
 $$
-\eta_K = \\|\nabla u^\ast - \nabla u_h\\|_{L^2(K)}  
+\eta_K = \\|\nabla u^\ast - \nabla u_h\\|_{L^2(K)}
 \quad\bigl( \text{or } \\|\sigma^\ast - \sigma_h\\| \bigr).
 $$
 
-- **Global Estimate**  
-   Sum or square–sum over all elements to get a global error estimate:  
+- **Global Estimate**
+   Sum or square–sum over all elements to get a global error estimate:
 
 $$
 \eta = \Bigl(\sum_{K} \eta_K^2\Bigr)^{1/2}.
@@ -205,19 +205,19 @@ $$
 
 #### Advantages
 
-- **Simplicity**: Only requires post-processing of existing solution gradients.  
-- **Accuracy**: Often yields reliable error localization even on unstructured meshes.  
+- **Simplicity**: Only requires post-processing of existing solution gradients.
+- **Accuracy**: Often yields reliable error localization even on unstructured meshes.
 - **Efficiency**: Computational cost is low compared to residual-based estimators.
 
 #### Typical Workflow
 
-- Solve the PDE with your chosen finite element discretization.  
-- Compute element-wise gradients $\nabla u_h$ or stresses $\sigma_h$.  
-- Recover a smoothed gradient $\nabla u^*$ or stress $\sigma^\ast$.  
-- Estimate $\eta_K$ on each element and mark for refinement.  
+- Solve the PDE with your chosen finite element discretization.
+- Compute element-wise gradients $\nabla u_h$ or stresses $\sigma_h$.
+- Recover a smoothed gradient $\nabla u^*$ or stress $\sigma^\ast$.
+- Estimate $\eta_K$ on each element and mark for refinement.
 - Refine mesh elements with largest $\eta_K$ and repeat.
 
-**Reference:**  
+**Reference:**
 [1] Zienkiewicz, O.C. and Zhu, J.Z., The superconvergent patch recovery and a posteriori error estimates. Part 1: The recovery technique. Int. J. Num. Meth. Engng. 33, 1331-1364 (1992).
 
 [2] Zienkiewicz, O.C. and Zhu, J.Z., The superconvergent patch recovery and a posteriori error estimates. Part 2: Error estimates and adaptivity. Int. J. Num. Meth. Engng. 33, 1365-1382 (1992).
@@ -233,8 +233,8 @@ Below is the classification of each mesh file used in the sample runs, indicatin
 | `square-disc.mesh`          | 2D          | triangles                     |
 | `square-disc-nurbs.mesh`    | 2D          | NURBS quadrilaterals          |
 | `star.mesh`                 | 2D          | quadrilaterals                |
-| `escher.mesh`               | 3D          | tetrahedrons                  |
-| `fichera.mesh`              | 3D          | hexahedrons                   |
+| `escher.mesh`               | 3D          | tetrahedra                    |
+| `fichera.mesh`              | 3D          | hexahedra                     |
 | `disc-nurbs.mesh`           | 2D          | NURBS quadrilaterals          |
 | `ball-nurbs.mesh`           | 3D          | NURBS hexahedra               |
 | `pipe-nurbs.mesh`           | 3D          | NURBS hexahedra               |
@@ -290,12 +290,12 @@ FiniteElementSpace fespace(&mesh, &fec);
 #### Set up the error estimator
 We declare the ZZ error estimator, mentioned earlier, in [lines 160-174](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174).
 
-***ErrorEstimator***  
+***ErrorEstimator***
 
   - `ZienkiewiczZhuEstimator`: computes element errors by subtracting a “smoothed” gradient (recovered via `DiffusionIntegrator`) from the original.
 
-  - `LSZienkiewiczZhuEstimator`: a least‐squares variant activated with `-ls`, useful for certain mesh types.  
-  
+  - `LSZienkiewiczZhuEstimator`: a least‐squares variant activated with `-ls`, useful for certain mesh types.
+
   - In 3D on non-hexahedral meshes, [Tikhonov regularization](https://en.wikipedia.org/wiki/Ridge_regression#Tikhonov_regularization_for_linear_equations) improves conditioning.
 
 ```c++
@@ -317,7 +317,7 @@ if (LSZZ)
 ```
 We create a threshold refiner to determine when to refine the mesh ([lines 180-181](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp#L160-174)).
 
-***ThresholdRefiner***  
+***ThresholdRefiner***
 
   - `SetTotalErrorFraction(0.7)`: marks elements whose cumulative error reaches 70% for refinement. This corresponds to setting $\theta=0.7$ in (10).
 
@@ -335,7 +335,7 @@ refiner.SetTotalErrorFraction(0.7);
 
 **Iteration start & logging**
 
-This begins a new AMR iteration, retrieving the current number of true DoFs (cdofs) and printing the iteration index and DoF count. 
+This begins a new AMR iteration, retrieving the current number of true DoFs (cdofs) and printing the iteration index and DoF count.
 ```c++
 for (int it = 0; ; it++)
 {
@@ -388,7 +388,7 @@ There are two solving strategies depending on whether partial assembly (`pa`) is
 
 - If MFEM is compiled with `SuiteSparse`, the system is solved directly using the **`UMFPackSolver`** (a direct sparse solver with METIS ordering for efficiency).
 
-***Partial Assembly Mode (`pa == true`)*** 
+***Partial Assembly Mode (`pa == true`)***
 
 - A simple diagonal (Jacobi) preconditioner (**`OperatorJacobiSmoother`**) is used.
 
@@ -478,7 +478,7 @@ The figure above shows a sequence of adaptively refined meshes produced by runni
 
 ---
 
-Back to the the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
+Back to the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>

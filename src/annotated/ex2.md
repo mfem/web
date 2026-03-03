@@ -43,7 +43,7 @@ $$
 {\sigma({u})} = \lambda (\nabla \cdot {u}) {I} + \mu (\nabla {u} + \nabla {u}^T),
 $$
 
-where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties. 
+where $\lambda$ and $\mu$ are Lamé's constants which depend on material properties.
 
 To solve this system of equations numerically, we convert it into a discrete problem with a finite number of unknowns. The [_Finite Element Method_](https://en.wikipedia.org/wiki/Finite_element_method) (FEM) proceeds by constructing a linear combination of _basis functions_ to represent the solution $u$ over the domain $\Omega\subset\mathbb{R}^n$.
 
@@ -70,7 +70,7 @@ $$
 \int_{\Omega} \nabla v_h : {\sigma}(u_h)\, \mathrm{d}{x} = \int_{\partial \Omega} v_h \cdot ({\sigma}(u_h) \cdot {n})\, \mathrm{d}S.
 $$
 
-The boundary of the domain, $\partial\Omega$, is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogenous ($u = 0$) displacement boundary condition, whereas the rest of the boundary has a traction boundary condition, ${\sigma} \cdot {n} = t$. In this problem, the traction force $t$ is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$, we obtain the weak formulation
+The boundary of the domain, $\partial\Omega$, is divided into two parts, the displacement (Dirichlet) boundary $\Gamma_D$ and the traction (Neumann) boundary $\Gamma_T$. In this example problem, the left-hand side of the boundary has a homogeneous ($u = 0$) displacement boundary condition, whereas the rest of the boundary has a traction boundary condition, ${\sigma} \cdot {n} = t$. In this problem, the traction force $t$ is non-zero only on the right-hand side of the boundary. Now using our constitutive law (2), which gives the relation between ${\sigma}$ and the displacement field ${u}$, we obtain the weak formulation
 
 $$
 \int_{\Omega} \lambda (\nabla\cdot u_h)(\nabla\cdot v_h) + \mu (\nabla u_h + \nabla {u}^T_h) : \nabla v_h \, \mathrm{d}{x} = \int_{\Gamma_T} v_h \cdot t\, \mathrm{d}S
@@ -421,7 +421,7 @@ mpirun -np 48 ex2p -m ../data/beam-tet.mesh
 
 ---
 
-Back to the the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
+Back to the <a href="../../getting-started"><i class="fa fa-play-circle"></i>&nbsp;Getting Started</a> page.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
