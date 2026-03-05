@@ -20,14 +20,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ##### **March 10, 2026**
 #### Ido Akkerman (Delft university of Technology)
-##### *Title*
+##### *NURBS-Based Isogeometric Analysis: Past, Present, and Future*
 ##### [**9:00am PDT, March 10, 2026**](https://everytimezone.com/s/33982442)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** TBA
+**Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements.
+Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements.
+In this talk, will discuss important implementational aspect as well as some benefits of IGA through several applications.
+These application will focus incompressible flow simulations using the Variational Multiscale Method (VMS) framework.
+More recently, H(div)- and H(curl)-conforming spline spaces have been implemented, opening new opportunities for mixed formulations. These spaces can satisfy the de Rham Complex exactly, enabling structure-preserving discretization. One promising application is incompressible flow, where compatible velocity–pressure pairs can achieve not only inf-sup stability but also pointwise satisfaction of the incompressibility constraint.
 
 ---
 
@@ -52,7 +56,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </button>](https://youtu.be/rVx4LQtqEOg)
 
 **Abstract:** The transition to heterogeneous or GPU-dominated hardware in high-performance computing (HPC) infrastructure has highlighted the need for hardware-extensible implementations of HPC applications in scientific computing and AI. Ensuring that these implementations are optimised for the specific hardware target poses a significant challenge, as the optimisation process requires specific hardware-level knowledge that is not only outside the scientific domain but also varies across different hardware types and vendors. In this talk, we present some of the approaches being used to enable this transition within the Nektar++ framework, which aims to present an interface for the development of solvers based on the spectral/hp element method. We first focus on our present redevelopment efforts to enable Nektar++ to transition from solely CPU to GPU architectures. Here, we have a particular interest in the performance of matrix-free operators for unstructured three-dimensional meshes of different element types (e.g. tetrahedra, prisms). These are a critical component in the simulation of problems that involve complex geometries, which is a key focus of our framework.
-<p> In the second half of the talk, we present a second approach that is designed to provide longer-term flexibility for Nektar++, and potentially other software frameworks based on the high-order finite element method. This project, NektarIR, is a domain-specific compiler for high-order finite element operations on CPU and GPU hardwares. Using the MLIR project, we have created an intermediate representation of a high-level abstraction of the operations that is rewritten and lowered through a series of passes to optimised and hardware-specific kernels. These kernels are then just-in-time (JIT) compiled for the specific hardware and architecture using LLVM and can be used in the construction of spectral/hp element solvers for computational fluid dynamics. We present benchmarks for the overhead introduced by our compiler pipeline and a run-time performance comparison of our kernels against the Nektar++ spectral/hp element framework.
+In the second half of the talk, we present a second approach that is designed to provide longer-term flexibility for Nektar++, and potentially other software frameworks based on the high-order finite element method. This project, NektarIR, is a domain-specific compiler for high-order finite element operations on CPU and GPU hardwares. Using the MLIR project, we have created an intermediate representation of a high-level abstraction of the operations that is rewritten and lowered through a series of passes to optimised and hardware-specific kernels. These kernels are then just-in-time (JIT) compiled for the specific hardware and architecture using LLVM and can be used in the construction of spectral/hp element solvers for computational fluid dynamics. We present benchmarks for the overhead introduced by our compiler pipeline and a run-time performance comparison of our kernels against the Nektar++ spectral/hp element framework.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -73,7 +77,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </button>](https://youtu.be/vMODQyiF4Xs)
 
 **Abstract:** Multiscale and multiphysics problems are typically governed by a wide range of interacting temporal and spatial scales, with different physical processes often dominating the opposing ends of the scale range. The simulation of these phenomena requires highly accurate and efficient numerical schemes that should allow for adaptive and flexible discretization strategies to tailor the approximation scheme to the locally dominating physical effect. Still, for practical applications, the occurring scale range in relevant engineering applications typically remains too immense even for well-parallelized simulations on nascent exascale architectures. Here, scale-bridging models must supplement upscaled governing equations to enable simulations of for example turbulent flows, flows with phase interfaces and so on.
-<br> In this talk, I will present contributions and recent advances to both fields: First, I will discuss highly accurate and locally adaptive numerical schemes based on DGSEM for solving the compressible Navier-Stokes equations on pre-exascale systems and beyond with a focus on applications in the aerospace engineering sector. In the second part of my talk, I will discuss how and where (and where not) machine learning methods can help devise the necessary scale bridging models that are numerically and mathematically consistent and provide examples of successful CFD/ML hybrid applications.
+In this talk, I will present contributions and recent advances to both fields: First, I will discuss highly accurate and locally adaptive numerical schemes based on DGSEM for solving the compressible Navier-Stokes equations on pre-exascale systems and beyond with a focus on applications in the aerospace engineering sector. In the second part of my talk, I will discuss how and where (and where not) machine learning methods can help devise the necessary scale bridging models that are numerically and mathematically consistent and provide examples of successful CFD/ML hybrid applications.
 
 </div><div class="col-md-3" markdown="1">
 
