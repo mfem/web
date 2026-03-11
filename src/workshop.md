@@ -15,7 +15,7 @@ the first day of the workshop (September 22) will be reserved for a hands-on MFE
 
 ### Registration
 
-If you plan to attend, either in-person or virtually, [please register no later than **September 15th**](https://forms.gle/5sqBL3p7ReDTvWkt9).
+If you plan to attend, either in-person or virtually, [please register no later than **September 11th**](https://forms.gle/5sqBL3p7ReDTvWkt9).
 
 * **In person:** The registration fee for in-person attendance is **$150 for regular participants** and **$75 for students**. After completing this registration form, you will receive separate payment instructions for the registration fee in a follow-up message.
 
