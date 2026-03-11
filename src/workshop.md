@@ -6,12 +6,7 @@
 
 ### Overview
 
-The MFEM team and Georgia Tech's School of Computational Science and Engineering invite you to
-the 2026 MFEM Community Workshop, which will take place on September 22-25, 2026 in a hybrid
-format: in-person at [Georgia Tech](#venue) + virtually on Zoom. The goal of the workshop is
-to foster collaboration among all MFEM users and developers, share the latest MFEM features
-with the broader community, deepen application engagements, and solicit feedback to guide
-future development directions for the project.
+The MFEM team, together with Georgia Tech's School of Computational Science and Engineering and the Open Source Program Office, invite you to the 2026 MFEM Community Workshop, which will take place on September 22-25, 2026 in a hybrid format: in-person at [Georgia Tech](#venue) + virtually on Zoom. The goal of the workshop is to foster collaboration among all MFEM users and developers, share the latest MFEM features with the broader community, deepen application engagements, and solicit feedback to guide future development directions for the project.
 
 *We encourage you to join us in person if you can!* As you make travel plans, please note that
 the first day of the workshop (September 22) will be reserved for a hands-on MFEM tutorial.
@@ -20,7 +15,12 @@ the first day of the workshop (September 22) will be reserved for a hands-on MFE
 
 ### Registration
 
-Registration details will be posted here soon.
+If you plan to attend, either in-person or virtually, [please register no later than **September 11th**](https://forms.gle/5sqBL3p7ReDTvWkt9).
+
+* **In person:** The registration fee for in-person attendance is **$150 for regular participants** and **$75 for students**. After completing this registration form, you will receive separate payment instructions for the registration fee in a follow-up message.
+
+* **Remote:** There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
+
 
 ### Venue
 
@@ -117,7 +117,7 @@ El Capitan.
 
 ---
 
-### About GT's School of Computational Science and Engineering
+### About Georgia Tech
 
 <img src="/img/GT_RGB_300wide.png" alt="GT logo" align="left" style="margin-right: 10px;"></img>
 
@@ -130,7 +130,7 @@ GT's [School of Computational Science and Engineering](https://cse.gatech.edu/) 
 keep pace with and solve the most challenging problems in science, engineering, health, and social domains.
 This research focuses on high-performance computing, modeling and simulation, and large-scale Big Data analytics
 powered by machine learning and artificial intelligence to enable breakthroughs in scientific discovery and
-engineering practice.
+engineering practice. GT's [Open Source Program Office (OSPO)](https://ospo.cc.gatech.edu/) supports the development, maintenance, and sustainability of open-source research software.
 
 ---
 
