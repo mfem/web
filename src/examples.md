@@ -2423,6 +2423,23 @@ _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/bl
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="umansky" markdown="1">
+##Umansky Miniapp: Plasma Physics
+<img class="floatright" width="500pt" src="../img/examples/umansky_cg_1536.png">
+
+This miniapp... 
+
+For more details, please see the [documentation](plasma.md) in the
+`miniapps/plasma` directory.
+
+_The miniapp has only a parallel version but it is available in two variants;
+[umansky_cg.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/umansky_cg.cpp) and
+[umansky_dg.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/umansky_dg.cpp) and.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
