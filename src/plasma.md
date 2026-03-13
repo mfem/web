@@ -153,6 +153,50 @@ T. D. Rognlien published in 2005.
 
 ![](img/examples/umansky_cg_amr_1536.png)
 
+In this test problem the background magnetic field is constant and
+parallel to the diagonal of the rectangular domain from the lower left
+corner to the upper right. An additional complication is produced by
+applying a discontinuous boundary condition with the temperature equal
+to one on two sides of the domain and zero on the other two.
+
+#### Mini Application Features
+
+There are currently two versions of this mini application which use
+the continuous Galerkin (CG) and discontinuous Galerkin (DG) methods
+for enforcing continuity across element interfaces. The CG version is
+very similar to [example 1](examples.md#example-1-poisson-problem) or
+the [Volta](electromagnetics.md#volta-mini-application) mini
+application. The DG version is very similar to [example
+14](examples.md#example-14-dg-diffusion).
+
+The purpose of this mini application is to provide convenient starting
+points for experimenting with different methods for solving this very
+challenging problem.
+
+**Diffusion Coefficient Ratio: $A_\kappa =
+  \frac{\kappa_\parallel}{\kappa_\perp}$ can be set with the command
+  line option `-Ak`.
+
+**Dimensions of the Domain: The width and height of the rectangular
+  domain can be set with the options `-w` and `-h`.
+
+**Number of Elements in Initial Mesh: The numbers of elements in the
+  horizontal and vertical directions can be set with the command line
+  options `-nx` and `-ny`.
+
+**Type of Elements: The mesh can be built using triangular (`-e 0`) or
+  quadrilateral (`-e 1`) elements.
+
+**Adaptive Mesh Refinement Controls: The maximum number of AMR
+  iterations, the maximum number of degrees of freedom, and the
+  minimum error target can be set with the command line options
+  `-maxit`, `-maxdofs`, and `-minerr` respectively. The choice of
+  conforming or non-conforming refinement of triangular elements can
+  be set with `-c` or `-nc`.
+
+**DG Options: In the discontinuous Galerkin (DG) version of this mini
+  application the user can also set the DG parameters sigma, kappa,
+  and eta using `-s`, `-k`, and `-eta`.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
