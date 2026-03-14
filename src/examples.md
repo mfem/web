@@ -48,6 +48,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="wave">Wave</option>
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
+      <option id="plasma">Plasma Physics</option>
       <option id="meshing">Meshing</option>
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
@@ -2551,6 +2552,9 @@ function update()
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
    + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
+
+   // plasma physics miniapps
+   +showElement("umansky", (plasma || diffusion) && (h1 || l2) && (galerkin || dg || amr || pa) && (pcg || gmres || amg))
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)
