@@ -2428,7 +2428,11 @@ _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/bl
 ##Umansky Miniapp: Plasma Physics
 <img class="floatright" width="500pt" src="../img/examples/umansky_cg_1536.png">
 
-This miniapp... 
+This miniapp implements a specific anisotropic diffusion test problem
+relevant in plasma physics. The full description of this test problem
+can be found in the paper "On numerical solution of strongly
+anisotropic diffusion equation on misaligned grids" by M.V. Umansky,
+M.S. Day, and T. D. Rognlien published in 2005.
 
 For more details, please see the [documentation](plasma.md) in the
 `miniapps/plasma` directory.
