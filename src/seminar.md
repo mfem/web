@@ -25,7 +25,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>]()
+</button>](https://llnlfed.webex.com/meet/copeland11)
 
 **Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements.
 Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements.
@@ -1392,7 +1392,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 &nbsp;
 
 #### Jed Brown (CU Boulder)
-##### **April 7, 2026**
+##### **April 14, 2026**
 
 ---
 
