@@ -14,24 +14,19 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/akkerman.jpg)
+![](img/seminar/brown.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-##### **March 10, 2026**
-#### Ido Akkerman (Delft university of Technology)
-##### *NURBS-Based Isogeometric Analysis: Past, Present, and Future*
-##### [**9:00am PDT, March 10, 2026**](https://everytimezone.com/s/33982442)
+#### Jed Brown (CU Boulder)
+##### *Performance-portable multiscale mechanics with libCEED*
+##### [**9:00am PDT, April 21, 2026**](https://everytimezone.com/s/238f14d6)
 
 [<button type="button" class="btn btn-success">
 **Webex**
-</button>](https://llnlfed.webex.com/meet/copeland11)
+</button>]()
 
-**Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements.
-Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements.
-In this talk, will discuss important implementational aspect as well as some benefits of IGA through several applications.
-These application will focus incompressible flow simulations using the Variational Multiscale Method (VMS) framework.
-More recently, H(div)- and H(curl)-conforming spline spaces have been implemented, opening new opportunities for mixed formulations. These spaces can satisfy the de Rham Complex exactly, enabling structure-preserving discretization. One promising application is incompressible flow, where compatible velocity–pressure pairs can achieve not only inf-sup stability but also pointwise satisfaction of the incompressibility constraint.
+**Abstract:** libCEED is a library offering fast algebra for finite-element discretizations, with optimized support for GPUs from NVIDIA, AMD, and Intel. In this talk, we will examine two applications built on libCEED, Ratel for solid mechanics and HONEE for fluids. Ratel offers a range of inelastic (finite-strain poro-visco-elasto-plasticity with phase-field fracture) models, including support for implicit material-point methods (iMPM) for large-deformation problems such as post-failure analysis of bonded granular media. The iMPM and contact mechanics capability has been implemented using recently-developed "at-points" capability, which provides a flexible algorithmic framework for approximation methods that do not cleanly map to standard quadrature. HONEE provides implicit solvers for compressible scale-resolving turbulence, including data-driven subgrid stress models and RANS. We will assess versatility and performance implications of this approach to multiscale mechanics.
 
 ---
 
@@ -1391,11 +1386,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Jed Brown (CU Boulder)
-##### **April 14, 2026**
-
----
-
 #### Brendan Keith (Brown)
 ##### **May 5, 2026**
 
@@ -1405,3 +1395,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ##### **June 9, 2026**
 
 </div>
+
+
+<!--
+#### Ido Akkerman (Delft university of Technology)
+##### *NURBS-Based Isogeometric Analysis: Past, Present, and Future*
+##### March 10, 2026
+**Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements. Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements. In this talk, will discuss important implementational aspect as well as some benefits of IGA through several applications. These application will focus incompressible flow simulations using the Variational Multiscale Method (VMS) framework. More recently, H(div)- and H(curl)-conforming spline spaces have been implemented, opening new opportunities for mixed formulations. These spaces can satisfy the de Rham Complex exactly, enabling structure-preserving discretization. One promising application is incompressible flow, where compatible velocity–pressure pairs can achieve not only inf-sup stability but also pointwise satisfaction of the incompressibility constraint.
+-->
