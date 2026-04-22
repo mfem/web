@@ -96,3 +96,11 @@ The types of available boundary conditions and how to apply them
 depend on the discretizations being used. This page describes how
 to enforce various boundary conditions for certain classes of
 problems.
+
+### [Vector-Valued Fields](fem_vector_disc.md)
+
+Vector-valued fields arise in many common application areas including
+structural mechancis, electromagnetics, and fluid flow. Understanding
+the advantages and disadvantages of different discretization choices
+is particularly important when working with vector-valued fields,
+their derivatives, boundary conditions, etc..
