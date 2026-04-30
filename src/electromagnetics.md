@@ -554,14 +554,5 @@ tighten and eventually reflect back towards the opposite pole.
   command line. The most useful of these would be the time step and final time
   which can be reset with `-dt` and `-tf` respectively.
 
-  The Lorentz mini application can create a "mesh" of the trajectory which
-  can be displayed using GLVis and/or VisIt. The mesh is made up of
-  quadrilateral elements forming a ribbon along the trajectory. One edge of
-  these quadrilaterals is aligned with the sequence of calculated positions.
-  The adjacent edges are related to the acceleration of the particle i.e.
-  $(\vec{p}\_{k} - \vec{p}\_{k-1})/(m \Delta t)$. To compute the edge length
-  this acceleration is scaled by a user defined quantity (the `-rf` command
-  line option can be used to adjust this "ribbon" factor).
-
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
