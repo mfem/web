@@ -48,7 +48,7 @@ positions and velocities, with perfectly elastic collisions
 to model interaction with domain boundaries.
 [![](img/gallery/workshop25/mfem-particles.png)](img/gallery/workshop25/mfem-particles.mp4)
 
-## Particle Miniapps
+# Particle Miniapps
 
 ### Lorentz Miniapp
 
