@@ -298,7 +298,7 @@ Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/
 
 [🎬](img/gallery/workshop25/mfem-particles.mp4)
 * **Particles lighting up MFEM**.
-The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to inject particles into the MFEM mesh at random positions and velocities, with perfectly elastic collisions to model interaction with domain boundaries. Visualization with [Blender](https://www.blender.org/). Image courtesy of Ketan Mittal and Joe Signorelli .*
+The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to inject particles into the MFEM mesh at random positions and velocities, with perfectly elastic collisions to model interaction with domain boundaries. Visualization with [Blender](https://www.blender.org/). Image courtesy of Ketan Mittal and Joe Signorelli.*
 
 
 </div><div class="col-md-3" markdown="1">
