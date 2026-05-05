@@ -48,6 +48,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="wave">Wave</option>
       <option id="compressibleflow">Compressible flow</option>
       <option id="incompressibleflow">Incompressible flow</option>
+      <option id="plasma">Plasma Physics</option>
       <option id="meshing">Meshing</option>
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
@@ -2423,6 +2424,32 @@ _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/bl
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="umansky" markdown="1">
+##Umansky Miniapp: Plasma Physics
+<img class="floatright" width="500pt" src="../img/examples/umansky_cg_1536.png">
+
+This miniapp implements a specific anisotropic diffusion test problem
+relevant in plasma physics. It can be used to evaluate potential
+solution methods for their ability to accurately model cross-field
+diffusion and avoid over- or under-shooting of nearly discontinuous
+solutions.
+
+The full discussion of this test problem can be found in the paper "On
+numerical solution of strongly anisotropic diffusion equation on
+misaligned grids" by M.V. Umansky, M.S. Day, and T. D. Rognlien
+published in 2005.
+
+For more details, please see the [documentation](plasma.md) in the
+`miniapps/plasma` directory.
+
+_The miniapp has only a parallel version but it is available in two variants;
+[umansky_cg.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/umansky_cg.cpp) and
+[umansky_dg.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/umansky_dg.cpp) and.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2534,6 +2561,9 @@ function update()
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
    + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
+
+   // plasma physics miniapps
+   +showElement("umansky", (plasma || diffusion) && (h1 || l2) && (galerkin || dg || amr || pa) && (pcg || gmres || amg))
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)
