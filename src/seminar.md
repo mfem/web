@@ -62,7 +62,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 [<button type="button" class="btn btn-primary">
 **Slides**
-</button>]()
+</button>](https://github.com/jedbrown/talks/blob/main/20260421-PerfPortableMultiscaleLibCEED.ipynb)
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
