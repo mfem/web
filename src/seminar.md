@@ -14,23 +14,41 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/xroca.jpeg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Xevi Roca (Barcelona Supercomputing Center)
+##### *TBD*
+##### [**9:00am PDT, June 9, 2026**](https://everytimezone.com/s/cc41cf42)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/keith.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Brendan Keith (Brown University)
 ##### *Proximal Galerkin: A Unified Framework for Variational Problems with Inequality Constraints*
-##### [**9:00am PDT, May 5, 2026**](https://everytimezone.com/s/176943fe)
+##### May 5, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/keith.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** This talk presents the Proximal Galerkin (PG) method, a high-order numerical method for solving variational problems with inequality constraints. PG combines two foundational ideas from applied mathematics: Galerkin discretizations of partial differential equations (PDEs) and proximal point algorithms for constrained optimization. Conceptually, PG is a discretized Riemannian gradient flow within a finite-dimensional function space, such as a finite element space. Each iteration of the method involves solving a regularized subproblem equivalent to a nonlinear PDE formulated as a nonlinear saddle-point system. This unified framework systematically handles a broad class of variational inequalities, yielding constraint-preserving solution approximations without relying on specialized or low-order basis functions. The talk will outline the theoretical foundations of PG, highlight its connections to differential geometry and convex analysis, and showcase recent applications in contact mechanics, fracture, and multi-phase flows, among others.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -51,7 +69,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </button>]()
 
 **Abstract:** libCEED is a library offering fast algebra for finite-element discretizations, with optimized support for GPUs from NVIDIA, AMD, and Intel. In this talk, we will examine two applications built on libCEED, Ratel for solid mechanics and HONEE for fluids. Ratel offers a range of inelastic (finite-strain poro-visco-elasto-plasticity with phase-field fracture) models, including support for implicit material-point methods (iMPM) for large-deformation problems such as post-failure analysis of bonded granular media. The iMPM and contact mechanics capability has been implemented using recently-developed "at-points" capability, which provides a flexible algorithmic framework for approximation methods that do not cleanly map to standard quadrature. HONEE provides implicit solvers for compressible scale-resolving turbulence, including data-driven subgrid stress models and RANS. We will assess versatility and performance implications of this approach to multiscale mechanics.
-
 
 </div><div class="col-md-6" markdown="1">
 
@@ -1407,8 +1424,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Xevi Roca (Barcelona Supercomputing Center)
-##### **June 9, 2026**
+TBD
 
 </div>
 
