@@ -21,7 +21,6 @@ If you plan to attend, either in-person or virtually, [please register no later 
 
 * **Remote:** There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
 
-
 ### Venue
 
 The workshop will take place at [Georgia Tech](http://gatech.edu/) (GT) in Atlanta, Georgia. GT is about a 30-minute drive from Hartsfield-Jackson Atlanta International Airport. Information about the meeting room and a map will be available soon.
@@ -31,6 +30,9 @@ The workshop will take place at [Georgia Tech](http://gatech.edu/) (GT) in Atlan
 This will be the third hybrid edition of the MFEM community workshop and the sixth overall. Elements of the workshop under discussion:
 
 - Live, hands-on tutorial (**to be held on the first day of the workshop, September 22**)
+    * [Tutorial registration is separate](https://llnlfed.webex.com/weblink/register/rb48e17ed4f10072dffdae65cdeffe44f) as part of the LLNL High Performance Computing Innovation Center’s summer tutorial series
+    * Hybrid format: Georgia Tech or on Webex
+    * Great for new users!
 - Project news and development updates from the MFEM team
 - An overview of the latest features and future roadmap
 - Contributed talks from application developers utilizing MFEM
