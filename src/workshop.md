@@ -2,7 +2,7 @@
 <h4>September 22-25, 2026</h4>
 <h4>Georgia Tech + Virtual</h4>
 
-![MFEM Logo](img/logo-300.png)
+![MFEM-GT-banner](/img/mfem-gt-workshop-banner.jpg)
 
 ### Overview
 
@@ -21,23 +21,24 @@ If you plan to attend, either in-person or virtually, [please register no later 
 
 * **Remote:** There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
 
-
 ### Venue
 
 The workshop will take place at [Georgia Tech](http://gatech.edu/) (GT) in Atlanta, Georgia. GT is about a 30-minute drive from Hartsfield-Jackson Atlanta International Airport. Information about the meeting room and a map will be available soon.
 
 ### Meeting Format
 
-This will be the third hybrid edition of the MFEM community workshop and the sixth overall. Elements of the workshop under discussion:
+This will be the third hybrid edition of the MFEM community workshop and the sixth overall. Highlights of the program include:
 
-- Live, hands-on tutorial (**to be held on the first day of the workshop, September 22**)
-- Project news and development updates from the MFEM team
-- An overview of the latest features and future roadmap
-- Contributed talks from application developers utilizing MFEM
-- Student lightning talks
-- Office hours with the MFEM team
+- Free guided tutorial (**to be held on the first day of the workshop, September 22**)
+    * [Tutorial registration is separate](https://llnlfed.webex.com/weblink/register/rb48e17ed4f10072dffdae65cdeffe44f) as part of the LLNL High Performance Computing Innovation Center’s summer tutorial series
+    * Hybrid format: Georgia Tech or on Webex
+    * Great for new users!
+- Project news and roadmap
+- Application developer talks – submit your abstract with registration
+- Student lightning talks – submit your abstract with registration
 - In-person poster session
 - Visualization contest
+- Office hours
 
 See also the agendas for the previous [2025](../workshop25), [2024](../workshop24), [2023](../workshop23), [2022](../workshop22), and [2021](../workshop21) MFEM workshops.
 
@@ -118,8 +119,6 @@ El Capitan.
 ---
 
 ### About Georgia Tech
-
-<img src="/img/GT_RGB_300wide.png" alt="GT logo" align="left" style="margin-right: 10px;"></img>
 
 The [Georgia Institute of Technology](http://gatech.edu/) (Georgia Tech or GT), is one of the nation's
 top public research universities with more than 50,000 students who study in person at the main campus
