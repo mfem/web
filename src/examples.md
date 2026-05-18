@@ -1308,6 +1308,22 @@ We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex42" markdown="1">
+##Example 42: Signorini Problem
+<img class="floatright" width="280pt" src="../img/examples/ex42.png">
+
+This example code solves the pointwise bound-constrained energy minimization problem
+$$ \text{minimize } J(u) \text{ over } H^1(\Omega) \quad \text{subject to } u \cdot \widetilde n \le \varphi \text{ on } \Gamma_C.$$
+This is known as the Signorini problem, a classical contact problem and variational inequality with pointwise constraints. In this example, the gap function $\varphi$ is defined as the vertical distance between the initial body and the rigid surface below. The outward normal $\widetilde n = (0,0,-1)$ defines the downward displacement, so the constraint limits penetration into the rigid surface.
+
+The problem is solved using the Proximal Galerkin finite element method, which is a nonlinear, structure-preserving mixed method for pointwise bound constraints proposed by [Keith and Surowiec](https://arxiv.org/abs/2307.12444). This example showcases the direct use of the SubMesh feature in MFEM, and it demonstrates how to set up and solve nonlinear mixed methods with variables defined on different mesh domains.
+
+_The example has a serial ([ex42.cpp]())
+and a parallel ([ex42p.cpp]()) version.
+We recommend viewing Example 1 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem

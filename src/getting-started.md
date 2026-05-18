@@ -28,6 +28,7 @@ We recommend that new users start with these articles:
 - [Example 3 / Definite Maxwell Problem](annotated/ex3.md)
 - [Example 6 / Poisson Problem with AMR](annotated/ex6.md)
 - [Example 36 / The Obstacle Problem](annotated/ex36.md)
+- [Example 42 / The Signorini Problem](annotated/ex42.md)
 
 ### Example Mini Applications
 

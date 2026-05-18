@@ -121,6 +121,7 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
  - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation,
  - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion.
+ - [Example 42](https://docs.mfem.org/html/ex42_8cpp_source.html): Signorini Contact Solver
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
