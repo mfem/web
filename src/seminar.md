@@ -66,7 +66,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/w4csXSjV3Yo)
 
 **Abstract:** libCEED is a library offering fast algebra for finite-element discretizations, with optimized support for GPUs from NVIDIA, AMD, and Intel. In this talk, we will examine two applications built on libCEED, Ratel for solid mechanics and HONEE for fluids. Ratel offers a range of inelastic (finite-strain poro-visco-elasto-plasticity with phase-field fracture) models, including support for implicit material-point methods (iMPM) for large-deformation problems such as post-failure analysis of bonded granular media. The iMPM and contact mechanics capability has been implemented using recently-developed "at-points" capability, which provides a flexible algorithmic framework for approximation methods that do not cleanly map to standard quadrature. HONEE provides implicit solvers for compressible scale-resolving turbulence, including data-driven subgrid stress models and RANS. We will assess versatility and performance implications of this approach to multiscale mechanics.
 
