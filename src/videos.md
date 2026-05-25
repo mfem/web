@@ -10,6 +10,15 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Jed Brown (CU Boulder)
+#### *Performance-portable multiscale mechanics with libCEED*
+##### **April 21, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/w4csXSjV3Yo"><img src="https://img.youtube.com/vi/w4csXSjV3Yo/maxresdefault.jpg"></img></a>
+
+libCEED is a library offering fast algebra for finite-element discretizations, with optimized support for GPUs from NVIDIA, AMD, and Intel. In this talk, we will examine two applications built on libCEED, Ratel for solid mechanics and HONEE for fluids. Ratel offers a range of inelastic (finite-strain poro-visco-elasto-plasticity with phase-field fracture) models, including support for implicit material-point methods (iMPM) for large-deformation problems such as post-failure analysis of bonded granular media. The iMPM and contact mechanics capability has been implemented using recently-developed "at-points" capability, which provides a flexible algorithmic framework for approximation methods that do not cleanly map to standard quadrature. HONEE provides implicit solvers for compressible scale-resolving turbulence, including data-driven subgrid stress models and RANS. We will assess versatility and performance implications of this approach to multiscale mechanics.
+
+---
+
 #### David Moxey and Edward Erasmie-Jones (King's College London)
 #### *NektarIR: A Domain-Specific Compiler for High-Order Finite Element Operations on Heterogeneous Hardware*
 ##### **February 10, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -224,7 +233,7 @@ Despite the recent flurry of work employing machine learning to develop surrogat
 
 The decline of Moore's law and an increasing reliance on computation has led to an explosion of specialized software packages and hardware architectures. While this diversity enables unprecedented flexibility, it also requires domain-experts to learn how to customize programs to efficiently leverage the latest platform-specific API's and data structures, instead of working on their intended problem. Rather than forcing each user to bear this burden, I propose building high-level abstractions within general-purpose compilers that enable fast, portable, and composable programs to be automatically generated. This talk will demonstrate this approach through compilers that I built for two domains: automatic differentiation and parallelism. These domains are critical to both scientific computing and machine learning, forming the basis of neural network training, uncertainty quantification, and high-performance computing. For example, a researcher hoping to incorporate their climate simulation into a machine learning model must also provide a corresponding derivative simulation. My compiler, Enzyme, automatically generates these derivatives from existing computer programs, without modifying the original application. Moreover, operating within the compiler enables Enzyme to combine differentiation with program optimization, resulting in asymptotically and empirically faster code. Looking forward, this talk will also touch on how this domain-agnostic compiler approach can be applied to new directions, including probabilistic programming.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Sungho Lee (University of Memphis)
 #### *LAGHOST: Development of Lagrangian High-Order Solver for Tectonics*
@@ -234,7 +243,7 @@ The decline of Moore's law and an increasing reliance on computation has led to 
 
 Long-term geological and tectonic processes associated with large deformation highlight the importance of using a moving Lagrangian frame. However, modern advancements in the finite element method, such as MPI parallelization, GPU acceleration, high-order elements, and adaptive grid refinement for tectonics based on this frame, have not been updated. Moreover, the existing solvers available in open access suffer from limited tutorials, a poor user manual, and several dependencies that make model building complex. These limitations can discourage both new users and developers from utilizing and improving these models. As a result, we are motivated to develop a user-friendly, Lagrangian thermo-mechanical numerical model that incorporates visco-elastoplastic rheology to simulate long-term tectonic processes like mountain building, mantle convection and so on. We introduce an ongoing project called LAGHOST (Lagrangian High-Order Solver for Tectonics), which is an MFEM-based tectonic solver. LAGHOST expands the capabilities of MFEM's LAGHOS mini-app. Currently, our solver incorporates constitutive equation, body force, mass scaling, dynamic relaxation, Mohr-Coulomb plasticity, plastic softening, Winkler foundation, remeshing, and remapping. To evaluate LAGHOST, we conducted four benchmark tests. The first test involved compressing an elastic box at a constant velocity, while the second test focused on the compaction of a self-weighted elastic column. To enable larger time-step sizes and achieve quasi-static solutions in the benchmarks, we introduced a fictitious density and implemented dynamic relaxation. This involved scaling the density factor and introducing a portion of force component opposing the previous velocity direction at nodal points. Our results exhibited good agreement with analytical solutions. Subsequently, we incorporated Mohr-Coulomb plasticity, a reliable model for predicting rock failure, into LAGHOST. We revisited the elastic box benchmark and considered plastic materials. By considering stress correction arising from plastic yielding, we confirmed that the updated solution from elastic guess aligned with the analytical solution. Furthermore, we applied LAGHOST to simulate the evolution of a normal fault, a significant tectonic phenomenon. To model normal fault evolution, we introduced strain softening on cohesion as the dominant factor based on geological evidence. Our simulations successfully captured the normal fault's evolution, with plastic strain localizing at shallow depths before propagating deeper. The fault angle reached approximately 60 degrees, in line with the Mohr-Coulomb failure theory.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Kevin Chung (LLNL)
 #### *Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition*
