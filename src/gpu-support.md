@@ -229,7 +229,7 @@ Be aware that `UseDevice()` is not the same as `UseDevice(true)`, the first one 
 
 ### Using constexpr inside mfem::forall
 ```c++
-constexpr P = ...; // Results in an error on MSVC
+constexpr int P = ...; // Results in an error on MSVC
 mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
@@ -244,7 +244,7 @@ However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in error
 
 A simple fix for this error is to declare the `constexpr` variable as `static constexpr`.
 ```c++
-static constexpr P = ...; // Omitting the static results in an error on MSVC
+static constexpr int P = ...; // Omitting the static results in an error on MSVC
 mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
