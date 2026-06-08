@@ -14,7 +14,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/xroca.jpeg)
+![](img/seminar/xroca.png)
 
 </div><div class="col-md-12" markdown="1">
 
