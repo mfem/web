@@ -48,7 +48,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/o2prkGMiw6s)
 
 **Abstract:** This talk presents the Proximal Galerkin (PG) method, a high-order numerical method for solving variational problems with inequality constraints. PG combines two foundational ideas from applied mathematics: Galerkin discretizations of partial differential equations (PDEs) and proximal point algorithms for constrained optimization. Conceptually, PG is a discretized Riemannian gradient flow within a finite-dimensional function space, such as a finite element space. Each iteration of the method involves solving a regularized subproblem equivalent to a nonlinear PDE formulated as a nonlinear saddle-point system. This unified framework systematically handles a broad class of variational inequalities, yielding constraint-preserving solution approximations without relying on specialized or low-order basis functions. The talk will outline the theoretical foundations of PG, highlight its connections to differential geometry and convex analysis, and showcase recent applications in contact mechanics, fracture, and multi-phase flows, among others.
 
