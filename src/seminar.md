@@ -12,6 +12,12 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
+TBD
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
 </div><div class="col-md-3" markdown="1">
 
 ![](img/seminar/xroca.png)
@@ -20,17 +26,18 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Xevi Roca (Barcelona Supercomputing Center)
 ##### *Enabling high-fidelity aeronautic simulations with high-order methods: geometry, numerics, and physics*
-##### [**9:00am PDT, June 9, 2026**](https://everytimezone.com/s/cc41cf42)
+##### June 9, 2026
 
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/roca.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** Future aviation designs will exploit physical interactions that will challenge current simulation technologies. They use low-order geometric and numerical discretizations that can neglect the key physical interactions. Fortunately, new high-order methods feature high geometric and numerical accuracy and preserve physical structures. This talk overviews our work on geometric, numerical, and physical challenges of high-order methods. First, straight-edged meshes lack the geometric accuracy required by high-order methods. They fail to match the curvature of design boundaries (e.g., wings) or the solution field within the volume (e.g., shocks). This unnecessarily increases the element count, thereby hampering simulation performance. Addressing these issues, we will present our optimization-based methods for mesh curving and curved adaptivity. Our meshes provide the geometric accuracy required for high-fidelity analysis. They also reduce the number of field solver iterations and enable the qualitative reproduction of the experimental oil-flow observations. Second, standard numerical solvers do not address the stiffer and denser coupling of high-order methods. As a result, solver iterations and memory consumption can become unaffordable. Regarding these issues, we will present specific-purpose solvers for mesh curving and curved adaptivity. We will also present preliminary results on low-order preconditioning for high-order discontinuous Galerkin (dG) simplicial discretizations. By handling stiffness and memory consumption, we reduce the number of iterations and the energy use, making high-order methods more affordable. Finally, high-order methods feature low dissipation and dispersion but may fail to preserve relevant physics. Specifically, for time-domain Maxwell equations, standard dG methods do not preserve the underlying Poisson structure. Consequently, in long-time simulations, they lead to significant drifts in conserved quantities, such as energy. In this regard, we will present observability results and preliminary efforts to preserve the Poisson structure. We expect to enhance the physical fidelity of high-order methods in our applications. In perspective, by combining solutions to geometric, numerical, and physical challenges of high-order methods, we aim to enable high-fidelity analysis for the next generation of aviation designs.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1436,4 +1443,22 @@ TBD
 ##### *NURBS-Based Isogeometric Analysis: Past, Present, and Future*
 ##### March 10, 2026
 **Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements. Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements. In this talk, will discuss important implementational aspect as well as some benefits of IGA through several applications. These application will focus incompressible flow simulations using the Variational Multiscale Method (VMS) framework. More recently, H(div)- and H(curl)-conforming spline spaces have been implemented, opening new opportunities for mixed formulations. These spaces can satisfy the de Rham Complex exactly, enabling structure-preserving discretization. One promising application is incompressible flow, where compatible velocity–pressure pairs can achieve not only inf-sup stability but also pointwise satisfaction of the incompressibility constraint.
+-->
+
+<!--
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/empty.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Speaker (Institution)
+##### *Title*
+##### [**9:00am PDT, Month Day, Year**](https://everytimezone.com/s/cc41cf42)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Abstract
 -->
