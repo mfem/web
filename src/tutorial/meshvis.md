@@ -73,7 +73,7 @@ Physical Surface(1) = {1,6,8};
 Mesh.MshFileVersion = 2.2;
 ```
 
-The first line from the above snippet defines physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the Boolean operation. The second line defines physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last line specifies the file format. Note that MFEM can only read ASCII Gmsh format version 2.2.
+The first line from the above snippet defines physical volume 1 to coincide with the geometry volume 50, which is the final volume obtained by the Boolean operation. The second line defines physical surface 1 to include geometric surfaces {1,6,8}. Finally, the last line specifies the file format.
 
 <div class="col-md-6" markdown="1">
 <img src="../img/gmsh2.png">
