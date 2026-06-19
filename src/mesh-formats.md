@@ -10,6 +10,7 @@ MFEM supports a number of mesh formats, including:
   - The [NETGEN](https://sourceforge.net/projects/netgen-mesher/) triangular and
     tetrahedral mesh formats.
   - The [TrueGrid](http://www.truegrid.com/) hexahedral mesh format.
+  - [Gmsh](https://gmsh.info/) format (version 2.2 and 4.1, ASCII and binary).
 
 See below for more details and information on the specific formats that are
 supported. All of these mesh formats are also supported by MFEM's native
@@ -55,15 +56,9 @@ arrays are present, the one named "material" will take precedence.
 
 ### Gmsh Mesh Formats
 
-MFEM supports reading version 2.2 of the [Gmsh](https://gmsh.info/) ASCII and
-binary formats for 2D and 3D meshes. High-order elements (up to order 9) are
-supported, as are periodic meshes.
-
-<i class="fa fa-warning" style="color:red"></i>&nbsp;
-Note that newer versions of Gmsh output files in version 4.1 of the Gmsh format,
-which is not compatible with MFEM. Users should either specify
-`Mesh.MshFileVersion = 2.2;` in their geometry file or run Gmsh with `-format
-msh22` from the command line.
+MFEM supports reading versions 4.1 and 2.2 of the [Gmsh](https://gmsh.info/)
+ASCII and binary formats for 2D and 3D meshes. High-order elements (up to order
+9) are supported, as are periodic meshes.
 
 <i class="fa fa-info-circle" style="color:green"></i>&nbsp;
 Elements' _physical tags_ in Gmsh correspond to their _attribute numbers_ in
