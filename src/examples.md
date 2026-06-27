@@ -1365,7 +1365,7 @@ corresponding right hand side $(f, g)$. We discretize  the velocity ($\bf u$) wi
  the pressure ($p$) with a compatible NURBS-based $H_1$ elements.
 The problem solved in this example is the same as [Example 5](#ex5).
 
-_The example only has a serial ([nurbs_ex5.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex5.cpp))._
+_The example only has a serial ([nurbs_ex5.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex5.cpp)) version._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1409,7 +1409,7 @@ spaces, with three variants:
 Using different approaches for demonstration purposes, we project or interpolate a gradient, curl, or
 divergence in the appropriate spaces, comparing the errors in each case.
 
-_The example has a serial ([nurbs_ex24.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp))._
+_The example only has a serial ([nurbs_ex24.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp)) version._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -2521,7 +2521,7 @@ function update()
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
    + showElement("ex41", (advection || diffusion) && (l2 || h1) && (galerkin || dg) && (pcg || rk))
 
-   // nurbs miniapps
+   // nurbs examples
    + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
    + showElement("nurbs_ex3", maxwell && hcurl && nurbs && all4)
    + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
