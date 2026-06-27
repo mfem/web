@@ -76,6 +76,8 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="mixed">Mixed FEM</option>
       <option id="dg">Discontinuous Galerkin (DG)</option>
       <option id="dpg">Discont. Petrov-Galerkin (DPG)</option>
+      <option id="ldg">Local Discont. Galerkin (LDG)</option>
+      <option id="hdg">Hybridizable Discont. Galerkin (HDG)</option>
       <option id="hybr">Hybridization</option>
       <option id="staticcond">Static condensation</option>
       <option id="nurbs">Isogeometric analysis (NURBS)</option>
@@ -277,14 +279,15 @@ corresponding right hand side $(f, g)$. We discretize with Raviart-Thomas
 finite elements (velocity $\bf u$) and piecewise discontinuous
 polynomials (pressure $p$).
 
-The example demonstrates the use of the BlockMatrix and BlockOperator
-classes, as well as the collective saving of several grid functions in
-[VisIt](https://visit.llnl.gov) and [ParaView](https://www.paraview.org)
+The example demonstrates the use of the DarcyForm class, as well as
+hybridization of mixed systems and the collective saving of several grid
+functions in [VisIt](https://visit.llnl.gov) and [ParaView](https://www.paraview.org)
 formats.
 
 _The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5.cpp))
 and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex5p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
+and an [L/HDG modification](#hdg_ex5).
 Partial assembly is supported.
 We recommend viewing examples 1-4 before viewing this example._
 <div style="clear:both;"/></div>
@@ -311,8 +314,9 @@ visualization are also illustrated.
 
 _The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6.cpp))
 and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex6p.cpp)) version.
-It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc)
-and a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi).
+It also has a PETSc modification in [examples/petsc](https://github.com/mfem/mfem/blob/master/examples/petsc),
+a PUMI modification in [examples/pumi](https://github.com/mfem/mfem/blob/master/examples/pumi)
+and an [HDG version](#hdg_ex6).
 Partial assembly and [GPU devices](gpu-support.md) are supported.
 We recommend viewing Example 1 before viewing this example._
 <div style="clear:both;"/></div>
@@ -513,6 +517,7 @@ of discontinuous spaces and DG-specific face integrators.
 
 _The example has a serial ([ex14.cpp](https://github.com/mfem/mfem/blob/master/examples/ex14.cpp))
 and a parallel ([ex14p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex14p.cpp)) version.
+It also has an [L/HDG modification](#hdg_ex14).
 We recommend viewing examples 1 and 9 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -603,6 +608,7 @@ illustrated.
 
 _The example has a serial ([ex17.cpp](https://github.com/mfem/mfem/blob/master/examples/ex17.cpp))
 and a parallel ([ex17p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex17p.cpp)) version.
+It also has an [L/HDG modification](#hdg_ex17).
 We recommend viewing examples 2 and 14 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -783,6 +789,7 @@ visualization are also illustrated.
 
 _The example has a serial ([ex21.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21.cpp))
 and a parallel ([ex21p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex21p.cpp)) version.
+It also has an [HDG version](#hdg_ex21).
 We recommend viewing Examples 2 and 6 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1304,6 +1311,7 @@ integrators within MFEM.
 
 _The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
 and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version.
+It also has a [L/HDG modification](#hdg_ex41).
 We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
@@ -1410,6 +1418,168 @@ Using different approaches for demonstration purposes, we project or interpolate
 divergence in the appropriate spaces, comparing the errors in each case.
 
 _The example only has a serial ([nurbs_ex24.cpp](https://github.com/mfem/mfem/blob/master/miniapps/nurbs/nurbs_ex24.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex5" markdown="1">
+##HDG Example 5: Darcy Problem
+<a href="https://glvis.org/live/?stream=../data/streams/ex5.saved" target="_blank">
+<img class="floatright" src="../img/examples/ex5.png">
+</a>
+
+This example code solves a simple 2D/3D mixed Darcy problem
+corresponding to the saddle point system
+$$ \begin{array}{rcl}
+   k\,{\bf u} + {\rm grad}\,p &=& f \\\\
+   -{\rm div}\,{\bf u} &=& g
+\end{array} $$
+with natural boundary condition $-p = $ "given pressure".
+Here we use a given exact solution $({\bf u},p)$ and compute the
+corresponding right hand side $(f, g)$. We discretize with Raviart-Thomas
+finite elements (velocity $\bf u$) and piecewise discontinuous
+polynomials (pressure $p$). Alternatively, the piecewise discontinuous
+polynomials are used for both quantities.
+
+The example demonstrates the use of the DarcyForm class, as well as
+algebraic reduction and hybridization of mixed systems and the collective saving
+of several grid functions in [VisIt](https://visit.llnl.gov) and
+[ParaView](https://www.paraview.org) formats.
+
+_The example has a serial ([ex5.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex5.cpp))
+and a parallel ([ex5p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex5p.cpp)) version.
+Partial assembly is supported in mixed formulation.
+We recommend viewing examples 1-4 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex6" markdown="1">
+##HDG Example 6: Poisson Problem with AMR
+<img class="floatright" src="../img/examples/ex6.png">
+
+This is a version of Example 1 with a simple adaptive mesh
+refinement loop. The problem being solved is again the Poisson
+equation $$-\Delta u = 1$$ with homogeneous Dirichlet boundary
+conditions. The problem is solved on a sequence of meshes which
+are locally refined in a conforming (triangles, tetrahedrons)
+or non-conforming (quadrilaterals, hexahedra) manner manner according
+to HDG error estimator.
+
+The example demonstrates MFEM's capability to work with both
+conforming and nonconforming refinements, in 2D and 3D, on
+linear and curved meshes. Interpolation of functions
+from coarse to fine meshes, as well as persistent [GLVis](https://glvis.org)
+visualization are also illustrated.
+
+_The example has a serial ([ex6.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex6.cpp))
+and a parallel ([ex6p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex6p.cpp)) version.
+We recommend viewing examples 1 and 5 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex14" markdown="1">
+##HDG Example 14: L/HDG Diffusion
+<img class="floatright" src="../img/examples/ex14.png">
+
+This example code demonstrates the use of MFEM to define a
+mixed / local / hybridizable discontinuous Galerkin (DG) finite
+element discretization of the Poisson equation $$-\Delta u = 1$$ with
+homogeneous Dirichlet boundary conditions. Finite element
+spaces of any order, including zero on regular grids, are
+supported. The example highlights the use of discontinuous
+spaces and L/HDG-specific face integrators.
+
+_The example has a serial ([ex14.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex14.cpp))
+and a parallel ([ex14p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex14p.cpp)) version.
+We recommend viewing examples 1 and 5 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex17" markdown="1">
+##HDG Example 17: L/HDG Linear Elasticity
+<img class="floatright" src="../img/examples/ex17.png">
+
+This example code solves a simple linear elasticity problem
+describing a multi-material cantilever beam using mixed / local
+/ hybridizable discontinuous Galerkin (DG) formulation.
+
+Specifically, we approximate the weak form of
+$$-{\rm div}({\sigma}({\bf u})) = 0$$
+where
+$${\sigma}({\bf u}) = \lambda\, {\rm div}({\bf u})\,I + \mu\,(\nabla{\bf u} + \nabla{\bf u}^T)$$
+is the stress tensor corresponding to displacement field ${\bf u}$, and $\lambda$ and $\mu$
+are the material Lame constants. The boundary conditions are
+Dirichlet, $\bf{u}=\bf{u_D}$, on the fixed part of the boundary, namely
+boundary attributes 1 and 2; on the rest of the boundary we use
+${\sigma}({\bf u})\cdot n = {\bf 0}$. The geometry of the domain is assumed to be
+as follows:
+
+![](img/examples/ex17-domain.png)
+
+The example demonstrates the use of high-order DG vector finite
+element spaces with the linear DG elasticity bilinear form,
+meshes with curved elements, and the definition of piece-wise
+constant and function vector-coefficient objects. The use of
+non-homogeneous Dirichlet b.c. imposed weakly or strongly on
+the trace variable, is also illustrated.
+
+_The example has a serial ([ex17.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex17.cpp))
+and a parallel ([ex17p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex17p.cpp)) version.
+We recommend viewing examples 2 and 14 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex21" markdown="1">
+##HDG Example 21: Adaptive mesh refinement for linear elasticity
+<img class="floatright" src="../img/examples/ex21.png">
+
+This is a version of Example 2 with a simple adaptive mesh
+refinement loop. The problem being solved is again linear
+elasticity describing a multi-material cantilever beam.
+The problem is solved on a sequence of meshes which
+are locally refined in a conforming (triangles, tetrahedrons)
+or non-conforming (quadrilaterals, hexahedra) manner according
+to HDG error estimator.
+
+The example demonstrates MFEM's capability to work with both
+conforming and nonconforming refinements, in 2D and 3D, on
+linear and curved meshes. Interpolation of functions from
+coarse to fine meshes, as well as persistent GLVis
+visualization are also illustrated.
+
+_The example has a serial ([ex21.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex21.cpp))
+and a parallel ([ex21p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex21p.cpp)) version.
+We recommend viewing Examples 2 and 6 before viewing this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_ex41" markdown="1">
+##HDG Example 41: L/HDG Advection-Diffusion
+<img class="floatright" width="240pt" src="../img/examples/ex41.png">
+
+This example solves a time-dependent advection–diffusion equation
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u -\nabla\cdot\kappa\nabla u = 0,$$
+where $v$ is a given fluid velocity, and $u_0(x)=u(0,x)$ is a given initial
+condition, using high-order finite elements in space and implicit–explicit
+(IMEX) Runge–Kutta methods in time. The spatial discretization is based on local
+or hybridizable discontinuous Galerkin (DG) finite elements on periodic meshes
+in 2D or 3D, with several choices of velocity fields and initial data. The
+advective part of the operator is treated explicitly, while the diffusive part
+is handled implicitly using algebraic reduction or total flux hybridization. The
+IMEX splitting is realized through MFEM’s additive TimeDependentOperator
+interface, and the implicit solve is preconditioned using BlockILU or
+HypreBoomerAMG in parallel. The example illustrates Local / Hybridizable
+Discontinuous Galerkin (L/HDG) discretizations in MFEM, and the use of IMEX ODE
+time integrators.
+
+_The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex41.cpp))
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/hdg/ex41p.cpp)) version.
+We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -2483,7 +2653,7 @@ function update()
    + showElement("ex2",  elasticity && h1 && (galerkin || nurbs || staticcond) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex3",  (maxwell) && hcurl && (galerkin || staticcond || pa) && (gs || pcg || umfpack || ams || petsc))
    + showElement("ex4",  graddiv && (hdiv || hminus12) && (galerkin || hybr || staticcond || pa) && (gs || pcg || umfpack || amg || ads || ams || petsc))
-   + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
+   + showElement("ex5",  darcy && (l2 || hdiv) && (mixed || hybr || pa) && (gs || jacobi || minres || umfpack || amg  || petsc))
    + showElement("ex6",  (diffusion) && h1 && (galerkin || nurbs || amr || pa) && (gs || pcg || umfpack || amg || petsc))
    + showElement("ex7",  (diffusion || meshing) && h1 && (galerkin || amr) && (gs || pcg || umfpack || amg))
    + showElement("ex8",  diffusion && (l2 || h1 || hminus12) && dpg && (gs || pcg || umfpack || amg || ads || ams))
@@ -2527,6 +2697,14 @@ function update()
    + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
    + showElement("nurbs_ex11", diffusion && all2 && nurbs && all4)
    + showElement("nurbs_ex24", all1 && (hcurl || hdiv) && nurbs && all4)
+
+   // hdg examples
+   + showElement("hdg_ex5",  darcy && (l2 || hdiv || h12) && (mixed || hybr || ldg || hdg || pa) && (gs || jacobi || minres || gmres || umfpack || amg))
+   + showElement("hdg_ex6",  diffusion && (l2 || hdiv || h12) && (nurbs || amr || hdg) && (gs || gmres || umfpack || amg))
+   + showElement("hdg_ex14", diffusion && (l2 || hdiv || h12) && (mixed || ldg || hdg || pa) && (gs || jacobi || minres || gmres || umfpack || amg))
+   + showElement("hdg_ex17", elasticity && (l2 || h12) && (dg || ldg || hdg) && (gs || minres || gmres || umfpack || amg))
+   + showElement("hdg_ex21", elasticity && (l2 || h12) && (amr || hdg) && (gs || gmres || umfpack || amg))
+   + showElement("hdg_ex41", (advection || diffusion) && (l2 || hdiv || h12) && (ldg || hdg) && (gmres || rk || amg))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
