@@ -318,6 +318,6 @@ This is done by calling `w.SyncMemory(v)` which simply copies the validity flags
 
 On the other hand, if in the example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
 In this particular case, the call will move the subvector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`.
-This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
+This way the whole `Vector v` gets the real data in one location -- before the call, part of it was on device and the part described by `w` was on host.
 
 Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the validity flags of `v`, the difference is where the real data is before the call -- in the first case the real data is in `v` and in the second, it is in `w`.
