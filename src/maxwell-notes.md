@@ -322,7 +322,7 @@ for an overview of this concept.
 
 [^1]: A list of the various ` BilinearFormIntegrators` can be found at
     [Bilinear Form Integrators](bilininteg.md). More detailed descriptions
-    can be found in the files `fem/biliniteg.[ch]pp`.
+    can be found in the files `fem/bilininteg.[ch]pp`.
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
