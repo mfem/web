@@ -2,7 +2,7 @@ tag-mesh:
 
 # Getting High-Order Mesh Data into MFEM
 
-### Coordinate Mapping Using a Transformation Function
+## Coordinate Mapping Using a Transformation Function
 
 Perhaps the simplest method to create a mesh with high-order geometry involves
 the use of a coordinates transformation, $\vec{\phi}$, which maps a starting
@@ -40,11 +40,11 @@ functions and degrees of freedom to transform reference elements to the desired
 curved elements. However, most realistic domains would present some very
 daunting challenges for this method.
 
-### Projecting One Representation to Another Element-by-Element
+## Projecting One Representation to Another Element-by-Element
 
 TBD
 
-### DIY Computation of Nodal Values
+## DIY Computation of Nodal Values
 
 MFEM can use either continuous or discontinuous scalar basis functions to
 represent each component of the coordinates of the nodal values. The ordering
@@ -64,6 +64,16 @@ be greater than zero but first order meshes typically define their nodes
 differently. When representing mesh geometry the `order` variable typically
 satisfies `order ≥ 2`.
 
+### 1D Mesh Geometry
+
+```
+nodes
+FiniteElementSpace
+FiniteElementCollection: L2_T1_1D_P3
+VDim: 1
+Ordering: 1
+```
+
 #### Segment
 
 MFEM provides a handful of options for basis interpolation points but for this
@@ -72,6 +82,59 @@ orders 1 through 8.
 
 ![segment-ho](img/formats/segment-ho.png "L2 Segment Nodes for Orders 1 to 8"){width=50%}
 *Figure: L2 Segment Nodes for orders 1 to 8.*
+
+### 2D Mesh Geometry
+
+```
+nodes
+FiniteElementSpace
+FiniteElementCollection: L2_T1_2D_P3
+VDim: 2
+Ordering: 1
+```
+
+#### Triangle
+
+```
+for (int o = 0, j = 0; j <= order; j++)
+   for (int i = 0; i + j <= order; i++)
+   {
+      double w = p1d[i] + p1d[j] + p1d[order-i-j];
+      Nodes.IntPoint(o++).Set2(p1d[i]/w, p1d[j]/w);
+   }
+```
+
+![triangle-o3](img/formats/triangle-o3.png "L2 Triangle Nodes for Order 3"){width=40%}
+*Figure: As an example this image shows the placement and numbering of the
+nodes of a third order triangle. The colored lines correspond to constant `j`
+values from the above loop. The darker gray lines correspond to constant `i`
+values.*
+
+#### Quadrilateral
+
+```
+for (int o = 0, j = 0; j <= order; j++)
+   for (int i = 0; i <= order; i++)
+   {
+      Nodes.IntPoint(o++).Set2(p1d[i], p1d[j]);
+   }
+```
+
+![quadrilateral-o3](img/formats/quadrilateral-o3.png "L2 Quadrilateral Nodes for Order 3"){width=40%}
+*Figure: As an example this image shows the placement and numbering of the
+nodes of a third order quadrilateral. The colored lines correspond to constant
+`j` values from the above loop. The gray lines correspond to constant `i`
+values.*
+
+### 3D Mesh Geometry
+
+```
+nodes
+FiniteElementSpace
+FiniteElementCollection: L2_T1_3D_P3_Pyr0
+VDim: 3
+Ordering: 1
+```
 
 #### Tetrahedra
 
@@ -90,7 +153,7 @@ for (int o = 0, k = 0; k <= order; k++)
 *Figure: As an example this image shows the placement and numbering of the
 nodes of a third order tetrahedron. The surfaces correspond to constant `k`
 values from the above loop. The lines within the surfaces correspond to
-constant `j` and `i` vlaues.*
+constant `j` and `i` values.*
 
 
 #### Hexahedra
@@ -104,6 +167,13 @@ for (int o = 0, k = 0; k <= order; k++)
          Nodes.IntPoint(o++).Set3(p1d[i], p1d[j], p1d[k]);
       }
 ```
+
+![hexahedron-o3](img/formats/hexahedron-o3.png "L2 Hexahedron Nodes for Order 3"){width=50%}
+*Figure: As an example this image shows the placement and numbering of the
+nodes of a third order hexahedron. The surfaces correspond to constant `k`
+values from the above loop. The lines within the surfaces correspond to
+constant `j` and `i` values.*
+
 
 #### Wedges (or Prisms)
 
@@ -123,7 +193,7 @@ for (int o = 0, k = 0; k <= order; k++)
 *Figure: As an example this image shows the placement and numbering of the
 nodes of a third order wedge. The surfaces correspond to constant `k` values
 from the above loop. The lines within the surfaces correspond to constant `j`
-and `i` vlaues.*
+and `i` values.*
 
 #### Pyramids
 
@@ -160,7 +230,7 @@ for (int k = 0; k <= order; k++)
 *Figure: As an example this image shows the placement and numbering of the
 nodes of a third order pyramid. The surfaces correspond to constant `k` values
 from the above loop. The lines within the surfaces correspond to constant `j`
-and `i` vlaues.*
+and `i` values.*
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
