@@ -10,6 +10,15 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Xevi Roca (Barcelona Supercomputing Center)
+#### *Enabling High-Fidelity Aeronautic Simulations with High-Order Methods: Geometry, Numerics, and Physics*
+##### **June 9, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/8lcEPPuSMXE"><img src="../img/videos/8lcEPPuSMXE-1280x720.png"></img></a>
+
+Future aviation designs will exploit physical interactions that will challenge current simulation technologies. They use low-order geometric and numerical discretizations that can neglect the key physical interactions. Fortunately, new high-order methods feature high geometric and numerical accuracy and preserve physical structures. This talk overviews our work on geometric, numerical, and physical challenges of high-order methods. First, straight-edged meshes lack the geometric accuracy required by high-order methods. They fail to match the curvature of design boundaries (e.g., wings) or the solution field within the volume (e.g., shocks). This unnecessarily increases the element count, thereby hampering simulation performance. Addressing these issues, we will present our optimization-based methods for mesh curving and curved adaptivity. Our meshes provide the geometric accuracy required for high-fidelity analysis. They also reduce the number of field solver iterations and enable the qualitative reproduction of the experimental oil-flow observations. Second, standard numerical solvers do not address the stiffer and denser coupling of high-order methods. As a result, solver iterations and memory consumption can become unaffordable. Regarding these issues, we will present specific-purpose solvers for mesh curving and curved adaptivity. We will also present preliminary results on low-order preconditioning for high-order discontinuous Galerkin (dG) simplicial discretizations. By handling stiffness and memory consumption, we reduce the number of iterations and the energy use, making high-order methods more affordable. Finally, high-order methods feature low dissipation and dispersion but may fail to preserve relevant physics. Specifically, for time-domain Maxwell equations, standard dG methods do not preserve the underlying Poisson structure. Consequently, in long-time simulations, they lead to significant drifts in conserved quantities, such as energy. In this regard, we will present observability results and preliminary efforts to preserve the Poisson structure. We expect to enhance the physical fidelity of high-order methods in our applications. In perspective, by combining solutions to geometric, numerical, and physical challenges of high-order methods, we aim to enable high-fidelity analysis for the next generation of aviation designs.
+
+---
+
 #### Brendan Keith (Brown University)
 #### *Proximal Galerkin: A Unified Framework for Variational Problems with Inequality Constraints*
 ##### **May 5, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
