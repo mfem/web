@@ -1584,6 +1584,115 @@ We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <br></div>
 
 
+<div id="hdg_anisodiff" markdown="1">
+##HDG Anisotropic Diffusion Miniapp
+<img class="floatright" width="240pt" src="../img/examples/hdg_anisodiff.png">
+
+This miniapp solves asymptotic heat diffusion problem with anisotropic
+conductivity in the mixed formulation corresponding to the system
+$$\begin{array}{rcl}
+\kappa^{-1}\cdot {\bf q} + \nabla T &=& {\bf g} \\\\
+\nabla\cdot {\bf q} + a T &=& -f
+\end{array}$$
+with essential (RT) / natural (DG) Neumann boundary condition
+${\bf q}\cdot{\bf n} = 0$, where ${\bf n}$ is the outer normal, or Dirichlet
+b.c. for $T$. The tensor $\kappa$ represents the heat conductivity, where its
+symmetric and antisymmetric parts can be adjusted. The scalar $a$ is the heat
+capacity, which can be zero, changing the problem to steady-state, indefinite,
+saddle-point. Multiple steady and asymptotic problems are offered.
+               
+We discretize with (broken) Raviart-Thomas finite elements (heat flux ${\bf q}$)
+and piecewise discontinuous polynomials (temperature $T$). Alternatively, the
+piecewise discontinuous polynomials are used for both quantities with
+stabilization, yielding the Local Discontinous Galerkin method. Optionally,
+the mixed system is algebraically reduced or hybridized with DG interface
+elements or H1 trace elements.
+
+The miniapp demonstrates the use of the DarcyForm class and the wrapping system
+operator DarcyOperator in an AMR loop with the HDG error estimator.
+
+_The miniapp has a serial ([anisodiff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/hdg/anisodiff.cpp))
+and a parallel ([panisodiff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/hdg/panisodiff.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_convdiff" markdown="1">
+##HDG Convection-Diffusion Miniapp
+<img class="floatright" width="360pt" src="../img/examples/hdg_convdiff.png">
+
+This miniapp solves a convection-diffusion problem in the mixed formulation
+corresponding to the system
+$$\begin{array}{rcl}
+\kappa^{-1} {\bf q} + \nabla T &=& {\bf g} \\\\
+\nabla\cdot {\bf q} + \nabla\cdot(T {\bf c}) + \frac{dT}{dt} &=& -f
+\end{array}$$
+with natural Dirichlet boundary condition for $T$ and/or Neumann boundary
+condition for the total flux $({\bf q} + T{\bf c})\cdot {\bf n}$, where
+${\bf n}$ is the outer normal. The scalar $\kappa$ is the heat conductivity and
+${\bf c}$ the given velocity field. Multiple problems are offered based on the
+paper: _N.C. Nguyen et al., Journal of Computational Physics 228 (2009) 3232–
+3254_.
+
+We discretize with (broken) Raviart-Thomas finite elements (heat flux ${\bf q}$)
+and piecewise discontinuous polynomials (temperature $T$). Alternatively, the
+piecewise discontinuous polynomials are used for both quantities with
+stabilization, yielding the Local Discontinous Galerkin method. Optionally,
+the mixed system is algebraically reduced or hybridized with DG interface
+elements or H1 trace elements. The schemes can be also upwinded along the
+velocity field in both, diffusion and convection parts, or centered (default).
+
+The miniapp demonstrates the use of the DarcyForm class and time evolution of
+the system operator provided by DarcyOperator with different boundary conditions
+and discretizations.
+
+_The miniapp has a serial ([convdiff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/hdg/convdiff.cpp))
+and a parallel ([pconvdiff.cpp](https://github.com/mfem/mfem/blob/master/miniapps/hdg/pconvdiff.cpp)) version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="hdg_mfem-logo" markdown="1">
+##HDG MFEM Logo Miniapp
+<img class="floatright" width="240pt" src="../img/examples/hdg_mfem-logo.png">
+
+This miniapp solves a convection-diffusion problem in the mixed
+corresponding to the system
+$$\begin{array}{rcl}
+\kappa^{-1}\cdot {\bf q} + \nabla T &=& {\bf g} \\\\
+\nabla\cdot {\bf q} + \nabla\cdot(T {\bf c}) + aT &=& -f
+\end{array}$$
+with natural Dirichlet boundary condition $T = 0$. The tensor $\kappa$
+represents the heat conductivity, where its symmetric and antisymmetric parts
+can be adjusted. The scalar $a$ is then the heat capacity, which can be zero,
+changing the problem to steady-state, indefinite, saddle-point. The initial
+condition is MFEM text forming a raster mask. The conductivity has profile of
+random Gaussian blobs while velocity has a similar profile of magnitude with
+circular orientation.
+
+We discretize with (broken) Raviart-Thomas finite elements (heat flux ${\bf q}$)
+and piecewise discontinuous polynomials (temperature $T$). Alternatively, the
+piecewise discontinuous polynomials are used for both quantities with
+stabilization, yielding the Local Discontinous Galerkin method. Optionally,
+the mixed system is algebraically reduced or hybridized with DG interface
+elements or H1 trace elements. The schemes can be also upwinded along the
+velocity field in both, diffusion and convection parts, or centered (default).
+
+The miniapp demonstrates the use of the DarcyForm class and steady solution with
+system operator provided by DarcyOperator and different discretizations.
+
+_The miniapp has only a serial ([mfem-logo.cpp](https://github.com/mfem/mfem/blob/master/miniapps/hdg/mfem-logo.cpp))
+version.
+**We recommend that new users start with the example codes before
+moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="volta" markdown="1">
 ##Volta Miniapp: Electrostatics
 <img class="floatright" src="../img/examples/volta.png">
@@ -2705,6 +2814,11 @@ function update()
    + showElement("hdg_ex17", elasticity && (l2 || h12) && (dg || ldg || hdg) && (gs || minres || gmres || umfpack || amg))
    + showElement("hdg_ex21", elasticity && (l2 || h12) && (amr || hdg) && (gs || gmres || umfpack || amg))
    + showElement("hdg_ex41", (advection || diffusion) && (l2 || hdiv || h12) && (ldg || hdg) && (gmres || rk || amg))
+
+   // hdg miniapps
+   + showElement("hdg_anisodiff", diffusion && (l2 || hdiv || h12) && (amr || mixed || ldg || hdg) && (gs || gmres || umfpack || amg))
+   + showElement("hdg_convdiff", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || ldg || hdg) && (gs || gmres || umfpack || rk || amg))
+   + showElement("hdg_mfem-logo", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || ldg || hdg) && (gs || gmres || umfpack))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
