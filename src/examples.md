@@ -2810,15 +2810,15 @@ function update()
    // hdg examples
    + showElement("hdg_ex5",  darcy && (l2 || hdiv || h12) && (mixed || hybr || ldg || hdg || pa) && (gs || jacobi || minres || gmres || umfpack || amg))
    + showElement("hdg_ex6",  diffusion && (l2 || hdiv || h12) && (nurbs || amr || hdg) && (gs || gmres || umfpack || amg))
-   + showElement("hdg_ex14", diffusion && (l2 || hdiv || h12) && (mixed || ldg || hdg || pa) && (gs || jacobi || minres || gmres || umfpack || amg))
+   + showElement("hdg_ex14", diffusion && (l2 || hdiv || h12) && (mixed || hybr || ldg || hdg || pa) && (gs || jacobi || minres || gmres || umfpack || amg))
    + showElement("hdg_ex17", elasticity && (l2 || h12) && (dg || ldg || hdg) && (gs || minres || gmres || umfpack || amg))
    + showElement("hdg_ex21", elasticity && (l2 || h12) && (amr || hdg) && (gs || gmres || umfpack || amg))
-   + showElement("hdg_ex41", (advection || diffusion) && (l2 || hdiv || h12) && (ldg || hdg) && (gmres || rk || amg))
+   + showElement("hdg_ex41", (advection || diffusion) && (l2 || hdiv || h12) && (hybr || ldg || hdg) && (gmres || rk || amg))
 
    // hdg miniapps
-   + showElement("hdg_anisodiff", diffusion && (l2 || hdiv || h12) && (amr || mixed || ldg || hdg) && (gs || gmres || umfpack || amg))
-   + showElement("hdg_convdiff", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || ldg || hdg) && (gs || gmres || umfpack || rk || amg))
-   + showElement("hdg_mfem-logo", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || ldg || hdg) && (gs || gmres || umfpack))
+   + showElement("hdg_anisodiff", diffusion && (l2 || hdiv || h12) && (amr || mixed || hybr || ldg || hdg) && (gs || gmres || umfpack || amg))
+   + showElement("hdg_convdiff", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || hybr || ldg || hdg) && (gs || gmres || umfpack || rk || amg))
+   + showElement("hdg_mfem-logo", (advection || diffusion) && (l2 || hdiv || h12) && (mixed || hybr || ldg || hdg) && (gs || gmres || umfpack))
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
