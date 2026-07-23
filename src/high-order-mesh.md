@@ -42,7 +42,54 @@ daunting challenges for this method.
 
 ## Projecting One Representation to Another Element-by-Element
 
-TBD
+If you have software which is currently able to represent your mesh with its
+high-order geometry you may consider linking the MFEM library into this
+software. This would enable the creation of a `VectorCoefficient` class
+analogous to MFEM's `VectorGridFunctionCoefficient` which is instead based on
+your native mesh representation.
+
+The core of this class would be an `Eval` member function similar to this
+pseudocode example:
+
+```
+void YourMeshCoordinateCoefficient::Eval(Vector &V, ElementTransformation &T,
+                                         const IntegrationPoint &ip)
+{
+   const int elem_index = T.ElementNo;
+
+   const double ref_x = ip.x;
+   const double ref_y = ip.y;
+   const double ref_z = ip.z;
+
+   V.SetSize(your_mesh_space_dimension);
+
+   // Evaluate the coordinates of your mesh geometry for element `elem_index`
+   // at the reference coordinates specified by {ref_x, ref_y, ref_z}.
+   // Write the resulting vector value into `V`.
+}
+```
+
+This `VectorCoefficient` could then be used to set MFEM's mesh geometry as
+follows:
+```
+Mesh mesh(your_manifold_dimension,
+          your_number_of_vertices,
+	  your_number_of_elements,
+	  your_number_of_boundary_elements,
+	  your_space_dimension);
+
+// Create the mesh topology element-by-element 
+...
+
+// Promote the mesh geometry to the desired order
+mesh.SetCurvature(your_geom_order);
+
+// Setup your specialized vector coefficient object
+YourMeshCoordinateCoefficient your_mesh_coef(your_mesh_coef_args);
+
+// Project the high-order geometry onto the previously specified mesh topology
+mesh.GetNodes()->ProjectCoefficient(your_mesh_coef);
+```
 
 ## DIY Computation of Nodal Values
 
