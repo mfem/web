@@ -1463,7 +1463,7 @@ refinement loop. The problem being solved is again the Poisson
 equation $$-\Delta u = 1$$ with homogeneous Dirichlet boundary
 conditions. The problem is solved on a sequence of meshes which
 are locally refined in a conforming (triangles, tetrahedrons)
-or non-conforming (quadrilaterals, hexahedra) manner manner according
+or non-conforming (quadrilaterals, hexahedra) manner according
 to HDG error estimator.
 
 The example demonstrates MFEM's capability to work with both
@@ -1604,7 +1604,7 @@ saddle-point. Multiple steady and asymptotic problems are offered.
 We discretize with (broken) Raviart-Thomas finite elements (heat flux ${\bf q}$)
 and piecewise discontinuous polynomials (temperature $T$). Alternatively, the
 piecewise discontinuous polynomials are used for both quantities with
-stabilization, yielding the Local Discontinous Galerkin method. Optionally,
+stabilization, yielding the Local Discontinuous Galerkin method. Optionally,
 the mixed system is algebraically reduced or hybridized with DG interface
 elements or H1 trace elements.
 
@@ -1639,7 +1639,7 @@ paper: _N.C. Nguyen et al., Journal of Computational Physics 228 (2009) 3232–
 We discretize with (broken) Raviart-Thomas finite elements (heat flux ${\bf q}$)
 and piecewise discontinuous polynomials (temperature $T$). Alternatively, the
 piecewise discontinuous polynomials are used for both quantities with
-stabilization, yielding the Local Discontinous Galerkin method. Optionally,
+stabilization, yielding the Local Discontinuous Galerkin method. Optionally,
 the mixed system is algebraically reduced or hybridized with DG interface
 elements or H1 trace elements. The schemes can be also upwinded along the
 velocity field in both, diffusion and convection parts, or centered (default).
@@ -1661,7 +1661,7 @@ moving to the miniapps.**_
 <img class="floatright" width="240pt" src="../img/examples/hdg_mfem-logo.png">
 
 This miniapp solves a convection-diffusion problem in the mixed
-corresponding to the system
+formulation corresponding to the system
 $$\begin{array}{rcl}
 \kappa^{-1}\cdot {\bf q} + \nabla T &=& {\bf g} \\\\
 \nabla\cdot {\bf q} + \nabla\cdot(T {\bf c}) + aT &=& -f
