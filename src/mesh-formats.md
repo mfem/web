@@ -35,7 +35,7 @@ MFEM supports:
     supporting non-conforming (AMR) meshes.
   - MFEM's format for [NURBS](mesh-format-v1.0.md#nurbs-meshes) meshes.
 
-To learn more about getting high-order mesh data into MFEM see [High-Order Mesh Data](high-order-mesh.md).
+To learn more about getting high-order mesh data into MFEM, see [High-Order Mesh Data](high-order-mesh.md).
 
 ### VTK Mesh Formats
 

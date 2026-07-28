@@ -126,7 +126,7 @@ In MFEM, finite element functions are objects of type `GridFunction` which belon
 
 The actual geometry of each element is obtained by extracting the local degrees of freedom from the global *nodes*, expanding them in the corresponding (reference element) finite element basis, and using the resulting polynomial vector field to map the reference element.
 
-For a discussion of creating the high-order geometry data described below see  [High-Order Mesh Data](high-order-mesh.md).
+For a discussion of creating the high-order geometry data described below, see [High-Order Mesh Data](high-order-mesh.md).
 
 An example of a first order geometry is given in [Listing 2](#listing-2):
 

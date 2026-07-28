@@ -5,7 +5,7 @@ tag-mesh:
 ## Coordinate Mapping Using a Transformation Function
 
 Perhaps the simplest method to create a mesh with high-order geometry involves
-the use of a coordinates transformation, $\vec{\phi}$, which maps a starting
+the use of a coordinate transformation, $\vec{\phi}$, which maps a starting
 domain to the desired curved domain, $\vec{x} = \vec{\phi}(\vec{u})$.
 
 The process starts with a mesh of the starting domain. This can be a first-order
@@ -34,7 +34,7 @@ Clearly this method has practical limitations. Strictly speaking, any high-order
 finite element mesh supported by MFEM can be generated in this manner. It only
 requires a starting mesh which represents the necessary topology of the desired
 domain and a sufficiently detailed transformation function which can transform
-each region of that topological structure to its desired shape. In deed, this is
+each region of that topological structure to its desired shape. Indeed, this is
 exactly how MFEM represents high-order meshes by using finite element basis
 functions and degrees of freedom to transform reference elements to the desired
 curved elements. However, most realistic domains would present some very
@@ -74,9 +74,9 @@ follows:
 ```
 Mesh mesh(your_manifold_dimension,
           your_number_of_vertices,
-	  your_number_of_elements,
-	  your_number_of_boundary_elements,
-	  your_space_dimension);
+          your_number_of_elements,
+          your_number_of_boundary_elements,
+          your_space_dimension);
 
 // Create the mesh topology element-by-element 
 ...
@@ -126,7 +126,7 @@ clearly the manifold dimension of the elements, and finally `P3` indicates
 third order basis functions. The integer after the letter `P` can be any
 positive integer.
 
-The `VDim` values gives the vector dimension of the coordinate space. In 1D
+The `VDim` value gives the vector dimension of the coordinate space. In 1D
 meshes this is typically `1` but if the mesh describes a curve in a 2D or 3D
 space this value could be `2` or `3`.
 
@@ -170,7 +170,7 @@ notation is not allowed in this section of the file.
 The geometry section of a 2D MFEM mesh which uses a discontinuous representation
 of its coordinates would start with the following header. Note the
 `FiniteElementCollection` line. Again, this string can be parsed to determine
-the characteristics of the appropriate basis functions see the
+the characteristics of the appropriate basis functions, see the
 [1D section](#1d-mesh-geometry) for a detailed description.
 
 ```
@@ -181,10 +181,10 @@ VDim: 2
 Ordering: 1
 ```
 
-On 2D manifolds the `VDim` can be either 2 or 3. The later defining a 2D surface
-embedded in a 3D space. In these cases the 2 or 3 coordinates corresponding to
-each interpolation point are usually written on one line of the output file
-(using `Ordering = 1`). 
+On 2D manifolds the `VDim` can be either 2 or 3. The latter defining a 2D
+surface embedded in a 3D space. In these cases the 2 or 3 coordinates
+corresponding to each interpolation point are usually written on one line of
+the output file (using `Ordering = 1`). 
 
 MFEM currently supports two element types in 2D domains; [Triangle](#triangle)
 and [Square](#quadrilateral) (a.k.a. [Quadrilateral](#quadrilateral)).
@@ -261,7 +261,7 @@ Ordering: 1
 ```
 
 On 3D manifolds the `VDim` must be 3. As in 2D the 3 coordinates are usually
-written on a single line using `Ordering 1`.
+written on a single line using `Ordering = 1`.
 
 MFEM currently supports four element types in 3D domains;
 [Tetrahedron](#tetrahedron), [Cube](#hexahedron)
