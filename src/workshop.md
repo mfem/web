@@ -23,7 +23,33 @@ If you plan to attend, either in-person or virtually, [please register no later 
 
 ### Venue
 
-The workshop will take place at [Georgia Tech](http://gatech.edu/) (GT) in Atlanta, Georgia. GT is about a 30-minute drive from Hartsfield-Jackson Atlanta International Airport. Information about the meeting room and a map will be available soon.
+The meeting will be held in **[Georgia Tech Global Learning Center (GLC)](https://pe.gatech.edu/global-learning-center)** (84 5th St NW, Atlanta, GA 30308). This location is highlighted on the map below. 
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.08888722727835!2d-84.38973962829907!3d33.776184208587324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50466be9894e5%3A0x6c3a4370c99dd7d7!2sGlobal%20Learning%20and%20Conference%20Center%2C%2081%204th%20St%20NW%2C%20Atlanta%2C%20GA%2030332!5e0!3m2!1sen!2sus!4v1785852421704!5m2!1sen!2sus" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+### Lodging Options
+
+We have not arranged an official conference hotel, but there are plenty of options
+in Midtown within walking distance of the venue, the Georgia Tech Global Learning
+Center (84 5th St NW, Atlanta, GA 30308). Attendees are encouraged to book early,
+as late September is a busy season in Atlanta. A few suggestions:
+
+* [Georgia Tech Hotel and Conference Center](http://www.gatechhotel.com/) — adjacent to the venue (1 min walk)
+* [Renaissance Atlanta Midtown Hotel](https://www.marriott.com/en-us/hotels/atlbd-renaissance-atlanta-midtown-hotel/overview/) — 6 min walk
+* [Hilton Garden Inn Atlanta Midtown](https://www.hilton.com/en/hotels/atlamgi-hilton-garden-inn-atlanta-midtown/) — 10 min walk
+* [Hotel Indigo Atlanta Midtown](https://www.ihg.com/hotelindigo/hotels/us/en/atlanta/atlfx/hoteldetail) — 13 min walk
+* [Courtyard by Marriott Atlanta Midtown](https://www.marriott.com/en-us/hotels/atlyc-courtyard-atlanta-midtown/overview/) — 14 min walk
+* [Element by Marriott Atlanta Midtown](https://www.marriott.com/en-us/hotels/atlle-element-atlanta-midtown/overview/) — 14 min walk
+* [Residence Inn Atlanta Midtown/Georgia Tech](https://www.marriott.com/en-us/hotels/atlmt-residence-inn-atlanta-midtown-georgia-tech/overview/) — 14 min walk
+* [Hyatt Centric Midtown Atlanta](https://www.hyatt.com/hyatt-centric/en-US/atlhm-hyatt-centric-midtown-atlanta) — 15 min walk
+* [Hampton Inn Atlanta-Georgia Tech-Downtown](https://www.hilton.com/en/hotels/atlgthx-hampton-atlanta-georgia-tech-downtown/) — 18 min walk
+* [Sonesta Select Atlanta Midtown Georgia Tech](https://www.sonesta.com/sonesta-select/ga/atlanta/sonesta-select-atlanta-midtown-georgia-tech) — 18 min walk
+* [Hampton Inn & Suites Atlanta Midtown](https://www.hilton.com/en/hotels/atlmnhx-hampton-suites-atlanta-midtown/) — 21 min walk
+
+
+The venue is also a 10-minute walk from the Midtown MARTA station, which connects 
+directly to Hartsfield-Jackson Atlanta International Airport as well as to other 
+parts of the city, should you prefer to stay farther afield.
 
 ### Meeting Format
 
