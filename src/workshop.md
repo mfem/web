@@ -17,7 +17,7 @@ the first day of the workshop (September 22) will be reserved for a hands-on MFE
 
 If you plan to attend, either in-person or virtually, [please register no later than **September 11th**](https://forms.gle/5sqBL3p7ReDTvWkt9).
 
-* **In person:** The registration fee for in-person attendance is **$150 for regular participants** and **$75 for students**. After completing this registration form, you will receive separate payment instructions for the registration fee in a follow-up message.
+* **In person:** The registration fee for in-person attendance is **$150 for regular participants** and **$75 for students**. After completing this registration form, please pay the registration fee here: [Payment Link](https://epay.gatech.edu/C20793_ustores/web/store_main.jsp?STOREID=642).
 
 * **Remote:** There is no registration fee for remote participants. Zoom details will be distributed prior to the event date.
 
