@@ -2,8 +2,8 @@
 
 ## Google Scholar Citations
 
- - [Recent](https://scholar.google.com/scholar?scisbd=2&q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR++%22j.camwa.2020.06.009%22&hl=en&as_sdt=1,5)
- - [All time](https://scholar.google.com/scholar?q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR++%22j.camwa.2020.06.009%22&hl=en&as_sdt=1,5)
+ - [Recent](https://scholar.google.com/scholar?scisbd=2&q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR+%22MFEM+library%22+OR+%22j.camwa.2020.06.009%22+OR+%2210943420241261981%22+OR+%22dc.20171025.1248%22+OR+%22github.com%2Fmfem%2Fmfem%22&hl=en&as_sdt=1,5)
+ - [All time](https://scholar.google.com/scholar?q=%22mfem.org%22+OR+%22modular+finite+element+methods%22+OR+%22MFEM+library%22+OR+%22j.camwa.2020.06.009%22+OR+%2210943420241261981%22+OR+%22dc.20171025.1248%22+OR+%22github.com%2Fmfem%2Fmfem%22&hl=en&as_sdt=1,5)
 
 ## Selected Publications
 
@@ -24,6 +24,7 @@
 #### 2025
   1. S. Martinez-Weissberg, W. Pazner, Z. Yosibash, [Finite element analysis of very large bone models based on micro-CT scans](https://arxiv.org/abs/2512.24401), *to appear*, **2025**. Also available as [arXiv:2512.24401](https://arxiv.org/abs/2512.24401).
   1. S. Henneking, S. Venkat, V. Dobrev, J. Camier, Tz. Kolev, M. Fernando, A. Gabriel, O. Ghattas, [Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone](https://doi.org/10.1145/3712285.3771787), *SC25 proceedings*, **2025**. Also available as [arXiv:2504.16344](https://arxiv.org/abs/2504.16344). **&nbsp;<i class="fa fa-trophy"></i>&nbsp;Gordon Bell Award Winner**
+  1. T. Hartland, B. Keith, T. M. Surowiec, [A Scalable Interior-Point Gauss–Newton Method for PDE-Constrained Optimization With Bound Constraints](https://doi.org/10.1002/nla.70040), *Numerical Linear Algebra with Applications*, **2025**.
   1. K. Mittal, J.-L. Barrera, Tz. Kolev, M. Schmidt, V. Tomov, [High-Order Mesh hr-Adaptivity for Surface Fitting to Implicit Geometries](https://doi.org/10.1007/978-3-031-76988-7_18), *Lecture Notes in Computational Science and Engineering*, **2025**.
   1. B. Keith, D. Kim, B. S. Lazarov, T. M. Surowiec, [Analysis of the SiMPL method for density-based topology optimization](https://doi.org/10.1137/24M1708863), *SIAM Journal on Optimization*, 35(2), **2025**. Also available as [arXiv:2409.19341](https://arxiv.org/abs/2409.19341).
   1. D. Kim, B. S. Lazarov, T. M. Surowiec, B. Keith, [A Simple Introduction to the SiMPL Method for Density-Based Topology Optimization](https://doi.org/10.1007/s00158-025-04008-9), *Structural and Multidisciplinary Optimization*, 68, 74, **2025**. Also available as [arXiv:2411.19421](https://arxiv.org/abs/2411.19421).
