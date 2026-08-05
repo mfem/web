@@ -8,7 +8,7 @@
 ## Selected Publications
 
 #### 2026
-  1. J. Tu, I. Karlin, J. Camier, V. Dobrev, Tz. Kolev, S. Henneking, O. Ghattas, [Accelerating High-Order Finite Element Simulations at Extreme Scale with FP64 Tensor Cores](https://arxiv.org/abs/2603.09038), *to appear*, **2026**. Also available as [arXiv:2603.09038](https://arxiv.org/abs/2603.09038).
+  1. J. Tu, I. Karlin, J. Camier, V. Dobrev, Tz. Kolev, S. Henneking, O. Ghattas, [Accelerating High-Order Finite Element Simulations at Extreme Scale with FP64 Tensor Cores](https://doi.org/10.23919/ISC.2026.11520474), *ISC High Performance 2026 Research Paper Proceedings*, **2026**. Also available as [arXiv:2603.09038](https://arxiv.org/abs/2603.09038).
   1. A. Larsson, M. Kim, C. Vales, S. Adriaenssens, D. Copeland, Y. Choi, S. W. Cheung, [Hyper-reduction methods for accelerating nonlinear finite element simulations: open source implementation and reproducible benchmarks](https://arxiv.org/abs/2602.23551), *to appear*, **2026**. Also available as [arXiv:2602.23551](https://arxiv.org/abs/2602.23551).
   1. R. T. Black, S. A. Maas, W. Wu, J. Maheshwari, Tz. Kolev, J. A. Weiss, M. A. Jolley, [An open-source computational framework for immersed fluid-structure interaction modeling using FEBio and MFEM](https://arxiv.org/abs/2601.08266), *to appear*, **2026**. Also available as [arXiv:2601.08266](https://arxiv.org/abs/2601.08266).
   1. T. Dzanic, Tz. Kolev, K. Mittal, [A method for bounding high-order finite element functions: Applications to mesh validity and bounds-preserving limiters](https://doi.org/10.1016/j.jcp.2025.114444), *Journal of Computational Physics*, 545, 114444, **2026**. Also available as [arXiv:2504.11688](https://arxiv.org/abs/2504.11688).
