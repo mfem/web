@@ -105,6 +105,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 Date         | Message
 ------------ | -----------------------------------------------------------------
 Apr 10, 2026 | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
+Mar 2026     | MFEM in LLNL's [FY25 LDRD Report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).
 Dec 5, 2025  |  [Particles in MFEM](https://mfem.org/particles/).
 Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
 Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop25.md).
