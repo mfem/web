@@ -2423,6 +2423,45 @@ _This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/bl
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="pic" markdown="1">
+##Particle-In-Cell (PIC) Miniapp
+<img class="floatright" width="300" src="../img/examples/electrostatic-pic.png">
+
+The [electrostatic PIC miniapp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)
+couples explicit particle pushing to a finite element Poisson solve for the
+self-consistent electric field on a periodic two- or three-dimensional domain.
+It is intended for plasma physics applications such as linear Landau damping
+and demonstrates how to combine MFEM's particle support with parallel finite
+element field solvers.
+
+At each time step, particle charge is deposited on the grid using Dirac delta
+shape functions. The miniapp then solves
+
+$$-\epsilon_0 \Delta \phi(q) =
+e \sum_{j=1}^{N_p} \psi_j \delta(q-Q_j) - e n_0,$$
+
+where $\epsilon_0=1$, $Q_j$ and $\psi_j$ are the position and weight of
+particle $j$, and the constant background ion density $n_0$ enforces global
+charge neutrality. The periodic Poisson system is solved with `OrthoSolver` to
+enforce a zero-mean potential. The electric field
+$\mathbf{E}=-\nabla\phi$ is then interpolated to the particle positions before
+their momenta and positions are advanced with a leap-frog scheme.
+
+Compatible finite element spaces following the discrete de Rham complex,
+together with leap-frog time integration, preserve the symplectic structure of
+the discretization. The miniapp also supports charge-conserving deposition,
+parallel particle redistribution across MPI ranks, optional GLVis
+visualization of $\phi$ and $\mathbf{E}$, and CSV output of kinetic, field, and
+total energy. The figure shows the field-energy history for a linear Landau
+damping test (this 2D2V benchmark follows the setup of
+[Ricketson and Hu (2025)](https://www.osti.gov/servlets/purl/2587773), with a
+weak cosine density perturbation, $L_x = L_y = 22$, $\alpha=0.05$ and $k=2\pi/22$, on a
+periodic square domain).
+
+_This miniapp has only a parallel ([electrostatic-pic.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)) implementation._
+<div style="clear:both;"/></div>
+<br></div>
+
 <!-- ------------------------------------------------------------------------- -->
 
 <div id="nomatch">
@@ -2570,6 +2609,7 @@ function update()
    + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
    + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi))
    + showElement("contact", elasticity && h1 && galerkin && (pcg || amg))
+   + showElement("pic", particle && (h1 || hcurl) && (galerkin || symplectic) && (pcg || amg))
 
    ; // ...end of expression
 
