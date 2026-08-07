@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <meta name="keywords" content="Finite Element Library,Finite Element Code,Finite Element Method Library,Finite Element Method Code,Finite Element C++,Finite Element Method C++,Finite Element Library C++,Finite Element Code C++,FEM Code,FEM Library,FEM C++">
+        <meta name="google-site-verification" content="45K56TawSdzbgy-uDtfJdYwp7zaVdL3fIAGYt869wwU" />
+<!--	<title></title>  -->
+        <title>MFEM - Finite Element Discretization Library</title>
+
+        <link href="../css/bootstrap-mfem.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+	<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NS5XV5TFM6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-NS5XV5TFM6');
+        </script>
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="https://mfem.org">MFEM</a>
+        </div>
+
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../features/">Features</a>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../examples/">Example Codes</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../electromagnetics/">Electromagnetics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fluids/">Fluid Dynamics</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../meshing-miniapps/">Meshing</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../nurbs/">NURBS Discretization</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../autodiff/">Automatic Differentiation</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../particles/">Particles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tools/">Tools</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../toys/">Toys</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../getting-started/">Getting Started</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../howto/howto-index/">HowTo Articles</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../fem/">Finite Elements</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../performance/">Performance</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../gpu-support/">GPU Support</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../mesh-formats/">Mesh Formats</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../dox/">Doxygen</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../publications/">Publications</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../about/">About</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../search/">🔎 Search...</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                            <li >
+                                 <a href="../news/">News</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../videos/">Videos</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../seminar/">Seminar</a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                 <a href="../workshop/">Workshop</a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                 <a href="../tutorial/">Tutorial</a>
+                            </li>
+                        
+                    
+                    </ul>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../gallery/">Gallery</a>
+                </li>
+            
+            
+            
+            
+            
+                <li >
+                    <!-- Replace "nav_item.url|url" with "nav_item.url" for older mkdocs (before 1.0) -->
+                    <a href="../download/">Download</a>
+                </li>
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a href="https://github.com/mfem/mfem/">
+                        
+                            <i class="fa fa-github-square"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="container">
+            
+            <div class="col-md-3 visible-xs visible-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#reference-element-types-and-connectivities">Reference Element Types and Connectivities</a></li>
+        
+            <li><a href="#0d-element">0D Element</a></li>
+        
+            <li><a href="#1d-element">1D Element</a></li>
+        
+            <li><a href="#2d-elements">2D Elements</a></li>
+        
+            <li><a href="#3d-elements">3D Elements</a></li>
+        
+    
+    
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../fem/"><i class="fa fa-chevron-circle-left"></i> Back to Finite Element Method</a> </li>
+        
+	
+    
+	
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../mesh-formats/"><i class="fa fa-chevron-circle-left"></i> Back to Mesh Formats</a> </li>
+        
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div> <!-- toc on top on mobile -->
+            <div class="col-md-9" role="main">
+
+<h1 id="reference-element-types-and-connectivities">Reference Element Types and Connectivities</h1>
+<p>The reference element types supported by MFEM are documented in the file 
+<a href="https://github.com/mfem/mfem/blob/master/fem/geom.hpp">geom.hpp</a>. This file
+contains the reference vertices and their order as well as edge and face
+definitions when appropriate.</p>
+<h2 id="0d-element">0D Element</h2>
+<p>Zero dimensional elements are used as boundary elements or interior "faces" of
+one dimensional domains.</p>
+<h3 id="point-element"><code>Point</code> Element</h3>
+<p>A <code>Point</code> element is simply a single vertex at the origin of reference space.</p>
+<h2 id="1d-element">1D Element</h2>
+<p>One dimensional elements can be used within the domain of 1D meshes. They also
+arise as boundary elements or interior "faces" of 2D domains.</p>
+<h3 id="segment-element"><code>Segment</code> Element</h3>
+<p>A <code>Segment</code> element is a line segment from the origin of a 1D reference space,
+$x=0$, to the point $x=1$.</p>
+<h2 id="2d-elements">2D Elements</h2>
+<p>Two dimensional elements can be used within the domain of 2D meshes. They also
+arise as boundary elements or interior "faces" of 3D domains.</p>
+<h3 id="triangle-element"><code>Triangle</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="tri-z2v" src="../img/connectivity/tri-z2v.png" title="Triangle Vertices" width="80%" /></th>
+<th align="center"><img alt="tri-z2e" src="../img/connectivity/tri-z2e.png" title="Triangle Edges" width="80%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Triangle</code> element consists of three vertices in a 2D reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+</tr>
+<tr>
+<td align="center">(0,0)</td>
+<td align="center">(1,0)</td>
+<td align="center">(0,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v2, v0}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="square-element"><code>Square</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="sqr-z2v" src="../img/connectivity/sqr-z2v.png" title="Quadrilateral Vertices" width="80%" /></th>
+<th align="center"><img alt="sqr-z2e" src="../img/connectivity/sqr-z2e.png" title="Quadrilateral Edges" width="80%" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Square</code> element, a.k.a <code>Quadrilateral</code>, consists of four vertices in a 2D reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+<td align="center">v3</td>
+</tr>
+<tr>
+<td align="center">(0,0)</td>
+<td align="center">(1,0)</td>
+<td align="center">(1,1)</td>
+<td align="center">(0,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+<td align="center">e3</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v2, v3}</td>
+<td align="center">{v3, v0}</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3d-elements">3D Elements</h2>
+<p>Three dimensional elements can be used within the domain of 3D meshes.</p>
+<h3 id="tetrahedron-element"><code>Tetrahedron</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="tet-z2v" src="../img/connectivity/tet-z2v.png" title="Tetrahedron Vertices" /></th>
+<th align="center"><img alt="tet-z2e" src="../img/connectivity/tet-z2e.png" title="Tetrahedron Edges" /></th>
+<th align="center"><img alt="tet-v2f" src="../img/connectivity/tet-z2f.png" title="Tetrahedron Faces" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+<td align="center">Faces</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Tetrahedron</code> element consists of four vertices in a 3D reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+<td align="center">v3</td>
+</tr>
+<tr>
+<td align="center">(0,0,0)</td>
+<td align="center">(1,0,0)</td>
+<td align="center">(0,1,0)</td>
+<td align="center">(0,0,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+<td align="center">e3</td>
+<td align="center">e4</td>
+<td align="center">e5</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v0, v2}</td>
+<td align="center">{v0, v3}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v1, v3}</td>
+<td align="center">{v2, v3}</td>
+</tr>
+</tbody>
+</table>
+<p>The Face-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">f0</td>
+<td align="center">f1</td>
+<td align="center">f2</td>
+<td align="center">f3</td>
+</tr>
+<tr>
+<td align="center">{v1, v2, v3}</td>
+<td align="center">{v0, v3, v2}</td>
+<td align="center">{v0, v1, v3}</td>
+<td align="center">{v0, v2, v1}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cube-element"><code>Cube</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="hex-z2v" src="../img/connectivity/hex-z2v.png" title="Hexahedron Vertices" width="80%" /></th>
+<th align="center"><img alt="hex-z2e" src="../img/connectivity/hex-z2e.png" title="Hexahedron Edges" width="80%" /></th>
+<th align="center"><img alt="hex-v2f" src="../img/connectivity/hex-z2f.png" title="Hexahedron Faces" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+<td align="center">Faces</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Cube</code> element, a.k.a. <code>Hexahedron</code>, consists of eight vertices in a 3D
+reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+<td align="center">v3</td>
+<td align="center">v4</td>
+<td align="center">v5</td>
+<td align="center">v6</td>
+<td align="center">v7</td>
+</tr>
+<tr>
+<td align="center">(0,0,0)</td>
+<td align="center">(1,0,0)</td>
+<td align="center">(1,1,0)</td>
+<td align="center">(0,1,0)</td>
+<td align="center">(0,0,1)</td>
+<td align="center">(1,0,1)</td>
+<td align="center">(1,1,1)</td>
+<td align="center">(0,1,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+<td align="center">e3</td>
+<td align="center">e4</td>
+<td align="center">e5</td>
+<td align="center">e6</td>
+<td align="center">e7</td>
+<td align="center">e8</td>
+<td align="center">e9</td>
+<td align="center">e10</td>
+<td align="center">e11</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v3, v2}</td>
+<td align="center">{v0, v3}</td>
+<td align="center">{v4, v5}</td>
+<td align="center">{v5, v6}</td>
+<td align="center">{v7, v6}</td>
+<td align="center">{v4, v7}</td>
+<td align="center">{v0, v4}</td>
+<td align="center">{v1, v5}</td>
+<td align="center">{v2, v6}</td>
+<td align="center">{v3, v7}</td>
+</tr>
+</tbody>
+</table>
+<p>The Face-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">f0</td>
+<td align="center">f1</td>
+<td align="center">f2</td>
+<td align="center">f3</td>
+<td align="center">f4</td>
+<td align="center">f5</td>
+</tr>
+<tr>
+<td align="center">{v3, v2, v1, v0}</td>
+<td align="center">{v0, v1, v5, v4}</td>
+<td align="center">{v1, v2, v6, v5}</td>
+<td align="center">{v2, v3, v7, v6}</td>
+<td align="center">{v3, v0, v4, v7}</td>
+<td align="center">{v4, v5, v6, v7}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prism-element"><code>Prism</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="pri-z2v" src="../img/connectivity/pri-z2v.png" title="Prism Vertices" width="80%" /></th>
+<th align="center"><img alt="pri-z2e" src="../img/connectivity/pri-z2e.png" title="Prism Edges" width="80%" /></th>
+<th align="center"><img alt="pri-v2f" src="../img/connectivity/pri-z2f.png" title="Prism Faces" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+<td align="center">Faces</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Prism</code> element, a.k.a. <code>Wedge</code>, consists of six vertices in a 3D
+reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+<td align="center">v3</td>
+<td align="center">v4</td>
+<td align="center">v5</td>
+</tr>
+<tr>
+<td align="center">(0,0,0)</td>
+<td align="center">(1,0,0)</td>
+<td align="center">(0,1,0)</td>
+<td align="center">(0,0,1)</td>
+<td align="center">(1,0,1)</td>
+<td align="center">(0,1,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+<td align="center">e3</td>
+<td align="center">e4</td>
+<td align="center">e5</td>
+<td align="center">e6</td>
+<td align="center">e7</td>
+<td align="center">e8</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v2, v0}</td>
+<td align="center">{v3, v4}</td>
+<td align="center">{v4, v5}</td>
+<td align="center">{v5, v3}</td>
+<td align="center">{v0, v3}</td>
+<td align="center">{v1, v4}</td>
+<td align="center">{v2, v5}</td>
+</tr>
+</tbody>
+</table>
+<p>The Face-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">f0</td>
+<td align="center">f1</td>
+<td align="center">f2</td>
+<td align="center">f3</td>
+<td align="center">f4</td>
+</tr>
+<tr>
+<td align="center">{v0, v2, v1}</td>
+<td align="center">{v3, v4, v5}</td>
+<td align="center">{v0, v1, v4, v3}</td>
+<td align="center">{v1, v2, v5, v4}</td>
+<td align="center">{v2, v0, v3, v5}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pyramid-element"><code>Pyramid</code> Element</h3>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="pyr-z2v" src="../img/connectivity/pyr-z2v.png" title="Pyramid Vertices" width="80%" /></th>
+<th align="center"><img alt="pyr-z2e" src="../img/connectivity/pyr-z2e.png" title="Pyramid Edges" width="80%" /></th>
+<th align="center"><img alt="pyr-v2f" src="../img/connectivity/pyr-z2f.png" title="Pyramid Faces" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Vertices</td>
+<td align="center">Edges</td>
+<td align="center">Faces</td>
+</tr>
+</tbody>
+</table>
+<p>A <code>Pyramid</code> element consists of five vertices in a 3D reference space:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">v0</td>
+<td align="center">v1</td>
+<td align="center">v2</td>
+<td align="center">v3</td>
+<td align="center">v4</td>
+</tr>
+<tr>
+<td align="center">(0,0,0)</td>
+<td align="center">(1,0,0)</td>
+<td align="center">(1,1,0)</td>
+<td align="center">(0,1,0)</td>
+<td align="center">(0,0,1)</td>
+</tr>
+</tbody>
+</table>
+<p>The Edge-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">e0</td>
+<td align="center">e1</td>
+<td align="center">e2</td>
+<td align="center">e3</td>
+<td align="center">e4</td>
+<td align="center">e5</td>
+<td align="center">e6</td>
+<td align="center">e7</td>
+</tr>
+<tr>
+<td align="center">{v0, v1}</td>
+<td align="center">{v1, v2}</td>
+<td align="center">{v3, v2}</td>
+<td align="center">{v0, v3}</td>
+<td align="center">{v0, v4}</td>
+<td align="center">{v1, v4}</td>
+<td align="center">{v2, v4}</td>
+<td align="center">{v3, v4}</td>
+</tr>
+</tbody>
+</table>
+<p>The Face-to-Vertex connectivity is:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">f0</td>
+<td align="center">f1</td>
+<td align="center">f2</td>
+<td align="center">f3</td>
+<td align="center">f4</td>
+</tr>
+<tr>
+<td align="center">{v3, v2, v1, v0}</td>
+<td align="center">{v0, v1, v4}</td>
+<td align="center">{v1, v2, v4}</td>
+<td align="center">{v2, v3, v4}</td>
+<td align="center">{v3, v0, v4}</td>
+</tr>
+</tbody>
+</table>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "all"}}, tex2jax: {inlineMath: [['$','$']]}});</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML"></script></div>
+            <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#reference-element-types-and-connectivities">Reference Element Types and Connectivities</a></li>
+        
+            <li><a href="#0d-element">0D Element</a></li>
+        
+            <li><a href="#1d-element">1D Element</a></li>
+        
+            <li><a href="#2d-elements">2D Elements</a></li>
+        
+            <li><a href="#3d-elements">3D Elements</a></li>
+        
+    
+    
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../fem/"><i class="fa fa-chevron-circle-left"></i> Back to Finite Element Method</a> </li>
+        
+	
+    
+	
+	
+	
+	
+           <hr style="background-color:white; height:20px; margin-left:-1px;  margin-right:-1px; margin-top:15px; margin-bottom:10px " />
+           <li><a href="../mesh-formats/"><i class="fa fa-chevron-circle-left"></i> Back to Mesh Formats</a> </li>
+        
+    
+    </ul>
+</div>
+
+<!-- Developer notes:
+  See the MkDocs documentation in https://www.mkdocs.org/dev-guide/themes/#page
+  and the Jinja2 template API in https://tedboy.github.io/jinja2/index.html
+--></div>
+            
+        </div>
+        
+
+        <footer class="footer">
+           <div class="container">
+              <p class="text-muted alignright">LLNL-WEB-676715</p>
+              <p class="text-muted alignleft">
+                  Developed by the <a href="/about/">MFEM team</a> at
+                  <a href="https://computing.llnl.gov/casc/">CASC</a>,
+                  <a href="https://www.llnl.gov/">LLNL</a></p>
+           </div>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../js/retina.min.js"></script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../search/main.js"></script>
+    </body>
+</html>
