@@ -214,10 +214,10 @@ similarly to ensure synchronized data on the device one should use `Read()`.
 Do not use `GetData()` to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.
 
 ### Tracking data movements and allocations
-Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help by printing when data is transferred, allocated, etc.
+Compiling MFEM with `MFEM_TRACK_CUDA_MEM` or `MFEM_TRACK_HIP_MEM` can help by printing when data is transferred, allocated, etc.
 Large amount of data movement between host and device should be avoided at all costs.
 Pinpoint where this is occurring and see if you can refactor your code so the data stays mainly on the device.
-Avoid allocating GPU memory too frequently, CUDA `malloc` calls are slow and can hinder performance.
+Avoid allocating GPU memory too frequently, CUDA and HIP `malloc` calls are slow and can hinder performance.
 If you really need to allocate frequently GPU memory, consider using a memory pool (e.g. [Umpire](https://github.com/LLNL/Umpire)), that way the mallocs are much cheaper on the GPU.
 
 ### The UseDevice function
@@ -229,7 +229,7 @@ Be aware that `UseDevice()` is not the same as `UseDevice(true)`, the first one 
 
 ### Using constexpr inside mfem::forall
 ```c++
-constexpr P = ...; // Results in an error on MSVC
+constexpr int P = ...; // Results in an error on MSVC
 mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
@@ -244,7 +244,7 @@ However, on MSVC (e.g. in the MFEM AppVeyor CI checks), this can result in error
 
 A simple fix for this error is to declare the `constexpr` variable as `static constexpr`.
 ```c++
-static constexpr P = ...; // Omitting the static results in an error on MSVC
+static constexpr int P = ...; // Omitting the static results in an error on MSVC
 mfem::forall(N, [=] MFEM_HOST_DEVICE (int n)
 {
    double my_data[P];
@@ -318,6 +318,6 @@ This is done by calling `w.SyncMemory(v)` which simply copies the validity flags
 
 On the other hand, if in the example you moved `w` to host and modified it there, and then you want to access the data through the base `Vector v` (you can think of the more general case here, when `w` is smaller than `v`) then you need to call `w.SyncAliasMemory(v)`.
 In this particular case, the call will move the subvector described by `w` from host to device and update the validity flags of `w` to be the same as the ones of `v`.
-This way the whole `Vector v` gets the real data in one location -- before the call part of it was on device and the part described by w was on host.
+This way the whole `Vector v` gets the real data in one location -- before the call, part of it was on device and the part described by `w` was on host.
 
 Both `w.SyncMemory(v)` and `w.SyncAliasMemory(v)` ensure that `w` gets the validity flags of `v`, the difference is where the real data is before the call -- in the first case the real data is in `v` and in the second, it is in `w`.
