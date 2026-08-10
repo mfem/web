@@ -99,6 +99,17 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 </center>
 </div>
 
+<div class="col-md-12" markdown="1" style="padding-left:0;">
+To submit an entry in the contest, please fill out the
+[Google form](https://docs.google.com/forms/d/e/1FAIpQLSfCE-8ERD0eaIQZVlC0LA2MqUOF4xM6Q7zV6gQSEQ9Xx1t1Rg/viewform?usp=header).
+
+Alternatively, you may email your submission to
+[mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
+description of the simulation (the underlying physics, discretization,
+application details, etc.), and visualization software used (GLVis, ParaView,
+VisIt, etc.).
+</div>
+
 ---
 
 ### Virtual Backgrounds
