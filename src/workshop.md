@@ -23,7 +23,7 @@ If you plan to attend, either in-person or virtually, [please register no later 
 
 ### Venue
 
-The meeting will be held in **[Georgia Tech Global Learning Center (GLC)](https://pe.gatech.edu/global-learning-center)** (84 5th St NW, Atlanta, GA 30308). This location is highlighted on the map below. 
+The meeting will be held in **[Georgia Tech Global Learning Center (GLC)](https://pe.gatech.edu/global-learning-center)** (84 5th St NW, Atlanta, GA 30308). This location is highlighted on the map below.
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.08888722727835!2d-84.38973962829907!3d33.776184208587324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50466be9894e5%3A0x6c3a4370c99dd7d7!2sGlobal%20Learning%20and%20Conference%20Center%2C%2081%204th%20St%20NW%2C%20Atlanta%2C%20GA%2030332!5e0!3m2!1sen!2sus!4v1785852421704!5m2!1sen!2sus" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
@@ -47,8 +47,8 @@ as late September is a busy season in Atlanta. A few suggestions:
 * [Hampton Inn & Suites Atlanta Midtown](https://www.hilton.com/en/hotels/atlmnhx-hampton-suites-atlanta-midtown/) — 21 min walk
 
 
-The venue is also a 10-minute walk from the Midtown MARTA station, which connects 
-directly to Hartsfield-Jackson Atlanta International Airport as well as to other 
+The venue is also a 10-minute walk from the Midtown MARTA station, which connects
+directly to Hartsfield-Jackson Atlanta International Airport as well as to other
 parts of the city, should you prefer to stay farther afield.
 
 ### Meeting Format
@@ -108,7 +108,6 @@ Alternatively, you may email your submission to
 description of the simulation (the underlying physics, discretization,
 application details, etc.), and visualization software used (GLVis, ParaView,
 VisIt, etc.).
-</div>
 
 ---
 
@@ -116,6 +115,7 @@ VisIt, etc.).
 
 We invite workshop participants to use the virtual backgrounds designed for this event.
 Click each image to enlarge, then right-click to save locally.
+</div>
 
 <center>
 
