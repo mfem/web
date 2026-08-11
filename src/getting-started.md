@@ -20,6 +20,7 @@ We recommend that new users start with these articles:
 
 - [GPU Support](gpu-support.md)
 - [Performance and Partial Assembly](performance.md)
+- [Differentiable Finite Elements (∂FEM)](dfem.md)
 
 ### Annotated MFEM Examples
 

@@ -49,6 +49,7 @@ nav:
   - 'Performance': performance.md
   - '_High Performance Templated Code': tperformance.md
   - 'GPU Support': gpu-support.md
+  - 'Automatic Differentiation (∂FEM)' : dfem.md
   - 'Mesh Formats': mesh-formats.md
   - '_Mesh Format v1.0': mesh-format-v1.0.md
   - '_Mesh Format v1.x': mesh-format-v1.x.md
