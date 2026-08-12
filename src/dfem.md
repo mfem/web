@@ -289,12 +289,13 @@ This effectively evaluates, in one sweep over the quadrature points,
 $$ y \;=\; P^{\sf T} G^{\sf T} \Big( B_{\text{val}}^{\sf T} \, D_{\text{mass}}
    \;+\; B_{\text{grad}}^{\sf T} \, D_{\text{diff}} \Big)\big(B \, G \, P \, u\big), $$
 
-that is, the matrix-free action $y = (A - k^2 M)\,u$, with neither the stiffness
-matrix $A$ nor the mass matrix $M$ ever being formed. The q-function is called
-once per quadrature point and writes both terms; the `Outputs` tuple then
-contracts `mass` against the value basis and `diffusion` against the gradient
-basis, and since both name the field `U`, the two results are summed into the
-same output vector.
+where $B = [\,B_{\text{val}};\ B_{\text{grad}}\,]$ stacks the two interpolations
+requested in `Inputs`, so that $B \, G \, P \, u$ carries both the value and the
+reference gradient of $u$ at every quadrature point, and $B^{\sf T}$ splits into
+one transposed interpolation per declared output — both of which name the field
+`U`, so the two contributions are summed into the same output vector. This is
+the matrix-free action $y = (A - k^2 M)\,u$, with neither the stiffness
+matrix $A$ nor the mass matrix $M$ ever being formed, and will give access to the Jacobian of the combined operator.
 
 
 ## Using the operator
