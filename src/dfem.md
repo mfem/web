@@ -147,8 +147,7 @@ so what has to be provided is:
    [energies and second derivatives](#energies-and-second-derivatives),
 
 together with a backend template argument, which selects [how many quadrature
-points the q-function sees per call](#local-and-global-q-functions). Several
-integrators may be added to one operator; their contributions accumulate.
+points the q-function sees per call](#local-and-global-q-functions). 
 
 The `Derivatives<...>{}` sequence determines which derivatives are generated, at
 **compile time**: only the requested ones are instantiated, so nothing is paid
@@ -156,6 +155,7 @@ for a derivative that is never asked for. Omit the sequence
 entirely for an operator you only ever apply — even then ∂FEM is useful, since
 it lets you write custom physics without implementing a new
 `BilinearFormIntegrator`.
+
 
 The code below puts this together for a nonlinear diffusion residual
 $\int_\Omega \kappa(u) \, \nabla u \cdot \nabla v \, dx$, with
@@ -240,6 +240,62 @@ the q-function. That is why the mesh coordinates are requested as an input
 field: the gradient of the coordinates is the Jacobian $J$, from which you get
 the physical gradient $\nabla_x u = \nabla_\xi u \, J^{-1}$ and the measure
 $\det(J)\,w$.
+
+### Handling multiple integrators
+
+Several integrators may be added to one operator, and their contributions
+**accumulate**. 
+This can also be achieved with a single integrator, which is declared with **multiple outputs**. 
+Those landing on the same output space are summed after each has been contracted with its own test function basis. 
+This is how an operator that is a sum of terms is written in one pass over the quadrature
+points, with the geometry evaluated only once.
+
+As an example, for a Helmholtz-type operator
+$\int_\Omega \nabla u \cdot \nabla v \, dx - k^2 \int_\Omega u \, v \, dx$, the
+diffusion term leaves through `Gradient<U>` and the mass term through
+`Value<U>`:
+
+```c++
+struct Helmholtz
+{
+   real_t k;
+
+   MFEM_HOST_DEVICE inline
+   void operator()(const real_t &u,                      // Value<U>
+                   const tensor<real_t, dim> &dudxi,     // Gradient<U>
+                   const tensor<real_t, dim, dim> &J,    // Gradient<Coords>
+                   const real_t &w,                      // Weight
+                   real_t &mass,                         // out: Value<U>
+                   tensor<real_t, dim> &diffusion) const // out: Gradient<U>
+   {
+      const auto invJ = inv(J);
+      const auto detJ = det(J);
+      mass      = -k * k * u * detJ * w;
+      diffusion = (dudxi * invJ) * transpose(invJ) * (detJ * w);
+   }
+};
+
+Helmholtz qf{k};
+dop.AddDomainIntegrator<LocalQFBackend>(
+   qf,
+   Inputs<Value<U>, Gradient<U>, Gradient<Coords>, Weight> {},
+   Outputs<Value<U>, Gradient<U>> {},
+   ir, all_domain_attr,
+   Derivatives<U> {});
+```
+
+This effectively evaluates, in one sweep over the quadrature points,
+
+$$ y \;=\; P^{\sf T} G^{\sf T} \Big( B_{\text{val}}^{\sf T} \, D_{\text{mass}}
+   \;+\; B_{\text{grad}}^{\sf T} \, D_{\text{diff}} \Big)\big(B \, G \, P \, u\big), $$
+
+that is, the matrix-free action $y = (A - k^2 M)\,u$, with neither the stiffness
+matrix $A$ nor the mass matrix $M$ ever being formed. The q-function is called
+once per quadrature point and writes both terms; the `Outputs` tuple then
+contracts `mass` against the value basis and `diffusion` against the gradient
+basis, and since both name the field `U`, the two results are summed into the
+same output vector.
+
 
 ## Using the operator
 
