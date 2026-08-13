@@ -26,47 +26,47 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner Leonardo Molinari
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md#nstx)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md#blast)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md#drone)
-      <div class="carousel-caption d-none" style="margin-top:-10px;">
-        Topology optimization of a drone body using <br> LLNL's [LiDO code](https://str.llnl.gov/2018-03/tortorelli), based on MFEM
-      </div>
-    </div>
-    <div class="item">
-      [<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
-      <div class="carousel-caption d-none" style="margin-top:-15px;">
-        Non-conforming adaptive mesh refinement with parallel load-balancing
-      </div>
-    </div>
-  </div>
+<div class="carousel-inner" markdown="1">
+<div class="item active" markdown="1">
+[<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
+<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
+2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
+</div>
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
+<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
+2025 Visualization Contest Winner Leonardo Molinari
+</div>
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md#nstx)
+<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
+Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
+</div>
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md#blast)
+<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
+High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
+</div>
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md#drone)
+<div class="carousel-caption d-none" style="margin-top:-10px;" markdown="1">
+Topology optimization of a drone body using <br> LLNL's [LiDO code](https://str.llnl.gov/2018-03/tortorelli), based on MFEM
+</div>
+</div>
+<div class="item" markdown="1">
+[<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
+<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
+Non-conforming adaptive mesh refinement with parallel load-balancing
+</div>
+</div>
+</div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -98,7 +98,8 @@ We host an annual [workshop](workshop.md) and [FEM@LLNL seminar series](seminar.
 See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
 
 
-</div><div class="col-md-6 news-table" markdown="1">
+</div>
+<div class="col-md-6 news-table" markdown="1">
 
 ## News
 
