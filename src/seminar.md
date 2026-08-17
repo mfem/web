@@ -19,14 +19,14 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 </div><div class="col-md-12" markdown="1">
 
 #### Ben Southworth (Los Alamos National Laboratory)
-##### *TBD*
+##### *BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning*
 ##### [**9:00am PDT, September 15, 2026**](https://everytimezone.com/s/aed65837)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** TBD
+**Abstract:** Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning, and are often treated as one of the easy parts of a finite-element calculation. A diagonal approximation of the mass matrix is cheap and widely used, but can be surprisingly ineffective, particularly for high-order elements and certain basis functions. This talk presents the BRoken-space Additive Schwarz (BRAS) inverse approximation, a sparse mass-matrix preconditioner that applies exact element-local mass inverses in the broken finite-element space and then averages back to the conforming space. BRAS uses the same element-level ingredients and assembly operators already present in finite-element codes, applies naturally across H1, H(curl), and H(div) spaces, and substantially reduces condition numbers, Krylov iterations, and time to solution compared with diagonal preconditioning in our experiments. In certain highly ill-conditioned regimes such as high-order Bernstein basis functions, BRAS-preconditioned CG requires more than 100x fewer iterations than diagonal preconditioned CG. I will describe a sequence of results that develops the basic algorithm, explains its performance through a sharp spectral theory on tensor-product de Rham complexes, including strong eigenvalue clustering and favorable high-order behavior for common MFEM bases, and extends the construction to strongly nonuniform and nonconforming adaptively refined meshes. I will also discuss an essentially matrix-free MFEM implementation, and demonstrate efficacy on both standalone mass solves and Schur-complement-based block preconditioning, yielding meaningful speedups in all cases.
 
 ---
 
