@@ -5,6 +5,11 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
+<!-- Interactive map between the weak form and the code, below. Loaded here
+     rather than site-wide, so no other page pays for it. -->
+<link rel="stylesheet" href="../css/dfem-map.css">
+<script type="text/javascript" src="../js/dfem-map.js"></script>
+
 # Differentiable Finite Elements (∂FEM)
 
 ∂FEM brings differentiability into MFEM's high-performance finite element
@@ -159,7 +164,42 @@ it lets you write custom physics without implementing a new
 
 The code below puts this together for a nonlinear diffusion residual
 $\int_\Omega \kappa(u) \, \nabla u \cdot \nabla v \, dx$, with
-$\kappa(u) = 1 + u^2$:
+$\kappa(u) = 1 + u^2$. Point at any coloured term below — in the maths or in
+the code — to light up its counterparts:
+
+<div id="dm">
+<div id="dm-legend"></div>
+<div id="dm-caption"></div>
+<div id="dm-body">
+<div class="dm-col dm-col-math">
+
+<p class="dm-h">The weak form</p>
+<div class="dm-math">
+$$ r(u;v) \;=\; \class{dm-domain}{\int_\Omega} \class{dm-kappa}{\kappa(u)} \,
+   \class{dm-gradu}{\nabla u} \cdot \class{dm-test}{\nabla v} \;
+   \class{dm-measure}{dx} \;=\; 0 $$
+</div>
+<p class="dm-sub">for all $v \in V_h$, with $\class{dm-kappa}{\kappa(u) = 1 + u^2}$.</p>
+
+<p class="dm-h">Evaluated at the quadrature points</p>
+<div class="dm-math">
+$$ \class{dm-domain}{\sum_q} \class{dm-kappa}{\kappa(u_q)} \,
+   \class{dm-gradu}{\nabla_{\!x} u_q} \cdot \class{dm-test}{\nabla_{\!x} v_q} \;
+   \class{dm-measure}{\det(J_q)\, w_q} $$
+</div>
+<p class="dm-sub">This line is the q-function, term for term.</p>
+
+<p class="dm-h">The operator decomposition</p>
+<div class="dm-math">
+$$ A_p(u) \;=\; \class{dm-test}{P^{\sf T} G^{\sf T} B^{\sf T}} \;
+   \class{dm-qf}{D}\big( \class{dm-evalB}{B \, G \, P} \, u \big) $$
+</div>
+<p class="dm-sub">$P$, $G$ and $B$ are topological, so only $\class{dm-qf}{D}$ is
+written, and only $\class{dm-qf}{D}$ is differentiated.</p>
+
+</div>
+</div>
+</div>
 
 ```c++
 // Field identifiers — arbitrary integers, your names for the fields

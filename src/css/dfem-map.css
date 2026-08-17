@@ -1,0 +1,230 @@
+/* ------------------------------------------------------------------------
+   dfem-map.css — styling for the interactive weak-form <-> code map.
+
+   Loaded by src/dfem.md alone, not site-wide: no other page pays for it.
+   Every selector here is dm- prefixed, and every element it styles lives
+   inside the #dm container, so it stays out of the way regardless.
+
+   The script marks the active concept's regions with .is-lit, which drives
+   every highlight in the widget. Highlights use box-shadow rather than
+   padding or borders, so nothing reflows when a region lights up.
+   ------------------------------------------------------------------------ */
+
+#dm {
+   margin: 1.5em 0;
+   border: 1px solid #dfe3e8;
+   border-radius: 4px;
+   background: #fff;
+}
+
+/* ------------------------------------------------------------- legend bar */
+
+/* The legend and caption are built by script; with JavaScript off they stay
+   empty and must not show as bare strips. The maths and the code sample
+   then render exactly as they do on any other page.                     */
+#dm-legend:empty, #dm-caption:empty { display: none; }
+
+#dm-legend {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+   padding: 10px 14px;
+   border-bottom: 1px solid #eceff1;
+   background: #fafbfc;
+   border-radius: 4px 4px 0 0;
+}
+
+.dm-chip {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   padding: 3px 10px;
+   font: inherit;
+   font-size: 13px;
+   line-height: 1.6;
+   color: #37474f;
+   background: #fff;
+   border: 1px solid #d7dde2;
+   border-radius: 999px;
+   cursor: pointer;
+}
+
+.dm-chip:hover { border-color: #b0bec5; }
+
+/* colour and border only — bolding the label would change the chip's width
+   and could rewrap the whole legend row, shifting everything below it */
+.dm-chip[aria-pressed="true"] { border-color: #78909c; background: #eceff1; color: #263238; }
+
+.dm-swatch {
+   width: 9px;
+   height: 9px;
+   border-radius: 2px;
+   background: #90a4ae;
+}
+
+/* ------------------------------------------------------------ caption bar */
+
+#dm-caption {
+   display: grid;
+   padding: 10px 14px;
+   border-bottom: 1px solid #eceff1;
+   font-size: 14px;
+   line-height: 1.5;
+   color: #455a64;
+}
+
+.dm-cap {
+   grid-area: 1 / 1;          /* all captions share one cell */
+   visibility: hidden;        /* hidden, but still sizes the cell */
+   opacity: 0;
+   transition: opacity .1s ease;
+}
+
+.dm-cap.is-on { visibility: visible; opacity: 1; }
+
+.dm-cap-key {
+   display: inline-block;
+   padding: 1px 8px;
+   margin-right: 8px;
+   border-radius: 3px;
+   font-weight: bold;
+   background: #eceff1;
+}
+
+.dm-cap-math { font-style: italic; color: #607d8b; }
+.dm-cap-note { display: block; margin-top: 4px; }
+
+/* stated explicitly so a reference reads as a link off the docs page too,
+   where no site stylesheet is colouring anchors */
+.dm-cap-note a { color: #18bc9c; text-decoration: underline; }
+.dm-cap-note a:hover, .dm-cap-note a:focus { color: #12907a; }
+.dm-cap-idle { color: #78909c; font-style: italic; }
+.dm-cap-pin  { display: block; margin-top: 4px; font-size: 12px; color: #90a4ae; opacity: 0; }
+.dm-cap.is-pinned .dm-cap-pin { opacity: 1; }
+
+/* ---------------------------------------------------------------- columns */
+
+#dm-body {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+
+.dm-col { padding: 4px 14px 14px; box-sizing: border-box; }
+.dm-col-math { flex: 1 1 320px; border-right: 1px solid #eceff1; min-width: 0; }
+.dm-col-code { flex: 2 1 605px; min-width: 0; }
+
+@media (max-width: 960px) {
+   .dm-col-math { border-right: none; border-bottom: 1px solid #eceff1; }
+}
+                            
+@media (min-width: 1480px) {
+   .col-md-9 #dm { margin-left: -135px; }
+}
+
+/* narrower than that the columns stack, so the divider runs underneath */
+@media (max-width: 1479px) {
+   .col-md-9 .dm-col-math { border-right: none; border-bottom: 1px solid #eceff1; }
+}
+
+.dm-head {
+   position: sticky;
+   top: 0;
+   z-index: 2;
+   background: #fff;
+   border-radius: 4px 4px 0 0;
+}
+
+.col-md-9 .dm-head { top: 70px; }
+
+.dm-h {
+   margin: 14px 0 6px;
+   font-size: 11px;
+   font-weight: bold;
+   letter-spacing: .08em;
+   text-transform: uppercase;
+   color: #90a4ae;
+}
+
+.dm-math { overflow-x: auto; overflow-y: hidden; }
+.dm-sub { margin: 2px 0 0; font-size: 13px; color: #78909c; }
+
+#dm pre {
+   margin: 0 0 4px;
+   padding: 8px 10px;
+   font-size: 12.5px;
+   line-height: 1.7;      /* room between the bands on adjacent lines */
+   background: #f7f8f9;
+   border: 1px solid #edf0f2;
+   border-radius: 3px;
+   overflow-x: auto;
+}
+
+/* ------------------------------------------------------------- highlights */
+
+#dm [data-dm] {
+   cursor: pointer;
+   transition: background-color .12s ease, box-shadow .12s ease;
+}
+
+#dm [data-dm]:focus { outline: 2px dotted #78909c; outline-offset: 2px; }
+
+/* every key carries its own two colours; only the active one paints */
+#dm [data-dm="domain"]  { --hl-bg:#e8eaf6; --hl-fg:#5c6bc0; }
+#dm [data-dm="evalB"]   { --hl-bg:#e1f5fe; --hl-fg:#0288d1; }
+#dm [data-dm="qf"]      { --hl-bg:#f3e5f5; --hl-fg:#8e24aa; }
+#dm [data-dm="kappa"]   { --hl-bg:#fff3e0; --hl-fg:#ef6c00; }
+#dm [data-dm="gradu"]   { --hl-bg:#e8f5e9; --hl-fg:#2e7d32; }
+#dm [data-dm="test"]    { --hl-bg:#fce4ec; --hl-fg:#c2185b; }
+#dm [data-dm="measure"] { --hl-bg:#fff8e1; --hl-fg:#b08300; }
+
+/* The script marks every region of the active concept with .is-lit, so the
+   two rules below cover all keys at once, taking their colours from the
+   --hl- pair each key carries above. Adding a concept needs no edit here.
+
+   The script does this rather than CSS selecting on the container's active
+   key, because CSS cannot compare one element's attribute against another's:
+   that spelling needs every key spelled out in both rules, twice over.
+
+   In the maths a region is one element, so a haloed box reads best: the
+   doubled shadow fakes 2px of padding around it without reflow.          */
+#dm .is-lit {
+   background: var(--hl-bg);
+   border-radius: 3px;
+   box-shadow: 0 0 0 2px var(--hl-bg), 0 0 0 3px var(--hl-fg);
+}
+
+/* In code one region is usually several fragments, because highlight.js has
+   already split the line into spans of its own and a range cuts across them.
+   A haloed box per fragment stacks overlapping outlines inside what should
+   read as a single mark — so code highlights are a flat band with an
+   underline, which merges seamlessly across neighbouring fragments.       */
+#dm pre .is-lit {
+   border-radius: 0;
+   box-shadow: inset 0 -2px 0 var(--hl-fg);
+}
+
+/* the caption's own key badge carries the colour, but is a label rather
+   than a target, so it is keyed separately and never highlights */
+.dm-cap-key[data-cap-key="domain"]  { background:#e8eaf6; color:#3949ab; }
+.dm-cap-key[data-cap-key="evalB"]   { background:#e1f5fe; color:#0277bd; }
+.dm-cap-key[data-cap-key="qf"]      { background:#f3e5f5; color:#7b1fa2; }
+.dm-cap-key[data-cap-key="kappa"]   { background:#fff3e0; color:#e65100; }
+.dm-cap-key[data-cap-key="gradu"]   { background:#e8f5e9; color:#2e7d32; }
+.dm-cap-key[data-cap-key="test"]    { background:#fce4ec; color:#c2185b; }
+.dm-cap-key[data-cap-key="measure"] { background:#fff8e1; color:#8d6e00; }
+
+.dm-chip[data-dm="domain"]  .dm-swatch { background:#5c6bc0; }
+.dm-chip[data-dm="evalB"]   .dm-swatch { background:#0288d1; }
+.dm-chip[data-dm="qf"]      .dm-swatch { background:#8e24aa; }
+.dm-chip[data-dm="kappa"]   .dm-swatch { background:#ef6c00; }
+.dm-chip[data-dm="gradu"]   .dm-swatch { background:#2e7d32; }
+.dm-chip[data-dm="test"]    .dm-swatch { background:#c2185b; }
+.dm-chip[data-dm="measure"] .dm-swatch { background:#b08300; }
+
+/* the caption badge is a label, not a target */
+.dm-cap-key { cursor: default; }
+
+@media (prefers-reduced-motion: reduce) {
+   #dm [data-dm], .dm-cap, .dm-cap-pin { transition: none; }
+}
