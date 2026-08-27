@@ -23,9 +23,9 @@ If you plan to attend, either in-person or virtually, [please register no later 
 
 ### Venue
 
-The meeting will be held in **[Georgia Tech Global Learning Center (GLC)](https://pe.gatech.edu/global-learning-center)** (84 5th St NW, Atlanta, GA 30308). This location is highlighted on the map below.
+The Sept. 22 tutorial will be held at the **[Georgia Tech Coda Building](https://coda.gatech.edu/)** (Room 114, 756 W Peachtree St NW, Atlanta, GA 30308), then the rest of the workshop will take place in the **[Georgia Tech Global Learning Center (GLC)](https://pe.gatech.edu/global-learning-center)** (84 5th St NW, Atlanta, GA 30308). These locations are marked on the map below.
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.08888722727835!2d-84.38973962829907!3d33.776184208587324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f50466be9894e5%3A0x6c3a4370c99dd7d7!2sGlobal%20Learning%20and%20Conference%20Center%2C%2081%204th%20St%20NW%2C%20Atlanta%2C%20GA%2030332!5e0!3m2!1sen!2sus!4v1785852421704!5m2!1sen!2sus" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1658.2038737742764!2d-84.38964460098103!3d33.77596721307912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x88f5046677950223%3A0x7fd1ad077b382c98!2sCoda%2C%20756%20W%20Peachtree%20St%20NW%2C%20Atlanta%2C%20GA%2030308!3m2!1d33.7752651!2d-84.38764259999999!4m5!1s0x88f50466be9894e5%3A0x6c3a4370c99dd7d7!2sGlobal%20Learning%20and%20Conference%20Center%2C%2081%204th%20St%20NW%2C%20Atlanta%2C%20GA%2030332!3m2!1d33.7761528!2d-84.38952259999999!5e0!3m2!1sen!2sus!4v1787851664832!5m2!1sen!2sus" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ### Lodging Options
 
