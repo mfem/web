@@ -59,6 +59,7 @@ This will be the third hybrid edition of the MFEM community workshop and the six
     * [Tutorial registration is separate](https://llnlfed.webex.com/weblink/register/rb48e17ed4f10072dffdae65cdeffe44f) as part of the LLNL High Performance Computing Innovation Center’s summer tutorial series
     * Hybrid format: Georgia Tech or on Webex
     * Great for new users!
+    * **Note:** *The tutorial will take place 9am–11am PT / 12pm–2pm ET. The Webex registration page above displays your current time zone.*
 - Project news and roadmap
 - Application developer talks – submit your abstract with registration
 - Student lightning talks – submit your abstract with registration
