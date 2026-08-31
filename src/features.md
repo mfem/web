@@ -68,10 +68,10 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - high-performance preconditioners from the *[hypre](https://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
  - several eigensolvers from the [SLEPc](https://slepc.upv.es/) suite,
- - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
+ - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP), including MPI-distributed solvers, from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](https://computing.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](https://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](https://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack), the [SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html) library, and GPU-accelerated direct solvers from [cuDSS](https://developer.nvidia.com/cudss),
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
  - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
@@ -133,6 +133,7 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
  - [Lorentz](https://docs.mfem.org/html/lorentz_8cpp_source.html): charged particle tracking miniapp,
+ - [Electrostatic PIC](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp): electrostatic particle-in-cell miniapp,
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,

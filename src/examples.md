@@ -1941,10 +1941,14 @@ low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
 function that was obtained by restricting a high-order grid function to the
-low-order refined space.
+low-order refined space. The $L^2$ projection can also be weighted by a
+coefficient, in which case the transfer conserves the weighted mass — for
+example, transferring velocity while conserving density-weighted momentum.
 
-_The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_The miniapp has a serial
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp))
+and a parallel
+([plor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/plor-transfer.cpp)) version._
 _**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>

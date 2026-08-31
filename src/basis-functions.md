@@ -107,9 +107,13 @@ open, closed and/or nodal. In practice, in MFEM, the basis functions for
 simplices are obtained as products of a hierarchical, one-dimensional basis of
 Chebyshev polynomials of the first kind.
 Triangular prisms and, more generally, wedge elements are the tensor product of
-a triangle and segment element, while pyramids are based on [Fuentes, F. et al.
+a triangle and segment element, while pyramids are based by default on [Fuentes, F. et al.
 (2015). Orientation embedded high order shape functions for the exact sequence
-elements of all shapes](https://doi.org/10.1016/j.camwa.2015.04.027).
+elements of all shapes](https://doi.org/10.1016/j.camwa.2015.04.027), with the
+alternative basis of [Bergot, M. et al. (2010). Higher-order finite elements for
+hybrid meshes using new nodal pyramidal elements](https://doi.org/10.1007/s10915-009-9334-9)
+selectable in the `H1_FECollection` and `L2_FECollection` classes and the
+`SetCurvature` methods of `Mesh` and `ParMesh`.
 
 The user can use the [`display-basis` miniapp](tools.md#display-basis) to
 visualize various types of basis functions on a single mesh element of their
