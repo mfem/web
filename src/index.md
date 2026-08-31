@@ -104,7 +104,7 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Apr 10, 2026 | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
+Sep 1, 2026  | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
 Mar 2026     | MFEM in LLNL's [FY25 LDRD Report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).
 Dec 5, 2025  |  [Particles in MFEM](https://mfem.org/particles/).
 Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
@@ -120,7 +120,7 @@ Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/37439900
 
 [<button type="button" class="btn btn-success">
 **Download mfem-4.10.tgz**
-</button>](https://bit.ly/mfem-4-10)
+</button>](https://bit.ly/mfem-4_10)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")
