@@ -120,7 +120,7 @@ Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/37439900
 
 [<button type="button" class="btn btn-success">
 **Download mfem-4.10.tgz**
-</button>](https://bit.ly/mfem-4_10)
+</button>](https://bit.ly/4iEAcbE)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")
