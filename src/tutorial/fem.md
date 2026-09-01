@@ -127,8 +127,8 @@ visualization will automatically update in the GLVis browser window.
 
 The computational mesh is provided as input (option `-m`) that could be 3D, 2D,
 surface, hex/tet, etc. (It defaults to `star.mesh` in line
-[78](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L78).) The code in
-lines [121-125](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L121-L125)
+[82](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L82).) The code in
+lines [125-129](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L125-L129)
 loads the mesh from the given file, `mesh_file` and creates the corresponding MFEM
 object `mesh` of class `Mesh`.
 
@@ -138,7 +138,7 @@ int dim = mesh.Dimension();
 ```
 
 The following code (lines
-[127-138](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L127-L138))
+[131-142](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L131-L142))
 refines the mesh uniformly to about 50,000 elements. You can easily modify the
 refinement by changing the definition of `ref_levels`.
 
@@ -158,7 +158,7 @@ provided as input via `-o`), and `FiniteElementSpace`, which connects the space
 and the mesh.
 
 Focusing on the common case `order > 0`, the code in lines
-[140-163](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L140-L163)
+[144-167](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L144-L167)
 is essentially:
 
 ```c++
@@ -172,7 +172,7 @@ size of the linear system $n$ from the previous section.
 
 The finite element degrees of freedom that are on the domain boundary are then
 extracted in lines
-[165-180](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L165-L180).
+[169-184](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L169-L184).
 We need those to impose the Dirichlet boundary conditions.
 
 ```c++
@@ -190,7 +190,7 @@ attributes and returns the `FiniteElementSpace` degrees of freedom that belong
 to the marked attributes (the non-zero entries of `ess_bdr`).
 
 The right-hand side $b$ is constructed in lines
-[182-188](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L182-L188).
+[186-192](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L186-L192).
 In MFEM terminology, integrals of the form (7) are implemented in the
 class `LinearForm`. The `Coefficient` object corresponds to $f$ from the
 previous section, which here is set to $1$. You can easily specify more general
@@ -207,7 +207,7 @@ The finite element approximation $u_h$ is described in MFEM as a `GridFunction`
 belonging to the `FiniteElementSpace`. Note that a `GridFunction` object can be
 viewed both as the function $u_h$ in (2) as well as the vector of degrees of
 freedom $x$ in (8). See lines
-[190-194](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L190-L194).
+[194-198](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L194-L198).
 
 ```c++
 GridFunction x(&fespace);
@@ -219,7 +219,7 @@ boundary conditions (for simplicity, here we just set `x=0` in the whole domain)
 
 The matrix $A$ is represented as a `BilinearForm` object, with a specific
 `DiffusionIntegrator` corresponding to the weak form (6). See lines
-[196-216](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L196-L216).
+[200-213](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L200-L213).
 
 ```c++
 BilinearForm a(&fespace);
@@ -236,9 +236,9 @@ You can also provide a variety of coefficients to the integrator, for example,
 portions of the domain.
 
 The linear system (5) is formed in lines
-[218-222](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L218-L222)
+[215-226](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L215-L226)
 and solved with a variety of options in lines
-[224-258](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L224-L258).
+[228-274](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L228-L274).
 One simple case is:
 
 ```c++
@@ -273,7 +273,7 @@ preconditioner.
 Once the linear system is solved, we recover the solution as a finite element
 grid function, and then visualize and save the final results to disk (files
 `refined.mesh` and `sol.gf`). See lines
-[260-280](https://github.com/mfem/mfem/blob/v4.9/examples/ex1.cpp#L260-L280).
+[276-296](https://github.com/mfem/mfem/blob/v4.10/examples/ex1.cpp#L276-L296).
 
 ```c++
 a.RecoverFEMSolution(X, b, x);

@@ -1569,6 +1569,46 @@ _The miniapp has only a parallel
 <br></div>
 
 
+<div id="pic" markdown="1">
+##Particle-In-Cell (PIC) Miniapp
+<img class="floatright" width="300" src="../img/examples/electrostatic-pic.png">
+
+The [electrostatic PIC miniapp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)
+couples explicit particle pushing to a finite element Poisson solve for the
+self-consistent electric field on a periodic two- or three-dimensional domain.
+It is intended for plasma physics applications such as linear Landau damping
+and demonstrates how to combine MFEM's particle support with parallel finite
+element field solvers.
+
+At each time step, particle charge is deposited on the grid using Dirac delta
+shape functions. The miniapp then solves
+
+$$-\epsilon_0 \Delta \phi(q) =
+e \sum_{j=1}^{N_p} \psi_j \delta(q-Q_j) - e n_0,$$
+
+where $\epsilon_0=1$, $Q_j$ and $\psi_j$ are the position and weight of
+particle $j$, and the constant background ion density $n_0$ enforces global
+charge neutrality. The periodic Poisson system is solved with `OrthoSolver` to
+enforce a zero-mean potential. The electric field
+$\mathbf{E}=-\nabla\phi$ is then interpolated to the particle positions before
+their momenta and positions are advanced with a leap-frog scheme.
+
+Compatible finite element spaces following the discrete de Rham complex,
+together with leap-frog time integration, preserve the symplectic structure of
+the discretization. The miniapp also supports charge-conserving deposition,
+parallel particle redistribution across MPI ranks, optional GLVis
+visualization of $\phi$ and $\mathbf{E}$, and CSV output of kinetic, field, and
+total energy. The figure shows the field-energy history for a linear Landau
+damping test (this 2D2V benchmark follows the setup of
+[Ricketson and Hu (2025)](https://www.osti.gov/servlets/purl/2587773), with a
+weak cosine density perturbation, $L_x = L_y = 22$, $\alpha=0.05$ and $k=2\pi/22$, on a
+periodic square domain).
+
+_This miniapp has only a parallel ([electrostatic-pic.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)) implementation._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="mobius-strip" markdown="1">
 ##Mobius Strip Miniapp
 <a href="https://glvis.org/live/?stream=../data/streams/mobius-strip.saved" target="_blank">
@@ -1901,10 +1941,14 @@ low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
 function that was obtained by restricting a high-order grid function to the
-low-order refined space.
+low-order refined space. The $L^2$ projection can also be weighted by a
+coefficient, in which case the transfer conserves the weighted mass — for
+example, transferring velocity while conserving density-weighted momentum.
 
-_The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_The miniapp has a serial
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp))
+and a parallel
+([plor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/plor-transfer.cpp)) version._
 _**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -2534,6 +2578,7 @@ function update()
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
    + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
+   + showElement("pic", particle && (h1 || hcurl) && (galerkin || symplectic) && (pcg || amg))
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)

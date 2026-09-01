@@ -75,9 +75,12 @@ The native MFEM backend and the RAJA backend support the same features and Integ
 | Features                          | native MFEM | OCCA backend | libCEED backend |
 |-----------------------------------|:-----------:|:------------:|:---------------:|
 | Tensor elements support           | ✅          | ✅           | ✅              |
-| Simplices support                 | ❌          | ❌           | ✅              |
+| Simplices support                 | ✅*         | ❌           | ✅              |
 | Mixed elements support            | ❌          | ❌           | ✅              |
 | Assembly: None                    | ❌          | ❌           | ✅              |
 | Assembly: Partial                 | ✅          | ✅           | ✅              |
 | Assembly: Element                 | ✅          | ❌           | ❌              |
 | Assembly: Full                    | ✅          | ❌           | ❌              |
+
+\* Native simplex support is limited to partial assembly of the mass and
+diffusion integrators with the Bernstein H1 basis.
