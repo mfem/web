@@ -429,10 +429,10 @@
 <li>high-performance preconditioners from the <em><a href="https://www.llnl.gov/CASC/hypre">hypre</a></em> library including the <a href="../examples/?amg">BoomerAMG</a>, <a href="../examples/?ams">AMS</a> and <a href="../examples/?ads">ADS</a> solvers,</li>
 <li>many linear and nonlinear solvers, preconditioners and time integrators from the <a href="https://www.mcs.anl.gov/petsc">PETSc</a> suite,</li>
 <li>several eigensolvers from the <a href="https://slepc.upv.es/">SLEPc</a> suite,</li>
-<li>various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the <a href="https://github.com/ginkgo-project/ginkgo">Ginkgo</a> library.</li>
+<li>various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP), including MPI-distributed solvers, from the <a href="https://github.com/ginkgo-project/ginkgo">Ginkgo</a> library.</li>
 <li>time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the <a href="https://computing.llnl.gov/projects/sundials/sundials-software">SUNDIALS</a> suite,</li>
 <li>discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,</li>
-<li><a href="../examples/?superlu">parallel</a> and <a href="../examples/?umfpack">serial</a> sparse direct solvers based on <a href="https://crd-legacy.lbl.gov/~xiaoye/SuperLU">SuperLU</a>, <a href="https://portal.nersc.gov/project/sparse/strumpack">STRUMPACK</a> and the <a href="https://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library,</li>
+<li><a href="../examples/?superlu">parallel</a> and <a href="../examples/?umfpack">serial</a> sparse direct solvers based on <a href="https://crd-legacy.lbl.gov/~xiaoye/SuperLU">SuperLU</a>, <a href="https://portal.nersc.gov/project/sparse/strumpack">STRUMPACK</a>, the <a href="https://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</a> library, and GPU-accelerated direct solvers from <a href="https://developer.nvidia.com/cudss">cuDSS</a>,</li>
 <li>explicit and implicit high-order Runge-Kutta <a href="https://docs.mfem.org/html/classmfem_1_1ODESolver.html">time integrators</a>,</li>
 <li>solvers for nonlinear problems (Newton, <a href="https://github.com/LLNL/hiop">HiOp</a>) and for single linearly constrained <a href="https://docs.mfem.org/html/classmfem_1_1SLBQPOptimizer.html">quadratic minimization</a> problems.</li>
 </ul>
@@ -491,6 +491,7 @@
 <li><a href="https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html">Maxwell</a>: transient electromagnetics simulation code,</li>
 <li><a href="https://docs.mfem.org/html/joule_8cpp_source.html">Joule</a>: transient magnetics and Joule heating miniapp,</li>
 <li><a href="https://docs.mfem.org/html/lorentz_8cpp_source.html">Lorentz</a>: charged particle tracking miniapp,</li>
+<li><a href="https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp">Electrostatic PIC</a>: electrostatic particle-in-cell miniapp,</li>
 <li><a href="https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details">Navier</a>: solver for the incompressible time-dependent Navier-Stokes equations,</li>
 <li><a href="https://docs.mfem.org/html/mesh-explorer_8cpp_source.html">Mesh Explorer</a>: visualize and manipulate meshes,</li>
 <li><a href="https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html">Mesh Optimizer</a>: optimize high-order meshes,</li>
