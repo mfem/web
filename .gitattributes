@@ -1,0 +1,4 @@
+# Avoid huge diffs for generated seminar search indexes.
+# Also mark as generated so GitHub doesn't count them toward language stats.
+src/seminar/pdf-index.json -diff linguist-generated
+src/seminar/youtube-index.json -diff linguist-generated

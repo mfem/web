@@ -79,6 +79,12 @@ theme:
 extra:
   include_next_prev: false  # turn off next/previous buttons
 
+extra_css:
+  - seminar/search.css
+
+extra_javascript:
+  - seminar/search.js
+
 plugins:
   - search
   - exclude-search:
