@@ -419,7 +419,7 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 [![](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png)](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png)
 
-*Heat flux magnitude in a [convection - (anisotropic) diffusion simulation](https://github.com/mfem/mfem/blob/darcy-hdg-dev/examples/ex5-aniso.cpp) with MFEM text as the initial temperature profile. A single implicit step of the [HDG scheme](https://github.com/mfem/mfem/pull/4350) was used. Image courtesy of Jan Nikl, **winner** of the 2024 MFEM Workshop Visualization Contest.*
+*Heat flux magnitude in a [convection - (anisotropic) diffusion simulation](/examples/#hdg_mfem-logo) with MFEM text as the initial temperature profile. A single implicit step of the [HDG scheme](https://docs.mfem.org/html/classmfem_1_1DarcyHybridization.html#details) was used. Image courtesy of Jan Nikl, **winner** of the 2024 MFEM Workshop Visualization Contest.*
 
 ----
 
