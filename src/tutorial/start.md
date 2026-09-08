@@ -32,15 +32,6 @@ Docker container locally, follow the local URLs in the <a href="../docker/#runni
 </div>
 </div>
 
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
-</div>
-<div class="panel-body">
-If you use VPN, make sure to <b>turn it off</b> before following the instructions below.
-</div>
-</div>
-
 ---
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code
