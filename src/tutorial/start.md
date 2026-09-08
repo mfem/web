@@ -82,7 +82,10 @@ In this tutorial we use [GLVis](https://glvis.org) for finite element visualizat
 
 - If the GLVis URL includes <code>?socket=/glvis-ws</code>, it is already connected and you can skip the next step.
 
-- (If needed) Click the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in the upper left corner, then enter the current host name followed by <code>/glvis-ws</code> in the <b>Host</b> field, for example <code>SESSION.mfem.hpcic.training/glvis-ws</code> or <code>localhost:3000/glvis-ws</code>, and click `CONNECT`.
+- (If needed) Click the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in
+the upper left corner, then enter the current host name followed by <code>/glvis-ws</code> in the <b>Host</b> field,
+for example <code>SESSION.mfem.hpcic.training/glvis-ws</code> or <code>localhost:3000/glvis-ws</code>, and click
+`CONNECT`. When the button switches to `DISCONNECT`, click outside of the **Connect to socket** dialog to close it.
 
 - Your environment should now look like:
 
