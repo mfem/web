@@ -5,10 +5,13 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
-<!-- Interactive map between the weak form and the code, below. Loaded here
-     rather than site-wide, so no other page pays for it. -->
+<!-- Interactive map between the weak form and the code, and the interactive
+     operator decomposition further down. Loaded here rather than site-wide,
+     so no other page pays for them. -->
 <link rel="stylesheet" href="../css/dfem-map.css">
 <script type="text/javascript" src="../js/dfem-map.js"></script>
+<link rel="stylesheet" href="../css/dfem-diagram.css">
+<script type="text/javascript" src="../js/dfem-diagram.js"></script>
 
 # Differentiable Finite Elements (∂FEM)
 
@@ -395,6 +398,265 @@ prolongation and works on L-vectors instead.
 What the backend does control is the inner half, E $\to$ Q $\to$ E, that is,
 the type of q-function the operator accepts, and how many quadrature points it
 sees per call.
+
+<div class="dfd dfd-global" id="dfd">
+
+  <div class="dfd-intro">The whole chain, end to end. Point at a
+    <strong>panel</strong> or an <strong>arrow</strong> to read what it is, and
+    click to pin it; the <strong>Local / Global</strong> switch redraws the
+    kernel boundaries on the right-hand side, which is the half the backend
+    owns.</div>
+
+  <div class="dfd-head">
+    <div class="dfd-formula">$\nabla A(u;p) = P^T B^T G^T \, \color{#a94442}{\nabla D(u;p)} \, B G P$</div>
+    <div class="dfd-toggle" role="group" aria-label="q-function backend">
+      <button type="button" class="dfd-btn" data-mode="local">LocalQFBackend</button>
+      <button type="button" class="dfd-btn dfd-on" data-mode="global">GlobalQFBackend</button>
+    </div>
+  </div>
+
+  <div class="dfd-scroll">
+    <svg id="dfd-svg" viewBox="0 0 980 330" aria-label="Finite element operator decomposition">
+
+      <defs>
+        <marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 z" fill="#555"/>
+        </marker>
+        <marker id="ahd" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 z" fill="#a94442"/>
+        </marker>
+        <filter id="lift" x="-20%" y="-20%" width="140%" height="150%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2.6" flood-color="#26415a" flood-opacity="0.42"/>
+        </filter>
+      </defs>
+
+      <!-- Kernel boundaries. Only one set is visible at a time; the .dfd-local
+           or .dfd-global class on the root decides which. -->
+
+      <g class="kbox k-local">
+        <rect x="548" y="32" width="404" height="254" rx="6"/>
+        <text class="klabel" x="946" y="300" style="text-anchor:end">1 fused kernel · forall elements</text>
+      </g>
+
+      <g class="kbox k-global">
+        <rect x="552" y="127" width="64"  height="24"  rx="4"/><text class="klabel" x="584" y="121">1 per input</text>
+        <rect x="552" y="159" width="64"  height="24"  rx="4"/><text class="klabel" x="584" y="201">1 per output</text>
+        <rect x="750" y="40"  width="202" height="240" rx="6"/><text class="klabel" x="851" y="32">1 kernel</text>
+      </g>
+
+      <!-- Vector levels. The dof pictures are drawn by the script from the
+           LEVELS table; only the x position lives here. -->
+
+      <g class="hot dfd-lvl"        data-k="T"></g>
+      <g class="hot dfd-lvl"        data-k="L"></g>
+      <g class="hot dfd-lvl epanel" data-k="E"></g>
+      <g class="hot dfd-lvl qpanel" data-k="Q"></g>
+
+      <text class="qtag k-global" x="685" y="136">xq · global memory</text>
+      <text class="qtag k-global" x="685" y="190">yq · global memory</text>
+      <text class="qtag k-local"  x="685" y="136">registers / shared</text>
+      <text class="qtag k-local"  x="685" y="190">never materialized</text>
+
+      <!-- Arrows are drawn by the script from the ARROWS table; only the
+           q-function loop below is a one-off. -->
+
+      <g class="hot" data-k="D">
+        <rect class="grab" x="748" y="60" width="200" height="210"/>
+        <path class="dcurve" d="M744,82 C 884,82 884,236 744,236" marker-end="url(#ahd)"/>
+        <text class="dlab" x="888" y="164">∂D</text>
+        <text class="dcode k-global" x="946" y="252" style="text-anchor:end">for q = 0 … nqp·ne</text>
+        <text class="dcode k-global" x="946" y="266" style="text-anchor:end">qf(xq[q], yq[q])</text>
+        <text class="dcode k-local"  x="946" y="252" style="text-anchor:end">qf(x_q, y_q)</text>
+        <text class="dcode k-local"  x="946" y="266" style="text-anchor:end">one quadrature point</text>
+      </g>
+
+      <!-- Level captions are drawn by the script; these three are one-offs. -->
+
+      <text class="ownlab"        x="250" y="320">DifferentiableOperator</text>
+      <text class="etag"          x="481" y="318">handover · xe / ye</text>
+      <text class="ownlab own-be" x="762" y="320">q-function backend</text>
+
+    </svg>
+  </div>
+
+  <div class="dfd-detail" id="dfd-detail"></div>
+
+</div>
+
+<!-- Text shown in the panel below the diagram. One block per hover target,
+     keyed by its data-k; targets whose story depends on the backend have a
+     -local and a -global variant. -->
+
+<div id="dfd-copy" hidden>
+
+  <div id="c-T">
+    <h4>T-vector — global true dofs</h4>
+    <p>One entry per unique, unconstrained degree of freedom in the global
+    parallel system. This is the vector a linear solver, a Newton iteration or a
+    <code>HypreParVector</code> operates on.</p>
+    <p><strong>This level is optional.</strong> By default the operator runs at
+    <code>MultLevel::TVECTOR</code>, so <code>Mult</code> takes a T-vector and
+    returns one. Switching it:</p>
+<pre><code>dop.SetMultLevel(DifferentiableOperator::LVECTOR);</code></pre>
+    <p>makes <code>Mult</code> take and return <strong>L-vectors</strong>
+    instead. <code>P</code> and <code>Pᵀ</code> then drop out and this level
+    never appears.</p>
+    <p>The setting carries into the operators returned by
+    <code>GetDerivative</code> and <code>GetSecondDerivative</code>, so a
+    Jacobian is applied at the same level as the residual.</p>
+  </div>
+
+  <div id="c-L">
+    <h4>L-vector — local subdomain dofs</h4>
+    <p>Every degree of freedom visible on this rank, including those shared with
+    neighbouring ranks and those constrained by hanging nodes. This is the layout
+    of a <code>GridFunction</code>.</p>
+    <p>Under <code>SetMultLevel(LVECTOR)</code> this becomes the operator's entry
+    and exit level, and the chain starts and ends here rather than at the
+    T-vector.</p>
+  </div>
+
+  <div id="c-E">
+    <h4>E-vector — element dofs</h4>
+    <p>Size <code>ne × ndof_per_elem × vdim</code>. Shared degrees of freedom are
+    duplicated, so elements become completely independent.</p>
+    <p><code>DifferentiableOperator</code> gives the
+    backend <code>std::vector&lt;Vector*&gt; xe</code> and receives <code>ye</code>.
+    Everything to the left is common to each operator, while to the right is <strong>backend-specific</strong>.</p>
+  </div>
+
+  <div id="c-Q-local">
+    <h4>Q-vector — quadrature point values</h4>
+    <p>With <code>LocalQFBackend</code> this level is never materialized, but is
+    fused into the element-local kernel.</p>
+    <p>The interpolated values produced by <code>B</code> live in per-thread
+    registers and <code>MFEM_SHARED</code> memory <em>inside</em> the same kernel
+    that runs the q-function, and the results are consumed by <code>Bᵀ</code>
+    before the kernel exits.
+  </div>
+
+  <div id="c-Q-global">
+    <h4>Q-vector — quadrature point values</h4>
+    <p> With <code>GlobalQFBackend</code> this level is a real allocation for the entire q-vector.</p>
+    <p><code>xq</code> and <code>yq</code> are <code>BlockVector</code>s in global
+    memory, one block per input and per output, each sized
+    <code>nqp × size_on_qp × nentities</code>. They are written by one kernel and
+    read back by the next.</p>
+    <p>That round trip is the cost of the global backend; what you buy with it is
+    a q-function that sees every quadrature point at once.</p>
+  </div>
+
+  <div id="c-P">
+    <h4>P / Pᵀ — subdomain restriction, T ↔ L
+      <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
+    <p>Standard MFEM operator decomposition — see <a href="../performance/#finite-element-operator-decomposition">Finite
+    Element Operator Decomposition</a>.</p>
+    <p> Skipped when the <code>DifferentiableOperator</code>
+    runs at <code>LVECTOR</code> level.</p>
+  </div>
+
+  <div id="c-G">
+    <h4>G / Gᵀ — element restriction, L ↔ E
+      <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
+    <p>Standard MFEM operator decomposition — see <a href="../performance/#finite-element-operator-decomposition">Finite
+    Element Operator Decomposition</a>.</p>
+  </div>
+
+  <div id="c-B">
+    <h4>B — basis evaluation, E → Q
+      <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
+    <p><code>B</code> is a <strong>stack with one row block per input</strong>,
+    and the <code>FieldOperator</code> you request picks the block:</p>
+    <ul>
+      <li><code>Value&lt;i&gt;</code> — interpolated values, <code>vdim</code> per
+      point.</li>
+      <li><code>Gradient&lt;i&gt;</code> — derivatives in <em>reference</em>
+      coordinates, <code>vdim × dim</code> per point.</li>
+      <li><code>Identity&lt;i&gt;</code> — field already lives at the quadrature
+      points, so it is passed through with no contraction.</li>
+      <li><code>Weight</code> — the quadrature weights, read straight from the
+      rule; not a field, and it has no basis rows.</li>
+    </ul>
+    <p>The first two are sum-factorized <code>DofToQuad</code> contractions,
+    applied <strong>per element in both backends</strong> — never one quadrature
+    point at a time. What the backends change is only <em>where the result
+    goes</em>: registers (Local) or <code>xq</code> in global memory (Global).</p>
+  </div>
+
+  <div id="c-Bt">
+    <h4>Bᵀ — contract onto test functions, Q → E
+      <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
+    <p>The same stack transposed: <strong>one row block per output</strong>,
+    again chosen by the <code>FieldOperator</code>:</p>
+    <ul>
+      <li><code>Value&lt;i&gt;</code> — multiply by the shape functions and sum
+      into the element dofs.</li>
+      <li><code>Gradient&lt;i&gt;</code> — the same against the shape-function
+      derivatives.</li>
+      <li><code>Identity&lt;i&gt;</code> — written straight to quadrature-point
+      storage, no contraction.</li>
+      <li><code>FunctionalValue&lt;i&gt;</code> — the same, used for energies and
+      functionals.</li>
+      <li><code>Sum&lt;i&gt;</code> — reduced to a single number, during the
+      transpose of <code>P</code> rather than here.</li>
+    </ul>
+    <p><code>Weight</code> is input-only; <code>FunctionalValue</code> and
+    <code>Sum</code> are output-only.</p>
+    <p>The quadrature weight and the geometric factors are <strong>not</strong>
+    applied here — request <code>Weight</code> as an input and apply them
+    yourself inside the q-function.</p>
+  </div>
+
+  <div id="c-D-local">
+    <h4>∂D — q-function
+      <span class="dfd-tag dfd-tag-diff">differentiated</span></h4>
+    <p>The only nonlinear, problem-specific part of the operator, and the only
+    part ∂FEM differentiates.</p>
+    <p><code>LocalQFBackend</code> <strong>fuses</strong> E → Q → Q → E into a
+    single kernel, launched once and looping over <strong>elements</strong>:</p>
+<pre><code>forall(e):                       // ONE kernel launch
+   LoadValue / LoadGradient      //  B  , whole element
+   ---- registers + MFEM_SHARED ----
+   foreach qp (qx,qy,qz):        //  one qp per THREAD
+      qfunc(...)                 //  f(), single point
+   ---- MFEM_SYNC_THREAD ----
+   WriteValue / WriteGradient    //  Bᵀ , whole element</code></pre>
+    <ul>
+      <li>The outer loop is over <strong>elements</strong>, not quadrature
+      points.</li>
+      <li>Quadrature data never leaves registers / shared memory.</li>
+      <li>Your q-function is called with the values at a <strong>single</strong>
+      quadrature point</li>
+    </ul>
+  </div>
+
+  <div id="c-D-global">
+    <h4>∂D — q-function
+      <span class="dfd-tag dfd-tag-diff">differentiated</span></h4>
+    <p>The only nonlinear, problem-specific part of the operator, and the only
+    part ∂FEM differentiates.</p>
+    <p><code>GlobalQFBackend</code> keeps the three stages as <strong>separate
+    passes</strong> through global memory:</p>
+<pre><code>interpolate(...)   // xe -&gt; xq   one kernel per input
+call_qfunc(...)    // xq -&gt; yq   one kernel, ALL qp
+integrate(...)     // yq -&gt; ye   one kernel per output</code></pre>
+    <ul>
+      <li><code>n_inputs + 1 + n_outputs</code> kernel launches, with
+      <code>xq</code> / <code>yq</code> materialized in between.</li>
+      <li>Your q-function receives <code>tensor_array</code>s spanning
+      <strong>all</strong> <code>nqp × nentities</code> points and writes whole
+      output blocks — the q-function <strong>must include</strong> the loop over quadrature
+      points.</li>
+    </ul>
+  </div>
+
+  <div id="c-hint">
+    <p class="dfd-hint">Hover or tab a panel or an arrow. Click to pin it.
+    Panels are vector types, arrows are the operators between them — the top row
+    is the forward pass, the bottom row the return pass.</p>
+  </div>
+
+</div>
 
 **`LocalQFBackend`** passes the data of a *single* quadrature point, and MFEM
 owns the loops:
