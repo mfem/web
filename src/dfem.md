@@ -266,14 +266,21 @@ integrator, with two different meanings:
 
 | Field operator | At a quadrature point | Q-function argument |
 | --- | --- | --- |
-| `Value<ID>` | the interpolated value | scalar, tensor |
-| `Gradient<ID>` | the gradient, in **reference** coordinates | tensor |
-| `Identity<ID>` | the data as is, for quadrature and parameter spaces | scalar, tensor |
-| `Weight` | the integration rule weight (no field identifier) | scalar |
-| `FunctionalValue<ID>` | **output only**: sum into a scalar functional | scalar |
+| `Value<ID>` | the interpolated value | `scalar_t`, `tensor<scalar_t, V>` |
+| `Gradient<ID>` | the gradient, in **reference** coordinates | `tensor<scalar_t, D>`, `tensor<scalar_t, V, D>` |
+| `Hessian<ID>` | the hessian, in **reference** coordinates | `tensor<scalar_t, D, D>`, `tensor<scalar_t, V, D, D>` |
+| `Identity<ID>` | the data as is, for quadrature and parameter spaces | `scalar_t`, `tensor<scalar_t, ...>` |
+| `Weight` | the integration rule weight (no field identifier) | `real_t` |
+| `FunctionalValue<ID>` | **output only**: sum into a scalar functional | `scalar_t` |
 
-In every case the argument type follows the vector dimension of the space the
-field was declared on, and a mismatch is a compile error.
+The last column is the type of the matching parameter in the q-function
+signature; the field operator itself only carries an integer field identifier.
+Where two forms are listed, the first is the one for a scalar field and the
+second for a vector field. `D` is the mesh dimension, `V` the vector dimension
+of the space the field was declared on, and `scalar_t` the scalar that argument
+is written against: `real_t` under Enzyme, `dual<real_t, real_t>` with the dual
+fallback. The type has to follow the space exactly, and a mismatch is a compile
+error.
 
 Gradients arrive in *reference* coordinates, so the pullback needs to happen in
 the q-function. That is why the mesh coordinates are requested as an input
@@ -605,6 +612,63 @@ best place to continue and to start experimenting:
 
 ## Advanced topics
 
+### Reducing compile time and binary size: kernel selection
+
+∂FEM is heavily templated, and Enzyme requires every instantiation to be known
+at compile time. This costs compile time and binary size, especially for complex
+models carrying templates of their own (e.g several constitutive behaviours in a
+nonlinear mechanics problem).
+
+The number of kernels one integrator emits is a product:
+
+$$ N \;=\; N_{\rm dim} \,\times\, N_{q} \,\times\, \big(1 + N_{k} \, N_{\partial}\big), $$
+
+where $N_{\rm dim}$ is the spatial dimensions covered, $N_{q}$ the quadrature
+tile sizes, $N_{k}$ the callbacks requested and $N_{\partial}$ the derivatives
+requested; the $1$ is the primal action, which is always emitted. $N_q$ is the
+number of quadrature tile sizes the kernels are specialized on, and is fixed by
+the backend rather than by the caller.
+
+The remaining three factors can be controlled:
+
+**$N_{\rm dim}$: deduced from the q-function.** The spatial dimension is taken
+from the trailing extent of the first `Gradient` or `Hessian` argument, scanning
+the inputs and then the outputs, so a q-function written against
+`tensor<scalar_t, 2, 2>` emits the 2D branch alone.
+
+**$N_{k}$: selected by a bit-mask.** Every `AddDomainIntegrator` registers
+callbacks for the operations the operator may be asked to perform, and by
+default all of them are requested, though few operators use all. The second
+template argument narrows that set:
+
+```c++
+constexpr auto kernels = DerivativeKernels::Action | DerivativeKernels::Apply;
+dop.AddDomainIntegrator<LocalQFBackend, kernels>(...);
+```
+
+The individual kernels are `Apply`, `ApplyTranspose`, `AssembleMatrix`,
+`AssembleDiagonal` and `Action`, and predefined families group the combinations
+that occur in practice:
+
+| Family | Expands to | For |
+| --- | --- | --- |
+| `None` | nothing | an operator that is only ever applied |
+| `MF` | `Action` | matrix-free derivative action |
+| `PA` | `Apply | ApplyTranspose` | partially assembled action (cached setup+apply) |
+| `AllAssembly` | `AssembleMatrix | AssembleDiagonal` | sparse and `HypreParMatrix` assembly, diagonals |
+| `All` | `PA | AllAssembly | Action` | the default |
+
+`Setup`, which fills the quadrature point cache, is never requested explicitly:
+it is enabled automatically by `Apply`, `ApplyTranspose`, `AssembleMatrix` or
+`AssembleDiagonal`, all of which read that cache. `Action` is the exception —
+the matrix-free action recomputes at each application, so `MF` on its own emits
+no `Setup` kernel.
+
+**$N_{\partial}$: the requested derivatives.** The callbacks above are
+instantiated once per entry in the `Derivatives<...>` sequence, so asking only
+for the derivatives actually taken keeps that factor down. This is covered in
+[adding an integrator](#adding-an-integrator).
+
 ### Reusing temporaries: ScratchBank
 
 Sometimes a global q-function is easier to write as several passes over the
@@ -660,7 +724,7 @@ number of quadrature points: flags, scalars, small `Vector` workspaces. Derive
 from `QFWithScratch<bool, real_t, Vector>`, aliased `QFWithGlobalScratchType`,
 and reach the entries with `GetGlobalScratch<I>()`.
 
-### A few more knobs
+### A few more special topics
 
 Rarely needed at first, but useful to know about.
 
