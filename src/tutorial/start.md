@@ -20,10 +20,10 @@
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-If you are part of the
+<i class="fa fa-arrow-circle-right"></i>&nbsp; If you are part of the
 <a href="https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials">HPC software tutorial series</a>,
-use the VS Code and GLVis HTTPS URLs sent by the Slackbot when it starts your development container.
-For example, the Slackbot message includes URLs like
+use the URLs sent by the Slackbot when it starts your development container.
+For example, the Slackbot message includes URLs for VS Code and GLVis like
 <code>https://SESSION.mfem.hpcic.training?folder=/home/euler/mfem</code> and
 <code>https://SESSION.mfem.hpcic.training/glvis/live/?socket=/glvis-ws</code>.
 <p><p>
@@ -36,9 +36,7 @@ Docker container locally, follow the local URLs in the <a href="../docker/#runni
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code
 
-- Open the VS Code URL sent by the Slackbot.
-
-  For a local Docker container, open `http://localhost:3000/?folder=/home/euler/mfem`.
+- Open the VS Code URL.
 
 - You should see the Visual Studio Code (VS Code) interface.
 
@@ -74,9 +72,7 @@ and adjust it similarly to the desktop version.
 
 In this tutorial we use [GLVis](https://glvis.org) for finite element visualization based on MFEM.
 
-- Open the GLVis URL sent by the Slackbot.
-
-  For a local Docker container, open `http://localhost:3000/glvis/live/?socket=/glvis-ws`.
+- Open the GLVis URL.
 
 - When you move the mouse to the top of the window you should see the GLVis interface:
 

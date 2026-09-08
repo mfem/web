@@ -14,7 +14,7 @@ MFEM and its capabilities in a variety of computing environments: from the cloud
 (like AWS), to HPC clusters, and your own laptop.
 
 There are [CPU](https://github.com/mfem/containers/pkgs/container/containers%2Fdeveloper-cpu)
-and [GPU](https://github.com/mfem/containers/pkgs/container/containers%2Fdeveloper-cuda-sm70)
+and [GPU](https://github.com/mfem/containers/pkgs/container/containers%2Fdeveloper-cuda-sm89)
 variations of the image, we will refer to it generically
 as `mfem/developer` during the tutorial.
 
@@ -40,7 +40,7 @@ Depending on your connection, this may take a while to download and extract (the
 
 To start the container, run:
 
-    docker run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
+    docker run --cap-add=SYS_PTRACE -p 3000:3000 ghcr.io/mfem/containers/developer-cpu:latest
 
 You can later stop this by pressing <kbd>Ctrl-C</kbd>.
 See the docker [documentation](https://docs.docker.com/engine/reference/commandline/cli/) for more details.
@@ -49,14 +49,16 @@ We provide two variations of our containers that are configured with CPU or CPU
 and GPU capabilities. If you have an NVIDIA supported CUDA GPU you have to
 install the [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
-Our CUDA images are built with the `sm_70` compute capability by default. If your GPU is
-an `sm_70` you can use the prebuilt `mfem/developer-cuda-sm70` image with:
+Prebuilt CUDA images are available for the `sm_75` and `sm_89` compute capabilities.
+Use the image that matches your GPU. For example, for an `sm_75` GPU:
 
-    docker pull ghcr.io/mfem/containers/developer-cuda-sm70:latest
+    docker pull ghcr.io/mfem/containers/developer-cuda-sm75:latest
 
 To start the container use
 
-    docker run --gpus all --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cuda-sm70:latest
+    docker run --gpus all --cap-add=SYS_PTRACE -p 3000:3000 ghcr.io/mfem/containers/developer-cuda-sm75:latest
+
+For an `sm_89` GPU, replace `sm75` with `sm89` in these commands.
 
 If you need a different compute capability, you can clone the `mfem/containers`
 [repository](https://github.com/mfem/containers) and build an image e.g., for`sm_80`, with
@@ -73,9 +75,8 @@ This automatically builds all libraries with the correctly supported CUDA comput
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-The forwarding of ports <code>3000</code>, <code>8000</code> and <code>8080</code>
-is needed for
-<a href="../start/#set-up-vs-code">VS Code</a>, <a href="../start/#set-up-glvis">GLVis</a> and the websocket connection between them.
+Forward port <code>3000</code> to access <a href="../start/#set-up-vs-code">VS Code</a>,
+<a href="../start/#set-up-glvis">GLVis</a>, and the GLVis WebSocket bridge through the container's reverse proxy.
 The <code>--cap-add=SYS_PTRACE</code> option is added to resolve MPI warnings.
 </div>
 </div>
@@ -97,7 +98,7 @@ Both of these can take a while, depending on your hardware and network connectio
 To start the virtual machine and the container in it, run:
 
     podman machine start
-    podman run --cap-add=SYS_PTRACE -p 3000:3000 -p 8000:8000 -p 8080:8080 ghcr.io/mfem/containers/developer-cpu:latest
+    podman run --cap-add=SYS_PTRACE -p 3000:3000 ghcr.io/mfem/containers/developer-cpu:latest
 
 You can later stop these by pressing <kbd>Ctrl-C</kbd> and typing `podman machine stop`.
 
@@ -115,23 +116,18 @@ on macOS and follow the Linux <a href="#linux">instructions</a> above.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Running the tutorial locally
 
-Once the `mfem/developer` container is running, you can proceed with the
-[<i class="fa fa-play-circle"></i> Getting Started](start.md) page using the
-following `IP`: `127.0.0.1`. You can alternatively use `localhost` for the `IP`.
+Once the `mfem/developer` container is running, open VS Code at:
 
-In particular, the VS Code and GLVis windows can be accessed at
-[localhost:3000](http://localhost:3000) and
-[localhost:8000/live](http://localhost:8000/live) respectively.
+[localhost:3000/?folder=/home/euler/mfem](http://localhost:3000/?folder=/home/euler/mfem)
+
+and GLVis at:
+
+[localhost:3000/glvis/live/?socket=/glvis-ws](http://localhost:3000/glvis/live/?socket=/glvis-ws).
 
 Furthermore, you can use the above pages from any other devices (tablets,
 phones) that are connected to the same network as the machine running the
 container.
 
-For example you can run an example from the VS Code terminal on your laptop and
-visualize the results on a GLVis window on your phone.
-
-To connect other devices, first run `hostname -s` to get the local host name and then
-use that `{hostname}` for the `IP` in the rest of the tutorial.
 
 ---
 
