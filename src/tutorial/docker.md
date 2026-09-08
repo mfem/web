@@ -121,6 +121,10 @@ Once the `mfem/developer` container is running, open:
 - VS Code: [localhost:3000/?folder=/home/euler/mfem](http://localhost:3000/?folder=/home/euler/mfem)
 - GLVis: [localhost:3000/glvis/live/?socket=/glvis-ws](http://localhost:3000/glvis/live/?socket=/glvis-ws)
 
+You can now proceed with the
+[<i class="fa fa-play-circle"></i> Getting Started](start.md)
+instructions.
+
 Furthermore, you can use the above pages from any other devices (tablets,
 phones) that are connected to the same network as the machine running the
 container.
