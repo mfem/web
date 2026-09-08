@@ -129,6 +129,11 @@ Furthermore, you can use the above pages from any other devices (tablets,
 phones) that are connected to the same network as the machine running the
 container.
 
+For example you can run an example from the VS Code terminal on your laptop and
+visualize the results on a GLVis window on your phone.
+
+To connect other devices, first run `hostname -s` to get the local host name and then
+use that `{hostname}` for the `IP` in the rest of the tutorial.
 
 ---
 
