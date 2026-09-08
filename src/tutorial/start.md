@@ -36,15 +36,17 @@ Docker container locally, follow the local URLs in the <a href="../docker/#runni
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code
 
-- Open the VS Code URL.
+- Open the VS Code URL in a new browser window.
 
 - You should see the Visual Studio Code (VS Code) interface.
 
 - Click on `Mark Done` to continue.
 
+- If the VS Code URL includes `?folder=/home/euler/mfem`, the MFEM directory opens automatically and you can skip the next step.
+
 <img class="tight" src="../img/start1.png">
 
-- If the VS Code URL includes `?folder=/home/euler/mfem`, the MFEM directory opens automatically. Otherwise, click on `open a folder` (under `Recent`), then select `mfem`, then click `OK`.
+- (If needed) Click on `open a folder` (under `Recent`), then select `mfem`, then click `OK`.
 
 - In the left pane, open `examples` and select `ex1.cpp`.
 
@@ -72,20 +74,15 @@ and adjust it similarly to the desktop version.
 
 In this tutorial we use [GLVis](https://glvis.org) for finite element visualization based on MFEM.
 
-- Open the GLVis URL.
+- Open the GLVis URL in a new browser window.
 
 - When you move the mouse to the top of the window you should see the GLVis interface:
 
 <img class="tight" src="../img/start3.png">
 
-<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
-</div>
-<div class="panel-body">
-The <code>?socket=/glvis-ws</code> part of the URL automatically connects GLVis to the development container.
-</div>
-</div>
+- If the GLVis URL includes <code>?socket=/glvis-ws</code>, it is already connected and you can skip the next step.
+
+- (If needed) Click the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in the upper left corner, then enter the current host name followed by <code>/glvis-ws</code> in the <b>Host</b> field, for example <code>SESSION.mfem.hpcic.training/glvis-ws</code> or <code>localhost:3000/glvis-ws</code>, and click `CONNECT`.
 
 - Your environment should now look like:
 

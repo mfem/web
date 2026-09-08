@@ -116,13 +116,10 @@ on macOS and follow the Linux <a href="#linux">instructions</a> above.
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Running the tutorial locally
 
-Once the `mfem/developer` container is running, open VS Code at:
+Once the `mfem/developer` container is running, open:
 
-[localhost:3000/?folder=/home/euler/mfem](http://localhost:3000/?folder=/home/euler/mfem)
-
-and GLVis at:
-
-[localhost:3000/glvis/live/?socket=/glvis-ws](http://localhost:3000/glvis/live/?socket=/glvis-ws).
+- VS Code: [localhost:3000/?folder=/home/euler/mfem](http://localhost:3000/?folder=/home/euler/mfem)
+- GLVis: [localhost:3000/glvis/live/?socket=/glvis-ws](http://localhost:3000/glvis/live/?socket=/glvis-ws)
 
 Furthermore, you can use the above pages from any other devices (tablets,
 phones) that are connected to the same network as the machine running the
