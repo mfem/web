@@ -130,7 +130,7 @@ After the tutorial on September 22, workshop activities will take place 8:00am�
 | 11:30-12:00 | Dohyun Kim (Brown University)<br><details><summary>*Multi-material topology optimization with polytopal constraints*</summary><h6>We introduce an efficient and scalable method for density-based multi-material topology optimization, integrating classical mirror descent techniques with point-wise polytopal design constraints. Such constraints arise naturally in this class of problems, wherein the vertices of convex polytopes correspond to distinct design states, only one of which should be occupied at each point in space. The framework generates a descending sequence of iterates by penalizing the design space around the previous iterate with a generalized distance function tailored to the convex geometry of the n-dimensional polytope. This distance function, called a Bregman divergence, smooths the optimization landscape, ensuring that each iterate strictly satisfies the point-wise constraints. Subsequently, global constraints (e.g., bounds on the structural mass) can be enforced easily by solving a small, finite-dimensional dual problem. The resulting method is simple to implement and demonstrates robustness and efficiency when combined with an Armijo-type line search algorithm. We validate the method in structural design problems involving the optimal arrangement of both isotropic and anisotropic materials, as well as magnetic flux optimization in electric motors.</h6></details> |
 | 12:00-1:00 | **Lunch** |
 | 1:00-1:30 | Yuanzhe Xi (Emory University)<br><details><summary>*MFEM + LLM*</summary><h6>*Abstract to come*</h6></details> |
-| 1:30-2:00 | Rui Peng Li (LLNL)<br><details><summary>*ML + preconditioning + hypre*</summary><h6>*Abstract to come*</h6></details> |
+| 1:30-2:00 | Rui Peng Li (LLNL)<br><details><summary>*AI-Driven algebraic multigrid: graph neural networks for operator design*</summary><h6>*We develop ML and data-driven strategies to accelerate algebraic multigrid (AMG) by learning the key operators. Using graph neural networks (GNNs) and reinforcement learning (RL), we model sparse matrices as graphs and optimize AMG coarsening directly from data. Our results demonstrate that neural operators can reproduce and potentially improve AMG components using LLNL’s expertise in scalable PDE solvers and scientific machine learning.*</h6></details> |
 | 2:00-3:00 | **Student talks**<br>Rushan Zhang (Georgia Tech)<br><details><summary>*Particle in cell simulation in MFEM*</summary><h6>We present a new electrostatic Particle-In-Cell (PIC) miniapp for MFEM that couples explicit particle dynamics with a finite-element Poisson solver on periodic meshes. The implementation demonstrates a finite-element PIC workflow, including charge deposition, periodic Poisson solves, field interpolation, leap-frog particle integration, and parallel particle redistribution. By combining MFEM’s particle infrastructure with compatible finite element spaces and parallel solvers, the miniapp provides a scalable reference implementation for electrostatic PIC simulations. In this talk, we will discuss the implementation of finite-element PIC methods in MFEM and demonstrate the solver on the Landau damping benchmark.</h6></details><br>Anthony Kolshorn (Portland State University)<br><details><summary>*Implicit-explicit Runge Kutta methods in design optimization with applications to heat transfer*</summary><h6>This presentation will illustrate a method for exploiting the structure of topology optimization problems with mixed multi-physics constraints. Design Optimization is typically constrained by Partial Differential Equations (PDEs) derived from physical laws. For large-scale applications, exploiting the structure of the PDE significantly reduces implementation and computational costs. For time-dependent PDEs, Implicit-Explicit Runge-Kutta (IMEX-RK) time integration has proven highly successful in solving fluid dynamics and heat transfer problems. We lay the groundwork for an adjoint-based design approach using IMEX-RK schemes for forward- and backward-time integration. We provide a general derivation of the discrete adjoint for IMEX-RK methods. Large heat transfer topology optimization experiments in MFEM demonstrate the efficacy of our framework in the high-performance computing (HPC) context.</h6></details><br>Pablo Cortes (Portland State University)<br><details><summary>*A continuous-adjoints framework for PDE-constrained optimization in 3D time dependent wave propagation phenomena*</summary><h6>We present a high-performance computing framework for 3D PDE-constrained optimization in time dependent wave propagation, with applications in topology optimization and inverse problems. Continuous adjoints are derived from the first-order optimality conditions of a Lagrangian operator defined over a space-time cylinder. Adjoint consistency of the fully discrete system is then reduced to verifying the transpose of a monolithic space-time operator obtained by discretizing these continuous optimality conditions. To overcome severe 3D space-time memory bottlenecks, optimal time-checkpointing schemes are seamlessly integrated into the reverse time-marching process. Large-scale 3D elastodynamic benchmarks demonstrate the framework's scalability, memory efficiency, and versatility across different optimization tasks and discretization schemes.</h6></details><br>Amit Rotem (Virginia Tech)<br><details><summary>*Scalable WaveHoltz in MFEM*</summary><h6>Finite element discretizations of the Helmholtz equations lead to massive and highly indefinite linear systems which are difficult to solve with classical iterative methods. We present a scalable WaveHoltz solver for the Helmholtz equation in MFEM, leveraging optimized finite element infrastructure to achieve performance portability on modern GPU architectures. Our formulation combines off-the-shelf MFEM components with a novel modified midpoint time-stepping scheme accelerated by algebraic multigrid resulting in a robust and performant method providing a practical pathway to scalable Helmholtz solvers. We compare against alternative off-the-shelf solvers and analyze key design choices, highlighting tradeoffs impacting robustness, efficiency, and implementation simplicity.</h6></details> |
 | 3:00-4:00 | **Break** |
 | 4:00-5:00 | **Poster session** (in-person only) |
@@ -223,19 +223,29 @@ Click each image to enlarge, then right-click to save locally.
 
 ## Workshop Sponsors
 
+<!--
 We are seeking sponsors to help support this year's workshop. Sponsorship helps offset the costs of hosting an in-person event, lower registration fees for attendees, and support student travel and attendance.
 
 Event sponsors will be recognized on the workshop website, mentioned during the sessions, and will have the opportunity for a poster display or table. While we welcome donations of any size, we offer the following suggested tiers of sponsorship:
+-->
 
-* **Bronze Sponsor – $2,000**
-    * Listed on website, recognized during opening and closing talks
-* **Silver Sponsor – $4,000**
-    * Listed on website, recognized during opening and closing talks
-    * Two technical sessions listed as sponsored by the organization
-* **Gold Sponsor – $6,000**
-    * Listed on website, recognized during opening and closing talks
-    * Two technical sessions listed as sponsored by the organization
-    * Poster/Table in the workshop room for the duration of the meeting
+We gratefully acknowledge the support of our workshop sponsors.
+
+#### **Gold Sponsor – $6,000**
+<img src="/img/llnl_logo.png" width="350">
+
+#### **Silver Sponsor – $4,000**
+<div class="row">
+<div class="col-md-6" markdown="1">
+<img src="/img/logos/GT-logo.png" width="200">
+</div>
+<div class="col-md-6" markdown="1">
+<img src="/img/logos/UKAEA-logo.png" width="200">
+</div>
+</div>
+
+#### **Bronze Sponsor – $2,000**
+<img src="/img/logos/CSE-logo.png" width="450">
 
 If your organization is interested in sponsoring the workshop, please contact the organizers at [mfem@llnl.gov](mailto:mfem@llnl.gov).
 
