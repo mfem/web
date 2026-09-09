@@ -223,16 +223,10 @@ Click each image to enlarge, then right-click to save locally.
 
 ## Workshop Sponsors
 
-<!--
-We are seeking sponsors to help support this year's workshop. Sponsorship helps offset the costs of hosting an in-person event, lower registration fees for attendees, and support student travel and attendance.
-
-Event sponsors will be recognized on the workshop website, mentioned during the sessions, and will have the opportunity for a poster display or table. While we welcome donations of any size, we offer the following suggested tiers of sponsorship:
--->
-
 We gratefully acknowledge the support of our workshop sponsors.
 
 #### **Gold Sponsor – $6,000**
-<img src="/img/llnl_logo.png" width="350">
+<img src="/img/llnl_logo.png" width="500">
 
 #### **Silver Sponsor – $4,000**
 <div class="row">
