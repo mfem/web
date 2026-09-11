@@ -20,26 +20,15 @@
 <h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
 </div>
 <div class="panel-body">
-You need an <code>IP</code> address to follow the steps described below.
-<p><p>
 <i class="fa fa-arrow-circle-right"></i>&nbsp; If you are part of the
 <a href="https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials">HPC software tutorial series</a>,
-you should have received an email with the AWS instance IP address allocated to you.
-Use that in place of <code>IP</code> in the instructions below.
+use the URLs sent by the Slackbot when it starts your development container.
+For example, the Slackbot message includes URLs for VS Code and GLVis like
+<code>https://SESSION.mfem.hpcic.training?folder=/home/euler/mfem</code> and
+<code>https://SESSION.mfem.hpcic.training/glvis/live/?socket=/glvis-ws</code>.
 <p><p>
 <i class="fa fa-arrow-circle-right"></i>&nbsp; If you are running a
-Docker container locally, as described in the <a href="../docker/#running-the-tutorial-locally"><span class="mdi mdi-docker"></span> Local Docker Container</a> page, use <code>localhost</code> in place of <code>IP</code> in the instructions below.
-<p><p>
-<i class="fa fa-arrow-circle-right"></i>&nbsp; If you setup your own cloud instance with the Docker container, you should use the cloud instance <code>IP</code> address.
-</div>
-</div>
-
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-warning"></i>&nbsp; Warning</h3>
-</div>
-<div class="panel-body">
-If you use VPN, make sure to <b>turn it off</b> before following the instructions below.
+Docker container locally, follow the local URLs in the <a href="../docker/#running-the-tutorial-locally"><span class="mdi mdi-docker"></span> Local Docker Container</a> page.
 </div>
 </div>
 
@@ -47,15 +36,17 @@ If you use VPN, make sure to <b>turn it off</b> before following the instruction
 
 ### <i class="fa fa-check-square-o"></i>&nbsp; Set up VS Code
 
-- Open a new browser window and load `http://IP:3000`.
+- Open the VS Code URL in a new browser window.
 
 - You should see the Visual Studio Code (VS Code) interface.
 
 - Click on `Mark Done` to continue.
 
+- If the VS Code URL includes `?folder=/home/euler/mfem`, the MFEM directory opens automatically and you can skip the next step.
+
 <img class="tight" src="../img/start1.png">
 
-- Click on `open a folder` (under `Recent`), then select `mfem`, then click `OK`.
+- (If needed) Click on `open a folder` (under `Recent`), then select `mfem`, then click `OK`.
 
 - In the left pane, open `examples` and select `ex1.cpp`.
 
@@ -83,25 +74,18 @@ and adjust it similarly to the desktop version.
 
 In this tutorial we use [GLVis](https://glvis.org) for finite element visualization based on MFEM.
 
-- Open a new browser window and load `http://IP:8000/live`.
+- Open the GLVis URL in a new browser window.
 
 - When you move the mouse to the top of the window you should see the GLVis interface:
 
 <img class="tight" src="../img/start3.png">
 
-- Click on the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in
-  the upper left corner, then click `CONNECT`.
+- If the GLVis URL includes <code>?socket=/glvis-ws</code>, it is already connected and you can skip the next step.
 
-<div class="panel panel-info" style="width:92%; margin-left: auto; margin-right: auto;">
-<div class="panel-heading">
-<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
-</div>
-<div class="panel-body">
-The <b>Host</b> field in the <b>Connect to socket</b> dialog should match your <code>IP</code>.
-</div>
-</div>
-
-- When the button switches to `DISCONNECT`, click outside of the **Connect to socket** dialog to close it.
+- (If needed) Click the **Connect to socket** icon &nbsp;<span class="mdi mdi-lan-connect mdi-18px"></span>&nbsp; in
+the upper left corner, then enter the current host name followed by <code>/glvis-ws</code> in the <b>Host</b> field,
+for example <code>SESSION.mfem.hpcic.training/glvis-ws</code> or <code>localhost:3000/glvis-ws</code>, and click
+`CONNECT`. When the button switches to `DISCONNECT`, click outside of the **Connect to socket** dialog to close it.
 
 - Your environment should now look like:
 
