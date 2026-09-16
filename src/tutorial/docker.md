@@ -142,7 +142,7 @@ use that `{hostname}` for the `IP` in the rest of the tutorial.
 <h3 class="panel-title"><i class="fa fa-question-circle"></i>&nbsp; Questions?</h3>
 </div>
 <div class="panel-body">
-Ask for help in the tutorial <a href="https://mfemworkshop.slack.com/archives/C0B3SM3FT3P">Slack channel</a>.
+Ask for help in the tutorial <a href="https://radiuss-llnl.slack.com/archives/C03T2DQCSC8">Slack channel</a>.
 </div>
 </div>
 
