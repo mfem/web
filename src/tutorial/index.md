@@ -16,9 +16,10 @@ along in your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Comp
 
 No previous experience is necessary.
 
-[<button type="button" class="btn btn-success">
+<!-- TODO: Add 2026 video here when available -->
+<!-- [<button type="button" class="btn btn-success">
 **Watch the video**
-</button>](https://www.youtube.com/watch?v=Sq1EwYyjFzc)
+</button>](https://www.youtube.com/watch?v=Sq1EwYyjFzc) -->
 
 <!-- 2024 video: https://www.youtube.com/watch?v=Ps0wAuMbLVU -->
 
