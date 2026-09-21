@@ -165,20 +165,20 @@ Georgia Tech GLC (in-person only).
 
 | Presenter | Poster |
 | --- | --- |
-| Christine Tseng (Brown University) | *Explicit-implicit-null timestepping for anisotropic diffusion* |
-| Yiming Yu (Brown University) | *Topology optimization for inspectability* |
+| Tage Burnett (Georgia Tech) | *A structure-preserving ROM for particle-in-cell simulations* |
+| Peng Chen (Georgia Tech) | *Differentiable programming for infinite-dimensional Bayesian inverse problems using MFEM on GPUs* |
 | Alexander de Magalhaes (Georgia Tech) | *MFEM-based Grad-Shafranov solvers* |
 | Brook Eyob (Georgia Tech) | *Discontinuous Galerkin semidiscretization of the information geometric regularized compressible Euler equations* |
-| David Winters (Georgia Tech) | *Lagrangian information geometric regularization* |
-| Eddy Luo and Elliot Day (Georgia Tech) | *Improving particle-based simulations in MFEM* |
-| Jackie Yao (Georgia Tech) | *AI-guided co-design of integrated ferroic wave-material systems for communications, sensing, and computing* |
-| Meixi Li (Georgia Tech) | *Detecting repeating patterns in signals* |
-| Peng Chen (Georgia Tech) | *Differentiable programming for infinite-dimensional Bayesian inverse problems using MFEM on GPUs* |
-| Rushan Zhang (Georgia Tech) | *Particle-in-cell simulation in MFEM* |
-| Tage Burnett (Georgia Tech) | *A structure-preserving ROM for particle-in-cell simulations* |
-| Yanjie Tong (Georgia Tech) | *PDE-native world models: operator-latent predictive architectures for scientific AI* |
-| Yuan Qiu (Georgia Tech) | *Variationally correct operator learning for nonlinear parametric PDEs: reduced basis neural operators with local a posteriori error certification* |
 | Ilaria Fontana (University of Arizona) | *Recent advances in quasi-Trefftz methods* |
+| Meixi Li (Georgia Tech) | *Detecting repeating patterns in signals* |
+| Eddy Luo and Elliot Day (Georgia Tech) | *Improving particle-based simulations in MFEM* |
+| Yuan Qiu (Georgia Tech) | *Variationally correct operator learning for nonlinear parametric PDEs: reduced basis neural operators with local a posteriori error certification* |
+| Yanjie Tong (Georgia Tech) | *PDE-native world models: operator-latent predictive architectures for scientific AI* |
+| Christine Tseng (Brown University) | *Explicit-implicit-null timestepping for anisotropic diffusion* |
+| David Winters (Georgia Tech) | *Lagrangian information geometric regularization* |
+| Jackie Yao (Georgia Tech) | *AI-guided co-design of integrated ferroic wave-material systems for communications, sensing, and computing* |
+| Yiming Yu (Brown University) | *Topology optimization for inspectability* |
+| Rushan Zhang (Georgia Tech) | *Particle-in-cell simulation in MFEM* |
 
 ---
 
