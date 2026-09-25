@@ -1,15 +1,3 @@
-<div class="col-md-12" markdown="1">
-<center>
-[<button type="button" class="btn btn-success">
-**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop<br/>(<small>September 22–25, 2026</small>)**
-</button>](workshop.md)
-&nbsp;
-[<button type="button" class="btn btn-primary">
-**<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Register**
-</button>](https://forms.gle/5sqBL3p7ReDTvWkt9)
-</center>
-</div>
-
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
@@ -104,12 +92,12 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
+Sep 22, 2026 | MFEM [Community Workshop](workshop.md).
 Sep 1, 2026  | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
 Mar 2026     | MFEM in LLNL's [FY25 LDRD Report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).
 Dec 5, 2025  |  [Particles in MFEM](https://mfem.org/particles/).
 Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
 Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop25.md).
-Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
 
 ## Latest Release
 
