@@ -2165,7 +2165,7 @@ The miniapp supports:
 - A variety of test cases and benchmarks
 
 _This miniapp has only a parallel
-([navier_solver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_solver.cpp)) version.
+([navier_solver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/fluids/navier/navier_solver.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
