@@ -8,6 +8,27 @@ The FEM@LLNL seminar series is focused on finite element research and applicatio
 
 Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcETKJnhWaU7_Wa2V3d7WIPdf3_JYK4JmA/viewform?usp=sf_link) to sign-up for future FEM@LLNL seminar announcements.
 
+### <i class="fa fa-search" aria-hidden="true"></i> Search
+
+Search inside the FEM@LLNL seminar slides and talk recordings. Just start typing your query below.
+
+<div id="seminar-pdf-search" class="seminar-search-box" markdown="0">
+  <div class="seminar-search-row">
+    <label for="seminar-pdf-search-input" class="sr-only">Search seminar slides and videos</label>
+    <input id="seminar-pdf-search-input" type="search" class="form-control seminar-search-input" placeholder='e.g. MFEM' autocomplete="off" />
+  </div>
+  <div class="small text-muted seminar-search-status">
+    <span id="seminar-pdf-search-sort-controls" class="seminar-search-sort-controls">
+      Sort by:
+      <label><input type="radio" name="seminar-pdf-search-sort" value="relevance" checked /> Relevance</label>
+      <label><input type="radio" name="seminar-pdf-search-sort" value="recent" /> Most Recent</label>
+      <label><input type="radio" name="seminar-pdf-search-sort" value="oldest" /> Oldest</label>
+    </span>
+    <span id="seminar-pdf-search-status" class="seminar-search-status-text"></span>
+  </div>
+  <div id="seminar-pdf-search-results" class="seminar-search-results"></div>
+</div>
+
 ---
 
 ### <i class="fa fa-star"></i> Next Talk

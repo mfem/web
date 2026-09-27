@@ -326,3 +326,132 @@ input {
   display: inline;
   margin: -0.125em 0 0 0.25em;
 }
+
+/* Seminar PDF/YouTube search widget */
+.seminar-search-box {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 2px 12px;
+}
+.seminar-search-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+.seminar-search-input {
+  width: 100%;
+  border-radius: 10px;
+}
+.seminar-search-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin-top: 6px;
+}
+.seminar-search-status-text {
+  margin-left: auto;
+  text-align: right;
+  padding-right: 4px;
+}
+.seminar-search-sort-controls {
+  display: none;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 4px;
+}
+.seminar-search-results {
+  margin-top: 10px;
+}
+.seminar-search-sort-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  white-space: nowrap;
+}
+.seminar-search-sort-controls input[type="radio"] {
+  margin: 0;
+}
+.seminar-search-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+}
+.seminar-search-card .hdr {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.seminar-search-card .title {
+  font-size: 16px;
+  line-height: 1.25;
+}
+.seminar-search-card .speaker {
+  color: #555;
+  font-weight: 600;
+}
+.seminar-search-card .body {
+  padding: 10px 12px;
+}
+.seminar-search-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.seminar-search-badge {
+  font-size: 12px;
+  color: #555;
+  background: #f3f4f6;
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+.seminar-search-hit {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.seminar-search-pill {
+  display: inline-block;
+  min-width: 74px;
+  text-align: center;
+  border-radius: 999px;
+  background: #f3f4f6;
+  border: 1px solid #eee;
+  padding: 2px 8px;
+}
+.seminar-search-pill a {
+  color: inherit;
+  text-decoration: none;
+}
+.seminar-search-snippet {
+  border-left: 2px solid #eee;
+  padding-left: 10px;
+  color: #666;
+}
+.seminar-search-toggle {
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+.seminar-search-toggle:hover {
+  text-decoration: underline;
+}
+.seminar-search-tabs {
+  margin-top: 10px;
+}
+.seminar-search-tabs.nav-tabs > li > a {
+  padding: 6px 10px;
+}
+.seminar-search-tabpane {
+  padding-top: 10px;
+}
