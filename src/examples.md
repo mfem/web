@@ -1308,6 +1308,37 @@ We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex43" markdown="1">
+##Example 43: Weakly-imposed Sliding Boundary Conditions in Linear Elasticity
+<img class="floatright" width="240pt" src="../img/examples/ex43.png">
+
+This example code solves a linear elasticity problem using Nitsche's method to
+enforce sliding boundary conditions. In particular, we consider a linear
+elastic body that is displaced in the normal direction on the entire boundary,
+but is free to slide in the tangential direction. This is achieved by imposing
+homogeneous Dirichlet boundary conditions on the normal component of the
+displacement, while applying homogeneous Neumann boundary conditions on the
+tangential components of the displacement. By enforcing a uniform, constant
+normal displacement on the boundary, we can simulate the effect of compressing
+or expanding the elastic body uniformly. These boundary conditions are applied
+weakly using Nitsche's method, allowing for more flexibility in handling
+complex geometries in either 2D or 3D.
+
+This example can be viewed as an alternative to Example 28. Whereas Example 28
+imposes sliding boundary conditions using the general-purpose constrained
+system solvers found in mfem/linalg/constraints.hpp, this example employs
+Nitsche's method to weakly enforce the same condition by modifying the
+underlying variational formulation. Unlike Example 28, the approach here is
+specialized to isotropic linear elasticity, but it has the advantage of
+producing a well-conditioned SPD stiffness matrix that can be readily
+preconditioned with standard AMG.
+
+_The example has a serial ([ex43.cpp](https://github.com/mfem/mfem/blob/ex43/examples/ex43.cpp))
+and a parallel ([ex43p.cpp](https://github.com/mfem/mfem/blob/ex43/examples/ex43p.cpp)) version.
+We recommend reviewing examples 2 and 28 before this example._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem

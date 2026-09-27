@@ -120,7 +120,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
  - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
  - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation,
- - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion.
+ - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion,
+ - [Example 43](https://docs.mfem.org/html/ex43_8cpp_source.html): weakly-imposed sliding boundary conditions for linear elasticity.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
 
