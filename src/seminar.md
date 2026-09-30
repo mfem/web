@@ -1447,7 +1447,13 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-TBD
+#### Eric Cyr (Sandia National Laboratories)
+##### **December 8, 2026**
+
+---
+
+#### Harshitha Menon (LLNL)
+##### **January 5, 2027**
 
 </div>
 
