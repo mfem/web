@@ -42,6 +42,7 @@ nav:
   - '_Linear Form Integrators': lininteg.md
   - '_Integration': integration.md
   - '_Coefficients': coefficient.md
+  - '_Error Estimators': error-estimators.md
   - '_Nonlinear Form Integrators': nonlininteg.md
   - '_Linear Interpolators': lininterp.md
   - '_Weak Formulations': fem_weak_form.md

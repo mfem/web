@@ -62,6 +62,12 @@ The `Coefficient` objects in MFEM are general functions on continuous level that
 are used to represent the PDE coefficients of linear and bilinear forms, as well
 as to specify initial conditions, boundary conditions, exact solutions, etc.
 
+### [Error Estimators](error-estimators.md)
+
+Error estimators provide local indicators for adaptive mesh refinement. This
+page describes MFEM's estimator interface and `GeneralErrorEstimator`, which
+combines domain, face, and boundary residual terms into one AMR indicator.
+
 ### [Nonlinear Form Integrators](nonlininteg.md)
 
 Nonlinear form integrators are used to express the local action of a general
