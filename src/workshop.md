@@ -180,7 +180,7 @@ Georgia Tech GLC (in-person only).
 | Peng Chen (Georgia Tech) | *Differentiable programming for infinite-dimensional Bayesian inverse problems using MFEM on GPUs* ([PDF](pdf/workshop26/Poster_Chen.pdf)) |
 | Alexander de Magalhaes (Georgia Tech) | *MFEM-based Grad-Shafranov solvers* ([PDF](pdf/workshop26/Poster_deMagalhaes.pdf)) |
 | Brook Eyob (Georgia Tech) | *Discontinuous Galerkin semidiscretization of the information geometric regularized compressible Euler equations* ([PDF](pdf/workshop26/Poster_Eyob.pdf)) |
-| Ilaria Fontana (University of Arizona) | *Recent advances in quasi-Trefftz methods* ([PDF](pdf/workshop26/Poster_Fontana.pdf)) |
+| Ilaria Fontana (University of Arizona) | *Recent advances in quasi-Trefftz methods* |
 | Meixi Li (Georgia Tech) | *Detecting repeating patterns in signals* |
 | Eddy Luo and Elliot Day (Georgia Tech) | *Improving particle-based simulations in MFEM* ([PDF](pdf/workshop26/Poster_Luo-Day.pdf)) |
 | Leonardo Molinari | *Strongly coupled partitioned FSI solver in MFEM with scalable interface transfer* ([PDF](pdf/workshop26/Poster_Molinari.pdf)) |
