@@ -69,7 +69,6 @@ The meeting will include the following elements:
 - Office hours and discussions with the MFEM team
 
 See also the agenda for the previous [2024](../workshop24), [2023](../workshop23), [2022](../workshop22), and [2021](../workshop21) MFEM workshops.
--->
 
 Workshop participants are encouraged to join the
 [MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1hxasxnlt-erkRWQTMLmBoHUdXlB0Wfg)
@@ -79,6 +78,7 @@ MFEM workshop.
 ### Workshop Zoom
 
 Join Zoom Meeting: [https://pdx.zoom.us/j/82929966415](https://pdx.zoom.us/j/82929966415).
+-->
 
 ### Agenda
 
@@ -88,7 +88,9 @@ The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (
 
 #### Wednesday, September 10
 
+<!--
 Remote Participants: [Join via Zoom](https://pdx.zoom.us/j/82929966415)
+-->
 
 | Time | Activity | Presenter |
 |---|---|---|
