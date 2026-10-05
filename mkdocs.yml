@@ -99,5 +99,3 @@ plugins:
 #           url: ../mfem_master
 #           config: doc/config.in
 #           workdir: .
-
-google_analytics: ['UA-101697-3', 'mfem.org']
