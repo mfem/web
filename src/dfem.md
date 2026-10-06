@@ -47,7 +47,7 @@ the minimum needed to read them.
 ## The main idea
 
 MFEM writes a finite element operator in the [finite element operator
-decomposition](performance.md#finite-element-operator-decomposition)
+decomposition](performance.md#finite-element-operator-decomposition):
 
 $$ A_p(u) \;=\; P^{\sf T} G^{\sf T} B^{\sf T} \; D\big(B \, G \, P \, u\big), $$
 
@@ -55,15 +55,14 @@ where $P$ and $G$ take the solution from global true degrees of freedom down to
 element degrees of freedom, $B$ evaluates it at the quadrature points, and $D$
 applies the pointwise physics there.
 
-The key observation is that $P$, $G$ and $B$ are **topological** and depend only
+The key observation is that $P$, $G$ and $B$ are **linear** and **topological** and depend only
 on the mesh and the finite element spaces, not on the solution, the coordinates,
-or any design parameter. They can therefore be left out of the differentiation
-loop entirely, and the Jacobian of the whole operator is the same decomposition
-wrapped around the Jacobian of $D$ alone:
+or any design parameter. 
+Therefore we can exclude them from differentiation, and write the Jacobian of the whole operator using the same decomposition:
 
 $$ J_p(u) \;=\; P^{\sf T} G^{\sf T} B^{\sf T} \; J_D(u_q) \; B \, G \, P. $$
 
-So $D$ is the only part you write, and the only part that is differentiated.
+where $D$ is the only part a user specifies, and the only part to be differentiated.
 
 The same holds for **parameters**. A parametric operator $A(u;\rho)$ takes its
 design or coefficient fields through their own prolongation,
@@ -74,43 +73,21 @@ is the very same call as differentiating with respect to the solution.
 ## Building a ∂FEM operator
 
 The core of ∂FEM is the `DifferentiableOperator` class. Like a `BilinearForm`,
-you construct it on a mesh, add integrators to it, and apply it, except that the
-integrators are not chosen from a catalogue: you write the physics as
-quadrature-point functions, which MFEM is then able to differentiate.
-
-Everything on this page assumes:
-
-```c++
-#include "mfem.hpp"
-
-using namespace mfem;
-using namespace mfem::future;
-```
-
-Here we assume that the differentiated arguments are written as plain `real_t`,
-which is the Enzyme case. Without Enzyme they have to carry a dual type
-instead — see
-[differentiation engine](#differentiation-engine-enzyme-and-dual-numbers).
+you *construct it on a mesh*, *add integrators to it*, and *apply it*.
+The difference is that the integrator itself is not chosen from a predefined catalogue,
+but the user can specify the custom physics through a quadrature-point function,
+which then ∂FEM is able to differentiate.
 
 Three components make up the interface:
 
-**`FieldDescriptor`** describes the inputs and outputs. A field is an integer
-identifier that you choose, paired with the space it lives in: a
-`ParFiniteElementSpace`, a `VectorQuadratureSpace` for data given directly at
-quadrature points, or a `ParameterSpace` for a few global scalars. The
-identifier is just a name; it is how field operators and derivative requests
-refer to that field everywhere else.
+**`FieldDescriptor`**: a pair identifying a field by a **unique integer ID** and describing **which space it lives in**
+(possible choices `ParFiniteElementSpace`, a `VectorQuadratureSpace`, or a `ParameterSpace`).
 
-**`FieldOperator`** says how a field is evaluated at the quadrature points: its
-value, its gradient, and so on. In an `Inputs<...>` tuple, field operators fix
-what the q-function receives and in which order; in `Outputs<...>` they fix
-which test function basis the result is contracted against. See
-[field operators](#field-operators) below.
+**`FieldOperator`**: how a field is evaluated at a q-point. For `Inputs<...>` it describes how the field is interpolated at the quadrature point level; 
+for `Outputs<...>` they fix which test function basis the result is contracted against.
+See [field operators](#field-operators) below.
 
-**The q-function** is the kernel applied at the quadrature point level, the $D$
-of the decomposition, and the only part that gets differentiated. It is a struct
-with a `const` call operator taking the inputs in the order `Inputs` declares
-them, followed by the outputs as non-`const` references.
+**The `q-function`**: a functor describing the physics at the quadrature point level; this is the only part that gets differentiated.
 
 ### Creating the operator
 
@@ -129,14 +106,14 @@ DifferentiableOperator(
 Integrators are then registered on that operator:
 
 ```c++
-template <typename backend_t = GlobalQFBackend, ...>
+template <typename backend_t = LocalQFBackend, ...>
 void AddDomainIntegrator(
    qfunc_t &qfunc,                             // 1. q-function functor
    input_t inputs,                             // 2. Inputs<...>  field operators
    output_t outputs,                           //    Outputs<...> field operators
-   const IntegrationRule &integration_rule,    // 3.
-   const Array<int> &domain_attributes,        // 4.
-   derivative_ids_t derivative_ids =           // 5.
+   const IntegrationRule &integration_rule,    // 3. Integration rule
+   const Array<int> &domain_attributes,        // 4. Attributes
+   derivative_ids_t derivative_ids =           // 5. Requested derivatives
       Derivatives<> {},
    second_derivative_ids_t second_derivative_ids =
       SecondDerivatives<Pairs::None> {});
@@ -144,25 +121,22 @@ void AddDomainIntegrator(
 
 so what has to be provided is:
 
-1. a functor for the q-function,
-2. two tuples of `FieldOperator`s, associated to the operator's
-   `FieldDescriptor`s,
-3. an `IntegrationRule`,
-4. the domain (`AddDomainIntegrator`) or boundary (`AddBoundaryIntegrator`)
+1. The functor for the q-function,
+2. Two tuples of `FieldOperator`s, associated to the operator's `FieldDescriptor`s,
+3. An `IntegrationRule`,
+4. Domain (`AddDomainIntegrator`) or boundary (`AddBoundaryIntegrator`)
    attributes,
-5. (optional) an integer sequence of requested derivatives, consistent with the
+5. (optional) An integer sequence of requested derivatives, consistent with the
    field IDs, and of second derivatives, see
    [energies and second derivatives](#energies-and-second-derivatives),
 
-together with a backend template argument, which selects [how many quadrature
-points the q-function sees per call](#local-and-global-q-functions). 
+Together with a backend template argument, which selects ∂FEM execution model at the q-level, and the type of q-function needed (see [QFBackends](#local-and-global-q-functions)). 
 
 The `Derivatives<...>{}` sequence determines which derivatives are generated, at
 **compile time**: only the requested ones are instantiated, so nothing is paid
-for a derivative that is never asked for. Omit the sequence
-entirely for an operator you only ever apply — even then ∂FEM is useful, since
-it lets you write custom physics without implementing a new
-`BilinearFormIntegrator`.
+for a derivative that is never asked for. 
+We suggest omitting unnecessary derivatives, or the entire sequence for an operator you only ever apply and not differentiate;
+even then ∂FEM is useful, since it lets you write custom physics without implementing a new `BilinearFormIntegrator`.
 
 
 The code below puts this together for a nonlinear diffusion residual
@@ -250,22 +224,22 @@ dop.AddDomainIntegrator<LocalQFBackend>(
 ```
 
 The q-function above is written against a *single* quadrature point, which is
-what `LocalQFBackend` asks for. That choice is discussed in
-[local and global q-functions](#local-and-global-q-functions); until then, read
-it as "one quadrature point per call".
+what `LocalQFBackend` asks for (see [QFBackends](#local-and-global-q-functions)).
+
+
+So far we assumed that the differentiated arguments are written as plain `real_t`,
+which is what is expected when using the [Enzyme](https://enzyme.mit.edu) library for performing AD. Without Enzyme they have to carry a dual type
+instead (see [differentiation engine](#differentiation-engine-enzyme-and-dual-numbers)).
+
 
 ### Field operators
 
-Field operators are the $B$ of the decomposition: they say *how* each field is
-evaluated at the quadrature points. The same types appear on both sides of the
-integrator, with two different meanings:
+Field operators are the $B/B^T$ of the decomposition.
+The same operators are used on the input/output side, with two different meanings:
 
-- in `Inputs`, a field operator selects what the q-function receives, and its
-  position fixes which argument it lands in;
-- in `Outputs`, it selects the test function basis the result is contracted
-  against. `Outputs<Value<U>>` gives $\int v \, (\cdot)$, so a mass-like form,
-  while `Outputs<Gradient<U>>` gives $\int \nabla v \cdot (\cdot)$, a
-  diffusion-like one.
+- in `Inputs`, a field operator selects how the input is interpolated at q-level and what the q-function receives;
+- in `Outputs`, it selects the test function basis the result is contracted against; e.g. `Outputs<Value<U>>` gives $\int (\cdot) \,  v $, so a mass-like form,
+  while `Outputs<Gradient<U>>` gives $\int (\cdot) \cdot \nabla v$, a diffusion-like one.
 
 | Field operator | At a quadrature point | Q-function argument |
 | --- | --- | --- |
@@ -285,17 +259,25 @@ is written against: `real_t` under Enzyme, `dual<real_t, real_t>` with the dual
 fallback. The type has to follow the space exactly, and a mismatch is a compile
 error.
 
-Gradients arrive in *reference* coordinates, so the pullback needs to happen in
-the q-function. That is why the mesh coordinates are requested as an input
-field: the gradient of the coordinates is the Jacobian $J$, from which you get
-the physical gradient $\nabla_x u = \nabla_\xi u \, J^{-1}$ and the measure
-$\det(J)\,w$.
+<div class="panel panel-info">
+<div class="panel-heading">
+<h3 class="panel-title"><i class="fa fa-info-circle"></i>&nbsp; Note</h3>
+</div>
+<div class="panel-body">
+Gradients arrive in reference coordinates, so the pullback needs to happen in
+the q-function. 
+That is why the mesh coordinates and quadrature weights are generally provided as inputs.
+This additionally enables using the same general interface to compute derivatives with 
+respect to mesh coordinates.
+</div>
+</div>
+
 
 ### Handling multiple integrators
 
 Several integrators may be added to one operator, and their contributions
-**accumulate**. 
-This can also be achieved with a single integrator, which is declared with **multiple outputs**. 
+**accumulate**, just like with standard **`BilinearIntegrator`**s. 
+This can also be achieved with a single integrator, which is declared with **multiple outputs**.s 
 Those landing on the same output space are summed after each has been contracted with its own test function basis. 
 This is how an operator that is a sum of terms is written in one pass over the quadrature
 points, with the geometry evaluated only once.
@@ -359,7 +341,7 @@ MultiVector Y{y_tdofs};
 dop.Mult(X, Y);
 ```
 
-The Jacobian of a `DifferentiableOperator dop` is requested by field identifier,
+The Jacobian of a `DifferentiableOperator` is requested by field identifier,
 which returns a `DerivativeOperator` pointer with available matrix-free action:
 
 ```c++
@@ -372,9 +354,7 @@ dop_du->MultTranspose(DR, DU);           // du = J^T dr
 
 This is the linearization of a nonlinear operator *about a state*, so this
 call is **stateful**: `X` is captured and reused for every subsequent apply. Ask
-for the derivative again whenever the state changes, which is what happens when
-`GetDerivative` is called from an `Operator::GetGradient()` override, once per
-Newton step.
+for the derivative again whenever the state changes.
 
 Nothing is assembled unless you ask, which for high order saves a great deal of
 memory and time. When a matrix is needed anyway, typically for a preconditioner,
@@ -384,16 +364,9 @@ the derivative operator assembles itself through `Assemble(SparseMatrix *&A)`,
 ## Local and global q-functions
 
 `DifferentiableOperator` always handles the outer half of the decomposition
-itself: the transformation from T- or L-vectors down to E-vectors, and back
-again. These are the stages of the
-[operator decomposition](performance.md#finite-element-operator-decomposition):
-a T-vector holds the global true degrees of freedom, an L-vector the local ones
-of an MPI rank after $P$, and an E-vector the element degrees of freedom after
-$G$, with $B$ taking those to the quadrature point values (Q). That part is
-identical whichever backend you pick, and you only choose which end you hand it.
-By default `Mult` takes and returns true degrees of freedom; when composing
-operators, `SetMultLevel(DifferentiableOperator::LVECTOR)` skips the parallel
-prolongation and works on L-vectors instead.
+itself: the transformation from T- or L-vectors down to E-vectors, and back. 
+That part is identical whichever backend you pick, and a user can optionally choose
+what is handed to and returned by the `DifferentiableOperator` with `SetMultLevel(DifferentiableOperator::LVECTOR/TVECTOR)`.
 
 What the backend does control is the inner half, E $\to$ Q $\to$ E, that is,
 the type of q-function the operator accepts, and how many quadrature points it
@@ -719,9 +692,6 @@ The rest, including how the operator is used, remains unchanged.
 `LocalQFBackend` is the right choice for essentially all physics: because MFEM
 owns the loops, it can generate fused, tensor-product, GPU-friendly kernels, and
 it is the only backend that supports energy functionals and second derivatives.
-Note that it is not the default — `AddDomainIntegrator` and
-`AddBoundaryIntegrator` fall back to `GlobalQFBackend` when the template
-argument is omitted, so it is worth naming the backend explicitly.
 
 `GlobalQFBackend` is worth reaching for when the pointwise picture does not fit:
 when the computation has to be split into several passes over the quadrature
@@ -748,19 +718,16 @@ With the dual fallback, the arguments that take part in differentiation have to
 carry the dual type instead — which is why the miniapps and tests template their
 physics on `dscalar_t` and select it with exactly this `#ifdef`.
 
-[Enzyme](https://enzyme.mit.edu) is a compiler plugin that differentiates code
-at the LLVM level, after optimization. It supports forward and reverse mode,
-works on GPUs, and is the recommended choice: with Enzyme your q-function is
-ordinary `real_t` code and the compiler synthesizes the derivative. Enable it
-with `MFEM_USE_ENZYME=ON`.
-
+[Enzyme](https://enzyme.mit.edu) (enabled it with `MFEM_USE_ENZYME=ON`) is an AD library that works at the compiler level.
+It is a plugin for LLVM that differentiates code after it has beend compiled to intermediate representation (IR).
+Therefore it allows to generate optimized forward and reverse mode derivatives for any language that lowers to LLVM.
 Working at the compiler level rather than through type overloading also means
 the q-function may call into code that other AD tools could not touch, an
 external library, or a routine written in another language, such as an equation
 of state.
 
 Without Enzyme, ∂FEM falls back to `dual<real_t, real_t>`, a header-only
-forward-mode implementation based on operator overloading. It needs no external
+forward-mode implementation based on a native dual number implementation. It needs no external
 dependencies and debugs easily, which is convenient while developing a new
 q-function, but being forward mode only it supports neither energy functionals
 nor second derivatives.
