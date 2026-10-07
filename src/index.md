@@ -10,7 +10,6 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
     <li data-target="#myCarousel" data-slide-to="6"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -19,15 +18,15 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
+      [<img class="d-block w-100" width="500" height="500" src="img/gallery/workshop26/RR2D-small.jpg">](gallery.md#rocha)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
+        2026 Visualization Contest Winner Henrique Bergallo Rocha
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
+      [<img class="d-block w-100" width="400" height="400" src="img/gallery/workshop26/gearbox-small.jpg">](gallery.md#legrain)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner Leonardo Molinari
+        2026 Visualization Contest Winner Grégory Legrain
       </div>
     </div>
     <div class="item">

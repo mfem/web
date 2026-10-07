@@ -3,7 +3,7 @@
 <h4>September 22–25, 2026</h4>
 <h4>Georgia Tech + Virtual</h4>
 
-![MFEM-GT-banner](/img/mfem-gt-workshop-banner.jpg)
+![MFEM-GT-banner](/img/mfem-gt-workshop-banner-small.jpg){: loading="eager" width="1600" height="901"}
 
 **Speakers' slides** and **posters** are linked in the agenda below.
 
@@ -204,14 +204,14 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 [gallery](gallery.md). Here are the winners from the 2025 workshop:
 
 <div class="col-md-6" markdown="1">
-<a href="https://mfem.org/img/gallery/workshop25/cascadia.png"><img alt="tsunami simulation on PNW coast" src="https://mfem.org/img/gallery/workshop25/cascadia.png" width="400"></a>
+<a href="https://mfem.org/img/gallery/workshop25/cascadia.png"><img alt="tsunami simulation on PNW coast" src="/img/gallery/workshop25/cascadia-small.png" width="1000" height="573" style="width:400px;" loading="lazy"></a>
 <center>
 <strong>Cascadia team:</strong> <em>Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. This research won the <a href="https://awards.acm.org/bell/">2025 ACM Gordon Bell Prize</a>.</em>
 </center>
 </div>
 
 <div class="col-md-6" markdown="1">
-<a href="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png"><img alt="lines radiating in all directions out of a column" src="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png" width="220"></a>
+<a href="https://mfem.org/img/gallery/workshop25/RFA-ElectricField.png"><img alt="lines radiating in all directions out of a column" src="/img/gallery/workshop25/RFA-ElectricField-small.jpg" width="869" height="1000" style="width:220px;" loading="lazy"></a>
 <center>
 <strong>Leonardo Molinari:</strong> <em>Electric field distribution during a radiofrequency (RF) ablation procedure on an idealized intracardiac geometry.</em>
 </center>
@@ -238,18 +238,18 @@ Click each image to enlarge, then right-click to save locally.
 <center>
 
 <div class="col-md-4" markdown="1">
-<a href="https://mfem.org/img/workshop-vb/mfem-blueprint-text.png"><img alt="virtual background1" src="https://mfem.org/img/workshop-vb/mfem-blueprint-text.png"></a>
-<a href="https://mfem.org/img/workshop-vb/mfem-dark-blue-text.png"><img alt="virtual background2" src="https://mfem.org/img/workshop-vb/mfem-dark-blue-text.png"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-blueprint-text.png"><img alt="virtual background1" src="/img/workshop-vb/mfem-blueprint-text-small.jpg" width="1000" height="563" loading="lazy"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-dark-blue-text.png"><img alt="virtual background2" src="/img/workshop-vb/mfem-dark-blue-text-small.jpg" width="1000" height="563" loading="lazy"></a>
 </div>
 
 <div class="col-md-4" markdown="1">
-<a href="https://mfem.org/img/workshop-vb/mfem-wave-text.png"><img alt="virtual background3" src="https://mfem.org/img/workshop-vb/mfem-wave-text.png"></a>
-<a href="https://mfem.org/img/workshop-vb/mfem-light-blue-text.png"><img alt="virtual background4" src="https://mfem.org/img/workshop-vb/mfem-light-blue-text.png"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-wave-text.png"><img alt="virtual background3" src="/img/workshop-vb/mfem-wave-text-small.jpg" width="1000" height="563" loading="lazy"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-light-blue-text.png"><img alt="virtual background4" src="/img/workshop-vb/mfem-light-blue-text-small.jpg" width="1000" height="563" loading="lazy"></a>
 </div>
 
 <div class="col-md-4" markdown="1">
-<a href="https://mfem.org/img/workshop-vb/mfem-tron-wave-text.png"><img alt="virtual background5" src="https://mfem.org/img/workshop-vb/mfem-tron-wave-text.png"></a>
-<a href="https://mfem.org/img/workshop-vb/mfem-grey-text.png"><img alt="virtual background6" src="https://mfem.org/img/workshop-vb/mfem-grey-text.png"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-tron-wave-text.png"><img alt="virtual background5" src="/img/workshop-vb/mfem-tron-wave-text-small.jpg" width="1000" height="563" loading="lazy"></a>
+<a href="https://mfem.org/img/workshop-vb/mfem-grey-text.png"><img alt="virtual background6" src="/img/workshop-vb/mfem-grey-text-small.jpg" width="1000" height="563" loading="lazy"></a>
 </div>
 
 </center>
@@ -263,20 +263,20 @@ Click each image to enlarge, then right-click to save locally.
 We gratefully acknowledge the support of our workshop sponsors.
 
 #### **Gold Sponsor – $6,000**
-<img src="/img/llnl_logo.png" width="500">
+<img src="/img/llnl_logo.png" width="747" height="144" style="width:500px;" loading="lazy">
 
 #### **Silver Sponsor – $4,000**
 <div class="row">
 <div class="col-md-6" markdown="1">
-<img src="/img/logos/GT-logo.png" width="200">
+<img src="/img/logos/GT-logo.png" width="1296" height="1296" style="width:200px;" loading="lazy">
 </div>
 <div class="col-md-6" markdown="1">
-<img src="/img/logos/UKAEA-logo.png" width="200">
+<img src="/img/logos/UKAEA-logo.png" width="1200" height="1200" style="width:200px;" loading="lazy">
 </div>
 </div>
 
 #### **Bronze Sponsor – $2,000**
-<img src="/img/logos/CSE-logo.png" width="450">
+<img src="/img/logos/CSE-logo.png" width="2344" height="576" style="width:450px;" loading="lazy">
 
 If your organization is interested in sponsoring the workshop, please contact the organizers at [mfem@llnl.gov](mailto:mfem@llnl.gov).
 
