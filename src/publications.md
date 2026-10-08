@@ -7,6 +7,9 @@
 
 ## Selected Publications
 
+#### 2027
+1. R. Zhang, G. Wimmer, Q. Tang. [Structure-preserving transfer of Grad–Shafranov equilibria to magnetohydrodynamic solvers](https://doi.org/10.1016/j.jcp.2026.115369), *Journal of Computational Physics*, 568, 115369, **2027**. Also available as [arXiv:2511.07763](https://arxiv.org/abs/2511.07763).
+
 #### 2026
   1. J. Tu, I. Karlin, J. Camier, V. Dobrev, Tz. Kolev, S. Henneking, O. Ghattas, [Accelerating High-Order Finite Element Simulations at Extreme Scale with FP64 Tensor Cores](https://doi.org/10.23919/ISC.2026.11520474), *ISC High Performance 2026 Research Paper Proceedings*, **2026**. Also available as [arXiv:2603.09038](https://arxiv.org/abs/2603.09038).
   1. A. Larsson, M. Kim, C. Vales, S. Adriaenssens, D. Copeland, Y. Choi, S. W. Cheung, [Hyper-reduction methods for accelerating nonlinear finite element simulations: open source implementation and reproducible benchmarks](https://arxiv.org/abs/2602.23551), *to appear*, **2026**. Also available as [arXiv:2602.23551](https://arxiv.org/abs/2602.23551).
