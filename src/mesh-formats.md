@@ -22,6 +22,8 @@ visualization tool, [GLVis](https://glvis.org/).
 Detailed description of these formats can be found on [MFEM's mesh
 formats](mesh-format-v1.0.md) page.
 
+For information on element-to-vertex, edge-to-vertex, and face-to-vertex connectivities used in MFEM's native formats, see [connectivity](connectivity.md).
+
 MFEM supports:
 
   - MFEM's [mesh v1.0 format](mesh-format-v1.0.md#mfem-mesh-v10) for
