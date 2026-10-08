@@ -1447,6 +1447,11 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
+#### Dylan Copeland (LLNL)
+##### **October 10, 2026**
+
+---
+
 #### Will Pazner (Portland State University)
 ##### **November 9, 2026**
 

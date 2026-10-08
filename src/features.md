@@ -38,7 +38,7 @@ MFEM supports arbitrary element [transformations][ElementTransformation] and inc
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
  - [mesh optimization][HyperelasticModel] based on the Target-Matrix Optimization Paradigm (TMOP),
- - higher-order elements with [curved](mesh-formats.md#curvilinear-vtk-meshes) boundaries,
+ - higher-order elements with [curved](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) boundaries,
  - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D, topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes, 1D meshes.
 
 Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the [PUMI](https://scorec.rpi.edu/pumi) distributed mesh management system.
