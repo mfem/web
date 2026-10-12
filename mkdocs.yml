@@ -20,6 +20,7 @@ nav:
   - 'Example Codes': examples.md
   - 'Electromagnetics': electromagnetics.md
   - 'Fluid Dynamics': fluids.md
+  - 'Plasma Physics': plasma.md
   - 'Meshing': meshing-miniapps.md
   - 'NURBS Discretization': nurbs.md
   - 'Automatic Differentiation': autodiff.md
