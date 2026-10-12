@@ -6,10 +6,9 @@ Error estimators provide elementwise indicators that identify where a finite
 element solution needs more resolution. They are commonly used with
 `ThresholdRefiner` in an adaptive mesh refinement (AMR) loop. MFEM includes
 specialized estimators, such as the Zienkiewicz--Zhu and Kelly estimators, as
-well as `GeneralErrorEstimator`, a composable framework for residual-based
-indicators.
+well as composable tools for residual-based indicators.
 
-`GeneralErrorEstimator` separates the traversal of the mesh from the
+A composable residual framework separates the traversal of the mesh from the
 calculation of individual residual terms. Applications add the domain,
 interior-face, and boundary terms appropriate to their PDE; the framework
 combines those terms into one indicator per element.
@@ -22,7 +21,7 @@ used by AMR are:
 | Method | Purpose |
 | --- | --- |
 | `GetLocalErrors()` | Returns one non-negative indicator for each local mesh element. |
-| `GetTotalError()` | Returns the global L2 norm of the local indicators. |
+| `GetTotalError()` | Returns the global L2 norm of the most recently computed local indicators. Call `GetLocalErrors()` first. |
 | `Reset()` | Invalidates cached indicators after solution data changes without a mesh change. |
 
 An estimator also refreshes its cached values when it detects that the mesh
@@ -51,6 +50,26 @@ $$
 $$
 
 In a parallel run, the final sum is reduced across MPI ranks.
+
+## Available estimators
+
+MFEM provides specialized estimators for common indicators as well as a
+compositional framework for custom residual indicators. All classes in this
+table derive from `ErrorEstimator`; `GetLocalErrors()` supplies the local
+indicators used by AMR.
+
+| Estimator | Description |
+| --- | --- |
+| `AnisotropicErrorEstimator` | Abstract extension for estimators that also provide per-element anisotropic refinement flags. |
+| `ZienkiewiczZhuEstimator` | Recovery-based ZZ indicator for scalar or vector fields; also provides anisotropic refinement flags. |
+| `ComplexZienkiewiczZhuEstimator` | Applies ZZ recovery independently to the real and imaginary components of a `ComplexGridFunction` or `ParComplexGridFunction`, then combines their squared local indicators. |
+| `LSZienkiewiczZhuEstimator` | Face-patch, least-squares variant of the ZZ estimator. |
+| `L2ZienkiewiczZhuEstimator` | Global $L^2$ flux-recovery ZZ estimator, implemented for parallel problems. |
+| `LpErrorEstimator` | Computes the elementwise $L^p$ error against a known exact scalar or vector solution. |
+| `KellyErrorEstimator` | Fast residual-style indicator based on flux jumps; intended for selected material attributes and does not include boundary faces. |
+| `MaxwellResidualEstimator` | Dedicated real time-harmonic Maxwell residual indicator. |
+| `ComplexMaxwellResidualEstimator` | Dedicated complex time-harmonic Maxwell residual indicator. |
+| `GeneralErrorEstimator` | Combines reusable volume, interior-face, and boundary contributions into a single elementwise indicator. |
 
 ## Building a general estimator
 
@@ -128,6 +147,34 @@ Face estimators that read `ParGridFunction` values on both sides of a shared
 face should override `ExchangeFaceNbrData()`. `GeneralErrorEstimator` invokes
 it before evaluating parallel shared faces.
 
+### Weighted face-jump estimators
+
+`NedelecNormalJumpErrorEstimator` and `RTTangentialJumpErrorEstimator` are
+reusable interior-face indicators for weighted field jumps. They return a
+contribution for each element adjacent to the face and can be registered with
+`AddInteriorFaceEstimator`.
+
+| Estimator | Field space | Quantity measured |
+| --- | --- | --- |
+| `NedelecNormalJumpErrorEstimator` | H(curl), H(curl)-R2D, or H(curl)-R1D | Normal jump of a weighted field. |
+| `RTTangentialJumpErrorEstimator` | H(div), H(div)-R2D, or H(div)-R1D | Tangential jump of a weighted field. |
+
+Both accept an optional scalar or matrix coefficient $a$ and a constant factor
+$\alpha$; without $a$, they use the identity map. The coefficient is evaluated
+on each side of a face, so it may be discontinuous. `FaceJumpScaling` selects
+the elementwise scale:
+
+| Value | Scale |
+| --- | --- |
+| `FaceJumpScaling::NONE` | $\alpha$ only. |
+| `FaceJumpScaling::H_OVER_P` | $\alpha h_K/p_K$. |
+| `FaceJumpScaling::H_OVER_P_OVER_COEFFICIENT` | $\alpha h_K/(p_K a_\{\min,K})$; requires positive scalar or symmetric positive-definite matrix $a$. |
+
+These general jump estimators evaluate $a x$ directly. They are not
+interchangeable with the specialized Maxwell jump terms, which instead use the
+discontinuous reconstructed curl flux $\mathcal{H}_h$ or displacement $D_h$ to
+match the Maxwell residual indicator.
+
 The typical application structure is:
 
 ```cpp
@@ -204,19 +251,42 @@ Dirichlet or Neumann boundary estimator explicitly when the residual indicator
 must include nonhomogeneous boundary data. The standalone real Maxwell
 estimator assumes homogeneous tangential boundary conditions.
 
-Example 42 demonstrates an AMR loop that can switch between the ZZ estimator,
-the standalone Maxwell residual estimator, and a `GeneralErrorEstimator`
-configured by `AddMaxwellResidualEstimators`.
+Example 42 and its parallel counterpart, `ex42p`, apply an AMR loop to the real
+time-harmonic Maxwell equation. They can switch between the ZZ estimator, the
+standalone Maxwell residual estimator, and a `GeneralErrorEstimator` configured
+by `AddMaxwellResidualEstimators`.
+
+Example 43 and its parallel counterpart, `ex43p`, apply the same adaptive
+pattern to the complex time-harmonic Maxwell equation. They can switch between
+complex ZZ recovery, `ComplexMaxwellResidualEstimator`, and a
+`GeneralErrorEstimator` configured by `AddComplexMaxwellResidualEstimators`.
 
 ## Choosing an estimator
 
-Use a specialized estimator when its assumptions match the problem and its
-fixed formulation is sufficient. Use `GeneralErrorEstimator` when a residual
-indicator needs to combine several PDE terms, apply terms on selected material
-or boundary attributes, reuse derived data, or add application-specific
-contributions. In either case, treat an indicator as a refinement guide: its
-normalization and reliability depend on the PDE, finite element space,
-coefficients, and residual terms being used.
+Start with a dedicated estimator when its assumptions match the PDE and the
+available indicator contains the terms needed for refinement. Dedicated
+implementations can encode problem-specific identities, select appropriate
+reconstructions and weights, and avoid the setup and traversal overhead of a
+collection of independent terms. For example, the Maxwell residual estimators
+use discontinuous curl-flux and displacement reconstructions in a formulation
+that their general weighted jump counterparts do not reproduce.
+
+Use `GeneralErrorEstimator` when the indicator naturally consists of reusable
+volume, face, and boundary contributions, particularly when terms must be
+restricted to selected attributes or shared derived fields can be prepared once
+per sweep. It makes an application-specific indicator explicit and lets the
+same components be reused in related PDE models. The tradeoff is that the
+application must select, scale, and register every required term correctly;
+omitting a residual or boundary contribution changes the indicator.
+
+When a PDE has a stable, well-defined residual indicator that is used
+repeatedly, writing a dedicated `ErrorEstimator` can be preferable. It can
+provide a simpler user interface, enforce the problem's assumptions, share
+intermediate data without exposing assembly details, and tailor the computation
+to the PDE. A dedicated estimator should still be validated against its
+constituent residual terms and used as a refinement guide: normalization and
+reliability depend on the finite element space, coefficients, and problem
+formulation.
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({TeX: {equationNumbers: {autoNumber: "AMS"}},
