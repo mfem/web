@@ -28,6 +28,11 @@ methods.
 Some of the C++ classes for the finite element realizations of these
 PDE-level concepts in MFEM are described below.
 
+### [Reference Elements and Connectivities](connectivity.md)
+
+MFEM supports a variety of element and boundary element types. The linked page
+shows each element in reference space and the order of its vertices.
+
 ### [Primal and Dual Vectors](pri-dual-vec.md)
 
 The finite element method uses vectors of data in a variety of ways and the
