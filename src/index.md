@@ -10,7 +10,6 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
     <li data-target="#myCarousel" data-slide-to="6"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -19,15 +18,15 @@
       [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
+      [<img class="d-block w-100" width="500" height="500" src="img/gallery/workshop26/RR2D-small.jpg">](gallery.md#rocha)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
+        2026 Visualization Contest Winner Henrique Bergallo Rocha
       </div>
     </div>
     <div class="item">
-      [<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
+      [<img class="d-block w-100" width="400" height="400" src="img/gallery/workshop26/gearbox-small.jpg">](gallery.md#legrain)
       <div class="carousel-caption d-none" style="margin-top:-15px;">
-        2025 Visualization Contest Winner Leonardo Molinari
+        2026 Visualization Contest Winner Grégory Legrain
       </div>
     </div>
     <div class="item">
@@ -92,22 +91,23 @@ See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](vi
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Oct 8, 2025 | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
-Sep 18, 2025 | [PyMFEM](https://github.com/mfem/PyMFEM) version 4.8 [released](https://github.com/mfem/PyMFEM/releases/tag/v_4.8.0).
-Sep 10, 2025 | 2025 [MFEM community workshop](workshop.md).
-Apr 9, 2025  | Version 4.8 [released](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG).
-May 2, 2024  | New MFEM [paper](https://journals.sagepub.com/doi/pdf/10.1177/10943420241261981) in IJHPCA.
+Sep 22, 2026 | MFEM [Community Workshop](workshop.md).
+Sep 1, 2026  | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
+Mar 2026     | MFEM in LLNL's [FY25 LDRD Report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).
+Dec 5, 2025  |  [Particles in MFEM](https://mfem.org/particles/).
+Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
+Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop25.md).
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.8/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.8.tgz**
-</button>](https://bit.ly/mfem-4-8)
+**Download mfem-4.10.tgz**
+</button>](https://bit.ly/4iEAcbE)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")

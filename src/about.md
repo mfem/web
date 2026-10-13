@@ -1,10 +1,26 @@
 # About MFEM
 
-MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html) project.
+MFEM originates from previous research effort in the (unreleased) [AggieFEM/aFEM](img/2000c-Lazarov.png) project.
+
+<!-- The AggieFEM/aFEM project used to be https://www.math.tamu.edu/research/vigre/archive/2000c-Lazarov.html. The above screenshot was taken in 2024. -->
 
 Please cite with:
 ```c
-@article{mfem,
+@article{mfem-2024,
+  title = {High-Performance Finite Elements with {MFEM}},
+  author = {J. Andrej and N. Atallah and J.-P. Bäcker and  J.-S. Camier and
+            D. Copeland and V. Dobrev and Y. Dudouit and T. Duswald and
+            B. Keith and D. Kim and T. Kolev and B. Lazarov and  K. Mittal and
+            W. Pazner and S. Petrides and S. Shiraiwa and M. Stowell and V. Tomov},
+  journal={The International Journal of High Performance Computing Applications},
+  volume={38},
+  number={5},
+  pages={447-467},
+  year={2024},
+  publisher={SAGE Publications Sage UK: London, England}
+}
+
+@article{mfem-2021,
   title = {{MFEM}: A Modular Finite Element Methods Library},
   author = {R. Anderson and J. Andrej and A. Barker and J. Bramwell and J.-S. Camier and
             J. Cerveny and V. Dobrev and Y. Dudouit and A. Fisher and Tz. Kolev and W. Pazner and
@@ -43,33 +59,42 @@ Please cite with:
 - [Adrien Bernede](https://github.com/adrienbernede)
 - [Aaron Black](https://github.com/aaroncblack)
 - [John Bowen](https://github.com/johnbowen42)
+- [Gabriele Bozzola](https://github.com/Sbozzolo)
 - [Jamie Bramwell](https://people.llnl.gov/bramwell1)
 - [Thomas Brunner](https://people.llnl.gov/brunner6)
 - [Jean-Sylvain Camier](https://people.llnl.gov/camier1)
 - [Hugh Carson](https://github.com/hughcars)
 - [Robert Carson](https://scholar.google.com/citations?user=RpyyzXkAAAAJ&hl=en)
+- [Alex Chapman](https://github.com/chapman39)
 - [Eric Chin](https://scholar.google.com/citations?user=ix4Y2oMAAAAJ)
 - [Lenka Červená](https://github.com/cervenal)
 - [Jakub Červený](https://www.linkedin.com/in/jcerveny)
 - [Dylan Copeland](https://people.llnl.gov/copeland11)
 - [Johann Dahm](https://jdahm.me)
+- [Yuyang Dai](https://github.com/yuyangdai)
 - [William Dawn](https://wcdawn.github.io)
 - [Victor DeCaria](https://github.com/victor-decaria-nnl)
 - [Veselin Dobrev](https://people.llnl.gov/dobrev1)
+- [Justin Dong](https://github.com/jdongg)
+- [Tara Drwenski](https://github.com/tdrwenski)
 - [Daniel Drzisga](https://www.drzisga.dev)
 - [Yohann Dudouit](https://people.llnl.gov/dudouit1)
 - [Tobias Duswald](https://www.linkedin.com/in/tobias-duswald-8a5726158/)
 - [Truman Ellis](https://github.com/trumanellis)
+- [Tom Epperly](https://github.com/tepperly)
 - [Josh Essman](https://github.com/joshessman-llnl)
 - [Aaron Fisher](https://people.llnl.gov/fisher47)
 - [David Gardner](https://people.llnl.gov/gardner48)
 - [Pieter Ghysels](https://crd.lbl.gov/divisions/amcr/applied-mathematics-dept/scalable-solvers/members/staff-members/pieter-ghysels-2)
 - [Andrew Gillette](https://akgillette.github.io)
+- [Anne van Gils](https://github.com/AnnevanGils)
 - [Sebastian Grimberg](https://scholar.google.com/citations?user=p2FEptUAAAAJ&hl=en)
 - [Hennes Hajduk](https://www.mn.uio.no/geo/english/people/aca/metos/hennesh/index.html)
 - [Cyrus Harrison](https://people.llnl.gov/harrison37)
 - [Tucker Hartland](https://github.com/thartland)
 - [Stefan Henneking](https://www.oden.utexas.edu/people/1497)
+- [Henrique BR](https://github.com/Heinrich-BR)
+- [Paul Hilscher](https://github.com/paul-hilscher)
 - [Andrew Ho](https://www.linkedin.com/in/andrew-ho-45b14647)
 - [Milan Holec](https://people.llnl.gov/holec1)
 - [Delyan Kalchev](https://scholar.google.com/citations?user=tqH-TyIAAAAJ&hl=en)
@@ -79,11 +104,13 @@ Please cite with:
 - [Dohyun Kim](https://github.com/dohyun-cse)
 - [Patrick Knupp](https://dblp.org/pid/38/3416.html)
 - [Tzanio Kolev](https://people.llnl.gov/kolev1) &mdash; Project Leader
+- [Anthony Kolshorn](https://github.com/Toni-ko)
 - [Chris Laganella](https://github.com/Laganellac)
 - [Justin Laughlin](https://github.com/justinlaughlin)
 - [Ilya Lashuk](https://scholar.google.com/citations?user=5KQiAUoAAAAJ&hl=en)
 - [Boyan Lazarov](https://scholar.google.com/citations?user=06WPX88AAAAJ&hl=en)
 - [Chak Shing Lee](https://scholar.google.com/citations?user=WyqnLwsAAAAJ&hl=en)
+- [Jesse Li](https://github.com/LwhJesse)
 - [Alex Lindsay](https://github.com/lindsayad)
 - [Tim Linke](https://github.com/talinke)
 - [Jacob Lotz](https://github.com/JacobLotz)
@@ -98,11 +125,17 @@ Please cite with:
 - [Nuno Nobre](https://github.com/nmnobre)
 - [Dennis Ogiermann](https://github.com/termi-official)
 - [Geoffrey Oxberry](https://github.com/goxberry)
+- [Max Paik](https://github.com/maxpaik16)
 - [Edward Palmer](https://github.com/EdwardPalmer99)
 - [Aditya Parik](https://github.com/aparikusu)
 - [Will Pazner](https://pazner.github.io)
+- [John Pennycook](https://github.com/Pennycook)
 - [Cosmin Petra](https://people.llnl.gov/petra1)
 - [Socratis Petrides](https://people.llnl.gov/petrides1)
+- [Dzung Pham](https://github.com/dnpham23)
+- [Ce Qin](https://github.com/adamqc)
+- [Sohail Reddy](https://github.com/sohailreddy)
+- [Noe Reyes](https://github.com/thatguynoe)
 - [Robert Rieben](https://people.llnl.gov/rieben1)
 - [Amit Rotem](https://github.com/arotem3)
 - [Michael Schneier](https://github.com/nnpp-schneier)
@@ -136,6 +169,7 @@ Please cite with:
 - [Max Yang](https://github.com/publixsubfan)
 - [George Zagaris](https://github.com/gzagaris)
 - [Stefano Zampini](https://ecrc.kaust.edu.sa/Pages/People.aspx)
+- [Rushan Zhang](https://github.com/rzhangbq)
 - [Patrick Zulian](https://www.ics.usi.ch/index.php/people-detail-page/93-patrick-zulian-sp-1923892153)
 
 

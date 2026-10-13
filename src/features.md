@@ -38,7 +38,7 @@ MFEM supports arbitrary element [transformations][ElementTransformation] and inc
  - conforming local mesh refinement (triangular/tetrahedral meshes),
  - non-conforming mesh refinement (quadrilateral/hexahedral meshes), including anisotropic refinement,
  - [mesh optimization][HyperelasticModel] based on the Target-Matrix Optimization Paradigm (TMOP),
- - higher-order elements with [curved](mesh-formats.md#curvilinear-vtk-meshes) boundaries,
+ - higher-order elements with [curved](mesh-format-v1.0.md#curvilinear-and-more-general-meshes) boundaries,
  - [surface](https://github.com/mfem/mfem/blob/master/data/square-disc-surf.mesh) meshes embedded in 3D, topologically [periodic](https://github.com/mfem/mfem/blob/master/data/periodic-hexagon.mesh) meshes, 1D meshes.
 
 Additional support for automated adaptive analysis and parallel unstructured modifications on simplex meshes is provided via integration with the [PUMI](https://scorec.rpi.edu/pumi) distributed mesh management system.
@@ -68,10 +68,10 @@ A variety of solvers are available for the resulting linear algebra systems (or 
  - high-performance preconditioners from the *[hypre](https://www.llnl.gov/CASC/hypre)* library including the [BoomerAMG](examples.md?amg), [AMS](examples.md?ams) and [ADS](examples.md?ads) solvers,
  - many linear and nonlinear solvers, preconditioners and time integrators from the [PETSc](https://www.mcs.anl.gov/petsc) suite,
  - several eigensolvers from the [SLEPc](https://slepc.upv.es/) suite,
- - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP) from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
+ - various iterative solvers and preconditioners on multiple architectures (OpenMP, CUDA and HIP), including MPI-distributed solvers, from the [Ginkgo](https://github.com/ginkgo-project/ginkgo) library.
  - time integrators and non-linear solvers from the CVODE, ARKODE and KINSOL libraries of the [SUNDIALS](https://computing.llnl.gov/projects/sundials/sundials-software) suite,
  - discretization-specific solvers for electromagnetic, elasticity, hybridization and DPG methods,
- - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](https://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack) and the [SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html) library,
+ - [parallel](examples.md?superlu) and [serial](examples.md?umfpack) sparse direct solvers based on [SuperLU](https://crd-legacy.lbl.gov/~xiaoye/SuperLU), [STRUMPACK](https://portal.nersc.gov/project/sparse/strumpack), the [SuiteSparse](https://faculty.cse.tamu.edu/davis/suitesparse.html) library, and GPU-accelerated direct solvers from [cuDSS](https://developer.nvidia.com/cudss),
  - explicit and implicit high-order Runge-Kutta [time integrators][ODESolver],
  - solvers for nonlinear problems (Newton, [HiOp](https://github.com/LLNL/hiop)) and for single linearly constrained [quadratic minimization][SLBQPOptimizer] problems.
 
@@ -119,7 +119,8 @@ MFEM includes a number of well-documented [example codes](examples.md) that can 
  - [Example 37](https://docs.mfem.org/html/ex37_8cpp_source.html): topology optimization,
  - [Example 38](https://docs.mfem.org/html/ex38_8cpp_source.html): cut-surface and cut-volume integration,
  - [Example 39](https://docs.mfem.org/html/ex39_8cpp_source.html): named mesh attributes,
- - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation.
+ - [Example 40](https://docs.mfem.org/html/ex40_8cpp_source.html): eikonal equation,
+ - [Example 41](https://docs.mfem.org/html/ex41_8cpp_source.html): DG/CG IMEX time dependent advection-diffusion.
  - [Example 42](https://docs.mfem.org/html/ex42_8cpp_source.html): clamped biharmonic equation.
 
 Most of the examples have a serial and a parallel version, illustrating the ease of transition and the minimal code changes between the two.
@@ -132,6 +133,8 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Tesla](https://docs.mfem.org/html/tesla_8cpp_source.html): simple magnetostatics simulation code,
  - [Maxwell](https://docs.mfem.org/html/electromagnetics_2maxwell_8cpp_source.html): transient electromagnetics simulation code,
  - [Joule](https://docs.mfem.org/html/joule_8cpp_source.html): transient magnetics and Joule heating miniapp,
+ - [Lorentz](https://docs.mfem.org/html/lorentz_8cpp_source.html): charged particle tracking miniapp,
+ - [Electrostatic PIC](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp): electrostatic particle-in-cell miniapp,
  - [Navier](https://docs.mfem.org/html/classmfem_1_1navier_1_1NavierSolver.html#details): solver for the incompressible time-dependent Navier-Stokes equations,
  - [Mesh Explorer](https://docs.mfem.org/html/mesh-explorer_8cpp_source.html): visualize and manipulate meshes,
  - [Mesh Optimizer](https://docs.mfem.org/html/mesh-optimizer_8cpp_source.html): optimize high-order meshes,
@@ -149,10 +152,11 @@ Beyond the examples, a number of miniapps are available that are more representa
  - [Convert DC](https://docs.mfem.org/html/convert-dc_8cpp_source.html): convert between different DataCollection formats,
  - [LOR Transfer](https://docs.mfem.org/html/lor-transfer_8cpp_source.html): map functions between high-order and low-order-refined spaces,
  - [ParELAG H(curl) and H(div) AMGe](https://docs.mfem.org/html/MultilevelHcurlHdivSolver_8cpp_source.html): solve H(curl) and H(div) problems using the element-based algebraic multigrid (AMGe) in the ParELAG library,
- - [SPDE](https://github.com/mfem/mfem/blob/master/miniapps/spde/generate_random_field.cpp): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
- - [Contact](https://github.com/mfem/mfem/blob/master/miniapps/tribol/contact-patch-test.cpp): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library,
- - [Multidomain](https://github.com/mfem/mfem/blob/master/miniapps/multidomain/multidomain.cpp): Multidomain and SubMesh demonstration Miniapp,
- - [DPG](https://github.com/mfem/mfem/blob/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
+ - [SPDE](https://docs.mfem.org/html/generate__random__field_8cpp_source.html): generate a Gaussian random field via the SPDE method; i.e., by solving a fractional PDE with random load,
+ - [Tribol](https://docs.mfem.org/html/contact-patch-test_8cpp_source.html): mortar contact patch test for elasticity using the [Tribol](https://github.com/LLNL/Tribol) library,
+ - [Contact](https://docs.mfem.org/html/contact_8cpp_source.html): Frictionless contact examples using [IP optimization](https://docs.mfem.org/html/ip_8hpp_source.html) and the [AMGF solver](https://docs.mfem.org/html/filteredsolver_8hpp_source.html),
+ - [Multidomain](https://docs.mfem.org/html/multidomain_8cpp_source.html): Multidomain and SubMesh demonstration Miniapp,
+ - [DPG](https://github.com/mfem/mfem/tree/master/miniapps/dpg):  Discontinuous Petrov-Galerkin (DPG) for various examples.
 
 In addition, the sources for several external benchmark/proxy-apps build on top of MFEM are available:
 

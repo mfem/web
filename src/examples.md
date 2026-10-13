@@ -52,6 +52,7 @@ or post [questions](https://github.com/mfem/mfem/issues/new?labels=question) or 
       <option id="nonlocal">Nonlocal</option>
       <option id="stochastic">Stochastic</option>
       <option id="freeboundary">Free boundary</option>
+      <option id="particle">Particle Methods</option>
    </select>
 </div>
 <div class="col-sm-6 col-md-3 small" markdown="1">
@@ -1285,6 +1286,29 @@ We recommend viewing Example 5 and Example 36 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex41" markdown="1">
+##Example 41: DG/CG Advection-Diffusion
+<img class="floatright" width="240pt" src="../img/examples/ex41.png">
+
+This example solves a time-dependent advection–diffusion equation
+$$\frac{\partial u}{\partial t} + v \cdot \nabla u -\nabla\cdot\kappa\nabla u = 0,$$ where $v$ is a given fluid
+velocity, and $u_0(x)=u(0,x)$ is a given initial condition, using high-order finite elements in space
+and implicit–explicit (IMEX) Runge–Kutta methods in time. The spatial discretization is based on discontinuous
+Galerkin (DG) or continuous Galerkin (CG) finite elements on periodic meshes in 2D or 3D, with several choices
+of velocity fields and initial data. The advective part of the operator is treated explicitly, while the
+diffusive part is handled implicitly using a symmetric interior-penalty formulation. The IMEX splitting is
+realized through MFEM’s additive TimeDependentOperator interface, and the implicit solve is preconditioned
+using a low-order refined (LOR) discretization of the diffusion operator (in parallel, via Hypre-based solvers).
+The example illustrates how to combine operator splitting, DG/CG spatial discretizations, and IMEX time
+integrators within MFEM.
+
+_The example has a serial ([ex41.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41.cpp))
+and a parallel ([ex41p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex41p.cpp)) version.
+We recommend reviewing examples 9, 14, 16, and 18 before this example._
+<div style="clear:both;"/></div>
+<br></div>
+
+
 <div id="ex42" markdown="1">
 ##Example 42: Clamped Biharmonic
 <img class="floatright" width="280pt" src="../img/examples/ex42.png">
@@ -1301,6 +1325,7 @@ and a parallel ([ex42p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex
 We recommend viewing Example 1 and Example 14 before viewing this example._
 <div style="clear:both;"/></div>
 <br></div>
+
 
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem
@@ -1523,6 +1548,81 @@ _The miniapp has only a parallel
 ([joule.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/joule.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="lorentz" markdown="1">
+##Lorentz Miniapp: Particle Trajectory Calculation
+<img class="floatright" width="280pt" src="../img/examples/lorentz-full.png">
+
+This miniapp reads VisIt data collection objects produced by applications such
+as Volta and Tesla (described above) and computes particle trajectories subject
+to the electric and magnetic fields described therein.
+
+This code uses the Boris algorithm to approximate the Lorentz force,
+
+$$\frac{d\vec{p}}{dt} = q \left(\vec{E} + \vec{v}\times\vec{B}\right),$$
+
+exerted on a test particle with a given mass, charge, initial position and
+momentum.
+
+The Lorentz miniapp must be run on the same number of processors as the
+applications which produced the VisIt data collection objects. However, the
+electric and magnetic fields do not need to be defined on the same mesh. The
+Lorentz miniapp relies on the `FindPoints` functionality available through
+MFEM's parallel mesh classes to query the field values even when those field
+values are located on different processors.
+
+For more details, please see the [documentation](electromagnetics.md) in the
+`miniapps/electromagnetics` directory.
+
+_The miniapp has only a parallel
+([lorentz.cpp](https://github.com/mfem/mfem/blob/master/miniapps/electromagnetics/lorentz.cpp)) version.
+**We recommend that new users become familiar with the
+[Volta](#volta-miniapp-electrostatics) and/or
+[Tesla](#tesla-miniapp-magnetostatics) miniapps before moving to this miniapp.
+**_
+<div style="clear:both;"/></div>
+<br></div>
+
+
+<div id="pic" markdown="1">
+##Particle-In-Cell (PIC) Miniapp
+<img class="floatright" width="300" src="../img/examples/electrostatic-pic.png">
+
+The [electrostatic PIC miniapp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)
+couples explicit particle pushing to a finite element Poisson solve for the
+self-consistent electric field on a periodic two- or three-dimensional domain.
+It is intended for plasma physics applications such as linear Landau damping
+and demonstrates how to combine MFEM's particle support with parallel finite
+element field solvers.
+
+At each time step, particle charge is deposited on the grid using Dirac delta
+shape functions. The miniapp then solves
+
+$$-\epsilon_0 \Delta \phi(q) =
+e \sum_{j=1}^{N_p} \psi_j \delta(q-Q_j) - e n_0,$$
+
+where $\epsilon_0=1$, $Q_j$ and $\psi_j$ are the position and weight of
+particle $j$, and the constant background ion density $n_0$ enforces global
+charge neutrality. The periodic Poisson system is solved with `OrthoSolver` to
+enforce a zero-mean potential. The electric field
+$\mathbf{E}=-\nabla\phi$ is then interpolated to the particle positions before
+their momenta and positions are advanced with a leap-frog scheme.
+
+Compatible finite element spaces following the discrete de Rham complex,
+together with leap-frog time integration, preserve the symplectic structure of
+the discretization. The miniapp also supports charge-conserving deposition,
+parallel particle redistribution across MPI ranks, optional GLVis
+visualization of $\phi$ and $\mathbf{E}$, and CSV output of kinetic, field, and
+total energy. The figure shows the field-energy history for a linear Landau
+damping test (this 2D2V benchmark follows the setup of
+[Ricketson and Hu (2025)](https://www.osti.gov/servlets/purl/2587773), with a
+weak cosine density perturbation, $L_x = L_y = 22$, $\alpha=0.05$ and $k=2\pi/22$, on a
+periodic square domain).
+
+_This miniapp has only a parallel ([electrostatic-pic.cpp](https://github.com/mfem/mfem/blob/master/miniapps/plasma/pic/electrostatic-pic.cpp)) implementation._
 <div style="clear:both;"/></div>
 <br></div>
 
@@ -1859,10 +1959,14 @@ low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
 function that was obtained by restricting a high-order grid function to the
-low-order refined space.
+low-order refined space. The $L^2$ projection can also be weighted by a
+coefficient, in which case the transfer conserves the weighted mass — for
+example, transferring velocity while conserving density-weighted momentum.
 
-_The miniapp has only a serial
-([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp)) version._
+_The miniapp has a serial
+([lor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/lor-transfer.cpp))
+and a parallel
+([plor-transfer.cpp](https://github.com/mfem/mfem/blob/master/miniapps/tools/plor-transfer.cpp)) version._
 _**We recommend that new users start with the example codes before moving to the miniapps.**_
 <div style="clear:both;"/></div>
 <br></div>
@@ -2079,7 +2183,7 @@ The miniapp supports:
 - A variety of test cases and benchmarks
 
 _This miniapp has only a parallel
-([navier_solver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/navier/navier_solver.cpp)) version.
+([navier_solver.cpp](https://github.com/mfem/mfem/blob/master/miniapps/fluids/navier/navier_solver.cpp)) version.
 **We recommend that new users start with the example codes before
 moving to the miniapps.**_
 <div style="clear:both;"/></div>
@@ -2363,7 +2467,23 @@ _This miniapp has only a parallel ([contact-patch-test.cpp](https://github.com/m
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="contact" markdown="1">
+##Contact miniapp
 
+<a href="../img/gallery/workshop25/contact.mp4" target="_blank">
+<img class="floatright" width="250" src="../img/gallery/workshop25/contact.png">
+</a>
+
+This [miniapp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp) demonstrates how to use MFEM in combination with [Tribol](https://github.com/LLNL/Tribol)
+ to simulate frictionless contact between deformable solids. The contact gap function and its Jacobian are evaluated using Tribol’s mortar segment-to-segment method (see [Puso and Laursen, 2004](https://doi.org/10.1016/j.cma.2003.10.010)).  An **Interior-Point (IP)** optimization solver is used to solve an inequality-constrained minimization problem enforcing a non-penetration condition. Linear systems arising in the IP iterations are solved using **Conjugate Gradient (CG)** preconditioned with the [AMG with Filtering (AMGF)](https://arxiv.org/abs/2505.18576) solver.
+
+Several benchmark problems are provided, including the two-block compression, ironing and beam-sphere tests. These examples illustrate how MFEM and Tribol can be combined to build large-scale scalable simulations of contact mechanics problems.
+
+_This miniapp has only a parallel ([contact.cpp](https://github.com/mfem/mfem/blob/master/miniapps/contact/contact.cpp)) implementation. For more details, please see the documentation in [miniapps/contact/README.md](https://github.com/mfem/mfem/blob/master/miniapps/contact/README.md).
+**We recommend viewing Example 2 and the Tribol miniapp before viewing this miniapp.**_
+
+<div style="clear:both;"/></div>
+<br></div>
 
 <!-- ------------------------------------------------------------------------- -->
 
@@ -2451,7 +2571,7 @@ function update()
    + showElement("ex28", elasticity && h1 && galerkin && pcg)
    + showElement("ex29", diffusion && (h1 || hcurl) && (galerkin || staticcond) && (gs || pcg || amg))
    + showElement("ex30", meshing && (h1 || hcurl || hdiv || l2) && (galerkin || nurbs || amr) && none)
-   + showElement("ex31",  maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
+   + showElement("ex31", maxwell && hcurl && galerkin && (gs || pcg || umfpack || ams))
    + showElement("ex32", maxwell && hcurl && galerkin && (lobpcg || ams))
    + showElement("ex33", (diffusion || nonlocal) && h1 && galerkin && amg)
    + showElement("ex34", maxwell && (hcurl || h1 || hdiv) && galerkin && (pcg || amg || ams))
@@ -2461,21 +2581,24 @@ function update()
    + showElement("ex38", all1 && all2 && all3 && none)
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
+   + showElement("ex41", (advection || diffusion) && (l2 || h1) && (galerkin || dg) && (pcg || rk))
    + showElement("ex42", all1 && h1 && galerkin && (pcg || amg))
    
 
    // nurbs miniapps
-   + showElement("nurbs_ex1", diffusion && nurbs && h1)
-   + showElement("nurbs_ex3", maxwell && nurbs && hcurl)
-   + showElement("nurbs_ex5", darcy && nurbs && hdiv)
-   + showElement("nurbs_ex11", diffusion && nurbs)
-   + showElement("nurbs_ex24", nurbs && (hcurl || hdiv))
+   + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
+   + showElement("nurbs_ex3", maxwell && hcurl && nurbs && all4)
+   + showElement("nurbs_ex5", darcy && hdiv && nurbs && all4)
+   + showElement("nurbs_ex11", diffusion && all2 && nurbs && all4)
+   + showElement("nurbs_ex24", all1 && (hcurl || hdiv) && nurbs && all4)
 
    // electromagnetic miniapps
    + showElement("volta", maxwell && (l2 || hdiv) && (galerkin || amr) && (pcg || amg))
    + showElement("tesla", maxwell && (hdiv || hcurl) && (galerkin || amr) && (pcg || amg || ams))
    + showElement("maxwell", (maxwell || conduction || wave) && (hdiv || hcurl) && (galerkin || staticcond || mixed) && (pcg || symplectic))
    + showElement("joule", (maxwell || conduction) && (l2 || h1 || hdiv || hcurl) && (galerkin || amr || staticcond) && (pcg || amg || ams || ads || sdirk))
+   + showElement("lorentz", (maxwell || particle) && all2 && all3 && all4)
+   + showElement("pic", particle && (h1 || hcurl) && (galerkin || symplectic) && (pcg || amg))
 
    // meshing miniapps
    + showElement("mobius-strip", meshing && all2 && all3 && all4)
@@ -2511,6 +2634,7 @@ function update()
    + showElement("spde", (diffusion || nonlocal || stochastic) && h1 && galerkin && amg)
    + showElement("dpgminiapp", (diffusion || convectiondiffusion || maxwell || acoustics || wave) && (group2) && (dpg || amr) && (amg || ams || ads || pcg))
    + showElement("tribol", elasticity && h1 && galerkin && (superlu || minres || jacobi))
+   + showElement("contact", elasticity && h1 && galerkin && (pcg || amg))
 
    ; // ...end of expression
 

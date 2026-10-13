@@ -14,23 +14,209 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/southworth.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Ben Southworth (Los Alamos National Laboratory)
+##### *BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning*
+##### [**9:00am PDT, September 15, 2026**](https://everytimezone.com/s/aed65837)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning, and are often treated as one of the easy parts of a finite-element calculation. A diagonal approximation of the mass matrix is cheap and widely used, but can be surprisingly ineffective, particularly for high-order elements and certain basis functions. This talk presents the BRoken-space Additive Schwarz (BRAS) inverse approximation, a sparse mass-matrix preconditioner that applies exact element-local mass inverses in the broken finite-element space and then averages back to the conforming space. BRAS uses the same element-level ingredients and assembly operators already present in finite-element codes, applies naturally across H1, H(curl), and H(div) spaces, and substantially reduces condition numbers, Krylov iterations, and time to solution compared with diagonal preconditioning in our experiments. In certain highly ill-conditioned regimes such as high-order Bernstein basis functions, BRAS-preconditioned CG requires more than 100x fewer iterations than diagonal preconditioned CG. I will describe a sequence of results that develops the basic algorithm, explains its performance through a sharp spectral theory on tensor-product de Rham complexes, including strong eigenvalue clustering and favorable high-order behavior for common MFEM bases, and extends the construction to strongly nonuniform and nonconforming adaptively refined meshes. I will also discuss an essentially matrix-free MFEM implementation, and demonstrate efficacy on both standalone mass solves and Schur-complement-based block preconditioning, yielding meaningful speedups in all cases.
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/xroca.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Xevi Roca (Barcelona Supercomputing Center)
+##### *Enabling high-fidelity aeronautic simulations with high-order methods: geometry, numerics, and physics*
+##### June 9, 2026
+
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/roca.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/8lcEPPuSMXE)
+
+**Abstract:** Future aviation designs will exploit physical interactions that will challenge current simulation technologies. They use low-order geometric and numerical discretizations that can neglect the key physical interactions. Fortunately, new high-order methods feature high geometric and numerical accuracy and preserve physical structures. This talk overviews our work on geometric, numerical, and physical challenges of high-order methods. First, straight-edged meshes lack the geometric accuracy required by high-order methods. They fail to match the curvature of design boundaries (e.g., wings) or the solution field within the volume (e.g., shocks). This unnecessarily increases the element count, thereby hampering simulation performance. Addressing these issues, we will present our optimization-based methods for mesh curving and curved adaptivity. Our meshes provide the geometric accuracy required for high-fidelity analysis. They also reduce the number of field solver iterations and enable the qualitative reproduction of the experimental oil-flow observations. Second, standard numerical solvers do not address the stiffer and denser coupling of high-order methods. As a result, solver iterations and memory consumption can become unaffordable. Regarding these issues, we will present specific-purpose solvers for mesh curving and curved adaptivity. We will also present preliminary results on low-order preconditioning for high-order discontinuous Galerkin (dG) simplicial discretizations. By handling stiffness and memory consumption, we reduce the number of iterations and the energy use, making high-order methods more affordable. Finally, high-order methods feature low dissipation and dispersion but may fail to preserve relevant physics. Specifically, for time-domain Maxwell equations, standard dG methods do not preserve the underlying Poisson structure. Consequently, in long-time simulations, they lead to significant drifts in conserved quantities, such as energy. In this regard, we will present observability results and preliminary efforts to preserve the Poisson structure. We expect to enhance the physical fidelity of high-order methods in our applications. In perspective, by combining solutions to geometric, numerical, and physical challenges of high-order methods, we aim to enable high-fidelity analysis for the next generation of aviation designs.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/keith.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Brendan Keith (Brown University)
+##### *Proximal Galerkin: A Unified Framework for Variational Problems with Inequality Constraints*
+##### May 5, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/keith.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/o2prkGMiw6s)
+
+**Abstract:** This talk presents the Proximal Galerkin (PG) method, a high-order numerical method for solving variational problems with inequality constraints. PG combines two foundational ideas from applied mathematics: Galerkin discretizations of partial differential equations (PDEs) and proximal point algorithms for constrained optimization. Conceptually, PG is a discretized Riemannian gradient flow within a finite-dimensional function space, such as a finite element space. Each iteration of the method involves solving a regularized subproblem equivalent to a nonlinear PDE formulated as a nonlinear saddle-point system. This unified framework systematically handles a broad class of variational inequalities, yielding constraint-preserving solution approximations without relying on specialized or low-order basis functions. The talk will outline the theoretical foundations of PG, highlight its connections to differential geometry and convex analysis, and showcase recent applications in contact mechanics, fracture, and multi-phase flows, among others.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/brown.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Jed Brown (CU Boulder)
+##### *Performance-portable multiscale mechanics with libCEED*
+##### April 21, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](https://github.com/jedbrown/talks/blob/main/20260421-PerfPortableMultiscaleLibCEED.ipynb)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/w4csXSjV3Yo)
+
+**Abstract:** libCEED is a library offering fast algebra for finite-element discretizations, with optimized support for GPUs from NVIDIA, AMD, and Intel. In this talk, we will examine two applications built on libCEED, Ratel for solid mechanics and HONEE for fluids. Ratel offers a range of inelastic (finite-strain poro-visco-elasto-plasticity with phase-field fracture) models, including support for implicit material-point methods (iMPM) for large-deformation problems such as post-failure analysis of bonded granular media. The iMPM and contact mechanics capability has been implemented using recently-developed "at-points" capability, which provides a flexible algorithmic framework for approximation methods that do not cleanly map to standard quadrature. HONEE provides implicit solvers for compressible scale-resolving turbulence, including data-driven subgrid stress models and RANS. We will assess versatility and performance implications of this approach to multiscale mechanics.
+
+</div><div class="col-md-6" markdown="1">
+
+![](img/seminar/moxey+erasmie-jones.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### David Moxey and Edward Erasmie-Jones (King's College London)
+##### *NektarIR: A Domain-Specific Compiler for High-Order Finite Element Operations on Heterogeneous Hardware*
+##### February 10, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/moxey+erasmie-jones.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/rVx4LQtqEOg)
+
+**Abstract:** The transition to heterogeneous or GPU-dominated hardware in high-performance computing (HPC) infrastructure has highlighted the need for hardware-extensible implementations of HPC applications in scientific computing and AI. Ensuring that these implementations are optimised for the specific hardware target poses a significant challenge, as the optimisation process requires specific hardware-level knowledge that is not only outside the scientific domain but also varies across different hardware types and vendors. In this talk, we present some of the approaches being used to enable this transition within the Nektar++ framework, which aims to present an interface for the development of solvers based on the spectral/hp element method. We first focus on our present redevelopment efforts to enable Nektar++ to transition from solely CPU to GPU architectures. Here, we have a particular interest in the performance of matrix-free operators for unstructured three-dimensional meshes of different element types (e.g. tetrahedra, prisms). These are a critical component in the simulation of problems that involve complex geometries, which is a key focus of our framework.
+In the second half of the talk, we present a second approach that is designed to provide longer-term flexibility for Nektar++, and potentially other software frameworks based on the high-order finite element method. This project, NektarIR, is a domain-specific compiler for high-order finite element operations on CPU and GPU hardwares. Using the MLIR project, we have created an intermediate representation of a high-level abstraction of the operations that is rewritten and lowered through a series of passes to optimised and hardware-specific kernels. These kernels are then just-in-time (JIT) compiled for the specific hardware and architecture using LLVM and can be used in the construction of spectral/hp element solvers for computational fluid dynamics. We present benchmarks for the overhead introduced by our compiler pipeline and a run-time performance comparison of our kernels against the Nektar++ spectral/hp element framework.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/beck.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Andrea Beck (University of Stuttgart)
+##### *Efficient solution strategies for multiscale flow problems: combining adaptive high order discretizations, models and data*
+##### February 2, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/beck.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/vMODQyiF4Xs)
+
+**Abstract:** Multiscale and multiphysics problems are typically governed by a wide range of interacting temporal and spatial scales, with different physical processes often dominating the opposing ends of the scale range. The simulation of these phenomena requires highly accurate and efficient numerical schemes that should allow for adaptive and flexible discretization strategies to tailor the approximation scheme to the locally dominating physical effect. Still, for practical applications, the occurring scale range in relevant engineering applications typically remains too immense even for well-parallelized simulations on nascent exascale architectures. Here, scale-bridging models must supplement upscaled governing equations to enable simulations of for example turbulent flows, flows with phase interfaces and so on.
+In this talk, I will present contributions and recent advances to both fields: First, I will discuss highly accurate and locally adaptive numerical schemes based on DGSEM for solving the compressible Navier-Stokes equations on pre-exascale systems and beyond with a focus on applications in the aerospace engineering sector. In the second part of my talk, I will discuss how and where (and where not) machine learning methods can help devise the necessary scale bridging models that are numerically and mathematically consistent and provide examples of successful CFD/ML hybrid applications.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/gopalakrishnan.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Jay Gopalakrishnan (Portland State University)
+##### *Matrix-valued finite elements*
+##### January 20, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/gopalakrishnan.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/aK_Q72evHQE)
+
+**Abstract:** Matrix-valued finite elements arise naturally in
+continuum models, with stress elements in structural mechanics as
+typical examples. This talk begins by describing a recent element for
+viscous stresses in fluid mechanics. Its development is motivated by
+recent H(div)-conforming approximations of fluid velocity, in which
+the divergence-free constraint of viscous incompressible flows can be
+enforced exactly. We identify a natural companion space for viscous
+stresses and develop simple elements with nt-continuity (where n and t
+denote normal and tangential components on element interfaces,
+respectively), corresponding to shear continuity of traceless viscous
+stresses. The associated Sobolev space is a low-regularity,
+nonstandard space H(curl div) of matrix-valued functions. The
+resulting method, termed the Mass-Conserving Stress-yielding (MCS)
+method, is exactly mass conserving, pressure robust, yields
+optimal-order approximations for velocity, pressure, stress, and
+vorticity, and relies only on facet-based coupling, making it amenable
+to hybridization. The talk then places these developments in the
+broader context of other matrix-valued finite elements, including
+nn-continuous Hellan–Herrmann–Johnson elements and tt-continuous Regge
+elements. We present a recent avenue for connecting these apparently
+disparate developments in nn-, nt-, and tt-continuous matrix-valued
+finite elements, and conclude with challenges in seeking unifying
+principles for tensor-valued discretizations beyond the de Rham
+complex.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/falgout.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Robert Falgout (LLNL)
+##### *New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems*
+##### November 18, 2025
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/falgout.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/DK8yVzOo9Og)
+
+**Abstract:** The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/henshaw.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Bill Henshaw (RPI)
-##### *An O(N) Helmholtz Solver by time-filtering the Wave Equation*
-##### [**9:00am PDT, November 4, 2025**](https://everytimezone.com/s/46f772ae)
+##### *An O(N) Helmholtz Solver by Time-Filtering the Wave Equation*
+##### November 4, 2025
 
- [<button type="button" class="btn btn-success">
-**Webex**
- </button>]()
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/henshaw.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/ZiRymGF3YuY)
 
 **Abstract:** An efficient and high-order accurate solver for Helmholtz problems is described. The approach is based on the WaveHoltz algorithm which computes time-harmonic solutions by time-filtering solutions of the wave equation. The wave equation is solved efficiently with implicit time-stepping using as few as five time-steps per period, independent of the mesh size. When multigrid is used to solve the implicit time-stepping equations, the cost of the resulting WaveHoltz scheme scales linearly with the number of grid points N (at fixed frequency) and is thus optimal in CPU-time and memory usage as the mesh is refined. Krylov space solvers such as GMRES are used to accelerate the basic fixed-point iteration. Eigenvector deflation can be used to further improve the convergence. We have implemented the scheme for complex geometry using overset grids with a solver using the Overture framework. Numerical results are given for problems in two and three space dimensions, to second and fourth-order accuracy, and they show the potential of the approach to solve a wide range of large-scale Helmholtz problems.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -48,7 +234,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/tQnLkI8sE-Y)
 
 **Abstract:** Shock waves in high-speed gas dynamics cause severe numerical difficulties for classical solvers and scientific machine learning. This talk begins with the observation that shock formation arises from the flow map reaching the boundary of the manifold of diffeomorphisms. We modify its geometry such that geodesics approach but never reach the boundary. The resulting information geometric regularization (IGR) has smooth solutions while avoiding the excessive dissipation of viscous regularizations, accelerating and simplifying the simulation of flows with shocks. We prove the existence of global strong IGR solutions in the unidimensional pressureless case and illustrate its practical utility on multidimensional examples with complex shock interactions. With S. Bryngelson and other collaborators, we use IGR to conduct the first compressible flow simulation exceeding a quadrillion degrees of freedom.
 The modified geometry of the diffeomorphism manifold is the information geometry of the mass density. The last part of the talk explains how this observation motivates information geometric mechanics that views the solutions of continuum mechanical PDEs as parameters of probability distributions originating from statistical physics. Replacing the Euclidean geometry of individual particles with the information geometry of statistical families promises performant numerical methods that preserve the positivity of densities and energies and readily integrate with scientific machine learning.
@@ -728,7 +914,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Youngsoo Choi (Lawrence Livermore National Laboratory)
+#### Youngsoo Choi (LLNL)
 ##### *Physics-guided interpretable data-driven simulations*
 ##### November 14, 2023
 
@@ -1234,7 +1420,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=I0kTJdR8oZU&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=2)
 
-**Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
+**Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expedite the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1261,40 +1447,32 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Robert Falgout (Lawrence Livermore National Laboratory)
-##### **November 18, 2025**
+#### Dylan Copeland (LLNL)
+##### **October 10, 2026**
 
 ---
 
-#### Jay Gopalakrishnan (Portland State University)
-##### **December 16, 2025**
+#### Will Pazner (Portland State University)
+##### **November 9, 2026**
 
 ---
 
-#### Andrea Beck (University of Stuttgart)
-##### **January 12, 2026**
+#### Eric Cyr (Sandia National Laboratories)
+##### **December 8, 2026**
 
 ---
 
-#### David Moxey and Edward Erasmie-Jones (King’s College London)
-##### **February 10, 2026**
+#### Harshitha Menon (LLNL)
+##### **January 5, 2027**
 
 ---
 
-#### Ido Akkerman (Delft university of Technology)
-##### **March 10, 2026**
+#### Alice Gabriel (UCSD)
+##### **March 2, 2027**
 
 ---
 
-#### Brendan Keith (Brown)
-##### **May 5, 2026**
+#### Eric Chin (LLNL)
+##### **May 25, 2027**
 
 </div>
-
-<!--
-Rob Falgout
-
-Title: New advances in hypre 3.0 for mixed precision and semi-structured problems
-
-Abstract: The version 3.0 release of hypre in September brought two major changes to the library: a rewrite of the semi-structured code with a new semi-structured algebraic multigrid solver (SSAMG), and a new mixed precision functionality with support for lower precision preconditioning of Krylov solvers. The overhaul of the semi-structured code was done to extend functionality from square matrices to rectangular matrices with full support for matrix-vector and matrix-matrix operations. This enabled the implementation of the SSAMG solver that takes advantage of structure and builds on the existing PFMG and BoomerAMG solvers. The mixed precision support allows users to switch precisions at runtime (with little change to user code) and enables the implementation of mixed-precision solvers. In this talk we will discuss the new features of the library and provide performance results for the new solvers and implementations.
--->

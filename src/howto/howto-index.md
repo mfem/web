@@ -22,7 +22,7 @@ by our users in practice.
 ### Meshes
 - [Navigating Mesh Connectivity](nav-mesh-connectivity.md)
 - [Parallel Element Numbering](element-local-global-numbering.md)
-- [Finding Local Element Coordinates of Physical Points](findpts.md)
+- [Finding Local Element Coordinates of Physical Points with FindPointsGSLIB](findpts.md)
 - [Working with Nonconforming Meshes for AMR](ncmesh.md)
 
 ### Linear Algebra

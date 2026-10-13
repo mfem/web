@@ -29,7 +29,9 @@ low-order refined mesh using either $L^2$ projection or pointwise evaluation.
 These transfer operators can be designed to discretely conserve mass and to
 recover the original high-order solution when transferring a low-order grid
 function that was obtained by restricting a high-order grid function to the
-low-order refined space.
+low-order refined space. The $L^2$ projection can also be weighted by a
+coefficient, in which case the transfer conserves the weighted mass — for
+example, transferring velocity while conserving density-weighted momentum.
 
 ## DataCollection Tools
 
@@ -56,6 +58,15 @@ The `load-dc` miniapp, found in the `miniapps/tools` subdirectory, loads and
 visualizes (in GLVis) previously saved data using DataCollection sub-classes,
 see e.g. Example 5/5p.
 ![](img/examples/load-dc.png)
+Currently, only the VisItDataCollection class is supported.
+
+### Compare DC
+
+The `compare-dc` miniapp, found in the `miniapps/tools` subdirectory, loads two
+sets of previously saved data using DataCollection sub-classes and computes the
+$L^2$ norm of their difference. When a tolerance is provided with the `-tol`
+option, the symmetric relative difference is compared against it and an error
+is reported if the tolerance is exceeded.
 Currently, only the VisItDataCollection class is supported.
 
 ### Get Values

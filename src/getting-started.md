@@ -21,6 +21,14 @@ We recommend that new users start with these articles:
 - [GPU Support](gpu-support.md)
 - [Performance and Partial Assembly](performance.md)
 
+### Annotated MFEM Examples
+
+- [Example 1 / Finite Element Basics](tutorial/fem.md)
+- [Example 2 / Linear Elasticity](annotated/ex2.md)
+- [Example 3 / Definite Maxwell Problem](annotated/ex3.md)
+- [Example 6 / Poisson Problem with AMR](annotated/ex6.md)
+- [Example 36 / The Obstacle Problem](annotated/ex36.md)
+
 ### Example Mini Applications
 
 - [Electromagnetics Miniapps](electromagnetics.md)

@@ -23,6 +23,7 @@ nav:
   - 'Meshing': meshing-miniapps.md
   - 'NURBS Discretization': nurbs.md
   - 'Automatic Differentiation': autodiff.md
+  - 'Particles': particles.md
   - 'Tools': tools.md
   - 'Toys': toys.md
 - Documentation:
@@ -35,7 +36,9 @@ nav:
   - '_Maxwell Notes': maxwell-notes.md
   - 'HowTo Articles': howto/howto-index.md
   - 'Finite Elements': fem.md
+  - '_Reference Elements and Connectivities': connectivity.md
   - '_Primal and Dual Vectors': pri-dual-vec.md
+  - '_Finite Element Basis Functions': basis-functions.md
   - '_Bilinear Form Integrators': bilininteg.md
   - '_Linear Form Integrators': lininteg.md
   - '_Integration': integration.md
@@ -59,6 +62,7 @@ nav:
   - 'Videos': videos.md
   - 'Seminar': seminar.md
   - 'Workshop': workshop.md
+  - '_Workshop25': workshop25.md
   - '_Workshop24': workshop24.md
   - '_Workshop23': workshop23.md
   - '_Workshop22': workshop22.md
@@ -96,5 +100,3 @@ plugins:
 #           url: ../mfem_master
 #           config: doc/config.in
 #           workdir: .
-
-google_analytics: ['UA-101697-3', 'mfem.org']
