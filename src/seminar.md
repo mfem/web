@@ -12,7 +12,23 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 ### <i class="fa fa-star"></i> Next Talk
 
-*To be announced*
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/copeland.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Dylan Copeland (Lawrence Livermore National Laboratory)
+##### *Conforming NURBS meshes with non-conforming patch topology*
+##### [**9:00am PST, October 20, 2026**](https://everytimezone.com/s/45c9f3da)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.
+
+---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
@@ -24,15 +40,17 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 #### Ben Southworth (Los Alamos National Laboratory)
 ##### *BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning*
-##### [**9:00am PDT, September 15, 2026**](https://everytimezone.com/s/aed65837)
+##### September 15, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/southworth2.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
 </button>](https://youtu.be/f8FAua-ZQh0)
 
 **Abstract:** Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning, and are often treated as one of the easy parts of a finite-element calculation. A diagonal approximation of the mass matrix is cheap and widely used, but can be surprisingly ineffective, particularly for high-order elements and certain basis functions. This talk presents the BRoken-space Additive Schwarz (BRAS) inverse approximation, a sparse mass-matrix preconditioner that applies exact element-local mass inverses in the broken finite-element space and then averages back to the conforming space. BRAS uses the same element-level ingredients and assembly operators already present in finite-element codes, applies naturally across H1, H(curl), and H(div) spaces, and substantially reduces condition numbers, Krylov iterations, and time to solution compared with diagonal preconditioning in our experiments. In certain highly ill-conditioned regimes such as high-order Bernstein basis functions, BRAS-preconditioned CG requires more than 100x fewer iterations than diagonal preconditioned CG. I will describe a sequence of results that develops the basic algorithm, explains its performance through a sharp spectral theory on tensor-product de Rham complexes, including strong eigenvalue clustering and favorable high-order behavior for common MFEM bases, and extends the construction to strongly nonuniform and nonconforming adaptively refined meshes. I will also discuss an essentially matrix-free MFEM implementation, and demonstrate efficacy on both standalone mass solves and Schur-complement-based block preconditioning, yielding meaningful speedups in all cases.
-
----
 
 </div><div class="col-md-3" markdown="1">
 
@@ -43,7 +61,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Xevi Roca (Barcelona Supercomputing Center)
 ##### *Enabling high-fidelity aeronautic simulations with high-order methods: geometry, numerics, and physics*
 ##### June 9, 2026
-
 
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -186,7 +203,7 @@ complex.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Falgout (LLNL)
+#### Robert Falgout (Lawrence Livermore National Laboratory)
 ##### *New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems*
 ##### November 18, 2025
 
@@ -855,7 +872,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Kevin Chung (LLNL)
+#### Kevin Chung (Lawrence Livermore National Laboratory)
 ##### *Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition*
 ##### February 6, 2024
 
@@ -916,7 +933,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Youngsoo Choi (LLNL)
+#### Youngsoo Choi (Lawrence Livermore National Laboratory)
 ##### *Physics-guided interpretable data-driven simulations*
 ##### November 14, 2023
 
@@ -1316,7 +1333,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 </div><div class="col-md-12" markdown="1">
 
-#### Mike Puso (LLNL)
+#### Mike Puso (Lawrence Livermore National Laboratory)
 ##### *Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research*
 ##### May 24, 2022
 [<button type="button" class="btn btn-primary">
@@ -1327,7 +1344,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=RasTXV6IYC0&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=7)
 
-**Abstract:** Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
+**Abstract:** Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1411,7 +1428,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Carson (LLNL)
+#### Robert Carson (Lawrence Livermore National Laboratory)
 ##### *An Overview of ExaConstit and Its Use in the ExaAM Project*
 ##### February 1, 2022
 [<button type="button" class="btn btn-primary">
@@ -1449,11 +1466,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-#### Dylan Copeland (LLNL)
-##### **October 10, 2026**
-
----
-
 #### Will Pazner (Portland State University)
 ##### **November 9, 2026**
 
@@ -1464,7 +1476,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ---
 
-#### Harshitha Menon (LLNL)
+#### Harshitha Menon (Lawrence Livermore National Laboratory)
 ##### **January 5, 2027**
 
 ---
@@ -1474,7 +1486,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 ---
 
-#### Eric Chin (LLNL)
+#### Eric Chin (Lawrence Livermore National Laboratory)
 ##### **May 25, 2027**
 
 </div>
