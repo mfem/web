@@ -381,18 +381,34 @@
 <h3 id="next-talk"><i class="fa fa-star"></i> Next Talk</h3>
 </div>
 <div class="col-md-3">
+<p><img alt="" src="../img/seminar/copeland.png" /></p>
+</div>
+<div class="col-md-12">
+<h4 id="dylan-copeland-lawrence-livermore-national-laboratory">Dylan Copeland (Lawrence Livermore National Laboratory)</h4>
+<h5 id="conforming-nurbs-meshes-with-non-conforming-patch-topology"><em>Conforming NURBS meshes with non-conforming patch topology</em></h5>
+<h5 id="900am-pst-october-20-2026"><a href="https://everytimezone.com/s/45c9f3da"><strong>9:00am PST, October 20, 2026</strong></a></h5>
+<p><a href=""><button type="button" class="btn btn-success">
+<strong>Webex</strong>
+</button></a></p>
+<p><strong>Abstract:</strong> We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.</p>
+<hr />
+<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
+</div>
+<div class="col-md-3">
 <p><img alt="" src="../img/seminar/southworth.jpg" /></p>
 </div>
 <div class="col-md-12">
 <h4 id="ben-southworth-los-alamos-national-laboratory">Ben Southworth (Los Alamos National Laboratory)</h4>
 <h5 id="broken-space-additive-schwarz-bras-for-mass-matrix-preconditioning"><em>BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning</em></h5>
-<h5 id="900am-pdt-september-15-2026"><a href="https://everytimezone.com/s/aed65837"><strong>9:00am PDT, September 15, 2026</strong></a></h5>
-<p><a href=""><button type="button" class="btn btn-success">
-<strong>Webex</strong>
+<h5 id="september-15-2026">September 15, 2026</h5>
+<p><a href="pdf/seminar/southworth2.pdf"><button type="button" class="btn btn-primary">
+<strong>Slides</strong>
+</button></a>
+&nbsp;&nbsp;
+<a href="https://youtu.be/f8FAua-ZQh0"><button type="button" class="btn btn-success">
+<strong>Talk Recording</strong>
 </button></a></p>
 <p><strong>Abstract:</strong> Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning, and are often treated as one of the easy parts of a finite-element calculation. A diagonal approximation of the mass matrix is cheap and widely used, but can be surprisingly ineffective, particularly for high-order elements and certain basis functions. This talk presents the BRoken-space Additive Schwarz (BRAS) inverse approximation, a sparse mass-matrix preconditioner that applies exact element-local mass inverses in the broken finite-element space and then averages back to the conforming space. BRAS uses the same element-level ingredients and assembly operators already present in finite-element codes, applies naturally across H1, H(curl), and H(div) spaces, and substantially reduces condition numbers, Krylov iterations, and time to solution compared with diagonal preconditioning in our experiments. In certain highly ill-conditioned regimes such as high-order Bernstein basis functions, BRAS-preconditioned CG requires more than 100x fewer iterations than diagonal preconditioned CG. I will describe a sequence of results that develops the basic algorithm, explains its performance through a sharp spectral theory on tensor-product de Rham complexes, including strong eigenvalue clustering and favorable high-order behavior for common MFEM bases, and extends the construction to strongly nonuniform and nonconforming adaptively refined meshes. I will also discuss an essentially matrix-free MFEM implementation, and demonstrate efficacy on both standalone mass solves and Schur-complement-based block preconditioning, yielding meaningful speedups in all cases.</p>
-<hr />
-<h3 id="previous-talks"><i class="fa fa-check" aria-hidden="true"></i> Previous Talks</h3>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/xroca.png" /></p>
@@ -519,7 +535,7 @@ complex.</p>
 <p><img alt="" src="../img/seminar/falgout.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="robert-falgout-llnl">Robert Falgout (LLNL)</h4>
+<h4 id="robert-falgout-lawrence-livermore-national-laboratory">Robert Falgout (Lawrence Livermore National Laboratory)</h4>
 <h5 id="new-advances-in-hypre-30-for-mixed-precision-and-semi-structured-problems"><em>New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems</em></h5>
 <h5 id="november-18-2025">November 18, 2025</h5>
 <p><a href="../pdf/seminar/falgout.pdf"><button type="button" class="btn btn-primary">
@@ -1104,7 +1120,7 @@ Benjamin-Bona-Mahony equation.</p>
 <p><img alt="" src="../img/seminar/chung.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="kevin-chung-llnl">Kevin Chung (LLNL)</h4>
+<h4 id="kevin-chung-lawrence-livermore-national-laboratory">Kevin Chung (Lawrence Livermore National Laboratory)</h4>
 <h5 id="data-driven-dg-fem-via-reduced-order-modeling-and-domain-decomposition"><em>Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition</em></h5>
 <h5 id="february-6-2024">February 6, 2024</h5>
 <p><a href="../pdf/seminar/chung.pdf"><button type="button" class="btn btn-primary">
@@ -1152,7 +1168,7 @@ Benjamin-Bona-Mahony equation.</p>
 <p><img alt="" src="../img/seminar/choi.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="youngsoo-choi-llnl">Youngsoo Choi (LLNL)</h4>
+<h4 id="youngsoo-choi-lawrence-livermore-national-laboratory">Youngsoo Choi (Lawrence Livermore National Laboratory)</h4>
 <h5 id="physics-guided-interpretable-data-driven-simulations"><em>Physics-guided interpretable data-driven simulations</em></h5>
 <h5 id="november-14-2023">November 14, 2023</h5>
 <p><a href="../pdf/seminar/choi.pdf"><button type="button" class="btn btn-primary">
@@ -1497,7 +1513,7 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><img alt="" src="../img/seminar/puso.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="mike-puso-llnl">Mike Puso (LLNL)</h4>
+<h4 id="mike-puso-lawrence-livermore-national-laboratory">Mike Puso (Lawrence Livermore National Laboratory)</h4>
 <h5 id="topics-in-immersed-boundary-and-contact-methods-current-llnl-projects-and-research"><em>Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research</em></h5>
 <h5 id="may-24-2022">May 24, 2022</h5>
 <p><a href="../pdf/seminar/puso.pdf"><button type="button" class="btn btn-primary">
@@ -1507,7 +1523,7 @@ The work presented here has been facilitated by funding through DOE's National V
 <a href="https://www.youtube.com/watch?v=RasTXV6IYC0&amp;list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&amp;index=7"><button type="button" class="btn btn-success">
 <strong>Talk Recording</strong>
 </button></a></p>
-<p><strong>Abstract:</strong> Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.</p>
+<p><strong>Abstract:</strong> Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.</p>
 </div>
 <div class="col-md-3">
 <p><img alt="" src="../img/seminar/chiodi.jpg" /></p>
@@ -1577,7 +1593,7 @@ The work presented here has been facilitated by funding through DOE's National V
 <p><img alt="" src="../img/seminar/carson.jpg" /></p>
 </div>
 <div class="col-md-12">
-<h4 id="robert-carson-llnl">Robert Carson (LLNL)</h4>
+<h4 id="robert-carson-lawrence-livermore-national-laboratory">Robert Carson (Lawrence Livermore National Laboratory)</h4>
 <h5 id="an-overview-of-exaconstit-and-its-use-in-the-exaam-project"><em>An Overview of ExaConstit and Its Use in the ExaAM Project</em></h5>
 <h5 id="february-1-2022">February 1, 2022</h5>
 <p><a href="../pdf/seminar/carson.pdf"><button type="button" class="btn btn-primary">
@@ -1607,22 +1623,19 @@ The work presented here has been facilitated by funding through DOE's National V
 <hr />
 <h3 id="future-talks"><i class="fa fa-calendar" aria-hidden="true"></i> Future Talks</h3>
 <p>&nbsp;</p>
-<h4 id="dylan-copeland-llnl">Dylan Copeland (LLNL)</h4>
-<h5 id="october-10-2026"><strong>October 10, 2026</strong></h5>
-<hr />
 <h4 id="will-pazner-portland-state-university">Will Pazner (Portland State University)</h4>
 <h5 id="november-9-2026"><strong>November 9, 2026</strong></h5>
 <hr />
 <h4 id="eric-cyr-sandia-national-laboratories">Eric Cyr (Sandia National Laboratories)</h4>
 <h5 id="december-8-2026"><strong>December 8, 2026</strong></h5>
 <hr />
-<h4 id="harshitha-menon-llnl">Harshitha Menon (LLNL)</h4>
+<h4 id="harshitha-menon-lawrence-livermore-national-laboratory">Harshitha Menon (Lawrence Livermore National Laboratory)</h4>
 <h5 id="january-5-2027"><strong>January 5, 2027</strong></h5>
 <hr />
 <h4 id="alice-gabriel-ucsd">Alice Gabriel (UCSD)</h4>
 <h5 id="march-2-2027"><strong>March 2, 2027</strong></h5>
 <hr />
-<h4 id="eric-chin-llnl">Eric Chin (LLNL)</h4>
+<h4 id="eric-chin-lawrence-livermore-national-laboratory">Eric Chin (Lawrence Livermore National Laboratory)</h4>
 <h5 id="may-25-2027"><strong>May 25, 2027</strong></h5>
 </div></div>
             <div class="col-md-3 hidden-xs hidden-sm"><div class="bs-sidebar hidden-print affix well" role="complementary">
