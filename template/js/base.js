@@ -18,6 +18,17 @@ $('body').scrollspy({
     target: '.bs-sidebar',
 });
 
+// Keep section positions and the active link in sync after layout changes.
+function refreshScrollSpy() {
+    $('body').scrollspy('refresh');
+    $('body').scrollspy('process');
+}
+
+$(window).on('load resize', refreshScrollSpy);
+if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(refreshScrollSpy);
+}
+
 
 /* Prevent disabled links from causing a page reload */
 $("li.disabled a").click(function() {

@@ -1,8 +1,8 @@
+<div class="col-md-12"  markdown="1">
+
 # MFEM Videos
 
 A collection of MFEM-related videos, including recorded talks from the MFEM workshops, conferences, and other presentations.
-
-<div class="col-md-12"  markdown="1">
 
 ## FEM@LLNL Seminars
 

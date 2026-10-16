@@ -1,3 +1,5 @@
+<div class="col-md-12"  markdown="1">
+
 # Gallery
 
 This page collects screenshots and videos from various simulations based on MFEM.
@@ -6,8 +8,6 @@ Click thumbnails to open full-resolution images or simulation videos.
 Video captions include 🎬 and, when available, 🖼️ for a full-resolution still image.
 
 Additional images can be found in the [GLVis gallery](https://glvis.org/gallery/).
-
-<div class="col-md-12"  markdown="1">
 
 ## Main Gallery
 
@@ -240,6 +240,14 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 ---
 
+<div id="holograms" class="anchor"></div>
+
+[![Spectral Fresnel holograms of the MFEM and GLVis logos](img/gallery/workshop26/holograms-small.jpg){: loading="lazy" width="1000" height="500"}](img/gallery/workshop26/holograms.mp4)
+
+*Spectral Fresnel holograms and diffraction grating of the MFEM and GLVis logos. Image courtesy of John Camier, as part of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/holograms.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/holograms.mp4 "Video"){: aria-label="Video"}
+
+---
+
 [![](img/gallery/workshop26/valve-fsi-small.jpg){: loading="lazy" width="1000" height="563"}](img/gallery/workshop26/valve-fsi.mp4)
 
 *FSI simulation of semilunar heart valve dynamics under pulsatile blood flow using a VMS-stabilized immersed FSI formulation in the FEBio MFEM iFSI code. Image courtesy of Ryan Black, as part of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/valve-fsi.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/valve-fsi.mp4 "Video"){: aria-label="Video"}
@@ -252,25 +260,17 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 ---
 
-<div id="rocha" class="anchor"></div>
-
-[![](img/gallery/workshop26/RR2D-small.jpg){: loading="lazy" width="1000" height="504"}](img/gallery/workshop26/RR2D.mp4)
-
-*<i class="fa fa-trophy"></i> Video of temperature and vorticity evolution in the 2D Rogers-Ricci model in a cross-section of a linear plasma device. Image courtesy of Henrique Bergallo Rocha, **winner** of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/RR2D.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/RR2D.mp4 "Video"){: aria-label="Video"}
-
----
-
 [![](img/gallery/workshop26/tohoku-oki-small.jpg){: loading="lazy" width="1000" height="563"}](img/gallery/workshop26/tohoku-oki.mp4)
 
 *Dynamic rupture and acoustic–gravity simulations of the 2011 Tōhoku–Oki earthquake in the Japan Trench. Image courtesy of Stefan Henneking, as part of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/tohoku-oki.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/tohoku-oki.mp4 "Video"){: aria-label="Video"}
 
 </div><div class="col-md-6"  markdown="1">
 
-<div id="holograms" class="anchor"></div>
+<div id="rocha" class="anchor"></div>
 
-[![Spectral Fresnel holograms of the MFEM and GLVis logos](img/gallery/workshop26/holograms-small.jpg){: loading="lazy" width="1000" height="500"}](img/gallery/workshop26/holograms.mp4)
+[![](img/gallery/workshop26/RR2D-small.jpg){: loading="lazy" width="1000" height="504"}](img/gallery/workshop26/RR2D.mp4)
 
-*Spectral Fresnel holograms and diffraction grating of the MFEM and GLVis logos. Image courtesy of John Camier, as part of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/holograms.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/holograms.mp4 "Video"){: aria-label="Video"}
+*<i class="fa fa-trophy"></i> Video of temperature and vorticity evolution in the 2D Rogers-Ricci model in a cross-section of a linear plasma device. Image courtesy of Henrique Bergallo Rocha, **winner** of the 2026 MFEM Visualization Contest.* [🖼️](img/gallery/workshop26/RR2D.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop26/RR2D.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -306,11 +306,9 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 ---
 
-<div id="cascadia" class="anchor"></div>
+[![](img/gallery/workshop25/particles.png){: loading="lazy" width="1194" height="641"}](img/gallery/workshop25/particles.mp4)
 
-[![](img/gallery/workshop25/cascadia-small.png){: loading="lazy" width="1000" height="573"}](img/gallery/workshop25/cascadia.mp4)
-
-*<i class="fa fa-trophy"></i> Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. Image courtesy of the [Cascadia team](https://arxiv.org/abs/2504.16344), **winners** of the 2025 MFEM Visualization Contest.* [🖼️](img/gallery/workshop25/cascadia.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop25/cascadia.mp4 "Video"){: aria-label="Video"}
+*[Particle-laden fluid flow](https://github.com/mfem/mfem/pull/4986) in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Visualization Contest.* [🎬](img/gallery/workshop25/particles.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -320,9 +318,11 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
-[![](img/gallery/workshop25/particles.png){: loading="lazy" width="1194" height="641"}](img/gallery/workshop25/particles.mp4)
+<div id="cascadia" class="anchor"></div>
 
-*[Particle-laden fluid flow](https://github.com/mfem/mfem/pull/4986) in a 2D bifurcated channel using the Navier miniapp in MFEM. Image courtesy of Joe Signorelli and Ketan Mittal, as part of the 2025 MFEM Visualization Contest.* [🎬](img/gallery/workshop25/particles.mp4 "Video"){: aria-label="Video"}
+[![](img/gallery/workshop25/cascadia-small.png){: loading="lazy" width="1000" height="573"}](img/gallery/workshop25/cascadia.mp4)
+
+*<i class="fa fa-trophy"></i> Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone. Image courtesy of the [Cascadia team](https://arxiv.org/abs/2504.16344), **winners** of the 2025 MFEM Visualization Contest.* [🖼️](img/gallery/workshop25/cascadia.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop25/cascadia.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -344,25 +344,25 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
-<div id="schmidt" class="anchor"></div>
-
-[![](img/gallery/workshop24/conf-topopt.png){: loading="lazy" width="1000" height="682"}](img/gallery/workshop24/conf-topopt.mp4)
-
-*<i class="fa fa-trophy"></i> Multi-component [topology optimization](https://doi.org/10.1007/s00158-024-03870-3) with conformal meshes. Image courtesy of Mathias Schmidt, **winner** of the 2024 MFEM Visualization Contest.* [🎬](img/gallery/workshop24/conf-topopt.mp4 "Video"){: aria-label="Video"}
-
----
-
 <div id="nikl" class="anchor"></div>
 
 [![](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png){: loading="lazy" width="1006" height="1007"}](img/gallery/workshop24/ex5-aniso-q-200x200-p2-Q3-HDG-a1e3-ks1e-3-c2e4.png)
 
 *<i class="fa fa-trophy"></i> Heat flux magnitude in a [convection - (anisotropic) diffusion simulation](https://github.com/mfem/mfem/blob/darcy-hdg-dev/examples/ex5-aniso.cpp) with MFEM text as the initial temperature profile. A single implicit step of the [HDG scheme](https://github.com/mfem/mfem/pull/4350) was used. Image courtesy of Jan Nikl, **winner** of the 2024 MFEM Visualization Contest.*
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 [![](img/gallery/workshop24/canti3.png){: loading="lazy" width="1428" height="1185"}](img/gallery/workshop24/canti3.png)
 
 *Density-based topology optimization for a cantilever beam with the [SiMPL method](https://arxiv.org/abs/2409.19341). Image courtesy of Dohyun Kim, as part of the 2024 MFEM Visualization Contest.*
+
+</div><div class="col-md-6"  markdown="1">
+
+<div id="schmidt" class="anchor"></div>
+
+[![](img/gallery/workshop24/conf-topopt.png){: loading="lazy" width="1000" height="682"}](img/gallery/workshop24/conf-topopt.mp4)
+
+*<i class="fa fa-trophy"></i> Multi-component [topology optimization](https://doi.org/10.1007/s00158-024-03870-3) with conformal meshes. Image courtesy of Mathias Schmidt, **winner** of the 2024 MFEM Visualization Contest.* [🎬](img/gallery/workshop24/conf-topopt.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -378,19 +378,17 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
-<div id="camier" class="anchor"></div>
-
-[![](img/gallery/workshop23/lf_vortex_rings-small.jpg){: loading="lazy" width="1000" height="1000"}](img/gallery/workshop23/lf_vortex_rings.mp4)
-
-*<i class="fa fa-trophy"></i> Leapfrogging vortex rings using an incompressible Schrödinger fluid solver in MFEM. Image courtesy of John Camier, **winner** of the 2023 MFEM Visualization Contest.* [🖼️](img/gallery/workshop23/lf_vortex_rings.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop23/lf_vortex_rings.mp4 "Video"){: aria-label="Video"}
-
----
-
 <div id="ebrahimi" class="anchor"></div>
 
 [![](img/gallery/workshop23/excavator.png){: loading="lazy" width="1624" height="895"}](img/gallery/workshop23/excavator.png)
 
 *<i class="fa fa-trophy"></i> Displacement distribution of a loaded excavator arm under static equilibrium using MFEM's API in an external library. Image courtesy of Mehran Ebrahimi, **winner** of the 2023 MFEM Visualization Contest.*
+
+---
+
+[![](img/gallery/workshop23/KHI2D.png){: loading="lazy" width="150" height="500"}](img/gallery/workshop23/KHI2D.mp4)
+
+*Turbulence effect of the Kelvin-Helmholtz instability in tokamak edge plasma using an MHDeX code developed at LLNL. Image courtesy of Milan Holec, as part of the 2023 MFEM Visualization Contest.* [🎬](img/gallery/workshop23/KHI2D.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -406,9 +404,11 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
-[![](img/gallery/workshop23/KHI2D.png){: loading="lazy" width="150" height="500"}](img/gallery/workshop23/KHI2D.mp4)
+<div id="camier" class="anchor"></div>
 
-*Turbulence effect of the Kelvin-Helmholtz instability in tokamak edge plasma using an MHDeX code developed at LLNL. Image courtesy of Milan Holec, as part of the 2023 MFEM Visualization Contest.* [🎬](img/gallery/workshop23/KHI2D.mp4 "Video"){: aria-label="Video"}
+[![](img/gallery/workshop23/lf_vortex_rings-small.jpg){: loading="lazy" width="1000" height="1000"}](img/gallery/workshop23/lf_vortex_rings.mp4)
+
+*<i class="fa fa-trophy"></i> Leapfrogging vortex rings using an incompressible Schrödinger fluid solver in MFEM. Image courtesy of John Camier, **winner** of the 2023 MFEM Visualization Contest.* [🖼️](img/gallery/workshop23/lf_vortex_rings.png "Full-resolution image"){: aria-label="Full-resolution image"} [🎬](img/gallery/workshop23/lf_vortex_rings.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -436,6 +436,20 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
+<div id="zwick" class="anchor"></div>
+
+[![](img/gallery/workshop22/brain_electric_field-small.png){: loading="lazy" width="512" height="512"}](img/gallery/workshop22/brain_electric_field.png)
+
+*<i class="fa fa-trophy"></i> Streamlines of the electric field generated by a current dipole source located in the temporal lobe of an epilepsy patient. Image courtesy of Ben Zwick, **winner** of the 2022 MFEM Visualization Contest.*
+
+---
+
+[![](img/gallery/workshop22/gyroid_microcell-small.png){: loading="lazy" width="473" height="512"}](img/gallery/workshop22/gyroid_microcell.png)
+
+*Flow through a periodic gyroid microcell, using the MFEM [Navier miniapp](https://mfem.org/fluids/) with additional Brinkman penalization. Image courtesy of Mathias Schmidt, as part of the 2022 MFEM Visualization Contest.*
+
+</div><div class="col-md-6"  markdown="1">
+
 <div id="pazner" class="anchor"></div>
 
 [![](img/gallery/workshop22/coil-small.png){: loading="lazy" width="485" height="512"}](img/gallery/workshop22/coil.mp4)
@@ -449,20 +463,6 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 [![](img/gallery/workshop22/heat_thumbnail-small.png){: loading="lazy" width="512" height="503"}](img/gallery/workshop22/heat.mp4)
 
 *<i class="fa fa-trophy"></i> Topology-optimized heat sink obtained by minimizing the thermal energy in a domain with constant internal heating. Image courtesy of Tobias Duswald, **winner** of the 2022 MFEM Visualization Contest.* [🎬](img/gallery/workshop22/heat.mp4 "Video"){: aria-label="Video"}
-
-</div><div class="col-md-6"  markdown="1">
-
-<div id="zwick" class="anchor"></div>
-
-[![](img/gallery/workshop22/brain_electric_field-small.png){: loading="lazy" width="512" height="512"}](img/gallery/workshop22/brain_electric_field.png)
-
-*<i class="fa fa-trophy"></i> Streamlines of the electric field generated by a current dipole source located in the temporal lobe of an epilepsy patient. Image courtesy of Ben Zwick, **winner** of the 2022 MFEM Visualization Contest.*
-
----
-
-[![](img/gallery/workshop22/gyroid_microcell-small.png){: loading="lazy" width="473" height="512"}](img/gallery/workshop22/gyroid_microcell.png)
-
-*Flow through a periodic gyroid microcell, using the MFEM [Navier miniapp](https://mfem.org/fluids/) with additional Brinkman penalization. Image courtesy of Mathias Schmidt, as part of the 2022 MFEM Visualization Contest.*
 
 </div><div class="col-md-12"  markdown="1">
 
@@ -478,9 +478,9 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 ---
 
-[![](img/gallery/workshop21/turbine-small.png){: loading="lazy" width="512" height="363"}](img/gallery/workshop21/turbine.mp4)
+[![](img/gallery/workshop21/kh-small.png){: loading="lazy" width="512" height="256"}](img/gallery/workshop21/kh.mp4)
 
-*<i class="fa fa-trophy"></i> Incompressible fluid flow around a rotating turbine using a space-time embedded-hybridized discontinuous Galerkin discretization. Image courtesy of Tamas Horvath, **winner** of the 2021 MFEM Visualization Contest.* [🎬](img/gallery/workshop21/turbine.mp4 "Video"){: aria-label="Video"}
+*Inviscid Kelvin-Helmholtz instability using high-order invariant domain preserving discontinuous Galerkin methods with convex limiting. Image courtesy of Will Pazner, as part of the 2021 MFEM Visualization Contest.* [🎬](img/gallery/workshop21/kh.mp4 "Video"){: aria-label="Video"}
 
 ---
 
@@ -496,9 +496,9 @@ The new [particle framework](https://github.com/mfem/mfem/pull/4986) is used to 
 
 </div><div class="col-md-6"  markdown="1">
 
-[![](img/gallery/workshop21/kh-small.png){: loading="lazy" width="512" height="256"}](img/gallery/workshop21/kh.mp4)
+[![](img/gallery/workshop21/turbine-small.png){: loading="lazy" width="512" height="363"}](img/gallery/workshop21/turbine.mp4)
 
-*Inviscid Kelvin-Helmholtz instability using high-order invariant domain preserving discontinuous Galerkin methods with convex limiting. Image courtesy of Will Pazner, as part of the 2021 MFEM Visualization Contest.* [🎬](img/gallery/workshop21/kh.mp4 "Video"){: aria-label="Video"}
+*<i class="fa fa-trophy"></i> Incompressible fluid flow around a rotating turbine using a space-time embedded-hybridized discontinuous Galerkin discretization. Image courtesy of Tamas Horvath, **winner** of the 2021 MFEM Visualization Contest.* [🎬](img/gallery/workshop21/turbine.mp4 "Video"){: aria-label="Video"}
 
 ---
 
