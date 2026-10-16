@@ -186,7 +186,7 @@ Software release number: LLNL-CODE-806117.
 
 DOI: [10.11578/dc.20171025.1248](https://doi.org/10.11578/dc.20171025.1248).
 
-----
+---
 
 Website built with [MkDocs](https://www.mkdocs.org/), [Bootstrap](https://getbootstrap.com/)
 and [Bootswatch](https://bootswatch.com/). Hosted on [GitHub](https://github.com/mfem/).

@@ -10,7 +10,7 @@ MFEM consists of the following closely interconnected modules:
 * [Mesh](#mesh) - mesh class, mesh readers, mesh manipulation.
 * [FEM](#finite-elements) - finite elements, spaces, linear and bilinear forms, etc.
 
-----
+---
 
 ## General
 
@@ -68,7 +68,7 @@ MFEM consists of the following closely interconnected modules:
 * Makes it easy to define and parse command line parameters.
 * Used in all examples and miniapps.
 
-----
+---
 
 ## Linear Algebra
 
@@ -198,7 +198,7 @@ MFEM consists of the following closely interconnected modules:
 * Similar to `BlockOperator` but with diagonal block structure and square
   diagonal blocks.
 
-----
+---
 
 ## Mesh
 
@@ -265,7 +265,7 @@ MFEM consists of the following closely interconnected modules:
 
 * Classes `ThresholdRefiner`, `ThresholdDerefiner`, `Rebalancer`.
 
-----
+---
 
 ## Finite Elements
 
