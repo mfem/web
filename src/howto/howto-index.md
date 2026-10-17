@@ -24,6 +24,7 @@ by our users in practice.
 - [Parallel Element Numbering](element-local-global-numbering.md)
 - [Finding Local Element Coordinates of Physical Points with FindPointsGSLIB](findpts.md)
 - [Working with Nonconforming Meshes for AMR](ncmesh.md)
+- [Selecting and Using Sets of Mesh Entities](entity-sets.md)
 
 ### Linear Algebra
 - [Using Block Operators and Matrices](block_operators_matrices.md)
