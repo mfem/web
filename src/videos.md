@@ -4,6 +4,58 @@
 
 A collection of MFEM-related videos, including recorded talks from the MFEM workshops, conferences, and other presentations.
 
+## MFEM Workshop 2026
+
+---
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Qi Tang (Georgia Tech)
+#### *Welcome and Overview*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+
+<a class="youtube" href="https://youtu.be/-y19oid1N1U"><img src="https://img.youtube.com/vi/-y19oid1N1U/maxresdefault.jpg"></img></a>
+
+Welcome to attendees with an overview of the workshop agenda, participant demographics, and community resources.
+
+---
+
+#### Tzanio Kolev (LLNL)
+#### *The State of MFEM*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/x5tgSjyvL28"><img src="https://img.youtube.com/vi/x5tgSjyvL28/maxresdefault.jpg"></img></a>
+
+Summary of the project’s past, present, and future with an emphasis on key capabilities and examples.
+
+---
+
+#### Veselin Dobrev (LLNL)
+#### *Recent Developments*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/XF9ThTKei-w"><img src="https://img.youtube.com/vi/XF9ThTKei-w/maxresdefault.jpg"></img></a>
+
+Review of MFEM features developed during 2026.
+
+---
+
+#### Shani Martinez-Weissberg (Tel-Aviv University)
+#### *FEA of Very Large Bone Models Based on Micro-CT Scans*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/SeNiglEmCSY"><img src="https://img.youtube.com/vi/SeNiglEmCSY/maxresdefault.jpg"></img></a>
+
+High-resolution micro-computed tomography (µCT)-based micro-finite element (µFE) models provide a powerful framework for investigating bone mechanics but remain computationally challenging at anatomically relevant scales. This work presents a scalable µFE framework for large-scale biomechanical analysis of an intact New Zealand White rabbit femur using predominantly open-source tools. Bone geometries were segmented from µCT images and converted into voxel-based finite element meshes containing more than 8×10^8 degrees of freedom. Simulations were performed using the MFEM library, employing both full assembly and matrix-free element-by-element formulations for large-scale linear elasticity problems. Numerical results were verified against a commercial finite element solver and experimentally validated using compression testing and digital image correlation measurements. In addition, the influence of image resolution on displacement and principal strain predictions was investigated. The study demonstrates the feasibility of performing anatomically realistic µFE analyses at unprecedented scales using moderate high-performance computing resources and highlights the potential of MFEM for image-based biomechanical applications.
+
+</div><div class="col-md-6"  markdown="1">
+
+#### Ryan Black (Children’s Hospital of Philadelphia)
+#### *Immersed FSI Modeling Using FEBio and MFEM*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/iBR5jpUu6DY"><img src="https://img.youtube.com/vi/iBR5jpUu6DY/maxresdefault.jpg"></img></a>
+
+Heart valve disease and dysfunction present significant challenges in pediatric populations, where heterogeneous anatomy often requires highly individualized treatment strategies. Computational fluid–structure interaction (FSI) modeling offers a promising tool for the evaluation and optimization of patient-specific repairs by predicting both valve mechanics and the resulting hemodynamics. In this talk, we present an open-source computational framework for immersed FSI modeling using FEBio and MFEM (FEBioMFEMiFSI). FSI coupling is achieved using a fictitious domain/distributed Lagrange multiplier methodology with variational multiscale stabilization to enhance accuracy on under-resolved grids characteristic of unfitted FSI methods. A fully implicit, monolithic scheme provides robust coupling for the strongly coupled fluid–solid interactions characteristic of cardiovascular applications. The method is implemented by coupling MFEM, a GPU-ready and scalable finite element library with state-of-the-art parallel performance, with FEBio, which provides advanced solid modeling capabilities and an extensive material library for biomechanics. We demonstrate the capabilities of the framework using several test problems, including a three-dimensional semilunar heart valve simulation. We will also discuss ongoing GPU acceleration efforts for the framework leveraging matrix-free finite element methods.
+
+</div><div class="col-md-12"  markdown="1">
+
 ## FEM@LLNL Seminars
 
 ---

@@ -6,8 +6,8 @@
 [**article**](https://computing.llnl.gov/about/newsroom/mfem-workshop-2022)
 about the workshop on LLNL's Computing website. Watch the
 [**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Cexj3ZH8psiMPKh87O0ff) of
-workshop presentations (linked individually below and available on the [videos page](videos.md)),
-and view **contest submissions** in the [gallery](gallery.md).
+workshop presentations (linked individually below and available on the [videos page](videos.md#mfem-workshop-2022)),
+and view **contest submissions** in the [gallery](gallery.md#2022-visualization-contest).
 
 ![MFEM Logo](img/logo-300.png)
 
