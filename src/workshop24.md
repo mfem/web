@@ -4,7 +4,7 @@
 
 **Speakers' slides** are linked in the agenda below. Watch the
 [**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG0yTf7zZZ0o0_VAOG2Z4rSj) of
-workshop presentations (linked individually below and available on the [videos page](videos.md#mfem-workshop-2025)),
+workshop presentations (linked individually below and available on the [videos page](videos.md#mfem-workshop-2024)),
 and view **contest submissions** in the [gallery](gallery.md#2024-visualization-contest).
 
 ![MFEM Logo](img/logo-300.png)
