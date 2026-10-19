@@ -103,6 +103,9 @@ img.teamphoto {
     height: auto;
     filter: drop-shadow(4px 4px 4px #999);
 }
+.youtube:focus:not(:focus-visible) {
+    outline: none;
+}
 
 p.centered {
     margin-left: auto;
