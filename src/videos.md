@@ -14,7 +14,7 @@ A collection of MFEM-related videos, including recorded talks from the MFEM work
 #### *Welcome and Overview*
 ##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
 
-<a class="youtube" href="https://youtu.be/mLq6F0JwEfQ"><img src="https://img.youtube.com/vi/mLq6F0JwEfQ/maxresdefault.jpg"></img></a>
+<a class="youtube" href="https://youtu.be/-y19oid1N1U"><img src="https://img.youtube.com/vi/-y19oid1N1U/maxresdefault.jpg"></img></a>
 
 Welcome to attendees with an overview of the workshop agenda, participant demographics, and community resources.
 
