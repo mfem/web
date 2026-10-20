@@ -14,23 +14,44 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/pazner.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Will Pazner (Portland State University)
+##### *TBA*
+##### [**9:00am PST, November 9, 2026**](https://everytimezone.com/s/95330cbc)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/copeland.png)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Dylan Copeland (Lawrence Livermore National Laboratory)
 ##### *Conforming NURBS meshes with non-conforming patch topology*
-##### [**9:00am PST, October 20, 2026**](https://everytimezone.com/s/45c9f3da)
+##### October 20, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/copeland.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
 **Abstract:** We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1465,11 +1486,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Will Pazner (Portland State University)
-##### **November 9, 2026**
-
----
 
 #### Eric Cyr (Sandia National Laboratories)
 ##### **December 8, 2026**
