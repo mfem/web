@@ -44,7 +44,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 [<button type="button" class="btn btn-primary">
 **Slides**
-</button>](pdf/seminar/southworth.pdf)
+</button>](pdf/seminar/southworth2.pdf)
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
