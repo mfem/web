@@ -80,7 +80,17 @@ component of a vector field.
 
 MFEM provides a convenience method, called `FormLinearSystem`, on the
 `[Par]BilinearForm` class which can prepare a linear system with these
-essential constraints.
+essential constraints. The example below is for scalar H1 diffusion;
+its projection and integrators must be changed for other FE families.
+Use `ProjectBdrCoefficient` for H1 scalar or componentwise vector data,
+`ProjectBdrCoefficientTangent` for an ND field, and
+`ProjectBdrCoefficientNormal` for an RT field. The RT overload accepting
+a scalar coefficient takes the prescribed physical normal component
+and includes the boundary geometric scaling. A vector coefficient
+passed to the normal overload is dotted with the boundary normal.
+`ProjectBdrCoefficient` does not perform these ND/RT trace projections.
+For ND/RT volume loads use `VectorFEDomainLFIntegrator`; replace the
+scalar diffusion form by the appropriate vector FE bilinear integrators.
 
 ```c++
 // Set the Dirichlet values in the solution vector
@@ -136,6 +146,20 @@ condition by default.
 
 ###  Neumann Boundary Conditions
 
+For pure Neumann scalar diffusion on a connected domain, with no
+Dirichlet constraint, coercive Robin term, or reaction term, the
+constant field is in the operator nullspace. `FormLinearSystem` does
+not remove this nullspace when the essential-DOF list is empty. For
+$-\div(\lambda\grad u)=s$ and outward flux
+$\hat\{n}\cdot\lambda\grad u=g$, check the compatibility condition
+$\int_\Omega s+\int_{\partial\Omega}g=0$ before solving. Compatible
+data determine the solution only up to a constant: use a mean-value
+constraint, an appropriate gauge together with compatible data, or a
+solver configured to handle the constant nullspace. Check solver
+convergence. The usual unconstrained SPD solve cannot be applied
+unchanged to incompatible data. Each disconnected component has its
+own constant nullspace and compatibility condition.
+
 Neumann boundary conditions are closely related to natural boundary
 conditions.  Rather than ignoring the boundary integral we integrate a
 known function on the boundary which approximates the desired value of
@@ -165,10 +189,22 @@ Neumann boundary conditions can be added to the above example code by adding the
 b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
 ```
 
-For H(Curl) fields this can be accomplished by adding the
-`VectorFEBoundaryTangentLFIntegrator` with an appropriate vector
-coefficient for $\vec\{f}$ to a `[Par]LinearForm` object.  And
-finally, for H(Div) fields this can be accomplished by adding the
+The sign of the boundary contribution depends on the continuous
+operator. For the diffusion, negative-gradient, and combined
+advection-diffusion rows above, add the boundary load with the stated
+data. For the conservative-divergence row, add `BoundaryLFIntegrator`
+with a coefficient for $-f$, since
+$(\div(\vec\{\lambda}u),v)=(-\vec\{\lambda}u,\grad v)+(f,v)_{\Gamma_N}$.
+
+For three-dimensional H(Curl) fields in either curl row above, add
+`VectorFEBoundaryTangentLFIntegrator` with a vector coefficient for
+$-\vec\{f}$, not $\vec\{f}$. Integration by parts gives
+$(\curl\vec\{a},\vec\{v})=(\vec\{a},\curl\vec\{v})+
+(\hat\{n}\cross\vec\{a},\vec\{v})_{\Gamma_N}$, so the prescribed
+boundary term is subtracted from the right-hand side. The same sign
+is needed for the curl Robin condition below.
+
+For H(Div) fields this can be accomplished by adding the
 `VectorFEBoundaryFluxLFIntegrator` with an appropriate scalar
 coefficient for $f = \hat\{n}\cdot\vec\{f}$ to a `[Par]LinearForm`
 object.  Other integrators may be appropriate if it is desirable to
