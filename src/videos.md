@@ -54,7 +54,7 @@ High-resolution micro-computed tomography (µCT)-based micro-finite element (µF
 
 Heart valve disease and dysfunction present significant challenges in pediatric populations, where heterogeneous anatomy often requires highly individualized treatment strategies. Computational fluid–structure interaction (FSI) modeling offers a promising tool for the evaluation and optimization of patient-specific repairs by predicting both valve mechanics and the resulting hemodynamics. In this talk, we present an open-source computational framework for immersed FSI modeling using FEBio and MFEM (FEBioMFEMiFSI). FSI coupling is achieved using a fictitious domain/distributed Lagrange multiplier methodology with variational multiscale stabilization to enhance accuracy on under-resolved grids characteristic of unfitted FSI methods. A fully implicit, monolithic scheme provides robust coupling for the strongly coupled fluid–solid interactions characteristic of cardiovascular applications. The method is implemented by coupling MFEM, a GPU-ready and scalable finite element library with state-of-the-art parallel performance, with FEBio, which provides advanced solid modeling capabilities and an extensive material library for biomechanics. We demonstrate the capabilities of the framework using several test problems, including a three-dimensional semilunar heart valve simulation. We will also discuss ongoing GPU acceleration efforts for the framework leveraging matrix-free finite element methods.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Andrew Ho (LLNL)
 #### *Upcoming changes to the MFEM memory manager*
@@ -81,7 +81,7 @@ High-order L2 discontinuous FEM discretizations in scientific computing often re
 
 We will take a detailed look into the recent developments of Automatic Differentiation in MFEM which leverages modern compiler framework techniques of the LLVM project. The presentation is concluded with exciting new experiments as well as news about recent developments.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Siyuan Brant Qian (UIUC)
 #### *Hardware-adaptive numerics for MFEM through compiler-based rewriting*
@@ -89,6 +89,42 @@ We will take a detailed look into the recent developments of Automatic Different
 <a class="youtube" href="https://youtu.be/qVcUrb1jTko"><img src="https://img.youtube.com/vi/qVcUrb1jTko/maxresdefault.jpg"></img></a>
 
 The finite element method is foundational to science and engineering, and is now used at scales that demand GPU accelerators. Portability solutions enable one code base to execute across devices, but performance portability does not necessarily follow: FP64 throughput ranges from 1/2 to 1/64 of FP32, while much of modern GPU throughput is concentrated in reduced-precision tensor cores. Moreover, directly implementing a mathematical formulation in floating point can sacrifice either accuracy or performance. MFEM-Poseidon applies the Poseidon profile-guided compiler to MFEM. Users write operators and custom physics and specify an accuracy target; the compiler then rewrites kernels, choosing precisions, algebraic transformations, and specialized hardware units for the target device. Rewritten programs run 9.14× faster for elasticity operator evaluation, 5.05× faster for its conjugate-gradient solve, and 1.57× faster for a diffusion kernel while preserving near-FP64 accuracy on an RTX 5090. On a GH200, the same operator is instead mapped onto FP64 tensor cores, achieving a 2.48× end-to-end speedup. Rewrite strategies also transfer from surrogate profiles to production problem sizes. In this talk, I will present the MFEM-Poseidon workflow, show how it integrates with MFEM operators and user-defined physics, and discuss how the compiler adapts the same application to GPUs with very different arithmetic capabilities. I will also describe our experience using profile-guided numerical rewriting in MFEM and optimization opportunities for compiler-assisted performance portability in future MFEM applications.
+
+---
+
+#### Rui Peng Li (LLNL)
+#### *Learning AMG operators with graph neural networks: AMGLearn with PyMFEM
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/zTgWVN_Eqmo"><img src="https://img.youtube.com/vi/zTgWVN_Eqmo/maxresdefault.jpg"></img></a>
+
+We develop ML and data-driven strategies to accelerate algebraic multigrid (AMG) by learning the key operators. Using graph neural networks (GNNs) and reinforcement learning (RL), we model sparse matrices as graphs and optimize AMG coarsening directly from data. Our results demonstrate that neural operators can reproduce and potentially improve AMG components using LLNL’s expertise in scalable PDE solvers and scientific machine learning.
+
+---
+
+#### Vladimir Fedorov (Raiden Numerics LLC)
+#### *Design of a GPU-accelerated DGTD Maxwell solver*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/TZq3PSEW31E"><img src="https://img.youtube.com/vi/TZq3PSEW31E/maxresdefault.jpg"></img></a>
+
+We present mufem, a Python-native finite element framework developed at Raiden Numerics for scalable multiphysics simulations, with a primary focus on electromagnetics, plasma, and coupled thermal problems. mufem is built directly on top of MFEM and exposes its high-order finite elements, adaptive mesh refinement, and CPU/GPU performance portability through a high-level Python API targeted at industrial users and automated design workflows. The main part of the talk centers on mufem's discontinuous Galerkin time-domain (DGTD) solver for the full Maxwell system. We discuss how MFEM's existing infrastructure — DG spaces, face integrators, parallel mesh handling, and the partial-assembly machinery — provided the majority of the building blocks needed for a parallel DGTD implementation. We then describe the components we had to introduce ourselves: custom bilinear-form integrators for the upwind numerical flux and material couplings, together with a manual partial-assembly implementation of these integrators to enable efficient execution on GPUs. To bring everything together, we plan to walk through a few real-world applications from electromagnetic and photonic device design. These examples will let us show mufem in action — how it scales on multi-GPU systems, where we still hit walls today, and where we plan to take the framework next.
+
+---
+
+#### Gregory Legrain (Ecole Centrale de Nantes)
+#### *A comparative study of finite‑element techniques for analyzing complex geometries*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/1bsKUwoF77E"><img src="https://img.youtube.com/vi/1bsKUwoF77E/maxresdefault.jpg"></img></a>
+
+The integration of complex geometries into numerical simulations remains a significant challenge in computational mechanics, particularly in applications such as additive manufacturing, biomedical imaging, and materials science. To provide practical guidelines for selecting the most suitable method based on problem complexity and desired accuracy, advancing the seamless integration of image-based computations and complex geometric modeling in engineering simulations, we compare different numerical methods. Only methods involving minimal geometrical pre-treatment are considered here: voxel-based FEM, conformal decomposition FEM (CDFEM) and fictitious domain methods. The geometry is represented thanks to level-set functions which can be obtained from a segmentation or recalculated from a meshed surface. To validate and compare these methods, convergence analyses are conducted for 2D and 3D scalar and vector problems of increased complexity.
+
+---
+
+#### Boyan Lazarov (LLNL)
+#### *Scalable design and optimization for frequency-domain wave and vibration problems*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/zK-NDk3_0S4"><img src="https://img.youtube.com/vi/zK-NDk3_0S4/maxresdefault.jpg"></img></a>
+
+Topology optimization offers an effective approach for controlling wave propagation and structural vibration. However, high-resolution frequency-domain design is computationally intensive, as each optimization step requires repeated state and adjoint solutions for large systems. The conditioning of these systems deteriorates with mesh refinement, significant material contrast, and proximity to resonance. This work presents a scalable density-based framework for time-harmonic acoustic and elastic design. Its core contribution is reformulating the complex finite-element equations as coupled real block systems, enabling parallel iterative solvers and multilevel preconditioning within the optimization process. Frequency-response formulations address forced-response and resonance-oriented design. Adjoint sensitivities are integrated with gradient-based updates, while filtering and projection techniques provide regularization, length-scale control, and robustness to both uniform and non-uniform geometric variations. The implementation leverages the MFEM finite-element library and distributes state, adjoint, sensitivity, and optimization computations across distributed-memory resources. Representative acoustic and three-dimensional structural examples examine mesh scalability, material contrast, and excitation-frequency selection.
 
 </div><div class="col-md-12"  markdown="1">
 
