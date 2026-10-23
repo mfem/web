@@ -303,10 +303,11 @@ To build with METIS 5, after following the instructions to build METIS 5 above:
 ```sh
 cmake .. -DMFEM_USE_MPI=YES -DMFEM_USE_METIS_5=YES -DMETIS_DIR=../../metis-5.1.0
 ```
-To build with HIP:
+To build with HIP, select a HIP-capable C++ compiler on the first configuration of a fresh build directory. MFEM currently compiles HIP device code through its C++ compiler rather than enabling CMake's HIP language; a default compiler such as `g++` is not sufficient. With ROCm's compiler in `PATH`:
 ```sh
-cmake .. -DMFEM_USE_HIP=YES
+cmake .. -DMFEM_USE_HIP=YES -DCMAKE_CXX_COMPILER=amdclang++
 ```
+If ROCm is installed outside the standard search paths, also provide `-DROCM_PATH=<rocm-installation-directory>`. When enabling RAJA with HIP, set `CMAKE_HIP_COMPILER` to the same compiler as `CMAKE_CXX_COMPILER`; see the [MFEM installation instructions](https://github.com/mfem/mfem/blob/master/INSTALL).
 
 To specify what HIP architecture(s) to target:
 ```sh
