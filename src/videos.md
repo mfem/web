@@ -81,7 +81,7 @@ High-order L2 discontinuous FEM discretizations in scientific computing often re
 
 We will take a detailed look into the recent developments of Automatic Differentiation in MFEM which leverages modern compiler framework techniques of the LLVM project. The presentation is concluded with exciting new experiments as well as news about recent developments.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Siyuan Brant Qian (UIUC)
 #### *Hardware-adaptive numerics for MFEM through compiler-based rewriting*
@@ -90,10 +90,10 @@ We will take a detailed look into the recent developments of Automatic Different
 
 The finite element method is foundational to science and engineering, and is now used at scales that demand GPU accelerators. Portability solutions enable one code base to execute across devices, but performance portability does not necessarily follow: FP64 throughput ranges from 1/2 to 1/64 of FP32, while much of modern GPU throughput is concentrated in reduced-precision tensor cores. Moreover, directly implementing a mathematical formulation in floating point can sacrifice either accuracy or performance. MFEM-Poseidon applies the Poseidon profile-guided compiler to MFEM. Users write operators and custom physics and specify an accuracy target; the compiler then rewrites kernels, choosing precisions, algebraic transformations, and specialized hardware units for the target device. Rewritten programs run 9.14× faster for elasticity operator evaluation, 5.05× faster for its conjugate-gradient solve, and 1.57× faster for a diffusion kernel while preserving near-FP64 accuracy on an RTX 5090. On a GH200, the same operator is instead mapped onto FP64 tensor cores, achieving a 2.48× end-to-end speedup. Rewrite strategies also transfer from surrogate profiles to production problem sizes. In this talk, I will present the MFEM-Poseidon workflow, show how it integrates with MFEM operators and user-defined physics, and discuss how the compiler adapts the same application to GPUs with very different arithmetic capabilities. I will also describe our experience using profile-guided numerical rewriting in MFEM and optimization opportunities for compiler-assisted performance portability in future MFEM applications.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Rui Peng Li (LLNL)
-#### *Learning AMG operators with graph neural networks: AMGLearn with PyMFEM
+#### *Learning AMG operators with graph neural networks: AMGLearn with PyMFEM*
 ##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
 <a class="youtube" href="https://youtu.be/zTgWVN_Eqmo"><img src="https://img.youtube.com/vi/zTgWVN_Eqmo/maxresdefault.jpg"></img></a>
 
@@ -125,6 +125,33 @@ The integration of complex geometries into numerical simulations remains a signi
 <a class="youtube" href="https://youtu.be/zK-NDk3_0S4"><img src="https://img.youtube.com/vi/zK-NDk3_0S4/maxresdefault.jpg"></img></a>
 
 Topology optimization offers an effective approach for controlling wave propagation and structural vibration. However, high-resolution frequency-domain design is computationally intensive, as each optimization step requires repeated state and adjoint solutions for large systems. The conditioning of these systems deteriorates with mesh refinement, significant material contrast, and proximity to resonance. This work presents a scalable density-based framework for time-harmonic acoustic and elastic design. Its core contribution is reformulating the complex finite-element equations as coupled real block systems, enabling parallel iterative solvers and multilevel preconditioning within the optimization process. Frequency-response formulations address forced-response and resonance-oriented design. Adjoint sensitivities are integrated with gradient-based updates, while filtering and projection techniques provide regularization, length-scale control, and robustness to both uniform and non-uniform geometric variations. The implementation leverages the MFEM finite-element library and distributes state, adjoint, sensitivity, and optimization computations across distributed-memory resources. Representative acoustic and three-dimensional structural examples examine mesh scalability, material contrast, and excitation-frequency selection.
+
+---
+
+#### Dohyun Kim (Brown University)
+#### *Multi-material topology optimization with general convex polytopal constraints*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/5gfqzK5kb-o"><img src="https://img.youtube.com/vi/5gfqzK5kb-o/maxresdefault.jpg"></img></a>
+
+We introduce an efficient and scalable method for density-based multi-material topology optimization, integrating classical mirror descent techniques with point-wise polytopal design constraints. Such constraints arise naturally in this class of problems, wherein the vertices of convex polytopes correspond to distinct design states, only one of which should be occupied at each point in space. The framework generates a descending sequence of iterates by penalizing the design space around the previous iterate with a generalized distance function tailored to the convex geometry of the n-dimensional polytope. This distance function, called a Bregman divergence, smooths the optimization landscape, ensuring that each iterate strictly satisfies the point-wise constraints. Subsequently, global constraints (e.g., bounds on the structural mass) can be enforced easily by solving a small, finite-dimensional dual problem. The resulting method is simple to implement and demonstrates robustness and efficiency when combined with an Armijo-type line search algorithm. We validate the method in structural design problems involving the optimal arrangement of both isotropic and anisotropic materials, as well as magnetic flux optimization in electric motors.
+
+---
+
+#### Alexander Blair (UKAEA)
+#### *MFEM in MOOSE: a framework for coupled multiphysics*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/r7dTUhQ6SeU"><img src="https://img.youtube.com/vi/r7dTUhQ6SeU/maxresdefault.jpg"></img></a>
+
+Last year, initial support for setting up and solving MFEM-based FE problems was added to MOOSE; a large-scale open-source parallel FE multiphysics framework originating from Idaho National Laboratory (INL). Since then, MOOSE's MFEM capabilities have developed at pace. This year, support for solving nonlinear problems, eigenproblems, and DG problems using MFEM have been added, alongside capabilities to enable interpolative transfers between MFEM-based and libMesh-based variables to facilitate coupling with existing problems in the MOOSE framework. In this presentation, we shall present the range of new MFEM capabilities added to MOOSE this year, and outline how users can get started with using MOOSE with MFEM.
+
+---
+
+#### Henrique Bergallo Rocha (UKAEA)
+#### *Composing problems in MFEM-MOOSE*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/q8VEBgx-PhU"><img src="https://img.youtube.com/vi/q8VEBgx-PhU/maxresdefault.jpg"></img></a>
+
+MFEM-MOOSE's recently-merged ProblemComposer feature allows users to wire external MFEM problem operators and equation systems to be used within the MOOSE framework and interface with MOOSE submodules. In this presentation, we demonstrate how the ProblemComposer works and how a custom ProblemOperator can be written for MFEM-MOOSE. We use as an example a transient nonlinear 2D plasma model initially written in native MFEM and subsequently ported to MFEM-MOOSE through the new ProblemComposer.
 
 </div><div class="col-md-12"  markdown="1">
 
