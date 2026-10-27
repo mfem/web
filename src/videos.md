@@ -90,7 +90,7 @@ We will take a detailed look into the recent developments of Automatic Different
 
 The finite element method is foundational to science and engineering, and is now used at scales that demand GPU accelerators. Portability solutions enable one code base to execute across devices, but performance portability does not necessarily follow: FP64 throughput ranges from 1/2 to 1/64 of FP32, while much of modern GPU throughput is concentrated in reduced-precision tensor cores. Moreover, directly implementing a mathematical formulation in floating point can sacrifice either accuracy or performance. MFEM-Poseidon applies the Poseidon profile-guided compiler to MFEM. Users write operators and custom physics and specify an accuracy target; the compiler then rewrites kernels, choosing precisions, algebraic transformations, and specialized hardware units for the target device. Rewritten programs run 9.14× faster for elasticity operator evaluation, 5.05× faster for its conjugate-gradient solve, and 1.57× faster for a diffusion kernel while preserving near-FP64 accuracy on an RTX 5090. On a GH200, the same operator is instead mapped onto FP64 tensor cores, achieving a 2.48× end-to-end speedup. Rewrite strategies also transfer from surrogate profiles to production problem sizes. In this talk, I will present the MFEM-Poseidon workflow, show how it integrates with MFEM operators and user-defined physics, and discuss how the compiler adapts the same application to GPUs with very different arithmetic capabilities. I will also describe our experience using profile-guided numerical rewriting in MFEM and optimization opportunities for compiler-assisted performance portability in future MFEM applications.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Rui Peng Li (LLNL)
 #### *Learning AMG operators with graph neural networks: AMGLearn with PyMFEM*
@@ -108,7 +108,7 @@ We develop ML and data-driven strategies to accelerate algebraic multigrid (AMG)
 
 We present mufem, a Python-native finite element framework developed at Raiden Numerics for scalable multiphysics simulations, with a primary focus on electromagnetics, plasma, and coupled thermal problems. mufem is built directly on top of MFEM and exposes its high-order finite elements, adaptive mesh refinement, and CPU/GPU performance portability through a high-level Python API targeted at industrial users and automated design workflows. The main part of the talk centers on mufem's discontinuous Galerkin time-domain (DGTD) solver for the full Maxwell system. We discuss how MFEM's existing infrastructure — DG spaces, face integrators, parallel mesh handling, and the partial-assembly machinery — provided the majority of the building blocks needed for a parallel DGTD implementation. We then describe the components we had to introduce ourselves: custom bilinear-form integrators for the upwind numerical flux and material couplings, together with a manual partial-assembly implementation of these integrators to enable efficient execution on GPUs. To bring everything together, we plan to walk through a few real-world applications from electromagnetic and photonic device design. These examples will let us show mufem in action — how it scales on multi-GPU systems, where we still hit walls today, and where we plan to take the framework next.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Gregory Legrain (Ecole Centrale de Nantes)
 #### *A comparative study of finite‑element techniques for analyzing complex geometries*
@@ -152,6 +152,33 @@ Last year, initial support for setting up and solving MFEM-based FE problems was
 <a class="youtube" href="https://youtu.be/q8VEBgx-PhU"><img src="https://img.youtube.com/vi/q8VEBgx-PhU/maxresdefault.jpg"></img></a>
 
 MFEM-MOOSE's recently-merged ProblemComposer feature allows users to wire external MFEM problem operators and equation systems to be used within the MOOSE framework and interface with MOOSE submodules. In this presentation, we demonstrate how the ProblemComposer works and how a custom ProblemOperator can be written for MFEM-MOOSE. We use as an example a transient nonlinear 2D plasma model initially written in native MFEM and subsequently ported to MFEM-MOOSE through the new ProblemComposer.
+
+---
+
+#### Shipeng Mao (Chinese Academy of Sciences)
+#### Structure-preserving, high-order, efficient MHD simulation with MFEM*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/Nqd5iToBdo4"><img src="https://img.youtube.com/vi/Nqd5iToBdo4/maxresdefault.jpg"></img></a>
+
+Magnetohydrodynamics (MHD) governs the behavior of electrically conducting fluids such as plasmas, liquid metals, and the solar corona, with important applications in astrophysics, geophysics, and magnetic confinement fusion. The MHD model has important physical properties, such as the divergence-free constraints on the velocity and magnetic fields, helicity conservation, the topology of magnetic field lines, the energy law, and positivity of density, which must be preserved in numerical simulations to ensure reliable long-time results. In this talk, we present a family of structure-preserving, high-order finite element methods implemented in MFEM that exactly maintain these properties. Built on finite element exterior calculus (FEEC), these methods include Eulerian, arbitrary Lagrangian–Eulerian (ALE), and fully Lagrangian formulations for compressible and incompressible MHD, and are high-order accurate and efficient enough for large-scale GPU simulations. Numerical benchmarks demonstrate their accuracy, efficiency, and robustness in extreme regimes, including high Reynolds numbers and magnetic Reynolds numbers.
+
+---
+
+#### Jan Nikl (LLNL)
+#### *Updates in the framework for mixed systems of MFEM*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/F9WvtxppwVA"><img src="https://img.youtube.com/vi/F9WvtxppwVA/maxresdefault.jpg"></img></a>
+
+The talk summarizes the overall design of the framework for mixed systems in MFEM and its recent updates. This framework offers a user-friendly way of setting up mixed systems for problems of hydrodynamics, thermodynamics, electromagnetics, elasticity and others. On top of that, it enables a single-line algebraic reduction of the system by eliminating discontinuous potentials or fluxes, like in the Local Discontinuous Galerkin (LDG) method. However, even more appealing feature is the single-line hybridization of the total flux (e.g. Hybridizable Discontinuous Galerkin (HDG) or Broken Raviart-Thomas (HBRT)). The discrete system is formed only for the trace unknowns on the skeleton of the mesh, while overall stability is improved. Moreover, such discrete systems can be efficiently preconditioned by algebraic multigrid methods, for example. The new additions to the framework include more choices of the trace space, which enables setups with the Embedded Discontinuous Galerkin method, which even further reduces size of the hybridized system. Secondly, LDG and HDG methods have been extended for problems of linear elasticity with demonstration in modified MFEM examples, including AMR based on the native HDG error estimator. Finally, hybridized methods have been introduced to the world of mesh optimization, where the native HDG error estimator can be used as a metric in the Target Matrix Optimization Paradigm for PDE-driven mesh optimization. This kind of adaptivity becomes very useful in problems of strongly anisotropic diffusion, where it naturally aligns the high-order mesh with the direction of anisotropy and reduces the number of refinement levels needed.
+
+---
+
+#### Zhang Chunyu (Sun Yat-Sen University)
+#### *A two-scale higher-order damage elasticity theory and solution procedure for quasi-brittle fracture*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/IB4zY_ENY6c"><img src="https://img.youtube.com/vi/IB4zY_ENY6c/maxresdefault.jpg"></img></a>
+
+To rigorously capture the tight coupling between elastic deformation and damage initiation/propagation in quasi-brittle fracture processes, a two-scale damaged elasticity theory is proposed that accounts for the meso-scale inhomogeneity of both the strain and the damage fields. It formulates a degraded strain energy density to capture size effects and localized damage initiation and propagation through a homogenization operation. This approach takes a simplified and unified physics and offers a consistent treatment of higher-order deformation and damage, enabling natural incorporation of size effects on fracture strength. No additional regularization is needed to maintain damage localization. Structural deformation is solved using the principle of minimum potential energy, where the Augmented Lagrangian Method (ALM) reduces the order of gradient operators. All boundary conditions are free of high-order terms and can be applied in the conventional manner. Numerical investigations demonstrate the theory's capability to predict non-singular deformation at crack tips, accurately model size-dependent fracture in perforated brittle plates, and achieve mesh-independent failure predictions in benchmark problems.
 
 </div><div class="col-md-12"  markdown="1">
 
