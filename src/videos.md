@@ -108,7 +108,7 @@ We develop ML and data-driven strategies to accelerate algebraic multigrid (AMG)
 
 We present mufem, a Python-native finite element framework developed at Raiden Numerics for scalable multiphysics simulations, with a primary focus on electromagnetics, plasma, and coupled thermal problems. mufem is built directly on top of MFEM and exposes its high-order finite elements, adaptive mesh refinement, and CPU/GPU performance portability through a high-level Python API targeted at industrial users and automated design workflows. The main part of the talk centers on mufem's discontinuous Galerkin time-domain (DGTD) solver for the full Maxwell system. We discuss how MFEM's existing infrastructure — DG spaces, face integrators, parallel mesh handling, and the partial-assembly machinery — provided the majority of the building blocks needed for a parallel DGTD implementation. We then describe the components we had to introduce ourselves: custom bilinear-form integrators for the upwind numerical flux and material couplings, together with a manual partial-assembly implementation of these integrators to enable efficient execution on GPUs. To bring everything together, we plan to walk through a few real-world applications from electromagnetic and photonic device design. These examples will let us show mufem in action — how it scales on multi-GPU systems, where we still hit walls today, and where we plan to take the framework next.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Gregory Legrain (Ecole Centrale de Nantes)
 #### *A comparative study of finite‑element techniques for analyzing complex geometries*
@@ -117,7 +117,7 @@ We present mufem, a Python-native finite element framework developed at Raiden N
 
 The integration of complex geometries into numerical simulations remains a significant challenge in computational mechanics, particularly in applications such as additive manufacturing, biomedical imaging, and materials science. To provide practical guidelines for selecting the most suitable method based on problem complexity and desired accuracy, advancing the seamless integration of image-based computations and complex geometric modeling in engineering simulations, we compare different numerical methods. Only methods involving minimal geometrical pre-treatment are considered here: voxel-based FEM, conformal decomposition FEM (CDFEM) and fictitious domain methods. The geometry is represented thanks to level-set functions which can be obtained from a segmentation or recalculated from a meshed surface. To validate and compare these methods, convergence analyses are conducted for 2D and 3D scalar and vector problems of increased complexity.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Boyan Lazarov (LLNL)
 #### *Scalable design and optimization for frequency-domain wave and vibration problems*
@@ -179,6 +179,33 @@ The talk summarizes the overall design of the framework for mixed systems in MFE
 <a class="youtube" href="https://youtu.be/IB4zY_ENY6c"><img src="https://img.youtube.com/vi/IB4zY_ENY6c/maxresdefault.jpg"></img></a>
 
 To rigorously capture the tight coupling between elastic deformation and damage initiation/propagation in quasi-brittle fracture processes, a two-scale damaged elasticity theory is proposed that accounts for the meso-scale inhomogeneity of both the strain and the damage fields. It formulates a degraded strain energy density to capture size effects and localized damage initiation and propagation through a homogenization operation. This approach takes a simplified and unified physics and offers a consistent treatment of higher-order deformation and damage, enabling natural incorporation of size effects on fracture strength. No additional regularization is needed to maintain damage localization. Structural deformation is solved using the principle of minimum potential energy, where the Augmented Lagrangian Method (ALM) reduces the order of gradient operators. All boundary conditions are free of high-order terms and can be applied in the conventional manner. Numerical investigations demonstrate the theory's capability to predict non-singular deformation at crack tips, accurately model size-dependent fracture in perforated brittle plates, and achieve mesh-independent failure predictions in benchmark problems.
+
+---
+
+#### Jacopo Rodeschini (University of Bergamo)
+#### *A scalable state-space Python package for spatio-temporal geostatistics*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/0L9H5g4X-qk"><img src="https://img.youtube.com/vi/0L9H5g4X-qk/maxresdefault.jpg"></img></a>
+
+This work presents a novel low-rank approximation of the multivariate State-Space Model (SSM) for high-dimensional spatio-temporal data, where the temporal dynamics follow a first-order autoregressive process. The approach is based on the Stochastic Partial Differential Equation (SPDE) representation of the Matérn Gaussian spatial covariance function, applied component-wise to the spatial processes that are independent over time. This formulation yields a sparse representation of the latent process on a finite element mesh, enabling scalable inference. Model parameters are estimated using an Expectation-Maximization (EM) algorithm. Simulation studies and a real-world environmental application demonstrate the model's effectiveness in capturing complex spatio-temporal dependencies while maintaining computational efficiency in high-dimensional settings.
+
+---
+
+#### Guosheng Fu (Notre Dame)
+#### *Entropy-stable and physical-constraint-preserving DGSEM for general-relativistic hydrodynamics*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/IDYVQWugUUQ"><img src="https://img.youtube.com/vi/IDYVQWugUUQ/maxresdefault.jpg"></img></a>
+
+High-order methods for relativistic hydrodynamics must preserve both nonlinear stability and physical constraints, including positive density and pressure and subluminal velocity. This talk presents an entropy-stable discontinuous Galerkin spectral element framework combined with physical-constraint-preserving limiting. Building on the W-form formulation introduced by Kailiang Wu, we develop entropy-stable discretizations for general relativistic hydrodynamics on stationary spacetimes and for symmetry-reduced two-dimensional models with compatible entropy laws. A unified DGSEM combines entropy-conservative fluxes, compatible geometric source discretizations, and discrete geometric conservation laws on curvilinear meshes. Numerical results demonstrate high-order accuracy and robustness for special relativistic flows and black-hole accretion problems.
+
+---
+
+#### Hennes Hajduk (TU Dortmund University)
+#### *Property-preserving numerical methods for the shallow-water equations with source terms*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/_3DCuMsQcMo"><img src="https://img.youtube.com/vi/_3DCuMsQcMo/maxresdefault.jpg"></img></a>
+
+The shallow water equations are a fundamental mathematical model used to describe the motion of water in rivers, coastal regions, oceans, and other large-scale geophysical settings. Despite their relatively simple form, these equations capture a wide range of important phenomena, including tsunami propagation, storm surges, and flooding caused by dam failures. Reliable simulations of such events play an important role in risk assessment, disaster management, and environmental planning. Designing numerical methods that simultaneously satisfy all of these requirements is a longstanding challenge. Existing approaches often preserve only some of these properties or achieve them at the expense of excessive numerical diffusion, which can reduce accuracy in practical simulations. In this presentation, I will present a recently developed framework for constructing numerical methods that preserve positivity, entropy stability, and well-balancedness simultaneously. My talk will conclude with numerical examples demonstrating the performance of the method on standard benchmark problems, followed by a discussion of future research directions.
 
 </div><div class="col-md-12"  markdown="1">
 
