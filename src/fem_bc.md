@@ -71,26 +71,17 @@ constrain the tangential components of a vector field, and H(Div)
 (Raviart-Thomas) elements can only constrain the normal
 component of a vector field.
 
-| Space   | Essential BC                                                      |
-|---------|-------------------------------------------------------------------|
-|  H1     | $u = f$ on $\Gamma_D$                                             |
-|  H1$^d$ | $\vec\{u} = \vec\{f}$ on $\Gamma_D$                               |
-|  ND     | $(\hat\{n}\times\vec\{u})\times\hat\{n} = \vec\{f}$ on $\Gamma_D$ |
-|  RT     | $\hat\{n}\cdot\vec\{u} = f$ on $\Gamma_D$                         |
+| Space   | Essential BC                                                      | Set values with |
+|---------|-------------------------------------------------------------------|-----------------|
+|  H1     | $u = f$ on $\Gamma_D$                                             | `ProjectBdrCoefficient` (scalar coefficient) |
+|  H1$^d$ | $\vec\{u} = \vec\{f}$ on $\Gamma_D$                               | `ProjectBdrCoefficient` (vector coefficient) |
+|  ND     | $(\hat\{n}\times\vec\{u})\times\hat\{n} = \vec\{f}$ on $\Gamma_D$ | `ProjectBdrCoefficientTangent` |
+|  RT     | $\hat\{n}\cdot\vec\{u} = f$ on $\Gamma_D$                         | `ProjectBdrCoefficientNormal` |
 
-MFEM provides a convenience method, called `FormLinearSystem`, on the
-`[Par]BilinearForm` class which can prepare a linear system with these
-essential constraints. The example below is for scalar H1 diffusion;
-its projection and integrators must be changed for other FE families.
-Use `ProjectBdrCoefficient` for H1 scalar or componentwise vector data,
-`ProjectBdrCoefficientTangent` for an ND field, and
-`ProjectBdrCoefficientNormal` for an RT field. The RT overload accepting
-a scalar coefficient takes the prescribed physical normal component
-and includes the boundary geometric scaling. A vector coefficient
-passed to the normal overload is dotted with the boundary normal.
-`ProjectBdrCoefficient` does not perform these ND/RT trace projections.
-For ND/RT volume loads use `VectorFEDomainLFIntegrator`; replace the
-scalar diffusion form by the appropriate vector FE bilinear integrators.
+MFEM provides `FormLinearSystem` on `[Par]BilinearForm` to prepare a
+linear system with essential constraints. The example below uses scalar
+H1 diffusion; for other spaces, use the projection method above and
+appropriate integrators.
 
 ```c++
 // Set the Dirichlet values in the solution vector
@@ -146,20 +137,6 @@ condition by default.
 
 ###  Neumann Boundary Conditions
 
-For pure Neumann scalar diffusion on a connected domain, with no
-Dirichlet constraint, coercive Robin term, or reaction term, the
-constant field is in the operator nullspace. `FormLinearSystem` does
-not remove this nullspace when the essential-DOF list is empty. For
-$-\div(\lambda\grad u)=s$ and outward flux
-$\hat\{n}\cdot\lambda\grad u=g$, check the compatibility condition
-$\int_\Omega s+\int_{\partial\Omega}g=0$ before solving. Compatible
-data determine the solution only up to a constant: use a mean-value
-constraint, an appropriate gauge together with compatible data, or a
-solver configured to handle the constant nullspace. Check solver
-convergence. The usual unconstrained SPD solve cannot be applied
-unchanged to incompatible data. Each disconnected component has its
-own constant nullspace and compatibility condition.
-
 Neumann boundary conditions are closely related to natural boundary
 conditions.  Rather than ignoring the boundary integral we integrate a
 known function on the boundary which approximates the desired value of
@@ -167,20 +144,18 @@ the boundary condition (often a involving a derivative of the field).
 The following table shows a variety of common operators and their
 related Neumann boundary condition.
 
-| Operator | Continuous Operator | Neumann BC |
-|----------|---------------------|------------|
-| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)=f$ on $\Gamma_N$|
-| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$|
-| $(\lambda\div\vec\{u},\div\vec\{v})$   | $-\grad(\lambda\div\vec\{u})$| $\lambda\div\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\Gamma_N$ |
-| $(-\vec\{\lambda}u,\grad v)$                   | $\div(\vec\{\lambda}u)$ | $\hat\{n}\cdot\vec\{\lambda}u = f$ on $\Gamma_N$ |
-|$(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$| $\hat\{n}\cross(\lambda\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$ |
-| $(\lambda\grad u - \vec\{\beta}u,\grad v)$             | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=f$ on $\Gamma_N$   |
+| Operator | Continuous Operator | Neumann BC | Add to `[Par]LinearForm` |
+|----------|---------------------|------------|--------------------------|
+| $(\lambda\grad u,\grad v)$ | $-\div(\lambda\grad u)$ | $\hat\{n}\cdot(\lambda\grad u)=f$ on $\Gamma_N$ | `BoundaryLFIntegrator` with $f$ |
+| $(\lambda\curl\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\curl\vec\{u})$ | $\hat\{n}\cross(\lambda\curl\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$ | `VectorFEBoundaryTangentLFIntegrator` with $-\vec\{f}$ (3D) |
+| $(\lambda\div\vec\{u},\div\vec\{v})$ | $-\grad(\lambda\div\vec\{u})$ | $\lambda\div\vec\{u}=\hat\{n}\cdot\vec\{f}$ on $\Gamma_N$ | `VectorFEBoundaryFluxLFIntegrator` with $\hat\{n}\cdot\vec\{f}$ |
+| $(-\vec\{\lambda}u,\grad v)$ | $\div(\vec\{\lambda}u)$ | $\hat\{n}\cdot\vec\{\lambda}u = f$ on $\Gamma_N$ | `BoundaryLFIntegrator` with $-f$ |
+| $(\lambda\vec\{u},\curl\vec\{v})$ | $\curl(\lambda\vec\{u})$ | $\hat\{n}\cross(\lambda\vec\{u})=\hat\{n}\cross\vec\{f}$ on $\Gamma_N$ | `VectorFEBoundaryTangentLFIntegrator` with $-\vec\{f}$ (3D) |
+| $(\lambda\grad u - \vec\{\beta}u,\grad v)$ | $-\div(\lambda\grad u) + \div(\vec\{\beta}u)$ | $\hat\{n}\cdot(\lambda\grad u-\vec\{\beta}u)=f$ on $\Gamma_N$ | `BoundaryLFIntegrator` with $f$ |
 
-To impose these boundary conditions in MFEM simply modify the
-right-hand side of your linear system by adding the appropriate
-boundary integral of either $f$ or $\vec\{f}$.  For $H^1$ or $L^2$
-fields this can be accomplished by adding the `BoundaryLFIntegrator`
-with an appropriate coefficient for $f$ to a `[Par]LinearForm` object.
+Add the boundary integrator listed above to the right-hand-side
+`[Par]LinearForm`. The signs follow from
+[integration by parts](fem_weak_form.md).
 
 Neumann boundary conditions can be added to the above example code by adding the following line before the call to `b.Assemble()`.
 ```c++
@@ -189,26 +164,10 @@ Neumann boundary conditions can be added to the above example code by adding the
 b.AddBoundaryIntegrator(new BoundaryLFIntegrator(nbcCoef), nbc_marker);
 ```
 
-The sign of the boundary contribution depends on the continuous
-operator. For the diffusion, negative-gradient, and combined
-advection-diffusion rows above, add the boundary load with the stated
-data. For the conservative-divergence row, add `BoundaryLFIntegrator`
-with a coefficient for $-f$, since
-$(\div(\vec\{\lambda}u),v)=(-\vec\{\lambda}u,\grad v)+(f,v)_{\Gamma_N}$.
-
-For three-dimensional H(Curl) fields in either curl row above, add
-`VectorFEBoundaryTangentLFIntegrator` with a vector coefficient for
-$-\vec\{f}$, not $\vec\{f}$. Integration by parts gives
-$(\curl\vec\{a},\vec\{v})=(\vec\{a},\curl\vec\{v})+
-(\hat\{n}\cross\vec\{a},\vec\{v})_{\Gamma_N}$, so the prescribed
-boundary term is subtracted from the right-hand side. The same sign
-is needed for the curl Robin condition below.
-
-For H(Div) fields this can be accomplished by adding the
-`VectorFEBoundaryFluxLFIntegrator` with an appropriate scalar
-coefficient for $f = \hat\{n}\cdot\vec\{f}$ to a `[Par]LinearForm`
-object.  Other integrators may be appropriate if it is desirable to
-express the functions $\,f$ or $\vec\{f}$ in other ways.
+**Note:** Pure Neumann problems may require compatible source and boundary
+data and a constraint to obtain a unique solution. `FormLinearSystem`
+does not impose these automatically. For scalar diffusion on a connected
+domain, `OrthoSolver` can help handle the constant nullspace.
 
 ### Robin Boundary Conditions
 
@@ -232,9 +191,9 @@ $\gamma$.  For example, when solving for an $H^1$ field one should add
 a `MassIntegrator` with an appropriate scalar coefficient for
 $\gamma$.
 
-The implementation of a Robin boundary condition requires precisely
-the same change to the right-hand-side as the Neumann boundary
-condition as well as a new term in the bilinear form before `a.Assemble()`:
+Use the same right-hand-side boundary integrator and coefficient as in
+the corresponding Neumann row. For the scalar H1 diffusion example, add
+the boundary terms before `b.Assemble()` and `a.Assemble()`, respectively:
 
 ```c++
 // Add Robin BCs n.(matCoef Grad u) + rbcACoef u = rbcBCoef on the boundary
