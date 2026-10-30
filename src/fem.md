@@ -67,6 +67,13 @@ The `Coefficient` objects in MFEM are general functions on continuous level that
 are used to represent the PDE coefficients of linear and bilinear forms, as well
 as to specify initial conditions, boundary conditions, exact solutions, etc.
 
+### [Complex-Valued Classes](complex.md)
+
+MFEM provides complex scalars, vectors, dense coefficient data, coefficients,
+grid functions, and forms for complex-valued finite element problems. These
+classes build complex systems from real-valued components and work with the
+existing MFEM integrators.
+
 ### [Nonlinear Form Integrators](nonlininteg.md)
 
 Nonlinear form integrators are used to express the local action of a general
