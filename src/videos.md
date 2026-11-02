@@ -140,7 +140,7 @@ The integration of complex geometries into numerical simulations remains a signi
 
 Topology optimization offers an effective approach for controlling wave propagation and structural vibration. However, high-resolution frequency-domain design is computationally intensive, as each optimization step requires repeated state and adjoint solutions for large systems. The conditioning of these systems deteriorates with mesh refinement, significant material contrast, and proximity to resonance. This work presents a scalable density-based framework for time-harmonic acoustic and elastic design. Its core contribution is reformulating the complex finite-element equations as coupled real block systems, enabling parallel iterative solvers and multilevel preconditioning within the optimization process. Frequency-response formulations address forced-response and resonance-oriented design. Adjoint sensitivities are integrated with gradient-based updates, while filtering and projection techniques provide regularization, length-scale control, and robustness to both uniform and non-uniform geometric variations. The implementation leverages the MFEM finite-element library and distributes state, adjoint, sensitivity, and optimization computations across distributed-memory resources. Representative acoustic and three-dimensional structural examples examine mesh scalability, material contrast, and excitation-frequency selection.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Dohyun Kim (Brown University)
 #### *Multi-material topology optimization with general convex polytopal constraints*
@@ -149,7 +149,7 @@ Topology optimization offers an effective approach for controlling wave propagat
 
 We introduce an efficient and scalable method for density-based multi-material topology optimization, integrating classical mirror descent techniques with point-wise polytopal design constraints. Such constraints arise naturally in this class of problems, wherein the vertices of convex polytopes correspond to distinct design states, only one of which should be occupied at each point in space. The framework generates a descending sequence of iterates by penalizing the design space around the previous iterate with a generalized distance function tailored to the convex geometry of the n-dimensional polytope. This distance function, called a Bregman divergence, smooths the optimization landscape, ensuring that each iterate strictly satisfies the point-wise constraints. Subsequently, global constraints (e.g., bounds on the structural mass) can be enforced easily by solving a small, finite-dimensional dual problem. The resulting method is simple to implement and demonstrates robustness and efficiency when combined with an Armijo-type line search algorithm. We validate the method in structural design problems involving the optimal arrangement of both isotropic and anisotropic materials, as well as magnetic flux optimization in electric motors.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Alexander Blair (UKAEA)
 #### *MFEM in MOOSE: a framework for coupled multiphysics*
@@ -166,6 +166,32 @@ Last year, initial support for setting up and solving MFEM-based FE problems was
 <a class="youtube" href="https://youtu.be/q8VEBgx-PhU"><img src="https://img.youtube.com/vi/q8VEBgx-PhU/maxresdefault.jpg"></img></a>
 
 MFEM-MOOSE's recently-merged ProblemComposer feature allows users to wire external MFEM problem operators and equation systems to be used within the MOOSE framework and interface with MOOSE submodules. In this presentation, we demonstrate how the ProblemComposer works and how a custom ProblemOperator can be written for MFEM-MOOSE. We use as an example a transient nonlinear 2D plasma model initially written in native MFEM and subsequently ported to MFEM-MOOSE through the new ProblemComposer.
+
+---
+
+#### 2026 Student Lightning Talks
+#### *Session 2*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/CwMGCw9vo_Q"><img src="https://img.youtube.com/vi/CwMGCw9vo_Q/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2026 workshop page](workshop.md) for abstracts.
+
+- Jielin Yang (University of Notre Dame): "An h-adaptive entropy-stable oscillation-eliminating discontinuous Galerkin method for the Euler equations on curvilinear meshes"
+- Anthony Kolshorn (Portland State University): "Implicit-explicit Runge Kutta methods in design optimization with applications to heat transfer"
+- Pablo Cortes Castillo (Portland State University): "Transient PDE-constrained optimization for hyperbolic phenomena"
+- Amit Rotem (Virginia Tech): "WaveHoltz: a general-purpose GPU Helmholtz solver in MFEM"
+
+---
+
+#### 2026 Student Lightning Talks
+#### *Session 3*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/iHJtJdN4pOw"><img src="https://img.youtube.com/vi/iHJtJdN4pOw/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2026 workshop page](workshop.md) for abstracts.
+
+- Radovan Dabetić (ETH Zurich): "Multigrid for FEEC using mass-lumping and transforming smoothers: algorithms and results"
+- Christine Tseng (Brown University): "Explicit-implicit-null time stepping from stiff, nonlinear anisotropic diffusion to linear solves"
 
 ---
 
@@ -223,6 +249,20 @@ The shallow water equations are a fundamental mathematical model used to describ
 
 ---
 
+#### 2026 Student Lightning Talks
+#### *Session 4*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/C4lnVcDxS6U"><img src="https://img.youtube.com/vi/C4lnVcDxS6U/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2026 workshop page](workshop.md) for abstracts.
+
+- Yiming Yu (Brown University): “Topology optimization for inspectability”
+- Brook Eyob (Georgia Tech): “Information geometric regularization for Euler equations in discontinuous Galerkin methods”
+- Rushan Zhang (Georgia Tech): “Particle-in-cell in MFEM”
+- Mitchell Scott (Emory University): “Accelerating multigrid prolongation via bipartite graph attention networks”
+
+---
+
 #### Noe Reyes Rivas (Brown University)
 #### *Proximal Galerkin for contact mechanics*
 ##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
@@ -238,8 +278,6 @@ The proximal Galerkin method is a numerical method for solving variational probl
 <a class="youtube" href="https://youtu.be/Ke5jDfoof-I"><img src="https://img.youtube.com/vi/Ke5jDfoof-I/maxresdefault.jpg"></img></a>
 
 In this talk, we will provide an explicit description of our implementation of simplicial finite elements for the complete de Rham complex in 4D. We choose to develop finite elements in 4D because of their usefulness in spacetime applications. Specifically, we are interested in simplex elements for the potential of mesh adaptivity. Our work modifies and updates a previously generated MFEM branch developed by Andreas Schafelner and Martin Neumueller. Our work consists of the following stages: defining degrees of freedom on a reference element, constructing a Vandermonde matrix to transfer modal functions to nodal functions, methods for computing both the value of conforming basis functions and their derivatives, and finally orientation matching for neighboring elements. We then demonstrate the capabilities of our functions with an order of accuracy study on appropriate canonical PDEs.
-
----
 
 </div><div class="col-md-12"  markdown="1">
 
