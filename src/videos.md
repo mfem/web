@@ -74,6 +74,20 @@ High-order L2 discontinuous FEM discretizations in scientific computing often re
 
 ---
 
+#### 2026 Student Lightning Talks
+#### *Session 1*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/4DY6cLtHp-U"><img src="https://img.youtube.com/vi/4DY6cLtHp-U/maxresdefault.jpg"></img></a>
+
+The following students presented lightning talks in this video. See the [2026 workshop page](workshop.md) for abstracts.
+
+- Maxwell Paik (NYU): “AMGF-Schwarz: improving the scalability of algebraic multigrid with filtering”
+- Kevin Sweet (Portland State University): “High-order ALE hydrodynamics with tangential movement on curved boundaries”
+- Ashvin Oli (Vanderbilt University): “Scalable phase-field fracture simulations on Frontier using MFEM”
+- David Winters (Georgia Tech): “Lagrangian information geometric regularization”
+
+---
+
 #### Leonardo Molinari (LLNL)
 #### *Differentiable finite elements in MFEM*
 ##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
@@ -117,7 +131,7 @@ We present mufem, a Python-native finite element framework developed at Raiden N
 
 The integration of complex geometries into numerical simulations remains a significant challenge in computational mechanics, particularly in applications such as additive manufacturing, biomedical imaging, and materials science. To provide practical guidelines for selecting the most suitable method based on problem complexity and desired accuracy, advancing the seamless integration of image-based computations and complex geometric modeling in engineering simulations, we compare different numerical methods. Only methods involving minimal geometrical pre-treatment are considered here: voxel-based FEM, conformal decomposition FEM (CDFEM) and fictitious domain methods. The geometry is represented thanks to level-set functions which can be obtained from a segmentation or recalculated from a meshed surface. To validate and compare these methods, convergence analyses are conducted for 2D and 3D scalar and vector problems of increased complexity.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### Boyan Lazarov (LLNL)
 #### *Scalable design and optimization for frequency-domain wave and vibration problems*
@@ -126,7 +140,7 @@ The integration of complex geometries into numerical simulations remains a signi
 
 Topology optimization offers an effective approach for controlling wave propagation and structural vibration. However, high-resolution frequency-domain design is computationally intensive, as each optimization step requires repeated state and adjoint solutions for large systems. The conditioning of these systems deteriorates with mesh refinement, significant material contrast, and proximity to resonance. This work presents a scalable density-based framework for time-harmonic acoustic and elastic design. Its core contribution is reformulating the complex finite-element equations as coupled real block systems, enabling parallel iterative solvers and multilevel preconditioning within the optimization process. Frequency-response formulations address forced-response and resonance-oriented design. Adjoint sensitivities are integrated with gradient-based updates, while filtering and projection techniques provide regularization, length-scale control, and robustness to both uniform and non-uniform geometric variations. The implementation leverages the MFEM finite-element library and distributes state, adjoint, sensitivity, and optimization computations across distributed-memory resources. Representative acoustic and three-dimensional structural examples examine mesh scalability, material contrast, and excitation-frequency selection.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Dohyun Kim (Brown University)
 #### *Multi-material topology optimization with general convex polytopal constraints*
@@ -206,6 +220,26 @@ High-order methods for relativistic hydrodynamics must preserve both nonlinear s
 <a class="youtube" href="https://youtu.be/_3DCuMsQcMo"><img src="https://img.youtube.com/vi/_3DCuMsQcMo/maxresdefault.jpg"></img></a>
 
 The shallow water equations are a fundamental mathematical model used to describe the motion of water in rivers, coastal regions, oceans, and other large-scale geophysical settings. Despite their relatively simple form, these equations capture a wide range of important phenomena, including tsunami propagation, storm surges, and flooding caused by dam failures. Reliable simulations of such events play an important role in risk assessment, disaster management, and environmental planning. Designing numerical methods that simultaneously satisfy all of these requirements is a longstanding challenge. Existing approaches often preserve only some of these properties or achieve them at the expense of excessive numerical diffusion, which can reduce accuracy in practical simulations. In this presentation, I will present a recently developed framework for constructing numerical methods that preserve positivity, entropy stability, and well-balancedness simultaneously. My talk will conclude with numerical examples demonstrating the performance of the method on standard benchmark problems, followed by a discussion of future research directions.
+
+---
+
+#### Noe Reyes Rivas (Brown University)
+#### *Proximal Galerkin for contact mechanics*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/IZnTAm0M3pQ"><img src="https://img.youtube.com/vi/IZnTAm0M3pQ/maxresdefault.jpg"></img></a>
+
+The proximal Galerkin method is a numerical method for solving variational problems with inequality constraints. We apply the method to Signorini’s problem, the classical model of a three-dimensional linearly elastic body resting on a rigid, frictionless surface, and multi-body contact problems. We also introduce a regularized primal form of proximal Galerkin and provide implementations using the finite element software MFEM.
+
+---
+
+#### Patrick Saber (Penn State)
+#### *Implementation details for the 4D MFEM branch*
+##### **September 22-25, 2026** | [MFEM Workshop 2026](workshop.md)
+<a class="youtube" href="https://youtu.be/Ke5jDfoof-I"><img src="https://img.youtube.com/vi/Ke5jDfoof-I/maxresdefault.jpg"></img></a>
+
+In this talk, we will provide an explicit description of our implementation of simplicial finite elements for the complete de Rham complex in 4D. We choose to develop finite elements in 4D because of their usefulness in spacetime applications. Specifically, we are interested in simplex elements for the potential of mesh adaptivity. Our work modifies and updates a previously generated MFEM branch developed by Andreas Schafelner and Martin Neumueller. Our work consists of the following stages: defining degrees of freedom on a reference element, constructing a Vandermonde matrix to transfer modal functions to nodal functions, methods for computing both the value of conforming basis functions and their derivatives, and finally orientation matching for neighboring elements. We then demonstrate the capabilities of our functions with an order of accuracy study on appropriate canonical PDEs.
+
+---
 
 </div><div class="col-md-12"  markdown="1">
 
