@@ -20,25 +20,56 @@ A Coefficient's `Eval` method depends on not only the position within
 an element but also on the element attribute number which allows the
 Coefficient to return different results from different regions of the
 domain or boundary. This can be a powerful feature but it can lead to
-unexpected results.  As a rule domain integrals will have access to
-element attributes and boundary integrals will access the boundary
-attributes.  This seems obvious but there may be cases where the
-outcome is not so clear cut and careful thought is required.
+unexpected results. The attribute available to `Eval` belongs to the
+`ElementTransformation` supplied by the integrator, not necessarily
+to the integration surface. Ordinary domain integrators supply volume
+attributes and ordinary boundary-element integrators supply boundary
+attributes. Face integrators can use both contexts in one integral:
+`DGDirichletLFIntegrator` evaluates its prescribed boundary value with
+the boundary face transformation, but its diffusion coefficient with
+the adjacent volume element. `DGDiffusionIntegrator` similarly uses
+adjacent volume attributes for material coefficients, including on
+boundary faces. `BoundaryFlowIntegrator` uses a boundary attribute for
+its prescribed value and a volume attribute for its velocity. Check
+which transformation is passed for each coefficient before indexing
+an attribute-dependent coefficient or constructing a piecewise one.
 
-It is important to know when a Coefficient will be accessed,
-particularly in the case of time-dependent or field-dependent
-coefficients.  When used with `GridFunction::Project`,
-`GridFunction::ComputeL2Error`, and other `GridFunction` methods the
-`Coefficient` is used immediately. When used in `BilinearForm` and
-`LinearForm` objects the coefficients are only accessed during calls
-to the `Assemble` methods.  An important side note is that
-`GridFunction` and `LinearForm` objects will overwrite their values
-during such calls but a `BilinearForm` will not.  Consequently, when
-using a time-dependent coefficient with a `BilinearForm` object it is
-crucial that the user calls `BilinearForm::Update` to reset the
-internally stored matrix to zero before calling
-`BilinearForm::Assemble`.  Otherwise the new matrix entries will be
-added to the previous values leading to odd behavior.
+It is important to know when a coefficient is evaluated, particularly
+for time-dependent or field-dependent data. `GridFunction` projection
+and error routines evaluate it immediately. Ordinary assembled
+`BilinearForm` and `LinearForm` objects evaluate it during `Assemble`,
+but this is not the only possible evaluation: for example,
+`BilinearForm::ComputeElementMatrix` evaluates its integrators when
+element matrices are not cached. A LEGACY `NonlinearForm` evaluates
+its integrators during residual and gradient calls. Other assembly
+levels and integrators can have different coefficient caching rules;
+do not infer coefficient lifetime or whether changed data will take
+effect from the word "matrix-free" alone.
+
+Projection and `LinearForm::Assemble` overwrite their result vectors.
+In LEGACY assembly, a `BilinearForm` instead adds to its stored matrix.
+For time-dependent coefficients, call `BilinearForm::Update` to reset
+that matrix before reassembling it, or old and new entries accumulate.
+
+## Coefficient ownership and lifetime
+
+Adding an integrator to a form normally transfers ownership of the
+integrator to the form; it does not transfer ownership of coefficients
+passed to ordinary integrator constructors. For example,
+`MassIntegrator(q)` stores a pointer to `q`, and `DomainLFIntegrator(q)`
+stores a reference. Keep `q` alive through every assembly or other
+operation that evaluates that integrator. A helper that registers an
+integrator using a local coefficient and then returns before assembly
+leaves a dangling reference; keep the coefficient in the caller or an
+owning application object instead. A `GridFunctionCoefficient` also
+borrows its grid function, which must remain valid during evaluation.
+
+Coefficient containers have their own ownership rules. For example,
+`VectorArrayCoefficient::Set` and `MatrixArrayCoefficient::Set` own the
+supplied coefficient by default; use their `own=false` option when
+passing a coefficient owned elsewhere, including a stack object.
+Consult the individual constructor or setter documentation rather
+than assuming that every coefficient wrapper borrows or owns its inputs.
 
 ## Scalar Coefficients
 
