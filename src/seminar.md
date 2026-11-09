@@ -14,28 +14,43 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
+![](img/seminar/cyr.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Eric Cyr (Sandia National Laboratories)
+##### *TBA*
+##### [**9:00am PST, December 8, 2026**](https://everytimezone.com/s/98a70213)
+
+[<button type="button" class="btn btn-success">
+**Webex**
+</button>]()
+
+**Abstract:** TBA
+
+---
+
+### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
 ![](img/seminar/pazner.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
 #### Will Pazner (Portland State University)
 ##### *Matrix-Free Preconditioners for High-Order Finite Elements on Triangles via the Duffy de Rham Complex*
-##### [**9:00am PST, November 9, 2026**](https://everytimezone.com/s/95330cbc)
+##### November 9, 2026
 
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/pazner.pdf)
+&nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
-**Webex**
+**Talk Recording**
 </button>]()
 
-**Abstract:** The efficient solution of high-order finite element problems necessitates the use of matrix-free solvers. On meshes consisting of tensor-product elements, this technology is well-established. Sum factorization and partial assembly techniques allow for the efficient operator evaluation, and solvers such as p-multigrid or low-order-refined (LOR) result in uniformly well-conditioned systems. On simplicial meshes, matrix-free solver techniques are much less established.
-
-In this talk, we develop low-order-refined preconditioners for high-order finite elements on triangles. We construct new finite element spaces that are defined by means of a triangular lattice on each element. These spaces form a discrete de Rham complex we call the Duffy de Rham complex. The resulting high-order elements give rise to systems that are spectrally equivalent, independent of polynomial degree, to their lowest-order counterparts on the refined mesh defined by the same lattice. The new spaces are supersets of the standard Lagrange, Nédélec, and L2 spaces, and LOR solvers for the Duffy spaces can be used to precondition the standard systems using a fictitious space approach.
-
-This talk will describe the construction of the spaces, the theory of spectral equivalence, practical AMG algorithms for the low-order system, and demonstrate numerical results on a variety of high-order test cases.
-
----
-
-### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
-
+**Abstract:** The efficient solution of high-order finite element problems necessitates the use of matrix-free solvers. On meshes consisting of tensor-product elements, this technology is well-established. Sum factorization and partial assembly techniques allow for the efficient operator evaluation, and solvers such as p-multigrid or low-order-refined (LOR) result in uniformly well-conditioned systems. On simplicial meshes, matrix-free solver techniques are much less established. In this talk, we develop low-order-refined preconditioners for high-order finite elements on triangles. We construct new finite element spaces that are defined by means of a triangular lattice on each element. These spaces form a discrete de Rham complex we call the Duffy de Rham complex. The resulting high-order elements give rise to systems that are spectrally equivalent, independent of polynomial degree, to their lowest-order counterparts on the refined mesh defined by the same lattice. The new spaces are supersets of the standard Lagrange, Nédélec, and L2 spaces, and LOR solvers for the Duffy spaces can be used to precondition the standard systems using a fictitious space approach. This talk will describe the construction of the spaces, the theory of spectral equivalence, practical AMG algorithms for the low-order system, and demonstrate numerical results on a variety of high-order test cases.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1490,11 +1505,6 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 ### <i class="fa fa-calendar" aria-hidden="true"></i> Future Talks
 
 &nbsp;
-
-#### Eric Cyr (Sandia National Laboratories)
-##### **December 8, 2026**
-
----
 
 #### Harshitha Menon (Lawrence Livermore National Laboratory)
 ##### **January 5, 2027**
