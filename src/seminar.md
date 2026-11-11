@@ -68,7 +68,7 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 &nbsp;&nbsp;
 [<button type="button" class="btn btn-success">
 **Talk Recording**
-</button>]()
+</button>](https://youtu.be/qH8zq03TnbI)
 
 **Abstract:** We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.
 
