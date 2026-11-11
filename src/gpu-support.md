@@ -35,8 +35,10 @@ To get the pointer `T*` from a `Memory<T>` object, one has to use the `Read()`, 
 
 `Read()`, `Write()`, and `ReadWrite()` automatically handle data movement between the host and device. They can optimize data transfer, since e.g. data that is declared as `Write()` on the host/device need not be updated from the device/host.
 
-The method `void UseDevice(bool)` specifies if a `Memory<T>` object is intended for computation on host or on device.
-The `Read()`,`Write()`, and `ReadWrite()` methods will return device pointer if using the device has been set to `true` with `UseDevice`, by default it is `false` and will return a host pointer.
+The method `void UseDevice(bool)` marks whether an object is intended for device computation; many vector operations use this flag to choose their execution location.
+For `Vector` and `Array<T>`, however, `Read()`, `Write()`, and `ReadWrite()` default to `on_dev = true`: they select the configured device memory class and also set the device-use flag, even if `UseDevice(true)` was not called before.
+To request host access explicitly, use `HostRead()`, `HostWrite()`, or `HostReadWrite()` (equivalently, pass `false` to these access methods).
+The lower-level `Memory<T>` methods take an explicit memory class and size.
 
 Sometimes, it is necessary to access the data specifically on the host. In this case the `HostRead()`, `HostWrite()`, and `HostReadWrite()` methods should be used.
 
@@ -213,7 +215,10 @@ In order to make sure that the host data is synchronized one should use `HostRea
 similarly to ensure synchronized data on the device one should use `Read()`.
 
 ### Do not use GetData
-Do not use `GetData()` to access a pointer for device work since this will always return the host pointer without synchronizing the data with the device.
+`GetData()` returns a host pointer without synchronizing data or updating its validity flags.
+This also matters for host work: after device operations, use `HostRead()` before reading, `HostReadWrite()` before modifying existing values, or `HostWrite()` when overwriting every entry.
+Prefer the pointer returned by the appropriate access method. Direct entry access (`v(i)`, `v[i]`) and STL iterators have the same host synchronization requirement.
+Use `Read()`, `ReadWrite()`, or `Write()` for device work, according to the intended access.
 
 ### Tracking data movements and allocations
 Compiling MFEM with `MFEM_TRACK_CUDA_MEM` can help by printing when data is transferred, allocated, etc.
