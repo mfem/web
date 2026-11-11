@@ -287,6 +287,15 @@ In this talk, we will provide an explicit description of our implementation of s
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Dylan Copeland (LLNL)
+#### *Conforming NURBS Meshes with Non-Conforming Patch Topology*
+##### **October 20, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/qH8zq03TnbI"><img src="https://img.youtube.com/vi/qH8zq03TnbI/maxresdefault.jpg"></img></a>
+
+We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.
+
+---
+
 #### Ben Southworth (Los Alamos National Laboratory)
 #### *BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning*
 ##### **September 15, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
