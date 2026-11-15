@@ -248,8 +248,18 @@ Vector B, X;
 a.FormLinearSystem(ess_tdof_list, x, b, A, X, B);
 cout << "Size of linear system: " << A->Height() << endl;
 
-GSSmoother M((SparseMatrix&)(*A));
-PCG(*A, M, B, X, 1, 200, 1e-12, 0.0);
+if (pa)
+{
+   // For a space and integrator supported by partial assembly, A is an
+   // Operator rather than a SparseMatrix. Use its assembled diagonal.
+   OperatorJacobiSmoother M(a, ess_tdof_list);
+   PCG(*A, M, B, X, 1, 200, 1e-12, 0.0);
+}
+else
+{
+   GSSmoother M((SparseMatrix&)(*A));
+   PCG(*A, M, B, X, 1, 200, 1e-12, 0.0);
+}
 ```
 The method `FormLinearSystem` takes the `BilinearForm`, `LinearForm`,
 `GridFunction`, and boundary conditions (i.e., `a`, `b`, `x`, and `ess_tdof_list`);
