@@ -1,0 +1,36 @@
+/* Heading hierarchy for the ∂FEM page: loaded by src/dfem.md alone.
+   Sections (h2) get extra space and an underline; subsections (h3) are
+   smaller. A border-bottom is used rather than a border-top, because the
+   theme's h[id]::before anchor-offset spacer sits above the heading text. */
+div.col-md-9 h2 {
+   margin-top: 56px;
+   padding-bottom: 8px;
+   border-bottom: 1px solid #d7dde2;
+}
+/* Subsections: an accent bar on the left, in the site's link colour.
+   The theme's h3[id]::before anchor spacer makes the heading box 75px taller
+   than its text, so a border-left would run up into the text above. The bar
+   is drawn instead with ::after, starting 75px below the top of the box. */
+div.col-md-9 h3:not(.panel-title) {
+   position: relative;
+   margin-top: 32px;
+   padding-left: 16px;
+   font-size: 22px;
+}
+div.col-md-9 h3:not(.panel-title)::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 75px;
+   bottom: 0;
+   width: 4px;
+   background: #008cba;
+}
+
+/* Panel headings (Note, Upcoming rename, ...): tighter than the theme's. */
+div.col-md-9 .panel-heading {
+   padding: 6px 12px;
+}
+div.col-md-9 .panel-title {
+   font-size: 15px;
+}

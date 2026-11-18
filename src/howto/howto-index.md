@@ -18,6 +18,8 @@ by our users in practice.
 ### Finite Elements
 - [Using Partial and Matrix-free Assembly](assembly_levels.md)
 
+### Differentiable Finite Elements (∂FEM)
+- [Get Started with ∂FEM](dfem.md)
 
 ### Meshes
 - [Navigating Mesh Connectivity](nav-mesh-connectivity.md)
