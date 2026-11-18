@@ -327,6 +327,16 @@
          legendEl.parentNode.insertBefore(head, legendEl);
          head.appendChild(legendEl);
          head.appendChild(caption);
+
+         var setHeadHeight = function () {
+            root.style.setProperty("--dm-head-h", head.offsetHeight + "px");
+         };
+         setHeadHeight();
+         if (window.ResizeObserver) {
+            new ResizeObserver(setHeadHeight).observe(head);
+         } else {
+            window.addEventListener("resize", setHeadHeight);
+         }
       }
       var idleCap = document.createElement("div");
       idleCap.className = "dm-cap";

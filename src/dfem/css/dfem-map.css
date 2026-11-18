@@ -106,25 +106,33 @@
 
 #dm-body {
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap: nowrap;
 }
-
 
 .dm-col { padding: 4px 14px 14px; box-sizing: border-box; }
-.dm-col-math { flex: 1 1 320px; border-right: 1px solid #eceff1; min-width: 0; }
-.dm-col-code { flex: 2 1 605px; min-width: 0; }
-
-@media (max-width: 960px) {
-   .dm-col-math { border-right: none; border-bottom: 1px solid #eceff1; }
+.dm-col-math { flex: 1 1 320px; min-width: 0; }
+#dm { --dm-top: 0px; }
+.col-md-9 #dm { --dm-top: 70px; }
+.dm-col-math {
+   position: sticky;
+   top: calc(var(--dm-top) + var(--dm-head-h, 0px));
+   align-self: flex-start;
+   max-height: calc(100vh - var(--dm-top) - var(--dm-head-h, 0px));
+   overflow-y: auto;
 }
-                            
+.dm-col-code { flex: 2 1 605px; min-width: 0; border-left: 1px solid #eceff1; }
+
 @media (min-width: 1480px) {
    .col-md-9 #dm { margin-left: -135px; }
 }
 
-/* narrower than that the columns stack, so the divider runs underneath */
-@media (max-width: 1479px) {
-   .col-md-9 .dm-col-math { border-right: none; border-bottom: 1px solid #eceff1; }
+/* small screens: give the maths a larger share and tighten the spacing */
+@media (max-width: 760px) {
+   .dm-col { padding: 2px 8px 10px; }
+   .dm-col-math { flex: 2 1 0; }
+   .dm-col-code { flex: 3 1 0; }
+   #dm pre { font-size: 11px; padding: 6px 8px; }
+   .dm-sub { font-size: 12px; }
 }
 
 .dm-head {
