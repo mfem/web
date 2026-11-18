@@ -156,7 +156,7 @@ redraws the kernel boundaries on the right-hand side.
   <div id="c-P">
     <h4>P / Pᵀ — subdomain restriction, T ↔ L
       <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
-    <p>Standard MFEM operator decomposition — see <a href="../performance/#finite-element-operator-decomposition">Finite
+    <p>Standard MFEM operator decomposition — see <a href="../../performance/#finite-element-operator-decomposition">Finite
     Element Operator Decomposition</a>.</p>
     <p> Skipped when the <code>DifferentiableOperator</code>
     runs at <code>LVECTOR</code> level.</p>
@@ -165,7 +165,7 @@ redraws the kernel boundaries on the right-hand side.
   <div id="c-G">
     <h4>G / Gᵀ — element restriction, L ↔ E
       <span class="dfd-tag dfd-tag-topo">topological · not differentiated</span></h4>
-    <p>Standard MFEM operator decomposition — see <a href="../performance/#finite-element-operator-decomposition">Finite
+    <p>Standard MFEM operator decomposition — see <a href="../../performance/#finite-element-operator-decomposition">Finite
     Element Operator Decomposition</a>.</p>
   </div>
 

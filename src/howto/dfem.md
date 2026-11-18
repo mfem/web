@@ -8,11 +8,11 @@ tag-howto:
 </script>
 
 <!-- Same heading and panel styles as the ∂FEM page. -->
-<link rel="stylesheet" href="../../css/dfem-page.css">
+<link rel="stylesheet" href="../../dfem/css/dfem-page.css">
 
 # HowTo: Get started with ∂FEM
 
-Short recipes for common tasks with [∂FEM](../dfem.md), MFEM's differentiable
+Short recipes for common tasks with [∂FEM](../dfem/index.md), MFEM's differentiable
 finite element operators. The concepts behind each recipe are explained on the
 ∂FEM page; this page shows the code. Like that page, it documents the
 [`dfem-dev`](https://github.com/mfem/mfem/tree/dfem-dev) branch.
@@ -40,7 +40,7 @@ complete code can be found.
 ∂FEM is not included by `mfem.hpp`; include its header explicitly (the miniapps
 use `"../../fem/dfem/doperator.hpp"`). The q-function arguments that take part
 in differentiation use a scalar type that depends on the AD tool, see
-[AD tools](../dfem.md#ad-tools-enzyme-and-dual-numbers):
+[AD tools](../dfem/index.md#ad-tools-enzyme-and-dual-numbers):
 
 ```c++
 #include "mfem.hpp"
@@ -183,14 +183,14 @@ struct NonlinearDiffusionGlobal
 | `ParameterSpace` fields | no | yes |
 | Use it for | most physics | several passes over the points, external libraries working on whole arrays, `ParameterSpace` fields |
 
-The [backends section](../dfem.md#local-and-global-backends) of the ∂FEM page
+The [backends section](../dfem/index.md#local-and-global-backends) of the ∂FEM page
 shows the mechanism behind two execution models side by side.
 
 ## Use the Jacobian
 
 `GetDerivative` linearizes the operator about a state and returns a
 `DerivativeOperator`. Each use needs its
-[kernel](../dfem.md#matrix-free-partial-and-full-assembly):
+[kernel](../dfem/index.md#matrix-free-partial-and-full-assembly):
 
 ```c++
 Vector du(n), dr(n), w(n), dw(n);
