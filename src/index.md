@@ -1,15 +1,3 @@
-<div class="col-md-12" markdown="1">
-<center>
-[<button type="button" class="btn btn-success">
-**<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; MFEM Community Workshop<br/>(<small>September 22–25, 2026</small>)**
-</button>](workshop.md)
-&nbsp;
-[<button type="button" class="btn btn-primary">
-**<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Register**
-</button>](https://forms.gle/5sqBL3p7ReDTvWkt9)
-</center>
-</div>
-
 <div class="col-md-6" markdown="1">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" markdown="1" style="margin-top:-10px;margin-bottom:0px;height:360px;">
@@ -22,51 +10,50 @@
     <li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>
     <li data-target="#myCarousel" data-slide-to="6"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
 
   <!-- Wrapper for slides -->
-<div class="carousel-inner" markdown="1">
-<div class="item active" markdown="1">
-[<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" width="450" height="300" src="img/gallery/workshop25/cascadia.png">](gallery.md#cascadia)
-<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
-2025 Visualization Contest Winner [Cascadia](https://arxiv.org/abs/2504.16344) team
-</div>
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" width="225" height="160" src="img/gallery/workshop25/RFA-ElectricField.png">](gallery.md#molinari)
-<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
-2025 Visualization Contest Winner Leonardo Molinari
-</div>
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md#nstx)
-<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
-Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
-</div>
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md#blast)
-<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
-High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
-</div>
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md#drone)
-<div class="carousel-caption d-none" style="margin-top:-10px;" markdown="1">
-Topology optimization of a drone body using <br> LLNL's [LiDO code](https://str.llnl.gov/2018-03/tortorelli), based on MFEM
-</div>
-</div>
-<div class="item" markdown="1">
-[<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
-<div class="carousel-caption d-none" style="margin-top:-15px;" markdown="1">
-Non-conforming adaptive mesh refinement with parallel load-balancing
-</div>
-</div>
-</div>
+  <div class="carousel-inner">
+    <div class="item active">
+      [<img class="d-block w-100" src="img/logo-300.png" >](gallery.md)
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="500" height="500" src="img/gallery/workshop26/RR2D-small.jpg">](gallery.md#rocha)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2026 Visualization Contest Winner Henrique Bergallo Rocha
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="400" height="400" src="img/gallery/workshop26/gearbox-small.jpg">](gallery.md#legrain)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        2026 Visualization Contest Winner Grégory Legrain
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="250" height="250" src="img/carousel/tokamak.png">](gallery.md#nstx)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        Electromagnetic wave propagation in the [NSTX-U](https://nstx-u.pppl.gov/overview) tokamak
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="250" height="250" src="img/carousel/icf.jpg">](gallery.md#blast)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        High-order multi-material hydrodynamics in the [BLAST](https://www.llnl.gov/casc/blast) code
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" style="width:90%; margin-top:50px;" src="img/carousel/drone.png">](gallery.md#drone)
+      <div class="carousel-caption d-none" style="margin-top:-10px;">
+        Topology optimization of a drone body using <br> LLNL's [LiDO code](https://str.llnl.gov/2018-03/tortorelli), based on MFEM
+      </div>
+    </div>
+    <div class="item">
+      [<img class="d-block w-100" width="280" height="280" src="img/carousel/amr.png">](gallery.md)
+      <div class="carousel-caption d-none" style="margin-top:-15px;">
+        Non-conforming adaptive mesh refinement with parallel load-balancing
+      </div>
+    </div>
+  </div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -98,29 +85,29 @@ We host an annual [workshop](workshop.md) and [FEM@LLNL seminar series](seminar.
 See also our [Gallery](gallery.md), [Publications](publications.md), [Videos](videos.md) and [News](news.md) pages.
 
 
-</div>
-<div class="col-md-6 news-table" markdown="1">
+</div><div class="col-md-6 news-table" markdown="1">
 
 ## News
 
 Date         | Message
 ------------ | -----------------------------------------------------------------
-Dec 11, 2025 | Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).
+Sep 22, 2026 | MFEM [Community Workshop](workshop.md).
+Sep 1, 2026  | Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).
+Mar 2026     | MFEM in LLNL's [FY25 LDRD Report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).
 Dec 5, 2025  |  [Particles in MFEM](https://mfem.org/particles/).
 Nov 22, 2025 | [2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) &nbsp;[<i class="fa fa-trophy"></i>](https://awards.acm.org/bell)
 Nov 13, 2025 | [Recap](https://computing.llnl.gov/about/newsroom/mfem-workshop-2025) of 2025 [community workshop](workshop25.md).
-Oct 8, 2025  | [Postdoc position](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member) on the MFEM team. &nbsp;&nbsp;**[<i class="fa fa-envelope-o"></i>&nbsp;Apply](https://jobs.smartrecruiters.com/LLNL/3743990009818416-casc-postdoctoral-research-staff-member)**
 
 ## Latest Release
 
-[New features](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG)
+[New features](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG)
 ┊ [Examples](examples.md)
 ┊ [Code documentation](dox.md)
 ┊ [Sources](https://github.com/mfem/mfem)
 
 [<button type="button" class="btn btn-success">
-**Download mfem-4.9.tgz**
-</button>](https://bit.ly/mfem-4-9)
+**Download mfem-4.10.tgz**
+</button>](https://bit.ly/4iEAcbE)
 
 [Older releases](download.md) ┊ [Python wrapper](https://github.com/mfem/PyMFEM) ┊
 [![Launch Colab](https://colab.research.google.com/assets/colab-badge.svg){style="display:inline;margin:0"}](https://colab.research.google.com/github/GLVis/pyglvis/blob/main/examples/ex1.ipynb "Python Jupyter notebook")

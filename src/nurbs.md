@@ -35,7 +35,7 @@ spaces with the curl-curl and the (vector finite element) mass
 bilinear form, as well as the computation of discretization
 error when the exact solution is known. Static condensation is
 also illustrated.
-For implementation see [`miniapps/nurbs/nurbs__ex1`](https://docs.mfem.org/html/nurbs__ex3_8cpp_source.html).
+For implementation see [`miniapps/nurbs/nurbs__ex3`](https://docs.mfem.org/html/nurbs__ex3_8cpp_source.html).
 
 ### NURBS Ex 5: Darcy problem
 

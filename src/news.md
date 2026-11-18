@@ -2,6 +2,8 @@
 
 <img width=130px, style="margin:-10px"> | |
 ------------ | -----------------------------------------------------------------
+**Sep 1, 2026** | *Version 4.10 [released](https://github.com/mfem/mfem/blob/v4.10/CHANGELOG).*
+**Mar 2026** | *MFEM highlighted in LLNL's [annual LDRD report](https://ldrd-annual.llnl.gov/sites/ldrd_annual/files/2026-03/fy2025-ldrd-overview.pdf#page=15).*
 **Dec 11, 2025** | *Version 4.9 [released](https://github.com/mfem/mfem/blob/v4.9/CHANGELOG).*
 **Dec 5, 2025** | *[Particles in MFEM](https://mfem.org/particles/).*
 **Nov 22, 2025** | *[2025 ACM Gordon Bell Prize](https://www.llnl.gov/article/53636/llnl-ut-ucsd-win-gordon-bell-prize-exascale-tsunami-forecasting) awarded to [research](https://arxiv.org/pdf/2504.16344) using MFEM to achieve the largest known finite element simulation.*

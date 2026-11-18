@@ -4,8 +4,8 @@
 
 **Speakers' slides** are linked in the agenda below. Watch the
 [**video playlist**](https://www.youtube.com/playlist?list=PLy9rIbGDXrG2Ov2flNqK3CNhBpgTA4xwc) of
-workshop presentations (linked individually below and available on the [videos page](videos.md)),
-and view **contest submissions** in the [gallery](gallery.md).
+workshop presentations (linked individually below and available on the [videos page](videos.md#mfem-workshop-2025)),
+and view **contest submissions** in the [gallery](gallery.md#2025-visualization-contest).
 
 ![MFEM Logo](img/logo-300.png)
 
@@ -69,7 +69,6 @@ The meeting will include the following elements:
 - Office hours and discussions with the MFEM team
 
 See also the agenda for the previous [2024](../workshop24), [2023](../workshop23), [2022](../workshop22), and [2021](../workshop21) MFEM workshops.
--->
 
 Workshop participants are encouraged to join the
 [MFEM Community Slack workspace](https://join.slack.com/t/mfemworkshop/shared_invite/zt-1hxasxnlt-erkRWQTMLmBoHUdXlB0Wfg)
@@ -79,6 +78,7 @@ MFEM workshop.
 ### Workshop Zoom
 
 Join Zoom Meeting: [https://pdx.zoom.us/j/82929966415](https://pdx.zoom.us/j/82929966415).
+-->
 
 ### Agenda
 
@@ -88,7 +88,9 @@ The meeting activities will take place 8:00 am - 5:00 pm Pacific Daylight Time (
 
 #### Wednesday, September 10
 
+<!--
 Remote Participants: [Join via Zoom](https://pdx.zoom.us/j/82929966415)
+-->
 
 | Time | Activity | Presenter |
 |---|---|---|
@@ -151,17 +153,6 @@ committee) will receive an MFEM T-shirt. We will also feature the images in the
 </div>
 
 <div class="col-md-12" markdown="1" style="padding-left:0;">
-
-<!--
-To submit an entry in the contest, please fill out the
-[Google form](https://docs.google.com/forms/d/e/1FAIpQLSdDpasPq0V-q2v_UFpmMyEjV14C67DNrmGbTdnkP57Tzsc3Gg/viewform?usp=dialog).
-
-Alternatively, you may email your submission to
-[mfem@llnl.gov](mailto:mfem@llnl.gov), including your name, institution, a short
-description of the simulation (the underlying physics, discretization,
-application details, etc.), and visualization software used (GLVis, ParaView,
-VisIt, etc.).
--->
 
 ---
 

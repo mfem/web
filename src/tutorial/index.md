@@ -1,11 +1,10 @@
 # MFEM Tutorial on AWS
-<h4>September 9, 2025</h4>
+<h4>September 22, 2026</h4>
 
 ![MFEM on AWS](img/mfem-aws.png)
 
 Welcome to the MFEM tutorial, part of the
-[LLNL HPC Software Tutorials Series](https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials)
-in collaboration with [AWS](https://aws.amazon.com/blogs/hpc/call-for-participation-hpc-tutorial-series-from-the-hpcic/).
+[LLNL HPC Software Tutorials Series](https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials).
 
 [MFEM](https://mfem.org/) is a modular parallel C++ library for finite element
 methods developed at [CASC](https://computing.llnl.gov/casc/),
@@ -17,10 +16,12 @@ along in your own [Amazon EC2](https://en.wikipedia.org/wiki/Amazon_Elastic_Comp
 
 No previous experience is necessary.
 
+<!-- TODO: Add 2026 video here when available -->
 [<button type="button" class="btn btn-success">
 **Watch the video**
-</button>](https://www.youtube.com/watch?v=Sq1EwYyjFzc)
+</button>](https://youtu.be/gzGWRXlZBwA)
 
+<!-- 2025 video: https://www.youtube.com/watch?v=Sq1EwYyjFzc -->
 <!-- 2024 video: https://www.youtube.com/watch?v=Ps0wAuMbLVU -->
 
 <script type="module">

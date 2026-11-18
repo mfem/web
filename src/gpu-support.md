@@ -89,6 +89,8 @@ Several variants of `mfem::forall` exist, such as `mfem::forall_2D` and `mfem::f
 In the case of a GPU, `mfem::forall_3D(N, X,Y,Z, [=] MFEM_HOST_DEVICE (int n){...})` will declare `N` block of threads each of size `X`x`Y`x`Z` threads, whereas `mfem::forall` uses `N/MFEM_CUDA_BLOCKS` block of threads each of size `MFEM_CUDA_BLOCKS = 256` threads.
 Using `mfem::forall_3D` (and `mfem::forall_2D`) over `mfem::forall` results in a higher level of parallelism, the former using `N`x`X`x`Y`x`Z` software threads and the latter only `N` software threads.
 
+The `mfem::forall_2D` and `mfem::forall_3D` wrappers also accept an optional template parameter specifying the GPU kernel launch bounds, i.e. the maximum number of threads per block, for the native and RAJA GPU backends. For example, `mfem::forall_3D<MAX_THREADS_PER_BLOCK>(N, X, Y, Z, ...)` lets the compiler optimize register usage when the thread block size is known at compile time.
+
 In order to exploit 2D or 3D blocks of threads, it is convenient to use the macro `MFEM_FOREACH_THREAD(i,x,p)` to use threads as a `for` loop.
 The first variable `i` is the name of the "loop" variable, `x` is the threadId (it can take the values `x`, `y`, or `z`), and `p` is the loop upper bound.
 If we rewrite the previous example using `mfem::forall_3D` and `MFEM_FOREACH_THREAD`, we get:

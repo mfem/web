@@ -14,23 +14,83 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 
 </div><div class="col-md-3" markdown="1">
 
-![](img/seminar/southworth.jpg)
+![](img/seminar/cyr.jpg)
 
 </div><div class="col-md-12" markdown="1">
 
-#### Ben Southworth (Los Alamos National Laboratory)
-##### *TBD*
-##### [**9:00am PDT, September 15, 2026**](https://everytimezone.com/s/aed65837)
+#### Eric Cyr (Sandia National Laboratories)
+##### *TBA*
+##### [**9:00am PST, December 8, 2026**](https://everytimezone.com/s/98a70213)
 
 [<button type="button" class="btn btn-success">
 **Webex**
 </button>]()
 
-**Abstract:** TBD
+**Abstract:** TBA
 
 ---
 
 ### <i class="fa fa-check" aria-hidden="true"></i> Previous Talks
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/pazner.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Will Pazner (Portland State University)
+##### *Matrix-Free Preconditioners for High-Order Finite Elements on Triangles via the Duffy de Rham Complex*
+##### November 9, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/pazner.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>]()
+
+**Abstract:** The efficient solution of high-order finite element problems necessitates the use of matrix-free solvers. On meshes consisting of tensor-product elements, this technology is well-established. Sum factorization and partial assembly techniques allow for the efficient operator evaluation, and solvers such as p-multigrid or low-order-refined (LOR) result in uniformly well-conditioned systems. On simplicial meshes, matrix-free solver techniques are much less established. In this talk, we develop low-order-refined preconditioners for high-order finite elements on triangles. We construct new finite element spaces that are defined by means of a triangular lattice on each element. These spaces form a discrete de Rham complex we call the Duffy de Rham complex. The resulting high-order elements give rise to systems that are spectrally equivalent, independent of polynomial degree, to their lowest-order counterparts on the refined mesh defined by the same lattice. The new spaces are supersets of the standard Lagrange, Nédélec, and L2 spaces, and LOR solvers for the Duffy spaces can be used to precondition the standard systems using a fictitious space approach. This talk will describe the construction of the spaces, the theory of spectral equivalence, practical AMG algorithms for the low-order system, and demonstrate numerical results on a variety of high-order test cases.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/copeland.png)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Dylan Copeland (Lawrence Livermore National Laboratory)
+##### *Conforming NURBS meshes with non-conforming patch topology*
+##### October 20, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/copeland.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/qH8zq03TnbI)
+
+**Abstract:** We present a new type of NURBS finite element mesh with the powerful flexibility of allowing nonconforming patches, while still producing conforming elements and finite element spaces. Allowing patches to intersect in nonconforming ways has practical advantages in resolving physical regions and enables specification of spacing formulas for graded refinement, associated with patch edges. A further feature enabled by this type of mesh is refinement by local factors in each direction of each patch, which enables generation of minimal coarse meshes. Within a simulation workflow, minimal coarse meshes can be refined in various ways for efficient variation of mesh parameters. We outline a general algorithm for generating these meshes, with complex, realistic examples including isogeometric analysis computations. The advantages of this new mesh type can be exploited even for applications without NURBS or curved geometry, by converting to a high-order finite element mesh in a post-processing step.
+
+</div><div class="col-md-3" markdown="1">
+
+![](img/seminar/southworth.jpg)
+
+</div><div class="col-md-12" markdown="1">
+
+#### Ben Southworth (Los Alamos National Laboratory)
+##### *BRoken-Space Additive Schwarz (BRAS) for Mass Matrix Preconditioning*
+##### September 15, 2026
+
+[<button type="button" class="btn btn-primary">
+**Slides**
+</button>](pdf/seminar/southworth2.pdf)
+&nbsp;&nbsp;
+[<button type="button" class="btn btn-success">
+**Talk Recording**
+</button>](https://youtu.be/f8FAua-ZQh0)
+
+**Abstract:** Finite-element mass matrix solves and approximate inverses arise often in explicit time integration as well as Schur-complement-based block preconditioning, and are often treated as one of the easy parts of a finite-element calculation. A diagonal approximation of the mass matrix is cheap and widely used, but can be surprisingly ineffective, particularly for high-order elements and certain basis functions. This talk presents the BRoken-space Additive Schwarz (BRAS) inverse approximation, a sparse mass-matrix preconditioner that applies exact element-local mass inverses in the broken finite-element space and then averages back to the conforming space. BRAS uses the same element-level ingredients and assembly operators already present in finite-element codes, applies naturally across H1, H(curl), and H(div) spaces, and substantially reduces condition numbers, Krylov iterations, and time to solution compared with diagonal preconditioning in our experiments. In certain highly ill-conditioned regimes such as high-order Bernstein basis functions, BRAS-preconditioned CG requires more than 100x fewer iterations than diagonal preconditioned CG. I will describe a sequence of results that develops the basic algorithm, explains its performance through a sharp spectral theory on tensor-product de Rham complexes, including strong eigenvalue clustering and favorable high-order behavior for common MFEM bases, and extends the construction to strongly nonuniform and nonconforming adaptively refined meshes. I will also discuss an essentially matrix-free MFEM implementation, and demonstrate efficacy on both standalone mass solves and Schur-complement-based block preconditioning, yielding meaningful speedups in all cases.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -41,7 +101,6 @@ Fill in [this form](https://docs.google.com/forms/d/e/1FAIpQLScrJ9QT7v7abx2ELcET
 #### Xevi Roca (Barcelona Supercomputing Center)
 ##### *Enabling high-fidelity aeronautic simulations with high-order methods: geometry, numerics, and physics*
 ##### June 9, 2026
-
 
 [<button type="button" class="btn btn-primary">
 **Slides**
@@ -184,7 +243,7 @@ complex.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Falgout (LLNL)
+#### Robert Falgout (Lawrence Livermore National Laboratory)
 ##### *New Advances in hypre 3.0 for Mixed Precision and Semi-Structured Problems*
 ##### November 18, 2025
 
@@ -853,7 +912,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Kevin Chung (LLNL)
+#### Kevin Chung (Lawrence Livermore National Laboratory)
 ##### *Data-Driven DG FEM Via Reduced Order Modeling and Domain Decomposition*
 ##### February 6, 2024
 
@@ -914,7 +973,7 @@ Benjamin-Bona-Mahony equation.
 
 </div><div class="col-md-12" markdown="1">
 
-#### Youngsoo Choi (LLNL)
+#### Youngsoo Choi (Lawrence Livermore National Laboratory)
 ##### *Physics-guided interpretable data-driven simulations*
 ##### November 14, 2023
 
@@ -1314,7 +1373,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 </div><div class="col-md-12" markdown="1">
 
-#### Mike Puso (LLNL)
+#### Mike Puso (Lawrence Livermore National Laboratory)
 ##### *Topics in Immersed Boundary and Contact Methods: Current LLNL Projects and Research*
 ##### May 24, 2022
 [<button type="button" class="btn btn-primary">
@@ -1325,7 +1384,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=RasTXV6IYC0&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=7)
 
-**Abstract:** Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results using from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
+**Abstract:** Many of the most interesting phenomena in solid mechanics occurs at material interfaces. This can be in the form of fluid structure interaction, cracks, material discontinuities, impact etc. Solutions to these problems often require some form of immersed/embedded boundary method or contact or combination of both. This talk will provide a brief overview of different lab efforts in these areas and presents some of the current research aspects and results from LLNL production codes. Technically speaking, the methods discussed here all require Lagrange multipliers to satisfy the constraints on the interface of overlapping or dissimilar meshes which complicates the solution. Stability and consistency of Lagrange multiplier approaches can be hard to achieve both in space and time. For example, the wrong choice of multiplier space will either be over-constrained and/or cause oscillations at the material interfaces for simple statics problems. For dynamics, many of the basic time integration schemes such as Newmark's method are known to be unstable due to gaps opening and closing. Here we introduce some (non-Nitsche) stabilized multiplier spaces for immersed boundary and contact problems and a structure preserving time integration scheme for long time dynamic contact problems. Finally, I will describe some on-going efforts extending this work.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1409,7 +1468,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 </div><div class="col-md-12" markdown="1">
 
-#### Robert Carson (LLNL)
+#### Robert Carson (Lawrence Livermore National Laboratory)
 ##### *An Overview of ExaConstit and Its Use in the ExaAM Project*
 ##### February 1, 2022
 [<button type="button" class="btn btn-primary">
@@ -1420,7 +1479,7 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 **Talk Recording**
 </button>](https://www.youtube.com/watch?v=I0kTJdR8oZU&list=PLy9rIbGDXrG1Lfy3Um-KEPqFae7Ipghqj&index=2)
 
-**Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expediate the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
+**Abstract:** As additively manufactured (AM) parts become increasingly more popular in industry, a growing need exists to help expedite the certifying process of parts. The ExaAM project seeks to help this process by producing a workflow to model the AM process from the melt pool process all the way up to the part scale response by leveraging multiple physics codes run on upcoming exascale computing platforms. As part of this workflow, ExaConstit is a next-generation quasi-static, solid mechanics FEM code built upon MFEM used to connect local microstructures and local properties within the part scale response. Within this talk, we will first provide an overview of ExaConstit, how we have ported it over to the GPU, and some performance numbers on a number of different platforms. Next, we will discuss how we have leveraged MFEM and the FLUX workflow to run hundreds of high-fidelity simulations on Summit in-order to generate the local properties needed to drive the part scale simulation in the ExaAM workflow. Finally, we will show case a few other areas ExaConstit has been used in.
 
 </div><div class="col-md-3" markdown="1">
 
@@ -1447,32 +1506,17 @@ Additionally, one might have concerns about storage, post-processing (Will I be 
 
 &nbsp;
 
-TBD
+#### Harshitha Menon (Lawrence Livermore National Laboratory)
+##### **January 5, 2027**
+
+---
+
+#### Alice Gabriel (UCSD)
+##### **March 2, 2027**
+
+---
+
+#### Eric Chin (Lawrence Livermore National Laboratory)
+##### **May 25, 2027**
 
 </div>
-
-
-<!--
-#### Ido Akkerman (Delft university of Technology)
-##### *NURBS-Based Isogeometric Analysis: Past, Present, and Future*
-##### March 10, 2026
-**Abstract:** Over the past decade, Isogeometric Analysis (IGA) has gained significant traction in computational mechanics. A defining feature of IGA is the increased continuity of its approximation spaces compared with traditional finite element methods. This enhanced smoothness can improve numerical modeling in terms of both accuracy and efficiency, while also enabling new modeling capabilities that are difficult to achieve with standard finite elements. Despite these advantages, IGA does not naturally fit into the conventional finite element framework. This has important implications for its implementation in software libraries such as MFEM, where class structures and abstractions are primarily designed for traditional finite elements. In this talk, will discuss important implementational aspect as well as some benefits of IGA through several applications. These application will focus incompressible flow simulations using the Variational Multiscale Method (VMS) framework. More recently, H(div)- and H(curl)-conforming spline spaces have been implemented, opening new opportunities for mixed formulations. These spaces can satisfy the de Rham Complex exactly, enabling structure-preserving discretization. One promising application is incompressible flow, where compatible velocity–pressure pairs can achieve not only inf-sup stability but also pointwise satisfaction of the incompressibility constraint.
--->
-
-<!--
-</div><div class="col-md-3" markdown="1">
-
-![](img/seminar/empty.png)
-
-</div><div class="col-md-12" markdown="1">
-
-#### Speaker (Institution)
-##### *Title*
-##### [**9:00am PDT, Month Day, Year**](https://everytimezone.com/s/cc41cf42)
-
-[<button type="button" class="btn btn-success">
-**Webex**
-</button>]()
-
-**Abstract:** Abstract
--->
