@@ -80,7 +80,8 @@ component of a vector field.
 
 MFEM provides a convenience method, called `FormLinearSystem`, on the
 `[Par]BilinearForm` class which can prepare a linear system with these
-essential constraints.
+essential constraints. For an overview of the operations performed by
+`FormLinearSystem` see this page on [elimination](fem_elim.md).
 
 ```c++
 // Set the Dirichlet values in the solution vector
