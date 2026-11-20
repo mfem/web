@@ -904,7 +904,7 @@ in [miniapps/dfem](https://github.com/mfem/mfem/tree/dfem-dev/miniapps/dfem) on
 
 | Miniapp | Description |
 | --- | --- |
-| [dfem-minimal-surface][ms] | Minimal surface in 2D, $\min \int_\Omega \sqrt{1 + \lvert\nabla u\rvert^2}\, d\Omega$: AD against hand-coded derivatives and finite differences, side by side |
+| [dfem-minimal-surface][ms] | Minimal surface in 2D, $\min \int_\Omega \sqrt&#123;1 + \lvert\nabla u\rvert^2&#125;\, d\Omega$: AD against hand-coded derivatives and finite differences, side by side |
 | [dfem-hyperelasticity_energy][he] | Hyperelasticity from a strain-energy density, $E(u) = \int_\Omega \psi(\nabla u)\, d\Omega$: second derivatives of an energy functional on a quasistatic 3D beam |
 | [dfem-runtime-materials][rm] | Mixed-material mass operator with sparse material data on a custom `ParameterSpace`, the number of materials chosen at runtime |
 
@@ -918,7 +918,7 @@ branch:
 
 | Miniapp | Description |
 | --- | --- |
-| [Mesh fitting/optimization with TMOP](https://arxiv.org/abs/2611.22099) | $\min \sum_T \int_T \mu(J(x)) + \sum_{s \in S} w\, \sigma^2(x_s)$: mesh quality and surface fitting through ∂FEM; the MFEM version is the [Mesh Optimizer miniapp](../meshing-miniapps.md#mesh-optimizer) |
+| [Mesh fitting/optimization with TMOP](https://arxiv.org/abs/2611.22099) | $\min \sum_T \int_T \mu(J(x)) + \sum_&#123;s \in S&#125; w\, \sigma^2(x_s)$: mesh quality and surface fitting through ∂FEM; the MFEM version is the [Mesh Optimizer miniapp](../meshing-miniapps.md#mesh-optimizer) |
 | [dfem-nonlinear-poisson][np] | Nonlinear diffusion $-\nabla \cdot (\kappa(u, \nabla u) \nabla u) = f$ |
 | [dfem-reaction-diffusion][rd] | Reaction-diffusion, $-\nabla \cdot (\kappa \nabla u) + \alpha u + \beta u^3 = f$: multiple outputs for a single field, fused into one kernel |
 | [dfem-hyperbolic-heat][hh] | Hyperbolic heat transfer, $\tau\, \partial_t^2 T + \rho c\, \partial_t T = \nabla \cdot (k(T) \nabla T) + Q$: nonlinear differentiation inside a time-dependent solve |
