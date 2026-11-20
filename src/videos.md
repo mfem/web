@@ -287,6 +287,15 @@ In this talk, we will provide an explicit description of our implementation of s
 
 </div><div class="col-md-6"  markdown="1">
 
+#### Will Pazner (Portland State University)
+#### *Matrix-Free Preconditioners for High-Order Finite Elements on Triangles via the Duffy de Rham Complex*
+##### **November 9, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
+<a class="youtube" href="https://youtu.be/emofftLpNmc"><img src="https://img.youtube.com/vi/emofftLpNmc/maxresdefault.jpg"></img></a>
+
+The efficient solution of high-order finite element problems necessitates the use of matrix-free solvers. On meshes consisting of tensor-product elements, this technology is well-established. Sum factorization and partial assembly techniques allow for the efficient operator evaluation, and solvers such as p-multigrid or low-order-refined (LOR) result in uniformly well-conditioned systems. On simplicial meshes, matrix-free solver techniques are much less established. In this talk, we develop low-order-refined preconditioners for high-order finite elements on triangles. We construct new finite element spaces that are defined by means of a triangular lattice on each element. These spaces form a discrete de Rham complex we call the Duffy de Rham complex. The resulting high-order elements give rise to systems that are spectrally equivalent, independent of polynomial degree, to their lowest-order counterparts on the refined mesh defined by the same lattice. The new spaces are supersets of the standard Lagrange, Nédélec, and L2 spaces, and LOR solvers for the Duffy spaces can be used to precondition the standard systems using a fictitious space approach. This talk will describe the construction of the spaces, the theory of spectral equivalence, practical AMG algorithms for the low-order system, and demonstrate numerical results on a variety of high-order test cases.
+
+---
+
 #### Dylan Copeland (LLNL)
 #### *Conforming NURBS Meshes with Non-Conforming Patch Topology*
 ##### **October 20, 2026** | [FEM@LLNL Seminar Series](https://mfem.org/seminar)
@@ -526,7 +535,7 @@ Numerical methods for the simulation of transient systems with structure-preserv
 
 Viscous contact problems are time-dependent viscous flow problems where the fluid is in contact with a solid surface from which it can detach and reattach. Over sufficiently long timescales, ice is assumed to flow like a viscous fluid with a nonlinear rheology. Therefore, certain phenomena in glaciology, like the formation of subglacial cavities in the base of an ice sheet or the dynamics of marine ice sheets (continental ice sheets that slide into the ocean and go afloat at a grounding line, detaching from the bedrock), can be modelled as viscous contact problems. In particular, these problems can be described by coupling the Stokes equations with contact boundary conditions to free boundary equations that evolve the ice domain in time. In this talk, I will describe the difficulties that arise when attempting to solve this system numerically and I will introduce a method that is capable of overcoming them.
 
----
+</div><div class="col-md-6"  markdown="1">
 
 #### Nat Trask (University of Pennsylvania)
 #### *A Data Driven Finite Element Exterior Calculus*
@@ -536,7 +545,7 @@ Viscous contact problems are time-dependent viscous flow problems where the flui
 
 Despite the recent flurry of work employing machine learning to develop surrogate models to accelerate scientific computation, the "black-box" underpinnings of current techniques fail to provide the verification and validation guarantees provided by modern finite element methods. In this talk we present a data-driven finite element exterior calculus for developing reduced-order models of multiphysics systems when the governing equations are either unknown or require closure. The framework employs deep learning architectures typically used for logistic classification to construct a trainable partition of unity which provides notions of control volumes with associated boundary operators. This alternative to a traditional finite element mesh is fully differentiable and allows construction of a discrete de Rham complex with a corresponding Hodge theory. We demonstrate how models may be obtained with the same robustness guarantees as traditional mixed finite element discretization, with deep connections to contemporary techniques in graph neural networks. For applications developing digital twins where surrogates are intended to support real time data assimilation and optimal control, we further develop the framework to support Bayesian optimization of unknown physics on the underlying adjacency matrices of the chain complex. By framing the learning of fluxes via an optimal recovery problem with a computationally tractable posterior distribution, we are able to develop models with intrinsic representations of epistemic uncertainty.
 
-</div><div class="col-md-6"  markdown="1">
+---
 
 #### William Moses (University of Illinois Urbana-Champaign)
 #### *Supercharging Programming Through Compiler Technology*
