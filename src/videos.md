@@ -1959,7 +1959,7 @@ Jamie Bramwell of LLNL presented an overview of the open-source [Serac project](
 
 <a class="youtube" href="https://www.youtube.com/watch?v=oUk6tkHWjI4"><img src="https://img.youtube.com/vi/oUk6tkHWjI4/maxresdefault.jpg"></img></a>
 
-Veselin Dobrev of LLNL detailed the project’s recent developments including memory manager improvements; serial support for p- and hp-refinement; high-order/low-order refined solution transfer; GLVis visualization via Jupyter Notebooks; and additional GPU support regarding HYPRE preconditioners, PETSc tools, and mesh optimization. MFEM now also integrates with various new libraries (AmgX, Gingko, FMS, and others), and continuous integration testing has been conducted on LLNL’s Quartz, Lassen, and Corona machines. Additionally, Dobrev summarized MFEM’s integrations with other software libraries and the team’s engagements with the Exascale Computing Project, SciDAC, the FASTMath Institute, and other projects.
+Veselin Dobrev of LLNL detailed the project’s recent developments including memory manager improvements; serial support for p- and hp-refinement; high-order/low-order refined solution transfer; GLVis visualization via Jupyter Notebooks; and additional GPU support regarding HYPRE preconditioners, PETSc tools, and mesh optimization. MFEM now also integrates with various new libraries (AmgX, Ginkgo, FMS, and others), and continuous integration testing has been conducted on LLNL’s Quartz, Lassen, and Corona machines. Additionally, Dobrev summarized MFEM’s integrations with other software libraries and the team’s engagements with the Exascale Computing Project, SciDAC, the FASTMath Institute, and other projects.
 
 ---
 

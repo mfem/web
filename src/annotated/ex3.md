@@ -212,7 +212,7 @@ if (static_cond) { a->EnableStaticCondensation(); }
 
    cout << "Size of linear system: " << A->Height() << endl;
 ```
-Here, static condensation is enabled if it was requested from the command line using the command `-sc`. Then `a->Assemble();` computes the element matrices and assembles the global stiffness matrix. The function `FormLinearSystm` transforms the assembled bilinear form `a` and linear form `b` into the final algebraic system `A X = B`; cf. lines 212-216 of [Annotated Example 1](https://mfem.org/tutorial/fem/#annotated-example-1)). Note that the function
+Here, static condensation is enabled if it was requested from the command line using the command `-sc`. Then `a->Assemble();` computes the element matrices and assembles the global stiffness matrix. The function `FormLinearSystem` transforms the assembled bilinear form `a` and linear form `b` into the final algebraic system `A X = B`; cf. lines 212-216 of [Annotated Example 1](https://mfem.org/tutorial/fem/#annotated-example-1)). Note that the function
 `FormLinearSystem` also eliminates the essential boundary dofs declared in `ess_tdof_list`. Lastly, we print the size of the linear system for the convenience of the user.
 
 ---
