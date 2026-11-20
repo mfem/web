@@ -1,0 +1,99 @@
+/* ------------------------------------------------------------------------
+   dfem-diagram.css — interactive ∂FEM operator decomposition.
+
+   Styles the T -> L -> E -> Q panel diagram and its detail panel. The
+   .dfd-local / .dfd-global class on the root switches the kernel boundaries
+   and the Q-level treatment between the two q-function backends.
+   ------------------------------------------------------------------------ */
+
+/* ---- shell ------------------------------------------------------------ */
+.dfd { border: 1px solid #ddd; border-radius: 4px; background: #fff;
+       margin: 1.5em 0; font-size: 14px; }
+.dfd-scroll { overflow-x: auto; padding: 6px 10px 0; }
+
+/* ---- lead-in: how to read the diagram --------------------------------- */
+.dfd-intro { padding: 10px 14px; border-bottom: 1px solid #eee;
+             color: #666; line-height: 1.5; }
+.dfd-intro strong { color: #444; }
+
+/* ---- header: formula and backend switch ------------------------------- */
+.dfd-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+            justify-content: space-between; padding: 10px 14px;
+            border-bottom: 1px solid #eee; background: #f7f7f9; }
+.dfd-formula { font-family: Menlo, Consolas, monospace; font-size: 15px; color: #333; }
+.dfd-formula em { font-style: normal; color: #a94442; font-weight: 700; }
+.dfd-toggle { display: flex; }
+.dfd-btn { font-family: Menlo, Consolas, monospace; font-size: 12px;
+           padding: 4px 10px; border: 1px solid #ccc; background: #fff;
+           color: #555; cursor: pointer; }
+.dfd-btn:first-child { border-radius: 3px 0 0 3px; }
+.dfd-btn:last-child  { border-radius: 0 3px 3px 0; border-left: 0; }
+.dfd-btn.dfd-on { background: #337ab7; border-color: #2e6da4; color: #fff; }
+
+/* ---- vector level panels ---------------------------------------------- */
+#dfd-svg { display: block; width: 100%; min-width: 760px; max-width: 980px;
+           margin: 0 auto; height: auto;
+           font-family: Menlo, Consolas, monospace; }
+.pbox { fill: #f0f0f0; stroke: #bbb; stroke-width: 1; }   /* panel outline */
+.sbox { fill: #fafafa; stroke: #888; stroke-width: 1; }   /* subdomain / element */
+
+/* E is the handover between operator and backend: lifted to the foreground. */
+.epanel .pbox { fill: #fff; stroke: #9aa7b1; stroke-width: 1.4; filter: url(#lift); }
+.epanel .sbox { fill: #f8fafb; stroke: #93a0aa; }
+.etag { font-size: 11.5px; text-anchor: middle; fill: #6b7a86; font-weight: 700; }
+
+/* Q turns amber only when it is a real allocation. */
+.dfd-global .qpanel .pbox { fill: #fdf3e3; stroke: #d9a441; stroke-width: 1.4; }
+.qtag { font-size: 11px; text-anchor: middle; fill: #8a6d3b; }
+.dfd-local .qtag { fill: #a94442; }
+
+/* ---- operators --------------------------------------------------------- */
+.hot { cursor: pointer; }
+.grab { fill: transparent; stroke: none; }                /* hover target */
+.hot line { stroke: #555; stroke-width: 1.6; }
+.alab { font-family: Georgia, serif; font-style: italic; font-size: 16px;
+        fill: #333; text-anchor: middle; }
+.dcurve { fill: none; stroke: #a94442; stroke-width: 2; }
+.dlab { font-family: Georgia, serif; font-style: italic; font-size: 17px;
+        fill: #a94442; text-anchor: middle; }
+.dcode { font-size: 11px; fill: #a94442; text-anchor: middle; }
+
+/* ---- kernel boundaries and captions ------------------------------------ */
+.kbox rect { fill: none; stroke-width: 1.4; stroke-dasharray: 5 3; }
+.klabel { font-size: 11px; text-anchor: middle; }
+.k-local  rect { stroke: #a94442; }
+.k-local  .klabel { fill: #a94442; }
+.k-global rect { stroke: #8a6d3b; }
+.k-global .klabel { fill: #8a6d3b; }
+.dfd-local .k-global, .dfd-global .k-local { display: none; }
+
+.toplab, .botlab { font-family: Georgia, serif; font-size: 13.5px; fill: #333;
+                   text-anchor: middle; }
+.ownlab { font-size: 12px; fill: #999; text-anchor: middle; }
+.ownlab.own-be { fill: #a94442; }
+
+/* ---- hover highlight --------------------------------------------------- */
+.hot.act .pbox   { stroke: #337ab7; stroke-width: 2.4; }
+.hot.act line    { stroke: #337ab7; stroke-width: 2.6; }
+.hot.act .alab   { fill: #337ab7; }
+.hot.act .dcurve { stroke-width: 3.4; }
+
+/* ---- detail panel ------------------------------------------------------ */
+.dfd-detail { border-top: 1px solid #eee; padding: 12px 16px; min-height: 170px;
+              background: #fcfcfc; border-radius: 0 0 4px 4px; }
+.dfd-detail h4 { margin: 0 0 6px; font-size: 14px; font-weight: 700; color: #333; }
+.dfd-detail p  { margin: 0 0 8px; line-height: 1.5; color: #444; }
+.dfd-detail ul { margin: 6px 0 8px; padding-left: 20px; }
+.dfd-detail li { margin: 3px 0; line-height: 1.45; color: #444; }
+.dfd-detail pre { background: #f5f5f5; border: 1px solid #e3e3e3;
+                  border-radius: 3px; padding: 8px 10px; margin: 8px 0;
+                  font-size: 12px; overflow-x: auto; white-space: pre; }
+.dfd-detail code { background: #f0f0f0; padding: 1px 4px; border-radius: 2px;
+                   font-size: 12px; color: #c7254e; }
+.dfd-detail pre code { background: none; padding: 0; color: #333; }
+.dfd-hint { color: #999; font-style: italic; }
+.dfd-tag { display: inline-block; font-size: 10px; text-transform: uppercase;
+           letter-spacing: .5px; padding: 2px 6px; border-radius: 2px;
+           margin-left: 8px; vertical-align: middle; }
+.dfd-tag-topo { background: #dff0d8; color: #3c763d; }
+.dfd-tag-diff { background: #f2dede; color: #a94442; }
