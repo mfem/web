@@ -138,21 +138,10 @@ calls it at one quadrature point at a time, inside one fused kernel per batch
 of elements. With `GlobalQFBackend`, the inputs at every quadrature point are
 first stored in memory, and the q-function is then run on all of them.
 
-A q-function written for one point, like `NonlinearDiffusion` above, runs on
-both backends; only the template argument changes:
-
-```c++
-dop.AddDomainIntegrator<GlobalQFBackend>(
-   qf,
-   Inputs<Value<U>, Gradient<U>, Gradient<Coords>, Weight> {},
-   Outputs<Gradient<U>> {},
-   ir, all_attr, Derivatives<U> {});
-```
-
-The global backend also accepts a q-function that sees all the points at once.
-Its arguments are `tensor_array`s (from `linalg/tensor_arrays.hpp`) indexed by
-the point, and it writes the loop itself, with `mfem::forall<UseEnzyme>` so that
-Enzyme can differentiate through it. The same physics as `NonlinearDiffusion`:
+A q-function for `GlobalQFBackend` sees all the points at once. Its arguments
+are `tensor_array`s (from `linalg/tensor_arrays.hpp`) indexed by the point, and
+it writes the loop itself, with `mfem::forall<UseEnzyme>` so that Enzyme can
+differentiate through it on device. The same physics as `NonlinearDiffusion`:
 
 ```c++
 struct NonlinearDiffusionGlobal
@@ -173,6 +162,20 @@ struct NonlinearDiffusionGlobal
    }
 };
 ```
+
+Alternatively, a pointwise q-function, one with no `tensor_array` argument and
+no scratch, like `NonlinearDiffusion` above, can be passed to `GlobalQFBackend`
+as it is; only the template argument changes:
+
+```c++
+dop.AddDomainIntegrator<GlobalQFBackend>(
+   qf,
+   Inputs<Value<U>, Gradient<U>, Gradient<Coords>, Weight> {},
+   Outputs<Gradient<U>> {},
+   ir, all_attr, Derivatives<U> {});
+```
+
+`GlobalQFBackend` then wraps it in the loop over the quadrature points itself.
 
 | | `LocalQFBackend` | `GlobalQFBackend` |
 | --- | --- | --- |

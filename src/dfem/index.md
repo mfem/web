@@ -577,6 +577,10 @@ dop.AddDomainIntegrator<LocalQFBackend>(qf, IT{}, OT{}, ir, attr, DT{});
 dop.AddDomainIntegrator<GlobalQFBackend>(qf, IT{}, OT{}, ir, attr, DT{});
 ```
 
+`GlobalQFBackend` recognizes such a pointwise q-function and internally wraps it in a loop
+over the quadrature points itself; see
+[Choose the backend](../howto/dfem.md#choose-the-backend) in the HowTo.
+
 With `GlobalQFBackend`, the q-function can instead take `tensor_array` views
 spanning *all* quadrature points, in which case it must write the loop over
 them itself:
