@@ -405,12 +405,12 @@ struct Helmholtz
    real_t k;
 
    MFEM_HOST_DEVICE inline
-   void operator()(const real_t &u,                      // Value<U>
-                   const tensor<real_t, dim> &dudxi,     // Gradient<U>
-                   const tensor<real_t, dim, dim> &J,    // Gradient<Coords>
-                   const real_t &w,                      // Weight
-                   real_t &mass,                         // out: Value<U>
-                   tensor<real_t, dim> &diffusion) const // out: Gradient<U>
+   void operator()(const dscalar_t &u,                      // Value<U>
+                   const tensor<dscalar_t, dim> &dudxi,     // Gradient<U>
+                   const tensor<real_t, dim, dim> &J,       // Gradient<Coords>
+                   const real_t &w,                         // Weight
+                   dscalar_t &mass,                         // out: Value<U>
+                   tensor<dscalar_t, dim> &diffusion) const // out: Gradient<U>
    {
       const auto invJ = inv(J);
       const auto detJ = det(J);
