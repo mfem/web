@@ -12,6 +12,20 @@ its owning rank.
 The `ParMesh` class provides functions for mapping between local and global element indices, as
 described below. These functions support conforming or AMR meshes.
 
+The first element-numbering query after construction or a topology change
+computes rank offsets using MPI communication. Initialize the numbering by
+calling the following on **all ranks**, including ranks with no local elements:
+
+```c++
+Array<HYPRE_BigInt> global_indices;
+pmesh.GetGlobalElementIndices(global_indices);
+```
+
+Subsequent queries can be rank-local until the mesh changes. Repeat collective
+initialization after refinement, derefinement, or rebalance. These indices are
+numbering for the current partition and topology, not persistent element IDs;
+do not reuse old indices to identify elements after such changes.
+
 ## Getting the global index corresponding to a local index
 
 For a local index `local_element_num` of an element owned by the current MPI rank, the global index

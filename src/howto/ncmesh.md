@@ -56,7 +56,25 @@ for (int i = 0; i < mesh->GetNE(); i++)
 mesh->GeneralRefinement(refinement_list);
 ```
 
-The resulting hanging nodes will be treated transparently by the `FiniteElementSpace` and
+If finite-element spaces and fields already exist, update them after **each**
+mesh operation, before the next refinement, derefinement, or load balance:
+
+```c++
+// After the mesh operation above:
+fespace.Update();       // construct transfer for this mesh operation
+x.Update();            // repeat for every field sharing fespace
+a.Update();
+b.Update();
+fespace.UpdatesFinished(); // only after every field has been transferred
+```
+
+Apply this sequence separately again after `Rebalance()`. The space update
+operator covers one mesh operation; delaying it until after two operations is
+unsupported. `Update(false)` omits field transfer and is appropriate only when
+the previous field values can be discarded. See the [annotated Example 6](../annotated/ex6.md)
+for a complete solve/refine/transfer loop.
+
+After updating the spaces and forms, the resulting hanging nodes are treated by the `FiniteElementSpace` and
 `BilinearForm` classes:
 
 * `FiniteElementSpace` will internally construct a conforming interpolation matrix $P$,
@@ -155,8 +173,15 @@ will either explicitly assemble the parallel $P^TAP$ system using the Hypre libr
 the action of the $P$ matrix will be applied during solver iterations.
 
 Parallel refinement is still done through `Mesh::GeneralRefinement` inherited by the `ParMesh`
-class. The method takes local element indices and works the same as in serial. All parallel
-concerns such as keeping the ghost layers synchronized are handled internally in `ParNCMesh`.
+class. The method takes local element indices. Unlike a serial local operation,
+parallel refinement must be called by **all ranks** in the mesh communicator,
+including ranks whose local refinement list is empty. Do not guard the call
+with `if (refinement_list.Size())`: neighboring ranks must participate in the
+ghost-layer communication handled internally by `ParNCMesh`.
+
+Parallel derefinement and `Rebalance()` also require all ranks to participate.
+`ParFiniteElementSpace::Update()` is collective even if that rank's space is
+already current; update the space on every rank after the mesh operation.
 
 *Note: parallel anisotropic refinement of 3D meshes is not supported yet.*
 
