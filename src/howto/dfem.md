@@ -52,6 +52,11 @@ using dscalar_t = std::conditional_t<mfem::UseEnzyme, real_t,
                                      dual<real_t, real_t>>;
 ```
 
+To run on a GPU, select the device as in any MFEM code, for example
+`Device device("cuda");` at the start of `main`; the code on this page is
+otherwise unchanged. See [Running on a GPU](../dfem/index.md#running-on-a-gpu)
+for the requirements on the q-function.
+
 <div class="panel panel-danger">
 <div class="panel-heading">
 <h3 class="panel-title"><i class="fa fa-exclamation-circle"></i>&nbsp; Upcoming rename</h3>

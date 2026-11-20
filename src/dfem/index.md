@@ -136,7 +136,20 @@ cmake .. -DCMAKE_CXX_COMPILER=clang++ -DMFEM_USE_MPI=ON \
          -DMFEM_USE_ENZYME=ON -DENZYME_DIR=/path/to/enzyme
 ```
 
-More details on how to build Enzyme on Linux and macOS. are provided in [INSTALL](https://github.com/mfem/mfem/blob/dfem-dev/INSTALL).
+More details on how to build Enzyme on Linux and macOS are provided in [INSTALL](https://github.com/mfem/mfem/blob/dfem-dev/INSTALL).
+
+### Running on a GPU
+
+∂FEM follows MFEM's execution model, so minimal change is required for the code to run on device.
+
+As usual, select the backend with `Device device(backend);` (supported backends are `"cpu"`, `"cuda"`, `"hip"`), and every ∂FEM kernel runs there, with no change to the operator code itself. The RAJA, OCCA and OpenMP backends are not supported yet.
+
+Some requirements to keep in mind when writing the q-function:
+- the q-function, and every function it calls, must be marked
+  `MFEM_HOST_DEVICE`; a lambda q-function is written `[] MFEM_HOST_DEVICE (...)`;
+- a q-function for `GlobalQFBackend` that writes its own loop over the
+  quadrature points must run it on the device with `mfem::forall`, not a plain
+  `for` loop; with Enzyme, use `mfem::forall<UseEnzyme>`.
 
 ## Building a DifferentiableOperator
 
