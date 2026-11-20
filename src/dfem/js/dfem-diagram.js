@@ -30,7 +30,7 @@
     owns.</div>
 
   <div class="dfd-head">
-    <div class="dfd-formula">$\nabla A(u;p) = P^T B^T G^T \, \color{#a94442}{\nabla D(u;p)} \, B G P$</div>
+    <div class="dfd-formula">$\nabla A(u;p) = P^T G^T B^T \, \color{#a94442}{\nabla D(u;p)} \, B G P$</div>
     <div class="dfd-toggle" role="group" aria-label="q-function backend">
       <button type="button" class="dfd-btn" data-mode="local">LocalQFBackend</button>
       <button type="button" class="dfd-btn dfd-on" data-mode="global">GlobalQFBackend</button>
@@ -260,11 +260,11 @@
     part ∂FEM differentiates.</p>
     <p><code>GlobalQFBackend</code> keeps the three stages as <strong>separate
     passes</strong> through global memory:</p>
-<pre><code>interpolate(...)   // xe -&gt; xq   one kernel per input
-call_qfunc(...)    // xq -&gt; yq   one kernel, ALL qp
-integrate(...)     // yq -&gt; ye   one kernel per output</code></pre>
+<pre><code>interpolate(...)   // xe -&gt; xq
+call_qfunc(...)    // xq -&gt; yq   ALL qp
+integrate(...)     // yq -&gt; ye</code></pre>
     <ul>
-      <li><code>n_inputs + 1 + n_outputs</code> kernel launches, with
+      <li>Each stage is one or more kernel launches, with
       <code>xq</code> / <code>yq</code> materialized in between.</li>
       <li>A q-function written for a single point is run at every point by the
       backend.</li>

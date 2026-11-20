@@ -12,9 +12,8 @@ tag-howto:
 
 # HowTo: Get started with ∂FEM
 
-Short recipes for common tasks with [∂FEM](../dfem/index.md), MFEM's differentiable
-finite element operators. The concepts behind each recipe are explained on the
-∂FEM page; this page shows the code. Like that page, it documents the
+Short recipes for common tasks with [∂FEM](../dfem/index.md). The main concepts behind each recipe are explained on the
+∂FEM page; here we just focus on the code. Like that page, it documents the
 [`dfem-dev`](https://github.com/mfem/mfem/tree/dfem-dev) branch.
 
 Most snippets are condensed from the ∂FEM
@@ -167,7 +166,8 @@ struct NonlinearDiffusionGlobal
       mfem::forall<UseEnzyme>(u.size(), [=] MFEM_HOST_DEVICE (int q)
       {
          const auto invJ = inv(J(q));
-         dvdxi(q) = (1.0_r + u(q) * u(q)) * (dudxi(q) * invJ)
+         const dscalar_t uq = u(q);
+         dvdxi(q) = (1.0_r + uq * uq) * (dudxi(q) * invJ)
                     * transpose(invJ) * det(J(q)) * w(q);
       });
    }
@@ -177,7 +177,7 @@ struct NonlinearDiffusionGlobal
 | | `LocalQFBackend` | `GlobalQFBackend` |
 | --- | --- | --- |
 | The q-function sees | one quadrature point | one point, or all of them with `tensor_array` arguments |
-| Kernels | one fused kernel | one per input, one for the q-function, one per output |
+| Kernels | one fused kernel | separate kernels to interpolate, run the q-function and integrate |
 | Quadrature point data | kept in registers and shared memory | stored in memory between the kernels |
 | Functionals and second derivatives | yes | no |
 | `ParameterSpace` fields | no | yes |
@@ -613,10 +613,7 @@ q-function with a `FunctionalValue` output on a quadrature space, and request
 the second derivatives:
 
 ```c++
-constexpr int E = 5;
-QuadratureSpace qs(pmesh, ir);
-VectorQuadratureSpace e_space(qs, 1);
-
+template <typename dscalar_t>
 struct Energy
 {
    MFEM_HOST_DEVICE inline
@@ -632,11 +629,15 @@ struct Energy
    }
 };
 
+constexpr int E = 5;
+QuadratureSpace qs(pmesh, ir);
+VectorQuadratureSpace e_space(qs, 1);
+
 std::vector<FieldDescriptor> e_in  = {{U, &fes}, {Coords, &nodes_fes}};
 std::vector<FieldDescriptor> e_out = {{E, &e_space}};
 DifferentiableOperator F(e_in, e_out, pmesh);
 
-Energy energy_qf;
+Energy<dscalar_t> energy_qf;
 F.AddDomainIntegrator<LocalQFBackend>(
    energy_qf,
    Inputs<Value<U>, Gradient<U>, Gradient<Coords>, Weight> {},

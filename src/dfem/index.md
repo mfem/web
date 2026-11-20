@@ -103,12 +103,6 @@ using dscalar_t = std::conditional_t<mfem::UseEnzyme, real_t,
                                      mfem::future::dual<real_t, real_t>>;
 ```
 
-The examples on this page are written with `real_t`, which is the Enzyme case.
-With the dual fallback, the arguments that take part in differentiation (the
-fields listed in `Derivatives<...>` and the outputs) have to carry `dscalar_t`
-instead, which is why the miniapps and tests write their physics against
-`dscalar_t`.
-
 ## Building MFEM with ∂FEM
 
 ∂FEM needs a parallel build of MFEM. Enzyme is a plugin for LLVM, so MFEM must
@@ -161,7 +155,9 @@ A `FieldDescriptor` describes a field by its ID, a distinct non-negative integer
 
 ```c++
 constexpr int U = 0, Coords = 1;
-auto *mesh_nodes_fes = pmesh.GetNodes()->ParFESpace();
+pmesh.EnsureNodes();
+auto *nodes = static_cast<ParGridFunction *>(pmesh.GetNodes());
+auto *mesh_nodes_fes = nodes->ParFESpace();
 std::vector<FieldDescriptor> inputs = {{U, &fes}, {Coords, mesh_nodes_fes}};
 ```
 
@@ -171,7 +167,7 @@ std::vector<FieldDescriptor> inputs = {{U, &fes}, {Coords, mesh_nodes_fes}};
 | `VectorQuadratureSpace` | data stored at the quadrature points, functional outputs |
 | `ParameterSpace` (derived by the user) | parameters with a layout of their own |
 
-The mesh coordinates are a field like any other, declared on the space of the mesh nodes (`pmesh.GetNodes()->ParFESpace()`, after `pmesh.EnsureNodes()`).
+The mesh coordinates are a field like any other, declared on the space of the mesh nodes (the `ParFiniteElementSpace` of `pmesh.GetNodes()`, after `pmesh.EnsureNodes()`).
 This enables straightforward differentiation with respect to the mesh shape.
 
 ### Field operators
@@ -346,11 +342,11 @@ constexpr int U = 1, Coords = 2, dim = 2;
 struct NonlinearDiffusion
 {
    MFEM_HOST_DEVICE inline
-   void operator()(const real_t &u,                    // Value<U>
-                   const tensor<real_t, dim> &dudxi,   // Gradient<U>
+   void operator()(const dscalar_t &u,                 // Value<U>
+                   const tensor<dscalar_t, dim> &dudxi, // Gradient<U>
                    const tensor<real_t, dim, dim> &J,  // Gradient<Coords>
                    const real_t &w,                    // Weight
-                   tensor<real_t, dim> &dvdxi) const   // the output
+                   tensor<dscalar_t, dim> &dvdxi) const // the output
    {
       const auto invJ = inv(J);
       const auto dudx = dudxi * invJ;             // physical gradient
@@ -360,7 +356,9 @@ struct NonlinearDiffusion
 };
 
 // The pieces the operator is built on
-auto *mesh_nodes_fes = pmesh.GetNodes()->ParFESpace();
+pmesh.EnsureNodes();
+auto *nodes = static_cast<ParGridFunction *>(pmesh.GetNodes());
+auto *mesh_nodes_fes = nodes->ParFESpace();
 const IntegrationRule &ir = IntRules.Get(pmesh.GetTypicalElementGeometry(),
                                          2 * order + 1);
 Array<int> all_domain_attr(pmesh.attributes.Max());
@@ -488,14 +486,15 @@ The q-function returns the integrand at one point, already multiplied by the
 measure:
 
 ```c++
+template <typename dscalar_t>
 struct WeightedDirichletEnergy
 {
    MFEM_HOST_DEVICE inline
-   void operator()(const tensor<real_t, dim> &dudxi,   // Gradient<U>
-                   const real_t &rho,                  // Value<Rho>
-                   const tensor<real_t, dim, dim> &J,  // Gradient<Coords>
-                   const real_t &w,                    // Weight
-                   real_t &e) const                    // FunctionalValue<Energy>
+   void operator()(const tensor<dscalar_t, dim> &dudxi, // Gradient<U>
+                   const dscalar_t &rho,                 // Value<Rho>
+                   const tensor<real_t, dim, dim> &J,    // Gradient<Coords>
+                   const real_t &w,                      // Weight
+                   dscalar_t &e) const                   // FunctionalValue<Energy>
    {
       const auto dudx = dudxi * inv(J);
       e = 0.5_r * rho * sqnorm(dudx) * det(J) * w;
@@ -504,7 +503,10 @@ struct WeightedDirichletEnergy
 ```
 
 Compared to a residual, the output lives on a one-component
-`VectorQuadratureSpace` and is marked `FunctionalValue`, and second derivatives are requested with `SecondDerivatives<...>`.
+`VectorQuadratureSpace` and is marked `FunctionalValue`, and second derivatives are requested with `SecondDerivatives<...>`. The q-function is a class template on
+`dscalar_t`, registered as `WeightedDirichletEnergy<dscalar_t>`: with dual numbers, ∂FEM computes
+second derivatives by re-instantiating it with nested duals, and a q-function
+without that template parameter fails to compile.
 
 ```c++
 QuadratureSpace       qspace(pmesh, ir);
@@ -516,7 +518,7 @@ std::vector<FieldDescriptor> outputs = {{Energy, &qspace_vec}};
 
 DifferentiableOperator F(inputs, outputs, pmesh);
 
-WeightedDirichletEnergy qf;
+WeightedDirichletEnergy<dscalar_t> qf;
 F.AddDomainIntegrator<LocalQFBackend>(
    qf,
    Inputs<Gradient<U>, Value<Rho>, Gradient<Coords>, Weight> {},
@@ -585,16 +587,17 @@ them itself:
 struct NonlinearDiffusionGlobal
 {
    MFEM_HOST_DEVICE inline
-   void operator()(tensor_array<const real_t> &u,
-                   tensor_array<const real_t, dim> &dudxi,
+   void operator()(tensor_array<const dscalar_t> &u,
+                   tensor_array<const dscalar_t, dim> &dudxi,
                    tensor_array<const real_t, dim, dim> &J,
                    tensor_array<const real_t> &w,
-                   tensor_array<real_t, dim> &dvdxi) const
+                   tensor_array<dscalar_t, dim> &dvdxi) const
    {
       mfem::forall<UseEnzyme>(u.size(), [=] MFEM_HOST_DEVICE (int q)
       {
          const auto invJ = inv(J(q));
-         dvdxi(q) = (1.0_r + u(q) * u(q)) * (dudxi(q) * invJ)
+         const dscalar_t uq = u(q);
+         dvdxi(q) = (1.0_r + uq * uq) * (dudxi(q) * invJ)
                     * transpose(invJ) * det(J(q)) * w(q);
       });
    }
@@ -836,20 +839,20 @@ slightly subtle: a temporary also needs a matching *shadow* buffer, so that the
 derivative information computed in one pass survives into the next. Without it
 the derivative comes out silently wrong.
 
-`ScratchBank` handles this. Derive your q-function from `QFWithScratchType` and
+`ScratchBank` handles this. Derive your q-function from `QFWithScratchType<dscalar_t>` and
 the shadow buffers are allocated and kept in step for you:
 
 <!-- TODO: drop the explicit UseEnzyme argument once the Enzyme code fix lands. -->
 
 ```c++
-struct CubicQFWithScratch : QFWithScratchType
+struct CubicQFWithScratch : QFWithScratchType<dscalar_t>
 {
    MFEM_HOST_DEVICE inline
-   void operator()(tensor_array<const real_t> &x,
-                   tensor_array<const real_t> &coef,
+   void operator()(tensor_array<const dscalar_t> &x,
+                   tensor_array<const dscalar_t> &coef,
                    tensor_array<const real_t, 2, 2> &J,
                    tensor_array<const real_t> &w,
-                   tensor_array<real_t> &y) const
+                   tensor_array<dscalar_t> &y) const
    {
       const int NQ = nq;
       auto s = make_tensor_array<>(scratch[0], NQ);
@@ -880,7 +883,8 @@ entry per scratch buffer, giving its components per quadrature point. So
 
 There is also a *global* scratch for data whose size does not depend on the
 number of quadrature points: flags, scalars, small `Vector` workspaces. Derive
-from `QFWithScratch<bool, real_t, Vector>`, aliased `QFWithGlobalScratchType`,
+from `QFWithScratch<dscalar_t, bool, real_t, Vector>`, aliased
+`QFWithGlobalScratchType<dscalar_t>`,
 and reach the entries with `GetGlobalScratch<I>()`.
 
 ## Current limitations

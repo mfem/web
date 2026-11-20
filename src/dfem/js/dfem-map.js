@@ -70,7 +70,7 @@
       {
          key: "test", label: "∇v", math: "the test function gradient",
          note: "You never write the test function. Outputs<Gradient<U>> declares which " +
-               "basis the result is contracted against — the Bᵀ Gᵀ Pᵀ of the " +
+               "basis the result is contracted against — the   Pᵀ Gᵀ Bᵀ of the " +
                "decomposition — and dvdxi is the value handed to it. The transpose(invJ) " +
                "is the matching pullback for ∇v."
       },
@@ -104,15 +104,15 @@
       ranges: [
          /* the q-function */
          ["qf",      "struct NonlinearDiffusion"],
-         ["kappa",   "const real_t &u,"],
+         ["kappa",   "const dscalar_t &u,"],
          ["kappa",   "// Value<U>"],
-         ["gradu",   "const tensor<real_t, dim> &dudxi,"],
+         ["gradu",   "const tensor<dscalar_t, dim> &dudxi,"],
          ["gradu",   "// Gradient<U>"],
          ["measure", "const tensor<real_t, dim, dim> &J,"],
          ["measure", "// Gradient<Coords>"],
          ["measure", "const real_t &w,"],
          ["measure", "// Weight"],
-         ["test",    "tensor<real_t, dim> &dvdxi) const"],
+         ["test",    "tensor<dscalar_t, dim> &dvdxi) const"],
          ["test",    "// the output"],
          ["measure", "const auto invJ = inv(J);"],
          ["gradu",   "const auto dudx = dudxi * invJ;"],
@@ -124,7 +124,7 @@
          ["measure", "det(J) * w"],
 
          /* the pieces it is built on */
-         ["measure", "pmesh.GetNodes()->ParFESpace()"],
+         ["measure", "nodes->ParFESpace()"],
          ["domain",  "const IntegrationRule &ir"],
          ["domain",  "Array<int> all_domain_attr("],
          ["evalB",   "std::vector<FieldDescriptor> inputs"],
