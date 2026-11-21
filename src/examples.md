@@ -1308,6 +1308,51 @@ We recommend reviewing examples 9, 14, 16, and 18 before this example._
 <div style="clear:both;"/></div>
 <br></div>
 
+<div id="ex42" markdown="1">
+##Example 42: Adaptive Real Time-Harmonic Maxwell
+
+<img class="floatright" width="280pt" src="../img/examples/ex42.png">
+
+This example solves the real time-harmonic Maxwell equation
+$$
+\operatorname{curl}(\mu^{-1}\operatorname{curl} E)
+- \omega^2 \epsilon E = f
+$$
+with homogeneous tangential-electric boundary conditions. It demonstrates an
+adaptive mesh refinement loop driven by one of three indicators: ZZ recovery of
+the curl, `MaxwellResidualEstimator`, or `GeneralErrorEstimator` populated with
+the real Maxwell residual terms. The residual indicators follow the formulation
+of Chaumont-Frelet and Vega.
+
+_The example has a serial ([ex42.cpp](https://github.com/mfem/mfem/blob/master/examples/ex42.cpp))
+and a parallel ([ex42p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex42p.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
+<div id="ex43" markdown="1">
+##Example 43: Adaptive Complex Time-Harmonic Maxwell
+
+<img class="floatright" width="280pt" src="../img/examples/ex43-time.gif">
+
+This example solves the complex time-harmonic Maxwell equation
+$$
+\operatorname{curl}(\mu^{-1}\operatorname{curl} E)
+- \omega^2 \epsilon_{\mathrm{eff}} E = f,
+$$
+where $\epsilon_{\mathrm{eff}} = \epsilon_r + i(\epsilon_i + \sigma/\omega)$.
+It uses the $e^{-i\omega t}$ convention, so the imaginary permittivity and
+conductivity represent passive loss. The adaptive loop can use complex ZZ
+recovery, `ComplexMaxwellResidualEstimator`, or `GeneralErrorEstimator`
+populated with the complex Maxwell residual terms.
+
+The animation shows the physical electric field over one period at a fixed
+viewpoint: $E(x,t)=\operatorname{Re}[(E_r+iE_i)e^{-i\omega t}]$.
+
+_The example has a serial ([ex43.cpp](https://github.com/mfem/mfem/blob/master/examples/ex43.cpp))
+and a parallel ([ex43p.cpp](https://github.com/mfem/mfem/blob/master/examples/ex43p.cpp)) version._
+<div style="clear:both;"/></div>
+<br></div>
+
 
 <div id="nurbs_ex1" markdown="1">
 ##NURBS Example 1: Poisson Problem
@@ -2564,6 +2609,8 @@ function update()
    + showElement("ex39", diffusion && h1 && galerkin && all4)
    + showElement("ex40", darcy && (l2 || hdiv) && (galerkin || mixed) && (gmres || newton))
    + showElement("ex41", (advection || diffusion) && (l2 || h1) && (galerkin || dg) && (pcg || rk))
+   + showElement("ex42", maxwell && hcurl && (galerkin || amr) && gmres)
+   + showElement("ex43", maxwell && hcurl && (galerkin || amr) && gmres)
 
    // nurbs miniapps
    + showElement("nurbs_ex1", diffusion && h1 && nurbs && all4)
